@@ -1,0 +1,155 @@
+import type {
+  DrugPublicationStatus,
+  DrugReviewStatus,
+  DrugSafetyItem,
+  DrugSummary,
+} from "@/types/drugs";
+import { canShowValidatedLabel } from "@/lib/content-source/readiness";
+
+export const DRUG_INDEX_STATUS_LABELS = {
+  needsRevision: "Révision requise",
+  sources: "Sources à consolider",
+  preparation: "En préparation",
+  unreviewed: "Non relu",
+  validated: "Validé",
+} as const;
+
+export const DRUG_DETAIL_STATUS_LABELS = {
+  pharmacologyReview: "Révision pharmacologique requise",
+  sources: "Sources à consolider",
+  toVerify: "À vérifier",
+  posologyUnavailable: "Posologies non disponibles",
+  medication: "Médicament",
+} as const;
+
+export const DRUG_REVIEW_STATUS_LABELS: Record<DrugReviewStatus, string> = {
+  unreviewed: DRUG_INDEX_STATUS_LABELS.unreviewed,
+  needs_revision: DRUG_INDEX_STATUS_LABELS.needsRevision,
+  pharmacist_review_required: DRUG_INDEX_STATUS_LABELS.needsRevision,
+  pharmacist_reviewed: DRUG_INDEX_STATUS_LABELS.sources,
+  validated: DRUG_INDEX_STATUS_LABELS.validated,
+};
+
+export const DRUG_PUBLICATION_STATUS_LABELS: Record<
+  DrugPublicationStatus,
+  string
+> = {
+  draft: DRUG_INDEX_STATUS_LABELS.preparation,
+  seed_placeholder: DRUG_INDEX_STATUS_LABELS.preparation,
+  needs_pharmacology_review: DRUG_INDEX_STATUS_LABELS.needsRevision,
+  published: DRUG_INDEX_STATUS_LABELS.sources,
+  hidden: DRUG_INDEX_STATUS_LABELS.preparation,
+  archived: DRUG_INDEX_STATUS_LABELS.preparation,
+};
+
+const PREPARATION_STATUSES: DrugPublicationStatus[] = [
+  "draft",
+  "seed_placeholder",
+  "hidden",
+  "archived",
+];
+
+export function canClaimValidated(
+  reviewStatus: DrugReviewStatus,
+  publicationStatus?: DrugPublicationStatus | string | null,
+): boolean {
+  return canShowValidatedLabel(reviewStatus, publicationStatus);
+}
+
+export function isPreparationDrug(drug: Pick<DrugSummary, "status" | "visibility">) {
+  return (
+    PREPARATION_STATUSES.includes(drug.status) || drug.visibility === "stub"
+  );
+}
+
+export function drugIndexStatusLabel(
+  drug: Pick<DrugSummary, "status" | "reviewStatus" | "visibility">,
+): string {
+  // TODO: "Validé" is intentionally mapped only when reviewStatus is explicitly validated.
+  // Seed placeholders and editorial_placeholder rows must never display it.
+  if (isPreparationDrug(drug)) {
+    return DRUG_INDEX_STATUS_LABELS.preparation;
+  }
+
+  if (canClaimValidated(drug.reviewStatus, drug.status)) {
+    return DRUG_INDEX_STATUS_LABELS.validated;
+  }
+
+  if (drug.reviewStatus === "unreviewed") {
+    return DRUG_INDEX_STATUS_LABELS.unreviewed;
+  }
+
+  if (
+    drug.reviewStatus === "needs_revision" ||
+    drug.reviewStatus === "pharmacist_review_required"
+  ) {
+    return DRUG_INDEX_STATUS_LABELS.needsRevision;
+  }
+
+  return DRUG_INDEX_STATUS_LABELS.sources;
+}
+
+export function drugDetailStatusLabel(
+  drug: Pick<DrugSummary, "status" | "reviewStatus" | "visibility">,
+): string {
+  if (isPreparationDrug(drug)) {
+    return DRUG_INDEX_STATUS_LABELS.preparation;
+  }
+
+  if (canClaimValidated(drug.reviewStatus, drug.status)) {
+    return DRUG_INDEX_STATUS_LABELS.validated;
+  }
+
+  if (drug.reviewStatus === "unreviewed") {
+    return DRUG_INDEX_STATUS_LABELS.unreviewed;
+  }
+
+  if (
+    drug.reviewStatus === "needs_revision" ||
+    drug.reviewStatus === "pharmacist_review_required" ||
+    drug.status === "needs_pharmacology_review"
+  ) {
+    return DRUG_DETAIL_STATUS_LABELS.pharmacologyReview;
+  }
+
+  return DRUG_DETAIL_STATUS_LABELS.sources;
+}
+
+export function drugSourceStatusLabel(
+  sourceStatus: DrugSafetyItem["sourceStatus"],
+): string {
+  if (sourceStatus === "validated") {
+    return DRUG_INDEX_STATUS_LABELS.validated;
+  }
+  if (sourceStatus === "reviewed") {
+    return DRUG_DETAIL_STATUS_LABELS.sources;
+  }
+  return DRUG_DETAIL_STATUS_LABELS.toVerify;
+}
+
+export function mapRawDrugStatusLabel(
+  publicationStatus?: string | null,
+  reviewStatus?: string | null,
+): string {
+  if (
+    publicationStatus === "seed_placeholder" ||
+    publicationStatus === "imported" ||
+    publicationStatus === "cleaned" ||
+    reviewStatus === "editorial_placeholder"
+  ) {
+    return DRUG_INDEX_STATUS_LABELS.preparation;
+  }
+  if (reviewStatus === "unreviewed") {
+    return DRUG_INDEX_STATUS_LABELS.unreviewed;
+  }
+  if (reviewStatus === "needs_revision") {
+    return DRUG_INDEX_STATUS_LABELS.needsRevision;
+  }
+  if (reviewStatus === "pharmacist_review_required") {
+    return DRUG_DETAIL_STATUS_LABELS.pharmacologyReview;
+  }
+  if (canClaimValidated(reviewStatus as DrugReviewStatus, publicationStatus)) {
+    return DRUG_INDEX_STATUS_LABELS.validated;
+  }
+  return DRUG_INDEX_STATUS_LABELS.preparation;
+}

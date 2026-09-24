@@ -1,0 +1,3326 @@
+{
+  "generated_at": "2026-09-15T15:38:51.237Z",
+  "proposed_categories": [
+    {
+      "slug": "urgences",
+      "name": "Urgences",
+      "existing": true
+    },
+    {
+      "slug": "cardiologie",
+      "name": "Cardiologie",
+      "existing": true
+    },
+    {
+      "slug": "pediatrie",
+      "name": "Pédiatrie",
+      "existing": true
+    },
+    {
+      "slug": "infectiologie",
+      "name": "Infectiologie",
+      "existing": true
+    },
+    {
+      "slug": "gyneco_obstetrique",
+      "name": "Gynéco-obstétrique",
+      "existing": true
+    },
+    {
+      "slug": "neurologie",
+      "name": "Neurologie",
+      "existing": true
+    },
+    {
+      "slug": "pneumologie",
+      "name": "Pneumologie",
+      "existing": true
+    },
+    {
+      "slug": "gastro_enterologie",
+      "name": "Gastro-entérologie",
+      "existing": false,
+      "note": "seed uses gastro via interests; content_categories has no gastro yet"
+    },
+    {
+      "slug": "nephrologie",
+      "name": "Néphrologie",
+      "existing": false
+    },
+    {
+      "slug": "endocrino_diabetologie",
+      "name": "Endocrino-diabétologie",
+      "existing": false,
+      "alias_of": "endocrinologie"
+    },
+    {
+      "slug": "endocrinologie",
+      "name": "Endocrinologie",
+      "existing": true
+    },
+    {
+      "slug": "dermatologie",
+      "name": "Dermatologie",
+      "existing": false
+    },
+    {
+      "slug": "psychiatrie",
+      "name": "Psychiatrie",
+      "existing": false
+    },
+    {
+      "slug": "reanimation",
+      "name": "Réanimation",
+      "existing": false
+    },
+    {
+      "slug": "hematologie",
+      "name": "Hématologie",
+      "existing": false
+    },
+    {
+      "slug": "rhumatologie",
+      "name": "Rhumatologie",
+      "existing": false
+    },
+    {
+      "slug": "oncologie",
+      "name": "Oncologie",
+      "existing": false
+    },
+    {
+      "slug": "geriatrie",
+      "name": "Gériatrie",
+      "existing": false
+    },
+    {
+      "slug": "allergologie",
+      "name": "Allergologie",
+      "existing": false
+    },
+    {
+      "slug": "orl",
+      "name": "ORL",
+      "existing": false
+    },
+    {
+      "slug": "ophtalmologie",
+      "name": "Ophtalmologie",
+      "existing": false
+    },
+    {
+      "slug": "urologie",
+      "name": "Urologie",
+      "existing": false
+    },
+    {
+      "slug": "chirurgie",
+      "name": "Chirurgie",
+      "existing": false
+    },
+    {
+      "slug": "anesthesie",
+      "name": "Anesthésie",
+      "existing": false
+    },
+    {
+      "slug": "medecine_generale",
+      "name": "Médecine générale",
+      "existing": false
+    },
+    {
+      "slug": "prevention_suivi",
+      "name": "Prévention / Suivi",
+      "existing": false
+    },
+    {
+      "slug": "reeducation",
+      "name": "Rééducation",
+      "existing": false
+    },
+    {
+      "slug": "dietetique",
+      "name": "Diététique",
+      "existing": false
+    },
+    {
+      "slug": "medicaments",
+      "name": "Médicaments",
+      "existing": true
+    },
+    {
+      "slug": "scores",
+      "name": "Scores",
+      "existing": true
+    }
+  ],
+  "proposed_tags": [
+    "douleur_thoracique",
+    "dyspnee",
+    "fievre",
+    "grossesse",
+    "pediatrie",
+    "antibiotherapie",
+    "insuffisance_renale",
+    "ecg",
+    "traumatologie",
+    "sepsis",
+    "anticoagulation",
+    "diabete",
+    "urgences",
+    "cat_decisionnels",
+    "recommandations",
+    "medicaments",
+    "scores",
+    "vaccination",
+    "soins_palliatifs",
+    "personnes_agees",
+    "hepatologie",
+    "imagerie"
+  ],
+  "calc_specialty_map": [
+    {
+      "source_value": "medecine-interne",
+      "source_kind": "calc_specialty",
+      "nabda_category": "medecine_generale",
+      "nabda_tags": [
+        "medecine_generale"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "urgences",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "urgences"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "soins-intensifs",
+      "source_kind": "calc_specialty",
+      "nabda_category": "reanimation",
+      "nabda_tags": [
+        "reanimation"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "general",
+      "source_kind": "calc_specialty",
+      "nabda_category": "medecine_generale",
+      "nabda_tags": [
+        "medecine_generale"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "hematologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "hematologie",
+      "nabda_tags": [
+        "hematologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "cardiologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "cardiologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "chirurgie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "chirurgie",
+      "nabda_tags": [
+        "chirurgie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "gastroenterologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "neurologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "pneumologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "pneumologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "pediatrie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "geriatrie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "geriatrie",
+      "nabda_tags": [
+        "geriatrie",
+        "personnes_agees"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "infectiologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "traumatologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "traumatologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "endocrinologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "endocrino_diabetologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "hepatologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "hepatologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "nephrologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "nephrologie",
+        "insuffisance_renale"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "psychiatrie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "pharmacotherapie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "orthopedie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "chirurgie",
+      "nabda_tags": [
+        "orthopedie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "anesthesie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "anesthesie",
+      "nabda_tags": [
+        "anesthesie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "toxicologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "toxicologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "neurochirurgie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurochirurgie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "allergologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "allergologie",
+      "nabda_tags": [
+        "allergologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "soins-palliatifs",
+      "source_kind": "calc_specialty",
+      "nabda_category": "prevention_suivi",
+      "nabda_tags": [
+        "soins_palliatifs"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "cancerologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "oncologie",
+      "nabda_tags": [
+        "oncologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "radiologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "imagerie"
+      ],
+      "flag": "unmapped_primary"
+    },
+    {
+      "source_value": "gynecologie-obstetrique",
+      "source_kind": "calc_specialty",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "rhumatologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "urologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urologie",
+      "nabda_tags": [
+        "urologie"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "biologie",
+      "source_kind": "calc_specialty",
+      "nabda_category": "scores",
+      "nabda_tags": [
+        "biologie"
+      ],
+      "flag": "support_specialty"
+    },
+    {
+      "source_value": "douleur",
+      "source_kind": "calc_specialty",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "douleur"
+      ],
+      "flag": null
+    },
+    {
+      "source_value": "nutrition",
+      "source_kind": "calc_specialty",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "nutrition"
+      ],
+      "flag": null
+    }
+  ],
+  "cat_title_map": [
+    {
+      "source_id": "g.abces-cutanes-furoncles-anthrax",
+      "source_value": "Abcès cutanés, furoncles, anthrax",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.accident-ischemique-transitoire",
+      "source_value": "Accident ischémique transitoire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.acne",
+      "source_value": "Acné",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.agitation",
+      "source_value": "Agitation",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.agranulocytose-et-neutropenie",
+      "source_value": "Agranulocytose et neutropénie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "hematologie",
+      "nabda_tags": [
+        "hematologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "anémie|anemie|agranulocytose|neutropénie|neutropenie|purpura",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.ains-traitement-par",
+      "source_value": "AINS (traitement par)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "ains|avk|antibiotiques|biomedicaments|anticoagul",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.alcool-mesusage-et-prise-en-charge-du-sevrage",
+      "source_value": "Alcool : mésusage et prise en charge du sevrage",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.amenorrhee-secondaire",
+      "source_value": "Aménorrhée secondaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.anemie-ferriprive-de-l-adulte",
+      "source_value": "Anémie ferriprive de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "hematologie",
+      "nabda_tags": [
+        "hematologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "anémie|anemie|agranulocytose|neutropénie|neutropenie|purpura",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.anemie-hemolytique-auto-immune-de-l-enfant",
+      "source_value": "Anémie hémolytique auto-immune de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.anesthesie",
+      "source_value": "Anesthésie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "anesthesie",
+      "nabda_tags": [
+        "anesthesie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "anesthésie|anesthesie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.angine",
+      "source_value": "Angine",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.angor-stable",
+      "source_value": "Angor stable",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.antibiotiques-antiviraux-traitement-par",
+      "source_value": "Antibiotiques, antiviraux (traitement par)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "ains|avk|antibiotiques|biomedicaments|anticoagul",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.apnees-obstructives-du-sommeil-syndrome-d",
+      "source_value": "Apnées obstructives du sommeil (syndrome d')",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.arteriopathie-obliterante-des-membres-inferieurs",
+      "source_value": "Artériopathie oblitérante des membres inférieurs",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.arthrite-juvenile-idiopathique",
+      "source_value": "Arthrite juvénile idiopathique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.asthme-aigu-grave",
+      "source_value": "Asthme aigu grave",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.asthme-de-l-adulte",
+      "source_value": "Asthme de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.asthme-de-l-enfant-traitement-de-fond",
+      "source_value": "Asthme de l'enfant : traitement de fond",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.asthme-de-l-enfant-traitement-des-crises",
+      "source_value": "Asthme de l'enfant : traitement des crises",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.avk-traitement-par",
+      "source_value": "AVK (traitement par)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "ains|avk|antibiotiques|biomedicaments|anticoagul",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.biomedicaments-anticorps-monoclonaux-et-proteines-de-fusion",
+      "source_value": "Biomédicaments (anticorps monoclonaux et protéines de fusion)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "ains|avk|antibiotiques|biomedicaments|anticoagul",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.bpco",
+      "source_value": "BPCO",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.bronchiolite-aigue-du-nourrisson",
+      "source_value": "Bronchiolite aiguë du nourrisson",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.bronchite-aigue-de-l-adulte",
+      "source_value": "Bronchite aiguë de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.cancers-complications-des-chimiotherapies",
+      "source_value": "Cancers : complications des chimiothérapies",
+      "source_kind": "cat_guideline",
+      "nabda_category": "oncologie",
+      "nabda_tags": [
+        "oncologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cancer|chimioth",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.cancers-depistages-organises-des-cancers-sein-colon-rectum-col-de-l-uter",
+      "source_value": "Cancers : dépistages organisés des cancers (sein, côlon, rectum, col de l'utérus)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "oncologie",
+      "nabda_tags": [
+        "oncologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cancer|chimioth",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.cirrhose",
+      "source_value": "Cirrhose",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.colique-nephretique",
+      "source_value": "Colique néphrétique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "insuffisance_renale",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "rénale|renale|colique néphr|nephret|lithiase urinaire|pyélonéphrite|pyelonephrite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.confusion-aigue",
+      "source_value": "Confusion aiguë",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.constipation-de-l-adulte",
+      "source_value": "Constipation de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.contraception",
+      "source_value": "Contraception",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.convulsion-febrile",
+      "source_value": "Convulsion fébrile",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "fievre",
+        "neurologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.covid-19",
+      "source_value": "COVID-19",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.crise-epileptique-de-l-adulte",
+      "source_value": "Crise épileptique de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.crohn-maladie-de",
+      "source_value": "Crohn (maladie de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.cystite-aigue-de-la-femme",
+      "source_value": "Cystite aiguë de la femme",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "fievre",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.denutrition-de-la-personne-agee",
+      "source_value": "Dénutrition de la personne âgée",
+      "source_kind": "cat_guideline",
+      "nabda_category": "geriatrie",
+      "nabda_tags": [
+        "personnes_agees",
+        "nutrition"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dependance-aux-opiaces-traitement-de-substitution",
+      "source_value": "Dépendance aux opiacés (traitement de substitution)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.depression",
+      "source_value": "Dépression",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dermatite-atopique-de-l-adulte",
+      "source_value": "Dermatite atopique de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dermatite-atopique-de-l-enfant",
+      "source_value": "Dermatite atopique de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dermite-seborrheique-de-l-adolescent-et-de-l-adulte",
+      "source_value": "Dermite séborrhéique de l'adolescent et de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.diabete-de-type-1",
+      "source_value": "Diabète de type 1",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "diabete",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "diabète|diabete|thyro|obésité|obesite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.diabete-de-type-2",
+      "source_value": "Diabète de type 2",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "diabete",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "diabète|diabete|thyro|obésité|obesite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.diarrhee-aigue-de-l-adulte",
+      "source_value": "Diarrhée aiguë de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dietetique-hypercholesterolemie",
+      "source_value": "Diététique : Hypercholestérolémie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dietetique",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "diététique|dietetique",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dietetique-hypertriglyceridemie",
+      "source_value": "Diététique : Hypertriglycéridémie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dietetique",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "diététique|dietetique",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dietetique-insuffisance-renale-chronique-avant-le-stade-de-la-dialyse-et",
+      "source_value": "Diététique : Insuffisance rénale chronique avant le stade de la dialyse et hors transplantation",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dietetique",
+      "nabda_tags": [
+        "prevention_suivi",
+        "insuffisance_renale",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "diététique|dietetique",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dietetique-obesite",
+      "source_value": "Diététique : Obésité",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dietetique",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "diététique|dietetique",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dietetique-regime-sans-residus",
+      "source_value": "Diététique : Régime sans résidus",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dietetique",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "diététique|dietetique",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.diverticulose-colique",
+      "source_value": "Diverticulose colique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dmla",
+      "source_value": "DMLA",
+      "source_kind": "cat_guideline",
+      "nabda_category": "ophtalmologie",
+      "nabda_tags": [
+        "ophtalmologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.douleur-de-l-adulte",
+      "source_value": "Douleur de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "douleur"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.douleur-de-l-enfant",
+      "source_value": "Douleur de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.drepanocytose-de-l-enfant",
+      "source_value": "Drépanocytose de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dysfonction-erectile",
+      "source_value": "Dysfonction érectile",
+      "source_kind": "cat_guideline",
+      "nabda_category": "urologie",
+      "nabda_tags": [
+        "urologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dyslipidemies",
+      "source_value": "Dyslipidémies",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "cardiologie",
+        "prevention_suivi"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.dysmenorrhees",
+      "source_value": "Dysménorrhées",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "gyneco_obstetrique",
+        "douleur"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.embolie-pulmonaire",
+      "source_value": "Embolie pulmonaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "embolie|thrombose veineuse|avk",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.endocardite-infectieuse-prophylaxie",
+      "source_value": "Endocardite infectieuse : prophylaxie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "cardiologie",
+        "prevention_suivi"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.endocardite-infectieuse-traitement",
+      "source_value": "Endocardite infectieuse : traitement",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.entorse-de-cheville",
+      "source_value": "Entorse de cheville",
+      "source_kind": "cat_guideline",
+      "nabda_category": "urgences",
+      "nabda_tags": [
+        "traumatologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.enuresie-de-l-enfant",
+      "source_value": "Énurésie de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.epilepsie-de-l-adulte",
+      "source_value": "Épilepsie de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.epilepsie-de-l-enfant",
+      "source_value": "Épilepsie de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.erysipele-et-autres-dermohypodermites-bacteriennes",
+      "source_value": "Érysipèle et autres dermohypodermites bactériennes",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "dermatologie",
+        "antibiotherapie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.escarres-ulceres",
+      "source_value": "Escarres, ulcères",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.fibrillation-atriale",
+      "source_value": "Fibrillation atriale",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.fievre-de-l-enfant",
+      "source_value": "Fièvre de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.gale",
+      "source_value": "Gale",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "infectiologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.gastroenterite-aigue-de-l-enfant",
+      "source_value": "Gastroentérite aiguë de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.glaucome-primitif-a-angle-ouvert",
+      "source_value": "Glaucome primitif à angle ouvert",
+      "source_kind": "cat_guideline",
+      "nabda_category": "ophtalmologie",
+      "nabda_tags": [
+        "ophtalmologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.gonarthrose-coxarthrose",
+      "source_value": "Gonarthrose, coxarthrose",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.goutte",
+      "source_value": "Goutte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.grippe-saisonniere",
+      "source_value": "Grippe saisonnière",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.grossesse-suivi-de",
+      "source_value": "Grossesse (suivi de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hbpm-et-fondaparinux-traitement-par",
+      "source_value": "HBPM et fondaparinux (traitement par)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hemophilie",
+      "source_value": "Hémophilie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "hematologie",
+      "nabda_tags": [
+        "hematologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hemorroides",
+      "source_value": "Hémorroïdes",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hepatite-b",
+      "source_value": "Hépatite B",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hepatite-c",
+      "source_value": "Hépatite C",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.herpes-cutaneomuqueux",
+      "source_value": "Herpès cutanéomuqueux",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "infectiologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hta-hypertension-arterielle",
+      "source_value": "HTA (hypertension artérielle)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hta-severe-et-urgences-hypertensives",
+      "source_value": "HTA sévère et urgences hypertensives",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hypercalcemie",
+      "source_value": "Hypercalcémie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "endocrino_diabetologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hyperkaliemie",
+      "source_value": "Hyperkaliémie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "insuffisance_renale",
+        "urgences"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hyperprolactinemie",
+      "source_value": "Hyperprolactinémie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "endocrino_diabetologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hyperthyroidie",
+      "source_value": "Hyperthyroïdie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "diabete",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "diabète|diabete|thyro|obésité|obesite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hypertrophie-benigne-de-la-prostate",
+      "source_value": "Hypertrophie bénigne de la prostate",
+      "source_kind": "cat_guideline",
+      "nabda_category": "urologie",
+      "nabda_tags": [
+        "urologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hypotension-orthostatique",
+      "source_value": "Hypotension orthostatique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "cardiologie",
+        "geriatrie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.hypothyroidie-de-l-adulte",
+      "source_value": "Hypothyroïdie de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "diabete",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "diabète|diabete|thyro|obésité|obesite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.immunoglobulines-humaines-polyvalentes-traitement-par",
+      "source_value": "Immunoglobulines humaines polyvalentes (traitement par)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.impetigo",
+      "source_value": "Impétigo",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.incontinence-urinaire-de-la-femme",
+      "source_value": "Incontinence urinaire de la femme",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infarctus-cerebral",
+      "source_value": "Infarctus cérébral",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-des-voies-biliaires",
+      "source_value": "Infections des voies biliaires",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "gastro_enterologie",
+        "antibiotherapie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-genitales-de-la-femme",
+      "source_value": "Infections génitales de la femme",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-oculaires",
+      "source_value": "Infections oculaires",
+      "source_kind": "cat_guideline",
+      "nabda_category": "ophtalmologie",
+      "nabda_tags": [
+        "ophtalmologie",
+        "infectiologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-osteoarticulaires-bacteriennes",
+      "source_value": "Infections ostéoarticulaires bactériennes",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "rhumatologie",
+        "antibiotherapie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-respiratoires-basses-de-l-enfant",
+      "source_value": "Infections respiratoires basses de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.infections-urinaires-masculines",
+      "source_value": "Infections urinaires masculines",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "urologie",
+        "antibiotherapie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insomnie-de-l-adulte",
+      "source_value": "Insomnie de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insomnie-de-l-enfant",
+      "source_value": "Insomnie de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insuffisance-cardiaque-aigue",
+      "source_value": "Insuffisance cardiaque aiguë",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "cardiologie",
+        "urgences",
+        "dyspnee"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insuffisance-cardiaque-chronique",
+      "source_value": "Insuffisance cardiaque chronique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "cardiologie",
+        "dyspnee"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insuffisance-renale-aigue-de-l-adulte",
+      "source_value": "Insuffisance rénale aiguë de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "insuffisance_renale",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "rénale|renale|colique néphr|nephret|lithiase urinaire|pyélonéphrite|pyelonephrite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insuffisance-renale-chronique",
+      "source_value": "Insuffisance rénale chronique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "insuffisance_renale",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "rénale|renale|colique néphr|nephret|lithiase urinaire|pyélonéphrite|pyelonephrite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.insuffisance-veineuse-chronique",
+      "source_value": "Insuffisance veineuse chronique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.interruption-de-grossesse",
+      "source_value": "Interruption de grossesse",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.liste-des-guides-ald-en-cancerologie",
+      "source_value": "Liste des guides ALD en cancérologie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "oncologie",
+      "nabda_tags": [
+        "oncologie",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "cancer|chimioth",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.lithiase-biliaire",
+      "source_value": "Lithiase biliaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.lithiase-urinaire",
+      "source_value": "Lithiase urinaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "nephrologie",
+      "nabda_tags": [
+        "insuffisance_renale",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "rénale|renale|colique néphr|nephret|lithiase urinaire|pyélonéphrite|pyelonephrite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.lombalgie-chronique",
+      "source_value": "Lombalgie chronique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.lombalgie-et-lomboradiculalgie-aigues-communes",
+      "source_value": "Lombalgie et lomboradiculalgie aiguës communes",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.lyme-maladie-de",
+      "source_value": "Lyme (maladie de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.maladies-rares",
+      "source_value": "Maladies rares",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medecine_generale",
+      "nabda_tags": [
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.meningite-aigue-de-l-adulte",
+      "source_value": "Méningite aiguë de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.meningite-de-l-enfant",
+      "source_value": "Méningite de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.menopause",
+      "source_value": "Ménopause",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.migraine",
+      "source_value": "Migraine",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.mycoses-cutaneomuqueuses",
+      "source_value": "Mycoses cutanéomuqueuses",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.narcolepsie-et-hypersomnie-idiopathique",
+      "source_value": "Narcolepsie et hypersomnie idiopathique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.obesites",
+      "source_value": "Obésités",
+      "source_kind": "cat_guideline",
+      "nabda_category": "endocrinologie",
+      "nabda_tags": [
+        "diabete",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "diabète|diabete|thyro|obésité|obesite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.osteoporose",
+      "source_value": "Ostéoporose",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.otite-moyenne-aigue-de-l-enfant",
+      "source_value": "Otite moyenne aiguë de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "fievre",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.paludisme-prophylaxie",
+      "source_value": "Paludisme : prophylaxie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.paludisme-traitement",
+      "source_value": "Paludisme : traitement",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.parasitoses",
+      "source_value": "Parasitoses",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.parkinson-maladie-de",
+      "source_value": "Parkinson (maladie de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.pediculoses",
+      "source_value": "Pédiculoses",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.phobie-sociale",
+      "source_value": "Phobie sociale",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.pneumonie-aigue-communautaire-de-l-adulte",
+      "source_value": "Pneumonie aiguë communautaire de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "fievre",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.polyarthrite-rhumatoide",
+      "source_value": "Polyarthrite rhumatoïde",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.post-infarctus",
+      "source_value": "Post-infarctus",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.prescription-et-populations-particulieres-medicaments-en-pediatrie",
+      "source_value": "Prescription et populations particulières : Médicaments en pédiatrie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "prescription et populations",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.prescription-et-populations-particulieres-medicaments-et-deficit-en-g6pd",
+      "source_value": "Prescription et populations particulières : Médicaments et déficit en G6PD",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "prescription et populations",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.prescription-et-populations-particulieres-medicaments-et-femme-en-age-de",
+      "source_value": "Prescription et populations particulières : Médicaments et femme en âge de procréer/grossesse",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "grossesse",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "prescription et populations",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.prescription-et-populations-particulieres-medicaments-et-fonction-renale",
+      "source_value": "Prescription et populations particulières : Médicaments et fonction rénale",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "insuffisance_renale",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "prescription et populations",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.prescription-et-populations-particulieres-medicaments-et-personnes-agees",
+      "source_value": "Prescription et populations particulières : Médicaments et personnes âgées",
+      "source_kind": "cat_guideline",
+      "nabda_category": "medicaments",
+      "nabda_tags": [
+        "medicaments",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "prescription et populations",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.psoriasis-en-plaques-de-l-adulte",
+      "source_value": "Psoriasis en plaques de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.purpura-thrombopenique-immunologique-de-l-enfant",
+      "source_value": "Purpura thrombopénique immunologique de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.pyelonephrite-aigue-de-la-femme",
+      "source_value": "Pyélonéphrite aiguë de la femme",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gyneco_obstetrique",
+      "nabda_tags": [
+        "grossesse",
+        "gyneco_obstetrique",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "grossesse|contraception|ménopause|menopause|aménorrhée|amenorrhee|interruption de grossesse|femme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.pyelonephrite-aigue-du-nourrisson-et-de-l-enfant",
+      "source_value": "Pyélonéphrite aiguë du nourrisson et de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "antibiotherapie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.raynaud-phenomene-de",
+      "source_value": "Raynaud (phénomène de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.rectocolite-hemorragique",
+      "source_value": "Rectocolite hémorragique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-arteriopathie-des-membres-inferieurs-aomi",
+      "source_value": "Rééducation fonctionnelle : Artériopathie des membres inférieurs (AOMI)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-bpco",
+      "source_value": "Rééducation fonctionnelle : BPCO",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "dyspnee",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-diabete",
+      "source_value": "Rééducation fonctionnelle : Diabète",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "diabete",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-gonarthrose-coxarthrose",
+      "source_value": "Rééducation fonctionnelle : Gonarthrose, coxarthrose",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-infarctus-cerebral",
+      "source_value": "Rééducation fonctionnelle : Infarctus cérébral",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "douleur_thoracique",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-introduction",
+      "source_value": "Rééducation fonctionnelle : Introduction",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "reference_note",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-maladie-coronaire",
+      "source_value": "Rééducation fonctionnelle : Maladie coronaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-obesite",
+      "source_value": "Rééducation fonctionnelle : Obésité",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-parkinson-maladie-de",
+      "source_value": "Rééducation fonctionnelle : Parkinson (maladie de)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-pneumopathie-aigue-communautaire",
+      "source_value": "Rééducation fonctionnelle : Pneumopathie aiguë communautaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "reference_note",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-polyarthrite-rhumatoide",
+      "source_value": "Rééducation fonctionnelle : Polyarthrite rhumatoïde",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-sclerose-en-plaques",
+      "source_value": "Rééducation fonctionnelle : Sclérose en plaques",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.reeducation-fonctionnelle-spondylarthrite-ankylosante",
+      "source_value": "Rééducation fonctionnelle : Spondylarthrite ankylosante",
+      "source_kind": "cat_guideline",
+      "nabda_category": "reeducation",
+      "nabda_tags": [
+        "prevention_suivi",
+        "recommandations"
+      ],
+      "classification": "recommendation_article",
+      "rule": "rééducation|reeducation",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.rgo-de-l-adulte",
+      "source_value": "RGO de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.rgo-du-nourrisson",
+      "source_value": "RGO du nourrisson",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.rhinite-allergique",
+      "source_value": "Rhinite allergique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.rhinopharyngite-aigue-de-l-enfant",
+      "source_value": "Rhinopharyngite aiguë de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.risque-cardiovasculaire-evaluation-et-prevention",
+      "source_value": "Risque cardiovasculaire : évaluation et prévention",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.schizophrenie",
+      "source_value": "Schizophrénie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.sclerose-en-plaques",
+      "source_value": "Sclérose en plaques",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.sinusite-aigue-de-l-adulte",
+      "source_value": "Sinusite aiguë de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.sinusite-aigue-de-l-enfant",
+      "source_value": "Sinusite aiguë de l'enfant",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pediatrie",
+      "nabda_tags": [
+        "pediatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "enfant|nourrisson|juvénile|juvenile|pédiat|pediat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.soins-palliatifs-et-accompagnement",
+      "source_value": "Soins palliatifs et accompagnement",
+      "source_kind": "cat_guideline",
+      "nabda_category": "prevention_suivi",
+      "nabda_tags": [
+        "soins_palliatifs",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "soins palliatifs",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.spasticite",
+      "source_value": "Spasticité",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.spondylarthrite-ankylosante",
+      "source_value": "Spondylarthrite ankylosante",
+      "source_kind": "cat_guideline",
+      "nabda_category": "rhumatologie",
+      "nabda_tags": [
+        "rhumatologie",
+        "douleur",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "polyarthrite|spondylarthrite|ostéoporose|osteoporose|goutte|arthrite|lombalgie",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.syncope",
+      "source_value": "Syncope",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.syndrome-coronarien-aigu-st",
+      "source_value": "Syndrome coronarien aigu ST-",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.syndrome-coronarien-aigu-st-infarctus-du-myocarde",
+      "source_value": "Syndrome coronarien aigu ST+ (Infarctus du myocarde)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "douleur_thoracique",
+        "ecg",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "infarctus|coronarien|angor|fibrillation|hta|hypertension|cardiovasculaire|post-infarctus|artériopathie|arteriopathie|insuffisance veineuse|syncope",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.syndrome-de-l-intestin-irritable",
+      "source_value": "Syndrome de l'intestin irritable",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.tabagisme-sevrage",
+      "source_value": "Tabagisme : sevrage",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.tdah",
+      "source_value": "TDAH",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.thrombose-veineuse-profonde-prophylaxie-en-chirurgie",
+      "source_value": "Thrombose veineuse profonde : prophylaxie en chirurgie",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "embolie|thrombose veineuse|avk",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.thrombose-veineuse-profonde-prophylaxie-en-milieu-medical",
+      "source_value": "Thrombose veineuse profonde : prophylaxie en milieu médical",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "embolie|thrombose veineuse|avk",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.thrombose-veineuse-profonde-traitement",
+      "source_value": "Thrombose veineuse profonde : traitement",
+      "source_kind": "cat_guideline",
+      "nabda_category": "cardiologie",
+      "nabda_tags": [
+        "anticoagulation",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "embolie|thrombose veineuse|avk",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.toux-de-l-adulte",
+      "source_value": "Toux de l'adulte",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.trouble-anxieux-generalise",
+      "source_value": "Trouble anxieux généralisé",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.trouble-bipolaire",
+      "source_value": "Trouble bipolaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.trouble-neurocognitif-majeur",
+      "source_value": "Trouble neurocognitif majeur",
+      "source_kind": "cat_guideline",
+      "nabda_category": "geriatrie",
+      "nabda_tags": [
+        "geriatrie",
+        "neurologie",
+        "personnes_agees"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.trouble-obsessionnel-compulsif-toc",
+      "source_value": "Trouble obsessionnel compulsif (TOC)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.trouble-panique",
+      "source_value": "Trouble panique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "manual_override",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.troubles-des-conduites-alimentaires",
+      "source_value": "Troubles des conduites alimentaires",
+      "source_kind": "cat_guideline",
+      "nabda_category": "psychiatrie",
+      "nabda_tags": [
+        "psychiatrie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "dépression|depression|anxi|bipolaire|schizophr|phobie|toc|tdah|conduites alimentaires|alcool|tabagisme",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.tuberculose-pulmonaire",
+      "source_value": "Tuberculose pulmonaire",
+      "source_kind": "cat_guideline",
+      "nabda_category": "pneumologie",
+      "nabda_tags": [
+        "dyspnee",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "asthme|bpco|pneumonie|bronchiolite|bronchite|toux|apnées|apnees|tuberculose|rhinite|sinusite|rhinopharyngite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.ulcere-gastrique-ou-duodenal",
+      "source_value": "Ulcère gastrique ou duodénal",
+      "source_kind": "cat_guideline",
+      "nabda_category": "gastro_enterologie",
+      "nabda_tags": [
+        "gastro_enterologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "cirrhose|crohn|rgo|ulcère|ulcere|constipation|lithiase biliaire|intestin irritable|hépatite|hepatite|rectocolite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.uretrite-masculine",
+      "source_value": "Urétrite masculine",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.urticaire-chronique",
+      "source_value": "Urticaire chronique",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.vaccinations",
+      "source_value": "Vaccinations",
+      "source_kind": "cat_guideline",
+      "nabda_category": "prevention_suivi",
+      "nabda_tags": [
+        "vaccination",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vaccin",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.varicelle",
+      "source_value": "Varicelle",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.verrue-cutanee",
+      "source_value": "Verrue cutanée",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.vertiges",
+      "source_value": "Vertiges",
+      "source_kind": "cat_guideline",
+      "nabda_category": "neurologie",
+      "nabda_tags": [
+        "neurologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "épilep|epilep|migraine|parkinson|sclérose|sclerose|méningite|meningite|ait|ischémique transitoire|vertige|confusion|agitation|céphal|cephal",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.vih-infection-par-le",
+      "source_value": "VIH (infection par le)",
+      "source_kind": "cat_guideline",
+      "nabda_category": "infectiologie",
+      "nabda_tags": [
+        "infectiologie",
+        "antibiotherapie",
+        "fievre",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "vih|hépatite|hepatite|paludisme|lyme|angine|cystite|otite|sinusite|tuberculose|parasitos|uretrite|covid|grippe|bronchite",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.voyages-recommandations-sanitaires",
+      "source_value": "Voyages : recommandations sanitaires",
+      "source_kind": "cat_guideline",
+      "nabda_category": "prevention_suivi",
+      "nabda_tags": [
+        "prevention_suivi",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "voyage|dépistage|depistage|suivi de",
+      "unmapped": false
+    },
+    {
+      "source_id": "g.zona",
+      "source_value": "Zona",
+      "source_kind": "cat_guideline",
+      "nabda_category": "dermatologie",
+      "nabda_tags": [
+        "dermatologie",
+        "cat_decisionnels",
+        "recommandations"
+      ],
+      "classification": "hybrid_protocol",
+      "rule": "acné|acne|psoriasis|urticaire|zona|varicelle|verrue|abcès cutan|abces cutan|mycose|pédicul|pedicul|impétigo|eczéma|dermat",
+      "unmapped": false
+    }
+  ],
+  "unmapped_cat": [],
+  "synonyms": [
+    {
+      "a": "gastroenterologie",
+      "b": "gastro_enterologie"
+    },
+    {
+      "a": "gynecologie-obstetrique",
+      "b": "gyneco_obstetrique"
+    },
+    {
+      "a": "soins-intensifs",
+      "b": "reanimation"
+    },
+    {
+      "a": "cancerologie",
+      "b": "oncologie"
+    },
+    {
+      "a": "endocrinologie",
+      "b": "endocrino_diabetologie"
+    },
+    {
+      "a": "medecine-interne",
+      "b": "medecine_generale"
+    },
+    {
+      "a": "general",
+      "b": "medecine_generale"
+    }
+  ],
+  "cat_counts_by_category": {
+    "dermatologie": 14,
+    "neurologie": 17,
+    "hematologie": 3,
+    "medicaments": 9,
+    "psychiatrie": 12,
+    "gyneco_obstetrique": 10,
+    "pediatrie": 22,
+    "anesthesie": 1,
+    "infectiologie": 13,
+    "cardiologie": 19,
+    "pneumologie": 10,
+    "oncologie": 3,
+    "gastro_enterologie": 14,
+    "nephrologie": 5,
+    "geriatrie": 2,
+    "endocrinologie": 8,
+    "dietetique": 5,
+    "ophtalmologie": 3,
+    "urgences": 2,
+    "urologie": 2,
+    "rhumatologie": 8,
+    "medecine_generale": 1,
+    "reeducation": 13,
+    "prevention_suivi": 3
+  }
+}
