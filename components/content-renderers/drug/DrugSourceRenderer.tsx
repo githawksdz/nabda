@@ -88,7 +88,7 @@ export function DrugSourceRenderer({
       ) : null}
       <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:items-start lg:gap-6">
       <DrugPreviewTabs tabs={tabs} value={tab} counts={counts} onChange={setTab} />
-      <div className="min-w-0 lg:max-w-[42rem]">
+      <div className="layout-reading">
       {showFilters ? (
         <div className="flex gap-2 overflow-x-auto no-scrollbar">
           {DRUG_TAB_FILTERS.map((item) => {

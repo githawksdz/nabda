@@ -90,7 +90,7 @@ export function CatSourceRenderer({
             }}
           />
         ) : null}
-        <div className="flex min-w-0 flex-col gap-4 lg:max-w-[42rem]">
+        <div className="layout-reading flex flex-col gap-4">
           {showImage ? (
             <CatStaticImageCard
               images={effectiveMode === "image" ? data.images : data.images.slice(0, 1)}

@@ -21,7 +21,7 @@ export function FrequentSearchChips({ chips, onSelect }: FrequentSearchChipsProp
             key={chip.id}
             type="button"
             onClick={() => onSelect(chip)}
-            className="h-8 rounded-lg bg-surface-container-low px-3 text-body-sm text-on-surface-variant active:scale-95"
+            className="motion-color h-8 rounded-lg bg-surface-container-low px-3 text-body-sm text-on-surface-variant active:bg-surface-container"
           >
             {chip.label}
           </button>

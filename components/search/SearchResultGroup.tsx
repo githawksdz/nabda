@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { SearchResultCard } from "./SearchResultCard";
+import { SearchResultList } from "./SearchResultCard";
 import { cn } from "@/lib/utils";
 import type { SearchResultGroup } from "@/types/search";
 
@@ -9,36 +9,40 @@ type SearchResultGroupProps = {
 
 export function SearchResultGroupSection({ group }: SearchResultGroupProps) {
   return (
-    <section>
+    <section aria-labelledby={`search-group-${group.id}`}>
       <div className="mb-2 flex items-start justify-between gap-3">
-        <div className="flex items-start gap-2">
+        <div className="flex min-w-0 items-start gap-2">
           <span
             className={cn(
-              "mt-1.5 size-1.5 shrink-0 rounded-full",
+              "mt-2 size-1.5 shrink-0 rounded-full",
               group.dotClassName ?? "bg-primary",
             )}
+            aria-hidden
           />
-          <div>
-            <h2 className="text-headline-sm">{group.title}</h2>
+          <div className="min-w-0">
+            <h2
+              id={`search-group-${group.id}`}
+              className="text-headline-sm text-text-primary"
+            >
+              {group.title}
+            </h2>
             {group.subtitle && !group.seeAllHref ? (
-              <p className="text-label-sm text-on-surface-variant">{group.subtitle}</p>
+              <p className="text-label-sm text-text-secondary">{group.subtitle}</p>
             ) : null}
           </div>
         </div>
         {group.seeAllHref ? (
           <Link
             href={group.seeAllHref}
-            className="text-label-md text-on-surface-variant"
+            className="shrink-0 text-label-md text-text-secondary underline-offset-2 hover:underline"
           >
             {group.seeAllLabel ?? group.subtitle}
           </Link>
         ) : null}
       </div>
-      <div className="flex flex-col gap-2">
-        {group.results.map((result) => (
-          <SearchResultCard key={result.id} result={result} />
-        ))}
-      </div>
+      <ul className="flex min-w-0 flex-col gap-1.5">
+        <SearchResultList results={group.results} />
+      </ul>
     </section>
   );
 }

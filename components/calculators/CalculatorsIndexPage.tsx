@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AppShell } from "@/components/app/AppShell";
+import { IndexPageIntro } from "@/components/discovery/IndexPageIntro";
 import { CalculatorContextGrid } from "./CalculatorContextGrid";
 import { CalculatorEmptyState } from "./CalculatorEmptyState";
 import { CalculatorFilterChips } from "./CalculatorFilterChips";
@@ -15,6 +16,7 @@ import {
   filterCalculators,
   filterChipsForCatalog,
 } from "@/lib/calculators/calculator-ui-config";
+import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import type { CalculatorCategorySlug, CalculatorSummary } from "@/types/calculators";
 
 type CalculatorsIndexPageProps = {
@@ -65,25 +67,23 @@ export function CalculatorsIndexPage({
 
   function scrollToFilters() {
     document.getElementById("calculator-search")?.focus();
-    document.getElementById("calculator-filters")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const filters = document.getElementById("calculator-filters");
+    if (filters) {
+      scrollElementIntoView(filters, { block: "start" });
+    }
   }
 
   return (
     <AppShell
       title="Scores"
+      pageHeading={false}
       navVariant="text"
-      frameClassName="max-w-[390px]"
+      frame="clinical"
       avatarDot
-      contentClassName="pb-[calc(96px+env(safe-area-inset-bottom,0px))]"
       headerActions={<CalculatorsHeader onTune={scrollToFilters} />}
     >
-      <div className="flex flex-col gap-5 pt-2">
-        <section className="flex flex-col gap-2">
-          <h2 className="text-headline-lg">Calculateurs cliniques & scores</h2>
-        </section>
+      <div className="flex min-w-0 flex-col gap-5 pt-2">
+        <IndexPageIntro title="Calculateurs cliniques & scores" />
 
         <CalculatorSafetyNotice />
 

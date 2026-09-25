@@ -18,13 +18,11 @@ export function ClinicalDetailFrame({
       title={title}
       backHref={backHref}
       showBottomNav={false}
-      contentClassName={cnDetailFrame()}
+      pageHeading={false}
+      frame="clinical"
     >
+      {/* Dock owns bottom reserve. Shell does not add nav padding when nav is hidden. */}
       <div className={READING_DOCK_CONTENT_CLASS}>{children}</div>
     </AppShell>
   );
-}
-
-function cnDetailFrame() {
-  return "lg:max-w-[56rem]";
 }

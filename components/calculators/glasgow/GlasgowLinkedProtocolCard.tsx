@@ -14,7 +14,7 @@ export function GlasgowLinkedProtocolCard() {
           <Link
             key={resource.id}
             href={resource.href ?? "/calculators"}
-            className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm active:scale-[0.99]"
+            className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm motion-surface active:bg-surface-container"
           >
             <span className="flex size-9 shrink-0 items-center justify-center rounded-lg bg-surface-container-low">
               {resource.kind === "cat" ? (

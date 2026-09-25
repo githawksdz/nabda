@@ -36,7 +36,7 @@ export function CalculatorContextGrid({
               aria-pressed={isActive}
               onClick={() => onSelect(context.slug)}
               className={cn(
-                "flex flex-col items-center rounded-xl bg-surface-container-lowest px-2 py-3 text-center shadow-sm active:scale-[0.98]",
+                "flex flex-col items-center rounded-xl bg-surface-container-lowest px-2 py-3 text-center shadow-sm motion-surface",
                 isActive && "ring-1 ring-primary",
               )}
             >

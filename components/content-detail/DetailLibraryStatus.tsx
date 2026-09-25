@@ -1,5 +1,10 @@
 "use client";
 
+import { Check } from "lucide-react";
+import { Button } from "@/components/ui/Button";
+import { OfflineProgressStatus } from "@/components/ui/OfflineProgressStatus";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
 import Link from "next/link";
 import { useCallback, useEffect, useState } from "react";
 import { createClient } from "@/lib/supabase/client";
@@ -196,89 +201,72 @@ export function DetailLibraryStatus({
   }
 
   return (
-    <section className="rounded-xl bg-surface-container-low px-3 py-3 text-body-sm">
-      {state.kind === "loading" ? <p>Vérification hors-ligne…</p> : null}
-      {state.kind === "signed-out" ? (
-        <p>
-          Connectez-vous pour télécharger.{" "}
-          <Link href="/" className="inline-flex min-h-11 items-center font-semibold">
-            Se connecter
-          </Link>
-        </p>
+    <Surface variant="muted" className="px-3 py-3 text-body-sm">
+      {state.kind === "loading" ? (
+        <p role="status">Vérification hors-ligne…</p>
       ) : null}
-      {state.kind === "downloaded" ? <p>Disponible hors-ligne</p> : null}
+      {state.kind === "signed-out" ? (
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <StatusBadge tone="offline">Connectez-vous pour télécharger</StatusBadge>
+          <Button href="/" variant="secondary">
+            Se connecter
+          </Button>
+        </div>
+      ) : null}
+      {state.kind === "downloaded" ? (
+        <StatusBadge tone="downloaded">
+          <Check className="size-3.5" strokeWidth={1.75} aria-hidden />
+          Disponible hors-ligne
+        </StatusBadge>
+      ) : null}
       {state.kind === "stale" ? (
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p>Mise à jour disponible</p>
-          <button
-            type="button"
-            onClick={() => void downloadItem(true)}
-            className="inline-flex min-h-11 items-center rounded-full px-3 font-semibold"
-          >
+          <StatusBadge tone="stale">Mise à jour disponible</StatusBadge>
+          <Button variant="secondary" onClick={() => void downloadItem(true)}>
             Mettre à jour
-          </button>
+          </Button>
         </div>
       ) : null}
       {state.kind === "ready" ? (
         <div className="flex flex-wrap items-center gap-2">
-          <button
-            type="button"
-            onClick={() => void downloadItem()}
-            className="inline-flex min-h-11 items-center rounded-full bg-primary px-3 font-semibold text-on-primary"
-          >
-            Télécharger
-          </button>
+          <Button onClick={() => void downloadItem()}>Télécharger</Button>
           {state.packSlug ? (
-            <button
-              type="button"
-              onClick={() => void downloadPack(state.packSlug as string)}
-              className="inline-flex min-h-11 items-center rounded-full px-3 font-semibold"
-            >
+            <Button variant="secondary" onClick={() => void downloadPack(state.packSlug as string)}>
               Télécharger le pack
-            </button>
+            </Button>
           ) : (
-            <Link href="/offline" className="inline-flex min-h-11 items-center px-1">
+            <Link href="/offline" className="inline-flex min-h-11 items-center px-1 text-text-secondary">
               Hors-ligne
             </Link>
           )}
         </div>
       ) : null}
       {state.kind === "online-only" ? (
-        <p>Contenu disponible uniquement en ligne.</p>
+        <StatusBadge tone="offline">Disponible uniquement en ligne</StatusBadge>
       ) : null}
       {state.kind === "check" ? (
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p>Télécharger pour confirmer la disponibilité hors-ligne.</p>
-          <button
-            type="button"
-            onClick={() => void downloadItem()}
-            className="inline-flex min-h-11 items-center rounded-full bg-primary px-3 font-semibold text-on-primary"
-          >
-            Télécharger
-          </button>
+          <p className="text-text-secondary">
+            Télécharger pour confirmer la disponibilité hors-ligne.
+          </p>
+          <Button onClick={() => void downloadItem()}>Télécharger</Button>
         </div>
       ) : null}
       {state.kind === "pro" ? (
-        <p>
-          Pro requis. Cet élément ne peut pas être téléchargé avec l&apos;accès actuel.
-        </p>
+        <StatusBadge tone="pro">Pro requis</StatusBadge>
       ) : null}
       {state.kind === "offline-blocked" ? (
-        <p>Connexion requise pour télécharger.</p>
+        <StatusBadge tone="offline">Connexion requise pour télécharger</StatusBadge>
       ) : null}
       {state.kind === "error" ? (
         <div className="flex flex-wrap items-center justify-between gap-2">
-          <p>{state.message}</p>
-          <button
-            type="button"
-            onClick={() => void downloadItem()}
-            className="inline-flex min-h-11 items-center rounded-full px-3 font-semibold"
-          >
+          <p className="text-status-danger">{state.message}</p>
+          <Button variant="secondary" onClick={() => void downloadItem()}>
             Réessayer
-          </button>
+          </Button>
         </div>
       ) : null}
-      {state.kind === "working" ? <p>{state.label}</p> : null}
-    </section>
+      {state.kind === "working" ? <OfflineProgressStatus label={state.label} /> : null}
+    </Surface>
   );
 }

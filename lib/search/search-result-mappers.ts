@@ -15,7 +15,7 @@ import type {
 } from "@/types/search";
 
 export const IDENTITY_STATUS_IMPORTED = "Importé · aperçu interne";
-export const IDENTITY_STATUS_PREPARATION = "En préparation";
+export const IDENTITY_STATUS_UNAVAILABLE = "Contenu indisponible";
 export const IDENTITY_STATUS_SOURCE_PRESERVED = "Source préservée";
 export const IDENTITY_STATUS_PUBLISHED = "Publié";
 
@@ -199,10 +199,10 @@ export function identityContentHref(
 
 export function identityStatusLabel(hit: IdentitySearchHit): string | undefined {
   if (isPlaceholderRecord(hit.status, hit.reviewStatus)) {
-    return IDENTITY_STATUS_PREPARATION;
+    return IDENTITY_STATUS_UNAVAILABLE;
   }
   if (hit.status !== "published" || hit.clinicalPayloadStatus === "locked") {
-    return IDENTITY_STATUS_PREPARATION;
+    return IDENTITY_STATUS_UNAVAILABLE;
   }
   if (hit.visibility === "premium") {
     return "Pro";

@@ -128,7 +128,7 @@ export function CockcroftInputForm({
               key={example.id}
               type="button"
               onClick={() => onChange(example.values)}
-              className="h-8 rounded-full bg-surface-container-low px-3 text-label-md text-on-surface-variant"
+              className="inline-flex min-h-11 items-center rounded-full bg-surface-muted px-3 text-label-md text-text-secondary"
             >
               {example.label}
             </button>
@@ -157,7 +157,7 @@ function SexOption({
       aria-checked={selected}
       onClick={onSelect}
       className={cn(
-        "flex min-h-[56px] flex-col items-center justify-center rounded-xl px-2 py-2 text-center active:scale-[0.98]",
+        "motion-color flex min-h-[56px] flex-col items-center justify-center rounded-xl px-2 py-2 text-center",
         selected
           ? "bg-primary text-on-primary"
           : "bg-surface-container-low text-on-surface-variant",
@@ -185,7 +185,7 @@ function UnitChip({
       aria-checked={selected}
       onClick={onSelect}
       className={cn(
-        "h-7 rounded-md px-2 text-label-sm",
+        "motion-color h-11 rounded-md px-2 text-label-sm font-semibold",
         selected
           ? "bg-primary text-on-primary"
           : "text-on-surface-variant",

@@ -1,9 +1,10 @@
 @import "tailwindcss";
 @import "./vaul.css";
 
-/* Stitch grayscale / cream tokens */
+/* Semantic tokens mapped onto the existing cream / ink identity. */
 
 :root {
+  /* Legacy Stitch aliases — keep for current screens */
   --background: #fcf8fb;
   --surface: #fcf8fb;
   --surface-container-lowest: #ffffff;
@@ -25,6 +26,122 @@
   --on-secondary-container: #63646c;
   --error: #ba1a1a;
   --error-container: #ffdad6;
+
+  /* Canvas / surfaces */
+  --canvas: var(--background);
+  --surface-muted: var(--surface-container-low);
+  --surface-elevated: var(--surface-container-lowest);
+  --surface-inverse: var(--primary-container);
+
+  /* Text */
+  --text-primary: var(--on-surface);
+  --text-secondary: var(--on-surface-variant);
+  --text-muted: var(--secondary);
+  --text-disabled: var(--outline);
+  --text-inverse: var(--on-primary);
+
+  /* Borders */
+  --border-default: var(--outline-variant);
+  --border-subtle: var(--surface-variant);
+  --border-strong: var(--outline);
+  --border-focus: var(--primary);
+  --border-focus-inverse: var(--on-primary);
+
+  /* Actions */
+  --action-primary: var(--primary);
+  --action-primary-hover: #1b1b1e;
+  --action-primary-pressed: #000000;
+  --action-secondary: var(--surface-container-low);
+  --action-secondary-hover: var(--surface-container);
+  --action-secondary-pressed: var(--surface-container-high);
+  --action-disabled: var(--surface-container-high);
+  --action-disabled-text: var(--outline);
+
+  /* Status — restrained, never the only signal */
+  --status-success: #1f6b3a;
+  --status-success-container: #dceee2;
+  --status-warning: #8a5a00;
+  --status-warning-container: #f5e6c8;
+  --status-danger: var(--error);
+  --status-danger-container: var(--error-container);
+  --status-info: #3d4a66;
+  --status-info-container: var(--secondary-container);
+  --status-offline: var(--secondary);
+  --status-offline-container: var(--surface-container);
+  --status-stale: var(--status-warning);
+  --status-stale-container: var(--status-warning-container);
+  --status-premium: var(--primary-container);
+  --status-premium-on: var(--on-primary-container);
+  --status-downloaded: var(--status-success);
+  --status-downloaded-container: var(--status-success-container);
+  --status-error: var(--status-danger);
+  --status-error-container: var(--status-danger-container);
+
+  /* Spacing */
+  --space-2xs: 4px;
+  --space-xs: 8px;
+  --space-sm: 12px;
+  --space-md: 16px;
+  --space-lg: 20px;
+  --space-xl: 24px;
+  --space-2xl: 32px;
+  --space-3xl: 40px;
+
+  /* Radius */
+  --radius-control: 12px;
+  --radius-card: 16px;
+  --radius-card-lg: 20px;
+  --radius-pill: 999px;
+  --radius-sheet: 24px;
+
+  /* Shadow */
+  --shadow-none: none;
+  --shadow-subtle: 0 1px 8px rgba(0, 0, 0, 0.04);
+  --shadow-card: 0 1px 2px rgba(0, 0, 0, 0.06);
+  --shadow-sheet: 0 -8px 24px rgba(0, 0, 0, 0.08);
+  --shadow-focus: 0 0 0 2px var(--canvas), 0 0 0 4px var(--border-focus);
+
+  /* Control sizes */
+  --size-touch: 44px;
+  --size-control: 44px;
+  --size-control-compact: 40px;
+  --size-input: 48px;
+  --size-chip: 44px;
+  --size-icon-button: 44px;
+  --size-nav-item: 44px;
+  --size-avatar: 44px;
+  --size-avatar-sm: 32px;
+
+  /* Layers */
+  --z-base: 0;
+  --z-sticky: 30;
+  --z-dock: 40;
+  --z-header: 50;
+  --z-nav: 50;
+  --z-backdrop: 60;
+  --z-sheet: 70;
+  --z-toast: 80;
+
+  /* Motion. Primitives use .motion-* below. Sheets use --motion-overlay. */
+  --motion-instant: 80ms;
+  --duration-fast: 120ms;
+  --duration-standard: 200ms;
+  --motion-emphasis: 220ms;
+  --motion-overlay: 260ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+  --ease-enter: cubic-bezier(0, 0, 0.2, 1);
+  --ease-exit: cubic-bezier(0.4, 0, 1, 1);
+
+  /* Shell / frame */
+  --layout-sidebar: 15rem;
+  --layout-workspace: 72rem;
+  --layout-clinical: 72rem;
+  --layout-reading: 42rem;
+  --layout-header-height: 3.5rem;
+  --layout-nav-height: 4rem;
+  --layout-dock-height: 4.5rem;
+  --layout-nav-clearance: 5rem;
+  --layout-dock-clearance: 6.5rem;
 }
 
 @theme inline {
@@ -50,6 +167,43 @@
   --color-error: var(--error);
   --color-error-container: var(--error-container);
   --color-foreground: var(--on-surface);
+
+  --color-canvas: var(--canvas);
+  --color-surface-muted: var(--surface-muted);
+  --color-surface-elevated: var(--surface-elevated);
+  --color-surface-inverse: var(--surface-inverse);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+  --color-text-muted: var(--text-muted);
+  --color-text-disabled: var(--text-disabled);
+  --color-text-inverse: var(--text-inverse);
+  --color-border-default: var(--border-default);
+  --color-border-subtle: var(--border-subtle);
+  --color-border-strong: var(--border-strong);
+  --color-border-focus: var(--border-focus);
+  --color-action-primary: var(--action-primary);
+  --color-action-primary-hover: var(--action-primary-hover);
+  --color-action-secondary: var(--action-secondary);
+  --color-action-disabled: var(--action-disabled);
+  --color-status-success: var(--status-success);
+  --color-status-success-container: var(--status-success-container);
+  --color-status-warning: var(--status-warning);
+  --color-status-warning-container: var(--status-warning-container);
+  --color-status-danger: var(--status-danger);
+  --color-status-danger-container: var(--status-danger-container);
+  --color-status-info: var(--status-info);
+  --color-status-info-container: var(--status-info-container);
+  --color-status-offline: var(--status-offline);
+  --color-status-offline-container: var(--status-offline-container);
+  --color-status-stale: var(--status-stale);
+  --color-status-stale-container: var(--status-stale-container);
+  --color-status-premium: var(--status-premium);
+  --color-status-premium-on: var(--status-premium-on);
+  --color-status-downloaded: var(--status-downloaded);
+  --color-status-downloaded-container: var(--status-downloaded-container);
+  --color-status-error: var(--status-error);
+  --color-status-error-container: var(--status-error-container);
+
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
     BlinkMacSystemFont, "Segoe UI", sans-serif;
   --radius-sm: 8px;
@@ -57,6 +211,12 @@
   --radius-lg: 16px;
   --radius-xl: 20px;
   --radius-sheet: 24px;
+  --radius-control: var(--radius-control);
+  --radius-card: var(--radius-card);
+  --radius-pill: var(--radius-pill);
+  --shadow-subtle: var(--shadow-subtle);
+  --shadow-card: var(--shadow-card);
+  --shadow-sheet: var(--shadow-sheet);
 }
 
 html,
@@ -70,26 +230,92 @@ body {
 
 html {
   -webkit-text-size-adjust: 100%;
+  overflow-x: clip;
 }
 
 body {
   overscroll-behavior-y: none;
-  background: #fcf8fb;
-  color: var(--on-surface);
+  background: var(--canvas);
+  color: var(--text-primary);
   font-family: var(--font-sans);
+}
+
+.layout-gutter {
+  padding-inline: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .layout-gutter {
+    padding-inline: var(--space-xl);
+  }
+}
+
+.layout-workspace {
+  width: 100%;
+  max-width: var(--layout-workspace);
+  margin-inline: auto;
+}
+
+.layout-clinical {
+  width: 100%;
+  max-width: var(--layout-clinical);
+  margin-inline: auto;
+}
+
+.layout-reading {
+  width: 100%;
+  max-width: var(--layout-reading);
+  min-width: 0;
+}
+
+.layout-sticky-under-header {
+  top: calc(var(--layout-header-height) + env(safe-area-inset-top, 0px));
+}
+
+.layout-gutter-bleed {
+  margin-inline: calc(var(--space-md) * -1);
+  padding-inline: var(--space-md);
+}
+
+@media (min-width: 1024px) {
+  .layout-gutter-bleed {
+    margin-inline: calc(var(--space-xl) * -1);
+    padding-inline: var(--space-xl);
+  }
 }
 
 a:focus-visible,
 button:focus-visible,
 input:focus-visible,
+textarea:focus-visible,
+select:focus-visible,
 summary:focus-visible,
-[role="button"]:focus-visible {
-  outline: 2px solid var(--primary);
+[role="button"]:focus-visible,
+[role="tab"]:focus-visible,
+[role="switch"]:focus-visible,
+[role="menuitem"]:focus-visible {
+  outline: 2px solid var(--border-focus);
   outline-offset: 2px;
+}
+
+.surface-inverse :is(a, button, input, textarea, select, summary, [role="button"]):focus-visible {
+  outline-color: var(--border-focus-inverse);
 }
 
 * {
   box-sizing: border-box;
+}
+
+.visually-hidden:where(:not(:focus-within, :active)) {
+  position: absolute !important;
+  clip-path: inset(50%) !important;
+  overflow: hidden !important;
+  width: 1px !important;
+  height: 1px !important;
+  margin: -1px !important;
+  padding: 0 !important;
+  border: 0 !important;
+  white-space: nowrap !important;
 }
 
 .pb-safe {
@@ -195,17 +421,270 @@ summary:focus-visible,
 }
 
 .source-html a {
-  color: var(--primary);
+  color: var(--action-primary);
   text-decoration: underline;
 }
 
 .source-html img {
   max-width: 100%;
   height: auto;
-  border-radius: 12px;
+  border-radius: var(--radius-control);
 }
 
 .source-html .media-placeholder {
   margin-top: 0.5rem;
-  color: var(--on-surface-variant);
+  color: var(--text-secondary);
+}
+
+/* Shared primitive motion. Color and border use --duration-fast.
+   Press scale uses --motion-instant and does not affect layout. */
+.motion-press {
+  transition-property: background-color, border-color, box-shadow, color, transform;
+  transition-duration:
+    var(--duration-fast),
+    var(--duration-fast),
+    var(--duration-fast),
+    var(--duration-fast),
+    var(--motion-instant);
+  transition-timing-function: var(--ease-standard);
+}
+
+.motion-press:active:not(:disabled) {
+  transform: scale(0.98);
+}
+
+.motion-color {
+  transition-property: background-color, border-color, color;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+.motion-surface {
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+.motion-field {
+  transition-property: background-color, border-color, box-shadow;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+.motion-transform {
+  transition-property: transform;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+/* Indeterminate spinner cycle, not a state-transition duration. */
+.motion-spin {
+  animation-name: motion-spin;
+  animation-duration: 1s;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes motion-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .motion-press:active:not(:disabled) {
+    transform: none;
+  }
+
+  .motion-spin {
+    animation: none;
+  }
+}
+
+/* Modules dialog. The sheet moves a short distance from the bottom edge.
+   Exit is faster than entrance. Backdrop opacity only. */
+.module-sheet {
+  transform: translateY(16px);
+  opacity: 0;
+  transition-property: transform, opacity;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-exit);
+}
+
+.module-sheet[data-phase="open"] {
+  transform: translateY(0);
+  opacity: 1;
+  transition-duration: var(--motion-overlay);
+  transition-timing-function: var(--ease-enter);
+}
+
+.module-sheet::backdrop {
+  opacity: 0;
+  transition-property: opacity;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-exit);
+}
+
+.module-sheet[data-phase="open"]::backdrop {
+  opacity: 1;
+  transition-duration: var(--duration-standard);
+  transition-timing-function: var(--ease-enter);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .module-sheet,
+  .module-sheet[data-phase="open"] {
+    transform: none;
+  }
+}
+
+/* Vaul writes its default sheet timing inline and injects the same duration.
+   These overrides shorten the visible motion. Vaul still waits its own
+   close timer before snap reset and onAnimationEnd. Do not fork the library.
+   Kept inside no-preference so the reduced-motion duration rule still wins. */
+[data-vaul-drawer] {
+  will-change: auto !important;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  [data-vaul-drawer][data-state="open"] {
+    transition-duration: var(--motion-overlay) !important;
+    transition-timing-function: var(--ease-enter) !important;
+    animation-duration: var(--motion-overlay) !important;
+    animation-timing-function: var(--ease-enter) !important;
+  }
+
+  [data-vaul-drawer][data-state="closed"] {
+    transition-duration: var(--duration-fast) !important;
+    transition-timing-function: var(--ease-exit) !important;
+    animation-duration: var(--duration-fast) !important;
+    animation-timing-function: var(--ease-exit) !important;
+  }
+
+  [data-vaul-overlay][data-state="open"] {
+    transition-property: opacity;
+    transition-duration: var(--duration-standard) !important;
+    transition-timing-function: var(--ease-enter) !important;
+    animation-duration: var(--duration-standard) !important;
+    animation-timing-function: var(--ease-enter) !important;
+  }
+
+  [data-vaul-overlay][data-state="closed"] {
+    transition-property: opacity;
+    transition-duration: var(--duration-fast) !important;
+    transition-timing-function: var(--ease-exit) !important;
+    animation-duration: var(--duration-fast) !important;
+    animation-timing-function: var(--ease-exit) !important;
+  }
+}
+
+.status-toast {
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition-property: opacity, transform;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-exit);
+}
+
+.status-toast[data-phase="open"] {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+  transition-duration: var(--duration-standard);
+  transition-timing-function: var(--ease-enter);
+}
+
+.motion-emphasis {
+  animation-name: motion-emphasis;
+  animation-duration: var(--motion-emphasis);
+  animation-timing-function: var(--ease-standard);
+}
+
+@keyframes motion-emphasis {
+  0% {
+    transform: scale(1);
+  }
+  45% {
+    transform: scale(1.06);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.motion-progress {
+  -webkit-appearance: none;
+  appearance: none;
+  height: 0.5rem;
+  width: 100%;
+  overflow: hidden;
+  border: 0;
+  border-radius: 999px;
+  background-color: var(--surface-container-high);
+  color: var(--action-primary);
+}
+
+.motion-progress::-webkit-progress-bar {
+  background-color: var(--surface-container-high);
+}
+
+.motion-progress::-webkit-progress-value {
+  background-color: var(--action-primary);
+  transition-property: width;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+.motion-progress::-moz-progress-bar {
+  background-color: var(--action-primary);
+  transition-property: width;
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-standard);
+}
+
+.offline-remove {
+  display: grid;
+  grid-template-rows: 1fr;
+  transition-property: grid-template-rows, opacity, transform;
+  transition-duration: var(--duration-standard);
+  transition-timing-function: var(--ease-exit);
+}
+
+.offline-remove-inner {
+  min-height: 0;
+  overflow: hidden;
+}
+
+.offline-remove[data-exiting="true"] {
+  grid-template-rows: 0fr;
+  opacity: 0;
+  transform: translateY(4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .status-toast,
+  .status-toast[data-phase="open"] {
+    transform: translateX(-50%);
+  }
+
+  .motion-emphasis {
+    animation: none;
+  }
+
+  .offline-remove,
+  .offline-remove[data-exiting="true"] {
+    transform: none;
+  }
 }

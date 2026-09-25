@@ -88,7 +88,7 @@ export function DrugOverview({ drug }: DrugOverviewProps) {
             <Link
               key={preview.id}
               href={drugDetailHref(drug.slug, "securite")}
-              className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm active:scale-[0.99]"
+              className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm motion-surface active:bg-surface-container"
             >
               <span className="min-w-0 flex-1">
                 <span className="block text-body-md font-medium">{preview.title}</span>

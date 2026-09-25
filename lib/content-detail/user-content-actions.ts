@@ -1,5 +1,6 @@
 "use server";
 
+import type { FavoriteMutationResult } from "@/lib/ui/favorite-result";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { FavoriteItemType, HistoryItemType } from "@/types/content";
@@ -83,14 +84,14 @@ export async function isFavorite(
 export async function toggleFavorite(
   entityType: FavoriteItemType,
   entityId: string,
-): Promise<{ saved: boolean; skipped?: boolean }> {
+): Promise<FavoriteMutationResult> {
   if (!isFavoriteType(entityType) || !entityId) {
-    return { saved: false, skipped: true };
+    return { saved: false, skipped: true, reason: "write_failed" };
   }
 
   const supabase = await getSupabaseOrNull();
   if (!supabase) {
-    return { saved: false, skipped: true };
+    return { saved: false, skipped: true, reason: "write_failed" };
   }
 
   try {
@@ -98,8 +99,7 @@ export async function toggleFavorite(
       data: { user },
     } = await supabase.auth.getUser();
     if (!user) {
-      // TODO: surface a sign-in prompt without blocking local bookmark UI.
-      return { saved: false, skipped: true };
+      return { saved: false, skipped: true, reason: "unauthenticated" };
     }
 
     const { data: existing, error: readError } = await supabase
@@ -112,7 +112,7 @@ export async function toggleFavorite(
 
     if (readError) {
       console.warn("toggleFavorite read", readError.message);
-      return { saved: false, skipped: true };
+      return { saved: false, skipped: true, reason: "write_failed" };
     }
 
     if (existing) {
@@ -123,7 +123,7 @@ export async function toggleFavorite(
         .eq("user_id", user.id);
       if (error) {
         console.warn("toggleFavorite delete", error.message);
-        return { saved: false, skipped: true };
+        return { saved: false, skipped: true, reason: "write_failed" };
       }
       return { saved: false };
     }
@@ -135,12 +135,12 @@ export async function toggleFavorite(
     });
     if (error) {
       console.warn("toggleFavorite insert", error.message);
-      return { saved: false, skipped: true };
+      return { saved: false, skipped: true, reason: "write_failed" };
     }
     return { saved: true };
   } catch (error) {
     console.warn("toggleFavorite", error);
-    return { saved: false, skipped: true };
+    return { saved: false, skipped: true, reason: "write_failed" };
   }
 }
 

@@ -47,8 +47,8 @@ export function ProtocolDeepSection({
         <RichContentRenderer document={section.content} />
       ) : (
         <EmptyContentState
-          title="Section en préparation"
-          description="Le contenu de cette section n'est pas encore disponible dans Nabda."
+          title="Aucune information disponible pour cette section."
+          description="Cette section de la fiche publiée ne contient pas d'information."
           href={protocolHref(detail.protocol.slug)}
           actionLabel="Retour à la synthèse"
         />

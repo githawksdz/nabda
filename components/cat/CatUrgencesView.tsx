@@ -50,9 +50,8 @@ export function CatUrgencesView({
     <div className="flex flex-col gap-4">
       <div className="flex items-center justify-between gap-2">
         <div className="flex min-w-0 items-center gap-2">
-          <h2 className="text-headline-lg">CAT</h2>
-          <span className="inline-flex items-center gap-1.5 rounded-full bg-surface-container px-2.5 py-1 text-label-sm">
-            <span className="size-1.5 animate-pulse rounded-full bg-error" />
+          <h1 className="text-headline-lg">CAT</h1>
+          <span className="inline-flex items-center rounded-full bg-surface-container px-2.5 py-1 text-label-sm">
             {filterLabel}
           </span>
         </div>

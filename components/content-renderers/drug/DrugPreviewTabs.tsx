@@ -19,7 +19,7 @@ export function DrugPreviewTabs({
   return (
     <nav
       aria-label="Onglets monographie"
-      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
+      className="preview-chip-nav layout-sticky-under-header sticky z-[var(--z-sticky)] -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
       <div className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {tabs.map((tab) => {
@@ -32,7 +32,7 @@ export function DrugPreviewTabs({
               aria-current={active ? "page" : "false"}
               onClick={() => onChange(tab)}
               className={cn(
-                "flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label-md",
                 active
                   ? "bg-primary font-semibold text-on-primary shadow-sm"
                   : "bg-surface-container-low text-on-surface-variant",
@@ -43,7 +43,7 @@ export function DrugPreviewTabs({
               {count > 0 ? (
                 <span
                   className={cn(
-                    "flex min-w-4 items-center justify-center rounded-full px-1 text-[10px] leading-[13px]",
+                    "motion-color flex min-w-4 items-center justify-center rounded-full px-1 text-[10px] leading-[13px]",
                     active
                       ? "bg-on-primary text-primary"
                       : "bg-surface-container-high text-on-surface",

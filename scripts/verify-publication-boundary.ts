@@ -89,8 +89,12 @@ function walkTs(dir: string, out: string[] = []): string[] {
   checks.push({
     id: "search_zero_copy",
     ok:
-      zero.includes("Ce contenu n’existe pas dans Nabda") &&
-      zero.includes("Essayez un autre terme"),
+      zero.includes("SEARCH_EMPTY_TITLE") &&
+      zero.includes("SEARCH_EMPTY_HELP") &&
+      read("lib/search/search-outcome.ts").includes(
+        "Ce contenu n’existe pas dans Nabda",
+      ) &&
+      read("lib/search/search-outcome.ts").includes("Essayez un autre terme"),
     detail: "ZeroResultCanvas messaging",
   });
 }

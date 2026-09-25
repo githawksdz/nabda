@@ -42,13 +42,13 @@ export function PreferenceToggleRow({
         disabled={disabled}
         onClick={() => onChange(!checked)}
         className={cn(
-          "relative h-6 w-10 shrink-0 rounded-full transition-colors disabled:opacity-40",
+          "motion-color relative h-6 w-10 shrink-0 rounded-full disabled:opacity-40",
           checked ? "bg-primary" : "bg-surface-container-high",
         )}
       >
         <span
           className={cn(
-            "absolute top-0.5 size-5 rounded-full bg-surface-container-lowest shadow-sm transition-transform",
+            "motion-transform absolute top-0.5 size-5 rounded-full bg-surface-container-lowest shadow-sm",
             checked ? "translate-x-4" : "translate-x-0.5",
           )}
         />

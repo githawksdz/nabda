@@ -3,11 +3,15 @@ import {
   getFeaturedCalculators,
   getHomeFeedItems,
 } from "@/features/home/api";
-import { calculatorToScoreShortcut, feedItemToHomeUpdate } from "@/lib/home/mappers";
+import { featuredCalculatorsToScoreShortcuts, feedItemToHomeUpdate } from "@/lib/home/mappers";
 import { getCurrentUserPlan } from "@/features/subscriptions/api";
 import { getCurrentProfile } from "@/features/profile/api";
 import { resolveHomeMode, resolveHomeUser } from "@/lib/home/resolve-home-state";
 import { getHistoryItems } from "@/lib/personal/personal-api";
+import {
+  computeCompletionPercent,
+  parseProfilePreferences,
+} from "@/lib/personal/profile-completion";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { HistoryItem } from "@/types/personal";
 
@@ -24,10 +28,14 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   let scores = undefined;
   let updates = undefined;
   let recents: HistoryItem[] = [];
+  let signedIn = false;
+  let feedUnavailable = false;
+  let completionPercent: number | undefined;
 
   if (isSupabaseConfigured()) {
     try {
       profile = await getCurrentProfile();
+      signedIn = Boolean(profile);
       const plan = await getCurrentUserPlan();
       planSlug = plan?.slug ?? null;
 
@@ -37,11 +45,24 @@ export default async function HomePage({ searchParams }: HomePageProps) {
         getHistoryItems(),
       ]);
 
-      scores = calculators.map(calculatorToScoreShortcut);
+      scores = featuredCalculatorsToScoreShortcuts(calculators);
       updates = feed.map(feedItemToHomeUpdate);
       recents = history.items;
+
+      if (profile) {
+        const prefs = parseProfilePreferences(profile.preferences);
+        completionPercent = computeCompletionPercent({
+          fullName: profile.full_name,
+          profession: profile.profession,
+          specialtyInterests: prefs.personalization?.specialties ?? [],
+          usageMode: profile.usage_mode,
+          onboardingCompleted: profile.onboarding_completed,
+          profileCompleted: profile.profile_status === "complete",
+        });
+      }
     } catch (error) {
       console.warn("Home feed unavailable; showing empty home state.", error);
+      feedUnavailable = true;
     }
   }
 
@@ -52,6 +73,9 @@ export default async function HomePage({ searchParams }: HomePageProps) {
     <HomeDashboard
       mode={mode}
       user={user}
+      signedIn={signedIn}
+      feedUnavailable={feedUnavailable}
+      completionPercent={completionPercent}
       scores={scores ?? []}
       updates={updates ?? []}
       recents={recents}

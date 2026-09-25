@@ -201,21 +201,16 @@ async function main() {
 
   checks.push(...scanRuntimeImports());
 
-  const contentUnavailable = fs.readFileSync(
-    path.join(ROOT, "components/app/ContentUnavailable.tsx"),
+  const emptyContentState = fs.readFileSync(
+    path.join(ROOT, "components/content-detail/EmptyContentState.tsx"),
     "utf8",
   );
   checks.push({
-    id: "content_unavailable_component",
+    id: "detail_empty_content_state",
     ok:
-      contentUnavailable.includes('kind: ContentUnavailableKind') ||
-      contentUnavailable.includes("ContentUnavailableKind"),
-    detail: "ContentUnavailable present with typed kinds",
-  });
-  checks.push({
-    id: "content_unavailable_no_mock_cta",
-    ok: !/demo|fixture|mock content/i.test(contentUnavailable),
-    detail: "no mock CTAs in unavailable UI",
+      emptyContentState.includes("EmptyContentState") &&
+      !/demo|fixture|mock content/i.test(emptyContentState),
+    detail: "EmptyContentState for missing detail slugs; no mock CTAs",
   });
 
   for (const slug of SAMPLE_ROUTES.protocols) {
@@ -377,7 +372,7 @@ async function main() {
     checks.push({
       id: `${item.kind}_missing_unavailable`,
       ok: !data,
-      detail: data ? "unexpectedly resolved" : "null → ContentUnavailable path",
+      detail: data ? "unexpectedly resolved" : "null → detail empty state path",
     });
   }
 

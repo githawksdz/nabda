@@ -8,6 +8,32 @@ import type {
   RecommendationRow,
   ScoreShortcut,
 } from "@/types/home";
+import type { CalculatorType } from "@/types/calculators";
+
+function demoScoreShortcut(
+  id: string,
+  slug: string,
+  fields: {
+    title: string;
+    subtitle: string;
+    href: string;
+    icon: string;
+    actionLabel?: string;
+    catalogType?: CalculatorType;
+  },
+): ScoreShortcut {
+  return {
+    id,
+    slug,
+    contentType: "calculator",
+    catalogType: fields.catalogType ?? "score",
+    title: fields.title,
+    subtitle: fields.subtitle,
+    href: fields.href,
+    icon: fields.icon,
+    ...(fields.actionLabel ? { actionLabel: fields.actionLabel } : {}),
+  };
+}
 
 export const incompleteUser: HomeUser = {
   id: "demo-incomplete",
@@ -95,34 +121,31 @@ export const featuredPourVous: HomeUpdate = {
 };
 
 export const usefulScores: ScoreShortcut[] = [
-  {
-    id: "glasgow",
+  demoScoreShortcut("glasgow", "glasgow", {
     title: "Glasgow",
     subtitle: "Coma & Conscience",
     href: "/calculators/glasgow",
     icon: "brain",
-  },
-  {
-    id: "cockcroft",
+  }),
+  demoScoreShortcut("cockcroft", "cockcroft-gault", {
     title: "Cockcroft",
     subtitle: "Clairance rénale",
     href: "/calculators/cockcroft-gault",
     icon: "droplets",
-  },
-  {
-    id: "wells",
+    catalogType: "formula",
+  }),
+  demoScoreShortcut("wells", "wells-ep", {
     title: "Wells EP",
     subtitle: "Probabilité embolie",
     href: "/calculators/wells-ep",
     icon: "wind",
-  },
-  {
-    id: "curb65",
+  }),
+  demoScoreShortcut("curb65", "curb-65", {
     title: "CURB-65",
     subtitle: "Pneumopathie aiguë",
     href: "/calculators/curb-65",
     icon: "wind",
-  },
+  }),
 ];
 
 export const gardeRecommendations: RecommendationRow[] = [
@@ -171,38 +194,34 @@ export const clinicalWatchSecondary: HomeUpdate = {
 };
 
 export const frequentScores: ScoreShortcut[] = [
-  {
-    id: "sofa",
+  demoScoreShortcut("sofa", "sofa", {
     title: "SOFA / qSOFA",
     subtitle: "Évaluation du sepsis",
     href: "/calculators/sofa",
     icon: "activity",
     actionLabel: "Ouvrir le calcul →",
-  },
-  {
-    id: "gcs",
+  }),
+  demoScoreShortcut("gcs", "glasgow", {
     title: "Glasgow (GCS)",
     subtitle: "Évaluation neurologique",
     href: "/calculators/glasgow",
     icon: "brain",
     actionLabel: "Ouvrir le calcul →",
-  },
-  {
-    id: "chadsvasc",
+  }),
+  demoScoreShortcut("chadsvasc", "cha2ds2-vasc", {
     title: "CHA₂DS₂-VASc",
     subtitle: "Risque thromboembolique",
     href: "/calculators/cha2ds2-vasc",
     icon: "heart-pulse",
     actionLabel: "Ouvrir le calcul →",
-  },
-  {
-    id: "nihss",
+  }),
+  demoScoreShortcut("nihss", "nihss", {
     title: "Score NIHSS",
     subtitle: "AVC ischémique aigu",
     href: "/calculators/nihss",
     icon: "brain",
     actionLabel: "Ouvrir le calcul →",
-  },
+  }),
 ];
 
 export const proAdvancedTools = [

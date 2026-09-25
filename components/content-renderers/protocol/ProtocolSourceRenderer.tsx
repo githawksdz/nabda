@@ -100,7 +100,7 @@ export function ProtocolSourceRenderer({
           activeId={currentGroupId}
           onActiveId={selectSection}
         />
-        <div className="flex min-w-0 flex-col gap-4 lg:max-w-[42rem]">
+        <div className="layout-reading flex flex-col gap-4">
           {heroes.length > 0 ? (
             <div className="flex flex-col gap-3">
               {heroes.map((section) => (

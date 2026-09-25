@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { Shield } from "lucide-react";
 import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
 import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
@@ -22,6 +22,16 @@ import {
 } from "@/lib/content-detail/content-detail-ui-config";
 import { getFlowchartDemoFixtures } from "@/lib/demo-fixtures/load";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
+import {
+  COPY_LABEL_MS,
+  FAVORITE_ADDED_MESSAGE,
+  FAVORITE_REMOVED_MESSAGE,
+  FAVORITE_SIGN_IN_MESSAGE,
+  FAVORITE_WRITE_FAILED_MESSAGE,
+} from "@/lib/ui/feedback-timing";
+import { reconcileFavorite } from "@/lib/ui/favorite-result";
+import { StatusToast } from "@/components/ui/StatusToast";
+import { useNotice, useTimedFlag } from "@/components/ui/useTimedFlag";
 import type { CatDetail, CatTab } from "@/types/content-detail";
 import type { CatRenderData } from "@/types/content-rendering";
 
@@ -41,7 +51,11 @@ export function CatDetailPage({
   initialBookmarked = false,
 }: CatDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
-  const [toast, setToast] = useState<string | null>(null);
+  const [pendingFavorite, setPendingFavorite] = useState(false);
+  const [favoriteEmphasis, setFavoriteEmphasis] = useState(0);
+  const [favoriteAnnouncement, setFavoriteAnnouncement] = useState("");
+  const { notice, showToast, dismissToast } = useNotice();
+  const copied = useTimedFlag(COPY_LABEL_MS);
 
   const sourceMode = Boolean(source);
   const mode = sourceMode ? "tabs" : resolveCatDetailMode({ detail, state: viewState });
@@ -54,34 +68,42 @@ export function CatDetailPage({
     (activeTab === "carte" || activeTab === "etapes");
   const flowchart = detail ? resolveVisibleFlowchart(detail) : undefined;
 
-  useEffect(() => {
-    if (!toast) {
-      return;
-    }
-    const timeoutId = window.setTimeout(() => setToast(null), 2800);
-    return () => window.clearTimeout(timeoutId);
-  }, [toast]);
-
-  function showToast(message: string) {
-    setToast(message);
-  }
-
-  async function persistFavorite() {
+  async function persistFavorite(previous: boolean) {
     const slug = detail?.map.slug ?? source?.slug;
     if (!slug) {
+      setBookmarked(previous);
       return;
     }
+    setPendingFavorite(true);
     const result = await toggleFavorite("cat", slug);
-    if (!result.skipped) {
-      setBookmarked(result.saved);
+    const next = reconcileFavorite(previous, result);
+    setBookmarked(next.bookmarked);
+    setPendingFavorite(false);
+    switch (next.outcome) {
+      case "unauthenticated":
+        showToast(FAVORITE_SIGN_IN_MESSAGE);
+        return;
+      case "write_failed":
+        showToast(FAVORITE_WRITE_FAILED_MESSAGE, "alert");
+        return;
+      case "saved":
+      case "removed":
+        setFavoriteEmphasis((value) => value + 1);
+        setFavoriteAnnouncement(
+          next.outcome === "saved"
+            ? FAVORITE_ADDED_MESSAGE
+            : FAVORITE_REMOVED_MESSAGE,
+        );
     }
   }
 
   function toggleBookmark() {
-    const next = !bookmarked;
-    setBookmarked(next);
-    showToast(next ? "CAT enregistrée" : "CAT retirée");
-    void persistFavorite();
+    if (pendingFavorite) {
+      return;
+    }
+    const previous = bookmarked;
+    setBookmarked(!bookmarked);
+    void persistFavorite(previous);
   }
 
   async function shareCat() {
@@ -95,9 +117,9 @@ export function CatDetailPage({
         return;
       }
       await navigator.clipboard.writeText(`${title}\n${url}`);
-      showToast("Lien de la CAT copié");
+      copied.start();
     } catch {
-      showToast("Partage annulé");
+      showToast("Partage annulé", "alert");
     }
   }
 
@@ -108,11 +130,14 @@ export function CatDetailPage({
           label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
+          disabled: pendingFavorite,
+          busy: pendingFavorite,
+          emphasisKey: favoriteEmphasis,
           onClick: toggleBookmark,
         },
         {
           id: "sources",
-          label: "Sources",
+          label: "Références",
           icon: "sources",
           href: catHref(detail?.map.slug ?? source?.slug ?? "", { tab: "sources" }),
         },
@@ -126,8 +151,8 @@ export function CatDetailPage({
         },
         {
           id: "share",
-          label: "Partager",
-          icon: "share",
+          label: copied.active ? "Copié" : "Partager",
+          icon: copied.active ? "check" : "share",
           onClick: shareCat,
         },
       ]
@@ -189,7 +214,7 @@ export function CatDetailPage({
                       ) : null
                     ) : null}
                   </div>
-                  <div className="min-w-0 lg:max-w-[42rem]">
+                  <div className="layout-reading">
                 {mode === "tabs" && (activeTab === "etapes" || activeTab === "carte") ? (
                   <div className={activeTab === "carte" ? "hidden lg:block" : undefined}>
                   {source ? (
@@ -221,8 +246,8 @@ export function CatDetailPage({
                   detail && !source ? (
                     <CatSourcesView detail={detail} />
                   ) : (
-                    <p className="rounded-xl bg-surface-container-low p-3.5 text-body-sm text-on-surface-variant">
-                      Contenu source préservé. Pas de validation clinique automatique.
+                    <p className="rounded-xl bg-surface-muted p-3.5 text-body-sm text-text-secondary">
+                      Les références de cette fiche ne sont pas affichées ici.
                     </p>
                   )
                 ) : null}
@@ -238,20 +263,12 @@ export function CatDetailPage({
             )}
           </div>
         {dockActions.length > 0 ? (
-          <BottomReadingDock
-            actions={dockActions}
-            meta={source ? "Source préservée" : "Aperçu local · référence clinique"}
-          />
+          <BottomReadingDock actions={dockActions} />
         ) : null}
-        {toast ? (
-          <p
-            role="status"
-            aria-live="polite"
-            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-          >
-            {toast}
-          </p>
-        ) : null}
+        <p className="sr-only" role="status" aria-live="polite">
+          {favoriteAnnouncement}
+        </p>
+        <StatusToast notice={notice} onDismiss={dismissToast} />
     </ClinicalDetailFrame>
   );
 }

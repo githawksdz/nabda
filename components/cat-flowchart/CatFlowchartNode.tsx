@@ -56,7 +56,7 @@ export function CatFlowchartNodeView({
         height: node.height,
       }}
       className={cn(
-        "absolute flex flex-col items-center justify-center px-2.5 text-center transition-shadow",
+        "absolute flex flex-col items-center justify-center px-2.5 text-center",
         node.type === "start" &&
           "rounded-full bg-primary text-on-primary shadow-sm",
         node.type === "decision" &&

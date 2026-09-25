@@ -2,12 +2,11 @@
 
 import { useRouter } from "next/navigation";
 import { type FormEvent, useState } from "react";
-import Link from "next/link";
-import { Search } from "lucide-react";
-import type { HomeMode, SearchChip } from "@/types/home";
+import { FilterChip } from "@/components/ui/FilterChip";
+import { SearchField } from "@/components/ui/TextField";
+import type { SearchChip } from "@/types/home";
 
 type HomeSearchBarProps = {
-  mode: HomeMode;
   chips: SearchChip[];
 };
 
@@ -23,36 +22,28 @@ export function HomeSearchBar({ chips }: HomeSearchBarProps) {
   }
 
   return (
-    <section className="flex flex-col gap-2.5">
-      <form
-        onSubmit={onSubmit}
-        className="flex h-12 items-center gap-2 rounded-xl bg-surface-container-low px-3"
-      >
-        <Search className="size-4 shrink-0 text-on-surface-variant" strokeWidth={1.75} aria-hidden />
-        <input
+    <section className="flex min-w-0 w-full max-w-[var(--layout-reading)] flex-col gap-3">
+      <form action="/search" method="get" onSubmit={onSubmit}>
+        <SearchField
+          name="q"
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
+          onChange={setQuery}
+          onClear={() => setQuery("")}
           placeholder={placeholder}
-          aria-label="Recherche"
-          className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
+          className="bg-surface-elevated shadow-[var(--shadow-card)]"
         />
       </form>
       {chips.length > 0 ? (
-        <div className="flex gap-2 overflow-x-auto no-scrollbar">
+        <nav
+          aria-label="Raccourcis"
+          className="flex max-w-full gap-2 overflow-x-auto no-scrollbar"
+        >
           {chips.map((chip) => (
-            <Link
-              key={chip.id}
-              href={chip.href}
-              className={
-                chip.active
-                  ? "rounded-full bg-primary px-3 py-1.5 text-label-md text-on-primary"
-                  : "rounded-full bg-surface-container-high px-3 py-1.5 text-label-md text-on-surface"
-              }
-            >
+            <FilterChip key={chip.id} href={chip.href}>
               {chip.label}
-            </Link>
+            </FilterChip>
           ))}
-        </div>
+        </nav>
       ) : null}
     </section>
   );

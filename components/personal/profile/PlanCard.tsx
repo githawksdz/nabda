@@ -1,4 +1,6 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
 import type { PlanPresentation } from "@/types/personal";
 
 type PlanCardProps = {
@@ -6,32 +8,28 @@ type PlanCardProps = {
 };
 
 export function PlanCard({ plan }: PlanCardProps) {
+  const badge =
+    plan.variant === "pro"
+      ? { label: "Pro", tone: "pro" as const }
+      : plan.variant === "pending"
+        ? { label: "En cours", tone: "stale" as const }
+        : { label: "Gratuit", tone: "free" as const };
+
   return (
-    <section className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+    <Surface variant="elevated" className="flex flex-col gap-2">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h2 className="text-headline-sm">{plan.title}</h2>
-          <p className="mt-1 text-label-sm text-on-surface-variant">
-            {plan.statusLabel}
-          </p>
+        <div className="min-w-0">
+          <h2 className="text-headline-sm text-text-primary">{plan.title}</h2>
+          <p className="mt-1 text-body-sm text-text-secondary">{plan.statusLabel}</p>
         </div>
-        <span className="rounded-full bg-surface-container-high px-2 py-0.5 text-label-sm text-on-surface-variant">
-          {plan.variant === "pro"
-            ? "Pro"
-            : plan.variant === "pending"
-              ? "En cours"
-              : "Découverte"}
-        </span>
+        <StatusBadge tone={badge.tone}>{badge.label}</StatusBadge>
       </div>
-      <p className="mt-2 text-body-sm text-on-surface-variant">{plan.body}</p>
+      <p className="text-body-sm text-text-secondary">{plan.body}</p>
       {plan.actionHref && plan.actionLabel ? (
-        <Link
-          href={plan.actionHref}
-          className="mt-4 inline-flex h-10 items-center rounded-lg bg-surface-container-low px-3 text-label-md"
-        >
+        <Button href={plan.actionHref} variant="secondary">
           {plan.actionLabel}
-        </Link>
+        </Button>
       ) : null}
-    </section>
+    </Surface>
   );
 }

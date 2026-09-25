@@ -144,7 +144,6 @@ export function ProfilePage({
     <AppShell
       title={PROFILE_COPY.title}
       navVariant="text"
-      frameClassName="max-w-[390px]"
       avatarDot={incomplete}
     >
       <div
@@ -162,11 +161,11 @@ export function ProfilePage({
 
         <ProfileIdentityCard profile={visibleProfile} />
 
+        <PlanCard plan={plan} />
+
         {showCompletion ? (
           <ProfileCompletionCard onDefer={() => setHideCompletion(true)} />
         ) : null}
-
-        <PlanCard plan={plan} />
 
         <ProfileSectionList
           title={PROFILE_COPY.practiceTitle}
@@ -174,17 +173,8 @@ export function ProfilePage({
         />
 
         <section>
-          <h3 className="mb-2 text-headline-sm">
-            {PROFILE_COPY.preferencesTitle}
-          </h3>
-          <div className="overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm">
-            <PreferenceToggleRow
-              label={PROFILE_COPY.catUpdatesLabel}
-              checked={catUpdates}
-              onChange={(next) => void updateCatUpdates(next)}
-              disabled={catUpdatesSaving}
-            />
-            <div className="ml-4 h-px bg-surface-variant" />
+          <h2 className="mb-2 text-headline-sm">Hors-ligne</h2>
+          <div className="overflow-hidden rounded-[var(--radius-card)] bg-surface-muted">
             <ProfileSectionRow
               item={{
                 id: "offline",
@@ -192,6 +182,20 @@ export function ProfilePage({
                 value: "Ouvrir",
                 href: "/offline",
               }}
+            />
+          </div>
+        </section>
+
+        <section>
+          <h2 className="mb-2 text-headline-sm">
+            {PROFILE_COPY.preferencesTitle}
+          </h2>
+          <div className="overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm">
+            <PreferenceToggleRow
+              label={PROFILE_COPY.catUpdatesLabel}
+              checked={catUpdates}
+              onChange={(next) => void updateCatUpdates(next)}
+              disabled={catUpdatesSaving}
             />
             <div className="ml-4 h-px bg-surface-variant" />
             <ProfileSectionRow

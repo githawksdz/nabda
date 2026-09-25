@@ -44,7 +44,7 @@ function NavLinks({ items }: { items: typeof PRIMARY_NAV }) {
 
 export function DesktopSidebar() {
   return (
-    <aside className="sticky top-0 hidden h-dvh w-60 shrink-0 flex-col border-r border-outline-variant bg-surface lg:flex">
+    <aside className="sticky top-0 hidden h-dvh w-[var(--layout-sidebar)] shrink-0 flex-col border-r border-outline-variant bg-surface lg:flex">
       <p className="px-4 pt-5 pb-3 text-headline-sm">Nabda</p>
       <nav aria-label="Navigation principale" className="flex flex-1 flex-col gap-4 overflow-y-auto px-2 pb-6">
         <NavLinks items={PRIMARY_NAV} />

@@ -1,6 +1,7 @@
 "use client";
 
 import { useControls } from "react-zoom-pan-pinch";
+import { preferredMotionDuration } from "@/lib/ui/scroll-behavior";
 import { CatFlowchartEdgeLayer } from "./CatFlowchartEdgeLayer";
 import { CatFlowchartNodeView } from "./CatFlowchartNode";
 import type { CatFlowchartMap } from "@/types/cat-flowchart";
@@ -42,7 +43,10 @@ export function CatFlowchartBoard({
           selected={selectedId === node.id}
           onSelect={onSelect}
           onFocus={(id) => {
-            void zoomToElement(id, { maxScale: 1.25, animationTime: 220 });
+            void zoomToElement(id, {
+              maxScale: 1.25,
+              animationTime: preferredMotionDuration(220),
+            });
           }}
         />
       ))}

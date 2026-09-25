@@ -1,6 +1,9 @@
 "use client";
 
 import { useEffect, useMemo, useState } from "react";
+import { CalculatorFieldControl } from "./CalculatorFieldControl";
+import { Surface } from "@/components/ui/Surface";
+import { Button } from "@/components/ui/Button";
 import { loadCalculatorEngine } from "@/lib/calculators/engine-registry";
 import { measureSync } from "@/lib/calculators/calculator-perf";
 import type { CalculatorEngine } from "@/lib/calculators/engine-types";
@@ -111,64 +114,44 @@ export function GeneratedFormulaCalculator({
         </p>
       </header>
 
-      <div className="flex min-w-0 flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-3">
+        <div className="flex justify-end">
+          <Button
+            variant="secondary"
+            onClick={() =>
+              setValues(Object.fromEntries(data.inputs.map((field) => [field.name, ""])))
+            }
+          >
+            Réinitialiser
+          </Button>
+        </div>
       {fields.map((field) => (
-        <label key={field.name} className="flex flex-col gap-1.5">
-          <span className="text-body-md font-medium">
-            {field.label}
-            {field.unit ? ` (${field.unit})` : ""}
-          </span>
-          {field.options.length ? (
-            <div className="flex flex-col gap-1.5">
-              {field.options.map((opt) => {
-                const selected = values[field.name] === opt.value;
-                return (
-                  <button
-                    key={`${field.name}-${opt.value}`}
-                    type="button"
-                    onClick={() =>
-                      setValues((prev) => ({ ...prev, [field.name]: opt.value }))
-                    }
-                    className={`rounded-xl px-3.5 py-2.5 text-left text-body-sm ${
-                      selected
-                        ? "bg-primary text-on-primary"
-                        : "bg-surface-container-low text-on-surface"
-                    }`}
-                  >
-                    {opt.label}
-                  </button>
-                );
-              })}
-            </div>
-          ) : field.type === "date" ? (
-            <input
-              type="date"
-              value={values[field.name] ?? ""}
-              onChange={(e) =>
-                setValues((prev) => ({ ...prev, [field.name]: e.target.value }))
-              }
-              className="rounded-xl bg-surface-container-low px-3.5 py-2.5 text-body-sm"
-            />
-          ) : (
-            <input
-              type="text"
-              inputMode="decimal"
-              value={values[field.name] ?? ""}
-              onChange={(e) =>
-                setValues((prev) => ({ ...prev, [field.name]: e.target.value }))
-              }
-              className="rounded-xl bg-surface-container-low px-3.5 py-2.5 text-body-sm"
-              placeholder="Valeur"
-            />
-          )}
-        </label>
+        <CalculatorFieldControl
+          key={field.name}
+          name={field.name}
+          label={field.label}
+          type={field.type}
+          yesNo={field.yesNo}
+          unit={field.unit}
+          optional={field.optional}
+          options={field.options}
+          value={values[field.name] ?? ""}
+          onChange={(next) =>
+            setValues((prev) => ({ ...prev, [field.name]: next }))
+          }
+        />
       ))}
       </div>
 
-      <div className="rounded-xl bg-surface-container-low px-3.5 py-3 lg:sticky lg:top-[calc(72px+env(safe-area-inset-top,0px))]">
-        <p className="text-label-md text-on-surface-variant">Résultat</p>
-        <p className="mt-1 text-body-md">{resultText}</p>
-      </div>
+      <Surface
+        variant="muted"
+        className="lg:sticky lg:top-[calc(var(--layout-header-height)+env(safe-area-inset-top,0px))]"
+      >
+        <p className="text-label-md text-text-secondary">Résultat</p>
+        <p className="mt-1 whitespace-pre-wrap text-body-md text-text-primary [overflow-wrap:anywhere]">
+          {resultText}
+        </p>
+      </Surface>
     </div>
   );
 }

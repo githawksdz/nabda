@@ -213,10 +213,6 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         prompt="ou continuer avec"
         googlePending={googlePending}
         onGoogle={onGoogle}
-        onPhone={(message) => {
-          setError(null);
-          setInfo({ text: message, tone: "info" });
-        }}
       />
 
       <p className="text-center text-[13px] text-on-surface-variant">

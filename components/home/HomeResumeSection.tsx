@@ -1,7 +1,23 @@
 import Link from "next/link";
-import { PersonalContentCard } from "@/components/personal/PersonalContentCard";
+import {
+  Calculator,
+  ChevronRight,
+  FileText,
+  GitBranch,
+  Pill,
+} from "lucide-react";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
 import { ENTITY_TYPE_LABELS } from "@/lib/personal/personal-mappers";
 import type { HistoryItem } from "@/types/personal";
+
+const ENTITY_ICONS = {
+  cat: GitBranch,
+  protocol: FileText,
+  calculator: Calculator,
+  drug: Pill,
+} as const;
 
 type HomeResumeSectionProps = {
   item: HistoryItem | null;
@@ -10,32 +26,59 @@ type HomeResumeSectionProps = {
 export function HomeResumeSection({ item }: HomeResumeSectionProps) {
   return (
     <section>
-      <div className="mb-3">
-        <h2 className="text-headline-sm">Reprendre</h2>
-        <p className="mt-1 text-body-sm text-on-surface-variant">
-          Continuez là où vous vous êtes arrêté.
-        </p>
+      <h2 className="text-headline-sm">Reprendre</h2>
+      <p className="mt-1 text-body-sm text-text-secondary">
+        Continuez là où vous vous êtes arrêté.
+      </p>
+      <div className="mt-3">
+        {item ? (
+          <ResumeRow item={item} />
+        ) : (
+          <EmptyState
+            compact
+            headingLevel="p"
+            title="Aucun contenu récent"
+            description="Les fiches que vous consultez apparaîtront ici."
+            actionLabel="Recherche"
+            actionHref="/search"
+          />
+        )}
       </div>
-      {item ? (
-        <PersonalContentCard
-          href={item.href}
-          title={item.title}
-          subtitle={item.subtitle}
-          kindLabel={item.kindLabel ?? ENTITY_TYPE_LABELS[item.entityType]}
-          entityType={item.entityType}
-          compact
-        />
-      ) : (
-        <div className="rounded-xl bg-surface-container-low px-4 py-4">
-          <p className="text-body-md font-medium">Aucun contenu récent</p>
-          <p className="mt-1 text-body-sm text-on-surface-variant">
-            Les fiches que vous consultez apparaîtront ici.
-          </p>
-          <Link href="/search" className="mt-2 inline-flex min-h-11 items-center text-label-md">
-            Recherche
-          </Link>
-        </div>
-      )}
     </section>
+  );
+}
+
+function ResumeRow({ item }: { item: HistoryItem }) {
+  const Icon = ENTITY_ICONS[item.entityType];
+  const kindLabel = item.kindLabel ?? ENTITY_TYPE_LABELS[item.entityType];
+
+  return (
+    <Link href={item.href} className="block min-w-0">
+      <Surface
+        as="div"
+        variant="elevated"
+        className="flex items-center gap-3 p-3.5 hover:bg-surface-muted"
+      >
+        <span className="flex size-11 shrink-0 items-center justify-center rounded-[var(--radius-control)] bg-surface-muted text-text-primary">
+          <Icon className="size-5" strokeWidth={1.75} aria-hidden />
+        </span>
+        <span className="min-w-0 flex-1">
+          <StatusBadge tone="muted">{kindLabel}</StatusBadge>
+          <span className="mt-1.5 block truncate text-body-md font-medium">
+            {item.title}
+          </span>
+          {item.subtitle ? (
+            <span className="mt-0.5 block truncate text-body-sm text-text-secondary">
+              {item.subtitle}
+            </span>
+          ) : null}
+        </span>
+        <ChevronRight
+          className="size-4 shrink-0 text-text-muted"
+          strokeWidth={1.75}
+          aria-hidden
+        />
+      </Surface>
+    </Link>
   );
 }

@@ -34,7 +34,7 @@ export type CatUpdate = {
   slug: string;
   title: string;
   meta: string;
-  statusLabel: string;
+  statusLabel?: string;
   href: string;
 };
 

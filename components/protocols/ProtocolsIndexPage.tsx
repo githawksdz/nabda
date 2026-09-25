@@ -1,9 +1,18 @@
 "use client";
 
-import Link from "next/link";
 import { useMemo, useState } from "react";
 import { AppShell } from "@/components/app/AppShell";
+import {
+  DiscoveryList,
+  DiscoveryListItem,
+  DiscoveryListRow,
+} from "@/components/discovery/DiscoveryListRow";
+import { IndexPageIntro } from "@/components/discovery/IndexPageIntro";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { SearchField } from "@/components/ui/TextField";
+import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import type { ProtocolSummary } from "@/lib/protocols/protocol-catalog";
+import { FileText } from "lucide-react";
 
 type ProtocolsIndexPageProps = {
   protocols?: ProtocolSummary[];
@@ -29,67 +38,64 @@ export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) 
   return (
     <AppShell
       title="Protocoles"
+      pageHeading={false}
       navVariant="text"
-      frameClassName="max-w-[390px]"
-      contentClassName="pb-[calc(96px+env(safe-area-inset-bottom,0px))]"
+      frame="clinical"
     >
-      <div className="flex flex-col gap-4 pt-2">
-        <section className="flex flex-col gap-2">
-          <h2 className="text-headline-lg">Protocoles</h2>
-          <p className="text-body-md text-on-surface-variant">
-            Synthèses et guides cliniques disponibles dans Nabda.
-          </p>
-        </section>
+      <div className="flex min-w-0 flex-col gap-4 pt-2">
+        <IndexPageIntro
+          title="Protocoles"
+          description="Synthèses et guides cliniques disponibles dans Nabda."
+        />
 
-        <input
-          type="search"
+        <SearchField
           value={query}
-          onChange={(event) => setQuery(event.target.value)}
-          placeholder="Rechercher un protocole…"
-          className="w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 text-body-md outline-none"
-          aria-label="Rechercher un protocole"
+          onChange={setQuery}
+          onClear={() => setQuery("")}
+          placeholder="Filtrer cette liste…"
+          label="Filtrer les protocoles"
+          compact
+          className="bg-surface-muted shadow-none"
         />
 
         {protocols.length === 0 ? (
-          <div className="rounded-xl bg-surface-container-lowest p-6 text-center shadow-sm">
-            <p className="text-headline-sm">Aucun protocole disponible</p>
-            <p className="mt-2 text-body-sm text-on-surface-variant">
-              Le référentiel sera enrichi au fur et à mesure des imports.
-            </p>
-          </div>
+          <EmptyState
+            compact
+            headingLevel="h2"
+            title="Aucun protocole disponible"
+            description="Le référentiel sera enrichi au fur et à mesure des imports."
+          />
         ) : filtered.length === 0 ? (
-          <div className="rounded-xl bg-surface-container-lowest p-6 text-center shadow-sm">
-            <p className="text-headline-sm">Aucun résultat</p>
-            <p className="mt-2 text-body-sm text-on-surface-variant">
-              Essayez un autre terme de recherche.
-            </p>
-          </div>
+          <EmptyState
+            compact
+            headingLevel="h2"
+            title="Aucun résultat"
+            description="Essayez un autre terme de recherche."
+            actionLabel="Effacer le filtre"
+            onAction={() => setQuery("")}
+          />
         ) : (
-          <div className="overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm">
-            {filtered.map((item, index) => (
-              <div key={item.id}>
-                <Link
+          <DiscoveryList>
+            {filtered.map((item) => (
+              <DiscoveryListItem key={item.id}>
+                <DiscoveryListRow
                   href={item.href}
-                  className="flex flex-col gap-1 px-4 py-3 hover:bg-surface-container-low"
-                >
-                  <span className="text-body-md font-medium">{item.title}</span>
-                  {item.summary ? (
-                    <span className="text-body-sm text-on-surface-variant line-clamp-2">
-                      {item.summary}
-                    </span>
-                  ) : null}
-                  {item.statusLabel ? (
-                    <span className="text-label-sm text-on-surface-variant">
-                      {item.statusLabel}
-                    </span>
-                  ) : null}
-                </Link>
-                {index < filtered.length - 1 ? (
-                  <div className="ml-4 h-px bg-surface-variant" />
-                ) : null}
-              </div>
+                  title={item.title}
+                  typeLabel="Protocole"
+                  description={item.summary ?? undefined}
+                  statusLabel={item.statusLabel ?? undefined}
+                  statusTone={
+                    item.statusLabel
+                      ? accessLabelToTone(item.statusLabel)
+                      : undefined
+                  }
+                  icon={
+                    <FileText className="size-4" strokeWidth={1.75} aria-hidden />
+                  }
+                />
+              </DiscoveryListItem>
             ))}
-          </div>
+          </DiscoveryList>
         )}
       </div>
     </AppShell>

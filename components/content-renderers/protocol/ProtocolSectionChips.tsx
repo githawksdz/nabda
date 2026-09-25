@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import { cn } from "@/lib/utils";
 import { groupAnchorId } from "@/lib/content-rendering/protocol";
+import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import type { ProtocolRenderGroup } from "@/types/content-rendering-protocol";
 
 type ProtocolSectionChipsProps = {
@@ -63,7 +64,7 @@ export function ProtocolSectionChips({
     <nav
       data-preview-chips=""
       aria-label="Groupes de sections"
-      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
+      className="preview-chip-nav layout-sticky-under-header sticky z-[var(--z-sticky)] -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
       <div className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {groups.map((group) => {
@@ -80,11 +81,11 @@ export function ProtocolSectionChips({
                   return;
                 }
                 event.preventDefault();
-                target.scrollIntoView({ behavior: "smooth", block: "start" });
+                scrollElementIntoView(target, { block: "start" });
                 onActiveId(group.id);
               }}
               className={cn(
-                "flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
                 isActive
                   ? "is-current bg-primary font-semibold text-on-primary shadow-sm"
                   : "bg-surface-container-low text-on-surface-variant",

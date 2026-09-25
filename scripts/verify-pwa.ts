@@ -59,6 +59,14 @@ async function main() {
   const layout = read("app/layout.tsx");
 
   checks.push({
+    id: "viewport_allows_pinch_zoom",
+    ok:
+      !layout.includes("userScalable: false") &&
+      !layout.includes("maximumScale: 1") &&
+      !layout.includes("user-scalable=no"),
+    detail: "app/layout.tsx viewport",
+  });
+  checks.push({
     id: "manifest_exists",
     ok: manifest.includes('name: "Nabda"') && manifest.includes('display: "standalone"'),
     detail: "app/manifest.ts",

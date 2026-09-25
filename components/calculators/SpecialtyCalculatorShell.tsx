@@ -27,7 +27,7 @@ type SpecialtyCalculatorShellProps = {
   cockcroftValues: CockcroftFormValues;
   onCockcroftChange: (values: CockcroftFormValues) => void;
   onCockcroftReset: () => void;
-  onCockcroftCopy: () => void;
+  onCockcroftCopy: () => void | Promise<boolean>;
 };
 
 export function SpecialtyCalculatorShell({

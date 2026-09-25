@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
 import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import { BottomReadingDock, type DockAction } from "@/components/content-detail/BottomReadingDock";
@@ -15,6 +15,16 @@ import {
   resolveProtocolViewMode,
 } from "@/lib/content-detail/content-detail-ui-config";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
+import {
+  COPY_LABEL_MS,
+  FAVORITE_ADDED_MESSAGE,
+  FAVORITE_REMOVED_MESSAGE,
+  FAVORITE_SIGN_IN_MESSAGE,
+  FAVORITE_WRITE_FAILED_MESSAGE,
+} from "@/lib/ui/feedback-timing";
+import { reconcileFavorite } from "@/lib/ui/favorite-result";
+import { StatusToast } from "@/components/ui/StatusToast";
+import { useNotice, useTimedFlag } from "@/components/ui/useTimedFlag";
 import type { ProtocolDetail } from "@/types/content-detail";
 import type { ProtocolRenderData } from "@/types/content-rendering";
 
@@ -35,7 +45,11 @@ export function ProtocolDetailPage({
 }: ProtocolDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [summarySaved, setSummarySaved] = useState(initialBookmarked);
-  const [toast, setToast] = useState<string | null>(null);
+  const [pendingFavorite, setPendingFavorite] = useState(false);
+  const [favoriteEmphasis, setFavoriteEmphasis] = useState(0);
+  const [favoriteAnnouncement, setFavoriteAnnouncement] = useState("");
+  const { notice, showToast, dismissToast } = useNotice();
+  const copied = useTimedFlag(COPY_LABEL_MS);
 
   const sourceMode = Boolean(source);
   const mode = sourceMode
@@ -58,48 +72,57 @@ export function ProtocolDetailPage({
       ? protocolHref(detail.protocol.slug)
       : "/search?type=protocols";
 
-  useEffect(() => {
-    if (!toast) {
-      return;
-    }
-    const timeoutId = window.setTimeout(() => setToast(null), 2800);
-    return () => window.clearTimeout(timeoutId);
-  }, [toast]);
-
-  function showToast(message: string) {
-    setToast(message);
-  }
-
-  async function persistFavorite() {
+  async function persistFavorite(previous: boolean) {
     const slug = detail?.protocol.slug ?? source?.slug;
     if (!slug) {
+      setBookmarked(previous);
+      setSummarySaved(previous);
       return;
     }
+    setPendingFavorite(true);
     const result = await toggleFavorite("protocol", slug);
-    if (result.skipped) {
-      setBookmarked(initialBookmarked);
-      setSummarySaved(initialBookmarked);
-      showToast("Connectez-vous pour ajouter aux favoris.");
-      return;
+    const next = reconcileFavorite(previous, result);
+    setBookmarked(next.bookmarked);
+    setSummarySaved(next.bookmarked);
+    setPendingFavorite(false);
+    switch (next.outcome) {
+      case "unauthenticated":
+        showToast(FAVORITE_SIGN_IN_MESSAGE);
+        return;
+      case "write_failed":
+        showToast(FAVORITE_WRITE_FAILED_MESSAGE, "alert");
+        return;
+      case "saved":
+      case "removed":
+        setFavoriteEmphasis((value) => value + 1);
+        setFavoriteAnnouncement(
+          next.outcome === "saved"
+            ? FAVORITE_ADDED_MESSAGE
+            : FAVORITE_REMOVED_MESSAGE,
+        );
     }
-    setBookmarked(result.saved);
-    setSummarySaved(result.saved);
   }
 
   function toggleBookmark() {
+    if (pendingFavorite) {
+      return;
+    }
+    const previous = bookmarked;
     const next = !bookmarked;
     setBookmarked(next);
     setSummarySaved(next);
-    showToast(next ? "Synthèse sauvegardée" : "Synthèse retirée");
-    void persistFavorite();
+    void persistFavorite(previous);
   }
 
   function toggleSummarySave() {
+    if (pendingFavorite) {
+      return;
+    }
+    const previous = summarySaved;
     const next = !summarySaved;
     setSummarySaved(next);
     setBookmarked(next);
-    showToast(next ? "Synthèse sauvegardée" : "Synthèse retirée");
-    void persistFavorite();
+    void persistFavorite(previous);
   }
 
   async function shareSummary() {
@@ -113,9 +136,9 @@ export function ProtocolDetailPage({
         return;
       }
       await navigator.clipboard.writeText(`${title}\n${url}`);
-      showToast("Lien du résumé copié");
+      copied.start();
     } catch {
-      showToast("Partage annulé");
+      showToast("Partage annulé", "alert");
     }
   }
 
@@ -126,7 +149,7 @@ export function ProtocolDetailPage({
     const { next } = section
       ? adjacentSections(detail!, section.slug)
       : { next: detail?.sections.find((item) => item.show_in_cards) };
-    dockMeta = source ? "Lecture / Garde · même source" : "Aperçu local";
+    dockMeta = undefined;
 
     if (mode === "preparation") {
       dockActions = [
@@ -135,17 +158,20 @@ export function ProtocolDetailPage({
           label: summarySaved ? "Retirer" : "Favoris",
           icon: summarySaved ? "bookmark-check" : "bookmark",
           active: summarySaved,
+          disabled: pendingFavorite,
+          busy: pendingFavorite,
+          emphasisKey: favoriteEmphasis,
           onClick: toggleSummarySave,
         },
         {
           id: "share",
-          label: "Partager",
-          icon: "share",
+          label: copied.active ? "Copié" : "Partager",
+          icon: copied.active ? "check" : "share",
           onClick: shareSummary,
         },
         {
           id: "sources",
-          label: "Sources",
+          label: "Références",
           icon: "sources",
           href: "/search?type=protocols",
         },
@@ -168,11 +194,14 @@ export function ProtocolDetailPage({
           label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
+          disabled: pendingFavorite,
+          busy: pendingFavorite,
+          emphasisKey: favoriteEmphasis,
           onClick: toggleBookmark,
         },
         {
           id: "sources",
-          label: "Sources",
+          label: "Références",
           icon: "sources",
           href: source ? `/cat/${slug}` : protocolHref(slug, { section: "sources" }),
         },
@@ -222,15 +251,10 @@ export function ProtocolDetailPage({
         {dockActions.length > 0 ? (
           <BottomReadingDock actions={dockActions} meta={dockMeta} />
         ) : null}
-        {toast ? (
-          <p
-            role="status"
-            aria-live="polite"
-            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm lg:left-[calc(50%+7.5rem)]"
-          >
-            {toast}
-          </p>
-        ) : null}
+        <p className="sr-only" role="status" aria-live="polite">
+          {favoriteAnnouncement}
+        </p>
+        <StatusToast notice={notice} onDismiss={dismissToast} />
     </ClinicalDetailFrame>
   );
 }

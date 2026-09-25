@@ -46,8 +46,8 @@ export function AuthDrawer({ mode, onModeChange }: AuthDrawerProps) {
       setBackgroundColorOnScale={false}
     >
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 bg-black/35 backdrop-blur-[2px]" />
-        <Drawer.Content className="fixed right-0 bottom-0 left-0 mx-auto flex h-full max-h-[97%] max-w-[430px] flex-col rounded-t-[24px] bg-surface-container-lowest outline-none">
+        <Drawer.Overlay className="fixed inset-0 z-[var(--z-backdrop)] bg-black/35 backdrop-blur-[2px]" />
+        <Drawer.Content className="fixed right-0 bottom-0 left-0 z-[var(--z-sheet)] mx-auto flex h-full max-h-[97%] max-w-[430px] flex-col rounded-t-[24px] bg-surface-container-lowest outline-none">
           <div className="relative flex shrink-0 items-center justify-center pt-3 pb-1">
             <Drawer.Handle className="!mx-0 !h-1 !w-9 !bg-surface-container-highest" />
             <button
@@ -59,7 +59,7 @@ export function AuthDrawer({ mode, onModeChange }: AuthDrawerProps) {
               <X className="size-4" strokeWidth={1.75} />
             </button>
           </div>
-          <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto px-5 pt-2 pb-6">
+          <div className="no-scrollbar min-h-0 flex-1 overflow-y-auto px-5 pt-2 pb-[calc(24px+env(safe-area-inset-bottom,0px))]">
             {displayedMode === "login" ? (
               <LoginForm onSwitchToRegister={() => onModeChange("register")} />
             ) : null}

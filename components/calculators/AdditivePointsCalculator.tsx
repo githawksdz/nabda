@@ -1,6 +1,9 @@
 "use client";
 
 import { useMemo, useState } from "react";
+import { CalculatorFieldControl } from "./CalculatorFieldControl";
+import { Button } from "@/components/ui/Button";
+import { Surface } from "@/components/ui/Surface";
 import {
   additivePointsEngine,
   parseAdditiveSchemaFromPayload,
@@ -68,53 +71,59 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
         </p>
       </header>
 
-      <div className="flex min-w-0 flex-col gap-4">
+      <div className="flex min-w-0 flex-col gap-3">
+        <div className="flex justify-end">
+          <Button
+            variant="secondary"
+            onClick={() =>
+              setSelections(Object.fromEntries(schema.map((field) => [field.name, null])))
+            }
+          >
+            Réinitialiser
+          </Button>
+        </div>
       {schema.map((field) => (
-        <fieldset key={field.name} className="space-y-2">
-          <legend className="text-body-md font-medium">{field.label}</legend>
-          <div className="flex flex-col gap-1.5">
-            {field.options.map((opt) => {
-              const selected = selections[field.name] === opt.value;
-              return (
-                <button
-                  key={`${field.name}-${opt.value}-${opt.label}`}
-                  type="button"
-                  onClick={() =>
-                    setSelections((prev) => ({ ...prev, [field.name]: opt.value }))
-                  }
-                  className={`rounded-xl px-3.5 py-2.5 text-left text-body-sm transition ${
-                    selected
-                      ? "bg-primary text-on-primary"
-                      : "bg-surface-container-low text-on-surface"
-                  }`}
-                >
-                  {opt.label}
-                </button>
-              );
-            })}
-          </div>
-        </fieldset>
+        <CalculatorFieldControl
+          key={field.name}
+          name={field.name}
+          label={field.label}
+          type={field.type}
+          options={field.options.map((option) => ({
+            label: option.label,
+            value: String(option.value),
+          }))}
+          value={
+            selections[field.name] == null ? "" : String(selections[field.name])
+          }
+          onChange={(next) =>
+            setSelections((prev) => ({
+              ...prev,
+              [field.name]: next === "" ? null : Number(next),
+            }))
+          }
+        />
       ))}
       </div>
 
-      <div className="rounded-xl bg-surface-container-low px-3.5 py-3 lg:sticky lg:top-[calc(72px+env(safe-area-inset-top,0px))]">
+      <Surface
+        variant="muted"
+        className="lg:sticky lg:top-[calc(var(--layout-header-height)+env(safe-area-inset-top,0px))]"
+      >
         {result.ok ? (
           <>
-            <p className="text-label-md text-on-surface-variant">Résultat</p>
-            <p className="mt-1 text-headline-sm">
+            <p className="text-label-md text-text-secondary">Résultat</p>
+            <p className="mt-1 text-headline-sm text-text-primary">
               {result.output.total}
-              <span className="text-body-md text-on-surface-variant">
+              <span className="text-body-md text-text-secondary">
                 {" "}
                 / {result.output.max}
               </span>
             </p>
           </>
         ) : (
-          <p className="text-body-sm text-on-surface-variant">
-            {result.error.message}
-          </p>
+          <p className="text-body-sm text-text-secondary">{result.error.message}</p>
         )}
-      </div>
+      </Surface>
     </div>
   );
 }

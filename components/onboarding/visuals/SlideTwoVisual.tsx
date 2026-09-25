@@ -11,7 +11,7 @@ export function SlideTwoVisual() {
 
         <div className="z-10 flex w-full items-center justify-between">
           <div className="inline-flex items-center gap-1.5 rounded-full bg-surface-container-low px-2.5 py-1">
-            <span className="size-1.5 animate-pulse rounded-full bg-primary" />
+            <span className="size-1.5 rounded-full bg-primary" />
             <span className="text-[11px] font-medium tracking-wide text-on-surface-variant">
               Algorithme dynamique
             </span>

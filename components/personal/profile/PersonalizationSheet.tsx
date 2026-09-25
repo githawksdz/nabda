@@ -129,8 +129,8 @@ export function PersonalizationSheet({
       setBackgroundColorOnScale={false}
     >
       <Drawer.Portal>
-        <Drawer.Overlay className="fixed inset-0 z-[60] bg-black/35 backdrop-blur-[2px]" />
-        <Drawer.Content className="fixed right-0 bottom-0 left-0 z-[70] mx-auto flex h-[85dvh] max-h-[85dvh] w-full max-w-[390px] flex-col rounded-t-[28px] bg-surface-container-lowest outline-none">
+        <Drawer.Overlay className="fixed inset-0 z-[var(--z-backdrop)] bg-black/35 backdrop-blur-[2px]" />
+        <Drawer.Content className="fixed right-0 bottom-0 left-0 z-[var(--z-sheet)] mx-auto flex h-[85dvh] max-h-[85dvh] w-full max-w-[390px] flex-col rounded-t-[28px] bg-surface-container-lowest outline-none">
           <div className="flex shrink-0 items-center justify-center pt-3 pb-1">
             <Drawer.Handle className="!mx-0 !h-1 !w-9 !bg-surface-container-highest" />
           </div>

@@ -142,7 +142,7 @@ export function personalStatusLabel(
     publicationStatus === "draft" ||
     publicationStatus === "seed_placeholder"
   ) {
-    return "Contenu en préparation";
+    return undefined;
   }
   return doctorCatalogStatusLabel({
     publicationStatus,

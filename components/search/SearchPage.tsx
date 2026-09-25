@@ -10,6 +10,8 @@ import { SearchInitialState } from "./SearchInitialState";
 import { SearchGroupedResults } from "./SearchGroupedResults";
 import { SearchMedicationResults } from "./SearchMedicationResults";
 import { SearchZeroState } from "./SearchZeroState";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
 import { searchContent } from "@/features/content/api";
 import { createClient } from "@/lib/supabase/client";
 import { contentRepository } from "@/lib/offline/repository";
@@ -21,6 +23,7 @@ import {
 } from "@/lib/search/search-ui-constants";
 import { isDemoContentModeClient } from "@/lib/content-data/content-source-mode";
 import { getSearchDemoFixturesSync } from "@/lib/demo-fixtures/load";
+import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import {
   groupSearchResults,
   identityToMedicationSearchResult,
@@ -38,6 +41,12 @@ import {
   searchResultsToMedication,
 } from "@/lib/search/resolve-search";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+import {
+  SEARCH_ERROR_HELP,
+  SEARCH_ERROR_TITLE,
+  SEARCH_LOADING_LABEL,
+} from "@/lib/search/search-outcome";
+import { SEARCH_FIELD_PLACEHOLDER } from "@/lib/ui/access-status-display";
 import type { FrequentSearchChip, SearchFilter, SearchResult } from "@/types/search";
 
 type SearchPageProps = {
@@ -57,9 +66,11 @@ export function SearchPage({
     parseSearchFilter(initialFilter),
   );
   const [recentsCleared, setRecentsCleared] = useState(false);
+  const [lookupAttempt, setLookupAttempt] = useState(0);
   const [identity, setIdentity] = useState<{
     query: string;
     results: SearchResult[];
+    failed: boolean;
   } | null>(null);
 
   const screen = resolveSearchScreen(query, filter);
@@ -69,11 +80,13 @@ export function SearchPage({
     demoMode && (isDouleurQuery(query) || isAmoxQuery(query));
   const needsLookup =
     Boolean(query.trim()) && screen !== "initial" && screen !== "zero";
+  const identityMatches = identity?.query === query.trim();
   const identityResults = useMemo(
-    () => (identity?.query === query.trim() ? identity.results : []),
-    [query, identity],
+    () => (identityMatches && !identity?.failed ? identity.results : []),
+    [identity, identityMatches],
   );
-  const loading = needsLookup && !demoQuery && identity?.query !== query.trim();
+  const lookupFailed = Boolean(needsLookup && identityMatches && identity?.failed);
+  const loading = needsLookup && !identityMatches;
   const douleurGroupsSource = useMemo(
     () => demo?.DOULEUR_GROUPS ?? [],
     [demo],
@@ -127,19 +140,19 @@ export function SearchPage({
             ? await contentRepository.searchContent(user.id, trimmed)
             : [];
           if (!cancelled) {
-            setIdentity({ query: trimmed, results: rows });
+            setIdentity({ query: trimmed, results: rows, failed: false });
           }
           return;
         }
         if (!isSupabaseConfigured()) {
           if (!cancelled) {
-            setIdentity({ query: trimmed, results: [] });
+            setIdentity({ query: trimmed, results: [], failed: true });
           }
           return;
         }
         const rows = await searchContent(query, { type: filter });
         if (!cancelled) {
-          setIdentity({ query: trimmed, results: rows });
+          setIdentity({ query: trimmed, results: rows, failed: false });
         }
       } catch (error) {
         console.warn("searchContent failed.", error);
@@ -152,11 +165,15 @@ export function SearchPage({
             ? await contentRepository.searchContent(user.id, trimmed)
             : [];
           if (!cancelled) {
-            setIdentity({ query: trimmed, results: rows });
+            if (rows.length > 0) {
+              setIdentity({ query: trimmed, results: rows, failed: false });
+            } else {
+              setIdentity({ query: trimmed, results: [], failed: true });
+            }
           }
         } catch {
           if (!cancelled) {
-            setIdentity({ query: trimmed, results: [] });
+            setIdentity({ query: trimmed, results: [], failed: true });
           }
         }
       }
@@ -166,7 +183,7 @@ export function SearchPage({
     return () => {
       cancelled = true;
     };
-  }, [filter, needsLookup, query]);
+  }, [filter, lookupAttempt, needsLookup, query]);
 
   const clearQuery = useCallback(() => {
     setQuery("");
@@ -203,14 +220,18 @@ export function SearchPage({
           )
         : identityMedications;
 
+  const requestFailed =
+    lookupFailed && groupedTotal === 0 && medicationResults.length === 0;
   const visibleScreen =
     loading && needsLookup
       ? screen
-      : screen === "results" && groupedTotal === 0
-        ? "zero"
-        : screen === "drugs" && medicationResults.length === 0
+      : requestFailed
+        ? "error"
+        : screen === "results" && groupedTotal === 0
           ? "zero"
-          : screen;
+          : screen === "drugs" && medicationResults.length === 0
+            ? "zero"
+            : screen;
 
   const chips = useMemo(() => {
     if (visibleScreen === "zero") return ZERO_FILTERS;
@@ -224,45 +245,36 @@ export function SearchPage({
     return INITIAL_FILTERS;
   }, [demoQuery, grouped, query, visibleScreen]);
 
-  const inputVariant =
-    visibleScreen === "drugs"
-      ? "compact"
-      : visibleScreen === "results" || visibleScreen === "zero"
-        ? "dock"
-        : "hero";
-
-  const placeholder =
-    visibleScreen === "drugs"
-      ? "Rechercher une DCI, spécialité..."
-      : "Rechercher CAT, médicament, score…";
+  const placeholder = SEARCH_FIELD_PLACEHOLDER;
 
   return (
     <AppShell
       title="Recherche"
+      pageHeading={false}
       navVariant="text"
       headerActions={
         <button
           type="button"
           aria-label="Filtres"
-          onClick={() =>
-            document.getElementById("search-filters")?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
+          onClick={() => {
+            const filters = document.getElementById("search-filters");
+            if (filters) {
+              scrollElementIntoView(filters, { block: "start" });
+            }
+          }}
           className="flex size-11 items-center justify-center rounded-full text-on-surface-variant"
         >
           <SlidersHorizontal className="size-5" strokeWidth={1.75} />
         </button>
       }
     >
-      <div className="flex flex-col gap-4 pt-2">
+      <div className="flex min-w-0 flex-col gap-4 pt-2">
+        <h1 className="sr-only">Recherche clinique</h1>
         <SearchInputBar
           value={query}
           onChange={setQuery}
           onClear={clearQuery}
           placeholder={placeholder}
-          variant={inputVariant}
           inputRef={inputRef}
         />
         <SearchFilterChips
@@ -284,9 +296,7 @@ export function SearchPage({
 
         {visibleScreen === "results" ? (
           loading ? (
-            <p className="text-body-sm text-on-surface-variant">
-              Recherche en cours…
-            </p>
+            <LoadingIndicator label={SEARCH_LOADING_LABEL} />
           ) : (
             <SearchGroupedResults
               query={query.trim()}
@@ -305,9 +315,7 @@ export function SearchPage({
 
         {visibleScreen === "drugs" ? (
           loading ? (
-            <p className="text-body-sm text-on-surface-variant">
-              Recherche en cours…
-            </p>
+            <LoadingIndicator label={SEARCH_LOADING_LABEL} />
           ) : (
             <SearchMedicationResults
               results={medicationResults}
@@ -324,6 +332,19 @@ export function SearchPage({
 
         {visibleScreen === "zero" ? (
           <SearchZeroState query={query.trim()} onClear={clearQuery} />
+        ) : null}
+
+        {visibleScreen === "error" ? (
+          <EmptyState
+            headingLevel="h2"
+            title={SEARCH_ERROR_TITLE}
+            description={SEARCH_ERROR_HELP}
+            actionLabel="Réessayer"
+            onAction={() => {
+              setIdentity(null);
+              setLookupAttempt((attempt) => attempt + 1);
+            }}
+          />
         ) : null}
       </div>
     </AppShell>

@@ -69,10 +69,10 @@ export function HistoryPage({ items, source = "mock" }: HistoryPageProps) {
   }
 
   return (
-    <AppShell title={HISTORY_COPY.title} navVariant="text">
+    <AppShell title={HISTORY_COPY.title} navVariant="text" pageHeading={false}>
       <div className="flex flex-col gap-5 pt-2">
         <section className="flex flex-col gap-1">
-          <h2 className="text-headline-lg">{HISTORY_COPY.title}</h2>
+          <h1 className="text-headline-lg">{HISTORY_COPY.title}</h1>
           <p className="text-body-md text-on-surface-variant">
             {HISTORY_COPY.subtitle}
           </p>

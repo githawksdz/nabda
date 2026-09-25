@@ -36,6 +36,5 @@ export const SOFT_MESSAGES = {
   emailTaken: "Cette adresse est déjà utilisée. Essayez de vous connecter.",
   invalidCredentials: "Email ou mot de passe incorrect.",
   loginUnavailable: "Connexion impossible pour le moment. Réessayez.",
-  phoneSoon: "Connexion par téléphone bientôt disponible.",
   resetSent: "Si un compte existe, un lien sera envoyé.",
 } as const;

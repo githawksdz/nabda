@@ -3,9 +3,10 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { X } from "lucide-react";
-import { useEffect, useRef, type MouseEvent } from "react";
+import { useEffect, useRef, useState, type MouseEvent, type SyntheticEvent } from "react";
 import { DoctorNavIcon } from "@/components/app/DoctorNavIcon";
 import { MODULE_NAV, isDoctorNavActive } from "@/lib/navigation/doctor-nav";
+import { prefersReducedMotion } from "@/lib/ui/scroll-behavior";
 import { cn } from "@/lib/utils";
 
 type ModuleSheetProps = {
@@ -13,10 +14,27 @@ type ModuleSheetProps = {
   onClose: () => void;
 };
 
+type SheetPhase = "closed" | "open" | "closing";
+
+const MODULE_SHEET_EXIT_FALLBACK_MS = 120;
+
+function moduleSheetExitMs(): number {
+  if (typeof window === "undefined" || prefersReducedMotion()) {
+    return 0;
+  }
+  const raw = getComputedStyle(document.documentElement)
+    .getPropertyValue("--duration-fast")
+    .trim();
+  const value = Number.parseFloat(raw);
+  return Number.isFinite(value) ? value : MODULE_SHEET_EXIT_FALLBACK_MS;
+}
+
 export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
   const pathname = usePathname();
   const dialogRef = useRef<HTMLDialogElement>(null);
   const pathnameRef = useRef(pathname);
+  const exitTimer = useRef(0);
+  const [phase, setPhase] = useState<SheetPhase>("closed");
 
   useEffect(() => {
     const dialog = dialogRef.current;
@@ -24,9 +42,42 @@ export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
       return;
     }
     dialog.setAttribute("closedby", "any");
-    if (open && !dialog.open) {
-      dialog.showModal();
-    } else if (!open && dialog.open) {
+    window.clearTimeout(exitTimer.current);
+
+    let outerFrame = 0;
+    let innerFrame = 0;
+
+    if (open) {
+      if (!dialog.open) {
+        dialog.showModal();
+      }
+      outerFrame = window.requestAnimationFrame(() => {
+        innerFrame = window.requestAnimationFrame(() => {
+          setPhase("open");
+        });
+      });
+      return () => {
+        window.cancelAnimationFrame(outerFrame);
+        window.cancelAnimationFrame(innerFrame);
+      };
+    }
+
+    if (dialog.open && moduleSheetExitMs() > 0) {
+      setPhase("closing");
+      exitTimer.current = window.setTimeout(() => {
+        const current = dialogRef.current;
+        if (current?.open) {
+          current.close();
+        }
+        setPhase("closed");
+      }, moduleSheetExitMs());
+      return () => {
+        window.clearTimeout(exitTimer.current);
+      };
+    }
+
+    setPhase("closed");
+    if (dialog.open) {
       dialog.close();
     }
   }, [open]);
@@ -40,7 +91,7 @@ export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
   }, [onClose, pathname]);
 
   useEffect(() => {
-    if (!open) {
+    if (!open && phase === "closed") {
       return;
     }
     const previous = document.body.style.overflow;
@@ -48,7 +99,12 @@ export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
     return () => {
       document.body.style.overflow = previous;
     };
-  }, [open]);
+  }, [open, phase]);
+
+  function onCancel(event: SyntheticEvent<HTMLDialogElement>) {
+    event.preventDefault();
+    onClose();
+  }
 
   function onDialogClick(event: MouseEvent<HTMLDialogElement>) {
     const dialog = dialogRef.current;
@@ -73,11 +129,13 @@ export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
       role="dialog"
       aria-modal="true"
       aria-labelledby="doctor-modules-title"
+      data-phase={phase}
       onClose={onClose}
+      onCancel={onCancel}
       onClick={onDialogClick}
-      className="top-auto m-0 mt-auto max-h-[min(70dvh,32rem)] w-full max-w-none overflow-y-auto rounded-t-2xl border-0 bg-surface p-0 text-on-surface shadow-[0_-8px_24px_rgba(0,0,0,0.08)] backdrop:bg-on-surface/40"
+      className="module-sheet top-auto z-[var(--z-sheet)] m-0 mt-auto max-h-[min(70dvh,32rem)] w-full max-w-none overflow-y-auto rounded-t-2xl border-0 bg-surface p-0 text-on-surface shadow-[var(--shadow-sheet)] backdrop:bg-on-surface/40"
     >
-      <div className="mx-auto w-full max-w-[42rem] px-4 pt-3 pb-[calc(16px+env(safe-area-inset-bottom,0px))]">
+      <div className="layout-gutter layout-workspace pt-3 pb-[calc(16px+env(safe-area-inset-bottom,0px))]">
         <div className="mb-2 flex items-center justify-between gap-3">
           <h2 id="doctor-modules-title" className="text-headline-sm">
             Modules

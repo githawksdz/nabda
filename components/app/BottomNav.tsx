@@ -16,9 +16,9 @@ export function BottomNav({ variant = "pill" }: BottomNavProps) {
   return (
     <nav
       aria-label="Navigation principale"
-      className="fixed inset-x-0 bottom-0 z-50 bg-surface/90 pb-safe shadow-[0_-1px_8px_rgba(0,0,0,0.03)] backdrop-blur-xl lg:hidden"
+      className="fixed inset-x-0 bottom-0 z-[var(--z-nav)] bg-surface/90 pb-safe shadow-[var(--shadow-subtle)] backdrop-blur-xl lg:hidden"
     >
-      <div className="mx-auto flex h-16 w-full max-w-[42rem] items-center justify-around px-1">
+      <div className="mx-auto flex h-[var(--layout-nav-height)] w-full items-center justify-around px-1">
         {PRIMARY_NAV.map((item) => {
           const active = isDoctorNavActive(pathname, item.href);
           return (

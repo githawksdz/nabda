@@ -18,6 +18,7 @@ import {
   generalFilterChipsForCatalog,
 } from "@/lib/cat/cat-ui-config";
 import { getCatDemoFixturesSync } from "@/lib/demo-fixtures/load";
+import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import {
   filterCatCards,
   matchesCatQuery,
@@ -138,23 +139,23 @@ export function CatIndexPage({
   return (
     <AppShell
       title="Conduites À Tenir"
+      pageHeading={false}
       navVariant="text"
-      frameClassName="max-w-[390px]"
+      frame="clinical"
       avatarDot
-      contentClassName="pb-[calc(96px+env(safe-area-inset-bottom,0px))]"
       headerActions={
         <CatHeader
-          onTune={() =>
-            document.getElementById("cat-filters")?.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
+          onTune={() => {
+            const filters = document.getElementById("cat-filters");
+            if (filters) {
+              scrollElementIntoView(filters, { block: "start" });
+            }
+          }}
         />
       }
     >
       {state === "general" ? (
-        <div className="flex flex-col gap-5 pt-2">
+        <div className="flex min-w-0 flex-col gap-5 pt-2">
           <CatModuleIdentity catalogCount={useCatalog ? catalog.length : 0} />
           <CatSearchBar
             value={query}

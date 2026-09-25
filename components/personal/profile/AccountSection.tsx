@@ -98,7 +98,7 @@ export function AccountSection() {
                 type="button"
                 onClick={() => void confirmSignOut()}
                 disabled={pending}
-                className="inline-flex h-9 items-center rounded-lg bg-primary px-3 text-label-md text-on-primary disabled:opacity-50"
+                className="inline-flex min-h-11 items-center rounded-lg bg-primary px-3 text-label-md text-on-primary disabled:opacity-50"
               >
                 {PROFILE_COPY.signOutLabel}
               </button>
@@ -106,7 +106,7 @@ export function AccountSection() {
                 type="button"
                 onClick={() => setConfirming(false)}
                 disabled={pending}
-                className="inline-flex h-9 items-center rounded-lg bg-surface-container-high px-3 text-label-md"
+                className="inline-flex min-h-11 items-center rounded-lg bg-surface-container-high px-3 text-label-md"
               >
                 {PROFILE_COPY.signOutCancel}
               </button>

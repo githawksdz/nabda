@@ -1,8 +1,10 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import Link from "next/link";
 import { AppShell } from "@/components/app/AppShell";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
+import { StatusBadge } from "@/components/ui/StatusBadge";
 import { GeneratedFormulaCalculator } from "@/components/calculators/GeneratedFormulaCalculator";
 import { createClient } from "@/lib/supabase/client";
 import { contentRepository } from "@/lib/offline/repository";
@@ -50,32 +52,34 @@ export function OfflineContentView({ contentType, slug }: OfflineContentViewProp
 
   if (corrupt) {
     return (
-      <AppShell title="Hors-ligne">
-        <p className="text-body-md">
-          Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau.
-        </p>
-        <Link href="/offline" className="mt-4 inline-flex min-h-11 items-center text-label-md">
-          Gérer les téléchargements
-        </Link>
+      <AppShell title="Hors-ligne" frame="workspace">
+        <EmptyState
+          title="Contenu local illisible"
+          description="Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau."
+          actionLabel="Gérer les téléchargements"
+          actionHref="/offline"
+        />
       </AppShell>
     );
   }
 
   if (missing) {
     return (
-      <AppShell title="Hors-ligne">
-        <p className="text-body-md">Contenu disponible uniquement en ligne.</p>
-        <Link href="/offline" className="mt-4 inline-flex text-label-md underline">
-          Gérer les téléchargements
-        </Link>
+      <AppShell title="Hors-ligne" frame="workspace">
+        <EmptyState
+          title="Disponible uniquement en ligne."
+          description="Cette fiche n’est pas présente dans les téléchargements de cet appareil."
+          actionLabel="Gérer les téléchargements"
+          actionHref="/offline"
+        />
       </AppShell>
     );
   }
 
   if (!payload) {
     return (
-      <AppShell title="Hors-ligne">
-        <p className="text-body-sm text-on-surface-variant">Ouverture du contenu local…</p>
+      <AppShell title="Hors-ligne" frame="workspace">
+        <LoadingIndicator label="Ouverture du contenu local…" />
       </AppShell>
     );
   }
@@ -83,15 +87,15 @@ export function OfflineContentView({ contentType, slug }: OfflineContentViewProp
   const title = String(payload.title ?? slug);
 
   return (
-    <AppShell title={title}>
-      <p className="text-label-sm text-on-surface-variant">Copie locale chiffrée</p>
+    <AppShell title={title} pageHeading={contentType === "calculator"} frame="workspace">
+      <StatusBadge tone="downloaded">Copie locale · version résumée</StatusBadge>
       {contentType === "calculator" ? (
         <div className="mt-4">
           <GeneratedFormulaCalculator data={payload as unknown as CalculatorRenderData} />
         </div>
       ) : (
         <article className="mt-4 space-y-3">
-          <h2 className="text-headline-sm">{title}</h2>
+          <h1 className="text-headline-sm">{title}</h1>
           <p className="text-body-sm text-on-surface-variant">
             Fiche téléchargée. Version hors-ligne résumée. La mise en page complète
             est disponible en ligne.

@@ -18,8 +18,6 @@ export function GlasgowOptionGroup({
   value,
   onChange,
 }: GlasgowOptionGroupProps) {
-  const columns = options.length === 4 ? "grid-cols-4" : "grid-cols-3";
-
   return (
     <section>
       <div className="mb-2 flex items-end justify-between gap-2">
@@ -31,7 +29,7 @@ export function GlasgowOptionGroup({
       <div
         role="radiogroup"
         aria-label={label}
-        className={cn("grid gap-1.5", columns)}
+        className={cn("grid grid-cols-2 gap-1.5 sm:grid-cols-3", options.length === 4 && "sm:grid-cols-4")}
       >
         {options.map((option) => {
           const selected = option.value === value;
@@ -44,10 +42,10 @@ export function GlasgowOptionGroup({
               aria-label={option.ariaLabel}
               onClick={() => onChange(option.value)}
               className={cn(
-                "flex min-h-[56px] flex-col items-center justify-center rounded-xl px-1 py-1.5 text-center active:scale-[0.98]",
+                "motion-color flex min-h-11 flex-col items-center justify-center rounded-[var(--radius-control)] px-1 py-1.5 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
                 selected
-                  ? "bg-primary text-on-primary"
-                  : "bg-surface-container-low text-on-surface-variant",
+                  ? "bg-action-primary font-semibold text-text-inverse"
+                  : "bg-surface-muted text-text-secondary",
               )}
             >
               <span className="text-label-md font-medium">{option.value}</span>

@@ -1,7 +1,7 @@
 "use client";
 
 import { CatIcon } from "./cat-icons";
-import { cn } from "@/lib/utils";
+import { FilterChip, FilterChipRow } from "@/components/ui/FilterChip";
 import type { CatEmergencyFilter, CatSubFilter } from "@/types/cat";
 
 type CatEmergencyFilterChipsProps = {
@@ -16,28 +16,21 @@ export function CatEmergencyFilterChips({
   onSelect,
 }: CatEmergencyFilterChipsProps) {
   return (
-    <div className="flex gap-2 overflow-x-auto no-scrollbar">
-      {filters.map((filter) => {
-        const isActive = active === filter.id;
-        return (
-          <button
-            key={filter.id}
-            type="button"
-            onClick={() => onSelect(filter.id)}
-            className={cn(
-              "flex h-8 shrink-0 items-center gap-1.5 rounded-lg px-3 text-label-sm",
-              isActive
-                ? "bg-surface-container-highest text-on-surface"
-                : "bg-surface-container-low text-on-surface-variant",
-            )}
-          >
-            {filter.alert ? (
-              <CatIcon name="alert" className="size-3.5 text-error" />
-            ) : null}
-            {filter.label}
-          </button>
-        );
-      })}
-    </div>
+    <FilterChipRow label="Filtres d'urgence">
+      {filters.map((filter) => (
+        <FilterChip
+          key={filter.id}
+          selected={active === filter.id}
+          onClick={() => onSelect(filter.id)}
+          leading={
+            filter.alert ? (
+              <CatIcon name="alert" className="size-3.5 text-status-danger" />
+            ) : null
+          }
+        >
+          {filter.label}
+        </FilterChip>
+      ))}
+    </FilterChipRow>
   );
 }

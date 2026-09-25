@@ -12,7 +12,7 @@ export function DrugTabs({ slug, active }: DrugTabsProps) {
   return (
     <nav
       aria-label="Sections de la fiche médicament"
-      className="sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-surface/90 px-4 py-2 backdrop-blur-xl"
+      className="layout-sticky-under-header layout-gutter-bleed sticky z-[var(--z-sticky)] bg-surface/90 py-2 backdrop-blur-xl"
     >
       <div className="flex gap-2 overflow-x-auto no-scrollbar">
         {DRUG_TABS.map((tab) => {
@@ -23,10 +23,10 @@ export function DrugTabs({ slug, active }: DrugTabsProps) {
               href={drugDetailHref(slug, tab.id)}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex h-8 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
                 isActive
-                  ? "bg-primary text-on-primary shadow-sm"
-                  : "bg-surface-container-low text-on-surface-variant",
+                  ? "bg-action-primary font-semibold text-text-inverse"
+                  : "bg-surface-muted text-text-secondary",
               )}
             >
               {tab.label}

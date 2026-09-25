@@ -20,7 +20,7 @@ export function FrequentDrugsGrid({ drugs }: FrequentDrugsGridProps) {
           <Link
             key={drug.id}
             href={drug.href}
-            className="flex min-h-[132px] flex-col rounded-2xl bg-surface-container-lowest p-3.5 shadow-sm active:scale-[0.98]"
+            className="flex min-h-[132px] flex-col rounded-2xl bg-surface-container-lowest p-3.5 shadow-sm motion-surface active:bg-surface-container"
           >
             <span className="flex items-start justify-between gap-2">
               <span className="flex size-9 items-center justify-center rounded-lg bg-surface-container-low">

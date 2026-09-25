@@ -36,8 +36,14 @@ export type HomeUpdate = {
   footer?: string;
 };
 
+import type { CalculatorType } from "@/types/calculators";
+
 export type ScoreShortcut = {
   id: string;
+  slug: string;
+  /** Nabda parent entity for stable keys and publication checks. */
+  contentType: "calculator";
+  catalogType: CalculatorType;
   title: string;
   subtitle: string;
   href: string;
@@ -52,15 +58,6 @@ export type RecommendationRow = {
   typeLabel: string;
   href: string;
   icon: string;
-};
-
-export type ToolRow = {
-  id: string;
-  title: string;
-  subtitle: string;
-  href: string;
-  icon: string;
-  cta: string;
 };
 
 export type SearchChip = {

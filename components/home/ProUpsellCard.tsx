@@ -1,25 +1,23 @@
-import Link from "next/link";
+import { Button } from "@/components/ui/Button";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
 
 export function ProUpsellCard() {
   return (
-    <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
+    <Surface variant="muted" as="aside" className="flex flex-col gap-3">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <p className="text-label-sm text-on-surface-variant">Nabda Pro</p>
-          <h2 className="mt-1 text-headline-sm">Débloquez les packs hors ligne</h2>
+        <div className="min-w-0">
+          <h2 className="text-headline-sm">Packs hors-ligne</h2>
+          <p className="mt-1 text-body-sm text-text-secondary">
+            Les packs hors-ligne se gèrent dans Hors-ligne. Les éléments Pro
+            restent indiqués avant le téléchargement.
+          </p>
         </div>
-        <span className="text-label-sm text-on-surface-variant">Garde sereine</span>
+        <StatusBadge tone="free">Gratuit</StatusBadge>
       </div>
-      <p className="mt-2 text-body-sm text-on-surface-variant">
-        Les packs hors-ligne se gèrent dans Hors-ligne. Les éléments Pro restent
-        indiqués avant le téléchargement.
-      </p>
-      <Link
-        href="/offline"
-        className="mt-4 flex h-11 items-center justify-center rounded-lg bg-primary text-label-md text-on-primary"
-      >
+      <Button variant="secondary" href="/offline">
         Ouvrir Hors-ligne
-      </Link>
-    </section>
+      </Button>
+    </Surface>
   );
 }

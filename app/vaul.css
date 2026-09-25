@@ -1,9 +1,17 @@
 [data-vaul-drawer] {
   touch-action: none;
-  will-change: transform;
-  transition: transform 0.5s cubic-bezier(0.32, 0.72, 0, 1);
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  transition-property: transform;
+  transition-duration: var(--motion-overlay);
+  transition-timing-function: var(--ease-enter);
+  animation-duration: var(--motion-overlay);
+  animation-timing-function: var(--ease-enter);
+}
+
+[data-vaul-drawer][data-state="closed"] {
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-exit);
+  animation-duration: var(--duration-fast);
+  animation-timing-function: var(--ease-exit);
 }
 
 [data-vaul-drawer][data-vaul-snap-points="false"][data-vaul-drawer-direction="bottom"][data-state="open"] {
@@ -67,8 +75,13 @@
 }
 
 [data-vaul-overlay][data-vaul-snap-points="false"] {
-  animation-duration: 0.5s;
-  animation-timing-function: cubic-bezier(0.32, 0.72, 0, 1);
+  animation-duration: var(--duration-standard);
+  animation-timing-function: var(--ease-enter);
+}
+
+[data-vaul-overlay][data-vaul-snap-points="false"][data-state="closed"] {
+  animation-duration: var(--duration-fast);
+  animation-timing-function: var(--ease-exit);
 }
 [data-vaul-overlay][data-vaul-snap-points="false"][data-state="open"] {
   animation-name: fadeIn;
@@ -83,7 +96,14 @@
 
 [data-vaul-overlay][data-vaul-snap-points="true"] {
   opacity: 0;
-  transition: opacity 0.5s cubic-bezier(0.32, 0.72, 0, 1);
+  transition-property: opacity;
+  transition-duration: var(--duration-standard);
+  transition-timing-function: var(--ease-enter);
+}
+
+[data-vaul-overlay][data-vaul-snap-points="true"][data-state="closed"] {
+  transition-duration: var(--duration-fast);
+  transition-timing-function: var(--ease-exit);
 }
 
 [data-vaul-overlay][data-vaul-snap-points="true"] {

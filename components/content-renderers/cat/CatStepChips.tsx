@@ -8,6 +8,7 @@ import {
   catGroupAnchorId,
   catImageAnchorId,
 } from "@/lib/content-rendering/cat";
+import { scrollElementIntoView, scrollWindowTo } from "@/lib/ui/scroll-behavior";
 import type { CatRenderGroup, CatRenderMode } from "@/types/content-rendering-cat";
 
 type CatStepChipsProps = {
@@ -67,8 +68,16 @@ export function CatStepChips({
 
   useEffect(() => {
     const active = stripRef.current?.querySelector("[aria-current='true']");
-    active?.scrollIntoView({ inline: "center", block: "nearest", behavior: "smooth" });
+    if (active) {
+      scrollElementIntoView(active, { inline: "center", block: "nearest" });
+    }
   }, [activeId, mode]);
+
+  const imageScrollTimer = useRef(0);
+
+  useEffect(() => {
+    return () => window.clearTimeout(imageScrollTimer.current);
+  }, []);
 
   const chips =
     mode === "garde"
@@ -91,7 +100,7 @@ export function CatStepChips({
     <nav
       data-preview-chips=""
       aria-label="Groupes d'étapes"
-      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
+      className="preview-chip-nav layout-sticky-under-header sticky z-[var(--z-sticky)] -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
       <div ref={stripRef} className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {chips.map((chip) => {
@@ -111,17 +120,19 @@ export function CatStepChips({
               onClick={() => {
                 if (chip.isTout) {
                   onSelectTout();
-                  window.scrollTo({ top: SCROLL_TOP_OFFSET, behavior: "smooth" });
+                  scrollWindowTo({ top: SCROLL_TOP_OFFSET });
                   onActiveId("tout");
                   return;
                 }
                 if (chip.isImage) {
                   onSelectImage();
                   onActiveId("image");
-                  window.setTimeout(() => {
-                    document
-                      .getElementById(catImageAnchorId())
-                      ?.scrollIntoView({ behavior: "smooth", block: "start" });
+                  window.clearTimeout(imageScrollTimer.current);
+                  imageScrollTimer.current = window.setTimeout(() => {
+                    const node = document.getElementById(catImageAnchorId());
+                    if (node) {
+                      scrollElementIntoView(node, { block: "start" });
+                    }
                   }, 50);
                   return;
                 }
@@ -129,12 +140,12 @@ export function CatStepChips({
                   catGroupAnchorId(chip.targetId),
                 );
                 if (target) {
-                  target.scrollIntoView({ behavior: "smooth", block: "start" });
+                  scrollElementIntoView(target, { block: "start" });
                 }
                 onActiveId(chip.targetId);
               }}
               className={cn(
-                "flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
                 !exists && "opacity-40",
                 isActive
                   ? "is-current bg-primary font-semibold text-on-primary shadow-sm"

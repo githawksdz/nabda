@@ -26,11 +26,10 @@ export function catUpdateFromDbMap(row: CatMap): CatUpdate {
     slug: row.slug,
     title: row.title,
     meta: row.summary ?? "CAT",
-    statusLabel:
-      doctorCatalogStatusLabel({
-        publicationStatus: row.status,
-        visibility: row.visibility,
-      }) ?? "Contenu en préparation",
+    statusLabel: doctorCatalogStatusLabel({
+      publicationStatus: row.status,
+      visibility: row.visibility,
+    }),
     href: `/cat/${row.slug}`,
   };
 }

@@ -1,11 +1,8 @@
-import { Smartphone } from "lucide-react";
-import { AUTH_INFO } from "@/lib/auth/error-messages";
 import { cn } from "@/lib/utils";
 
 type SocialAuthRowProps = {
   prompt: string;
   onGoogle: () => void;
-  onPhone?: (message: string) => void;
   googlePending?: boolean;
 };
 
@@ -35,7 +32,6 @@ function GoogleMark() {
 export function SocialAuthRow({
   prompt,
   onGoogle,
-  onPhone,
   googlePending = false,
 }: SocialAuthRowProps) {
   return (
@@ -54,17 +50,6 @@ export function SocialAuthRow({
           )}
         >
           <GoogleMark />
-        </button>
-        <button
-          type="button"
-          aria-label="Continuer par téléphone"
-          onClick={() => onPhone?.(AUTH_INFO.phoneSoon)}
-          className={cn(
-            "flex size-12 items-center justify-center rounded-full bg-surface-container-lowest shadow-sm ring-1 ring-outline-variant/70",
-            "focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary",
-          )}
-        >
-          <Smartphone className="size-5 text-on-surface" strokeWidth={1.75} />
         </button>
       </div>
     </div>

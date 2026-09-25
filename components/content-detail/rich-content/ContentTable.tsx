@@ -21,8 +21,8 @@ export function ContentTable({ caption, headers, rows }: ContentTableProps) {
                 key={`${headers[index] ?? index}-${cell}`}
                 className={
                   index === 0
-                    ? "text-label-md"
-                    : "mt-1 text-body-sm text-on-surface-variant"
+                    ? "text-label-md [overflow-wrap:anywhere]"
+                    : "mt-1 text-body-sm text-text-secondary [overflow-wrap:anywhere]"
                 }
               >
                 {cell}

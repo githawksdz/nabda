@@ -153,13 +153,3 @@ export type CalculatorVariablePreview = {
   label: string;
   points: string;
 };
-
-export type CalculatorPreparationCopy = {
-  versionLabel?: string;
-  noticeTitle: string;
-  noticeBody: string;
-  variablesTitle?: string;
-  variables: CalculatorVariablePreview[];
-  resourcesTitle?: string;
-  resources: LinkedCalculatorResource[];
-};

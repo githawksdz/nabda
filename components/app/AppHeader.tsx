@@ -1,6 +1,12 @@
 import Link from "next/link";
 import { ArrowLeft, LayoutGrid, Search, User } from "lucide-react";
 import type { ReactNode } from "react";
+import {
+  LAYOUT_FRAME,
+  LAYOUT_GUTTER,
+  type ShellFrame,
+} from "@/lib/layout/frames";
+import { cn } from "@/lib/utils";
 
 type AppHeaderProps = {
   title?: string;
@@ -9,6 +15,8 @@ type AppHeaderProps = {
   modulesOpen?: boolean;
   onOpenModules?: () => void;
   backHref?: string;
+  pageHeading?: boolean;
+  frame?: ShellFrame;
 };
 
 export function AppHeader({
@@ -18,10 +26,20 @@ export function AppHeader({
   modulesOpen = false,
   onOpenModules,
   backHref,
+  pageHeading = true,
+  frame = "workspace",
 }: AppHeaderProps) {
+  const titleClassName = "min-w-0 truncate text-headline-sm";
+
   return (
-    <header className="fixed top-0 right-0 left-0 z-50 bg-surface/85 pt-safe shadow-[0_1px_8px_rgba(0,0,0,0.04)] backdrop-blur-xl lg:left-60">
-      <div className="mx-auto flex h-14 w-full max-w-[42rem] items-center justify-between gap-2 px-4 lg:max-w-none">
+    <header className="fixed top-0 right-0 left-0 z-[var(--z-header)] bg-surface/85 pt-safe shadow-[var(--shadow-subtle)] backdrop-blur-xl lg:left-[var(--layout-sidebar)]">
+      <div
+        className={cn(
+          "flex h-[var(--layout-header-height)] w-full items-center justify-between gap-2",
+          LAYOUT_GUTTER,
+          LAYOUT_FRAME[frame],
+        )}
+      >
         <div className="flex min-w-0 items-center gap-1">
           {backHref ? (
             <Link
@@ -33,7 +51,11 @@ export function AppHeader({
               Retour
             </Link>
           ) : null}
-          <h1 className="min-w-0 truncate text-headline-sm">{title}</h1>
+          {pageHeading ? (
+            <h1 className={titleClassName}>{title}</h1>
+          ) : (
+            <p className={titleClassName}>{title}</p>
+          )}
         </div>
         <div className="flex shrink-0 items-center gap-1.5">
           <Link

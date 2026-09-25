@@ -10,17 +10,20 @@ import { HomeSearchBar } from "@/components/home/HomeSearchBar";
 import { OfflinePackCard } from "@/components/home/OfflinePackCard";
 import { ProUpsellCard } from "@/components/home/ProUpsellCard";
 import { ProfileCompletionCard } from "@/components/home/ProfileCompletionCard";
+import { Surface } from "@/components/ui/Surface";
 import {
   freemiumSearchChips,
   incompleteSearchChips,
 } from "@/lib/home/home-ui-config";
-import { getHomeDemoFixturesSync } from "@/lib/demo-fixtures/load";
 import type { HomeMode, HomeUpdate, HomeUser, ScoreShortcut } from "@/types/home";
 import type { HistoryItem } from "@/types/personal";
 
 type HomeDashboardProps = {
   mode: HomeMode;
   user: HomeUser;
+  signedIn?: boolean;
+  feedUnavailable?: boolean;
+  completionPercent?: number;
   scores?: ScoreShortcut[];
   updates?: HomeUpdate[];
   recents?: HistoryItem[];
@@ -29,6 +32,9 @@ type HomeDashboardProps = {
 export function HomeDashboard({
   mode,
   user,
+  signedIn = false,
+  feedUnavailable = false,
+  completionPercent,
   scores = [],
   updates = [],
   recents = [],
@@ -40,26 +46,41 @@ export function HomeDashboard({
       : mode === "freemium-complete"
         ? freemiumSearchChips
         : [];
-  const demo = getHomeDemoFixturesSync();
   const resumeItem = recents[0] ?? null;
   const frequentRecents = recents.slice(resumeItem ? 1 : 0);
-  const clinicalUpdates = updates;
-  const usefulScores = scores.length > 0 ? scores : demo?.usefulScores ?? [];
 
   return (
-    <AppShell>
-      <div className="flex flex-col gap-5">
-        <HomeIdentityBar user={user} mode={mode} />
-        <HomeSearchBar mode={mode} chips={chips} />
-        <HomeResumeSection item={resumeItem} />
-        <HomeFrequentSection recents={frequentRecents} scores={usefulScores} />
-        <ClinicalUpdates updates={clinicalUpdates} />
+    <AppShell title="Accueil">
+      <div className="flex flex-col gap-6 pt-1 lg:gap-8">
+        <HomeIdentityBar user={user} mode={mode} signedIn={signedIn} />
+        <HomeSearchBar chips={chips} />
 
-        {mode === "incomplete" && !hideReward ? (
-          <ProfileCompletionCard onDefer={() => setHideReward(true)} />
+        {feedUnavailable ? (
+          <Surface variant="muted" className="py-3" role="status">
+            <p className="text-body-sm text-text-secondary">
+              Les contenus récents n&apos;ont pas pu être chargés. Réessayez dans
+              un instant.
+            </p>
+          </Surface>
         ) : null}
-        {mode === "freemium-complete" ? <ProUpsellCard /> : null}
-        {mode === "pro-practitioner" ? <OfflinePackCard /> : null}
+
+        <div className="grid items-start gap-6 lg:grid-cols-2 lg:gap-8">
+          <HomeResumeSection item={resumeItem} />
+          <HomeFrequentSection recents={frequentRecents} featuredScores={scores} />
+        </div>
+
+        <ClinicalUpdates updates={updates} />
+
+        <div className="layout-reading flex flex-col gap-4">
+          {signedIn && mode === "incomplete" && !hideReward ? (
+            <ProfileCompletionCard
+              onDefer={() => setHideReward(true)}
+              percent={completionPercent}
+            />
+          ) : null}
+          {mode === "freemium-complete" ? <ProUpsellCard /> : null}
+          {mode === "pro-practitioner" ? <OfflinePackCard /> : null}
+        </div>
       </div>
     </AppShell>
   );

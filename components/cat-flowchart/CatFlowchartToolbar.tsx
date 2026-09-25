@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { Crosshair, Minus, Plus, Scan } from "lucide-react";
 import { useControls, useTransformEffect } from "react-zoom-pan-pinch";
+import { preferredMotionDuration } from "@/lib/ui/scroll-behavior";
 
 export function CatFlowchartToolbar() {
   const { zoomIn, zoomOut, centerView, fitToView } = useControls();
@@ -27,7 +28,10 @@ export function CatFlowchartToolbar() {
           type="button"
           aria-label="Ajuster à la vue"
           onClick={() => {
-            void fitToView({ mode: "contain", animationTime: 220 });
+            void fitToView({
+              mode: "contain",
+              animationTime: preferredMotionDuration(220),
+            });
           }}
           className="flex size-8 items-center justify-center text-on-surface-variant"
         >
@@ -37,7 +41,7 @@ export function CatFlowchartToolbar() {
           type="button"
           aria-label="Centrer la vue"
           onClick={() => {
-            void centerView(undefined, 220);
+            void centerView(undefined, preferredMotionDuration(220));
           }}
           className="flex size-8 items-center justify-center text-on-surface-variant"
         >
@@ -47,7 +51,7 @@ export function CatFlowchartToolbar() {
           type="button"
           aria-label="Zoom arrière"
           onClick={() => {
-            void zoomOut(0.18, 160);
+            void zoomOut(0.18, preferredMotionDuration(160));
           }}
           className="flex size-8 items-center justify-center text-on-surface-variant"
         >
@@ -57,7 +61,7 @@ export function CatFlowchartToolbar() {
           type="button"
           aria-label="Zoom avant"
           onClick={() => {
-            void zoomIn(0.18, 160);
+            void zoomIn(0.18, preferredMotionDuration(160));
           }}
           className="flex size-8 items-center justify-center text-on-surface-variant"
         >

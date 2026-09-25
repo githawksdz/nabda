@@ -18,9 +18,11 @@ export function CatUpdateRow({ update }: CatUpdateRowProps) {
           {update.meta}
         </span>
       </span>
-      <span className="shrink-0 rounded-full bg-surface-container-high px-2 py-0.5 text-label-sm text-on-surface-variant">
-        {update.statusLabel}
-      </span>
+      {update.statusLabel ? (
+        <span className="shrink-0 rounded-full bg-surface-container-high px-2 py-0.5 text-label-sm text-on-surface-variant">
+          {update.statusLabel}
+        </span>
+      ) : null}
       <ChevronRight className="size-5 shrink-0 text-outline" strokeWidth={1.75} />
     </Link>
   );

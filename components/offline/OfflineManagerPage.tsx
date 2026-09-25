@@ -1,10 +1,17 @@
-"use client";
+﻿"use client";
 
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useRef, useState, type TransitionEvent } from "react";
 import Link from "next/link";
 import { AppShell } from "@/components/app/AppShell";
+import { Button } from "@/components/ui/Button";
+import { EmptyState } from "@/components/ui/EmptyState";
+import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
+import { OfflineProgressStatus } from "@/components/ui/OfflineProgressStatus";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
 import { createClient } from "@/lib/supabase/client";
 import { contentRepository } from "@/lib/offline/repository";
+import { prefersReducedMotion } from "@/lib/ui/scroll-behavior";
 import { loadCalculatorEngine } from "@/lib/calculators/engine-registry";
 import type {
   LocalContentRecord,
@@ -33,7 +40,7 @@ function errorCopy(reason: string): string {
     return "Contenu disponible uniquement en ligne.";
   }
   if (reason === "storage_full") {
-    return "Espace de stockage insuffisant. Libérez de l’espace puis réessayez.";
+    return "Espace de stockage insuffisant. Libérez de l'espace puis réessayez.";
   }
   if (reason === "offline") return "Connexion requise pour télécharger.";
   if (reason === "checksum_mismatch") {
@@ -60,6 +67,9 @@ export function OfflineManagerPage() {
   const [error, setError] = useState<string | null>(null);
   const [search, setSearch] = useState("");
   const [searchHits, setSearchHits] = useState<{ title: string; href: string }[]>([]);
+  const [exitingId, setExitingId] = useState<string | null>(null);
+  const downloadedListRef = useRef<HTMLUListElement>(null);
+  const downloadedHeadingRef = useRef<HTMLHeadingElement>(null);
 
   const refresh = useCallback(async (uid: string) => {
     const [nextStatus, nextLocal, nextManifest] = await Promise.all([
@@ -158,10 +168,41 @@ export function OfflineManagerPage() {
     }
   }
 
-  async function removeLocal(type: OfflineContentType, slug: string) {
-    if (!userId) return;
+  function focusDownloadedItem(index: number) {
+    const items = downloadedListRef.current?.querySelectorAll<HTMLElement>("[data-offline-item]");
+    const target = items?.[index] ?? items?.[index - 1];
+    const focusable = target?.querySelector<HTMLElement>("a, button");
+    if (focusable) {
+      focusable.focus();
+      return;
+    }
+    downloadedHeadingRef.current?.focus();
+  }
+
+  async function removeLocal(type: OfflineContentType, slug: string, id: string) {
+    if (!userId || exitingId) return;
+    const index = local.findIndex((item) => item.id === id);
     await contentRepository.removeItem(userId, type, slug);
-    await refresh(userId);
+    if (prefersReducedMotion()) {
+      await refresh(userId);
+      window.requestAnimationFrame(() => focusDownloadedItem(index));
+      return;
+    }
+    setExitingId(id);
+  }
+
+  function onDownloadedExit(event: TransitionEvent<HTMLLIElement>, id: string) {
+    if (event.propertyName !== "opacity" || event.target !== event.currentTarget) {
+      return;
+    }
+    if (exitingId !== id || !userId) {
+      return;
+    }
+    const index = local.findIndex((item) => item.id === id);
+    setExitingId(null);
+    void refresh(userId).then(() => {
+      window.requestAnimationFrame(() => focusDownloadedItem(index));
+    });
   }
 
   async function runSearch(value: string) {
@@ -176,192 +217,250 @@ export function OfflineManagerPage() {
 
   const lastSync = !status?.lastSyncAt
     ? "Jamais synchronisé"
-    : `Dernière synchro ${new Date(status.lastSyncAt).toLocaleString("fr-FR")}`;
+    : `Dernière vérification ${new Date(status.lastSyncAt).toLocaleString("fr-FR")}`;
 
   return (
-    <AppShell title="Hors-ligne">
-      <div className="flex flex-col gap-5">
+    <AppShell title="Hors-ligne" frame="workspace">
+      <div className="flex min-w-0 flex-col gap-5 pt-2">
+        <header className="flex flex-col gap-1">
+          <p className="text-body-md text-text-secondary">
+            Contenus téléchargés sur cet appareil. Rien n’est téléchargé automatiquement.
+          </p>
+        </header>
+
         {!authReady ? (
-          <p className="text-body-sm">Vérification du compte…</p>
+          <LoadingIndicator label="Vérification du compte…" />
         ) : null}
+
         {authReady && !userId ? (
-          <section className="rounded-2xl bg-surface-container-low p-4">
-            <p className="text-body-md">Connectez-vous pour télécharger.</p>
-            <Link href="/" className="mt-2 inline-flex min-h-11 items-center font-semibold">
-              Se connecter
-            </Link>
-          </section>
+          <EmptyState
+            title="Connectez-vous pour télécharger."
+            description="Les favoris et les contenus hors-ligne sont liés à votre compte."
+            actionLabel="Se connecter"
+            actionHref="/"
+          />
         ) : null}
 
-        {userId ? (
-          <section className="rounded-2xl bg-surface-container-low p-4">
-            <p className="text-label-sm text-on-surface-variant">
-              {status?.online ? "En ligne" : "Hors-ligne"}
+        {userId && status ? (
+          <Surface variant="muted" className="flex flex-col gap-2">
+            <div className="flex flex-wrap gap-1.5">
+              <StatusBadge tone={status.online ? "downloaded" : "offline"}>
+                {status.online ? "En ligne" : "Hors-ligne"}
+              </StatusBadge>
+              {status.updateAvailable ? (
+                <StatusBadge tone="stale">Mise à jour disponible</StatusBadge>
+              ) : null}
+            </div>
+            <p className="text-body-sm text-text-secondary">{lastSync}</p>
+            <p className="text-body-sm text-text-secondary">
+              {status.itemCount} contenus آ· {formatBytes(status.storageBytes)}
             </p>
-            <p className="mt-1 text-body-sm">{lastSync}</p>
-            <p className="mt-1 text-body-sm">
-              {status?.itemCount ?? 0} contenus · {formatBytes(status?.storageBytes ?? 0)}
-            </p>
-            {status?.updateAvailable ? (
-              <p className="mt-2 text-body-sm">Mise à jour disponible</p>
-            ) : null}
-          </section>
+          </Surface>
         ) : null}
 
-        {progress ? <p className="text-body-sm">{progress}</p> : null}
-        {error ? <p className="text-body-sm">{error}</p> : null}
+        {progress ? (
+          <Surface variant="muted">
+            <OfflineProgressStatus label={progress} />
+          </Surface>
+        ) : null}
+
+        {error ? (
+          <Surface variant="muted">
+            <StatusBadge
+              tone={
+                error.startsWith("Pro requis")
+                  ? "pro"
+                  : error.includes("Connectez-vous")
+                    ? "info"
+                    : error.includes("uniquement en ligne") ||
+                        error.includes("Connexion requise")
+                      ? "offline"
+                      : "error"
+              }
+            >
+              {error}
+            </StatusBadge>
+          </Surface>
+        ) : null}
 
         {userId ? (
           <>
-            <label className="flex flex-col gap-1.5">
-              <span className="text-label-md">Recherche locale</span>
+            <label className="flex min-w-0 flex-col gap-1.5">
+              <span className="text-label-md text-text-primary">Recherche locale</span>
               <input
                 value={search}
                 onChange={(event) => void runSearch(event.target.value)}
-                className="min-h-11 rounded-xl bg-surface-container-low px-3.5 py-2.5 text-body-sm"
+                className="min-h-11 rounded-[var(--radius-control)] bg-surface-muted px-3.5 text-body-md"
                 placeholder="Titre déjà téléchargé"
               />
             </label>
             {searchHits.length > 0 ? (
-              <ul className="space-y-2">
+              <ul className="flex flex-col gap-1.5">
                 {searchHits.map((hit) => (
                   <li key={hit.href}>
-                    <Link href={hit.href} className="block rounded-xl bg-surface-container-low px-3.5 py-3 text-body-sm">
+                    <Link
+                      href={hit.href}
+                      className="block min-h-11 rounded-[var(--radius-card)] bg-surface-muted px-3.5 py-3 text-body-md"
+                    >
                       {hit.title}
                     </Link>
                   </li>
                 ))}
               </ul>
             ) : search.trim() ? (
-              <p className="text-body-sm text-on-surface-variant">Aucun contenu téléchargé ne correspond.</p>
+              <p className="text-body-sm text-text-secondary">
+                Aucun contenu téléchargé ne correspond.
+              </p>
             ) : null}
 
-            <section>
+            <section className="flex flex-col gap-2">
               <h2 className="text-headline-sm">Packs</h2>
-              <div className="mt-3 space-y-3">
-                {(manifest?.packs ?? []).map((pack) => (
-                  <article key={pack.slug} className="rounded-2xl bg-surface-container-low p-4">
-                    <p className="text-label-sm text-on-surface-variant">
-                      {pack.visibility === "premium" ? "Pro" : "Gratuit"} · v{pack.version} · {pack.itemCount} items
-                    </p>
-                    <h3 className="mt-1 text-body-md font-medium">{pack.title}</h3>
-                    <button
-                      type="button"
-                      className="mt-3 inline-flex min-h-11 items-center rounded-lg bg-primary px-3 text-label-md text-on-primary disabled:opacity-50"
-                      onClick={() => void downloadPack(pack.slug)}
-                      disabled={!status?.online}
-                    >
-                      Télécharger le pack
-                    </button>
-                    {!status?.online ? (
-                      <p className="mt-2 text-label-sm text-on-surface-variant">
-                        Connexion requise pour télécharger.
-                      </p>
-                    ) : null}
-                  </article>
-                ))}
-                {(manifest?.packs ?? []).length === 0 ? (
-                  <p className="text-body-sm text-on-surface-variant">
-                    Aucun pack publié pour votre accès.
-                  </p>
-                ) : null}
-              </div>
+              {(manifest?.packs ?? []).length === 0 ? (
+                <p className="text-body-sm text-text-secondary">
+                  Aucun pack publié pour votre accès.
+                </p>
+              ) : (
+                <ul className="flex flex-col gap-2">
+                  {(manifest?.packs ?? []).map((pack) => (
+                    <li key={pack.slug}>
+                      <Surface variant="muted" className="flex flex-col gap-2">
+                        <div className="flex flex-wrap gap-1.5">
+                          <StatusBadge tone="muted">Pack</StatusBadge>
+                          <StatusBadge tone={pack.visibility === "premium" ? "pro" : "free"}>
+                            {pack.visibility === "premium" ? "Pro" : "Gratuit"}
+                          </StatusBadge>
+                          <StatusBadge tone="muted">{pack.itemCount} contenus</StatusBadge>
+                        </div>
+                        <h3 className="text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+                          {pack.title}
+                        </h3>
+                        <Button
+                          onClick={() => void downloadPack(pack.slug)}
+                          disabled={!status?.online}
+                        >
+                          Télécharger le pack
+                        </Button>
+                        {!status?.online ? (
+                          <p className="text-label-sm text-text-secondary">
+                            Connexion requise pour télécharger.
+                          </p>
+                        ) : null}
+                      </Surface>
+                    </li>
+                  ))}
+                </ul>
+              )}
             </section>
 
-            <section>
-              <h2 className="text-headline-sm">Items individuels</h2>
-              <div className="mt-3 space-y-2">
+            <section className="flex flex-col gap-2">
+              <h2 className="text-headline-sm">Contenus individuels</h2>
+              <ul className="flex flex-col gap-1.5">
                 {(manifest?.individual ?? []).slice(0, 40).map((item) => (
-                  <div
+                  <li
                     key={`${item.contentType}:${item.slug}`}
-                    className="flex items-center justify-between gap-3 rounded-xl bg-surface-container-low px-3.5 py-3"
+                    className="flex min-w-0 items-center justify-between gap-3 rounded-[var(--radius-card)] bg-surface-muted px-3 py-2.5"
                   >
-                    <div>
-                      <p className="text-body-sm">{item.title}</p>
-                      <p className="text-label-sm text-on-surface-variant">
-                        {TYPE_LABEL[item.contentType]} · {item.visibility === "premium" ? "Pro" : "Gratuit"}
-                      </p>
-                    </div>
-                    <button
-                      type="button"
-                      className="inline-flex min-h-11 items-center px-2 text-label-sm font-semibold disabled:opacity-50"
+                    <span className="min-w-0">
+                      <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+                        {item.title}
+                      </span>
+                      <span className="mt-1 flex flex-wrap gap-1.5">
+                        <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
+                        <StatusBadge tone={item.visibility === "premium" ? "pro" : "free"}>
+                          {item.visibility === "premium" ? "Pro" : "Gratuit"}
+                        </StatusBadge>
+                      </span>
+                    </span>
+                    <Button
+                      variant="secondary"
                       onClick={() => void downloadItem(item.contentType, item.slug)}
                       disabled={!status?.online}
                     >
                       Télécharger
-                    </button>
-                  </div>
+                    </Button>
+                  </li>
                 ))}
-              </div>
+              </ul>
             </section>
 
-            <section>
-              <h2 className="text-headline-sm">Téléchargés</h2>
+            <section className="flex flex-col gap-2">
+              <h2
+                ref={downloadedHeadingRef}
+                tabIndex={-1}
+                className="text-headline-sm outline-none"
+              >
+                Téléchargés
+              </h2>
               {local.length === 0 ? (
-                <p className="mt-3 text-body-sm text-on-surface-variant">
-                  Aucun contenu téléchargé. Téléchargez une fiche ou un pack pour la
-                  consulter sans connexion.
-                </p>
+                <EmptyState
+                  compact
+                  headingLevel="p"
+                  title="Aucun contenu téléchargé"
+                  description="Téléchargez une fiche ou un pack pour la consulter sans connexion."
+                />
               ) : (
-                <ul className="mt-3 space-y-2">
+                <ul ref={downloadedListRef} className="flex flex-col gap-1.5">
                   {local.map((item) => {
                     const corrupt = corruptIds.has(item.id);
+                    const exiting = exitingId === item.id;
                     return (
                       <li
                         key={item.id}
-                        className="rounded-xl bg-surface-container-low px-3.5 py-3"
+                        data-offline-item=""
+                        data-exiting={exiting ? "true" : undefined}
+                        onTransitionEnd={(event) => onDownloadedExit(event, item.id)}
+                        className="offline-remove rounded-[var(--radius-card)] bg-surface-muted"
                       >
+                        <div className="offline-remove-inner px-3 py-2.5">
                         {corrupt ? (
-                          <>
-                            <p className="text-body-sm">{item.title}</p>
-                            <p className="mt-1 text-label-sm">
-                              Ce contenu local est illisible. Supprimez-le puis
-                              téléchargez-le à nouveau.
-                            </p>
-                            <div className="mt-2 flex flex-wrap gap-3">
-                              <button
-                                type="button"
-                                className="inline-flex min-h-11 items-center font-semibold"
-                                onClick={() => void removeLocal(item.contentType, item.slug)}
+                          <div className="flex flex-col gap-2">
+                            <p className="text-body-md font-medium">{item.title}</p>
+                            <StatusBadge tone="error">
+                              Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau.
+                            </StatusBadge>
+                            <div className="flex flex-wrap gap-2">
+                              <Button
+                                variant="secondary"
+                                onClick={() => void removeLocal(item.contentType, item.slug, item.id)}
+                                disabled={exiting}
                               >
                                 Supprimer
-                              </button>
-                              <button
-                                type="button"
-                                className="inline-flex min-h-11 items-center font-semibold"
+                              </Button>
+                              <Button
                                 onClick={() => void downloadItem(item.contentType, item.slug)}
                                 disabled={!status?.online}
                               >
                                 Télécharger
-                              </button>
+                              </Button>
                             </div>
-                          </>
+                          </div>
                         ) : (
-                          <>
+                          <div className="flex flex-col gap-2">
                             <Link
                               href={`/offline/view/${item.contentType}/${item.slug}`}
-                              className="block"
+                              className="block min-w-0"
                             >
-                              <p className="text-body-sm">{item.title}</p>
-                              <p className="text-label-sm text-on-surface-variant">
-                                {item.stale
-                                  ? "Mise à jour disponible"
-                                  : "Disponible hors-ligne"}
-                                {" · "}
-                                {TYPE_LABEL[item.contentType]}
-                              </p>
+                              <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+                                {item.title}
+                              </span>
+                              <span className="mt-1 flex flex-wrap gap-1.5">
+                                <StatusBadge tone={item.stale ? "stale" : "downloaded"}>
+                                  {item.stale ? "Mise à jour disponible" : "Disponible hors-ligne"}
+                                </StatusBadge>
+                                <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
+                              </span>
                             </Link>
                             {item.stale && status?.online ? (
-                              <button
-                                type="button"
-                                className="mt-2 inline-flex min-h-11 items-center font-semibold"
+                              <Button
+                                variant="secondary"
                                 onClick={() => void downloadItem(item.contentType, item.slug)}
                               >
                                 Mettre à jour
-                              </button>
+                              </Button>
                             ) : null}
-                          </>
+                          </div>
                         )}
+                        </div>
                       </li>
                     );
                   })}

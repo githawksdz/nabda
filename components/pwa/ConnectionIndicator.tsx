@@ -1,13 +1,23 @@
 "use client";
 
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Wifi, WifiOff } from "lucide-react";
+import { StatusBadge } from "@/components/ui/StatusBadge";
 
 export function ConnectionIndicator() {
   const [online, setOnline] = useState(true);
+  const [live, setLive] = useState("");
+  const announced = useRef(false);
 
   useEffect(() => {
-    const sync = () => setOnline(navigator.onLine);
+    const sync = () => {
+      const next = navigator.onLine;
+      setOnline(next);
+      if (announced.current) {
+        setLive(next ? "En ligne" : "Hors-ligne");
+      }
+      announced.current = true;
+    };
     sync();
     window.addEventListener("online", sync);
     window.addEventListener("offline", sync);
@@ -18,12 +28,18 @@ export function ConnectionIndicator() {
   }, []);
 
   return (
-    <span
-      className="inline-flex items-center gap-1 rounded-full bg-surface-container-low px-2 py-1 text-label-sm text-on-surface-variant"
-      aria-live="polite"
-    >
-      {online ? <Wifi className="size-3.5" strokeWidth={1.75} /> : <WifiOff className="size-3.5" strokeWidth={1.75} />}
-      {online ? "En ligne" : "Hors-ligne"}
-    </span>
+    <>
+      <StatusBadge tone={online ? "muted" : "offline"}>
+        {online ? (
+          <Wifi className="size-3.5" strokeWidth={1.75} aria-hidden />
+        ) : (
+          <WifiOff className="size-3.5" strokeWidth={1.75} aria-hidden />
+        )}
+        {online ? "En ligne" : "Hors-ligne"}
+      </StatusBadge>
+      <span className="sr-only" role="status" aria-live="polite">
+        {live}
+      </span>
+    </>
   );
 }

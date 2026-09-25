@@ -69,6 +69,5 @@ export function mapAuthError(error: unknown): string {
 export const AUTH_INFO = {
   confirmEmail: "Vérifiez votre email pour confirmer votre compte.",
   resetSent: "Si un compte existe, un lien sera envoyé.",
-  phoneSoon: "Connexion par téléphone bientôt disponible.",
   googleUnavailable: "Connexion Google indisponible pour le moment.",
 } as const;

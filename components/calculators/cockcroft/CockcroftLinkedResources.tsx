@@ -59,7 +59,7 @@ export function CockcroftLinkedResources() {
               key={resource.id}
               href={resource.href}
               className={cn(
-                "flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm active:scale-[0.99]",
+                "flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm motion-surface active:bg-surface-container",
               )}
             >
               {inner}

@@ -1,5 +1,8 @@
+"use client";
+
 import { CockcroftSpectrumMeter } from "./CockcroftSpectrumMeter";
 import { COCKCROFT_SAFETY_NOTE } from "@/lib/calculators/cockcroft-gault";
+import { useDebouncedAnnouncement } from "@/components/ui/useDebouncedAnnouncement";
 import type { CockcroftResult } from "@/types/calculators";
 
 type CockcroftResultCardProps = {
@@ -7,6 +10,12 @@ type CockcroftResultCardProps = {
 };
 
 export function CockcroftResultCard({ result }: CockcroftResultCardProps) {
+  const announcement = useDebouncedAnnouncement(
+    !result.rangeError && result.display.trim()
+      ? `Clairance calculée ${result.display} mL/min`
+      : "",
+  );
+
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <div className="flex items-start justify-between gap-3">
@@ -17,15 +26,14 @@ export function CockcroftResultCard({ result }: CockcroftResultCardProps) {
           Calcul dynamique
         </span>
       </div>
-      <p
-        role="status"
-        aria-live="polite"
-        className="mt-1 text-display text-on-surface"
-      >
+      <p className="mt-1 text-display text-on-surface">
         {result.display}{" "}
         <span className="text-headline-sm font-semibold text-on-surface-variant">
           mL/min
         </span>
+      </p>
+      <p className="sr-only" role="status" aria-live="polite">
+        {announcement}
       </p>
       <CockcroftSpectrumMeter result={result} />
       {result.rangeError ? (

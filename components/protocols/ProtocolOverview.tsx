@@ -95,7 +95,7 @@ export function ProtocolOverview({ detail }: ProtocolOverviewProps) {
           items={navItems}
           activeSlug={null}
         />
-        <div className="flex min-w-0 flex-col gap-5 lg:max-w-[42rem]">
+        <div className="layout-reading flex flex-col gap-5">
           <ProtocolSectionCards
             protocolSlug={detail.protocol.slug}
             sections={detail.sections}

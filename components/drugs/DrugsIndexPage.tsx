@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import { AppShell } from "@/components/app/AppShell";
+import { IndexPageIntro } from "@/components/discovery/IndexPageIntro";
 import { DrugCategoryChips } from "./DrugCategoryChips";
 import { DrugClassGrid } from "./DrugClassGrid";
 import { DrugDirectoryList } from "./DrugDirectoryList";
@@ -17,6 +18,7 @@ import {
   filterDrugs,
   frequentDrugs,
 } from "@/lib/drugs/drug-ui-config";
+import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import type { DrugCategorySlug, DrugSummary } from "@/types/drugs";
 
 type DrugsIndexPageProps = {
@@ -52,28 +54,26 @@ export function DrugsIndexPage({ drugs = [] }: DrugsIndexPageProps) {
 
   function scrollToFilters() {
     document.getElementById("drug-search")?.focus();
-    document.getElementById("drug-filters")?.scrollIntoView({
-      behavior: "smooth",
-      block: "start",
-    });
+    const filters = document.getElementById("drug-filters");
+    if (filters) {
+      scrollElementIntoView(filters, { block: "start" });
+    }
   }
 
   return (
     <AppShell
       title="Médicaments"
+      pageHeading={false}
       navVariant="text"
-      frameClassName="max-w-[390px]"
+      frame="clinical"
       avatarDot
-      contentClassName="pb-[calc(96px+env(safe-area-inset-bottom,0px))]"
       headerActions={<DrugsHeader onTune={scrollToFilters} />}
     >
-      <div className="flex flex-col gap-5 pt-2">
-        <section className="flex flex-col gap-2">
-          <h2 className="text-headline-lg">{DRUG_IDENTITY.title}</h2>
-          <p className="text-body-md text-on-surface-variant">
-            {DRUG_IDENTITY.subtitle}
-          </p>
-        </section>
+      <div className="flex min-w-0 flex-col gap-5 pt-2">
+        <IndexPageIntro
+          title={DRUG_IDENTITY.title}
+          description={DRUG_IDENTITY.subtitle}
+        />
 
         <DrugSafetyNotice />
 

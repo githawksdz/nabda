@@ -46,7 +46,7 @@ export function PersonalContentCard({
   return (
     <Link
       href={href}
-      className="group flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm active:scale-[0.99]"
+      className="motion-surface flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3.5 shadow-sm active:bg-surface-container"
     >
       <span className="flex size-10 shrink-0 items-center justify-center rounded-lg bg-surface-container-low">
         <Icon className="size-5 text-on-surface" strokeWidth={1.75} />
@@ -71,7 +71,7 @@ export function PersonalContentCard({
       </span>
       {trailing ?? (
         <ChevronRight
-          className="size-4 shrink-0 text-outline transition-transform group-hover:translate-x-0.5"
+          className="size-4 shrink-0 text-outline"
           strokeWidth={1.75}
         />
       )}

@@ -157,17 +157,16 @@ export function filterCalculators(
 }
 
 export function calculatorStatusLabel(item: CalculatorSummary): string {
-  if (
-    item.visibility === "stub" ||
-    item.visibility === "preview_only" ||
-    item.status === "draft"
-  ) {
-    return "Contenu en préparation";
+  if (item.status !== "published") {
+    return "Contenu indisponible";
   }
-  if (item.status === "published") {
-    return "Publié";
+  if (item.visibility === "stub" || item.visibility === "preview_only") {
+    return "Contenu indisponible";
   }
-  return "Contenu en préparation";
+  if (item.visibility === "premium") {
+    return "Pro";
+  }
+  return "Publié";
 }
 
 const CALCULATOR_SLUG_ALIASES: Record<string, string> = {

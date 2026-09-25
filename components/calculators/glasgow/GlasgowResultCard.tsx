@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from "@/lib/utils";
+import { useDebouncedAnnouncement } from "@/components/ui/useDebouncedAnnouncement";
 import type { GlasgowInterpretation } from "@/types/calculators";
 
 type GlasgowResultCardProps = {
@@ -7,16 +10,16 @@ type GlasgowResultCardProps = {
 
 export function GlasgowResultCard({ interpretation }: GlasgowResultCardProps) {
   const pills = interpretation.formula.split(" ");
+  const announcement = useDebouncedAnnouncement(
+    `Score total ${interpretation.fraction}, ${interpretation.label}`,
+  );
 
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <p className="text-label-sm text-on-surface-variant">Score total</p>
-      <p
-        role="status"
-        aria-live="polite"
-        className="mt-1 text-display text-on-surface"
-      >
-        {interpretation.fraction}
+      <p className="mt-1 text-display text-on-surface">{interpretation.fraction}</p>
+      <p className="sr-only" role="status" aria-live="polite">
+        {announcement}
       </p>
       <p className="mt-1 text-headline-sm">{interpretation.label}</p>
       <div className="mt-3 flex flex-wrap gap-1.5">

@@ -3,6 +3,7 @@ import {
   Bookmark,
   BookmarkCheck,
   BookOpen,
+  Check,
   ChevronRight,
   Flag,
   GitBranch,
@@ -10,6 +11,7 @@ import {
   Share2,
   WifiOff,
 } from "lucide-react";
+import { LAYOUT_DOCK_RESERVE } from "@/lib/layout/frames";
 import { cn } from "@/lib/utils";
 
 export type DockActionIcon =
@@ -21,7 +23,8 @@ export type DockActionIcon =
   | "share"
   | "offline"
   | "reset"
-  | "report";
+  | "report"
+  | "check";
 
 export type DockAction = {
   id: string;
@@ -30,6 +33,9 @@ export type DockAction = {
   onClick?: () => void;
   icon: DockActionIcon;
   active?: boolean;
+  disabled?: boolean;
+  busy?: boolean;
+  emphasisKey?: number;
 };
 
 type BottomReadingDockProps = {
@@ -37,9 +43,8 @@ type BottomReadingDockProps = {
   meta?: string;
 };
 
-/** Reserve space so fixed dock does not cover the last block (meta line + 72px bar). */
-export const READING_DOCK_CONTENT_CLASS =
-  "pb-[calc(104px+env(safe-area-inset-bottom,0px))] lg:pb-[calc(112px+env(safe-area-inset-bottom,0px))]";
+/** Single owner of reading-dock content clearance. Do not also add nav padding. */
+export const READING_DOCK_CONTENT_CLASS = LAYOUT_DOCK_RESERVE;
 
 function DockIcon({ name }: { name: DockActionIcon }) {
   const className = "size-4";
@@ -60,6 +65,8 @@ function DockIcon({ name }: { name: DockActionIcon }) {
       return <RotateCcw className={className} strokeWidth={1.75} />;
     case "report":
       return <Flag className={className} strokeWidth={1.75} />;
+    case "check":
+      return <Check className={className} strokeWidth={1.75} />;
     default:
       return <WifiOff className={className} strokeWidth={1.75} />;
   }
@@ -71,7 +78,7 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-40 bg-surface/90 pb-safe shadow-[0_-1px_8px_rgba(0,0,0,0.03)] backdrop-blur-xl lg:left-60">
+    <div className="fixed inset-x-0 bottom-0 z-[var(--z-dock)] bg-surface/90 pb-safe shadow-[var(--shadow-subtle)] backdrop-blur-xl lg:left-[var(--layout-sidebar)]">
       {meta ? (
         <p className="px-4 pt-2 text-center text-label-sm text-on-surface-variant">
           {meta}
@@ -79,19 +86,21 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
       ) : null}
       <nav
         aria-label="Actions de lecture"
-        className="mx-auto flex h-[72px] w-full max-w-[42rem] items-stretch justify-around px-1 lg:max-w-none"
+        className="mx-auto flex h-[var(--layout-dock-height)] w-full items-stretch justify-around px-1"
       >
         {actions.map((action) => {
           const className = cn(
-            "flex min-w-0 flex-1 flex-col items-center justify-center gap-1 px-1 text-on-surface-variant",
-            action.active && "text-primary",
+            "motion-color flex min-h-11 min-w-0 flex-1 flex-col items-center justify-center gap-1 px-1 text-text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
+            action.active && "font-semibold text-text-primary",
           );
           const inner = (
             <>
               <span
+                key={action.emphasisKey ?? 0}
                 className={cn(
-                  "flex size-8 items-center justify-center rounded-full",
-                  action.active && "bg-secondary-container text-primary",
+                  "flex size-9 items-center justify-center rounded-full",
+                  action.active && "bg-surface-container text-text-primary",
+                  action.emphasisKey ? "motion-emphasis" : undefined,
                 )}
               >
                 <DockIcon name={action.icon} />
@@ -111,6 +120,10 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
               key={action.id}
               type="button"
               onClick={action.onClick}
+              disabled={action.disabled}
+              aria-busy={action.busy || undefined}
+              aria-pressed={action.id === "save" ? Boolean(action.active) : undefined}
+              aria-label={action.label}
               className={className}
             >
               {inner}

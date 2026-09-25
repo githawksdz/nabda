@@ -7,6 +7,13 @@ import { BottomNav } from "./BottomNav";
 import { DesktopSidebar } from "./DesktopSidebar";
 import { ModuleSheet } from "./ModuleSheet";
 import { ConnectionIndicator } from "@/components/pwa/ConnectionIndicator";
+import {
+  LAYOUT_FRAME,
+  LAYOUT_GUTTER,
+  LAYOUT_HEADER_OFFSET,
+  LAYOUT_NAV_RESERVE,
+  type ShellFrame,
+} from "@/lib/layout/frames";
 import { cn } from "@/lib/utils";
 
 type AppShellProps = {
@@ -15,10 +22,11 @@ type AppShellProps = {
   headerActions?: ReactNode;
   navVariant?: "pill" | "text";
   contentClassName?: string;
-  frameClassName?: string;
   avatarDot?: boolean;
   backHref?: string;
   showBottomNav?: boolean;
+  pageHeading?: boolean;
+  frame?: ShellFrame;
 };
 
 export function AppShell({
@@ -27,23 +35,26 @@ export function AppShell({
   headerActions,
   navVariant = "pill",
   contentClassName,
-  frameClassName,
   avatarDot = false,
   backHref,
   showBottomNav = true,
+  pageHeading = true,
+  frame = "workspace",
 }: AppShellProps) {
   const [modulesOpen, setModulesOpen] = useState(false);
 
   return (
-    <div className="min-h-dvh bg-background text-on-surface lg:flex">
+    <div className="min-h-dvh overflow-x-clip bg-background text-on-surface lg:flex">
       <DesktopSidebar />
       <div className="relative min-h-dvh min-w-0 flex-1">
         <AppHeader
           title={title}
+          pageHeading={pageHeading}
           avatarDot={avatarDot}
           backHref={backHref}
           onOpenModules={() => setModulesOpen(true)}
           modulesOpen={modulesOpen}
+          frame={frame}
           actions={
             <>
               <ConnectionIndicator />
@@ -53,10 +64,12 @@ export function AppShell({
         />
         <main
           className={cn(
-            showBottomNav
-              ? "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(112px+env(safe-area-inset-bottom,0px))] lg:pb-8"
-              : "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(96px+env(safe-area-inset-bottom,0px))] lg:pb-10",
-            frameClassName,
+            "min-w-0",
+            LAYOUT_HEADER_OFFSET,
+            LAYOUT_GUTTER,
+            LAYOUT_FRAME[frame],
+            // Nav reserve only when BottomNav is shown. Detail docks own their own padding.
+            showBottomNav ? LAYOUT_NAV_RESERVE : "pb-6 lg:pb-8",
             contentClassName,
           )}
         >

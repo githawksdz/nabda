@@ -7,7 +7,7 @@
 - Public routes list and open content **only from Supabase**.
 - Identity catalog queries use the **server admin client** (imported corpus is `admin_only` under RLS).
 - Source-preserved payloads load from Supabase via `lib/content-data/source-payload-supabase.ts`.
-- Missing slug → `ContentUnavailable` (not mock, not local JSON).
+- Missing slug → detail `EmptyContentState` / redirect (not mock, not local JSON).
 - No local JSON fallback and no mock content fixtures on public content providers.
 
 ## UI config vs demo fixtures
@@ -49,12 +49,12 @@ These remain for import/tooling only:
 
 ## Missing content UX
 
-`components/app/ContentUnavailable.tsx` — shared not-found state for protocol, CAT, drug, and calculator detail routes.
+`components/content-detail/EmptyContentState.tsx` — inline empty state on protocol, CAT, drug, and calculator detail pages when render data is absent.
 
 ## Provider order
 
 ```
-production public:  Supabase → null (ContentUnavailable)
+production public:  Supabase → null (detail empty state)
 demo:               fixtures via lib/demo-fixtures/load.ts on search/home/personal overlays
 internal:           local JSON via lib/internal/*-local.ts
 ```

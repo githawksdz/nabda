@@ -22,10 +22,10 @@ export function CatSegmentedTabs({ slug, active }: CatSegmentedTabsProps) {
             href={catHref(slug, { tab: tab.id })}
             aria-current={isActive ? "page" : undefined}
             className={cn(
-              "flex h-8 flex-1 items-center justify-center rounded-full px-2 text-label-sm",
+              "motion-color flex min-h-11 flex-1 items-center justify-center rounded-full px-2 text-label-sm",
               isActive
-                ? "bg-primary text-on-primary shadow-sm"
-                : "text-on-surface-variant",
+                ? "bg-action-primary font-semibold text-text-inverse"
+                : "text-text-secondary",
             )}
           >
             {tab.label}

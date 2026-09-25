@@ -1,28 +1,35 @@
-import { cn } from "@/lib/utils";
+import type { ReactNode } from "react";
+import { StatusBadge, type StatusTone } from "@/components/ui/StatusBadge";
 
 type StatusChipProps = {
-  label: string;
+  label?: string;
+  children?: ReactNode;
   variant?: "soft" | "dark" | "outline" | "warning";
   className?: string;
 };
 
+const VARIANT_TONE: Record<NonNullable<StatusChipProps["variant"]>, StatusTone> =
+  {
+    soft: "muted",
+    dark: "inverse",
+    outline: "outline",
+    warning: "danger",
+  };
+
+/** Compatibility wrapper. New call sites should use StatusBadge. */
 export function StatusChip({
   label,
+  children,
   variant = "soft",
   className,
 }: StatusChipProps) {
   return (
-    <span
-      className={cn(
-        "inline-flex items-center rounded-full px-2.5 py-1 text-label-sm",
-        variant === "soft" && "bg-surface-container-high text-on-surface-variant",
-        variant === "dark" && "bg-primary text-on-primary",
-        variant === "outline" && "bg-surface-container-low text-secondary",
-        variant === "warning" && "bg-error-container text-error",
-        className,
-      )}
+    <StatusBadge
+      label={label}
+      tone={VARIANT_TONE[variant]}
+      className={className}
     >
-      {label}
-    </span>
+      {children}
+    </StatusBadge>
   );
 }

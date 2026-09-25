@@ -55,7 +55,7 @@ export function PwaProvider({ children }: PwaProviderProps) {
     <>
       {children}
       {updateWaiting ? (
-        <div className="fixed bottom-[calc(88px+env(safe-area-inset-bottom,0px))] left-1/2 z-[60] w-[min(100%-2rem,400px)] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-on-primary shadow-lg">
+        <div className="fixed bottom-[calc(var(--layout-nav-height)+env(safe-area-inset-bottom,0px)+1.5rem)] left-1/2 z-[var(--z-toast)] w-[min(100%-2rem,400px)] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-on-primary shadow-lg">
           <p className="text-label-md">Nouvelle version de l&apos;application</p>
           <button type="button" className="mt-2 text-body-sm underline" onClick={applyUpdate}>
             Mettre à jour

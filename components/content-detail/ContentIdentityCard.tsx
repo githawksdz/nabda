@@ -1,4 +1,6 @@
-import { StatusChip } from "./StatusChip";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
+import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import {
   doctorPublicationLabel,
   doctorVisibilityLabel,
@@ -18,28 +20,34 @@ export function ContentIdentityCard({
   const publication = doctorPublicationLabel(protocol.status);
 
   return (
-    <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
-      <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
-        {eyebrow}
-      </p>
-      <h1 className="mt-1 text-headline-md">{protocol.title}</h1>
+    <Surface variant="elevated" className="flex flex-col gap-2">
+      <p className="text-label-sm text-text-secondary">{eyebrow}</p>
+      <h1 className="text-headline-md text-text-primary [overflow-wrap:anywhere]">
+        {protocol.title}
+      </h1>
       {protocol.subtitle ? (
-        <p className="mt-2 text-body-md text-on-surface-variant">
+        <p className="text-body-md text-text-secondary [overflow-wrap:anywhere]">
           {protocol.subtitle}
         </p>
       ) : null}
       {protocol.summary ? (
-        <p className="mt-3 text-body-sm text-on-surface-variant">
+        <p className="text-body-sm text-text-secondary [overflow-wrap:anywhere]">
           {protocol.summary}
         </p>
       ) : null}
-      <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-1.5 pt-1">
         {protocol.categories.map((category) => (
-          <StatusChip key={category} label={category} variant="outline" />
+          <StatusBadge key={category} tone="outline">
+            {category}
+          </StatusBadge>
         ))}
-        <StatusChip label={publication} />
-        {visibility ? <StatusChip label={visibility} variant="soft" /> : null}
+        {publication ? (
+          <StatusBadge tone={accessLabelToTone(publication)}>{publication}</StatusBadge>
+        ) : null}
+        {visibility ? (
+          <StatusBadge tone={accessLabelToTone(visibility)}>{visibility}</StatusBadge>
+        ) : null}
       </div>
-    </section>
+    </Surface>
   );
 }

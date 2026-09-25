@@ -1,3 +1,4 @@
+import { DiscoveryList, DiscoveryListItem } from "@/components/discovery/DiscoveryListRow";
 import { DrugListRow } from "./DrugListRow";
 import type { DrugSummary } from "@/types/drugs";
 
@@ -26,11 +27,13 @@ export function DrugDirectoryList({
         </div>
         <span className="text-label-sm text-on-surface-variant">Ordre A-Z</span>
       </div>
-      <div className="flex flex-col gap-2">
+      <DiscoveryList>
         {drugs.map((drug) => (
-          <DrugListRow key={drug.id} drug={drug} />
+          <DiscoveryListItem key={drug.id}>
+            <DrugListRow drug={drug} />
+          </DiscoveryListItem>
         ))}
-      </div>
+      </DiscoveryList>
     </section>
   );
 }

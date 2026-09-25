@@ -1,16 +1,15 @@
 "use client";
 
-import { Search, X } from "lucide-react";
-import { cn } from "@/lib/utils";
-import type { RefObject } from "react";
+import { type FormEvent, type RefObject } from "react";
+import { SearchField } from "@/components/ui/TextField";
 
 type SearchInputBarProps = {
   value: string;
   onChange: (value: string) => void;
   onClear: () => void;
   placeholder: string;
-  variant?: "hero" | "dock" | "compact";
   inputRef?: RefObject<HTMLInputElement | null>;
+  onSubmit?: () => void;
 };
 
 export function SearchInputBar({
@@ -18,37 +17,29 @@ export function SearchInputBar({
   onChange,
   onClear,
   placeholder,
-  variant = "hero",
   inputRef,
+  onSubmit,
 }: SearchInputBarProps) {
-  const compact = variant === "compact";
+  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+    event.preventDefault();
+    onSubmit?.();
+    inputRef?.current?.blur();
+  }
 
   return (
-    <div
-      className={cn(
-        "flex items-center gap-2 rounded-xl bg-surface-container px-3 shadow-sm focus-within:bg-surface-container-lowest focus-within:shadow-md",
-        compact ? "h-11" : "h-12",
-      )}
+    <form
+      role="search"
+      onSubmit={handleSubmit}
+      className="min-w-0"
     >
-      <Search className="size-4 shrink-0 text-on-surface-variant" strokeWidth={1.75} />
-      <input
-        ref={inputRef}
+      <SearchField
         value={value}
-        onChange={(event) => onChange(event.target.value)}
+        onChange={onChange}
+        onClear={onClear}
         placeholder={placeholder}
-        aria-label="Recherche"
-        className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
+        inputRef={inputRef}
+        className="min-w-0 bg-surface-elevated shadow-[var(--shadow-card)] focus-within:ring-2 focus-within:ring-action-primary/20"
       />
-      {value ? (
-        <button
-          type="button"
-          aria-label="Effacer la recherche"
-          onClick={onClear}
-          className="flex min-h-11 min-w-11 items-center justify-center rounded-full bg-surface-variant text-on-surface"
-        >
-          <X className="size-4" strokeWidth={1.75} />
-        </button>
-      ) : null}
-    </div>
+    </form>
   );
 }

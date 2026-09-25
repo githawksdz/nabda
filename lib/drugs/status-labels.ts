@@ -62,11 +62,13 @@ export function isPreparationDrug(drug: Pick<DrugSummary, "status" | "visibility
   );
 }
 
+const PUBLIC_UNAVAILABLE_LABEL = "Contenu indisponible";
+
 export function drugIndexStatusLabel(
   drug: Pick<DrugSummary, "status" | "reviewStatus" | "visibility">,
 ): string {
   if (isPreparationDrug(drug) || drug.status !== "published") {
-    return "Contenu en préparation";
+    return PUBLIC_UNAVAILABLE_LABEL;
   }
   if (drug.visibility === "premium") {
     return "Pro";
@@ -86,7 +88,7 @@ export function drugSourceStatusLabel(
   if (sourceStatus === "validated" || sourceStatus === "reviewed") {
     return "Source documentée";
   }
-  return DRUG_DETAIL_STATUS_LABELS.toVerify;
+  return PUBLIC_UNAVAILABLE_LABEL;
 }
 
 export function mapRawDrugStatusLabel(

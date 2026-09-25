@@ -1,4 +1,6 @@
-import { StatusChip } from "@/components/content-detail/StatusChip";
+import { StatusBadge } from "@/components/ui/StatusBadge";
+import { Surface } from "@/components/ui/Surface";
+import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import {
   drugDetailStatusLabel,
   drugIndexStatusLabel,
@@ -19,39 +21,38 @@ export function DrugIdentityCard({
 
   if (variant === "compact") {
     return (
-      <section className="rounded-2xl bg-surface-container-lowest p-3.5 shadow-sm">
-        <div className="flex items-start justify-between gap-3">
-          <div className="min-w-0">
-            <h1 className="text-headline-sm">{drug.genericName}</h1>
-            {drug.classChip ? (
-              <div className="mt-2">
-                <StatusChip label={drug.classChip} variant="outline" />
-              </div>
-            ) : null}
-          </div>
-          <StatusChip label={compactStatus} />
+      <Surface variant="elevated" className="flex items-start justify-between gap-3 p-3.5">
+        <div className="min-w-0">
+          <p className="text-label-sm text-text-secondary">Médicament</p>
+          <h1 className="mt-1 text-headline-sm text-text-primary [overflow-wrap:anywhere]">
+            {drug.genericName}
+          </h1>
+          {drug.classChip ? (
+            <div className="mt-2">
+              <StatusBadge tone="outline">{drug.classChip}</StatusBadge>
+            </div>
+          ) : null}
         </div>
-      </section>
+        <StatusBadge tone={accessLabelToTone(compactStatus)}>{compactStatus}</StatusBadge>
+      </Surface>
     );
   }
 
   return (
-    <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
-      <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
-        Médicament
+    <Surface variant="elevated" className="flex flex-col gap-2">
+      <p className="text-label-sm text-text-secondary">Médicament</p>
+      <h1 className="text-headline-md text-text-primary [overflow-wrap:anywhere]">
+        {drug.genericName}
+      </h1>
+      <p className="text-body-md text-text-secondary [overflow-wrap:anywhere]">
+        {drug.subtitle || drug.className}
       </p>
-      <h1 className="mt-1 text-headline-md">{drug.genericName}</h1>
-      {drug.subtitle ? (
-        <p className="mt-2 text-body-md text-on-surface-variant">{drug.subtitle}</p>
-      ) : (
-        <p className="mt-2 text-body-md text-on-surface-variant">{drug.className}</p>
-      )}
-      <div className="mt-4 flex flex-wrap gap-1.5">
+      <div className="flex flex-wrap gap-1.5 pt-1">
         {drug.shortClassName ? (
-          <StatusChip label={drug.shortClassName} variant="outline" />
+          <StatusBadge tone="outline">{drug.shortClassName}</StatusBadge>
         ) : null}
-        <StatusChip label={detailStatus} />
+        <StatusBadge tone={accessLabelToTone(detailStatus)}>{detailStatus}</StatusBadge>
       </div>
-    </section>
+    </Surface>
   );
 }

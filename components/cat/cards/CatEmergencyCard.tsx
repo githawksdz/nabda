@@ -15,7 +15,7 @@ export function CatEmergencyCard({ card }: CatEmergencyCardProps) {
     <Link
       href={card.href}
       data-category={card.subFilter}
-      className="group flex items-start gap-3 rounded-2xl bg-surface-container-lowest p-3.5 shadow-sm"
+      className="motion-surface flex items-start gap-3 rounded-2xl bg-surface-container-lowest p-3.5 shadow-sm active:bg-surface-container"
     >
       <span
         className={cn(
@@ -53,7 +53,7 @@ export function CatEmergencyCard({ card }: CatEmergencyCardProps) {
         </span>
       </span>
       <ChevronRight
-        className="mt-1 size-5 shrink-0 text-outline transition-transform group-hover:translate-x-0.5"
+        className="mt-1 size-5 shrink-0 text-outline"
         strokeWidth={1.75}
       />
     </Link>

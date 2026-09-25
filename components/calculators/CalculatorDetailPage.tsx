@@ -1,7 +1,7 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
 import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import {
@@ -17,6 +17,16 @@ import {
 } from "./SpecialtyCalculatorShell";
 import type { SpecialtyCalculatorUiKind } from "@/lib/calculators/specialty-calculator-ui";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
+import {
+  COPY_LABEL_MS,
+  FAVORITE_ADDED_MESSAGE,
+  FAVORITE_REMOVED_MESSAGE,
+  FAVORITE_SIGN_IN_MESSAGE,
+  FAVORITE_WRITE_FAILED_MESSAGE,
+} from "@/lib/ui/feedback-timing";
+import { reconcileFavorite } from "@/lib/ui/favorite-result";
+import { StatusToast } from "@/components/ui/StatusToast";
+import { useNotice, useTimedFlag } from "@/components/ui/useTimedFlag";
 import type {
   CalculatorDetailMode,
   CalculatorSummary,
@@ -53,7 +63,11 @@ export function CalculatorDetailPage({
   initialBookmarked = false,
 }: CalculatorDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
-  const [toast, setToast] = useState<string | null>(null);
+  const [pendingFavorite, setPendingFavorite] = useState(false);
+  const [favoriteEmphasis, setFavoriteEmphasis] = useState(0);
+  const [favoriteAnnouncement, setFavoriteAnnouncement] = useState("");
+  const { notice, showToast, dismissToast } = useNotice();
+  const copied = useTimedFlag(COPY_LABEL_MS);
   const [selection, setSelection] = useState<GlasgowSelection>(
     GLASGOW_DEFAULT_SELECTION,
   );
@@ -66,16 +80,37 @@ export function CalculatorDetailPage({
   const formulaActive = mode === "formula" && Boolean(source);
   const sourceMode = mode === "source" && Boolean(source);
 
-  useEffect(() => {
-    if (!toast) {
+  async function persistFavorite(previous: boolean) {
+    setPendingFavorite(true);
+    const result = await toggleFavorite("calculator", slug);
+    const next = reconcileFavorite(previous, result);
+    setBookmarked(next.bookmarked);
+    setPendingFavorite(false);
+    switch (next.outcome) {
+      case "unauthenticated":
+        showToast(FAVORITE_SIGN_IN_MESSAGE);
+        return;
+      case "write_failed":
+        showToast(FAVORITE_WRITE_FAILED_MESSAGE, "alert");
+        return;
+      case "saved":
+      case "removed":
+        setFavoriteEmphasis((value) => value + 1);
+        setFavoriteAnnouncement(
+          next.outcome === "saved"
+            ? FAVORITE_ADDED_MESSAGE
+            : FAVORITE_REMOVED_MESSAGE,
+        );
+    }
+  }
+
+  function toggleBookmark() {
+    if (pendingFavorite) {
       return;
     }
-    const timeoutId = window.setTimeout(() => setToast(null), 2800);
-    return () => window.clearTimeout(timeoutId);
-  }, [toast]);
-
-  function showToast(message: string) {
-    setToast(message);
+    const previous = bookmarked;
+    setBookmarked(!bookmarked);
+    void persistFavorite(previous);
   }
 
   function resetGlasgow() {
@@ -86,20 +121,6 @@ export function CalculatorDetailPage({
   function resetCockcroft() {
     setCockcroft(COCKCROFT_EMPTY_VALUES);
     showToast("Paramètres réinitialisés");
-  }
-
-  async function persistFavorite() {
-    const result = await toggleFavorite("calculator", slug);
-    if (!result.skipped) {
-      setBookmarked(result.saved);
-    }
-  }
-
-  function toggleBookmark() {
-    const next = !bookmarked;
-    setBookmarked(next);
-    showToast(next ? "Score enregistré" : "Score retiré");
-    void persistFavorite();
   }
 
   async function resolveCopyText() {
@@ -129,19 +150,20 @@ export function CalculatorDetailPage({
         return;
       }
       await navigator.clipboard.writeText(`${copyText}\n${url}`);
-      showToast("Résultat copié");
+      copied.start();
     } catch {
-      showToast("Partage annulé");
+      showToast("Partage annulé", "alert");
     }
   }
 
-  async function copyCockcroftResult() {
+  async function copyCockcroftResult(): Promise<boolean> {
     try {
       const copyText = await resolveCopyText();
       await navigator.clipboard.writeText(copyText);
-      showToast("Résultat copié");
+      return true;
     } catch {
-      showToast("Copie indisponible");
+      showToast("Copie indisponible", "alert");
+      return false;
     }
   }
 
@@ -161,12 +183,15 @@ export function CalculatorDetailPage({
           label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
+          disabled: pendingFavorite,
+          busy: pendingFavorite,
+          emphasisKey: favoriteEmphasis,
           onClick: toggleBookmark,
         },
         {
           id: "share",
-          label: "Partager",
-          icon: "share",
+          label: copied.active ? "Copié" : "Partager",
+          icon: copied.active ? "check" : "share",
           onClick: shareCalculator,
         },
       ]
@@ -177,12 +202,15 @@ export function CalculatorDetailPage({
             label: bookmarked ? "Retirer" : "Favoris",
             icon: bookmarked ? "bookmark-check" : "bookmark",
             active: bookmarked,
+            disabled: pendingFavorite,
+            busy: pendingFavorite,
+            emphasisKey: favoriteEmphasis,
             onClick: toggleBookmark,
           },
           {
             id: "share",
-            label: "Partager",
-            icon: "share",
+            label: copied.active ? "Copié" : "Partager",
+            icon: copied.active ? "check" : "share",
             onClick: shareCalculator,
           },
         ]
@@ -224,19 +252,11 @@ export function CalculatorDetailPage({
           />
         ) : null}
       </div>
-      <BottomReadingDock
-        actions={dockActions}
-        meta={specialtyActive ? "Aide au calcul · interprétation clinique" : undefined}
-      />
-      {toast ? (
-        <p
-          role="status"
-          aria-live="polite"
-          className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-        >
-          {toast}
-        </p>
-      ) : null}
+      <BottomReadingDock actions={dockActions} />
+      <p className="sr-only" role="status" aria-live="polite">
+        {favoriteAnnouncement}
+      </p>
+      <StatusToast notice={notice} onDismiss={dismissToast} />
     </ClinicalDetailFrame>
   );
 }

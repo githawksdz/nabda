@@ -51,7 +51,7 @@ export function GlasgowCalculator({
             Réinitialiser E4 V5 M6
           </button>
         </div>
-        <div className="lg:sticky lg:top-[calc(72px+env(safe-area-inset-top,0px))]">
+        <div className="lg:sticky lg:top-[calc(var(--layout-header-height)+env(safe-area-inset-top,0px))]">
           <GlasgowResultCard interpretation={interpretation} />
         </div>
       </div>

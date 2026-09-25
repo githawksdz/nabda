@@ -1,48 +1,59 @@
 "use client";
 
-import Link from "next/link";
-import { profileCompletion } from "@/lib/home/home-ui-config";
+import { Button } from "@/components/ui/Button";
+import { Surface } from "@/components/ui/Surface";
+import { PROFILE_COPY } from "@/lib/personal/personal-ui-config";
 
 type ProfileCompletionCardProps = {
   onDefer: () => void;
+  percent?: number;
 };
 
-export function ProfileCompletionCard({ onDefer }: ProfileCompletionCardProps) {
+export function ProfileCompletionCard({
+  onDefer,
+  percent,
+}: ProfileCompletionCardProps) {
+  const shown =
+    typeof percent === "number" ? Math.min(100, Math.max(0, percent)) : null;
+
   return (
-    <section className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+    <Surface variant="muted" as="aside" className="flex flex-col gap-3">
       <div className="flex items-start justify-between gap-3">
-        <div>
-          <h2 className="text-headline-sm">{profileCompletion.title}</h2>
-          <p className="mt-1 text-body-sm text-on-surface-variant">
-            {profileCompletion.subtitle}
+        <div className="min-w-0">
+          <h2 className="text-headline-sm">{PROFILE_COPY.completionTitle}</h2>
+          <p className="mt-1 text-body-sm text-text-secondary">
+            {PROFILE_COPY.completionBody}
           </p>
         </div>
-        <span className="text-data-metric">{profileCompletion.percent}%</span>
+        {shown != null ? (
+          <p className="shrink-0 text-label-md text-text-secondary">
+            {shown}&nbsp;%
+          </p>
+        ) : null}
       </div>
-      <div className="mt-3 h-1.5 overflow-hidden rounded-full bg-surface-container-high">
+      {shown != null ? (
         <div
-          className="h-full rounded-full bg-primary"
-          style={{ width: `${profileCompletion.percent}%` }}
-        />
-      </div>
-      <p className="mt-2 text-label-sm text-on-surface-variant">
-        {profileCompletion.meta}
-      </p>
-      <div className="mt-4 flex gap-2">
-        <Link
-          href="/onboarding/personalisation"
-          className="flex h-10 flex-1 items-center justify-center rounded-lg bg-primary text-label-md text-on-primary"
+          className="h-1.5 overflow-hidden rounded-full bg-surface-container-high"
+          role="progressbar"
+          aria-valuemin={0}
+          aria-valuemax={100}
+          aria-valuenow={shown}
+          aria-label="Progression du profil"
         >
-          Compléter
-        </Link>
-        <button
-          type="button"
-          onClick={onDefer}
-          className="flex h-10 flex-1 items-center justify-center rounded-lg bg-surface-container-low text-label-md"
-        >
-          Plus tard
-        </button>
+          <div
+            className="h-full rounded-full bg-action-primary"
+            style={{ width: `${shown}%` }}
+          />
+        </div>
+      ) : null}
+      <div className="flex gap-2">
+        <Button href="/onboarding/personalisation" className="flex-1">
+          {PROFILE_COPY.completionCta}
+        </Button>
+        <Button variant="secondary" className="flex-1" onClick={onDefer}>
+          {PROFILE_COPY.completionDefer}
+        </Button>
       </div>
-    </section>
+    </Surface>
   );
 }

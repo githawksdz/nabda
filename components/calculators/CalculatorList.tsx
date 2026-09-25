@@ -1,3 +1,4 @@
+import { DiscoveryList, DiscoveryListItem } from "@/components/discovery/DiscoveryListRow";
 import { CalculatorListRow } from "./CalculatorListRow";
 import type { CalculatorSummary } from "@/types/calculators";
 
@@ -22,11 +23,13 @@ export function CalculatorList({ calculators }: CalculatorListProps) {
         </div>
         <span className="text-label-sm text-on-surface-variant">Ordre A-Z</span>
       </div>
-      <div className="flex flex-col gap-2">
+      <DiscoveryList>
         {calculators.map((calculator) => (
-          <CalculatorListRow key={calculator.id} calculator={calculator} />
+          <DiscoveryListItem key={calculator.id}>
+            <CalculatorListRow calculator={calculator} />
+          </DiscoveryListItem>
         ))}
-      </div>
+      </DiscoveryList>
     </section>
   );
 }

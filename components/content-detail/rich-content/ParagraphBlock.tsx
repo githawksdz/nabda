@@ -3,5 +3,5 @@ type ParagraphBlockProps = {
 };
 
 export function ParagraphBlock({ text }: ParagraphBlockProps) {
-  return <p className="text-body-md text-on-surface">{text}</p>;
+  return <p className="text-body-md leading-relaxed text-text-primary [overflow-wrap:anywhere]">{text}</p>;
 }

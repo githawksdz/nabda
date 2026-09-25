@@ -17,7 +17,7 @@ export function SectionNav({
   return (
     <nav
       aria-label="Sections du protocole"
-      className="sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-surface/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
+      className="layout-sticky-under-header sticky z-[var(--z-sticky)] -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:static lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
       <div className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {items.map((item) => {
@@ -31,13 +31,15 @@ export function SectionNav({
               )}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 max-w-[16rem] shrink-0 items-center rounded-full px-3.5 text-label-md lg:max-w-none lg:shrink",
                 isActive
-                  ? "bg-primary text-on-primary shadow-sm"
-                  : "bg-surface-container-low text-on-surface-variant",
+                  ? "bg-action-primary font-semibold text-text-inverse"
+                  : "bg-surface-muted text-text-secondary",
               )}
             >
-              {item.label}
+              <span className="truncate lg:whitespace-normal lg:[overflow-wrap:anywhere]">
+                {item.label}
+              </span>
             </Link>
           );
         })}

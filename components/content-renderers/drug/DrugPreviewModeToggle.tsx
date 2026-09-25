@@ -32,7 +32,7 @@ export function DrugPreviewModeToggle({
             aria-pressed={active}
             onClick={() => onChange(option.id)}
             className={cn(
-              "h-9 rounded-full text-label-md",
+              "motion-color h-9 rounded-full text-label-md",
               active
                 ? "bg-primary font-semibold text-on-primary"
                 : "text-on-surface-variant",

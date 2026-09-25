@@ -1,5 +1,7 @@
+import { resolveCalculatorSlug } from "@/lib/calculators/calculator-slugs";
 import type { Calculator, HomeFeedItem } from "@/types/content";
 import type { HomeUpdate, ScoreShortcut } from "@/types/home";
+import { homeFeaturedCalculatorType, isFeaturedScoreCalculator } from "@/lib/home/featured-scores";
 
 const CALCULATOR_ICONS: Record<string, string> = {
   glasgow: "brain",
@@ -12,13 +14,24 @@ const CALCULATOR_ICONS: Record<string, string> = {
 };
 
 export function calculatorToScoreShortcut(calculator: Calculator): ScoreShortcut {
+  const slug = resolveCalculatorSlug(calculator.slug);
   return {
     id: calculator.id,
+    slug,
+    contentType: "calculator",
+    catalogType: homeFeaturedCalculatorType(calculator),
     title: calculator.short_title || calculator.title,
     subtitle: calculator.usage_context || calculator.description || "",
-    href: `/calculators/${calculator.slug}`,
-    icon: CALCULATOR_ICONS[calculator.slug] ?? "calculator",
+    href: `/calculators/${slug}`,
+    icon: CALCULATOR_ICONS[calculator.slug] ?? CALCULATOR_ICONS[slug] ?? "calculator",
   };
+}
+
+/** Published featured calculators limited to clinical score catalog types. */
+export function featuredCalculatorsToScoreShortcuts(
+  calculators: Calculator[],
+): ScoreShortcut[] {
+  return calculators.filter(isFeaturedScoreCalculator).map(calculatorToScoreShortcut);
 }
 
 export function feedItemToHomeUpdate(item: HomeFeedItem): HomeUpdate {

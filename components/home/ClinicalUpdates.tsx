@@ -1,4 +1,3 @@
-import { SectionHeader } from "@/components/home/cards/SectionHeader";
 import { UpdateCard } from "@/components/home/cards/UpdateCard";
 import type { HomeUpdate } from "@/types/home";
 
@@ -12,13 +11,15 @@ export function ClinicalUpdates({ updates }: ClinicalUpdatesProps) {
   }
 
   return (
-    <section>
-      <SectionHeader title="Nouveautés cliniques" />
-      <div className="flex flex-col gap-2">
+    <section className="layout-reading">
+      <h2 className="text-headline-sm">Nouveautés cliniques</h2>
+      <ul className="mt-3 flex flex-col gap-1.5">
         {updates.map((update) => (
-          <UpdateCard key={update.id} update={update} />
+          <li key={update.id}>
+            <UpdateCard update={update} variant="compact" />
+          </li>
         ))}
-      </div>
+      </ul>
     </section>
   );
 }

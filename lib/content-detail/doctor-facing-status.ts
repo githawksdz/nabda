@@ -3,11 +3,13 @@
  * Does not expose editorial/review workflow states.
  */
 
-export function doctorPublicationLabel(publicationStatus?: string | null): string {
+export function doctorPublicationLabel(
+  publicationStatus?: string | null,
+): string {
   if (publicationStatus === "published") {
     return "Publié";
   }
-  return "Contenu en préparation";
+  return "Contenu indisponible";
 }
 
 export function doctorVisibilityLabel(visibility?: string | null): string | undefined {
@@ -30,8 +32,5 @@ export function doctorCatalogStatusLabel(input: {
   }
   const visibility = doctorVisibilityLabel(input.visibility);
   const publication = doctorPublicationLabel(input.publicationStatus);
-  if (publication === "Contenu en préparation") {
-    return publication;
-  }
   return visibility ?? publication;
 }

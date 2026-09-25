@@ -28,10 +28,10 @@ export function FavoritesPage({ items }: FavoritesPageProps) {
   const filterEmpty = !isEmpty && visible.length === 0;
 
   return (
-    <AppShell title={FAVORITES_COPY.title} navVariant="text">
+    <AppShell title={FAVORITES_COPY.title} navVariant="text" pageHeading={false}>
       <div className="flex flex-col gap-5 pt-2">
         <section className="flex flex-col gap-1">
-          <h2 className="text-headline-lg">{FAVORITES_COPY.title}</h2>
+          <h1 className="text-headline-lg">{FAVORITES_COPY.title}</h1>
           <p className="text-body-md text-on-surface-variant">
             {FAVORITES_COPY.subtitle}
           </p>

@@ -17,7 +17,7 @@ export function CatSearchBar({
   showClear = false,
 }: CatSearchBarProps) {
   return (
-    <div className="flex h-11 items-center gap-2 rounded-xl bg-surface-container-low px-3 focus-within:bg-surface-container-lowest">
+    <div className="flex h-[var(--size-input)] items-center gap-2 rounded-xl bg-surface-container-low px-3 focus-within:bg-surface-container-lowest">
       <CatIcon name="search" className="size-4 shrink-0 text-on-surface-variant" />
       <input
         value={value}
