@@ -10,7 +10,12 @@ import {
 } from "@/components/content-detail/BottomReadingDock";
 import { CalculatorIdentity } from "./CalculatorIdentity";
 import { CalculatorSourceRenderer } from "@/components/content-renderers/calculator/CalculatorSourceRenderer";
-import { resolveCalculatorDetailMode } from "@/lib/calculators/calculator-mappers";
+import {
+  COCKCROFT_EMPTY_VALUES,
+  GLASGOW_DEFAULT_SELECTION,
+  SpecialtyCalculatorShell,
+} from "./SpecialtyCalculatorShell";
+import type { SpecialtyCalculatorUiKind } from "@/lib/calculators/specialty-calculator-ui";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
 import type {
   CalculatorDetailMode,
@@ -20,14 +25,6 @@ import type {
 } from "@/types/calculators";
 import type { CalculatorRenderData } from "@/types/content-rendering";
 
-const GlasgowCalculator = dynamic(
-  () => import("./glasgow/GlasgowCalculator").then((mod) => mod.GlasgowCalculator),
-  { ssr: false },
-);
-const CockcroftCalculator = dynamic(
-  () => import("./cockcroft/CockcroftCalculator").then((mod) => mod.CockcroftCalculator),
-  { ssr: false },
-);
 const AdditivePointsCalculator = dynamic(
   () => import("./AdditivePointsCalculator").then((mod) => mod.AdditivePointsCalculator),
   { ssr: false },
@@ -38,36 +35,12 @@ const GeneratedFormulaCalculator = dynamic(
   { ssr: false },
 );
 
-const GLASGOW_DEFAULT_SELECTION: GlasgowSelection = {
-  eyes: 4,
-  verbal: 5,
-  motor: 6,
-};
-const COCKCROFT_EMPTY_VALUES: CockcroftFormValues = {
-  sex: null,
-  age: "",
-  weight: "",
-  creatinine: "",
-  unit: "umol_l",
-};
-const GLASGOW_IDENTITY = {
-  headerTitle: "Score de Glasgow",
-  eyebrow: "Score neurologique",
-  title: "Glasgow (GCS)",
-  subtitle: "Évaluation du niveau de conscience.",
-} as const;
-const COCKCROFT_IDENTITY = {
-  headerTitle: "Cockcroft-Gault",
-  eyebrow: "Formule",
-  title: "Cockcroft-Gault",
-  subtitle: "Estimation de la clairance de la créatinine.",
-} as const;
-
 type CalculatorDetailPageProps = {
   slug: string;
-  calculator?: CalculatorSummary;
+  calculator: CalculatorSummary;
   source?: CalculatorRenderData | null;
-  mode?: CalculatorDetailMode;
+  mode: CalculatorDetailMode;
+  specialtyUi?: SpecialtyCalculatorUiKind | null;
   initialBookmarked?: boolean;
 };
 
@@ -75,7 +48,8 @@ export function CalculatorDetailPage({
   slug,
   calculator,
   source,
-  mode: modeProp,
+  mode,
+  specialtyUi,
   initialBookmarked = false,
 }: CalculatorDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
@@ -86,13 +60,12 @@ export function CalculatorDetailPage({
   const [cockcroft, setCockcroft] = useState<CockcroftFormValues>(
     COCKCROFT_EMPTY_VALUES,
   );
-  const mode = modeProp ?? resolveCalculatorDetailMode(slug, calculator);
-  const glasgow = mode === "glasgow";
-  const cockcroftActive = mode === "cockcroft";
+
+  const specialtyActive = mode === "specialty" && Boolean(specialtyUi);
   const additiveActive = mode === "additive" && Boolean(source);
   const formulaActive = mode === "formula" && Boolean(source);
   const sourceMode = mode === "source" && Boolean(source);
-  const unavailable = mode === "unavailable" && Boolean(source);
+
   useEffect(() => {
     if (!toast) {
       return;
@@ -130,23 +103,23 @@ export function CalculatorDetailPage({
   }
 
   async function resolveCopyText() {
-    if (glasgow) {
+    if (specialtyUi === "glasgow") {
       const { glasgowCopyText, interpretGlasgow } = await import(
         "@/lib/calculators/glasgow"
       );
       return glasgowCopyText(interpretGlasgow(selection));
     }
-    if (cockcroftActive) {
+    if (specialtyUi === "cockcroft") {
       const { cockcroftCopyText, computeCockcroft } = await import(
         "@/lib/calculators/cockcroft-gault"
       );
       return cockcroftCopyText(cockcroft, computeCockcroft(cockcroft));
     }
-    return calculator?.name ?? "Calculateur Nabda";
+    return calculator.name;
   }
 
   async function shareCalculator() {
-    const title = source?.title ?? calculator?.name ?? "Calculateur Nabda";
+    const title = source?.title ?? calculator.name;
     const url = window.location.href;
     const copyText = await resolveCopyText();
     try {
@@ -172,19 +145,16 @@ export function CalculatorDetailPage({
     }
   }
 
-  const headerTitle = glasgow
-    ? GLASGOW_IDENTITY.headerTitle
-    : cockcroftActive
-      ? COCKCROFT_IDENTITY.headerTitle
-      : (source?.title ?? calculator?.shortName ?? calculator?.name ?? "Calculateur");
+  const headerTitle =
+    source?.title ?? calculator.shortName ?? calculator.name ?? "Calculateur";
 
-  const dockActions: DockAction[] = glasgow
+  const dockActions: DockAction[] = specialtyActive
     ? [
         {
           id: "reset",
           label: "Réinit.",
           icon: "reset",
-          onClick: resetGlasgow,
+          onClick: specialtyUi === "glasgow" ? resetGlasgow : resetCockcroft,
         },
         {
           id: "save",
@@ -194,47 +164,13 @@ export function CalculatorDetailPage({
           onClick: toggleBookmark,
         },
         {
-          id: "cat",
-          label: "CAT",
-          icon: "cat",
-          href: "/cat/coma-glasgow-inferieur-8",
-        },
-        {
           id: "share",
           label: "Partager",
           icon: "share",
           onClick: shareCalculator,
         },
       ]
-    : cockcroftActive
-      ? [
-          {
-            id: "reset",
-            label: "Réinit.",
-            icon: "reset",
-            onClick: resetCockcroft,
-          },
-          {
-            id: "save",
-            label: bookmarked ? "Retirer" : "Favoris",
-            icon: bookmarked ? "bookmark-check" : "bookmark",
-            active: bookmarked,
-            onClick: toggleBookmark,
-          },
-          {
-            id: "cat",
-            label: "CAT",
-            icon: "cat",
-            href: "/cat/insuffisance-renale",
-          },
-          {
-            id: "share",
-            label: "Partager",
-            icon: "share",
-            onClick: shareCalculator,
-          },
-        ]
-      : sourceMode || additiveActive || formulaActive || unavailable
+    : sourceMode || additiveActive || formulaActive
       ? [
           {
             id: "save",
@@ -254,96 +190,53 @@ export function CalculatorDetailPage({
 
   return (
     <ClinicalDetailFrame title={headerTitle} backHref="/calculators">
-        <DetailLibraryStatus contentType="calculator" slug={slug} />
-        <div className="flex flex-col gap-4 pt-3">
-            {calculator && (glasgow || cockcroftActive) ? (
-              <CalculatorIdentity
-                calculator={calculator}
-                eyebrow={glasgow ? GLASGOW_IDENTITY.eyebrow : COCKCROFT_IDENTITY.eyebrow}
-                title={glasgow ? GLASGOW_IDENTITY.title : COCKCROFT_IDENTITY.title}
-                subtitle={
-                  glasgow
-                    ? GLASGOW_IDENTITY.subtitle
-                    : COCKCROFT_IDENTITY.subtitle
-                }
-              />
-            ) : null}
+      <DetailLibraryStatus contentType="calculator" slug={slug} />
+      <div className="flex flex-col gap-4 pt-3">
+        <CalculatorIdentity calculator={calculator} />
 
-            {glasgow && calculator ? (
-              <GlasgowCalculator
-                selection={selection}
-                onChange={setSelection}
-                onReset={resetGlasgow}
-              />
-            ) : null}
-
-            {cockcroftActive && calculator ? (
-              <CockcroftCalculator
-                values={cockcroft}
-                onChange={setCockcroft}
-                onReset={resetCockcroft}
-                onCopy={copyCockcroftResult}
-              />
-            ) : null}
-
-            {additiveActive && source ? (
-              <AdditivePointsCalculator data={source} />
-            ) : null}
-
-            {formulaActive && source ? (
-              <GeneratedFormulaCalculator data={source} />
-            ) : null}
-
-            {unavailable && source ? (
-              <aside
-                role="status"
-                className="rounded-xl bg-surface-container-low px-3.5 py-3"
-              >
-                <p className="text-label-md">
-                  Calculateur temporairement indisponible
-                </p>
-                <p className="mt-1 text-body-sm text-on-surface-variant">
-                  La logique source n&apos;a pas pu être compilée en moteur typé
-                  sûr. Aucun résultat fictif n&apos;est affiché.
-                </p>
-                <div className="mt-3">
-                  <CalculatorSourceRenderer
-                    data={source}
-                    linkMode="public"
-                    showIdentity={false}
-                    enginePending={false}
-                  />
-                </div>
-              </aside>
-            ) : null}
-
-            {sourceMode && source ? (
-              <CalculatorSourceRenderer
-                data={source}
-                linkMode="public"
-                showIdentity={false}
-                enginePending={false}
-              />
-            ) : null}
-
-          </div>
-        <BottomReadingDock
-          actions={dockActions}
-          meta={
-            glasgow || cockcroftActive
-              ? "Aide au calcul · interprétation clinique"
-              : undefined
-          }
-        />
-        {toast ? (
-          <p
-            role="status"
-            aria-live="polite"
-            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-          >
-            {toast}
-          </p>
+        {specialtyActive && specialtyUi ? (
+          <SpecialtyCalculatorShell
+            uiKind={specialtyUi}
+            glasgowSelection={selection}
+            onGlasgowChange={setSelection}
+            onGlasgowReset={resetGlasgow}
+            cockcroftValues={cockcroft}
+            onCockcroftChange={setCockcroft}
+            onCockcroftReset={resetCockcroft}
+            onCockcroftCopy={copyCockcroftResult}
+          />
         ) : null}
+
+        {additiveActive && source ? (
+          <AdditivePointsCalculator data={source} />
+        ) : null}
+
+        {formulaActive && source ? (
+          <GeneratedFormulaCalculator data={source} />
+        ) : null}
+
+        {sourceMode && source ? (
+          <CalculatorSourceRenderer
+            data={source}
+            linkMode="public"
+            showIdentity={false}
+            enginePending={false}
+          />
+        ) : null}
+      </div>
+      <BottomReadingDock
+        actions={dockActions}
+        meta={specialtyActive ? "Aide au calcul · interprétation clinique" : undefined}
+      />
+      {toast ? (
+        <p
+          role="status"
+          aria-live="polite"
+          className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
+        >
+          {toast}
+        </p>
+      ) : null}
     </ClinicalDetailFrame>
   );
 }

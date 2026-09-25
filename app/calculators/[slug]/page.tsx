@@ -3,13 +3,9 @@ import { redirect } from "next/navigation";
 import { CalculatorDetailPage } from "@/components/calculators/CalculatorDetailPage";
 import { getCalculatorRenderData } from "@/lib/content-data/calculator-data";
 import { summaryFromDbCalculator } from "@/lib/calculators/calculator-mappers";
-import {
-  isCockcroftSlug,
-  isGlasgowSlug,
-  resolveCalculatorSlug,
-} from "@/lib/calculators/calculator-slugs";
-import { hasAnyCompiledEngine } from "@/lib/calculators/engine-registry";
-import { parseAdditiveSchemaFromPayload } from "@/lib/calculators/engines/additive-points";
+import { resolveCalculatorSlug } from "@/lib/calculators/calculator-slugs";
+import { resolveCalculatorRenderMode } from "@/lib/calculators/resolve-calculator-render-mode";
+import { specialtyCalculatorUiKind } from "@/lib/calculators/specialty-calculator-ui";
 import { getCalculators } from "@/features/content/api";
 import {
   normalizeDoctorContentSlug,
@@ -20,7 +16,6 @@ import {
   isFavorite,
   recordContentView,
 } from "@/lib/content-detail/user-content-actions";
-import type { CalculatorDetailMode } from "@/types/calculators";
 
 type CalculatorDetailRouteProps = {
   params: Promise<{ slug: string }>;
@@ -29,36 +24,16 @@ type CalculatorDetailRouteProps = {
   }>;
 };
 
-function additiveSchemaUsable(
-  source: NonNullable<Awaited<ReturnType<typeof getCalculatorRenderData>>>,
-): boolean {
-  const schema = parseAdditiveSchemaFromPayload(
-    source.inputs.map((input) => ({
-      name: input.name,
-      label: input.label,
-      type: input.type,
-      optional: input.optional,
-      options: input.options.map((o) => ({
-        label: o.label,
-        value: Number(o.value),
-      })),
-    })),
+function findReadableCalculatorRow(
+  rows: Awaited<ReturnType<typeof getCalculators>>,
+  gatedSlug: string,
+) {
+  return rows.find(
+    (item) =>
+      item.slug === gatedSlug ||
+      resolveCalculatorSlug(item.slug) === gatedSlug ||
+      resolveCalculatorSlug(gatedSlug) === resolveCalculatorSlug(item.slug),
   );
-  return schema.length > 0;
-}
-
-function resolveMode(
-  slug: string,
-  source: Awaited<ReturnType<typeof getCalculatorRenderData>>,
-): CalculatorDetailMode {
-  if (isGlasgowSlug(slug)) return "glasgow";
-  if (isCockcroftSlug(slug)) return "cockcroft";
-  if (source?.formulaType === "additive_points" && source.inputs?.length) {
-    return additiveSchemaUsable(source) ? "additive" : "unavailable";
-  }
-  if (source && hasAnyCompiledEngine(slug)) return "formula";
-  if (source) return "unavailable";
-  return "missing";
 }
 
 export async function generateMetadata({
@@ -73,12 +48,9 @@ export async function generateMetadata({
       description: "Calculateur clinique Nabda.",
     };
   }
-  const title = isGlasgowSlug(normalized)
-    ? "Score de Glasgow"
-    : isCockcroftSlug(normalized)
-      ? "Cockcroft-Gault"
-      : (await getCalculatorRenderData(normalized, { linkMode: "public" }))?.title ??
-        "Calculateur";
+  const rows = await getCalculators();
+  const row = findReadableCalculatorRow(rows, normalized);
+  const title = row?.title ?? row?.short_title ?? "Calculateur";
 
   return {
     title: `${title} · Nabda`,
@@ -95,42 +67,32 @@ export default async function CalculatorDetailRoute({
   const canonicalSlug = resolveCalculatorSlug(slug);
   const gatedSlug = await requirePublishedDoctorContent("calculator", canonicalSlug);
 
-  const isBuiltinEngine =
-    isGlasgowSlug(gatedSlug) || isCockcroftSlug(gatedSlug);
-  const source = isBuiltinEngine
-    ? null
-    : await getCalculatorRenderData(gatedSlug, { linkMode: "public" });
-
-  if (!isBuiltinEngine && !source) {
+  const rows = await getCalculators();
+  const row = findReadableCalculatorRow(rows, gatedSlug);
+  if (!row) {
     redirect("/home");
   }
 
-  const mode = resolveMode(gatedSlug, source);
+  const calculator = summaryFromDbCalculator(row);
+  const source = await getCalculatorRenderData(gatedSlug, { linkMode: "public" });
+  const mode = resolveCalculatorRenderMode(gatedSlug, source);
+
   if (mode === "missing") {
     redirect("/home");
   }
 
-  const rows = await getCalculators();
-  const row = rows.find(
-    (item) =>
-      item.slug === gatedSlug ||
-      resolveCalculatorSlug(item.slug) === gatedSlug,
-  );
-  const calculator = row ? summaryFromDbCalculator(row) : undefined;
-
-  if (!calculator && !isBuiltinEngine) {
+  const specialtyUi = specialtyCalculatorUiKind(gatedSlug);
+  if (mode === "specialty" && !specialtyUi) {
     redirect("/home");
   }
 
-  await recordContentView(
-    "calculator",
-    calculator?.slug ?? source?.slug ?? gatedSlug,
-  );
+  if (mode !== "specialty" && !source) {
+    redirect("/home");
+  }
 
-  const initialBookmarked = await isFavorite(
-    "calculator",
-    calculator?.slug ?? source?.slug ?? gatedSlug,
-  );
+  await recordContentView("calculator", calculator.slug);
+
+  const initialBookmarked = await isFavorite("calculator", calculator.slug);
 
   return (
     <CalculatorDetailPage
@@ -139,6 +101,7 @@ export default async function CalculatorDetailRoute({
       calculator={calculator}
       source={source}
       mode={mode}
+      specialtyUi={specialtyUi}
       initialBookmarked={initialBookmarked}
     />
   );

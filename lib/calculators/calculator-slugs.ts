@@ -15,25 +15,8 @@ export function resolveCalculatorSlug(slug: string): string {
   return CALCULATOR_SLUG_ALIASES[slug] ?? slug;
 }
 
-export function isGlasgowSlug(slug: string): boolean {
-  const resolved = resolveCalculatorSlug(slug);
-  return resolved === "glasgow" || resolved === "glasgow-coma-scale-score-gcs";
-}
-
-export function isCockcroftSlug(slug: string): boolean {
-  const resolved = resolveCalculatorSlug(slug);
-  return (
-    resolved === "cockcroft-gault" ||
-    resolved === "creatinine-clearance-cockcroft-gault-equation"
-  );
-}
-
 export function isPuqeSlug(slug: string): boolean {
   return resolveCalculatorSlug(slug) === "score-puqe";
-}
-
-export function hasActiveCalculatorEngine(slug: string): boolean {
-  return isGlasgowSlug(slug) || isCockcroftSlug(slug);
 }
 
 export function isAdditiveFormulaType(formulaType: string | null | undefined): boolean {

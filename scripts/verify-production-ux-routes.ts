@@ -16,10 +16,6 @@ import {
   getContentSourceMode,
   isDemoContentMode,
 } from "@/lib/content-data/content-source-mode";
-import {
-  isCockcroftSlug,
-  isGlasgowSlug,
-} from "@/lib/calculators/calculator-slugs";
 import { calculatorStatusLabel } from "@/lib/calculators/calculator-ui-config";
 import { loadLocalEnvFiles } from "@/lib/nabda-db/load-env";
 import type { CalculatorSummary } from "@/types/calculators";
@@ -300,21 +296,6 @@ async function main() {
   }
 
   for (const slug of SAMPLE_ROUTES.calculators) {
-    if (isGlasgowSlug(slug) || isCockcroftSlug(slug)) {
-      routes.push({
-        route: `/calculators/${slug}`,
-        kind: "calculator_live",
-        resolved: true,
-        payloadSource: null,
-      });
-      checks.push({
-        id: `calculator_live_${slug}`,
-        ok: true,
-        detail: "live engine route (GCS/Cockcroft) — provider payload not required",
-      });
-      continue;
-    }
-
     const data = await getCalculatorRenderData(slug, { linkMode: "public" });
     routes.push({
       route: `/calculators/${slug}`,

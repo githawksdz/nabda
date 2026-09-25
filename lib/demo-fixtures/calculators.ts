@@ -415,20 +415,8 @@ export function getCalculatorBySlug(
   return MOCK_CALCULATORS.find((item) => item.slug === resolved);
 }
 
-export function isGlasgowSlug(slug: string) {
-  return resolveCalculatorSlug(slug) === "glasgow";
-}
-
-export function isCockcroftSlug(slug: string) {
-  return resolveCalculatorSlug(slug) === "cockcroft-gault";
-}
-
 export function isPuqeSlug(slug: string) {
   return resolveCalculatorSlug(slug) === "score-puqe";
-}
-
-export function hasActiveCalculatorEngine(slug: string) {
-  return isGlasgowSlug(slug) || isCockcroftSlug(slug);
 }
 
 export const PUQE_VERSION_LABEL = "v0.9";

@@ -142,13 +142,10 @@ export type CockcroftResult = {
 };
 
 export type CalculatorDetailMode =
-  | "glasgow"
-  | "cockcroft"
+  | "specialty"
   | "additive"
   | "formula"
   | "source"
-  | "unavailable"
-  | "preparation"
   | "missing";
 
 export type CalculatorVariablePreview = {

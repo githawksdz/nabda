@@ -7,11 +7,8 @@ import type {
   CalculatorType,
   CalculatorVisibility,
 } from "@/types/calculators";
-import {
-  isCockcroftSlug,
-  isGlasgowSlug,
-  resolveCalculatorSlug,
-} from "@/lib/calculators/calculator-slugs";
+import { resolveCalculatorSlug } from "@/lib/calculators/calculator-slugs";
+import { resolveCalculatorRenderMode } from "@/lib/calculators/resolve-calculator-render-mode";
 import { parseCalculatorCategorySlug } from "@/lib/calculators/calculator-ui-config";
 import { overlaySafeText } from "@/lib/content-source/readiness";
 
@@ -76,10 +73,7 @@ export function inferCalculatorType(
   slug: string,
   fallback?: CalculatorType,
 ): CalculatorType {
-  if (isCockcroftSlug(slug)) {
-    return "formula";
-  }
-  if (isGlasgowSlug(slug) || resolveCalculatorSlug(slug) === "score-puqe") {
+  if (resolveCalculatorSlug(slug) === "score-puqe") {
     return "score";
   }
   return fallback ?? "score";
@@ -172,19 +166,9 @@ export function overlayDbCalculator(
   };
 }
 
-export function resolveCalculatorDetailMode(
-  slug: string,
-  calculator?: CalculatorSummary,
-): CalculatorDetailMode {
-  // Local demo engines. formula_json is ignored until a validated calculator
-  // import ships with canRenderClinicalDetails === true.
-  if (isGlasgowSlug(slug)) {
-    return "glasgow";
-  }
-  if (isCockcroftSlug(slug)) {
-    return "cockcroft";
-  }
-  return calculator ? "preparation" : "missing";
+/** @deprecated Use server `resolveCalculatorRenderMode` with render payload. */
+export function resolveCalculatorDetailMode(slug: string): CalculatorDetailMode {
+  return resolveCalculatorRenderMode(slug, null);
 }
 
 export function catalogFromDbCalculators(rows: DbCalculator[]): CalculatorSummary[] {

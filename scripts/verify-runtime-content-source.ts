@@ -20,7 +20,8 @@ import {
   isSourceRenderAllowed,
   payloadSourceLabel,
 } from "@/lib/content-data/content-source";
-import { isGlasgowSlug, isCockcroftSlug } from "@/lib/calculators/calculator-slugs";
+import { specialtyCalculatorUiKind } from "@/lib/calculators/specialty-calculator-ui";
+import { hasSpecialtyEngine } from "@/lib/calculators/engine-registry";
 import { loadLocalEnvFiles } from "@/lib/nabda-db/load-env";
 
 const ROOT = process.cwd();
@@ -131,17 +132,17 @@ function main() {
   );
 
   checks.push({
-    name: "gcs_engine_slug",
+    name: "specialty_ui_gcs",
     layer: "static",
-    ok: isGlasgowSlug("glasgow-coma-scale-score-gcs"),
-    details: "isGlasgowSlug(glasgow-coma-scale-score-gcs)",
+    ok: specialtyCalculatorUiKind("glasgow-coma-scale-score-gcs") === "glasgow",
+    details: "specialty UI registry includes GCS",
   });
 
   checks.push({
-    name: "cockcroft_engine_slug",
+    name: "specialty_engine_cockcroft",
     layer: "static",
-    ok: isCockcroftSlug("cockcroft-gault"),
-    details: "isCockcroftSlug(cockcroft-gault)",
+    ok: hasSpecialtyEngine("creatinine-clearance-cockcroft-gault-equation"),
+    details: "engine registry includes Cockcroft",
   });
 
   checks.push({
