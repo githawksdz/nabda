@@ -90,7 +90,7 @@ export const featuredPourVous: HomeUpdate = {
   description:
     "Prise en charge diagnostique initiale et stratification du risque selon ESC 2024. Protocole troponine ultrasensible hs-cTn.",
   meta: "Urgences · CAT",
-  footer: "< 2 min de lecture · Sources à consolider",
+  footer: "< 2 min de lecture · Publié",
   href: "/cat/douleur-thoracique",
 };
 
@@ -159,7 +159,7 @@ export const clinicalWatchFeatured: HomeUpdate = {
   description:
     "Intégration du score d'Ottawa et fenêtre de sensibilité scanographique à 6h. Conduite actualisée.",
   timeLabel: "Aujourd'hui · 07:30",
-  footer: "Révision médicale requise · Lecture 3 min",
+  footer: "Publié · Lecture 3 min",
   href: "/cat/cephalees-brutales-hsa",
 };
 
@@ -218,7 +218,7 @@ export const proAdvancedTools = [
     id: "interactions",
     title: "Interactions médicamenteuses multi-lignes",
     subtitle: "Contre-indications, QT long, cytochrome P450",
-    href: "/interactions",
+    href: "/search?type=drugs",
     icon: "pill" as const,
     cta: "Vérifier",
   },

@@ -3,7 +3,7 @@
  * Titles, DCI, brands, tags, routes — never clinical HTML, doses, or formulas.
  */
 
-import { canShowValidatedLabel, isPlaceholderRecord } from "@/lib/content-source/readiness";
+import { isPlaceholderRecord } from "@/lib/content-source/readiness";
 import { normalizeSlug } from "@/lib/nabda-db/slugs";
 import type {
   IdentityContentType,
@@ -17,7 +17,7 @@ import type {
 export const IDENTITY_STATUS_IMPORTED = "Importé · aperçu interne";
 export const IDENTITY_STATUS_PREPARATION = "En préparation";
 export const IDENTITY_STATUS_SOURCE_PRESERVED = "Source préservée";
-export const IDENTITY_STATUS_VALIDATED = "Validé";
+export const IDENTITY_STATUS_PUBLISHED = "Publié";
 
 export const IDENTITY_SUBTITLE: Record<IdentityContentType, string> = {
   cat: "Arbre décisionnel",
@@ -198,29 +198,19 @@ export function identityContentHref(
 }
 
 export function identityStatusLabel(hit: IdentitySearchHit): string | undefined {
-  if (canShowValidatedLabel(hit.reviewStatus, hit.status)) {
-    return IDENTITY_STATUS_VALIDATED;
-  }
-  const importedLike =
-    hit.status === "imported" ||
-    hit.status === "cleaned" ||
-    hit.visibility === "admin_only" ||
-    hit.clinicalPayloadStatus === "locked";
-  if (importedLike && (hit.status === "imported" || hit.visibility === "admin_only")) {
-    return IDENTITY_STATUS_IMPORTED;
-  }
   if (isPlaceholderRecord(hit.status, hit.reviewStatus)) {
     return IDENTITY_STATUS_PREPARATION;
   }
-  if (hit.status === "published" && hit.clinicalPayloadStatus !== "locked") {
-    return hit.reviewStatus === "unreviewed" || hit.reviewStatus === "editorial_reviewed"
-      ? IDENTITY_STATUS_SOURCE_PRESERVED
-      : undefined;
+  if (hit.status !== "published" || hit.clinicalPayloadStatus === "locked") {
+    return IDENTITY_STATUS_PREPARATION;
   }
-  if (hit.status === "published") {
-    return IDENTITY_STATUS_SOURCE_PRESERVED;
+  if (hit.visibility === "premium") {
+    return "Pro";
   }
-  return IDENTITY_STATUS_PREPARATION;
+  if (hit.visibility === "public_free") {
+    return IDENTITY_STATUS_PUBLISHED;
+  }
+  return IDENTITY_STATUS_SOURCE_PRESERVED;
 }
 
 export function identityHaystack(hit: IdentitySearchHit): string {

@@ -1,10 +1,9 @@
 import { isDemoContentMode } from "@/lib/content-data/content-source-mode";
 import { getPersonalDemoFixtures } from "@/lib/demo-fixtures/load";
 import { HISTORY_GROUP_TITLES } from "@/lib/personal/personal-ui-config";
-import {
-  canShowValidatedLabel,
-  isPlaceholderRecord,
-} from "@/lib/content-source/readiness";
+import { canReadContent, type ViewerAccess } from "@/lib/authz/content-gate";
+import { doctorCatalogStatusLabel } from "@/lib/content-detail/doctor-facing-status";
+import { isPlaceholderRecord } from "@/lib/content-source/readiness";
 import type {
   FavoriteItem,
   HistoryGroup,
@@ -113,30 +112,42 @@ export type CatalogIdentity = {
   title: string;
   status?: string | null;
   reviewStatus?: string | null;
+  visibility?: string | null;
 };
+
+export function isCatalogReadable(
+  catalog: CatalogIdentity | undefined,
+  viewer: ViewerAccess,
+): boolean {
+  if (!catalog) {
+    return false;
+  }
+  return canReadContent(
+    {
+      status: catalog.status,
+      visibility: catalog.visibility,
+      reviewStatus: catalog.reviewStatus,
+    },
+    viewer,
+  );
+}
 
 export function personalStatusLabel(
   publicationStatus?: string | null,
   reviewStatus?: string | null,
-  fallback?: string,
+  visibility?: string | null,
 ): string | undefined {
-  if (canShowValidatedLabel(reviewStatus, publicationStatus)) {
-    return fallback;
-  }
   if (
     isPlaceholderRecord(publicationStatus, reviewStatus) ||
     publicationStatus === "draft" ||
     publicationStatus === "seed_placeholder"
   ) {
-    return "En préparation";
+    return "Contenu en préparation";
   }
-  if (reviewStatus === "needs_revision") {
-    return "Révision requise";
-  }
-  if (reviewStatus === "unreviewed" || !reviewStatus) {
-    return fallback ?? "Révision médicale requise";
-  }
-  return fallback ?? "Révision médicale requise";
+  return doctorCatalogStatusLabel({
+    publicationStatus,
+    visibility,
+  });
 }
 
 export function storedHistoryCaption(
@@ -180,11 +191,7 @@ export function resolvePersonalCopy(
   const statusLabel =
     catalog === undefined && !isDemoContentMode()
       ? "Plus disponible dans Nabda"
-      : personalStatusLabel(
-          catalog?.status,
-          catalog?.reviewStatus,
-          mock?.statusLabel,
-        );
+      : personalStatusLabel(catalog?.status, catalog?.reviewStatus);
 
   return {
     title,
@@ -198,14 +205,20 @@ export function resolvePersonalCopy(
   };
 }
 
-export function mapFavoriteRow(input: {
-  id: string;
-  itemType: string;
-  itemSlug: string;
-  createdAt?: string;
-  catalog?: CatalogIdentity;
-}): FavoriteItem | null {
+export function mapFavoriteRow(
+  input: {
+    id: string;
+    itemType: string;
+    itemSlug: string;
+    createdAt?: string;
+    catalog?: CatalogIdentity;
+  },
+  viewer?: ViewerAccess,
+): FavoriteItem | null {
   if (!isPersonalEntityType(input.itemType) || !input.itemSlug) {
+    return null;
+  }
+  if (!isDemoContentMode() && viewer && !isCatalogReadable(input.catalog, viewer)) {
     return null;
   }
 
@@ -238,15 +251,21 @@ export function asMetadata(
   return value as Record<string, unknown>;
 }
 
-export function mapHistoryRow(input: {
-  id: string;
-  itemType: string;
-  itemSlug: string;
-  viewedAt: string;
-  metadata?: unknown;
-  catalog?: CatalogIdentity;
-}): HistoryItem | null {
+export function mapHistoryRow(
+  input: {
+    id: string;
+    itemType: string;
+    itemSlug: string;
+    viewedAt: string;
+    metadata?: unknown;
+    catalog?: CatalogIdentity;
+  },
+  viewer?: ViewerAccess,
+): HistoryItem | null {
   if (!isPersonalEntityType(input.itemType) || !input.itemSlug) {
+    return null;
+  }
+  if (!isDemoContentMode() && viewer && !isCatalogReadable(input.catalog, viewer)) {
     return null;
   }
 
@@ -433,7 +452,7 @@ export function mapPlanPresentation(
     statusLabel: "Freemium actif",
     body: "Accès standard aux modules disponibles.",
     actionLabel: "Voir Praticien Pro",
-    actionHref: "/premium",
+    actionHref: "/offline",
   };
 }
 

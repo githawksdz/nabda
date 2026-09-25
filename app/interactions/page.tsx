@@ -1,10 +1,5 @@
-import { EmptyModulePage } from "@/components/app/EmptyModulePage";
+import { redirect } from "next/navigation";
 
 export default function InteractionsPage() {
-  return (
-    <EmptyModulePage
-      title="Interactions"
-      description="Le vérificateur d’interactions sera ajouté ici."
-    />
-  );
+  redirect("/search?type=drugs");
 }

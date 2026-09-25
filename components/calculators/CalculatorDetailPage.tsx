@@ -4,19 +4,14 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
 import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
-import { CalculatorBottomDock } from "./CalculatorBottomDock";
+import {
+  BottomReadingDock,
+  type DockAction,
+} from "@/components/content-detail/BottomReadingDock";
 import { CalculatorIdentity } from "./CalculatorIdentity";
-import { CalculatorPreparationState } from "./CalculatorPreparationState";
 import { CalculatorSourceRenderer } from "@/components/content-renderers/calculator/CalculatorSourceRenderer";
 import { resolveCalculatorDetailMode } from "@/lib/calculators/calculator-mappers";
-import {
-  PUQE_RESOURCES,
-  PUQE_VARIABLES,
-  PUQE_VERSION_LABEL,
-  isPuqeSlug,
-} from "@/lib/calculators/calculator-ui-config";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
-import type { CalculatorDockAction } from "./CalculatorBottomDock";
 import type {
   CalculatorDetailMode,
   CalculatorSummary,
@@ -85,7 +80,6 @@ export function CalculatorDetailPage({
 }: CalculatorDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [toast, setToast] = useState<string | null>(null);
-  const [notified, setNotified] = useState(false);
   const [selection, setSelection] = useState<GlasgowSelection>(
     GLASGOW_DEFAULT_SELECTION,
   );
@@ -99,9 +93,6 @@ export function CalculatorDetailPage({
   const formulaActive = mode === "formula" && Boolean(source);
   const sourceMode = mode === "source" && Boolean(source);
   const unavailable = mode === "unavailable" && Boolean(source);
-  const preparation = mode === "preparation" || mode === "missing";
-  const puqe = isPuqeSlug(slug);
-
   useEffect(() => {
     if (!toast) {
       return;
@@ -122,12 +113,6 @@ export function CalculatorDetailPage({
   function resetCockcroft() {
     setCockcroft(COCKCROFT_EMPTY_VALUES);
     showToast("Paramètres réinitialisés");
-  }
-
-  function toggleNotify() {
-    const next = !notified;
-    setNotified(next);
-    showToast(next ? "Alerte programmée" : "Alerte retirée");
   }
 
   async function persistFavorite() {
@@ -193,7 +178,7 @@ export function CalculatorDetailPage({
       ? COCKCROFT_IDENTITY.headerTitle
       : (source?.title ?? calculator?.shortName ?? calculator?.name ?? "Calculateur");
 
-  const dockActions: CalculatorDockAction[] = glasgow
+  const dockActions: DockAction[] = glasgow
     ? [
         {
           id: "reset",
@@ -341,33 +326,8 @@ export function CalculatorDetailPage({
               />
             ) : null}
 
-            {preparation && !sourceMode ? (
-              <CalculatorPreparationState
-                calculator={calculator}
-                missing={mode === "missing"}
-                versionLabel={puqe ? PUQE_VERSION_LABEL : undefined}
-                statusLabel="En préparation"
-                noticeTitle={
-                  mode === "missing"
-                    ? "Calculateur introuvable"
-                    : "Calculateur en cours d'homologation"
-                }
-                noticeBody={
-                  mode === "missing"
-                    ? "Cet outil n'est pas encore disponible. Structure en préparation."
-                    : "Algorithme et pondérations en phase de relecture médicale. Saisie désactivée."
-                }
-                variablesTitle={
-                  puqe ? "Variables cliniques du score (3)" : undefined
-                }
-                variables={puqe ? PUQE_VARIABLES : []}
-                resources={puqe ? PUQE_RESOURCES : []}
-                notified={notified}
-                onNotify={toggleNotify}
-              />
-            ) : null}
           </div>
-        <CalculatorBottomDock
+        <BottomReadingDock
           actions={dockActions}
           meta={
             glasgow || cockcroftActive

@@ -3,17 +3,17 @@
 import { useEffect, useState } from "react";
 import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
 import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
-import { DrugFooterActions, type DrugDockAction } from "./DrugFooterActions";
+import {
+  BottomReadingDock,
+  type DockAction,
+} from "@/components/content-detail/BottomReadingDock";
 import { DrugIdentityCard } from "./DrugIdentityCard";
 import { DrugOverview, DrugFormsCard, DrugSourcesCard } from "./DrugOverview";
-import { DrugPreparationState } from "./DrugPreparationState";
-import { DrugRequestState, type DrugIndexationPayload } from "./DrugRequestState";
 import { DrugSafetyTab } from "./DrugSafetyTab";
 import { DrugTabs } from "./DrugTabs";
 import { DrugSourceRenderer } from "@/components/content-renderers/drug/DrugSourceRenderer";
 import {
   drugDetailHref,
-  getDrugAlternatives,
   resolveDrugTab,
 } from "@/lib/drugs/drug-ui-config";
 import { toggleFavorite } from "@/lib/content-detail/user-content-actions";
@@ -39,14 +39,10 @@ export function DrugDetailPage({
 }: DrugDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
   const [toast, setToast] = useState<string | null>(null);
-  const [requested, setRequested] = useState(false);
   const sourceMode = Boolean(source);
   const activeTab = resolveDrugTab(tab);
   const canonicalSlug = detail?.slug ?? source?.slug ?? slug;
-  const alternatives = getDrugAlternatives(canonicalSlug);
   const headerTitle = source?.title ?? detail?.genericName ?? "Médicament";
-  const preparationOrRequest =
-    !sourceMode && (mode === "preparation" || mode === "request");
 
   useEffect(() => {
     if (!toast) {
@@ -78,21 +74,8 @@ export function DrugDetailPage({
     void persistFavorite();
   }
 
-  function reportSource() {
-    showToast("Signalement enregistré localement");
-  }
-
-  function handleIndexation(payload: DrugIndexationPayload) {
-    setRequested(true);
-    showToast(
-      payload.notify
-        ? "Demande enregistrée. Alerte locale activée."
-        : "Demande d'indexation enregistrée localement",
-    );
-  }
-
-  const dockActions: DrugDockAction[] =
-    (detail || source) && !preparationOrRequest
+  const dockActions: DockAction[] =
+    detail || source
       ? [
           {
             id: "save",
@@ -103,7 +86,7 @@ export function DrugDetailPage({
           },
           {
             id: "sources",
-            label: "Sources",
+            label: "Références",
             icon: "sources",
             href: drugDetailHref(canonicalSlug, "sources"),
           },
@@ -117,24 +100,6 @@ export function DrugDetailPage({
             {sourceMode && source ? (
               <DrugSourceRenderer data={source} linkMode="public" />
             ) : null}
-            {!sourceMode && mode === "request" ? (
-              <DrugRequestState
-                slug={canonicalSlug}
-                moleculeName={detail?.genericName}
-                alternatives={alternatives}
-                submitted={requested}
-                onSubmit={handleIndexation}
-              />
-            ) : null}
-            {!sourceMode && mode === "preparation" ? (
-              <DrugPreparationState
-                slug={canonicalSlug}
-                drug={detail}
-                alternatives={alternatives}
-                submitted={requested}
-                onSubmit={handleIndexation}
-              />
-            ) : null}
             {!sourceMode && mode === "overview" && detail ? (
               <>
                 <DrugIdentityCard
@@ -143,9 +108,7 @@ export function DrugDetailPage({
                 />
                 <DrugTabs slug={canonicalSlug} active={activeTab} />
                 {activeTab === "apercu" ? <DrugOverview drug={detail} /> : null}
-                {activeTab === "securite" ? (
-                  <DrugSafetyTab drug={detail} onReport={reportSource} />
-                ) : null}
+                {activeTab === "securite" ? <DrugSafetyTab drug={detail} /> : null}
                 {activeTab === "formes" ? (
                   <DrugFormsCard rows={detail.formStructure} />
                 ) : null}
@@ -155,9 +118,9 @@ export function DrugDetailPage({
               </>
             ) : null}
           </div>
-        <DrugFooterActions
+        <BottomReadingDock
           actions={dockActions}
-          meta={source ? "Source préservée · référentiel source" : "Référentiel de consultation · données à vérifier"}
+          meta={source ? "Contenu clinique Nabda" : "Référentiel de consultation"}
         />
         {toast ? (
           <p

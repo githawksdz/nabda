@@ -38,7 +38,7 @@ function hrefForTarget(type: string | null, slug: string | null) {
     return "/home";
   }
   if (type === "premium") {
-    return "/premium";
+    return "/offline";
   }
   if (type === "offline") {
     return "/offline";

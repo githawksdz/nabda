@@ -13,7 +13,6 @@ export const SEARCH_FILTERS: SearchFilter[] = [
   "protocols",
   "drugs",
   "calculators",
-  "interactions",
 ];
 
 export function parseSearchFilter(value?: string | null): SearchFilter {

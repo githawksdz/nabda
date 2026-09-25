@@ -435,7 +435,7 @@ export function buildPlaceholderDrugDetail(summary: DrugSummary): DrugDetail {
     ],
     references: [
       {
-        label: "Sources à consolider après revue pharmacologique",
+        label: "Référentiel thérapeutique (exemple)",
         sourceStatus: "placeholder",
       },
     ],
@@ -511,7 +511,7 @@ const AMOXICILLINE_DETAIL: DrugDetail | undefined = AMOXICILLINE_SUMMARY
       ],
       references: [
         {
-          label: "Sources à consolider après revue pharmacologique",
+          label: "Référentiel thérapeutique (exemple)",
           sourceStatus: "placeholder",
         },
       ],

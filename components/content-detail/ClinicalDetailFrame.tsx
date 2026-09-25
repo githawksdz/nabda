@@ -1,5 +1,6 @@
 import type { ReactNode } from "react";
 import { AppShell } from "@/components/app/AppShell";
+import { READING_DOCK_CONTENT_CLASS } from "@/components/content-detail/BottomReadingDock";
 
 type ClinicalDetailFrameProps = {
   title: string;
@@ -17,9 +18,13 @@ export function ClinicalDetailFrame({
       title={title}
       backHref={backHref}
       showBottomNav={false}
-      contentClassName="lg:max-w-[56rem]"
+      contentClassName={cnDetailFrame()}
     >
-      {children}
+      <div className={READING_DOCK_CONTENT_CLASS}>{children}</div>
     </AppShell>
   );
+}
+
+function cnDetailFrame() {
+  return "lg:max-w-[56rem]";
 }

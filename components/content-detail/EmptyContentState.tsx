@@ -10,7 +10,7 @@ type EmptyContentStateProps = {
 
 export function EmptyContentState({
   title = "Fiche en préparation",
-  description = "Cette recommandation n'est pas encore disponible. La structure sera ajoutée après relecture.",
+  description = "Cette recommandation n'est pas encore disponible dans Nabda.",
   href = "/search?type=protocols",
   actionLabel = "Retour aux recommandations",
 }: EmptyContentStateProps) {

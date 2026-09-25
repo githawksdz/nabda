@@ -47,7 +47,7 @@ export function getMockFavoriteItems(now = new Date()): FavoriteItem[] {
       title: "Céphalées brutales",
       subtitle: "Synthèse clinique sauvegardée",
       href: "/protocols/cephalees-brutales-hsa",
-      statusLabel: "Révision médicale requise",
+      statusLabel: "Contenu en préparation",
       kindLabel: "Protocole",
       savedAt,
     },
@@ -143,7 +143,7 @@ export const MOCK_PERSONAL_CATALOG: Record<
   "protocol:cephalees-brutales-hsa": {
     title: "Céphalées brutales",
     subtitle: "Synthèse clinique",
-    statusLabel: "Révision médicale requise",
+    statusLabel: "Contenu en préparation",
     kindLabel: "Protocole",
   },
   "calculator:cockcroft-gault": {

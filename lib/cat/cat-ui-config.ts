@@ -120,7 +120,7 @@ export const URGENCY_BANNER = {
 
 export const PREPARATION_PANEL = {
   // Design placeholder: replace with verified source/review metadata before production.
-  milestone: "Phase de relecture SFD · T2 2025",
+  milestone: "Publication prévue · T2 2025",
   title: "CAT Dermatologie en préparation",
   subtitle:
     "Cette spécialité est actuellement en cours d'élaboration par le comité scientifique Nabda. Les protocoles décisionnels majeurs arrivent très prochainement.",
@@ -157,7 +157,7 @@ export const CONNECTED_MODULES: CatConnectedModule[] = [
 ];
 
 export const SAFETY_FOOTNOTE =
-  "Relecture par pairs selon recommandations HAS / SFD";
+  "Contenu clinique Nabda · à croiser avec les protocoles locaux";
 
 export const COMMITTEE_FOOTNOTE =
   "Mis à jour quotidiennement par le comité médical Nabda";

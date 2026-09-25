@@ -1,10 +1,8 @@
 import { StatusChip } from "@/components/content-detail/StatusChip";
 import {
-  localAdaptationLabel,
-  publicationStatusLabel,
-  reviewStatusLabel,
-  visibilityLabel,
-} from "@/lib/content-detail/status-labels";
+  doctorPublicationLabel,
+  doctorVisibilityLabel,
+} from "@/lib/content-detail/doctor-facing-status";
 import type { CatMap } from "@/types/content-detail";
 
 type CatIdentityCardProps = {
@@ -12,6 +10,9 @@ type CatIdentityCardProps = {
 };
 
 export function CatIdentityCard({ map }: CatIdentityCardProps) {
+  const publication = doctorPublicationLabel(map.status);
+  const visibility = doctorVisibilityLabel(map.visibility);
+
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
@@ -28,12 +29,8 @@ export function CatIdentityCard({ map }: CatIdentityCardProps) {
         {map.categories.map((category) => (
           <StatusChip key={category} label={category} variant="outline" />
         ))}
-        <StatusChip label={publicationStatusLabel(map.status)} />
-        <StatusChip label={reviewStatusLabel(map.review_status, map.status)} />
-        {map.local_adaptation_status ? (
-          <StatusChip label={localAdaptationLabel(map.local_adaptation_status)} />
-        ) : null}
-        <StatusChip label={visibilityLabel(map.visibility)} />
+        <StatusChip label={publication} />
+        {visibility ? <StatusChip label={visibility} variant="soft" /> : null}
       </div>
     </section>
   );

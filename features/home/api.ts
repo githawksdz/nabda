@@ -7,7 +7,12 @@ import {
   HOME_FEED_SELECT,
   PROTOCOL_CATALOG_SELECT,
 } from "@/lib/authz/selects";
-import { filterReadableContent, getViewerAccess } from "@/lib/authz/access";
+import {
+  filterReadableContent,
+  getViewerAccess,
+  viewerCanReadSlug,
+  type ParentContentType,
+} from "@/lib/authz/access";
 import type { Calculator, HomeFeedItem, Protocol } from "@/types/content";
 import type { Profile } from "@/types/database";
 
@@ -67,7 +72,7 @@ export async function getHomeFeedItems(profile: Profile | null): Promise<HomeFee
     return [];
   }
 
-  return ((data ?? []) as HomeFeedItem[]).filter((item) => {
+  const audienceFiltered = ((data ?? []) as HomeFeedItem[]).filter((item) => {
     if (item.visibility === "premium" && !(viewer.authenticated && viewer.hasActivePro)) {
       return false;
     }
@@ -83,4 +88,39 @@ export async function getHomeFeedItems(profile: Profile | null): Promise<HomeFee
     }
     return true;
   });
+
+  const clinical: Array<{ type: ParentContentType; slug: string }> = [];
+  for (const item of audienceFiltered) {
+    const parent = feedTargetParentType(item.target_type);
+    if (parent && item.target_slug) {
+      clinical.push({ type: parent, slug: item.target_slug });
+    }
+  }
+
+  const readableClinical = new Set<string>();
+  await Promise.all(
+    clinical.map(async ({ type, slug }) => {
+      if (await viewerCanReadSlug(type, slug)) {
+        readableClinical.add(`${type}:${slug}`);
+      }
+    }),
+  );
+
+  return audienceFiltered.filter((item) => {
+    const parent = feedTargetParentType(item.target_type);
+    if (!parent || !item.target_slug) {
+      return true;
+    }
+    return readableClinical.has(`${parent}:${item.target_slug}`);
+  });
+}
+
+function feedTargetParentType(
+  targetType: string | null,
+): ParentContentType | null {
+  if (targetType === "protocol") return "protocol";
+  if (targetType === "cat") return "cat";
+  if (targetType === "drug") return "drug";
+  if (targetType === "calculator") return "calculator";
+  return null;
 }

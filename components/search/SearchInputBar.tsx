@@ -36,6 +36,7 @@ export function SearchInputBar({
         value={value}
         onChange={(event) => onChange(event.target.value)}
         placeholder={placeholder}
+        aria-label="Recherche"
         className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
       />
       {value ? (

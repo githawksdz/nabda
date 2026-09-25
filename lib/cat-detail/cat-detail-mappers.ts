@@ -310,7 +310,7 @@ function preparationStep(id: string): CatStep {
     order: 1,
     title: "Structure en préparation",
     description:
-      "Les étapes décisionnelles seront ajoutées après relecture. Adapter selon le protocole local.",
+      "Les étapes décisionnelles seront ajoutées prochainement. Adapter selon le protocole local.",
     chips: ["Éditorial"],
   };
 }

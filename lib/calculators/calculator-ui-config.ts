@@ -162,15 +162,12 @@ export function calculatorStatusLabel(item: CalculatorSummary): string {
     item.visibility === "preview_only" ||
     item.status === "draft"
   ) {
-    return "Structure en préparation";
+    return "Contenu en préparation";
   }
-  if (item.reviewStatus === "validated" && item.status !== "needs_validation") {
-    return "Validé";
+  if (item.status === "published") {
+    return "Publié";
   }
-  if (item.reviewStatus === "needs_revision") {
-    return "Révision requise";
-  }
-  return "Structure en préparation";
+  return "Contenu en préparation";
 }
 
 const CALCULATOR_SLUG_ALIASES: Record<string, string> = {

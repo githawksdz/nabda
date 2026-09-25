@@ -11,7 +11,6 @@ import { CatSegmentedTabs } from "./CatSegmentedTabs";
 import { CatStepsView } from "./CatStepsView";
 import { CatNotesView } from "./CatNotesView";
 import { CatSourcesView } from "./CatSourcesView";
-import { CatMapPreparationState } from "./CatMapPreparationState";
 import { CatRedFlags } from "./CatRedFlags";
 import { CatLinkedTools } from "./CatLinkedTools";
 import { CatFlowchartCanvas } from "@/components/cat-flowchart/CatFlowchartCanvas";
@@ -42,8 +41,6 @@ export function CatDetailPage({
   initialBookmarked = false,
 }: CatDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
-  const [notified, setNotified] = useState(false);
-  const [suggested, setSuggested] = useState(false);
   const [toast, setToast] = useState<string | null>(null);
 
   const sourceMode = Boolean(source);
@@ -85,16 +82,6 @@ export function CatDetailPage({
     setBookmarked(next);
     showToast(next ? "CAT enregistrée" : "CAT retirée");
     void persistFavorite();
-  }
-
-  function toggleNotify() {
-    const next = !notified;
-    setNotified(next);
-    showToast(
-      next
-        ? "Notification programmée dès la parution officielle"
-        : "Alerte de publication retirée",
-    );
   }
 
   async function shareCat() {
@@ -156,7 +143,7 @@ export function CatDetailPage({
             {mode === "missing" && !source ? (
               <EmptyContentState
                 title="CAT introuvable"
-                description="Cette carte clinique n'est pas encore disponible. Structure en préparation."
+                description="Cette carte clinique n'est pas disponible dans Nabda."
                 href="/cat"
                 actionLabel="Retour aux CAT"
               />
@@ -182,15 +169,6 @@ export function CatDetailPage({
                   slug={detail?.map.slug ?? source?.slug ?? ""}
                   active={activeTab}
                 />
-                {mode === "preparation" && detail && !source ? (
-                  <CatMapPreparationState
-                    detail={detail}
-                    notified={notified}
-                    suggested={suggested}
-                    onNotify={toggleNotify}
-                    onSuggest={() => setSuggested(true)}
-                  />
-                ) : null}
                 <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-6">
                   <div
                     className={
@@ -207,15 +185,6 @@ export function CatDetailPage({
                           data={source}
                           linkMode="public"
                           variant="image"
-                          showProvenance
-                        />
-                      ) : detail ? (
-                        <CatMapPreparationState
-                          detail={detail}
-                          notified={notified}
-                          suggested={suggested}
-                          onNotify={toggleNotify}
-                          onSuggest={() => setSuggested(true)}
                         />
                       ) : null
                     ) : null}

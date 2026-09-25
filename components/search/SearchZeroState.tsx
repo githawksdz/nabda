@@ -7,17 +7,10 @@ import { ZERO_PIVOTS } from "@/lib/search/search-ui-constants";
 
 type SearchZeroStateProps = {
   query: string;
-  suggested: boolean;
   onClear: () => void;
-  onSuggest: () => void;
 };
 
-export function SearchZeroState({
-  query,
-  suggested,
-  onClear,
-  onSuggest,
-}: SearchZeroStateProps) {
+export function SearchZeroState({ query, onClear }: SearchZeroStateProps) {
   const demoMode = isDemoContentModeClient();
   const zeroFallbackProtocols = demoMode
     ? (getSearchDemoFixturesSync()?.ZERO_FALLBACK_PROTOCOLS ?? [])
@@ -25,12 +18,7 @@ export function SearchZeroState({
 
   return (
     <div className="flex flex-col gap-5">
-      <ZeroResultCanvas
-        query={query}
-        suggested={suggested}
-        onClear={onClear}
-        onSuggest={onSuggest}
-      />
+      <ZeroResultCanvas query={query} onClear={onClear} />
 
       <section>
         <div className="mb-2">

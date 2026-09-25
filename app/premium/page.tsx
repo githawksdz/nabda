@@ -1,10 +1,5 @@
-import { EmptyModulePage } from "@/components/app/EmptyModulePage";
+import { redirect } from "next/navigation";
 
 export default function PremiumPage() {
-  return (
-    <EmptyModulePage
-      title="Nabda Pro"
-      description="Les packs hors ligne et outils Pro seront ajoutés ici."
-    />
-  );
+  redirect("/offline");
 }

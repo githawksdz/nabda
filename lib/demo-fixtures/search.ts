@@ -45,7 +45,7 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
         type: "cat",
         slug: "douleur-thoracique",
         title: "Douleur thoracique aiguë",
-        statusLabel: "Révision médicale requise",
+        statusLabel: "Contenu en préparation",
         extraLabel: "2 min",
         description:
           "Tri sélectif SCA ST+ / non ST+, embolie pulmonaire, dissection aortique.",
@@ -111,7 +111,7 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
         type: "drug",
         slug: "paracetamol",
         title: "Paracétamol (Acétaminophène)",
-        statusLabel: "Révision pharmacologique requise",
+        statusLabel: "Contenu en préparation",
         extraLabel: "Perfalgan • Doliprane",
         // TODO: Replace with pharmacist-reviewed drug data after validation.
         badge: "Posologies non disponibles dans cette version",
@@ -136,7 +136,7 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
   {
     id: "reco",
     title: "Protocoles (2)",
-    subtitle: "Sociétés savantes · sources à consolider",
+    subtitle: "Sociétés savantes · Protocoles",
     count: 2,
     dotClassName: "bg-on-surface-variant",
     results: [
@@ -145,11 +145,11 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
         type: "recommendation",
         slug: "cephalees-brutales-hsa",
         title: "Céphalées brutales et suspicion d'HSA",
-        statusLabel: "Révision médicale requise",
+        statusLabel: "Contenu en préparation",
         extraLabel: "Céphalée brutale inhabituelle",
         description:
           "Orientation diagnostique à interpréter selon le contexte clinique et le protocole local.",
-        footer: "Sources à consolider",
+        footer: "Publié",
         href: "/protocols/cephalees-brutales-hsa",
       },
     ],
@@ -192,7 +192,7 @@ export const AMOX_MEDICATIONS: MedicationSearchResult[] = [
     subtitle: "DCI · Céphalosporine 3G injectable",
     statusChip: "Fiche en préparation",
     infoLabel: "Usage hospitalier",
-    infoMeta: "Révision pharmacologique requise",
+    infoMeta: "Contenu en préparation",
     // TODO: Replace with pharmacist-reviewed drug data after validation.
     infoText: "Posologies non disponibles dans cette version. Selon protocole local.",
     footerText: "Compatibilités à confirmer après validation",

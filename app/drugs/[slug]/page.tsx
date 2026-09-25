@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { ContentUnavailable } from "@/components/app/ContentUnavailable";
+import { redirect } from "next/navigation";
 import { DrugDetailPage } from "@/components/drugs/DrugDetailPage";
 import { firstQueryValue } from "@/lib/content-data/query-helpers";
 import { getDrugRenderData } from "@/lib/content-data/drug-data";
+import {
+  normalizeDoctorContentSlug,
+  requirePublishedDoctorContent,
+} from "@/lib/authz/require-published-doctor-content";
+import { viewerCanReadSlug } from "@/lib/authz/access";
 import {
   isFavorite,
   recordContentView,
@@ -20,7 +25,14 @@ export async function generateMetadata({
   params,
 }: DrugDetailRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const source = await getDrugRenderData(slug, { linkMode: "public" });
+  const normalized = normalizeDoctorContentSlug(slug);
+  if (!normalized || !(await viewerCanReadSlug("drug", normalized))) {
+    return {
+      title: "Médicament · Nabda",
+      description: "Fiche médicament Nabda.",
+    };
+  }
+  const source = await getDrugRenderData(normalized, { linkMode: "public" });
   return {
     title: source?.title ? `${source.title} · Nabda` : "Médicament · Nabda",
     description: "Fiche médicament Nabda.",
@@ -33,10 +45,11 @@ export default async function DrugDetailRoute({
 }: DrugDetailRouteProps) {
   const { slug } = await params;
   const query = await searchParams;
-  const source = await getDrugRenderData(slug, { linkMode: "public" });
+  const gatedSlug = await requirePublishedDoctorContent("drug", slug);
+  const source = await getDrugRenderData(gatedSlug, { linkMode: "public" });
 
   if (!source) {
-    return <ContentUnavailable kind="drug" />;
+    redirect("/home");
   }
 
   await recordContentView("drug", source.slug);
@@ -45,8 +58,8 @@ export default async function DrugDetailRoute({
 
   return (
     <DrugDetailPage
-      key={slug}
-      slug={slug}
+      key={gatedSlug}
+      slug={gatedSlug}
       source={source}
       tab={firstQueryValue(query.tab)}
       mode="overview"

@@ -48,7 +48,7 @@ export function ProtocolDeepSection({
       ) : (
         <EmptyContentState
           title="Section en préparation"
-          description="Le contenu de cette section sera ajouté après relecture."
+          description="Le contenu de cette section n'est pas encore disponible dans Nabda."
           href={protocolHref(detail.protocol.slug)}
           actionLabel="Retour à la synthèse"
         />

@@ -12,7 +12,6 @@ import { CatLatestSection } from "./CatLatestSection";
 import { CatContextGrid } from "./CatContextGrid";
 import { CatOfflineCallout } from "./CatOfflineCallout";
 import { CatUrgencesView } from "./CatUrgencesView";
-import { CatPreparationView } from "./CatPreparationView";
 import { CatEmptyInlineState } from "./CatEmptyInlineState";
 import { isDemoContentModeClient } from "@/lib/content-data/content-source-mode";
 import {
@@ -205,16 +204,6 @@ export function CatIndexPage({
         </div>
       ) : null}
 
-      {state === "preparation" ? (
-        <div className="pt-2">
-          <CatPreparationView
-            query={query}
-            onQueryChange={setQuery}
-            category={category}
-            onCategoryChange={selectCategory}
-          />
-        </div>
-      ) : null}
     </AppShell>
   );
 }

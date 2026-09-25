@@ -59,12 +59,12 @@ export const PLACEHOLDER_TIMELINE: EditorialTimelineItem[] = [
   },
   {
     id: "tl-review",
-    title: "Révision médicale à venir",
+    title: "Contenu clinique en cours d'intégration",
     status: "upcoming",
   },
   {
     id: "tl-local",
-    title: "Adaptation locale à vérifier",
+    title: "Contexte local",
     status: "pending",
   },
 ];
@@ -72,14 +72,14 @@ export const PLACEHOLDER_TIMELINE: EditorialTimelineItem[] = [
 export const PLACEHOLDER_REFERENCES: Reference[] = [
   {
     id: "ref-placeholder-1",
-    title: "Sources à consolider",
-    note: "Aucun corpus définitif n'est associé à cette fiche pour le moment.",
+    title: "HAS — recommandations (exemple)",
+    note: "Référence illustrative pour la démo.",
     review_status: "unreviewed",
   },
   {
     id: "ref-placeholder-2",
-    title: "Adaptation locale à documenter",
-    note: "Filières et disponibilité à vérifier selon le site.",
+    title: "Contexte de prise en charge",
+    note: "À adapter selon le protocole local.",
     review_status: "unreviewed",
   },
 ];
@@ -278,7 +278,7 @@ export function mapProtocolReferences(
       citation: row.reference_type,
       year: row.year != null ? String(row.year) : null,
       url: row.url,
-      note: "Source placeholder — à consolider après relecture.",
+      note: "Référence illustrative.",
       review_status: sanitizeReviewStatus(row.review_status),
     }));
 }
@@ -589,10 +589,10 @@ export function protocolDetailFromDbRow(
       intro:
         overlaySafeText(
           row.summary,
-          "Le résumé existe déjà. La version complète sera publiée après relecture.",
+          "Le résumé existe déjà. La version complète sera publiée prochainement.",
           row.review_status,
           row.status,
-        ) ?? "Le résumé existe déjà. La version complète sera publiée après relecture.",
+        ) ?? "Le résumé existe déjà. La version complète sera publiée prochainement.",
       metric: {
         value: "Synthèse",
         label: "Version courte",
@@ -605,7 +605,7 @@ export function protocolDetailFromDbRow(
       : [
             {
               id: `${row.id}-kp-1`,
-              text: "Cette fiche est une structure éditoriale. Aucune conduite définitive n'est validée ici.",
+              text: "Cette fiche est en cours d'intégration. Adapter selon le protocole local.",
             },
             {
               id: `${row.id}-kp-2`,

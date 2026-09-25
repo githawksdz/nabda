@@ -5,7 +5,6 @@ import type {
   CatIndexState,
   CatSubFilter,
 } from "@/types/cat";
-import { safeSourceNote } from "@/lib/content-detail/status-labels";
 
 const CATEGORIES: CatCategorySlug[] = [
   "all",
@@ -33,9 +32,6 @@ export function resolveCatIndexState(
   if (preview === "urgences" || category === "urgences") {
     return "urgences";
   }
-  if (preview === "preparation" || category === "dermatologie") {
-    return "preparation";
-  }
   return "general";
 }
 
@@ -44,8 +40,7 @@ export function resolveActiveCategory(
   preview?: string | null,
 ): CatCategorySlug {
   if (preview === "urgences") return "urgences";
-  if (preview === "preparation") return "dermatologie";
-  return parseCatCategory(category);
+  return parseCatCategory(category ?? (preview === "preparation" ? "dermatologie" : null));
 }
 
 export function matchesCatQuery(value: string, query: string) {
@@ -76,22 +71,7 @@ export function filterCatCards(
   });
 }
 
-const REVIEWED = new Set(["validated", "medical_reviewed", "editorial_reviewed"]);
-
 export function overlaySeedReview(card: CatCard, seedCats: CatMap[]): CatCard {
-  const row = seedCats.find((item) => item.slug === card.slug);
-  if (
-    !row ||
-    row.status === "seed_placeholder" ||
-    row.review_status === "editorial_placeholder"
-  ) {
-    return card;
-  }
-  if (!REVIEWED.has(row.review_status)) {
-    return card;
-  }
-  return {
-    ...card,
-    sourceLabel: safeSourceNote(row.source_note, card.sourceLabel),
-  };
+  void seedCats;
+  return card;
 }

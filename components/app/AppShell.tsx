@@ -27,6 +27,7 @@ export function AppShell({
   headerActions,
   navVariant = "pill",
   contentClassName,
+  frameClassName,
   avatarDot = false,
   backHref,
   showBottomNav = true,
@@ -55,6 +56,7 @@ export function AppShell({
             showBottomNav
               ? "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(112px+env(safe-area-inset-bottom,0px))] lg:pb-8"
               : "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(96px+env(safe-area-inset-bottom,0px))] lg:pb-10",
+            frameClassName,
             contentClassName,
           )}
         >

@@ -2,6 +2,7 @@ import { cache } from "react";
 import { revalidatePath } from "next/cache";
 import { isDemoContentMode } from "@/lib/content-data/content-source-mode";
 import { isProPlanSlug } from "@/lib/authz/content-gate";
+import { getViewerAccess } from "@/lib/authz/access";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { getPersonalDemoFixtures } from "@/lib/demo-fixtures/load";
@@ -128,6 +129,7 @@ function putCatalog(
     display_name?: string | null;
     status?: string | null;
     review_status?: string | null;
+    visibility?: string | null;
   }>,
 ) {
   for (const row of rows) {
@@ -139,6 +141,7 @@ function putCatalog(
       title,
       status: row.status,
       reviewStatus: row.review_status,
+      visibility: row.visibility,
     });
   }
 }
@@ -162,25 +165,25 @@ async function loadCatalogMap(
       catSlugs.length
         ? supabase
             .from("cat_maps")
-            .select("slug, title, status, review_status")
+            .select("slug, title, status, review_status, visibility")
             .in("slug", catSlugs)
         : Promise.resolve({ data: [] }),
       protocolSlugs.length
         ? supabase
             .from("protocols")
-            .select("slug, title, status, review_status")
+            .select("slug, title, status, review_status, visibility")
             .in("slug", protocolSlugs)
         : Promise.resolve({ data: [] }),
       calculatorSlugs.length
         ? supabase
             .from("calculators")
-            .select("slug, title, status, review_status")
+            .select("slug, title, status, review_status, visibility")
             .in("slug", calculatorSlugs)
         : Promise.resolve({ data: [] }),
       drugSlugs.length
         ? supabase
             .from("drugs")
-            .select("slug, display_name, status, review_status")
+            .select("slug, display_name, status, review_status, visibility")
             .in("slug", drugSlugs)
         : Promise.resolve({ data: [] }),
     ]);
@@ -232,18 +235,22 @@ export const getFavoriteItems = cache(
         return { items: [], source: "empty" };
       }
 
+      const viewer = await getViewerAccess();
       const catalog = await loadCatalogMap(rows);
       const items = rows
         .map((row) =>
-          mapFavoriteRow({
-            id: row.id,
-            itemType: row.item_type,
-            itemSlug: row.item_slug,
-            createdAt: row.created_at,
-            catalog: isPersonalEntityType(row.item_type)
-              ? catalog.get(`${row.item_type}:${row.item_slug}`)
-              : undefined,
-          }),
+          mapFavoriteRow(
+            {
+              id: row.id,
+              itemType: row.item_type,
+              itemSlug: row.item_slug,
+              createdAt: row.created_at,
+              catalog: isPersonalEntityType(row.item_type)
+                ? catalog.get(`${row.item_type}:${row.item_slug}`)
+                : undefined,
+            },
+            viewer,
+          ),
         )
         .filter((item): item is FavoriteItem => item !== null);
 
@@ -287,19 +294,23 @@ export const getHistoryItems = cache(
         return { items: [], source: "empty" };
       }
 
+      const viewer = await getViewerAccess();
       const catalog = await loadCatalogMap(rows);
       const items = rows
         .map((row) =>
-          mapHistoryRow({
-            id: row.id,
-            itemType: row.item_type,
-            itemSlug: row.item_slug,
-            viewedAt: row.viewed_at,
-            metadata: row.metadata,
-            catalog: isPersonalEntityType(row.item_type)
-              ? catalog.get(`${row.item_type}:${row.item_slug}`)
-              : undefined,
-          }),
+          mapHistoryRow(
+            {
+              id: row.id,
+              itemType: row.item_type,
+              itemSlug: row.item_slug,
+              viewedAt: row.viewed_at,
+              metadata: row.metadata,
+              catalog: isPersonalEntityType(row.item_type)
+                ? catalog.get(`${row.item_type}:${row.item_slug}`)
+                : undefined,
+            },
+            viewer,
+          ),
         )
         .filter((item): item is HistoryItem => item !== null);
 

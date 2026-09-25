@@ -26,7 +26,7 @@ export function CatSourceRenderer({
   data,
   linkMode = "public",
   keepInternalQuery = false,
-  showProvenance = true,
+  showProvenance = linkMode === "internal",
   variant = "full",
 }: CatSourceRendererProps) {
   const [mode, setMode] = useState<CatRenderMode>(

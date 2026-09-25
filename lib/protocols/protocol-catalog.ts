@@ -1,4 +1,4 @@
-import { reviewStatusLabel } from "@/lib/content-detail/status-labels";
+import { doctorCatalogStatusLabel } from "@/lib/content-detail/doctor-facing-status";
 import type { Protocol } from "@/types/content";
 
 export type ProtocolSummary = {
@@ -16,7 +16,10 @@ export function summaryFromDbProtocol(row: Protocol): ProtocolSummary {
     slug: row.slug,
     title: row.title,
     summary: row.summary ?? undefined,
-    statusLabel: reviewStatusLabel(row.review_status, row.status),
+    statusLabel: doctorCatalogStatusLabel({
+      publicationStatus: row.status,
+      visibility: row.visibility,
+    }),
     href: `/protocols/${row.slug}`,
   };
 }

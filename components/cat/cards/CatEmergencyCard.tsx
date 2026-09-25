@@ -50,7 +50,6 @@ export function CatEmergencyCard({ card }: CatEmergencyCardProps) {
         <span className="mt-1 block text-body-md font-medium">{card.title}</span>
         <span className="mt-1 flex flex-wrap gap-x-2 text-label-sm text-on-surface-variant">
           <span>{card.categoryLabel}</span>
-          {card.sourceLabel ? <span>{card.sourceLabel}</span> : null}
         </span>
       </span>
       <ChevronRight

@@ -96,7 +96,7 @@ export function readingTrackerLabel(
     detail.protocol.short_title ?? detail.protocol.title.split(" et ")[0];
   const minutes = section.reading_time_minutes ?? 2;
   if (section.slug === "sources") {
-    return `${shortTitle} · Sources · à consolider`;
+    return `${shortTitle} · Références`;
   }
   return `${shortTitle} · Section ${section.order} sur ${detail.article.section_count} · ${minutes} min`;
 }
@@ -104,23 +104,22 @@ export function readingTrackerLabel(
 export const CARD_SECTIONS_TITLE = "Parcours séquentiel";
 export const KEY_POINTS_TITLE = "Points clés";
 export const LINKED_CONTENT_TITLE = "Outils et contenus liés";
-export const REVIEW_PANEL_TITLE = "Statut éditorial";
 export const PREPARATION_TITLE = "Protocole intégral en préparation";
 export const PREPARATION_SUBTITLE =
-  "Le résumé existe déjà. La version complète sera publiée après relecture.";
+  "Une synthèse est disponible. La fiche complète n’est pas encore accessible dans Nabda.";
 
 export const CAT_TABS: { id: CatTab; label: string }[] = [
   { id: "carte", label: "Carte" },
   { id: "etapes", label: "Étapes" },
   { id: "notes", label: "Notes" },
-  { id: "sources", label: "Sources" },
+  { id: "sources", label: "Références" },
 ];
 
 export const CAT_LINKED_TOOLS_TITLE = "Outils décisionnels liés";
 export const CAT_RED_FLAGS_TITLE = "Signaux d’alerte";
 export const CAT_MAP_PREPARATION_TITLE = "Carte CAT en préparation";
 export const CAT_MAP_PREPARATION_SUBTITLE =
-  "La fiche existe déjà. La carte décisionnelle sera ajoutée après validation.";
+  "La fiche existe déjà. La carte décisionnelle n’est pas encore disponible dans Nabda.";
 export const CAT_CARTE_PLACEHOLDER_TITLE = "Carte interactive à intégrer";
 export const CAT_CARTE_PLACEHOLDER_SUBTITLE =
   "Le canevas zoomable sera ajouté dans l’étape suivante.";

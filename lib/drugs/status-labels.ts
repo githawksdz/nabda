@@ -65,64 +65,26 @@ export function isPreparationDrug(drug: Pick<DrugSummary, "status" | "visibility
 export function drugIndexStatusLabel(
   drug: Pick<DrugSummary, "status" | "reviewStatus" | "visibility">,
 ): string {
-  // TODO: "Validé" is intentionally mapped only when reviewStatus is explicitly validated.
-  // Seed placeholders and editorial_placeholder rows must never display it.
-  if (isPreparationDrug(drug)) {
-    return DRUG_INDEX_STATUS_LABELS.preparation;
+  if (isPreparationDrug(drug) || drug.status !== "published") {
+    return "Contenu en préparation";
   }
-
-  if (canClaimValidated(drug.reviewStatus, drug.status)) {
-    return DRUG_INDEX_STATUS_LABELS.validated;
+  if (drug.visibility === "premium") {
+    return "Pro";
   }
-
-  if (drug.reviewStatus === "unreviewed") {
-    return DRUG_INDEX_STATUS_LABELS.unreviewed;
-  }
-
-  if (
-    drug.reviewStatus === "needs_revision" ||
-    drug.reviewStatus === "pharmacist_review_required"
-  ) {
-    return DRUG_INDEX_STATUS_LABELS.needsRevision;
-  }
-
-  return DRUG_INDEX_STATUS_LABELS.sources;
+  return "Publié";
 }
 
 export function drugDetailStatusLabel(
   drug: Pick<DrugSummary, "status" | "reviewStatus" | "visibility">,
 ): string {
-  if (isPreparationDrug(drug)) {
-    return DRUG_INDEX_STATUS_LABELS.preparation;
-  }
-
-  if (canClaimValidated(drug.reviewStatus, drug.status)) {
-    return DRUG_INDEX_STATUS_LABELS.validated;
-  }
-
-  if (drug.reviewStatus === "unreviewed") {
-    return DRUG_INDEX_STATUS_LABELS.unreviewed;
-  }
-
-  if (
-    drug.reviewStatus === "needs_revision" ||
-    drug.reviewStatus === "pharmacist_review_required" ||
-    drug.status === "needs_pharmacology_review"
-  ) {
-    return DRUG_DETAIL_STATUS_LABELS.pharmacologyReview;
-  }
-
-  return DRUG_DETAIL_STATUS_LABELS.sources;
+  return drugIndexStatusLabel(drug);
 }
 
 export function drugSourceStatusLabel(
   sourceStatus: DrugSafetyItem["sourceStatus"],
 ): string {
-  if (sourceStatus === "validated") {
-    return DRUG_INDEX_STATUS_LABELS.validated;
-  }
-  if (sourceStatus === "reviewed") {
-    return DRUG_DETAIL_STATUS_LABELS.sources;
+  if (sourceStatus === "validated" || sourceStatus === "reviewed") {
+    return "Source documentée";
   }
   return DRUG_DETAIL_STATUS_LABELS.toVerify;
 }

@@ -1,8 +1,13 @@
 import type { Metadata } from "next";
-import { ContentUnavailable } from "@/components/app/ContentUnavailable";
+import { redirect } from "next/navigation";
 import { CatDetailPage } from "@/components/cat-detail/CatDetailPage";
 import { firstQueryValue } from "@/lib/content-data/query-helpers";
 import { getCatRenderData } from "@/lib/content-data/cat-data";
+import {
+  normalizeDoctorContentSlug,
+  requirePublishedDoctorContent,
+} from "@/lib/authz/require-published-doctor-content";
+import { viewerCanReadSlug } from "@/lib/authz/access";
 import {
   isFavorite,
   recordContentView,
@@ -20,7 +25,14 @@ export async function generateMetadata({
   params,
 }: CatDetailRouteProps): Promise<Metadata> {
   const { slug } = await params;
-  const source = await getCatRenderData(slug, { linkMode: "public" });
+  const normalized = normalizeDoctorContentSlug(slug);
+  if (!normalized || !(await viewerCanReadSlug("cat", normalized))) {
+    return {
+      title: "CAT · Nabda",
+      description: "Carte clinique Nabda.",
+    };
+  }
+  const source = await getCatRenderData(normalized, { linkMode: "public" });
   return {
     title: source?.title ? `${source.title} · Nabda` : "CAT · Nabda",
     description: "Carte clinique Nabda.",
@@ -33,10 +45,11 @@ export default async function CatDetailRoute({
 }: CatDetailRouteProps) {
   const { slug } = await params;
   const query = await searchParams;
-  const source = await getCatRenderData(slug, { linkMode: "public" });
+  const gatedSlug = await requirePublishedDoctorContent("cat", slug);
+  const source = await getCatRenderData(gatedSlug, { linkMode: "public" });
 
   if (!source) {
-    return <ContentUnavailable kind="cat" />;
+    redirect("/home");
   }
 
   await recordContentView("cat", source.slug);
@@ -45,7 +58,7 @@ export default async function CatDetailRoute({
 
   return (
     <CatDetailPage
-      key={slug}
+      key={gatedSlug}
       source={source}
       tab={firstQueryValue(query.tab)}
       viewState={firstQueryValue(query.state)}

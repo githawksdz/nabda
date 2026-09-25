@@ -41,7 +41,7 @@ export function ProtocolSourceRenderer({
   data,
   linkMode = "public",
   keepInternalQuery = false,
-  showProvenance = true,
+  showProvenance = linkMode === "internal",
   sectionSlug,
 }: ProtocolSourceRendererProps) {
   const [mode, setMode] = useState<ProtocolRenderMode>("lecture");

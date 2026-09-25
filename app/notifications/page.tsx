@@ -1,10 +1,5 @@
-import { EmptyModulePage } from "@/components/app/EmptyModulePage";
+import { redirect } from "next/navigation";
 
 export default function NotificationsPage() {
-  return (
-    <EmptyModulePage
-      title="Notifications"
-      description="Vos notifications apparaîtront ici."
-    />
-  );
+  redirect("/profile");
 }

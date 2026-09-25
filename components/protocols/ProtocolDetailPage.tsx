@@ -7,7 +7,6 @@ import { BottomReadingDock, type DockAction } from "@/components/content-detail/
 import { EmptyContentState } from "@/components/content-detail/EmptyContentState";
 import { ProtocolOverview } from "./ProtocolOverview";
 import { ProtocolDeepSection } from "./ProtocolDeepSection";
-import { ProtocolPreparationState } from "./ProtocolPreparationState";
 import { ProtocolSourceRenderer } from "@/components/content-renderers/protocol/ProtocolSourceRenderer";
 import {
   adjacentSections,
@@ -35,8 +34,6 @@ export function ProtocolDetailPage({
   initialBookmarked = false,
 }: ProtocolDetailPageProps) {
   const [bookmarked, setBookmarked] = useState(initialBookmarked);
-  const [notified, setNotified] = useState(false);
-  const [suggested, setSuggested] = useState(false);
   const [summarySaved, setSummarySaved] = useState(initialBookmarked);
   const [toast, setToast] = useState<string | null>(null);
 
@@ -95,16 +92,6 @@ export function ProtocolDetailPage({
     setSummarySaved(next);
     showToast(next ? "Synthèse sauvegardée" : "Synthèse retirée");
     void persistFavorite();
-  }
-
-  function toggleNotify() {
-    const next = !notified;
-    setNotified(next);
-    showToast(
-      next
-        ? "Notification programmée dès la parution officielle"
-        : "Alerte de publication retirée",
-    );
   }
 
   function toggleSummarySave() {
@@ -222,7 +209,7 @@ export function ProtocolDetailPage({
             {!source && (mode === "missing" || !detail) ? (
               <EmptyContentState
                 title="Protocole introuvable"
-                description="Cette fiche n'est pas encore disponible. Structure en préparation."
+                description="Cette fiche n'est pas disponible dans Nabda."
               />
             ) : null}
             {!source && mode === "overview" && detail ? (
@@ -230,18 +217,6 @@ export function ProtocolDetailPage({
             ) : null}
             {!source && mode === "section" && detail && section ? (
               <ProtocolDeepSection detail={detail} section={section} />
-            ) : null}
-            {!source && mode === "preparation" && detail ? (
-              <ProtocolPreparationState
-                detail={detail}
-                notified={notified}
-                suggested={suggested}
-                summarySaved={summarySaved}
-                onNotify={toggleNotify}
-                onSuggest={() => setSuggested(true)}
-                onSaveSummary={toggleSummarySave}
-                onShare={shareSummary}
-              />
             ) : null}
           </div>
         {dockActions.length > 0 ? (

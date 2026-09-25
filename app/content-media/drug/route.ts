@@ -43,7 +43,7 @@ export async function GET(request: NextRequest) {
     status: 200,
     headers: {
       "Content-Type": mime,
-      "Cache-Control": "private, max-age=3600",
+      "Cache-Control": "private, no-store",
       "X-Robots-Tag": "noindex, nofollow",
       "X-Content-Type-Options": "nosniff",
     },

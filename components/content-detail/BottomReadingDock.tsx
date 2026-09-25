@@ -4,18 +4,31 @@ import {
   BookmarkCheck,
   BookOpen,
   ChevronRight,
+  Flag,
   GitBranch,
+  RotateCcw,
   Share2,
   WifiOff,
 } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+export type DockActionIcon =
+  | "bookmark"
+  | "bookmark-check"
+  | "sources"
+  | "next"
+  | "cat"
+  | "share"
+  | "offline"
+  | "reset"
+  | "report";
 
 export type DockAction = {
   id: string;
   label: string;
   href?: string;
   onClick?: () => void;
-  icon: "bookmark" | "bookmark-check" | "sources" | "next" | "cat" | "share" | "offline";
+  icon: DockActionIcon;
   active?: boolean;
 };
 
@@ -24,30 +37,39 @@ type BottomReadingDockProps = {
   meta?: string;
 };
 
-function DockIcon({ name }: { name: DockAction["icon"] }) {
+/** Reserve space so fixed dock does not cover the last block (meta line + 72px bar). */
+export const READING_DOCK_CONTENT_CLASS =
+  "pb-[calc(104px+env(safe-area-inset-bottom,0px))] lg:pb-[calc(112px+env(safe-area-inset-bottom,0px))]";
+
+function DockIcon({ name }: { name: DockActionIcon }) {
   const className = "size-4";
-  if (name === "bookmark") {
-    return <Bookmark className={className} strokeWidth={1.75} />;
+  switch (name) {
+    case "bookmark":
+      return <Bookmark className={className} strokeWidth={1.75} />;
+    case "bookmark-check":
+      return <BookmarkCheck className={className} strokeWidth={1.75} />;
+    case "sources":
+      return <BookOpen className={className} strokeWidth={1.75} />;
+    case "next":
+      return <ChevronRight className={className} strokeWidth={1.75} />;
+    case "cat":
+      return <GitBranch className={className} strokeWidth={1.75} />;
+    case "share":
+      return <Share2 className={className} strokeWidth={1.75} />;
+    case "reset":
+      return <RotateCcw className={className} strokeWidth={1.75} />;
+    case "report":
+      return <Flag className={className} strokeWidth={1.75} />;
+    default:
+      return <WifiOff className={className} strokeWidth={1.75} />;
   }
-  if (name === "bookmark-check") {
-    return <BookmarkCheck className={className} strokeWidth={1.75} />;
-  }
-  if (name === "sources") {
-    return <BookOpen className={className} strokeWidth={1.75} />;
-  }
-  if (name === "next") {
-    return <ChevronRight className={className} strokeWidth={1.75} />;
-  }
-  if (name === "cat") {
-    return <GitBranch className={className} strokeWidth={1.75} />;
-  }
-  if (name === "share") {
-    return <Share2 className={className} strokeWidth={1.75} />;
-  }
-  return <WifiOff className={className} strokeWidth={1.75} />;
 }
 
 export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
+  if (actions.length === 0) {
+    return null;
+  }
+
   return (
     <div className="fixed inset-x-0 bottom-0 z-40 bg-surface/90 pb-safe shadow-[0_-1px_8px_rgba(0,0,0,0.03)] backdrop-blur-xl lg:left-60">
       {meta ? (
@@ -57,7 +79,7 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
       ) : null}
       <nav
         aria-label="Actions de lecture"
-        className="mx-auto flex h-[72px] w-full max-w-[42rem] items-stretch justify-around px-1"
+        className="mx-auto flex h-[72px] w-full max-w-[42rem] items-stretch justify-around px-1 lg:max-w-none"
       >
         {actions.map((action) => {
           const className = cn(

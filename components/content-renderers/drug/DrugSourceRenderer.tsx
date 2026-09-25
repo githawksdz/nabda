@@ -31,8 +31,9 @@ type DrugSourceRendererProps = {
 
 export function DrugSourceRenderer({
   data,
+  linkMode = "public",
   keepInternalQuery = false,
-  showProvenance = true,
+  showProvenance = linkMode === "internal",
   showModeToggle = true,
   showFilters = false,
 }: DrugSourceRendererProps) {

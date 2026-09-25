@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { ContentUnavailable } from "@/components/app/ContentUnavailable";
+import { redirect } from "next/navigation";
 import { CalculatorDetailPage } from "@/components/calculators/CalculatorDetailPage";
 import { getCalculatorRenderData } from "@/lib/content-data/calculator-data";
 import { summaryFromDbCalculator } from "@/lib/calculators/calculator-mappers";
@@ -11,6 +11,11 @@ import {
 import { hasAnyCompiledEngine } from "@/lib/calculators/engine-registry";
 import { parseAdditiveSchemaFromPayload } from "@/lib/calculators/engines/additive-points";
 import { getCalculators } from "@/features/content/api";
+import {
+  normalizeDoctorContentSlug,
+  requirePublishedDoctorContent,
+} from "@/lib/authz/require-published-doctor-content";
+import { viewerCanReadSlug } from "@/lib/authz/access";
 import {
   isFavorite,
   recordContentView,
@@ -61,15 +66,19 @@ export async function generateMetadata({
 }: CalculatorDetailRouteProps): Promise<Metadata> {
   const { slug } = await params;
   const canonicalSlug = resolveCalculatorSlug(slug);
-  const source =
-    isGlasgowSlug(canonicalSlug) || isCockcroftSlug(canonicalSlug)
-      ? null
-      : await getCalculatorRenderData(canonicalSlug, { linkMode: "public" });
-  const title = isGlasgowSlug(canonicalSlug)
+  const normalized = normalizeDoctorContentSlug(canonicalSlug);
+  if (!normalized || !(await viewerCanReadSlug("calculator", normalized))) {
+    return {
+      title: "Calculateur · Nabda",
+      description: "Calculateur clinique Nabda.",
+    };
+  }
+  const title = isGlasgowSlug(normalized)
     ? "Score de Glasgow"
-    : isCockcroftSlug(canonicalSlug)
+    : isCockcroftSlug(normalized)
       ? "Cockcroft-Gault"
-      : (source?.title ?? "Calculateur");
+      : (await getCalculatorRenderData(normalized, { linkMode: "public" }))?.title ??
+        "Calculateur";
 
   return {
     title: `${title} · Nabda`,
@@ -84,39 +93,49 @@ export default async function CalculatorDetailRoute({
   const { slug } = await params;
   await searchParams;
   const canonicalSlug = resolveCalculatorSlug(slug);
-  const isDemoEngine =
-    isGlasgowSlug(canonicalSlug) || isCockcroftSlug(canonicalSlug);
-  const source = isDemoEngine
-    ? null
-    : await getCalculatorRenderData(canonicalSlug, { linkMode: "public" });
-  const mode = resolveMode(canonicalSlug, source);
+  const gatedSlug = await requirePublishedDoctorContent("calculator", canonicalSlug);
 
-  if (!isDemoEngine && !source) {
-    return <ContentUnavailable kind="calculator" />;
+  const isBuiltinEngine =
+    isGlasgowSlug(gatedSlug) || isCockcroftSlug(gatedSlug);
+  const source = isBuiltinEngine
+    ? null
+    : await getCalculatorRenderData(gatedSlug, { linkMode: "public" });
+
+  if (!isBuiltinEngine && !source) {
+    redirect("/home");
+  }
+
+  const mode = resolveMode(gatedSlug, source);
+  if (mode === "missing") {
+    redirect("/home");
   }
 
   const rows = await getCalculators();
   const row = rows.find(
     (item) =>
-      item.slug === canonicalSlug ||
-      resolveCalculatorSlug(item.slug) === canonicalSlug,
+      item.slug === gatedSlug ||
+      resolveCalculatorSlug(item.slug) === gatedSlug,
   );
   const calculator = row ? summaryFromDbCalculator(row) : undefined;
 
+  if (!calculator && !isBuiltinEngine) {
+    redirect("/home");
+  }
+
   await recordContentView(
     "calculator",
-    calculator?.slug ?? source?.slug ?? canonicalSlug,
+    calculator?.slug ?? source?.slug ?? gatedSlug,
   );
 
   const initialBookmarked = await isFavorite(
     "calculator",
-    calculator?.slug ?? source?.slug ?? canonicalSlug,
+    calculator?.slug ?? source?.slug ?? gatedSlug,
   );
 
   return (
     <CalculatorDetailPage
-      key={canonicalSlug}
-      slug={canonicalSlug}
+      key={gatedSlug}
+      slug={gatedSlug}
       calculator={calculator}
       source={source}
       mode={mode}

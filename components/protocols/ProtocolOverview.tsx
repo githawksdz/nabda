@@ -1,7 +1,6 @@
 import { ContentIdentityCard } from "@/components/content-detail/ContentIdentityCard";
 import { SectionNav } from "@/components/content-detail/SectionNav";
 import { LinkedContentGrid } from "@/components/content-detail/LinkedContentGrid";
-import { ReviewStatusPanel } from "@/components/content-detail/ReviewStatusPanel";
 import { ProtocolKeyPoints } from "./ProtocolKeyPoints";
 import { ProtocolSectionCards } from "./ProtocolSectionCards";
 import { getSectionNavItems } from "@/lib/content-detail/content-detail-ui-config";
@@ -102,10 +101,23 @@ export function ProtocolOverview({ detail }: ProtocolOverviewProps) {
             sections={detail.sections}
           />
           <LinkedContentGrid items={detail.linked_content} />
-          <ReviewStatusPanel
-            protocol={detail.protocol}
-            references={detail.references}
-          />
+          {detail.references.length > 0 ? (
+            <section className="rounded-2xl bg-surface-container-low p-4">
+              <h2 className="text-headline-sm">Références</h2>
+              <ul className="mt-3 space-y-2">
+                {detail.references.map((reference) => (
+                  <li key={reference.id}>
+                    <p className="text-body-md font-medium">{reference.title}</p>
+                    {reference.note ? (
+                      <p className="mt-1 text-body-sm text-on-surface-variant">
+                        {reference.note}
+                      </p>
+                    ) : null}
+                  </li>
+                ))}
+              </ul>
+            </section>
+          ) : null}
         </div>
       </div>
     </div>

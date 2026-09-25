@@ -188,9 +188,9 @@ const hsaPriseEnCharge: ProtocolSection = {
     {
       id: "hsa-pec-ref",
       type: "reference_mention",
-      label: "Sources à consolider",
+      label: "Références",
       href: "/protocols/cephalees-brutales-hsa?section=sources",
-      subtitle: "Relecture en cours",
+      subtitle: "Contenu en préparation",
     },
   ]),
 };
@@ -218,7 +218,7 @@ const hsaDetail: ProtocolDetail = {
     has_calculator_links: true,
     category_slug: "neurologie",
     content_type: "recommendation",
-    source_note: "Sources à consolider après relecture éditoriale et médicale.",
+    source_note: "Références dans une prochaine version Nabda.",
   },
   article: {
     id: `${HSA_ID}-article`,
@@ -280,8 +280,8 @@ const hsaDetail: ProtocolDetail = {
       nav_label: "Traitement",
       order: 5,
       summary:
-        "Les mesures thérapeutiques seront détaillées après relecture. En attendant, se référer au protocole local et à l'avis spécialisé. Aucune posologie n'est indiquée ici.",
-      tags: ["Local", "Relecture"],
+        "Les mesures thérapeutiques seront détaillées prochainement. En attendant, se référer au protocole local et à l'avis spécialisé. Aucune posologie n'est indiquée ici.",
+      tags: ["Local"],
     }),
     placeholderSection({
       id: `${HSA_ID}-sec-or`,
@@ -304,15 +304,15 @@ const hsaDetail: ProtocolDetail = {
       nav_label: "Sources",
       order: 7,
       summary:
-        "Les références définitives seront ajoutées après relecture. Les libellés ci-dessous restent des placeholders éditoriaux.",
-      tags: ["Relecture"],
+        "Les références définitives seront ajoutées prochainement. Les libellés ci-dessous restent des placeholders éditoriaux.",
+      tags: ["Clinique"],
       extra: [
         {
           id: "hsa-src-ref",
           type: "reference_mention",
-          label: "Sources à consolider",
+          label: "Références",
           href: "/protocols/cephalees-brutales-hsa",
-          subtitle: "Métadonnées non validées",
+          subtitle: "Exemple démo",
         },
       ],
     }),
@@ -368,13 +368,13 @@ const hsaDetail: ProtocolDetail = {
   references: [
     {
       id: "ref-hsa-1",
-      title: "Référence clinique à consolider",
-      note: "La source définitive sera ajoutée après relecture éditoriale et médicale.",
+      title: "HAS — recommandations (exemple)",
+      note: "La source définitive sera ajoutée dans une prochaine version Nabda.",
       review_status: "unreviewed",
     },
     {
       id: "ref-hsa-2",
-      title: "Adaptation locale à documenter",
+      title: "Contexte local",
       note: "Disponibilité des filières et examens à vérifier selon le site.",
       review_status: "unreviewed",
     },
@@ -382,7 +382,7 @@ const hsaDetail: ProtocolDetail = {
   timeline: [
     {
       id: "tl-hsa-1",
-      title: "Structure éditoriale & guidelines",
+      title: "Structure & guidelines",
       status: "created",
     },
     {
@@ -392,12 +392,12 @@ const hsaDetail: ProtocolDetail = {
     },
     {
       id: "tl-hsa-3",
-      title: "Relecture médicale collégiale",
+      title: "Mise à jour clinique",
       status: "upcoming",
     },
     {
       id: "tl-hsa-4",
-      title: "Adaptation locale Algérie & disponibilité locale",
+      title: "Contexte local",
       status: "pending",
     },
   ],
@@ -410,7 +410,7 @@ const meningeDetail: ProtocolDetail = {
     title: "Syndrome méningé aigu",
     subtitle: "Synthèse disponible — recommandation intégrale en préparation",
     summary:
-      "Le syndrome méningé aigu oriente vers une évaluation urgente. Cette synthèse rappelle le cadre clinique ; la version complète sera publiée après relecture.",
+      "Le syndrome méningé aigu oriente vers une évaluation urgente. Cette synthèse rappelle le cadre clinique ; la version complète sera publiée prochainement.",
     short_title: "Syndrome méningé",
     categories: ["Urgences", "Infectiologie"],
     tags: ["méningé", "garde"],
@@ -426,14 +426,14 @@ const meningeDetail: ProtocolDetail = {
     has_calculator_links: true,
     category_slug: "infectiologie",
     content_type: "recommendation",
-    source_note: "Sources à consolider. Aucune validation finale n'est revendiquée.",
+    source_note: "Références. Aucune validation finale n'est revendiquée.",
   },
   article: {
     id: `${MENINGE_ID}-article`,
     protocol_id: MENINGE_ID,
     reading_time_minutes: 3,
     section_count: 0,
-    intro: "Le résumé existe déjà. La version complète sera publiée après relecture.",
+    intro: "Le résumé existe déjà. La version complète sera publiée prochainement.",
     metric: {
       value: "Synthèse",
       label: "Version courte",
@@ -448,7 +448,7 @@ const meningeDetail: ProtocolDetail = {
     },
     {
       id: "meninge-kp-2",
-      text: "La conduite détaillée sera publiée après relecture",
+      text: "La conduite détaillée sera publiée prochainement",
     },
   ],
   linked_content: [
@@ -477,7 +477,7 @@ const meningeDetail: ProtocolDetail = {
   references: [
     {
       id: "ref-meninge-1",
-      title: "Sources à consolider",
+      title: "Références",
       note: "Aucun corpus définitif n'est associé à cette fiche pour le moment.",
       review_status: "unreviewed",
     },
@@ -485,7 +485,7 @@ const meningeDetail: ProtocolDetail = {
   timeline: [
     {
       id: "tl-meninge-1",
-      title: "Structure éditoriale & guidelines",
+      title: "Structure & guidelines",
       status: "created",
     },
     {
@@ -495,17 +495,17 @@ const meningeDetail: ProtocolDetail = {
     },
     {
       id: "tl-meninge-3",
-      title: "Relecture médicale collégiale",
+      title: "Mise à jour clinique",
       status: "upcoming",
     },
     {
       id: "tl-meninge-4",
-      title: "Adaptation locale Algérie & disponibilité locale",
+      title: "Contexte local",
       status: "pending",
     },
   ],
   available_summary:
-    "Le syndrome méningé aigu oriente vers une évaluation urgente. Stabilisation, examen clinique et avis spécialisé se discutent selon le contexte et le protocole local. La recommandation intégrale, y compris les examens et la thérapeutique, sera ajoutée après relecture. Aucune posologie n'est indiquée ici.",
+    "Le syndrome méningé aigu oriente vers une évaluation urgente. Stabilisation, examen clinique et avis spécialisé se discutent selon le contexte et le protocole local. La recommandation intégrale, y compris les examens et la thérapeutique, sera ajoutée prochainement. Aucune posologie n'est indiquée ici.",
 };
 
 const PROTOCOL_DETAILS: Record<string, ProtocolDetail> = {
@@ -607,7 +607,7 @@ export function readingTrackerLabel(
     detail.protocol.short_title ?? detail.protocol.title.split(" et ")[0];
   const minutes = section.reading_time_minutes ?? 2;
   if (section.slug === "sources") {
-    return `${shortTitle} · Sources · à consolider`;
+    return `${shortTitle} · Références`;
   }
   return `${shortTitle} · Section ${section.order} sur ${detail.article.section_count} · ${minutes} min`;
 }
@@ -615,23 +615,22 @@ export function readingTrackerLabel(
 export const CARD_SECTIONS_TITLE = "Parcours séquentiel";
 export const KEY_POINTS_TITLE = "Points clés";
 export const LINKED_CONTENT_TITLE = "Outils et contenus liés";
-export const REVIEW_PANEL_TITLE = "Statut éditorial";
 export const PREPARATION_TITLE = "Protocole intégral en préparation";
 export const PREPARATION_SUBTITLE =
-  "Le résumé existe déjà. La version complète sera publiée après relecture.";
+  "Le résumé existe déjà. La version complète sera publiée prochainement.";
 
 export const CAT_TABS: { id: CatTab; label: string }[] = [
   { id: "carte", label: "Carte" },
   { id: "etapes", label: "Étapes" },
   { id: "notes", label: "Notes" },
-  { id: "sources", label: "Sources" },
+  { id: "sources", label: "Références" },
 ];
 
 export const CAT_LINKED_TOOLS_TITLE = "Outils décisionnels liés";
 export const CAT_RED_FLAGS_TITLE = "Signaux d’alerte";
 export const CAT_MAP_PREPARATION_TITLE = "Carte CAT en préparation";
 export const CAT_MAP_PREPARATION_SUBTITLE =
-  "La fiche existe déjà. La carte décisionnelle sera ajoutée après validation.";
+  "La fiche existe déjà. La carte décisionnelle n’est pas encore disponible dans Nabda.";
 export const CAT_CARTE_PLACEHOLDER_TITLE = "Carte interactive à intégrer";
 export const CAT_CARTE_PLACEHOLDER_SUBTITLE =
   "Le canevas zoomable sera ajouté dans l’étape suivante.";
@@ -659,7 +658,7 @@ const thoraxDetail: CatDetail = {
     tags: ["garde", "douleur thoracique"],
     blocks: [],
     edges: [],
-    source_note: "Sources à consolider après relecture éditoriale et médicale.",
+    source_note: "Références dans une prochaine version Nabda.",
   },
   steps: [
     {
@@ -769,13 +768,13 @@ const thoraxDetail: CatDetail = {
   references: [
     {
       id: "cat-ref-1",
-      title: "Référence clinique à consolider",
-      note: "La source définitive sera ajoutée après relecture éditoriale et médicale.",
+      title: "HAS — recommandations (exemple)",
+      note: "La source définitive sera ajoutée dans une prochaine version Nabda.",
       review_status: "unreviewed",
     },
     {
       id: "cat-ref-2",
-      title: "Adaptation locale à documenter",
+      title: "Contexte local",
       note: "Filières, délais d’examen et disponibilité à vérifier selon le site.",
       review_status: "unreviewed",
     },
@@ -783,7 +782,7 @@ const thoraxDetail: CatDetail = {
   timeline: [
     {
       id: "cat-tl-1",
-      title: "Structure éditoriale créée",
+      title: "Structure créée",
       status: "created",
     },
     {
@@ -793,12 +792,12 @@ const thoraxDetail: CatDetail = {
     },
     {
       id: "cat-tl-3",
-      title: "Révision médicale à venir",
+      title: "Contenu en préparation",
       status: "upcoming",
     },
     {
       id: "cat-tl-4",
-      title: "Adaptation locale Algérie à vérifier",
+      title: "Contexte local",
       status: "pending",
     },
   ],

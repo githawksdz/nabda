@@ -151,7 +151,7 @@ export const DRUG_TABS: DrugTabItem[] = [
   { id: "apercu", label: "Aperçu" },
   { id: "securite", label: "Sécurité" },
   { id: "formes", label: "Formes" },
-  { id: "sources", label: "Sources" },
+  { id: "sources", label: "Références" },
 ];
 
 export const DRUG_POSOLOGY_TITLE = "Posologies";
@@ -201,7 +201,7 @@ export const DRUG_SAFETY_PREVIEWS = [
 const GENERIC_CONTRAINDICATIONS = [
   {
     id: "a-completer",
-    label: "Données à compléter après revue pharmacologique",
+    label: "Données de sécurité à confirmer selon le contexte patient",
     severity: "info" as const,
     sourceStatus: "placeholder" as const,
   },
@@ -257,7 +257,7 @@ export function buildPlaceholderDrugDetail(summary: DrugSummary): DrugDetail {
     ],
     references: [
       {
-        label: "Sources à consolider après revue pharmacologique",
+        label: "Référentiel thérapeutique (exemple)",
         sourceStatus: "placeholder",
       },
     ],

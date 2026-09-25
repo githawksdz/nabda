@@ -1,10 +1,8 @@
 import { StatusChip } from "./StatusChip";
 import {
-  localAdaptationLabel,
-  publicationStatusLabel,
-  reviewStatusLabel,
-  visibilityLabel,
-} from "@/lib/content-detail/status-labels";
+  doctorPublicationLabel,
+  doctorVisibilityLabel,
+} from "@/lib/content-detail/doctor-facing-status";
 import type { Protocol } from "@/types/content-detail";
 
 type ContentIdentityCardProps = {
@@ -16,6 +14,9 @@ export function ContentIdentityCard({
   protocol,
   eyebrow = "Protocole",
 }: ContentIdentityCardProps) {
+  const visibility = doctorVisibilityLabel(protocol.visibility);
+  const publication = doctorPublicationLabel(protocol.status);
+
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
@@ -36,10 +37,8 @@ export function ContentIdentityCard({
         {protocol.categories.map((category) => (
           <StatusChip key={category} label={category} variant="outline" />
         ))}
-        <StatusChip label={publicationStatusLabel(protocol.status)} />
-        <StatusChip label={reviewStatusLabel(protocol.review_status, protocol.status)} />
-        <StatusChip label={localAdaptationLabel(protocol.local_adaptation_status)} />
-        <StatusChip label={visibilityLabel(protocol.visibility)} variant="soft" />
+        <StatusChip label={publication} />
+        {visibility ? <StatusChip label={visibility} variant="soft" /> : null}
       </div>
     </section>
   );

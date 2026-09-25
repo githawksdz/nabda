@@ -57,8 +57,6 @@ export function SearchPage({
     parseSearchFilter(initialFilter),
   );
   const [recentsCleared, setRecentsCleared] = useState(false);
-  const [suggested, setSuggested] = useState(false);
-  const [suggestedQuery, setSuggestedQuery] = useState("");
   const [identity, setIdentity] = useState<{
     query: string;
     results: SearchResult[];
@@ -172,7 +170,6 @@ export function SearchPage({
 
   const clearQuery = useCallback(() => {
     setQuery("");
-    setSuggested(false);
     requestAnimationFrame(() => inputRef.current?.focus());
   }, []);
 
@@ -262,10 +259,7 @@ export function SearchPage({
       <div className="flex flex-col gap-4 pt-2">
         <SearchInputBar
           value={query}
-          onChange={(value) => {
-            setQuery(value);
-            setSuggested(false);
-          }}
+          onChange={setQuery}
           onClear={clearQuery}
           placeholder={placeholder}
           variant={inputVariant}
@@ -283,7 +277,6 @@ export function SearchPage({
             onClearRecents={() => setRecentsCleared(true)}
             onFrequent={(chip: FrequentSearchChip) => {
               setQuery(chip.query);
-              setSuggested(false);
               if (chip.filter) setFilter(chip.filter);
             }}
           />
@@ -330,15 +323,7 @@ export function SearchPage({
         ) : null}
 
         {visibleScreen === "zero" ? (
-          <SearchZeroState
-            query={query.trim()}
-            suggested={suggested && suggestedQuery === query.trim()}
-            onClear={clearQuery}
-            onSuggest={() => {
-              setSuggested(true);
-              setSuggestedQuery(query.trim());
-            }}
-          />
+          <SearchZeroState query={query.trim()} onClear={clearQuery} />
         ) : null}
       </div>
     </AppShell>

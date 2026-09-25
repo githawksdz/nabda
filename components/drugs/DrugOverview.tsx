@@ -8,7 +8,6 @@ import {
   DRUG_POSOLOGY_TITLE,
   drugDetailHref,
 } from "@/lib/drugs/drug-ui-config";
-import { DRUG_DETAIL_STATUS_LABELS } from "@/lib/drugs/status-labels";
 import type { DrugDetail, DrugStructureRow } from "@/types/drugs";
 
 type DrugOverviewProps = {
@@ -38,41 +37,26 @@ export function DrugFormsCard({ rows }: { rows: DrugStructureRow[] }) {
 }
 
 export function DrugSourcesCard({ drug }: { drug: DrugDetail }) {
+  if (drug.references.length === 0) {
+    return null;
+  }
+
   return (
     <section className="rounded-2xl bg-surface-container-low p-4">
-      <h2 className="text-headline-sm">Sources et relecture</h2>
-      <p className="mt-2 text-body-sm text-on-surface-variant">
-        Libellés conservateurs. Aucune validation finale n&apos;est revendiquée.
-      </p>
-      <ul className="mt-4 flex flex-col gap-2">
-        <li className="flex items-center justify-between gap-3 rounded-xl bg-surface-container-lowest px-3.5 py-3 shadow-sm">
-          <span className="text-body-sm">Révision pharmacologique</span>
-          <StatusChip label={DRUG_DETAIL_STATUS_LABELS.pharmacologyReview} />
-        </li>
-        <li className="flex items-center justify-between gap-3 rounded-xl bg-surface-container-lowest px-3.5 py-3 shadow-sm">
-          <span className="text-body-sm">Sources</span>
-          <StatusChip label={DRUG_DETAIL_STATUS_LABELS.sources} />
-        </li>
-        <li className="flex items-center justify-between gap-3 rounded-xl bg-surface-container-lowest px-3.5 py-3 shadow-sm">
-          <span className="text-body-sm">Posologies</span>
-          <StatusChip label={DRUG_DETAIL_STATUS_LABELS.posologyUnavailable} />
-        </li>
+      <h2 className="text-headline-sm">Références</h2>
+      <ul className="mt-3 flex flex-col gap-2">
+        {drug.references.map((reference) => (
+          <li key={reference.label} className="text-body-sm text-on-surface-variant">
+            {reference.href ? (
+              <Link href={reference.href} className="underline-offset-2 hover:underline">
+                {reference.label}
+              </Link>
+            ) : (
+              reference.label
+            )}
+          </li>
+        ))}
       </ul>
-      {drug.references.length > 0 ? (
-        <ul className="mt-4 flex flex-col gap-2">
-          {drug.references.map((reference) => (
-            <li key={reference.label} className="text-body-sm text-on-surface-variant">
-              {reference.href ? (
-                <Link href={reference.href} className="underline-offset-2 hover:underline">
-                  {reference.label}
-                </Link>
-              ) : (
-                reference.label
-              )}
-            </li>
-          ))}
-        </ul>
-      ) : null}
     </section>
   );
 }
@@ -108,9 +92,6 @@ export function DrugOverview({ drug }: DrugOverviewProps) {
             >
               <span className="min-w-0 flex-1">
                 <span className="block text-body-md font-medium">{preview.title}</span>
-                <span className="mt-1 inline-flex">
-                  <StatusChip label={preview.statusLabel} />
-                </span>
               </span>
               <ChevronRight className="size-4 shrink-0 text-outline" strokeWidth={1.75} />
             </Link>

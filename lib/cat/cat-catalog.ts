@@ -1,4 +1,4 @@
-import { reviewStatusLabel } from "@/lib/content-detail/status-labels";
+import { doctorCatalogStatusLabel } from "@/lib/content-detail/doctor-facing-status";
 import type { CatMap } from "@/types/content";
 import type { CatCard, CatUpdate } from "@/types/cat";
 
@@ -9,8 +9,11 @@ export function catCardFromDbMap(row: CatMap): CatCard {
     title: row.title,
     categoryLabel: "CAT",
     specialtyLabel: undefined,
-    statusLabel: reviewStatusLabel(row.review_status, row.status),
-    sourceLabel: row.imported_from === "nabda_db" ? "Source nabda_db" : undefined,
+    statusLabel: doctorCatalogStatusLabel({
+      publicationStatus: row.status,
+      visibility: row.visibility,
+    }),
+    sourceLabel: undefined,
     urgency: row.is_featured ? "urgent" : "routine",
     href: `/cat/${row.slug}`,
     meta: row.summary ?? undefined,
@@ -23,7 +26,11 @@ export function catUpdateFromDbMap(row: CatMap): CatUpdate {
     slug: row.slug,
     title: row.title,
     meta: row.summary ?? "CAT",
-    statusLabel: reviewStatusLabel(row.review_status, row.status),
+    statusLabel:
+      doctorCatalogStatusLabel({
+        publicationStatus: row.status,
+        visibility: row.visibility,
+      }) ?? "Contenu en préparation",
     href: `/cat/${row.slug}`,
   };
 }

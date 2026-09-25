@@ -26,7 +26,7 @@ export function CalculatorSourceRenderer({
   data,
   linkMode = "public",
   keepInternalQuery = false,
-  showProvenance = true,
+  showProvenance = linkMode === "internal",
   showIdentity = true,
   enginePending = false,
 }: CalculatorSourceRendererProps) {

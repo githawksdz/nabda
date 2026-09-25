@@ -1,15 +1,12 @@
 import Link from "next/link";
 import { ShieldAlert } from "lucide-react";
-import { StatusChip } from "@/components/content-detail/StatusChip";
-import { drugSourceStatusLabel } from "@/lib/drugs/status-labels";
 import type { DrugDetail } from "@/types/drugs";
 
 type DrugSafetyTabProps = {
   drug: DrugDetail;
-  onReport: () => void;
 };
 
-export function DrugSafetyTab({ drug, onReport }: DrugSafetyTabProps) {
+export function DrugSafetyTab({ drug }: DrugSafetyTabProps) {
   return (
     <div className="flex flex-col gap-4">
       <section className="rounded-xl bg-surface-container-low p-3.5">
@@ -28,10 +25,7 @@ export function DrugSafetyTab({ drug, onReport }: DrugSafetyTabProps) {
               key={item.id}
               className="rounded-xl bg-surface-container-lowest p-3.5 shadow-sm"
             >
-              <div className="flex items-start justify-between gap-3">
-                <p className="text-body-md font-medium">{item.label}</p>
-                <StatusChip label={drugSourceStatusLabel(item.sourceStatus)} />
-              </div>
+              <p className="text-body-md font-medium">{item.label}</p>
               {item.description ? (
                 <p className="mt-1 text-body-sm text-on-surface-variant">
                   {item.description}
@@ -50,10 +44,7 @@ export function DrugSafetyTab({ drug, onReport }: DrugSafetyTabProps) {
               key={item.id}
               className="rounded-xl bg-surface-container-lowest p-3.5 shadow-sm"
             >
-              <div className="flex items-start justify-between gap-3">
-                <p className="text-body-md font-medium">{item.label}</p>
-                <StatusChip label={drugSourceStatusLabel(item.sourceStatus)} />
-              </div>
+              <p className="text-body-md font-medium">{item.label}</p>
             </li>
           ))}
         </ul>
@@ -64,9 +55,6 @@ export function DrugSafetyTab({ drug, onReport }: DrugSafetyTabProps) {
         <p className="mt-2 text-body-sm text-on-surface-variant">
           {drug.pregnancyLactationStatus}
         </p>
-        <div className="mt-3">
-          <StatusChip label="À vérifier" />
-        </div>
       </section>
 
       <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
@@ -82,13 +70,6 @@ export function DrugSafetyTab({ drug, onReport }: DrugSafetyTabProps) {
         </Link>
       </section>
 
-      <button
-        type="button"
-        onClick={onReport}
-        className="inline-flex h-11 items-center justify-center rounded-xl bg-surface-container-low px-4 text-label-md text-on-surface"
-      >
-        Signaler une correction ou source
-      </button>
     </div>
   );
 }

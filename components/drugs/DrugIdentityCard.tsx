@@ -1,6 +1,5 @@
 import { StatusChip } from "@/components/content-detail/StatusChip";
 import {
-  DRUG_DETAIL_STATUS_LABELS,
   drugDetailStatusLabel,
   drugIndexStatusLabel,
 } from "@/lib/drugs/status-labels";
@@ -39,7 +38,7 @@ export function DrugIdentityCard({
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
-        {DRUG_DETAIL_STATUS_LABELS.medication}
+        Médicament
       </p>
       <h1 className="mt-1 text-headline-md">{drug.genericName}</h1>
       {drug.subtitle ? (
@@ -48,13 +47,10 @@ export function DrugIdentityCard({
         <p className="mt-2 text-body-md text-on-surface-variant">{drug.className}</p>
       )}
       <div className="mt-4 flex flex-wrap gap-1.5">
-        <StatusChip label={DRUG_DETAIL_STATUS_LABELS.medication} variant="outline" />
         {drug.shortClassName ? (
           <StatusChip label={drug.shortClassName} variant="outline" />
         ) : null}
         <StatusChip label={detailStatus} />
-        <StatusChip label={DRUG_DETAIL_STATUS_LABELS.sources} />
-        <StatusChip label={DRUG_DETAIL_STATUS_LABELS.posologyUnavailable} />
       </div>
     </section>
   );

@@ -369,7 +369,7 @@ export function calculatorStatusLabel(item: CalculatorSummary): string {
     return "Structure en préparation";
   }
   if (item.reviewStatus === "validated" && item.status !== "needs_validation") {
-    return "Validé";
+    return "Publié";
   }
   if (item.reviewStatus === "needs_revision") {
     return "Révision requise";
