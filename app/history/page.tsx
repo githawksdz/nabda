@@ -6,7 +6,7 @@ import { isEmptyPreview } from "@/lib/personal/personal-mappers";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Historique · Nabda",
+  title: "Récents · Nabda",
   description: "Reprendre vos consultations",
 };
 

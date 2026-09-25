@@ -243,6 +243,7 @@ export function mapFlowchartImages(
   availableFiles: Set<string>,
   keepInternalQuery: boolean,
   linkMode: "public" | "internal" = "internal",
+  slug?: string,
 ): CatRenderMedia[] {
   return sourcePaths.map((sourcePath) => {
     const filename = flowchartFilename(sourcePath);
@@ -252,7 +253,7 @@ export function mapFlowchartImages(
       filename,
       available,
       href: available
-        ? catSourceMediaHref(filename, linkMode === "public", keepInternalQuery)
+        ? catSourceMediaHref(filename, linkMode === "public", keepInternalQuery, slug)
         : "",
     };
   });

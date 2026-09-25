@@ -1,4 +1,5 @@
 import { PersonalContentCard } from "@/components/personal/PersonalContentCard";
+import { PersonalItemOfflineHint } from "@/components/personal/PersonalItemOfflineHint";
 import { ENTITY_TYPE_LABELS } from "@/lib/personal/personal-mappers";
 import type { FavoriteItem } from "@/types/personal";
 
@@ -15,6 +16,9 @@ export function FavoriteCard({ item }: FavoriteCardProps) {
       kindLabel={item.kindLabel ?? ENTITY_TYPE_LABELS[item.entityType]}
       entityType={item.entityType}
       statusLabel={item.statusLabel}
+      accessory={
+        <PersonalItemOfflineHint entityType={item.entityType} slug={item.entitySlug} />
+      }
     />
   );
 }

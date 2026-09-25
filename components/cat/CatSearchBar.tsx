@@ -8,8 +8,6 @@ type CatSearchBarProps = {
   onChange: (value: string) => void;
   placeholder: string;
   showClear?: boolean;
-  showMic?: boolean;
-  onMic?: () => void;
 };
 
 export function CatSearchBar({
@@ -17,8 +15,6 @@ export function CatSearchBar({
   onChange,
   placeholder,
   showClear = false,
-  showMic = false,
-  onMic,
 }: CatSearchBarProps) {
   return (
     <div className="flex h-11 items-center gap-2 rounded-xl bg-surface-container-low px-3 focus-within:bg-surface-container-lowest">
@@ -37,16 +33,6 @@ export function CatSearchBar({
           className="flex size-7 items-center justify-center rounded-full text-on-surface-variant"
         >
           <X className="size-4" strokeWidth={1.75} />
-        </button>
-      ) : null}
-      {showMic ? (
-        <button
-          type="button"
-          aria-label="Dictée"
-          onClick={onMic}
-          className="flex size-8 items-center justify-center rounded-full text-on-surface-variant"
-        >
-          <CatIcon name="mic" className="size-4" />
         </button>
       ) : null}
     </div>

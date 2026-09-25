@@ -29,7 +29,7 @@ export type LocalAdaptationStatus =
   | "to_verify"
   | "adapted";
 
-export type ContentTypeLabel = "Recommandation" | "CAT";
+export type ContentTypeLabel = "Recommandation" | "Protocole" | "CAT";
 
 export type ProtocolViewMode = "overview" | "section" | "preparation" | "missing";
 

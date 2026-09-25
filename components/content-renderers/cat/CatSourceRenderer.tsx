@@ -72,6 +72,10 @@ export function CatSourceRenderer({
                 ? "Image : illustration source, sans zones cliquables."
                 : "Étapes : ordre clinique linéaire. Les sources restent en bas."}
           </p>
+        </>
+      ) : null}
+      <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:items-start lg:gap-6">
+        {showToggle ? (
           <CatStepChips
             groups={groups}
             mode={mode}
@@ -85,55 +89,58 @@ export function CatSourceRenderer({
               }
             }}
           />
-        </>
-      ) : null}
-      {showImage ? (
-        <CatStaticImageCard
-          images={effectiveMode === "image" ? data.images : data.images.slice(0, 1)}
-          imagemapStripped={data.imagemapStripped}
-          zoomable={effectiveMode === "image"}
-          compact={imageCompact}
-        />
-      ) : null}
-      {showSteps ? (
-        <>
-          {!data.hasInteractiveGraph ? (
-            <p className="rounded-xl bg-surface-container-low px-3.5 py-3 text-label-sm text-on-surface-variant">
-              Étapes linéaires uniquement. Le schéma interactif n&apos;est pas disponible
-              (aucune arête de graphe).
-            </p>
+        ) : null}
+        <div className="flex min-w-0 flex-col gap-4 lg:max-w-[42rem]">
+          {showImage ? (
+            <CatStaticImageCard
+              images={effectiveMode === "image" ? data.images : data.images.slice(0, 1)}
+              imagemapStripped={data.imagemapStripped}
+              zoomable={effectiveMode === "image"}
+              compact={imageCompact}
+            />
           ) : null}
-          <CatShiftGroups
-            groups={groups}
-            keepInternalQuery={keepInternalQuery}
-            linkMode={linkMode}
-          />
-        </>
-      ) : null}
-      {data.linkedTools.length > 0 && effectiveMode !== "image" ? (
-        <section className="rounded-xl bg-surface-container-lowest p-3.5 shadow-sm">
-          <h2 className="text-body-md font-medium">Outils liés</h2>
-          <p className="mt-1 text-label-sm text-on-surface-variant">
-            Ouverture de fiche uniquement. Aucun calcul automatique.
-          </p>
-          <div className="mt-3 flex flex-wrap gap-1.5">
-            {data.linkedTools.map((chip) => (
-              <MentionChip
-                key={chip.id}
-                type={
-                  chip.kind === "calculator"
-                    ? "calculator_mention"
-                    : chip.kind === "drug"
-                      ? "drug_mention"
-                      : "protocol_mention"
-                }
-                label={chip.label}
-                href={chip.href}
+          {showSteps ? (
+            <>
+              {!data.hasInteractiveGraph ? (
+                <p className="rounded-xl bg-surface-container-low px-3.5 py-3 text-label-sm text-on-surface-variant">
+                  Étapes linéaires uniquement. Le schéma interactif n&apos;est pas disponible
+                  (aucune arête de graphe).
+                </p>
+              ) : null}
+              <CatShiftGroups
+                groups={groups}
+                keepInternalQuery={keepInternalQuery}
+                linkMode={linkMode}
+                activeGroupId={activeId}
               />
-            ))}
-          </div>
-        </section>
-      ) : null}
+            </>
+          ) : null}
+          {data.linkedTools.length > 0 && effectiveMode !== "image" ? (
+            <section className="rounded-xl bg-surface-container-lowest p-3.5 shadow-sm">
+              <h2 className="text-body-md font-medium">Outils liés</h2>
+              <p className="mt-1 text-label-sm text-on-surface-variant">
+                Ouverture de fiche uniquement. Aucun calcul automatique.
+              </p>
+              <div className="mt-3 flex flex-wrap gap-1.5">
+                {data.linkedTools.map((chip) => (
+                  <MentionChip
+                    key={chip.id}
+                    type={
+                      chip.kind === "calculator"
+                        ? "calculator_mention"
+                        : chip.kind === "drug"
+                          ? "drug_mention"
+                          : "protocol_mention"
+                    }
+                    label={chip.label}
+                    href={chip.href}
+                  />
+                ))}
+              </div>
+            </section>
+          ) : null}
+        </div>
+      </div>
     </div>
   );
 }

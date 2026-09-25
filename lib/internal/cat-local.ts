@@ -137,6 +137,7 @@ export function getCatPreviewBySlug(
     loaded.mediaFiles,
     keepInternalQuery,
     linkMode,
+    slug,
   );
   const protocolPreview = getProtocolPreviewBySlug(slug);
   const usedSectionIds = new Set(

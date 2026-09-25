@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { DrugDetailHeader } from "./DrugDetailHeader";
+import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
+import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import { DrugFooterActions, type DrugDockAction } from "./DrugFooterActions";
 import { DrugIdentityCard } from "./DrugIdentityCard";
 import { DrugOverview, DrugFormsCard, DrugSourcesCard } from "./DrugOverview";
@@ -11,8 +12,6 @@ import { DrugSafetyTab } from "./DrugSafetyTab";
 import { DrugTabs } from "./DrugTabs";
 import { DrugSourceRenderer } from "@/components/content-renderers/drug/DrugSourceRenderer";
 import {
-  DRUG_MISSING_HEADER,
-  DRUG_PREPARATION_HEADER,
   drugDetailHref,
   getDrugAlternatives,
   resolveDrugTab,
@@ -97,7 +96,7 @@ export function DrugDetailPage({
       ? [
           {
             id: "save",
-            label: bookmarked ? "Enregistré" : "Enregistrer",
+            label: bookmarked ? "Retirer" : "Favoris",
             icon: bookmarked ? "bookmark-check" : "bookmark",
             active: bookmarked,
             onClick: toggleBookmark,
@@ -108,43 +107,13 @@ export function DrugDetailPage({
             icon: "sources",
             href: drugDetailHref(canonicalSlug, "sources"),
           },
-          {
-            id: "report",
-            label: "Signaler",
-            icon: "report",
-            onClick: reportSource,
-          },
         ]
       : [];
 
   return (
-    <div className="min-h-dvh bg-background text-on-surface">
-      <div className="relative mx-auto min-h-dvh w-full max-w-[390px]">
-        <DrugDetailHeader
-          title={
-            sourceMode
-              ? headerTitle
-              : mode === "request"
-                ? DRUG_MISSING_HEADER
-                : mode === "preparation"
-                  ? DRUG_PREPARATION_HEADER
-                  : headerTitle
-          }
-          subtitle="Médicament"
-          backHref="/drugs"
-          bookmarked={bookmarked}
-          onToggleBookmark={
-            (detail || source) && !preparationOrRequest ? toggleBookmark : undefined
-          }
-        />
-        <main
-          className={
-            preparationOrRequest
-              ? "px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(32px+env(safe-area-inset-bottom,0px))]"
-              : "px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(128px+env(safe-area-inset-bottom,0px))]"
-          }
-        >
-          <div className="flex flex-col gap-4 pt-3">
+    <ClinicalDetailFrame title={headerTitle} backHref="/drugs">
+        <DetailLibraryStatus contentType="drug" slug={canonicalSlug} />
+        <div className="flex flex-col gap-4 pt-3">
             {sourceMode && source ? (
               <DrugSourceRenderer data={source} linkMode="public" />
             ) : null}
@@ -186,7 +155,6 @@ export function DrugDetailPage({
               </>
             ) : null}
           </div>
-        </main>
         <DrugFooterActions
           actions={dockActions}
           meta={source ? "Source préservée · référentiel source" : "Référentiel de consultation · données à vérifier"}
@@ -195,16 +163,11 @@ export function DrugDetailPage({
           <p
             role="status"
             aria-live="polite"
-            className={
-              preparationOrRequest
-                ? "fixed bottom-[calc(24px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-                : "fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-            }
+            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
           >
             {toast}
           </p>
         ) : null}
-      </div>
-    </div>
+    </ClinicalDetailFrame>
   );
 }

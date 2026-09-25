@@ -135,7 +135,7 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
   },
   {
     id: "reco",
-    title: "Recommandations (2)",
+    title: "Protocoles (2)",
     subtitle: "Sociétés savantes · sources à consolider",
     count: 2,
     dotClassName: "bg-on-surface-variant",
@@ -183,10 +183,7 @@ export const AMOX_MEDICATIONS: MedicationSearchResult[] = [
     infoText: "Adaptation à valider. Posologies non disponibles dans cette version.",
     footerText: "Comprimés, sachets, flacons IV · à vérifier",
     href: "/drugs/amoxicilline-acide-clavulanique",
-    actions: [
-      { label: "Interactions", href: "/interactions", variant: "secondary" },
-      { label: "Voir la fiche", href: "/drugs/amoxicilline-acide-clavulanique", variant: "primary" },
-    ],
+    actions: [{ label: "Voir la fiche", href: "/drugs/amoxicilline-acide-clavulanique", variant: "primary" }],
   },
   {
     id: "cefotaxime",
@@ -214,7 +211,7 @@ export const AMOX_MEDICATIONS: MedicationSearchResult[] = [
     infoText: "Posologies non disponibles dans cette version. Adaptation à valider.",
     footerText: "Interactions et ECG selon le contexte clinique",
     href: "/drugs/azithromycine",
-    actions: [{ label: "Vérifier interactions", href: "/interactions", variant: "primary" }],
+    actions: [{ label: "Voir la fiche", href: "/drugs/azithromycine", variant: "primary" }],
   },
 ];
 

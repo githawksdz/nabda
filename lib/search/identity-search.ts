@@ -6,12 +6,8 @@
 
 import type { SupabaseClient } from "@supabase/supabase-js";
 import {
-  identityAbbreviationsFromTrace,
-  identityBrandsFromTrace,
   identityHitMatchesQuery,
   identityHitToSearchResult,
-  identityTagsFromTrace,
-  isRecord,
   rankIdentityHit,
   stringArray,
 } from "@/lib/search/search-result-mappers";
@@ -23,6 +19,17 @@ import type {
   SearchFilter,
   SearchResult,
 } from "@/types/search";
+import {
+  ANONYMOUS_VIEWER,
+  canReadContent,
+  type ViewerAccess,
+} from "@/lib/authz/content-gate";
+import {
+  CALCULATOR_IDENTITY_SEARCH_SELECT,
+  CAT_IDENTITY_SEARCH_SELECT,
+  DRUG_IDENTITY_SEARCH_SELECT,
+  PROTOCOL_IDENTITY_SEARCH_SELECT,
+} from "@/lib/authz/selects";
 
 export const IDENTITY_SEARCH_STAGE = "A" as const;
 export const DEFAULT_IDENTITY_LIMIT = 8;
@@ -33,14 +40,10 @@ export const MAX_QUERY_LENGTH = 80;
 export const SEARCH_DOCUMENTS_STAGE_B_TODO =
   "Stage B implemented via search_documents (safe snippets only).";
 
-const PROTOCOL_COLUMNS =
-  "slug, title, short_title, category_slug, status, review_status, visibility, clinical_payload_status, source_id, source_prefix, imported_from, source_trace";
-const CAT_COLUMNS =
-  "slug, title, status, review_status, visibility, clinical_payload_status, source_id, source_prefix, imported_from, source_trace";
-const CALCULATOR_COLUMNS =
-  "slug, title, short_title, category_slug, status, review_status, visibility, clinical_payload_status, source_id, source_prefix, imported_from, source_trace";
-const DRUG_COLUMNS =
-  "slug, dci, display_name, therapeutic_class, status, review_status, visibility, clinical_payload_status, source_id, source_prefix, imported_from, source_trace";
+const PROTOCOL_COLUMNS = PROTOCOL_IDENTITY_SEARCH_SELECT;
+const CAT_COLUMNS = CAT_IDENTITY_SEARCH_SELECT;
+const CALCULATOR_COLUMNS = CALCULATOR_IDENTITY_SEARCH_SELECT;
+const DRUG_COLUMNS = DRUG_IDENTITY_SEARCH_SELECT;
 
 type IdentitySearchClient = SupabaseClient<Database>;
 
@@ -113,10 +116,6 @@ function buildBasicOrFilter(
   ].join(",");
 }
 
-function traceRecord(value: unknown): Record<string, unknown> | null {
-  return isRecord(value) ? value : null;
-}
-
 function rowToHit(
   type: IdentityContentType,
   row: Record<string, unknown>,
@@ -125,7 +124,6 @@ function rowToHit(
   if (!slug) {
     return null;
   }
-  const trace = traceRecord(row.source_trace);
   const dci = typeof row.dci === "string" ? row.dci : null;
   const displayName = typeof row.display_name === "string" ? row.display_name : null;
   const title =
@@ -145,12 +143,12 @@ function rowToHit(
     categorySlug:
       (typeof row.category_slug === "string" ? row.category_slug : null) ??
       (typeof row.therapeutic_class === "string" ? row.therapeutic_class : null),
-    tags: identityTagsFromTrace(trace),
-    brandNames: identityBrandsFromTrace(trace),
-    abbreviations: identityAbbreviationsFromTrace(trace),
-    sourceId: typeof row.source_id === "string" ? row.source_id : null,
-    sourcePrefix: typeof row.source_prefix === "string" ? row.source_prefix : null,
-    importedFrom: typeof row.imported_from === "string" ? row.imported_from : null,
+    tags: [],
+    brandNames: [],
+    abbreviations: [],
+    sourceId: null,
+    sourcePrefix: null,
+    importedFrom: null,
     status: typeof row.status === "string" ? row.status : null,
     reviewStatus: typeof row.review_status === "string" ? row.review_status : null,
     visibility: typeof row.visibility === "string" ? row.visibility : null,
@@ -166,9 +164,15 @@ async function queryIdentityTable(
   type: IdentityContentType,
   term: string,
   limit: number,
+  viewer: ViewerAccess,
 ): Promise<IdentitySearchHit[]> {
   const run = async (filter: string) =>
-    client.from(table).select(columns).or(filter).limit(limit);
+    client
+      .from(table)
+      .select(columns)
+      .eq("status", "published")
+      .or(filter)
+      .limit(limit);
 
   let { data, error } = await run(buildIdentityOrFilter(table, term));
   if (error) {
@@ -183,7 +187,18 @@ async function queryIdentityTable(
   const rows = (data ?? []) as unknown as Record<string, unknown>[];
   return rows
     .map((row) => rowToHit(type, row))
-    .filter((hit): hit is IdentitySearchHit => Boolean(hit));
+    .filter((hit): hit is IdentitySearchHit => Boolean(hit))
+    .filter((hit) =>
+      canReadContent(
+        {
+          slug: hit.slug,
+          status: hit.status,
+          reviewStatus: hit.reviewStatus,
+          visibility: hit.visibility,
+        },
+        viewer,
+      ),
+    );
 }
 
 function tablesForFilter(
@@ -231,18 +246,19 @@ export async function fetchIdentityHits(
     return [];
   }
   const limit = resolveIdentityLimit(filters?.limit);
+  const viewer = filters?.viewer ?? ANONYMOUS_VIEWER;
   const tables = tablesForFilter(type);
   const jobs = tables.map((table) => {
     if (table === "protocols") {
-      return queryIdentityTable(client, table, PROTOCOL_COLUMNS, "protocol", term, limit);
+      return queryIdentityTable(client, table, PROTOCOL_COLUMNS, "protocol", term, limit, viewer);
     }
     if (table === "cat_maps") {
-      return queryIdentityTable(client, table, CAT_COLUMNS, "cat", term, limit);
+      return queryIdentityTable(client, table, CAT_COLUMNS, "cat", term, limit, viewer);
     }
     if (table === "calculators") {
-      return queryIdentityTable(client, table, CALCULATOR_COLUMNS, "calculator", term, limit);
+      return queryIdentityTable(client, table, CALCULATOR_COLUMNS, "calculator", term, limit, viewer);
     }
-    return queryIdentityTable(client, table, DRUG_COLUMNS, "drug", term, limit);
+    return queryIdentityTable(client, table, DRUG_COLUMNS, "drug", term, limit, viewer);
   });
   const groups = await Promise.all(jobs);
   const hits = groups.flat().filter((hit) => identityHitMatchesQuery(hit, term));

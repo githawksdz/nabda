@@ -7,7 +7,9 @@ import { calculatorToScoreShortcut, feedItemToHomeUpdate } from "@/lib/home/mapp
 import { getCurrentUserPlan } from "@/features/subscriptions/api";
 import { getCurrentProfile } from "@/features/profile/api";
 import { resolveHomeMode, resolveHomeUser } from "@/lib/home/resolve-home-state";
+import { getHistoryItems } from "@/lib/personal/personal-api";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+import type { HistoryItem } from "@/types/personal";
 
 export const dynamic = "force-dynamic";
 
@@ -21,20 +23,23 @@ export default async function HomePage({ searchParams }: HomePageProps) {
   let planSlug: string | null = null;
   let scores = undefined;
   let updates = undefined;
+  let recents: HistoryItem[] = [];
 
   if (isSupabaseConfigured()) {
     try {
       profile = await getCurrentProfile();
       const plan = await getCurrentUserPlan();
-      planSlug = plan?.slug ?? profile?.plan_slug ?? null;
+      planSlug = plan?.slug ?? null;
 
-      const [calculators, feed] = await Promise.all([
+      const [calculators, feed, history] = await Promise.all([
         getFeaturedCalculators(),
         getHomeFeedItems(profile),
+        getHistoryItems(),
       ]);
 
       scores = calculators.map(calculatorToScoreShortcut);
       updates = feed.map(feedItemToHomeUpdate);
+      recents = history.items;
     } catch (error) {
       console.warn("Home feed unavailable; showing empty home state.", error);
     }
@@ -49,6 +54,7 @@ export default async function HomePage({ searchParams }: HomePageProps) {
       user={user}
       scores={scores ?? []}
       updates={updates ?? []}
+      recents={recents}
     />
   );
 }

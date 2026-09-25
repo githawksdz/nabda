@@ -1,10 +1,7 @@
-import { EmptyModulePage } from "@/components/app/EmptyModulePage";
+import { OfflineManagerPage } from "@/components/offline/OfflineManagerPage";
+
+export const dynamic = "force-dynamic";
 
 export default function OfflinePage() {
-  return (
-    <EmptyModulePage
-      title="Hors-ligne"
-      description="Le stockage hors-ligne sera connecté ici."
-    />
-  );
+  return <OfflineManagerPage />;
 }

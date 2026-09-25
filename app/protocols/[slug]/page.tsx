@@ -24,8 +24,8 @@ export async function generateMetadata({
   return {
     title: source?.title
       ? `${source.title} · Nabda`
-      : "Recommandation · Nabda",
-    description: "Recommandation clinique Nabda.",
+      : "Protocole · Nabda",
+    description: "Protocole clinique Nabda.",
   };
 }
 

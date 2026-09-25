@@ -63,9 +63,9 @@ export function ProtocolSectionChips({
     <nav
       data-preview-chips=""
       aria-label="Groupes de sections"
-      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl"
+      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
-      <div className="flex gap-2 overflow-x-auto no-scrollbar">
+      <div className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {groups.map((group) => {
           const href = `#${groupAnchorId(group.id)}`;
           const isActive = activeId === group.id;

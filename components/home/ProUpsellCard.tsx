@@ -11,14 +11,14 @@ export function ProUpsellCard() {
         <span className="text-label-sm text-on-surface-variant">Garde sereine</span>
       </div>
       <p className="mt-2 text-body-sm text-on-surface-variant">
-        Consultez l&apos;intégralité des CAT, fiches posologiques et calculateurs sans
-        réseau au sous-sol ou bloc opératoire.
+        Les packs hors-ligne se gèrent dans Hors-ligne. Les éléments Pro restent
+        indiqués avant le téléchargement.
       </p>
       <Link
-        href="/premium"
+        href="/offline"
         className="mt-4 flex h-11 items-center justify-center rounded-lg bg-primary text-label-md text-on-primary"
       >
-        Découvrir Pro
+        Ouvrir Hors-ligne
       </Link>
     </section>
   );

@@ -32,7 +32,7 @@ export const freemiumSearchChips: SearchChip[] = [
   { id: "cat", label: "CAT", href: "/cat", active: true },
   { id: "scores", label: "Scores", href: "/calculators" },
   { id: "posologies", label: "Posologies", href: "/drugs" },
-  { id: "normes", label: "Normes Bio", href: "/search?type=normes" },
+  { id: "protocols", label: "Protocoles", href: "/protocols" },
 ];
 
 const incompleteUser: HomeUser = {

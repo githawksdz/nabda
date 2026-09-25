@@ -96,7 +96,7 @@ export const GLASGOW_LINKED_RESOURCES: LinkedCalculatorResource[] = [
   },
   {
     id: "protocol-tc",
-    title: "Recommandation traumatisme crânien",
+    title: "Protocole traumatisme crânien",
     subtitle: "À interpréter avec l'examen clinique complet.",
     href: "/protocols/traumatisme-cranien",
     kind: "protocol",

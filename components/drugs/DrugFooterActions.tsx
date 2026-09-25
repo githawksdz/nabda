@@ -38,7 +38,7 @@ export function DrugFooterActions({ actions, meta }: DrugFooterActionsProps) {
   }
 
   return (
-    <div className="fixed bottom-0 left-1/2 z-50 w-full max-w-[390px] -translate-x-1/2 bg-surface/90 pb-safe shadow-[0_-1px_8px_rgba(0,0,0,0.03)] backdrop-blur-xl">
+    <div className="fixed inset-x-0 bottom-0 z-40 bg-surface/90 pb-safe shadow-[0_-1px_8px_rgba(0,0,0,0.03)] backdrop-blur-xl lg:left-60">
       {meta ? (
         <p className="px-4 pt-2 text-center text-label-sm text-on-surface-variant">
           {meta}
@@ -46,7 +46,7 @@ export function DrugFooterActions({ actions, meta }: DrugFooterActionsProps) {
       ) : null}
       <nav
         aria-label="Actions de la fiche médicament"
-        className="flex h-[72px] items-stretch justify-around px-1"
+        className="mx-auto flex h-[72px] w-full max-w-[42rem] items-stretch justify-around px-1"
       >
         {actions.map((action) => {
           const className = cn(

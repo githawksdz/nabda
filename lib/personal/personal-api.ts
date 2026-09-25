@@ -1,10 +1,7 @@
 import { cache } from "react";
 import { revalidatePath } from "next/cache";
-import {
-  isDemoContentMode,
-  isProductionContentMode,
-} from "@/lib/content-data/content-source-mode";
-import { createAdminClient, canUseAdminClient } from "@/lib/supabase/admin";
+import { isDemoContentMode } from "@/lib/content-data/content-source-mode";
+import { isProPlanSlug } from "@/lib/authz/content-gate";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { getPersonalDemoFixtures } from "@/lib/demo-fixtures/load";
@@ -48,9 +45,6 @@ async function getSupabaseOrNull() {
 }
 
 async function getCatalogSupabase() {
-  if (isProductionContentMode() && canUseAdminClient()) {
-    return createAdminClient();
-  }
   return await getSupabaseOrNull();
 }
 
@@ -340,9 +334,9 @@ type ProfilePreferenceRow = {
 };
 
 const PROFILE_PREFERENCE_SELECT =
-  "id, email, full_name, profession, usage_mode, profile_status, onboarding_completed, plan_slug, plan_status, experience_level, region, institution, practice_context, preferences";
+  "id, email, full_name, profession, usage_mode, profile_status, onboarding_completed, experience_level, region, institution, practice_context, preferences";
 const PROFILE_LEGACY_SELECT =
-  "id, email, full_name, profession, usage_mode, profile_status, onboarding_completed, plan_slug, plan_status";
+  "id, email, full_name, profession, usage_mode, profile_status, onboarding_completed";
 
 function isMissingColumnError(message: string, column: string) {
   const normalized = message.toLowerCase();
@@ -428,16 +422,20 @@ export const getPersonalProfileSummary = cache(
 
       const { data: activeSubscription } = await supabase
         .from("user_subscriptions")
-        .select("plan_slug, status")
+        .select("plan_slug, status, ends_at")
         .eq("user_id", user.id)
         .eq("status", "active")
         .order("starts_at", { ascending: false })
         .limit(1)
         .maybeSingle();
 
-      let pendingSubscription: { plan_slug: string; status: string } | null =
-        null;
-      if (!activeSubscription) {
+      const subscriptionIsLive =
+        activeSubscription?.status === "active" &&
+        (activeSubscription.ends_at == null ||
+          Date.parse(activeSubscription.ends_at) > Date.now());
+
+      let pendingSubscription: { plan_slug: string; status: string } | null = null;
+      if (!subscriptionIsLive) {
         const pending = await supabase
           .from("user_subscriptions")
           .select("plan_slug, status")
@@ -448,8 +446,6 @@ export const getPersonalProfileSummary = cache(
           .maybeSingle();
         pendingSubscription = pending.data;
       }
-
-      const subscription = activeSubscription ?? pendingSubscription;
 
       const { data: interestLinks } = await supabase
         .from("user_clinical_interests")
@@ -483,10 +479,14 @@ export const getPersonalProfileSummary = cache(
         specialtyInterests = draftLabels;
       }
 
-      const planSlug =
-        subscription?.plan_slug ?? profileRow?.plan_slug ?? "freemium";
-      const planStatus =
-        subscription?.status ?? profileRow?.plan_status ?? "active";
+      const livePro =
+        subscriptionIsLive && isProPlanSlug(activeSubscription?.plan_slug);
+      const planSlug = livePro ? activeSubscription?.plan_slug ?? "freemium" : "freemium";
+      const planStatus = livePro
+        ? "active"
+        : pendingSubscription
+          ? "pending"
+          : "active";
       const profileCompletedFromDraft = Boolean(personalization?.savedAt);
 
       if (!profileRow) {

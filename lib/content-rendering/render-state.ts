@@ -44,11 +44,13 @@ export function catSourceMediaHref(
   filename: string,
   publicRoute: boolean,
   unlocked: boolean,
+  slug?: string,
 ): string {
   const query = new URLSearchParams({ file: filename });
-  if (!publicRoute && unlocked) {
-    query.set("preview", "internal");
+  if (slug) {
+    query.set("slug", slug);
   }
+  void unlocked;
   const base = publicRoute ? "/content-media/cat" : "/internal/cat-preview/media";
   return `${base}?${query.toString()}`;
 }
@@ -57,11 +59,13 @@ export function drugSourceMediaHref(
   filename: string,
   publicRoute: boolean,
   unlocked: boolean,
+  slug?: string,
 ): string {
   const query = new URLSearchParams({ file: filename });
-  if (!publicRoute && unlocked) {
-    query.set("preview", "internal");
+  if (slug) {
+    query.set("slug", slug);
   }
+  void unlocked;
   const base = publicRoute ? "/content-media/drug" : "/internal/drug-preview/media";
   return `${base}?${query.toString()}`;
 }
@@ -71,8 +75,9 @@ export function calculatorHref(
   linkMode: ContentLinkMode,
   keepInternalQuery = false,
 ): string {
+  void keepInternalQuery;
   if (linkMode === "public") {
     return publicCalculatorHref(slug);
   }
-  return `/internal/calculator-preview/${slug}${keepInternalQuery ? "?preview=internal" : ""}`;
+  return `/internal/calculator-preview/${slug}`;
 }

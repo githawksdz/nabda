@@ -21,7 +21,7 @@ export const IDENTITY_STATUS_VALIDATED = "Validé";
 
 export const IDENTITY_SUBTITLE: Record<IdentityContentType, string> = {
   cat: "Arbre décisionnel",
-  protocol: "Recommandation",
+  protocol: "Protocole",
   calculator: "Score ou calculateur",
   drug: "Fiche médicament",
 };
@@ -94,7 +94,7 @@ export const SEARCH_GROUP_META: Array<{
   {
     id: "reco",
     type: "protocol",
-    title: "Recommandations",
+    title: "Protocoles",
     subtitle: "HAS / Sociétés savantes",
     filter: "protocols",
     dotClassName: "bg-on-surface-variant",

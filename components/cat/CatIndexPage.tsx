@@ -46,7 +46,6 @@ export function CatIndexPage({
   const searchParams = useSearchParams();
   const [query, setQuery] = useState("");
   const [subFilter, setSubFilter] = useState<CatSubFilter>("all");
-  const [notice, setNotice] = useState<string | null>(null);
 
   const category = resolveActiveCategory(
     searchParams.get("category") ?? initialCategory,
@@ -155,10 +154,6 @@ export function CatIndexPage({
         />
       }
     >
-      {notice ? (
-        <p className="pt-2 text-label-sm text-on-surface-variant">{notice}</p>
-      ) : null}
-
       {state === "general" ? (
         <div className="flex flex-col gap-5 pt-2">
           <CatModuleIdentity catalogCount={useCatalog ? catalog.length : 0} />
@@ -217,7 +212,6 @@ export function CatIndexPage({
             onQueryChange={setQuery}
             category={category}
             onCategoryChange={selectCategory}
-            onMic={() => setNotice("Dictée bientôt disponible.")}
           />
         </div>
       ) : null}

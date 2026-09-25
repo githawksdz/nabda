@@ -1,4 +1,5 @@
 import { PersonalContentCard } from "@/components/personal/PersonalContentCard";
+import { PersonalItemOfflineHint } from "@/components/personal/PersonalItemOfflineHint";
 import {
   ENTITY_TYPE_LABELS,
   formatRelativeViewedAt,
@@ -19,6 +20,9 @@ export function HistoryRow({ item }: HistoryRowProps) {
       entityType={item.entityType}
       meta={formatRelativeViewedAt(item.viewedAt)}
       compact
+      accessory={
+        <PersonalItemOfflineHint entityType={item.entityType} slug={item.entitySlug} />
+      }
     />
   );
 }

@@ -1,27 +1,13 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import dynamic from "next/dynamic";
+import { useEffect, useState } from "react";
+import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
+import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import { CalculatorBottomDock } from "./CalculatorBottomDock";
-import { CalculatorDetailHeader } from "./CalculatorDetailHeader";
 import { CalculatorIdentity } from "./CalculatorIdentity";
 import { CalculatorPreparationState } from "./CalculatorPreparationState";
-import { AdditivePointsCalculator } from "./AdditivePointsCalculator";
-import { GeneratedFormulaCalculator } from "./GeneratedFormulaCalculator";
-import { CockcroftCalculator } from "./cockcroft/CockcroftCalculator";
-import { GlasgowCalculator } from "./glasgow/GlasgowCalculator";
 import { CalculatorSourceRenderer } from "@/components/content-renderers/calculator/CalculatorSourceRenderer";
-import {
-  COCKCROFT_EMPTY_VALUES,
-  COCKCROFT_IDENTITY,
-  cockcroftCopyText,
-  computeCockcroft,
-} from "@/lib/calculators/cockcroft-gault";
-import {
-  GLASGOW_DEFAULT_SELECTION,
-  GLASGOW_IDENTITY,
-  glasgowCopyText,
-  interpretGlasgow,
-} from "@/lib/calculators/glasgow";
 import { resolveCalculatorDetailMode } from "@/lib/calculators/calculator-mappers";
 import {
   PUQE_RESOURCES,
@@ -38,6 +24,49 @@ import type {
   GlasgowSelection,
 } from "@/types/calculators";
 import type { CalculatorRenderData } from "@/types/content-rendering";
+
+const GlasgowCalculator = dynamic(
+  () => import("./glasgow/GlasgowCalculator").then((mod) => mod.GlasgowCalculator),
+  { ssr: false },
+);
+const CockcroftCalculator = dynamic(
+  () => import("./cockcroft/CockcroftCalculator").then((mod) => mod.CockcroftCalculator),
+  { ssr: false },
+);
+const AdditivePointsCalculator = dynamic(
+  () => import("./AdditivePointsCalculator").then((mod) => mod.AdditivePointsCalculator),
+  { ssr: false },
+);
+const GeneratedFormulaCalculator = dynamic(
+  () =>
+    import("./GeneratedFormulaCalculator").then((mod) => mod.GeneratedFormulaCalculator),
+  { ssr: false },
+);
+
+const GLASGOW_DEFAULT_SELECTION: GlasgowSelection = {
+  eyes: 4,
+  verbal: 5,
+  motor: 6,
+};
+const COCKCROFT_EMPTY_VALUES: CockcroftFormValues = {
+  sex: null,
+  age: "",
+  weight: "",
+  creatinine: "",
+  unit: "umol_l",
+};
+const GLASGOW_IDENTITY = {
+  headerTitle: "Score de Glasgow",
+  eyebrow: "Score neurologique",
+  title: "Glasgow (GCS)",
+  subtitle: "Évaluation du niveau de conscience.",
+} as const;
+const COCKCROFT_IDENTITY = {
+  headerTitle: "Cockcroft-Gault",
+  eyebrow: "Formule",
+  title: "Cockcroft-Gault",
+  subtitle: "Estimation de la clairance de la créatinine.",
+} as const;
 
 type CalculatorDetailPageProps = {
   slug: string;
@@ -72,19 +101,6 @@ export function CalculatorDetailPage({
   const unavailable = mode === "unavailable" && Boolean(source);
   const preparation = mode === "preparation" || mode === "missing";
   const puqe = isPuqeSlug(slug);
-  const interpretation = useMemo(
-    () => interpretGlasgow(selection),
-    [selection],
-  );
-  const cockcroftResult = useMemo(
-    () => computeCockcroft(cockcroft),
-    [cockcroft],
-  );
-  const copyText = glasgow
-    ? glasgowCopyText(interpretation)
-    : cockcroftActive
-      ? cockcroftCopyText(cockcroft, cockcroftResult)
-      : (calculator?.name ?? "Calculateur Nabda");
 
   useEffect(() => {
     if (!toast) {
@@ -128,9 +144,26 @@ export function CalculatorDetailPage({
     void persistFavorite();
   }
 
+  async function resolveCopyText() {
+    if (glasgow) {
+      const { glasgowCopyText, interpretGlasgow } = await import(
+        "@/lib/calculators/glasgow"
+      );
+      return glasgowCopyText(interpretGlasgow(selection));
+    }
+    if (cockcroftActive) {
+      const { cockcroftCopyText, computeCockcroft } = await import(
+        "@/lib/calculators/cockcroft-gault"
+      );
+      return cockcroftCopyText(cockcroft, computeCockcroft(cockcroft));
+    }
+    return calculator?.name ?? "Calculateur Nabda";
+  }
+
   async function shareCalculator() {
     const title = source?.title ?? calculator?.name ?? "Calculateur Nabda";
     const url = window.location.href;
+    const copyText = await resolveCopyText();
     try {
       if (navigator.share) {
         await navigator.share({ title, text: copyText, url });
@@ -146,6 +179,7 @@ export function CalculatorDetailPage({
 
   async function copyCockcroftResult() {
     try {
+      const copyText = await resolveCopyText();
       await navigator.clipboard.writeText(copyText);
       showToast("Résultat copié");
     } catch {
@@ -169,7 +203,7 @@ export function CalculatorDetailPage({
         },
         {
           id: "save",
-          label: bookmarked ? "Enregistré" : "Enregistrer",
+          label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
           onClick: toggleBookmark,
@@ -197,7 +231,7 @@ export function CalculatorDetailPage({
           },
           {
             id: "save",
-            label: bookmarked ? "Enregistré" : "Enregistrer",
+            label: bookmarked ? "Retirer" : "Favoris",
             icon: bookmarked ? "bookmark-check" : "bookmark",
             active: bookmarked,
             onClick: toggleBookmark,
@@ -219,7 +253,7 @@ export function CalculatorDetailPage({
       ? [
           {
             id: "save",
-            label: bookmarked ? "Enregistré" : "Enregistrer",
+            label: bookmarked ? "Retirer" : "Favoris",
             icon: bookmarked ? "bookmark-check" : "bookmark",
             active: bookmarked,
             onClick: toggleBookmark,
@@ -234,23 +268,9 @@ export function CalculatorDetailPage({
       : [];
 
   return (
-    <div className="min-h-dvh bg-background text-on-surface">
-      <div className="relative mx-auto min-h-dvh w-full max-w-[390px]">
-        <CalculatorDetailHeader
-          title={headerTitle}
-          backHref="/calculators"
-          bookmarked={bookmarked}
-          onToggleBookmark={toggleBookmark}
-          onShare={shareCalculator}
-        />
-        <main
-          className={
-            preparation && !sourceMode
-              ? "px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(32px+env(safe-area-inset-bottom,0px))]"
-              : "px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(128px+env(safe-area-inset-bottom,0px))]"
-          }
-        >
-          <div className="flex flex-col gap-4 pt-3">
+    <ClinicalDetailFrame title={headerTitle} backHref="/calculators">
+        <DetailLibraryStatus contentType="calculator" slug={slug} />
+        <div className="flex flex-col gap-4 pt-3">
             {calculator && (glasgow || cockcroftActive) ? (
               <CalculatorIdentity
                 calculator={calculator}
@@ -347,7 +367,6 @@ export function CalculatorDetailPage({
               />
             ) : null}
           </div>
-        </main>
         <CalculatorBottomDock
           actions={dockActions}
           meta={
@@ -360,16 +379,11 @@ export function CalculatorDetailPage({
           <p
             role="status"
             aria-live="polite"
-            className={
-              preparation
-                ? "fixed bottom-[calc(24px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-                : "fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
-            }
+            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
           >
             {toast}
           </p>
         ) : null}
-      </div>
-    </div>
+    </ClinicalDetailFrame>
   );
 }

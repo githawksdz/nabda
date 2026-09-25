@@ -149,6 +149,13 @@ export async function updatePassword(password: string): Promise<AuthResult> {
 
 export async function signOut() {
   const supabase = createClient();
+  const {
+    data: { user },
+  } = await supabase.auth.getUser();
+  if (user) {
+    const { clearOfflinePrivateData } = await import("@/lib/offline/repository");
+    await clearOfflinePrivateData();
+  }
   const { error } = await supabase.auth.signOut();
   return { error };
 }

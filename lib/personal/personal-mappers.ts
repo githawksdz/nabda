@@ -33,7 +33,7 @@ export const PERSONAL_ENTITY_TYPES = [
 
 export const ENTITY_TYPE_LABELS: Record<PersonalEntityType, string> = {
   cat: "CAT",
-  protocol: "Recommandation",
+  protocol: "Protocole",
   calculator: "Score",
   drug: "Médicament",
 };
@@ -60,6 +60,24 @@ export const ENTITY_SUBTITLES: Record<PersonalEntityType, { saved: string; viewe
 
 export function isPersonalEntityType(value: string): value is PersonalEntityType {
   return (PERSONAL_ENTITY_TYPES as readonly string[]).includes(value);
+}
+
+export function resumeHref(
+  entityType: PersonalEntityType,
+  slug: string,
+  metadata?: Record<string, unknown>,
+): string {
+  const base = personalHref(entityType, slug, "history");
+  const section =
+    typeof metadata?.section === "string" ? metadata.section.trim() : "";
+  const tab = typeof metadata?.tab === "string" ? metadata.tab.trim() : "";
+  if (entityType === "protocol" && section) {
+    return `${base}?section=${encodeURIComponent(section)}`;
+  }
+  if (entityType === "cat" && tab) {
+    return `${base}?tab=${encodeURIComponent(tab)}`;
+  }
+  return base;
 }
 
 export function personalHref(
@@ -246,7 +264,7 @@ export function mapHistoryRow(input: {
     entitySlug: input.itemSlug,
     title: copy.title,
     subtitle: storedCaption ?? copy.historySubtitle,
-    href: personalHref(input.itemType, input.itemSlug, "history"),
+    href: resumeHref(input.itemType, input.itemSlug, metadata),
     viewedAt: input.viewedAt,
     kindLabel: copy.kindLabel,
     metadata,

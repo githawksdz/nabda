@@ -61,7 +61,7 @@ export function CatUrgencesView({
           className="inline-flex h-8 shrink-0 items-center gap-1 rounded-full bg-surface-container-low px-2.5 text-label-sm text-on-surface-variant"
         >
           <CatIcon name="cloud" className="size-3.5" />
-          Offline
+          Hors-ligne
         </Link>
       </div>
 

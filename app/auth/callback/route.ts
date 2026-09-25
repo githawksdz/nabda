@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+import { safeAuthRedirectPath } from "@/lib/authz/redirect";
 
 export async function GET(request: Request) {
   const { searchParams, origin } = new URL(request.url);
@@ -54,14 +55,8 @@ export async function GET(request: Request) {
           : "/onboarding/personalisation";
       }
 
-      const forwardedHost = request.headers.get("x-forwarded-host");
-      const isLocal = process.env.NODE_ENV === "development";
-      const redirectOrigin =
-        !isLocal && forwardedHost ? `https://${forwardedHost}` : origin;
-
-      return NextResponse.redirect(
-        `${redirectOrigin}${next ?? destination}`,
-      );
+      const path = safeAuthRedirectPath(next, destination);
+      return NextResponse.redirect(`${origin}${path}`);
     }
   }
 

@@ -1,6 +1,12 @@
+"use client";
+
 import type { ReactNode } from "react";
+import { useState } from "react";
 import { AppHeader } from "./AppHeader";
 import { BottomNav } from "./BottomNav";
+import { DesktopSidebar } from "./DesktopSidebar";
+import { ModuleSheet } from "./ModuleSheet";
+import { ConnectionIndicator } from "@/components/pwa/ConnectionIndicator";
 import { cn } from "@/lib/utils";
 
 type AppShellProps = {
@@ -11,6 +17,8 @@ type AppShellProps = {
   contentClassName?: string;
   frameClassName?: string;
   avatarDot?: boolean;
+  backHref?: string;
+  showBottomNav?: boolean;
 };
 
 export function AppShell({
@@ -19,33 +27,42 @@ export function AppShell({
   headerActions,
   navVariant = "pill",
   contentClassName,
-  frameClassName = "max-w-[430px]",
   avatarDot = false,
+  backHref,
+  showBottomNav = true,
 }: AppShellProps) {
+  const [modulesOpen, setModulesOpen] = useState(false);
+
   return (
-    <div className="min-h-dvh bg-background text-on-surface">
-      <div
-        className={cn(
-          "relative mx-auto min-h-dvh w-full bg-background",
-          frameClassName,
-        )}
-      >
+    <div className="min-h-dvh bg-background text-on-surface lg:flex">
+      <DesktopSidebar />
+      <div className="relative min-h-dvh min-w-0 flex-1">
         <AppHeader
           title={title}
-          actions={headerActions}
-          frameClassName={frameClassName}
           avatarDot={avatarDot}
+          backHref={backHref}
+          onOpenModules={() => setModulesOpen(true)}
+          modulesOpen={modulesOpen}
+          actions={
+            <>
+              <ConnectionIndicator />
+              {headerActions}
+            </>
+          }
         />
         <main
           className={cn(
-            "px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(112px+env(safe-area-inset-bottom,0px))]",
+            showBottomNav
+              ? "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(112px+env(safe-area-inset-bottom,0px))] lg:pb-8"
+              : "mx-auto w-full max-w-[42rem] px-4 pt-[calc(56px+env(safe-area-inset-top,0px))] pb-[calc(96px+env(safe-area-inset-bottom,0px))] lg:pb-10",
             contentClassName,
           )}
         >
           {children}
         </main>
-        <BottomNav variant={navVariant} frameClassName={frameClassName} />
+        {showBottomNav ? <BottomNav variant={navVariant} /> : null}
       </div>
+      <ModuleSheet open={modulesOpen} onClose={() => setModulesOpen(false)} />
     </div>
   );
 }

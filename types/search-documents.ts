@@ -52,6 +52,7 @@ export type SearchDocumentHit = {
   tags: string[];
   priority: number;
   reviewStatus: string;
+  visibility?: string;
   activationState: string;
 };
 

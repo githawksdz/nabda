@@ -18,9 +18,16 @@ export function InternalPreviewBanner({
       </p>
       <p className="mt-1 text-body-sm">
         {locked
-          ? "Ajoutez ?preview=internal ou ouvrez cette route en développement."
+          ? "Un compte reviewer, éditeur ou admin est requis."
           : (body ?? "Inspection produit uniquement. Non publié, non Validé.")}
       </p>
+      {!locked ? (
+        <p className="mt-2 text-label-sm">
+          <a href="/internal/offline-packs" className="underline">
+            Gérer les packs hors-ligne
+          </a>
+        </p>
+      ) : null}
     </aside>
   );
 }

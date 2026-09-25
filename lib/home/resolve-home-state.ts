@@ -40,8 +40,8 @@ export function resolveHomeMode(
   planSlug?: string | null,
 ): HomeMode {
   const fromPreview = parseHomePreview(preview);
-  if (fromPreview) {
-    return fromPreview;
+  if (fromPreview === "incomplete") {
+    return "incomplete";
   }
 
   if (HOME_MODE_OVERRIDE) {
@@ -52,7 +52,7 @@ export function resolveHomeMode(
     return "incomplete";
   }
 
-  const slug = planSlug ?? profile.plan_slug ?? "freemium";
+  const slug = planSlug ?? "freemium";
   if (slug === "pro_yearly" || slug.startsWith("pro")) {
     return "pro-practitioner";
   }

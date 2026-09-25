@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import type { ReactNode } from "react";
+import { InternalPreviewFrame, InternalPreviewLocked } from "@/components/internal/protocol-preview/InternalPreviewLocked";
+import { canAccessInternalPreview } from "@/lib/internal/preview-gate";
 
 export const dynamic = "force-dynamic";
 
@@ -8,6 +10,15 @@ export const metadata: Metadata = {
   title: "Aperçu interne",
 };
 
-export default function InternalLayout({ children }: { children: ReactNode }) {
+export default async function InternalLayout({ children }: { children: ReactNode }) {
+  const allowed = await canAccessInternalPreview();
+  if (!allowed) {
+    return (
+      <InternalPreviewFrame>
+        <InternalPreviewLocked />
+      </InternalPreviewFrame>
+    );
+  }
+
   return children;
 }

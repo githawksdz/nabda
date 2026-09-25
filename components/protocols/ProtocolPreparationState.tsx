@@ -36,7 +36,7 @@ export function ProtocolPreparationState({
     <div className="flex flex-col gap-5">
       <ContentIdentityCard
         protocol={detail.protocol}
-        eyebrow="Recommandation en préparation"
+        eyebrow="Protocole en préparation"
       />
 
       <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">

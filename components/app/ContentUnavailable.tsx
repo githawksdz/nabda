@@ -12,11 +12,11 @@ const COPY: Record<
   { title: string; description: string; backHref: string; backLabel: string }
 > = {
   protocol: {
-    title: "Recommandation introuvable",
+    title: "Protocole introuvable",
     description:
       "Cette fiche n'existe pas ou n'est pas encore disponible dans Nabda.",
     backHref: "/protocols",
-    backLabel: "Voir les recommandations",
+    backLabel: "Voir les protocoles",
   },
   cat: {
     title: "CAT introuvable",

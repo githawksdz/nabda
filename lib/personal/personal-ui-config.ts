@@ -4,22 +4,22 @@ import type { PersonalFilterChip } from "@/types/personal";
 export const FAVORITES_COPY = {
   title: "Favoris",
   subtitle: "Vos références sauvegardées",
-  emptyTitle: "Votre classeur est vide",
+  emptyTitle: "Aucun favori",
   emptyDescription:
-    "Enregistrez une CAT, un score, une recommandation ou une fiche médicament pour les retrouver ici.",
+    "Enregistrez vos références utiles pour les retrouver rapidement.",
   emptyAction: "Explorer Nabda",
   emptyHref: "/search",
-  historyLinkLabel: "Voir l’historique",
+  historyLinkLabel: "Récents",
   historyLinkHref: "/history",
   historyLinkHint: "Reprendre vos consultations récentes",
 } as const;
 
 export const HISTORY_COPY = {
-  title: "Historique",
-  subtitle: "Reprendre vos consultations",
+  title: "Récents",
+  subtitle: "Reprendre un contenu consulté",
   privacyNote: "L’historique est privé et visible uniquement par vous.",
-  emptyTitle: "Aucune consultation récente",
-  emptyDescription: "Les contenus ouverts récemment apparaîtront ici.",
+  emptyTitle: "Aucun récent",
+  emptyDescription: "Les contenus que vous consultez apparaîtront ici.",
   emptyAction: "Explorer Nabda",
   emptyHref: "/search",
   clearLabel: "Effacer l’historique",
@@ -92,7 +92,7 @@ export const PERSONALIZATION_COPY = {
 export const FAVORITE_FILTER_CHIPS: PersonalFilterChip[] = [
   { id: "all", label: "Tous" },
   { id: "cat", label: "CAT" },
-  { id: "protocol", label: "Recommandations" },
+  { id: "protocol", label: "Protocoles" },
   { id: "calculator", label: "Scores" },
   { id: "drug", label: "Médicaments" },
 ];
@@ -102,7 +102,7 @@ export const HISTORY_FILTER_CHIPS: PersonalFilterChip[] = [
   { id: "calculator", label: "Scores" },
   { id: "cat", label: "CAT" },
   { id: "drug", label: "Médicaments" },
-  { id: "protocol", label: "Recommandations" },
+  { id: "protocol", label: "Protocoles" },
 ];
 
 export const HISTORY_GROUP_TITLES = {

@@ -60,8 +60,8 @@ export const PERSONALIZATION_PRIORITIES: PersonalizationChip[] = [
   },
   {
     id: "protocols",
-    label: "Recommandations",
-    aliases: ["Recommandations"],
+    label: "Protocoles",
+    aliases: ["Protocoles", "Recommandations"],
     interestSlugs: ["recommandations"],
   },
 ];

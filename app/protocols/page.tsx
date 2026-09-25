@@ -6,7 +6,7 @@ import { catalogFromDbProtocols } from "@/lib/protocols/protocol-catalog";
 export const dynamic = "force-dynamic";
 
 export const metadata: Metadata = {
-  title: "Recommandations · Nabda",
+  title: "Protocoles · Nabda",
   description: "Synthèses et guides cliniques",
 };
 

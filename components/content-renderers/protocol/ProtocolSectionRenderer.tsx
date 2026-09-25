@@ -1,6 +1,7 @@
 import { ChevronDown } from "lucide-react";
 import { ProtocolSectionCard } from "@/components/content-renderers/protocol/ProtocolSectionCard";
 import { groupAnchorId } from "@/lib/content-rendering/protocol";
+import { cn } from "@/lib/utils";
 import type { ProtocolRenderGroup } from "@/types/content-rendering-protocol";
 import type { ContentLinkMode } from "@/types/content-rendering";
 
@@ -8,12 +9,14 @@ type ProtocolSectionRendererProps = {
   groups: ProtocolRenderGroup[];
   keepInternalQuery?: boolean;
   linkMode?: ContentLinkMode;
+  activeGroupId?: string | null;
 };
 
 export function ProtocolSectionRenderer({
   groups,
   keepInternalQuery = false,
   linkMode = "internal",
+  activeGroupId = null,
 }: ProtocolSectionRendererProps) {
   return (
     <div className="flex flex-col gap-6">
@@ -36,7 +39,10 @@ export function ProtocolSectionRenderer({
           <section
             key={group.id}
             id={groupAnchorId(group.id)}
-            className="scroll-mt-[calc(64px+56px+env(safe-area-inset-top,0px))]"
+            className={cn(
+              "scroll-mt-[calc(64px+56px+env(safe-area-inset-top,0px))]",
+              activeGroupId && group.id !== activeGroupId ? "lg:hidden" : undefined,
+            )}
           >
             {group.collapsedByDefault ? (
               <details className="group">

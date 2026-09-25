@@ -17,7 +17,6 @@ type CatPreparationViewProps = {
   onQueryChange: (value: string) => void;
   category: CatCategorySlug;
   onCategoryChange: (id: CatCategorySlug) => void;
-  onMic: () => void;
 };
 
 export function CatPreparationView({
@@ -25,7 +24,6 @@ export function CatPreparationView({
   onQueryChange,
   category,
   onCategoryChange,
-  onMic,
 }: CatPreparationViewProps) {
   const [suggested, setSuggested] = useState(false);
   const [notified, setNotified] = useState(false);
@@ -36,8 +34,6 @@ export function CatPreparationView({
         value={query}
         onChange={onQueryChange}
         placeholder="Rechercher une CAT..."
-        showMic
-        onMic={onMic}
       />
       <CatFilterChips
         chips={PREPARATION_FILTER_CHIPS}

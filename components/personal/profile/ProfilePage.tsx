@@ -189,12 +189,8 @@ export function ProfilePage({
               item={{
                 id: "offline",
                 label: PROFILE_COPY.offlineCacheLabel,
-                value:
-                  plan.variant === "pro"
-                    ? "Bientôt disponible"
-                    : PROFILE_COPY.offlineCacheValue,
-                badge: "Pro",
-                href: plan.variant === "pro" ? undefined : "/premium",
+                value: "Ouvrir",
+                href: "/offline",
               }}
             />
             <div className="ml-4 h-px bg-surface-variant" />

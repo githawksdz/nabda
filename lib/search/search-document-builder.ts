@@ -268,7 +268,7 @@ export function buildIdentityDocuments(input: {
       contentType: "identity",
       contentId: "identity",
       title,
-      subtitle: asString(row.category_slug) ?? "Recommandation",
+      subtitle: asString(row.category_slug) ?? "Protocole",
       snippet: makeSnippet(asString(row.short_title) ?? title).snippet,
       searchableText: searchable,
       routeHref: identityContentHref("protocol", slug, row.source_id),

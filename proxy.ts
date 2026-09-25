@@ -13,7 +13,12 @@ function isAssetOrExempt(pathname: string): boolean {
     pathname.startsWith("/auth/update-password") ||
     pathname === "/staging-access" ||
     pathname === "/favicon.ico" ||
-    /\.(?:svg|png|jpg|jpeg|gif|webp|ico)$/i.test(pathname)
+    pathname === "/sw.js" ||
+    pathname === "/offline-fallback.html" ||
+    pathname === "/manifest.webmanifest" ||
+    pathname.startsWith("/icon-") ||
+    pathname.startsWith("/api/pwa/") ||
+    /\.(?:svg|png|jpg|jpeg|gif|webp|ico|webmanifest)$/i.test(pathname)
   );
 }
 

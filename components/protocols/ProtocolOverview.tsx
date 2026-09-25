@@ -89,21 +89,25 @@ export function ProtocolOverview({ detail }: ProtocolOverviewProps) {
       {detail.article.intro ? (
         <p className="text-body-sm text-on-surface-variant">{detail.article.intro}</p>
       ) : null}
-      <SectionNav
-        protocolSlug={detail.protocol.slug}
-        items={navItems}
-        activeSlug={null}
-      />
       <ProtocolKeyPoints points={detail.key_points} />
-      <ProtocolSectionCards
-        protocolSlug={detail.protocol.slug}
-        sections={detail.sections}
-      />
-      <LinkedContentGrid items={detail.linked_content} />
-      <ReviewStatusPanel
-        protocol={detail.protocol}
-        references={detail.references}
-      />
+      <div className="lg:grid lg:grid-cols-[13rem_minmax(0,1fr)] lg:items-start lg:gap-6">
+        <SectionNav
+          protocolSlug={detail.protocol.slug}
+          items={navItems}
+          activeSlug={null}
+        />
+        <div className="flex min-w-0 flex-col gap-5 lg:max-w-[42rem]">
+          <ProtocolSectionCards
+            protocolSlug={detail.protocol.slug}
+            sections={detail.sections}
+          />
+          <LinkedContentGrid items={detail.linked_content} />
+          <ReviewStatusPanel
+            protocol={detail.protocol}
+            references={detail.references}
+          />
+        </div>
+      </div>
     </div>
   );
 }

@@ -26,6 +26,7 @@ type PersonalContentCardProps = {
   meta?: string;
   compact?: boolean;
   trailing?: ReactNode;
+  accessory?: ReactNode;
 };
 
 export function PersonalContentCard({
@@ -38,6 +39,7 @@ export function PersonalContentCard({
   meta,
   compact = false,
   trailing,
+  accessory,
 }: PersonalContentCardProps) {
   const Icon = ENTITY_ICONS[entityType];
 
@@ -65,6 +67,7 @@ export function PersonalContentCard({
             {meta}
           </span>
         ) : null}
+        {accessory}
       </span>
       {trailing ?? (
         <ChevronRight

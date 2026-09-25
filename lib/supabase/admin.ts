@@ -1,6 +1,8 @@
 /**
  * Server-only Supabase admin client (service role).
- * Bypasses RLS for imported admin_only corpus reads. Never use in client components.
+ * Bypasses RLS. Allowed only in trusted import, migration, reconciliation,
+ * or administrative jobs — never in a public user-request path, server action,
+ * or App Router page.
  */
 
 import { createClient } from "@supabase/supabase-js";

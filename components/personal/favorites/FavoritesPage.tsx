@@ -4,8 +4,8 @@ import { useMemo, useState } from "react";
 import { AppShell } from "@/components/app/AppShell";
 import { PersonalEmptyState } from "@/components/personal/PersonalEmptyState";
 import { PersonalFilterChips } from "@/components/personal/PersonalFilterChips";
+import { PersonalLibraryTabs } from "@/components/personal/PersonalLibraryTabs";
 import { FavoritesList } from "./FavoritesList";
-import { FavoritesUtilityFooter } from "./FavoritesUtilityFooter";
 import {
   FAVORITE_FILTER_CHIPS,
   FAVORITES_COPY,
@@ -28,11 +28,7 @@ export function FavoritesPage({ items }: FavoritesPageProps) {
   const filterEmpty = !isEmpty && visible.length === 0;
 
   return (
-    <AppShell
-      title={FAVORITES_COPY.title}
-      navVariant="text"
-      frameClassName="max-w-[390px]"
-    >
+    <AppShell title={FAVORITES_COPY.title} navVariant="text">
       <div className="flex flex-col gap-5 pt-2">
         <section className="flex flex-col gap-1">
           <h2 className="text-headline-lg">{FAVORITES_COPY.title}</h2>
@@ -40,6 +36,8 @@ export function FavoritesPage({ items }: FavoritesPageProps) {
             {FAVORITES_COPY.subtitle}
           </p>
         </section>
+
+        <PersonalLibraryTabs />
 
         <PersonalFilterChips
           chips={chips}
@@ -66,8 +64,6 @@ export function FavoritesPage({ items }: FavoritesPageProps) {
         ) : (
           <FavoritesList items={visible} />
         )}
-
-        <FavoritesUtilityFooter />
       </div>
     </AppShell>
   );

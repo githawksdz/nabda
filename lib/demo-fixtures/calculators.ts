@@ -454,7 +454,7 @@ export const PUQE_VARIABLES: CalculatorVariablePreview[] = [
 export const PUQE_RESOURCES: LinkedCalculatorResource[] = [
   {
     id: "reco-nvg",
-    title: "Recommandation associée",
+    title: "Protocole associé",
     subtitle: "En préparation",
     // Design placeholder: replace with verified reference metadata before production.
     href: "/protocols/nausees-vomissements-grossesse",

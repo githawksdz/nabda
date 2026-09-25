@@ -1,7 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { DetailHeader } from "@/components/content-detail/DetailHeader";
+import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
+import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import { BottomReadingDock, type DockAction } from "@/components/content-detail/BottomReadingDock";
 import { EmptyContentState } from "@/components/content-detail/EmptyContentState";
 import { ProtocolOverview } from "./ProtocolOverview";
@@ -54,7 +55,7 @@ export function ProtocolDetailPage({
       : (source?.title ??
         detail?.protocol.short_title ??
         detail?.protocol.title ??
-        "Recommandation");
+        "Protocole");
   const backHref =
     mode === "section" && detail
       ? protocolHref(detail.protocol.slug)
@@ -78,10 +79,14 @@ export function ProtocolDetailPage({
       return;
     }
     const result = await toggleFavorite("protocol", slug);
-    if (!result.skipped) {
-      setBookmarked(result.saved);
-      setSummarySaved(result.saved);
+    if (result.skipped) {
+      setBookmarked(initialBookmarked);
+      setSummarySaved(initialBookmarked);
+      showToast("Connectez-vous pour ajouter aux favoris.");
+      return;
     }
+    setBookmarked(result.saved);
+    setSummarySaved(result.saved);
   }
 
   function toggleBookmark() {
@@ -111,7 +116,7 @@ export function ProtocolDetailPage({
   }
 
   async function shareSummary() {
-    const title = source?.title ?? detail?.protocol.title ?? "Recommandation Nabda";
+    const title = source?.title ?? detail?.protocol.title ?? "Protocole";
     const text = detail?.available_summary ?? detail?.protocol.summary ?? title;
     const url = window.location.href;
     try {
@@ -140,7 +145,7 @@ export function ProtocolDetailPage({
       dockActions = [
         {
           id: "save",
-          label: summarySaved ? "Enregistré" : "Enregistrer",
+          label: summarySaved ? "Retirer" : "Favoris",
           icon: summarySaved ? "bookmark-check" : "bookmark",
           active: summarySaved,
           onClick: toggleSummarySave,
@@ -173,7 +178,7 @@ export function ProtocolDetailPage({
       dockActions = [
         {
           id: "save",
-          label: bookmarked ? "Enregistré" : "Enregistrer",
+          label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
           onClick: toggleBookmark,
@@ -201,23 +206,22 @@ export function ProtocolDetailPage({
   }
 
   return (
-    <div className="min-h-dvh bg-background text-on-surface">
-      <div className="relative mx-auto min-h-dvh w-full max-w-[390px]">
-        <DetailHeader
-          contentType="Recommandation"
-          title={headerTitle}
-          backHref={backHref}
-          bookmarked={bookmarked || summarySaved}
-          onToggleBookmark={mode === "preparation" ? toggleSummarySave : toggleBookmark}
+    <ClinicalDetailFrame title={headerTitle} backHref={backHref}>
+        <DetailLibraryStatus
+          contentType="protocol"
+          slug={detail?.protocol.slug ?? source?.slug ?? ""}
         />
-        <main className="px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(128px+env(safe-area-inset-bottom,0px))]">
-          <div className="pt-3">
+        <div className="pt-3">
             {source ? (
-              <ProtocolSourceRenderer data={source} linkMode="public" />
+              <ProtocolSourceRenderer
+                data={source}
+                linkMode="public"
+                sectionSlug={sectionSlug}
+              />
             ) : null}
             {!source && (mode === "missing" || !detail) ? (
               <EmptyContentState
-                title="Recommandation introuvable"
+                title="Protocole introuvable"
                 description="Cette fiche n'est pas encore disponible. Structure en préparation."
               />
             ) : null}
@@ -240,7 +244,6 @@ export function ProtocolDetailPage({
               />
             ) : null}
           </div>
-        </main>
         {dockActions.length > 0 ? (
           <BottomReadingDock actions={dockActions} meta={dockMeta} />
         ) : null}
@@ -248,12 +251,11 @@ export function ProtocolDetailPage({
           <p
             role="status"
             aria-live="polite"
-            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
+            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm lg:left-[calc(50%+7.5rem)]"
           >
             {toast}
           </p>
         ) : null}
-      </div>
-    </div>
+    </ClinicalDetailFrame>
   );
 }

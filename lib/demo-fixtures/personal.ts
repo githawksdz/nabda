@@ -48,7 +48,7 @@ export function getMockFavoriteItems(now = new Date()): FavoriteItem[] {
       subtitle: "Synthèse clinique sauvegardée",
       href: "/protocols/cephalees-brutales-hsa",
       statusLabel: "Révision médicale requise",
-      kindLabel: "Recommandation",
+      kindLabel: "Protocole",
       savedAt,
     },
   ];
@@ -113,7 +113,7 @@ export function getMockHistoryItems(now = new Date()): HistoryItem[] {
       subtitle: "Synthèse clinique",
       href: "/protocols/cephalees-brutales-hsa",
       viewedAt: older.toISOString(),
-      kindLabel: "Recommandation",
+      kindLabel: "Protocole",
     },
   ];
 }
@@ -144,7 +144,7 @@ export const MOCK_PERSONAL_CATALOG: Record<
     title: "Céphalées brutales",
     subtitle: "Synthèse clinique",
     statusLabel: "Révision médicale requise",
-    kindLabel: "Recommandation",
+    kindLabel: "Protocole",
   },
   "calculator:cockcroft-gault": {
     title: "Cockcroft-Gault",

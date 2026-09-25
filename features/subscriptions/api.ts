@@ -1,13 +1,15 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { SUBSCRIPTION_PLAN_SELECT } from "@/lib/authz/selects";
+import { getViewerAccess } from "@/lib/authz/access";
 import type { SubscriptionPlan } from "@/types/content";
 
 export async function getSubscriptionPlans(): Promise<SubscriptionPlan[]> {
   const supabase = await createClient();
   const { data, error } = await supabase
     .from("subscription_plans")
-    .select("*")
+    .select(SUBSCRIPTION_PLAN_SELECT)
     .eq("is_active", true)
     .order("sort_order", { ascending: true });
 
@@ -16,7 +18,7 @@ export async function getSubscriptionPlans(): Promise<SubscriptionPlan[]> {
     return [];
   }
 
-  return data ?? [];
+  return (data ?? []) as SubscriptionPlan[];
 }
 
 export async function getCurrentUserPlan() {
@@ -29,12 +31,7 @@ export async function getCurrentUserPlan() {
     return null;
   }
 
-  const { data: profile } = await supabase
-    .from("profiles")
-    .select("plan_slug, plan_status")
-    .eq("id", user.id)
-    .maybeSingle();
-
+  const viewer = await getViewerAccess();
   const { data: subscription } = await supabase
     .from("user_subscriptions")
     .select("plan_slug, status, ends_at")
@@ -44,16 +41,23 @@ export async function getCurrentUserPlan() {
     .limit(1)
     .maybeSingle();
 
-  const slug = subscription?.plan_slug ?? profile?.plan_slug ?? "freemium";
+  const live =
+    subscription?.status === "active" &&
+    (subscription.ends_at == null || Date.parse(subscription.ends_at) > Date.now()) &&
+    Boolean(subscription.plan_slug);
+
+  const slug = live && viewer.hasActivePro ? subscription.plan_slug : "freemium";
+  const status = live && viewer.hasActivePro ? subscription.status : "active";
+
   const { data: plan } = await supabase
     .from("subscription_plans")
-    .select("*")
+    .select(SUBSCRIPTION_PLAN_SELECT)
     .eq("slug", slug)
     .maybeSingle();
 
   return {
     slug,
-    status: subscription?.status ?? profile?.plan_status ?? "active",
-    plan: plan ?? null,
+    status,
+    plan: (plan as SubscriptionPlan | null) ?? null,
   };
 }

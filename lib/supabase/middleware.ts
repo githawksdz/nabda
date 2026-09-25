@@ -1,13 +1,19 @@
-import { createServerClient } from "@supabase/ssr";
+import { createServerClient, type CookieOptions } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
 import type { Database } from "@/types/database";
 import { getSupabaseEnv } from "./env";
 
-function withSessionCookies(from: NextResponse, to: NextResponse) {
-  from.cookies.getAll().forEach((cookie) => {
-    to.cookies.set(cookie.name, cookie.value);
+type SessionCookie = {
+  name: string;
+  value: string;
+  options?: CookieOptions;
+};
+
+function applySessionCookies(target: NextResponse, cookies: SessionCookie[]) {
+  cookies.forEach(({ name, value, options }) => {
+    target.cookies.set(name, value, options);
   });
-  return to;
+  return target;
 }
 
 function isPublicRoute(pathname: string) {
@@ -17,6 +23,13 @@ function isPublicRoute(pathname: string) {
     pathname.startsWith("/auth/update-password") ||
     pathname.startsWith("/api/health") ||
     pathname.startsWith("/api/readiness") ||
+    pathname.startsWith("/content-media") ||
+    pathname.startsWith("/sw.js") ||
+    pathname.startsWith("/offline-fallback.html") ||
+    pathname.startsWith("/manifest.webmanifest") ||
+    pathname.startsWith("/icon-192") ||
+    pathname.startsWith("/icon-512") ||
+    pathname.startsWith("/api/pwa/") ||
     pathname === "/staging-access"
   );
 }
@@ -28,6 +41,7 @@ export async function updateSession(request: NextRequest) {
   }
 
   let supabaseResponse = NextResponse.next({ request });
+  let sessionCookies: SessionCookie[] = [];
 
   const supabase = createServerClient<Database>(env.url, env.anonKey, {
     cookies: {
@@ -35,6 +49,7 @@ export async function updateSession(request: NextRequest) {
         return request.cookies.getAll();
       },
       setAll(cookiesToSet) {
+        sessionCookies = cookiesToSet;
         cookiesToSet.forEach(({ name, value }) => {
           request.cookies.set(name, value);
         });
@@ -56,7 +71,7 @@ export async function updateSession(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = "/";
     url.search = "";
-    return withSessionCookies(supabaseResponse, NextResponse.redirect(url));
+    return applySessionCookies(NextResponse.redirect(url), sessionCookies);
   }
 
   if (user && pathname === "/") {
@@ -71,7 +86,7 @@ export async function updateSession(request: NextRequest) {
       url.pathname = profile?.onboarding_completed
         ? "/home"
         : "/onboarding/personalisation";
-      return withSessionCookies(supabaseResponse, NextResponse.redirect(url));
+      return applySessionCookies(NextResponse.redirect(url), sessionCookies);
     }
   }
 
@@ -85,7 +100,7 @@ export async function updateSession(request: NextRequest) {
     if (!error && profile?.onboarding_completed) {
       const url = request.nextUrl.clone();
       url.pathname = "/home";
-      return withSessionCookies(supabaseResponse, NextResponse.redirect(url));
+      return applySessionCookies(NextResponse.redirect(url), sessionCookies);
     }
   }
 

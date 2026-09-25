@@ -19,6 +19,18 @@ import type {
   SearchDocumentHit,
 } from "@/types/search-documents";
 import type { SearchFilter, SearchResult } from "@/types/search";
+import {
+  ANONYMOUS_VIEWER,
+  canReadContent,
+  type ContentIdentity,
+  type ViewerAccess,
+} from "@/lib/authz/content-gate";
+import {
+  CALCULATOR_IDENTITY_SEARCH_SELECT,
+  CAT_IDENTITY_SEARCH_SELECT,
+  DRUG_IDENTITY_SEARCH_SELECT,
+  PROTOCOL_IDENTITY_SEARCH_SELECT,
+} from "@/lib/authz/selects";
 
 export const SEARCH_DOCUMENTS_STAGE = "B" as const;
 export const DEFAULT_SEARCH_DOC_LIMIT = 36;
@@ -28,11 +40,64 @@ export const MAX_SEARCH_DOC_LIMIT = 48;
 type SearchClient = SupabaseClient;
 
 const PUBLIC_SELECT =
-  "id, entity_type, entity_slug, content_type, title, subtitle, snippet, route_href, section_anchor, category_slug, tags, priority, review_status, activation_state";
+  "id, entity_type, entity_slug, content_type, title, subtitle, snippet, route_href, section_anchor, category_slug, tags, priority, review_status, activation_state, visibility";
 
 function resolveLimit(limit?: number): number {
   if (!limit || limit < 1) return DEFAULT_SEARCH_DOC_LIMIT;
   return Math.min(limit, MAX_SEARCH_DOC_LIMIT);
+}
+
+function identityKey(type: SearchDocumentEntityType, slug: string): string {
+  return `${type}:${slug}`;
+}
+
+const PARENT_SELECT: Record<SearchDocumentEntityType, { table: string; columns: string }> = {
+  protocol: { table: "protocols", columns: PROTOCOL_IDENTITY_SEARCH_SELECT },
+  cat: { table: "cat_maps", columns: CAT_IDENTITY_SEARCH_SELECT },
+  drug: { table: "drugs", columns: DRUG_IDENTITY_SEARCH_SELECT },
+  calculator: { table: "calculators", columns: CALCULATOR_IDENTITY_SEARCH_SELECT },
+};
+
+async function loadParentIdentities(
+  client: SearchClient,
+  hits: SearchDocumentHit[],
+): Promise<Map<string, ContentIdentity>> {
+  const byType = new Map<SearchDocumentEntityType, Set<string>>();
+  for (const hit of hits) {
+    const set = byType.get(hit.entityType) ?? new Set<string>();
+    set.add(hit.entitySlug);
+    byType.set(hit.entityType, set);
+  }
+
+  const identities = new Map<string, ContentIdentity>();
+  await Promise.all(
+    [...byType.entries()].map(async ([entityType, slugs]) => {
+      const spec = PARENT_SELECT[entityType];
+      if (!spec || slugs.size === 0) {
+        return;
+      }
+      const { data, error } = await client
+        .from(spec.table)
+        .select(spec.columns)
+        .eq("status", "published")
+        .in("slug", [...slugs]);
+      if (error) {
+        console.warn(`search parent ${spec.table}`, error.message);
+        return;
+      }
+      for (const row of ((data ?? []) as unknown as Array<Record<string, unknown>>)) {
+        const slug = typeof row.slug === "string" ? row.slug : "";
+        if (!slug) continue;
+        identities.set(identityKey(entityType, slug), {
+          slug,
+          status: typeof row.status === "string" ? row.status : null,
+          visibility: typeof row.visibility === "string" ? row.visibility : null,
+          reviewStatus: typeof row.review_status === "string" ? row.review_status : null,
+        });
+      }
+    }),
+  );
+  return identities;
 }
 
 function entityTypesForFilter(
@@ -70,6 +135,7 @@ function rowToHit(row: Record<string, unknown>): SearchDocumentHit | null {
       : [],
     priority: typeof row.priority === "number" ? row.priority : 0,
     reviewStatus: typeof row.review_status === "string" ? row.review_status : "unreviewed",
+    visibility: typeof row.visibility === "string" ? row.visibility : "public_free",
     activationState:
       typeof row.activation_state === "string"
         ? row.activation_state
@@ -172,6 +238,7 @@ export async function fetchSearchDocumentHits(
   client: SearchClient,
   query: string,
   filters?: { type?: SearchFilter; limit?: number },
+  viewer: ViewerAccess = ANONYMOUS_VIEWER,
 ): Promise<SearchDocumentHit[]> {
   const term = sanitizeIdentityQuery(query).slice(0, MAX_QUERY_LENGTH);
   if (!term) return [];
@@ -182,12 +249,16 @@ export async function fetchSearchDocumentHits(
   const limit = resolveLimit(filters?.limit);
   const fetchLimit = Math.min(limit * 4, 120);
   const like = `%${term}%`;
+  const visibilities =
+    viewer.authenticated && viewer.hasActivePro
+      ? ["public_free", "premium"]
+      : ["public_free"];
 
   let request = client
     .from("search_documents")
     .select(PUBLIC_SELECT)
     .or(`title.ilike.${like},searchable_text.ilike.${like},entity_slug.ilike.${like}`)
-    .in("visibility", ["public_free", "premium"])
+    .in("visibility", visibilities)
     .order("priority", { ascending: false })
     .limit(fetchLimit);
 
@@ -203,9 +274,18 @@ export async function fetchSearchDocumentHits(
   }
 
   const rows = (data ?? []) as unknown as Record<string, unknown>[];
-  const hits = rows
+  const mapped = rows
     .map((row: Record<string, unknown>) => rowToHit(row))
     .filter((hit: SearchDocumentHit | null): hit is SearchDocumentHit => Boolean(hit));
+
+  const parents = await loadParentIdentities(client, mapped);
+  const hits = mapped.filter((hit) => {
+    const parent = parents.get(identityKey(hit.entityType, hit.entitySlug));
+    if (!parent) {
+      return false;
+    }
+    return canReadContent(parent, viewer);
+  });
 
   return dedupeSearchDocumentHits(hits, term, limit);
 }

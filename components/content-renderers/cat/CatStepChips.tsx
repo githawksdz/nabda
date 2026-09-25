@@ -91,9 +91,9 @@ export function CatStepChips({
     <nav
       data-preview-chips=""
       aria-label="Groupes d'étapes"
-      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl"
+      className="preview-chip-nav sticky top-[calc(64px+env(safe-area-inset-top,0px))] z-40 -mx-4 bg-background/90 px-4 py-2 backdrop-blur-xl lg:top-[calc(72px+env(safe-area-inset-top,0px))] lg:mx-0 lg:bg-transparent lg:px-0 lg:py-0"
     >
-      <div ref={stripRef} className="flex gap-2 overflow-x-auto no-scrollbar">
+      <div ref={stripRef} className="flex gap-2 overflow-x-auto no-scrollbar lg:flex-col lg:overflow-visible">
         {chips.map((chip) => {
           const exists =
             chip.isTout || (chip.isImage ? hasImage : groupIds.has(chip.targetId));

@@ -7,8 +7,8 @@ export function InternalPreviewLocked() {
       <InternalPreviewBanner locked />
       <h1 className="text-headline-sm">Aperçu interne indisponible</h1>
       <p className="text-body-sm text-on-surface-variant">
-        Cette route lit les JSON de dry-run pour l&apos;inspection produit. Elle n&apos;est pas dans
-        la navigation publique. En production, ajoutez <code>?preview=internal</code>.
+        Cette route lit les JSON de dry-run pour l&apos;inspection produit. Elle n&apos;est
+        pas dans la navigation publique. Un compte reviewer, éditeur ou admin est requis.
       </p>
     </div>
   );

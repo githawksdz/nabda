@@ -341,7 +341,7 @@ export function deriveLinkedContentForCat(input: {
       id: `${input.catId}-protocol`,
       type: "protocol",
       title: input.protocol.short_title || input.protocol.title,
-      subtitle: "Recommandation liée · fiche en préparation",
+      subtitle: "Protocole lié · fiche en préparation",
       href: `/protocols/${input.protocol.slug}`,
     };
     tools.push(protocolItem);

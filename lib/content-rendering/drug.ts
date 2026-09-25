@@ -6,7 +6,7 @@
 
 import { parseTopLevelRows } from "@/lib/nabda-db/html/drug-table-shape-analyzer";
 import { splitTables } from "@/lib/nabda-db/html/drug-table-normalizer";
-import { drugTabForKind, DRUG_TAB_ORDER } from "@/lib/nabda-db/html/drug-mobile-display-classifier";
+import { drugTabForKind } from "@/lib/nabda-db/html/drug-mobile-display-classifier";
 import { htmlToPlainText } from "@/lib/nabda-db/html/html-cleaner";
 import { sanitizePreviewHtml } from "@/lib/content-rendering/protocol";
 import { drugSourceMediaHref } from "@/lib/content-rendering/render-state";
@@ -20,7 +20,14 @@ import type {
   DrugRenderTable,
 } from "@/types/content-rendering-drug";
 
-export const DRUG_PREVIEW_TAB_ORDER: NabdaDrugDetailTab[] = DRUG_TAB_ORDER;
+export const DRUG_PREVIEW_TAB_ORDER: NabdaDrugDetailTab[] = [
+  "Aperçu",
+  "Sécurité",
+  "Posologie",
+  "Interactions",
+  "Formes",
+  "Sources",
+];
 
 export const DRUG_PHARMACIST_TAB_ORDER: NabdaDrugDetailTab[] = [
   "Sécurité",
@@ -127,6 +134,7 @@ export function rewriteDrugMediaSrcs(
   html: string,
   keepInternalQuery: boolean,
   linkMode: "public" | "internal" = "internal",
+  slug?: string,
 ): string {
   return html.replace(/<img\b[^>]*>/gi, (tag) => {
     const srcMatch = tag.match(/\bsrc\s*=\s*("([^"]*)"|'([^']*)')/i);
@@ -141,7 +149,7 @@ export function rewriteDrugMediaSrcs(
       if (!filename) {
         return tag;
       }
-      const href = drugSourceMediaHref(filename, linkMode === "public", keepInternalQuery);
+      const href = drugSourceMediaHref(filename, linkMode === "public", keepInternalQuery, slug);
       return `<img src="${href}" alt="${alt}">`;
     }
     return tag;
@@ -152,8 +160,9 @@ export function prepareDrugSectionHtml(
   html: string,
   keepInternalQuery: boolean,
   linkMode: "public" | "internal" = "internal",
+  slug?: string,
 ): string {
-  const withMedia = rewriteDrugMediaSrcs(html, keepInternalQuery, linkMode);
+  const withMedia = rewriteDrugMediaSrcs(html, keepInternalQuery, linkMode, slug);
   return sanitizePreviewHtml(withMedia, keepInternalQuery, "drug", linkMode);
 }
 

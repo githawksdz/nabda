@@ -8,7 +8,10 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "check:renderer-imports": "npx tsx scripts/check-renderer-import-boundaries.ts"
+    "check:renderer-imports": "npx tsx scripts/check-renderer-import-boundaries.ts",
+    "check:secure-content-boundary": "npx tsx scripts/verify-secure-content-boundary.ts",
+    "check:pwa": "npx tsx scripts/verify-pwa.ts",
+    "check:offline-management": "npx tsx scripts/verify-offline-management.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.6",

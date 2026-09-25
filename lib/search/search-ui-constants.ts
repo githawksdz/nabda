@@ -6,38 +6,18 @@ import type {
 } from "@/types/search";
 
 /** Search UI chips — not clinical content fixtures. */
-export const INITIAL_FILTERS: FilterChip[] = [
+export const SEARCH_TYPE_FILTERS: FilterChip[] = [
   { id: "all", label: "Tous" },
   { id: "cat", label: "CAT" },
-  { id: "protocols", label: "Recommandations" },
+  { id: "protocols", label: "Protocoles" },
   { id: "drugs", label: "Médicaments" },
   { id: "calculators", label: "Scores" },
-  { id: "interactions", label: "Interactions" },
 ];
 
-export const ZERO_FILTERS: FilterChip[] = [
-  { id: "all", label: "Tous" },
-  { id: "protocols", label: "Recommandations" },
-  { id: "drugs", label: "Médicaments DCI" },
-  { id: "calculators", label: "Scores cliniques" },
-  { id: "cat", label: "Arbres décisionnels" },
-];
-
-export const GROUPED_FILTERS: FilterChip[] = [
-  { id: "all", label: "Tous" },
-  { id: "cat", label: "CAT" },
-  { id: "protocols", label: "Recommandations" },
-  { id: "calculators", label: "Scores" },
-  { id: "drugs", label: "Médicaments" },
-];
-
-export const DRUG_FILTERS: FilterChip[] = [
-  { id: "all", label: "Tous" },
-  { id: "drugs", label: "Médicaments" },
-  { id: "cat", label: "CAT" },
-  { id: "protocols", label: "Recommandations" },
-  { id: "calculators", label: "Scores" },
-];
+export const INITIAL_FILTERS = SEARCH_TYPE_FILTERS;
+export const ZERO_FILTERS = SEARCH_TYPE_FILTERS;
+export const GROUPED_FILTERS = SEARCH_TYPE_FILTERS;
+export const DRUG_FILTERS = SEARCH_TYPE_FILTERS;
 
 export const DRUG_SECONDARY_FILTERS = [
   { id: "routes", label: "Toutes voies" },
@@ -83,7 +63,7 @@ export const EXPLORE_MODULES: ExploreModule[] = [
   },
   {
     id: "reco",
-    title: "Recommandations",
+    title: "Protocoles",
     subtitle: "Synthèses cliniques",
     href: "/protocols",
     icon: "badge-check",
@@ -111,7 +91,7 @@ export const ZERO_PIVOTS: PivotSuggestion[] = [
   },
   {
     id: "bio",
-    title: "Recommandations",
+    title: "Protocoles",
     href: "/protocols",
     icon: "flask",
   },

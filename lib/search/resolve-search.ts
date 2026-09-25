@@ -17,6 +17,9 @@ export const SEARCH_FILTERS: SearchFilter[] = [
 ];
 
 export function parseSearchFilter(value?: string | null): SearchFilter {
+  if (value === "interactions" || value === "normes") {
+    return "all";
+  }
   if (value && SEARCH_FILTERS.includes(value as SearchFilter)) {
     return value as SearchFilter;
   }

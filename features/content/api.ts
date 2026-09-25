@@ -1,7 +1,6 @@
 "use server";
 
 import { headers } from "next/headers";
-import { isProductionContentMode } from "@/lib/content-data/content-source-mode";
 import {
   fetchIdentityHits,
   identityHitsToSearchResults,
@@ -10,13 +9,19 @@ import {
   fetchSearchDocumentHits,
   searchDocumentHitsToSearchResults,
 } from "@/lib/search/search-documents";
-import { createAdminClient, canUseAdminClient } from "@/lib/supabase/admin";
-import { createClient } from "@/lib/supabase/server";
+import { createRlsClient } from "@/lib/supabase/rls-client";
 import { logWarn } from "@/lib/observability/logger";
 import {
   checkRateLimit,
   clientIpFromHeaders,
 } from "@/lib/security/rate-limit";
+import {
+  CALCULATOR_CATALOG_SELECT,
+  CAT_CATALOG_SELECT,
+  DRUG_CATALOG_SELECT,
+  PROTOCOL_CATALOG_SELECT,
+} from "@/lib/authz/selects";
+import { filterReadableContent, getViewerAccess } from "@/lib/authz/access";
 import type {
   Calculator,
   CatMap,
@@ -26,73 +31,98 @@ import type {
 import type { SearchFilter, SearchResult } from "@/types/search";
 
 async function getCatalogClient() {
-  if (isProductionContentMode() && canUseAdminClient()) {
-    return createAdminClient();
+  const client = await createRlsClient();
+  if (!client) {
+    throw new Error("Supabase is not configured.");
   }
-  return await createClient();
+  return client;
 }
 
 export async function getProtocols(): Promise<Protocol[]> {
-  const supabase = await getCatalogClient();
-  const { data, error } = await supabase
-    .from("protocols")
-    .select("*")
-    .order("is_featured", { ascending: false })
-    .order("title", { ascending: true });
+  try {
+    const [supabase, viewer] = await Promise.all([getCatalogClient(), getViewerAccess()]);
+    const { data, error } = await supabase
+      .from("protocols")
+      .select(PROTOCOL_CATALOG_SELECT)
+      .eq("status", "published")
+      .order("is_featured", { ascending: false })
+      .order("title", { ascending: true });
 
-  if (error) {
-    console.warn("getProtocols", error.message);
+    if (error) {
+      console.warn("getProtocols", error.message);
+      return [];
+    }
+
+    return filterReadableContent((data ?? []) as Protocol[], viewer);
+  } catch (error) {
+    console.warn("getProtocols", error);
     return [];
   }
-
-  return data ?? [];
 }
 
 export async function getCatMaps(): Promise<CatMap[]> {
-  const supabase = await getCatalogClient();
-  const { data, error } = await supabase
-    .from("cat_maps")
-    .select("*")
-    .order("is_featured", { ascending: false })
-    .order("title", { ascending: true });
+  try {
+    const [supabase, viewer] = await Promise.all([getCatalogClient(), getViewerAccess()]);
+    const { data, error } = await supabase
+      .from("cat_maps")
+      .select(CAT_CATALOG_SELECT)
+      .eq("status", "published")
+      .order("is_featured", { ascending: false })
+      .order("title", { ascending: true });
 
-  if (error) {
-    console.warn("getCatMaps", error.message);
+    if (error) {
+      console.warn("getCatMaps", error.message);
+      return [];
+    }
+
+    return filterReadableContent((data ?? []) as CatMap[], viewer);
+  } catch (error) {
+    console.warn("getCatMaps", error);
     return [];
   }
-
-  return data ?? [];
 }
 
 export async function getCalculators(): Promise<Calculator[]> {
-  const supabase = await getCatalogClient();
-  const { data, error } = await supabase
-    .from("calculators")
-    .select("*")
-    .order("is_featured", { ascending: false })
-    .order("title", { ascending: true });
+  try {
+    const [supabase, viewer] = await Promise.all([getCatalogClient(), getViewerAccess()]);
+    const { data, error } = await supabase
+      .from("calculators")
+      .select(CALCULATOR_CATALOG_SELECT)
+      .eq("status", "published")
+      .order("is_featured", { ascending: false })
+      .order("title", { ascending: true });
 
-  if (error) {
-    console.warn("getCalculators", error.message);
+    if (error) {
+      console.warn("getCalculators", error.message);
+      return [];
+    }
+
+    return filterReadableContent((data ?? []) as Calculator[], viewer);
+  } catch (error) {
+    console.warn("getCalculators", error);
     return [];
   }
-
-  return data ?? [];
 }
 
 export async function getDrugs(): Promise<Drug[]> {
-  const supabase = await getCatalogClient();
-  const { data, error } = await supabase
-    .from("drugs")
-    .select("*")
-    .order("display_name", { ascending: true });
+  try {
+    const [supabase, viewer] = await Promise.all([getCatalogClient(), getViewerAccess()]);
+    const { data, error } = await supabase
+      .from("drugs")
+      .select(DRUG_CATALOG_SELECT)
+      .eq("status", "published")
+      .order("display_name", { ascending: true });
 
-  if (error) {
-    console.warn("getDrugs", error.message);
+    if (error) {
+      console.warn("getDrugs", error.message);
+      return [];
+    }
+
+    return filterReadableContent((data ?? []) as Drug[], viewer);
+  } catch (error) {
+    console.warn("getDrugs", error);
     return [];
   }
-
-  return data ?? [];
 }
 
 /**
@@ -126,11 +156,12 @@ export async function searchContent(
     }
 
     const supabase = await getCatalogClient();
-    const docHits = await fetchSearchDocumentHits(supabase, trimmed, filters);
+    const viewer = await getViewerAccess();
+    const docHits = await fetchSearchDocumentHits(supabase, trimmed, filters, viewer);
     if (docHits.length > 0) {
       return searchDocumentHitsToSearchResults(docHits);
     }
-    const hits = await fetchIdentityHits(supabase, trimmed, filters);
+    const hits = await fetchIdentityHits(supabase, trimmed, { ...filters, viewer });
     return identityHitsToSearchResults(hits);
   } catch (error) {
     console.warn("searchContent", error);

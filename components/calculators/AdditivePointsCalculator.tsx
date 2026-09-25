@@ -5,6 +5,7 @@ import {
   additivePointsEngine,
   parseAdditiveSchemaFromPayload,
 } from "@/lib/calculators/engines/additive-points";
+import { measureSync } from "@/lib/calculators/calculator-perf";
 import type { CalculatorRenderData } from "@/types/content-rendering";
 
 type AdditivePointsCalculatorProps = {
@@ -43,8 +44,10 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
   );
 
   const result = useMemo(() => {
-    return additivePointsEngine.calculate({ selections, schema });
-  }, [selections, schema]);
+    return measureSync(data.slug, () =>
+      additivePointsEngine.calculate({ selections, schema }),
+    );
+  }, [selections, schema, data.slug]);
 
   if (!schema.length) {
     return (
@@ -56,8 +59,8 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
   }
 
   return (
-    <div className="flex flex-col gap-4">
-      <header className="space-y-1">
+    <div className="flex flex-col gap-4 lg:grid lg:grid-cols-2 lg:items-start lg:gap-6">
+      <header className="space-y-1 lg:col-span-2">
         <p className="text-label-md text-on-surface-variant">Score additif</p>
         <h2 className="text-headline-sm">{data.title}</h2>
         <p className="text-body-sm text-on-surface-variant">
@@ -65,6 +68,7 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
         </p>
       </header>
 
+      <div className="flex min-w-0 flex-col gap-4">
       {schema.map((field) => (
         <fieldset key={field.name} className="space-y-2">
           <legend className="text-body-md font-medium">{field.label}</legend>
@@ -91,8 +95,9 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
           </div>
         </fieldset>
       ))}
+      </div>
 
-      <div className="rounded-xl bg-surface-container-low px-3.5 py-3">
+      <div className="rounded-xl bg-surface-container-low px-3.5 py-3 lg:sticky lg:top-[calc(72px+env(safe-area-inset-top,0px))]">
         {result.ok ? (
           <>
             <p className="text-label-md text-on-surface-variant">Résultat</p>

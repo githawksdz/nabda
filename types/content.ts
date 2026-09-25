@@ -116,6 +116,7 @@ export type Protocol = {
   published_at: string | null;
   source_note: string | null;
   search_text: string;
+  offline_available?: boolean;
   created_at: string;
   updated_at: string;
 } & ContentImportMetadata;
@@ -135,6 +136,7 @@ export type CatMap = {
   source_note: string | null;
   created_at: string;
   updated_at: string;
+  offline_available?: boolean;
 } & ContentImportMetadata;
 
 export type Calculator = {
@@ -157,6 +159,7 @@ export type Calculator = {
   engine_implemented?: boolean | null;
   created_at: string;
   updated_at: string;
+  offline_available?: boolean;
 } & ContentImportMetadata;
 
 export type Drug = {
@@ -174,6 +177,7 @@ export type Drug = {
   search_text: string;
   created_at: string;
   updated_at: string;
+  offline_available?: boolean;
 } & ContentImportMetadata;
 
 export type HomeFeedItem = {

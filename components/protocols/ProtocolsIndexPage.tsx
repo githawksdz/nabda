@@ -28,14 +28,14 @@ export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) 
 
   return (
     <AppShell
-      title="Recommandations"
+      title="Protocoles"
       navVariant="text"
       frameClassName="max-w-[390px]"
       contentClassName="pb-[calc(96px+env(safe-area-inset-bottom,0px))]"
     >
       <div className="flex flex-col gap-4 pt-2">
         <section className="flex flex-col gap-2">
-          <h2 className="text-headline-lg">Recommandations</h2>
+          <h2 className="text-headline-lg">Protocoles</h2>
           <p className="text-body-md text-on-surface-variant">
             Synthèses et guides cliniques disponibles dans Nabda.
           </p>
@@ -45,14 +45,14 @@ export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) 
           type="search"
           value={query}
           onChange={(event) => setQuery(event.target.value)}
-          placeholder="Rechercher une recommandation…"
+          placeholder="Rechercher un protocole…"
           className="w-full rounded-xl border border-outline-variant bg-surface-container-lowest px-4 py-3 text-body-md outline-none"
-          aria-label="Rechercher une recommandation"
+          aria-label="Rechercher un protocole"
         />
 
         {protocols.length === 0 ? (
           <div className="rounded-xl bg-surface-container-lowest p-6 text-center shadow-sm">
-            <p className="text-headline-sm">Aucune recommandation disponible</p>
+            <p className="text-headline-sm">Aucun protocole disponible</p>
             <p className="mt-2 text-body-sm text-on-surface-variant">
               Le référentiel sera enrichi au fur et à mesure des imports.
             </p>

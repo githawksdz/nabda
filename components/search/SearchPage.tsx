@@ -11,6 +11,8 @@ import { SearchGroupedResults } from "./SearchGroupedResults";
 import { SearchMedicationResults } from "./SearchMedicationResults";
 import { SearchZeroState } from "./SearchZeroState";
 import { searchContent } from "@/features/content/api";
+import { createClient } from "@/lib/supabase/client";
+import { contentRepository } from "@/lib/offline/repository";
 import {
   DRUG_FILTERS,
   GROUPED_FILTERS,
@@ -57,7 +59,6 @@ export function SearchPage({
   const [recentsCleared, setRecentsCleared] = useState(false);
   const [suggested, setSuggested] = useState(false);
   const [suggestedQuery, setSuggestedQuery] = useState("");
-  const [notice, setNotice] = useState<string | null>(null);
   const [identity, setIdentity] = useState<{
     query: string;
     results: SearchResult[];
@@ -119,6 +120,19 @@ export function SearchPage({
 
     const run = async () => {
       try {
+        if (typeof navigator !== "undefined" && !navigator.onLine) {
+          const supabase = createClient();
+          const {
+            data: { user },
+          } = await supabase.auth.getUser();
+          const rows = user
+            ? await contentRepository.searchContent(user.id, trimmed)
+            : [];
+          if (!cancelled) {
+            setIdentity({ query: trimmed, results: rows });
+          }
+          return;
+        }
         if (!isSupabaseConfigured()) {
           if (!cancelled) {
             setIdentity({ query: trimmed, results: [] });
@@ -131,8 +145,21 @@ export function SearchPage({
         }
       } catch (error) {
         console.warn("searchContent failed.", error);
-        if (!cancelled) {
-          setIdentity({ query: trimmed, results: [] });
+        try {
+          const supabase = createClient();
+          const {
+            data: { user },
+          } = await supabase.auth.getUser();
+          const rows = user
+            ? await contentRepository.searchContent(user.id, trimmed)
+            : [];
+          if (!cancelled) {
+            setIdentity({ query: trimmed, results: rows });
+          }
+        } catch {
+          if (!cancelled) {
+            setIdentity({ query: trimmed, results: [] });
+          }
         }
       }
     };
@@ -145,13 +172,8 @@ export function SearchPage({
 
   const clearQuery = useCallback(() => {
     setQuery("");
-    setNotice(null);
     setSuggested(false);
     requestAnimationFrame(() => inputRef.current?.focus());
-  }, []);
-
-  const showNotice = useCallback((message: string) => {
-    setNotice(message);
   }, []);
 
   const douleurGroups = useMemo(
@@ -245,16 +267,10 @@ export function SearchPage({
             setSuggested(false);
           }}
           onClear={clearQuery}
-          onMic={() => showNotice("Dictée bientôt disponible.")}
-          onScan={() => showNotice("Scanner bientôt disponible.")}
           placeholder={placeholder}
           variant={inputVariant}
           inputRef={inputRef}
         />
-        {notice ? (
-          <p className="text-label-sm text-on-surface-variant">{notice}</p>
-        ) : null}
-
         <SearchFilterChips
           chips={chips}
           active={filter}

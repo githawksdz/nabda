@@ -1,6 +1,6 @@
 /**
- * Gate for /internal/* product inspection routes.
- * There is no admin role yet. Development is open; production needs ?preview=internal.
+ * Href helpers for /internal/* product inspection routes.
+ * Authorization lives in lib/internal/preview-gate.ts (server-only).
  */
 
 import { calculatorHref } from "@/lib/content-rendering/render-state";
@@ -16,15 +16,9 @@ export function firstSearchParam(
   return Array.isArray(value) ? value[0] : (value ?? undefined);
 }
 
-export function canAccessInternalPreview(previewParam?: string | null): boolean {
-  if (process.env.NODE_ENV !== "production") {
-    return true;
-  }
-  return previewParam === "internal";
-}
-
-export function internalPreviewQuery(unlocked: boolean): string {
-  return unlocked ? "?preview=internal" : "";
+export function internalPreviewQuery(_unlocked: boolean): string {
+  void _unlocked;
+  return "";
 }
 
 export function internalProtocolPreviewHref(slug: string, unlocked: boolean): string {
@@ -38,11 +32,13 @@ export function internalCatPreviewHref(slug: string, unlocked: boolean): string 
 export function internalCatPreviewMediaHref(
   filename: string,
   unlocked: boolean,
+  slug?: string,
 ): string {
   const query = new URLSearchParams({ file: filename });
-  if (unlocked) {
-    query.set("preview", "internal");
+  if (slug) {
+    query.set("slug", slug);
   }
+  void unlocked;
   return `/internal/cat-preview/media?${query.toString()}`;
 }
 
@@ -53,11 +49,13 @@ export function internalDrugPreviewHref(slug: string, unlocked: boolean): string
 export function internalDrugPreviewMediaHref(
   filename: string,
   unlocked: boolean,
+  slug?: string,
 ): string {
   const query = new URLSearchParams({ file: filename });
-  if (unlocked) {
-    query.set("preview", "internal");
+  if (slug) {
+    query.set("slug", slug);
   }
+  void unlocked;
   return `/internal/drug-preview/media?${query.toString()}`;
 }
 

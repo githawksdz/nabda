@@ -79,27 +79,47 @@ export function hasAnyCompiledEngine(slug: string): boolean {
   return hasSpecialtyEngine(slug) || hasGeneratedEngine(slug);
 }
 
+const engineCache = new Map<string, Promise<CalculatorEngine<unknown, unknown> | null>>();
+
 export async function loadCalculatorEngine(
   slug: string,
 ): Promise<CalculatorEngine<unknown, unknown> | null> {
   const resolved = resolveCalculatorSlug(slug);
-  const loader = SPECIALTY_LOADERS[slug] ?? SPECIALTY_LOADERS[resolved];
-  if (loader) {
-    const mod = await loader();
-    return (mod.engine ?? mod.default ?? null) as CalculatorEngine<
-      unknown,
-      unknown
-    > | null;
+  const cached = engineCache.get(resolved) ?? engineCache.get(slug);
+  if (cached) {
+    return cached;
   }
-  const entry =
-    GENERATED_ENGINE_MANIFEST[resolved as keyof typeof GENERATED_ENGINE_MANIFEST] ??
-    GENERATED_ENGINE_MANIFEST[slug as keyof typeof GENERATED_ENGINE_MANIFEST];
-  if (!entry) return null;
-  const mod = await entry.loader();
-  return (mod.engine ?? mod.default ?? null) as CalculatorEngine<
-    unknown,
-    unknown
-  > | null;
+
+  const pending = (async () => {
+    const loadStart = typeof performance !== "undefined" ? performance.now() : 0;
+    const loader = SPECIALTY_LOADERS[slug] ?? SPECIALTY_LOADERS[resolved];
+    let engine: CalculatorEngine<unknown, unknown> | null = null;
+    if (loader) {
+      const mod = await loader();
+      engine = (mod.engine ?? mod.default ?? null) as CalculatorEngine<
+        unknown,
+        unknown
+      > | null;
+    } else {
+      const entry =
+        GENERATED_ENGINE_MANIFEST[resolved as keyof typeof GENERATED_ENGINE_MANIFEST] ??
+        GENERATED_ENGINE_MANIFEST[slug as keyof typeof GENERATED_ENGINE_MANIFEST];
+      if (!entry) return null;
+      const mod = await entry.loader();
+      engine = (mod.engine ?? mod.default ?? null) as CalculatorEngine<
+        unknown,
+        unknown
+      > | null;
+    }
+    if (typeof performance !== "undefined") {
+      const { recordCalculatorPerf } = await import("@/lib/calculators/calculator-perf");
+      recordCalculatorPerf("calculator_engine_load_ms", resolved, performance.now() - loadStart);
+    }
+    return engine;
+  })();
+
+  engineCache.set(resolved, pending);
+  return pending;
 }
 
 export function engineMetaForSlug(slug: string): {

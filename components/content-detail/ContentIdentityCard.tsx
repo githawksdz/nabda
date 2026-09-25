@@ -14,7 +14,7 @@ type ContentIdentityCardProps = {
 
 export function ContentIdentityCard({
   protocol,
-  eyebrow = "Recommandation",
+  eyebrow = "Protocole",
 }: ContentIdentityCardProps) {
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">

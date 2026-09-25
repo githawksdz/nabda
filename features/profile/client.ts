@@ -13,12 +13,12 @@ export async function ensureProfileClient(): Promise<Profile | null> {
 
   const { data: existing } = await supabase
     .from("profiles")
-    .select("*")
+    .select("id, email, full_name, avatar_url, profession, usage_mode, profile_status, onboarding_completed")
     .eq("id", user.id)
     .maybeSingle();
 
   if (existing) {
-    return existing;
+    return existing as Profile;
   }
 
   const metadata = user.user_metadata ?? {};
@@ -36,10 +36,10 @@ export async function ensureProfileClient(): Promise<Profile | null> {
         (typeof metadata.picture === "string" && metadata.picture) ||
         null,
     })
-    .select("*")
+    .select("id, email, full_name, avatar_url, profession, usage_mode, profile_status, onboarding_completed")
     .single();
 
-  return created;
+  return created as Profile | null;
 }
 
 export async function hasClinicalConsentClient(userId: string) {

@@ -1,6 +1,7 @@
 "use server";
 
 import { createClient } from "@/lib/supabase/server";
+import { PROFILE_OWN_SELECT } from "@/lib/authz/selects";
 import type { Profile } from "@/types/database";
 
 export async function getCurrentUserId() {
@@ -23,12 +24,13 @@ export async function getCurrentProfile(): Promise<Profile | null> {
 
   const { data } = await supabase
     .from("profiles")
-    .select("*")
+    .select(PROFILE_OWN_SELECT)
     .eq("id", user.id)
     .maybeSingle();
 
   if (data) {
-    return data;
+    const row = data as Profile;
+    return { ...row, staff_role: row.staff_role ?? "none" };
   }
 
   const metadata = user.user_metadata ?? {};
@@ -46,10 +48,14 @@ export async function getCurrentProfile(): Promise<Profile | null> {
         (typeof metadata.picture === "string" && metadata.picture) ||
         null,
     })
-    .select("*")
+    .select(PROFILE_OWN_SELECT)
     .single();
 
-  return created;
+  if (!created) {
+    return null;
+  }
+  const row = created as Profile;
+  return { ...row, staff_role: row.staff_role ?? "none" };
 }
 
 export async function hasClinicalConsent(userId: string) {

@@ -1,6 +1,6 @@
 "use client";
 
-import { Mic, ScanLine, Search, X } from "lucide-react";
+import { Search, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 import type { RefObject } from "react";
 
@@ -8,8 +8,6 @@ type SearchInputBarProps = {
   value: string;
   onChange: (value: string) => void;
   onClear: () => void;
-  onMic: () => void;
-  onScan: () => void;
   placeholder: string;
   variant?: "hero" | "dock" | "compact";
   inputRef?: RefObject<HTMLInputElement | null>;
@@ -19,14 +17,11 @@ export function SearchInputBar({
   value,
   onChange,
   onClear,
-  onMic,
-  onScan,
   placeholder,
   variant = "hero",
   inputRef,
 }: SearchInputBarProps) {
   const compact = variant === "compact";
-  const docked = variant === "dock" || compact;
 
   return (
     <div
@@ -48,40 +43,11 @@ export function SearchInputBar({
           type="button"
           aria-label="Effacer la recherche"
           onClick={onClear}
-          className="flex size-7 items-center justify-center rounded-full bg-surface-variant text-on-surface"
+          className="flex min-h-11 min-w-11 items-center justify-center rounded-full bg-surface-variant text-on-surface"
         >
           <X className="size-4" strokeWidth={1.75} />
         </button>
       ) : null}
-      {docked ? (
-        <button
-          type="button"
-          aria-label="Dictée"
-          onClick={onMic}
-          className="flex size-9 items-center justify-center rounded-xl bg-surface-container text-on-surface-variant"
-        >
-          <Mic className="size-4" strokeWidth={1.75} />
-        </button>
-      ) : (
-        <>
-          <button
-            type="button"
-            aria-label="Dictée"
-            onClick={onMic}
-            className="flex size-8 items-center justify-center rounded-full text-on-surface-variant"
-          >
-            <Mic className="size-4" strokeWidth={1.75} />
-          </button>
-          <button
-            type="button"
-            aria-label="Scanner un document"
-            onClick={onScan}
-            className="flex size-8 items-center justify-center rounded-full text-on-surface-variant"
-          >
-            <ScanLine className="size-4" strokeWidth={1.75} />
-          </button>
-        </>
-      )}
     </div>
   );
 }

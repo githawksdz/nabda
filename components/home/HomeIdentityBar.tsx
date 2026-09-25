@@ -1,5 +1,4 @@
-import Link from "next/link";
-import { Bell, CircleHelp, GraduationCap, Shield, ShieldCheck } from "lucide-react";
+import { CircleHelp, GraduationCap, Shield, ShieldCheck } from "lucide-react";
 import { StatusChip } from "@/components/home/cards/StatusChip";
 import { cn } from "@/lib/utils";
 import type { HomeMode, HomeUser } from "@/types/home";
@@ -75,16 +74,6 @@ export function HomeIdentityBar({ user, mode }: HomeIdentityBarProps) {
         ) : (
           <StatusChip variant="outline">Freemium</StatusChip>
         )}
-        <Link
-          href="/notifications"
-          aria-label="Notifications"
-          className="relative flex size-9 items-center justify-center rounded-full bg-surface-container-low text-secondary"
-        >
-          <Bell className="size-4" strokeWidth={1.75} />
-          {!incomplete ? (
-            <span className="absolute top-1.5 right-1.5 size-1.5 rounded-full bg-error" />
-          ) : null}
-        </Link>
       </div>
     </section>
   );

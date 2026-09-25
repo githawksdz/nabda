@@ -105,7 +105,7 @@ export const CARD_SECTIONS_TITLE = "Parcours séquentiel";
 export const KEY_POINTS_TITLE = "Points clés";
 export const LINKED_CONTENT_TITLE = "Outils et contenus liés";
 export const REVIEW_PANEL_TITLE = "Statut éditorial";
-export const PREPARATION_TITLE = "Recommandation intégrale en préparation";
+export const PREPARATION_TITLE = "Protocole intégral en préparation";
 export const PREPARATION_SUBTITLE =
   "Le résumé existe déjà. La version complète sera publiée après relecture.";
 

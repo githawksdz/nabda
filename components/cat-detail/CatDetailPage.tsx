@@ -2,7 +2,8 @@
 
 import { useEffect, useState } from "react";
 import { Shield } from "lucide-react";
-import { DetailHeader } from "@/components/content-detail/DetailHeader";
+import { ClinicalDetailFrame } from "@/components/content-detail/ClinicalDetailFrame";
+import { DetailLibraryStatus } from "@/components/content-detail/DetailLibraryStatus";
 import { BottomReadingDock, type DockAction } from "@/components/content-detail/BottomReadingDock";
 import { EmptyContentState } from "@/components/content-detail/EmptyContentState";
 import { CatIdentityCard } from "./CatIdentityCard";
@@ -117,7 +118,7 @@ export function CatDetailPage({
     ? [
         {
           id: "save",
-          label: bookmarked ? "Enregistré" : "Enregistrer",
+          label: bookmarked ? "Retirer" : "Favoris",
           icon: bookmarked ? "bookmark-check" : "bookmark",
           active: bookmarked,
           onClick: toggleBookmark,
@@ -146,19 +147,12 @@ export function CatDetailPage({
     : [];
 
   return (
-    <div className="min-h-dvh bg-background text-on-surface">
-      <div className="relative mx-auto min-h-dvh w-full max-w-[390px]">
-        <DetailHeader
-          contentType="CAT"
-          title={headerTitle}
-          backHref="/cat"
-          searchHref="/search?type=cat"
-          bookmarked={bookmarked}
-          onToggleBookmark={toggleBookmark}
-          onShare={shareCat}
+    <ClinicalDetailFrame title={headerTitle} backHref="/cat">
+        <DetailLibraryStatus
+          contentType="cat"
+          slug={detail?.map.slug ?? source?.slug ?? ""}
         />
-        <main className="px-4 pt-[calc(64px+env(safe-area-inset-top,0px))] pb-[calc(128px+env(safe-area-inset-bottom,0px))]">
-          <div className="flex flex-col gap-5 pt-3">
+        <div className="flex flex-col gap-5 pt-3">
             {mode === "missing" && !source ? (
               <EmptyContentState
                 title="CAT introuvable"
@@ -197,28 +191,39 @@ export function CatDetailPage({
                     onSuggest={() => setSuggested(true)}
                   />
                 ) : null}
-                {mode === "tabs" && activeTab === "carte" ? (
-                  flowchart ? (
-                    <CatFlowchartCanvas map={flowchart} />
-                  ) : source ? (
-                    <CatSourceRenderer
-                      data={source}
-                      linkMode="public"
-                      variant="image"
-                      showProvenance
-                    />
-                  ) : detail ? (
-                    <CatMapPreparationState
-                      detail={detail}
-                      notified={notified}
-                      suggested={suggested}
-                      onNotify={toggleNotify}
-                      onSuggest={() => setSuggested(true)}
-                    />
-                  ) : null
-                ) : null}
-                {mode === "tabs" && activeTab === "etapes" ? (
-                  source ? (
+                <div className="lg:grid lg:grid-cols-2 lg:items-start lg:gap-6">
+                  <div
+                    className={
+                      mode === "tabs" && activeTab !== "carte"
+                        ? "hidden min-w-0 lg:block"
+                        : "min-w-0"
+                    }
+                  >
+                    {mode === "tabs" && (activeTab === "carte" || Boolean(flowchart) || Boolean(source)) ? (
+                      flowchart ? (
+                        <CatFlowchartCanvas map={flowchart} />
+                      ) : source ? (
+                        <CatSourceRenderer
+                          data={source}
+                          linkMode="public"
+                          variant="image"
+                          showProvenance
+                        />
+                      ) : detail ? (
+                        <CatMapPreparationState
+                          detail={detail}
+                          notified={notified}
+                          suggested={suggested}
+                          onNotify={toggleNotify}
+                          onSuggest={() => setSuggested(true)}
+                        />
+                      ) : null
+                    ) : null}
+                  </div>
+                  <div className="min-w-0 lg:max-w-[42rem]">
+                {mode === "tabs" && (activeTab === "etapes" || activeTab === "carte") ? (
+                  <div className={activeTab === "carte" ? "hidden lg:block" : undefined}>
+                  {source ? (
                     <CatSourceRenderer
                       data={source}
                       linkMode="public"
@@ -227,7 +232,8 @@ export function CatDetailPage({
                     />
                   ) : (
                     <CatStepsView steps={detail?.steps ?? []} />
-                  )
+                  )}
+                  </div>
                 ) : null}
                 {mode === "tabs" && activeTab === "notes" ? (
                   source ? (
@@ -257,10 +263,11 @@ export function CatDetailPage({
                     <CatLinkedTools items={detail.linked_tools} />
                   </>
                 ) : null}
+                  </div>
+                </div>
               </>
             )}
           </div>
-        </main>
         {dockActions.length > 0 ? (
           <BottomReadingDock
             actions={dockActions}
@@ -271,13 +278,12 @@ export function CatDetailPage({
           <p
             role="status"
             aria-live="polite"
-            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(358px,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
+            className="fixed bottom-[calc(96px+env(safe-area-inset-bottom,0px))] left-1/2 z-50 w-[min(42rem,calc(100%-32px))] -translate-x-1/2 rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm"
           >
             {toast}
           </p>
         ) : null}
-      </div>
-    </div>
+    </ClinicalDetailFrame>
   );
 }
 

@@ -50,6 +50,7 @@ export type UsageMode = (typeof USAGE_MODES)[number];
 export type ProfileStatus = (typeof PROFILE_STATUSES)[number];
 export type PlanSlug = "freemium" | "pro_yearly";
 export type PlanStatus = "active" | "pending" | "expired" | "cancelled";
+export type StaffRole = "none" | "reviewer" | "editor" | "admin";
 
 export type Profile = {
   id: string;
@@ -64,6 +65,7 @@ export type Profile = {
   onboarding_skipped: boolean;
   plan_slug: PlanSlug | string;
   plan_status: PlanStatus | string;
+  staff_role: StaffRole | string;
   experience_level: string | null;
   region: string | null;
   institution: string | null;
@@ -150,6 +152,7 @@ export type Database = {
           onboarding_skipped?: boolean;
           plan_slug?: string;
           plan_status?: string;
+          staff_role?: StaffRole | string;
           experience_level?: string | null;
           region?: string | null;
           institution?: string | null;
@@ -480,9 +483,140 @@ export type Database = {
         };
         Relationships: [];
       };
+      content_packs: {
+        Row: {
+          id: string;
+          slug: string;
+          title: string;
+          description: string | null;
+          version: number;
+          visibility: string;
+          status: string;
+          published_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title: string;
+          description?: string | null;
+          version?: number;
+          visibility?: string;
+          status?: string;
+          published_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          slug?: string;
+          title?: string;
+          description?: string | null;
+          version?: number;
+          visibility?: string;
+          status?: string;
+          published_at?: string | null;
+        };
+        Relationships: [];
+      };
+      content_pack_items: {
+        Row: {
+          pack_id: string;
+          content_type: string;
+          content_slug: string;
+          sort_order: number;
+          created_at: string;
+        };
+        Insert: {
+          pack_id: string;
+          content_type: string;
+          content_slug: string;
+          sort_order?: number;
+          created_at?: string;
+        };
+        Update: {
+          sort_order?: number;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "content_pack_items_pack_id_fkey";
+            columns: ["pack_id"];
+            isOneToOne: false;
+            referencedRelation: "content_packs";
+            referencedColumns: ["id"];
+          },
+        ];
+      };
     };
-    Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Views: {
+      catalog_protocols: { Row: Record<string, unknown>; Relationships: [] };
+      catalog_cat_maps: { Row: Record<string, unknown>; Relationships: [] };
+      catalog_calculators: { Row: Record<string, unknown>; Relationships: [] };
+      catalog_drugs: { Row: Record<string, unknown>; Relationships: [] };
+      public_source_protocol_sections: { Row: Record<string, unknown>; Relationships: [] };
+      public_source_cat_steps: { Row: Record<string, unknown>; Relationships: [] };
+      public_source_drug_sections: { Row: Record<string, unknown>; Relationships: [] };
+      public_source_drug_tables: { Row: Record<string, unknown>; Relationships: [] };
+      public_source_calculator_profiles: { Row: Record<string, unknown>; Relationships: [] };
+    };
+    Functions: {
+      has_active_pro: { Args: Record<string, never>; Returns: boolean };
+      has_staff_access: { Args: Record<string, never>; Returns: boolean };
+      parent_is_published: {
+        Args: { p_entity_type: string; p_entity_slug: string };
+        Returns: boolean;
+      };
+      parent_is_publicly_readable: {
+        Args: { p_entity_type: string; p_entity_slug: string };
+        Returns: boolean;
+      };
+      content_row_visible: {
+        Args: { p_visibility: string; p_status: string; p_review_status?: string };
+        Returns: boolean;
+      };
+      set_user_entitlement: {
+        Args: {
+          p_user_id: string;
+          p_plan_slug: string;
+          p_status?: string;
+          p_ends_at?: string | null;
+          p_source?: string;
+        };
+        Returns: string;
+      };
+      set_staff_role: {
+        Args: { p_user_id: string; p_staff_role: string };
+        Returns: undefined;
+      };
+      set_offline_available: {
+        Args: { p_content_type: string; p_content_slug: string; p_available: boolean };
+        Returns: undefined;
+      };
+      has_staff_editor: { Args: Record<string, never>; Returns: boolean };
+      staff_set_offline_available: {
+        Args: { p_content_type: string; p_content_slug: string; p_available: boolean };
+        Returns: undefined;
+      };
+      staff_upsert_content_pack: {
+        Args: {
+          p_id: string | null;
+          p_slug: string;
+          p_title: string;
+          p_description: string | null;
+          p_visibility: string;
+          p_version: number;
+        };
+        Returns: string;
+      };
+      staff_replace_pack_items: {
+        Args: { p_pack_id: string; p_items: Json };
+        Returns: undefined;
+      };
+      staff_set_pack_status: {
+        Args: { p_pack_id: string; p_status: string };
+        Returns: undefined;
+      };
+    };
     Enums: Record<string, never>;
     CompositeTypes: Record<string, never>;
   };

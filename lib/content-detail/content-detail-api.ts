@@ -1,5 +1,6 @@
 import { cache } from "react";
-// Mock remains the clinical fallback. DB sections/graphs overlay only when validated.
+import { canReadContent, getViewerAccess } from "@/lib/authz/access";
+import { isDemoContentMode } from "@/lib/content-data/content-source-mode";
 
 import {
   attachMockFlowchart,
@@ -20,6 +21,15 @@ import {
 } from "@/lib/content-detail/content-detail-mappers";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
+import {
+  CAT_BLOCK_SELECT,
+  CAT_CATALOG_SELECT,
+  CAT_EDGE_SELECT,
+  PROTOCOL_CATALOG_SELECT,
+  PROTOCOL_LINK_SELECT,
+  PROTOCOL_REFERENCE_SELECT,
+  PROTOCOL_SECTION_SELECT,
+} from "@/lib/authz/selects";
 import type {
   CatBlockRow,
   CatEdgeRow,
@@ -37,6 +47,10 @@ const EMPTY_CATALOGS: LinkedCatalogs = {
   calculators: [],
   drugs: [],
 };
+
+function asRow<T>(value: unknown): T {
+  return value as T;
+}
 
 async function getSupabaseOrNull() {
   if (!isSupabaseConfigured()) {
@@ -100,7 +114,7 @@ export async function fetchProtocolBySlug(
   try {
     const { data, error } = await supabase
       .from("protocols")
-      .select("*")
+      .select(PROTOCOL_CATALOG_SELECT)
       .eq("slug", slug)
       .maybeSingle();
 
@@ -109,7 +123,7 @@ export async function fetchProtocolBySlug(
       return null;
     }
 
-    return data;
+    return asRow<DbProtocol | null>(data);
   } catch (error) {
     console.warn("fetchProtocolBySlug", error);
     return null;
@@ -129,7 +143,7 @@ export async function fetchCatMapForRouteSlug(
   try {
     const { data, error } = await supabase
       .from("cat_maps")
-      .select("*")
+      .select(CAT_CATALOG_SELECT)
       .in("slug", slugs);
 
     if (error) {
@@ -139,7 +153,7 @@ export async function fetchCatMapForRouteSlug(
       const dashed = data.find(
         (row) => row.slug === `${normalizeCatRouteSlug(routeSlug)}-cat`,
       );
-      return exact ?? dashed ?? data[0];
+      return asRow<DbCatMap>(exact ?? dashed ?? data[0]);
     }
 
     const protocol = await fetchProtocolBySlug(normalizeCatRouteSlug(routeSlug));
@@ -149,7 +163,7 @@ export async function fetchCatMapForRouteSlug(
 
     const linked = await supabase
       .from("cat_maps")
-      .select("*")
+      .select(CAT_CATALOG_SELECT)
       .eq("protocol_id", protocol.id)
       .maybeSingle();
 
@@ -158,7 +172,7 @@ export async function fetchCatMapForRouteSlug(
       return null;
     }
 
-    return linked.data;
+    return asRow<DbCatMap | null>(linked.data);
   } catch (error) {
     console.warn("fetchCatMapForRouteSlug", error);
     return null;
@@ -174,7 +188,7 @@ async function fetchProtocolById(id: string): Promise<DbProtocol | null> {
   try {
     const { data, error } = await supabase
       .from("protocols")
-      .select("*")
+      .select(PROTOCOL_CATALOG_SELECT)
       .eq("id", id)
       .maybeSingle();
 
@@ -183,7 +197,7 @@ async function fetchProtocolById(id: string): Promise<DbProtocol | null> {
       return null;
     }
 
-    return data;
+    return asRow<DbProtocol | null>(data);
   } catch (error) {
     console.warn("fetchProtocolById", error);
     return null;
@@ -201,7 +215,7 @@ export async function fetchProtocolSections(
   try {
     const { data, error } = await supabase
       .from("protocol_sections")
-      .select("*")
+      .select(PROTOCOL_SECTION_SELECT)
       .eq("protocol_id", protocolId)
       .order("order_index", { ascending: true });
 
@@ -210,7 +224,7 @@ export async function fetchProtocolSections(
       return [];
     }
 
-    return data ?? [];
+    return asRow<ProtocolSectionRow[]>(data ?? []);
   } catch (error) {
     console.warn("fetchProtocolSections", error);
     return [];
@@ -228,7 +242,7 @@ export async function fetchProtocolReferences(
   try {
     const { data, error } = await supabase
       .from("protocol_references")
-      .select("*")
+      .select(PROTOCOL_REFERENCE_SELECT)
       .eq("protocol_id", protocolId)
       .order("order_index", { ascending: true });
 
@@ -237,7 +251,7 @@ export async function fetchProtocolReferences(
       return [];
     }
 
-    return data ?? [];
+    return asRow<ProtocolReferenceRow[]>(data ?? []);
   } catch (error) {
     console.warn("fetchProtocolReferences", error);
     return [];
@@ -255,7 +269,7 @@ export async function fetchProtocolLinks(
   try {
     const { data, error } = await supabase
       .from("protocol_links")
-      .select("*")
+      .select(PROTOCOL_LINK_SELECT)
       .eq("protocol_id", protocolId)
       .order("order_index", { ascending: true });
 
@@ -264,7 +278,7 @@ export async function fetchProtocolLinks(
       return [];
     }
 
-    return data ?? [];
+    return asRow<ProtocolLinkRow[]>(data ?? []);
   } catch (error) {
     console.warn("fetchProtocolLinks", error);
     return [];
@@ -280,7 +294,7 @@ export async function fetchCatBlocks(catMapId: string): Promise<CatBlockRow[]> {
   try {
     const { data, error } = await supabase
       .from("cat_blocks")
-      .select("*")
+      .select(CAT_BLOCK_SELECT)
       .eq("cat_map_id", catMapId)
       .order("order_index", { ascending: true });
 
@@ -289,7 +303,7 @@ export async function fetchCatBlocks(catMapId: string): Promise<CatBlockRow[]> {
       return [];
     }
 
-    return data ?? [];
+    return asRow<CatBlockRow[]>(data ?? []);
   } catch (error) {
     console.warn("fetchCatBlocks", error);
     return [];
@@ -305,7 +319,7 @@ export async function fetchCatEdges(catMapId: string): Promise<CatEdgeRow[]> {
   try {
     const { data, error } = await supabase
       .from("cat_edges")
-      .select("*")
+      .select(CAT_EDGE_SELECT)
       .eq("cat_map_id", catMapId)
       .order("order_index", { ascending: true });
 
@@ -314,7 +328,7 @@ export async function fetchCatEdges(catMapId: string): Promise<CatEdgeRow[]> {
       return [];
     }
 
-    return data ?? [];
+    return asRow<CatEdgeRow[]>(data ?? []);
   } catch (error) {
     console.warn("fetchCatEdges", error);
     return [];
@@ -326,13 +340,14 @@ export const getProtocolDetailBySlug = cache(
     const mock = getContentDetailDemoFixtures()?.getProtocolDetail(slug);
 
     try {
-      const [row, catalogs] = await Promise.all([
+      const [row, catalogs, viewer] = await Promise.all([
         fetchProtocolBySlug(slug),
         loadLinkedCatalogs(),
+        getViewerAccess(),
       ]);
 
-      if (!row) {
-        return mock;
+      if (!row || !canReadContent(row, viewer)) {
+        return isDemoContentMode() ? mock : undefined;
       }
 
       const [sectionRows, referenceRows, linkRows] = await Promise.all([
@@ -382,13 +397,14 @@ export const getCatDetailBySlug = cache(
       fixtures?.getCatDetail(canonicalSlug) ?? fixtures?.getCatDetail(slug);
 
     try {
-      const [row, catalogs] = await Promise.all([
+      const [row, catalogs, viewer] = await Promise.all([
         fetchCatMapForRouteSlug(slug),
         loadLinkedCatalogs(),
+        getViewerAccess(),
       ]);
 
-      if (!row) {
-        return mock ? attachMockFlowchart(mock) : undefined;
+      if (!row || !canReadContent(row, viewer)) {
+        return isDemoContentMode() && mock ? attachMockFlowchart(mock) : undefined;
       }
 
       const [protocol, blocks, edges] = await Promise.all([

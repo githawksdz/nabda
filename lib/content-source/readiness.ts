@@ -61,23 +61,21 @@ export function canShowValidatedLabel(
 }
 
 /**
- * DB clinical payloads stored in Supabase (protocol sections, CAT graphs,
- * posology, formula_json) may render only when the row is explicitly validated.
- * Local demo engines (Glasgow / Cockcroft) stay in lib/* mocks.
- *
- * Source-preserved nabda_db HTML uses canRenderSourcePreservedContent() instead.
- * Validé is independent of source rendering.
+ * DB clinical payloads may render when the parent row is published.
+ * Validé is a display label only (canShowValidatedLabel).
+ * Source-preserved nabda_db HTML uses canRenderSourcePreservedContent() plus lib/authz.
  */
 export function canRenderClinicalDetails(
   reviewStatus?: string | null,
   publicationStatus?: string | null,
 ): boolean {
-  return canShowValidatedLabel(reviewStatus, publicationStatus);
+  void reviewStatus;
+  return publicationStatus === "published";
 }
 
 /**
- * Internal UX-normalized preview (staff / ?preview=internal).
- * Route access is still gated by canAccessInternalPreview().
+ * Internal UX-normalized preview (staff).
+ * Route access is gated by requireRole("reviewer") via canAccessInternalPreview().
  */
 export function canRenderUxNormalizedPreview(): boolean {
   return true;
@@ -85,7 +83,9 @@ export function canRenderUxNormalizedPreview(): boolean {
 
 /**
  * Public rendering of source-preserved Supabase payloads.
- * Does not imply Validé. Production defaults to enabled; set NABDA_SOURCE_RENDER=0 to disable.
+ * Env kill-switch only — not authorization. Publication and entitlement
+ * are enforced by lib/authz and RLS (published + free/premium).
+ * Production defaults to enabled; set NABDA_SOURCE_RENDER=0 to disable.
  * @deprecated NABDA_SOURCE_RENDER=1 is no longer required in production.
  */
 export function canRenderSourcePreservedContent(): boolean {

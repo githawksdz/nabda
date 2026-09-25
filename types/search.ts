@@ -66,6 +66,7 @@ export type IdentitySearchHit = {
 export type IdentitySearchFilters = {
   type?: SearchFilter;
   limit?: number;
+  viewer?: import("@/lib/authz/content-gate").ViewerAccess;
 };
 
 export type SearchResultGroup = {

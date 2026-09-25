@@ -6,6 +6,7 @@ import { PersonalEmptyState } from "@/components/personal/PersonalEmptyState";
 import { PersonalFilterChips } from "@/components/personal/PersonalFilterChips";
 import { HistoryGroup } from "./HistoryGroup";
 import { HistoryPrivacyNotice } from "./HistoryPrivacyNotice";
+import { PersonalLibraryTabs } from "@/components/personal/PersonalLibraryTabs";
 import { HistoryRetentionFooter } from "./HistoryRetentionFooter";
 import {
   HISTORY_COPY,
@@ -68,11 +69,7 @@ export function HistoryPage({ items, source = "mock" }: HistoryPageProps) {
   }
 
   return (
-    <AppShell
-      title={HISTORY_COPY.title}
-      navVariant="text"
-      frameClassName="max-w-[390px]"
-    >
+    <AppShell title={HISTORY_COPY.title} navVariant="text">
       <div className="flex flex-col gap-5 pt-2">
         <section className="flex flex-col gap-1">
           <h2 className="text-headline-lg">{HISTORY_COPY.title}</h2>
@@ -80,6 +77,8 @@ export function HistoryPage({ items, source = "mock" }: HistoryPageProps) {
             {HISTORY_COPY.subtitle}
           </p>
         </section>
+
+        <PersonalLibraryTabs />
 
         <HistoryPrivacyNotice />
 
