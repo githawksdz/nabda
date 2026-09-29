@@ -54,7 +54,9 @@ function main() {
       }
     }
     if (
-      (rel.startsWith("components/") || rel.startsWith("app/calculators")) &&
+      (rel.startsWith("components/") ||
+        rel.startsWith("app/calculators") ||
+        rel.startsWith("app/(doctor)/calculators")) &&
       /equation_logic_text/.test(text)
     ) {
       equationHits.push(rel);

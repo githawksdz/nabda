@@ -1,30 +1,31 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AppShell } from "@/components/app/AppShell";
-import { IndexPageIntro } from "@/components/discovery/IndexPageIntro";
 import { CalculatorContextGrid } from "./CalculatorContextGrid";
 import { CalculatorEmptyState } from "./CalculatorEmptyState";
 import { CalculatorFilterChips } from "./CalculatorFilterChips";
 import { CalculatorList } from "./CalculatorList";
 import { CalculatorSafetyNotice } from "./CalculatorSafetyNotice";
 import { CalculatorSearchBar } from "./CalculatorSearchBar";
-import { CalculatorsHeader } from "./CalculatorsHeader";
 import { FrequentCalculatorsGrid } from "./FrequentCalculatorsGrid";
 import {
   contextsForCatalog,
   filterCalculators,
   filterChipsForCatalog,
 } from "@/lib/calculators/calculator-ui-config";
-import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
+import type { ModuleListPromotionSlot } from "@/lib/promotions/resolve-module-promotion";
 import type { CalculatorCategorySlug, CalculatorSummary } from "@/types/calculators";
 
 type CalculatorsIndexPageProps = {
   calculators?: CalculatorSummary[];
+  promotion?: ModuleListPromotionSlot;
+  visitedKeys?: string[];
 };
 
 export function CalculatorsIndexPage({
   calculators = [],
+  promotion = null,
+  visitedKeys = [],
 }: CalculatorsIndexPageProps) {
   const [query, setQuery] = useState("");
   const [category, setCategory] =
@@ -65,26 +66,9 @@ export function CalculatorsIndexPage({
     setCategory((current) => (current === next ? "all" : next));
   }
 
-  function scrollToFilters() {
-    document.getElementById("calculator-search")?.focus();
-    const filters = document.getElementById("calculator-filters");
-    if (filters) {
-      scrollElementIntoView(filters, { block: "start" });
-    }
-  }
-
   return (
-    <AppShell
-      title="Scores"
-      pageHeading={false}
-      navVariant="text"
-      frame="clinical"
-      avatarDot
-      headerActions={<CalculatorsHeader onTune={scrollToFilters} />}
-    >
+    <>
       <div className="flex min-w-0 flex-col gap-5 pt-2">
-        <IndexPageIntro title="Calculateurs cliniques & scores" />
-
         <CalculatorSafetyNotice />
 
         <CalculatorSearchBar value={query} onChange={setQuery} />
@@ -105,12 +89,16 @@ export function CalculatorsIndexPage({
               active={category}
               onSelect={selectContext}
             />
-            <CalculatorList calculators={filtered} />
+            <CalculatorList
+              calculators={filtered}
+              promotion={query.trim() ? null : promotion}
+              visitedKeys={visitedKeys}
+            />
           </>
         )}
 
         <CalculatorSafetyNotice variant="professional" />
       </div>
-    </AppShell>
+    </>
   );
 }

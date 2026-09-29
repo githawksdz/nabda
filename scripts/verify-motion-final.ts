@@ -85,7 +85,7 @@ check(
 );
 
 function displayIsNotLive(source: string) {
-  const marker = source.indexOf("text-display");
+  const marker = source.indexOf("text-result");
   const open = source.lastIndexOf("<p", marker);
   const close = source.indexOf(">", marker);
   return open >= 0 && close > open && !source.slice(open, close).includes("aria-live");

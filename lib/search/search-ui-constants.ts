@@ -8,7 +8,6 @@ import type {
 /** Search UI chips — not clinical content fixtures. */
 export const SEARCH_TYPE_FILTERS: FilterChip[] = [
   { id: "all", label: "Tous" },
-  { id: "cat", label: "CAT" },
   { id: "protocols", label: "Protocoles" },
   { id: "drugs", label: "Médicaments" },
   { id: "calculators", label: "Scores" },
@@ -38,15 +37,6 @@ export const FREQUENT_SEARCHES: FrequentSearchChip[] = [
 ];
 
 export const EXPLORE_MODULES: ExploreModule[] = [
-  {
-    id: "cat",
-    title: "Arbres décisionnels (CAT)",
-    subtitle: "Conduites à tenir",
-    label: "CAT",
-    href: "/cat",
-    icon: "git-branch",
-    featured: true,
-  },
   {
     id: "drugs",
     title: "Médicaments",

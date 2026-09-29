@@ -3,6 +3,7 @@
 import { useEffect, useMemo, useState } from "react";
 import { CalculatorFieldControl } from "./CalculatorFieldControl";
 import { Surface } from "@/components/ui/Surface";
+import { Skeleton } from "@/components/ui/Skeleton";
 import { Button } from "@/components/ui/Button";
 import { loadCalculatorEngine } from "@/lib/calculators/engine-registry";
 import { measureSync } from "@/lib/calculators/calculator-perf";
@@ -98,9 +99,17 @@ export function GeneratedFormulaCalculator({
 
   if (!engine) {
     return (
-      <p className="rounded-xl bg-surface-container-low px-3.5 py-3 text-body-sm text-on-surface-variant">
-        Chargement du moteur de calcul…
-      </p>
+      <div
+        role="status"
+        aria-live="polite"
+        aria-busy="true"
+        className="flex flex-col gap-3"
+      >
+        <span className="sr-only">Chargement du moteur de calcul…</span>
+        <Skeleton className="h-12 w-full rounded-[var(--radius-control)]" />
+        <Skeleton className="h-12 w-full rounded-[var(--radius-control)]" />
+        <Skeleton className="h-24 w-full rounded-[var(--radius-card)]" />
+      </div>
     );
   }
 

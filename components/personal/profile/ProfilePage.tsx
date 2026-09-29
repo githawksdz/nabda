@@ -2,17 +2,14 @@
 
 import { useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { AppShell } from "@/components/app/AppShell";
+import { useShellChrome } from "@/components/app/shell-chrome";
 import { AccountSection } from "./AccountSection";
 import { PlanCard } from "./PlanCard";
-import { PreferenceToggleRow } from "./PreferenceToggleRow";
 import { ProfileCompletionCard } from "./ProfileCompletionCard";
 import { ProfileIdentityCard } from "./ProfileIdentityCard";
-import {
-  ProfileSectionList,
-  ProfileSectionRow,
-} from "./ProfileSectionList";
+import { ProfileSectionList } from "./ProfileSectionList";
 import { PersonalizationSheet } from "./PersonalizationSheet";
+import { ListRow } from "@/components/ui/ListRow";
 import { PROFILE_COPY } from "@/lib/personal/personal-ui-config";
 import { mapPlanPresentation } from "@/lib/personal/personal-mappers";
 import {
@@ -21,29 +18,21 @@ import {
   labelsFromSpecialtyIds,
   withComputedCompletion,
 } from "@/lib/personal/profile-completion";
-import type { PersonalizationDraft, PersonalDataSource, UserProfileSummary } from "@/types/personal";
-import { saveCatUpdatesPreference } from "@/lib/personal/personal-actions";
+import type { PersonalizationDraft, UserProfileSummary } from "@/types/personal";
 
 type ProfilePageProps = {
   profile: UserProfileSummary;
   completeRequested?: boolean;
   personalization?: PersonalizationDraft;
-  source?: PersonalDataSource;
 };
 
 export function ProfilePage({
   profile,
   completeRequested = false,
   personalization,
-  source = "mock",
 }: ProfilePageProps) {
   const router = useRouter();
   const [hideCompletion, setHideCompletion] = useState(false);
-  const [catUpdates, setCatUpdates] = useState(
-    profile.catUpdatesEnabled !== false,
-  );
-  const [catUpdatesSaving, setCatUpdatesSaving] = useState(false);
-  const [catUpdatesError, setCatUpdatesError] = useState<string | null>(null);
   const [draft, setDraft] = useState(() =>
     draftFromProfile(profile, personalization),
   );
@@ -59,6 +48,8 @@ export function ProfilePage({
   const incomplete = isProfileIncomplete(visibleProfile);
   const showCompletion =
     !hideCompletion && incomplete && !completeRequested;
+
+  useShellChrome({ avatarDot: incomplete });
 
   const practiceItems = [
     {
@@ -126,26 +117,8 @@ export function ProfilePage({
     setHideCompletion(true);
   }
 
-  async function updateCatUpdates(next: boolean) {
-    setCatUpdates(next);
-    setCatUpdatesError(null);
-    if (source !== "db") {
-      return;
-    }
-    setCatUpdatesSaving(true);
-    const result = await saveCatUpdatesPreference(next);
-    setCatUpdatesSaving(false);
-    if (!result.ok) {
-      setCatUpdatesError(result.message ?? PROFILE_COPY.catUpdatesError);
-    }
-  }
-
   return (
-    <AppShell
-      title={PROFILE_COPY.title}
-      navVariant="text"
-      avatarDot={incomplete}
-    >
+    <>
       <div
         className="flex flex-col gap-5 pt-2"
         data-complete={completeRequested ? "1" : undefined}
@@ -164,7 +137,10 @@ export function ProfilePage({
         <PlanCard plan={plan} />
 
         {showCompletion ? (
-          <ProfileCompletionCard onDefer={() => setHideCompletion(true)} />
+          <ProfileCompletionCard
+            profile={visibleProfile}
+            onDefer={() => setHideCompletion(true)}
+          />
         ) : null}
 
         <ProfileSectionList
@@ -172,53 +148,14 @@ export function ProfilePage({
           items={practiceItems}
         />
 
-        <section>
-          <h2 className="mb-2 text-headline-sm">Hors-ligne</h2>
-          <div className="overflow-hidden rounded-[var(--radius-card)] bg-surface-muted">
-            <ProfileSectionRow
-              item={{
-                id: "offline",
-                label: PROFILE_COPY.offlineCacheLabel,
-                value: "Ouvrir",
-                href: "/offline",
-              }}
-            />
-          </div>
-        </section>
-
-        <section>
-          <h2 className="mb-2 text-headline-sm">
-            {PROFILE_COPY.preferencesTitle}
-          </h2>
-          <div className="overflow-hidden rounded-xl bg-surface-container-lowest shadow-sm">
-            <PreferenceToggleRow
-              label={PROFILE_COPY.catUpdatesLabel}
-              checked={catUpdates}
-              onChange={(next) => void updateCatUpdates(next)}
-              disabled={catUpdatesSaving}
-            />
-            <div className="ml-4 h-px bg-surface-variant" />
-            <ProfileSectionRow
-              item={{
-                id: "language",
-                label: PROFILE_COPY.languageLabel,
-                value: visibleProfile.language ?? PROFILE_COPY.languageValue,
-              }}
-            />
-            <div className="ml-4 h-px bg-surface-variant" />
-            <ProfileSectionRow
-              item={{
-                id: "display",
-                label: PROFILE_COPY.displayLabel,
-                value: visibleProfile.appearance ?? PROFILE_COPY.displayValue,
-              }}
-            />
-          </div>
-          {catUpdatesError ? (
-            <p className="mt-2 px-1 text-body-sm text-on-surface-variant">
-              {catUpdatesError}
-            </p>
-          ) : null}
+        <section className="flex flex-col gap-2">
+          <h2 className="text-headline-sm">Hors-ligne</h2>
+          <ListRow
+            title={PROFILE_COPY.offlineCacheLabel}
+            description="Ouvrir"
+            href="/offline"
+            className="rounded-[var(--radius)] bg-muted"
+          />
         </section>
 
         <AccountSection />
@@ -235,6 +172,6 @@ export function ProfilePage({
         initialDraft={draft}
         onSaved={handleSaved}
       />
-    </AppShell>
+    </>
   );
 }

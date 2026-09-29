@@ -100,7 +100,7 @@ export function WelcomeCarousel({
           <AnimatePresence initial={false} custom={direction} mode="wait">
             <motion.div
               key={slide.id}
-              className="absolute inset-0 touch-pan-y"
+              className="absolute inset-0 touch-none"
               custom={direction}
               variants={spatial ? slideVariants : reducedVariants}
               initial="enter"

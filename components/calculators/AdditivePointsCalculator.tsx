@@ -112,9 +112,9 @@ export function AdditivePointsCalculator({ data }: AdditivePointsCalculatorProps
         {result.ok ? (
           <>
             <p className="text-label-md text-text-secondary">Résultat</p>
-            <p className="mt-1 text-headline-sm text-text-primary">
+            <p className="mt-1 text-result text-text-primary">
               {result.output.total}
-              <span className="text-body-md text-text-secondary">
+              <span className="font-sans text-base font-semibold text-text-secondary">
                 {" "}
                 / {result.output.max}
               </span>

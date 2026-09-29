@@ -5,7 +5,7 @@ type HeadingBlockProps = {
 
 export function HeadingBlock({ level, text }: HeadingBlockProps) {
   if (level === 2) {
-    return <h2 className="text-headline-sm">{text}</h2>;
+    return <h2 className="text-headline-lg">{text}</h2>;
   }
   if (level === 3) {
     return <h3 className="text-body-md font-semibold">{text}</h3>;

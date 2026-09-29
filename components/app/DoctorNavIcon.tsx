@@ -2,8 +2,8 @@ import {
   Bookmark,
   Calculator,
   Clock,
-  GitBranch,
   House,
+  LayoutGrid,
   Pill,
   Search,
   User,
@@ -29,8 +29,6 @@ export function DoctorNavIcon({
       return <House {...props} />;
     case "search":
       return <Search {...props} />;
-    case "cat":
-      return <GitBranch {...props} />;
     case "favorites":
       return <Bookmark {...props} />;
     case "profile":
@@ -45,5 +43,7 @@ export function DoctorNavIcon({
       return <WifiOff {...props} />;
     case "recents":
       return <Clock {...props} />;
+    case "modules":
+      return <LayoutGrid {...props} />;
   }
 }

@@ -23,7 +23,7 @@ export function PasswordField({
     <div className="flex flex-col gap-1.5">
       <label
         htmlFor={fieldId}
-        className="text-[13px] font-medium text-on-surface-variant"
+          className="text-label-sm font-medium text-on-surface-variant"
       >
         {label}
       </label>
@@ -32,7 +32,7 @@ export function PasswordField({
           id={fieldId}
           type={visible ? "text" : "password"}
           className={cn(
-            "h-12 w-full rounded-lg bg-surface-container-low pr-12 pl-4 text-[15px] text-on-surface outline-none",
+            "h-12 w-full rounded-lg bg-surface-container-low pr-12 pl-4 text-base text-on-surface outline-none",
             "placeholder:text-on-surface-variant/60",
             "focus-visible:ring-2 focus-visible:ring-primary/20",
             className,
@@ -43,7 +43,7 @@ export function PasswordField({
           type="button"
           onClick={() => setVisible((value) => !value)}
           aria-label={visible ? "Masquer le mot de passe" : "Afficher le mot de passe"}
-          className="absolute top-1/2 right-2 flex size-9 -translate-y-1/2 items-center justify-center rounded-md text-on-surface-variant"
+          className="absolute top-1/2 right-2 flex size-11 -translate-y-1/2 items-center justify-center rounded-md text-on-surface-variant"
         >
           {visible ? (
             <EyeOff className="size-4" strokeWidth={1.75} />

@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Drawer } from "vaul";
+import { DrawerDescription, DrawerTitle } from "@/components/ui/AppDrawer";
+import { Button } from "@/components/ui/Button";
 import { sendPasswordReset, signInWithEmail, signInWithGoogle } from "@/features/auth/api";
 import { loginSchema, resetPasswordSchema } from "@/lib/auth/schemas";
 import { PasswordField } from "./PasswordField";
@@ -88,12 +89,10 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
     return (
       <form noValidate onSubmit={onResetSubmit} className="flex flex-col gap-4">
         <div className="flex flex-col gap-1">
-          <Drawer.Title className="text-[22px] font-semibold tracking-tight text-on-surface">
-            Réinitialiser
-          </Drawer.Title>
-          <Drawer.Description className="text-[14px] text-on-surface-variant">
+          <DrawerTitle>Réinitialiser</DrawerTitle>
+          <DrawerDescription>
             Entrez votre email pour recevoir un lien.
-          </Drawer.Description>
+          </DrawerDescription>
         </div>
 
         {error ? <SoftMessage type="error">{error}</SoftMessage> : null}
@@ -102,7 +101,7 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         <div className="flex flex-col gap-1.5">
           <label
             htmlFor={resetEmailId}
-            className="text-[13px] font-medium text-on-surface-variant"
+            className="text-label-sm font-medium text-on-surface-variant"
           >
             Adresse email
           </label>
@@ -116,17 +115,13 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
               setResetEmail(event.target.value);
               setError(null);
             }}
-            className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-[15px] text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
+            className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-base text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
           />
         </div>
 
-        <button
-          type="submit"
-          disabled={pending}
-          className="h-[50px] w-full rounded-lg bg-primary text-[15px] font-medium text-on-primary disabled:opacity-60"
-        >
+        <Button type="submit" loading={pending} className="w-full">
           {pending ? "Envoi du lien..." : "Envoyer le lien"}
-        </button>
+        </Button>
 
         <button
           type="button"
@@ -135,7 +130,7 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
             setError(null);
             setInfo(null);
           }}
-          className="text-center text-[13px] text-on-surface-variant"
+          className="text-center text-label-sm text-on-surface-variant"
         >
           Retour à la connexion
         </button>
@@ -146,12 +141,8 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
   return (
     <form noValidate onSubmit={onLoginSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <Drawer.Title className="text-[22px] font-semibold tracking-tight text-on-surface">
-          Connexion
-        </Drawer.Title>
-        <Drawer.Description className="text-[14px] text-on-surface-variant">
-          Retrouvez votre espace Nabda.
-        </Drawer.Description>
+        <DrawerTitle>Connexion</DrawerTitle>
+        <DrawerDescription>Retrouvez votre espace Nabda.</DrawerDescription>
       </div>
 
       {error ? <SoftMessage type="error">{error}</SoftMessage> : null}
@@ -160,7 +151,7 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={emailId}
-          className="text-[13px] font-medium text-on-surface-variant"
+          className="text-label-sm font-medium text-on-surface-variant"
         >
           Adresse email
         </label>
@@ -174,7 +165,7 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
             setEmail(event.target.value);
             setError(null);
           }}
-          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-[15px] text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
+          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-base text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
         />
       </div>
 
@@ -196,18 +187,14 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
           setError(null);
           setInfo(null);
         }}
-        className="self-start text-[13px] text-on-surface-variant"
+        className="self-start text-label-sm text-on-surface-variant"
       >
         Mot de passe oublié ?
       </button>
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="h-[50px] w-full rounded-lg bg-primary text-[15px] font-medium text-on-primary disabled:opacity-60"
-      >
+      <Button type="submit" loading={pending} className="w-full">
         {pending ? "Connexion..." : "Se connecter"}
-      </button>
+      </Button>
 
       <SocialAuthRow
         prompt="ou continuer avec"
@@ -215,7 +202,7 @@ export function LoginForm({ onSwitchToRegister }: LoginFormProps) {
         onGoogle={onGoogle}
       />
 
-      <p className="text-center text-[13px] text-on-surface-variant">
+      <p className="text-center text-label-sm text-on-surface-variant">
         Nouveau sur Nabda ?{" "}
         <button
           type="button"

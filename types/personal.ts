@@ -1,4 +1,4 @@
-export type PersonalEntityType = "cat" | "protocol" | "calculator" | "drug";
+export type PersonalEntityType = "protocol" | "calculator" | "drug";
 
 export type PersonalFilterId = "all" | PersonalEntityType;
 
@@ -30,6 +30,8 @@ export type HistoryItem = {
   href: string;
   viewedAt: string;
   kindLabel?: string;
+  /** Specialty slug from the protocol, or from the CAT's linked protocol. */
+  categorySlug?: string;
   metadata?: Record<string, unknown>;
 };
 

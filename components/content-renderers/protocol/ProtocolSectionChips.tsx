@@ -85,9 +85,9 @@ export function ProtocolSectionChips({
                 onActiveId(group.id);
               }}
               className={cn(
-                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3 text-label-sm",
                 isActive
-                  ? "is-current bg-primary font-semibold text-on-primary shadow-sm"
+                  ? "is-current bg-primary text-on-primary shadow-sm"
                   : "bg-surface-container-low text-on-surface-variant",
               )}
             >

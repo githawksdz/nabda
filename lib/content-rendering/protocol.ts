@@ -48,6 +48,14 @@ export function stripTags(html: string): string {
  * The normalizer already cleaned source HTML; this strips leftover executable bits
  * before dangerouslySetInnerHTML.
  */
+export function imgDimensionAttrs(tag: string): string {
+  const width = tag.match(/\bwidth\s*=\s*(?:"(\d+)"|'(\d+)'|(\d+))/i);
+  const height = tag.match(/\bheight\s*=\s*(?:"(\d+)"|'(\d+)'|(\d+))/i);
+  const w = width?.[1] ?? width?.[2] ?? width?.[3];
+  const h = height?.[1] ?? height?.[2] ?? height?.[3];
+  return `${w ? ` width="${w}"` : ""}${h ? ` height="${h}"` : ""}`;
+}
+
 export function sanitizePreviewHtml(
   html: string,
   keepInternalQuery = false,
@@ -70,7 +78,7 @@ export function sanitizePreviewHtml(
       const safeAlt = altValue.replace(/</g, "");
       return `<p class="media-placeholder">${safeAlt} · média non monté dans cet aperçu</p>`;
     }
-    return `<img src="${srcValue.replace(/"/g, "")}" alt="${altValue.replace(/"/g, "")}">`;
+    return `<img src="${srcValue.replace(/"/g, "")}" alt="${altValue.replace(/"/g, "")}"${imgDimensionAttrs(tag)}>`;
   });
   const suffix = keepInternalQuery ? "?preview=internal" : "";
   out = out.replace(
@@ -93,7 +101,7 @@ export function rewriteNabdaHref(
   const slug = sourceIdToSlug(id);
   if (linkMode === "public") {
     if (id.startsWith("g.")) {
-      return guidelinePreview === "cat" ? `/cat/${slug}` : `/protocols/${slug}`;
+      return `/protocols/${slug}`;
     }
     if (id.startsWith("calc.")) {
       return `/calculators/${slug}`;
@@ -101,11 +109,7 @@ export function rewriteNabdaHref(
     return `/drugs/${slug}`;
   }
   if (id.startsWith("g.")) {
-    const base =
-      guidelinePreview === "cat"
-        ? "/internal/cat-preview/"
-        : "/internal/protocol-preview/";
-    return `${base}${slug}${previewSuffix}`;
+    return `/internal/protocol-preview/${slug}${previewSuffix}`;
   }
   if (id.startsWith("calc.")) {
     if (guidelinePreview === "calculator") {

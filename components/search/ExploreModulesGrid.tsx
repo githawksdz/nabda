@@ -16,24 +16,26 @@ export function ExploreModulesGrid({ modules }: ExploreModulesGridProps) {
   return (
     <section>
       <div className="mb-2 flex items-center gap-1.5">
-        <Compass className="size-4 text-on-surface-variant" strokeWidth={1.75} />
-        <h2 className="text-headline-sm">Explorer par module</h2>
+        <Compass className="size-3.5 text-on-surface-variant" strokeWidth={1.75} />
+        <h2 className="text-label-md text-on-surface">Explorer par module</h2>
       </div>
       <div className="flex flex-col gap-2">
         {featured ? (
           <Link
             href={featured.href}
-            className="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-4 shadow-sm"
+            className="relative overflow-hidden rounded-2xl bg-surface-container-lowest p-3 shadow-sm"
           >
             <span className="text-label-sm text-on-surface-variant">
               {featured.label}
             </span>
-            <span className="mt-1 block text-headline-sm">{featured.title}</span>
-            <span className="mt-1 block text-body-sm text-on-surface-variant">
+            <span className="mt-1 block text-label-md text-on-surface">
+              {featured.title}
+            </span>
+            <span className="mt-0.5 block text-label-sm text-on-surface-variant">
               {featured.subtitle}
             </span>
-            <span className="mt-3 flex size-10 items-center justify-center rounded-lg bg-surface-container-low">
-              <HomeIcon name={featured.icon} className="size-5" />
+            <span className="mt-2 flex size-8 items-center justify-center rounded-lg bg-surface-container-low">
+              <HomeIcon name={featured.icon} className="size-4" />
             </span>
             <span className="pointer-events-none absolute -right-6 -bottom-8 size-28 rounded-full bg-surface-container-high/70" />
           </Link>
@@ -43,13 +45,15 @@ export function ExploreModulesGrid({ modules }: ExploreModulesGridProps) {
             <Link
               key={module.id}
               href={module.href}
-              className="rounded-xl bg-surface-container-lowest p-4 shadow-sm"
+              className="rounded-xl bg-surface-container-lowest p-3 shadow-sm"
             >
-              <span className="flex size-9 items-center justify-center rounded-lg bg-surface-container-low">
-                <HomeIcon name={module.icon} className="size-4" />
+              <span className="flex size-8 items-center justify-center rounded-lg bg-surface-container-low">
+                <HomeIcon name={module.icon} className="size-3.5" />
               </span>
-              <span className="mt-3 block text-body-md font-medium">{module.title}</span>
-              <span className="mt-1 block text-body-sm text-on-surface-variant">
+              <span className="mt-2 block text-label-md text-on-surface">
+                {module.title}
+              </span>
+              <span className="mt-0.5 block text-label-sm text-on-surface-variant">
                 {module.subtitle}
               </span>
             </Link>
@@ -59,14 +63,16 @@ export function ExploreModulesGrid({ modules }: ExploreModulesGridProps) {
           <Link
             key={module.id}
             href={module.href}
-            className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-4 shadow-sm"
+            className="flex items-center gap-3 rounded-xl bg-surface-container-lowest p-3 shadow-sm"
           >
-            <span className="flex size-10 items-center justify-center rounded-lg bg-surface-container-low">
-              <HomeIcon name={module.icon} className="size-5" />
+            <span className="flex size-8 items-center justify-center rounded-lg bg-surface-container-low">
+              <HomeIcon name={module.icon} className="size-4" />
             </span>
             <span className="min-w-0">
-              <span className="block text-body-md font-medium">{module.title}</span>
-              <span className="mt-0.5 block text-body-sm text-on-surface-variant">
+              <span className="block text-label-md text-on-surface">
+                {module.title}
+              </span>
+              <span className="mt-0.5 block text-label-sm text-on-surface-variant">
                 {module.subtitle}
               </span>
             </span>

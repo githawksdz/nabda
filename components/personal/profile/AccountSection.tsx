@@ -3,6 +3,13 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { StagingFeedbackLink } from "@/components/app/StagingFeedbackLink";
+import { Button } from "@/components/ui/Button";
+import {
+  CardContent,
+  CardFooter,
+  ContentCard,
+} from "@/components/ui/ContentCard";
+import { Alert, AlertDescription } from "@/components/shadcn/alert";
 import { ProfileSectionList } from "./ProfileSectionList";
 import { signOut } from "@/features/auth/api";
 import { PROFILE_COPY } from "@/lib/personal/personal-ui-config";
@@ -72,9 +79,9 @@ export function AccountSection() {
       />
 
       {note ? (
-        <p className="rounded-xl bg-surface-container-low px-4 py-3 text-body-sm text-on-surface-variant">
-          {note}
-        </p>
+        <Alert>
+          <AlertDescription>{note}</AlertDescription>
+        </Alert>
       ) : null}
 
       <div className="px-1">
@@ -82,46 +89,42 @@ export function AccountSection() {
       </div>
 
       {signOutError ? (
-        <p className="rounded-xl bg-surface-container-low px-4 py-3 text-body-sm text-on-surface-variant">
-          {signOutError}
-        </p>
+        <Alert variant="destructive">
+          <AlertDescription>{signOutError}</AlertDescription>
+        </Alert>
       ) : null}
 
-      <section className="rounded-xl bg-surface-container-lowest p-4 shadow-sm">
+      <ContentCard size="sm">
         {confirming ? (
-          <div className="flex flex-col gap-2">
-            <p className="text-body-sm text-on-surface">
-              {PROFILE_COPY.signOutConfirm}
-            </p>
-            <div className="flex gap-2">
-              <button
-                type="button"
+          <>
+            <CardContent>
+              <p className="text-body-sm">{PROFILE_COPY.signOutConfirm}</p>
+            </CardContent>
+            <CardFooter className="gap-2">
+              <Button
                 onClick={() => void confirmSignOut()}
                 disabled={pending}
-                className="inline-flex min-h-11 items-center rounded-lg bg-primary px-3 text-label-md text-on-primary disabled:opacity-50"
+                loading={pending}
               >
                 {PROFILE_COPY.signOutLabel}
-              </button>
-              <button
-                type="button"
+              </Button>
+              <Button
+                variant="secondary"
                 onClick={() => setConfirming(false)}
                 disabled={pending}
-                className="inline-flex min-h-11 items-center rounded-lg bg-surface-container-high px-3 text-label-md"
               >
                 {PROFILE_COPY.signOutCancel}
-              </button>
-            </div>
-          </div>
+              </Button>
+            </CardFooter>
+          </>
         ) : (
-          <button
-            type="button"
-            onClick={() => setConfirming(true)}
-            className="text-label-md text-on-surface-variant"
-          >
-            {PROFILE_COPY.signOutLabel}
-          </button>
+          <CardFooter>
+            <Button variant="ghost" onClick={() => setConfirming(true)}>
+              {PROFILE_COPY.signOutLabel}
+            </Button>
+          </CardFooter>
         )}
-      </section>
+      </ContentCard>
     </div>
   );
 }

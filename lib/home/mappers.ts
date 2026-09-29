@@ -66,7 +66,7 @@ function hrefForTarget(type: string | null, slug: string | null) {
     return `/protocols/${slug}`;
   }
   if (type === "cat") {
-    return `/cat/${slug}`;
+    return `/protocols/${slug.replace(/-cat$/, "")}`;
   }
   if (type === "calculator") {
     return `/calculators/${slug}`;

@@ -1,4 +1,5 @@
 import type {
+  DrugCatalogCardItem,
   DrugCategorySlug,
   DrugClassTile,
   DrugDetail,
@@ -9,6 +10,10 @@ import type {
   DrugTabItem,
   LinkedDrugResource,
 } from "@/types/drugs";
+import {
+  classLabelKey,
+  drugClassLabels,
+} from "@/lib/drugs/class-labels";
 import {
   DRUG_DETAIL_STATUS_LABELS,
   DRUG_INDEX_STATUS_LABELS,
@@ -30,17 +35,6 @@ export const DRUG_IDENTITY = {
   subtitle: "Référentiel thérapeutique & pharmacologie",
 } as const;
 
-const CHIP_CATEGORY_SLUGS: DrugCategorySlug[] = [
-  "all",
-  "antibiotiques",
-  "antalgiques",
-  "cardio",
-  "urgences",
-  "grossesse",
-  "pediatrie",
-  "rein",
-];
-
 /* MOCK_DRUGS moved to lib/demo-fixtures/drugs.ts */
 
 export const DRUG_CLASS_TILES: DrugClassTile[] = [
@@ -59,43 +53,30 @@ function isVisibleDrug(item: DrugSummary) {
 /** Catalog size comes from Supabase at runtime; chip count is filled by the index when needed. */
 export const DRUG_CATALOG_COUNT = 0;
 
-export const DRUG_FILTER_CHIPS: DrugFilterChip[] = [
-  { id: "all", label: "Tous" },
-  { id: "antibiotiques", label: "Antibiotiques" },
-  { id: "antalgiques", label: "Antalgiques" },
-  { id: "cardio", label: "Cardio" },
-  { id: "urgences", label: "Urgences" },
-  { id: "grossesse", label: "Grossesse" },
-  { id: "pediatrie", label: "Pédiatrie" },
-  { id: "rein", label: "Rein" },
-];
+export const DRUG_FILTER_CHIPS: DrugFilterChip[] = [{ id: "all", label: "Tous" }];
 
 export function filterChipsForDrugCatalog(
   drugs: DrugSummary[],
 ): DrugFilterChip[] {
   const visible = drugs.filter(isVisibleDrug);
-  return DRUG_FILTER_CHIPS.map((chip) => {
-    if (chip.id === "all") {
-      return { ...chip, count: visible.length };
+  const labels = new Map<string, string>();
+  for (const item of visible) {
+    for (const label of drugClassLabels(item)) {
+      const key = classLabelKey(label);
+      if (!labels.has(key)) {
+        labels.set(key, label);
+      }
     }
-    const count = visible.filter((item) =>
-      item.categorySlugs.includes(chip.id),
-    ).length;
-    return { ...chip, count: count > 0 ? count : undefined };
-  });
+  }
+  const chips = [...labels.entries()]
+    .sort((a, b) => a[1].localeCompare(b[1], "fr", { sensitivity: "base" }))
+    .map(([id, label]) => ({ id, label }));
+  return [{ id: "all", label: "Tous" }, ...chips];
 }
 
-export function parseDrugCategory(
-  value?: string | null,
-): DrugCategorySlug {
-  if (value && CHIP_CATEGORY_SLUGS.includes(value as DrugCategorySlug)) {
-    return value as DrugCategorySlug;
-  }
-  const classSlugs = DRUG_CLASS_TILES.map((tile) => tile.slug);
-  if (value && classSlugs.includes(value as DrugCategorySlug)) {
-    return value as DrugCategorySlug;
-  }
-  return "all";
+export function parseDrugCategory(value?: string | null): DrugCategorySlug {
+  const trimmed = value?.trim();
+  return trimmed || "all";
 }
 
 export function matchesDrugQuery(item: DrugSummary, query: string) {
@@ -104,11 +85,13 @@ export function matchesDrugQuery(item: DrugSummary, query: string) {
 
   const haystack = [
     item.genericName,
+    item.displayName,
     item.className,
     item.shortClassName,
     item.slug,
     item.atcCode,
     ...(item.brandNames ?? []),
+    ...drugClassLabels(item),
     ...item.searchTerms,
   ]
     .filter(Boolean)
@@ -118,6 +101,12 @@ export function matchesDrugQuery(item: DrugSummary, query: string) {
   return haystack.includes(needle);
 }
 
+function matchesDrugCategory(item: DrugSummary, category: DrugCategorySlug) {
+  if (category === "all") return true;
+  const key = classLabelKey(category);
+  return drugClassLabels(item).some((label) => classLabelKey(label) === key);
+}
+
 export function filterDrugs(
   items: DrugSummary[],
   query: string,
@@ -125,14 +114,83 @@ export function filterDrugs(
 ) {
   return items
     .filter(isVisibleDrug)
-    .filter((item) => {
-      const matchesCategory =
-        category === "all" || item.categorySlugs.includes(category);
-      return matchesCategory && matchesDrugQuery(item, query);
-    })
+    .filter(
+      (item) => matchesDrugCategory(item, category) && matchesDrugQuery(item, query),
+    )
     .sort((a, b) =>
       a.genericName.localeCompare(b.genericName, "fr", { sensitivity: "base" }),
     );
+}
+
+function foldName(value: string) {
+  return classLabelKey(value);
+}
+
+export function expandCommercialDrugCards(
+  drugs: DrugSummary[],
+): DrugCatalogCardItem[] {
+  const out: DrugCatalogCardItem[] = [];
+  for (const drug of drugs) {
+    const dci = drug.genericName?.trim() || "";
+    const brands = (drug.brandNames ?? [])
+      .map((name) => name.trim())
+      .filter(Boolean);
+    const uniqueBrands: string[] = [];
+    const seen = new Set<string>();
+    for (const brand of brands) {
+      const key = foldName(brand);
+      if (seen.has(key)) continue;
+      seen.add(key);
+      uniqueBrands.push(brand);
+    }
+    const display = drug.displayName?.trim();
+    const names =
+      uniqueBrands.length > 0
+        ? uniqueBrands
+        : display && dci && foldName(display) !== foldName(dci)
+          ? [display]
+          : [dci || display || drug.slug];
+    for (const name of names) {
+      const sameAsDci = Boolean(dci) && foldName(name) === foldName(dci);
+      out.push({
+        ...drug,
+        cardKey: `${drug.id}:${name}`,
+        commercialName: name,
+        dciLabel: sameAsDci ? null : dci || null,
+      });
+    }
+  }
+  return out.sort((a, b) =>
+    a.commercialName.localeCompare(b.commercialName, "fr", {
+      sensitivity: "base",
+    }),
+  );
+}
+
+export function filterDrugCards(
+  items: DrugSummary[],
+  query: string,
+  category: DrugCategorySlug,
+) {
+  const needle = query.trim().toLowerCase();
+  return expandCommercialDrugCards(items.filter(isVisibleDrug)).filter((item) => {
+    if (!matchesDrugCategory(item, category)) return false;
+    if (!needle) return true;
+    const haystack = [
+      item.commercialName,
+      item.dciLabel,
+      item.genericName,
+      item.displayName,
+      item.className,
+      ...(item.brandNames ?? []),
+      ...drugClassLabels(item),
+      ...item.searchTerms,
+    ]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+    return haystack.includes(needle);
+  });
 }
 
 export function frequentDrugs(items: DrugSummary[]) {

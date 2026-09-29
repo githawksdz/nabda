@@ -59,7 +59,7 @@ export function StatusToast({ notice, onDismiss }: StatusToastProps) {
       role={alert ? "alert" : "status"}
       aria-live={alert ? "assertive" : "polite"}
       data-phase={phase === "open" ? "open" : "closed"}
-      className="status-toast pointer-events-none fixed bottom-[calc(var(--layout-dock-height)+env(safe-area-inset-bottom,0px)+0.75rem)] left-1/2 z-[var(--z-toast)] w-[min(var(--layout-reading),calc(100%-32px))] rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm lg:left-[calc(50%+(var(--layout-sidebar)/2))]"
+      className="status-toast pointer-events-none fixed bottom-[calc(var(--layout-nav-height)+var(--layout-dock-height)+env(safe-area-inset-bottom,0px)+0.75rem)] left-1/2 z-[var(--z-toast)] w-[min(var(--layout-reading),calc(100%-32px))] rounded-xl bg-primary px-4 py-3 text-center text-label-md text-on-primary shadow-sm lg:bottom-[calc(var(--layout-dock-height)+env(safe-area-inset-bottom,0px)+0.75rem)] lg:left-[calc(50%+(var(--layout-sidebar)/2))]"
     >
       {notice.message}
     </p>

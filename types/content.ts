@@ -113,6 +113,7 @@ export type Protocol = {
   review_status: EditorialReviewStatus | string;
   visibility: ContentVisibility | string;
   is_featured: boolean;
+  is_new: boolean;
   published_at: string | null;
   source_note: string | null;
   search_text: string;
@@ -151,6 +152,7 @@ export type Calculator = {
   visibility: string;
   formula_json: Json;
   is_featured: boolean;
+  is_new: boolean;
   usage_context: string | null;
   search_text: string;
   /** Compiled TypeScript engine slug when wired. */
@@ -168,11 +170,13 @@ export type Drug = {
   dci: string;
   display_name: string;
   therapeutic_class: string | null;
+  category_slug: string | null;
   summary: string | null;
   status: string;
   review_status: string;
   visibility: string;
   is_featured: boolean;
+  is_new: boolean;
   source_note: string | null;
   search_text: string;
   created_at: string;
@@ -201,7 +205,7 @@ export type HomeFeedItem = {
   updated_at: string;
 } & ContentImportMetadata;
 
-export type FavoriteItemType = "protocol" | "cat" | "calculator" | "drug";
+export type FavoriteItemType = "protocol" | "calculator" | "drug";
 export type HistoryItemType = FavoriteItemType | "search";
 
 export type ProtocolSectionRow = {

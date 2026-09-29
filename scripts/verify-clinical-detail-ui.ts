@@ -1,5 +1,5 @@
 /**
- * Static checks for UI-5 clinical detail presentation (protocol, CAT, drug).
+ * Static checks for clinical detail presentation (protocol, drug, calculator).
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -19,7 +19,6 @@ function check(id: string, ok: boolean, detail: string) {
 const frame = read("components/content-detail/ClinicalDetailFrame.tsx");
 const dock = read("components/content-detail/BottomReadingDock.tsx");
 const protocol = read("components/protocols/ProtocolDetailPage.tsx");
-const cat = read("components/cat-detail/CatDetailPage.tsx");
 const drug = read("components/drugs/DrugDetailPage.tsx");
 const calculator = read("components/calculators/CalculatorDetailPage.tsx");
 const library = read("components/content-detail/DetailLibraryStatus.tsx");
@@ -27,9 +26,11 @@ const sectionNav = read("components/content-detail/SectionNav.tsx");
 
 check(
   "clinical_frame",
-  frame.includes('frame="clinical"') &&
-    frame.includes("READING_DOCK_CONTENT_CLASS") &&
-    frame.includes("showBottomNav={false}"),
+  frame.includes("READING_DOCK_CONTENT_CLASS") &&
+    !frame.includes("showBottomNav") &&
+    !frame.includes("@/components/app/AppShell") &&
+    read("lib/navigation/doctor-route-state.ts").includes('prefix: "/protocols/"') &&
+    read("lib/navigation/doctor-route-state.ts").includes('frame: "clinical"'),
   "ClinicalDetailFrame",
 );
 
@@ -42,7 +43,6 @@ check(
 
 for (const [name, src] of [
   ["protocol", protocol],
-  ["cat", cat],
   ["drug", drug],
 ] as const) {
   check(
@@ -73,10 +73,9 @@ check(
 );
 
 check(
-  "cat_tab_param",
-  read("components/cat-detail/CatSegmentedTabs.tsx").includes("tab:") &&
-    read("components/cat-detail/CatSegmentedTabs.tsx").includes("aria-current"),
-  "CatSegmentedTabs",
+  "protocol_has_no_cat_route",
+  !protocol.includes('href: "/cat') && !protocol.includes("`/cat/"),
+  "ProtocolDetailPage",
 );
 
 check(
@@ -90,8 +89,7 @@ check(
 
 check(
   "no_editorial_dock_meta",
-  !protocol.includes("Source préservée") &&
-    !cat.includes("Source préservée") &&
+    !protocol.includes("Source préservée") &&
     !drug.includes("Source préservée"),
   "detail pages",
 );
@@ -113,7 +111,6 @@ check(
   "no_service_role_in_detail",
   !frame.includes("service_role") &&
     !protocol.includes("service_role") &&
-    !cat.includes("service_role") &&
     !drug.includes("service_role"),
   "public detail components",
 );

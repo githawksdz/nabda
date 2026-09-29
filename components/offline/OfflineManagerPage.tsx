@@ -2,10 +2,17 @@
 
 import { useCallback, useEffect, useRef, useState, type TransitionEvent } from "react";
 import Link from "next/link";
-import { AppShell } from "@/components/app/AppShell";
 import { Button } from "@/components/ui/Button";
+import {
+  CardContent,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  ContentCard,
+} from "@/components/ui/ContentCard";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
+import { ListRow } from "@/components/ui/ListRow";
+import { PageSkeleton } from "@/components/ui/Skeleton";
 import { OfflineProgressStatus } from "@/components/ui/OfflineProgressStatus";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { Surface } from "@/components/ui/Surface";
@@ -51,7 +58,6 @@ function errorCopy(reason: string): string {
 
 const TYPE_LABEL: Record<OfflineContentType, string> = {
   protocol: "Protocole",
-  cat: "CAT",
   drug: "Médicament",
   calculator: "Score",
 };
@@ -220,8 +226,7 @@ export function OfflineManagerPage() {
     : `Dernière vérification ${new Date(status.lastSyncAt).toLocaleString("fr-FR")}`;
 
   return (
-    <AppShell title="Hors-ligne" frame="workspace">
-      <div className="flex min-w-0 flex-col gap-5 pt-2">
+    <div className="flex min-w-0 flex-col gap-5 pt-2">
         <header className="flex flex-col gap-1">
           <p className="text-body-md text-text-secondary">
             Contenus téléchargés sur cet appareil. Rien n’est téléchargé automatiquement.
@@ -229,7 +234,7 @@ export function OfflineManagerPage() {
         </header>
 
         {!authReady ? (
-          <LoadingIndicator label="Vérification du compte…" />
+          <PageSkeleton variant="list" label="Vérification du compte…" />
         ) : null}
 
         {authReady && !userId ? (
@@ -290,20 +295,19 @@ export function OfflineManagerPage() {
               <input
                 value={search}
                 onChange={(event) => void runSearch(event.target.value)}
-                className="min-h-11 rounded-[var(--radius-control)] bg-surface-muted px-3.5 text-body-md"
+                className="min-h-11 rounded-[var(--radius-control)] bg-surface-muted px-3.5 text-base"
                 placeholder="Titre déjà téléchargé"
               />
             </label>
             {searchHits.length > 0 ? (
-              <ul className="flex flex-col gap-1.5">
+              <ul className="flex flex-col gap-2">
                 {searchHits.map((hit) => (
                   <li key={hit.href}>
-                    <Link
+                    <ListRow
                       href={hit.href}
-                      className="block min-h-11 rounded-[var(--radius-card)] bg-surface-muted px-3.5 py-3 text-body-md"
-                    >
-                      {hit.title}
-                    </Link>
+                      title={hit.title}
+                      className="rounded-[var(--radius)] bg-muted"
+                    />
                   </li>
                 ))}
               </ul>
@@ -323,29 +327,33 @@ export function OfflineManagerPage() {
                 <ul className="flex flex-col gap-2">
                   {(manifest?.packs ?? []).map((pack) => (
                     <li key={pack.slug}>
-                      <Surface variant="muted" className="flex flex-col gap-2">
-                        <div className="flex flex-wrap gap-1.5">
-                          <StatusBadge tone="muted">Pack</StatusBadge>
-                          <StatusBadge tone={pack.visibility === "premium" ? "pro" : "free"}>
-                            {pack.visibility === "premium" ? "Pro" : "Gratuit"}
-                          </StatusBadge>
-                          <StatusBadge tone="muted">{pack.itemCount} contenus</StatusBadge>
-                        </div>
-                        <h3 className="text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
-                          {pack.title}
-                        </h3>
-                        <Button
-                          onClick={() => void downloadPack(pack.slug)}
-                          disabled={!status?.online}
-                        >
-                          Télécharger le pack
-                        </Button>
-                        {!status?.online ? (
-                          <p className="text-label-sm text-text-secondary">
-                            Connexion requise pour télécharger.
-                          </p>
-                        ) : null}
-                      </Surface>
+                      <ContentCard size="sm">
+                        <CardHeader>
+                          <CardTitle className="[overflow-wrap:anywhere]">
+                            {pack.title}
+                          </CardTitle>
+                          <div className="flex flex-wrap gap-1.5">
+                            <StatusBadge tone="muted">Pack</StatusBadge>
+                            <StatusBadge tone={pack.visibility === "premium" ? "pro" : "free"}>
+                              {pack.visibility === "premium" ? "Pro" : "Gratuit"}
+                            </StatusBadge>
+                            <StatusBadge tone="muted">{pack.itemCount} contenus</StatusBadge>
+                          </div>
+                        </CardHeader>
+                        <CardFooter className="flex-col items-stretch gap-2">
+                          <Button
+                            onClick={() => void downloadPack(pack.slug)}
+                            disabled={!status?.online}
+                          >
+                            Télécharger le pack
+                          </Button>
+                          {!status?.online ? (
+                            <p className="text-label-sm text-muted-foreground">
+                              Connexion requise pour télécharger.
+                            </p>
+                          ) : null}
+                        </CardFooter>
+                      </ContentCard>
                     </li>
                   ))}
                 </ul>
@@ -356,28 +364,29 @@ export function OfflineManagerPage() {
               <h2 className="text-headline-sm">Contenus individuels</h2>
               <ul className="flex flex-col gap-1.5">
                 {(manifest?.individual ?? []).slice(0, 40).map((item) => (
-                  <li
-                    key={`${item.contentType}:${item.slug}`}
-                    className="flex min-w-0 items-center justify-between gap-3 rounded-[var(--radius-card)] bg-surface-muted px-3 py-2.5"
-                  >
-                    <span className="min-w-0">
-                      <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
-                        {item.title}
-                      </span>
-                      <span className="mt-1 flex flex-wrap gap-1.5">
-                        <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
-                        <StatusBadge tone={item.visibility === "premium" ? "pro" : "free"}>
-                          {item.visibility === "premium" ? "Pro" : "Gratuit"}
-                        </StatusBadge>
-                      </span>
-                    </span>
-                    <Button
-                      variant="secondary"
-                      onClick={() => void downloadItem(item.contentType, item.slug)}
-                      disabled={!status?.online}
-                    >
-                      Télécharger
-                    </Button>
+                  <li key={`${item.contentType}:${item.slug}`}>
+                    <ListRow
+                      title={item.title}
+                      className="rounded-[var(--radius)] bg-muted"
+                      badge={
+                        <>
+                          <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
+                          <StatusBadge tone={item.visibility === "premium" ? "pro" : "free"}>
+                            {item.visibility === "premium" ? "Pro" : "Gratuit"}
+                          </StatusBadge>
+                        </>
+                      }
+                      trailing={
+                        <Button
+                          variant="secondary"
+                          size="compact"
+                          onClick={() => void downloadItem(item.contentType, item.slug)}
+                          disabled={!status?.online}
+                        >
+                          Télécharger
+                        </Button>
+                      }
+                    />
                   </li>
                 ))}
               </ul>
@@ -409,58 +418,59 @@ export function OfflineManagerPage() {
                         data-offline-item=""
                         data-exiting={exiting ? "true" : undefined}
                         onTransitionEnd={(event) => onDownloadedExit(event, item.id)}
-                        className="offline-remove rounded-[var(--radius-card)] bg-surface-muted"
+                        className="offline-remove"
                       >
-                        <div className="offline-remove-inner px-3 py-2.5">
-                        {corrupt ? (
-                          <div className="flex flex-col gap-2">
-                            <p className="text-body-md font-medium">{item.title}</p>
-                            <StatusBadge tone="error">
-                              Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau.
-                            </StatusBadge>
-                            <div className="flex flex-wrap gap-2">
-                              <Button
-                                variant="secondary"
-                                onClick={() => void removeLocal(item.contentType, item.slug, item.id)}
-                                disabled={exiting}
-                              >
-                                Supprimer
-                              </Button>
-                              <Button
-                                onClick={() => void downloadItem(item.contentType, item.slug)}
-                                disabled={!status?.online}
-                              >
-                                Télécharger
-                              </Button>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="flex flex-col gap-2">
-                            <Link
-                              href={`/offline/view/${item.contentType}/${item.slug}`}
-                              className="block min-w-0"
-                            >
-                              <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
-                                {item.title}
-                              </span>
-                              <span className="mt-1 flex flex-wrap gap-1.5">
-                                <StatusBadge tone={item.stale ? "stale" : "downloaded"}>
-                                  {item.stale ? "Mise à jour disponible" : "Disponible hors-ligne"}
+                        <ContentCard size="sm" className="offline-remove-inner">
+                          <CardHeader>
+                            <CardTitle className="[overflow-wrap:anywhere]">
+                              {item.title}
+                            </CardTitle>
+                          </CardHeader>
+                          <CardContent className="flex flex-col gap-2">
+                            {corrupt ? (
+                              <>
+                                <StatusBadge tone="error">
+                                  Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau.
                                 </StatusBadge>
-                                <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
-                              </span>
-                            </Link>
-                            {item.stale && status?.online ? (
-                              <Button
-                                variant="secondary"
-                                onClick={() => void downloadItem(item.contentType, item.slug)}
-                              >
-                                Mettre à jour
-                              </Button>
-                            ) : null}
-                          </div>
-                        )}
-                        </div>
+                                <div className="flex flex-wrap gap-2">
+                                  <Button
+                                    variant="secondary"
+                                    onClick={() => void removeLocal(item.contentType, item.slug, item.id)}
+                                    disabled={exiting}
+                                  >
+                                    Supprimer
+                                  </Button>
+                                  <Button
+                                    onClick={() => void downloadItem(item.contentType, item.slug)}
+                                    disabled={!status?.online}
+                                  >
+                                    Télécharger
+                                  </Button>
+                                </div>
+                              </>
+                            ) : (
+                              <>
+                                <Link
+                                  href={`/offline/view/${item.contentType}/${item.slug}`}
+                                  className="flex min-w-0 flex-wrap gap-1.5"
+                                >
+                                  <StatusBadge tone={item.stale ? "stale" : "downloaded"}>
+                                    {item.stale ? "Mise à jour disponible" : "Disponible hors-ligne"}
+                                  </StatusBadge>
+                                  <StatusBadge tone="muted">{TYPE_LABEL[item.contentType]}</StatusBadge>
+                                </Link>
+                                {item.stale && status?.online ? (
+                                  <Button
+                                    variant="secondary"
+                                    onClick={() => void downloadItem(item.contentType, item.slug)}
+                                  >
+                                    Mettre à jour
+                                  </Button>
+                                ) : null}
+                              </>
+                            )}
+                          </CardContent>
+                        </ContentCard>
                       </li>
                     );
                   })}
@@ -470,6 +480,5 @@ export function OfflineManagerPage() {
           </>
         ) : null}
       </div>
-    </AppShell>
   );
 }

@@ -23,6 +23,9 @@ const tokens = [
   "--layout-header-height",
   "--layout-nav-clearance",
   "--layout-dock-clearance",
+  "--list-new-bg",
+  "--list-unread-bg",
+  "--list-read-bg",
 ];
 
 const layoutClasses = [
@@ -41,6 +44,7 @@ const primitives = [
   "components/ui/PillNav.tsx",
   "components/ui/TextField.tsx",
   "components/ui/LoadingIndicator.tsx",
+  "components/ui/Skeleton.tsx",
   "components/ui/EmptyState.tsx",
 ];
 
@@ -80,10 +84,15 @@ const detailFrame = fs.readFileSync(
   path.join(ROOT, "components/content-detail/ClinicalDetailFrame.tsx"),
   "utf8",
 );
+const routeState = fs.readFileSync(
+  path.join(ROOT, "lib/navigation/doctor-route-state.ts"),
+  "utf8",
+);
 checks.push({
   id: "detail_uses_clinical_frame",
   ok:
-    detailFrame.includes('frame="clinical"') &&
+    routeState.includes('prefix: "/protocols/"') &&
+    routeState.includes('frame: "clinical"') &&
     detailFrame.includes("READING_DOCK_CONTENT_CLASS") &&
     !detailFrame.includes("max-w-[56rem]"),
   detail: "ClinicalDetailFrame.tsx",
@@ -92,7 +101,6 @@ checks.push({
 checks.push({
   id: "indexes_not_phone_column",
   ok: ![
-    "components/cat/CatIndexPage.tsx",
     "components/protocols/ProtocolsIndexPage.tsx",
     "components/drugs/DrugsIndexPage.tsx",
     "components/calculators/CalculatorsIndexPage.tsx",

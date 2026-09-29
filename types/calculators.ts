@@ -60,6 +60,8 @@ export type CalculatorSummary = {
   frequentMeta?: string;
   frequentCategoryLabel?: string;
   listOrder?: number;
+  isNew?: boolean;
+  categorySlug?: string;
 };
 
 export type CalculatorFilterChip = {

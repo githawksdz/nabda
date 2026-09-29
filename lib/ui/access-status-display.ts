@@ -34,7 +34,6 @@ export function accessLabelToTone(label: string): StatusTone {
 }
 
 const SEARCH_TYPE_LABELS: Record<SearchResultType, string> = {
-  cat: "CAT",
   protocol: "Protocole",
   recommendation: "Protocole",
   drug: "Médicament",
@@ -45,4 +44,4 @@ export function searchResultTypeLabel(type: SearchResultType): string {
   return SEARCH_TYPE_LABELS[type] ?? "Contenu";
 }
 
-export const SEARCH_FIELD_PLACEHOLDER = "DCI, marque, CAT, protocole, score…";
+export const SEARCH_FIELD_PLACEHOLDER = "DCI, marque, protocole, score…";

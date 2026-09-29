@@ -130,6 +130,7 @@ function putCatalog(
     status?: string | null;
     review_status?: string | null;
     visibility?: string | null;
+    category_slug?: string | null;
   }>,
 ) {
   for (const row of rows) {
@@ -142,6 +143,7 @@ function putCatalog(
       status: row.status,
       reviewStatus: row.review_status,
       visibility: row.visibility,
+      categorySlug: row.category_slug?.trim() || null,
     });
   }
 }
@@ -155,23 +157,16 @@ async function loadCatalogMap(
     return catalog;
   }
 
-  const catSlugs = uniqueSlugs(rows, "cat");
   const protocolSlugs = uniqueSlugs(rows, "protocol");
   const calculatorSlugs = uniqueSlugs(rows, "calculator");
   const drugSlugs = uniqueSlugs(rows, "drug");
 
   try {
-    const [cats, protocols, calculators, drugs] = await Promise.all([
-      catSlugs.length
-        ? supabase
-            .from("cat_maps")
-            .select("slug, title, status, review_status, visibility")
-            .in("slug", catSlugs)
-        : Promise.resolve({ data: [] }),
+    const [protocols, calculators, drugs] = await Promise.all([
       protocolSlugs.length
         ? supabase
             .from("protocols")
-            .select("slug, title, status, review_status, visibility")
+            .select("slug, title, category_slug, status, review_status, visibility")
             .in("slug", protocolSlugs)
         : Promise.resolve({ data: [] }),
       calculatorSlugs.length
@@ -188,7 +183,6 @@ async function loadCatalogMap(
         : Promise.resolve({ data: [] }),
     ]);
 
-    putCatalog(catalog, "cat", cats.data ?? []);
     putCatalog(catalog, "protocol", protocols.data ?? []);
     putCatalog(catalog, "calculator", calculators.data ?? []);
     putCatalog(catalog, "drug", drugs.data ?? []);

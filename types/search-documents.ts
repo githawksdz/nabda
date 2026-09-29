@@ -1,4 +1,4 @@
-export type SearchDocumentEntityType = "protocol" | "cat" | "drug" | "calculator";
+export type SearchDocumentEntityType = "protocol" | "drug" | "calculator";
 
 export type SearchDocumentContentType =
   | "identity"

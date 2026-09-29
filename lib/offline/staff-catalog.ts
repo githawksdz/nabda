@@ -15,7 +15,6 @@ import type {
 } from "@/lib/offline/staff-types";
 
 const PROTOCOL_STAFF_SELECT = "slug, title, status, visibility, offline_available, updated_at";
-const CAT_STAFF_SELECT = "slug, title, status, visibility, offline_available, updated_at";
 const DRUG_STAFF_SELECT =
   "slug, display_name, status, visibility, offline_available, updated_at";
 const CALCULATOR_STAFF_SELECT = "slug, title, status, visibility, offline_available, updated_at";
@@ -102,9 +101,8 @@ export async function loadStaffOfflineCatalog(): Promise<StaffOfflineCatalog> {
   }
   const supabase = access.client;
 
-  const [protocols, cats, drugs, calculators, packs, packItems] = await Promise.all([
+  const [protocols, drugs, calculators, packs, packItems] = await Promise.all([
     supabase.from("protocols").select(PROTOCOL_STAFF_SELECT).order("title"),
-    supabase.from("cat_maps").select(CAT_STAFF_SELECT).order("title"),
     supabase.from("drugs").select(DRUG_STAFF_SELECT).order("display_name"),
     supabase.from("calculators").select(CALCULATOR_STAFF_SELECT).order("title"),
     supabase.from("content_packs").select(PACK_STAFF_SELECT).order("updated_at", { ascending: false }),
@@ -115,7 +113,6 @@ export async function loadStaffOfflineCatalog(): Promise<StaffOfflineCatalog> {
     packs.error?.message ??
     packItems.error?.message ??
     protocols.error?.message ??
-    cats.error?.message ??
     drugs.error?.message ??
     calculators.error?.message ??
     null;
@@ -125,7 +122,6 @@ export async function loadStaffOfflineCatalog(): Promise<StaffOfflineCatalog> {
 
   const identities: IdentityLite[] = [
     ...(protocols.data ?? []).map((row) => mapIdentity("protocol", row)),
-    ...(cats.data ?? []).map((row) => mapIdentity("cat", row)),
     ...(drugs.data ?? []).map((row) => mapIdentity("drug", row)),
     ...(calculators.data ?? []).map((row) => mapIdentity("calculator", row)),
   ];

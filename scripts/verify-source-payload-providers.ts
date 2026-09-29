@@ -7,7 +7,6 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { getCalculatorRenderData } from "@/lib/content-data/calculator-data";
-import { getCatRenderData } from "@/lib/content-data/cat-data";
 import { getDrugRenderData } from "@/lib/content-data/drug-data";
 import { getProtocolRenderData } from "@/lib/content-data/protocol-data";
 import { loadLocalEnvFiles } from "@/lib/nabda-db/load-env";
@@ -66,26 +65,6 @@ async function checkProtocol(slug: string): Promise<ProviderCheck> {
   };
 }
 
-async function checkCat(slug: string): Promise<ProviderCheck> {
-  const data = await getCatRenderData(slug, { linkMode: "public" });
-  const htmlFields = data?.steps.map((step) => step.html) ?? [];
-  return {
-    route: "/cat/[slug]",
-    slug,
-    found: Boolean(data),
-    payloadSource: data?.payloadSource ?? null,
-    activationState: data?.activationState ?? null,
-    provenanceLabel: provenanceLabel(data?.payloadSource ?? null),
-    counts: {
-      steps: data?.steps.length ?? 0,
-      images: data?.images.length ?? 0,
-      warnings: data?.protocolWarnings.length ?? 0,
-    },
-    htmlSanitized: !hasScriptTags(htmlFields),
-    notes: data ? [] : ["Provider returned null — route will use mock/detail API"],
-  };
-}
-
 async function checkDrug(slug: string): Promise<ProviderCheck> {
   const data = await getDrugRenderData(slug, { linkMode: "public" });
   const htmlFields = data?.sections.map((section) => section.html) ?? [];
@@ -130,8 +109,6 @@ async function main() {
   const checks: ProviderCheck[] = [
     await checkProtocol("asthme-aigu-grave"),
     await checkProtocol("abces-cutanes-furoncles-anthrax"),
-    await checkCat("asthme-aigu-grave"),
-    await checkCat("abces-cutanes-furoncles-anthrax"),
     await checkDrug("amoxicilline-1000mg-orale-dispersible"),
     await checkDrug("paracetamol-500mg-orale-comprime"),
     await checkDrug("amoxicilline"),

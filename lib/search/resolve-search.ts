@@ -9,15 +9,14 @@ import type {
 
 export const SEARCH_FILTERS: SearchFilter[] = [
   "all",
-  "cat",
   "protocols",
   "drugs",
   "calculators",
 ];
 
 export function parseSearchFilter(value?: string | null): SearchFilter {
-  if (value === "interactions" || value === "normes") {
-    return "all";
+  if (value === "interactions" || value === "normes" || value === "cat") {
+    return value === "cat" ? "protocols" : "all";
   }
   if (value && SEARCH_FILTERS.includes(value as SearchFilter)) {
     return value as SearchFilter;
@@ -61,7 +60,6 @@ export function countsFromGroups(groups: SearchResultGroup[]): Partial<Record<Se
   };
 
   for (const group of groups) {
-    if (group.id === "cat") counts.cat = group.count;
     if (group.id === "scores") counts.calculators = group.count;
     if (group.id === "drugs") counts.drugs = group.count;
     if (group.id === "reco") counts.protocols = group.count;
@@ -93,7 +91,6 @@ export function filterGroupedResults(
   }
 
   return groups.filter((group) => {
-    if (filter === "cat") return group.id === "cat";
     if (filter === "calculators") return group.id === "scores";
     if (filter === "protocols") return group.id === "reco";
     if (filter === "drugs") return group.id === "drugs";

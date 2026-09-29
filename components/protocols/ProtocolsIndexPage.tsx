@@ -1,25 +1,39 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AppShell } from "@/components/app/AppShell";
 import {
   DiscoveryList,
   DiscoveryListItem,
-  DiscoveryListRow,
 } from "@/components/discovery/DiscoveryListRow";
 import { IndexPageIntro } from "@/components/discovery/IndexPageIntro";
+import { ProtocolListCard } from "@/components/protocols/ProtocolListCard";
+import { ModuleListPromoSlot } from "@/components/promotions/ModuleListPromoSlot";
 import { EmptyState } from "@/components/ui/EmptyState";
+import { ListPagination } from "@/components/ui/ListPagination";
 import { SearchField } from "@/components/ui/TextField";
-import { accessLabelToTone } from "@/lib/ui/access-status-display";
+import { useListPage } from "@/components/ui/useListPage";
+import { slicePage } from "@/lib/ui/list-pagination";
+import { interleaveModulePromotion } from "@/lib/promotions/module-list";
+import type { ModuleListPromotionSlot } from "@/lib/promotions/resolve-module-promotion";
+import { hasVisited } from "@/lib/ui/content-list-state";
 import type { ProtocolSummary } from "@/lib/protocols/protocol-catalog";
-import { FileText } from "lucide-react";
 
 type ProtocolsIndexPageProps = {
   protocols?: ProtocolSummary[];
+  promotion?: ModuleListPromotionSlot;
+  visitedKeys?: string[];
 };
 
-export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) {
+export function ProtocolsIndexPage({
+  protocols = [],
+  promotion = null,
+  visitedKeys = [],
+}: ProtocolsIndexPageProps) {
   const [query, setQuery] = useState("");
+  const { page, setPage, pageSize, setPageSize } = useListPage(
+    query,
+    "protocols-list",
+  );
 
   const filtered = useMemo(() => {
     const normalized = query.trim().toLowerCase();
@@ -35,18 +49,11 @@ export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) 
     );
   }, [protocols, query]);
 
+  const paged = slicePage(filtered, page, pageSize);
+
   return (
-    <AppShell
-      title="Protocoles"
-      pageHeading={false}
-      navVariant="text"
-      frame="clinical"
-    >
-      <div className="flex min-w-0 flex-col gap-4 pt-2">
-        <IndexPageIntro
-          title="Protocoles"
-          description="Synthèses et guides cliniques disponibles dans Nabda."
-        />
+    <div className="flex min-w-0 flex-col gap-4 pt-2">
+        <IndexPageIntro description="Synthèses et guides cliniques disponibles dans Nabda." />
 
         <SearchField
           value={query}
@@ -75,29 +82,44 @@ export function ProtocolsIndexPage({ protocols = [] }: ProtocolsIndexPageProps) 
             onAction={() => setQuery("")}
           />
         ) : (
-          <DiscoveryList>
-            {filtered.map((item) => (
-              <DiscoveryListItem key={item.id}>
-                <DiscoveryListRow
-                  href={item.href}
-                  title={item.title}
-                  typeLabel="Protocole"
-                  description={item.summary ?? undefined}
-                  statusLabel={item.statusLabel ?? undefined}
-                  statusTone={
-                    item.statusLabel
-                      ? accessLabelToTone(item.statusLabel)
-                      : undefined
-                  }
-                  icon={
-                    <FileText className="size-4" strokeWidth={1.75} aria-hidden />
-                  }
-                />
-              </DiscoveryListItem>
-            ))}
-          </DiscoveryList>
+          <>
+            <DiscoveryList id="protocols-list" className="scroll-mt-24">
+              {interleaveModulePromotion(
+                paged.items,
+                (item) => (
+                  <DiscoveryListItem key={item.id}>
+                    <ProtocolListCard
+                      href={item.href}
+                      title={item.title}
+                      description={item.summary ?? undefined}
+                      categorySlug={item.categorySlug}
+                      accessTier={
+                        item.visibility === "premium" ? "pro" : "free"
+                      }
+                      isNew={item.isNew}
+                      visited={hasVisited(visitedKeys, "protocol", item.slug)}
+                      statusLabel={item.statusLabel ?? undefined}
+                    />
+                  </DiscoveryListItem>
+                ),
+                query.trim() || paged.page !== 1 || !promotion ? null : (
+                  <DiscoveryListItem key="module-promo">
+                    <ModuleListPromoSlot promotion={promotion} />
+                  </DiscoveryListItem>
+                ),
+              )}
+            </DiscoveryList>
+            <ListPagination
+              page={paged.page}
+              pageCount={paged.pageCount}
+              total={paged.total}
+              pageSize={pageSize}
+              onPageChange={setPage}
+              onPageSizeChange={setPageSize}
+              label="Pagination des protocoles"
+            />
+          </>
         )}
-      </div>
-    </AppShell>
+    </div>
   );
 }

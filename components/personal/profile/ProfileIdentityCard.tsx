@@ -1,4 +1,10 @@
-import { Surface } from "@/components/ui/Surface";
+import { Avatar, AvatarFallback } from "@/components/shadcn/avatar";
+import {
+  CardContent,
+  CardHeader,
+  CardTitle,
+  ContentCard,
+} from "@/components/ui/ContentCard";
 import { displayProfileName } from "@/lib/personal/profile-completion";
 import type { UserProfileSummary } from "@/types/personal";
 
@@ -15,32 +21,26 @@ export function ProfileIdentityCard({ profile }: ProfileIdentityCardProps) {
   const place = [profile.institution, profile.region].filter(Boolean).join(" · ");
 
   return (
-    <Surface variant="elevated" className="flex flex-col gap-3">
-      <div className="flex items-start gap-3">
-        <span className="flex size-14 shrink-0 items-center justify-center rounded-[var(--radius-card)] bg-action-primary text-label-md text-text-inverse">
-          {profile.initials}
-        </span>
+    <ContentCard>
+      <CardHeader className="flex flex-row items-start gap-3">
+        <Avatar className="size-14">
+          <AvatarFallback className="bg-primary text-label-md text-primary-foreground">
+            {profile.initials}
+          </AvatarFallback>
+        </Avatar>
         <div className="min-w-0 flex-1">
-          <h2 className="text-headline-sm text-text-primary [overflow-wrap:anywhere]">
-            {name}
-          </h2>
-          {details.length > 0 ? (
-            <p className="mt-1 text-body-sm text-text-secondary [overflow-wrap:anywhere]">
-              {details.join(" · ")}
-            </p>
-          ) : (
-            <p className="mt-1 text-body-sm text-text-secondary">
-              Profil clinique à compléter
-            </p>
-          )}
+          <CardTitle className="[overflow-wrap:anywhere]">{name}</CardTitle>
+          <p className="mt-1 text-body-sm text-muted-foreground [overflow-wrap:anywhere]">
+            {details.length > 0 ? details.join(" · ") : "Profil clinique à compléter"}
+          </p>
           {place ? (
-            <p className="mt-0.5 text-label-sm text-text-secondary">{place}</p>
+            <p className="mt-0.5 text-label-sm text-muted-foreground">{place}</p>
           ) : null}
         </div>
-      </div>
-      <div>
+      </CardHeader>
+      <CardContent>
         <div
-          className="h-1.5 overflow-hidden rounded-full bg-surface-container-high"
+          className="h-1.5 overflow-hidden rounded-full bg-muted"
           role="progressbar"
           aria-valuenow={profile.completionPercent}
           aria-valuemin={0}
@@ -48,14 +48,14 @@ export function ProfileIdentityCard({ profile }: ProfileIdentityCardProps) {
           aria-label={`Profil complété à ${profile.completionPercent} pour cent`}
         >
           <div
-            className="h-full rounded-full bg-action-primary"
+            className="h-full rounded-full bg-primary"
             style={{ width: `${profile.completionPercent}%` }}
           />
         </div>
-        <p className="mt-2 text-label-sm text-text-secondary">
+        <p className="mt-2 text-label-sm text-muted-foreground">
           Profil complété à {profile.completionPercent}%
         </p>
-      </div>
-    </Surface>
+      </CardContent>
+    </ContentCard>
   );
 }

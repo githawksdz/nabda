@@ -1,6 +1,14 @@
 import { Button } from "@/components/ui/Button";
 import { StatusBadge } from "@/components/ui/StatusBadge";
-import { Surface } from "@/components/ui/Surface";
+import {
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardFooter,
+  CardHeader,
+  CardTitle,
+  ContentCard,
+} from "@/components/ui/ContentCard";
 import type { PlanPresentation } from "@/types/personal";
 
 type PlanCardProps = {
@@ -16,20 +24,24 @@ export function PlanCard({ plan }: PlanCardProps) {
         : { label: "Gratuit", tone: "free" as const };
 
   return (
-    <Surface variant="elevated" className="flex flex-col gap-2">
-      <div className="flex items-start justify-between gap-3">
-        <div className="min-w-0">
-          <h2 className="text-headline-sm text-text-primary">{plan.title}</h2>
-          <p className="mt-1 text-body-sm text-text-secondary">{plan.statusLabel}</p>
-        </div>
-        <StatusBadge tone={badge.tone}>{badge.label}</StatusBadge>
-      </div>
-      <p className="text-body-sm text-text-secondary">{plan.body}</p>
+    <ContentCard>
+      <CardHeader>
+        <CardTitle>{plan.title}</CardTitle>
+        <CardDescription>{plan.statusLabel}</CardDescription>
+        <CardAction>
+          <StatusBadge tone={badge.tone}>{badge.label}</StatusBadge>
+        </CardAction>
+      </CardHeader>
+      <CardContent>
+        <p className="text-body-sm text-muted-foreground">{plan.body}</p>
+      </CardContent>
       {plan.actionHref && plan.actionLabel ? (
-        <Button href={plan.actionHref} variant="secondary">
-          {plan.actionLabel}
-        </Button>
+        <CardFooter>
+          <Button href={plan.actionHref} variant="secondary">
+            {plan.actionLabel}
+          </Button>
+        </CardFooter>
       ) : null}
-    </Surface>
+    </ContentCard>
   );
 }

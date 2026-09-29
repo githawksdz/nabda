@@ -149,17 +149,6 @@ check(
 );
 
 check(
-  "flowchart_zoom_still_deferred",
-    read("components/cat-flowchart/CatFlowchartBoard.tsx").includes(
-      "preferredMotionDuration(220)",
-    ) &&
-    read("components/cat-flowchart/CatFlowchartToolbar.tsx").includes(
-      "preferredMotionDuration(220)",
-    ),
-  "CatFlowchartBoard.tsx / CatFlowchartToolbar.tsx",
-);
-
-check(
   "framer_motion_still_deferred",
   read("components/onboarding/WelcomeCarousel.tsx").includes("framer-motion") &&
     read("components/onboarding/WelcomeCarousel.tsx").includes("dragElastic={0}"),
@@ -168,14 +157,11 @@ check(
 
 const clinicalChips = [
   "components/content-detail/SectionNav.tsx",
-  "components/cat-detail/CatSegmentedTabs.tsx",
   "components/drugs/DrugTabs.tsx",
   "components/content-renderers/protocol/ProtocolSectionChips.tsx",
-  "components/content-renderers/cat/CatStepChips.tsx",
   "components/content-renderers/drug/DrugPreviewTabs.tsx",
   "components/content-renderers/protocol/ProtocolShiftModeToggle.tsx",
   "components/content-renderers/drug/DrugPreviewModeToggle.tsx",
-  "components/content-renderers/cat/CatPreviewModeToggle.tsx",
 ];
 const chipMisses = clinicalChips.filter((file) => !read(file).includes("motion-color"));
 check("clinical_chips_use_motion_color", chipMisses.length === 0, chipMisses.join(", ") || "all");

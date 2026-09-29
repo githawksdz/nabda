@@ -23,9 +23,9 @@ export function DrugTabs({ slug, active }: DrugTabsProps) {
               href={drugDetailHref(slug, tab.id)}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                "motion-color flex min-h-11 shrink-0 items-center rounded-full px-3 text-label-sm",
                 isActive
-                  ? "bg-action-primary font-semibold text-text-inverse"
+                  ? "bg-action-primary text-text-inverse"
                   : "bg-surface-muted text-text-secondary",
               )}
             >

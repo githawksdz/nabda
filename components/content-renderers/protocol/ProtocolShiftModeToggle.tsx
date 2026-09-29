@@ -32,9 +32,9 @@ export function ProtocolShiftModeToggle({
             aria-pressed={active}
             onClick={() => onChange(option.id)}
             className={cn(
-              "motion-color h-9 rounded-full text-label-md",
+              "motion-color h-9 rounded-full text-label-sm",
               active
-                ? "bg-primary font-semibold text-on-primary"
+                ? "bg-primary text-on-primary"
                 : "text-on-surface-variant",
             )}
           >

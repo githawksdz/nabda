@@ -9,7 +9,6 @@ import fs from "node:fs";
 import path from "node:path";
 
 import { getCalculatorRenderData } from "@/lib/content-data/calculator-data";
-import { getCatRenderData } from "@/lib/content-data/cat-data";
 import { getDrugRenderData } from "@/lib/content-data/drug-data";
 import { getProtocolRenderData } from "@/lib/content-data/protocol-data";
 import {
@@ -29,7 +28,6 @@ const SAMPLE_ROUTES = {
     "asthme-aigu-grave",
     "abces-cutanes-furoncles-anthrax",
   ],
-  cat: ["asthme-aigu-grave", "abces-cutanes-furoncles-anthrax"],
   drugs: [
     "amoxicilline",
     "amoxicilline-1000mg-orale-dispersible",
@@ -44,7 +42,6 @@ const SAMPLE_ROUTES = {
 
 const MISSING_ROUTES = {
   protocols: "does-not-exist",
-  cat: "does-not-exist",
   drugs: "does-not-exist",
   calculators: "does-not-exist",
 } as const;
@@ -81,15 +78,7 @@ function scanRuntimeImports(): Check[] {
   const checks: Check[] = [];
   const files: string[] = [];
   for (const root of [
-    "app/home",
-    "app/search",
-    "app/cat",
-    "app/protocols",
-    "app/drugs",
-    "app/calculators",
-    "app/favorites",
-    "app/history",
-    "app/profile",
+    "app/(doctor)",
     "components/content-renderers",
     "components/app",
     "lib/content-data",
@@ -237,35 +226,6 @@ async function main() {
     }
   }
 
-  for (const slug of SAMPLE_ROUTES.cat) {
-    const data = await getCatRenderData(slug, { linkMode: "public" });
-    routes.push({
-      route: `/cat/${slug}`,
-      kind: "cat",
-      resolved: Boolean(data),
-      payloadSource: data?.payloadSource ?? null,
-    });
-    checks.push({
-      id: `cat_sample_${slug}`,
-      ok: Boolean(data) && payloadSourceOk(data?.payloadSource),
-      detail: data
-        ? `payloadSource=${data.payloadSource} steps=${data.steps.length}`
-        : "missing (expected sample present in Supabase)",
-    });
-    if (data) {
-      checks.push({
-        id: `cat_no_interactive_graph_claim_${slug}`,
-        ok: data.hasInteractiveGraph === false,
-        detail: `hasInteractiveGraph=${String(data.hasInteractiveGraph)}`,
-      });
-      checks.push({
-        id: `cat_safe_${slug}`,
-        ok: !hasEvalOrScript(data) && !hasUnsafeMediaPath(data),
-        detail: "no script/eval/unsafe media",
-      });
-    }
-  }
-
   for (const slug of SAMPLE_ROUTES.drugs) {
     const data = await getDrugRenderData(slug, { linkMode: "public" });
     routes.push({
@@ -344,11 +304,6 @@ async function main() {
       load: getProtocolRenderData,
     },
     {
-      kind: "cat" as const,
-      slug: MISSING_ROUTES.cat,
-      load: getCatRenderData,
-    },
-    {
       kind: "drug" as const,
       slug: MISSING_ROUTES.drugs,
       load: getDrugRenderData,
@@ -363,7 +318,7 @@ async function main() {
   for (const item of missingLoaders) {
     const data = await item.load(item.slug, { linkMode: "public" });
     routes.push({
-      route: `/${item.kind === "protocol" ? "protocols" : item.kind === "cat" ? "cat" : item.kind === "drug" ? "drugs" : "calculators"}/${item.slug}`,
+      route: `/${item.kind === "protocol" ? "protocols" : item.kind === "drug" ? "drugs" : "calculators"}/${item.slug}`,
       kind: item.kind,
       resolved: Boolean(data),
       unavailableExpected: true,

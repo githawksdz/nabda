@@ -117,10 +117,9 @@ function walkTs(dir: string, out: string[] = []): string[] {
 
 // 11 public routes gate before render data
 for (const route of [
-  "app/protocols/[slug]/page.tsx",
-  "app/cat/[slug]/page.tsx",
-  "app/drugs/[slug]/page.tsx",
-  "app/calculators/[slug]/page.tsx",
+  "app/(doctor)/protocols/[slug]/page.tsx",
+  "app/(doctor)/drugs/[slug]/page.tsx",
+  "app/(doctor)/calculators/[slug]/page.tsx",
 ]) {
   const src = read(route);
   checks.push({
@@ -134,10 +133,9 @@ for (const route of [
 
 // 11b no ContentUnavailable on public detail routes
 for (const route of [
-  "app/protocols/[slug]/page.tsx",
-  "app/cat/[slug]/page.tsx",
-  "app/drugs/[slug]/page.tsx",
-  "app/calculators/[slug]/page.tsx",
+  "app/(doctor)/protocols/[slug]/page.tsx",
+  "app/(doctor)/drugs/[slug]/page.tsx",
+  "app/(doctor)/calculators/[slug]/page.tsx",
 ]) {
   checks.push({
     id: `route_no_content_unavailable_${path.basename(path.dirname(route))}`,
@@ -148,7 +146,12 @@ for (const route of [
 
 // 12 no public route imports preparation components
 {
-  const publicRoots = ["app/protocols", "app/cat", "app/drugs", "app/calculators"];
+  const publicRoots = [
+    "app/(doctor)/protocols",
+    "app/(doctor)/cat",
+    "app/(doctor)/drugs",
+    "app/(doctor)/calculators",
+  ];
   const prepImports = [
     "ProtocolPreparationState",
     "CatPreparationView",
@@ -198,10 +201,9 @@ for (const route of [
 
 // 15 no service role on public detail routes
 for (const route of [
-  "app/protocols/[slug]/page.tsx",
-  "app/cat/[slug]/page.tsx",
-  "app/drugs/[slug]/page.tsx",
-  "app/calculators/[slug]/page.tsx",
+  "app/(doctor)/protocols/[slug]/page.tsx",
+  "app/(doctor)/drugs/[slug]/page.tsx",
+  "app/(doctor)/calculators/[slug]/page.tsx",
 ]) {
   checks.push({
     id: `route_no_service_role_${path.basename(path.dirname(route))}`,

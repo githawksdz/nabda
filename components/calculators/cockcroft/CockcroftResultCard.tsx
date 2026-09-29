@@ -26,9 +26,9 @@ export function CockcroftResultCard({ result }: CockcroftResultCardProps) {
           Calcul dynamique
         </span>
       </div>
-      <p className="mt-1 text-display text-on-surface">
+      <p className="mt-1 text-result text-on-surface">
         {result.display}{" "}
-        <span className="text-headline-sm font-semibold text-on-surface-variant">
+        <span className="font-sans text-base font-semibold text-on-surface-variant">
           mL/min
         </span>
       </p>

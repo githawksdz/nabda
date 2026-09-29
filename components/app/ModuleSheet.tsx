@@ -160,10 +160,10 @@ export function ModuleSheet({ open, onClose }: ModuleSheetProps) {
                     aria-current={active ? "page" : undefined}
                     onClick={onClose}
                     className={cn(
-                      "flex min-h-11 items-center gap-3 rounded-xl px-3 text-body-md",
+                      "flex min-h-11 items-center gap-3 rounded-xl px-3 text-label-sm",
                       active
-                        ? "bg-secondary-container font-semibold text-primary"
-                        : "text-on-surface",
+                        ? "bg-on-surface/[0.07] text-on-surface"
+                        : "text-on-surface-variant",
                     )}
                   >
                     <DoctorNavIcon name={item.icon} />

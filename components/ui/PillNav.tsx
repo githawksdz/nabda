@@ -3,8 +3,7 @@ import type { ReactNode } from "react";
 import { cn } from "@/lib/utils";
 
 /**
- * Route-level pill navigation. Favoris/Récents and similar links stay
- * as links with aria-current — they are not in-page tabs.
+ * Route-level pill navigation. Links use aria-current; they are not in-page tabs.
  */
 type PillNavProps = {
   label: string;
@@ -38,9 +37,9 @@ export function PillNavLink({
       href={href}
       aria-current={current ? "page" : undefined}
       className={cn(
-        "motion-color inline-flex min-h-[var(--size-touch)] shrink-0 items-center rounded-full px-3.5 text-label-md",
+        "motion-color inline-flex h-8 min-h-8 shrink-0 items-center rounded-full px-2.5 text-[10px] leading-3 font-medium",
         current
-          ? "bg-action-primary font-semibold text-text-inverse"
+          ? "bg-action-primary text-text-inverse"
           : "bg-surface-muted text-text-secondary",
         className,
       )}

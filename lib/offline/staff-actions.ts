@@ -10,7 +10,7 @@ import {
 } from "@/lib/offline/staff-catalog";
 import type { StaffMutationResult, StaffOfflineCatalog } from "@/lib/offline/staff-types";
 
-const contentTypeSchema = z.enum(["protocol", "cat", "drug", "calculator"]);
+const contentTypeSchema = z.enum(["protocol", "drug", "calculator"]);
 const visibilitySchema = z.enum(["public_free", "premium"]);
 const slugSchema = z
   .string()

@@ -17,14 +17,12 @@ import {
 } from "@/lib/security/rate-limit";
 import {
   CALCULATOR_CATALOG_SELECT,
-  CAT_CATALOG_SELECT,
   DRUG_CATALOG_SELECT,
   PROTOCOL_CATALOG_SELECT,
 } from "@/lib/authz/selects";
 import { filterReadableContent, getViewerAccess } from "@/lib/authz/access";
 import type {
   Calculator,
-  CatMap,
   Drug,
   Protocol,
 } from "@/types/content";
@@ -56,28 +54,6 @@ export async function getProtocols(): Promise<Protocol[]> {
     return filterReadableContent((data ?? []) as Protocol[], viewer);
   } catch (error) {
     console.warn("getProtocols", error);
-    return [];
-  }
-}
-
-export async function getCatMaps(): Promise<CatMap[]> {
-  try {
-    const [supabase, viewer] = await Promise.all([getCatalogClient(), getViewerAccess()]);
-    const { data, error } = await supabase
-      .from("cat_maps")
-      .select(CAT_CATALOG_SELECT)
-      .eq("status", "published")
-      .order("is_featured", { ascending: false })
-      .order("title", { ascending: true });
-
-    if (error) {
-      console.warn("getCatMaps", error.message);
-      return [];
-    }
-
-    return filterReadableContent((data ?? []) as CatMap[], viewer);
-  } catch (error) {
-    console.warn("getCatMaps", error);
     return [];
   }
 }

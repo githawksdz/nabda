@@ -1,6 +1,5 @@
 export type SearchFilter =
   | "all"
-  | "cat"
   | "protocols"
   | "drugs"
   | "calculators"
@@ -9,7 +8,6 @@ export type SearchFilter =
 export type SearchScreenState = "initial" | "results" | "drugs" | "zero";
 
 export type SearchResultType =
-  | "cat"
   | "protocol"
   | "recommendation"
   | "drug"
@@ -31,6 +29,7 @@ export type SearchResult = {
   href: string;
   /** Stable nabda_db id when the hit comes from an imported identity. */
   sourceId?: string;
+  isNew?: boolean;
 };
 
 /** Re-export Stage B document types for callers. */
@@ -41,7 +40,7 @@ export type {
 } from "@/types/search-documents";
 
 /** Stage A identity hit — titles, DCI, brands, tags. No clinical bodies. */
-export type IdentityContentType = "protocol" | "cat" | "calculator" | "drug";
+export type IdentityContentType = "protocol" | "calculator" | "drug";
 
 export type IdentitySearchHit = {
   type: IdentityContentType;
@@ -61,6 +60,8 @@ export type IdentitySearchHit = {
   reviewStatus?: string | null;
   visibility?: string | null;
   clinicalPayloadStatus?: string | null;
+  isNew?: boolean;
+  summary?: string | null;
 };
 
 export type IdentitySearchFilters = {
@@ -97,6 +98,8 @@ export type MedicationSearchResult = {
     href: string;
     variant?: "primary" | "secondary";
   }>;
+  isNew?: boolean;
+  categorySlug?: string;
 };
 
 export type FrequentSearchChip = {

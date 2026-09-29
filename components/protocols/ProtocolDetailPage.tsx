@@ -175,19 +175,10 @@ export function ProtocolDetailPage({
           icon: "sources",
           href: "/search?type=protocols",
         },
-        {
-          id: "cat",
-          label: "Mode garde",
-          icon: "cat",
-          href: "/cat",
-        },
       ];
     } else {
       const slug = detail?.protocol.slug ?? source?.slug ?? "";
-      const nextHref = next
-        ? protocolHref(slug, { section: next.slug })
-        : `/cat/${slug}`;
-      const catHref = `/cat/${slug}`;
+      const nextHref = next ? protocolHref(slug, { section: next.slug }) : null;
       dockActions = [
         {
           id: "save",
@@ -203,20 +194,18 @@ export function ProtocolDetailPage({
           id: "sources",
           label: "Références",
           icon: "sources",
-          href: source ? `/cat/${slug}` : protocolHref(slug, { section: "sources" }),
+          href: protocolHref(slug, { section: "sources" }),
         },
-        {
-          id: "next",
-          label: next ? "Suivant" : "CAT",
-          icon: "next",
-          href: nextHref,
-        },
-        {
-          id: "cat",
-          label: "Mode garde",
-          icon: "cat",
-          href: catHref,
-        },
+        ...(nextHref
+          ? [
+              {
+                id: "next",
+                label: "Suivant",
+                icon: "next" as const,
+                href: nextHref,
+              },
+            ]
+          : []),
       ];
     }
   }

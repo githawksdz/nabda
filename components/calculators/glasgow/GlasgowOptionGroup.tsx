@@ -44,7 +44,7 @@ export function GlasgowOptionGroup({
               className={cn(
                 "motion-color flex min-h-11 flex-col items-center justify-center rounded-[var(--radius-control)] px-1 py-1.5 text-center focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
                 selected
-                  ? "bg-action-primary font-semibold text-text-inverse"
+                  ? "bg-action-primary text-text-inverse"
                   : "bg-surface-muted text-text-secondary",
               )}
             >

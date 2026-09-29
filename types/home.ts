@@ -18,6 +18,8 @@ export type HomeUser = {
   title?: string;
   professionLabel?: string;
   specialtyLabel?: string;
+  /** Practice context label, e.g. Garde. Empty when the profile has no mode yet. */
+  usageModeLabel?: string;
   plan: Plan;
   profileStatus: HomeProfileStatus;
   verified?: boolean;
@@ -58,13 +60,6 @@ export type RecommendationRow = {
   typeLabel: string;
   href: string;
   icon: string;
-};
-
-export type SearchChip = {
-  id: string;
-  label: string;
-  href: string;
-  active?: boolean;
 };
 
 export type OfflinePackMetric = {

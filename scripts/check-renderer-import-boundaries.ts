@@ -10,15 +10,7 @@ import path from "node:path";
 const ROOT = process.cwd();
 
 const PUBLIC_SCAN_ROOTS = [
-  "app/home",
-  "app/search",
-  "app/cat",
-  "app/protocols",
-  "app/drugs",
-  "app/calculators",
-  "app/favorites",
-  "app/history",
-  "app/profile",
+  "app/(doctor)",
   "app/content-media",
   "components",
   "features",

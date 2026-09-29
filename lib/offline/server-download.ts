@@ -16,7 +16,6 @@ import type {
 } from "@/lib/offline/types";
 import { createRlsClient } from "@/lib/supabase/rls-client";
 import { getProtocolRenderData } from "@/lib/content-data/protocol-data";
-import { getCatRenderData } from "@/lib/content-data/cat-data";
 import { getDrugRenderData } from "@/lib/content-data/drug-data";
 import { getCalculatorRenderData } from "@/lib/content-data/calculator-data";
 import type { ViewerAccess } from "@/lib/authz/content-gate";
@@ -33,7 +32,6 @@ type IdentityRow = {
 
 const TABLES: Record<OfflineContentType, string> = {
   protocol: "protocols",
-  cat: "cat_maps",
   drug: "drugs",
   calculator: "calculators",
 };
@@ -73,7 +71,6 @@ async function loadIdentity(
 
 async function loadPayload(type: OfflineContentType, slug: string): Promise<unknown | null> {
   if (type === "protocol") return getProtocolRenderData(slug, { linkMode: "public" });
-  if (type === "cat") return getCatRenderData(slug, { linkMode: "public" });
   if (type === "drug") return getDrugRenderData(slug, { linkMode: "public" });
   return getCalculatorRenderData(slug, { linkMode: "public" });
 }
@@ -127,18 +124,13 @@ export async function buildCatalogManifest(
   const supabase = await db();
   if (!supabase) return null;
 
-  const [packsRes, protocols, cats, drugs, calculators] = await Promise.all([
+  const [packsRes, protocols, drugs, calculators] = await Promise.all([
     supabase
       .from("content_packs")
       .select("id, slug, title, description, version, visibility, status, published_at, updated_at")
       .eq("status", "published"),
     supabase
       .from("protocols")
-      .select("slug, title, status, visibility, offline_available, updated_at")
-      .eq("status", "published")
-      .eq("offline_available", true),
-    supabase
-      .from("cat_maps")
       .select("slug, title, status, visibility, offline_available, updated_at")
       .eq("status", "published")
       .eq("offline_available", true),
@@ -214,7 +206,6 @@ export async function buildCatalogManifest(
 
   const individual = [
     ...mapIndividuals("protocol", protocols.data),
-    ...mapIndividuals("cat", cats.data),
     ...mapIndividuals("drug", drugs.data, "display_name"),
     ...mapIndividuals("calculator", calculators.data),
   ].filter((row) => row.visibility !== "premium" || viewer.hasActivePro);

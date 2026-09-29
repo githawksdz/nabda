@@ -53,7 +53,7 @@ async function batchUpsert(
 
 async function updateIdentityFlags(
   client: ImportClient,
-  table: "protocols" | "cat_maps" | "drugs" | "calculators",
+  table: "protocols" | "drugs" | "calculators",
   sourceIds: string[],
   payloadType: string,
 ): Promise<void> {
@@ -95,7 +95,6 @@ async function main() {
   }
 
   const protocolSourceIds = loaded.protocols.map((item) => item.protocolSourceId);
-  const catSourceIds = loaded.cats.map((item) => item.protocolSourceId);
   const drugSourceIds = loaded.drugs.map((item) => item.drugSourceId);
   const calculatorSourceIds = loaded.calculators.map((item) => item.sourceId);
 
@@ -105,7 +104,6 @@ async function main() {
     protocolSourceIds,
     "protocol_sections",
   );
-  await updateIdentityFlags(client, "cat_maps", catSourceIds, "cat_steps");
   await updateIdentityFlags(client, "drugs", drugSourceIds, "drug_sections");
   await updateIdentityFlags(
     client,

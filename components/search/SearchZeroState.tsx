@@ -23,7 +23,7 @@ export function SearchZeroState({ query, onClear }: SearchZeroStateProps) {
 
       <section aria-labelledby="search-zero-pivots">
         <div className="mb-3">
-          <h2 id="search-zero-pivots" className="text-headline-sm">
+          <h2 id="search-zero-pivots" className="text-label-md text-text-primary">
             Explorer les modules
           </h2>
           <p className="text-label-sm text-text-secondary">
@@ -40,7 +40,7 @@ export function SearchZeroState({ query, onClear }: SearchZeroStateProps) {
                 <span className="flex size-9 items-center justify-center rounded-[var(--radius-control)] bg-surface-elevated">
                   <HomeIcon name={pivot.icon} className="size-4" />
                 </span>
-                <span className="text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+                <span className="text-label-md text-text-primary [overflow-wrap:anywhere]">
                   {pivot.title}
                 </span>
               </Surface>
@@ -53,7 +53,7 @@ export function SearchZeroState({ query, onClear }: SearchZeroStateProps) {
         <section aria-labelledby="search-zero-demo-protocols">
           <h2
             id="search-zero-demo-protocols"
-            className="mb-2 text-headline-sm"
+            className="mb-2 text-label-md"
           >
             Protocoles les plus consultés
           </h2>
@@ -65,7 +65,7 @@ export function SearchZeroState({ query, onClear }: SearchZeroStateProps) {
                   className="flex min-h-11 items-center gap-3 px-4 py-3 hover:bg-surface-container"
                 >
                   <span className="min-w-0 flex-1">
-                    <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+                    <span className="block text-label-md text-text-primary [overflow-wrap:anywhere]">
                       {item.title}
                     </span>
                     {item.footer ? (

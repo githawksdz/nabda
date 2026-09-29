@@ -21,7 +21,7 @@ type CalculatorFieldControlProps = {
 };
 
 const controlClass =
-  "min-h-11 rounded-[var(--radius-control)] bg-surface-muted px-3 text-body-md text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary";
+  "min-h-11 rounded-[var(--radius-control)] bg-surface-muted px-3 text-base font-medium tabular-nums text-text-primary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary";
 
 export function CalculatorFieldControl({
   name,
@@ -43,7 +43,7 @@ export function CalculatorFieldControl({
     const stack = kind === "segmented" && options.some((option) => option.label.length > 18);
     return (
       <fieldset className="min-w-0">
-        <legend className="text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
+        <legend className="text-label-md text-text-primary [overflow-wrap:anywhere]">
           {groupLabel}
           {unit ? <span className="font-normal text-text-secondary"> ({unit})</span> : null}
         </legend>
@@ -65,7 +65,7 @@ export function CalculatorFieldControl({
                   "motion-color min-h-11 rounded-[var(--radius-control)] px-3 py-2 text-left text-body-sm",
                   "focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
                   selected
-                    ? "bg-action-primary font-semibold text-text-inverse"
+                    ? "bg-action-primary text-text-inverse"
                     : "bg-surface-muted text-text-secondary",
                 )}
               >
@@ -81,7 +81,7 @@ export function CalculatorFieldControl({
   if (kind === "checkbox_group") {
     return (
       <fieldset className="min-w-0">
-        <legend className="text-body-md font-medium text-text-primary">{groupLabel}</legend>
+        <legend className="text-label-md text-text-primary">{groupLabel}</legend>
         <div className="mt-2 flex flex-col gap-1.5">
           {options.map((option) => {
             const checked = multiValue.includes(option.value);
@@ -114,7 +114,7 @@ export function CalculatorFieldControl({
   if (kind === "select") {
     return (
       <label className="flex min-w-0 flex-col gap-1.5" htmlFor={name}>
-        <span className="text-body-md font-medium text-text-primary">{groupLabel}</span>
+        <span className="text-label-md text-text-primary">{groupLabel}</span>
         <select
           id={name}
           name={name}
@@ -136,7 +136,7 @@ export function CalculatorFieldControl({
   if (kind === "date") {
     return (
       <label className="flex min-w-0 flex-col gap-1.5" htmlFor={name}>
-        <span className="text-body-md font-medium text-text-primary">{groupLabel}</span>
+        <span className="text-label-md text-text-primary">{groupLabel}</span>
         <input
           id={name}
           name={name}
@@ -151,7 +151,7 @@ export function CalculatorFieldControl({
 
   return (
     <label className="flex min-w-0 flex-col gap-1.5" htmlFor={name}>
-      <span className="text-body-md font-medium text-text-primary">
+      <span className="text-label-md text-text-primary">
         {groupLabel}
         {unit ? <span className="font-normal text-text-secondary"> · {unit}</span> : null}
       </span>

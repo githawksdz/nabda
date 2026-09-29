@@ -337,11 +337,11 @@ const hsaDetail: ProtocolDetail = {
   ],
   linked_content: [
     {
-      id: "link-cat",
-      type: "cat",
-      title: "CAT Céphalée brutale",
-      subtitle: "Carte clinique · Urgences",
-      href: "/cat/cephalees-brutales-hsa",
+      id: "link-protocol",
+      type: "protocol",
+      title: "Protocole céphalée brutale",
+      subtitle: "Urgences",
+      href: "/protocols/cephalees-brutales-hsa",
     },
     {
       id: "link-ottawa",
@@ -460,11 +460,11 @@ const meningeDetail: ProtocolDetail = {
       href: "/calculators/glasgow",
     },
     {
-      id: "meninge-cat",
-      type: "cat",
-      title: "Module CAT",
-      subtitle: "Cartes cliniques d'urgence",
-      href: "/cat",
+      id: "meninge-protocol",
+      type: "protocol",
+      title: "Protocoles d'urgence",
+      subtitle: "Fiches cliniques",
+      href: "/protocols",
     },
     {
       id: "meninge-search",

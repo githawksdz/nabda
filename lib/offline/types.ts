@@ -2,7 +2,7 @@
  * Offline/PWA content types. Narrow DTOs only — never raw database rows.
  */
 
-export type OfflineContentType = "protocol" | "cat" | "drug" | "calculator";
+export type OfflineContentType = "protocol" | "drug" | "calculator";
 
 export type OfflineEntitlement = "public_free" | "premium";
 

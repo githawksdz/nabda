@@ -2,8 +2,6 @@
 
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useRouter, useSearchParams } from "next/navigation";
-import { SlidersHorizontal } from "lucide-react";
-import { AppShell } from "@/components/app/AppShell";
 import { SearchInputBar } from "./SearchInputBar";
 import { SearchFilterChips } from "./SearchFilterChips";
 import { SearchInitialState } from "./SearchInitialState";
@@ -11,7 +9,7 @@ import { SearchGroupedResults } from "./SearchGroupedResults";
 import { SearchMedicationResults } from "./SearchMedicationResults";
 import { SearchZeroState } from "./SearchZeroState";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
+import { PageSkeleton } from "@/components/ui/Skeleton";
 import { searchContent } from "@/features/content/api";
 import { createClient } from "@/lib/supabase/client";
 import { contentRepository } from "@/lib/offline/repository";
@@ -23,7 +21,6 @@ import {
 } from "@/lib/search/search-ui-constants";
 import { isDemoContentModeClient } from "@/lib/content-data/content-source-mode";
 import { getSearchDemoFixturesSync } from "@/lib/demo-fixtures/load";
-import { scrollElementIntoView } from "@/lib/ui/scroll-behavior";
 import {
   groupSearchResults,
   identityToMedicationSearchResult,
@@ -52,18 +49,22 @@ import type { FrequentSearchChip, SearchFilter, SearchResult } from "@/types/sea
 type SearchPageProps = {
   initialQuery?: string;
   initialFilter?: string;
+  visitedKeys?: string[];
 };
 
 export function SearchPage({
-  initialQuery = "",
-  initialFilter = "all",
+  initialQuery,
+  initialFilter,
+  visitedKeys = [],
 }: SearchPageProps) {
   const router = useRouter();
   const searchParams = useSearchParams();
   const inputRef = useRef<HTMLInputElement>(null);
-  const [query, setQuery] = useState(initialQuery);
+  const [query, setQuery] = useState(
+    () => initialQuery ?? searchParams.get("q") ?? "",
+  );
   const [filter, setFilter] = useState<SearchFilter>(
-    parseSearchFilter(initialFilter),
+    parseSearchFilter(initialFilter ?? searchParams.get("type")),
   );
   const [recentsCleared, setRecentsCleared] = useState(false);
   const [lookupAttempt, setLookupAttempt] = useState(0);
@@ -248,28 +249,8 @@ export function SearchPage({
   const placeholder = SEARCH_FIELD_PLACEHOLDER;
 
   return (
-    <AppShell
-      title="Recherche"
-      pageHeading={false}
-      navVariant="text"
-      headerActions={
-        <button
-          type="button"
-          aria-label="Filtres"
-          onClick={() => {
-            const filters = document.getElementById("search-filters");
-            if (filters) {
-              scrollElementIntoView(filters, { block: "start" });
-            }
-          }}
-          className="flex size-11 items-center justify-center rounded-full text-on-surface-variant"
-        >
-          <SlidersHorizontal className="size-5" strokeWidth={1.75} />
-        </button>
-      }
-    >
+    <>
       <div className="flex min-w-0 flex-col gap-4 pt-2">
-        <h1 className="sr-only">Recherche clinique</h1>
         <SearchInputBar
           value={query}
           onChange={setQuery}
@@ -296,7 +277,7 @@ export function SearchPage({
 
         {visibleScreen === "results" ? (
           loading ? (
-            <LoadingIndicator label={SEARCH_LOADING_LABEL} />
+            <PageSkeleton variant="list" label={SEARCH_LOADING_LABEL} />
           ) : (
             <SearchGroupedResults
               query={query.trim()}
@@ -309,13 +290,14 @@ export function SearchPage({
                   : groupedTotal
               }
               groups={grouped}
+              visitedKeys={visitedKeys}
             />
           )
         ) : null}
 
         {visibleScreen === "drugs" ? (
           loading ? (
-            <LoadingIndicator label={SEARCH_LOADING_LABEL} />
+            <PageSkeleton variant="list" label={SEARCH_LOADING_LABEL} />
           ) : (
             <SearchMedicationResults
               results={medicationResults}
@@ -326,6 +308,7 @@ export function SearchPage({
                   ? 24
                   : medicationResults.length
               }
+              visitedKeys={visitedKeys}
             />
           )
         ) : null}
@@ -347,6 +330,6 @@ export function SearchPage({
           />
         ) : null}
       </div>
-    </AppShell>
+    </>
   );
 }

@@ -302,7 +302,6 @@ function checkEntitlementSource(): Check[] {
     access.includes('from("user_subscriptions")') && access.includes("ends_at");
   const profilesSelectIsStaffOnly = /from\("profiles"\)\s*\.select\("staff_role"\)/.test(access);
   const middleware = fs.readFileSync(path.join(ROOT, "lib", "supabase", "middleware.ts"), "utf8");
-  const mediaCat = fs.readFileSync(path.join(ROOT, "app", "content-media", "cat", "route.ts"), "utf8");
   const mediaDrug = fs.readFileSync(path.join(ROOT, "app", "content-media", "drug", "route.ts"), "utf8");
   return [
     {
@@ -324,7 +323,7 @@ function checkEntitlementSource(): Check[] {
     {
       id: "media_uses_parent_content_acl",
       layer: "static",
-      ok: mediaCat.includes("viewerCanReadSlug") && mediaDrug.includes("viewerCanReadSlug"),
+      ok: mediaDrug.includes("viewerCanReadSlug"),
       detail: "media routes authorize via parent slug publication and entitlement",
     },
   ];

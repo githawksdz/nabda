@@ -23,7 +23,7 @@ export function CalculatorSearchBar({
         onChange={(event) => onChange(event.target.value)}
         placeholder="Rechercher un score, formule, pathologie..."
         aria-label="Rechercher un score, formule, pathologie"
-        className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
+        className="h-full min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-on-surface-variant"
       />
       {value ? (
         <button

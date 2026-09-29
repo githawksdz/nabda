@@ -42,6 +42,7 @@ const field = read("components/ui/TextField.tsx");
 const surface = read("components/ui/Surface.tsx");
 const badge = read("components/ui/StatusBadge.tsx");
 const loading = read("components/ui/LoadingIndicator.tsx");
+const skeleton = read("components/ui/Skeleton.tsx");
 
 const tokens: Record<string, string> = {
   "--motion-instant": "80ms",
@@ -74,6 +75,7 @@ check("motion_press_scale", css.includes("transform: scale(0.98)"), "globals.css
 check("reduced_motion_rule", css.includes("prefers-reduced-motion: reduce") && css.includes("transition-duration: 0.01ms !important"), "globals.css");
 check("reduced_motion_removes_scale", /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.motion-press:active:not\(:disabled\) \{\s*transform: none;/.test(css), "globals.css");
 check("reduced_motion_stops_spin", /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.motion-spin \{\s*animation: none;/.test(css), "globals.css");
+check("reduced_motion_stops_skeleton", /@media \(prefers-reduced-motion: reduce\)[\s\S]*\.motion-skeleton \{\s*animation: none;/.test(css), "globals.css");
 check("no_transition_all_in_globals", !/transition:\s*all/.test(css) && !css.includes("transition-all"), "globals.css");
 
 check("button_press", button.includes("motion-press") && button.includes("Spinner") && button.includes("disabled || loading"), "Button.tsx");
@@ -92,6 +94,14 @@ check(
     !loading.includes("animate-pulse") &&
     !loading.includes("animate-spin"),
   "LoadingIndicator.tsx",
+);
+check(
+  "page_skeleton",
+  skeleton.includes("motion-skeleton") &&
+    skeleton.includes('role="status"') &&
+    skeleton.includes("sr-only") &&
+    !skeleton.includes("animate-pulse"),
+  "Skeleton.tsx",
 );
 
 const uiDir = walk(path.join(ROOT, "components/ui"));

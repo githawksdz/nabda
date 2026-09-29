@@ -7,7 +7,7 @@ export function GlasgowLinkedProtocolCard() {
     <section>
       <h2 className="text-headline-sm">Conduite à tenir associée</h2>
       <p className="mt-1 text-body-sm text-on-surface-variant">
-        Consulter la CAT liée selon le contexte clinique.
+        Consulter le protocole lié selon le contexte clinique.
       </p>
       <div className="mt-3 flex flex-col gap-2">
         {GLASGOW_LINKED_RESOURCES.map((resource) => (

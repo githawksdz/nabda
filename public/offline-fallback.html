@@ -4,42 +4,261 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
     <meta name="theme-color" content="#fcf8fb" />
-    <title>Nabda hors-ligne</title>
+    <title>Nabda</title>
     <style>
+      :root {
+        --background: #fcf8fb;
+        --surface: #fcf8fb;
+        --on-surface: #1c1b1d;
+        --on-surface-variant: #47464b;
+        --primary: #000000;
+        --on-primary: #ffffff;
+        --header-height: 3.5rem;
+        --nav-height: 4rem;
+      }
+      * { box-sizing: border-box; }
+      html, body { height: 100%; }
       body {
         margin: 0;
         min-height: 100dvh;
-        font-family: system-ui, sans-serif;
-        background: #fcf8fb;
-        color: #1c1b1d;
+        font-family: ui-sans-serif, system-ui, sans-serif;
+        background: var(--background);
+        color: var(--on-surface);
+      }
+      [data-doctor-shell] { min-height: 100dvh; }
+      [data-app-header] {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 50;
+        height: calc(var(--header-height) + env(safe-area-inset-top, 0px));
+        padding-top: env(safe-area-inset-top, 0px);
+        background: color-mix(in srgb, var(--surface) 85%, transparent);
+        backdrop-filter: blur(24px);
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+      }
+      .header-row {
         display: flex;
         align-items: center;
-        justify-content: center;
-        padding: 24px;
+        justify-content: space-between;
+        height: var(--header-height);
+        padding: 0 16px;
       }
-      main { max-width: 360px; }
-      h1 { font-size: 1.4rem; margin: 0 0 8px; }
-      p { color: #47464b; line-height: 1.45; }
-      a {
+      .header-row h1 {
+        margin: 0;
+        font-size: 1.125rem;
+        font-weight: 600;
+        letter-spacing: -0.01em;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .avatar {
+        display: flex;
+        width: 32px;
+        height: 32px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 999px;
+        background: var(--primary);
+        color: var(--on-primary);
+      }
+      main {
+        padding: calc(var(--header-height) + env(safe-area-inset-top, 0px) + 16px) 16px calc(var(--nav-height) + env(safe-area-inset-bottom, 0px) + 24px);
+      }
+      .copy { max-width: 26rem; }
+      .copy p { color: var(--on-surface-variant); line-height: 1.45; }
+      .copy a.cta {
         display: inline-flex;
         margin-top: 16px;
-        background: #000;
-        color: #fff;
+        min-height: 44px;
+        align-items: center;
+        background: var(--primary);
+        color: var(--on-primary);
         text-decoration: none;
         padding: 12px 16px;
-        border-radius: 8px;
+        border-radius: 12px;
         font-weight: 600;
       }
+      [data-bottom-nav] {
+        position: fixed;
+        inset: auto 0 0 0;
+        z-index: 50;
+        background: color-mix(in srgb, var(--surface) 90%, transparent);
+        backdrop-filter: blur(24px);
+        box-shadow: 0 1px 8px rgba(0, 0, 0, 0.04);
+        padding-bottom: env(safe-area-inset-bottom, 0px);
+      }
+      .nav-row {
+        display: flex;
+        height: var(--nav-height);
+        align-items: center;
+        justify-content: space-around;
+        padding: 0 4px;
+      }
+      .nav-item {
+        display: inline-flex;
+        min-height: 44px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 2px;
+        padding: 4px 12px;
+        border: 0;
+        border-radius: 16px;
+        background: transparent;
+        color: var(--on-surface-variant);
+        text-decoration: none;
+        font: inherit;
+      }
+      .nav-item[aria-current="page"] {
+        background: #f0edf0;
+        color: var(--on-surface);
+        font-weight: 500;
+      }
+      .nav-item svg { width: 20px; height: 20px; }
+      .nav-item span { font-size: 11px; line-height: 13px; font-weight: 400; }
+      dialog {
+        width: 100%;
+        max-width: none;
+        margin: auto 0 0;
+        border: 0;
+        border-radius: 16px 16px 0 0;
+        padding: 12px 16px calc(16px + env(safe-area-inset-bottom, 0px));
+        background: var(--surface);
+        color: var(--on-surface);
+      }
+      dialog::backdrop { background: rgba(28, 27, 29, 0.4); }
+      .sheet-head {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-bottom: 8px;
+      }
+      .sheet-head h2 { margin: 0; font-size: 1.125rem; }
+      .sheet-head button {
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 999px;
+        background: transparent;
+        color: var(--on-surface-variant);
+        font-size: 1.25rem;
+      }
+      .sheet-link {
+        display: flex;
+        min-height: 44px;
+        align-items: center;
+        padding: 0 12px;
+        border-radius: 12px;
+        color: var(--on-surface-variant);
+        text-decoration: none;
+      }
+      .sheet-link[aria-current="page"] { background: rgba(28, 27, 29, 0.07); color: var(--on-surface); }
     </style>
   </head>
   <body>
-    <main>
-      <h1>Nabda hors-ligne</h1>
-      <p>
-        Le réseau est indisponible. Ouvrez un contenu déjà téléchargé, ou
-        reconnectez-vous pour mettre à jour.
-      </p>
-      <a href="/offline">Contenus téléchargés</a>
-    </main>
+    <div data-doctor-shell>
+      <header data-app-header>
+        <div class="header-row">
+          <h1 id="shell-title">Nabda</h1>
+          <a class="avatar" href="/profile" aria-label="Profil">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true">
+              <path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2" />
+              <circle cx="12" cy="7" r="4" />
+            </svg>
+          </a>
+        </div>
+      </header>
+      <main>
+        <div class="copy">
+          <p>
+            L’application reste disponible hors-ligne. Le catalogue clinique
+            nécessite une connexion, sauf le contenu déjà téléchargé.
+          </p>
+          <a class="cta" href="/offline">Contenus téléchargés</a>
+        </div>
+      </main>
+      <nav data-bottom-nav aria-label="Navigation principale">
+        <div class="nav-row">
+          <a class="nav-item" data-nav-href="/home" href="/home">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="M15 21v-8a1 1 0 0 0-1-1h-4a1 1 0 0 0-1 1v8"/><path d="M3 10a2 2 0 0 1 .709-1.528l7-5.999a2 2 0 0 1 2.582 0l7 5.999A2 2 0 0 1 21 10v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+            <span>Accueil</span>
+          </a>
+          <a class="nav-item" data-nav-href="/history" href="/history">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+            <span>Récents</span>
+          </a>
+          <a class="nav-item" data-nav-href="/search" href="/search">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <span>Recherche</span>
+          </a>
+          <button class="nav-item" id="open-modules" type="button" aria-haspopup="dialog" aria-controls="doctor-modules">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><rect width="7" height="7" x="3" y="3" rx="1"/><rect width="7" height="7" x="14" y="3" rx="1"/><rect width="7" height="7" x="14" y="14" rx="1"/><rect width="7" height="7" x="3" y="14" rx="1"/></svg>
+            <span>Modules</span>
+          </button>
+          <a class="nav-item" data-nav-href="/favorites" href="/favorites">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" aria-hidden="true"><path d="m19 21-7-4-7 4V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v16z"/></svg>
+            <span>Favoris</span>
+          </a>
+        </div>
+      </nav>
+      <dialog id="doctor-modules" aria-labelledby="doctor-modules-title">
+        <div class="sheet-head">
+          <h2 id="doctor-modules-title">Modules</h2>
+          <button type="button" id="close-modules" aria-label="Fermer">×</button>
+        </div>
+        <nav aria-label="Modules">
+          <a class="sheet-link" data-module-href="/cat" href="/cat">CAT</a>
+          <a class="sheet-link" data-module-href="/protocols" href="/protocols">Protocoles</a>
+          <a class="sheet-link" data-module-href="/drugs" href="/drugs">Médicaments</a>
+          <a class="sheet-link" data-module-href="/calculators" href="/calculators">Scores</a>
+          <a class="sheet-link" data-module-href="/offline" href="/offline">Hors-ligne</a>
+        </nav>
+      </dialog>
+    </div>
+    <script>
+      const path = location.pathname;
+      const titles = {
+        "/home": "Accueil",
+        "/search": "Recherche",
+        "/history": "Récents",
+        "/favorites": "Favoris",
+        "/profile": "Profil",
+        "/cat": "CAT",
+        "/protocols": "Protocoles",
+        "/drugs": "Médicaments",
+        "/calculators": "Scores",
+        "/offline": "Hors-ligne",
+      };
+      const title = Object.keys(titles)
+        .sort((a, b) => b.length - a.length)
+        .find((href) => path === href || (href !== "/home" && path.startsWith(href + "/")));
+      document.getElementById("shell-title").textContent = titles[title] || "Nabda";
+
+      document.querySelectorAll("[data-nav-href]").forEach((node) => {
+        const href = node.getAttribute("data-nav-href");
+        if (href && (path === href || path.startsWith(href + "/"))) {
+          node.setAttribute("aria-current", "page");
+        }
+      });
+      const moduleHrefs = ["/cat", "/protocols", "/drugs", "/calculators", "/offline"];
+      const moduleActive = moduleHrefs.some((href) => path === href || path.startsWith(href + "/"));
+      if (moduleActive) {
+        document.getElementById("open-modules").setAttribute("aria-current", "page");
+      }
+      document.querySelectorAll("[data-module-href]").forEach((node) => {
+        const href = node.getAttribute("data-module-href");
+        if (href && (path === href || path.startsWith(href + "/"))) {
+          node.setAttribute("aria-current", "page");
+        }
+      });
+
+      const dialog = document.getElementById("doctor-modules");
+      document.getElementById("open-modules").addEventListener("click", () => dialog.showModal());
+      document.getElementById("close-modules").addEventListener("click", () => dialog.close());
+      dialog.addEventListener("click", (event) => {
+        if (event.target === dialog) dialog.close();
+      });
+    </script>
   </body>
 </html>

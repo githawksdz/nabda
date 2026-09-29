@@ -31,9 +31,9 @@ export function SectionNav({
               )}
               aria-current={isActive ? "page" : undefined}
               className={cn(
-                "motion-color flex min-h-11 max-w-[16rem] shrink-0 items-center rounded-full px-3.5 text-label-md lg:max-w-none lg:shrink",
+                "motion-color flex min-h-11 max-w-[16rem] shrink-0 items-center rounded-full px-3 text-label-sm lg:max-w-none lg:shrink",
                 isActive
-                  ? "bg-action-primary font-semibold text-text-inverse"
+                  ? "bg-action-primary text-text-inverse"
                   : "bg-surface-muted text-text-secondary",
               )}
             >

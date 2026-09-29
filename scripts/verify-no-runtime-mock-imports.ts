@@ -12,15 +12,7 @@ import path from "node:path";
 const ROOT = process.cwd();
 
 const RUNTIME_SCAN_ROOTS = [
-  "app/home",
-  "app/search",
-  "app/cat",
-  "app/protocols",
-  "app/drugs",
-  "app/calculators",
-  "app/favorites",
-  "app/history",
-  "app/profile",
+  "app/(doctor)",
   "components",
   "features",
   "lib/content-data",
@@ -35,6 +27,7 @@ const RUNTIME_SCAN_ROOTS = [
   "lib/calculators",
   "lib/personal",
   "lib/content-detail",
+  "lib/promotions",
 ];
 
 const SKIP_DIR_NAMES = new Set([
@@ -71,12 +64,10 @@ const FORBIDDEN = [
 const REQUIRED_UI_CONFIG = [
   "lib/home/home-ui-config.ts",
   "lib/search/search-ui-constants.ts",
-  "lib/cat/cat-ui-config.ts",
   "lib/drugs/drug-ui-config.ts",
   "lib/calculators/calculator-ui-config.ts",
   "lib/personal/personal-ui-config.ts",
   "lib/content-detail/content-detail-ui-config.ts",
-  "lib/cat-flowchart/flowchart-ui-config.ts",
 ];
 
 const REQUIRED_DEMO_FIXTURES = [
@@ -89,6 +80,7 @@ const REQUIRED_DEMO_FIXTURES = [
   "lib/demo-fixtures/calculators.ts",
   "lib/demo-fixtures/content-detail.ts",
   "lib/demo-fixtures/flowchart.ts",
+  "lib/demo-fixtures/promotions.ts",
 ];
 
 const DEMO_HEADER =

@@ -7,7 +7,6 @@ import type { LocalContentRecord, OfflineContentType } from "@/lib/offline/types
 import type { PersonalEntityType } from "@/types/personal";
 
 const TYPE_MAP: Record<PersonalEntityType, OfflineContentType> = {
-  cat: "cat",
   protocol: "protocol",
   calculator: "calculator",
   drug: "drug",

@@ -93,7 +93,6 @@ function contentId(type: OfflineContentType, slug: string) {
 }
 
 function publicHref(type: OfflineContentType, slug: string): string {
-  if (type === "cat") return `/cat/${slug}`;
   if (type === "drug") return `/drugs/${slug}`;
   if (type === "calculator") return `/calculators/${slug}`;
   return `/protocols/${slug}`;
@@ -392,9 +391,6 @@ export const contentRepository = {
 
   async getProtocol(userId: string, slug: string) {
     return this.getContent(userId, "protocol", slug);
-  },
-  async getCat(userId: string, slug: string) {
-    return this.getContent(userId, "cat", slug);
   },
   async getDrug(userId: string, slug: string) {
     return this.getContent(userId, "drug", slug);

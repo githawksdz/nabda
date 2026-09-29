@@ -10,7 +10,7 @@ export function ContentTable({ caption, headers, rows }: ContentTableProps) {
       {caption ? (
         <h3 className="mb-2 text-body-md font-semibold">{caption}</h3>
       ) : null}
-      <ul className="flex flex-col gap-2">
+      <ul className="flex flex-col gap-2 tabular-nums">
         {rows.map((row) => (
           <li
             key={row.join("-")}

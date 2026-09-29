@@ -23,6 +23,14 @@ function check(id: string, ok: boolean, detail: string) {
   checks.push({ id, ok, detail });
 }
 
+function hasClinicalIndex(src: string, href: string) {
+  const index = src.indexOf(`href: "${href}"`);
+  if (index < 0) {
+    return false;
+  }
+  return src.slice(index, index + 280).includes('frame: "clinical"');
+}
+
 const searchPage = read("components/search/SearchPage.tsx");
 const zeroCanvas = read("components/search/ZeroResultCanvas.tsx");
 const searchInput = read("components/search/SearchInputBar.tsx");
@@ -33,15 +41,12 @@ const medicationCard = read("components/search/MedicationResultCard.tsx");
 const userActions = read("lib/content-detail/user-content-actions.ts");
 const constants = read("lib/search/search-ui-constants.ts");
 const protocols = read("components/protocols/ProtocolsIndexPage.tsx");
-const drugs = read("components/drugs/DrugsIndexPage.tsx");
-const calculators = read("components/calculators/CalculatorsIndexPage.tsx");
-const cat = read("components/cat/CatIndexPage.tsx");
 const discoveryRow = read("components/discovery/DiscoveryListRow.tsx");
 
 check(
   "search_placeholder",
   searchPage.includes("SEARCH_FIELD_PLACEHOLDER") &&
-    SEARCH_FIELD_PLACEHOLDER === "DCI, marque, CAT, protocole, score…",
+    SEARCH_FIELD_PLACEHOLDER === "DCI, marque, protocole, score…",
   "SearchPage placeholder",
 );
 
@@ -53,7 +58,7 @@ check(
 
 check(
   "search_loading_label",
-  searchPage.includes("LoadingIndicator") &&
+  searchPage.includes("PageSkeleton") &&
     searchPage.includes("SEARCH_LOADING_LABEL") &&
     SEARCH_LOADING_LABEL === "Recherche en cours…",
   "SearchPage loading",
@@ -80,7 +85,7 @@ check(
 check(
   "supported_filters",
   JSON.stringify(SEARCH_FILTERS) ===
-    JSON.stringify(["all", "cat", "protocols", "drugs", "calculators"]),
+    JSON.stringify(["all", "protocols", "drugs", "calculators"]),
   "SEARCH_FILTERS",
 );
 
@@ -150,21 +155,21 @@ check(
 
 check(
   "index_discovery_rows",
-  protocols.includes("DiscoveryListRow") &&
+  protocols.includes("ProtocolListCard") &&
     read("components/calculators/CalculatorListRow.tsx").includes(
       "DiscoveryListRow",
     ) &&
-    read("components/drugs/DrugListRow.tsx").includes("DiscoveryListRow"),
+    read("components/drugs/DrugListRow.tsx").includes("commercialName"),
   "index list rows",
 );
 
+const routeState = read("lib/navigation/doctor-route-state.ts");
 check(
   "clinical_frame",
-  protocols.includes('frame="clinical"') &&
-    drugs.includes('frame="clinical"') &&
-    calculators.includes('frame="clinical"') &&
-    cat.includes('frame="clinical"'),
-  "AppShell clinical frame",
+  hasClinicalIndex(routeState, "/protocols") &&
+    hasClinicalIndex(routeState, "/drugs") &&
+    hasClinicalIndex(routeState, "/calculators"),
+  "doctor-route-state clinical frame",
 );
 
 check(
@@ -198,6 +203,23 @@ check(
   discoveryRow.includes("focus-visible:outline") &&
     discoveryRow.includes("<Link"),
   "DiscoveryListRow",
+);
+
+check(
+  "list_card_states",
+  discoveryRow.includes("data-list-state") &&
+    discoveryRow.includes("resolveListSurface") &&
+    discoveryRow.includes("Sparkles") &&
+    read("lib/ui/content-list-state.ts").includes('"new" | "unread" | "read"'),
+  "new/unread/read list surfaces",
+);
+
+check(
+  "medication_search_uses_discovery_row",
+  read("components/search/SearchMedicationResults.tsx").includes(
+    "DiscoveryListRow",
+  ),
+  "SearchMedicationResults",
 );
 
 const failed = checks.filter((item) => !item.ok);

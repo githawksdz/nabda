@@ -8,7 +8,7 @@ import { parseTopLevelRows } from "@/lib/nabda-db/html/drug-table-shape-analyzer
 import { splitTables } from "@/lib/nabda-db/html/drug-table-normalizer";
 import { drugTabForKind } from "@/lib/nabda-db/html/drug-mobile-display-classifier";
 import { htmlToPlainText } from "@/lib/nabda-db/html/html-cleaner";
-import { sanitizePreviewHtml } from "@/lib/content-rendering/protocol";
+import { imgDimensionAttrs, sanitizePreviewHtml } from "@/lib/content-rendering/protocol";
 import { drugSourceMediaHref } from "@/lib/content-rendering/render-state";
 import type { NabdaDrugDetailTab, NabdaDrugSection } from "@/types/nabda-drug-sections";
 import type { NabdaDrugTableCandidate } from "@/types/nabda-drug-tables";
@@ -150,7 +150,7 @@ export function rewriteDrugMediaSrcs(
         return tag;
       }
       const href = drugSourceMediaHref(filename, linkMode === "public", keepInternalQuery, slug);
-      return `<img src="${href}" alt="${alt}">`;
+      return `<img src="${href}" alt="${alt}"${imgDimensionAttrs(tag)}>`;
     }
     return tag;
   });

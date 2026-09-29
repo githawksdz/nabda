@@ -25,7 +25,7 @@ export function SoftMessage({ type = "info", children }: SoftMessageProps) {
     <div
       role="status"
       className={cn(
-        "flex items-start gap-2 rounded-md px-3 py-2 text-[13px] leading-snug",
+        "flex items-start gap-2 rounded-md px-3 py-2 text-label-sm leading-snug",
         tones[type],
       )}
     >

@@ -26,7 +26,7 @@ export function TextField({
 
   return (
     <div className="flex flex-col gap-1.5">
-      <label htmlFor={id} className="text-label-md text-text-primary">
+      <label htmlFor={id} className="text-label-sm text-text-primary">
         {label}
       </label>
       <input
@@ -35,7 +35,7 @@ export function TextField({
         aria-invalid={errorText ? true : undefined}
         aria-describedby={describedBy}
         className={cn(
-          "motion-field min-h-[var(--size-input)] rounded-[var(--radius-control)] bg-surface-muted px-3.5 text-body-md text-text-primary",
+          "motion-field min-h-[var(--size-input)] rounded-[var(--radius-control)] bg-surface-muted px-3.5 text-base text-text-primary",
           "placeholder:text-text-secondary",
           disabled && "cursor-not-allowed text-text-disabled",
           errorText && "ring-1 ring-status-danger",
@@ -109,7 +109,7 @@ export function SearchField({
         autoCorrect="off"
         spellCheck={false}
         enterKeyHint="search"
-        className="h-full min-w-0 flex-1 bg-transparent text-body-md placeholder:text-text-secondary"
+        className="h-full min-w-0 flex-1 bg-transparent text-base placeholder:text-text-secondary"
       />
       {value && onClear ? (
         <button

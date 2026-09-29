@@ -354,6 +354,7 @@ export function protocolPayload(identity: ProtocolIdentity, slug: string): Recor
     review_status: "unreviewed",
     visibility: "admin_only",
     is_featured: false,
+    is_new: false,
     published_at: null,
     source_note: "nabda_db identity import. Clinical body locked.",
     source_id: identity.source_id,
@@ -430,6 +431,7 @@ export function drugPayload(identity: DrugIdentity, slug: string): Record<string
     review_status: "unreviewed",
     visibility: "admin_only",
     is_featured: false,
+    is_new: false,
     source_note: "nabda_db DCI identity. Strength labels are availability metadata, not posology.",
     source_id: identity.source_id,
     source_prefix: identity.source_prefix,
@@ -483,6 +485,7 @@ export function calculatorPayload(
       dosing_or_high_risk_not_enabled: identity.risk_classification === "dosing_or_high_risk",
     },
     is_featured: false,
+    is_new: false,
     usage_context: identity.risk_classification,
     source_id: identity.source_id,
     source_prefix: identity.source_prefix,
@@ -516,11 +519,11 @@ function linkSourceId(
 function protocolLinkPayload(args: {
   protocolId: string | null;
   protocolSourceId: string;
-  targetType: "protocol" | "cat" | "drug" | "calculator";
+  targetType: "protocol" | "drug" | "calculator";
   targetId: string | null;
   targetSlug: string;
   label: string;
-  relationship: "related" | "primary_cat" | "linked_drug" | "linked_calculator";
+  relationship: "related" | "linked_drug" | "linked_calculator";
   orderIndex: number;
   targetSourceId: string;
 }): Record<string, unknown> {
@@ -664,56 +667,8 @@ export function buildImportPlan(
   }
 
   const catRows: PlannedRow[] = [];
-  const catBySource = new Map<string, PlannedRow>();
-  for (const identity of loaded.cats) {
-    const resolved = resolveImportSlug(
-      identity.slug,
-      identity.source_id,
-      existingCats.bySourceId,
-      existingCats.bySlug,
-      claimedCatSlugs,
-    );
-    claimedCatSlugs.add(resolved.slug);
-    const existing = findExisting(
-      identity.source_id,
-      resolved.slug,
-      existingCats.bySourceId,
-      existingCats.bySlug,
-    );
-    const decided = decideAction(existing);
-    const protocol = protocolBySource.get(identity.protocol_source_id);
-    const row: PlannedRow = {
-      table: "cat_maps",
-      action: decided.action,
-      source_id: identity.source_id,
-      slug: resolved.slug,
-      conflict: resolved.conflict || decided.conflict,
-      payload: catPayload(identity, resolved.slug, null),
-    };
-    row.payload._protocol_source_id = identity.protocol_source_id;
-    row.payload._protocol_plan_slug = protocol?.slug ?? null;
-    if (existing && decided.action === "update_identity") {
-      row.payload.review_status = preserveReviewStatus(existing.review_status);
-      if (existing.map_json && typeof existing.map_json === "object") {
-        const map = existing.map_json as { nodes?: unknown[] };
-        if (Array.isArray(map.nodes) && map.nodes.length > 0) {
-          row.action = "skip_protected";
-          row.conflict = "existing cat map_json has nodes; graph not overwritten";
-        }
-      }
-    }
-    if (row.conflict) {
-      conflicts.push({
-        table: "cat_maps",
-        source_id: identity.source_id,
-        slug: resolved.slug,
-        reason: row.conflict,
-      });
-    }
-    catRows.push(row);
-    catBySource.set(identity.source_id, row);
-    tallyAction(plannedActions, "cat_maps", row.action);
-  }
+  void existingCats;
+  void claimedCatSlugs;
 
   const drugRows: PlannedRow[] = [];
   const drugBySource = new Map<string, PlannedRow>();
@@ -826,26 +781,6 @@ export function buildImportPlan(
       continue;
     }
     let order = 0;
-    const cat = catBySource.get(protocol.source_id);
-    if (cat && cat.action !== "skip_protected") {
-      pushLink({
-        table: "protocol_links",
-        action: "insert",
-        source_id: linkSourceId(protocol.source_id, "primary_cat", protocol.source_id),
-        slug: cat.slug,
-        payload: protocolLinkPayload({
-          protocolId: null,
-          protocolSourceId: protocol.source_id,
-          targetType: "cat",
-          targetId: null,
-          targetSlug: cat.slug,
-          label: cat.payload.title as string,
-          relationship: "primary_cat",
-          orderIndex: order++,
-          targetSourceId: protocol.source_id,
-        }),
-      });
-    }
     for (const relatedId of protocol.linked_protocol_ids) {
       const related = protocolBySource.get(relatedId);
       if (!related) {

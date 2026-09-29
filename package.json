@@ -4,7 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
+    "dev:webpack": "next dev --webpack",
     "dev:lan": "next dev --hostname 0.0.0.0 --port 3000",
+    "dev:lan:webpack": "next dev --webpack --hostname 0.0.0.0 --port 3000",
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
@@ -24,15 +26,20 @@
     "check:search-index-ui": "npx tsx scripts/verify-search-index-ui.ts",
     "check:clinical-detail-ui": "npx tsx scripts/verify-clinical-detail-ui.ts",
     "check:calculator-ui": "npx tsx scripts/verify-calculator-ui.ts",
-    "check:offline-profile-ui": "npx tsx scripts/verify-offline-profile-ui.ts"
+    "check:offline-profile-ui": "npx tsx scripts/verify-offline-profile-ui.ts",
+    "check:persistent-shell": "npx tsx scripts/verify-persistent-shell.ts",
+    "check:promotional-cards": "npx tsx scripts/verify-promotional-cards.ts"
   },
   "dependencies": {
     "@supabase/ssr": "^0.12.6",
     "@supabase/supabase-js": "^2.115.0",
+    "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "framer-motion": "^13.2.0",
+    "healthicons-react": "^3.5.0",
     "lucide-react": "^1.41.0",
     "next": "16.3.4",
+    "radix-ui": "^1.6.7",
     "react": "19.2.8",
     "react-dom": "19.2.8",
     "react-zoom-pan-pinch": "^4.2.0",

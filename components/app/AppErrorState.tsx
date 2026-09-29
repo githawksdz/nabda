@@ -8,6 +8,7 @@ type AppErrorStateProps = {
   description?: string;
   onRetry?: () => void;
   homeHref?: string;
+  fill?: "viewport" | "content";
 };
 
 export function AppErrorState({
@@ -15,9 +16,16 @@ export function AppErrorState({
   description = "Nabda n’a pas pu charger cette page pour le moment.",
   onRetry,
   homeHref = "/home",
+  fill = "viewport",
 }: AppErrorStateProps) {
   return (
-    <div className="layout-gutter layout-workspace mx-auto flex min-h-dvh w-full flex-col justify-center gap-4 bg-background pb-[calc(24px+env(safe-area-inset-bottom,0px))] pt-[calc(24px+env(safe-area-inset-top,0px))] text-on-surface">
+    <div
+      className={
+        fill === "content"
+          ? "flex min-h-[40dvh] w-full flex-col justify-center gap-4 py-16 text-on-surface"
+          : "layout-gutter layout-workspace mx-auto flex min-h-dvh w-full flex-col justify-center gap-4 bg-background pb-[calc(24px+env(safe-area-inset-bottom,0px))] pt-[calc(24px+env(safe-area-inset-top,0px))] text-on-surface"
+      }
+    >
       <h1 className="text-headline-md">{title}</h1>
       <p className="text-body-md text-on-surface-variant">{description}</p>
       <div className="flex flex-col gap-2 pt-2">
@@ -44,14 +52,16 @@ export function AppErrorState({
 export function AppErrorBoundaryFallback({
   error,
   reset,
+  fill = "viewport",
 }: {
   error: Error & { digest?: string };
   reset: () => void;
+  fill?: "viewport" | "content";
 }) {
   useEffect(() => {
     // digest only — never stack / secrets
     console.error(JSON.stringify({ event: "app_error", digest: error.digest }));
   }, [error]);
 
-  return <AppErrorState onRetry={reset} />;
+  return <AppErrorState onRetry={reset} fill={fill} />;
 }

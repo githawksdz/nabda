@@ -36,28 +36,20 @@ export const PROFILE_COPY = {
   contextSubtitle: "Paramètres & profil clinique",
   completionTitle: "Complétez votre profil",
   completionBody:
-    "Personnalisez vos CAT, scores fréquents et contenus prioritaires selon votre pratique.",
+    "Personnalisez vos protocoles, scores fréquents et contenus prioritaires selon votre pratique.",
   completionPack: "Pack de démarrage disponible",
   completionCta: "Compléter maintenant",
   completionDefer: "Plus tard",
   completionHref: "/profile?complete=1",
   practiceTitle: "Pratique & contexte",
-  preferencesTitle: "Préférences d’application",
   accountTitle: "Compte & sécurité",
   unsetValue: "Non renseigné",
   experienceLabel: "Niveau d’expérience",
   regionLabel: "Région",
   institutionLabel: "Structure",
   practiceContextLabel: "Contexte de pratique",
-  catUpdatesLabel: "Mises à jour des CAT",
-  catUpdatesError:
-    "Impossible d’enregistrer cette préférence pour le moment. Réessayez.",
   offlineCacheLabel: "Mise en cache hors-ligne",
   offlineCacheValue: "Pro",
-  languageLabel: "Langue du référentiel",
-  languageValue: "Français",
-  displayLabel: "Affichage",
-  displayValue: "Automatique",
   securityLabel: "Sécurité & mot de passe",
   securityHref: "/auth/update-password",
   privacyLabel: "Confidentialité des données",
@@ -79,7 +71,7 @@ export const PERSONALIZATION_COPY = {
   prioritiesLabel: "Priorités",
   rewardTitle: "Pack de démarrage personnalisé",
   rewardBody:
-    "Un raccourci vers vos scores, CAT et fiches fréquentes, sans recherche manuelle.",
+    "Un raccourci vers vos scores, protocoles et fiches fréquentes, sans recherche manuelle.",
   rewardStatus: "Prêt à configurer",
   activate: "Activer mon espace personnalisé",
   activating: "Configuration en cours…",
@@ -91,7 +83,6 @@ export const PERSONALIZATION_COPY = {
 
 export const FAVORITE_FILTER_CHIPS: PersonalFilterChip[] = [
   { id: "all", label: "Tous" },
-  { id: "cat", label: "CAT" },
   { id: "protocol", label: "Protocoles" },
   { id: "calculator", label: "Scores" },
   { id: "drug", label: "Médicaments" },
@@ -100,9 +91,8 @@ export const FAVORITE_FILTER_CHIPS: PersonalFilterChip[] = [
 export const HISTORY_FILTER_CHIPS: PersonalFilterChip[] = [
   { id: "all", label: "Tous" },
   { id: "calculator", label: "Scores" },
-  { id: "cat", label: "CAT" },
-  { id: "drug", label: "Médicaments" },
   { id: "protocol", label: "Protocoles" },
+  { id: "drug", label: "Médicaments" },
 ];
 
 export const HISTORY_GROUP_TITLES = {

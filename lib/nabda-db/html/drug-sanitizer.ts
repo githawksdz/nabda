@@ -19,7 +19,7 @@ import {
   titleForDrugKey,
 } from "@/lib/nabda-db/html/drug-section-classifier";
 import { analyzeDrugTables, tableDepth } from "@/lib/nabda-db/html/drug-table-normalizer";
-import { htmlToPlainText } from "@/lib/nabda-db/html/html-cleaner";
+import { htmlToPlainText, imgDimensionAttrs } from "@/lib/nabda-db/html/html-cleaner";
 import { sourceIdToSlug } from "@/lib/nabda-db/slugs";
 import type {
   DrugSanitizeInput,
@@ -162,7 +162,7 @@ export function sanitizeDrugHtml(html: string): {
     if (src) keptImageSrcs.push(src);
     const altMatch = tag.match(/\balt\s*=\s*("([^"]*)"|'([^']*)')/i);
     const alt = (altMatch?.[2] ?? altMatch?.[3] ?? "").replace(/"/g, "");
-    return `<img src="${src.replace(/"/g, "")}" alt="${alt}">`;
+    return `<img src="${src.replace(/"/g, "")}" alt="${alt}"${imgDimensionAttrs(tag)}>`;
   });
 
   return {

@@ -20,14 +20,14 @@ export function RecentConsultations({
     <section>
       <div className="mb-2 flex items-center justify-between">
         <div className="flex items-center gap-1.5">
-          <History className="size-4 text-on-surface-variant" strokeWidth={1.75} />
-          <h2 className="text-headline-sm">Récemment consultés</h2>
+          <History className="size-3.5 text-on-surface-variant" strokeWidth={1.75} />
+          <h2 className="text-label-md">Récemment consultés</h2>
         </div>
         {!cleared ? (
           <button
             type="button"
             onClick={onClear}
-            className="text-label-md text-on-surface-variant"
+            className="text-label-sm text-on-surface-variant"
           >
             Effacer
           </button>
@@ -49,8 +49,8 @@ export function RecentConsultations({
                   <HomeIcon name={item.icon} className="size-5 text-on-surface" />
                 </span>
                 <span className="min-w-0 flex-1">
-                  <span className="block text-body-md font-medium">{item.title}</span>
-                  <span className="mt-0.5 block text-body-sm text-on-surface-variant">
+                  <span className="block text-label-md">{item.title}</span>
+                  <span className="mt-0.5 block text-label-sm text-on-surface-variant">
                     {item.meta}
                   </span>
                 </span>

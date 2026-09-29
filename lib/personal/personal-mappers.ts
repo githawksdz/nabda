@@ -24,14 +24,12 @@ import {
 } from "@/types/database";
 
 export const PERSONAL_ENTITY_TYPES = [
-  "cat",
   "protocol",
   "calculator",
   "drug",
 ] as const satisfies readonly PersonalEntityType[];
 
 export const ENTITY_TYPE_LABELS: Record<PersonalEntityType, string> = {
-  cat: "CAT",
   protocol: "Protocole",
   calculator: "Score",
   drug: "Médicament",
@@ -39,10 +37,6 @@ export const ENTITY_TYPE_LABELS: Record<PersonalEntityType, string> = {
 
 export const ENTITY_SUBTITLES: Record<PersonalEntityType, { saved: string; viewed: string }> =
   {
-    cat: {
-      saved: "Arbre décisionnel sauvegardé",
-      viewed: "Arbre décisionnel",
-    },
     protocol: {
       saved: "Synthèse clinique sauvegardée",
       viewed: "Synthèse clinique",
@@ -69,12 +63,8 @@ export function resumeHref(
   const base = personalHref(entityType, slug, "history");
   const section =
     typeof metadata?.section === "string" ? metadata.section.trim() : "";
-  const tab = typeof metadata?.tab === "string" ? metadata.tab.trim() : "";
   if (entityType === "protocol" && section) {
     return `${base}?section=${encodeURIComponent(section)}`;
-  }
-  if (entityType === "cat" && tab) {
-    return `${base}?tab=${encodeURIComponent(tab)}`;
   }
   return base;
 }
@@ -85,8 +75,6 @@ export function personalHref(
   variant: "favorite" | "history" = "history",
 ): string {
   switch (entityType) {
-    case "cat":
-      return variant === "favorite" ? `/cat/${slug}?tab=carte` : `/cat/${slug}`;
     case "protocol":
       return `/protocols/${slug}`;
     case "calculator":
@@ -113,6 +101,7 @@ export type CatalogIdentity = {
   status?: string | null;
   reviewStatus?: string | null;
   visibility?: string | null;
+  categorySlug?: string | null;
 };
 
 export function isCatalogReadable(
@@ -286,6 +275,7 @@ export function mapHistoryRow(
     href: resumeHref(input.itemType, input.itemSlug, metadata),
     viewedAt: input.viewedAt,
     kindLabel: copy.kindLabel,
+    categorySlug: input.catalog?.categorySlug?.trim() || undefined,
     metadata,
   };
 }
@@ -306,7 +296,6 @@ export function chipsWithCounts(
 ): PersonalFilterChip[] {
   const counts: Record<PersonalFilterId, number> = {
     all: items.length,
-    cat: 0,
     protocol: 0,
     calculator: 0,
     drug: 0,
@@ -451,8 +440,8 @@ export function mapPlanPresentation(
     title: "Plan Découverte",
     statusLabel: "Freemium actif",
     body: "Accès standard aux modules disponibles.",
-    actionLabel: "Voir Praticien Pro",
-    actionHref: "/offline",
+    actionLabel: "Voir Nabda Pro",
+    actionHref: "/pro",
   };
 }
 

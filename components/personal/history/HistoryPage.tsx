@@ -1,12 +1,10 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AppShell } from "@/components/app/AppShell";
 import { PersonalEmptyState } from "@/components/personal/PersonalEmptyState";
 import { PersonalFilterChips } from "@/components/personal/PersonalFilterChips";
 import { HistoryGroup } from "./HistoryGroup";
 import { HistoryPrivacyNotice } from "./HistoryPrivacyNotice";
-import { PersonalLibraryTabs } from "@/components/personal/PersonalLibraryTabs";
 import { HistoryRetentionFooter } from "./HistoryRetentionFooter";
 import {
   HISTORY_COPY,
@@ -69,55 +67,44 @@ export function HistoryPage({ items, source = "mock" }: HistoryPageProps) {
   }
 
   return (
-    <AppShell title={HISTORY_COPY.title} navVariant="text" pageHeading={false}>
-      <div className="flex flex-col gap-5 pt-2">
-        <section className="flex flex-col gap-1">
-          <h1 className="text-headline-lg">{HISTORY_COPY.title}</h1>
-          <p className="text-body-md text-on-surface-variant">
-            {HISTORY_COPY.subtitle}
-          </p>
-        </section>
+    <div className="flex flex-col gap-5 pt-2">
+      <HistoryPrivacyNotice />
 
-        <PersonalLibraryTabs />
+      <PersonalFilterChips
+        chips={chips}
+        active={filter}
+        onSelect={setFilter}
+      />
 
-        <HistoryPrivacyNotice />
-
-        <PersonalFilterChips
-          chips={chips}
-          active={filter}
-          onSelect={setFilter}
+      {isEmpty ? (
+        <PersonalEmptyState
+          title={HISTORY_COPY.emptyTitle}
+          description={HISTORY_COPY.emptyDescription}
+          href={HISTORY_COPY.emptyHref}
+          actionLabel={HISTORY_COPY.emptyAction}
+          icon="history"
         />
-
-        {isEmpty ? (
-          <PersonalEmptyState
-            title={HISTORY_COPY.emptyTitle}
-            description={HISTORY_COPY.emptyDescription}
-            href={HISTORY_COPY.emptyHref}
-            actionLabel={HISTORY_COPY.emptyAction}
-            icon="history"
-          />
-        ) : filterEmpty ? (
-          <PersonalEmptyState
-            title="Aucune consultation dans ce filtre"
-            description="Essayez un autre type de contenu ou réaffichez tout l’historique."
-            actionLabel="Voir tout l’historique"
-            icon="history"
-            onAction={() => setFilter("all")}
-          />
-        ) : (
-          <div className="flex flex-col gap-5">
-            {groups.map((group) => (
-              <HistoryGroup key={group.id} group={group} />
-            ))}
-          </div>
-        )}
-
-        <HistoryRetentionFooter
-          disabled={isEmpty}
-          error={clearError}
-          onClear={handleClear}
+      ) : filterEmpty ? (
+        <PersonalEmptyState
+          title="Aucune consultation dans ce filtre"
+          description="Essayez un autre type de contenu ou réaffichez tout l’historique."
+          actionLabel="Voir tout l’historique"
+          icon="history"
+          onAction={() => setFilter("all")}
         />
-      </div>
-    </AppShell>
+      ) : (
+        <div className="flex flex-col gap-5">
+          {groups.map((group) => (
+            <HistoryGroup key={group.id} group={group} />
+          ))}
+        </div>
+      )}
+
+      <HistoryRetentionFooter
+        disabled={isEmpty}
+        error={clearError}
+        onClear={handleClear}
+      />
+    </div>
   );
 }

@@ -12,8 +12,8 @@ export const RECENT_CONSULTATIONS: RecentConsultation[] = [
   {
     id: "recent-cat",
     title: "Douleur thoracique",
-    meta: "CAT · Urgences · il y a 2h",
-    href: "/cat/douleur-thoracique",
+    meta: "Protocole · Urgences · il y a 2h",
+    href: "/protocols/douleur-thoracique",
     icon: "git-branch",
   },
   {
@@ -34,15 +34,15 @@ export const RECENT_CONSULTATIONS: RecentConsultation[] = [
 
 export const DOULEUR_GROUPS: SearchResultGroup[] = [
   {
-    id: "cat",
-    title: "Conduite à Tenir (2)",
-    subtitle: "Algorithmes d'urgence",
+    id: "protocols-shift",
+    title: "Protocoles (2)",
+    subtitle: "Conduites cliniques",
     count: 2,
     dotClassName: "bg-primary",
     results: [
       {
         id: "cat-thorax",
-        type: "cat",
+        type: "protocol",
         slug: "douleur-thoracique",
         title: "Douleur thoracique aiguë",
         statusLabel: "Contenu en préparation",
@@ -50,11 +50,11 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
         description:
           "Tri sélectif SCA ST+ / non ST+, embolie pulmonaire, dissection aortique.",
         footer: "Urgences · Cardiologie",
-        href: "/cat/douleur-thoracique",
+        href: "/protocols/douleur-thoracique",
       },
       {
         id: "cat-abdomen",
-        type: "cat",
+        type: "protocol",
         slug: "douleur-abdominale-adulte",
         title: "Douleur abdominale de l'adulte",
         statusLabel: "Urgent",
@@ -62,7 +62,7 @@ export const DOULEUR_GROUPS: SearchResultGroup[] = [
         description:
           "Arbre décisionnel chirurgical vs médical, imagerie en coupe & bilans.",
         footer: "Chirurgie viscérale · Scanner injecté",
-        href: "/cat/douleur-abdominale-adulte",
+        href: "/protocols/douleur-abdominale-adulte",
       },
     ],
   },
@@ -218,19 +218,19 @@ export const AMOX_MEDICATIONS: MedicationSearchResult[] = [
 export const ZERO_FALLBACK_PROTOCOLS: SearchResult[] = [
   {
     id: "sca",
-    type: "cat",
+    type: "protocol",
     slug: "syndrome-coronarien-aigu-st-plus",
     title: "Syndrome coronarien aigu (SCA ST+)",
     footer: "Cardiologie • Mis à jour il y a 3j",
-    href: "/cat/syndrome-coronarien-aigu-st-plus",
+    href: "/protocols/syndrome-coronarien-aigu-st-plus",
   },
   {
     id: "dra",
-    type: "cat",
+    type: "protocol",
     slug: "detresse-respiratoire-aigue-adulte",
     title: "Détresse respiratoire aiguë adulte",
-    footer: "Pneumologie / Réanimation • CAT immédiate",
-    href: "/cat/detresse-respiratoire-aigue-adulte",
+    footer: "Pneumologie / Réanimation",
+    href: "/protocols/detresse-respiratoire-aigue-adulte",
   },
 ];
 

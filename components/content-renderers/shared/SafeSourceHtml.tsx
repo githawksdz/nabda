@@ -36,7 +36,7 @@ export function SafeSourceHtml({
   }
   return (
     <div
-      className={className ?? "source-html text-body-sm text-on-surface"}
+      className={className ?? "source-html text-on-surface"}
       // Sanitized dry-run HTML only. Scripts, handlers, and javascript: URLs stripped.
       dangerouslySetInnerHTML={{ __html: sanitized }}
     />

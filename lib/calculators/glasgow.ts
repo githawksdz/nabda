@@ -88,11 +88,11 @@ export const GLASGOW_GROUPS: {
 
 export const GLASGOW_LINKED_RESOURCES: LinkedCalculatorResource[] = [
   {
-    id: "cat-coma",
-    title: "CAT Coma & Glasgow < 8",
-    subtitle: "Consulter la CAT liée selon le contexte clinique.",
-    href: "/cat/coma-glasgow-inferieur-8",
-    kind: "cat",
+    id: "protocol-coma",
+    title: "Protocole coma et Glasgow < 8",
+    subtitle: "Consulter le protocole lié selon le contexte clinique.",
+    href: "/protocols/coma-glasgow-inferieur-8",
+    kind: "protocol",
   },
   {
     id: "protocol-tc",

@@ -473,7 +473,9 @@ export function buildSourcePayloadPlan(input: {
   liveDb: SourcePayloadPlan["live_db"];
   existingRowKeys?: Map<string, Set<string>>;
 }): SourcePayloadPlan {
-  const rows = buildSourcePayloadRows(input.root, input.loaded, input.maps);
+  const rows = buildSourcePayloadRows(input.root, input.loaded, input.maps).filter(
+    (row) => row.table !== SOURCE_PAYLOAD_TABLES.catSteps,
+  );
   const rowsByTable: Record<string, SourcePayloadRow[]> = {};
   for (const row of rows) {
     const list = rowsByTable[row.table] ?? [];

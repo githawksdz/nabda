@@ -3,12 +3,6 @@
  * Uses the user/anon RLS client — never the service role on a request path.
  */
 
-import {
-  collectCatLinkedTools,
-  collectCatPreviewStats,
-  flowchartFilename,
-  mapFlowchartImages,
-} from "@/lib/content-rendering/cat";
 import { collectPreviewStats } from "@/lib/content-rendering/protocol";
 import {
   collectDrugPreviewStats,
@@ -18,7 +12,6 @@ import {
   resolveDrugPreviewSlug,
 } from "@/lib/content-rendering/drug";
 import { resolveCalculatorPreviewSlug } from "@/lib/content-rendering/calculator";
-import { isSafeMediaFilename } from "@/lib/content-data/source-media-paths";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import { createRlsClient } from "@/lib/supabase/rls-client";
 import type { SupabaseClient } from "@supabase/supabase-js";
@@ -31,7 +24,6 @@ import {
   SOURCE_PAYLOAD_TABLES,
 } from "@/lib/nabda-db/source-payload-constants";
 import type { NabdaProtocolSection } from "@/types/nabda-protocol-sections";
-import type { NabdaCatStep } from "@/types/nabda-cat-steps";
 import type { NabdaDrugSection } from "@/types/nabda-drug-sections";
 import type { NabdaDrugTableCandidate } from "@/types/nabda-drug-tables";
 import type { ProtocolRenderSource } from "@/types/content-rendering-protocol";
@@ -50,9 +42,6 @@ type PayloadDbRow = {
 };
 
 /** Filename allowlist only — disk existence is checked by /content-media/* routes. */
-function catMediaFilenameOk(filename: string): boolean {
-  return isSafeMediaFilename(filename);
-}
 
 export function canLoadSupabaseSourcePayloads(): boolean {
   return isSupabaseConfigured();
@@ -140,67 +129,11 @@ export async function loadProtocolRenderSourceFromSupabase(
 }
 
 export async function loadCatRenderSourceFromSupabase(
-  slug: string,
-  keepInternalQuery = false,
-  linkMode: ContentLinkMode = "public",
+  _slug: string,
+  _keepInternalQuery = false,
+  _linkMode: ContentLinkMode = "public",
 ): Promise<CatRenderSource | null> {
-  if (!(await authorizeParent("cat", slug))) {
-    return null;
-  }
-  const rows = await fetchEntityRows(SOURCE_PAYLOAD_TABLES.catSteps, slug);
-  if (!rows.length) {
-    return null;
-  }
-  const bundle = rows.find((row) => row.payload_item_id === SOURCE_PAYLOAD_BUNDLE_ITEM_ID);
-  const steps = rows
-    .filter((row) => row.entity_type === "cat_step")
-    .map((row) => row.payload as NabdaCatStep);
-  if (!steps.length && !bundle) {
-    return null;
-  }
-  const bundlePayload = bundle?.payload ?? {};
-  const flowchartImages = Array.isArray(bundlePayload.flowchartImages)
-    ? (bundlePayload.flowchartImages as string[])
-    : [];
-  const mediaFiles = new Set(
-    flowchartImages
-      .map((sourcePath) => flowchartFilename(sourcePath))
-      .filter((filename) => catMediaFilenameOk(filename)),
-  );
-  const images = mapFlowchartImages(flowchartImages, mediaFiles, keepInternalQuery, linkMode, slug);
-  const extraWarnings = Array.isArray(bundlePayload.warnings)
-    ? [...(bundlePayload.warnings as string[])]
-    : [];
-  if (images.some((image) => !image.available)) {
-    extraWarnings.push("static_png_missing");
-  }
-  const hasStaticFlowchartImage = Boolean(bundlePayload.hasStaticFlowchartImage);
-  const hasExtractedLinearSteps = Boolean(bundlePayload.hasExtractedLinearSteps ?? steps.length > 0);
-  if (hasStaticFlowchartImage && images.length === 0) {
-    extraWarnings.push("static_png_missing");
-  }
-
-  return {
-    slug,
-    title: String(bundlePayload.protocolTitle ?? slug),
-    sourceId: steps[0]?.protocolSourceId ?? "",
-    extractionMode: (bundlePayload.extractionMode as CatRenderSource["extractionMode"]) ?? "none",
-    hasStaticFlowchartImage,
-    hasExtractedLinearSteps,
-    hasInteractiveGraph: false,
-    imagemapStripped: Boolean(bundlePayload.imagemapStripped),
-    protocolWarnings: [...new Set(extraWarnings)],
-    steps,
-    images,
-    warningItems: [],
-    linkedTools: collectCatLinkedTools(steps, keepInternalQuery, linkMode),
-    stats: collectCatPreviewStats(
-      steps,
-      images,
-      Boolean(bundlePayload.imagemapStripped),
-      [],
-    ),
-  };
+  return null;
 }
 
 async function resolveDrugPayloadEntitySlug(slug: string): Promise<string | null> {

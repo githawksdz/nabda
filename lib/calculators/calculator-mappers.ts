@@ -125,6 +125,8 @@ export function summaryFromDbCalculator(row: DbCalculator): CalculatorSummary {
     iconName: CALCULATOR_ICONS[slug] ?? CALCULATOR_ICONS[row.slug] ?? "activity",
     searchTerms: [row.slug, row.title, row.short_title ?? "", row.description ?? ""],
     frequentlyUsed: row.is_featured,
+    isNew: Boolean(row.is_new),
+    categorySlug: row.category_slug ?? undefined,
   };
 }
 
@@ -163,6 +165,8 @@ export function overlayDbCalculator(
     ),
     visibility: mapCalculatorVisibility(row.visibility),
     frequentlyUsed: row.is_featured || base.frequentlyUsed,
+    isNew: Boolean(row.is_new) || base.isNew,
+    categorySlug: row.category_slug ?? base.categorySlug,
   };
 }
 

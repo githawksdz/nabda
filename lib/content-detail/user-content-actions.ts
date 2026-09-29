@@ -4,17 +4,20 @@ import type { FavoriteMutationResult } from "@/lib/ui/favorite-result";
 import { createClient } from "@/lib/supabase/server";
 import { isSupabaseConfigured } from "@/lib/supabase/env";
 import type { FavoriteItemType, HistoryItemType } from "@/types/content";
+import {
+  canonicalVisitType,
+  visitedContentKey,
+  type VisitItemType,
+} from "@/lib/ui/content-list-state";
 
 const FAVORITE_TYPES = new Set<FavoriteItemType>([
   "protocol",
-  "cat",
   "calculator",
   "drug",
 ]);
 
 const HISTORY_TYPES = new Set<HistoryItemType>([
   "protocol",
-  "cat",
   "calculator",
   "drug",
   "search",
@@ -173,7 +176,59 @@ export async function recordContentView(
     if (error) {
       console.warn("recordContentView", error.message);
     }
+
+    const visitType = canonicalVisitType(entityType);
+    if (visitType) {
+      const now = new Date().toISOString();
+      const { error: visitError } = await supabase.from("user_content_visits").upsert(
+        {
+          user_id: user.id,
+          item_type: visitType,
+          item_slug: entityId,
+          last_viewed_at: now,
+        },
+        { onConflict: "user_id,item_type,item_slug" },
+      );
+      if (visitError) {
+        console.warn("recordContentView visit", visitError.message);
+      }
+    }
   } catch (error) {
     console.warn("recordContentView", error);
+  }
+}
+
+export async function getVisitedContentKeys(): Promise<string[]> {
+  const supabase = await getSupabaseOrNull();
+  if (!supabase) {
+    return [];
+  }
+
+  try {
+    const {
+      data: { user },
+    } = await supabase.auth.getUser();
+    if (!user) {
+      return [];
+    }
+
+    const { data, error } = await supabase
+      .from("user_content_visits")
+      .select("item_type, item_slug")
+      .eq("user_id", user.id);
+
+    if (error) {
+      console.warn("getVisitedContentKeys", error.message);
+      return [];
+    }
+
+    return (data ?? [])
+      .map((row) =>
+        visitedContentKey(row.item_type as VisitItemType, row.item_slug),
+      )
+      .filter((key): key is string => Boolean(key));
+  } catch (error) {
+    console.warn("getVisitedContentKeys", error);
+    return [];
   }
 }

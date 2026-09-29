@@ -64,3 +64,9 @@ export function getFlowchartDemoFixtures() {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   return require("@/lib/demo-fixtures/flowchart") as typeof import("@/lib/demo-fixtures/flowchart");
 }
+
+export function getPromotionalCardsDemoFixtures() {
+  if (!demoEnabled()) return null;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  return require("@/lib/demo-fixtures/promotions") as typeof import("@/lib/demo-fixtures/promotions");
+}

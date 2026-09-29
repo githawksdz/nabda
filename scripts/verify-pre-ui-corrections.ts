@@ -173,11 +173,12 @@ check(
 );
 
 const header = read("components/app/AppHeader.tsx");
-const detail = read("components/content-detail/ClinicalDetailFrame.tsx");
+const routeState = read("lib/navigation/doctor-route-state.ts");
 check(
   "detail_shell_is_not_second_h1",
   header.includes("pageHeading") &&
-    detail.includes("pageHeading={false}") &&
+    routeState.includes("pageHeading: false") &&
+    routeState.includes('prefix: "/calculators/"') &&
     read("components/calculators/CalculatorIdentity.tsx").includes("<h1"),
   "clinical title remains the h1",
 );

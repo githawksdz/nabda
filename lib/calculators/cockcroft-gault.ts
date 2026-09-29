@@ -87,11 +87,11 @@ export const COCKCROFT_LINKED_RESOURCES: LinkedCalculatorResource[] = [
     disabled: true,
   },
   {
-    id: "cat-ir",
-    title: "CAT insuffisance rénale",
+    id: "protocol-ir",
+    title: "Protocole insuffisance rénale",
     subtitle: "Consulter selon le contexte clinique.",
-    href: "/cat/insuffisance-renale",
-    kind: "cat",
+    href: "/protocols/insuffisance-renale",
+    kind: "protocol",
   },
   {
     id: "ckd-epi",

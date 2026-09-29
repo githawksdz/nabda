@@ -68,10 +68,10 @@ export const proUser: HomeUser = {
 export const starterRecommendations: RecommendationRow[] = [
   {
     id: "starter-cat",
-    title: "Découvrir les CAT",
-    specialty: "Arbres décisionnels d'urgence et protocoles clairs",
+    title: "Découvrir les protocoles",
+    specialty: "Protocoles d'urgence clairs",
     typeLabel: "",
-    href: "/cat",
+    href: "/protocols",
     icon: "git-branch",
   },
   {
@@ -97,8 +97,8 @@ export const incompleteUpdates: HomeUpdate[] = [
     id: "update-douleur",
     label: "Nouveau",
     title: "Douleur thoracique",
-    meta: "Urgences · CAT",
-    href: "/cat/douleur-thoracique",
+    meta: "Urgences · Protocole",
+    href: "/protocols/douleur-thoracique",
   },
   {
     id: "update-fievre",
@@ -112,12 +112,12 @@ export const incompleteUpdates: HomeUpdate[] = [
 export const featuredPourVous: HomeUpdate = {
   id: "featured-douleur",
   label: "Nouveau",
-  title: "Nouvelle CAT : douleur thoracique",
+  title: "Nouveau protocole : douleur thoracique",
   description:
     "Prise en charge diagnostique initiale et stratification du risque selon ESC 2024. Protocole troponine ultrasensible hs-cTn.",
-  meta: "Urgences · CAT",
+  meta: "Urgences · Protocole",
   footer: "< 2 min de lecture · Publié",
-  href: "/cat/douleur-thoracique",
+  href: "/protocols/douleur-thoracique",
 };
 
 export const usefulScores: ScoreShortcut[] = [
@@ -169,8 +169,8 @@ export const gardeRecommendations: RecommendationRow[] = [
     id: "reco-fievre",
     title: "Fièvre inexpliquée de l'adulte",
     specialty: "Médecine interne",
-    typeLabel: "CAT",
-    href: "/cat/fievre-inexpliquee",
+    typeLabel: "Protocole",
+    href: "/protocols/fievre-inexpliquee",
     icon: "thermometer",
   },
 ];
@@ -183,7 +183,7 @@ export const clinicalWatchFeatured: HomeUpdate = {
     "Intégration du score d'Ottawa et fenêtre de sensibilité scanographique à 6h. Conduite actualisée.",
   timeLabel: "Aujourd'hui · 07:30",
   footer: "Publié · Lecture 3 min",
-  href: "/cat/cephalees-brutales-hsa",
+  href: "/protocols/cephalees-brutales-hsa",
 };
 
 export const clinicalWatchSecondary: HomeUpdate = {
@@ -244,7 +244,7 @@ export const proAdvancedTools = [
 ];
 
 export const offlinePackMetrics: OfflinePackMetric[] = [
-  { id: "cat", value: "42", label: "Arbres CAT" },
+  { id: "protocols", value: "42", label: "Protocoles" },
   { id: "calc", value: "18", label: "Scores" },
   { id: "doses", value: "—", label: "Médicaments" },
 ];

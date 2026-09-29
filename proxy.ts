@@ -1,6 +1,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { updateSession } from "@/lib/supabase/middleware";
 import { getStagingAccessSecret } from "@/lib/env/server";
+import { buildCsp, cspHeaderName } from "@/lib/security/csp";
 
 const STAGING_COOKIE = "nabda_staging_access";
 
@@ -17,6 +18,7 @@ function isAssetOrExempt(pathname: string): boolean {
     pathname === "/offline-fallback.html" ||
     pathname === "/manifest.webmanifest" ||
     pathname.startsWith("/icon-") ||
+    pathname.startsWith("/icons/") ||
     pathname.startsWith("/api/pwa/") ||
     /\.(?:svg|png|jpg|jpeg|gif|webp|ico|webmanifest)$/i.test(pathname)
   );
@@ -24,14 +26,13 @@ function isAssetOrExempt(pathname: string): boolean {
 
 function stagingGate(request: NextRequest): NextResponse | null {
   const secret = getStagingAccessSecret();
-  if (!secret) return null; // gate disabled
+  if (!secret) return null;
 
   if (isAssetOrExempt(request.nextUrl.pathname)) return null;
 
   const cookie = request.cookies.get(STAGING_COOKIE)?.value;
   if (cookie === secret) return null;
 
-  // Allow POST unlock via query on staging-access page only
   const url = request.nextUrl.clone();
   url.pathname = "/staging-access";
   url.search = "";
@@ -39,9 +40,16 @@ function stagingGate(request: NextRequest): NextResponse | null {
 }
 
 export async function proxy(request: NextRequest) {
+  const nonce = Buffer.from(crypto.randomUUID()).toString("base64");
+  const csp = buildCsp(nonce);
+  request.headers.set("x-nonce", nonce);
+  request.headers.set("Content-Security-Policy", csp);
+
   const gated = stagingGate(request);
-  if (gated) return gated;
-  return updateSession(request);
+  const response = gated ?? (await updateSession(request));
+  response.headers.set(cspHeaderName(), csp);
+  response.headers.set("x-nonce", nonce);
+  return response;
 }
 
 export const config = {

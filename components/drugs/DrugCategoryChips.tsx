@@ -20,7 +20,6 @@ export function DrugCategoryChips({
         <FilterChip
           key={chip.id}
           selected={active === chip.id}
-          count={chip.count}
           onClick={() => onSelect(chip.id)}
         >
           {chip.label}

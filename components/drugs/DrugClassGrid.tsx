@@ -18,7 +18,7 @@ export function DrugClassGrid({
   return (
     <section>
       <div className="mb-2 flex items-center justify-between">
-        <h2 className="text-headline-sm">Explorer par classe</h2>
+          <h2 className="text-label-md">Explorer par classe</h2>
         <span className="text-label-sm text-on-surface-variant">
           {classes.length} classes
         </span>
@@ -43,7 +43,7 @@ export function DrugClassGrid({
                   className="size-4 text-on-surface"
                 />
               </span>
-              <span className="mt-2 block text-label-md text-on-surface">
+              <span className="mt-2 block text-label-sm text-on-surface">
                 {item.label}
               </span>
             </button>

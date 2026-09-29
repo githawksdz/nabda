@@ -282,39 +282,6 @@ export function buildIdentityDocuments(input: {
     if (doc) docs.push(doc);
   }
 
-  for (const row of input.cats) {
-    const slug = normalizeSlug(row.slug);
-    if (!slug) {
-      skips.push({ reason: "missing_slug", entity_type: "cat", detail: String(row.source_id) });
-      continue;
-    }
-    const title = asString(row.title) || slug;
-    const searchable = joinSearchable([
-      title,
-      slug,
-      row.source_id,
-      ...tagsFromTrace(row.source_trace),
-    ]);
-    const doc = draftBase({
-      entityType: "cat",
-      entitySlug: slug,
-      entitySourceId: asString(row.source_id),
-      contentType: "identity",
-      contentId: "identity",
-      title,
-      subtitle: "Conduite à tenir",
-      snippet: makeSnippet(title).snippet,
-      searchableText: searchable,
-      routeHref: identityContentHref("cat", slug, row.source_id),
-      tags: tagsFromTrace(row.source_trace),
-      priority: 100,
-      reviewStatus: row.review_status,
-      activationState: "source_preserved_active",
-      sourceTrace: { kind: "identity", table: "cat_maps" },
-    });
-    if (doc) docs.push(doc);
-  }
-
   for (const row of input.drugs) {
     const slug = normalizeSlug(row.slug);
     if (!slug) {
@@ -556,69 +523,10 @@ export function buildProtocolSectionDocuments(
 }
 
 export function buildCatStepDocuments(
-  rows: PayloadRow[],
-  identityTitles: Map<string, string>,
+  _rows: PayloadRow[],
+  _identityTitles: Map<string, string>,
 ): { docs: SearchDocumentDraft[]; skips: SearchDocumentSkip[]; truncated: number; blocked: number } {
-  const docs: SearchDocumentDraft[] = [];
-  const skips: SearchDocumentSkip[] = [];
-  let truncated = 0;
-  let blocked = 0;
-
-  for (const row of rows) {
-    if (row.entity_type === "cat_bundle") {
-      skips.push({ reason: "bundle_skipped", entity_type: "cat", detail: row.payload_item_id });
-      continue;
-    }
-    const slug = normalizeSlug(row.entity_slug);
-    if (!slug) {
-      skips.push({ reason: "missing_slug", entity_type: "cat", detail: row.source_id });
-      continue;
-    }
-    const stepTitle = payloadTitle(row.payload) || "Étape";
-    const entityTitle = identityTitles.get(slug) || asString(row.payload?.protocolTitle) || slug;
-    const plain = asString(row.plain_text) || asString(row.payload?.text);
-    const snip = makeSnippet(plain);
-    if (snip.truncated) truncated += 1;
-    if (snip.blocked) {
-      blocked += 1;
-      skips.push({ reason: "unsafe_text_blocked", entity_type: "cat", detail: row.payload_item_id });
-      continue;
-    }
-    const searchable = joinSearchable([entityTitle, stepTitle, plain]);
-    if (!searchable) {
-      skips.push({ reason: "empty_text", entity_type: "cat", detail: row.payload_item_id });
-      continue;
-    }
-    const stepId = asString(row.payload?.id) || row.payload_item_id;
-    const priority =
-      asString(row.payload?.priority) === "critical" ||
-      asString(row.payload?.priority) === "urgent" ||
-      row.payload?.containsEmergencySignal === true
-        ? 80
-        : 50;
-    const doc = draftBase({
-      entityType: "cat",
-      entitySlug: slug,
-      entitySourceId: row.source_id,
-      contentType: "step",
-      contentId: row.payload_item_id,
-      contentOrder: row.sort_order,
-      title: `${entityTitle} · ${stepTitle}`,
-      subtitle: payloadKind(row.payload) ?? "Étape",
-      snippet: snip.snippet,
-      searchableText: searchable,
-      routeHref: `/cat/${slug}`,
-      sectionAnchor: stepId,
-      priority,
-      reviewStatus: row.review_status,
-      activationState: row.activation_state ?? "source_preserved_active",
-      sourceTrace: { kind: "source_cat_steps", payload_item_id: row.payload_item_id },
-    });
-    if (doc) docs.push(doc);
-    else skips.push({ reason: "draft_rejected", entity_type: "cat", detail: row.payload_item_id });
-  }
-
-  return { docs, skips, truncated, blocked };
+  return { docs: [], skips: [], truncated: 0, blocked: 0 };
 }
 
 export function buildDrugSectionDocuments(

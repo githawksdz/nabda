@@ -18,9 +18,9 @@ export function DrugSearchBar({ value, onChange }: DrugSearchBarProps) {
         id="drug-search"
         value={value}
         onChange={(event) => onChange(event.target.value)}
-        placeholder="Rechercher molécule, classe, marque…"
-        aria-label="Rechercher molécule, classe, marque"
-        className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
+        placeholder="Rechercher une marque, DCI, classe…"
+        aria-label="Rechercher une marque, DCI, classe"
+        className="h-full min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-on-surface-variant"
       />
       {value ? (
         <button

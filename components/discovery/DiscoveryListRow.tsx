@@ -1,7 +1,23 @@
 import Link from "next/link";
-import { ChevronRight } from "lucide-react";
+import { ChevronRight, Sparkles } from "lucide-react";
 import type { ReactNode } from "react";
+import { Badge } from "@/components/shadcn/badge";
+import {
+  Item,
+  ItemActions,
+  ItemContent,
+  ItemDescription,
+  ItemMedia,
+  ItemTitle,
+} from "@/components/shadcn/item";
 import { StatusBadge, type StatusTone } from "@/components/ui/StatusBadge";
+import {
+  contentTypeLabel,
+  specialtyConfig,
+  specialtyConfigs,
+  type ContentCardType,
+} from "@/lib/ui/content-card-config";
+import { resolveListSurface } from "@/lib/ui/content-list-state";
 import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import { cn } from "@/lib/utils";
 
@@ -15,7 +31,19 @@ type DiscoveryListRowProps = {
   statusTone?: StatusTone;
   icon?: ReactNode;
   className?: string;
+  contentType?: ContentCardType;
+  specialties?: Array<string | null | undefined>;
+  accessTier?: "free" | "pro";
+  isNew?: boolean;
+  visited?: boolean;
+  actions?: ReactNode;
 };
+
+const SURFACE_CLASS = {
+  new: "bg-list-new-bg",
+  unread: "bg-list-unread-bg",
+  read: "bg-list-read-bg",
+} as const;
 
 export function DiscoveryListRow({
   href,
@@ -27,65 +55,105 @@ export function DiscoveryListRow({
   statusTone,
   icon,
   className,
+  contentType,
+  specialties = [],
+  accessTier,
+  isNew = false,
+  visited = false,
+  actions,
 }: DiscoveryListRowProps) {
-  const tone = statusTone ?? (statusLabel ? accessLabelToTone(statusLabel) : undefined);
+  const surface = resolveListSurface({ isNew, visited });
+  const chips = specialtyConfigs(specialties);
+  const accent = specialtyConfig(specialties[0] ?? null)?.accent ?? "var(--specialty-neutral)";
+  const resolvedTypeLabel = typeLabel ?? (contentType ? contentTypeLabel(contentType) : undefined);
+  const isPro =
+    accessTier === "pro" ||
+    statusLabel?.trim().toLowerCase() === "pro";
+  const unavailable =
+    Boolean(statusLabel) &&
+    !isPro &&
+    statusLabel !== "Publié" &&
+    statusLabel !== "Gratuit";
+  const tone =
+    statusTone ?? (statusLabel ? accessLabelToTone(statusLabel) : undefined);
+  const body = description || subtitle;
 
   return (
-    <Link
-      href={href}
+    <Item
+      asChild
+      variant="muted"
+      data-list-state={surface}
       className={cn(
-        "motion-surface flex min-h-11 min-w-0 items-center gap-3 rounded-[var(--radius-card)] bg-surface-muted px-3 py-2.5",
-        "hover:bg-surface-container focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
+        "relative min-h-[var(--size-touch)] overflow-hidden pl-4 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-ring",
+        SURFACE_CLASS[surface],
         className,
       )}
     >
-      {icon ? (
-        <span className="flex size-9 shrink-0 items-center justify-center rounded-[var(--radius-control)] bg-surface-elevated text-text-primary">
-          {icon}
-        </span>
-      ) : null}
-      <span className="min-w-0 flex-1">
-        <span className="block text-body-md font-medium text-text-primary [overflow-wrap:anywhere]">
-          {title}
-        </span>
-        {(typeLabel || subtitle || description) && (
-          <span className="mt-0.5 flex min-w-0 flex-wrap items-center gap-x-1.5 gap-y-1 text-body-sm text-text-secondary">
-            {typeLabel ? (
-              <StatusBadge tone="muted">{typeLabel}</StatusBadge>
-            ) : null}
-            {subtitle ? (
-              <span className="min-w-0 [overflow-wrap:anywhere]">{subtitle}</span>
-            ) : null}
-            {description ? (
-              <span className="min-w-0 basis-full [overflow-wrap:anywhere] line-clamp-2">
-                {description}
-              </span>
-            ) : null}
-          </span>
-        )}
-        {statusLabel ? (
-          <span className="mt-1.5 inline-flex">
-            <StatusBadge tone={tone ?? "muted"}>{statusLabel}</StatusBadge>
-          </span>
+      <Link href={href}>
+        <span
+          aria-hidden
+          className="absolute top-3 bottom-3 left-0 w-[3px] rounded-full"
+          style={{ backgroundColor: accent }}
+        />
+        {icon ? (
+          <ItemMedia
+            variant="icon"
+            className="size-8 rounded-lg bg-surface-container text-text-primary"
+          >
+            {icon}
+          </ItemMedia>
         ) : null}
-      </span>
-      <ChevronRight
-        className="size-4 shrink-0 text-text-muted"
-        strokeWidth={1.75}
-        aria-hidden
-      />
-    </Link>
+        <ItemContent>
+          <ItemTitle className="[overflow-wrap:anywhere]">{title}</ItemTitle>
+          {body ? (
+            <ItemDescription className="line-clamp-2">{body}</ItemDescription>
+          ) : resolvedTypeLabel ? (
+            <ItemDescription>{resolvedTypeLabel}</ItemDescription>
+          ) : null}
+          {chips.length > 0 ? (
+            <div className="mt-1 flex flex-wrap gap-1.5">
+              {chips.map((chip) => (
+                <Badge
+                  key={chip.label}
+                  variant="outline"
+                  className={cn("h-5 border px-2 text-[11px] font-medium", chip.chipClass)}
+                >
+                  {chip.label}
+                </Badge>
+              ))}
+            </div>
+          ) : null}
+        </ItemContent>
+        <ItemActions className="self-start pt-0.5">
+          {actions}
+          {isPro ? (
+            <span className="inline-flex items-center gap-0.5 text-[11px] font-medium text-status-premium">
+              <Sparkles className="size-3" aria-hidden />
+              <span className="max-sm:sr-only">Pro</span>
+            </span>
+          ) : unavailable && statusLabel ? (
+            <StatusBadge tone={tone ?? "muted"}>{statusLabel}</StatusBadge>
+          ) : null}
+          <ChevronRight
+            className="size-3.5 text-muted-foreground/50"
+            strokeWidth={1.75}
+            aria-hidden
+          />
+        </ItemActions>
+      </Link>
+    </Item>
   );
 }
 
 type DiscoveryListProps = {
   children: ReactNode;
   className?: string;
+  id?: string;
 };
 
-export function DiscoveryList({ children, className }: DiscoveryListProps) {
+export function DiscoveryList({ children, className, id }: DiscoveryListProps) {
   return (
-    <ul className={cn("flex min-w-0 flex-col gap-1.5", className)}>
+    <ul id={id} className={cn("flex min-w-0 flex-col gap-1.5", className)}>
       {children}
     </ul>
   );

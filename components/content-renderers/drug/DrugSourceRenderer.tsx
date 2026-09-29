@@ -99,9 +99,9 @@ export function DrugSourceRenderer({
                 type="button"
                 onClick={() => setFilter(item.id)}
                 className={cn(
-                  "flex h-8 shrink-0 items-center rounded-full px-3.5 text-label-md",
+                  "flex h-8 shrink-0 items-center rounded-full px-3 text-label-sm",
                   active
-                    ? "bg-primary font-semibold text-on-primary"
+                    ? "bg-primary text-on-primary"
                     : "bg-surface-container-low text-on-surface-variant",
                 )}
               >

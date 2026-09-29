@@ -1,9 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AppShell } from "@/components/app/AppShell";
 import { EmptyState } from "@/components/ui/EmptyState";
-import { LoadingIndicator } from "@/components/ui/LoadingIndicator";
+import { PageSkeleton } from "@/components/ui/Skeleton";
 import { StatusBadge } from "@/components/ui/StatusBadge";
 import { GeneratedFormulaCalculator } from "@/components/calculators/GeneratedFormulaCalculator";
 import { createClient } from "@/lib/supabase/client";
@@ -52,45 +51,38 @@ export function OfflineContentView({ contentType, slug }: OfflineContentViewProp
 
   if (corrupt) {
     return (
-      <AppShell title="Hors-ligne" frame="workspace">
-        <EmptyState
-          title="Contenu local illisible"
-          description="Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau."
-          actionLabel="Gérer les téléchargements"
-          actionHref="/offline"
-        />
-      </AppShell>
+      <EmptyState
+        title="Contenu local illisible"
+        description="Ce contenu local est illisible. Supprimez-le puis téléchargez-le à nouveau."
+        actionLabel="Gérer les téléchargements"
+        actionHref="/offline"
+      />
     );
   }
 
   if (missing) {
     return (
-      <AppShell title="Hors-ligne" frame="workspace">
-        <EmptyState
-          title="Disponible uniquement en ligne."
-          description="Cette fiche n’est pas présente dans les téléchargements de cet appareil."
-          actionLabel="Gérer les téléchargements"
-          actionHref="/offline"
-        />
-      </AppShell>
+      <EmptyState
+        title="Disponible uniquement en ligne."
+        description="Cette fiche n’est pas présente dans les téléchargements de cet appareil."
+        actionLabel="Gérer les téléchargements"
+        actionHref="/offline"
+      />
     );
   }
 
   if (!payload) {
-    return (
-      <AppShell title="Hors-ligne" frame="workspace">
-        <LoadingIndicator label="Ouverture du contenu local…" />
-      </AppShell>
-    );
+    return <PageSkeleton variant="detail" label="Ouverture du contenu local…" />;
   }
 
   const title = String(payload.title ?? slug);
 
   return (
-    <AppShell title={title} pageHeading={contentType === "calculator"} frame="workspace">
+    <>
       <StatusBadge tone="downloaded">Copie locale · version résumée</StatusBadge>
       {contentType === "calculator" ? (
         <div className="mt-4">
+          <h1 className="text-headline-sm">{title}</h1>
           <GeneratedFormulaCalculator data={payload as unknown as CalculatorRenderData} />
         </div>
       ) : (
@@ -105,6 +97,6 @@ export function OfflineContentView({ contentType, slug }: OfflineContentViewProp
           ) : null}
         </article>
       )}
-    </AppShell>
+    </>
   );
 }

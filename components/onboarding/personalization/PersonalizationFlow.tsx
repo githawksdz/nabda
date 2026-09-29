@@ -189,7 +189,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
   return (
     <MobileShell>
       <header className="flex h-12 shrink-0 items-center justify-between">
-        <span className="text-[15px] font-semibold tracking-tight">Nabda</span>
+        <span className="text-label-md tracking-tight">Nabda</span>
         {step !== "consent" ? (
           <button
             type="button"
@@ -222,7 +222,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
         {step === "profession" ? (
           <section className="flex flex-col gap-4">
             <div>
-              <h1 className="text-[22px] font-semibold tracking-tight">
+              <h1 className="text-headline-md tracking-tight">
                 Votre profession
               </h1>
               <p className="mt-1 text-[14px] text-on-surface-variant">
@@ -252,7 +252,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
         {step === "interests" ? (
           <section className="flex flex-col gap-4">
             <div>
-              <h1 className="text-[22px] font-semibold tracking-tight">
+              <h1 className="text-headline-md tracking-tight">
                 Vos intérêts
               </h1>
               <p className="mt-1 text-[14px] text-on-surface-variant">
@@ -273,7 +273,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
                       type="button"
                       onClick={() => toggleInterest(interest.id)}
                       className={cn(
-                        "rounded-full px-3 py-2 text-[13px]",
+                        "rounded-full px-3 py-2 text-label-sm",
                         selected
                           ? "bg-primary text-on-primary"
                           : "bg-surface-container-low text-on-surface",
@@ -294,7 +294,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
         {step === "usage" ? (
           <section className="flex flex-col gap-4">
             <div>
-              <h1 className="text-[22px] font-semibold tracking-tight">
+              <h1 className="text-headline-md tracking-tight">
                 Mode d’usage
               </h1>
               <p className="mt-1 text-[14px] text-on-surface-variant">
@@ -324,7 +324,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
         {step === "consent" ? (
           <section className="flex flex-col gap-4">
             <div>
-              <h1 className="text-[22px] font-semibold tracking-tight">
+              <h1 className="text-headline-md tracking-tight">
                 Récapitulatif
               </h1>
               <p className="mt-1 text-[14px] text-on-surface-variant">
@@ -353,7 +353,7 @@ export function PersonalizationFlow({ initial }: PersonalizationFlowProps) {
                 {usageMode ? USAGE_MODE_LABELS[usageMode] : "—"}
               </p>
             </div>
-            <label className="flex items-start gap-3 rounded-xl bg-surface-container-low p-4 text-[13px] leading-snug">
+            <label className="flex items-start gap-3 rounded-xl bg-surface-container-low p-4 text-label-sm leading-snug">
               <input
                 type="checkbox"
                 checked={accepted}

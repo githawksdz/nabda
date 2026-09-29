@@ -54,9 +54,8 @@ export async function fetchExistingContent(client: ImportClient): Promise<{
   protocol_links: ExistingLinkRow[];
 }> {
   const contentColumns = "id, slug, source_id, status, review_status, visibility";
-  const [protocols, cat_maps, calculators, drugs, protocol_links] = await Promise.all([
+  const [protocols, calculators, drugs, protocol_links] = await Promise.all([
     fetchAll<ExistingContentRow>(client, "protocols", contentColumns),
-    fetchAll<ExistingContentRow>(client, "cat_maps", `${contentColumns}, map_json`),
     fetchAll<ExistingContentRow>(
       client,
       "calculators",
@@ -69,5 +68,5 @@ export async function fetchExistingContent(client: ImportClient): Promise<{
       "id, source_id, protocol_id, relationship, target_slug",
     ),
   ]);
-  return { protocols, cat_maps, calculators, drugs, protocol_links };
+  return { protocols, cat_maps: [], calculators, drugs, protocol_links };
 }

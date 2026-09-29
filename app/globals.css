@@ -1,9 +1,15 @@
 @import "tailwindcss";
 @import "./vaul.css";
+@import "./promo-cards.css";
 
 /* Semantic tokens mapped onto the existing cream / ink identity. */
 
 :root {
+  /* Three type roles. next/font sets the family variables on <html>. */
+  --font-body: var(--font-geist), ui-sans-serif, system-ui, sans-serif;
+  --font-heading: var(--font-manrope), ui-sans-serif, system-ui, sans-serif;
+  --font-signature: var(--font-source-serif-4), Georgia, "Times New Roman", serif;
+
   /* Legacy Stitch aliases — keep for current screens */
   --background: #fcf8fb;
   --surface: #fcf8fb;
@@ -77,6 +83,54 @@
   --status-error: var(--status-danger);
   --status-error-container: var(--status-danger-container);
 
+  /* List card surfaces — new wins over unread/read. */
+  --list-new-bg: color-mix(in srgb, var(--status-info-container) 55%, var(--surface-elevated));
+  --list-unread-bg: var(--surface-elevated);
+  --list-read-bg: color-mix(in srgb, var(--surface-muted) 82%, var(--surface-container));
+  --specialty-neutral: var(--on-surface-variant);
+  --specialty-cardiologie: #b4534a;
+  --specialty-pneumologie: #3d6ea8;
+  --specialty-neurologie: #6d5aa8;
+  --specialty-endocrinologie: #b07a2e;
+  --specialty-urgences: #c46a2e;
+  --specialty-gastro: #3d8a5a;
+  --specialty-infectiologie: #3d8a78;
+  --specialty-pediatrie: #c45c7a;
+  --specialty-nephrologie: #4a7a9a;
+  --specialty-obstetrique: #a85a78;
+  --specialty-hematologie: #a85a5a;
+  --specialty-dermatologie: #8a6a3d;
+  --specialty-oncologie: #6a4a7a;
+  --specialty-rhumatologie: #7a5a3a;
+  --specialty-ophtalmologie: #3d7a9a;
+  --specialty-psychiatrie: #5a6aa8;
+  --specialty-geriatrie: #6a7a5a;
+  --specialty-allergologie: #b07a4a;
+  --specialty-orl: #4a6a8a;
+  --specialty-urologie: #4a7a7a;
+  --specialty-chirurgie: #5a6a6a;
+  --specialty-anesthesie: #6a5a8a;
+  --specialty-dietetique: #5a8a4a;
+
+  /* shadcn semantic aliases. Cream / ink values stay above. */
+  --foreground: var(--text-primary);
+  --card: var(--surface-elevated);
+  --card-foreground: var(--text-primary);
+  --popover: var(--surface-elevated);
+  --popover-foreground: var(--text-primary);
+  --primary-foreground: var(--text-inverse);
+  --muted: var(--surface-muted);
+  --muted-foreground: var(--text-secondary);
+  --accent: var(--surface-container);
+  --accent-foreground: var(--text-primary);
+  --destructive: var(--status-danger);
+  --destructive-foreground: var(--text-inverse);
+  --secondary-foreground: var(--text-primary);
+  --border: var(--border-default);
+  --input: var(--border-default);
+  --ring: var(--border-focus);
+  --radius: var(--radius-card);
+
   /* Spacing */
   --space-2xs: 4px;
   --space-xs: 8px;
@@ -106,7 +160,7 @@
   --size-control: 44px;
   --size-control-compact: 40px;
   --size-input: 48px;
-  --size-chip: 44px;
+  --size-chip: 32px;
   --size-icon-button: 44px;
   --size-nav-item: 44px;
   --size-avatar: 44px;
@@ -133,6 +187,7 @@
   --ease-exit: cubic-bezier(0.4, 0, 1, 1);
 
   /* Shell / frame */
+  --layout-sheet: 26.875rem;
   --layout-sidebar: 15rem;
   --layout-workspace: 72rem;
   --layout-clinical: 72rem;
@@ -142,6 +197,12 @@
   --layout-dock-height: 4.5rem;
   --layout-nav-clearance: 5rem;
   --layout-dock-clearance: 6.5rem;
+  --layout-bottom-nav-height: var(--layout-nav-height);
+  --layout-reading-dock-height: var(--layout-dock-height);
+  --layout-mobile-safe-bottom: env(safe-area-inset-bottom, 0px);
+  --layout-detail-clearance: calc(
+    var(--layout-dock-clearance) + var(--layout-nav-height)
+  );
 }
 
 @theme inline {
@@ -166,7 +227,22 @@
   --color-on-secondary-container: var(--on-secondary-container);
   --color-error: var(--error);
   --color-error-container: var(--error-container);
-  --color-foreground: var(--on-surface);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
 
   --color-canvas: var(--canvas);
   --color-surface-muted: var(--surface-muted);
@@ -203,9 +279,53 @@
   --color-status-downloaded-container: var(--status-downloaded-container);
   --color-status-error: var(--status-error);
   --color-status-error-container: var(--status-error-container);
+  --color-list-new-bg: var(--list-new-bg);
+  --color-list-unread-bg: var(--list-unread-bg);
+  --color-list-read-bg: var(--list-read-bg);
 
-  --font-sans: var(--font-inter), ui-sans-serif, system-ui, -apple-system,
-    BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --font-sans: var(--font-body);
+
+  --text-display: 24px;
+  --text-display--line-height: 1.2;
+  --text-display--letter-spacing: -0.02em;
+  --text-display--font-weight: 700;
+  --text-headline-lg: 18px;
+  --text-headline-lg--line-height: 1.3;
+  --text-headline-lg--letter-spacing: -0.018em;
+  --text-headline-lg--font-weight: 700;
+  --text-headline-md: 16px;
+  --text-headline-md--line-height: 1.35;
+  --text-headline-md--letter-spacing: -0.016em;
+  --text-headline-md--font-weight: 700;
+  --text-headline-sm: 15px;
+  --text-headline-sm--line-height: 1.35;
+  --text-headline-sm--letter-spacing: -0.014em;
+  --text-headline-sm--font-weight: 600;
+  --text-body-lg: 16px;
+  --text-body-lg--line-height: 25px;
+  --text-body-lg--letter-spacing: -0.011em;
+  --text-body-lg--font-weight: 400;
+  --text-body-md: 15px;
+  --text-body-md--line-height: 22px;
+  --text-body-md--letter-spacing: -0.011em;
+  --text-body-md--font-weight: 400;
+  --text-body-sm: 13px;
+  --text-body-sm--line-height: 19px;
+  --text-body-sm--letter-spacing: -0.006em;
+  --text-body-sm--font-weight: 400;
+  --text-label-md: 14px;
+  --text-label-md--line-height: 18px;
+  --text-label-md--letter-spacing: 0;
+  --text-label-md--font-weight: 600;
+  --text-label-sm: 12px;
+  --text-label-sm--line-height: 16px;
+  --text-label-sm--letter-spacing: 0.01em;
+  --text-label-sm--font-weight: 500;
+  --text-data-metric: 20px;
+  --text-data-metric--line-height: 1.2;
+  --text-data-metric--letter-spacing: -0.02em;
+  --text-data-metric--font-weight: 600;
+
   --radius-sm: 8px;
   --radius-md: 12px;
   --radius-lg: 16px;
@@ -237,7 +357,123 @@ body {
   overscroll-behavior-y: none;
   background: var(--canvas);
   color: var(--text-primary);
-  font-family: var(--font-sans);
+  font-family: var(--font-body);
+}
+
+:lang(ar) {
+  --font-signature: "Noto Serif Arabic", "Noto Naskh Arabic", serif;
+  --font-heading: "IBM Plex Sans Arabic", "Noto Sans Arabic", sans-serif;
+  --font-body: "IBM Plex Sans Arabic", "Noto Sans Arabic", sans-serif;
+}
+
+button,
+input,
+textarea,
+select,
+label {
+  font-family: var(--font-body);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.text-display,
+.text-headline-lg,
+.text-headline-md,
+.text-headline-sm,
+.text-clinical-title {
+  font-family: var(--font-heading);
+}
+
+@utility font-heading {
+  font-family: var(--font-heading);
+}
+
+@utility font-signature {
+  font-family: var(--font-signature);
+  font-weight: 600;
+}
+
+.font-signature {
+  font-family: var(--font-signature);
+  font-weight: 600;
+}
+
+.promo-pro-emphasis {
+  font-family: var(--font-signature);
+  font-weight: 700;
+  font-style: italic;
+}
+
+.text-clinical-title {
+  font-size: 24px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+.text-result {
+  font-family: var(--font-body);
+  font-size: 40px;
+  line-height: 1.05;
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  font-variant-numeric: tabular-nums;
+}
+
+.text-data-metric,
+table {
+  font-variant-numeric: tabular-nums;
+}
+
+.source-html {
+  font-family: var(--font-body);
+  font-size: 16px;
+  line-height: 25px;
+  font-weight: 400;
+}
+
+.source-html :is(h2, h3, h4) {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.source-html h2 {
+  font-size: 18px;
+}
+
+.source-html h3,
+.source-html h4 {
+  font-size: 16px;
+}
+
+.source-html table {
+  font-family: var(--font-body);
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@media (min-width: 1024px) {
+  .text-display {
+    font-size: 28px;
+  }
+
+  .text-headline-lg,
+  .source-html h2 {
+    font-size: 20px;
+  }
+
+  .text-clinical-title {
+    font-size: 30px;
+  }
+
+  .text-result {
+    font-size: 48px;
+  }
 }
 
 .layout-gutter {
@@ -266,6 +502,18 @@ body {
   width: 100%;
   max-width: var(--layout-reading);
   min-width: 0;
+}
+
+[data-slot="item"][data-list-state="new"] {
+  background-color: var(--list-new-bg);
+}
+
+[data-slot="item"][data-list-state="unread"] {
+  background-color: var(--list-unread-bg);
+}
+
+[data-slot="item"][data-list-state="read"] {
+  background-color: var(--list-read-bg);
 }
 
 .layout-sticky-under-header {
@@ -335,76 +583,6 @@ summary:focus-visible,
   scrollbar-width: none;
 }
 
-.text-display {
-  font-size: 34px;
-  line-height: 41px;
-  letter-spacing: -0.022em;
-  font-weight: 600;
-}
-
-.text-headline-lg {
-  font-size: 24px;
-  line-height: 30px;
-  letter-spacing: -0.019em;
-  font-weight: 600;
-}
-
-.text-headline-md {
-  font-size: 20px;
-  line-height: 25px;
-  letter-spacing: -0.017em;
-  font-weight: 600;
-}
-
-.text-headline-sm {
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.016em;
-  font-weight: 600;
-}
-
-.text-body-lg {
-  font-size: 17px;
-  line-height: 22px;
-  letter-spacing: -0.016em;
-  font-weight: 400;
-}
-
-.text-body-md {
-  font-size: 15px;
-  line-height: 20px;
-  letter-spacing: -0.015em;
-  font-weight: 400;
-}
-
-.text-body-sm {
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: -0.006em;
-  font-weight: 400;
-}
-
-.text-label-md {
-  font-size: 13px;
-  line-height: 18px;
-  letter-spacing: -0.006em;
-  font-weight: 500;
-}
-
-.text-label-sm {
-  font-size: 11px;
-  line-height: 13px;
-  letter-spacing: 0.006em;
-  font-weight: 500;
-}
-
-.text-data-metric {
-  font-size: 22px;
-  line-height: 28px;
-  letter-spacing: -0.018em;
-  font-weight: 500;
-}
-
 .preview-chip-nav {
   scroll-target-group: auto;
 }
@@ -415,8 +593,8 @@ summary:focus-visible,
 
 .source-html :is(.title, .nommed, .dci, h2, h3) {
   margin-top: 0.75rem;
-  font-size: 13px;
-  line-height: 18px;
+  font-size: 12px;
+  line-height: 16px;
   font-weight: 600;
 }
 
@@ -491,6 +669,24 @@ summary:focus-visible,
   }
 }
 
+/* Placeholder bones. Opacity only. Stops under reduced motion. */
+.motion-skeleton {
+  animation-name: motion-skeleton;
+  animation-duration: 1.6s;
+  animation-timing-function: var(--ease-standard);
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+}
+
+@keyframes motion-skeleton {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0.45;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   html {
     scroll-behavior: auto;
@@ -510,6 +706,10 @@ summary:focus-visible,
   }
 
   .motion-spin {
+    animation: none;
+  }
+
+  .motion-skeleton {
     animation: none;
   }
 }

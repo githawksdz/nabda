@@ -76,6 +76,7 @@ export type Protocol = {
   category_slug?: string | null;
   content_type?: DbProtocol["content_type"];
   is_featured?: boolean;
+  is_new?: boolean;
   published_at?: string | null;
   source_note?: string | null;
   search_text?: string;

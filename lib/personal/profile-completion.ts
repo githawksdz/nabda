@@ -44,16 +44,37 @@ export type ProfileCompletionInput = {
   profileCompleted?: boolean;
 };
 
-export function computeCompletionPercent(input: ProfileCompletionInput): number {
-  const checks = [
+export type ProfileCompletionProgress = {
+  filled: number;
+  total: number;
+  percent: number;
+};
+
+export function profileCompletionChecks(input: ProfileCompletionInput): boolean[] {
+  return [
     Boolean(input.fullName?.trim()),
     Boolean(input.profession?.trim()),
     (input.specialtyInterests?.length ?? 0) > 0,
     Boolean(input.usageMode?.trim()),
     Boolean(input.onboardingCompleted || input.profileCompleted),
   ];
+}
+
+export function computeProfileCompletion(
+  input: ProfileCompletionInput,
+): ProfileCompletionProgress {
+  const checks = profileCompletionChecks(input);
   const filled = checks.filter(Boolean).length;
-  return Math.round((filled / checks.length) * 100);
+  const total = checks.length;
+  return {
+    filled,
+    total,
+    percent: total === 0 ? 0 : Math.round((filled / total) * 100),
+  };
+}
+
+export function computeCompletionPercent(input: ProfileCompletionInput): number {
+  return computeProfileCompletion(input).percent;
 }
 
 export function isProfileIncomplete(

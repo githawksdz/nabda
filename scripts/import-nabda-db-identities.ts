@@ -157,12 +157,11 @@ async function main() {
   });
 
   plan.rows.protocols = applyOverwriteGate(plan.rows.protocols, allowValidated);
-  plan.rows.cat_maps = applyOverwriteGate(plan.rows.cat_maps, allowValidated);
   plan.rows.calculators = applyOverwriteGate(plan.rows.calculators, allowValidated);
   plan.rows.drugs = applyOverwriteGate(plan.rows.drugs, allowValidated);
 
   process.stdout.write(
-    `Identity import starting. protocols=${plan.counts.protocols} cats=${plan.counts.cat_maps} drugs=${plan.counts.drugs} calcs=${plan.counts.calculators} links=${plan.counts.protocol_links_safe}\n`,
+    `Identity import starting. protocols=${plan.counts.protocols} drugs=${plan.counts.drugs} calcs=${plan.counts.calculators} links=${plan.counts.protocol_links_safe}\n`,
   );
 
   const protocolIds = await upsertIdentityTable(
@@ -172,21 +171,6 @@ async function main() {
     existing.protocols,
   );
   process.stdout.write(`protocols done (${protocolIds.size} ids)\n`);
-
-  for (const row of plan.rows.cat_maps) {
-    const protocolSourceId = row.payload._protocol_source_id;
-    if (typeof protocolSourceId === "string") {
-      row.payload.protocol_id = protocolIds.get(protocolSourceId) ?? null;
-    }
-  }
-
-  const catIds = await upsertIdentityTable(
-    client,
-    "cat_maps",
-    plan.rows.cat_maps,
-    existing.cat_maps,
-  );
-  process.stdout.write(`cat_maps done (${catIds.size} ids)\n`);
 
   const drugIds = await upsertIdentityTable(
     client,
@@ -228,9 +212,7 @@ async function main() {
     payload.protocol_id = protocolId;
     const targetSourceId = trace.target_source_id;
     const targetType = payload.target_type;
-    if (targetType === "cat" && typeof targetSourceId === "string") {
-      payload.target_id = catIds.get(targetSourceId) ?? null;
-    } else if (targetType === "protocol" && typeof targetSourceId === "string") {
+    if (targetType === "protocol" && typeof targetSourceId === "string") {
       payload.target_id = protocolIds.get(targetSourceId) ?? null;
     } else if (targetType === "drug" && typeof targetSourceId === "string") {
       payload.target_id = drugIds.get(targetSourceId) ?? null;

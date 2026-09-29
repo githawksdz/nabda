@@ -6,6 +6,9 @@ export type ProtocolSummary = {
   slug: string;
   title: string;
   summary?: string;
+  categorySlug?: string;
+  isNew?: boolean;
+  visibility?: string | null;
   statusLabel?: string;
   href: string;
 };
@@ -16,6 +19,9 @@ export function summaryFromDbProtocol(row: Protocol): ProtocolSummary {
     slug: row.slug,
     title: row.title,
     summary: row.summary ?? undefined,
+    categorySlug: row.category_slug ?? undefined,
+    isNew: Boolean(row.is_new),
+    visibility: row.visibility,
     statusLabel: doctorCatalogStatusLabel({
       publicationStatus: row.status,
       visibility: row.visibility,

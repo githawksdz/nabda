@@ -20,22 +20,20 @@ function check(id: string, ok: boolean, detail: string) {
 const css = read("app/globals.css");
 const field = read("components/ui/TextField.tsx");
 const searchBar = read("components/search/SearchInputBar.tsx");
-const homeSearch = read("components/home/HomeSearchBar.tsx");
 const toast = read("components/ui/StatusToast.tsx");
 const timing = read("lib/ui/feedback-timing.ts");
 const notice = read("components/ui/useTimedFlag.ts");
 const favorite = read("lib/ui/favorite-result.ts");
 const medication = read("components/search/MedicationResultCard.tsx");
 const protocol = read("components/protocols/ProtocolDetailPage.tsx");
-const cat = read("components/cat-detail/CatDetailPage.tsx");
 const drug = read("components/drugs/DrugDetailPage.tsx");
 const calculator = read("components/calculators/CalculatorDetailPage.tsx");
 const cockcroft = read("components/calculators/cockcroft/CockcroftCalculator.tsx");
 const progress = read("components/ui/OfflineProgressStatus.tsx");
 const manager = read("components/offline/OfflineManagerPage.tsx");
 const library = read("components/content-detail/DetailLibraryStatus.tsx");
-const connection = read("components/pwa/ConnectionIndicator.tsx");
 const auth = read("components/onboarding/AuthDrawer.tsx");
+const appDrawer = read("components/ui/AppDrawer.tsx");
 const actions = read("lib/content-detail/user-content-actions.ts");
 const pkg = JSON.parse(read("package.json")) as {
   dependencies?: Record<string, string>;
@@ -49,8 +47,6 @@ check(
     !searchBar.includes("h-14") &&
     !searchBar.includes("h-12") &&
     !searchBar.includes("h-11") &&
-    !homeSearch.includes("h-14") &&
-    read("components/cat/CatSearchBar.tsx").includes("h-[var(--size-input)]") &&
     read("components/drugs/DrugSearchBar.tsx").includes("h-[var(--size-input)]") &&
     read("components/calculators/CalculatorSearchBar.tsx").includes(
       "h-[var(--size-input)]",
@@ -83,7 +79,7 @@ check(
   "feedback timing",
 );
 
-const favoritePages = [protocol, cat, drug, calculator, medication];
+const favoritePages = [protocol, drug, calculator, medication];
 check(
   "favorite_rollback",
   favorite.includes('case "unauthenticated"') &&
@@ -109,7 +105,6 @@ check(
   timing.includes("COPY_LABEL_MS = 2000") &&
     cockcroft.includes('copied.active ? "Copié"') &&
     protocol.includes('copied.active ? "Copié"') &&
-    cat.includes('copied.active ? "Copié"') &&
     calculator.includes('copied.active ? "Copié"') &&
     calculator.includes('"Copie indisponible", "alert"') &&
     notice.includes("window.clearTimeout(timer.current)"),
@@ -142,19 +137,10 @@ check(
 );
 
 check(
-  "connection_no_fake_sync",
-  connection.includes("En ligne") &&
-    connection.includes("Hors-ligne") &&
-    connection.includes('aria-live="polite"') &&
-    !connection.toLowerCase().includes("synchron"),
-  "ConnectionIndicator",
-);
-
-check(
   "auth_safe_area",
-  auth.includes("pb-[calc(24px+env(safe-area-inset-bottom,0px))]") &&
+  appDrawer.includes("safe-area-inset-bottom") &&
     auth.includes("shouldScaleBackground={false}"),
-  "AuthDrawer",
+  "AppDrawer",
 );
 
 check(
@@ -191,11 +177,8 @@ check(
 
 check(
   "deferred_motion_still_present",
-  read("components/onboarding/WelcomeCarousel.tsx").includes("framer-motion") &&
-    read("components/cat-flowchart/CatFlowchartBoard.tsx").includes(
-      "preferredMotionDuration(220)",
-    ),
-  "WelcomeCarousel / CatFlowchartBoard",
+  read("components/onboarding/WelcomeCarousel.tsx").includes("framer-motion"),
+  "WelcomeCarousel",
 );
 
 check(

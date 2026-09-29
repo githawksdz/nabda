@@ -4,7 +4,7 @@ import type { OfflineContentType } from "@/lib/offline/types";
 
 export const dynamic = "force-dynamic";
 
-const TYPES = new Set<OfflineContentType>(["protocol", "cat", "drug", "calculator"]);
+const TYPES = new Set<OfflineContentType>(["protocol", "drug", "calculator"]);
 
 export async function GET(request: Request) {
   const session = await requireOfflineViewer();

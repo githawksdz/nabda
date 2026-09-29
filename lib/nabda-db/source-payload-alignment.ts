@@ -279,12 +279,9 @@ export async function loadAlignmentData(client: ImportClient): Promise<{
   drugBundles: PayloadBundleRow[];
   calculatorBundles: PayloadBundleRow[];
 }> {
-  const [protocols, cats, drugs, calculators, protocolBundles, catBundles, drugBundles, calculatorBundles] =
+  const [protocols, drugs, calculators, protocolBundles, drugBundles, calculatorBundles] =
     await Promise.all([
       fetchAll<IdentityRow>(client, "protocols", "slug,source_id,has_source_payload,source_payload_types", {
-        imported_from: SOURCE_PAYLOAD_IMPORTED_FROM,
-      }),
-      fetchAll<IdentityRow>(client, "cat_maps", "slug,source_id,has_source_payload,source_payload_types", {
         imported_from: SOURCE_PAYLOAD_IMPORTED_FROM,
       }),
       fetchAll<IdentityRow>(client, "drugs", "slug,source_id,has_source_payload,source_payload_types", {
@@ -302,10 +299,6 @@ export async function loadAlignmentData(client: ImportClient): Promise<{
         "entity_slug,source_id",
         { entity_type: "protocol_bundle", imported_from: SOURCE_PAYLOAD_IMPORTED_FROM },
       ),
-      fetchAll<PayloadBundleRow>(client, "source_cat_steps", "entity_slug,source_id", {
-        entity_type: "cat_bundle",
-        imported_from: SOURCE_PAYLOAD_IMPORTED_FROM,
-      }),
       fetchAll<PayloadBundleRow>(client, "source_drug_sections", "entity_slug,source_id", {
         entity_type: "drug_bundle",
         imported_from: SOURCE_PAYLOAD_IMPORTED_FROM,
@@ -320,11 +313,11 @@ export async function loadAlignmentData(client: ImportClient): Promise<{
 
   return {
     protocols,
-    cats,
+    cats: [],
     drugs,
     calculators,
     protocolBundles,
-    catBundles,
+    catBundles: [],
     drugBundles,
     calculatorBundles,
   };

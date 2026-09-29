@@ -289,7 +289,7 @@ function linkHref(row: ProtocolLinkRow): string | null {
     return `/protocols/${slug}`;
   }
   if (row.target_type === "cat" && slug) {
-    return `/cat/${slug.replace(/-cat$/, "")}`;
+    return `/protocols/${slug.replace(/-cat$/, "")}`;
   }
   if (row.target_type === "drug" && slug) {
     return `/drugs/${slug}`;
@@ -304,12 +304,10 @@ function linkHref(row: ProtocolLinkRow): string | null {
 }
 
 function linkType(targetType: string): LinkedContentType {
-  if (
-    targetType === "cat" ||
-    targetType === "calculator" ||
-    targetType === "drug" ||
-    targetType === "protocol"
-  ) {
+  if (targetType === "cat" || targetType === "protocol") {
+    return "protocol";
+  }
+  if (targetType === "calculator" || targetType === "drug") {
     return targetType;
   }
   return "reference";
@@ -328,10 +326,7 @@ export function mapProtocolLinks(rows: ProtocolLinkRow[]): LinkedContentItem[] {
           id: row.id,
           type: linkType(row.target_type),
           title: row.label,
-          subtitle:
-            row.relationship === "primary_cat"
-              ? "Carte clinique liée · fiche en préparation"
-              : "Lien éditorial · à confirmer",
+          subtitle: "Lien éditorial · à confirmer",
           href,
         },
       ];
@@ -441,6 +436,7 @@ export function overlayProtocolIdentity(
     review_status: sanitizeReviewStatus(row.review_status, row.status),
     visibility: row.visibility,
     is_featured: row.is_featured,
+    is_new: Boolean(row.is_new),
     published_at: row.published_at,
     source_note: safeSourceNote(row.source_note, mock.source_note ?? DEFAULT_STATUS_LABELS.sources),
     content_type: row.content_type,
@@ -470,11 +466,11 @@ export function deriveLinkedContentForProtocol(input: {
   const items: LinkedContentItem[] = [];
   if (input.catRouteSlug) {
     items.push({
-      id: `${input.protocolId}-link-cat`,
-      type: "cat",
-      title: input.catTitle ?? "CAT liée",
-      subtitle: "Carte clinique · fiche en préparation",
-      href: `/cat/${input.catRouteSlug}`,
+      id: `${input.protocolId}-link-protocol`,
+      type: "protocol",
+      title: input.catTitle ?? "Protocole lié",
+      subtitle: "Fiche clinique",
+      href: `/protocols/${input.catRouteSlug.replace(/-cat$/, "")}`,
     });
   }
 

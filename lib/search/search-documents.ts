@@ -27,7 +27,6 @@ import {
 } from "@/lib/authz/content-gate";
 import {
   CALCULATOR_IDENTITY_SEARCH_SELECT,
-  CAT_IDENTITY_SEARCH_SELECT,
   DRUG_IDENTITY_SEARCH_SELECT,
   PROTOCOL_IDENTITY_SEARCH_SELECT,
 } from "@/lib/authz/selects";
@@ -53,7 +52,6 @@ function identityKey(type: SearchDocumentEntityType, slug: string): string {
 
 const PARENT_SELECT: Record<SearchDocumentEntityType, { table: string; columns: string }> = {
   protocol: { table: "protocols", columns: PROTOCOL_IDENTITY_SEARCH_SELECT },
-  cat: { table: "cat_maps", columns: CAT_IDENTITY_SEARCH_SELECT },
   drug: { table: "drugs", columns: DRUG_IDENTITY_SEARCH_SELECT },
   calculator: { table: "calculators", columns: CALCULATOR_IDENTITY_SEARCH_SELECT },
 };
@@ -105,7 +103,6 @@ function entityTypesForFilter(
 ): SearchDocumentEntityType[] | null {
   if (!type || type === "all") return null;
   if (type === "interactions") return [];
-  if (type === "cat") return ["cat"];
   if (type === "protocols") return ["protocol"];
   if (type === "drugs") return ["drug"];
   if (type === "calculators") return ["calculator"];

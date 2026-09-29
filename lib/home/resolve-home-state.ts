@@ -1,25 +1,7 @@
-import {
-  HOME_MODE_OVERRIDE,
-  userTemplateForMode,
-} from "@/lib/home/home-ui-config";
-import { PROFESSION_LABELS, type Profile } from "@/types/database";
+import { HOME_MODE_OVERRIDE, userTemplateForMode } from "@/lib/home/home-ui-config";
+import { displayNameWithTitle, initialsFromName } from "@/lib/session/person";
+import { PROFESSION_LABELS, USAGE_MODE_LABELS, type Profile } from "@/types/database";
 import type { HomeMode, HomeUser } from "@/types/home";
-
-function initialsFromName(name: string | null | undefined, fallback: string) {
-  if (!name?.trim()) {
-    return fallback;
-  }
-  const parts = name.trim().split(/\s+/);
-  const letters = parts.slice(0, 2).map((part) => part[0]?.toUpperCase() ?? "");
-  return letters.join("") || fallback;
-}
-
-function firstName(name: string | null | undefined) {
-  if (!name?.trim()) {
-    return "";
-  }
-  return name.trim().split(/\s+/)[0] ?? "";
-}
 
 export function parseHomePreview(value: string | undefined): HomeMode | null {
   if (value === "incomplete") {
@@ -67,12 +49,7 @@ export function resolveHomeUser(profile: Profile | null, mode: HomeMode): HomeUs
   }
 
   const name = profile.full_name?.trim() || mock.fullName || "";
-  const displayName =
-    mode === "pro-practitioner"
-      ? name
-        ? `Dr. ${firstName(name)} ${name.split(/\s+/).slice(1).map((part) => `${part[0]}.`).join(" ")}`.trim()
-        : mock.displayName
-      : firstName(name) || mock.displayName;
+  const displayName = displayNameWithTitle(name, profile.profession) || mock.displayName;
 
   return {
     ...mock,
@@ -82,6 +59,9 @@ export function resolveHomeUser(profile: Profile | null, mode: HomeMode): HomeUs
     initials: initialsFromName(name, mock.initials),
     professionLabel:
       profile.profession ? PROFESSION_LABELS[profile.profession] : mock.professionLabel,
+    usageModeLabel: profile.usage_mode
+      ? USAGE_MODE_LABELS[profile.usage_mode]
+      : undefined,
     profileStatus: profile.profile_status,
     plan: mode === "pro-practitioner" ? "pro" : "freemium",
   };

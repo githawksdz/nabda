@@ -20,24 +20,16 @@ export type DrugVisibility =
   | "stub"
   | "admin_only";
 
-export type DrugCategorySlug =
-  | "all"
-  | "antibiotiques"
-  | "antalgiques"
-  | "cardio"
-  | "urgences"
-  | "grossesse"
-  | "pediatrie"
-  | "rein"
-  | "anticoagulants"
-  | "diabete";
+export type DrugCategorySlug = string;
 
 export type DrugSummary = {
   id: string;
   slug: string;
   genericName: string;
+  displayName?: string;
   brandNames?: string[];
   className: string;
+  classLabels?: string[];
   shortClassName?: string;
   atcCode?: string;
   categorySlugs: DrugCategorySlug[];
@@ -48,6 +40,15 @@ export type DrugSummary = {
   iconName: string;
   searchTerms: string[];
   frequentlyConsulted?: boolean;
+  description?: string;
+  categorySlug?: string;
+  isNew?: boolean;
+};
+
+export type DrugCatalogCardItem = DrugSummary & {
+  cardKey: string;
+  commercialName: string;
+  dciLabel: string | null;
 };
 
 export type DrugTab = "apercu" | "securite" | "formes" | "sources";
@@ -112,7 +113,6 @@ export type DrugDetail = DrugSummary & {
 export type DrugFilterChip = {
   id: DrugCategorySlug;
   label: string;
-  count?: number;
 };
 
 export type DrugClassTile = {

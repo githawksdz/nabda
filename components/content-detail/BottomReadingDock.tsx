@@ -6,12 +6,11 @@ import {
   Check,
   ChevronRight,
   Flag,
-  GitBranch,
   RotateCcw,
   Share2,
   WifiOff,
 } from "lucide-react";
-import { LAYOUT_DOCK_RESERVE } from "@/lib/layout/frames";
+import { LAYOUT_DOCK_ABOVE_NAV_RESERVE } from "@/lib/layout/frames";
 import { cn } from "@/lib/utils";
 
 export type DockActionIcon =
@@ -19,7 +18,6 @@ export type DockActionIcon =
   | "bookmark-check"
   | "sources"
   | "next"
-  | "cat"
   | "share"
   | "offline"
   | "reset"
@@ -43,8 +41,8 @@ type BottomReadingDockProps = {
   meta?: string;
 };
 
-/** Single owner of reading-dock content clearance. Do not also add nav padding. */
-export const READING_DOCK_CONTENT_CLASS = LAYOUT_DOCK_RESERVE;
+/** Single owner of reading-dock + bottom-nav content clearance. */
+export const READING_DOCK_CONTENT_CLASS = LAYOUT_DOCK_ABOVE_NAV_RESERVE;
 
 function DockIcon({ name }: { name: DockActionIcon }) {
   const className = "size-4";
@@ -57,8 +55,6 @@ function DockIcon({ name }: { name: DockActionIcon }) {
       return <BookOpen className={className} strokeWidth={1.75} />;
     case "next":
       return <ChevronRight className={className} strokeWidth={1.75} />;
-    case "cat":
-      return <GitBranch className={className} strokeWidth={1.75} />;
     case "share":
       return <Share2 className={className} strokeWidth={1.75} />;
     case "reset":
@@ -78,7 +74,10 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
   }
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[var(--z-dock)] bg-surface/90 pb-safe shadow-[var(--shadow-subtle)] backdrop-blur-xl lg:left-[var(--layout-sidebar)]">
+    <div
+      data-reading-dock
+      className="fixed inset-x-0 bottom-[calc(var(--layout-nav-height)+env(safe-area-inset-bottom,0px))] z-[var(--z-dock)] bg-surface/90 shadow-[var(--shadow-subtle)] backdrop-blur-xl lg:bottom-0 lg:left-[var(--layout-sidebar)] lg:pb-safe"
+    >
       {meta ? (
         <p className="px-4 pt-2 text-center text-label-sm text-on-surface-variant">
           {meta}
@@ -91,7 +90,7 @@ export function BottomReadingDock({ actions, meta }: BottomReadingDockProps) {
         {actions.map((action) => {
           const className = cn(
             "motion-color flex min-h-11 min-w-0 flex-1 flex-col items-center justify-center gap-1 px-1 text-text-secondary focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-action-primary",
-            action.active && "font-semibold text-text-primary",
+            action.active && "text-text-primary",
           );
           const inner = (
             <>

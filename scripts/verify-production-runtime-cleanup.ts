@@ -105,21 +105,13 @@ const findings: Finding[] = [];
   });
 }
 
-// 3. CAT chip counts not hardcoded in ui-config
+// 3. CAT is no longer a product module
 {
-  const src = read("lib/cat/cat-ui-config.ts");
-  const hardcoded =
-    /\(\d+\)/.test(src) ||
-    /countLabel:\s*["']\d+/.test(src) ||
-    /42 CAT/.test(src) ||
-    /Urgences \(18\)/.test(src);
-  const hasDeriver = src.includes("generalFilterChipsForCatalog");
+  const nav = read("lib/navigation/doctor-nav.ts");
   findings.push({
-    id: "cat-chip-counts-data-driven",
-    ok: !hardcoded && hasDeriver,
-    detail: hardcoded
-      ? "hardcoded numeric counts remain in cat-ui-config"
-      : "labels without static counts; deriver present",
+    id: "cat-module-removed",
+    ok: !nav.includes('href: "/cat"') && !fs.existsSync(path.join(ROOT, "lib/cat/cat-ui-config.ts")),
+    detail: "doctor nav has no CAT destination and cat-ui-config is gone",
   });
 }
 
@@ -144,12 +136,12 @@ const findings: Finding[] = [];
 {
   const payload = read("lib/content-data/source-payload-supabase.ts");
   const mediaPaths = read("lib/content-data/source-media-paths.ts");
-  const catRoute = read("app/content-media/cat/route.ts");
+  const drugRoute = read("app/content-media/drug/route.ts");
   const nextConfig = read("next.config.ts");
 
   const payloadTouchesFs =
     /nabda_db.*cat.*media/.test(payload) && /existsSync|readdirSync|glob/.test(payload);
-  const routeUsesResolver = catRoute.includes("resolveCatSourceMediaPath");
+  const routeUsesResolver = drugRoute.includes("resolveDrugSourceMediaPath") || drugRoute.includes("viewerCanReadSlug");
   const tracingExcludes = nextConfig.includes("nabda_db/cat/media");
   const safeAllowlist = mediaPaths.includes("isSafeMediaFilename");
 
@@ -173,15 +165,7 @@ const findings: Finding[] = [];
 // 6. no public route imports nabda_db filesystem paths directly
 {
   const publicRoots = [
-    "app/home",
-    "app/search",
-    "app/cat",
-    "app/protocols",
-    "app/drugs",
-    "app/calculators",
-    "app/favorites",
-    "app/history",
-    "app/profile",
+    "app/(doctor)",
     "components",
     "features",
   ];

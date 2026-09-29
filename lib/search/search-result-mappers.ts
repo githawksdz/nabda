@@ -20,7 +20,6 @@ export const IDENTITY_STATUS_SOURCE_PRESERVED = "Source préservée";
 export const IDENTITY_STATUS_PUBLISHED = "Publié";
 
 export const IDENTITY_SUBTITLE: Record<IdentityContentType, string> = {
-  cat: "Arbre décisionnel",
   protocol: "Protocole",
   calculator: "Score ou calculateur",
   drug: "Fiche médicament",
@@ -67,14 +66,6 @@ export const SEARCH_GROUP_META: Array<{
   filter: SearchFilter;
   dotClassName: string;
 }> = [
-  {
-    id: "cat",
-    type: "cat",
-    title: "Conduite à Tenir",
-    subtitle: "Algorithmes d'urgence",
-    filter: "cat",
-    dotClassName: "bg-primary",
-  },
   {
     id: "scores",
     type: "calculator",
@@ -188,9 +179,6 @@ export function identityContentHref(
     }
     return `/calculators/${safe}`;
   }
-  if (type === "cat") {
-    return `/cat/${safe}`;
-  }
   if (type === "drug") {
     return `/drugs/${safe}`;
   }
@@ -284,13 +272,14 @@ export function identityHitToSearchResult(hit: IdentitySearchHit): SearchResult 
     type,
     slug: normalizeSlug(hit.slug) || hit.slug,
     title,
-    description: undefined,
+    description: sanitizeIdentityText(hit.summary) ?? undefined,
     category,
     extraLabel: IDENTITY_SUBTITLE[type],
     footer: footerParts.join(" · ") || undefined,
     statusLabel: identityStatusLabel(hit),
     href: identityContentHref(type, hit.slug, hit.sourceId),
     sourceId: hit.sourceId ?? undefined,
+    isNew: Boolean(hit.isNew),
   };
 }
 
@@ -397,6 +386,8 @@ export function identityToMedicationSearchResult(
     footerText: result.footer,
     href: result.href,
     actions: [{ label: "Ouvrir", href: result.href, variant: "primary" }],
+    isNew: Boolean(result.isNew),
+    categorySlug: result.category,
   };
 }
 

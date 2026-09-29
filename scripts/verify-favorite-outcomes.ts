@@ -21,7 +21,6 @@ const favorite = read("lib/ui/favorite-result.ts");
 const timing = read("lib/ui/feedback-timing.ts");
 const pages = [
   "components/protocols/ProtocolDetailPage.tsx",
-  "components/cat-detail/CatDetailPage.tsx",
   "components/drugs/DrugDetailPage.tsx",
   "components/calculators/CalculatorDetailPage.tsx",
   "components/search/MedicationResultCard.tsx",

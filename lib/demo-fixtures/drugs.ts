@@ -254,7 +254,7 @@ function isVisibleDrug(item: DrugSummary) {
 export const DRUG_CATALOG_COUNT = MOCK_DRUGS.filter(isVisibleDrug).length;
 
 export const DRUG_FILTER_CHIPS: DrugFilterChip[] = [
-  { id: "all", label: "Tous", count: DRUG_CATALOG_COUNT },
+  { id: "all", label: "Tous" },
   { id: "antibiotiques", label: "Antibiotiques" },
   { id: "antalgiques", label: "Antalgiques" },
   { id: "cardio", label: "Cardio" },

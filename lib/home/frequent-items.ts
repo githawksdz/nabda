@@ -6,7 +6,6 @@ import type { HistoryItem } from "@/types/personal";
 export const HOME_FREQUENT_DISPLAY_LIMIT = 6;
 
 const TYPE_ICON: Record<HistoryItem["entityType"], string> = {
-  cat: "git-branch",
   protocol: "file",
   calculator: "calculator",
   drug: "pill",

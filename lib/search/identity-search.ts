@@ -1,5 +1,5 @@
 /**
- * Stage A identity search against protocols, cat_maps, drugs, calculators.
+ * Stage A identity search against protocols, drugs, and calculators.
  * Queries title/DCI/brands/tags only. Does not create search_documents.
  * Uses the caller’s Supabase client so RLS is never bypassed.
  */
@@ -26,7 +26,6 @@ import {
 } from "@/lib/authz/content-gate";
 import {
   CALCULATOR_IDENTITY_SEARCH_SELECT,
-  CAT_IDENTITY_SEARCH_SELECT,
   DRUG_IDENTITY_SEARCH_SELECT,
   PROTOCOL_IDENTITY_SEARCH_SELECT,
 } from "@/lib/authz/selects";
@@ -41,7 +40,6 @@ export const SEARCH_DOCUMENTS_STAGE_B_TODO =
   "Stage B implemented via search_documents (safe snippets only).";
 
 const PROTOCOL_COLUMNS = PROTOCOL_IDENTITY_SEARCH_SELECT;
-const CAT_COLUMNS = CAT_IDENTITY_SEARCH_SELECT;
 const CALCULATOR_COLUMNS = CALCULATOR_IDENTITY_SEARCH_SELECT;
 const DRUG_COLUMNS = DRUG_IDENTITY_SEARCH_SELECT;
 
@@ -64,7 +62,7 @@ export function resolveIdentityLimit(limit?: number): number {
 }
 
 export function buildIdentityOrFilter(
-  table: "protocols" | "cat_maps" | "calculators" | "drugs",
+  table: "protocols" | "calculators" | "drugs",
   term: string,
 ): string {
   const like = `%${term}%`;
@@ -77,9 +75,6 @@ export function buildIdentityOrFilter(
       `source_trace->>brand_names_sample.ilike.${like}`,
       `source_trace->>extra_tags.ilike.${like}`,
     );
-  } else if (table === "cat_maps") {
-    parts.push(`title.ilike.${like}`);
-    parts.push(`source_trace->>tag_slugs.ilike.${like}`);
   } else {
     parts.push(`title.ilike.${like}`, `short_title.ilike.${like}`, `category_slug.ilike.${like}`);
     parts.push(`source_trace->>tag_slugs.ilike.${like}`);
@@ -91,7 +86,7 @@ export function buildIdentityOrFilter(
 }
 
 function buildBasicOrFilter(
-  table: "protocols" | "cat_maps" | "calculators" | "drugs",
+  table: "protocols" | "calculators" | "drugs",
   term: string,
 ): string {
   const like = `%${term}%`;
@@ -103,9 +98,6 @@ function buildBasicOrFilter(
       `therapeutic_class.ilike.${like}`,
       `source_id.ilike.${like}`,
     ].join(",");
-  }
-  if (table === "cat_maps") {
-    return `slug.ilike.${like},title.ilike.${like},source_id.ilike.${like}`;
   }
   return [
     `slug.ilike.${like}`,
@@ -154,12 +146,19 @@ function rowToHit(
     visibility: typeof row.visibility === "string" ? row.visibility : null,
     clinicalPayloadStatus:
       typeof row.clinical_payload_status === "string" ? row.clinical_payload_status : null,
+    isNew: row.is_new === true,
+    summary:
+      typeof row.summary === "string"
+        ? row.summary
+        : typeof row.description === "string"
+          ? row.description
+          : null,
   };
 }
 
 async function queryIdentityTable(
   client: IdentitySearchClient,
-  table: "protocols" | "cat_maps" | "calculators" | "drugs",
+  table: "protocols" | "calculators" | "drugs",
   columns: string,
   type: IdentityContentType,
   term: string,
@@ -203,15 +202,14 @@ async function queryIdentityTable(
 
 function tablesForFilter(
   type: SearchFilter | undefined,
-): Array<"protocols" | "cat_maps" | "calculators" | "drugs"> {
+): Array<"protocols" | "calculators" | "drugs"> {
   if (type === "interactions") {
     return [];
   }
-  if (type === "cat") return ["cat_maps"];
   if (type === "protocols") return ["protocols"];
   if (type === "calculators") return ["calculators"];
   if (type === "drugs") return ["drugs"];
-  return ["protocols", "cat_maps", "calculators", "drugs"];
+  return ["protocols", "calculators", "drugs"];
 }
 
 export function planPayloadToIdentityHit(
@@ -251,9 +249,6 @@ export async function fetchIdentityHits(
   const jobs = tables.map((table) => {
     if (table === "protocols") {
       return queryIdentityTable(client, table, PROTOCOL_COLUMNS, "protocol", term, limit, viewer);
-    }
-    if (table === "cat_maps") {
-      return queryIdentityTable(client, table, CAT_COLUMNS, "cat", term, limit, viewer);
     }
     if (table === "calculators") {
       return queryIdentityTable(client, table, CALCULATOR_COLUMNS, "calculator", term, limit, viewer);

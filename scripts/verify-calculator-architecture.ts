@@ -44,7 +44,7 @@ function walkTs(dir: string, out: string[] = []): string[] {
 
 // 1 — calculator route: gate before render, fail closed
 {
-  const route = read("app/calculators/[slug]/page.tsx");
+  const route = read("app/(doctor)/calculators/[slug]/page.tsx");
   checks.push({
     id: "route_require_published_gate",
     ok:
@@ -72,7 +72,7 @@ function walkTs(dir: string, out: string[] = []): string[] {
 
 // 2 — no preparation / unavailable public calculator UI on route
 {
-  const route = read("app/calculators/[slug]/page.tsx");
+  const route = read("app/(doctor)/calculators/[slug]/page.tsx");
   const detail = read("components/calculators/CalculatorDetailPage.tsx");
   checks.push({
     id: "route_no_prep_unavailable",
@@ -87,7 +87,7 @@ function walkTs(dir: string, out: string[] = []): string[] {
 
 // 3 — catalog index is DB-only
 {
-  const index = read("app/calculators/page.tsx");
+  const index = read("app/(doctor)/calculators/page.tsx");
   checks.push({
     id: "catalog_db_only",
     ok:
@@ -207,7 +207,7 @@ for (const slug of listDedicatedSpecialtyUiSlugs()) {
     /getBuiltInCalculator/,
     /fallbackCalculatorDefinition/,
   ];
-  for (const file of walkTs(path.join(ROOT, "app/calculators"))) {
+  for (const file of walkTs(path.join(ROOT, "app/(doctor)/calculators"))) {
     const src = read(file);
     for (const re of patterns) {
       if (re.test(src)) {

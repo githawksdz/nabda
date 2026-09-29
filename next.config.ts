@@ -1,9 +1,19 @@
+import os from "node:os";
 import type { NextConfig } from "next";
 
-const extraDevOrigins =
-  process.env.ALLOWED_DEV_ORIGINS?.split(",")
-    .map((origin) => origin.trim())
-    .filter(Boolean) ?? [];
+function lanDevOrigins() {
+  const fromEnv =
+    process.env.ALLOWED_DEV_ORIGINS?.split(",")
+      .map((origin) => origin.trim().replace(/^https?:\/\//, "").split(":")[0])
+      .filter(Boolean) ?? [];
+
+  const fromNics = Object.values(os.networkInterfaces())
+    .flatMap((nics) => nics ?? [])
+    .filter((nic) => !nic.internal && (nic.family === "IPv4" || nic.family === 4))
+    .map((nic) => nic.address);
+
+  return [...new Set([...fromEnv, ...fromNics])];
+}
 
 /** Keep nabda_db media out of route file traces — served only via explicit handlers. */
 const NABDA_MEDIA_EXCLUDES = [
@@ -14,12 +24,19 @@ const NABDA_MEDIA_EXCLUDES = [
 ];
 
 const nextConfig: NextConfig = {
+  env: {
+    NEXT_PUBLIC_BUILD_ID:
+      process.env.NEXT_PUBLIC_BUILD_ID ||
+      process.env.VERCEL_GIT_COMMIT_SHA ||
+      process.env.npm_package_version ||
+      "dev",
+  },
   // Staging protection: do not ship browser source maps in production.
   productionBrowserSourceMaps: false,
   // LAN phone/tablet testing (`npm run dev:lan`) hits the machine IP, not localhost.
   // Next.js blocks /_next JS from unknown origins, which leaves the page with no handlers.
-  // Set ALLOWED_DEV_ORIGINS (comma-separated) in .env.local — do not hardcode a machine IP.
-  allowedDevOrigins: extraDevOrigins,
+  // Private NIC addresses are allowed automatically; ALLOWED_DEV_ORIGINS can add extras.
+  allowedDevOrigins: lanDevOrigins(),
   outputFileTracingExcludes: {
     "/internal/cat-preview/**": NABDA_MEDIA_EXCLUDES,
     "/internal/drug-preview/**": NABDA_MEDIA_EXCLUDES,

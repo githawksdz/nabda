@@ -185,7 +185,7 @@ function UnitChip({
       aria-checked={selected}
       onClick={onSelect}
       className={cn(
-        "motion-color h-11 rounded-md px-2 text-label-sm font-semibold",
+        "motion-color h-11 rounded-md px-2 text-label-sm",
         selected
           ? "bg-primary text-on-primary"
           : "text-on-surface-variant",
@@ -224,7 +224,7 @@ function NumericField({
           inputMode="decimal"
           autoComplete="off"
           placeholder={placeholder}
-          className="h-full min-w-0 flex-1 bg-transparent text-body-md outline-none placeholder:text-on-surface-variant"
+          className="h-full min-w-0 flex-1 bg-transparent text-base outline-none placeholder:text-on-surface-variant"
         />
         {unit ? (
           <span className="text-label-sm text-on-surface-variant">{unit}</span>

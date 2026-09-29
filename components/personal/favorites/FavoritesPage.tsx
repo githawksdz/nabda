@@ -1,10 +1,8 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { AppShell } from "@/components/app/AppShell";
 import { PersonalEmptyState } from "@/components/personal/PersonalEmptyState";
 import { PersonalFilterChips } from "@/components/personal/PersonalFilterChips";
-import { PersonalLibraryTabs } from "@/components/personal/PersonalLibraryTabs";
 import { FavoritesList } from "./FavoritesList";
 import {
   FAVORITE_FILTER_CHIPS,
@@ -28,43 +26,32 @@ export function FavoritesPage({ items }: FavoritesPageProps) {
   const filterEmpty = !isEmpty && visible.length === 0;
 
   return (
-    <AppShell title={FAVORITES_COPY.title} navVariant="text" pageHeading={false}>
-      <div className="flex flex-col gap-5 pt-2">
-        <section className="flex flex-col gap-1">
-          <h1 className="text-headline-lg">{FAVORITES_COPY.title}</h1>
-          <p className="text-body-md text-on-surface-variant">
-            {FAVORITES_COPY.subtitle}
-          </p>
-        </section>
+    <div className="flex flex-col gap-5 pt-2">
+      <PersonalFilterChips
+        chips={chips}
+        active={filter}
+        onSelect={setFilter}
+      />
 
-        <PersonalLibraryTabs />
-
-        <PersonalFilterChips
-          chips={chips}
-          active={filter}
-          onSelect={setFilter}
+      {isEmpty ? (
+        <PersonalEmptyState
+          title={FAVORITES_COPY.emptyTitle}
+          description={FAVORITES_COPY.emptyDescription}
+          href={FAVORITES_COPY.emptyHref}
+          actionLabel={FAVORITES_COPY.emptyAction}
+          icon="bookmark"
         />
-
-        {isEmpty ? (
-          <PersonalEmptyState
-            title={FAVORITES_COPY.emptyTitle}
-            description={FAVORITES_COPY.emptyDescription}
-            href={FAVORITES_COPY.emptyHref}
-            actionLabel={FAVORITES_COPY.emptyAction}
-            icon="bookmark"
-          />
-        ) : filterEmpty ? (
-          <PersonalEmptyState
-            title="Aucun favori dans ce filtre"
-            description="Essayez un autre type de contenu ou réaffichez toutes vos références."
-            actionLabel="Voir tous les favoris"
-            icon="bookmark"
-            onAction={() => setFilter("all")}
-          />
-        ) : (
-          <FavoritesList items={visible} />
-        )}
-      </div>
-    </AppShell>
+      ) : filterEmpty ? (
+        <PersonalEmptyState
+          title="Aucun favori dans ce filtre"
+          description="Essayez un autre type de contenu ou réaffichez toutes vos références."
+          actionLabel="Voir tous les favoris"
+          icon="bookmark"
+          onAction={() => setFilter("all")}
+        />
+      ) : (
+        <FavoritesList items={visible} />
+      )}
+    </div>
   );
 }

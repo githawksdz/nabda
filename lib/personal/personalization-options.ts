@@ -41,10 +41,10 @@ export const PERSONALIZATION_SPECIALTIES: PersonalizationChip[] = [
 
 export const PERSONALIZATION_PRIORITIES: PersonalizationChip[] = [
   {
-    id: "cat",
-    label: "CAT décisionnels",
-    aliases: ["CAT"],
-    interestSlugs: ["cat_decisionnels"],
+    id: "protocols-shift",
+    label: "Protocoles d'urgence",
+    aliases: ["Protocoles"],
+    interestSlugs: ["protocoles", "cat_decisionnels"],
   },
   {
     id: "scores",
@@ -70,5 +70,5 @@ export const PERSONALIZATION_REWARD_CHIPS = [
   "Glasgow",
   "Wells",
   "Cockcroft",
-  "CAT urgences",
+  "Protocoles d'urgence",
 ] as const;

@@ -16,7 +16,7 @@ import {
   type StaffRole,
   type ViewerAccess,
 } from "@/lib/authz/content-gate";
-import { CAT_CATALOG_SELECT, DRUG_CATALOG_SELECT } from "@/lib/authz/selects";
+import { DRUG_CATALOG_SELECT } from "@/lib/authz/selects";
 
 export {
   canReadContent,
@@ -111,7 +111,7 @@ export async function requireRole(minimum: StaffRole = "reviewer"): Promise<View
   return viewer;
 }
 
-export type ParentContentType = "protocol" | "cat" | "drug" | "calculator";
+export type ParentContentType = "protocol" | "drug" | "calculator";
 
 export async function loadContentIdentity(
   type: ParentContentType,
@@ -125,17 +125,13 @@ export async function loadContentIdentity(
   const table =
     type === "protocol"
       ? "protocols"
-      : type === "cat"
-        ? "cat_maps"
-        : type === "drug"
-          ? "drugs"
-          : "calculators";
-  const columns =
-    type === "cat"
-      ? CAT_CATALOG_SELECT
       : type === "drug"
-        ? DRUG_CATALOG_SELECT
-        : "slug, status, review_status, visibility";
+        ? "drugs"
+        : "calculators";
+  const columns =
+    type === "drug"
+      ? DRUG_CATALOG_SELECT
+      : "slug, status, review_status, visibility";
 
   const { data, error } = await supabase
     .from(table)

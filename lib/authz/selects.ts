@@ -1,31 +1,31 @@
 /** Explicit PostgREST column lists. Never use select("*") on public content paths. */
 
 export const PROTOCOL_CATALOG_SELECT =
-  "id, slug, title, short_title, summary, category_slug, content_type, status, review_status, visibility, is_featured, published_at, source_note, created_at, updated_at";
+  "id, slug, title, short_title, summary, category_slug, content_type, status, review_status, visibility, is_featured, is_new, published_at, source_note, created_at, updated_at";
 
 export const CAT_CATALOG_SELECT =
   "id, protocol_id, slug, title, summary, status, review_status, visibility, is_featured, published_at, source_note, created_at, updated_at";
 
 export const CALCULATOR_CATALOG_SELECT =
-  "id, slug, title, short_title, description, category_slug, status, review_status, visibility, is_featured, usage_context, engine_slug, engine_version, engine_implemented, created_at, updated_at";
+  "id, slug, title, short_title, description, category_slug, status, review_status, visibility, is_featured, is_new, usage_context, engine_slug, engine_version, engine_implemented, created_at, updated_at";
 
 export const DRUG_CATALOG_SELECT =
-  "id, slug, dci, display_name, therapeutic_class, summary, status, review_status, visibility, is_featured, source_note, created_at, updated_at";
+  "id, slug, dci, display_name, therapeutic_class, category_slug, summary, status, review_status, visibility, is_featured, is_new, source_note, source_trace, created_at, updated_at";
 
 export const HOME_FEED_SELECT =
   "id, title, description, label, category_slug, item_type, target_type, target_slug, visibility, plan_required, audience_professions, audience_interests, is_active, priority, published_at, review_status, created_at, updated_at";
 
 export const PROTOCOL_IDENTITY_SEARCH_SELECT =
-  "slug, title, short_title, category_slug, status, review_status, visibility";
+  "slug, title, short_title, summary, category_slug, status, review_status, visibility, is_new";
 
 export const CAT_IDENTITY_SEARCH_SELECT =
   "slug, title, status, review_status, visibility";
 
 export const CALCULATOR_IDENTITY_SEARCH_SELECT =
-  "slug, title, short_title, category_slug, status, review_status, visibility";
+  "slug, title, short_title, description, category_slug, status, review_status, visibility, is_new";
 
 export const DRUG_IDENTITY_SEARCH_SELECT =
-  "slug, dci, display_name, therapeutic_class, status, review_status, visibility";
+  "slug, dci, display_name, therapeutic_class, summary, category_slug, status, review_status, visibility, is_new";
 
 export const PROTOCOL_SECTION_SELECT =
   "id, protocol_id, heading, section_type, order_index, visibility, adaptation_flags, content_json, plain_text, review_status, created_at, updated_at";

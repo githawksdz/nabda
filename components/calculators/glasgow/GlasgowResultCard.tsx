@@ -17,11 +17,11 @@ export function GlasgowResultCard({ interpretation }: GlasgowResultCardProps) {
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
       <p className="text-label-sm text-on-surface-variant">Score total</p>
-      <p className="mt-1 text-display text-on-surface">{interpretation.fraction}</p>
+      <p className="mt-1 text-result text-on-surface">{interpretation.fraction}</p>
       <p className="sr-only" role="status" aria-live="polite">
         {announcement}
       </p>
-      <p className="mt-1 text-headline-sm">{interpretation.label}</p>
+      <p className="mt-1 text-headline-md">{interpretation.label}</p>
       <div className="mt-3 flex flex-wrap gap-1.5">
         {pills.map((pill) => (
           <span

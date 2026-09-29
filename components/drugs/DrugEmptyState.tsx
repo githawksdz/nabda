@@ -14,7 +14,7 @@ export function DrugEmptyState({
 }: DrugEmptyStateProps) {
   return (
     <EmptyState
-      title={catalogEmpty ? "Catalogue indisponible" : "Aucune molécule trouvée"}
+      title={catalogEmpty ? "Catalogue indisponible" : "Aucun médicament trouvé"}
       description={
         catalogEmpty
           ? "Les fiches médicaments ne sont pas disponibles pour le moment."

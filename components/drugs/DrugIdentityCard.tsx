@@ -1,5 +1,12 @@
 import { StatusBadge } from "@/components/ui/StatusBadge";
-import { Surface } from "@/components/ui/Surface";
+import {
+  CardAction,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  ContentCard,
+} from "@/components/ui/ContentCard";
 import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import {
   drugDetailStatusLabel,
@@ -21,38 +28,40 @@ export function DrugIdentityCard({
 
   if (variant === "compact") {
     return (
-      <Surface variant="elevated" className="flex items-start justify-between gap-3 p-3.5">
-        <div className="min-w-0">
-          <p className="text-label-sm text-text-secondary">Médicament</p>
-          <h1 className="mt-1 text-headline-sm text-text-primary [overflow-wrap:anywhere]">
-            {drug.genericName}
-          </h1>
+      <ContentCard size="sm">
+        <CardHeader>
+          <p className="text-label-sm text-muted-foreground">Médicament</p>
+          <CardTitle className="[overflow-wrap:anywhere]">{drug.genericName}</CardTitle>
           {drug.classChip ? (
-            <div className="mt-2">
-              <StatusBadge tone="outline">{drug.classChip}</StatusBadge>
-            </div>
+            <StatusBadge tone="outline">{drug.classChip}</StatusBadge>
           ) : null}
-        </div>
-        <StatusBadge tone={accessLabelToTone(compactStatus)}>{compactStatus}</StatusBadge>
-      </Surface>
+          <CardAction>
+            <StatusBadge tone={accessLabelToTone(compactStatus)}>
+              {compactStatus}
+            </StatusBadge>
+          </CardAction>
+        </CardHeader>
+      </ContentCard>
     );
   }
 
   return (
-    <Surface variant="elevated" className="flex flex-col gap-2">
-      <p className="text-label-sm text-text-secondary">Médicament</p>
-      <h1 className="text-headline-md text-text-primary [overflow-wrap:anywhere]">
-        {drug.genericName}
-      </h1>
-      <p className="text-body-md text-text-secondary [overflow-wrap:anywhere]">
-        {drug.subtitle || drug.className}
-      </p>
-      <div className="flex flex-wrap gap-1.5 pt-1">
+    <ContentCard>
+      <CardHeader>
+        <p className="text-label-sm text-muted-foreground">Médicament</p>
+        <CardTitle className="text-clinical-title [overflow-wrap:anywhere]">
+          {drug.genericName}
+        </CardTitle>
+        <CardDescription className="text-body-md [overflow-wrap:anywhere]">
+          {drug.subtitle || drug.className}
+        </CardDescription>
+      </CardHeader>
+      <CardContent className="flex flex-wrap gap-1.5">
         {drug.shortClassName ? (
           <StatusBadge tone="outline">{drug.shortClassName}</StatusBadge>
         ) : null}
         <StatusBadge tone={accessLabelToTone(detailStatus)}>{detailStatus}</StatusBadge>
-      </div>
-    </Surface>
+      </CardContent>
+    </ContentCard>
   );
 }

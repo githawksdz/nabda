@@ -21,9 +21,9 @@ export function FilterChip({
   ...props
 }: FilterChipProps) {
   const classes = cn(
-    "motion-color flex min-h-[var(--size-chip)] shrink-0 items-center gap-1.5 rounded-full px-3.5 text-label-md",
+    "motion-color inline-flex h-8 min-h-8 shrink-0 items-center gap-1 rounded-full px-2.5 text-[10px] leading-3 font-medium",
     selected
-      ? "bg-action-primary font-semibold text-text-inverse"
+      ? "bg-action-primary text-text-inverse"
       : "bg-surface-muted text-text-secondary hover:bg-surface-container",
     disabled &&
       "cursor-not-allowed bg-action-disabled text-text-disabled hover:bg-action-disabled",
@@ -36,7 +36,7 @@ export function FilterChip({
       {count != null ? (
         <span
           className={cn(
-            "motion-color flex min-w-4 items-center justify-center rounded-full px-1 text-label-sm",
+            "motion-color flex min-w-3.5 items-center justify-center rounded-full px-1 text-[9px] leading-none font-medium",
             selected
               ? "bg-text-inverse text-action-primary"
               : "bg-surface-container-high text-text-primary",

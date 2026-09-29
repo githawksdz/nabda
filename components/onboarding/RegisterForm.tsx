@@ -1,6 +1,7 @@
 import { useId, useState, type FormEvent } from "react";
 import { useRouter } from "next/navigation";
-import { Drawer } from "vaul";
+import { DrawerDescription, DrawerTitle } from "@/components/ui/AppDrawer";
+import { Button } from "@/components/ui/Button";
 import { signInWithGoogle, signUpWithEmail } from "@/features/auth/api";
 import { registerSchema } from "@/lib/auth/schemas";
 import { PasswordField } from "./PasswordField";
@@ -72,12 +73,8 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
   return (
     <form noValidate onSubmit={onSubmit} className="flex flex-col gap-4">
       <div className="flex flex-col gap-1">
-        <Drawer.Title className="text-[22px] font-semibold tracking-tight text-on-surface">
-          Créer un compte
-        </Drawer.Title>
-        <Drawer.Description className="text-[14px] text-on-surface-variant">
-          Créez votre espace Nabda.
-        </Drawer.Description>
+        <DrawerTitle>Créer un compte</DrawerTitle>
+        <DrawerDescription>Créez votre espace Nabda.</DrawerDescription>
       </div>
 
       {error ? <SoftMessage type="error">{error}</SoftMessage> : null}
@@ -86,7 +83,7 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={nameId}
-          className="text-[13px] font-medium text-on-surface-variant"
+          className="text-label-sm font-medium text-on-surface-variant"
         >
           Nom complet
         </label>
@@ -99,14 +96,14 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
             setName(event.target.value);
             setError(null);
           }}
-          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-[15px] text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
+          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-base text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
         />
       </div>
 
       <div className="flex flex-col gap-1.5">
         <label
           htmlFor={emailId}
-          className="text-[13px] font-medium text-on-surface-variant"
+          className="text-label-sm font-medium text-on-surface-variant"
         >
           Adresse email
         </label>
@@ -120,7 +117,7 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
             setEmail(event.target.value);
             setError(null);
           }}
-          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-[15px] text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
+          className="h-12 w-full rounded-lg bg-surface-container-low px-4 text-base text-on-surface outline-none placeholder:text-on-surface-variant/60 focus-visible:ring-2 focus-visible:ring-primary/20"
         />
       </div>
 
@@ -134,13 +131,9 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
         }}
       />
 
-      <button
-        type="submit"
-        disabled={pending}
-        className="h-[50px] w-full rounded-lg bg-primary text-[15px] font-medium text-on-primary disabled:opacity-60"
-      >
+      <Button type="submit" loading={pending} className="w-full">
         {pending ? "Création du compte..." : "Créer mon compte"}
-      </button>
+      </Button>
 
       <SocialAuthRow
         prompt="ou s’inscrire avec"
@@ -148,7 +141,7 @@ export function RegisterForm({ onSwitchToLogin }: RegisterFormProps) {
         onGoogle={onGoogle}
       />
 
-      <p className="text-center text-[13px] text-on-surface-variant">
+      <p className="text-center text-label-sm text-on-surface-variant">
         Déjà membre ?{" "}
         <button
           type="button"

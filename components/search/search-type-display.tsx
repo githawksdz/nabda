@@ -3,7 +3,6 @@ import { searchResultTypeLabel } from "@/lib/ui/access-status-display";
 import type { SearchResult, SearchResultType } from "@/types/search";
 
 const TYPE_ICON: Record<SearchResultType, string> = {
-  cat: "git-branch",
   protocol: "file",
   recommendation: "file",
   drug: "pill",

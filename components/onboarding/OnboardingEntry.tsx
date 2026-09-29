@@ -14,7 +14,7 @@ export function OnboardingEntry() {
     <main className="min-h-dvh overflow-hidden bg-background text-on-surface">
       <div className="mx-auto flex min-h-dvh w-full max-w-[430px] flex-col px-4 pt-safe pb-safe">
         <header className="flex h-12 shrink-0 items-center justify-between">
-          <span className="text-[15px] font-semibold tracking-tight">
+          <span className="text-label-md tracking-tight">
             Nabda
           </span>
           <button

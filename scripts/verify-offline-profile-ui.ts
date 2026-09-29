@@ -20,7 +20,6 @@ const manager = read("components/offline/OfflineManagerPage.tsx");
 const view = read("components/offline/OfflineContentView.tsx");
 const profile = read("components/personal/profile/ProfilePage.tsx");
 const plan = read("components/personal/profile/PlanCard.tsx");
-const connection = read("components/pwa/ConnectionIndicator.tsx");
 const account = read("components/personal/profile/AccountSection.tsx");
 const signOut = read("features/auth/api.ts");
 
@@ -59,7 +58,7 @@ check(
 
 check(
   "profile_offline_entry",
-  profile.includes('href: "/offline"') && !profile.includes("/premium"),
+  profile.includes('href="/offline"') && !profile.includes("/premium"),
   "ProfilePage",
 );
 
@@ -75,14 +74,6 @@ check(
   "logout_still_signs_out",
   account.includes("signOut()") && signOut.includes("clearOfflinePrivateData"),
   "auth wipe",
-);
-
-check(
-  "connection_no_fake_sync",
-  connection.includes("En ligne") &&
-    connection.includes("Hors-ligne") &&
-    !connection.toLowerCase().includes("synchron"),
-  "ConnectionIndicator",
 );
 
 check(

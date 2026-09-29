@@ -13,6 +13,14 @@ export type HtmlCleanResult = {
 const EVENT_HANDLER_ATTR =
   /\s+on(?:mouseover|mouseout|mousemove|mouseenter|mouseleave|click|load|error|focus|blur)\s*=\s*("[\s\S]*?"|'[\s\S]*?')/gi;
 
+export function imgDimensionAttrs(tag: string): string {
+  const width = tag.match(/\bwidth\s*=\s*(?:"(\d+)"|'(\d+)'|(\d+))/i);
+  const height = tag.match(/\bheight\s*=\s*(?:"(\d+)"|'(\d+)'|(\d+))/i);
+  const w = width?.[1] ?? width?.[2] ?? width?.[3];
+  const h = height?.[1] ?? height?.[2] ?? height?.[3];
+  return `${w ? ` width="${w}"` : ""}${h ? ` height="${h}"` : ""}`;
+}
+
 function matchOpenDiv(html: string, from: number): { end: number; attrs: string } | null {
   if (html.slice(from, from + 4).toLowerCase() !== "<div") {
     return null;
@@ -219,7 +227,7 @@ export function cleanProtocolHtml(html: string): HtmlCleanResult {
     }
     const safeSrc = src ? src.replace(/"/g, "") : "";
     const safeAlt = alt.replace(/"/g, "");
-    return `<img src="${safeSrc}" alt="${safeAlt}">`;
+    return `<img src="${safeSrc}" alt="${safeAlt}"${imgDimensionAttrs(tag)}>`;
   });
 
   out = out.replace(/<span(?:\s[^>]*)?>\s*<\/span>/gi, "");

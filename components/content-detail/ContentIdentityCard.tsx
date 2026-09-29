@@ -1,5 +1,11 @@
 import { StatusBadge } from "@/components/ui/StatusBadge";
-import { Surface } from "@/components/ui/Surface";
+import {
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+  ContentCard,
+} from "@/components/ui/ContentCard";
 import { accessLabelToTone } from "@/lib/ui/access-status-display";
 import {
   doctorPublicationLabel,
@@ -20,34 +26,38 @@ export function ContentIdentityCard({
   const publication = doctorPublicationLabel(protocol.status);
 
   return (
-    <Surface variant="elevated" className="flex flex-col gap-2">
-      <p className="text-label-sm text-text-secondary">{eyebrow}</p>
-      <h1 className="text-headline-md text-text-primary [overflow-wrap:anywhere]">
-        {protocol.title}
-      </h1>
-      {protocol.subtitle ? (
-        <p className="text-body-md text-text-secondary [overflow-wrap:anywhere]">
-          {protocol.subtitle}
-        </p>
-      ) : null}
-      {protocol.summary ? (
-        <p className="text-body-sm text-text-secondary [overflow-wrap:anywhere]">
-          {protocol.summary}
-        </p>
-      ) : null}
-      <div className="flex flex-wrap gap-1.5 pt-1">
-        {protocol.categories.map((category) => (
-          <StatusBadge key={category} tone="outline">
-            {category}
-          </StatusBadge>
-        ))}
-        {publication ? (
-          <StatusBadge tone={accessLabelToTone(publication)}>{publication}</StatusBadge>
+    <ContentCard>
+      <CardHeader>
+        <p className="text-label-sm text-muted-foreground">{eyebrow}</p>
+        <CardTitle className="text-clinical-title [overflow-wrap:anywhere]">
+          {protocol.title}
+        </CardTitle>
+        {protocol.subtitle ? (
+          <CardDescription className="text-body-md [overflow-wrap:anywhere]">
+            {protocol.subtitle}
+          </CardDescription>
         ) : null}
-        {visibility ? (
-          <StatusBadge tone={accessLabelToTone(visibility)}>{visibility}</StatusBadge>
+      </CardHeader>
+      <CardContent className="flex flex-col gap-2">
+        {protocol.summary ? (
+          <p className="text-body-sm text-muted-foreground [overflow-wrap:anywhere]">
+            {protocol.summary}
+          </p>
         ) : null}
-      </div>
-    </Surface>
+        <div className="flex flex-wrap gap-1.5">
+          {protocol.categories.map((category) => (
+            <StatusBadge key={category} tone="outline">
+              {category}
+            </StatusBadge>
+          ))}
+          {publication ? (
+            <StatusBadge tone={accessLabelToTone(publication)}>{publication}</StatusBadge>
+          ) : null}
+          {visibility ? (
+            <StatusBadge tone={accessLabelToTone(visibility)}>{visibility}</StatusBadge>
+          ) : null}
+        </div>
+      </CardContent>
+    </ContentCard>
   );
 }

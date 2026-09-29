@@ -8,11 +8,14 @@ import type {
   DrugVisibility,
 } from "@/types/drugs";
 import { buildPlaceholderDrugDetail } from "@/lib/drugs/drug-ui-config";
+import { splitDrugClassLabels } from "@/lib/drugs/class-labels";
 import {
   canClaimValidated,
   isPreparationDrug,
 } from "@/lib/drugs/status-labels";
+import { identityBrandsFromTrace } from "@/lib/search/search-result-mappers";
 import { isPlaceholderRecord } from "@/lib/content-source/readiness";
+import type { Json } from "@/types/content";
 
 export function mapDrugPublicationStatus(status: string): DrugPublicationStatus {
   if (status === "published") return "published";
@@ -84,24 +87,63 @@ function neverValidatePlaceholder(
   return reviewStatus;
 }
 
+function sourceTraceRecord(value: Json | undefined): Record<string, unknown> | null {
+  if (!value || typeof value !== "object" || Array.isArray(value)) {
+    return null;
+  }
+  return value as Record<string, unknown>;
+}
+
+function uniqueNames(values: Array<string | null | undefined>): string[] {
+  const seen = new Set<string>();
+  const out: string[] = [];
+  for (const value of values) {
+    const trimmed = value?.trim();
+    if (!trimmed) continue;
+    const key = trimmed.toLowerCase();
+    if (seen.has(key)) continue;
+    seen.add(key);
+    out.push(trimmed);
+  }
+  return out;
+}
+
 export function summaryFromDbDrug(row: DbDrug): DrugSummary {
   const reviewStatus = neverValidatePlaceholder(row, mapDrugReviewStatus(row.review_status));
   const status = mapDrugPublicationStatus(row.status);
   const genericName = row.dci || row.display_name;
+  const trace = sourceTraceRecord(row.source_trace);
+  const brandNames = uniqueNames(identityBrandsFromTrace(trace));
+  const className = row.therapeutic_class || "Classe à compléter";
+  const classSlug =
+    typeof trace?.class_slug === "string" ? trace.class_slug : undefined;
+  const categorySlug = row.category_slug ?? classSlug ?? undefined;
   return {
     id: row.id,
     slug: row.slug,
     genericName,
-    className: row.therapeutic_class || "Classe à compléter",
+    displayName: row.display_name || undefined,
+    brandNames,
+    className,
+    classLabels: splitDrugClassLabels(className),
     shortClassName: row.therapeutic_class || undefined,
-    categorySlugs: [],
+    categorySlugs: categorySlug ? [categorySlug] : [],
     status,
     reviewStatus,
     visibility: mapDrugVisibility(row.visibility),
     href: `/drugs/${row.slug}`,
     iconName: "pill",
-    searchTerms: [row.slug, row.dci, row.display_name, row.therapeutic_class ?? ""],
+    searchTerms: [
+      row.slug,
+      row.dci,
+      row.display_name,
+      row.therapeutic_class ?? "",
+      ...brandNames,
+    ],
     frequentlyConsulted: row.is_featured,
+    description: row.summary ?? undefined,
+    categorySlug,
+    isNew: Boolean(row.is_new),
   };
 }
 
@@ -120,16 +162,43 @@ export function overlayDbDrugSummary(
     row,
     mapDrugReviewStatus(row.review_status),
   );
+  const genericName = row.dci || row.display_name || base.genericName;
+  const trace = sourceTraceRecord(row.source_trace);
+  const brandNames = uniqueNames([
+    ...(base.brandNames ?? []),
+    ...identityBrandsFromTrace(trace),
+  ]);
+  const className = row.therapeutic_class || base.className;
+  const classSlug =
+    typeof trace?.class_slug === "string" ? trace.class_slug : undefined;
   return {
     ...base,
     id: row.id || base.id,
-    genericName: row.dci || row.display_name || base.genericName,
-    className: row.therapeutic_class || base.className,
+    genericName,
+    displayName: row.display_name || base.displayName,
+    brandNames,
+    className,
+    classLabels: splitDrugClassLabels(className),
     shortClassName: base.shortClassName ?? row.therapeutic_class ?? undefined,
     status: mapDrugPublicationStatus(row.status),
     reviewStatus,
     visibility: mapDrugVisibility(row.visibility),
     frequentlyConsulted: row.is_featured || base.frequentlyConsulted,
+    description: row.summary ?? base.description,
+    categorySlug: row.category_slug ?? classSlug ?? base.categorySlug,
+    categorySlugs:
+      row.category_slug || classSlug
+        ? [row.category_slug ?? classSlug!]
+        : base.categorySlugs,
+    isNew: Boolean(row.is_new) || base.isNew,
+    searchTerms: uniqueNames([
+      ...base.searchTerms,
+      row.slug,
+      row.dci,
+      row.display_name,
+      row.therapeutic_class ?? "",
+      ...brandNames,
+    ]),
   };
 }
 

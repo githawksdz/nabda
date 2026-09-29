@@ -18,7 +18,6 @@ type OfflinePacksStaffPageProps = {
 const TYPES: Array<{ id: OfflineContentType | "all"; label: string }> = [
   { id: "all", label: "Tous" },
   { id: "protocol", label: "Protocoles" },
-  { id: "cat", label: "CAT" },
   { id: "drug", label: "Médicaments" },
   { id: "calculator", label: "Calculateurs" },
 ];

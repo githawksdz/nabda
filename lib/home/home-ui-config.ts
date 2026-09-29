@@ -1,23 +1,23 @@
-import type { HomeMode, HomeUser, SearchChip } from "@/types/home";
+import type { HomeMode, HomeUser } from "@/types/home";
 
-/** Home shell UI copy and navigation chips — not clinical content. */
+/** Home shell chrome. Campaign sentences live in the home campaign catalog. */
 
 /** Preview override if plan is not set: /home?preview=incomplete|freemium|pro */
 export const HOME_MODE_OVERRIDE: HomeMode | null = null;
 
-export const incompleteSearchChips: SearchChip[] = [
-  { id: "cat", label: "CAT", href: "/cat" },
-  { id: "drugs", label: "Médicaments", href: "/drugs" },
-  { id: "scores", label: "Scores", href: "/calculators" },
-  { id: "doses", label: "Pédiatrie", href: "/drugs" },
-];
-
-export const freemiumSearchChips: SearchChip[] = [
-  { id: "cat", label: "CAT", href: "/cat", active: true },
-  { id: "scores", label: "Scores", href: "/calculators" },
-  { id: "posologies", label: "Posologies", href: "/drugs" },
-  { id: "protocols", label: "Protocoles", href: "/protocols" },
-];
+export const HOME_CHROME = {
+  greeting: "Salut",
+  resumeTitle: "Reprendre",
+  resumeEmptyTitle: "Aucun protocole récent",
+  resumeEmptyBody: "Les protocoles que vous ouvrez apparaîtront ici.",
+  clinicalTitle: "Protocoles cliniques",
+  clinicalPrompt: "Afficher par",
+  clinicalEmptyTitle: "Aucun protocole à afficher",
+  clinicalEmptyBody: "Les protocoles publiés apparaîtront ici.",
+  profileProgressLabel: "Profil",
+  feedUnavailable:
+    "Les contenus récents n’ont pas pu être chargés. Réessayez dans un instant.",
+} as const;
 
 const incompleteUser: HomeUser = {
   id: "home-incomplete",

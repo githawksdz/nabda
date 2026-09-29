@@ -19,10 +19,10 @@ export function CalculatorIdentity({
 
   return (
     <section className="rounded-2xl bg-surface-container-lowest p-4 shadow-sm">
-      <p className="text-label-sm uppercase tracking-[0.04em] text-on-surface-variant">
+      <p className="text-label-sm text-on-surface-variant">
         {eyebrow}
       </p>
-      <h1 className="mt-1 text-headline-md">
+      <h1 className="mt-1 text-clinical-title">
         {title ?? calculator.listTitle ?? calculator.name}
       </h1>
       <p className="mt-2 text-body-sm text-on-surface-variant">

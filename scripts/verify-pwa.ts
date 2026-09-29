@@ -78,8 +78,12 @@ async function main() {
   });
   checks.push({
     id: "offline_fallback_exists",
-    ok: fallback.includes("hors-ligne") && sw.includes("/offline-fallback.html"),
-    detail: "public/offline-fallback.html",
+    ok:
+      fallback.includes("hors-ligne") &&
+      fallback.includes("data-bottom-nav") &&
+      fallback.includes("data-app-header") &&
+      sw.includes("/offline-fallback.html"),
+    detail: "public/offline-fallback.html includes app chrome",
   });
   checks.push({
     id: "sw_versioned_cache",
@@ -88,8 +92,36 @@ async function main() {
   });
   checks.push({
     id: "sw_does_not_cache_api",
-    ok: sw.includes("isApi") && sw.includes("return;") && !/cache\.(add|put).*\/api\/offline/.test(sw),
-    detail: "API and RSC requests are not cached",
+    ok:
+      sw.includes("isApi") &&
+      sw.includes("isRsc") &&
+      sw.includes("return;") &&
+      !/cache\.(add|put).*\/api\/offline/.test(sw),
+    detail: "API, RSC, and catalog HTML are not cached",
+  });
+  checks.push({
+    id: "sw_caches_shell_assets_on_visit",
+    ok:
+      sw.includes("CACHE_SHELL_ASSETS") &&
+      provider.includes("CACHE_SHELL_ASSETS") &&
+      provider.includes("collectShellAssetUrls"),
+    detail: "hashed JS/CSS/fonts captured on first controlled visit",
+  });
+  checks.push({
+    id: "sw_first_install_takes_control",
+    ok: sw.includes("if (!self.registration.active)") && sw.includes("skipWaiting"),
+    detail: "first install claims the open tab",
+  });
+  checks.push({
+    id: "sw_local_library_html_only",
+    ok:
+      sw.includes("function isLocalContentPath") &&
+      sw.includes("networkFirstLocalDocument") &&
+      /async function networkFirstNavigate\(request\) \{\s*try \{\s*return await fetch\(request\);/.test(
+        sw,
+      ) &&
+      sw.includes('url.pathname === "/offline"'),
+    detail: "only /offline documents are stored; other routes fall back to chrome",
   });
   checks.push({
     id: "sw_safe_update_flow",
@@ -371,8 +403,104 @@ async function main() {
   });
   checks.push({
     id: "offline_pages_exist",
-    ok: exists("app/offline/page.tsx") && exists("app/offline/view/[type]/[slug]/page.tsx"),
+    ok: exists("app/(doctor)/offline/page.tsx") && exists("app/(doctor)/offline/view/[type]/[slug]/page.tsx"),
     detail: "management + local reader",
+  });
+
+  const loginForm = read("components/onboarding/LoginForm.tsx");
+  const registerForm = read("components/onboarding/RegisterForm.tsx");
+  const passwordField = read("components/onboarding/PasswordField.tsx");
+  const csp = read("lib/security/csp.ts");
+  const proxy = read("proxy.ts");
+  const icon192 = read("app/icon-192/route.ts");
+  const icon512 = read("app/icon-512/route.ts");
+  const beforeRegister = provider.slice(0, provider.indexOf("serviceWorker.register"));
+
+  checks.push({
+    id: "static_pwa_icons",
+    ok:
+      exists("public/icons/icon-192.png") &&
+      exists("public/icons/icon-512.png") &&
+      exists("public/icons/icon-512-maskable.png") &&
+      exists("public/icons/apple-touch-icon.png") &&
+      manifest.includes("/icons/icon-192.png") &&
+      manifest.includes('purpose: "any"') &&
+      manifest.includes('purpose: "maskable"') &&
+      icon192.includes("/icons/icon-192.png") &&
+      icon512.includes("/icons/icon-512.png"),
+    detail: "public/icons + manifest + redirects",
+  });
+  checks.push({
+    id: "apple_touch_icon_and_capable_meta",
+    ok:
+      layout.includes("/icons/apple-touch-icon.png") &&
+      layout.includes("appleWebApp") &&
+      layout.includes("capable: true") &&
+      layout.includes('"apple-mobile-web-app-capable"') &&
+      layout.includes("Hub de publication clinique Nabda"),
+    detail: "app/layout.tsx apple icons + both capable tags",
+  });
+  checks.push({
+    id: "apple_startup_images",
+    ok:
+      exists("public/icons/splash-750x1334.png") &&
+      exists("public/icons/splash-1170x2532.png") &&
+      exists("public/icons/splash-1284x2778.png") &&
+      exists("public/icons/splash-1179x2556.png") &&
+      exists("public/icons/splash-1290x2796.png") &&
+      layout.includes("startupImage") &&
+      layout.includes("/icons/splash-750x1334.png"),
+    detail: "startup images + layout media queries",
+  });
+  checks.push({
+    id: "auth_inputs_are_16px",
+    ok:
+      !loginForm.includes("text-[15px]") &&
+      !registerForm.includes("text-[15px]") &&
+      !passwordField.includes("text-[15px]") &&
+      loginForm.includes("text-base") &&
+      registerForm.includes("text-base") &&
+      passwordField.includes("text-base") &&
+      (passwordField.includes("size-11") || passwordField.includes("min-h-11")),
+    detail: "LoginForm/RegisterForm/PasswordField",
+  });
+  checks.push({
+    id: "sw_registers_before_version_await",
+    ok:
+      provider.includes("serviceWorker.register") &&
+      !provider.includes("/api/pwa/version") &&
+      !beforeRegister.includes("await fetch") &&
+      provider.includes("NEXT_PUBLIC_BUILD_ID"),
+    detail: "PwaProvider registers immediately",
+  });
+  checks.push({
+    id: "sw_static_cache_capped",
+    ok:
+      sw.includes("STATIC_CACHE_MAX_ENTRIES") &&
+      sw.includes("trimStaticCache") &&
+      /STATIC_CACHE_MAX_ENTRIES = 80/.test(sw),
+    detail: "nabda-static-* eviction",
+  });
+  checks.push({
+    id: "offline_banner_listener",
+    ok:
+      provider.includes('addEventListener("offline"') &&
+      provider.includes('addEventListener("online"') &&
+      provider.includes("Hors-ligne") &&
+      provider.includes("layout-nav-height"),
+    detail: "PwaProvider online/offline bar",
+  });
+  checks.push({
+    id: "csp_nonce_in_proxy",
+    ok:
+      proxy.includes("buildCsp") &&
+      proxy.includes("cspHeaderName") &&
+      proxy.includes('request.headers.set("Content-Security-Policy"') &&
+      csp.includes("default-src 'self'") &&
+      csp.includes("'strict-dynamic'") &&
+      csp.includes("worker-src 'self'") &&
+      csp.includes("frame-ancestors 'none'"),
+    detail: "proxy.ts + lib/security/csp.ts",
   });
 
   const failed = checks.filter((check) => !check.ok);
@@ -384,7 +512,8 @@ async function main() {
     calculator_ms: { glasgowMs, cockcroftMs },
     checks,
     notes: [
-      "Browser installation and a fully offline shell were not exercised in this process.",
+      "Shell chrome and hashed static assets are cached on first controlled visit.",
+      "Catalog HTML, RSC, and API responses stay network-only. Downloaded clinical payloads stay in IndexedDB.",
       "Live entitlement still requires configured test users and applied migration 0022.",
     ],
   };

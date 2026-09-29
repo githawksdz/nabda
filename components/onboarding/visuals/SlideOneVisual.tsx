@@ -36,7 +36,7 @@ export function SlideOneVisual() {
             </span>
             <div className="min-w-0 flex-1">
               <p className="truncate text-[12px] font-medium text-on-surface">
-                Protocoles CAT
+                Protocoles
               </p>
               <p className="h-1.5 w-16 rounded-full bg-surface-container-high" />
             </div>

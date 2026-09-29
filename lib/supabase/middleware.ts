@@ -30,7 +30,9 @@ function isPublicRoute(pathname: string) {
     pathname.startsWith("/icon-192") ||
     pathname.startsWith("/icon-512") ||
     pathname.startsWith("/api/pwa/") ||
-    pathname === "/staging-access"
+    pathname === "/staging-access" ||
+    (process.env.NODE_ENV !== "production" &&
+      pathname.startsWith("/dev/promotional-cards"))
   );
 }
 

@@ -344,6 +344,26 @@ export type Database = {
         };
         Relationships: [];
       };
+      user_content_visits: {
+        Row: {
+          user_id: string;
+          item_type: string;
+          item_slug: string;
+          first_viewed_at: string;
+          last_viewed_at: string;
+        };
+        Insert: {
+          user_id: string;
+          item_type: string;
+          item_slug: string;
+          first_viewed_at?: string;
+          last_viewed_at?: string;
+        };
+        Update: {
+          last_viewed_at?: string;
+        };
+        Relationships: [];
+      };
       protocol_sections: {
         Row: ProtocolSectionRow;
         Insert: InsertWithImportDefaults<

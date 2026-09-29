@@ -12,7 +12,7 @@ export function WelcomeSlide({ slide, visual }: WelcomeSlideProps) {
       <div className="flex w-full max-w-[320px] max-h-[340px] aspect-[3/4] items-center justify-center">
         {visual}
       </div>
-      <h2 className="mt-5 text-center text-[22px] font-semibold leading-tight tracking-tight text-on-surface">
+      <h2 className="font-signature mt-5 text-center text-[1.75rem] leading-[1.15] text-on-surface">
         {slide.title}
       </h2>
       <p className="mt-2 max-w-[300px] text-center text-[14px] leading-snug text-on-surface-variant">
