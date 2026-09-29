@@ -1,0 +1,97 @@
+{
+  "id": "calc.immune-related-adverse-events-endocrine-toxicities-hypothyroidism",
+  "slug": "immune-related-adverse-events-endocrine-toxicities-hypothyroidism",
+  "language": "en",
+  "title": "Immune-lié Adverse Events pour Endocrine Toxicities - hypothyroïdie",
+  "short_title": "IRAE pour Endocrine Toxicities - hypothyroïdie",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "endocrinologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hypothyroidism"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Immune Related Adverse Events, irae, hypothyroidism, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+  ],
+  "dosing": false,
+  "formula": "| Criteria | Hypothyroidism grade |\n| --- | --- |\n| TSH <10 mIU/L and asymptomatic | G1 |\n| Moderate symptoms; able to perform ADLs; TSH persistently >10 mIU/L | G2 |\n| Severe symptoms, medically significant or life-threatening consequences, unable to perform ADLs | G3-4 |\n\nSee Next Steps for details on management.",
+  "how_to_use": {
+    "why": "Cet outil aide à la décision d'interrompre l'ICPi, de réaliser un bilan diagnostique complémentaire et d'initier une supplémentation en hormones thyroïdiennes.",
+    "when": "Patients adultes présentant des symptômes d’hypothyroïdie et/ou des anomalies de la TSH ou de la thyroxine libre apparues pendant un traitement par inhibiteurs de points de contrôle immunitaire, notamment les agents dirigés contre PD-1 (c.-à-d. pembrolizumab, nivolumab), PD-L1 (c.-à-d. atezolizumab, avelumab, durvalumab) ou CTLA-4 (c.-à-d. ipilimumab).",
+    "pearls": "- Une hypothyroïdie liée aux inhibiteurs de points de contrôle immunitaires (ICPi) doit être suspectée chez les patients présentant des anomalies du taux de TSH, de thyroxine libre et/ou des symptômes d’hypothyroïdie (p. ex. fatigue ou faiblesse extrême, prise de poids, perte de cheveux, constipation, sensation de froid) pendant un traitement par inhibiteurs de points de contrôle immunitaires.\n- Peut survenir à tout moment pendant un traitement par inhibiteurs de points de contrôle immunitaires.\n- Plus fréquemment observée avec les agents anti-PD-1 et anti-PD-L1, mais constitue également un événement indésirable important causé par les agents anti-CTLA-4.\n- La prise en charge de l’hypothyroïdie liée aux ICPi repose sur le grade de l’hypothyroïdie."
+  },
+  "next_steps": {
+    "advice": "- Surveiller la TSH et la thyroxine libre chez les patients toutes les 4 à 6 semaines de façon systématique pendant le traitement par ICPi.\n- Doser la TSH et la thyroxine libre chez les patients symptomatiques.",
+    "critical_actions": "Il est nécessaire de distinguer les problèmes hormonaux primaires des problèmes hormonaux secondaires.\n\nLa surveillance à la fois des taux de TSH et de thyroxine libre aide à distinguer l’hypothyroïdie primaire de l’hypothyroïdie centrale, qui peut être due à une hypophysite induite par les ICPi.",
+    "management": "For all patients where an IRAE diagnosis is being considered, it is always recommended to involve the specialist or team prescribing the immune checkpoint therapy.\n\n**Grade 1:**\n\n1. Continue ICPi with close follow-up and monitoring of TSH, free thyroxine.\n\n**Grade 2:**\n\n1. May hold ICPi until symptoms resolve to baseline.\n2. Consider endocrinology consult.\n3. Consider thyroid hormone supplementation in symptomatic patients with any degree of TSH elevation or in asymptomatic patients with TSH levels that persist > 10 mIU/L (measured 4 weeks apart).\n4. Monitor TSH every 6 to 8 weeks while titrating hormone replacement to normal TSH.\n5. Free thyroxine can be used in the short term (2 weeks) to ensure adequacy of therapy in those with frank hypothyroidism where the free thyroxine was initially low.\n6. Once adequately treated, monitor thyroid function (at least TSH) every 6 weeks while on active therapy or as needed for symptoms to ensure appropriate replacement.\n\n**Grade 3-4:**\n\n1. Should hold ICPi until symptoms resolve to baseline with appropriate supplementation.\n2. Consider endocrinology consult.\n3. Consider admission for IV therapy if signs of myxedema (bradycardia, hypothermia).\n4. Consider thyroid supplementation and offer reassessment as in grade 2.\n\nSee[Brahmer 2018](https://www.ncbi.nlm.nih.gov/pubmed/29442540)for full ASCO guidelines."
+  },
+  "evidence": "Guidelines for IRAE in Endocrine Toxicities (Hypothyroidism) were developed by a multidisciplinary, multi-organizational panel of experts in medical oncology based on a systematic review of the medical literature.",
+  "more_info": "",
+  "short_description": "Hypothyroïdie gravité (ICPi therapy).",
+  "medium_description": "Grades gravité de hypothyroïdie secondaire pour immune checkpoint inhibitor therapy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "grading",
+      "label": "Critères",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "TSH <10 mIU/L et asymptomatique",
+          "value": 1
+        },
+        {
+          "label": "modéré symptoms; able pour perform ADLs; TSH persistently >10 mIU/L",
+          "value": 2
+        },
+        {
+          "label": "Severe symptoms, medically significant ou life-threatening consequences, unable pour perform ADLs",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.immune-related-adverse-events-endocrine-toxicities-diabetes-mellitus",
+    "calc.immune-related-adverse-events-lung-toxicity-pneumonitis",
+    "calc.immune-related-adverse-events-renal-toxicities-nephritis"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10382,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

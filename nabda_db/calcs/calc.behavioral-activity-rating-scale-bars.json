@@ -1,0 +1,146 @@
+{
+  "id": "calc.behavioral-activity-rating-scale-bars",
+  "slug": "behavioral-activity-rating-scale-bars",
+  "language": "en",
+  "title": "Behavioral Activity Rating échelle (BARS)",
+  "short_title": "BARS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Trouble bipolaire",
+    "Delirium",
+    "Schizophrenia"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious"
+  ],
+  "abbreviations": [
+    "Behavioral Activity Rating Scale",
+    "BARS",
+    "agitation",
+    "emergency care",
+    "schizophrenia",
+    "bipolar disorder",
+    "delirium",
+    "aggression",
+    "restlessness"
+  ],
+  "dosing": false,
+  "formula": "BARS contains a single-item question consisting of seven categories:\n\n| Behavior | Scale |\n| --- | --- |\n| Difficult or unable to rouse | 1 |\n| Asleep but responds to verbal or physical contact | 2 |\n| Drowsy, appears sedated | 3 |\n| Quiet and awake (normal level of activity) | 4 |\n| Signs of overt (physical or verbal) activity, calms down with instruction | 5 |\n| Extremely or continuously active, not requiring restraint | 6 |\n| Violent, requires restraint | 7 |",
+  "how_to_use": {
+    "why": "- BARS is easy for physicians and nurses to understand and use in the acute setting, with very high inter- and intra-rater reliability.\n- Unlike most other scores used to assess agitation and psychiatric symptoms, BARS has been validated in the emergency department for rapidly assessing response to a single behavioral or pharmacologic intervention.",
+    "when": "The BARS calculator can be used in the emergency department and/or other acute care settings to rapidly assess agitation severity and response to treatment.",
+    "pearls": "- BARS uses psychomotor and behavioral activity as a proxy for agitation. Although this does not capture all components of agitation, it is the most clinically relevant aspect of agitation in the acute setting.\n- The score is based on clinical observation and does not require participation from the patient.\n- Although BARS can assess the behavioral response to acute interventions, it does not distinguish between medical and psychiatric etiologies of agitation.\n- Suggested actions in response to BARS scores are based on expert[consensus guidelines](https://pmc.ncbi.nlm.nih.gov/articles/PMC3298208/)from the American Association of Emergency Psychiatry."
+  },
+  "next_steps": {
+    "advice": "- BARS can be reassessed at multiple time points after an intervention for agitation.\n- Given its ease of use and strong inter-rater reliability, any clinical team member at the bedside with the patient can report a BARS score.",
+    "critical_actions": "- Attempt verbal de-escalation with patients with BARS 5-6 before resorting to chemical or physical restraints.\n- Broaden the differential diagnosis to include possible medical causes of sedation or agitation in patients with BARS 1-3 or 7.\n- Patients with BARS 1 require close monitoring regardless of the etiology of their behavioral state.",
+    "management": "BARS is a seven-point scale with scores ranging from 1 to 7.Scores are assigned based on a single clinical observation.\n\n- BARS 1-3: Additional medical workup may be needed.\n- BARS 4: Likely normal behavioral activity, intervention not needed.\n- BARS 5-6: Indicate the need for verbal de-escalation or other behavioral interventions.\n- BARS 7: Patient likely to require pharmacologic intervention and/or physical restraints. May require additional medical workup."
+  },
+  "evidence": "The[original](https://pubmed.ncbi.nlm.nih.gov/11777497/)study was a secondary analysis of data from three U.S.-based randomized controlled trials with a total of 502 patients, evaluating intramuscular ziprasidone for agitation in patients with psychosis. In this analysis, BARS showed strong correlation with two established agitation scales, CGI-S and PANSS. Notably, BARS outperformed these measures in detecting changes in agitation over a four-hour period following treatment. It also had near-perfect inter- and intra-rater reliability.\n\nIt has also been[validated](https://pubmed.ncbi.nlm.nih.gov/35129902/)in Portuguese and found to correlate with the Riker Sedation-Agitation Scale (SAS), a similar seven-point clinical observation score used primarily in the ICU setting.\n\nBARS has been incorporated into[protocols](https://pmc.ncbi.nlm.nih.gov/articles/PMC3298208/)suggested by the American Association for Emergency Psychiatry, with scores of 5-7 requiring verbal de-escalation or pharmacologic intervention.",
+  "more_info": "",
+  "short_description": "Screen patients avec agitation.",
+  "medium_description": "Screens patients avec agitation dans emergency care et ​​psychiatric settings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "bars",
+      "label": "Behavioral Activity Rating échelle (BARS)",
+      "tips": "BARS contains a single-item question consisting of seven categories:",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Difficult ou unable pour rouse",
+          "value": 1
+        },
+        {
+          "label": "Asleep but responds pour verbal ou physical contact",
+          "value": 2
+        },
+        {
+          "label": "Drowsy, appears sedated",
+          "value": 3
+        },
+        {
+          "label": "Quiet et awake (normal level de activity)",
+          "value": 4
+        },
+        {
+          "label": "Signs de overt (physical ou verbal) activity, calms down avec instruction",
+          "value": 5
+        },
+        {
+          "label": "Extremely ou continuously active, not requiring restraint",
+          "value": 6
+        },
+        {
+          "label": "Violent, nécessite restraint",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nordstrom K, Zun LS, Wilson MP, et al. Medical evaluation and triage of the agitated patient: consensus statement of the american association for emergency psychiatry project Beta medical evaluation workgroup. West J Emerg Med. 2012;13(1):3-10. doi:10.5811/westjem.2011.9.6863",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22461915/",
+      "kind": "international"
+    },
+    {
+      "text": "Swift RH, Harrigan EP, Cappelleri JC, Kramer D, Chandler LP. Validation of the behavioural activity rating scale (BARS): a novel measure of activity in agitated patients. J Psychiatr Res. 2002;36(2):87-95. doi:10.1016/s0022-3956(01)00052-8",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11777497/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Roppolo LP, Morris DW, Khan F, et al. Improving the management of acutely agitated patients in the emergency department through implementation of Project BETA (Best Practices in the Evaluation and Treatment of Agitation) [published correction appears in J Am Coll Emerg Physicians Open. 2023 Jun 22;4(3):e13002. doi: 10.1002/emp2.13002.]. J Am Coll Emerg Physicians Open. 2020;1(5):898-907. Published 2020 Jul 3. doi:10.1002/emp2.12138",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33145538/",
+      "kind": "other"
+    },
+    {
+      "text": "Garriga M, Pacchiarotti I, Kasper S, et al. Assessment and management of agitation in psychiatry: Expert consensus. World J Biol Psychiatry. 2016;17(2):86-128. doi:10.3109/15622975.2015.1132007",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26912127/",
+      "kind": "other"
+    },
+    {
+      "text": "Legambi TF, Doede M, Michael K, Zaleski M. A Quality Improvement Project on Agitation Management in the Emergency Department. J Emerg Nurs. 2021;47(3):390-399.e3. doi:10.1016/j.jen.2021.01.005",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33648736/",
+      "kind": "other"
+    },
+    {
+      "text": "Pereira LA, da Silva AG, Hemanny C, et al. Translation, cross-cultural adaptation, and validation of the Behavioral Activity Rating Scale (BARS) for the Brazilian population. Trends Psychiatry Psychother. 2023;45:e20210310. doi:10.47626/2237-6089-2021-0310",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35129902/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "4d34387a64512cac7b9dd1818a4e0768",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10607,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

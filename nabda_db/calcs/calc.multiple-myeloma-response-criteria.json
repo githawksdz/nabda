@@ -1,0 +1,308 @@
+{
+  "id": "calc.multiple-myeloma-response-criteria",
+  "slug": "multiple-myeloma-response-criteria",
+  "language": "en",
+  "title": "Multiple Myeloma Response critères",
+  "short_title": "Multiple Myeloma Response critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Myélome multiple"
+  ],
+  "chief_complaints": [
+    "Cancer",
+    "Douleur des extrémités"
+  ],
+  "abbreviations": [
+    "Mm",
+    "Multiple Myeloma Response Criteria (IMWG)",
+    "multiple myeloma",
+    "disease response",
+    "multiple myeloma response assessment",
+    "myeloma",
+    "imwg"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate criteria:\n\n| Criteria | Response category |\n| --- | --- |\n| Negative immunofixation of serum and urine AND disappearance of any soft tissue plasmacytomas AND <5% plasma cells in bone marrow | Complete response (CR) |\n| CR as defined above plus normal FLC ratio (0.26-1.65) AND absence of clonal cells in bone marrow by immunohistochemistry or immunofluorescence | Stringent complete response (sCR) |\n| Serum and urine M component detectable by immunofixation but not on electrophoresis OR ≥90% reduction in serum M component plus urine M component <100 mg per 24 hrs | Very good partial response (VGPR) |\n| ≥50% reduction of serum M protein and reduction in 24 hr urinary M protein by ≥90% or to <200 mg per 24 hrs If serum and urine M protein are unmeasurable, ≥50% decrease in the difference between involved and uninvolved FLC levels is required in place of the M protein criteria If serum and urine M protein are unmeasurable, and serum free light assay is also unmeasurable, ≥50% reduction in bone marrow plasma cells is required in place of M protein, provided baseline percentage was ≥30% In addition to the above criteria, if present at baseline, ≥50% reduction in the size of soft tissue plasmacytomas is also required | Partial response (PR) |\n| Not meeting criteria for CR, VGPR, PR, or progressive disease | Stable disease (SD) |\n| 25% increase from lowest response value in ≥1 of the following: Serum M component (absolute increase must be ≥0.5 g/100 mL) Urine M component (absolute increase must be ≥200 mg per 24 hrs) Only in patients without measurable serum and urine M protein levels: difference between involved and uninvolved FLC levels (absolute increase must be >100 mg/L) Bone marrow plasma cell percentage (absolute % must be ≥10%) Definite development of new bone lesions or soft tissue plasmacytomas or definite increase in the size of existing bone lesions or soft tissue plasmacytomas Development of hypercalcemia ( [corrected serum calcium](nabda:calc.calcium-correction-hypoalbuminemia\\) must be >11.5 mg/dL) that can be attributed solely to the plasma cell proliferative disorder | Progressive disease (PD) |",
+  "how_to_use": {
+    "why": "- Uniformise l",
+    "when": "- Utilisé à différents moments du traitement du myélome multiple (MM) pour évaluer la réponse au traitement et la progression.\n- Conçu principalement pour les essais cliniques.",
+    "pearls": "- Cet outil est basé sur la [version 2006](https://www.nature.com/articles/2404284) des critères ; les catégories de rechute clinique et de rechute après réponse complète (CR) ne sont pas incluses.\n- Les critères ont été mis à jour en [2016](https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(16)30206-6/abstract) pour refléter l'amélioration des taux de réponse avec les traitements plus récents du MM, en intégrant la cytométrie en flux et le séquençage génétique pour détecter les cellules tumorales résiduelles dans la moelle osseuse, ainsi que l'imagerie pour identifier une maladie résiduelle en dehors de la moelle osseuse (négativité de la maladie résiduelle minimale).\n- Les critères originaux reposaient sur des évaluations du sérum, des urines et de la moelle osseuse, qui sont aujourd'hui considérées comme moins sensibles que les techniques modernes.\n- Les tests doivent être confirmés sur 2 évaluations consécutives avant l'initiation d'un nouveau traitement ; les évaluations de la moelle osseuse ne nécessitent pas de confirmation.\n- Les tests de confirmation peuvent être réalisés à tout moment après le premier test, à condition qu'aucun nouveau traitement n'ait été commencé."
+  },
+  "next_steps": {
+    "advice": "- Les résultats sont principalement utilisés dans les essais cliniques pour surveiller la réponse au traitement.\n- Bien qu'aucune recommandation thérapeutique spécifique ne soit directement liée aux résultats, l'évaluation de la réponse peut aider à déterminer si un patient atteint les objectifs thérapeutiques et à guider d'éventuelles adaptations du traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Multiple myeloma response évaluation.",
+  "medium_description": "Predicts maladie response dans multiple myeloma, de International Myeloma Working Group (IMWG).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Negative immunofixation de serum et urine AND disappearance de any soft tissue plasmacytomas AND <5% plasma cells dans bone marrow",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Critères above plus normalFLCratio (0.26-1.65) AND absence de clonal cells dans bone marrow par immunohistochemistry ou immunofluorescence",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Serum et urine M component detectable par immunofixation but not sur electrophoresis OR ≥90% reduction dans serum M component plus urine M component <100 mg per 24 hrs",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "≥50% reduction de serum M protein et reduction dans 24 hr urinary M protein par ≥90% ou pour <200 mg per 24 hrs; if present at initial, ≥50% reduction dans size de soft tissue plasmacytomas is also requis",
+      "tips": "Voir [Preuves](#evidence) pour les critères si les protéines M sériques et urinaires ne sont pas mesurables.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Composant M sérique",
+      "tips": "L'augmentation absolue doit être ≥0.5 g/100 mL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "Composant monoclonal urinaire",
+      "tips": "L'augmentation absolue doit être ≥200 mg par 24 h",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seven",
+      "label": "Only chez les patients avecout measurable serum et urine M protein levels: difference between involved et uninvolved FLC levels",
+      "tips": "L'augmentation absolue doit être >100 mg/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eight",
+      "label": "Pourcentage de plasmocytes médullaires",
+      "tips": "Le % absolu doit être ≥10 %.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nine",
+      "label": "Definite development de new bone lesions ou soft tissue plasmacytomas ou definite increase dans size de existing bone lesions ou soft tissue plasmacytomas",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ten",
+      "label": "Development de hypercalcemia that can be attributed solely pour plasma cell proliferative disorder",
+      "tips": "[Calcium sérique corrigé](nabda:calc.calcium-correction-hypoalbuminemia) doit être > 11.5 mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "one != 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kumar S, Paiva B, Anderson KC, et al. International Myeloma Working Group consensus criteria for response and minimal residual disease assessment in multiple myeloma. Lancet Oncol. 2016;17(8):e328-e346.",
+      "href": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(16)30206-6/abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kyle RA, Rajkumar SV. Criteria for diagnosis, staging, risk stratification and response assessment of multiple myeloma. Leukemia. 2009;23(1):3-9.",
+      "href": "https://www.nature.com/articles/leu2008291/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Durie BGM, Harousseau J-L, Miguel JS, et al. International uniform response criteria for multiple myeloma. Leukemia. 2006;20(9):1467-1473.",
+      "href": "https://www.nature.com/articles/2404284",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jiménez-Ubieto A, Paiva B, Puig N, et al. Validation of the International Myeloma Working Group standard response criteria in the PETHEMA/GEM2012MENOS65 study: are these times of change? Blood. 2021;138(19):1901-1905.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9642785/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.multiple-myeloma-diagnostic-criteria",
+    "calc.asymptomatic-myeloma-prognosis",
+    "calc.impede-vte",
+    "calc.calcium-correction-hypoalbuminemia"
+  ],
+  "source_logic_hash": "7212e13ec968b6cdbadc68abd176ef8a",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.calcium-correction-hypoalbuminemia",
+      "text": "corrected serum calcium"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10232,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

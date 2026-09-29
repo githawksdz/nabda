@@ -1,0 +1,190 @@
+{
+  "id": "calc.stone-nephrolithometry-score-renal-calculi",
+  "slug": "stone-nephrolithometry-score-renal-calculi",
+  "language": "fr",
+  "title": "STONE Nephrolithometry score pour Renal Calculi",
+  "short_title": "Score STONE (post-TDM, rénal)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urologie"
+  ],
+  "diseases": [
+    "Calcul rénal"
+  ],
+  "chief_complaints": [
+    "Douleur du flanc",
+    "Hematuria"
+  ],
+  "abbreviations": [
+    "STONE",
+    "S.T.O.N.E.",
+    "kidney",
+    "renal",
+    "colic"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Les patients présentant des calculs rénaux peuvent être difficiles à évaluer et à pronostiquer.",
+    "when": "Le patient présentant des calculs rénaux — et non urétéraux.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Chez les patients ayant une faible probabilité d'être sans calcul, les attentes peuvent être gérées en préopératoire, en les informant qu'ils pourraient nécessiter des interventions supplémentaires ultérieurement."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Predicts renal stone récidive, after CT.",
+  "medium_description": "Predicts récidive de kidney stone basé sur radiological critères.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "size",
+      "label": "Stone size dans mm²",
+      "tips": "Longueur × largeur en mm",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-399",
+          "value": 1
+        },
+        {
+          "label": "400-799",
+          "value": 2
+        },
+        {
+          "label": "800-1599",
+          "value": 3
+        },
+        {
+          "label": ">1600",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tract",
+      "label": "Longueur du trajet (mm)",
+      "tips": "Distance entre le centre du calcul et la peau, mesurée sur le scanner à 0°, 45° et 90°",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤100",
+          "value": 1
+        },
+        {
+          "label": ">100",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "obstruction",
+      "label": "Obstruction (hydronéphrose)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Hydronéphrose absente/légère",
+          "value": 1
+        },
+        {
+          "label": "modéré/severe hydronephrosis",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "calyces",
+      "label": "Number de calyces avec calculi",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1-2",
+          "value": 1
+        },
+        {
+          "label": "3",
+          "value": 2
+        },
+        {
+          "label": "Calcul en corail complet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "essence",
+      "label": "Essence (stone density dans Hounsfield units)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤950",
+          "value": 1
+        },
+        {
+          "label": ">950",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Okhunov Z, Friedlander JI, George AK, Duty BD, Moreira DM, Srinivasan AK, Hillelsohn J, Smith AD, Okeke Z. S.T.O.N.E. Nephrolithometry: Novel Surgical Classification System for Kidney Calculi, Urology, Volume 81, Issue 6, June 2013, Pages 1154-1160, ISSN 0090-4295, http://dx.doi.org/10.1016/j.urology.2012.10.083.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23540858",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kevin Labadie, Zhamshid Okhunov, Arash Akhavein, Daniel Moreira, Jorge Moreno-Palacios, Michael del Junco, Zeph Okeke, Vincent Bird, Arthur D. Smith and Jaime Landman. Evaluation and Comparison of Urolithiasis Scoring Systems in Percutaneous Kidney Stone Surgery. Journal of Urology. Vol. 193, 1-6, January 2015.",
+      "href": "https://www.researchgate.net/profile/Jorge_Moreno-Palacios/publication/264501772_Evaluation_and_Comparison_of_Urolithiasis_Scoring_Systems_Used_in_Percutaneous_Kidney_Stone_Surgery/links/546a053e0cf2397f78300e30.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Akhavein A, Henriksen C, Syed J, Bird VG. Prediction of single procedure success rate using S.T.O.N.E. nephrolithometry surgical classification system with strict criteria for surgical outcome. Urology. 2015 Jan;85(1):69-73. doi: 10.1016/j.urology.2014.09.010.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25530366",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.renal-nephrometry-score",
+    "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+    "calc.international-iga-nephropathy-prediction-tool"
+  ],
+  "source_logic_hash": "a91dd5b6f42fffa46b34ab837530f362",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2044,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

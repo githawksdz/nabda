@@ -1,0 +1,217 @@
+{
+  "id": "calc.atlas-score-clostridium-difficile-infection",
+  "slug": "atlas-score-clostridium-difficile-infection",
+  "language": "fr",
+  "title": "Score ATLAS pour infection à Clostridium difficile",
+  "short_title": "Score ATLAS pour la colite à *C. difficile*",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhée",
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "Atlas",
+    "c. diff. Colitis",
+    "c diff",
+    "c diff Colitis",
+    "atlas score",
+    "Clostridium Difficile Infection"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| A ge, années | <60 | 0 |\n| 60-79 | 1 | |\n| ≥80 | 2 | |\n| T raitement par antibiotiques systémiques pendant le traitement de l'infection à C. diff (durée ≥1 jour) | Non | 0 |\n| Oui | 2 | |\n| L eucytes, cellules/µL | <16,000 | 0 |\n| 16,000-25,000 | 1 | |\n| >25,000 | 2 | |\n| A lbumine sérique | >3.5 g/dL (>35 g/L) | 0 |\n| 2.6-3.5 g/dL (26-35 g/L) | 1 | |\n| <2.6 g/dL (<26 g/L) | 2 | |\n| S créatinine sérique (comme mesure de la fonction rénale) | ≤1.3 mg/dL (≤120 μmol/L) | 0 |\n| 1.4-2.0 mg/dL (121-179 μmol/L) | 1 | |\n| ≥2.1 mg/dL (≥180 μmol/L) | 2 | |\n\n*Remarque : la validation originale ([Miller 2013](https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-148)) a examiné 6 paramètres : âge, température, numération des leucocytes, albumine, créatinine sérique et antibiotiques systémiques. La combinaison de paramètres qui permettait la meilleure discrimination entre les groupes de risque et la meilleure corrélation avec la guérison était celle des cinq paramètres excluant la température ; c'est pour cette raison que MDCalc utilise cette version.*",
+  "how_to_use": {
+    "why": "- Utile pour identifier les patients atteints de CDI qui présentent un risque élevé d'évolution sévère ou de mortalité.\n- La détermination de la sévérité de la maladie peut aider à la prise de décision clinique concernant l'intensité du traitement et le niveau de soins (p. ex., prise en charge ambulatoire versus hospitalière).\n- Les résultats peuvent faciliter les discussions avec les patients et leurs familles au sujet du pronostic et des options thérapeutiques.",
+    "when": "À utiliser chez les patients diagnostiqués avec une infection à *C. difficile* (CDI) au moment du diagnostic afin de stratifier la sévérité de la maladie.",
+    "pearls": "- Les scores sont corrélés aux taux de guérison ; toutefois, la corrélation avec la récidive n’était pas statistiquement significative.\n- Ne prend pas en compte tous les marqueurs de gravité de la maladie — par exemple, le type de souche a été exclu, car cette information n’est pas toujours facilement disponible au moment du diagnostic.\n- Les patients atteints d’une maladie menaçant le pronostic vital ou fulminante ont été exclus de l’étude de dérivation, ce qui peut conduire à une sous-représentation des patients à l’extrémité supérieure des valeurs du score.\n- Remarque : *Clostridium difficile* est désormais appelé *"
+  },
+  "next_steps": {
+    "advice": "- Aucune recommandation de prise en charge définitive n’a été formulée sur la base des résultats du score ATLAS.\n- **Pour les scores plus faibles :** envisager un traitement moins intensif et une éventuelle prise en charge ambulatoire, si le patient est cliniquement stable.\n- **",
+    "critical_actions": "",
+    "management": "Pour des recommandations thérapeutiques détaillées, veuillez vous référer aux recommandations cliniques de l'[American College of Gastroenterology](https://journals.lww.com/ajg/Fulltext/2021/06000/ACG_Clinical_Guidelines__Prevention,_Diagnosis,.12.aspx), de l'[American Society of Colon and Rectal Surgeons](https://pubmed.ncbi.nlm.nih.gov/33769319/), et de l'[Infectious Disease Society of America/Society for Healthcare Epidemiology of America](https://www.idsociety.org/practice-guideline/clostridioides-difficile-2021-focused-update/#Abstract)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score ATLAS | Taux de guérison | Mortalité |\n| --- | --- | --- |\n| 0 | 95,7 % | 0,0 % |\n| 1 | 93,3 % | 0,0 % |\n| 2 | 92,7 % | 0,0 % |\n| 3 | 89,5 % | 3,6 % |\n| 4 | 81,1 % | 4,2 % |\n| 5 | 76,1 % | 8,7 % |\n| 6 | 85,7 % | 10,9 % |\n| 7 | 50,0 % | 14,3 % |\n| 8 | 55,6 % | 56,0 % |\n| 9 | 33,0 % | >56,0 % |\n| 10 | <33,0 % | |\n\nTaux de guérison d'après [Miller 2013](https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-148).",
+  "short_description": "Réponse au traitement de C. diff.",
+  "medium_description": "Predicts response pour therapy chez les patients avec C. diff.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 60",
+          "value": 0
+        },
+        {
+          "label": "60-79",
+          "value": 1
+        },
+        {
+          "label": "≥ 80",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "treat",
+      "label": "**T** reatment avec systemic antibiotics during C. diff infection therapy",
+      "tips": "Durée ≥ 1 jour",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "leuk",
+      "label": "**L**eucocytes, cellules/µL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 16,000",
+          "value": 0
+        },
+        {
+          "label": "16,000-25,000",
+          "value": 1
+        },
+        {
+          "label": ">25,000",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alb",
+      "label": "Albumine sérique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">3,5 g/dL (>35 g/L)",
+          "value": 0
+        },
+        {
+          "label": "2,6-3,5 g/dL (26-35 g/L)",
+          "value": 1
+        },
+        {
+          "label": "< 2,6 g/dL (<26 g/L)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "**S** créatinine sérique",
+      "tips": "Comme mesure de la fonction rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤1,3 mg/dL (≤120 μmol/L)",
+          "value": 0
+        },
+        {
+          "label": "1,4-2,0 mg/dL (121-179 μmol/L) Note: les chiffres et unités doivent rester inchangés selon vos consignes; je conserve donc la notation d'origine: 1.4-2.0 mg/dL (121-179 μmol/L)",
+          "value": 1
+        },
+        {
+          "label": "≥2,1 mg/dL (≥180 μmol/L)",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Miller MA, Louie T, Mullane K, et al. Derivation and validation of a simple clinical bedside score (ATLAS) for Clostridium difficile infection which predicts response to therapy. BMC Infect Dis. 2013;13:148.",
+      "href": "https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-148",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abou Chakra CN, Pepin J, Valiquette L. Prediction tools for unfavourable outcomes in Clostridium difficile infection: a systematic review. PLoS ONE. 2012;7(1):e30258.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3265469/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Hernández-García R, Garza-González E, Miller M, Arteaga-Muller G, Galván-De Los Santos AM, Camacho-Ortiz A. Application of the ATLAS score for evaluating the severity of Clostridium difficile infection in teaching hospitals in Mexico. Braz J Infect Dis. 2015;19(4):399-402.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S1413867015001063",
+      "kind": "other"
+    },
+    {
+      "text": "Bagdasarian N, Rao K, Malani PN. Diagnosis and treatment of Clostridium difficile in adults: a systematic review. JAMA. 2015;313(4):398-408.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/2091993 ",
+      "kind": "other"
+    },
+    {
+      "text": "Miller MA, Louie T, Mullane K, et al. Derivation and validation of a simple clinical bedside score (ATLAS) for Clostridium difficile infection which predicts response to therapy. BMC Infect Dis. 2013;13:148.",
+      "href": "https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-148",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.travis-criteria",
+    "calc.ho-index",
+    "calc.menza-score"
+  ],
+  "source_logic_hash": "62fcc3d8faf2106a6ea9f3f652c8318b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10218,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar cr = parseFloat(cr);\nvar alb = parseFloat(alb);\nvar leuk = parseFloat(leuk);\nvar treat = parseFloat(treat);\nvar age = parseFloat(age);\n\nvar score = cr + alb + leuk + treat + age;\n\nvar cure = ['95.7',\n'93.3',\n'92.7',\n'89.5',\n'81.1',\n'76.1',\n'85.7',\n'50.0',\n'55.6',\n'33.0',\n'<33.0'];\n\nvar mort = ['0.0', '0.0', '0.0', '3.6', '4.2', '8.7', '10.9', '14.3', '56.0', '>56.0','>56.0'];\n\nvar curerate = cure[score];\nvar mortality = mort[score];\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: curerate + '% cure rate'\n});\ncalc_output.push({\n    name: '10218_ATLAS Score for C. Diff. Colitis_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'ATLAS Score'   \n});\ncalc_output.push({\n    name: '10218_ATLAS Score for C. Diff. Colitis_result (rate)',\n    value: curerate, \n    value_text: '%',\n    message: 'Cure rate'\n});\ncalc_output.push({\n    name: '10218_ATLAS Score for C. Diff. Colitis_result (mortality)',\n    value: mortality, \n    value_text: '%',\n    message: 'Mortality'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Mark A. Miller"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "e92206728e261086fc8c18fdef20eb82f50d7e2c8301287174526aa73006e7ca"
+}

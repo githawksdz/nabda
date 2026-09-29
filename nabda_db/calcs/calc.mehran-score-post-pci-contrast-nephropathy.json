@@ -1,0 +1,258 @@
+{
+  "id": "calc.mehran-score-post-pci-contrast-nephropathy",
+  "slug": "mehran-score-post-pci-contrast-nephropathy",
+  "language": "en",
+  "title": "Mehran score pour Post-PCI Contrast Nephropathy",
+  "short_title": "Score de Mehran (néphropathie post-PCI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "nephrologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Maladie rénale chronique",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Percutaneous coronary intervention",
+    "CIN",
+    "PCI"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Hypotension* | No | 0 |\n| Yes | 5 | |\n| Intra-aortic balloon pump | No | 0 |\n| Yes | 5 | |\n| Congestive heart failure** | No | 0 |\n| Yes | 5 | |\n| Age >75 years | No | 0 |\n| Yes | 4 | |\n| Anemia*** | No | 0 |\n| Yes | 3 | |\n| Diabetes | No | 0 |\n| Yes | 3 | |\n| Contrast media volume | - | 1 point per 100 mL contrast |\n| [eGFR](nabda:calc.mdrd-gfr-equation\\) , mL/min/1.73 m 2 | ≥60 | 0 |\n| 40 to <60 | 2 | |\n| 20 to <40 | 4 | |\n| <20 | 6 | |\n\n*Systolic blood pressure <80 mmHg for at least 1 hour requiring inotropic support with medications or intra-aortic balloon pump within 24 hours periprocedurally.\n\n**CHF class III/IV by New York Heart Association Classification and/or history of pulmonary edema.\n\n***Baseline hematocrit value <39% for men and <36% for women.\n\nNote: the original study includes serum creatinine (as a dichotomous variable) as an alternative to eGFR, and adds 4 points for Cr >1.5 mg/dL. We have chosen to use eGFR in this calculator as it tends to be a more accurate measure of renal function than creatinine alone.",
+  "how_to_use": {
+    "why": "",
+    "when": "Use in patients undergoing PCI. Do not use in patients with pre-existing end-stage renal disease on dialysis or patients with contrast exposure within 1 week of the index procedure.",
+    "pearls": "In the[original study](https://www.sciencedirect.com/science/article/pii/S0735109704014457?via%3Dihub), “contrast-induced nephropathy” was defined as an increase ≥0.5 mg/dL (or ≥25%) in pre-PCI serum creatinine at 48 hours post-PCI."
+  },
+  "next_steps": {
+    "advice": "Envisager des mesures néphroprotectrices telles que la N-acétylcystéine et la limitation du volume de produit de contraste chez les patients à haut risque de CIN.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CIN Risk Score | Risk of post-PCI CIN | |\n| --- | --- | --- |\n| Any CIN | CIN requiring dialysis | |\n| ≤5 | 7.5% | 0.04% |\n| 6-10 | 14.0% | 0.12% |\n| 11-15 | 26.1% | 1.09% |\n| ≥16 | 57.3% | 12.6% |",
+  "short_description": "Renal défaillance after cath.",
+  "medium_description": "Prédit le risque de néphropathie induite par le produit de contraste (CIN) après intervention coronarienne percutanée (PCI).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "hypo",
+      "label": "Hypotension",
+      "tips": "SBP <80 for ≥1 hr requiring inotrope or balloon pump within 24 hrs of cath",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pump",
+      "label": "Intra-aortic balloon pump",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "tips": "Insuffisance cardiaque congestive de classe III/IV selon la classification de la New York Heart Association et/ou antécédent d'œdème pulmonaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge >75 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anemia",
+      "tips": "Hématocrite initial < 39 % chez l'homme et < 36 % chez la femme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diab",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "cmv",
+      "label": "Volume de produit de contraste",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "gfr",
+      "label": "[eGFR](nabda:calc.mdrd-gfr-equation), mL/min/1,73 m²",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥60",
+          "value": 0
+        },
+        {
+          "label": "40 pour <60",
+          "value": 2
+        },
+        {
+          "label": "20 pour <40",
+          "value": 4
+        },
+        {
+          "label": "< 20",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mehran R, Aymong ED, Nikolsky E, et al. A simple risk score for prediction of contrast-induced nephropathy after percutaneous coronary intervention: development and initial validation. J Am Coll Cardiol. 2004;44(7):1393-9.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0735109704014457?via%3Dihub",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wi J, Ko YG, Shin DH, et al. Prediction of Contrast-Induced Nephropathy With Persistent Renal Dysfunction and Adverse Long-term Outcomes in Patients With Acute Myocardial Infarction Using the Mehran Risk Score. Clin Cardiol. 2013;36(1):46-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23027701",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sgura FA, Bertelli L, Monopoli D, et al. Mehran contrast-induced nephropathy risk score predicts short- and long-term clinical outcomes in patients with ST-elevation-myocardial infarction. Circ Cardiovasc Interv. 2010;3(5):491-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20923986",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Raingruber B, Kirkland-walsh H, Chahon N, Kellermann M. Using the Mehran risk scoring tool to predict risk for contrast medium-induced nephropathy in patients undergoing percutaneous angiography. Crit Care Nurse. 2011;31(1):e17-22.",
+      "href": "https://ccn.aacnjournals.org/content/31/1/e17.full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abellás-sequeiros RA, Raposeiras-roubín S, Abu-assi E, et al. Mehran contrast nephropathy risk score: Is it still useful 10 years later?. J Cardiol. 2016;67(3):262-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26169247",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.kidney-failure-risk-calculator",
+    "calc.mdrd-gfr-equation"
+  ],
+  "source_logic_hash": "941ca47c42e17e83930483a49a46c83e",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "eGFR"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10087,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

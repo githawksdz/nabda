@@ -1,0 +1,179 @@
+{
+  "id": "calc.vaginal-birth-after-cesarean-vbac",
+  "slug": "vaginal-birth-after-cesarean-vbac",
+  "language": "fr",
+  "title": "Accouchement vaginal après césarienne (MFMU)",
+  "short_title": "VBAC (MFMU)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Constipation",
+    "Dizziness",
+    "Fatigue",
+    "Nausea",
+    "Pregnancy",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Vaginal Birth After Cesarean (VBAC)",
+    "vbac",
+    "vaginal birth",
+    "c section",
+    "c-section",
+    "cesarean",
+    "cesarean section",
+    "cesarean delivery",
+    "vbac prediction",
+    "pregnancy",
+    "pregnant",
+    "birth"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous l'accouchement vaginal après césarienne (VBAC) et souhaitez-vous partager votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Utilisez-vous l'accouchement vaginal après césarienne (VBAC) et souhaitez-vous partager votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "La probabilité prédite de réussite du VBAC est calculée à partir des paramètres suivants :\n\n- Âge, années.\n- Poids avant la grossesse, kg.\n- Taille, cm.\n- Trouble de la progression du travail pour la césarienne précédente (oui ou non).\n- Accouchement vaginal antérieur uniquement avant la césarienne précédente (oui ou non).\n- VBAC antérieur (oui ou non).\n- Hypertension chronique traitée (oui ou non).\n\n% de probabilité de réussite du VBAC = [e^w^/(1 + e^w^)]*100\n\noù w = -5.952 – 0.023*(Âge) – 0.024*(Poids avant la grossesse, kg) + 0.056*(Taille, cm) – 0.597*(Trouble de la progression du travail) + 0.868*(Accouchement vaginal antérieur uniquement avant la césarienne précédente) + 1.869*(VBAC antérieur) – 0.966*(Hypertension chronique traitée)",
+  "short_description": "Successful vaginal birth prédiction.",
+  "medium_description": "Prédit la probabilité de réussite d'un accouchement vaginal après césarienne (VBAC).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids avant la grossesse",
+      "optional": false,
+      "unit": "wt_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "arrest",
+      "label": "Arrest disorder pour previous cesarean delivery",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "history",
+      "label": "Antécédents obstétricaux",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun antécédent d'accouchement vaginal",
+          "value": 0
+        },
+        {
+          "label": "Accouchement vaginal antérieur uniquement avant la césarienne précédente",
+          "value": 1
+        },
+        {
+          "label": "VBAC antérieur",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hypertension",
+      "label": "Hypertension chronique traitée",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Grobman WA, Sandoval G, Rice MM, et al. Prediction of vaginal birth after cesarean delivery in term gestations: a calculator without race and ethnicity. Am J Obstet Gynecol. 2021;225(6):664.e1-664.e7.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34043983/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Grobman WA, Lai Y, Landon MB, et al. Development of a nomogram for prediction of vaginal birth after cesarean delivery. Obstet Gynecol. 2007;109(4):806-812.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17400840/",
+      "kind": "other"
+    },
+    {
+      "text": "Costantine MM, Fox K, Byers BD, et al. Validation of the prediction model for success of vaginal birth after cesarean delivery. Obstet Gynecol. 2009;114(5):1029-1033.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20168103/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vbac-risk-score-successful-vaginal-delivery-flamm-model",
+    "calc.bishop-score-vaginal-delivery-induction-labor",
+    "calc.bwh-egg-freezing-counseling-tool-efct"
+  ],
+  "source_logic_hash": "b916997db9d3514317b4da0e4d847d9c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10433,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

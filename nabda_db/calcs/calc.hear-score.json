@@ -1,0 +1,227 @@
+{
+  "id": "calc.hear-score",
+  "slug": "hear-score",
+  "language": "en",
+  "title": "Score HEAR",
+  "short_title": "Score HEAR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Douleur aiguë",
+    "CAD",
+    "Maladie coronarienne",
+    "Choc cardiogénique"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur thoracique",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "HEAR Score",
+    "HEART Score",
+    "NSTEMI",
+    "STEMI",
+    "troponin",
+    "NSTEMI risk",
+    "ACS",
+    "acute coronary syndrome",
+    "myocardial infarction",
+    "non-STEMI",
+    "ST-segment elevation myocardial infarction",
+    "MACE",
+    "major adverse cardiac events"
+  ],
+  "dosing": false,
+  "formula": "To calculate the HEAR Score, add the points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| H istory | Slightly suspicious | 0 |\n| Moderately suspicious | 1 | |\n| Highly suspicious | 2 | |\n| E lectrocardiogram | Normal | 0 |\n| Nonspecific repolarization disturbance 1 | 1 | |\n| Significant ST-deviation | 2 | |\n| A ge | <45 years | 0 |\n| 45-64 years | 1 | |\n| ≥ 65 years | 2 | |\n| R isk factors 2 | No known risk factors | 0 |\n| 1 or 2 risk factors | 1 | |\n| ≥3 risk factors 3 | 2 | |\n\n1. Nonspecific repolarization disturbance, left bundle branch block, or pacemaker.\n2. Risk factors for atherosclerotic disease: hypercholesterolemia, hypertension, diabetes mellitus, cigarette smoking, positive family history, obesity.\n3. ≥3 risk factors or history of atherosclerotic disease.",
+  "how_to_use": {
+    "why": "- Provides rapid bedside risk stratification using information generally available to estimate a patient’s 30-day risk of MACE.\n- May help identify very low risk patients who are unlikely to benefit from cardiac biomarker testing.",
+    "when": "- À utiliser chez les patients adultes (≥ 18 ans) se présentant aux urgences avec une douleur thoracique non traumatique.\n- Ne pas appliquer chez les patients présentant des modifications ischémiques évidentes à l'ECG, une instabilité hémodynamique, une douleur thoracique persistante ou réfractaire, un examen physique préoccupant, une coronaropathie connue (CAD) ou un diagnostic alternatif urgent évident.",
+    "pearls": "- Designed as a partial [HEART Score](nabda:calc.heart-score-major-cardiac-events) (as part of a 2-step HEART strategy), allowing clinicians to distinguish patients at very low risk of major adverse cardiac events (MACE) from those who should undergo the full [HEART Pathway](nabda:calc.heart-pathway-early-discharge-acute-chest-pain) .\n- Highly sensitive for identifying very low risk patients (99% sensitivity), with a false-negative rate of 0.4% (1 of 279 patients) in the derivation study.\n- The derivation study also suggested a potential 19% reduction in troponin testing with the use of this tool."
+  },
+  "next_steps": {
+    "advice": "Atteindre le seuil « très faible risque » ne constitue pas un « risque nul » ; associez les résultats au jugement clinique et aux protocoles locaux.",
+    "critical_actions": "",
+    "management": "- **Score ≤1** (with nonischemic ECG and no known CAD):\n\n - Suggests very low risk for MACE.\n - Troponin testing may be avoided, or single troponin testing may be appropriate (depending on local protocols).\n - Patients who are discharged should be provided clear return precautions.\n- **Score ≥2** (or any concern for ACS): Proceed with [HEART Score](nabda:calc.heart-score-major-cardiac-events) / [HEART Pathway](nabda:calc.heart-pathway-early-discharge-acute-chest-pain) and standard ACS evaluation."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| HEAR Score | Risque |\n| --- | --- |\n| <2 | Faible |\n| ≥2 | Non faible |",
+  "short_description": "Stratifie le risque de NSTEMI et guide le dosage de la troponine.",
+  "medium_description": "Stratifie le risque de NSTEMI et évalue la nécessité d’un dosage de la troponine.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "a",
+      "label": "**H**istoire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Légèrement suspect",
+          "value": 0
+        },
+        {
+          "label": "Suspicion modérée",
+          "value": 1
+        },
+        {
+          "label": "Fortement suspect",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b",
+      "label": "**E** lectrocardiogram",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Trouble de la repolarisation non spécifique",
+          "value": 1
+        },
+        {
+          "label": "Déviation significative du segment ST",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "c",
+      "label": "**** ge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 45 ans",
+          "value": 0
+        },
+        {
+          "label": "45-64 ans",
+          "value": 1
+        },
+        {
+          "label": "≥65 ans",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d",
+      "label": "**R** isk factors",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun facteur de risque connu",
+          "value": 0
+        },
+        {
+          "label": "1 ou 2 facteurs de risque",
+          "value": 1
+        },
+        {
+          "label": "≥ 3 facteurs de risque",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Moumneh T, Richard-Jourjon V, Friou E, et al. Reliability of the CARE rule and the HEART score to rule out an acute coronary syndrome in non-traumatic chest pain patients. Intern Emerg Med. 2018;13(7):1111-1119. doi:10.1007/s11739-018-1803-4",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29500619/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Otsuka Y, Takeda S. Validation study of the modified HEART and HEAR scores in patients with chest pain who visit the emergency department. Acute Med Surg. 2020;7(1):e591. doi:10.1002/ams2.591",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33204433/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moumneh T, Sun BC, Baecker A, et al. Identifying patients with low risk of acute coronary syndrome without troponin testing: Validation of the HEAR score. Am J Med. 2021;134(4):499-506.e2. doi:10.1016/j.amjmed.2020.09.021",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33127371/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moumneh T, Penaloza A, Cismas A, et al. Evaluation of HEAR score to rule-out major adverse cardiac events without troponin test in patients presenting to the emergency department with chest pain. Eur J Emerg Med. 2021;28(4):292-298. doi:10.1097/MEJ.0000000000000791",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34187993/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "O’Rielly CM, Andruchow JE, McRae AD, Network of Canadian Emergency Researchers. External validation of a low HEAR score to identify emergency department chest pain patients at very low risk of major adverse cardiac events without troponin testing. CJEM. 2022;24(1):68-74. doi:10.1007/s43678-021-00159-y",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34273102/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.heart-score-major-cardiac-events",
+    "calc.heart-pathway-early-discharge-acute-chest-pain"
+  ],
+  "source_logic_hash": "1ee4e49e3ea9987fc845bce9870b6413",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.heart-score-major-cardiac-events",
+      "text": "HEART Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.heart-pathway-early-discharge-acute-chest-pain",
+      "text": "HEART Pathway"
+    },
+    {
+      "type": "calc",
+      "id": "calc.heart-score-major-cardiac-events",
+      "text": "HEART Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.heart-pathway-early-discharge-acute-chest-pain",
+      "text": "HEART Pathway"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10655,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\n\n// Calculate score\nvar score = a + b + c + d;\n\nvar risk;\nif (score < 2) {\n    risk = 'Low';\n} else {\n    risk = 'Not low';\n}\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of NSTEMI'\n});\ncalc_output.push({\n    name: '10655_HEAR Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'HEAR Score'\n});\ncalc_output.push({\n    name: '10655_HEAR Score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of NSTEMI'\n});\n",
+  "before_use": null,
+  "instructions": "Cet outil est similaire au [HEART Score](nabda:calc.heart-score-major-cardiac-events) et au [HEART Pathway](nabda:calc.heart-pathway-early-discharge-acute-chest-pain), mais n'inclut pas la troponine ; utilisez-le lorsqu'un patient est suspecté d'être à très faible risque de syndrome coronarien aigu (ACS).",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Thomas Moumneh"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "b34c4c026241b424db3184fa9234dc5ef8a3b4c1b31845e0af24f2f32bd42d8d"
+}

@@ -1,0 +1,234 @@
+{
+  "id": "calc.sick-control-one-fat-food-scoff-questionnaire",
+  "slug": "sick-control-one-fat-food-scoff-questionnaire",
+  "language": "fr",
+  "title": "Questionnaire SCOFF (Sick, Control, One, Fat, Food)",
+  "short_title": "SCOFF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Malnutrition",
+    "Obesity",
+    "Trouble du comportement alimentaire"
+  ],
+  "chief_complaints": [
+    "Anorexia",
+    "Anxious",
+    "Arthralgia",
+    "Depressed",
+    "Fatigue",
+    "Infertility",
+    "Perte d'appétit",
+    "Myalgias",
+    "Nausea",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "The SCOFF Questionnaire",
+    "SCOFF",
+    "eating disorder",
+    "anorexia nervosa",
+    "AN",
+    "bulimia nervosa",
+    "BN",
+    "binge eating disorder",
+    "BED",
+    "avoidant/restrictive food intake disorder",
+    "eating disorder not otherwise specified",
+    "EDNOS",
+    "self induced vomiting",
+    "obesity",
+    "weight loss",
+    "malnutrition",
+    "weight",
+    "bmi",
+    "mood disorder",
+    "screening"
+  ],
+  "dosing": false,
+  "formula": "Le score SCOFF est calculé par addition des points sélectionnés. Veuillez demander à votre patient :\n\n| Question | Points | |\n| --- | --- | --- |\n| Vous rendez-vous **S** malade (Sick) parce que vous vous sentez inconfortablement plein ? | Non | 0 |\n| Oui | 1 | |\n| Craignez-vous d'avoir perdu le **C** contrôle (Control) sur la quantité que vous mangez ? | Non | 0 |\n| Oui | 1 | |\n| Avez-vous récemment perdu plus d'un **O** (One stone, soit 14 livres ou 6,35 kg) en 3 mois ? | Non | 0 |\n| Oui | 1 | |\n| Vous croyez-vous **F** gros(se) (Fat) alors que les autres disent que vous êtes trop maigre ? | Non | 0 |\n| Oui | 1 | |\n| Diriez-vous que la **F** nourriture (Food) domine votre vie ? | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Le dépistage précoce, le diagnostic et la prise en charge des troubles des conduites alimentaires peuvent améliorer le pronostic.\n- Par rapport à d'autres outils de dépistage plus longs, ce questionnaire a été conçu pour sa simplicité afin d'améliorer son utilisation par les cliniciens de première ligne.",
+    "when": "Peut être utilisé comme outil de dépistage en soins primaires chez les patients présentant un risque accru de troubles des conduites alimentaires.",
+    "pearls": "- Ne permet pas de poser un diagnostic de trouble des conduites alimentaires, mais vise à susciter la suspicion qu'un trouble des conduites alimentaires sous-jacent pourrait exister.\n- Élaboré à partir des caractéristiques fondamentales de l'anorexie mentale et de la boulimie.\n- La sensibilité et la spécificité ont varié considérablement selon les études de validation ; toutefois, il présente une relativement bonne valeur prédictive négative.\n- Les études de validation ont principalement inclus de jeunes adultes et des femmes adultes, ce qui peut limiter sa généralisabilité.\n- Cet outil semble plus efficace dans les populations à risque que dans la population générale."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Un résultat positif au dépistage doit conduire à une évaluation complémentaire afin de confirmer le diagnostic de trouble des conduites alimentaires."
+  },
+  "evidence": "",
+  "more_info": "Un score ≥2 indique un dépistage positif pour un trouble des conduites alimentaires.",
+  "short_description": "Eating disorder dépistage.",
+  "medium_description": "Screens pour eating disorders.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Vous rendez-vous **S** malade parce que vous vous sentez inconfortablement plein ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Craignez-vous d'avoir perdu le **C** contrôle sur la quantité que vous mangez ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Have you recently lost more than **O** ne stone (14 pounds ou 6.35 kg) dans 3 month period?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Do you believe yourself pour be **F** at when others say you are too thin?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Diriez-vous que la **F** nourriture domine votre vie ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Feltner C, Peat C, Reddy S, et al. Screening for Eating Disorders in Adolescents and Adults: Evidence Report and Systematic Review for the US Preventive Services Task Force. JAMA. 2022;327(11):1068-1082.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35289875/",
+      "kind": "international"
+    },
+    {
+      "text": "Morgan JF, Reid F, Lacey JH. The SCOFF questionnaire: assessment of a new screening tool for eating disorders. BMJ. 1999;319(7223):1467-1468.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10582927/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hill LS, Reid F, Morgan JF, Lacey JH. SCOFF, the development of an eating disorder screening questionnaire. Int J Eat Disord. 2010;43(4):344-351.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19343793/",
+      "kind": "other"
+    },
+    {
+      "text": "Garcia-Campayo J, Sanz-Carrillo C, Ibañez JA, Lou S, Solano V, Alda M. Validation of the Spanish version of the SCOFF questionnaire for the screening of eating disorders in primary care. J Psychosom Res. 2005;59(2):51-55.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16185998/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lähteenmäki S, Aalto-Setälä T, Suokas JT, et al. Validation of the Finnish version of the SCOFF questionnaire among young adults aged 20 to 35 years. BMC Psychiatry. 2009;9:5.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19200401/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Garcia F, Grigioni S, Chelali S, Meyrignac G, Thibaut F, Déchelotte P. Validation of the French version of SCOFF questionnaire for screening of eating disorders among adults. World J Biol Psychiatry. 2010;11:888-893.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20509759/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sanchez-Armass O, Raffaelli M, Andrade FCD, et al. Validation of the SCOFF questionnaire for screening of eating disorders among Mexican university students. Eat Weight Disord. 2017;22(1):153-160.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26928282/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dsmv-diagnostic-criteria-for-binge-eating-disorder",
+    "calc.car-relax-alone-forget-friends-trouble-crafft-questionnaire",
+    "calc.drug-abuse-screening-test-10-dast-10"
+  ],
+  "source_logic_hash": "6ddb10615510d4cac9cd6efd2b656586",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10524,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,159 @@
+{
+  "id": "calc.bard-score-nafld-fibrosis",
+  "slug": "bard-score-nafld-fibrosis",
+  "language": "en",
+  "title": "BARD score pour NAFLD Fibrosis",
+  "short_title": "BARD score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Diabète sucré",
+    "Obesity"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue"
+  ],
+  "abbreviations": [
+    "BARD",
+    "fibrosis",
+    "NAFLD",
+    "Bard NAFLD",
+    "Bard score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) ≥28 | No | 0 |\n| Yes | 1 | |\n| AST / ALT ratio ≥0.8 | No | 0 |\n| Yes | 2 | |\n| Diabetes | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Predicts advanced fibrosis in NAFLD patients with a NPV of 97% (rules out fibrosis), thus potentially avoiding need for liver biopsy.\n- Comparable to NAFLD Fibrosis Score in terms of sensitivity and specificity.",
+    "when": "Patients with suspected NAFLD.",
+    "pearls": "- Strong negative predictive value for ruling out fibrosis ([Raszeja-Wyszomirska 2010](https://bmcgastroenterol.biomedcentral.com/articles/10.1186/1471-230X-10-67)).\n- Original study involved mostly Caucasian patients and therefore score may be less applicable in other populations.\n- Doesn’t predict fibrosis but rules out (high sensitivity).\n- Helps differentiate adult patients with NAFLD from NASH who have not yet developed clinical stigmata of cirrhosis."
+  },
+  "next_steps": {
+    "advice": "Patients identified at high risk of fibrosis related to NAFLD can get focused interventions to prevent future complications through life style modifications.",
+    "critical_actions": "Patients with advanced fibrosis can be monitored closely on the basis of BARD score for their disease progression and can be referred to liver transplant centers.",
+    "management": "Lifestyle modifications include:\n\n- Tight glycemic control\n- Blood pressure control\n- Balanced diet\n- Regular aerobic exercise"
+  },
+  "evidence": "The Bard Score was derived by[Harrison et al (2008)](https://www.ncbi.nlm.nih.gov/pubmed/18390575)in a retrospective study of 827 patients. All the patients had biopsy-proven NAFLD. A score of 2–4 was associated with an OR for advanced fibrosis of 17 (CI 9.2-31.9) and a negative predictive value of 96%. Limitations of the study include retrospective design, lack of population diversity, low sensitivity.",
+  "more_info": "Interpretation:\n\n| BARD Score | Risk of advanced fibrosis |\n| --- | --- |\n| 0-1 | Low |\n| 2-4 | High* |\n\n*Scores 2-4 were associated with odds ratio (OR) 17 (95% CI 9.2-31.9) and 96% NPV ([Harrison 2008](https://www.ncbi.nlm.nih.gov/pubmed/18390575)).",
+  "short_description": "Advanced fibrosis risque.",
+  "medium_description": "Predicts risque de advanced fibrosis dans NAFLD patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ≥28",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Harrison SA, Oliver D, Arnold HL, Gogia S, Neuschwander-tetri BA. Development and validation of a simple NAFLD clinical scoring system for identifying patients without advanced disease. Gut. 2008;57(10):1441-7. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18390575 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Raszeja-wyszomirska J, Szymanik B, Ławniczak M, et al. Validation of the BARD scoring system in Polish patients with nonalcoholic fatty liver disease (NAFLD). BMC Gastroenterol. 2010;10:67.",
+      "href": "https://bmcgastroenterol.biomedcentral.com/articles/10.1186/1471-230X-10-67 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ruffillo G, Fassio E, Alvarez E, et al. Comparison of NAFLD fibrosis score and BARD score in predicting fibrosis in nonalcoholic fatty liver disease. J Hepatol. 2011;54(1):160-3.",
+      "href": "https://www.journal-of-hepatology.eu/article/S0168-8278(10)00718-X/abstract ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cichoż-lach H, Celiński K, Prozorow-król B, Swatek J, Słomka M, Lach T. The BARD score and the NAFLD fibrosis score in the assessment of advanced liver fibrosis in nonalcoholic fatty liver disease. Med Sci Monit. 2012;18(12):CR735-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3560810/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fibrotic-nash-index-fni",
+    "calc.nafld-non-alcoholic-fatty-liver-disease-activity-score",
+    "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "bc58051f7161086076c6d2cfe2104e97",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10086,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

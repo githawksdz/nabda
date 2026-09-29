@@ -1,0 +1,162 @@
+{
+  "id": "calc.behavioral-pain-scale-bps-pain-assessment-intubated-patients",
+  "slug": "behavioral-pain-scale-bps-pain-assessment-intubated-patients",
+  "language": "en",
+  "title": "Behavioral douleur échelle (BPS) pour douleur évaluation dans Intubated patients",
+  "short_title": "Behavioral douleur échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "medecine-interne",
+    "neurologie",
+    "douleur"
+  ],
+  "diseases": [
+    "Delirium"
+  ],
+  "chief_complaints": [
+    "AMS"
+  ],
+  "abbreviations": [
+    "critical",
+    "sedation",
+    "sedated",
+    "icu"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Nonverbal patients express pain variably, making a standardized, accurate tool helpful in the evaluation of pain. Pain can be a cause of abnormal vital signs in the ICU setting, and using a quantitative tool can help confirm or refute this hypothesis.",
+    "when": "Intubated patients, often undergoing painful procedures.",
+    "pearls": "- The Behavioral Pain Scale (BPS) quantifies pain using body language and patient-ventilator interactions for intubated patients.\n- It was developed and validated by performing non-painful procedures (i.e., a central line dressing change) and noxious procedures (i.e., endotracheal tube suctioning) and then observing response patterns."
+  },
+  "next_steps": {
+    "advice": "The BPS is a useful tool to assess pain in intubated patients.",
+    "critical_actions": "The BPS requires attentive clinical observation and examination.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n- Scores ≤3 indicate no pain.\n- Scores 4-5 indicate mild pain.\n- Scores 6-11 indicate an unacceptable amount of pain.*\n- Scores ≥12 indicate maximum pain.*\n\n***Note:** For scores ≥6 consider sedation and/or analgesia.",
+  "short_description": "Douleur échelle dans intubated patients.",
+  "medium_description": "Quantifies douleur dans intubated patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Expression faciale",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Relaxed",
+          "value": 1
+        },
+        {
+          "label": "Partially tightened (e.g., brow lowering)",
+          "value": 2
+        },
+        {
+          "label": "Fully tightened (e.g., eyelid closing)",
+          "value": 3
+        },
+        {
+          "label": "Grimacing",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "limb",
+      "label": "Upper limb movements",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun mouvement",
+          "value": 1
+        },
+        {
+          "label": "Partially bent",
+          "value": 2
+        },
+        {
+          "label": "Fully bent avec finger flexion",
+          "value": 3
+        },
+        {
+          "label": "Permanently retracted",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vent",
+      "label": "Compliance avec mechanical ventilation",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Tolerating movement",
+          "value": 1
+        },
+        {
+          "label": "Coughing but tolerating ventilation pour most de time",
+          "value": 2
+        },
+        {
+          "label": "Fighting ventilator",
+          "value": 3
+        },
+        {
+          "label": "Unable pour control ventilation",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Payen JF, Bru O, Bosson JL, et al. Assessing pain in critically ill sedated patients by using a behavioral pain scale. Crit Care Med. 2001 Dec;29(12): 2258-63",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11801819",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ahlers SJ, van der Veen AM, van Dijk M, et al. The use of the Behavioral Pain Scale to assess pain in conscious sedated patients. Anesth Analg. 2010 Jan 1;110(1):127-33",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19897804",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nonverbal-pain-scale-nvps-nonverbal-patients",
+    "calc.richmond-agitation-sedation-scale-rass",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "08b2cd74b91e3c5aeb09cbef9234ea4e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3622,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

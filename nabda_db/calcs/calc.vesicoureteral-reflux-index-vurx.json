@@ -1,0 +1,186 @@
+{
+  "id": "calc.vesicoureteral-reflux-index-vurx",
+  "slug": "vesicoureteral-reflux-index-vurx",
+  "language": "fr",
+  "title": "Indice de reflux vésico-urétéral (VURx)",
+  "short_title": "VURx",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nephrologie",
+    "pediatrie",
+    "general",
+    "urologie"
+  ],
+  "diseases": [
+    "Reflux vésico-urétéral"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Constipation",
+    "Dysuria",
+    "Fever",
+    "Polyuria",
+    "Incontinence urinaire"
+  ],
+  "abbreviations": [
+    "Vesicoureteral Reflux Index (VURx)",
+    "vurx",
+    "reflux",
+    "vur",
+    "primary reflux",
+    "Vesicoureteral Reflux",
+    "resolution",
+    "reflux resolution",
+    "febrile UTI",
+    "urinary tract infection",
+    "children",
+    "pediatrics",
+    "UTI"
+  ],
+  "dosing": false,
+  "formula": "Le VURx est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sexe | Masculin | 0 |\n| Féminin | 1 | |\n| Moment du RUV | Miction | 1 |\n| Remplissage tardif | 2 | |\n| Remplissage précoce à moyen | 3 | |\n| Anomalies urétérales Inclut la duplication urétérale complète et le diverticule péri-urétéral | Absentes | 0 |\n| Présentes | 1 | |\n| Grade de RUV | Faible à modéré (Grade 1-3) | 0 |\n| Élevé (Grade 4-5) | 1 | |",
+  "how_to_use": {
+    "why": "En aidant les cliniciens à prédire quels enfants peuvent présenter une résolution spontanée du RUV ou des infections urinaires récurrentes, cet outil peut faciliter les discussions concernant la nécessité d'une intervention chirurgicale par rapport à une surveillance avec prophylaxie antibiotique.",
+    "when": "Utiliser cet outil chez les patients pédiatriques chez lesquels un reflux vésico-urétéral (RUV) vient d'être diagnostiqué, afin de prédire la résolution du reflux et le risque futur d'infection urinaire (IU).",
+    "pearls": "- Cette échelle sur 6 points intègre le sexe et trois constatations de la cystographie rétrograde mictionnelle (CRM) pour générer un résultat.\n- Il existe une variabilité connue des protocoles de CRM et des pratiques de compte rendu entre les établissements. L'utilisation des résultats d'une seule CRM peut potentiellement réduire cette variabilité et minimiser le risque.\n- À mesure que le score et le temps écoulé depuis le diagnostic augmentent, la résolution spontanée du RUV devient moins probable."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Le VURx constitue un élément d'un plan de traitement individualisé et peut faciliter les discussions avec les parents concernant le risque futur de leur enfant.\n\nEn général, un score VURx plus élevé indique une probabilité moindre de résolution spontanée du RUV et un risque plus élevé d'infection urinaire.\n\nLa prise en charge optimale du RUV continue d'évoluer, et l'équipe clinique devrait inclure un urologue pédiatre ayant une expertise dans ce domaine en constante évolution."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| VURx | Taux de résolution | Risque d'infection urinaire |\n| --- | --- | --- |\n| 1 | 89 % | 2 % |\n| 2 | 69 % | 3 % |\n| 3 | 53 % | 5 % |\n| 4 | 16 % | 15 % |\n| 5 | 11 % | 30 % |\n| 6 | 11 % | 58 % |",
+  "short_description": "Résolution du RUV et infection urinaire fébrile.",
+  "medium_description": "Predicts resolution de VUR dans enfants et risque de febrile UTI.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "time",
+      "label": "Moment du RUV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Voiding",
+          "value": 1
+        },
+        {
+          "label": "Remplissage tardif",
+          "value": 2
+        },
+        {
+          "label": "Early pour mid filling",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "anomaly",
+      "label": "Anomalies urétérales",
+      "tips": "Inclut la duplication urétérale complète et le diverticule péri-urétéral",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "grade",
+      "label": "Grade de RUV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "faible pour modéré (Grade 1-3)",
+          "value": 0
+        },
+        {
+          "label": "élevé (Grade 4-5)",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kirsch AJ, Arlen AM, Leong T, et al. Vesicoureteral reflux index (Vurx): a novel tool to predict primary reflux improvement and resolution in children less than 2 years of age. J Pediatr Urol. 2014;10(6):1249-1254.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25511573/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lovin JM, Kirsch AJ. The vcug for vur: looking beyond the reflux - American Urological Association. AUA News.",
+      "href": "https://www.auanews.net/issues/articles/2021/november-2021/the-vcug-for-vur-looking-beyond-the-reflux",
+      "kind": "other"
+    },
+    {
+      "text": "Arlen AM, Garcia-Roig M, Weiss AD, Leong T, Cooper CS, Kirsch AJ. Vesicoureteral reflux index: 2-institution analysis and validation. J Urol. 2016;195(4 Pt 2):1294-1299.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25813448/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Garcia-Roig M, Ridley DE, McCracken C, Arlen AM, Cooper CS, Kirsch AJ. Vesicoureteral reflux index: predicting primary vesicoureteral reflux resolution in children diagnosed after age 24 months. J Urol. 2017;197(4):1150-1157.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27939835/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pecarn-rule-low-risk-febrile-infants-29-60-days-old",
+    "calc.los-angeles-la-grading-esophagitis",
+    "calc.rome-iv-diagnostic-criteria-reflux-hypersensitivity"
+  ],
+  "source_logic_hash": "b5b45f0c46f5af09137d49574e00ba94",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10478,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-electrolytes-solution-alcaline-a",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

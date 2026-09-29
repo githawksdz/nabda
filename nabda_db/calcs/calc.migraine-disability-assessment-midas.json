@@ -1,0 +1,149 @@
+{
+  "id": "calc.migraine-disability-assessment-midas",
+  "slug": "migraine-disability-assessment-midas",
+  "language": "fr",
+  "title": "Migraine Disability évaluation (MIDAS)",
+  "short_title": "MIDAS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "neurologie",
+    "douleur"
+  ],
+  "diseases": [
+    "Migraine"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Fatigue",
+    "Headache",
+    "Nausea",
+    "Pain",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Migraine Disability Assessment",
+    "MIDAS",
+    "migraine",
+    "migraine disability",
+    "headache",
+    "pain",
+    "chronic pain",
+    "disability"
+  ],
+  "dosing": false,
+  "formula": "Le score MIDAS est calculé par l'addition du nombre de jours des questions suivantes :\n\nVeuillez poser à votre patient les questions suivantes concernant TOUTES les céphalées qu'il a eues au cours des 3 derniers mois.\n\n1. Pendant combien de jours au cours des 3 derniers mois avez-vous manqué le travail ou l'école à cause de vos céphalées ?\n2. Pendant combien de jours au cours des 3 derniers mois votre productivité au travail ou à l'école a-t-elle été réduite de moitié ou plus à cause de vos céphalées ?\n(Ne comptez pas les jours que vous avez comptés à la question 1 où vous avez manqué le travail ou l'école.)\n3. Pendant combien de jours au cours des 3 derniers mois n'avez-vous **pas** fait le travail ménager à cause de vos céphalées ?\n4. Pendant combien de jours au cours des 3 derniers mois votre productivité dans le travail ménager a-t-elle été réduite de moitié ou plus à cause de vos céphalées ?\n(Ne comptez pas les jours que vous avez comptés à la question 3 où vous n'avez pas fait le travail ménager.)\n5. Pendant combien de jours au cours des 3 derniers mois avez-vous manqué des activités familiales, sociales ou de loisirs à cause de vos céphalées ?",
+  "how_to_use": {
+    "why": "- Évalue l'impact des céphalées migraineuses sur le fonctionnement quotidien et la qualité de vie d'un patient sur une période de 3 mois.\n- Peut guider la prise de décision médicale concernant les plans de prise en charge.\n- Peut être utilisé pour surveiller l'efficacité du traitement actuel de la migraine.",
+    "when": "- Un outil simple au lit du patient qui peut être utilisé lors de l'évaluation de la sévérité de la migraine par le clinicien.\n- Peut être utile lors des consultations initiales et de suivi.",
+    "pearls": "- Dérivé d'un autre score de sévérité, le Headache Impact Questionnaire (HImQ), après que les questions basées sur le comptage des fréquences se sont révélées plus valides pour quantifier les impacts et l'incapacité liés aux céphalées.\n- Évalue l'impact des céphalées sur 3 domaines différents de l'activité quotidienne : le travail, les tâches ménagères et les activités non professionnelles.\n- Un journal n'est pas requis dans le processus de recueil des données pour ce score, mais cela n'exclut pas la nécessité d'un journal chez certains patients."
+  },
+  "next_steps": {
+    "advice": "- En général, l'objectif de la prise en charge est de réduire l'incapacité liée aux céphalées.\n- La catégorisation de l'incapacité d'un patient liée aux céphalées migraineuses peut être utilisée, en association avec la décision médicale partagée, pour évaluer la nécessité de traitements prophylactiques, évaluer l'efficacité du traitement actuel, déterminer la nécessité d'une intensification thérapeutique et envisager la nécessité d'une orientation vers un spécialiste.\n- Plusieurs sociétés savantes médicales fournissent des recommandations thérapeutiques, notamment l'American Headache Society, l'American Academy of Neurology et l'International Headache Society. Pour plus d'informations sur le traitement de la migraine, veuillez vous référer aux dernières recommandations.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score MIDAS | Grade | Niveau d'incapacité |\n| --- | --- | --- |\n| 0-5 | Ⅰ | Incapacité minime ou absente |\n| 6-10 | Ⅱ | Incapacité légère |\n| 11-20 | Ⅲ | Incapacité modérée |\n| ≥21 | Ⅳ | Incapacité sévère |",
+  "short_description": "Quantification de l'incapacité liée à la migraine.",
+  "medium_description": "Quantifies amount de disability due pour headache-lié symptoms.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q1",
+      "label": "1. sur how many days dans last 3 months did you miss work ou school because de your headaches?",
+      "optional": false,
+      "unit": "day(s)",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q2",
+      "label": "2. How many days dans last 3 months was your productivity at work ou school reduced par half ou more because de your headaches?",
+      "tips": "Ne comptez pas les jours que vous avez comptés à la question 1 où vous avez manqué le travail ou l'école.",
+      "optional": false,
+      "unit": "day(s)",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q3",
+      "label": "3. sur how many days dans last 3 months did you **not** do household work because de your headaches?",
+      "optional": false,
+      "unit": "day(s)",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q4",
+      "label": "4. How many days dans last 3 months was your productivity dans household work reduced par half ou more because de your headaches?",
+      "tips": "Ne comptez pas les jours que vous avez comptés à la question 3 où vous n'avez pas fait le travail ménager.",
+      "optional": false,
+      "unit": "day(s)",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q5",
+      "label": "5. sur how many days dans last 3 months did you miss family, social, ou leisure activities because de your headaches?",
+      "optional": false,
+      "unit": "day(s)",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Stewart WF, Lipton RB, Simon D, Liberman J, Von Korff M. Validity of an illness severity measure for headache in a population sample of migraine sufferers. Pain. 1999;79(2-3):291-301.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10068175/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stewart WF, Lipton RB, Kolodner K, Liberman J, Sawyer J. Reliability of the migraine disability assessment score in a population-based sample of headache sufferers. Cephalalgia. 1999;19(2):107-114; discussion 74.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10214536/",
+      "kind": "other"
+    },
+    {
+      "text": "Stewart WF, Lipton RB, Kolodner KB, Sawyer J, Lee C, Liberman JN. Validity of the Migraine Disability Assessment (MIDAS) score in comparison to a diary-based measure in a population sample of migraine sufferers. Pain. 2000;88(1):41-52.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11098098/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stewart WF, Lipton RB, Dowson AJ, Sawyer J. Development and testing of the Migraine Disability Assessment (MIDAS) Questionnaire to assess headache-related disability. Neurology. 2001;56(6 Suppl 1):S20-28.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11294956/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.neck-disability-index-ndi",
+    "calc.migraine-treatment-optimization-questionnaire-mtoq-4",
+    "calc.therapy-disability-neurology-tdn-grade"
+  ],
+  "source_logic_hash": "ee0f2b239f12087eb2ef28a67185b7a5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10521,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

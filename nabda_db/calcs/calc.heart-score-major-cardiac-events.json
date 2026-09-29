@@ -1,0 +1,281 @@
+{
+  "id": "calc.heart-score-major-cardiac-events",
+  "slug": "heart-score-major-cardiac-events",
+  "language": "en",
+  "title": "HEART score pour événements cardiaques majeurs",
+  "short_title": "Score HEART",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "trop",
+    "acs",
+    "mi",
+    "ntsemi",
+    "stemi",
+    "heart score",
+    "major cardiac events",
+    "heart prognosis",
+    "adverse cardiac event",
+    "chest pain",
+    "chest"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- |\n| History 1 | Slightly suspicious | Moderately suspicious | Highly suspicious |\n| EKG | Normal | Non-specific repolarization disturbance 2 | Significant ST deviation 3 |\n| Age (years) | <45 | 45–64 | ≥65 |\n| Risk factors 4 | No known risk factors | 1–2 risk factors | ≥3 risk factors or history of atherosclerotic disease |\n| Initial troponin 5 | ≤normal limit | 1–3× normal limit | >3× normal limit |\n\n1. e.g. Retrosternal pain, pressure, radiation to jaw/left shoulder/arms, duration 5–15 min, initiated by exercise/cold/emotion, perspiration, nausea/vomiting, reaction on nitrates within mins, patient recognizes symptoms. Low risk features of chest pain include: well localized, sharp, non-exertional, no diaphoresis, no nausea or vomiting, and reproducible with palpation.\n2. LBBB, typical changes suggesting LVH, repolarization disorders suggesting digoxin, unchanged known repolarization disorders.\n3. Significant ST-segment deviation without LBBB, LVH, or digoxin.\n4. HTN, hypercholesterolemia, DM, obesity (BMI >30 kg/m²), smoking (current, or smoking cessation ≤3 mo), positive family history (parent or sibling with CVD before age 65).\n5. Use local, regular sensitivity troponin assays and corresponding cutoffs.",
+  "how_to_use": {
+    "why": "Objectivement, stratifie le risque des patients en catégories faible, modéré et élevé, ce qui aide à guider la prise en charge, conduit à une meilleure utilisation des ressources, à des séjours hospitaliers et aux urgences plus courts pour les patients à faible risque, et à des interventions plus précoces pour les patients à risque modéré et élevé.",
+    "when": "Any ED patient with chest pain that the physician deems appropriate for an ACS workup.",
+    "pearls": "- Helps ED providers risk-stratify chest pain patients into low, moderate, and high-risk groups.\n- HEART is an acronym of its components: History, EKG, Age, Risk factors, and troponin. Each of these is scored with 0, 1 or 2 points.\n- Designed to risk stratify patients with undifferentiated chest pain, ***not*** those already diagnosed with ACS.\n- Identifies patients with higher risk of having a MACE (all-cause mortality, myocardial infarction, or coronary revascularization) in the following 6 weeks.\n- The user needs some experience taking a detailed chest pain history and reading EKGs to adequately apply these two components of the score.\n- Sometimes compared to [TIMI Score for UA/NSTEMI](nabda:calc.timi-risk-score-ua-nstemi) and the [GRACE ACS Risk Score](nabda:calc.grace-acs-risk-mortality-calculator) (older ACS scores), but the latter two differ from the HEART in that they measure risk of death for patients with diagnosed ACS.\n- The HEART Score outperforms the TIMI Score for UA/NSTEMI, safely identifying more low-risk patients.\n- Most widely validated for regular sensitivity troponin, though has also been recently studied using high sensitivity troponin ([Ljung 2019](https://www.annemergmed.com/article/S0196-0644(18)31529-4/abstract))."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Do not use if new ST-segment elevation requiring immediate intervention or clinically unstable patients.",
+    "management": "**Scores 0-3** : 0.9-1.7% risk of adverse cardiac event. In the HEART Score study, these patients were discharged (0.99% in the retrospective study, 1.7% in the prospective study).\n\n**Scores 4-6** : 12-16.6% risk of adverse cardiac event. In the HEART Score study, these patients were admitted to the hospital. (11.6% retrospective, 16.6% prospective).\n\n**Scores ≥7** : 50-65% risk of adverse cardiac event. In the HEART Score study, these patients were candidates for early invasive measures. (65.2% retrospective, 50.1% prospective).\n\nA MACE (Major Adverse Cardiac Event) was defined as all-cause mortality, myocardial infarction, or coronary revascularization."
+  },
+  "evidence": "The HEART Score was originally developed by[Backus et al (2008)](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2442661/)in a cohort of 122 patients with chest pain in an emergency department setting. The study included any patients admitted to the emergency department due to chest pain irrespective of age, prehospital assumptions, and previous medical treatments. It excluded patients with chest pain and significant ST segment elevations. Endpoints in this study were acute myocardial infarction (AMI), percutaneous coronary intervention (PCI), coronary artery bypass graft (CABG), and death. HEART Scores of 0-3 points confer a risk of 2.5% for any endpoint and therefore was used to support discharge from the ED. Conversely, scores 4-6 points confer a risk of 20.3%, implying admission for clinical observation is necessary. ≥7 points has a risk of 72.7% and supports early invasive strategies.\n\nIn a retrospective multicenter validation study also by[Backus et al (2010)](https://www.ncbi.nlm.nih.gov/pubmed/20802272), 880 patients presenting with chest pain were evaluated. The primary endpoints studied were the same as the original study. 158 patients (17.95%) reached the primary endpoint. Of the 303 patients with HEART Scores 0 to 3, three (0.99%) had a MACE. In 413 patients with scores 4 to 6, 48 cases (11.6%) resulted in a MACE, and in HEART Scores 7 to 10, MACE was identified in 107/164 cases (65.2%).\n\n[Backus et al](https://www.ncbi.nlm.nih.gov/pubmed/23465250)externally validated the HEART Score with a prospective multicenter study in 2013. The study evaluated 2,440 patients presenting with chest pain to 10 emergency departments in the Netherlands. The primary endpoint was the occurrence of any MACE within 6 weeks. The performance of the HEART Score was also compared to that of the TIMI Score for UA/NSTEMI and the GRACE ACS Risk Score. In the low risk group (score 0-3), 15/870 (1.7%) of patients were found to have a MACE. In patients with HEART scores 4-6, MACE was diagnosed in 183/1101 (16.6%). In patients with high HEART scores (values 7-10), MACE occurred in 50.1%. The c-statistic of the HEART score (0.83) was significantly higher than the c-statistic of TIMI (0.75) and GRACE (0.70) respectively (p <0.0001).\n\n[Poldervaart et al (2017)](https://annals.org/aim/article/2622872/effect-using-heart-score-patients-chest-pain-emergency-department-stepped)studied the HEART Score in a stepped-wedge cluster randomized trial with the objective of measuring both outcomes and use of healthcare resources. Nine Dutch hospitals were included in the study and were instructed to start usual care when assessing patients with chest pain. Every six weeks, one hospital was randomly assigned to use the HEART Score to assess patients with chest pain. A total of 3,648 patients were included (1,827 receiving usual care and 1,821 receiving HEART care). The study found that the six-week MACE incidence while using the HEART Score was 1.3% lower than with usual care, but there were no statistically significant differences in early discharge, readmissions, recurrent emergency department visits, outpatient visits, or visits to general practitioners.\n\nRecent studies have compared the HEART Score head-to-head with other clinical decision rules with regards to their ability to safely identify low risk patients. A study by[Poldervaart et al (2017)](https://www.ncbi.nlm.nih.gov/pubmed/27810290)comparing the HEART Score to the TIMI and GRACE Scores showed that the HEART Score outperformed the others when identifying low risk patients, with only 0.8% incidence of MACE in the low risk group.\n\nIn addition,[Nieuwets et al (2016)](https://bmjopen.bmj.com/content/6/6/e010694)compared the HEART Score with the TIMI Score, with regards to identifying low risk patients without compromising safety while also evaluating expected cost reduction. They found that the HEART Score identified more patients as low risk compared with the TIMI Score, which would have led to potential cost savings of €64,107 (~USD $76,000) by using the HEART Score cutoffs versus €14,670 (~USD $17,000) for TIMI.\n\nThe HEART Pathway developed by[Mahler et al (2015)](https://www.ncbi.nlm.nih.gov/pubmed/25737484)combined the HEART Score with 0- and 3-hour cardiac troponin tests in a decision aid designed to identify ED patients safe for early discharge. The study found that the HEART Pathway decreased length of stay by 12 hours, decreased objective cardiac testing by 12%, and increased early discharges by 21%. No MACE were seen within 30 days in patients who were identified for early discharge. Of note, this study (and the original HEART Score studies) uses regular sensitivity cardiac troponin.",
+  "more_info": "- Major Adverse Cardiac Event (MACE) was defined in this study as: AMI, PCI, CABG, death.\n- Ryan Radecki of EM Literature of Note[recommended emergency physicians use the HEART Score](https://www.emlitofnote.com/?p=440)over the [TIMI](nabda:calc.timi-risk-score-ua-nstemi) or [GRACE](nabda:calc.grace-acs-risk-mortality-calculator) scores for emergency department risk stratification of patients with possibly cardiac complaints.",
+  "short_description": "6-week risque de cardiac event pour douleur thoracique patients.",
+  "medium_description": "Predicts 6-week risque de major adverse cardiac events chez les patients avec douleur thoracique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "history",
+      "label": "Antécédents",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Légèrement suspect",
+          "value": 0
+        },
+        {
+          "label": "Suspicion modérée",
+          "value": 1
+        },
+        {
+          "label": "Fortement suspect",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ekg",
+      "label": "ECG",
+      "tips": "1 point: No ST deviation but LBBB, LVH, repolarization changes (e.g. digoxin); 2 points: ST deviation not due to LBBB, LVH, or digoxin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Trouble de la repolarisation non spécifique",
+          "value": 1
+        },
+        {
+          "label": "Déviation significative du segment ST",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 45",
+          "value": 0
+        },
+        {
+          "label": "45-64 ans",
+          "value": 1
+        },
+        {
+          "label": "≥65",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "risk_factors",
+      "label": "Facteurs de risque",
+      "tips": "Risk factors: HTN, hypercholesterolemia, DM, obesity (BMI >30 kg/m²), smoking (current, or smoking cessation ≤3 mo), positive family history (parent or sibling with CVD before age 65); atherosclerotic disease: prior MI, PCI/CABG, CVA/TIA, or peripheral arterial disease",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun facteur de risque connu",
+          "value": 0
+        },
+        {
+          "label": "1-2 facteurs de risque",
+          "value": 1
+        },
+        {
+          "label": "≥3 facteurs de risque ou antécédents de maladie athéroscléreuse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "troponin",
+      "label": "Troponine initiale",
+      "tips": "Use local, regular sensitivity troponin assays and corresponding cutoffs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ limite de la normale",
+          "value": 0
+        },
+        {
+          "label": "1–3× la limite normale",
+          "value": 1
+        },
+        {
+          "label": "> 3 × la limite normale",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Six AJ, Backus BE, Kelder JC. Chest pain in the emergency room: value of the HEART score. Neth Heart J. 2008;16(6):191-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2442661/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahler SA, Riley RF, Hiestand BC, et al. The HEART Pathway randomized trial: identifying emergency department patients with acute chest pain for early discharge. Circ Cardiovasc Qual Outcomes. 2015;8(2):195-203.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25737484 ",
+      "kind": "other"
+    },
+    {
+      "text": "Nieuwets A, Poldervaart JM, Reitsma JB, et al. Medical consumption compared for TIMI and HEART score in chest pain patients at the emergency department: a retrospective cost analysis. BMJ Open. 2016;6(6):e010694.",
+      "href": "https://bmjopen.bmj.com/content/6/6/e010694",
+      "kind": "other"
+    },
+    {
+      "text": "Poldervaart JM, Langedijk M, Backus BE, et al. Comparison of the GRACE, HEART and TIMI score to predict major adverse cardiac events in chest pain patients at the emergency department. Int J Cardiol. 2017;227:656-661.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27810290",
+      "kind": "other"
+    },
+    {
+      "text": "Poldervaart JM, Reitsma JB, Backus BE, et al. Effect of Using the HEART Score in Patients With Chest Pain in the Emergency Department: A Stepped-Wedge, Cluster Randomized Trial. Ann Intern Med. 2017.",
+      "href": "https://annals.org/aim/article/2622872/effect-using-heart-score-patients-chest-pain-emergency-department-stepped ",
+      "kind": "other"
+    },
+    {
+      "text": "Hess EP, Knoedler MA, Shah ND, et al. The chest pain choice decision aid: a randomized trial. Circ: Cardiovascular Quality and Outcomes. 2012;5(3):251-259.",
+      "href": "https://www.ahajournals.org/doi/full/10.1161/CIRCOUTCOMES.111.964791",
+      "kind": "other"
+    },
+    {
+      "text": "Backus BE, Six AJ, Kelder JC, et al. Chest pain in the emergency room: a multicenter validation of the HEART Score. Crit Pathw Cardiol. 2010;9(3):164-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20802272",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Backus BE, Six AJ, Kelder JC, et al. A prospective validation of the HEART score for chest pain patients at the emergency department. Int J Cardiol. 2013;168(3):2153-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23465250",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stopyra JP, Riley RF, Hiestand BC, et al. The HEART Pathway Randomized Controlled Trial One Year Outcomes. Acad Emerg Med. 2018;",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29920834",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ljung L, Lindahl B, Eggers KM, et al. A Rule-Out Strategy Based on High-Sensitivity Troponin and HEART Score Reduces Hospital Admissions. Ann Emerg Med. 2019;73(5):491-499.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30661856",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.reynolds-risk-score-cardiovascular-risk-women",
+    "calc.grace-acs-risk-mortality-calculator"
+  ],
+  "source_logic_hash": "00ce9d11587d36eaff2a6a12a24955f0",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-ua-nstemi",
+      "text": "TIMI Score for UA/NSTEMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE ACS Risk Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-ua-nstemi",
+      "text": "TIMI Score for UA/NSTEMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE ACS Risk Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1752,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n\nvar msg = '';\nvar mini_msg = '';\nvar v = parseInt(history) + parseInt(ekg) + parseInt(age) + parseInt(risk_factors) + parseInt(troponin);\nif (v < 4) { msg = 'Low Score (0-3 points)<br/><br/>Risk of MACE of 0.9-1.7%.';\n    mini_msg = 'Low Score' }\nif (v > 3 && v < 7) { msg = 'Moderate Score (4-6 points)<br/><br/>Risk of MACE of 12-16.6%.';\n    mini_msg = 'Moderate Score' }\nif (v > 6) { msg = 'High Score (7-10 points)<br/><br/>Risk of MACE of 50-65%.';\n    mini_msg = 'High Score' }\n\nif (v<7){\n\tif (parseInt(ekg) == 2) {\n\t\tmsg +='<br/><br/>If EKG is highly suspicious, many experts recommend further workup and admission even with a low HEART Score.';\n\t}\nif (parseInt(troponin) == 1 || parseInt(troponin) == 2) {\n\tmsg +='<br/><br/>If troponin is positive, many experts recommend further workup and admission even with a low HEART Score.';\n}\n}\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: v, \n\tvalue_text: 'points', \n\tmessage: mini_msg \n});\ncalc_output.push({ \n\tname: '1752_HEART Score_result', \n\tvalue: v, \n\tvalue_text: 'points', \n\tmessage: msg \n});",
+  "before_use": null,
+  "instructions": "À utiliser chez les patients ≥21 ans se présentant avec des symptômes évocateurs d'un SCA. Ne pas utiliser en cas de sus-décalage nouveau du segment ST ≥1 mm ou d'autres modifications nouvelles de l'ECG, d'hypotension, d'espérance de vie inférieure à 1 an, ou d'une affection non cardiaque médicale/chirurgicale/psychiatrique dont le médecin traitant estime qu'elle nécessite une hospitalisation.",
+  "contributor_ids": [
+    "carlos-rodriguez",
+    "hyunjoo-lee"
+  ],
+  "creator_names": [
+    "Dr. Barbra Backus"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Troponin"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "ce719066059e82ab63e5240647eb4781eacf90364155d2c2c08f475a1b95e4d5"
+}

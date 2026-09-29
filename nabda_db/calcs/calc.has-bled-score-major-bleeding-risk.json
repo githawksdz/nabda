@@ -1,0 +1,363 @@
+{
+  "id": "calc.has-bled-score-major-bleeding-risk",
+  "slug": "has-bled-score-major-bleeding-risk",
+  "language": "en",
+  "title": "HAS-BLED score pour Major saignement risque",
+  "short_title": "Score HAS-BLED",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "hematologie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Fibrillation atriale",
+    "Bleeding/Hemorrhage",
+    "Hémorragie gastro-intestinale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Palpitations",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "hemorrhage",
+    "anticoagulation",
+    "afib",
+    "cva",
+    "stroke",
+    "atrial fibrillation",
+    "stroke risk",
+    "hasbled",
+    "has",
+    "has-bled",
+    "bleeding risk",
+    "HAS-BLED Score for Major Bleeding Risk",
+    "has bled score",
+    "has bled",
+    "major bleeding"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points |\n| --- | --- |\n| Hypertension | 1 |\n| Maladie rénale (dialyse, transplantation, Cr >2.26 mg/dL ou 200 µmol/L) | 1 |\n| Maladie hépatique (cirrhose ou bilirubine >2x la normale avec AST/ALT/AP >3x la normale) | 1 |\n| Antécédent d'AVC | 1 |\n| Saignement majeur antérieur ou prédisposition aux saignements | 1 |\n| INR labile (INR instables/élevés, temps passé dans la zone thérapeutique <60%) | 1 |\n| Sujet âgé (âge >65 ans) | 1 |\n| Utilisation de médicaments prédisposant aux saignements (aspirine, clopidogrel, AINS) | 1 |\n| Consommation d'alcool (≥8 verres/semaine) | 1 |\n\nNote : HAS-BLED est un acronyme pour Hypertension, Abnormal liver/renal function, Stroke history, Bleeding predisposition, Labile INR, Elderly, Drug/alcohol usage.",
+  "how_to_use": {
+    "why": "Le score HAS-BLED peut aider à la discussion de prise de décision partagée concernant l'anticoagulation chez les patients atteints de fibrillation atriale.",
+    "when": "- Envisager d’utiliser le score HAS-BLED comme outil de référence pour faciliter la discussion de décision partagée concernant l’anticoagulation chez les patients atteints de fibrillation atriale.\n- Envisager d’utiliser le score HAS-BLED à la place d’autres scores de risque hémorragique, ou en association avec ceux-ci, tels que [HEMORR₂HAGES](nabda:calc.hemorr2hages-score-major-bleeding-risk) et [ATRIA](nabda:calc.atria-stroke-risk-score), pour déterminer le risque d’hémorragie majeure chez un patient atteint de fibrillation atriale.\n- Envisager de comparer le risque d’hémorragie majeure calculé par le score HAS-BLED au risque d’événements thromboemboliques selon le [CHA₂DS₂-VASc](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) afin de déterminer si le bénéfice de l’anticoagulation l’emporte sur le risque.",
+    "pearls": "The HAS-BLED Score was developed as a practical risk score to estimate the 1-year risk for major bleeding in patients with atrial fibrillation.\nStudy included 3456 ambulatory and hospitalized patients with AF and one-year follow-up status regarding major bleeding, and without mitral valve stenosis or valvular surgery.\n\n- Patients were followed up at one year to determine survival and major adverse cardiovascular events, such as major bleeding.\n- Major bleeding was defined as intracranial hemorrhage, bleeding requiring hospitalization, bleeding with hemoglobin decrease >2 g/L, or bleeding requiring transfusion.\n- Researchers performed univariable analysis to find potential bleeding risk factors associated with major bleeding at 1 year follow-up.\n- Developed HAS-BLED score based on results of their analysis as well as known significant risk factors for major bleeding.\n- Results showed that the annual bleeding rate increased with increasing scores.\n\nPoints to keep in mind:\n\n- Despite its popularity, neither the European nor the American guidelines recommend any specific risk score for predicting bleeding events in patients with AF.\n- The derivation study was based on a cohort in which only around 2/3 were on any antithrombotic therapy. The score has since been validated extensively.\n- Clinical factors that contribute to stroke risk and support anticoagulation in patients with atrial fibrillation are frequently risk factors for bleeding as well.\n- There may be superior predictive scores for bleeding events in patients taking direct oral anticoagulants, e.g. the [DOAC Score](nabda:calc.direct-acting-oral-anticoagulants-doac-score) .\n- Use this score with caution in patients with conditions that are associated with elevated bleeding risks, including but not limited to chronic kidney disease and cancer – this score has been shown to perform poorly in both of these conditions."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Les risques et bénéfices de l’anticoagulation propres à chaque patient doivent être soigneusement mis en balance chez tous les patients susceptibles d’être candidats à un traitement anticoagulant au long cours.",
+    "management": ""
+  },
+  "evidence": "The HAS-BLED Score was developed in 2010 as a practical risk score to estimate the 1-year risk of major bleeding in patients with atrial fibrillation (AF).[The original study](https://pubmed.ncbi.nlm.nih.gov/20299623/)used data from the prospective Euro Heart Survey on AF, and included 3456 ambulatory and hospitalized patients with AF and one-year follow-up status regarding major bleeding, and without mitral valve stenosis or valvular surgery. These patients were identified from both academic and non-academic hospitals in 35 member countries of the European Society for Cardiology (ESC).\n\nMajor bleeding was defined as intracranial hemorrhage, bleeding requiring hospitalization, bleeding with hemoglobin decrease >2 g/L, or bleeding requiring transfusion. The authors performed univariable logistic regression to identify potential risk predictors (p<0.10), which were then included in a multivariable logistic model and underwent variable selection by stepwise regression. Importantly, the authors noted the short follow-up period and the resultant scarcity of events, and thus added three risk factors consistently demonstrated to predict major bleeding in the then-contemporary literature (stroke, alcohol use, systolic blood pressure >160 mmHg) to the selected variables. The resultant score, HAS-BLED, thus included nine risk factors with one point each. In the derivation study, HAS-BLED achieved a c-statistic of 0.72 in the overall cohort, with c-statistics ranging between 0.69 (in those with oral anticoagulant alone) and 0.91 (in those with antiplatelet therapy alone) in various subgroups stratified by the type of antithrombotic therapy at baseline.\n\nMany external validations of the HAS-BLED score have been published. These include[a seminal study published in 2011](https://pubmed.ncbi.nlm.nih.gov/21111555/)using data from the SPORTIF III ad V clinical trials (which evaluated ximelagatran, a thrombin inhibitor, as anticoagulant in patients with AF) which outperformed 4 other contemporary predictive scores for major bleeding with a modest c-statistic. Perhaps more importantly, this validation study was also the first to define the risk categories of HAS-BLED, as these were not mentioned in the original derivation study. A large number of studies have since been published, which both validated HAS-BLED and often compared it against other similar predictive scores. A[2020 network meta-analysis of 18 studies](https://pubmed.ncbi.nlm.nih.gov/31782613/)found HAS-BLED to be the most balanced predictive score for major bleeding in terms of sensitivity and specificity, compared to other contemporary scores including the ABC‐bleeding score, [ATRIA](nabda:calc.atria-bleeding-risk-score) , European score, [GARFIELD‐AF](nabda:calc.garfield-af) , HAS‐BLED, [HEMORR₂HAGES](nabda:calc.hemorr2hages-score-major-bleeding-risk) , [ORBIT](nabda:calc.orbit-bleeding-risk-score-atrial-fibrillation) , Shireman, and mOBRI. A[2021 meta-analysis of 39 studies](https://pubmed.ncbi.nlm.nih.gov/34881309/)further estimated a c-statistic of 0.63 for major bleeding in anticoagulated patients, with almost identical performances in those using vitamin K antagonists and those using direct oral anticoagulants (DOAC). However, the same meta-analysis did not quantitatively evaluate the calibration of HAS-BLED, as was done by[an earlier 2015 meta-analysis](https://pubmed.ncbi.nlm.nih.gov/26418409/)which found significant under-prediction of bleeding events in those with HAS-BLED-defined moderate bleeding risk, but acceptable calibration in those with HAS-BLED-defined low or high bleeding risk. This was despite the fact that only around 2/3 of the derivation cohort were on at least one antithrombotic therapy.\n\nThe simplicity of the HAS-BLED score and the extensive external validations have led to widespread clinical adoption, with the[2020 ESC guidelines](https://pubmed.ncbi.nlm.nih.gov/32860505/)specifically recommending HAS-BLED for the assessment of bleeding risk in patients with AF. However, the more recent[2024 ESC guidelines](https://pubmed.ncbi.nlm.nih.gov/39210723/)and the[2023 ACC/AHA/ACCP/HRS guidelines](https://pubmed.ncbi.nlm.nih.gov/38033089/)both did not recommend a specific predictive score for major bleeding, citing uncertainties over accuracy and potential harms of not anticoagulating appropriately. The American guideline also mentioned the inclusion of multiple common risk factors for both bleeding and stroke in HAS-BLED as being unconducive to balancing the risks of these events in patients with AF.\n\nSuch reservation at least partly stemmed from the fact that HAS-BLED was derived when DOAC were only starting to become available, which casts doubt on the predictive accuracy of HAS-BLED in truly contemporary cohorts with DOAC use. A[recent meta-analysis](https://pubmed.ncbi.nlm.nih.gov/38969572/)found it to be inferior to the DOAC score in patients with AF using DOAC. Even when others found HAS-BLED to be comparable or superior in performance to other scores, such as by[Chichareon et al in 2023](https://pubmed.ncbi.nlm.nih.gov/36942465/), its discriminatory performance has remained mediocre since its original derivation. Additionally, the definition of estimated risk of major bleeding cited in most studies came from much earlier work, and was not aligned with most modern definitions of major bleeding. It is not clear whether these remain valid or translatable to modern clinical practice, with recent studies (e.g.[Chichareon et al 2023](https://pubmed.ncbi.nlm.nih.gov/36942465/),[Mei et al 2024](https://pubmed.ncbi.nlm.nih.gov/38969571/)) showing conflicting results. Furthermore, studies have shown HAS-BLED (and other common risk scores for bleeding events) to have poor performance in patients with specific risk-modifying conditions, such as[chronic kidney disease](https://pubmed.ncbi.nlm.nih.gov/35098518/)and[cancer](https://pubmed.ncbi.nlm.nih.gov/36444864/), calling into question the score’s utility in these patients.\n\nLastly, and perhaps most importantly, even though clinicians are advised to balance the risks of bleeding and thromboembolism in patients with AF when considering anticoagulation, the real-life implications of these events may not be equivalent. Without more granular data on the mortality and quality-of-life implications of these events (and thus different categories of HAS-BLED score), the HAS-BLED score should continue to be a metric of reference for clinicians to consider when discussing the risks and benefits of anticoagulation in patients with AF, and it may not be prudent for clinicians to directly compare bleeding and thromboembolic risks in a simplistically numeric manner without discussion with patients.",
+  "more_info": "| HAS-BLED Score | Risk group | Risk of major bleeding** | Bleeds per 100 patient-years*** | Recommendation |\n| --- | --- | --- | --- | --- |\n| 0 | Low | 0.9% | 1.13 | Anticoagulation should be considered |\n| 1 | 3.4% | 1.02 | | |\n| 2 | Moderate | 4.1% | 1.88 | Anticoagulation can be considered |\n| 3 | High | 5.8% | 3.72 | Alternatives to anticoagulation should be considered |\n| 4 | 8.9% | 8.70 | | |\n| 5 | 9.1% | 12.50 | | |\n| >5* | Very high | - | - | |\n\n*Scores greater than 5 were too rare to determine risk, but are likely over 10%.\n\n**Risk figures from[Lip 2011](https://www.ncbi.nlm.nih.gov/pubmed/21111555).\n\n***Risk figures from[Pisters 2010](https://www.ncbi.nlm.nih.gov/pubmed/20299623).",
+  "short_description": "Saignement risque avec AFib anticoagulation.",
+  "medium_description": "Estimates risque de major saignement pour patients sur anticoagulation pour assess risque-benefit dans fibrillation atriale care.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Hypertension",
+      "tips": "Non contrôlée, >160 mmHg systolique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renal_disease",
+      "label": "Maladie rénale",
+      "tips": "Dialyse, transplantation, Cr >2.26 mg/dL ou >200 µmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "liver_disease",
+      "label": "Maladie hépatique",
+      "tips": "Cirrhose ou bilirubine >2x la normale avec AST/ALT/AP >3x la normale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "Antécédent d'AVC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bleeding_predisposition",
+      "label": "Prior major saignement ou predisposition pour saignement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "labile_inr",
+      "label": "INR labile",
+      "tips": "INR instables/élevés, temps passé dans l'intervalle thérapeutique < 60 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_65",
+      "label": "Âge >65",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "medication_usage",
+      "label": "Medication usage predisposing pour saignement",
+      "tips": "Aspirine, clopidogrel, AINS",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alcohol_drug_use",
+      "label": "Consommation d'alcool",
+      "tips": "≥8 verres/semaine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hindricks G, Potpara T, Dagres N, Arbelo E, Bax JJ, Blomström-Lundqvist C, Boriani G, Castella M, Dan GA, Dilaveris PE, Fauchier L, Filippatos G, Kalman JM, La Meir M, Lane DA, Lebeau JP, Lettino M, Lip GYH, Pinto FJ, Thomas GN, Valgimigli M, Van Gelder IC, Van Putte BP, Watkins CL; ESC Scientific Document Group. 2020 ESC Guidelines for the diagnosis and management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS): The Task Force for the diagnosis and management of atrial fibrillation of the European Society of Cardiology (ESC) Developed with the special contribution of the European Heart Rhythm Association (EHRA) of the ESC. Eur Heart J. 2021 Feb 1;42(5):373-498. doi: 10.1093/eurheartj/ehaa612. Erratum in: Eur Heart J. 2021 Feb 1;42(5):507. doi: 10.1093/eurheartj/ehaa798. Erratum in: Eur Heart J. 2021 Feb 1;42(5):546-547. doi: 10.1093/eurheartj/ehaa945. Erratum in: Eur Heart J. 2021 Oct 21;42(40):4194. doi: 10.1093/eurheartj/ehab648.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32860505/",
+      "kind": "international"
+    },
+    {
+      "text": "Joglar JA, Chung MK, Armbruster AL, Benjamin EJ, Chyou JY, Cronin EM, Deswal A, Eckhardt LL, Goldberger ZD, Gopinathannair R, Gorenek B, Hess PL, Hlatky M, Hogan G, Ibeh C, Indik JH, Kido K, Kusumoto F, Link MS, Linta KT, Marcus GM, McCarthy PM, Patel N, Patton KK, Perez MV, Piccini JP, Russo AM, Sanders P, Streur MM, Thomas KL, Times S, Tisdale JE, Valente AM, Van Wagoner DR; Peer Review Committee Members. 2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. 2024 Jan 2;149(1):e1-e156. doi: 10.1161/CIR.0000000000001193. Epub 2023 Nov 30. Erratum in: Circulation. 2024 Jan 2;149(1):e167. doi: 10.1161/CIR.0000000000001207. Erratum in: Circulation. 2024 Feb 27;149(9):e936. doi: 10.1161/CIR.0000000000001218. Erratum in: Circulation. 2024 Jun 11;149(24):e1413. doi: 10.1161/CIR.0000000000001263.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38033089/",
+      "kind": "international"
+    },
+    {
+      "text": "Van Gelder IC, Rienstra M, Bunting KV, Casado-Arroyo R, Caso V, Crijns HJGM, De Potter TJR, Dwight J, Guasti L, Hanke T, Jaarsma T, Lettino M, Løchen ML, Lumbers RT, Maesen B, Mølgaard I, Rosano GMC, Sanders P, Schnabel RB, Suwalski P, Svennberg E, Tamargo J, Tica O, Traykov V, Tzeis S, Kotecha D; ESC Scientific Document Group. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS). Eur Heart J. 2024 Sep 29;45(36):3314-3414. doi: 10.1093/eurheartj/ehae176.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39210723/",
+      "kind": "international"
+    },
+    {
+      "text": "Pisters R, Lane DA, Nieuwlaat R, et al. A Novel User-Friendly Score (Has-Bled) To Assess 1-Year Risk Of Major Bleeding In Patients With Atrial Fibrillation: The Euro Heart Survey. Chest. 2010;138(5):1093-1100.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20299623",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mehran R, Rao SV, Bhatt DL, Gibson CM, Caixeta A, Eikelboom J, Kaul S, Wiviott SD, Menon V, Nikolsky E, Serebruany V, Valgimigli M, Vranckx P, Taggart D, Sabik JF, Cutlip DE, Krucoff MW, Ohman EM, Steg PG, White H. Standardized bleeding definitions for cardiovascular clinical trials: a consensus report from the Bleeding Academic Research Consortium. Circulation. 2011 Jun 14;123(23):2736-47. doi: 10.1161/CIRCULATIONAHA.110.009449.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21670242/",
+      "kind": "other"
+    },
+    {
+      "text": "Lip GY, Frison L, Halperin JL, Lane DA. Comparative validation of a novel risk score for predicting bleeding risk in anticoagulated patients with atrial fibrillation: the HAS-BLED (Hypertension, Abnormal Renal/Liver Function, Stroke, Bleeding History or Predisposition, Labile INR, Elderly, Drugs/Alcohol Concomitantly) score. J Am Coll Cardiol. 2011 Jan 11;57(2):173-80. doi: 10.1016/j.jacc.2010.09.024. Epub 2010 Nov 24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21111555",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhu W, He W, Guo L, Wang X, Hong K. The HAS-BLED Score for Predicting Major Bleeding Risk in Anticoagulated Patients With Atrial Fibrillation: A Systematic Review and Meta-analysis. Clin Cardiol. 2015 Sep;38(9):555-61. doi: 10.1002/clc.22435.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26418409/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gao X, Cai X, Yang Y, Zhou Y, Zhu W. Diagnostic Accuracy of the HAS-BLED Bleeding Score in VKA- or DOAC-Treated Patients With Atrial Fibrillation: A Systematic Review and Meta-Analysis. Front Cardiovasc Med. 2021 Nov 22;8:757087. doi: 10.3389/fcvm.2021.757087.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34881309/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chang G, Xie Q, Ma L, Hu K, Zhang Z, Mu G, Cui Y. Accuracy of HAS-BLED and other bleeding risk assessment tools in predicting major bleeding events in atrial fibrillation: A network meta-analysis. J Thromb Haemost. 2020 Apr;18(4):791-801. doi: 10.1111/jth.14692.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31782613/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chichareon P, Winijkul A, Lip GYH, Krittayaphong R. Comparative validation of HAS-BLED, GARFIELD-AF and ORBIT bleeding risk scores in Asian people with atrial fibrillation treated with oral anticoagulant: A report from the COOL-AF registry. Br J Clin Pharmacol. 2023 Aug;89(8):2472-2482. doi: 10.1111/bcp.15716.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36942465/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mei DA, Imberti JF, Bonini N, Romiti GF, Corica B, Proietti M, Vitolo M, Lip GYH, Boriani G. Performance of HAS-BLED and DOAC scores to predict major bleeding events in atrial fibrillation patients treated with direct oral anticoagulants: A report from a prospective European observational registry. Eur J Intern Med. 2024 Oct;128:63-70. doi: 10.1016/j.ejim.2024.06.022.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38969571/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nopp S, Spielvogel CP, Schmaldienst S, Klauser-Braun R, Lorenz M, Bauer BN, Pabinger I, Säemann M, Königsbrügge O, Ay C. Bleeding Risk Assessment in End-Stage Kidney Disease: Validation of Existing Risk Scores and Evaluation of a Machine Learning-Based Approach. Thromb Haemost. 2022 Aug 29;122(9). doi: 10.1055/a-1754-7551.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35098518/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pastori D, Marang A, Bisson A, Herbert J, Lip GYH, Fauchier L. Performance of the HAS-BLED, ORBIT, and ATRIA Bleeding Risk Scores on a Cohort of 399 344 Hospitalized Patients With Atrial Fibrillation and Cancer: Data From the French National Hospital Discharge Database. J Am Heart Assoc. 2022 Dec 6;11(23):e026388. doi: 10.1161/JAHA.121.026388.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36444864/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.garfield-af",
+    "calc.direct-acting-oral-anticoagulants-doac-score",
+    "calc.orbit-bleeding-risk-score-atrial-fibrillation",
+    "calc.hemorr2hages-score-major-bleeding-risk",
+    "calc.atria-stroke-risk-score",
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk"
+  ],
+  "source_logic_hash": "574e1ad9d3f6dc7295cde55f1c9221ce",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.hemorr2hages-score-major-bleeding-risk",
+      "text": "HEMORR₂HAGES"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-stroke-risk-score",
+      "text": "ATRIA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 807,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.clopidogrel",
+    "s.acetylsalicylique-clopidogrel"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

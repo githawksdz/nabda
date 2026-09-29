@@ -1,0 +1,188 @@
+{
+  "id": "calc.nomogram-breast-cancer-brain-metastasis",
+  "slug": "nomogram-breast-cancer-brain-metastasis",
+  "language": "en",
+  "title": "Nomogram pour Breast cancer Brain Metastasis",
+  "short_title": "Métastases cérébrales du cancer du sein",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "general",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer du sein",
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dizziness",
+    "Dyspnea",
+    "Douleur articulaire",
+    "Incontinence urinaire",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Nomogram for Breast Cancer Brain Metastasis",
+    "Breast Cancer Brain Metastasis",
+    "brain metastasis",
+    "metastasis",
+    "metastatic breast cancer",
+    "breast cancer",
+    "cancer",
+    "metastatic",
+    "metastatic cancer",
+    "brain cancer",
+    "brain",
+    "stage iv",
+    "stage iv breast cancer",
+    "stage 4",
+    "stage 4 breast cancer"
+  ],
+  "dosing": false,
+  "formula": "The nomogram score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | 10-14 | 100 |\n| 15-24 | 88 | |\n| 25-34 | 77 | |\n| 35-44 | 65 | |\n| 45-54 | 55 | |\n| 55-64 | 45 | |\n| 65-74 | 34 | |\n| 75-84 | 22 | |\n| 85-94 | 10 | |\n| 95-100 | 0 | |\n| Histological grade | 1 and 2 | 0 |\n| 3 | 25 | |\n| Receptor status | ER+ or PR+/HER2- | 0 |\n| ER-/HER2- | 20 | |\n| HER2+ | 60 | |\n| Delay between diagnosis and first metastasis, months | 0-9 | 73 |\n| 10-21 | 70 | |\n| 22-29 | 65 | |\n| 30-41 | 60 | |\n| 42-53 | 45 | |\n| 54-71 | 35 | |\n| 72-91 | 15 | |\n| ≥92 | 0 | |\n| Number of non brain metastatic sites | 1 | 0 |\n| >1 | 35 | |\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nomogram-cropped.png)\n\nFrom[Graesslin 2010](https://pubmed.ncbi.nlm.nih.gov/20308667/).",
+  "how_to_use": {
+    "why": "À utiliser dans le cadre des discussions pronostiques avec les patientes atteintes d’un cancer du sein métastatique.",
+    "when": "À utiliser chez les patientes atteintes d’un cancer du sein métastatique afin de déterminer leur risque de métastases cérébrales.",
+    "pearls": "- Les nomogrammes sont fréquemment utilisés en oncologie pour aider à pronostiquer de futurs événements cliniques.\n- Les nomogrammes représentés de façon picturale sont limités par la capacité du clinicien à estimer la corrélation entre les caractéristiques cliniques et leur équivalent en points.\n- Pour l’utiliser, tracez une ligne depuis chaque caractéristique clinique jusqu’à sa valeur en points correspondante. Additionnez les points.\n- Ensuite, tracez une ligne depuis le total de points jusqu’à la probabilité de métastases cérébrales.\n- Si vous préférez, vous pouvez saisir les valeurs des paramètres listés. L’équipe MDCalc a estimé les valeurs des paramètres à partir des exemples cliniques de la littérature primaire, ainsi qu’à l’aide de la méthode ci-dessus, pour générer le risque. Votre utilisation personnelle du nomogramme peut varier ; soyez conscient du risque lié à ces outils.\n- Pour en savoir plus sur les exemples cliniques des auteurs de l’étude, veuillez consulter l’annexe de [Graesslin et al](https://pubmed.ncbi.nlm.nih.gov/20308667/)."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Veuillez noter que cet outil implique l’utilisation d’une estimation visuelle pour générer un résultat de risque. Bien que tous les calculateurs médicaux comportent des hypothèses inhérentes utilisées dans leur analyse statistique, l’estimation visuelle peut introduire un risque accru d’erreur.",
+    "management": "Utilisez la probabilité résultante de métastases cérébrales pour guider les discussions cliniques avec les patients concernant leur pronostic."
+  },
+  "evidence": "Les nomogrammes représentent des formules statistiques complexes et peuvent être utilisés au chevet du patient pour guider les discussions sur le pronostic.\n\nLes nomogrammes représentés graphiquement sont limités par la capacité du clinicien à estimer la corrélation entre les caractéristiques cliniques et leur équivalent en points.",
+  "more_info": "Interprétation :\n\n| Score | Probabilité de métastase cérébrale |\n| --- | --- |\n| 0-79 | <4% |\n| 80-89 | 4% |\n| 90-124 | 5% |\n| 125-162 | 10% |\n| 163-187 | 15% |\n| 188-212 | 21% |\n| 213-237 | 27% |\n| 238-262 | 38% |\n| 263-293 | 47% |",
+  "short_description": "Brain metastasis risque pour breast cancer.",
+  "medium_description": "Predicts risque de brain metastasis chez les patients avec stage IV breast cancer.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_brain_mets",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "grade",
+      "label": "Grade histologique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1 et 2",
+          "value": 0
+        },
+        {
+          "label": "3",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "receptor",
+      "label": "Statut des récepteurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "ER+ ou PR+/HER2-",
+          "value": 0
+        },
+        {
+          "label": "ER-/HER2-",
+          "value": 20
+        },
+        {
+          "label": "HER2+",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "delay",
+      "label": "Délai entre le diagnostic et la première métastase",
+      "optional": false,
+      "unit": "delay_brain_mets",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sites",
+      "label": "Nombre de sites métastatiques non cérébraux",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1",
+          "value": 0
+        },
+        {
+          "label": ">1",
+          "value": 35
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Graesslin O, Abdulkarim BS, Coutant C, et al. Nomogram to predict subsequent brain metastasis in patients with metastatic breast cancer. J Clin Oncol. 2010;28(12):2032-2037.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20308667/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Graesslin O, Abdulkarim BS, Coutant C, et al. Nomogram to predict subsequent brain metastasis in patients with metastatic breast cancer. J Clin Oncol. 2010;28(12):2032-2037.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20308667/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.graded-prognostic-assessment-for-gastrointestinal-cancer-gigpa",
+    "calc.solitary-pulmonary-nodule-spn-malignancy-risk-score-mayo-clinic-model",
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence"
+  ],
+  "source_logic_hash": "e2c51d1cf88a1d3da8796b4ec8ed40e6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10492,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

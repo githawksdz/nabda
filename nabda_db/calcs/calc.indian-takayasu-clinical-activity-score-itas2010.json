@@ -1,0 +1,973 @@
+{
+  "id": "calc.indian-takayasu-clinical-activity-score-itas2010",
+  "slug": "indian-takayasu-clinical-activity-score-itas2010",
+  "language": "fr",
+  "title": "Score d'activité clinique indien de la maladie de Takayasu (ITAS2010)",
+  "short_title": "ITAS2010 pour Takayasu Arteritis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Fatigue",
+    "Fever",
+    "Headache",
+    "Pain",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "TA",
+    "Takayasu arteritis",
+    "arterial inflammation",
+    "arteritis",
+    "ITAS 2010"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Systémique | Aucun | 0 |\n| Malaise ou perte de poids >2 kg | 1 | |\n| Myalgie, arthralgie ou arthrite | 1 | |\n| Céphalées | 1 | |\n| Abdominal | Aucun | 0 |\n| Douleur abdominale sévère (douleur se présentant en urgence avec des signes d'ischémie intestinale, confirmée de préférence par imagerie ou chirurgie) | 1 | |\n| Génito-urinaire | Aucun | 0 |\n| Antécédent récent d'avortement spontané (perte fœtale spontanée dans les 12 semaines) | 1 | |\n| Rénal | Aucun | 0 |\n| PA systolique >140 | 1 | |\n| PA diastolique >90 | 2 | |\n| Neurologique | Aucun | 0 |\n| AVC | 2 | |\n| Crises convulsives (non hypertensives) | 1 | |\n| Syncope | 1 | |\n| Vertiges/étourdissements | 1 | |\n| Cardiovasculaire | Aucun | 0 |\n| Souffles | 2 | |\n| Asymétrie des pouls | 2 | |\n| Perte récente de pouls | 2 | |\n| Claudication | 2 | |\n| Carotidynie | 2 | |\n| Insuffisance aortique | 1 | |\n| Infarctus du myocarde/angor | 1 | |\n| Cardiomyopathie/insuffisance cardiaque | 1 | |\n| Souffles carotidiens | Droit | 1 |\n| Gauche | 1 | |\n| Souffles sous-claviers | Droit | 1 |\n| Gauche | 1 | |\n| Souffles rénaux | Droit | 1 |\n| Gauche | 1 | |\n| Asymétrie des pouls et de la PA | Absente | 0 |\n| Présente | 1 | |\n| Perte du pouls carotidien | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls sous-clavier | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls brachial | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls radial | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls fémoral | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls poplité | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls tibial postérieur | Droit | 1 |\n| Gauche | 1 | |\n| Perte du pouls pédieux | Droit | 1 |\n| Gauche | 1 | |\n| Claudication | Membre supérieur | 1 |\n| Membre inférieur | 1 | |",
+  "how_to_use": {
+    "why": "- Peut être utilisé comme outil clinique standardisé pour quantifier l’activité de la maladie TAK.\n- Plus spécifique à la TAK et plus facile à compléter que le BVAS.\n- Aide aux décisions d’intensification thérapeutique, notamment en ce qui concerne les glucocorticoïdes et le traitement immunosuppresseur.",
+    "when": "- À utiliser chez les patients atteints d’artérite de Takayasu (TAK) pour évaluer l’activité de la maladie et guider les décisions thérapeutiques.\n- Peut être appliqué au moment du diagnostic initial pour établir l’activité de référence de la maladie et lors des visites de suivi pour surveiller la réponse au traitement et détecter les rechutes.",
+    "pearls": "- Dérivé du Disease Extent Index for TAK (DEI.Tak), lui-même adapté du Birmingham Vasculitis Activity"
+  },
+  "next_steps": {
+    "advice": "- Cet outil n’est pas destiné à remplacer le bon jugement clinique et l’expertise spécialisée.\n- À utiliser dans le cadre d’une évaluation complète (p. ex., examen physique, données de laboratoire, examens d’imagerie) pour guider les décisions thérapeutiques et la surveillance.",
+    "critical_actions": "",
+    "management": "The following cutoffs are based on the original study by[Misra et al. (2013)](https://academic.oup.com/rheumatology/article-abstract/52/10/1795/1791761?redirectedFrom=fulltext):\n\n- **Inactive disease (score <2):** Consider tapering immunosuppressive therapy cautiously.\n- **Active disease (score ≥2):**\n\n - Consider intensifying treatment with corticosteroids, additional immunosuppressants, and/or biologic therapy.\n - Evaluate treatment adherence and exclude other conditions that may mimic disease activity.\n - Persistent elevation despite treatment may warrant vascular imaging to assess progression and rule out complications."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score ITAS2010 | Activité de la maladie |\n| --- | --- |\n| <2 | Inactive |\n| ≥2 | Active |",
+  "short_description": "Activité de la maladie : artérite de Takayasu.",
+  "medium_description": "Differentiates between active et inactive maladie dans Takayasu arteritis (TAK).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "malaise",
+      "label": "Malaise ou perte de poids > 2 kg",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arthritis",
+      "label": "Myalgies, arthralgies ou arthrite",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "headache",
+      "label": "Headache",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "pain",
+      "label": "Douleur abdominale sévère",
+      "tips": "Douleur se présentant en urgence avec des signes d’ischémie intestinale, confirmée de préférence par imagerie ou chirurgie",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "abort",
+      "label": "Antécédent récent de fausse couche spontanée",
+      "tips": "Spontaneous fetal loss within 12 weeks",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sys",
+      "label": "Pression artérielle systolique >140",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dias",
+      "label": "PA diastolique > 90",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seizure",
+      "label": "Seizures (not hypertensive)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "syncope",
+      "label": "Syncope",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vertigo",
+      "label": "Vertigo/dizziness",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "bruits",
+      "label": "Bruits",
+      "tips": "Si présents, peut sélectionner la localisation des bruits pour améliorer le diagnostic",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "carotidright",
+      "label": "Souffle carotidien (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "carotidleft",
+      "label": "Souffle carotidien (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "subright",
+      "label": "Souffle sous-clavier (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "subleft",
+      "label": "Souffle sous-clavier (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renalright",
+      "label": "Souffle rénal (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renalleft",
+      "label": "Souffle rénal (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "bruits == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulse",
+      "label": "Inégalité du pouls",
+      "tips": "Pouls faible d’un côté comparé au pouls homologue du membre opposé",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ineq",
+      "label": "Inégalité des pouls et de la pression artérielle",
+      "tips": "Pouls affaibli d’un côté par rapport au pouls homologue du membre opposé, confirmé par une mesure de la pression artérielle montrant une différence >10 mmHg",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "pulse == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nlop",
+      "label": "Perte récente de pouls",
+      "tips": "Si oui, peut sélectionner la localisation de la perte de pouls pour améliorer le diagnostic",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cpr",
+      "label": "Abolition du pouls carotidien (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cpl",
+      "label": "Abolition du pouls carotidien (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spr",
+      "label": "Abolition du pouls sous-clavier (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spl",
+      "label": "Abolition du pouls sous-clavier (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bpr",
+      "label": "Abolition du pouls brachial (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bpl",
+      "label": "Perte du pouls brachial (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rpr",
+      "label": "Abolition du pouls radial (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rpl",
+      "label": "Abolition du pouls radial (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fpr",
+      "label": "Abolition du pouls fémoral (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fpl",
+      "label": "Perte du pouls fémoral (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ppr",
+      "label": "Perte du pouls poplité (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ppl",
+      "label": "Abolition du pouls poplité (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ptpr",
+      "label": "Abolition du pouls tibial postérieur (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ptpl",
+      "label": "Abolition du pouls tibial postérieur (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dppr",
+      "label": "Abolition du pouls pédieux (droit)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dppl",
+      "label": "Abolition du pouls pédieux (gauche)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "nlop == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "claud",
+      "label": "Claudication",
+      "tips": "Si présent, il est possible de sélectionner la localisation de la claudication pour améliorer le diagnostic.",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arm",
+      "label": "Claudication du bras",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "claud == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leg",
+      "label": "Leg claudication",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "claud == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "carot",
+      "label": "Carotidodynia",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aortic",
+      "label": "Insuffisance aortique",
+      "tips": "Détecté cliniquement ou par échocardiographie",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "angina",
+      "label": "Infarctus du myocarde / angor",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "failure",
+      "label": "Cardiomyopathy/cardiac défaillance",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Misra R, Danda D, Rajappa SM, et al. Development and initial validation of the Indian Takayasu Clinical Activity Score (ITAS2010). Rheumatology (Oxford). 2013;52(10):1795-801.",
+      "href": "https://academic.oup.com/rheumatology/article/52/10/1795/1791761",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alibaz-Oner F, Aydin SZ, Akar S, et al. Assessment of patients with Takayasu arteritis in routine practice with Indian Takayasu Clinical Activity Score. J Rheumatol. 2015;42(8):1443-1447.",
+      "href": "https://www.jrheum.org/content/42/8/1443",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fritsch S, Copes RM, Savioli B, et al. Translation and validation of the Indian Takayasu clinical activity score (ITAS2010) for the Brazilian Portuguese language. Adv Rheumatol. 2019;59(1):43.",
+      "href": "https://advancesinrheumatology.biomedcentral.com/articles/10.1186/s42358-019-0087-3",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.score2-older-persons-score2-op",
+    "calc.jones-criteria-acute-rheumatic-fever-diagnosis"
+  ],
+  "source_logic_hash": "9dd8e0c75bc10dc6366e243eb84019c8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10100,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

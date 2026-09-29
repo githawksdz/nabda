@@ -1,0 +1,214 @@
+{
+  "id": "calc.asthma-predictive-index-api",
+  "slug": "asthma-predictive-index-api",
+  "language": "en",
+  "title": "Index prédictif de l’asthme (API)",
+  "short_title": "Indice prédictif de l’asthme",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Asthma",
+    "diagnosis",
+    "student"
+  ],
+  "dosing": false,
+  "formula": "**Critères stricts :**\n\n- ≥3 épisodes de sifflements respiratoires par an, ET\n- ≥1 critère majeur OU ≥2 critères mineurs\n\n**Critères souples :**\n\n- <3 épisodes de sifflements respiratoires par an, ET\n- ≥1 critère majeur OU ≥2 critères mineurs",
+  "how_to_use": {
+    "why": "Les cliniciens peuvent se montrer plus interventionnistes dans l’essai de traitements antiasthmatiques chez les patients susceptibles de recevoir un diagnostic d’asthme plus tard dans la vie.",
+    "when": "Enfants/nourrissons âgés de 3 ans ou moins présentant des épisodes de sifflements respiratoires.",
+    "pearls": "- L’Asthma Predictive Index (API) fournit une méthode pour prédire la probabilité d’un diagnostic ultérieur d’asthme, similaire au [Modified Asthma Predictive Index (mAPI)](nabda:calc.modified-asthma-predictive-index-mapi).\n- L’API ne s’applique qu’aux jeunes enfants présentant des sifflements respiratoires (wheezing).\n- Bien que la spécificité soit bonne, le score n’est pas un bon outil de dépistage — il ne permet pas de détecter de nombreux patients qui recevront ultérieurement un diagnostic d’asthme."
+  },
+  "next_steps": {
+    "advice": "Considérer que les bronchodilatateurs ou les corticoïdes peuvent être utiles chez les patients atteints de maladies respiratoires, en particulier s'ils répondent à des critères stricts pour de futurs diagnostics d'asthme.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "In the derivation study:\n\n- 59% of children with a positive loose index had active asthma at school age (defined at 15 years).\n- 76% of those with a positive strict index had active asthma at school age (defined at 15 years).",
+  "short_description": "Probabilité d'asthme chez l'enfant.",
+  "medium_description": "Determines likelihood de pédiatrique patients developing childhood asthme.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "wheezing",
+      "label": "Épisodes de sibilants/an",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥3",
+          "value": 2
+        },
+        {
+          "label": "< 3",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "asthma",
+      "label": "Parent avec asthme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eczema",
+      "label": "Patient avec eczema",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "rhin",
+      "label": "Le patient présente une rhinite allergique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cold",
+      "label": "Wheezing apart de colds",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eos",
+      "label": "Éosinophilie (≥4 % sur NFS)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Castro-Rodríguez JA, et al. A clinical index to define risk of asthma in young children with recurrent wheezing. Am J Respir Crit Care Med. 2000; 162: 1403–1406.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11029352",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leonardi NA, et al. Validation of the Asthma Predictive Index and comparison with simpler clinical prediction rules. J Allergy Clin Immunol. 2011 Jun;127(6):1466-72.e6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21453960",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-asthma-predictive-index-mapi",
+    "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score",
+    "calc.pediatric-asthma-score-pas"
+  ],
+  "source_logic_hash": "b927434fe1ba54c6330aaf723ecbef6f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-asthma-predictive-index-mapi",
+      "text": "Modified Asthma Predictive Index (mAPI)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3381,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,176 @@
+{
+  "id": "calc.menza-score",
+  "slug": "menza-score",
+  "language": "en",
+  "title": "Menza score",
+  "short_title": "Score de Menza",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "VIH/SIDA"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhée",
+    "Fatigue",
+    "Fièvre",
+    "Céphalée",
+    "Perte d'appétit",
+    "Éruption cutanée",
+    "Mal de gorge",
+    "Gonflement",
+    "Vomissements",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Menza Score",
+    "hiv risk",
+    "msm",
+    "hiv risk for msm",
+    "hiv infection",
+    "msm hiv risk",
+    "4-year hiv risk"
+  ],
+  "dosing": false,
+  "formula": "The Menza Score is calculated by the addition of the selected points:\n\n| Question | Points | |\n| --- | --- | --- |\n| Does your patient/client have gonorrhea, chlamydia, or syphilis, or does he have a history of these infections? | No | 0 |\n| Yes | 4 | |\n| Has your patient/client used methamphetamine or inhaled nitrites (poppers) in the prior 6 months? | No | 0 |\n| Yes | 11 | |\n| Does your patient/client report unprotected anal intercourse with a partner of positive or unknown HIV status in the prior year? | No | 0 |\n| Yes | 1 | |\n| Does your patient/client report 10 or more male sexual partners in the prior year? | No | 0 |\n| Yes | 3 | |",
+  "how_to_use": {
+    "why": "Identifying individuals at risk for HIV infection may allow for targeted prevention strategies.",
+    "when": "- Permet d’évaluer le risque de contracter le VIH chez les hommes ayant des rapports sexuels avec des hommes (MSM).\n- Peut être utilisé lors du recueil des antécédents sociaux et médicaux de patients nouveaux ou déjà suivis.",
+    "pearls": "- Ne doit être utilisé que pour évaluer le risque chez les MSM.\n- Ne doit pas être le seul outil utilisé pour déterminer la nécessité d’une prophylaxie pré-exposition (PrEP).\n- Repose sur des données sur les risques comportementaux recueillies entre 1999–2003, qui peuvent ne pas refléter fidèlement les facteurs de risque actuels de transmission du VIH en situation réelle.\n- Les études de validation ont noté une sensibilité diminuée chez les MSM noirs. Cela peut sous-estimer le risque d’acquisition du VIH dans cette population de patients."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Validation and clinical studies used a cutoff score of ≥1 for identifying high-risk individuals.\n- Patients determined to be high risk should receive targeted prevention strategies. These may include (but are not limited to) counseling on safe sex practices and condom use, more frequent HIV and STI screening, more frequent follow-up, and consideration for PrEP therapy.\n- For additional information, see the[WHO guidance](https://www.ncbi.nlm.nih.gov/books/NBK572729/)on HIV infection prevention strategies."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Menza Score | 4-year Risk of HIV |\n| --- | --- |\n| 0 | <5% |\n| 1-3 | 5-9% |\n| 4-11 | 10-14% |\n| ≥12 | >14% |",
+  "short_description": "Risque de VIH à 4 ans chez les HSH.",
+  "medium_description": "Predicts 4-year risque de HIV pour MSM.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Does your patient/client have gonorrhea, chlamydia, ou syphilis, ou does he have history de these infections?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Has your patient/client used methamphetamine ou inhaled nitrites (poppers) dans prior 6 months?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Does your patient/client report unprotected anal intercourse avec partner de positive ou unknown HIV status dans prior year?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Does your patient/client report 10 ou more male sexual partners dans prior year?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Menza TW, Hughes JP, Celum CL, Golden MR. Prediction of HIV acquisition among men who have sex with men. Sex Transm Dis. 2009;36(9):547-555.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19707108/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Luo Q, Luo Y, Cui T, Li T. Performance of hiv infection prediction models in men who have sex with men: a systematic review and meta-analysis. Arch Sex Behav. 2023;52(5):2011-2023.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36884160/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jones J, Hoenigl M, Siegler AJ, Sullivan PS, Little S, Rosenberg E. Assessing the performance of 3 human immunodeficiency virus incidence risk scores in a cohort of black and white men who have sex with men in the south. Sex Transm Dis. 2017;44(5):297-302.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28407646/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Palmer S, Dijkstra M, Ket JC, et al. Acute and early HIV infection screening among men who have sex with men, a systematic review and meta-analysis. J Int AIDS Soc. 2020;23 Suppl 6(Suppl 6):e25590.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33000916/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hiv-incidence-risk-index-hiri-msm",
+    "calc.denver-hiv-risk-score",
+    "calc.veterans-aging-cohort-study-charlson-comorbidity-index-vacs-cci"
+  ],
+  "source_logic_hash": "0d08ba4fadc7517f561690df7bdcf590",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10519,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\n\nvar score = q1 + q2 + q3 + q4;\n\nvar risk;\nif (score == 0) {\n    risk = '<5';\n} else if (score <= 3) {\n    risk = '5-9';\n} else if (score <= 11) {\n    risk = '10-14';\n} else {\n    risk = '>14';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + '% 4-year risk of HIV'\n});\ncalc_output.push({\n    name: '10519_Menza Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'Menza Score'\n});\ncalc_output.push({\n    name: '10519_Menza Score_result (risk)',\n    value: risk,\n    value_text: '%',\n    message: '4-year risk of HIV'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Timothy W. Menza"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "ba5edcfd771dce690173d54195b798a25a287b3bed5ba010b55de547af5188c7"
+}

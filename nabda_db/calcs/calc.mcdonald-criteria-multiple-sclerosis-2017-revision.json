@@ -1,0 +1,190 @@
+{
+  "id": "calc.mcdonald-criteria-multiple-sclerosis-2017-revision",
+  "slug": "mcdonald-criteria-multiple-sclerosis-2017-revision",
+  "language": "en",
+  "title": "McDonald critères pour multiple Sclerosis (2017 Revision)",
+  "short_title": "McDonald critères (2017 Revision)",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "neurologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "MS",
+    "Mcdonald",
+    "MRI",
+    "dissemination",
+    "time",
+    "space",
+    "multiple sclerosis",
+    "Mcdonald criteria",
+    "2017"
+  ],
+  "dosing": false,
+  "formula": "**McDonald Criteria (2017):**\n\n| Clinical attacks* | Number of lesions with objective clinical evidence** | Additional data needed for diagnosis of MS |\n| --- | --- | --- |\n| ≥2 | ≥2 | No additional tests required to demonstrate dissemination in space and time |\n| 1 (as well as clear-cut historical evidence of a previous attack involving a lesion in a distinct anatomical location) | No additional tests required to demonstrate dissemination in space and time | |\n| 1 | Dissemination in space demonstrated by an additional clinical attack implicating a different CNS site or by MRI | |\n| 1 | ≥2 | Dissemination in time demonstrated by additional clinical attack or MRI, or presence of CSF-specific oligoclonal bands |\n| 1 | Dissemination in space demonstrated by an additional clinical attack implicating a different CNS site or by MRI and dissemination in time demonstrated by additional clinical attack or MRI, or presence of CSF-specific oligoclonal bands | |\n\n*“Clinical attack” = monophasic clinical episode with patient-reported symptoms and objective findings reflecting inflammatory demyelinating CNS event (focal or multifocal), subacute or acute, for ≥24 hrs, with or without recovery, and no fever or infection present. Attack, relapse, exacerbation, and clinically isolated syndrome (first episode) are all synonymous.\n\n**“Objective clinical evidence” = abnormality on neurologic exam, imaging (MRI or optical coherence tomography), or visual evoked potentials, corresponding to anatomical location suggested by symptoms.",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients chez qui une SEP est suspectée et qui ont bénéficié d’une IRM.",
+    "pearls": "- Développé pour les patients présentant un syndrome cliniquement isolé typique, chez qui d’autres diagnostics sont jugés improbables, et NON pour différencier la SEP d’autres affections.\n- Ces critères peuvent aider à différencier la SEP rémittente d’autres syndromes cliniquement isolés qui peuvent la mimer."
+  },
+  "next_steps": {
+    "advice": "Le seuil pour des examens complémentaires (c.-à-d., IRM de la moelle épinière ou examen du LCR) doit être bas, selon le panel international qui a élaboré ces critères.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "MS diagnostic.",
+  "medium_description": "Diagnostique la sclérose en plaques.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "attacks",
+      "label": "Nombre de poussées cliniques",
+      "tips": "“Clinical attack” = monophasic clinical episode with patient-reported symptoms and objective findings reflecting inflammatory demyelinating CNS event (focal or multifocal), subacute or acute, for ≥24 hrs, with or without recovery, and no fever or infection present; attack, relapse, exacerbation, and clinically isolated syndrome (first episode) are all synonymous",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥2",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "lesions",
+      "label": "Number de lesions avec objective clinique evidence",
+      "tips": "« Preuve clinique objective » = anomalie à l’examen neurologique, à l’imagerie (IRM ou tomographie par cohérence optique) ou aux potentiels évoqués visuels, correspondant à la localisation anatomique suggérée par les symptômes.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥2",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "historical",
+      "label": "Historical evidence de previous attack involving lesion dans distinct anatomical location",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "attacks == 0 && lesions == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "data2",
+      "label": "Dissemination dans time demonstrated par additional clinique attack ou MRI, ou presence de CSF-specific oligoclonal bands",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "attacks == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "data1",
+      "label": "Dissemination dans space demonstrated par additional clinique attack implicating different CNS site ou par MRI",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "(attacks == 1 && lesions == 1) || (attacks == 0 && lesions == 1 && historical == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Thompson AJ, Banwell BL, Barkhof F, et al. Diagnosis of multiple sclerosis: 2017 revisions of the McDonald criteria. Lancet Neurol. 2017.",
+      "href": "https://www.thelancet.com/journals/laneur/article/PIIS1474-4422(17)30470-2/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-mcdonald-criteria-multiple-sclerosis-diagnosis",
+    "calc.expanded-disability-status-scale-edss-functional-systems-score-fss",
+    "calc.berg-balance-scale-bbs"
+  ],
+  "source_logic_hash": "571b2b5dca68f40bab31ae51664dff6d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10162,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

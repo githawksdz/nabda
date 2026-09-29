@@ -1,0 +1,354 @@
+{
+  "id": "calc.dsm-5-criteria-major-depressive-disorder",
+  "slug": "dsm-5-criteria-major-depressive-disorder",
+  "language": "fr",
+  "title": "DSM-5 critères pour Major Depressive Disorder",
+  "short_title": "DSM-5 critères pour Major Depressive Disorder",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Depressed",
+    "Suicidal"
+  ],
+  "abbreviations": [
+    "Major depressive disorder",
+    "mdd",
+    "depression",
+    "dsm5",
+    "dsm 5",
+    "dsm-5",
+    "dsm-iv",
+    "dsm criteria",
+    "suicide",
+    "dsm iv"
+  ],
+  "dosing": false,
+  "formula": "**Critères DSM-5 du trouble dépressif caractérisé (doit présenter tous les critères A à E ci-dessous) :**\n\n| Critères |\n| --- |\n| A. Symptômes dépressifs : ≥5 symptômes pendant la même période de deux semaines, représentant un changement par rapport au fonctionnement antérieur. Une humeur dépressive (n° 1) et/ou une perte d'intérêt ou de plaisir (n° 2) doivent être présentes. Exclure les symptômes clairement attribuables à une autre affection médicale. Humeur dépressive. La majeure partie de la journée, presque tous les jours. Peut être subjective (p. ex. se sentir triste, vide, désespéré) ou observée par l'entourage (p. ex. paraître au bord des larmes). Chez l'enfant et l'adolescent, peut se manifester par une humeur irritable. Perte d'intérêt ou de plaisir. Diminution marquée de l'intérêt ou du plaisir pour toutes (ou presque toutes) les activités, la majeure partie de la journée, presque tous les jours. Peut être subjective ou observée par l'entourage. Perte ou prise de poids. Perte de poids significative (sans régime) ou prise de poids (variation de >5 % du poids corporel en un mois), ou diminution ou augmentation de l'appétit presque tous les jours. Chez l'enfant, peut se manifester par une absence de prise de poids attendue. Insomnie ou hypersomnie. Presque tous les jours. Agitation ou ralentissement psychomoteur. Presque tous les jours et observable par l'entourage (pas seulement une agitation ou une lenteur ressenties subjectivement). Fatigue. Ou perte d'énergie, presque tous les jours. Sentiment de dévalorisation ou culpabilité excessive/inappropriée. Presque tous les jours. La culpabilité peut être délirante. Pas simplement un auto-reproche ou une culpabilité liée à la maladie. Diminution de la concentration. Presque tous les jours. Peut se manifester par une indécision. Peut être subjective ou observée par l'entourage. Pensées de mort/suicide. Pensées récurrentes de mort (pas seulement la peur de mourir), idéation suicidaire récurrente sans plan précis, ou tentative de suicide, ou plan précis de suicide. |\n| B. Les symptômes entraînent une souffrance cliniquement significative ou une altération du fonctionnement social, professionnel ou dans d'autres domaines importants. |\n| C. L'épisode n'est pas attribuable aux effets physiologiques d'une substance ou à une autre affection médicale. |\n| D. L'épisode n'est pas mieux expliqué par un trouble schizo-affectif, une schizophrénie, un trouble schizophréniforme, un trouble délirant, ou un autre trouble du spectre de la schizophrénie et autre trouble psychotique spécifié ou non spécifié. |\n| E. Absence d'antécédents d'épisode maniaque ou hypomaniaque (cette exclusion ne s'applique pas si tous les épisodes de type maniaque ou hypomaniaque sont induits par une substance ou attribuables aux effets physiologiques d'une autre affection médicale). |",
+  "how_to_use": {
+    "why": "",
+    "when": "Do you use the DSM-5 Criteria for MDD and want to contribute your expertise?[Join](https://www.mdcalc.com/join-us)our contributor team!",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- In patients who meet criteria for the diagnosis of Major Depressive Disorder, a comprehensive treatment plan should be created.\n- This plan may include psychotherapy and/or pharmacotherapy, along with the expertise of a psychiatrist or psychologist as needed. Be sure to also discuss a safety plan with those patients who are at elevated risk.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Diagnostic de MDD.",
+  "medium_description": "Diagnostic critères pour major depressive disorder (MDD).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "mood",
+      "label": "Déprimé mood",
+      "tips": "Most of the day, nearly every day; may be subjective (e.g. feels sad, empty, hopeless) or observed by others (e.g. appears tearful); in children and adolescents, can be irritable mood",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loss",
+      "label": "Perte d'intérêt/plaisir",
+      "tips": "Intérêt/plaisir nettement diminué pour toutes (ou presque toutes) les activités la plupart de la journée, presque tous les jours ; peut être subjectif ou observé par autrui",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weight",
+      "label": "Perte de poids ou gain",
+      "tips": "Significant weight loss (without dieting) or gain (change of >5% body weight in a month), or decrease or increase in appetite nearly every day; in children, may be failure to gain weight as expected",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "insomnia",
+      "label": "Insomnie ou hypersomnie",
+      "tips": "Presque tous les jours",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "psycho",
+      "label": "Agitation ou ralentissement psychomoteur",
+      "tips": "Presque tous les jours et observable par autrui (pas seulement agitation ou lenteur subjectives)",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fatigue",
+      "label": "Fatigue",
+      "tips": "Ou perte d'énergie, presque tous les jours",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "guilt",
+      "label": "Sentiment de dévalorisation ou culpabilité excessive/inappropriée",
+      "tips": "Presque tous les jours ; la culpabilité peut être délirante ; pas seulement des reproches envers soi-même ou une culpabilité d'être malade",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "concentration",
+      "label": "Diminution de la concentration",
+      "tips": "Presque tous les jours ; peut être une indécision ; peut être subjectif ou observé par autrui",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "suicide",
+      "label": "Pensées de mort/suicide",
+      "tips": "Pensées récurrentes de mort (pas seulement la peur de mourir), idéation suicidaire récurrente sans plan précis, ou tentative de suicide, ou plan précis de suicide",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Symptoms cause clinically significant distress ou impairment dans social, occupational, ou other important areas de functioning",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Episode not attributable pour physiological effects de substance ou another medical condition",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Episode not better explained par schizoaffective disorder, schizophrenia, schizophreniform disorder, delusional disorder, ou other specified et unspecified schizophrenia spectrum et other psychotic disorders",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "No history de manic ou hypomanic episode",
+      "tips": "L'exclusion ne s'applique pas si tous les épisodes d'allure maniaque ou hypomaniaque sont induits par une substance ou sont attribuables aux effets physiologiques d'une autre affection médicale.",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "American Psychiatric Association: Desk Reference to the Diagnostic Criteria From DSM-5. Arlington, VA, American Psychiatric Association, 2013.",
+      "href": "https://www.psychiatry.org/psychiatrists/practice/dsm",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dsm-5-criteria-bipolar-disorder",
+    "calc.dsmv-diagnostic-criteria-for-binge-eating-disorder",
+    "calc.dsm-5-criteria-posttraumatic-stress-disorder"
+  ],
+  "source_logic_hash": "7580d40317f07bd2335f2bc056a08c8f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10195,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

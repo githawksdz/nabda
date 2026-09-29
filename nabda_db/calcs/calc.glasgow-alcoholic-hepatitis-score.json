@@ -1,0 +1,136 @@
+{
+  "id": "calc.glasgow-alcoholic-hepatitis-score",
+  "slug": "glasgow-alcoholic-hepatitis-score",
+  "language": "en",
+  "title": "Glasgow Alcoholic Hepatitis score",
+  "short_title": "Score d'hépatite alcoolique de Glasgow (Glasgow Alcoholic Hepatitis score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "Carcinome hépatocellulaire",
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "etoh"
+  ],
+  "dosing": false,
+  "formula": "The Glasgow Alcoholic Hepatitis Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age | <50 | 1 |\n| ≥50 | 2 | |\n| White blood cell count | <15 x10 9 /L | 1 |\n| ≥15 x10 9 /L | 2 | |\n| BUN | <5 mmol/L | 1 |\n| ≥5 mmol/L | 2 | |\n| Bilirubin | <125 μmol/L | 1 |\n| 125-250 μmol/L | 2 | |\n| >250 μmol/L | 3 | |\n| PT ratio | <1.5 | 1 |\n| 1.5-2.0 | 2 | |\n| >2.0 | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "L’échelle de Glasgow de l’hépatite alcoolique (GAHS) est utile pour déterminer quels patients peuvent nécessiter une prise en charge plus intensive en fonction de leur mortalité estimée."
+  },
+  "next_steps": {
+    "advice": "Les patients atteints d’hépatite alcoolique doivent recevoir des conseils sur l’arrêt de la consommation d’alcool, car la poursuite de la consommation finira par contribuer à leur décès.",
+    "critical_actions": "",
+    "management": "Refer to[ACG guidelines](https://www.mdcalc.com/guidelines/acg/diagnosis-management-idiosyncratic-drug-induced-liver-injury)for management of idiosyncratic drug-induced liver injury."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Mortalité dans alcoholic hepatitis.",
+  "medium_description": "Predicts mortalité chez les patients avec alcoholic hepatitis par lab results et âge.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "white_blood_cell_count",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pt",
+      "label": "PT",
+      "optional": false,
+      "unit": "pt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pt_lab_normal",
+      "label": "PT laboratoire normal",
+      "tips": "Valeur normale du PT, selon votre laboratoire",
+      "optional": false,
+      "unit": "pt_ctrl",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Forrest EH, Evans CD, Stewart S, Phillips M, Oo YH, McAvoy NC, Fisher NC, Singhal S, Brind A, Haydon G, O'Grady J, Day CP, Hayes PC, Murray LS, Morris AJ. Analysis of factors predictive of mortality in alcoholic hepatitis and derivation and validation of the Glasgow alcoholic hepatitis score. Gut. 2005 Aug;54(8):1174-9. PubMed PMID: 16009691; PubMed Central PMCID: PMC1774903.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16009691",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maddreys-discriminant-function-alcoholic-hepatitis",
+    "calc.lille-model-alcoholic-hepatitis",
+    "calc.kings-college-criteria-acetaminophen-toxicity"
+  ],
+  "source_logic_hash": "b60462827e446d2c07b73c602b9f93af",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 680,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

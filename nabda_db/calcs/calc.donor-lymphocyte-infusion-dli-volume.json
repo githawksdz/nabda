@@ -1,0 +1,146 @@
+{
+  "id": "calc.donor-lymphocyte-infusion-dli-volume",
+  "slug": "donor-lymphocyte-infusion-dli-volume",
+  "language": "en",
+  "title": "Volume d’infusion de lymphocytes du donneur (DLI)",
+  "short_title": "Volume DLI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "whole blood",
+    "donor blood",
+    "donor lymphocytes",
+    "DLI Volume",
+    "Donor Lymphocyte Infusion (DLI) Volume"
+  ],
+  "dosing": true,
+  "formula": "(A) Absolute CD3^+^lymphocyte count, cells/mL = donor WBC x donor % total lymphocytes x donor % CD3+ lymphocytes x 1,000\n\n(B) Total CD3+ cells needed = weight, kg x CD3^+^infusion dose, cells/kg x number of doses desired\n\n(C) Total blood volume needed, L = (B / A) / collection efficiency\n\nNote: percents should be expressed as fractions, e.g. 30% total lymphocytes should be 0.30 in equation (A).\n\n**Example:**\n\nFor a 85 kg patient with WBC 6.2, 30% lymphocytes, 54% CD3^~+~^lymphocytes who will receive 2 doses of 50 × 10⁶ cells/kg each, collection efficiency 50%:\n\n(A) Absolute CD3^+^lymphocyte count = 6.2 x 10^3^x 0.30 x 0.54 x 1,000 = 1.004 x 10^6^cells/mL\n\n(B) Total CD3^+^cells needed = 85 x (50 × 10⁶) x 2 = 8.5 x 10^9^CD3^+^cells\n\n(C) Total blood volume needed, L = 8.5 x 10^9^/ 1.004 x 10^6^/ 0.5 = 16.9 L",
+  "how_to_use": {
+    "why": "La DLI est un aspect important de la prise en charge de la transplantation allogénique de cellules souches. Cependant, il s'agit d'une procédure rarement réalisée, avec une équation complexe utilisée pour estimer les volumes de collecte appropriés chez le donneur. Ce calcul devrait favoriser une collecte précise et fondée sur les preuves des produits de thérapie cellulaire par DLI.",
+    "when": "- Les patients ayant reçu une allogreffe de cellules souches peuvent recevoir des perfusions de lymphocytes du donneur (DLI) afin d’augmenter/renforcer l’effet du greffon contre la tumeur. Ces produits de thérapie cellulaire sont généralement collectés à partir du donneur initial des cellules progénitrices hématopoïétiques utilisées pour l’allogreffe initiale.\n- Cette équation estime le volume de sang total de donneur allogénique à traiter afin d’obtenir une dose appropriée de DLI.",
+    "pearls": "- DLI calculations rely on having a number of baseline clinical and laboratory values readily available from the donor, including the total white blood cell count and total lymphocyte percentage of the donor (typically obtained by automated CBC analysis), the percentage of total donor lymphocytes that are CD3+ T-cells (typically obtained by flow cytometry), as well as information needed about the recipient including their weight, the desired number of CD3+ cells/kg to be infused, and the number of doses to be infused; the latter two items are typically established by the recipient’s treating physician or transplant physician.\n- If flow cytometry data are not readily available, it is reasonable to estimate that the percentage of total donor lymphocytes that are CD3+ is 50%.\n- A typical goal for DLI procedures is to collect 1 dose of 5x10^7^CD3+ T-cells/kg recipient body weight; however, this will vary from case-to-case.\n- The calculation assumes a cellular collection efficiency of 50% by the apheresis instrument; this can vary somewhat from procedure-to-procedure."
+  },
+  "next_steps": {
+    "advice": "Discuter avec le personnel infirmier/technique d’aphérèse du volume de sang total à traiter. S’assurer que le laboratoire de traitement de thérapie cellulaire est également informé du nombre de doses en lesquelles la collecte finale doit être répartie pour l’infusion.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Estimates DLI dosage.",
+  "medium_description": "Estimates volume de whole blood pour process par apheresis pour yield appropriate DLI dosage.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids du receveur",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cd3",
+      "label": "Dose de perfusion de CD3+",
+      "tips": "Nombre de cellules CD+ à perfuser au receveur par dose",
+      "optional": false,
+      "default": 50,
+      "unit": "cd3",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "infusions",
+      "label": "Number de infusions pour recipient",
+      "optional": false,
+      "unit": "infusions",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "efficiency",
+      "label": "Efficacité de recueil",
+      "optional": false,
+      "default": 50,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Leucocytes du donneur (WBC)",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "lymphs_total",
+      "label": "Lymphocytes totaux du donneur",
+      "optional": false,
+      "unit": "donor_total_lymphs",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "lymphs_cd3",
+      "label": "Lymphocytes CD3+ du donneur",
+      "optional": false,
+      "unit": "donor_cd3",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Wingard JR. Hematopoietic Stem Cell Transplantation, A Handbook for Clinicians. 2010.",
+      "href": "https://www.google.com/books/edition/Hematopoietic_Stem_Cell_Transplantation/wzkNYAAACAAJ?hl=en",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.sickle-cell-rbc-exchange-volume",
+    "calc.mentzer-index"
+  ],
+  "source_logic_hash": "49fb2940e02b28b98b03177f986fe514",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10012,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

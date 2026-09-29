@@ -1,0 +1,168 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-pancreatic-sphincter-oddi-disorder-sod",
+  "slug": "rome-iv-diagnostic-criteria-functional-pancreatic-sphincter-oddi-disorder-sod",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional Pancreatic Sphincter de Oddi Disorder (SOD)",
+  "short_title": "Rome IV pour Pancreatic SOD",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles de l'interaction intestin-cerveau",
+    "Troubles du sphincter d'Oddi"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Functional Pancreatic Sphincter of Oddi Disorder, Rome IV for Pancreatic Sphincter of Oddi Disorder, rome iv pancreatic sphincter of oddi disorder, rome iv pancreatic sphincter of oddi, rome iv sphincter of oddi disorder, rome iv sphincter of oddi, rome iv for biliary pain, rome iv criteria for biliary pain, rome iv pancreatic sod, pancreatic sod"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV du trouble du sphincter d'Oddi pancréatique, le patient doit présenter les éléments suivants :\n\n1. Épisodes documentés de pancréatite récidivante (douleur typique avec amylase ou lipase >3 fois la normale et/ou signes d'imagerie de pancréatite aiguë).\n2. Autres étiologies de pancréatite exclues.\n3. Échoendoscopie négative.\n4. Manométrie sphinctérienne anormale.",
+  "how_to_use": {
+    "why": "- Aide à fournir un diagnostic et une stratégie thérapeutique chez les patients présentant une pancréatite récidivante invalidante, sinon inexpliquée.\n- Aide à guider les discussions avec les patients concernant une option thérapeutique comportant à la fois un risque procédural mais aussi un bénéfice thérapeutique potentiel si les critères sont remplis.",
+    "when": "À utiliser chez les patients présentant des épisodes récidivants de pancréatite avec douleur caractéristique et élévations biologiques appropriées. Les autres étiologies fréquentes de pancréatite doivent être exclues par une échoendoscopie (EUS) négative.",
+    "pearls": "- Le diagnostic ne peut être posé qu'après une exploration approfondie ayant exclu les autres causes plus fréquentes de pancréatite.\n- Une EUS normale est requise pour poser ce diagnostic. Une manométrie du sphincter d'Oddi peut être envisagée et, si réalisée, elle doit être anormale.\n- La cholangiopancréatographie par résonance magnétique (MRCP) avec mesure du canal pancréatique avant et après injection intraveineuse de sécrétine pourrait être envisagée mais n'a pas été validée.\n- Le rôle de la sphinctérotomie pancréatique dans le trouble du sphincter d'Oddi pancréatique reste incertain."
+  },
+  "next_steps": {
+    "advice": "**Si les critères sont remplis (positif) :**\n\n- Réaliser une sphinctérotomie biliaire (efficacité équivalente et risque procédural plus faible que la sphinctérotomie pancréatique et biliaire double).\n\n**Si les critères ne sont PAS remplis (négatif) :**\n\n- Envisager d'autres causes de pancréatite récidivante, telles que des mutations génétiques, une prise médicamenteuse ou de drogues dissimulée, y compris l'alcool et/ou les opiacés.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que pour les patients présentant une pancréatite idiopathique aiguë récidivante objective après bilan approfondi réalisé (incluant EUS +/- MRCP).\n\nREMARQUE : ce calculateur n'est pas validé pour les patients atteints de pancréatite chronique, car d'autres causes structurelles peuvent entraîner des douleurs dans cette population, telles que des sténoses focales ou des calculs pancréatiques.",
+    "management": ""
+  },
+  "evidence": "Un essai de petite taille mais déterminant a étudié 69 patients présentant une pancréatite aiguë récidivante idiopathique et un dysfonctionnement du sphincter d'Oddi pancréatique confirmé par manométrie. Cet essai n'a démontré aucune différence dans la réduction des récidives de pancréatite à 1 an entre les patients randomisés vers une sphinctérotomie biliaire et pancréatique double versus une sphinctérotomie biliaire seule. De plus, les deux groupes présentaient des taux de récidive proche de 50 % au suivi à 6 mois. Compte tenu de son risque accru sans bénéfice démontré, la sphinctérotomie double n'est souvent pas recommandée par rapport à la sphinctérotomie biliaire seule chez les patients présentant une pancréatite aiguë idiopathique récidivante.",
+  "more_info": "",
+  "short_description": "Diagnostic du dysfonctionnement du sphincter d'Oddi pancréatique.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional pancreatic sphincter de oddi disorder.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Documented recurrent episodes de pancreatitis (typical douleur avec amylase ou lipase >3 times normal et/ou imaging evidence de aigu pancreatitis)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Autres étiologies de pancréatite exclues",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Échoendoscopie négative",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Manométrie sphinctérienne anormale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cotton PB, Elta GH, Carter CR, Pasricha PJ, Corazziari ES. Rome IV. Gallbladder and Sphincter of Oddi Disorders. Gastroenterology. 2016;150:1420-1429.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144629",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Coté GA, Imperiale TF, Schmidt SE, et al. Similar efficacies of biliary, with or without pancreatic, sphincterotomy in treatment of idiopathic recurrent acute pancreatitis. Gastroenterology. 2012;143(6):1502-1509.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22982183/",
+      "kind": "other"
+    },
+    {
+      "text": "Aziz I, Palsson OS, Törnblom H, Sperber AD, Whitehead WE, Simrén M. The Prevalence and Impact of Overlapping Rome IV-Diagnosed Functional Gastrointestinal Disorders on Somatization, Quality of Life, and Healthcare Utilization: A Cross-Sectional General Population Study in Three Countries. Am J Gastroenterol. 2018;113(1):86-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29134969",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-functional-biliary-sphincter-oddi-disorder-sod",
+    "calc.rome-iv-diagnostic-criteria-functional-gallbladder-disorder",
+    "calc.rome-iv-diagnostic-criteria-unspecified-functional-bowel-disorder"
+  ],
+  "source_logic_hash": "1079fb11df229ff9245a2ae511163a93",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10312,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.amylase"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

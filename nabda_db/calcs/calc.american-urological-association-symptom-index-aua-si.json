@@ -1,0 +1,371 @@
+{
+  "id": "calc.american-urological-association-symptom-index-aua-si",
+  "slug": "american-urological-association-symptom-index-aua-si",
+  "language": "en",
+  "title": "Index de symptômes de l'American Urological Association (AUA-SI)/Score international des symptômes de la prostate (IPSS)",
+  "short_title": "AUA-SI/IPSS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "urologie"
+  ],
+  "diseases": [
+    "Hyperplasie bénigne de la prostate"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Polyuria"
+  ],
+  "abbreviations": [
+    "American Urological Association Symptom Index (AUA-SI)",
+    "International Prostate Symptom Score (IPSS)",
+    "aua si",
+    "aua-si",
+    "auasi",
+    "ipss",
+    "i-pss",
+    "i pss",
+    "benign prostatic hyperplasia",
+    "bph",
+    "hyperplasia"
+  ],
+  "dosing": false,
+  "formula": "The AUA-SI/IPSS is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Incomplete emptying: How often have you had the sensation of not emptying your bladder? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Frequency: How often have you had to urinate less than every two hours? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Intermittency: How often have you found you stopped and started again several times when you urinated? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Urgency: How often have you found it difficult to postpone urination? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Weak stream: How often have you had a weak urinary stream? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Straining: How often have you had to strain to start urination? | Not at all | 0 |\n| Less than 1 in 5 times | 1 | |\n| Less than half the time | 2 | |\n| About half the time | 3 | |\n| More than half the time | 4 | |\n| Almost always | 5 | |\n| Nocturia: How many times do you typically get up at night to urinate? | None | 0 |\n| 1 time | 1 | |\n| 2 times | 2 | |\n| 3 times | 3 | |\n| 4 times | 4 | |\n| ≥5 times | 5 | |\n| Quality of Life Due to Urinary Symptoms (optional) | | |\n| If you were to spend the rest of your life with your urinary condition just the way it is now, how would you feel about that? | Delighted | 0 |\n| Pleased | 1 | |\n| Mostly satisfied | 2 | |\n| Mixed | 3 | |\n| Mostly dissatisfied | 4 | |\n| Unhappy | 5 | |\n| Terrible | 6 | |",
+  "how_to_use": {
+    "why": "- Fournit une évaluation standardisée de la gravité des symptômes urinaires et de leur impact sur la qualité de vie.\n- Aide à déterminer la nécessité d'une intervention médicale ou chirurgicale en fonction de la gravité des symptômes et du niveau de gêne du patient.",
+    "when": "À utiliser dans l’évaluation initiale et le suivi des symptômes du bas appareil urinaire (LUTS) probablement attribués à une hypertrophie bénigne de la prostate (BPH).",
+    "pearls": "- N'est pas destiné à servir d'outil de dépistage de la BPH.\n- Cet outil ne permet pas de différencier la BPH des autres causes de LUTS, telles que les affections vésicales ou neurologiques, et doit être utilisé spécifiquement chez les patients présentant des LUTS et d'autres éléments en faveur d'une BPH."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne doit pas être le seul déterminant dans la prise en charge du BPH, mais doit faire partie d’une évaluation globale.",
+    "critical_actions": "",
+    "management": "- **Symptômes légers (score 0–7) :** souvent pris en charge par des modifications comportementales et du mode de vie ainsi qu’une surveillance de routine.\n- **Symptômes modérés à sévères (score 8–35) :**\n\n - Envisager des alpha-bloquants, des inhibiteurs de la 5-alpha-réductase, des antimuscariniques, des agonistes bêta-3 ou une association thérapeutique.\n - Dans les cas sévères ne répondant pas au traitement médical, des options chirurgicales peuvent être envisagées.\n- Réévaluer régulièrement le score du patient pour surveiller sa réponse au traitement.\n- Envisager une consultation en urologie si les symptômes sont sévères, progressifs, ou en cas de suspicion d’une autre pathologie, comme un cancer de la prostate."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| AUA-SI/IPSS | Sévérité des symptômes de l’HBP |\n| --- | --- |\n| ≤7 | Légère |\n| 8-19 | Modérée |\n| ≥20 | Sévère |",
+  "short_description": "BPH gravité.",
+  "medium_description": "Measures gravité de benign prostatic hyperplasia (BPH) symptoms.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "incomplete",
+      "label": "Vidange incomplète : À quelle fréquence avez-vous eu la sensation de ne pas vider votre vessie ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "freq",
+      "label": "Frequency: How often have you had pour urinate less than every two hours?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "intermit",
+      "label": "Intermittency: How often have you found you stopped et started again several times when you urinated?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "urgency",
+      "label": "Urgency: How often have you found it difficult pour postpone urination?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weak",
+      "label": "Jet urinaire faible : À quelle fréquence avez-vous eu un jet urinaire faible ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "strain",
+      "label": "Straining: How often have you had pour strain pour start urination?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Less than 1 dans 5 times",
+          "value": 1
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 2
+        },
+        {
+          "label": "Environ la moitié du temps",
+          "value": 3
+        },
+        {
+          "label": "Plus de la moitié du temps",
+          "value": 4
+        },
+        {
+          "label": "Presque toujours",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "noct",
+      "label": "Nocturia: How many times do you typically get up at night pour urinate?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "1 fois",
+          "value": 1
+        },
+        {
+          "label": "2 fois",
+          "value": 2
+        },
+        {
+          "label": "3 fois",
+          "value": 3
+        },
+        {
+          "label": "4 fois",
+          "value": 4
+        },
+        {
+          "label": "≥5 fois",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "quality",
+      "label": "If you were pour spend rest de your life avec your urinary condition just way it is now, how would you feel about that?",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Delighted",
+          "value": 1
+        },
+        {
+          "label": "Pleased",
+          "value": 2
+        },
+        {
+          "label": "Plutôt satisfait",
+          "value": 3
+        },
+        {
+          "label": "Mixed",
+          "value": 4
+        },
+        {
+          "label": "Plutôt insatisfait",
+          "value": 5
+        },
+        {
+          "label": "Unhappy",
+          "value": 6
+        },
+        {
+          "label": "Terrible",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lerner LB, McVary KT, Barry MJ, et al. Management of lower urinary tract symptoms attributed to benign prostatic hyperplasia: aua guideline part i-initial work-up and medical management. J Urol. 2021;206(4):806-817.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34384237/",
+      "kind": "international"
+    },
+    {
+      "text": "Barry MJ, Fowler FJ, O’Leary MP, et al. The american urological association symptom index for benign prostatic hyperplasia. The measurement committee of the american urological association. J Urol. 1992;148(5):1549-1557; discussion 1564.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/1279218/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi"
+  ],
+  "source_logic_hash": "9420f8cfd2c16bb511bd61e86095caf7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10462,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

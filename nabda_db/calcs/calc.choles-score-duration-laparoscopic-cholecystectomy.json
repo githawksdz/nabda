@@ -1,0 +1,299 @@
+{
+  "id": "calc.choles-score-duration-laparoscopic-cholecystectomy",
+  "slug": "choles-score-duration-laparoscopic-cholecystectomy",
+  "language": "fr",
+  "title": "CholeS score pour Duration de Laparoscopic Cholecystectomy",
+  "short_title": "Score CholeS",
+  "calc_type": null,
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cholangitis",
+    "Cholecystitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "Choles score",
+    "lap chol duration"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <40 | 0 |\n| ≥40 | 1.5 | |\n| Gender | Male | 1 |\n| Female | 0 | |\n| Indication | Pancreatitis | 0 |\n| Colic, dyskinesia, or polyp | 0.5 | |\n| Common bile duct stone | 2 | |\n| Acalculous or cholecystitis | 2.5 | |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) | <25 | 0 |\n| 25-35 | 1 | |\n| >35 | 2 | |\n| Common bile duct diameter | Normal | 0 |\n| Dilated | 2 | |\n| Gallbladder wall | Normal | 0 |\n| Thick | 1.5 | |\n| Pre-operative CT done | No | 0 |\n| Yes | 1.5 | |\n| Intra-op cholangiogram planned | No | 0 |\n| Yes | 3 | |\n| Number of previous surgical admissions | 0 | 0 |\n| 1-2 | 1 | |\n| >2 | 2.5 | |\n| [ASA Class](nabda:calc.asa-physical-status-asa-classification\\) | 1 | 0 |\n| 2 | 1 | |\n| >2 | 2.5 | |",
+  "how_to_use": {
+    "why": "Peut aider à la programmation opératoire et à des estimations plus précises des durées opératoires.",
+    "when": "- À utiliser chez les patients bénéficiant d'une cholécystectomie programmée.\n- Ne pas utiliser pour les cas d'urgence.",
+    "pearls": "S'applique uniquement à la cholécystectomie laparoscopique, pas aux autres interventions."
+  },
+  "next_steps": {
+    "advice": "Peut être utilisé pour réserver le temps opératoire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score CholeS | Groupe de risque | Probabilité d'une durée opératoire >90 minutes |\n| --- | --- | --- |\n| 0-3.5 | Faible | 5.1% |\n| 4-8 | Intermédiaire | 5.1-41.8% |\n| >8 | Élevé | 41.8% |",
+  "short_description": "Durée de la cholécystectomie laparoscopique.",
+  "medium_description": "Prédit la durée opératoire de la cholécystectomie laparoscopique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "≥40",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 1
+        },
+        {
+          "label": "Femme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "indication",
+      "label": "Indication",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pancreatitis",
+          "value": 0
+        },
+        {
+          "label": "Colique, dyskinésie ou polype",
+          "value": 0.5
+        },
+        {
+          "label": "Calcul de la voie biliaire principale",
+          "value": 2
+        },
+        {
+          "label": "Acalculous ou cholecystitis",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 25",
+          "value": 0
+        },
+        {
+          "label": "25-35",
+          "value": 1
+        },
+        {
+          "label": ">35",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ductdiameter",
+      "label": "Diamètre du cholédoque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Dilated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gallbladderwall",
+      "label": "Paroi vésiculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Thick",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "preopct",
+      "label": "Pre-operative CT done",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cholangiogram",
+      "label": "Cholangiogramme peropératoire prévu",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "surgadmits",
+      "label": "Nombre d'admissions chirurgicales antérieures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1-2",
+          "value": 1
+        },
+        {
+          "label": ">2",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "asa",
+      "label": "[Classe ASA](nabda:calc.asa-physical-status-asa-classification)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1",
+          "value": 0
+        },
+        {
+          "label": "2",
+          "value": 1
+        },
+        {
+          "label": ">2",
+          "value": 2.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bharamgoudar R, Sonsale A, Hodson J, Griffiths E. The development and validation of a scoring tool to predict the operative duration of elective laparoscopic cholecystectomy. Surg Endosc. 2018;32(7):3149-3157.",
+      "href": "https://link.springer.com/article/10.1007/s00464-018-6030-6",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.oakland-score-safe-discharge-lower-gi-bleed",
+    "calc.child-pugh-score-cirrhosis-mortality",
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.asa-physical-status-asa-classification"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA Class"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10030,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,337 @@
+{
+  "id": "calc.brief-resolved-unexplained-events-2.0-brue-2.0-criteria-infants",
+  "slug": "brief-resolved-unexplained-events-2.0-brue-2.0-criteria-infants",
+  "language": "en",
+  "title": "Brief Resolved Unexplained Events 2.0 (BRUE 2.0) critères pour Infants",
+  "short_title": "BRUE 2.0",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "Brief Resolved Unexplained Events 2.0 (BRUE 2.0) Criteria for Infants, BRUE 2.0, brue, brue 2, brief resolved unexplained events, brief resolved unexplained events, alte, sids, brue criteria, brue criteria 2, brue 2 criteria"
+  ],
+  "dosing": false,
+  "formula": "To be classified as BRUE, all of the following must be true:\n\n- Infant <1 year old.\n- Asymptomatic on presentation (no URI symptoms, no fever).\n- No explanation for the event after conducting history and physical (e.g. GER, feeding difficulties).\n- History of sudden, brief, and now resolved episode consisting of ≥1 of the following:\n\n - Cyanosis or pallor.\n - Absent, decreased, or irregular breathing.\n - Marked change in tone (hyper or hypotonia).\n - Altered level of responsiveness.\n\nThe risk of serious underlying condition and the risk of recurrent event are calculated based on the following inputs:\n\n- Age, days.\n- History of similar event.*\n- History of multiple events or event clusters.*\n- Abnormal medical history.*\n- Prematurity (<32 weeks or between 32-38 weeks and corrected to <45 weeks).*\n- Absent, decreased, or irregular breathing.*\n- Marked change in tone (hyper or hypotonia).*\n\n*Yes = 1, No = 0\n\n**% risk of serious underlying condition** = [e^x^/(1 + e^x^)]*100,\n\nwhere x = -2.9 – 0.0046*(Age, days) + 1.22*(History of similar event) + 0.35*(Abnormal medical history)\n\n**% risk of recurrent event** =[e^w^/(1 + e^w^)]*100,\n\nwhere w = -2.82 + 0.65*(History of similar event) + 0.98*(History of multiple events or event clusters) + 0.28*(Prematurity) + 0.36*(Cyanosis or pallor) + 0.16*(Absent, decreased, or irregular breathing) + 0.23*(Marked change in tone)",
+  "how_to_use": {
+    "why": "",
+    "when": "- Nourrissons de moins de 1 an ayant présenté un épisode symptomatique résolu au moment de l’évaluation\n- Les symptômes peuvent inclure des modifications de la couleur de la peau, du tonus musculaire et/ou de la respiration.\n- Tous les symptômes doivent être brefs, se résoudre spontanément et ne pas être attribués à une autre affection médicale.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Fournir une éducation sur le BRUE et rassurer (voir[ici](https://doi.org/10.1542/ppe_document103)).\n- S’engager dans une prise de décision partagée avec les familles si la réalisation de tests et l’admission à l’hôpital sont envisagées, en utilisant les risques calculés ci-dessus. Cette décision doit être guidée par les valeurs de la famille, le risque du patient, des éléments préoccupants à l’anamnèse ou à l’examen, et l’accès à un suivi rapproché.\n- Fournir aux aidants des ressources sur la formation aux gestes de réanimation cardio-pulmonaire (CPR).\n- Envisager une brève période de surveillance de 1-4 heures pour obtenir des évaluations répétées du nourrisson, ainsi que surveiller la récidive de l’événement.\n- Impliquer un travailleur social (ou un prestataire formé) pour réaliser une évaluation psychosociale, dépister la maltraitance infantile et apporter un soutien aux aidants.\n- Évaluation de l’alimentation par un prestataire formé.\n- Envisager la nécessité de tests diagnostiques (panel viral rapide, et coqueluche dans les groupes à haut risque).\n- Les consultations et tests diagnostiques supplémentaires doivent être adaptés aux constatations de l’anamnèse et de l’examen physique.\n- Assurer un suivi adéquat pour évaluer et prendre en charge tout symptôme persistant.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classifie les événements inexpliqués.",
+  "medium_description": "Classifies unexplained events, improves sur [BRUE Criteria](nabda:calc.brief-resolved-unexplained-events-brue-criteria-infants).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "infant_year",
+      "label": "Nourrisson <1 an",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "asymptomatic",
+      "label": "Asymptomatique à la présentation",
+      "tips": "p. ex. absence de symptômes d'URI, absence de fièvre",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "explanation",
+      "label": "No explanation pour event after conducting history et physical",
+      "tips": "Ex. : RGO, difficultés alimentaires",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cyanosis",
+      "label": "Cyanose ou pâleur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "absent",
+      "label": "Respiration absente, diminuée ou irrégulière",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "marked",
+      "label": "Marked change dans tone (hyper ou hypotonia)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "altered",
+      "label": "Altération du niveau de réactivité",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, days",
+      "optional": false,
+      "unit": "age_brue",
+      "show_points": false,
+      "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)"
+    },
+    {
+      "type": "toggle",
+      "name": "similar",
+      "label": "Antécédent d’événement similaire",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "multiple",
+      "label": "Antécédents de multiples événements ou clusters d’événements",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "Antécédents médicaux anormaux",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "premature",
+      "label": "Prematurity (<32 weeks ou between 32-38 weeks et corrected pour <45 weeks)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "infant_year==1 && asymptomatic==1 && explanation==1 && (cyanosis ==1 || absent ==1 || marked ==1 || altered ==1)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nama N, Hall M, Neuman M, et al. Risk Prediction for Underlying Diagnosis and Recurrence of Brief Resolved Unexplained Events Hospital Pediatrics. 2022.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35965279/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nama N, Shen Y, Bone JB, et al. External Validation of Brief Resolved Unexplained Events Prediction Rules for Serious Underlying Diagnosis. JAMA Pediatrics. 2024.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/10.1001/jamapediatrics.2024.4399?utm_campaign=articlePDF%26utm_medium=articlePDFlink%26utm_source=articlePDF%26utm_content=jamapediatrics.2024.4399",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tieder JS, Sullivan E, Stephans A, et al. Risk factors and outcomes after a brief resolved unexplained event: a multicenter study. Pediatrics. 2021;148(1):e2020036095.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34168059/",
+      "kind": "other"
+    },
+    {
+      "text": "Merritt JL, Quinonez RA, Bonkowsky JL, et al. A framework for evaluation of the higher-risk infant after a brief resolved unexplained event. Pediatrics. 2019;144(2):e20184101.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31350360/",
+      "kind": "other"
+    },
+    {
+      "text": "Tieder JS. Mortality risk and hospital admission after a brief resolved unexplained event. J Pediatr. 2018;197:12-13.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29571925/",
+      "kind": "other"
+    },
+    {
+      "text": "Tieder JS, Bonkowsky JL, Etzel RA, et al. Brief resolved unexplained events (Formerly apparent life-threatening events) and evaluation of lower-risk infants. Pediatrics. 2016;137(5):e20160590.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27244835/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.brief-resolved-unexplained-events-brue-criteria-infants",
+    "calc.rome-iv-diagnostic-criteria-belching-disorders",
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn"
+  ],
+  "source_logic_hash": "af2d1739077a73d506bcbbf5e608ec7c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10400,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

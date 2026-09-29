@@ -1,0 +1,167 @@
+{
+  "id": "calc.rome-iii-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+  "slug": "rome-iii-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+  "language": "fr",
+  "title": "Rome III Diagnostic critères pour Irritable Bowel syndrome (IBS)",
+  "short_title": "Rome III pour IBS",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Syndrome de l'intestin irritable"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Anxious",
+    "Constipation",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "IBS",
+    "irritable",
+    "bowel"
+  ],
+  "dosing": false,
+  "formula": "Douleurs ou gênes abdominales récurrentes, 3 jours par mois au cours des 3 derniers mois, associées à deux critères ou plus parmi ceux ci-dessous :\n\n- Critères remplis au cours des 3 derniers mois avec apparition des symptômes 6 mois avant le diagnostic.\n- Critères :\n\n 1. Soulagement lors de la défécation ; et/ou\n 2. Apparition associée à une modification de la fréquence des selles ; et/ou\n 3. Apparition associée à une modification de la forme (aspect) des selles.",
+  "how_to_use": {
+    "why": "Les symptômes qui définissent le SII sont subjectifs et auto-rapportés, ce qui rend utile un système de classification. De plus, il existe des données probantes soutenant l'idée que les patients remplissant les critères de Rome formels pourraient être plus susceptibles de répondre à certaines thérapeutiques.",
+    "when": "Patients en cours d’évaluation pour un possible IBS.",
+    "pearls": "- Les critères de Rome III aident au diagnostic du syndrome de l'intestin irritable (SII).\n\n**Points à retenir :**\n\n- Il n'existe toujours pas de référence objective (c'est-à-dire de standard « gold ») pour le SII ; les critères ont été élaborés par une revue de la littérature et un processus de consensus."
+  },
+  "next_steps": {
+    "advice": "Les critères de Rome III sont utiles pour classer les patients et déterminer les thérapeutiques potentielles.",
+    "critical_actions": "Le SII est un diagnostic d'élimination, c'est-à-dire que toutes les autres possibilités doivent d'abord être écartées.",
+    "management": "Nous ne connaissons pas d'algorithmes de prise en charge validés utilisant les critères de Rome."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Diagnostic du SII.",
+  "medium_description": "Official Rome III critères pour diagnostic de irritable bowel syndrome.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "def",
+      "label": "Improvement avec defecation",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "freq",
+      "label": "Onset associé avec change dans stool frequency",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "form",
+      "label": "Onset associé avec change dans stool form (appearance)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Drossman DA. The functional gastrointestinal disorders and the Rome II process. Gut. 1999;45(suppl II):II1–II5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1766692/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Comparison Table of Rome II &amp; Rome III Adult Diagnostic Criteria.",
+      "href": "https://www.romecriteria.org/assets/pdf/20_RomeIII_apB_899-916.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Thompson WG, Longstreth GF, Drossman DA, et al. Functional bowel disorders and functional abdominal pain. Gut. 1999;45(suppl 2):II43–II47.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/pmid/10457044/",
+      "kind": "other"
+    },
+    {
+      "text": "Longstreth GF, Thompson WG, Chey WD, et al. Functional bowel disorders. Gastroenterology. 2006;130:1489–1491.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16678561",
+      "kind": "other"
+    },
+    {
+      "text": "Drossman DA. The functional gastrointestinal disorders and the Rome III process. Gastroenterology 2006;130:1377–1390.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16678553",
+      "kind": "other"
+    },
+    {
+      "text": "Ford AC, et. al. Validation of the Rome III criteria for the diagnosis of irritable bowel syndrome in secondary care. Gastroenterology. 145: 1262–70.e1. Dec 2013.doi:10.1053/j.gastro.2013.08.048. PMID 23994201.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23994201",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-ii-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "59f77ef75c26b1f014fc265d4de5ac09",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3165,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

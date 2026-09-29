@@ -1,0 +1,120 @@
+{
+  "id": "calc.ast-platelet-ratio-index-apri",
+  "slug": "ast-platelet-ratio-index-apri",
+  "language": "en",
+  "title": "AST pour Platelet Ratio index (APRI)",
+  "short_title": "APRI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "cirrhosis",
+    "hep c",
+    "fibrosis",
+    "plt",
+    "amino"
+  ],
+  "dosing": false,
+  "formula": "APRI = (AST en UI/L) / (Limite supérieure de la normale de l’AST en UI/L) / (Plaquettes en 10^9^/L)",
+  "how_to_use": {
+    "why": "Il n’existe pas de méthode parfaite pour prédire la fibrose et la cirrhose en cas d’HCV, et l’APRI utilise des valeurs de laboratoire couramment disponibles qui peuvent aider à éviter le recours à la biopsie hépatique. Le score FIB-4 peut également être utile chez ces patients.",
+    "when": "Patients atteints d’hépatite C chez qui une biopsie hépatique est envisagée pour déterminer la probabilité de fibrose ou de cirrhose.",
+    "pearls": "- L’indice AST/plaquettes (APRI) prédit la fibrose et la cirrhose chez les patients atteints d’hépatite C.\n- Il offre une méthode non invasive pour prédire quels patients ont une cirrhose sans imagerie ni biopsie.\n\n**Points à garder à l’esprit :**\n\n- La plupart des experts recommandent d’utiliser l’indice AST/plaquettes conjointement avec d’autres tests non invasifs, en particulier pour les valeurs intermédiaires, car la sensibilité et la spécificité peuvent être insuffisantes à ces valeurs.\n- *Attention : si votre laboratoire utilise des limites supérieures de la normale pour l’AST plus élevées que celles habituellement observées, cela pourrait modifier les performances diagnostiques.*"
+  },
+  "next_steps": {
+    "advice": "Cet indice figure parmi les méthodes les mieux validées pour prédire la progression de l'HCV. Aux valeurs extrêmes (très élevées ou très basses), l'APRI peut éviter des examens invasifs supplémentaires chez une proportion substantielle de patients. Malheureusement, les résultats des études de validation suggèrent une valeur prédictive seulement modérée.",
+    "critical_actions": "L'APRI est validé dans les populations de patients adressés pour le HCV ; son extension à d'autres affections ou populations peut donc être trompeuse. Les valeurs de référence supérieures de l'AST varient selon le laboratoire, ce qui peut également affecter significativement les résultats.",
+    "management": "Nous n’avons pas connaissance d’algorithmes de prise en charge validés utilisant l’APRI."
+  },
+  "evidence": "",
+  "more_info": "Based on 2011 meta-analysis in Hepatology by Lin et. al:\n\nSignificant fibrosis: APRI threshold of 0.7 was 77% sensitive and 72% specific.\n\nSevere fibrosis: APRI threshold of 1.0 was 61% sensitive and 64% specific.\n\nCirrhosis: APRI threshold of 1.0 was 76% sensitive and 72% specific.",
+  "short_description": "Predicts hepatitis C-lié hepatic fibrosis et cirrhosis.",
+  "medium_description": "Determines likelihood de hepatic fibrosis et cirrhosis chez les patients avec hepatitis C.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "uln",
+      "label": "Limite supérieure de la normale de l'AST",
+      "optional": false,
+      "default": 40,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plt",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Wai CT, Greenson JK, Fontana RJ, et al. A simple noninvasive index can predict both significant fibrosis and cirrhosis in patients with chronic hepatitis C. Hepatology. 2003;38(2):518-26.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12883497",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sebastiani G, Halfon P, Castera L, et al. Comparison of three algorithms of non-invasive markers of fibrosis in chronic hepatitis C. Aliment Pharmacol Ther. 2012;35(1):92-104.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/j.1365-2036.2011.04897.x/full",
+      "kind": "other"
+    },
+    {
+      "text": "Khan DA, Fatima Tuz Z, Khan FA, Mubarak A. Evaluation of diagnostic accuracy of APRI for prediction of fibrosis in hepatitis C patients. J Ayub Med Coll Abbottabad 2008; 20: 122-126.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19999223",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lin ZH, Xin YN, Dong QJ, et al. Performance of the aspartate aminotransferase-to-platelet ratio index for the staging of hepatitis C-related fibrosis: an updated meta-analysis. Hepatology. 2011;53:726-36.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/hep.24105/abstract",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "01972d10e04d50a6227cab42e3bbb0a5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3094,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

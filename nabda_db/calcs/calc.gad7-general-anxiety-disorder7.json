@@ -1,0 +1,310 @@
+{
+  "id": "calc.gad7-general-anxiety-disorder7",
+  "slug": "gad7-general-anxiety-disorder7",
+  "language": "en",
+  "title": "GAD-7 (General anxiété Disorder-7)",
+  "short_title": "GAD-7",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Anxious"
+  ],
+  "abbreviations": [
+    "gad",
+    "anxious",
+    "psych",
+    "gad7",
+    "gad-7"
+  ],
+  "dosing": false,
+  "formula": "Score de 0 à 21, avec 0 à 3 points pour chacune des sept questions.",
+  "how_to_use": {
+    "why": "Déterminer objectivement la gravité initiale des symptômes et surveiller l’évolution des symptômes/les effets du traitement au fil du temps.",
+    "when": "Dépistage rapide de la présence d’un trouble anxieux cliniquement significatif (GAD, PD, SP & PTSD), en particulier en contexte ambulatoire.",
+    "pearls": "- The GAD-7 is useful in primary care and mental health settings as a screening tool and symptom severity measure for the four most common anxiety disorders (Generalized Anxiety Disorder, Panic Disorder, Social Phobia and PostTraumatic Stress Disorder).\n- It is 70-90% sensitive and 80-90% specific across disorders / cutoffs (see Evidence section for more).\n- Higher GAD-7 scores correlate with disability and functional impairment (in measures such as work productivity and health care utilization). ([Spitzer RL 2006](https://www.ncbi.nlm.nih.gov/pubmed/16717171)) ([Ruiz MA 2011](https://www.ncbi.nlm.nih.gov/pubmed/20692043))\n- The last item *“How difficult have these problems made it for you to do your work, take care of things at home, or get along with other people?”* - although not used in the calculation - is a good indicator of the patient’s global impairment and can be used to track treatment response."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Cet outil doit être utilisé pour le dépistage et la surveillance de la gravité des symptômes et ne peut pas remplacer une évaluation clinique et un diagnostic.\n- N'oubliez pas d'écarter les causes médicales de l'anxiété avant de diagnostiquer un trouble anxieux (par exemple, EKG pour les arythmies, TSH pour une maladie thyroïdienne).",
+    "management": "Scores ≥10 : évaluation complémentaire (incluant un entretien diagnostique et un examen de l'état mental) et/ou orientation vers un professionnel de la santé mentale recommandée.\n\n| Score | Sévérité des symptômes | Commentaires |\n| --- | --- | --- |\n| 5-9 | Léger | Surveillance |\n| 10*-14 | Modéré | Affection cliniquement significative possible |\n| >15 | Sévère | Traitement actif probablement indiqué |\n\n*Pour le trouble panique, la phobie sociale et le TSPT, un score seuil de 8 peut être utilisé pour une sensibilité/spécificité optimale (voir la section Données probantes)."
+  },
+  "evidence": "Initially validated in 2149 patients as a diagnostic tool for GAD (cutoff score 10-> sensitivity 89%, specificity 82%, test-retest reliability with ICC=0.83) ([Spitzer RL 2006](https://www.ncbi.nlm.nih.gov/pubmed/16717171)), the GAD-7 was later also found to have reasonable sensitivity and specificity as a screener for panic disorder, social phobia and PTSD (cutoff score 8- sensitivity 77%, specificity 82%; cutoff score 10 - sensitivity 68% and specificity 88% for any anxiety disorder). ([Kroenke K 2007](https://www.ncbi.nlm.nih.gov/pubmed/17339617))",
+  "more_info": "Pour toutes les questions, répondez par l’une des réponses suivantes :\n\n- Pas du tout = 0\n- Plusieurs jours = +1\n- Plus de la moitié des jours = +2\n- Presque tous les jours = +3\n\nLa dernière question du GAD-7 est un bon indicateur du retentissement global du patient, bien qu’elle ne soit pas incluse dans le calcul final des points.",
+  "short_description": "Gravité de anxiété.",
+  "medium_description": "Measures gravité de anxiété.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "nervous",
+      "label": "Se sentir nerveux, anxieux ou à cran",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "control_worrying",
+      "label": "Not being able pour stop ou control worrying",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "worrying",
+      "label": "S'inquiéter excessivement à propos de différentes choses",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "trouble_relaxing",
+      "label": "Difficulté à se détendre",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "restless",
+      "label": "Being so restless that it's hard pour sit still",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "irritable",
+      "label": "Becoming easily annoyed ou irritable",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "afraid",
+      "label": "Avoir peur comme si quelque chose de terrible allait se produire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "problems_difficult",
+      "label": "Ask patient: how difficult have these problems made it pour do work, take care de things at home, ou get along avec other people?",
+      "tips": "Facultatif, non inclus dans le score final, mais peut aider à évaluer l'atteinte globale",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "(afraid + irritable + restless + trouble_relaxing + worrying + control_worrying + nervous) > 0",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plutôt difficile",
+          "value": 1
+        },
+        {
+          "label": "Très difficile",
+          "value": 2
+        },
+        {
+          "label": "Extrêmement difficile",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Spitzer RL, Kroenke K, Williams JB, Löwe B. A brief measure for assessing generalized anxiety disorder: the GAD-7. Arch Intern Med. 2006 May 22;166(10):1092-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16717171",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kroenke K, Spitzer RL, Williams JBW, Monahan PO, Löwe B. Anxiety disorders in primary care: prevalence, impairment, comorbidity, and detection. Ann Intern Med 2007;146:317- 325.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17339617",
+      "kind": "other"
+    },
+    {
+      "text": "Ruiz MA, Zamorano E, García-Campayo J, Pardo A, Freire O, Rejas J. Validity of the GAD-7 scale as an outcome measure of disability in patients with generalized anxiety disorders in primary care. Journal of Affective Disorders. 2011;128:277–286.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20692043",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hamilton-anxiety-scale",
+    "calc.quick-inventory-depressive-symptomatology-qids",
+    "calc.phq9-patient-health-questionnaire9"
+  ],
+  "source_logic_hash": "3c9a44f16f6631157e93d01c2cde4169",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1727,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

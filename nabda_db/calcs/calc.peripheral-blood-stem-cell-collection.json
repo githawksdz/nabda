@@ -1,0 +1,125 @@
+{
+  "id": "calc.peripheral-blood-stem-cell-collection",
+  "slug": "peripheral-blood-stem-cell-collection",
+  "language": "fr",
+  "title": "Recueil de cellules souches du sang périphérique",
+  "short_title": "Recueil de cellules souches du sang périphérique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Hémopathie maligne",
+    "Leucémie / Lymphome"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Masse",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "stem cell transplant",
+    "pbsc"
+  ],
+  "dosing": true,
+  "formula": "Collection, cells/kg = collection efficiency, % / 100 × peripheral CD34+, cells/L × processed blood, L / recipient weight, kg\n\nExample:\n\n- Collection, cells/kg = [40% / 100] × [40 × 10^6^CD34+ cells/L] × [18 L] / [70 kg]\n- Collection, cells/kg = [0.4] × [40 × 10^6^] × [18] / [70]\n- Collection, cells/kg = 4.11 × 10^6^CD34+ cells/kg",
+  "how_to_use": {
+    "why": "- Fournit aux professionnels de santé une estimation de la durée du traitement. Par exemple, une estimation élevée du recueil suggère que le recueil pourrait être terminé en 1-2 jours plutôt qu’en 4-5 jours.\n- Le dernier jour du recueil, lorsqu’un patient est proche de l’objectif, si l’estimation fournit un nombre élevé, le patient peut ne pas avoir besoin d’effectuer un recueil sur une journée complète.",
+    "when": "Lorsqu’un patient fait l’objet d’une collecte de cellules souches CD34+ du sang périphérique, cette équation peut être utilisée pour estimer le nombre de cellules CD34+ qui seront collectées afin de déterminer la durée approximative ou le nombre approximatif de jours de la collecte de cellules souches.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "It is important that clinical decisions are made only from laboratory results on validated instruments.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Rendement en CD34+.",
+  "medium_description": "Estimates CD34+ yield using pre-apheresis peripheral blood absolute CD34 blood count.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids du receveur",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "blood",
+      "label": "Sang traité",
+      "optional": false,
+      "unit": "processed_blood",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "peripheral",
+      "label": "CD34+ périphériques",
+      "optional": false,
+      "unit": "cd34",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "efficiency",
+      "label": "Efficacité de recueil",
+      "optional": false,
+      "default": 40,
+      "unit": "coll_efficiency",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Hosing C, Saliba RM, Hamerschlak N, et al. Peripheral blood stem cell yield calculated using preapheresis absolute CD34+ cell count, peripheral blood volume processed, and donor body weight accurately predicts actual yield at multiple centers. Transfusion. 2014;54(4):1081-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24118027",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hematopoietic-cell-transplantation-specific-comorbidity-index-hct-ci",
+    "calc.duval-cibmtr-score-acute-myelogenous-leukemia-aml-survival",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi"
+  ],
+  "source_logic_hash": "6fe091e643e0cdec6c20953af71898e0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10009,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar efficiency = parseFloat(efficiency)/100\nvar peripheral = parseFloat(peripheral)\nvar blood = parseFloat(blood)\nvar wt = parseFloat(wt)\n\nvar collection = efficiency * peripheral * blood / wt\n\ncalc_output.push({\n   name: 'mini',\n   value: collection.toFixed(1),\n   value_text: 'million CD34+ cells/kg',\n   message: ''\n});\ncalc_output.push({\n   name: '10009_Peripheral Blood Stem Cell Collection_result',\n   value: collection.toFixed(1),\n   value_text: 'million CD34+ cells/kg',\n   message: ''\n});",
+  "before_use": "Cet outil de dosage est destiné à aider au calcul, et non à fournir des informations complètes ou définitives sur les médicaments. Toujours vérifier le dosage de tout médicament et consulter un pharmacien si nécessaire. Il est important que les décisions cliniques soient prises uniquement à partir de résultats de laboratoire obtenus sur des instruments validés.",
+  "instructions": null,
+  "contributor_ids": [
+    "george-hauser",
+    "alex-ryder-md-phd",
+    "caleb-cheng-md"
+  ],
+  "creator_names": [
+    "Dr. Jayesh Mehta"
+  ],
+  "measurement_ids": [
+    "processed blood",
+    "Peripheral CD34+",
+    "Collection efficiency"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "8c0e31695b5fd988e69e6ea497e178c0873a9f1cbfd1ea0dc5ee4083dfcee2a9"
+}

@@ -1,0 +1,417 @@
+{
+  "id": "calc.geriatric-depression-scale-gds-15",
+  "slug": "geriatric-depression-scale-gds-15",
+  "language": "en",
+  "title": "Geriatric dépression échelle (GDS-15)",
+  "short_title": "GDS-15",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Trouble bipolaire",
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Depressed",
+    "Fatigue",
+    "Headache",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Geriatric Depression Scale (GDS-15)",
+    "GDS-15",
+    "geriatric depression",
+    "depression",
+    "older adult depression",
+    "geriatric depression screening",
+    "older depression screening",
+    "depression scale",
+    "depressive episode",
+    "depressive mood",
+    "GDS",
+    "Geriatric Depression Scale",
+    "GDS short",
+    "depression assessment",
+    "geriatric depression assessment",
+    "DSM-IV",
+    "ICD-10"
+  ],
+  "dosing": false,
+  "formula": "The GDS-15 is calculated by the addition of the selected points. Please ask your patient to choose the best answer for how they felt over the past week:\n\n| Question | Points | |\n| --- | --- | --- |\n| Are you basically satisfied with your life? | Yes | 0 |\n| No | 1 | |\n| Have you dropped many of your activities and interests? | No | 0 |\n| Yes | 1 | |\n| Do you feel that your life is empty? | No | 0 |\n| Yes | 1 | |\n| Do you often get bored? | No | 0 |\n| Yes | 1 | |\n| Are you in good spirits most of the time? | Yes | 0 |\n| No | 1 | |\n| Are you afraid that something bad is going to happen to you? | No | 0 |\n| Yes | 1 | |\n| Do you feel happy most of the time? | Yes | 0 |\n| No | 1 | |\n| Do you often feel helpless? | No | 0 |\n| Yes | 1 | |\n| Do you prefer to stay at home, rather than going out and doing new things? | No | 0 |\n| Yes | 1 | |\n| Do you feel you have more problems with memory than most? | No | 0 |\n| Yes | 1 | |\n| Do you think it is wonderful to be alive now? | Yes | 0 |\n| No | 1 | |\n| Do you feel pretty worthless the way you are now? | No | 0 |\n| Yes | 1 | |\n| Do you feel full of energy? | Yes | 0 |\n| No | 1 | |\n| Do you feel that your situation is hopeless? | No | 0 |\n| Yes | 1 | |\n| Do you think that most people are better off than you are? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Conçu pour la population des adultes âgés, avec des questions simples à réponse oui/non qui tiennent compte des modifications cognitives typiques associées au vieillissement.\n- Spécifiquement conçu pour cibler les symptômes les plus évocateurs d’une dépression chez les adultes âgés.\n- Évite les symptômes somatiques, ce qui est particulièrement utile lorsque les symptômes d’affections médicales comorbides peuvent compliquer l’interprétation des résultats d’autres outils de dépistage de la dépression.",
+    "when": "- À utiliser pour dépister la dépression chez les personnes âgées (65 ans et plus).\n- Peut être intégré dans le cadre des évaluations gériatriques de routine, en particulier en soins primaires, en cliniques psychiatriques ambulatoires, en services hospitaliers et en établissements de soins de longue durée.\n- Peut être auto-administré ou réalisé par un praticien.\n- Outre le dépistage, il peut être utile pour surveiller les symptômes dépressifs et évaluer l'efficacité du traitement au fil du temps.",
+    "pearls": "- This is a condensed version of the original 30-item Geriatric Depression Scale. Versions with 1, 4, 5, 7, 8, 10, and 12 items have also been explored.\n- Not intended as a diagnostic tool. Positive results necessitate further clinical evaluation.\n- Studies show variability in the effectiveness of the GDS-15 among patients with significant cognitive impairment. Many validation studies have used cutoff Mini-Mental State Examination (MMSE) scores of 10-15 or higher.\n- Demonstrates sensitivity comparable to other depression screening tools, such as the [PHQ-9](nabda:calc.phq9-patient-health-questionnaire9) ."
+  },
+  "next_steps": {
+    "advice": "- Les patients obtenant un score de 5 ou plus doivent faire l’objet d’une évaluation diagnostique formelle de la dépression avant l’instauration du traitement.\n- Pour les patients obtenant un score inférieur à 5, poursuivre le dépistage systématique de la dépression et réévaluer si des symptômes préoccupants apparaissent.",
+    "critical_actions": "- Toujours réaliser une évaluation du risque suicidaire chez les patients chez qui une dépression est suspectée.\n- S’assurer que les diagnostics différentiels sont écartés lors de l’évaluation diagnostique formelle.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| GDS-15 | Signification |\n| --- | --- |\n| ≤4 | Absence de symptômes dépressifs cliniquement significatifs |\n| 5-7 | Suggère une dépression légère |\n| 8-9 | Suggère une dépression modérée |\n| ≥10 | Suggère une dépression sévère |",
+  "short_description": "Possible dépression dans older adultes.",
+  "medium_description": "Identifies possible dépression dans older adultes.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Are you basically satisfied avec your life?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Avez-vous abandonné beaucoup de vos activités et de vos centres d'intérêt ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Avez-vous le sentiment que votre vie est vide ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "Do you often get bored?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Are you dans good spirits most de time?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Are you afraid that something bad is going pour happen pour you?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q7",
+      "label": "Vous sentez-vous heureux(se) la plupart du temps ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q8",
+      "label": "Vous arrive-t-il souvent de vous sentir impuissant(e) ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q9",
+      "label": "Do you prefer pour stay at home, rather than going out et doing new things?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q10",
+      "label": "Do you feel you have more problems avec memory than most?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q11",
+      "label": "Do you think it is wonderful pour be alive now?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q12",
+      "label": "Do you feel pretty worthless way you are now?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q13",
+      "label": "Vous sentez-vous plein d’énergie ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q14",
+      "label": "Avez-vous le sentiment que votre situation est sans espoir ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q15",
+      "label": "Do you think that most people are better off than you are?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Yesavage JA, Brink TL, Rose TL, et al. Development and validation of a geriatric depression screening scale: A preliminary report. Journal of Psychiatric Research. 1982;17(1):37-49.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/7183759/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jongenelis K, Pot AM, Eisses AMH, et al. Diagnostic accuracy of the original 30-item and shortened versions of the Geriatric Depression Scale in nursing home patients. Int J Geriat Psychiatry. 2005;20(11):1067-1074.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16250079/",
+      "kind": "other"
+    },
+    {
+      "text": "Pocklington C, Gilbody S, Manea L, McMillan D. The diagnostic accuracy of brief versions of the Geriatric Depression Scale: a systematic review and meta‐analysis. Int J Geriat Psychiatry. 2016;31(8):837-857.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26890937/",
+      "kind": "other"
+    },
+    {
+      "text": "Pocklington C, Gilbody S, Manea L, McMillan D. The diagnostic accuracy of brief versions of the Geriatric Depression Scale: a systematic review and meta‐analysis. Int J Geriat Psychiatry. 2016;31(8):837-857.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26890937/",
+      "kind": "other"
+    },
+    {
+      "text": "Almeida OP, Almeida SA. Short versions of the geriatric depression scale: a study of their validity for the diagnosis of a major depressive episode according to ICD-10 and DSM-IV. Int J Geriat Psychiatry. 1999;14(10):858-865.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10521885/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dennis M, Kadri A, Coffey J. Depression in older people in the general hospital: a systematic review of screening instruments. Age and Ageing. 2012;41(2):148-154.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22236655/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shin C, Park MH, Lee SH, et al. Usefulness of the 15-item geriatric depression scale (GDS-15) for classifying minor and major depressive disorders among community-dwelling elders. Journal of Affective Disorders. 2019;259:370-375.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31470180/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sacuiu S, Seidu NM, Sigström R, et al. Accuracy of 12 short versions of the Geriatric Depression Scale to detect depression in a prospective study of a high-risk population with different levels of cognition. Int Psychogeriatr. 2022;34(5):479-488.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31747979/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.montgomery-asberg-depression-rating-scale-madrs",
+    "calc.edinburgh-postnatal-depression-scale-epds",
+    "calc.hamilton-depression-rating-scale-hamd",
+    "calc.phq9-patient-health-questionnaire9"
+  ],
+  "source_logic_hash": "2efdf00c0ecae86c1521d68695746fea",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.phq9-patient-health-questionnaire9",
+      "text": "PHQ-9"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10566,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

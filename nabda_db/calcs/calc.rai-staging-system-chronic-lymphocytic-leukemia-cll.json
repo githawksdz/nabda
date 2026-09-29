@@ -1,0 +1,202 @@
+{
+  "id": "calc.rai-staging-system-chronic-lymphocytic-leukemia-cll",
+  "slug": "rai-staging-system-chronic-lymphocytic-leukemia-cll",
+  "language": "en",
+  "title": "Rai Staging System pour chronique Lymphocytic Leukemia (CLL)",
+  "short_title": "Classification de Rai pour la LLC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Fièvre",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Rai staging system",
+    "chronic lymphocytic leukemia ",
+    "CLL"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate features (lymphocytosis must be present for all):\n\n| Lymph nodes, spleen, liver | Hemoglobin | Platelet count | Rai Stage |\n| --- | --- | --- | --- |\n| No enlargement | Near normal | Near normal | 0 |\n| Enlarged lymph nodes; no spleen or liver enlargement | Near normal | Near normal | I |\n| Enlarged spleen; lymph nodes and liver may or may not be enlarged | Near normal | Near normal | II |\n| May or may not be enlarged | Low | Near normal | III |\n| Enlarged lymph nodes, spleen, or liver | Low or near normal | Low | IV |\n\nFrom[American Cancer Society 2018](https://www.cancer.org/cancer/chronic-lymphocytic-leukemia/detection-diagnosis-staging/staging.html).\n\nLow hemoglobin: <11 g/dL; low platelets: <100,000/mm³.",
+  "how_to_use": {
+    "why": "- Like the [Binet Staging System](nabda:calc.binet-staging-system-chronic-lymphocytic-leukemia-cll) , this is a standardized tool widely used in clinical practice and research.\n- Relies on readily available physical examination and laboratory parameters.\n- Helps classify CLL into risk categories, providing an estimate of prognosis which can inform treatment decisions.",
+    "when": "À utiliser lors du diagnostic de la CLL.",
+    "pearls": "- Ne prend pas en compte les facteurs de risque moléculaires ou génétiques, qui peuvent influencer significativement le pronostic ou prédire la réponse au traitement.\n- Gardez à l'esprit que, à mesure que les traitements ont évolué, les estimations de survie globale médiane se sont améliorées. Les estimations de survie issues de la publication originale sont significativement plus courtes que celles actuellement attendues. Les données de survie référencées dans cet outil sont fondées sur celles documentées dans [Nabhan et al., 2014](https://pubmed.ncbi.nlm.nih.gov/25461996/)."
+  },
+  "next_steps": {
+    "advice": "Le stade à lui seul ne doit pas dicter le traitement ; tenir compte des symptômes et des comorbidités du patient. Utiliser le jugement clinique et les recommandations des spécialistes pour guider les décisions de prise en charge.",
+    "critical_actions": "",
+    "management": "- **Low risk (stage 0):**\n\n - Monitor with a \"watch and wait\" approach unless symptoms or disease progression occurs.\n - Focus on regular follow-ups and patient education.\n- **Intermediate risk (stages I–II):**\n\n - A “watch and wait” approach may be appropriate for asymptomatic individuals.\n - Assess for additional prognostic factors and signs of disease progression.\n - Consider initiating treatment if symptomatic or if there is rapid progression.\n- **High risk (stages III–IV):**\n\n - Initiate appropriate therapy based on patient and tumor characteristics, as well as goals of care.\n - Evaluate for clinical trials, especially in cases of high-risk genetic mutations.\n- For early-stage, asymptomatic CLL (stages 0–II), consider the [IPS-E](nabda:calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e) to predict the time to first treatment, helping to reaffirm treatment decisions and guide monitoring frequency."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Rai Stage | Risk Group | Overall Survival |\n| --- | --- | --- |\n| 0 | Low | >10 years |\n| I/II | Intermediate | 7 years |\n| III/IV | High | <4 years |\n\nFrom[Nabhan 2014](https://www.ncbi.nlm.nih.gov/pubmed/25461996).",
+  "short_description": "Classification des stades de la LLC",
+  "medium_description": "Stages chronique lymphocytic leukemia, similar pour [Binet Staging System](nabda:calc.binet-staging-system-chronic-lymphocytic-leukemia-cll).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "lymph",
+      "label": "Adénopathies",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spleen",
+      "label": "Splénomégalie",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "liver",
+      "label": "Hépatomégalie",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anémie",
+      "tips": "Hb <11 g/dL",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thrombocytopenia",
+      "label": "Thrombopénie",
+      "tips": "Platelets <100,000/mm³",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rai KR, Sawitsky A, Cronkite EP, Chanana AD, Levy RN, Pasternack BS. Clinical staging of chronic lymphocytic leukemia. Blood. 1975;46(2):219-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1139039",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nabhan C, Rosen ST. Chronic lymphocytic leukemia: a clinical review. JAMA. 2014;312(21):2265-76.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25461996",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll",
+    "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+    "calc.ball-score-relapsed-refractory-cll"
+  ],
+  "source_logic_hash": "84c51d68c2ec937078d82a410ddaf724",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll",
+      "text": "Binet Staging System"
+    },
+    {
+      "type": "calc",
+      "id": "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+      "text": "IPS-E"
+    },
+    {
+      "type": "calc",
+      "id": "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll",
+      "text": "Binet Staging System"
+    },
+    {
+      "type": "calc",
+      "id": "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+      "text": "IPS-E"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10054,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nspleen = parseFloat(spleen)\nliver = parseFloat(liver)\nlymph = parseFloat(lymph)\nanemia = parseFloat(anemia)\nthrombocytopenia = parseFloat(thrombocytopenia)\n\nvar rai\nvar risk\nvar survival\n\nif (thrombocytopenia == 1) {\n\trai = 'IV'\n  \trisk = 'High'\n  \tsurvival = '<4'\n\t}\nelse if (anemia == 1) {\n\trai = 'III'\n  \trisk = 'High'\n  \tsurvival = '<4'\n\t}\nelse if (spleen == 1| liver == 1) {\n\trai = 'II'\n  \trisk = 'Intermediate'\n  \tsurvival = '7'\n\t}\nelse if (lymph == 1) {\n\trai = 'I'\n  \trisk = 'Intermediate'\n  \tsurvival = '7'\n\t}\nelse {\n\trai = '0'\n\trisk = 'Low'\n\tsurvival = '>10' \n\t}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'Stage ' + rai,\n    value_text: '',\n    message: survival + ' years OS'\n});\ncalc_output.push({\n    name: '10054_Rai Staging for CLL_interpretation',\n    value: 'Stage ' + rai,\n    value_text: '',\n    message: 'Rai Stage'\n});\ncalc_output.push({\n    name: '10054_Rai Staging for CLL_result (risk)',\n    value: risk,\n    value_text: 'risk',\n    message: ''\n});\ncalc_output.push({\n    name: '10054_Rai Staging for CLL_result (survival)',\n    value: survival,\n    value_text: 'years',\n    message: 'Overall survival'\n});",
+  "before_use": null,
+  "instructions": "Use in patients with lymphocytosis (absolute lymphocytes ≥15,000/mm³in blood and ≥40% lymphocytes in marrow). Lymph nodes, spleen, and liver are considered enlarged if palpable on exam.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Kanti R. Rai"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "285b1c771daea6793fa28d6f5832fb5ce04ab87296926cb6ba5a3b93077d41ca"
+}

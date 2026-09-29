@@ -1,0 +1,422 @@
+{
+  "id": "calc.canadian-diabetes-risk-assessment-questionnaire-canrisk",
+  "slug": "canadian-diabetes-risk-assessment-questionnaire-canrisk",
+  "language": "en",
+  "title": "Canadian diabète risque évaluation Questionnaire (CANRISK)",
+  "short_title": "CANRISK",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hyperglycemia",
+    "Obesity",
+    "Hypoglycemia"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Perte d'appétit",
+    "Nausea",
+    "Déficit neurologique",
+    "Numbness",
+    "Polyuria",
+    "Soins préventifs / Dépistage",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Canadian Diabetes Risk Assessment Questionnaire (CANRISK)",
+    "CANRISK",
+    "canadian diabetes risk assessment questionnaire",
+    "type 2 diabetes mellitus",
+    "diabetes",
+    "T2D",
+    "T2DM",
+    "prediabetes",
+    "undiagnosed diabetes",
+    "preDM"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "- L’identification des patients à risque peut permettre l’instauration rapide de stratégies préventives, telles que des tests de dépistage et des modifications du mode de vie.\n- Cet outil ne nécessite pas d’analyses de laboratoire pour l’évaluation du risque, ce qui peut réduire les analyses sanguines inutiles et les coûts associés.\n- Recommandé comme calculateur de risque validé par le Groupe d’étude canadien sur les soins de santé préventifs (CTFPHC).",
+    "when": "Utilisé pour évaluer le risque de diabète de type 2 chez un patient lors des consultations de suivi médical de routine.",
+    "pearls": "- Modeled after the [Finnish Diabetes Risk Score (FINDRISC)](nabda:calc.findrisc-finnish-diabetes-risk-score) but includes additional factors, such as sex, ethnicity, history of macrosomia, and education level.\n- Developed using a cohort of Canadian adults, limiting its applicability to non-Canadian populations.\n- Relies on accurate self-reporting for some variables (e.g., physical activity, vegetable and fruit intake).\n- Not intended as a diagnostic tool. Individuals identified as high- or very high-risk should undergo appropriate diagnostic testing."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Suggested management based on CTFPHC recommendations:\n\n| Risk Level | Recommendation |\n| --- | --- |\n| Low to moderate | Routine screening for type 2 diabetes is not recommended. |\n| High | Hemoglobin A1c screening every 3–5 years. |\n| Very high | Hemoglobin A1c screening annually. |\n\nFor additional guidance on type 2 diabetes screening, please refer to the[Canadian Task Force on Preventive Health Care guidelines](https://canadiantaskforce.ca/the-canadian-task-force-on-preventive-health-care-releases-updated-guideline-for-screening-adults-for-type-2-diabetes/)."
+  },
+  "evidence": "Interprétation :\n\n| Score CANRISK | Niveau de risque | Risque de diabète à 10 ans | Recommandation |\n| --- | --- | --- | --- |\n| 0-32 | Faible à modéré | 1-17% | Le CTFPHC recommande de ne pas procéder à un dépistage systématique du diabète de type 2. |\n| 33-42 | Élevé | 33% | Le CTFPHC recommande un dépistage tous les 3-5 ans avec l'A1c. |\n| ≥43 | Très élevé | 50% | Le CTFPHC recommande un dépistage annuel avec l'A1c. |",
+  "more_info": "The CANRISK score is calculated by adding the selected points for each question. Please ask your patient the following questions:\n\n| Question | Points | | |\n| --- | --- | --- | --- |\n| Age, years | 18-44 | 0 | |\n| 45-54 | 7 | | |\n| 55-64 | 13 | | |\n| 65-74 | 15 | | |\n| Gender | Female | 0 | |\n| Male | 6 | | |\n| BMI | <25 kg/m 2 | 0 | |\n| 25-29 kg/m 2 | 4 | | |\n| 30-34 kg/m 2 | 9 | | |\n| ≥35 kg/m 2 | 14 | | |\n| Waist circumference at the level of the belly button (measure after breathing out) | Men | <94 cm (<37 in) | 0 |\n| 94-102 cm (37-40 in) | 4 | | |\n| >102 cm (>40 in) | 6 | | |\n| Women | <80 cm (<31.5 in) | 0 | |\n| 80-88 cm (31.5-35 in) | 4 | | |\n| >88 cm (>35 in) | 6 | | |\n| Physical activity, such as brisk walking for at least 30 minutes each day | Yes | 0 | |\n| No | 1 | | |\n| How often do you eat vegetables or fruits? | Every day | 0 | |\n| Not every day | 2 | | |\n| History of high blood pressure OR prescription for high blood pressure | No or don’t know | 0 | |\n| Yes | 4 | | |\n| History of high blood sugar either from a blood test, during an illness, or during pregnancy | No or don’t know | 0 | |\n| Yes | 14 | | |\n| Given birth to a large baby weighing 9 pounds (4.1 kg) or more | No, don’t know, or not applicable | 0 | |\n| Yes | 1 | | |\n| Family history of diabetes (do not count multiple children or siblings twice) | No or don’t know | 0 | |\n| One of the following: mother, father, brothers/sisters, children | 2 | | |\n| Two of the following: mother, father, brothers/sisters, children | 4 | | |\n| Three of the following: mother, father, brothers/sisters, children | 6 | | |\n| All of the following: mother, father, brothers/sisters, children | 8 | | |\n| Ethnic groups of biological (blood) parents (if more than one group applies, choose the one with the highest score) | White | 0 | |\n| Aboriginal | 3 | | |\n| Other non-white (Latin American, Arab, West Asian) | 3 | | |\n| Black (Afro-Caribbean) | 5 | | |\n| East Asian (Chinese, Vietnamese, Filipino, Korean, etc.) | 10 | | |\n| South Asian (East Indian, Pakistani, Sri Lankan, etc.) | 11 | | |\n| The highest level of education completed | University or college degree | 0 | |\n| Some college or university | 0 | | |\n| High school diploma | 1 | | |\n| Some high school or less | 5 | | |",
+  "short_description": "T2D et prediabetes dépistage.",
+  "medium_description": "Screens pour undiagnosed type 2 diabète mellitus et prediabetes.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "18-44",
+          "value": 0
+        },
+        {
+          "label": "45-54",
+          "value": 7
+        },
+        {
+          "label": "55-64",
+          "value": 13
+        },
+        {
+          "label": "65-74",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Gender",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 25 kg/m 2",
+          "value": 0
+        },
+        {
+          "label": "25-29 kg/m 2",
+          "value": 4
+        },
+        {
+          "label": "30-34 kg/m 2",
+          "value": 9
+        },
+        {
+          "label": "≥35 kg/m 2",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Tour de taille mesuré au niveau de l'ombilic",
+      "tips": "Mesurer après expiration.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q2 == 6",
+      "options": [
+        {
+          "label": "< 94 cm (<37 dans)",
+          "value": 0
+        },
+        {
+          "label": "94-102 cm (37-40 dans)",
+          "value": 4
+        },
+        {
+          "label": ">102 cm (>40 dans)",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Tour de taille mesuré au niveau de l'ombilic",
+      "tips": "Mesurer après expiration.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q2 == 0",
+      "options": [
+        {
+          "label": "< 80 cm (<31.5 dans)",
+          "value": 0
+        },
+        {
+          "label": "80-88 cm (31.5-35 dans)",
+          "value": 4
+        },
+        {
+          "label": ">88 cm (>35 dans)",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Physical activity such as brisk walking pour at least 30 minutes each day",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "À quelle fréquence consommez-vous des légumes ou des fruits ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Chaque jour",
+          "value": 0
+        },
+        {
+          "label": "Pas tous les jours",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "History de élevé pression artérielle OR prescription pour élevé pression artérielle",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non ou ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "History de élevé blood sugar either de blood test, during maladie, ou during grossesse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non ou ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "Given birth pour large baby weighing 9 pounds (4.1 kg) ou more",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non, ne sait pas, ou non applicable",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q11",
+      "label": "Family history de diabète",
+      "tips": "Ne pas compter deux fois plusieurs enfants ou plusieurs frères et sœurs.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non ou ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "L'un des suivants : mère, père, frères/sœurs, enfants",
+          "value": 2
+        },
+        {
+          "label": "Deux des éléments suivants : mère, père, frères/sœurs, enfants",
+          "value": 4
+        },
+        {
+          "label": "Trois des éléments suivants : mère, père, frères/sœurs, enfants",
+          "value": 6
+        },
+        {
+          "label": "Tous les éléments suivants : mère, père, frères/sœurs, enfants",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q12",
+      "label": "Groupes ethniques des parents biologiques (de sang)",
+      "tips": "Si plusieurs groupes s'appliquent, choisissez celui dont le score est le plus élevé.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "White",
+          "value": 0
+        },
+        {
+          "label": "Aboriginal",
+          "value": 3
+        },
+        {
+          "label": "Autre origine non blanche (latino-américaine, arabe, ouest-asiatique)",
+          "value": 3
+        },
+        {
+          "label": "Black (Afro-Caribbean)",
+          "value": 5
+        },
+        {
+          "label": "Est-asiatique (chinois, vietnamien, philippin, coréen, etc.)",
+          "value": 10
+        },
+        {
+          "label": "South Asian (East Indian, Pakistani, Sri Lankan, etc.)",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q13",
+      "label": "Niveau d’études le plus élevé atteint",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Diplôme universitaire ou collégial",
+          "value": 0
+        },
+        {
+          "label": "Études collégiales ou universitaires partielles",
+          "value": 0
+        },
+        {
+          "label": "élevé school diploma",
+          "value": 1
+        },
+        {
+          "label": "Some élevé school ou less",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ekoe JM, Goldenberg R, Katz P. Screening for diabetes in adults. Canadian Journal of Diabetes. 2018;42:S16-S19.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29650090/",
+      "kind": "international"
+    },
+    {
+      "text": "Pottie K, Jaramillo A, Lewin G, et al. Recommendations on screening for type 2 diabetes in adults. CMAJ. 2012;184(15):1687-1696.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23073674/",
+      "kind": "international"
+    },
+    {
+      "text": "Kaczorowski J, Robinson C, Nerenberg K. Development of the CANRISK questionnaire to screen for prediabetes and undiagnosed type 2 diabetes. Canadian Journal of Diabetes. 2009;33(4):381-385.",
+      "href": "https://www.canadianjournalofdiabetes.com/article/S1499-2671(09)34008-3/abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Robinson CA, Agarwal G, Nerenberg K. Validating the CANRISK prognostic model for assessing diabetes risk in Canada’s multi-ethnic population. Chronic Dis Inj Can. 2011;32(1):19-31.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22153173/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Papineau D, Fong M. Piloting the canrisk tool in vancouver coastal health. Chronic Dis Inj Can. 2011;32(1):12-18.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22153172/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glucose-infusion-rate-gir",
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.metabolic-score-insulin-resistance-mets-ir",
+    "calc.findrisc-finnish-diabetes-risk-score"
+  ],
+  "source_logic_hash": "9cab945456a17b2d3bc590d1c5b04c6c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.findrisc-finnish-diabetes-risk-score",
+      "text": "Finnish Diabetes Risk Score (FINDRISC)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10537,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

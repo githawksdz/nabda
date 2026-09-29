@@ -1,0 +1,111 @@
+{
+  "id": "calc.steinhart-model-acute-heart-failure-ahf-undifferentiated-dyspnea",
+  "slug": "steinhart-model-acute-heart-failure-ahf-undifferentiated-dyspnea",
+  "language": "fr",
+  "title": "Steinhart modèle pour aigu insuffisance cardiaque (AHF) dans Undifferentiated Dyspnea",
+  "short_title": "Steinhart modèle pour AHF",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "cardiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Dyspnea"
+  ],
+  "abbreviations": [
+    "Acute heart failure",
+    "AHF",
+    "undifferentiated dyspnea",
+    "steinhart model"
+  ],
+  "dosing": false,
+  "formula": "Probabilité de diagnostic clinique d'ICA = 1 / (1 + e^y^)\n\nOù y = 8 + 0,011 x âge – 5,9 × probabilité pré-test – 2,3 × log~10~(NT-proBNP) + 0,82 × probabilité pré-test × log10(NT-proBNP)\n\nRemarque : la probabilité pré-test est exprimée en % ; le NT-proBNP est exprimé en pg/mL (pmol/L).",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Utilise spécifiquement le NT-proBNP, et non le BNP standard, qui peut ne pas être disponible dans tous les contextes.\n- À appliquer de préférence dans les situations où le diagnostic est ambigu (c'est-à-dire lorsque la probabilité pré-test n'est ni très faible ni très élevée)."
+  },
+  "next_steps": {
+    "advice": "Rechercher d'autres causes de dyspnée dans les cas où l'insuffisance cardiaque aiguë est écartée.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "AHF diagnostic avec NT-proBNP.",
+  "medium_description": "Diagnoses aigu insuffisance cardiaque avec NT-proBNP dans undifferentiated dyspneic patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pre",
+      "label": "Pre-test probabilité",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bnp",
+      "label": "NT-proBNP",
+      "optional": false,
+      "unit": "nt_probnp",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Steinhart B, Thorpe KE, Bayoumi AM, Moe G, Januzzi JL, Mazer CD. Improving the diagnosis of acute heart failure using a validated prediction model. J Am Coll Cardiol. 2009;54(16):1515-21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19815122",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Steinhart BD, Levy P, Vandenberghe H, et al. A Randomized Control Trial Using a Validated Prediction Model for Diagnosing Acute Heart Failure in Undifferentiated Dyspneic Emergency Department Patients-Results of the GASP4Ar Study. J Card Fail. 2017;23(2):145-152.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565045",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.seattle-heart-failure-model",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent"
+  ],
+  "source_logic_hash": "e971fbab2c33f41fef376924f7a47510",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10065,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

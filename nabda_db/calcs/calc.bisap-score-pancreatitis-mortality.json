@@ -1,0 +1,189 @@
+{
+  "id": "calc.bisap-score-pancreatitis-mortality",
+  "slug": "bisap-score-pancreatitis-mortality",
+  "language": "fr",
+  "title": "Score BISAP pour la mortalité de la pancréatite",
+  "short_title": "Score BISAP pour la pancréatite",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Pancréatite"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Vomissements"
+  ],
+  "abbreviations": [
+    "ranson"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "",
+    "when": "Le BISAP est un score plus récent que les critères de Ranson, plus anciens, et ne nécessite pas de données recueillies 48 heures après l’admission hospitalière du patient.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Le contrôle de la douleur et l’hydratation constituent les piliers de la prise en charge de la pancréatite. La mise au repos du tube digestif était historiquement également utilisée, mais les recommandations modernes, telles que celles de l’American College of Gastroenterology, préconisent une alimentation précoce en cas de pancréatite aiguë légère[(Tenner 2013)](https://pubmed.ncbi.nlm.nih.gov/23896955/).",
+    "critical_actions": "",
+    "management": "Les patients présentant des caractéristiques atypiques ou une aggravation de l’état clinique peuvent bénéficier d’une imagerie par TDM et/ou d’une consultation chirurgicale afin d’évaluer les signes de pancréatite nécrosante ou la nécessité d’une intervention chirurgicale."
+  },
+  "evidence": "",
+  "more_info": "Des scores BISAP croissants sont également corrélés à la gravité de la pancréatite et au risque de pancréatite nécrosante. Le BISAP a montré des performances similaires à des scores plus étendus, comme [les critères de Ranson](nabda:calc.ransons-criteria-pancreatitis-mortality) et [l'APACHE-II.](nabda:calc.apache-ii-score)",
+  "short_description": "Mortalité dans la pancréatite.",
+  "medium_description": "Predicts risque de mortalité dans pancreatitis avec fewer variables than Ranson's.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bun_25",
+      "label": "BUN >25 mg/dL (8,92 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mental_status",
+      "label": "Altération de l’état mental",
+      "tips": "Défini comme une désorientation, une léthargie, une somnolence, un coma ou une stupeur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sirs_criteria",
+      "label": "[≥2 SIRS Criteria](nabda:calc.sirs-sepsis-septic-shock-criteria)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_60",
+      "label": "Âge > 60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pleural_effusion",
+      "label": "Épanchement pleural présent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wu BU, Johannes RS, Sun X, Tabak Y, Conwell DL, Banks PA. The early prediction of mortality in acute pancreatitis: a large population-based study. Gut. 2008;57(12):1698-703.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18519429",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Papachristou GI, Muddana V, Yadav D, et al. Comparison of BISAP, Ranson's, APACHE-II, and CTSI scores in predicting organ failure, complications, and mortality in acute pancreatitis. Am J Gastroenterol. 2010;105(2):435-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19861954",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gompertz M, Fernández L, Lara I, Miranda JP, Mancilla C, Berger Z. [Bedside index for severity in acute pancreatitis (BISAP) score as predictor of clinical outcome in acute pancreatitis: retrospective review of 128 patients]. Rev Med Chil. 2012;140(8):977-83.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23282769",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tenner S, Baillie J, Dewitt J, Vege SS. American College of Gastroenterology guideline: management of acute pancreatitis. Am J Gastroenterol. 2013;108(9):1400-15.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23896955/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ransons-criteria-pancreatitis-mortality",
+    "calc.apache-ii-score",
+    "calc.sirs-sepsis-septic-shock-criteria"
+  ],
+  "source_logic_hash": "b8da5fd4bbb66b5f4cae463ce81efd20",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1735,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar u = parseFloat(bun_25) + parseFloat(mental_status) + parseFloat(sirs_criteria) + parseFloat(age_60) + parseFloat(pleural_effusion);\nif (u == 0) { msg = 'Patients with a BISAP Score of 0 had <1% risk of mortality, and one study stratified patients with a score \\u22642, given a mortality risk of 1.9%.';\n    mini_msg = '<1% risk of mortality.'; }\nif (u > 0) { msg = 'Patients with a BISAP Score >0 had an increasing risk of mortality, with mortality increasing significantly with a score of 3 or greater. A score of 5 had a mortality rate of 22%.';\n    mini_msg = 'Increasing risk of mortality.'; } \n    \ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '1735_BISAP Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg });",
+  "before_use": null,
+  "instructions": "Les données doivent être recueillies au cours des 24 premières heures de l’évaluation du patient.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Bechien Wu"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "8caf7f596d6488ef118636c13196d579060e8d1dfbdc92a5949f5df792234b27"
+}

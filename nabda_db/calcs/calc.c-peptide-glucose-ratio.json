@@ -1,0 +1,176 @@
+{
+  "id": "calc.c-peptide-glucose-ratio",
+  "slug": "c-peptide-glucose-ratio",
+  "language": "fr",
+  "title": "Rapport peptide C/glucose",
+  "short_title": "Rapport peptide C/glucose",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hyperglycémie",
+    "Obésité",
+    "Hypoglycémie"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxieux",
+    "Vertiges",
+    "Fatigue",
+    "Perte d'appétit",
+    "Nausée",
+    "Déficit neurologique",
+    "Engourdissement",
+    "Palpitations",
+    "Polyurie",
+    "Soins préventifs / Dépistage",
+    "Crise convulsive",
+    "Vomissements",
+    "Faiblesse",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "C-Peptide to Glucose Ratio",
+    "C-Peptide/Glucose Ratio",
+    "CGR",
+    "C-peptide",
+    "CPR",
+    "postprandial C-peptide to glucose ratio",
+    "PCPRI",
+    "c-peptide index",
+    "CPI",
+    "glucose",
+    "diabetes",
+    "DM",
+    "type 1 diabetes",
+    "type 2 diabetes",
+    "prediabetes",
+    "hba1c",
+    "insulin",
+    "β cell",
+    "beta cell",
+    "endogenous insulin secretion",
+    "fasting",
+    "b cell"
+  ],
+  "dosing": false,
+  "formula": "**Postprandial** C-peptide to glucose ratio = serum C-peptide level (ng/mL) / plasma glucose level (mg/dL) × 100 (by[Saisho et al. (2016)](https://pubmed.ncbi.nlm.nih.gov/27196896/))\n\n**Fasting** C-peptide to glucose ratio = serum C-peptide level (pmol/L) / plasma glucose level (mg/dL) (by[Fritsche et al. (2023)](https://pubmed.ncbi.nlm.nih.gov/37308105/))",
+  "how_to_use": {
+    "why": "- Les taux de peptide C sont considérés comme une bonne estimation de la sécrétion d’insuline.\n- Le rapport peptide C/glucose pourrait permettre une meilleure évaluation de la fonction des cellules β que le peptide C seul, car il tient compte de la concentration actuelle de glucose.",
+    "when": "- Utilisé pour évaluer la production endogène d’insuline et la fonction des cellules β chez les patients diabétiques.\n- Aide à différencier les types de diabète, ce qui peut guider les décisions thérapeutiques, notamment la nécessité d’une insulinothérapie.",
+    "pearls": "- Les taux de peptide C à jeun et postprandiaux sont utilisés en pratique clinique et en recherche.\n\n- Les taux à jeun ont tendance à présenter moins de variabilité et peuvent fournir une mesure plus constante de la sécrétion basale d’insuline.\n- En revanche, les taux postprandiaux peuvent mieux refléter la capacité fonctionnelle maximale des cellules β.\n- Le jugement clinique doit guider le choix de la condition de test appropriée.\n- Non recommandé chez les patients atteints de maladie rénale chronique (eGFR <60 mL/min/1.74m^2^) ; le peptide C est éliminé par voie rénale, et une fonction rénale réduite peut entraîner des taux faussement élevés."
+  },
+  "next_steps": {
+    "advice": "- Les résultats reflètent la capacité de sécrétion d’insuline du patient.\n- Un déficit en insuline est en faveur d’un diagnostic de diabète de type 1, tandis qu’une sécrétion préservée est plus compatible avec un diabète de type 2 ; toutefois, il faut savoir qu’un déficit en insuline peut également se développer chez les patients atteints d’un diabète de type 2 ancien ou sévère en raison d’une défaillance progressive des cellules β.",
+    "critical_actions": "Utiliser les résultats conjointement avec le jugement clinique et le contexte clinique plus large lors du diagnostic et de la prise en charge des patients diabétiques.",
+    "management": "Interprétation proposée et considérations de prise en charge :\n\n- **Carence en insuline/perte de la fonction des cellules β :** L’insulinothérapie est nécessaire.\n- **Sécrétion d’insuline altérée :** Une insuline basale associée à d’autres antidiabétiques peut être appropriée.\n- **Sécrétion d’insuline/fonction des cellules β préservée :** L’insuline est généralement inutile."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Rapport C-peptide/glucose postprandial | Capacité de sécrétion d'insuline endogène |\n| --- | --- |\n| <2 | Perte de la fonction des cellules β |\n| ≥2 | Fonction des cellules β préservée |\n\n| Rapport C-peptide/glucose à jeun | Capacité de sécrétion d'insuline endogène |\n| --- | --- |\n| <2 | Déficit de sécrétion d'insuline |\n| 2-5 | Sécrétion d'insuline endogène altérée |\n| >5 | Sécrétion d'insuline endogène préservée |",
+  "short_description": "Fonction sécrétoire des cellules bêta.",
+  "medium_description": "Assesses beta cell secretory function chez les patients avec diabète/prediabetes.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "picker",
+      "label": "État de mesure",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "État postprandial",
+          "value": 0
+        },
+        {
+          "label": "État de jeûne",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "cpr",
+      "label": "C-peptide sérique",
+      "optional": false,
+      "unit": "c_peptide_cgr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "glu",
+      "label": "Glycémie plasmatique",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Saisho Y. Postprandial C-Peptide to Glucose Ratio as a Marker of β Cell Function: Implication for the Management of Type 2 Diabetes. Int J Mol Sci. 2016;17(5). doi:10.3390/ijms17050744",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27196896/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fritsche A, Heni M, Peter A, et al. Considering Insulin Secretory Capacity as Measured by a Fasting C-Peptide/Glucose Ratio in Selecting Glucose-Lowering Medications. Exp Clin Endocrinol Diabetes. 2022;130(3):200-204.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32947641/",
+      "kind": "other"
+    },
+    {
+      "text": "Fritsche A. Insulin Secretion Capacity as a Crucial Feature to Distinguish Type 1 From Type 2 Diabetes and to Indicate the Need for Insulin Therapy - A Critical Discussion of the ADA/EASD Consensus Statement on the Management of Type 1 Diabetes in Adults. Exp Clin Endocrinol Diabetes. 2023;131(9):500-503.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37308105/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.metabolic-score-insulin-resistance-mets-ir",
+    "calc.glucose-infusion-rate-gir"
+  ],
+  "source_logic_hash": "c14b4767863233a26680d3adfa8af4ad",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10529,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar picker = parseFloat(picker);\nif (UOMSYSTEM == true) { \n    var glu = parseFloat(glu); \n    var cpr = parseFloat(cpr);\n}\nif (UOMSYSTEM == false) {\n    var glu = parseFloat(glu) / 0.0555; \n    var cpr = parseFloat(cpr) * 331.093;\n}\n\nif (picker == 1) {\n    var cgr = cpr / glu;\n    var header = 'Fasting';\n    if (cgr < 2) {\n        var msg = 'Insulin secretion deficit';\n    } else if (cgr > 5) {\n        var msg = 'Preserved endogenous insulin secretion';\n    } else {\n        var msg = 'Impaired endogenous insulin secretion';\n    }\n} else {\n    var cgr = (cpr * 0.0030203) / glu * 100;\n    var header = 'Postprandial';\n    if (cgr < 2) {\n        var msg = 'Loss of β cell function';\n    } else {\n        var msg = 'Preserved β cell function';\n    }\n}\n\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: cgr.toFixed(2),\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: '10529_C-Peptide to Glucose Ratio_result',\n    value: cgr.toFixed(2),\n    value_text: '',\n    message: header + ' C-Peptide to Glucose Ratio' + '<br/><br/>' + msg\n});\n\n\n\n",
+  "before_use": null,
+  "instructions": "- Cet outil prend en charge les mesures postprandiales (environ 2 heures après un repas) et à jeun (8–12 heures).\n- Sélectionnez l'état de mesure correspondant au moment où les prélèvements de laboratoire ont été effectués, et vérifiez toutes les unités, car ces paramètres peuvent influencer significativement les résultats.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Yoshifumi Saisho"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "engine_sha256": "3226e59d1932f2df9dfb1dbfae3b36737b4231e71f2a6997cd556c3c328964ef"
+}

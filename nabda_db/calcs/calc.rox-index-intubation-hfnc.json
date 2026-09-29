@@ -1,0 +1,111 @@
+{
+  "id": "calc.rox-index-intubation-hfnc",
+  "slug": "rox-index-intubation-hfnc",
+  "language": "fr",
+  "title": "ROX index pour Intubation after HFNC",
+  "short_title": "ROX index pour Intubation",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Maladie coronarienne",
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "HFNC failure, ROX Index for Intubation after HFNC, ROX Index for Intubation, intubation, high-flow nasal cannula, hfnc, covid-19, covid19, covid, coronavirus, covid 19, rox index"
+  ],
+  "dosing": false,
+  "formula": "Indice ROX = SpO₂/FiO₂*, % / Fréquence respiratoire, respirations/min\n\n*Estimation de la FiO₂ à partir des débits d'oxygène et des dispositifs d'administration :\n\n| Type d'administration d'O₂ | Débits, L/min | FiO₂ |\n| --- | --- | --- |\n| Lunettes nasales | 1-6 | ~4 % de FiO₂ ajoutée au-dessus de l'air ambiant* par 1 L/min Air ambiant = 21 % 1 L/min = 25 % 2 L/min = 29 % 3 L/min = 33 % 4 L/min = 37 % 5 L/min = 41 % 6 L/min = 45 % |\n| Masque facial simple | ~6-12 | 35-60 %* |\n| Masque à réserve (non-rebreather) | 10-15 | ~70-90 % |\n| Lunettes nasales à haut débit | Jusqu'à 60 | 30-100 % |\n\n*Varie selon la fréquence respiratoire et la ventilation minute.",
+  "how_to_use": {
+    "why": "Bien qu'il n'ait pas été validé de manière externe, l'indice ROX est un calcul simple au lit du patient utilisant trois variables cliniques et constitue un moyen facile de résumer le degré d'insuffisance respiratoire hypoxémique d'un patient ; il a été créé et étudié pour prédire la nécessité d'intubation après HNFD, ce qui revêt une importance particulière dans la COVID-19.",
+    "when": "Après HNFD, lors de la réévaluation, l'indice ROX peut aider à identifier les patients dont les HNFD échoueront et qui devront évoluer vers l'intubation pour un support ventilatoire supplémentaire.",
+    "pearls": "- Voir notre tableau ci-dessous pour des estimations courantes de la FiO₂ selon le dispositif d'administration d'oxygène et les débits d'oxygène.\n- Un indice plus élevé est « meilleur », car il suggère une meilleure saturation en oxygène, un besoin en FiO₂ plus faible et/ou moins de tachypnée."
+  },
+  "next_steps": {
+    "advice": "- Intégrer toujours les tendances du ROX avec le travail respiratoire, l'état neurologique, les constantes vitales et les données biologiques pertinentes lors de la décision d'intubation.\n- Des valeurs de ROX basses ou en baisse orientent vers un échec des HNFD et un besoin d'intubation plus précoce, tandis que des valeurs élevées ou en hausse justifient la poursuite des HNFD.",
+    "critical_actions": "Ne jamais retarder l'intubation lorsque les signes cliniques indiquent une décompensation respiratoire imminente, quel que soit le score numérique.",
+    "management": "À 12 heures, si le ROX est :\n\n- **≥4,88 ou en hausse :**\n\n - Poursuivre les HNFD.\n - Sevrer la FiO₂ selon la tolérance.\n - Réévaluer régulièrement (p. ex., toutes les 2–4 heures).\n- **3,85–4,87 ou stable :**\n\n - Optimiser les HNFD (augmenter le débit, encourager la respiration bouche fermée, minimiser les fuites).\n - Traiter la cause sous-jacente et les facteurs réversibles.\n - Réévaluer et recalculer le score dans 1–2 heures.\n- **<3,85 ou en baisse rapide :** Discuter et se préparer à une intubation précoce ou escalader vers la VNI selon le protocole local."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n- Un indice ROX ≥4,88 mesuré à 2, 6 ou 12 heures après l'initiation des lunettes nasales à haut débit (HNFD) est associé à un risque plus faible d'intubation.\n- Pour un indice ROX <3,85, le risque d'échec des HNFD est élevé et l'intubation du patient doit être discutée.\n- Si l'indice ROX est compris entre 3,85 et <4,88, le score peut être recalculé une à deux heures plus tard pour une évaluation complémentaire.",
+  "short_description": "HFNC défaillance.",
+  "medium_description": "Predicts élevé-flow nasal cannula (HFNC) défaillance/need pour intubation.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "spo2",
+      "label": "SpO₂",
+      "optional": false,
+      "unit": "o2_sat",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fio2",
+      "label": "FiO₂",
+      "tips": "Voir [Données probantes](#evidence) pour estimer la FiO₂ à partir des débits d'oxygène et des modes d'administration",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "rr",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "unit": "rr",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Roca O, Messika J, Caralt B, et al. Predicting success of high-flow nasal cannula in pneumonia patients with hypoxemic respiratory failure: The utility of the ROX index. J Crit Care. 2016;35:200-5.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0883944116300946?via%3Dihub",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Roca O, Caralt B, Messika J, et al. An Index Combining Respiratory Rate and Oxygenation to Predict Outcome of Nasal High-Flow Therapy. Am J Respir Crit Care Med. 2019;199(11):1368-1376.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30576221",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.veterans-health-administration-covid-19-vaco-index-covid-19-mortality",
+    "calc.covid-risk"
+  ],
+  "source_logic_hash": "b505753dd1d6c49e91a738ce1367e91f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10302,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

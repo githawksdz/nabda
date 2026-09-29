@@ -1,0 +1,245 @@
+{
+  "id": "calc.ocular-hypertension-treatment-study-ohts-calculator",
+  "slug": "ocular-hypertension-treatment-study-ohts-calculator",
+  "language": "en",
+  "title": "Ocular hypertension traitement Study (OHTS) calculateur",
+  "short_title": "OHTS calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [],
+  "diseases": [
+    "Glaucoma"
+  ],
+  "chief_complaints": [
+    "Perte de vision"
+  ],
+  "abbreviations": [
+    "glaucoma",
+    "open-angle glaucoma",
+    "ocular hypertensive",
+    "OHTS",
+    "ocular hypertension treatment study"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | 30-44 | 0 |\n| 45-54 | 1 | |\n| 55-64 | 2 | |\n| 65-74 | 3 | |\n| ≥75 | 4 | |\n| Mean intraocular pressure*, mmHg | <22 | 0 |\n| 22 to <24 | 1 | |\n| 24 to <26 | 2 | |\n| 26 to <28 | 3 | |\n| ≥28 | 4 | |\n| Mean central corneal thickness*, µm | >600 | 0 |\n| 576–600 | 1 | |\n| 551–575 | 2 | |\n| 526–550 | 3 | |\n| ≤525 | 4 | |\n| Mean vertical cup-to-disc ratio by contour | <0.3 | 0 |\n| 0.3 to <0.4 | 1 | |\n| 0.4 to <0.5 | 2 | |\n| 0.5 to <0.6 | 3 | |\n| ≥0.6 | 4 | |\n| Mean pattern standard deviation**, dB | <1.8 | 0 |\n| 1.8 to <2.0 | 1 | |\n| 2.0 to <2.4 | 2 | |\n| 2.4 to <2.8 | 3 | |\n| ≥2.8 | 4 | |\n\n*Mean of three measurements per eye.\n\n**2 measurements per eye of: Humphrey full threshold 30-2, SITA Standard 30-2 or 24-2, or loss of variance from Octopus 32-2.",
+  "how_to_use": {
+    "why": "Aids in shared decision making with patients regarding whether to initiate treatment for ocular hypertension based on the five-year risk of progression to open angle glaucoma.",
+    "when": "Use in an outpatient setting in patients 30-80 years old with ocular hypertension to assess need for initial treatment to reduce the likelihood of progression to glaucoma.",
+    "pearls": "- The original studies used patients with a baseline intraocular pressure (IOP) of 22 to 32 mmHg.\n- Not validated in patients under 30 years of age or over 80 years of age.\n- Primarily developed from studies looking at the early development of primary open angle glaucoma (POAG) and has little utility in later stages of glaucoma.\n- Patients with potential secondary causes of elevated IOP including pigment dispersion or pseudoexfoliation should be excluded, as well as patients with non-glaucomatous reasons for visual field loss.\n- There are other established risk factors for the development of POAG, and these should be taken into account separately."
+  },
+  "next_steps": {
+    "advice": "- Patients with a score between 0-6 can be observed every 6 months.\n- Patients with a score between 7-12 should be counseled about the risks and benefits of starting treatment versus close observation.\n- Patients with a score >12 should strongly consider initiating treatment.",
+    "critical_actions": "",
+    "management": "- Initiation of IOP lowering therapy.\n- Close monitoring with visual field and optic nerve head imaging every 3-12 months, depending on specific patient parameters."
+  },
+  "evidence": "[Ocular Hypertension Treatment Study (2002)](https://www.ncbi.nlm.nih.gov/pubmed/12049574): This randomized controlled trial evaluated 1,636 patients with ocular hypertension without glaucomatous field or optic nerve loss and found that lowering IOP was beneficial in preventing the progression to glaucoma. This study also identified clinical characteristics that predict the onset of primary open angle glaucoma.\n\nData from the original OHTS group was pooled with data from the European Glaucoma Prevention Study (EGPS) group to develop with a model to predict five year progression to glaucoma based on characteristics identified in the original study.\n\nThe OHTS/EGPS model has been validated in subsequent studies referenced below.",
+  "more_info": "Interpretation:\n\n| OHTS Score | 5 year risk of developing POAG | Risk - Recommendation |\n| --- | --- | --- |\n| 0-6 | ≤4.0% | Low - Recommend observation every 6 months |\n| 7-8 | 10% | Intermediate - Recommend counseling on risks/benefits of treatment versus close observation |\n| 9-10 | 15% | |\n| 11-12 | 20% | |\n| >12 | ≥33% | High - Recommend initiating treatment |",
+  "short_description": "Primaire open angle glaucoma prevention.",
+  "medium_description": "Identifies patients that peut êtrenefit de therapy pour lower intraocular pressure (IOP).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "30-44",
+          "value": 0
+        },
+        {
+          "label": "45-54",
+          "value": 1
+        },
+        {
+          "label": "55-64",
+          "value": 2
+        },
+        {
+          "label": "65-74",
+          "value": 3
+        },
+        {
+          "label": "≥75",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "iop",
+      "label": "Mean intraocular pressure, mmHg",
+      "tips": "Mean of three measurements per eye",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 22",
+          "value": 0
+        },
+        {
+          "label": "22 pour <24",
+          "value": 1
+        },
+        {
+          "label": "24 pour <26",
+          "value": 2
+        },
+        {
+          "label": "26 pour <28",
+          "value": 3
+        },
+        {
+          "label": "≥28",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cct",
+      "label": "Mean central corneal thickness, µm",
+      "tips": "Mean of three measurements per eye",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">600",
+          "value": 0
+        },
+        {
+          "label": "576–600",
+          "value": 1
+        },
+        {
+          "label": "551–575",
+          "value": 2
+        },
+        {
+          "label": "526–550",
+          "value": 3
+        },
+        {
+          "label": "≤525",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cdr",
+      "label": "Mean vertical cup-pour-disc ratio par contour",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 0.3",
+          "value": 0
+        },
+        {
+          "label": "0.3 pour <0.4",
+          "value": 1
+        },
+        {
+          "label": "0.4 pour <0.5",
+          "value": 2
+        },
+        {
+          "label": "0.5 pour <0.6",
+          "value": 3
+        },
+        {
+          "label": "≥0.6",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stdev",
+      "label": "Mean pattern standard deviation, dB",
+      "tips": "2 measurements per eye of: Humphrey full threshold 30-2, SITA Standard 30-2 or 24-2, or loss of variance from Octopus 32-2",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.8",
+          "value": 0
+        },
+        {
+          "label": "1.8 pour <2.0",
+          "value": 1
+        },
+        {
+          "label": "2.0 pour <2.4",
+          "value": 2
+        },
+        {
+          "label": "2.4 pour <2.8",
+          "value": 3
+        },
+        {
+          "label": "≥2.8",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kass MA, Heuer DK, Higginbotham EJ, et al. The Ocular Hypertension Treatment Study A Randomized Trial Determines That Topical Ocular Hypotensive Medication Delays or Prevents the Onset of Primary Open-Angle Glaucoma. Arch Ophthalmol. 2002;120(6):701–713. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12049574 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "The Ocular Hypertension Treatment Study Group, European Glaucoma Prevention Study Group. The Accuracy and Clinical Application of Predictive Models for Primary Open-Angle Glaucoma in Ocular Hypertensive Individuals. Ophthalmology. 2008; 115(11): 2030-2036.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3117658/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Gordon MO, Beiser JA, Brandt JD, et al. The Ocular Hypertension Treatment Study Baseline Factors That Predict the Onset of Primary Open-Angle Glaucoma. Arch Ophthalmol. 2002;120(6):714–720. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12049575 ",
+      "kind": "other"
+    },
+    {
+      "text": "Gordon MO. Ocular Hypertension Treatment Study Group, European Prevention Study Group. Validated prediction model for the development of primary open-angle glaucoma in individuals with ocular hypertension. Ophthalmology. 2007;114:10–9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17095090 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.migraine-treatment-optimization-questionnaire-mtoq-4",
+    "calc.dire-score-opioid-treatment",
+    "calc.barcelona-clinic-liver-cancer-bclc-staging-classification-treatment-guidelines"
+  ],
+  "source_logic_hash": "095bf11067c427a103e796ec545e0a31",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10025,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

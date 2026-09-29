@@ -1,0 +1,344 @@
+{
+  "id": "calc.pulmonary-embolism-severity-index-pesi",
+  "slug": "pulmonary-embolism-severity-index-pesi",
+  "language": "fr",
+  "title": "Index de gravité de l'embolie pulmonaire (PESI)",
+  "short_title": "Score PESI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "PE"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "- Le PESI est conçu pour stratifier le risque des patients ayant reçu un diagnostic de PE afin de déterminer la gravité de leur maladie.\n- Cela peut aider les médecins à prendre des décisions concernant la prise en charge des patients susceptibles de pouvoir être traités en ambulatoire, ainsi qu’à attirer l’attention sur ceux qui sont jugés à haut risque et pourraient bénéficier de niveaux de soins plus élevés.",
+    "when": "- Dans le contexte d'un patient chez qui un diagnostic de PE a été posé, le PESI peut être utilisé pour déterminer la mortalité et la morbidité à long terme.\n- Il a été validé en externe.",
+    "pearls": "- Détermine le risque de mortalité et la gravité des complications.\n- Ne prend pas en compte :\n\n - Données de laboratoire.\n -"
+  },
+  "next_steps": {
+    "advice": "- Les déterminants sociaux de la santé doivent être pris en compte avant d’envisager une prise en charge ambulatoire (y compris l’accès aux anticoagulants et un suivi rapide pour les explorations et la prise en charge complémentaires, généralement dans les 7 jours).\n- Compte tenu de la faible mortalité de l’EP à faible risque, la prise en charge ambulatoire permettrait d’économiser des coûts de santé significatifs par rapport à l’hospitalisation (~5000 EUR par admission évitée selon [Ghazvinian et al, 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7711226/)).\n- Pour les patients jugés à risque très faible (score ≤ 65), toutes les études montraient une mortalité à 30 jours < 2 % ; dans la première validation, le risque faible (classe I et II) présentait une mortalité à 90 jours de 1,1 %.\n- Un [essai de non-infériorité](https://pubmed.ncbi.nlm.nih.gov/21703676/) a démontré que les classes I et II auraient pu être traitées en ambulatoire en l’absence d’autres problèmes médicaux ou sociaux.",
+    "critical_actions": "- L’insuffisance rénale ou les patients présentant d’autres comorbidités significatives doivent être considérés séparément, car ces patients n’ont pas été inclus dans l’étude de validation.\n- Le PESI prédit mal la morbidité/mortalité dans les groupes à risque intermédiaire.\n- Les paramètres mesurés par angio-TDM peuvent être supérieurs au PESI pour prédire la mortalité à 30 jours.\n- Les taux de Pro-BNP, la fonction du VD et la présence d’un thrombus du cœur droit peuvent également influencer l’évaluation du risque d’un patient.",
+    "management": "- Si le patient est considéré à très faible risque (≤ 65) ou à faible risque (66-85) selon le score PESI :\n\n - Il présente un risque global faible de mortalité ou de morbidité grave.\n - Envisager une prise en charge ambulatoire de l’EP si cela est cliniquement approprié et si les facteurs sociaux le permettent.\n- Si le patient est considéré à risque intermédiaire (86-105), élevé (106-125) ou très élevé (>125) :\n\n - Il présente un risque global élevé de mortalité et de morbidité grave.\n - Envisager des niveaux de soins plus élevés (p. ex., ICU) pour ceux ayant des scores plus élevés."
+  },
+  "evidence": "",
+  "more_info": "**Interpretation:**\n\n| PESI Score | Class | Risk Level |\n| --- | --- | --- |\n| 0-65 | I | Very low risk |\n| 66-85 | II | Low risk |\n| 86-105 | III | Intermediate risk |\n| 106-125 | IV | High risk |\n| ≥125 | V | Very high risk |",
+  "short_description": "Mortalité de l'EP.",
+  "medium_description": "Prédit le devenir à 30 jours des patients atteints d’embolie pulmonaire.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Antécédent de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_failure",
+      "label": "Antécédents d’insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chronic_lung_disease",
+      "label": "Antécédents de maladie pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_rate_110",
+      "label": "Fréquence cardiaque ≥110",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "systolic_blood_pressure_100",
+      "label": "Pression artérielle systolique <100 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "respiratory_rate_30",
+      "label": "Fréquence respiratoire ≥30",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "temperature_36",
+      "label": "Température <36°C/96,8°F",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "altered_mental_status",
+      "label": "Altération de l'état de conscience (disorientation, lethargy, stupor, ou coma)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "o2_saturation_90",
+      "label": "Saturation en O2 < 90 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Writing Committee Members, Creager MA, Barnes GD, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN guideline for the evaluation and management of acute pulmonary embolism in adults: a report of the American College of Cardiology/American Heart Association joint committee on clinical practice guidelines. Circulation. 2026;153(12):e977-e1051. doi:10.1161/CIR.0000000000001415",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+      "kind": "international"
+    },
+    {
+      "text": "Aujesky D, Obrosky DS, Stone RA, Auble TE, Perrier A, Cornuz J, Roy PM, Fine MJ. Derivation and validation of a prognostic model for pulmonary embolism. Am J Respir Crit Care Med. 2005 Oct 15;172(8):1041-6. Epub 2005 Jul 14. PubMed PMID: 16020800; PubMed Central PMCID: PMC2718410.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16020800",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aujesky D, Roy PM, Verschuren F, Righini M, Osterwalder J, Egloff M, Renaud B,Verhamme P, Stone RA, Legall C, Sanchez O, Pugh NA, N'gako A, Cornuz J, Hugli O, Beer HJ, Perrier A, Fine MJ, Yealy DM. Outpatient versus inpatient treatment for patients with acute pulmonary embolism: an international, open-label, randomised,non-inferiority trial. Lancet. 2011 Jul 2;378(9785):41-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21703676",
+      "kind": "other"
+    },
+    {
+      "text": "Venetz C, Jiménez D, Méan M, Aujesky D. A comparison of the original and simplified Pulmonary Embolism Severity Index. Thrombosis and haemostasis. 2011;106(09):423-8. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21713328/",
+      "kind": "other"
+    },
+    {
+      "text": "Squizzato A, Donadini MP, Galli L, Dentali F, Aujesky D, Ageno W. Prognostic clinical prediction rules to identify a low‐risk pulmonary embolism: a systematic review and meta‐analysis. Journal of thrombosis and haemostasis. 2012 Jul 1;10(7):1276-90.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22498033/",
+      "kind": "other"
+    },
+    {
+      "text": "Zwierzina D, Limacher A, Méan M, Righini M, Jaeger K, BEER HJ, Frauchiger B, Osterwalder J, Kucher N, Matter CM, Banyai M. Prospective comparison of clinical prognostic scores in elder patients with a pulmonary embolism. Journal of thrombosis and haemostasis. 2012 Nov;10(11):2270-6.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22985129/",
+      "kind": "other"
+    },
+    {
+      "text": "Mizuno A, Yamamoto T, Tanabe Y, Obayashi T, Takayama M, Nagao K, Tokyo CCU Network Scientific Committee. Pulmonary embolism severity index and simplified pulmonary embolism severity index risk scores are useful to predict mortality in Japanese patients with pulmonary embolism. Circulation Journal. 2015 Mar 25;79(4):889-91.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25739720/",
+      "kind": "other"
+    },
+    {
+      "text": "Elias A, Mallett S, Daoud-Elias M, Poggi JN, Clarke M. Prognostic models in acute pulmonary embolism: a systematic review and meta-analysis. BMJ Open. 2016;6(4):e010324. doi:10.1136/bmjopen-2015-010324",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27130162/",
+      "kind": "other"
+    },
+    {
+      "text": "Nguyen E, Caranfa JT, Lyman GH, Kuderer NM, Stirbis C, Wysocki M, Coleman CI, Weeda ER, Kohn CG. Clinical prediction rules for mortality in patients with pulmonary embolism and cancer to guide outpatient management: a meta‐analysis. Journal of Thrombosis and Haemostasis. 2018 Feb 1;16(2):279-92.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29215781/",
+      "kind": "other"
+    },
+    {
+      "text": "Jaquet E, Tritschler T, Stalder O, Limacher A, Méan M, Rodondi N, Aujesky D. Prediction of short‐term prognosis in elderly patients with acute pulmonary embolism: validation of the RIETE score. Journal of thrombosis and haemostasis. 2018 Jul 1;16(7):1313-20.",
+      "href": "https://www.jthjournal.org/article/S1538-7836(22)02326-1/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Li X, Hu Y, Lin P, Zhang J, Tang Y, Yi Q, Liang ZA, Zhou H, Wang M. Comparison of different clinical prognostic scores in patients with pulmonary embolism and active cancer. Thrombosis and Haemostasis. 2021 Jun;121(06):834-44.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33450779/",
+      "kind": "other"
+    },
+    {
+      "text": "Murguia AR, Segovia F, Ayvali F, Brockman M, Prakash S, Singh V, Dwivedi AK, Rajachandran M, Mukherjee D, Nickel NP. Evaluation of four validated risk scores to predict outcomes in Hispanic patients with acute pulmonary embolism. Angiology. 2025 Aug;76(7):629-36.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38290712/",
+      "kind": "other"
+    },
+    {
+      "text": "Donzé J, Le Gal G, Fine MJ, Roy PM, Sanchez O, Verschuren F, Cornuz J, Meyer G, Perrier A, Righini M, Aujesky D. Prospective validation of the Pulmonary Embolism Severity Index. A clinical prognostic model for pulmonary embolism. Thromb Haemost. 2008 Nov;100(5):943-8",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18989542",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-pesi-pulmonary-embolism-severity-index",
+    "calc.altitude-adjusted-perc-rule",
+    "calc.perc-rule-pulmonary-embolism"
+  ],
+  "source_logic_hash": "72561bc95fac84d4529a07ddaa564ced",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1304,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar u=parseInt(age)+parseInt(sex)+parseInt(cancer)+parseInt(heart_failure)+parseInt(chronic_lung_disease)+parseInt(heart_rate_110)+parseInt(systolic_blood_pressure_100)+parseInt(respiratory_rate_30)+parseInt(temperature_36)+parseInt(altered_mental_status)+parseInt(o2_saturation_90);\n\nvar msg='';\nvar mini_msg=''; \n\nif(u<66){\n    msg='Class I <br> Very low risk.';\n    mini_msg='Very Low Risk.'\n} \nif(u>65&&u<86){\n    msg='Class II <br> Low risk.';\n    mini_msg='Low Risk.'\n} \nif(u>85&&u<106){\n    msg='Class III <br> Intermediate risk.';\n    mini_msg='Intermediate Risk.'\n} \nif(u>105&&u<126){\n    msg='Class IV <br> High risk.';\n    mini_msg='High Risk.'\n} \nif(u>125){\n    msg='Class V <br> Very high risk.';\n    mini_msg='Very High Risk.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1304_PESI Score_result',\n    value:u,\n    value_text:'points',\nmessage:msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "meghan-prin-md"
+  ],
+  "creator_names": [
+    "Dr. Drahomir Aujesky"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "9b426fdc3715f17dba7fb49a6902b43f806de9ba0d41a5d010421e5c6aa7f6e1"
+}

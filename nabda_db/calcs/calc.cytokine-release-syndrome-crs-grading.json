@@ -1,0 +1,158 @@
+{
+  "id": "calc.cytokine-release-syndrome-crs-grading",
+  "slug": "cytokine-release-syndrome-crs-grading",
+  "language": "en",
+  "title": "Gradation du syndrome de libération de cytokines (CRS)",
+  "short_title": "Gradation du syndrome de libération de cytokines (CRS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Chimiothérapie",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Fièvre",
+    "Céphalée",
+    "Éruption cutanée",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "CRS grade",
+    "cytokine toxicity",
+    "cytokine release syndrome",
+    "CRS scale",
+    "CRS grading"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate symptoms/signs:\n\n| Toxicity | Grade |\n| --- | --- |\n| Symptoms not life-threatening; only symptomatic treatment required (fever, nausea, fatigue, headache, myalgias, malaise) | 1 |\n| Moderate intervention required for response: oxygen requirement <40%, hypotension responsive to fluids, low dose of one pressor, or grade 2 organ toxicity | 2 |\n| Aggressive intervention required for response: oxygen requirement ≥40%, hypotension requiring high dose/multiple pressors*, grade 3 organ toxicity, or grade 4 transaminitis | 3 |\n| Life-threatening symptoms: ventilator required, or grade 4 organ toxicity (excluding transaminitis) | 4 |\n| Death | 5 |\n\nGrade organ toxicity by[Common Terminology Criteria for Adverse Events (CTCAE) v4.0](https://www.eortc.be/services/doc/ctc/CTCAE_4.03_2010-06-14_QuickReference_5x7.pdf).\n\n*High dose pressors defined as any of the following for ≥3 hours:\n\n| Pressor | Dose** | |\n| --- | --- | --- |\n| Monotherapy | NorEPINEPHrine | ≥20 μg/kg/min |\n| DOPamine | ≥10 μg/kg/min | |\n| Phenylephrine | ≥200 μg/kg/min | |\n| EPINEPHrine | ≥10 μg/kg/min | |\n| If on vasopressin | Vasopressin + norEPINEPHrine equivalent of ≥10 μg/kg/min | |\n| If on combination pressors (excluding vasopressin) | NorEPINEPHrine equivalent of ≥20 μg/kg/min | |\n\n**VASST Trial vasopressor equivalent equation: norEPINEPHrine equivalent dose = [norEPINEPHrine (μg/min)] + [DOPamine (μg/kg/min) / 2] + [EPINEPHrine (μg/min)] + [phenylephrine (μg/min) / 10].",
+  "how_to_use": {
+    "why": "Aide à guider les interventions chez les patients recevant des thérapies immunologiques contre le cancer.",
+    "when": "Patients recevant une immunothérapie pour un cancer avec des signes de réactions immunologiques médiées par les cytokines et une dysfonction multi-organique.",
+    "pearls": "- Ne pas oublier la coagulopathie comme dysfonction d'organe.\n- Des vasopresseurs à forte dose doivent être administrés depuis ≥3 heures pour qu'un grade 3 soit attribué.\n- Envisager des corticoïdes à 24 heures en l'absence d'amélioration.\n- La plupart des patients recevant des traitements immunologiques présentent des processus évolutifs complexes et nécessitent des soins spécialisés. L'expertise clinique, la vigilance et un suivi fréquent sont essentiels pour reconnaître le CRS et ne pas attribuer les signes et symptômes à une autre cause (p. ex. infection)."
+  },
+  "next_steps": {
+    "advice": "Le jugement clinique doit être exercé à tout moment concernant l’évolution temporelle observée des symptômes et la réserve fonctionnelle du patient. L’adaptation des interventions et le passage à des agents de deuxième ligne, l’exclusion d’autres causes et le suivi sont essentiels.",
+    "critical_actions": "Always investigate for alternate causes such as infection, tumor lysis syndrome, or organ dysfunction. Always evaluate for end-organ damage.",
+    "management": "- Monitoring and aggressive supportive care should be considered in order to prevent irreversible end-organ damage.\n- Consider ICU setting (1:1 nursing care).\n- Consider involving expert consultative services."
+  },
+  "evidence": "Les interventions listées reposent sur les pratiques institutionnelles dans le cadre desquelles ces thérapies ont été développées. Elles ont été largement adoptées et utilisées dans les essais cliniques portant sur ces thérapies. Elles figurent également dans les libellés FDA de certains de ces médicaments.",
+  "more_info": "Interpretation:\n\n| CRS Grade | Treatment |\n| --- | --- |\n| Grade 1 CRS | Vigilant supportive care, assess for infection (treat fever and neutropenia if present; monitor fluid balance; give antipyretics/analgesics as needed) |\n| Grade 2 CRS, no extensive comorbidities or older age | Vigilant supportive care (monitor cardiac and other organ function closely) |\n| Grade 2 CRS with extensive comorbidities or older age | Vigilant supportive care, tocilizumab ± corticosteroids |\n| Grade 3-4 CRS | |\n| Grade 5 | Not applicable |\n\nFrom[Lee 2014](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4093680/).",
+  "short_description": "Gravité du CRS.",
+  "medium_description": "Évalue la gravité du CRS chez les patients sous immunothérapie.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "toxicity",
+      "label": "Toxicité",
+      "tips": "See[Evidence](#evidence)for grading organ toxicity and definitions of high-dose pressors",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Symptoms not life-threatening; only symptomatic traitement requis (fièvre, nausées, fatigue, headache, myalgias, malaise)",
+          "value": 1
+        },
+        {
+          "label": "modéré intervention requis pour response: oxygen requirement <40%, hypotension responsive pour fluids, faible dose de one pressor, ou grade 2 organe toxicity",
+          "value": 2
+        },
+        {
+          "label": "Aggressive intervention requis pour response: oxygen requirement ≥40%, hypotension requiring élevé dose/multiple pressors, grade 3 organe toxicity, ou grade 4 transaminitis",
+          "value": 3
+        },
+        {
+          "label": "Life-threatening symptoms: ventilator requis, ou grade 4 organe toxicity (excluding transaminitis)",
+          "value": 4
+        },
+        {
+          "label": "Décès",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "comorbidities",
+      "label": "Comorbidités étendues ou âge avancé",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "toxicity ==2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lee DW, Gardner R, Porter DL, et al. Current concepts in the diagnosis and management of cytokine release syndrome. Blood. 2014;124(2):188-95. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4093680/ ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Park JH, Romero FA, Taur Y, et al. Cytokine Release Syndrome Grade is a Predictive Marker for Infections in Relapsed or Refractory B-cell All Patients Treated with CAR T Cells. Clin Infect Dis. 2018.",
+      "href": "https://academic.oup.com/cid/advance-article-abstract/doi/10.1093/cid/ciy152/4898181?redirectedFrom=fulltext ",
+      "kind": "other"
+    },
+    {
+      "text": "Porter D, Frey N, Wood PA, Weng Y, Grupp SA. Grading of cytokine release syndrome associated with the CAR T cell therapy tisagenlecleucel. J Hematol Oncol. 2018;11(1):35.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5833070/ ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.common-terminology-criteria-adverse-events-ctcae",
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence",
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score"
+  ],
+  "source_logic_hash": "841e24625c2851ee6f5d82c9f4dff4f1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10041,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar toxicity = parseFloat(toxicity) \nvar comorbidities = parseFloat(comorbidities)\n\nvar grade\nvar treatment\n\nif (toxicity == 1) {\n\tgrade = 'Grade 1 CRS'\n\ttreatment = 'Vigilant supportive care, assess for infection (treat fever and neutropenia if present; monitor fluid balance; give antipyretics/analgesics as needed)'\n}\nelse if (toxicity == 2 && comorbidities == 0){\n\tgrade = 'Grade 2 CRS'\n\ttreatment = 'Vigilant supportive care (monitor cardiac and other organ function closely)'\n}\nelse if (toxicity == 2 && comorbidities == 1){\n\tgrade = 'Grade 2 CRS'\n\ttreatment = 'Vigilant supportive care, tocilizumab ± corticosteroids'\n}\nelse if (toxicity == 3 || toxicity == 4){\n\tgrade = 'Grade 3-4 CRS'\n\ttreatment = 'Vigilant supportive care, tocilizumab ± corticosteroids'\n}\nelse if (toxicity == 5){\n\tgrade = 'Grade 5 CRS'\n    treatment = '(Death)'\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: grade,\n    value_text: '',\n    message: treatment \n    });\ncalc_output.push({\n    name: '10041_Cytokine Release Syndrome (CRS) Grading_result',\n    value: grade,\n    value_text: '',\n    message: treatment\n    });\n",
+  "before_use": null,
+  "instructions": "Utilisation chez les patients recevant une immunothérapie pour un cancer.",
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.dopamine",
+    "s.phenylephrine",
+    "s.phenylephrine-tropicamide",
+    "s.lidocaine-phenylephrine-tropicamide",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine",
+    "s.phenylephrine-chlorpheniramine",
+    "s.paracetamol-cafeine-phenylephrine",
+    "s.paracetamol-pheniramine-phenylephrine-cafeine"
+  ],
+  "engine_sha256": "0ff71b797b998a3141f4bb66a649ffef53f89c46f098d980db9b3356016fdd26"
+}

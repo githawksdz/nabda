@@ -1,0 +1,557 @@
+{
+  "id": "calc.lung-injury-prediction-score-lips",
+  "slug": "lung-injury-prediction-score-lips",
+  "language": "en",
+  "title": "Lung lésion prédiction score (LIPS)",
+  "short_title": "Lung lésion prédiction score (LIPS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Lung Injury Prediction Score (LIPS)",
+    "lips",
+    "ali",
+    "acute lung injury risk",
+    "acute lung injury prediction",
+    "lung injury risk",
+    "lung injury prediction",
+    "coronavirus",
+    "corona virus",
+    "covid-19",
+    "covid 19",
+    "covid19"
+  ],
+  "dosing": false,
+  "formula": "The LIPS is calculated by the addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| Predisposing Conditions | |\n| Shock | 2 |\n| Aspiration | 2 |\n| Sepsis | 1 |\n| Pneumonia | 1.5 |\n| High-Risk Surgery | |\n| Orthopedic spine | 1 |\n| Acute abdomen | 2 |\n| Cardiac | 2.5 |\n| Aortic vascular | 3.5 |\n| If emergency surgery | 1.5 |\n| High-Risk Trauma | |\n| Traumatic brain injury | 2 |\n| Smoke inhalation | 2 |\n| Near drowning | 2 |\n| Lung contusion | 1.5 |\n| Multiple fractures | 1.5 |\n| Risk Modifiers | |\n| Alcohol abuse | 1 |\n| Obesity (BMI >30) | 1 |\n| Hypoalbuminemia | 1 |\n| Chemotherapy | 1 |\n| FiO₂ >0.35 (>4 L/min) | 2 |\n| Tachypnea (respiratory rate >30) | 1.5 |\n| SpO₂ <95% | 1 |\n| Acidosis (pH <7.35) | 1.5 |\n| Diabetes mellitus (only if sepsis) | -1 |",
+  "how_to_use": {
+    "why": "- Quantifie la probabilité qu’un patient développe une ALI/ARDS, permettant des interventions préventives précoces et à faible risque.\n- Peut être utilisé pour faciliter l’inclusion dans des essais de prévention de l’ALI/ARDS.",
+    "when": "- Apply to any adult who presents with at least one classic acute lung injury (ALI) or acute respiratory distress syndrome (ARDS) predisposing insult (e.g., sepsis, pneumonia, aspiration, major trauma) before frank lung injury is apparent.\n- Ideally applied during the first hours of ED triage, OR/PACU hand-off, ward admission, or ICU consult.",
+    "pearls": "- At initial hospital contact, derivation and multiple validation studies demonstrated good discrimination for subsequent ALI/ARDS (AUC 0.8–0.84).\n- Original cohorts excluded patients <18 years and pregnant patients."
+  },
+  "next_steps": {
+    "advice": "Interprétez toujours le score en tenant compte du contexte clinique et de l’expertise.",
+    "critical_actions": "",
+    "management": "- **Score ≤4:** Continue standard management and routine monitoring.\n- **Score >4:** Implement an ARDS-prevention bundle.\n\n - Perform close SpO₂ and work of breathing checks.\n - Employ lung-protective ventilation (≤6 mL/kg PBW, Pplat <30 cm H₂O).\n - Avoid high FiO₂ and high driving pressures.\n - Use a conservative IV fluid strategy and initiate early diuresis once shock resolves.\n - Minimise transfusions and use restrictive thresholds.\n - Treat underlying sepsis/pneumonia with appropriate antibiotic therapy."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| LIPS | Risk of Acute Lung Injury |\n| --- | --- |\n| ≤4 | Low |\n| >4* | High |\n\n*At a cutoff of 4, positive and negative likelihood ratios (95% CI) for development of ALI were 3.1 and 0.4, respectively, with a sensitivity of 69% and specificity of 78% ([Gajic 2011](https://www.atsjournals.org/doi/full/10.1164/rccm.201004-0549OC)).",
+  "short_description": "Aigu lung lésion risque.",
+  "medium_description": "Identifies patients at élevé risque pour developing aigu lung lésion (ALI).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Shock",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Aspiration",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Pneumonie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Orthopedic spine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "Aigu abdomen",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seven",
+      "label": "Cardiac",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eight",
+      "label": "Aortic vascular",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nine",
+      "label": "If emergency surgery",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ten",
+      "label": "Traumatic brain lésion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eleven",
+      "label": "Smoke inhalation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "twelve",
+      "label": "Near drowning",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thirteen",
+      "label": "Lung contusion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fourteen",
+      "label": "Multiple fractures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "fifteen",
+      "label": "Alcohol abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sixteen",
+      "label": "Obesity (BMI >30)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seventeen",
+      "label": "Hypoalbuminemia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eighteen",
+      "label": "Chemotherapy",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nineteen",
+      "label": "FiO~2~>0.35 (>4 L/min)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "twenty",
+      "label": "Tachypnea (fréquence respiratoire >30)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "twentyone",
+      "label": "SpO~2~<95%",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "twentytwo",
+      "label": "Acidosis (pH <7.35)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "twentythree",
+      "label": "Diabète mellitus (only if sepsis)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Trillo-Alvarez C, Cartin-Ceba R, Kor DJ, et al. Acute lung injury prediction score: derivation and validation in a population-based sample. Eur Respir J. 2011;37(3):604-609.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20562130/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gajic O, Dabbagh O, Park PK, et al. Early identification of patients at risk of acute lung injury: evaluation of lung injury prediction score in a multicenter cohort study. Am J Respir Crit Care Med. 2011;183(4):462-470.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20802164/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.spo2-fio2-ratio",
+    "calc.rads-radiologists-score-smoke-inhalation-injury"
+  ],
+  "source_logic_hash": "75c160b276cc5e8514f76da8097649c5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10281,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

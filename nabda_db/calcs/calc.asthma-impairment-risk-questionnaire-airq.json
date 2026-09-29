@@ -1,0 +1,290 @@
+{
+  "id": "calc.asthma-impairment-risk-questionnaire-airq",
+  "slug": "asthma-impairment-risk-questionnaire-airq",
+  "language": "en",
+  "title": "Questionnaire sur l'atteinte et le risque liés à l'asthme (AIRQ)",
+  "short_title": "AIRQ",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Asthma Impairment and Risk Questionnaire (AIRQ)",
+    "airq",
+    "asthma",
+    "asthma impairment",
+    "asthma risk"
+  ],
+  "dosing": false,
+  "formula": "The AIRQ Score is calculated by the addition of the selected points:\n\n| Question | Points | |\n| --- | --- | --- |\n| In the past 2 weeks , has coughing, wheezing, shortness of breath, or chest tightness… | | |\n| Bothered you during the day on more than 4 days ? | No | 0 |\n| Yes | 1 | |\n| Woke you up from sleep more than 1 time ? | No | 0 |\n| Yes | 1 | |\n| Limited the activities you want to do every day ? | No | 0 |\n| Yes | 1 | |\n| Caused you to use your rescue inhaler or nebulizer every day ? | No | 0 |\n| Yes | 1 | |\n| In the past 2 weeks … | | |\n| Did you have to limit your social activities (such as visiting with friends/relatives or playing with pets/children) because of your asthma? | No | 0 |\n| Yes | 1 | |\n| Did coughing, wheezing, shortness of breath, or chest tightness limit your ability to exercise? | No | 0 |\n| Yes | 1 | |\n| Did you feel that it was difficult to control your asthma? | No | 0 |\n| Yes | 1 | |\n| In the past 12 months , has coughing, wheezing, shortness of breath, or chest tightness… | | |\n| Caused you to take steroid pills or shots, such as prednisone or methylprednisolone? | No | 0 |\n| Yes | 1 | |\n| Caused you to go to the emergency room or have unplanned visits to a health care provider? | No | 0 |\n| Yes | 1 | |\n| Caused you to stay in the hospital overnight? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Ne pas utiliser pour poser le diagnostic d’asthme.\n- À utiliser comme outil d’aide à l’évaluation du contrôle de l’asthme chez les patients.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Utilisez-vous l’Asthma Impairment and Risk Questionnaire (AIRQ) et souhaitez-vous mettre à contribution votre expertise ? [Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| AIRQ Score | Asthma Severity |\n| --- | --- |\n| 0-1 | Well-controlled |\n| 2-4 | Not well-controlled |\n| 5-10 | Very poorly controlled |",
+  "short_description": "Asthme impairment et risque.",
+  "medium_description": "Mesure l'atteinte et le risque de l'asthme.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Vous a-t-il gêné pendant la journée pendant **plus de 4 jours** ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Vous a réveillé(e) du sommeil **plus de 1 fois** ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Limited activities you want pour do **every day**?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Caused you pour use your rescue inhaler ou nebulizer **every day**?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Did you have pour limit your social activities (such as visiting avec friends/relatives ou playing avec pets/enfants) because de your asthme?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Did coughing, wheezing, dyspnée, ou chest tightness limit your ability pour exercise?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Did you feel that it was difficult pour control your asthme?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "Caused you pour take steroid pills ou shots, such as prednisone ou methylprednisolone?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "Caused you pour go pour emergency room ou have unplanned visits pour health care provider?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "Caused you pour stay dans hôpital overnight?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Murphy KR, Chipps B, Beuther DA, et al. Development of the asthma impairment and risk questionnaire (Airq): a composite control measure. J Allergy Clin Immunol Pract. 2020;8(7):2263-2274.e5.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32387166/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chipps BE, Murphy KR, Wise RA, et al. Evaluating construct validity of the Asthma Impairment and Risk Questionnaire using a 3-month exacerbation recall. Ann Allergy Asthma Immunol. 2022;128(5):544-552.e3.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35123077/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.estimated-expected-peak-expiratory-flow-peak-flow",
+    "calc.copd-assessment-test-cat",
+    "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score"
+  ],
+  "source_logic_hash": "96c042d2feded239e8dc464e09362bb2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10495,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.prednisone",
+    "s.methylprednisolone",
+    "s.prednisolone",
+    "s.cinchocaine-prednisolone",
+    "s.naphazoline-prednisolone"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

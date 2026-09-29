@@ -1,0 +1,194 @@
+{
+  "id": "calc.alt-70-score-cellulitis",
+  "slug": "alt-70-score-cellulitis",
+  "language": "en",
+  "title": "ALT-70 score pour Cellulitis",
+  "short_title": "Score ALT-70",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cellulitis/Abscess"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Douleur des extrémités"
+  ],
+  "abbreviations": [
+    "cellulitis score",
+    "Alt 70"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| Asymmetric | +3 |\n| Age ≥70 years | +2 |\n| WBC in ED ≥10,000/µL | +1 |\n| HR in ED ≥90 bpm | +1 |",
+  "how_to_use": {
+    "why": "- Cellulitis is the most common skin and soft tissue infection, with a high cost. No gold-standard diagnostic test exists, and clinical signs of redness, edema, warmth, and tenderness are nonspecific.\n- At least 30% of patients with presumed cellulitis are misdiagnosed, leading to unnecessary admissions, overuse of antibiotics, and missed alternative diagnoses.\n- Factors previously used to determine likelihood of true cellulitis (e.g. past medical and skin history, prior cellulitis, ulcers, barrier disruption, tinea, lymphedema, venous disease, malignancy, and underlying dermatitis) have not been shown to be statistically significant risk factors for cellulitis.\n- May also help indicate appropriate subspecialty consultation to identify pseudocellulitis/mimickers.",
+    "when": "- Patients adultes se présentant aux urgences avec une jambe rouge et une suspicion clinique de dermohypodermite bactérienne (cellulite).\n- Ne pas utiliser en présence de l'un des éléments suivants :",
+    "pearls": "- Developed to assist with evaluation of lower extremity redness, which may be inappropriately diagnosed as cellulitis (versus mimickers, or “pseudocellulitis”).\n- Most patients with cellulitis have acute onset, unilateral involvement (usually one leg), and are sick with an elevated white blood cell count, tachycardia, and/or a fever.\n- Validated in a small cohort of 67 patients ([Li 2018](https://www.sciencedirect.com/science/article/pii/S0190962218322217))."
+  },
+  "next_steps": {
+    "advice": "- Scores 5-7 indicate likely cellulitis (>82.2% likelihood), and patients should receive appropriate therapy. This may vary based on comorbidities or underlying diseases, history of resistant organisms, prior culture data or prior antibiotic use, and/or whether there is a clear trigger or portal of entry.\n- Scores 3-4 indicate uncertainty, and consultation may be appropriate. Dermatology consultation may assist in the evaluation and can help identify alternative etiologies or explanations; if not available, ID consultation may be appropriate. Examples of alternative etiologies include:\n- Scores 0-2 suggest patients are unlikely to have true cellulitis (likelihood of pseudocellulitis >83.3%) and should be reassessed to have the differential diagnosis reconsidered. Very common mimickers include:",
+    "critical_actions": "- Les patients présentant une physiologie septique peuvent nécessiter une attention plus immédiate et une intervention plus agressive.\n- Les patients présentant des lésions fluctuantes/abcès peuvent nécessiter une imagerie et/ou une intervention chirurgicale.",
+    "management": "- Les patients atteints d’une véritable cellulite doivent être pris en charge selon les soins standards, qui varient en fonction de leur état pathologique sous-jacent, des antibiotiques récents ou des données de culture microbienne documentées antérieurement, et des profils locaux de résistance aux antibiotiques. Cela peut inclure des antibiotiques par voie orale ou IV.\n- Les patients atteints de pseudocellulite (imitateurs) doivent être traités de manière appropriée pour le diagnostic alternatif identifié."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score ALT-70 | Recommandation |\n| --- | --- |\n| 0-2 | Réévaluer (probabilité de pseudocellulite >83,3 %) |\n| 3-4 | Avis dermatologique et/ou infectiologique |\n| 5-7 | Traiter (probabilité de véritable cellulite >82,2 %) |",
+  "short_description": "Lower extremity cellulitis diagnostic.",
+  "medium_description": "Prédit la probabilité d'une cellulite des membres inférieurs par rapport à d'autres diagnostics.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "asy",
+      "label": "Asymmetric",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥70 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wbc",
+      "label": "WBC dans ED ≥10,000/µL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "HR dans ED ≥90 bpm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Raff AB, Weng QY, Cohen JM, et al. A predictive model for diagnosis of lower extremity cellulitis: A cross-sectional study. J Am Acad Dermatol. 2017;76(4):618-625.e2.",
+      "href": "https://www.jaad.org/article/S0190-9622(17)30018-X/abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levell NJ, Wingfield CG, Garioch JJ. Severe lower limb cellulitis is best diagnosed by dermatologists and managed with shared care between primary and secondary care. Br J Dermatol. 2011;164(6):1326-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21564054",
+      "kind": "other"
+    },
+    {
+      "text": "Arakaki RY, Strazzula L, Woo E, Kroshinsky D. The impact of dermatology consultation on diagnostic accuracy and antibiotic use among patients with suspected cellulitis seen at outpatient internal medicine offices: a randomized clinical trial. JAMA Dermatol. 2014;150(10):1056-61.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25143179",
+      "kind": "other"
+    },
+    {
+      "text": "Strazzula L, Cotliar J, Fox LP, et al. Inpatient dermatology consultation aids diagnosis of cellulitis among hospitalized patients: A multi-institutional analysis. J Am Acad Dermatol. 2015;73(1):70-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26089048",
+      "kind": "other"
+    },
+    {
+      "text": "Raff AB, Kroshinsky D. Cellulitis: A Review. JAMA. 2016;316(3):325-37.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27434444",
+      "kind": "other"
+    },
+    {
+      "text": "Weng QY, Raff AB, Cohen JM, et al. Costs and Consequences Associated With Misdiagnosed Lower Extremity Cellulitis. JAMA Dermatol. 2016.",
+      "href": "https://jamanetwork.com/journals/jamadermatology/fullarticle/2578851",
+      "kind": "other"
+    },
+    {
+      "text": "Li DG, Xia FD, Khosravi H, et al. Outcomes of Early Dermatology Consultation for Inpatients Diagnosed With Cellulitis. JAMA Dermatol. 2018;154(5):537-543.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29453874",
+      "kind": "other"
+    },
+    {
+      "text": "Ko LN, Garza-mayers AC, St john J, et al. Effect of Dermatology Consultation on Outcomes for Patients With Presumed Cellulitis: A Randomized Clinical Trial. JAMA Dermatol. 2018;154(5):529-536.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29453872",
+      "kind": "other"
+    },
+    {
+      "text": "Li DG, Dewan AK, Di Xia F, Khosravi H, Joyce C, Mostaghimi A. The ALT-70 Predictive Model Outperforms Thermal Imaging for the Diagnosis of Lower Extremity Cellulitis: A Prospective Evaluation. J Am Acad Dermatol. 2018.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0190962218322217",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Singer S, Li DG, Gunasekera N, et al. The ALT-70 Predictive Model Maintains Predictive Value at 24 and 48 Hours after Presentation. J Am Acad Dermatol. 2019.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30914341",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pedis-score-diabetic-foot-ulcers",
+    "calc.mayo-alliance-prognostic-system-maps-score"
+  ],
+  "source_logic_hash": "1a50f5c55ed71679b2b1c878c9f6cf04",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3998,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

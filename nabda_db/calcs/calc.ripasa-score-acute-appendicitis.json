@@ -1,0 +1,395 @@
+{
+  "id": "calc.ripasa-score-acute-appendicitis",
+  "slug": "ripasa-score-acute-appendicitis",
+  "language": "fr",
+  "title": "RIPASA score pour aigu Appendicitis",
+  "short_title": "Score RIPASA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "gastroenterologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Appendicitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "asian",
+    "appy",
+    "appendicitis",
+    "ripasa",
+    "RIPASA Score",
+    "RIPASA Score for Acute Appendicitis"
+  ],
+  "dosing": false,
+  "formula": "Addition des critères sélectionnés.",
+  "how_to_use": {
+    "why": "Les appendicectomies négatives étaient relativement fréquentes dans les cohortes de l'étude RIPASA, ce qui suggère que l'utilisation du score aurait pu réduire les chirurgies inutiles tout en passant à côté de peu de cas d'appendicite.",
+    "when": "Patients évalués pour une appendicite aiguë.",
+    "pearls": "- Le RIPASA est un système de score pour le diagnostic de l'appendicite.\n- Il est très précis pour le diagnostic d'appendicite au-dessus d'un seuil de points - généralement au-dessus de 7,5 points.\n\n**Points à garder à l'esprit :**\n\n- Il a été le plus largement étudié dans les populations asiatiques (Singapour, Inde) et moins dans les populations occidentales.\n- Comme il a été développé à Singapour, qui compte un grand nombre de ressortissants étrangers, la « carte d'identité de ressortissant étranger » a été incluse dans le score car elle présentait une certaine capacité prédictive. Ceci est plus difficile à appliquer à d'autres populations."
+  },
+  "next_steps": {
+    "advice": "Dans les contextes où l'imagerie avancée est utilisée plus libéralement, la performance du score RIPASA est incertaine, et aucune étude n'a encore évalué son impact lorsqu'il est appliqué en clinique.",
+    "critical_actions": "Le score RIPASA intègre et donc nécessite un certain nombre de résultats de tests de laboratoire et de caractéristiques anamnestiques ; bien que la précision soit élevée dans les études initiales, une étude de validation et/ou de mise en œuvre plus large et plus rigoureuse serait très utile.",
+    "management": "Nous ne connaissons pas d'algorithmes de prise en charge validés utilisant le score RIPASA."
+  },
+  "evidence": "",
+  "more_info": "La valeur seuil de 7,5 points était sensible à 98 % et spécifique à 81 % pour le diagnostic d'appendicite.",
+  "short_description": "Diagnoses appendicitis avec lab values et clinique findings.",
+  "medium_description": "Diagnoses appendicitis avec lab values et clinique findings, especially pour Asian populations.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0.5
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤40",
+          "value": 1
+        },
+        {
+          "label": ">40",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "foreign",
+      "label": "Ressortissant étranger",
+      "tips": "Voir [Perles/Pièges](#pearls-pitfalls) pour des précisions",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "rifpain",
+      "label": "Douleur de la fosse iliaque droite (FID)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rifmig",
+      "label": "Douleur migration pour RIF",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ano",
+      "label": "Anorexia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nv",
+      "label": "Nausées & vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dur",
+      "label": "Durée des symptômes",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤48 hrs",
+          "value": 1
+        },
+        {
+          "label": ">48 hrs",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "rifttp",
+      "label": "Douleur provoquée à la fosse iliaque droite",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "guard",
+      "label": "Guarding",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "reb",
+      "label": "Douleur à la décompression",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rovsing",
+      "label": "Signe de Rovsing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "temp",
+      "label": "Température entre 37 °C et 39 °C",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "wbc",
+      "label": "Hyperleucocytose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "urine",
+      "label": "Analyse urinaire négative (absence de sang, de leucocytes, de bactéries)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chong CF, Adi MI, Thien A, Suyoi A, Mackie AJ, Tin AS, Tripathi S, Jaman NH, Tan KK, Kok KY, Mathew VV, Paw O, Chua HB, Yapp SK. Development of the RIPASA score: a new appendicitis scoring system for the diagnosis of acute appendicitis. Singapore Med J. 2010 Mar;51(3):220-5.",
+      "href": "https://smj.sma.org.sg/5103/5103a4.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chong CF, Thien A, Mackie AJ, Tin AS, Tripathi S, Ahmad MA, Tan LT, Ang SH, Telisinghe PU. Comparison of RIPASA and Alvarado scores for the diagnosis of acute appendicitis. Singapore Med J. 2011 May;52(5):340-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21633767",
+      "kind": "other"
+    },
+    {
+      "text": "Butt MQ, Chatha SS, Ghumman AQ, Farooq M. RIPASA score: a new diagnostic score for diagnosis of acute appendicitis. J Coll Physicians Surg Pak. 2014 Dec;24(12):894-7. doi: 12.2014/JCPSP.894897.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25523723",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.appendicitis-inflammatory-response-air-score",
+    "calc.pediatric-appendicitis-score-pas",
+    "calc.alvarado-score-acute-appendicitis"
+  ],
+  "source_logic_hash": "24815e13a3ad248d4dc0d1e41c57cb5e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3166,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

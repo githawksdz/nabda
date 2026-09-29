@@ -1,0 +1,241 @@
+{
+  "id": "calc.manchester-score-prognosis-small-cell-lung-cancer",
+  "slug": "manchester-score-prognosis-small-cell-lung-cancer",
+  "language": "en",
+  "title": "Manchester score pour pronostic dans Small Cell Lung cancer",
+  "short_title": "Manchester score pour Lung cancer",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "hematologie",
+    "soins-palliatifs",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Cancer du poumon"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "ca",
+    "small cell lung cancer",
+    "survival",
+    "prognosis"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués. Si Karnofsky Performance Scale <60, l’item se voit attribuer 1 point.",
+  "how_to_use": {
+    "why": "",
+    "when": "Il a été utilisé pour déterminer quand administrer une chimiothérapie aux patients atteints de cancer du poumon admis en unité de soins intensifs. ([Zarogoulidis 2013](https://www.ncbi.nlm.nih.gov/pubmed/24102014))",
+    "pearls": "Le score distingue trois groupes pronostiques, avec des taux de survie globale à deux ans de 16,2 %, 2,5 % et 0 %."
+  },
+  "next_steps": {
+    "advice": "Le système de score peut aider à l’élaboration de nouvelles stratégies thérapeutiques et peut faciliter la comparaison de différentes études.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Original Study:\n\n- 407 patients with SCLC, seen between 1979 and 1985.\n- All patients received short-term intensive regimens (cyclophosphamide, etoposide and methotrexate or ifosfamide and etoposide, both followed by thoracic irradiation if complete response was noted).\n\n| Manchester score | Prognostic group | Two year survival (%) |\n| --- | --- | --- |\n| ≤1 | Good | 16.2 |\n| 2 - 3 | Medium | 2.5 |\n| ≥4 | Poor | 0 |",
+  "short_description": "Survie à 2 ans du carcinome pulmonaire à petites cellules (small cell lung CA).",
+  "medium_description": "Prédit la survie à 2 ans du cancer pulmonaire à petites cellules.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ldh",
+      "label": "LDH sériques > limite supérieure de la normale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "na",
+      "label": "Natrémie < 132 mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alkPhos",
+      "label": "Phosphatase alcaline sérique > 1.5 x limite supérieure de la normale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bicarb",
+      "label": "Bicarbonate sérique < 24",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stage",
+      "label": "Maladie étendue (stade étendu)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "karnofsky",
+      "label": "Indice de performance de Karnofsky (Karnofsky Performance Status, KPS)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "100 -- Normal. Aucune plainte. Aucun signe de maladie.",
+          "value": 0
+        },
+        {
+          "label": "90 -- Able pour carry sur normal activity. Minor signs ou symptoms de maladie.",
+          "value": 0
+        },
+        {
+          "label": "80 -- Normal activity avec effort. Some signs ou symptoms de maladie.",
+          "value": 0
+        },
+        {
+          "label": "70 -- Cares pour self. Unable pour carry sur normal activity ou pour do active work.",
+          "value": 0
+        },
+        {
+          "label": "60 -- nécessite occasional assistance, but is able pour care pour most de his/her personal needs.",
+          "value": 0
+        },
+        {
+          "label": "50 -- nécessite considerable assistance et frequent medical care.",
+          "value": 1
+        },
+        {
+          "label": "40 -- Disabled. nécessite special care et assistance.",
+          "value": 1
+        },
+        {
+          "label": "30 -- Severely disabled. hôpital admission is indicated although death not imminent.",
+          "value": 1
+        },
+        {
+          "label": "20 -- Very sick. hôpital admission necessary. Active supportive traitement necessary.",
+          "value": 1
+        },
+        {
+          "label": "10 -- Moribond. Processus fatals d'évolution rapide.",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cerny, T; Blair V, Anderson H et al. Pretreatment prognostic factors and scoring system in 407 small-cell lung cancer patients. International Journal of Cancer. 1987, (2): 146–149.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3026969",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Maestu, I; Pastor M, Gómez-Codina J et al. (Jun 1997). Pretreatment prognostic factors for survival in small-cell lung cancer: a new prognostic index and validation of three known prognostic indices on 341 patients .Annals of Oncology 8 (6): 547–553. doi:10.1023/A:1008212826956. PMID 9261523.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9261523",
+      "kind": "other"
+    },
+    {
+      "text": "Zarogoulidis P, et al. Intensive care unit and lung cancer: when should we intubate? J Thorac Dis. 2013 Sep;5 Suppl 4:S407-12. doi: 10.3978/j.issn.2072-1439.2013.08.15.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24102014",
+      "kind": "other"
+    },
+    {
+      "text": "Kawahara, Masaaki; Masahiro Fukuoka, Nagahiro Saijo et al. (1996). Prognostic factors and prognostic staging system for small cell lung cancer. Japanese Journal of Clinical Oncology (Oxford University Press) 27 (3): 158–165. doi:10.1093/jjco/27.3.158. PMID 9255270. ISSN: 0368-2811.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9255270",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pack-years-calculator",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score"
+  ],
+  "source_logic_hash": "c2f0d68d5dae161fbaa5db898f3d4df7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2142,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

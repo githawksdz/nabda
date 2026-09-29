@@ -1,0 +1,111 @@
+{
+  "id": "calc.maintenance-fluids-calculations",
+  "slug": "maintenance-fluids-calculations",
+  "language": "fr",
+  "title": "Calculs des apports hydriques d'entretien",
+  "short_title": "Apports hydriques d’entretien",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "nephrologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Burns",
+    "Dehydration",
+    "Hyperglycemia",
+    "Hémorragie gastro-intestinale",
+    "Pancreatitis",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Intoxication/Overdose",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "ivf",
+    "pediatric",
+    "dehydration",
+    "peds",
+    "421",
+    "4-2-1"
+  ],
+  "dosing": false,
+  "formula": "Calculé à l’aide de la règle « 4-2-1 » :\n\n- Pour 0-10 kg : 4 mL/kg/hr\n- Pour >10-20 kg : 40 mL + 2 mL/kg/hr pour chaque kg >10 kg\n- Pour >20 kg : 60 mL + 1 mL/kg/hr pour chaque kg >20 kg",
+  "how_to_use": {
+    "why": "La posologie des solutés ajustée au poids est importante, étant donné que l'eau corporelle totale (et le volume sanguin) d'un patient sont fonction de son poids.",
+    "when": "- Détermination des débits de liquides IV chez les patients qui ne prennent pas de liquides par voie orale (soit en raison de vomissements, soit parce qu'ils sont N",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Le statut d’hydratation antérieur, actuel et futur doit toujours être pris en compte lors de la prescription de solutés d’entretien, car un sous-dosage entraînera une déshydratation et une insuffisance rénale, tandis qu’un surdosage peut entraîner une surcharge hydrique et un œdème chez certains patients.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Apports hydriques d'entretien.",
+  "medium_description": "Calcule les besoins hydriques d’entretien en fonction du poids.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_all",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Holiday MA, Segar WE. The maintenance need for water in parenteral fluid therapy. Pediatrics 1957.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/13431307",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Arya VK. Basics of fluid and blood transfusion therapy in paediatric surgical patients. Indian Journal of Anaesthesia 2012;56(5):454-462. doi:10.4103/0019-5049.103960.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3531000/#!po=7.89474",
+      "kind": "other"
+    },
+    {
+      "text": "Oh TH. Formulas for calculating fluid maintenance requirements. Anesthesiology.1980;53:351.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7425366",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.arterial-blood-gas-abg-analyzer",
+    "calc.pediatric-ins-outs",
+    "calc.free-water-deficit-hypernatremia"
+  ],
+  "source_logic_hash": "08426b3956c83386732869a2ff0b27e2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 72,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

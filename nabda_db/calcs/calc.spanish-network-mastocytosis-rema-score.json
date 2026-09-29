@@ -1,0 +1,194 @@
+{
+  "id": "calc.spanish-network-mastocytosis-rema-score",
+  "slug": "spanish-network-mastocytosis-rema-score",
+  "language": "fr",
+  "title": "Score du Spanish Network sur la Mastocytose (REMA)",
+  "short_title": "Score REMA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Asthma",
+    "Maladies auto-immunes",
+    "Osteoporosis",
+    "Mastocytose systémique",
+    "Anaphylaxis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhea",
+    "Dizziness",
+    "Lymphadenopathy",
+    "Myalgias",
+    "Nausea",
+    "Soins préventifs / Dépistage",
+    "Rash",
+    "Dyspnée",
+    "Syncope",
+    "Vomiting",
+    "Wheezing",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Spanish Network on Mastocytosis (REMA) Score",
+    "REMA Score",
+    "Mast cell activation disorders",
+    "MCAD",
+    "bone marrow",
+    "mast cell",
+    "MC",
+    "mast cell activation",
+    "systemic mastocytosis",
+    "SM",
+    "MC clonality",
+    "serum baseline tryptase",
+    "sBt",
+    "indolent systemic mastocytosis",
+    "ISM",
+    "clonal MCAD",
+    "c-MCAD",
+    "nonclonal MCAD",
+    "nc-MCAD",
+    "clonal sMCAD",
+    "c-sMCAD",
+    "nonclonal sMCAD",
+    "nc-sMCAD"
+  ],
+  "dosing": false,
+  "formula": "Le score REMA est calculé en additionnant les points sélectionnés pour chaque variable :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sexe | Femme | -1 |\n| Homme | 1 | |\n| Urticaire et/ou angio-œdème | Oui | -2 |\n| Non | 1 | |\n| Présyncopes et/ou syncopes | Non | 0 |\n| Oui | 3 | |\n| Tryptase* | <15 ng/mL | -1 |\n| 15-25 ng/mL | 0 | |\n| >25 ng/mL | 2 | |\n\n*Tryptase sérique basale",
+  "how_to_use": {
+    "why": "- Utilise des données cliniques et biologiques pour évaluer la probabilité d'identifier des mastocytes clonaux lors d'une biopsie de moelle osseuse.\n- Peut orienter la décision quant à la nécessité d'une biopsie de moelle osseuse.",
+    "when": "- Pour les patients adultes présentant des symptômes d'activation mastocytaire sans lésions cutanées caractéristiques de la mastocytose cutanée.\n- Utilisé pour stratifier la probabilité de trouble clonal de l'activation mastocytaire (c-MCAD) ou de mastocytose systémique.",
+    "pearls": "- A démontré une sensibilité et une spécificité élevées pour prédire la clonalité mastocytaire et la présence d'une mastocytose systémique sous-jacente.\n- N'a pas vocation à remplacer les critères diagnostiques établis de la mastocytose systémique ni à exclure le diagnostic ; il sert plutôt à orienter les explorations complémentaires."
+  },
+  "next_steps": {
+    "advice": "- Un score ≥2 indique une probabilité élevée de mastocytes clonaux dans la moelle osseuse ou de mastocytose systémique, justifiant une biopsie de moelle osseuse.\n- Pour un score <2, envisager des examens complémentaires selon le jugement clinique, tels qu'une analyse de la mutation *KIT* et/ou un génotypage pour l'alpha-tryptasémie héréditaire.\n- Ce score ne doit pas être le seul critère pour déterminer la nécessité d'une biopsie de moelle osseuse et doit être interprété conjointement avec le jugement clinique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score REMA | Probabilité de MCAD clonal |\n| --- | --- |\n| <2 | Faible |\n| ≥2 | Élevée |",
+  "short_description": "Predicts mast cell clonality dans symptomatic patients.",
+  "medium_description": "Predicts mast cell clonality sur bone marrow biopsy chez les patients avec systemic mast cell activation symptoms.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Gender",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": -1
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Urticaire et/ou angio-œdème",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": -2
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Présyncopes et/ou syncopes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Tryptase",
+      "tips": "Tryptase sérique basale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 15 ng/mL",
+          "value": -1
+        },
+        {
+          "label": "15-25 ng/mL",
+          "value": 0
+        },
+        {
+          "label": ">25 ng/mL",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Álvarez-Twose I, González de Olano D, Sánchez-Muñoz L, et al. Clinical, biological, and molecular characteristics of clonal mast cell disorders presenting with systemic mast cell activation symptoms. Journal of Allergy and Clinical Immunology. 2010;125(6):1269-1278.e2.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20434205/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alvarez-Twose I, González-de-Olano D, Sánchez-Muñoz L, et al. Validation of the rema score for predicting mast cell clonality and systemic mastocytosis in patients with systemic mast cell activation symptoms. Int Arch Allergy Immunol. 2012;157(3):275-280.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22042301/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mayo-alliance-prognostic-system-maps-score",
+    "calc.world-health-organization-who-diagnostic-criteria-systemic-mastocytosis",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-systemic-mastocytosis"
+  ],
+  "source_logic_hash": "1ca4b20c6fa5773456433ba7e945c5a7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10554,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,183 @@
+{
+  "id": "calc.meld-score-model-end-stage-liver-disease-12-older",
+  "slug": "meld-score-model-end-stage-liver-disease-12-older",
+  "language": "en",
+  "title": "MELD Na (UNOS/OPTN)",
+  "short_title": "MELD Na (UNOS/OPTN)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "cirrhosis",
+    "esrd",
+    "hepatitis",
+    "liver failure",
+    "esld",
+    "jaundice",
+    "transplant",
+    "OLT",
+    "MELD Na (UNOS/OPTN)",
+    "MELD Na",
+    "MELD score",
+    "Model For End-Stage Liver Disease",
+    "Model For End-Stage Liver",
+    "meld score adult",
+    "meld model",
+    "meld calc",
+    "meld score 12",
+    "meld 12 and older"
+  ],
+  "dosing": false,
+  "formula": "Per[OPTN policy, January 2016 (pages 4–5)](https://optn.transplant.hrsa.gov/media/1575/policynotice_20151101.pdf):\n\nCandidates who are at least 12 years old receive an initial MELD(i) score equal to:\n\n**MELD(i) = 0.957** **×** **ln(Cr) + 0.378** **×** **ln(bilirubin) + 1.120** **×** **ln(INR) + 0.643**\n\nThen, round to the tenth decimal place and multiply by 10.\n\nIf MELD(i) > 11, perform additional MELD calculation as follows:\n\n**MELD = MELD(i) + 1.32** **×** **(137 – Na) – [ 0.033** **×** **MELD(i)** **×** **(137 – Na) ]**\n\nAdditional rules:\n\n- All values in US units (Cr and bilirubin in mg/dL, Na in mEq/L, and INR unitless).\n- If bilirubin, Cr, or INR is <1.0, use 1.0.\n- If any of the following is true, use Cr 4.0:\n\n - Cr >4.0.\n - ≥2 dialysis treatments within the prior 7 days.\n - 24 hours of continuous veno-venous hemodialysis (CVVHD) within the prior 7 days.\n- If Na <125 mmol/L, use 125. If Na >137 mmol/L, use 137.\n- Maximum MELD = 40.",
+  "how_to_use": {
+    "why": "- En février 2002, le MELD a été accepté par l'United Network for Organ Sharing (UNOS) pour la priorisation des patients en attente d'une transplantation hépatique aux États-Unis, remplaçant le [Child-Pugh Score](nabda:calc.child-pugh-score-cirrhosis-mortality).\n- Il a été largement étudié et validé.",
+    "when": "- Principalement utilisé pour stratifier les patients ≥12 ans sur les listes d’attente de transplantation hépatique.\n- Prédit la mortalité dans les situations suivantes : (a) après shunt portosystémique intrahépatique par voie transjugulaire (TIPS), (b) patients cirrhotiques subissant des interventions chirurgicales hors transplantation, (c) hépatite alcoolique aiguë, et (d) hémorragie variqueuse aiguë.",
+    "pearls": "- The MELD Score predicts three-month survival in patients (age 12+) with liver cirrhosis.\n\n- Scores range from 6 to 40, with higher scores correlating with increased severity of liver dysfunction and higher three-month mortality.\n\n- The MELD was updated in January 2016 and now includes serum sodium level.\n- It is preferable to using the calculator to calculate the MELD as there are several caveats relating to minimum and maximum values assigned in the MELD.\n- Values should be no more than 48 hours old.\n\n- MELD can be used on any patient with end stage liver disease irrespective of cirrhosis etiology.\n- Currently, there is no modification in the score for patients on anticoagulation (given their INR may be elevated).\n- Several conditions are “standard MELD exceptions” and receive a different score (see[Next Steps > Critical Actions](#next-steps)): hepatocellular carcinoma, hepatopulmonary syndrome, portopulmonary hypertension, familial amyloid polyneuropathy, primary hyperoxaluria, cystic fibrosis, hilar cholangiocarcinoma and hepatic artery thrombosis.\n- One of the exclusion criteria for the original data set was absence of acute reversible conditions such as spontaneous bacterial peritonitis or prerenal azotemia secondary to dehydration. Therefore, in principle, the score should only be applied after these reversible conditions have been treated, according to the authors ([Kamath 2007](https://www.ncbi.nlm.nih.gov/pubmed/17326206))."
+  },
+  "next_steps": {
+    "advice": "- Envisager une orientation vers un hépatologue ou un centre de transplantation hépatique pour les patients ayant un score MELD ≥10.\n- Le score MELD doit être réévalué périodiquement, car il évolue avec la variation des valeurs de laboratoire.\n- Tous les patients atteints de cirrhose doivent être soumis à un dépistage périodique du carcinome hépatocellulaire par dosage sérique de l’alpha-fœtoprotéine (AFP) et par imagerie appropriée, afin de déterminer s’ils peuvent obtenir des « exceptions MELD standard ».",
+    "critical_actions": "**Standard MELD Exceptions**\n\nThe following conditions are automatically assigned a MELD Score of 22 (28 in case of hyperoxaluria), with a 10% increase in score every 3 months from diagnosis.\n\n- Hepatocellular carcinoma (HCC) with one lesion between 2 - 5 cm or two to three lesions <3 cm (Milan criteria), provided no vascular invasion or extrahepatic disease.\n- Hepatopulmonary syndrome with PaO~2~<60 mmHg on room air.\n- Portopulmonary hypertension, with mean pulmonary artery pressure (mPAP) >25 mmHg at rest but maintained <35 mmHg with treatment.\n- Hepatic artery thrombosis 7–14 days post-liver transplantation.\n- Familial amyloid polyneuropathy, as diagnosed by identification of the transthyretin (TTR) gene mutation by DNA analysis or mass spectrometry in a biopsy sample and confirmation of amyloid deposition in an involved organ.\n- Primary hyperoxaluria with evidence of alanine glyoxylate aminotransferase deficiency (these patients requires combined liver-kidney transplantation).\n- Cystic fibrosis with FEV1 (forced expiratory volume in 1 second) <40%.\n- Hilar cholangiocarcinoma.",
+    "management": ""
+  },
+  "evidence": "MELD was[originally developed in 2001](https://www.ncbi.nlm.nih.gov/pubmed/11172350)by researchers at the Mayo Clinic to estimate survival of 231 patients undergoing elective transjugular intrahepatic portosystemic shunt (TIPS) placement and thus coined the “Mayo End Stage Liver Disease (MELD)” score.\n\nIn addition to serum bilirubin, creatinine levels and INR, etiology of liver disease was included, but subsequently removed due to difficulty estimating risk in patients with multiple causes of liver disease. The name was also later changed to Model for End-stage Liver Disease.\n\nIn 2002, the United Network for Organ Sharing (UNOS) began using a modified version of the MELD score to prioritize patients on their orthotopic liver transplantation waiting list. MELD was prospectively validated in 2003 by[Wiesner et al](https://www.ncbi.nlm.nih.gov/pubmed/12512033)in 3,437 patients awaiting transplant.\n\nFurther studies demonstrated that MELD can be used to predict short term mortality risk in cirrhosis patients with complications such as variceal bleeding, spontaneous bacterial peritonitis, acute hepatic failure and alcoholic hepatitis. It can also be used in preoperative assessment of cirrhotics undergoing non-transplant surgery and in HCC patients who are not candidates for transplant.\n\nIn 2006, the MELD Exception Study Group and Conference (MESSAGE) created the[MELD Exception Guidelines](https://www.ncbi.nlm.nih.gov/pubmed/17123284)for transplant list patients whose mortality was not accurately predicted by the standard MELD formula.\n\nIn March 2007,[Kamath et al](https://www.ncbi.nlm.nih.gov/pubmed/17326206)reported that, though MELD has the ability to rank cirrhotic patients according to short term mortality, it is not a perfectly universal score, as survival is not accurately predicted in 15-20% of patients, and users must be aware of limitations of its application.",
+  "more_info": "**Interpretation:**\n\n| MELD Score | Mortality |\n| --- | --- |\n| ≤9 | 1.9% |\n| 10–19 | 6.0% |\n| 20–29 | 19.6% |\n| 30–39 | 52.6% |\n| ≥40 | 71.3% |\n\nMore Info:[OPTN/UNOS Documentation on MELD and PELD](https://optn.transplant.hrsa.gov/media/1575/policynotice_20151101.pdf)",
+  "short_description": "Planification de transplantation hépatique + Na.",
+  "medium_description": "Quantifies end-stage liver maladie pour transplant planning avec sodium.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "dialysis",
+      "label": "Dialysis at least twice dans past week",
+      "tips": "Ou CVVHD pendant ≥24 heures au cours de la semaine écoulée",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "tips": "Cr >4.0 mg/dL se voit automatiquement attribuer une valeur de 4.0",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kamath PS, Wiesner RH, Malinchoc M, Kremers W, Therneau TM, Kosberg CL, D'Amico G, Dickson ER, Kim WR. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001 Feb;33(2):464-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172350",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kremers WK, van IJperen M, Kim WR, Freeman RB, Harper AM, Kamath PS, Wiesner RH. MELD score as a predictor of pretransplant and posttransplant survival in OPTN/UNOS status 1 patients. Hepatology. 2004 Mar;39(3):764-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14999695",
+      "kind": "other"
+    },
+    {
+      "text": "Kamath PS, Kim WR; Advanced Liver Disease Study Group. The model for end-stage liver disease (MELD).Hepatology. 2007 Mar;45(3):797-805.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17326206",
+      "kind": "other"
+    },
+    {
+      "text": " OPTN 2016 MELD Policy Changes",
+      "href": "https://optn.transplant.hrsa.gov/news/meld-serum-sodium-policy-changes/",
+      "kind": "other"
+    },
+    {
+      "text": "Freeman RB Jr, Gish RG, Harper A, Davis GL, Vierling J, Lieblein L, Klintmalm G, Blazek J, Hunter R, Punch J. Model for end-stage liver disease (MELD) exception guidelines: results and recommendations from the MELD Exception Study Group and Conference (MESSAGE) for the approval of patients who need liver transplantation with diseases not considered by the standard MELD formula.Liver Transpl. 2006;12(12 Suppl 3):S128.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17123284",
+      "kind": "other"
+    },
+    {
+      "text": "Wiesner R, United Network for Organ Sharing Liver Disease Severity Score Committee, et al. Model for end-stage liver disease (MELD) and allocation of donor livers.Gastroenterology. 2003 Jan;124(1):91-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12512033",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease",
+    "calc.child-pugh-score-cirrhosis-mortality"
+  ],
+  "source_logic_hash": "9d39ff3e54dc905af5272a6ae2643c35",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.child-pugh-score-cirrhosis-mortality",
+      "text": "Child-Pugh Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 78,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

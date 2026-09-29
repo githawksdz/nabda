@@ -1,0 +1,198 @@
+{
+  "id": "calc.wisconsin-criteria",
+  "slug": "wisconsin-criteria",
+  "language": "fr",
+  "title": "Wisconsin critères",
+  "short_title": "Wisconsin critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Traumatisme crânien",
+    "Injury/Trauma",
+    "Soins préventifs / Dépistage",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Wisconsin Criteria",
+    "maxillofacial injury",
+    "maxillofacial fracture",
+    "Maxillofacial Computed Tomographic Scans",
+    "Maxillofacial Computed Tomography",
+    "facial fracture",
+    "bony stepoff",
+    "bony instability",
+    "periorbital swelling",
+    "facial injury",
+    "facial trauma",
+    "maxillofacial trauma"
+  ],
+  "dosing": false,
+  "formula": "Les critères du Wisconsin sont positifs si l'un des signes suivants est présent :\n\n- Marche osseuse ou instabilité.\n- Œdème périorbitaire ou contusion.\n- Score du [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs) <14.\n- Malocclusion.\n- Absence dentaire.",
+  "how_to_use": {
+    "why": "- Évalue le risque de fracture faciale chez un patient traumatisé.\n- Vise à limiter l'exposition aux radiations et les coûts en évitant les tomodensitométries maxillo-faciales inutiles lorsque la probabilité de lésion significative est faible.",
+    "when": "À utiliser lors de l'évaluation des patients présentant des traumatismes faciaux aux urgences.",
+    "pearls": "- Cet outil ne diagnostique pas les fractures faciales ; il aide plutôt à déterminer la nécessité d'imageries complémentaires.\n- Ces critères étant fondés sur l'examen physique, les résultats dépendent de la qualité des compétences d'examen clinique du praticien.\n- La population de l'étude originale était principalement composée de patients victimes de traumatismes fermés dans un centre de traumatologie unique, ce qui peut limiter l'utilité en cas de traumatismes pénétrants et restreindre la généralisabilité.\n- Dans l'étude originale, la présence d'au moins un des 5 critères présentait une sensibilité de 98,2 % pour la présence d'une fracture faciale, avec une valeur prédictive négative de 87,8 % en l'absence des 5 critères.\n- Les études de validation montrent une sensibilité comprise entre 73 % et 90 % et une valeur prédictive négative entre 60 % et 93 %."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- La présence d'un critère positif doit faire pratiquer une tomodensitométrie maxillo-faciale.\n- Cet outil est mieux utilisé en complément, et non en remplacement, d'une évaluation clinique approfondie de l'état général du patient et d'autres lésions potentielles. Le jugement clinique doit toujours guider les décisions de prise en charge."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Maxillofacial lésion CT évaluation.",
+  "medium_description": "Predicts need pour CT use after maxillofacial lésion.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Marche osseuse ou instabilité",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Œdème périorbitaire ou contusion",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Score du [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs) <14",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "Malocclusion",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Absence dentaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sitzman TJ, Hanson SE, Alsheik NH, Gentry LR, Doyle JF, Gutowski KA. Clinical criteria for obtaining maxillofacial computed tomographic scans in trauma patients: Plastic and Reconstructive Surgery. 2011;127(3):1270-1278.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21364427/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Konik RD, Huang GS. Assessment of the “wisconsin criteria” for obtaining maxillofacial computed tomography in trauma patients at a community trauma center. Plastic and Reconstructive Surgery - Global Open. 2020;8(9S):110-111.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7553631/#:~:text=The%20%E2%80%9CWisconsin%20criteria%E2%80%9D%20consists%20of,negative%20predictive%20value%20of%2087.8%25.",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stewart CN, Wood L, Barta RJ. Validation of the “wisconsin criteria” for obtaining dedicated facial imaging and its financial impact at a level 1 trauma center. Craniomaxillofacial Trauma & Reconstruction. 2020;13(1):4-8.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32642025/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.infant-scalp-score",
+    "calc.thoracolumbar-injury-classification-severity-scale-tlics",
+    "calc.pecarn-cervical-spine-injury-prediction-rule",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "05edd33e03f7f1e6d764f9c742d970d6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10561,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

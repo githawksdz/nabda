@@ -1,0 +1,359 @@
+{
+  "id": "calc.asas-criteria-axial-spondyloarthritis-spa",
+  "slug": "asas-criteria-axial-spondyloarthritis-spa",
+  "language": "fr",
+  "title": "ASAS critères pour Axial Spondyloarthritis (SpA)",
+  "short_title": "ASAS critères pour Axial SpA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Pain"
+  ],
+  "abbreviations": [
+    "Spondyloarthritis",
+    "spa",
+    "spondylitis",
+    "sacroiliitis",
+    "Assessment of Spondyloarthritis International Society",
+    "si joint"
+  ],
+  "dosing": false,
+  "formula": "**Critère d'entrée :**\n\nRachialgie ≥3 mois et âge d'apparition <45 ans\n\n**Critères requis :**\n\nSacro-iliite à l'imagerie* plus ≥1 manifestation de SpA, ou\n\nHLA-B27 plus ≥2 manifestations supplémentaires de SpA\n\n**Manifestations de SpA :**\n\n- Rachialgie inflammatoire\n- Arthrite\n- Enthésite (talon)\n- Uvéite\n- Dactylite\n- Psoriasis\n- Maladie de Crohn ou rectocolite hémorragique\n- Bonne réponse aux AINS\n- Antécédents familiaux de SpA\n- HLA-B27\n- CRP élevée\n\n*Inflammation active (aiguë) à l'IRM hautement évocatrice d'une sacro-iliite associée à une SpA, ou sacro-iliite radiographique certaine selon les critères de New York modifiés (sacro-iliite bilatérale de grade 2-4 ou sacro-iliite unilatérale de grade 3-4, [Van Der Linden 1984](https://www.ncbi.nlm.nih.gov/pubmed/6231933)).",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients présentant une lombalgie chez qui une spondyloarthrite figure au diagnostic différentiel.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Strong recommendations for patients with axial SpA from the[American College of Rheumatology (ACR)](https://www.rheumatology.org/Portals/0/Files/Recommendations%20for%20the%20Treatment%20of%20Ankylosing%20Spondylitis.pdf)include:\n\n- Use of NSAIDs.\n- Use of TNF inhibitors if activity persists despite NSAIDs.\n- Avoid using systemic glucocorticoids.\n- Physical therapy.\n- Hip arthroplasty for patients with advanced hip arthritis."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classification de la SpA axiale.",
+  "medium_description": "Classifies axial spondyloarthritis according pour évaluation de Spondyloarthritis International Society (ASAS) critères.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "backpain",
+      "label": "Back douleur ≥3 months et âge at onset <45 years",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sacro",
+      "label": "Sacro-iliite à l'imagerie",
+      "tips": "Sacro-iliite à l'imagerie = inflammation active (aiguë) à l'IRM hautement évocatrice d'une sacro-iliite associée à la SpA, ou sacro-iliite radiographique certaine selon les critères de New York modifiés",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hla",
+      "label": "HLA-B27",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ibp",
+      "label": "Rachialgie inflammatoire",
+      "tips": "Au moins 4/5 présents : (1) âge de début <40 ans, (2) début insidieux, (3) amélioration avec l'exercice, (4) pas d'amélioration avec le repos, (5) douleur nocturne avec amélioration au lever.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arthritis",
+      "label": "Arthritis",
+      "tips": "Synovite active (périphérique), actuelle ou passée, diagnostiquée par un médecin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "enthesitis",
+      "label": "Enthésite (talon)",
+      "tips": "Douleur spontanée ou sensibilité à la palpation, passée ou actuelle, à l'insertion achilléenne ou du fascia plantaire au niveau du calcanéus",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "uveitis",
+      "label": "Uveitis",
+      "tips": "Uvéite antérieure, passée ou actuelle, confirmée par un ophtalmologiste",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dactylitis",
+      "label": "Dactylitis",
+      "tips": "Passé ou actuel, diagnostiqué par un médecin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "psoriasis",
+      "label": "Psoriasis",
+      "tips": "Passé ou actuel, diagnostiqué par un médecin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "crohns",
+      "label": "Maladie de Crohn ou rectocolite hémorragique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nsaids",
+      "label": "Good response pour NSAIDs",
+      "tips": "Résolution ou amélioration de la douleur lombaire 24–48 h après dose complète d'AINS",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "famhx",
+      "label": "Antécédents familiaux de SpA",
+      "tips": "Presence in 1st- or 2nd-degree relatives of any of the following: (1) ankylosing spondylitis, (2) psoriasis, (3) acute uveitis, (4) reactive arthritis, (5) IBD",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "crp",
+      "label": "CRP élevée",
+      "tips": "Après exclusion des autres causes d’élévation de la CRP",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "backpain == 1 && (sacro == 0 || hla == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ward MM, Deodhar A, Akl EA, et al. American College of Rheumatology/Spondylitis Association of America/Spondyloarthritis Research and Treatment Network 2015 Recommendations for the Treatment of Ankylosing Spondylitis and Nonradiographic Axial Spondyloarthritis. Arthritis Rheumatol. 2016;68(2):282-98.",
+      "href": "https://www.rheumatology.org/Portals/0/Files/Recommendations%20for%20the%20Treatment%20of%20Ankylosing%20Spondylitis.pdf ",
+      "kind": "international"
+    },
+    {
+      "text": "Rudwaleit M, Van Der Heijde D, Landewé R, et al. The development of Assessment of SpondyloArthritis international Society classification criteria for axial spondyloarthritis (part II): validation and final selection. Ann Rheum Dis. 2009;68(6):777-83.",
+      "href": "https://ard.bmj.com/content/annrheumdis/68/6/777.full.pdf ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Van Der Linden S, Valkenburg HA, Cats A. Evaluation of diagnostic criteria for ankylosing spondylitis. A proposal for modification of the New York criteria. Arthritis Rheum. 1984;27(4):361-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6231933 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis",
+    "calc.steroid-conversion-calculator"
+  ],
+  "source_logic_hash": "14459bc184cca853c51f186752de52b9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 306,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

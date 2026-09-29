@@ -1,0 +1,190 @@
+{
+  "id": "calc.atria-bleeding-risk-score",
+  "slug": "atria-bleeding-risk-score",
+  "language": "en",
+  "title": "Score de risque hémorragique ATRIA",
+  "short_title": "ATRIA — risque hémorragique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Palpitations"
+  ],
+  "abbreviations": [
+    "coumadin",
+    "warfarin",
+    "afib",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Risk Factor | Point Value |\n| --- | --- |\n| Anemia | +3 |\n| Severe Renal Disease/Dialysis | +3 |\n| Age ≥75 | +2 |\n| Prior Hemorrhage | +1 |\n| Hypertension | +1 |",
+  "how_to_use": {
+    "why": "Prend en compte le risque majeur et mineur d’hémorragie et de saignement chez les patients avant l’instauration d’un traitement par warfarine.",
+    "when": "- Le score de risque ATRIA, en association avec d'autres scores de stratification du risque et l'évaluation clinique globale du médecin, peut être utilisé pour aider à guider la décision de traitement par warfarine chez les patients nécessitant une anticoagulation.\n- Le score de risque ATRIA peut être utilisé comme l'un des outils potentiels pour stratifier le risque d'hémorragie majeure chez les patients chez qui une anticoagulation par warfarine est envisagée.",
+    "pearls": "The ATRIA study sought to develop a risk stratification score to predict warfarin-associated hemorrhage.\n\n- Included patients from the Kaiser Permanente of Northern California hospital system with non-valvular, non-transient atrial fibrillation via their ICD-9 codes and then followed up for a period of six to seven years.\n- Patients randomly divided into split-sample “derivation” and “validation” cohorts, in a 2:1 ratio, respectively.\n- The study sought to identify risk factors for patients with major hemorrhage, defined as fatal, requiring transfusion of ≥2 units pRBCs, or hemorrhage into critical anatomic site (intracranial, retroperitoneal, etc).\n- Five variables were derived after statistical analysis and then weighed based on degree of effect.\n- Scoring system consisted of five criteria, each of which was worth 1, 2, or 3 points.\n- Study used ≤3 points to define low probability group (<1%) for major hemorrhage, 4 points for immediate (2.6%) and 5-10 points for high (5.8%).\n\n**Points to keep in mind:**\n\n- Patients at risk for major hemorrhage, e.g. those with past intracranial bleeds, were likely already pre-excluded by clinicians and thus not included in the study\n- The derivation and validation cohorts were taken from the same patient population with excellent follow-up\n- Patients’ INRs and potential for compliance were not taken into consideration\n- The study did not compare the ATRIA score to the HAS-BLED score, which has been incorporated into European and Canadian atrial fibrillation guidelines\n- Subsequent studies comparing the performance of the ATRIA and HAS-BLED bleeding risk-prediction scores showed that HAS-BLED had better prediction accuracy than ATRIA."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- <4 points - risque faible\n- 4 points - risque intermédiaire\n- >4 points - risque élevé\n\nLes risques et les bénéfices de l'anticoagulation propres à chaque patient doivent être soigneusement mis en balance chez tous les patients susceptibles d'être candidats à un traitement au long cours par warfarine.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de saignement sous warfarine.",
+  "medium_description": "Determines saignement risque pour patients sur warfarin.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anemia",
+      "tips": "Hémoglobine <13 g/dL (homme), <12 g/dL (femme)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "severe_renal_disease",
+      "label": "Maladie rénale sévère",
+      "tips": "Débit de filtration glomérulaire <30 mL/min ou dépendant de la dialyse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_75",
+      "label": "Âge ≥ 75 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "prior_hemorrhage_diagnosis",
+      "label": "Any Prior hémorragie diagnostic",
+      "tips": "Ex : hémorragie digestive, hémorragie intracrânienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Antécédents d'hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fang MC, Go AS, Chang Y, et al. A New Risk Scheme to Predict Warfarin-Associated Hemorrhage: The ATRIA (Anticoagulation and Risk Factors in Atrial Fibrillation) Study. J Am Coll Cardiol. 2011;58(4):395-401. doi:10.1016/j.jacc.2011.03.031.",
+      "href": "https://content.onlinejacc.org/article.aspx?articleid=1146658",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Roldán V, Marín F, Fernández H, et al. Predictive value of the HAS-BLED and ATRIA bleeding scores for the risk of serious bleeding in a \"real-world\" population with atrial fibrillation receiving anticoagulant therapy. Chest. 2013;143(1):179-184.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22722228",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Senoo K, Proietti M, Lane DA, Lip GY. Evaluation of the HAS-BLED, ATRIA, and ORBIT Bleeding Risk Scores in Patients with Atrial Fibrillation Taking Warfarin. Am J Med. 2016;129(6):600-7.",
+      "href": "https://www.amjmed.com/article/S0002-9343(15)00926-2/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hemorr2hages-score-major-bleeding-risk",
+    "calc.garfield-af",
+    "calc.has-bled-score-major-bleeding-risk"
+  ],
+  "source_logic_hash": "577023392cc08619aa6d9d9e42515f7d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1718,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

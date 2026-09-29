@@ -1,0 +1,334 @@
+{
+  "id": "calc.injury-severity-score-iss",
+  "slug": "injury-severity-score-iss",
+  "language": "en",
+  "title": "Lésion gravité score (ISS)",
+  "short_title": "Lésion gravité score (ISS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "trauma"
+  ],
+  "dosing": false,
+  "formula": "Assign an Abbreviated Injury Scale (AIS) Score to the most severe injury in each body system as follows:\n\n| Severity | AIS |\n| --- | --- |\n| No injury | 0 |\n| Minor | 1 |\n| Moderate | 2 |\n| Serious | 3 |\n| Severe | 4 |\n| Critical | 5 |\n| Unsurvivable | 6 |\n\nThen, if the 3 most severe injuries in 3 body systems are A, B, and C, then\n\nISS = A² + B² + C²\n\nIf a patient has an AIS of 6 in any body system, they are automatically assigned an ISS of 75.",
+  "how_to_use": {
+    "why": "En raison du caractère hétérogène des patients traumatisés, la standardisation de la gravité des lésions traumatiques permet de disposer de populations d’échantillon beaucoup plus grandes dans les études de recherche sur les traumatismes.",
+    "when": "- L'ISS est un score qui vise à standardiser la gravité des lésions subies lors d'un traumatisme.\n- Cette standardisation permet d'étudier et de prédire avec plus de précision la morbidité et la mortalité après un traumatisme.",
+    "pearls": "- Initially derived in patients with blunt traumatic injury from motor vehicle accidents only.\n\n- The ISS is not intended to be used for bedside decisions regarding a single patient in the emergency department setting, but rather as a tool to standardize the study of trauma patients.\n- Due to the nature of the score, multiple combinations of Abbreviated Injury Scale (AIS) scores may arrive at the same ISS, each of which may indicate a different mortality rate. For example, an ISS of 17 can be made from patients with a combination of points based on the three most severe injuries, such as (4, 1, 0) or (3, 2, 2). The ISS also gives equal importance to each body region.\n- Patients with an AIS of 6 in any body system are automatically assigned an ISS of 75, the maximum possible score."
+  },
+  "next_steps": {
+    "advice": "Comme l’ISS est davantage conçu comme un outil de recherche, le calcul de l’ISS ne doit pas modifier la prise en charge initiale du patient présentant des lésions traumatiques.",
+    "critical_actions": "",
+    "management": "- In all trauma patients, initial treatment strategy should focus on the primary and secondary survey, and assessing and stabilizing the patient.\n- This score is intended mostly for research purposes but may have broader clinical use in the ICU for prognostication following initial stabilization of traumatic injuries."
+  },
+  "evidence": "- The ISS was derived by[Baker et al (1974)](https://www.ncbi.nlm.nih.gov/pubmed/4814394)by taking the previously used Abbreviated Injury Scale ([AMA Committee on Medical Aspects of Automotive Safety 1971](https://www.ncbi.nlm.nih.gov/pubmed/?term=5107365)) and adding up the squares of each of the three most severe body systems, in an effort to add increasing weight to the most severe injuries.\n- The top three most severe injuries were used to calculate the final score because it was shown that injuries that alone would not necessarily be life threatening, had a significant effect on mortality when occurring in combination with other severe injuries.\n- The derivation study included only injuries sustained from motor vehicle collisions, including occupants of the vehicles as well as pedestrians involved.\n- Further validation studies have validated the study to include other mechanisms of injury.\n- A study of 875 patients with gunshot wounds by[Beverland et al (1983)](https://www.ncbi.nlm.nih.gov/pubmed/6885141)showed that an increasing ISS was associated with increasing mortality (chi-squared = 83.31, p <O.0Ol).\n- A study by[Bull (1978)](https://www.ncbi.nlm.nih.gov/pubmed/?term=624568)confirmed the correlation between increasing ISS and increasing mortality for road traffic accidents, as well as increasing mean hospital length of stay with increasing ISS.\n- [Semmlow and Cone (1976)](https://www.ncbi.nlm.nih.gov/pubmed/?term=965234)found similar findings to Baker et al in terms of relationship between ISS and mortality when they looked at 8,852 trauma patients from the Illinois Trauma Program, including both vehicular and non-vehicular trauma. They also found ISS to correlate with hospital length of stay.",
+  "more_info": "",
+  "short_description": "Standardizes gravité de traumatisme.",
+  "medium_description": "Standardizes gravité de traumatic lésion basé sur worst lésion de 6 body systems.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "head_neck",
+      "label": "Head et neck worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Face worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chest",
+      "label": "Chest worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "abdomen",
+      "label": "Abdomen worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "extremity",
+      "label": "Extremity (y compris pelvis) worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "external",
+      "label": "External worst lésion?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No lésion",
+          "value": 0
+        },
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Serious",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 4
+        },
+        {
+          "label": "Critical",
+          "value": 5
+        },
+        {
+          "label": "Unsurvivable",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Baker SP, O'Neill B, Haddon W Jr, Long WB. The injury severity score: a method for describing patients with multiple injuries and evaluating emergency care. J Trauma. 1974 Mar;14(3):187-96. PubMed PMID: 4814394.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4814394",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rating the severity of tissue damage. I. The abbreviated scale. JAMA. 1971;215(2):277-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/5107365",
+      "kind": "other"
+    },
+    {
+      "text": "Semmlow JL, Cone R. Utility of the injury severity score: a confirmation. Health Serv Res. 1976;11(1):45-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/965234",
+      "kind": "other"
+    },
+    {
+      "text": "Bull JP. Measures of severity of injury. Injury. 1978;9(3):184-7.",
+      "href": "https://www.sciencedirect.com/science/article/pii/0020138378900049",
+      "kind": "other"
+    },
+    {
+      "text": "Copes WS, Champion HR, Sacco WJ, Lawnick MM, Keast SL, Bain LW. The Injury Severity Score revisited. J Trauma. 1988;28(1):69-77.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3123707",
+      "kind": "other"
+    },
+    {
+      "text": "Beverland DE, Rutherford WH. An assessment of the validity of the injury severity score when applied to gunshot wounds. Injury. 1983;15(1):19-22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6885141",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pediatric-trauma-score-pts",
+    "calc.blast-lung-injury-severity-score",
+    "calc.bastion-classification-lower-limb-blast-injuries"
+  ],
+  "source_logic_hash": "3361ff4373fa572e8e9311cdc829869b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1239,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

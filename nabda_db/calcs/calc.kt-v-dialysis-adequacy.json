@@ -1,0 +1,126 @@
+{
+  "id": "calc.kt-v-dialysis-adequacy",
+  "slug": "kt-v-dialysis-adequacy",
+  "language": "fr",
+  "title": "Kt/V pour Dialysis Adequacy",
+  "short_title": "Kt/V",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Kt/V",
+    "hemodialysis",
+    "peritoneal dialysis",
+    "treatment",
+    "prognosis",
+    "Gotch"
+  ],
+  "dosing": false,
+  "formula": "Kt/V, où\n\n- K = clairance de l’urée par le dialyseur\n- t = durée de dialyse\n- V = volume de distribution de l’urée, approximativement égal à l’eau corporelle totale du patient",
+  "how_to_use": {
+    "why": "- Intègre la clairance de l'urée du dialyseur, la durée du traitement et le volume de distribution en une valeur unique, suivie dans le temps et ajustable par des modifications de prescription.\n- Une dialyse adéquate est corrélée à un risque plus faible d'hospitalisation et de mortalité.\n- Les seuils sont intégrés au ESRD Quality Incentive Program (QIP), ce qui peut avoir un impact sur le remboursement des établissements.",
+    "when": "- À utiliser pour les contrôles d'adéquation de routine en hémodialyse et en dialyse péritonéale.\n- À appliquer après tout changement de prescription ou toute diminution de la fonction rénale résiduelle.\n- À vérifier en présence de signes cliniques de sous-dialyse.",
+    "pearls": "- La clairance de l’urée est proche de la clairance d’autres toxines urémiques de petite taille et hydrosolubles ; les résultats de cet outil ne reflètent donc que l’élimination des petits solutés. Les molécules de plus grande taille ou liées aux protéines, les électrolytes, l’état volémique, la pression artérielle et les résultats rapportés par les patients nécessitent toujours une évaluation distincte.\n- Le volume de distribution de l’urée est proche de l’eau corporelle totale (ajusté en fonction du volume retiré par ultrafiltration).\n- Un Kt/V élevé chez des patients de faible corpulence ou dénutris peut être trompeur ; raccourcir le traitement sur cette base risque de les laisser sous-dialysés."
+  },
+  "next_steps": {
+    "advice": "Les résultats peuvent être utilisés comme l'un des indicateurs de l'adéquation de la dialyse dans le cadre d'une évaluation globale comprenant les signes vitaux, l'état volémique clinique, le poids, les symptômes et les examens de laboratoire.\n\n**Seuils cibles :**\n\n- **Hémodialyse :**\n\n - Centers for Medicare and Medicaid Services (CMS) : ≥1,2 par séance (minimum).\n - National Kidney Foundation (NKF) : ≥1,4 par séance (recommandé).\n- **Dialyse péritonéale** : ≥1,7 par semaine (recommandé).",
+    "critical_actions": "",
+    "management": "Si les résultats sont inférieurs à la cible :\n\n- Revérifier :\n\n - Technique de prélèvement et calcul.\n - Perméabilité et fonction de l’accès.\n - Paramètres de la machine de dialyse.\n - Durée du traitement (p. ex., arrêt précoce, interruption temporaire, initiation tardive).\n- En cas de suspicion d’efficacité de dialyse réduite, envisager d’augmenter la dose :\n\n - Dialyse plus longue ou plus fréquente.\n - Débit sanguin/dialysat plus élevé.\n- Recalculer après tout ajustement."
+  },
+  "evidence": "",
+  "more_info": "Hemodialysis: Kt/V target is ≥1.4, per US National Kidney Foundation.\nPeritoneal dialysis: Kt/V target is ≥1.7/week.",
+  "short_description": "Quantifie l'adéquation du traitement par hémodialyse/dialyse péritonéale.",
+  "medium_description": "Quantifie l’adéquation du traitement par hémodialyse et par dialyse péritonéale.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "k",
+      "label": "Clairance de l'urée par le dialyseur",
+      "optional": false,
+      "unit": "k_dialysis",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "t",
+      "label": "Temps de dialyse",
+      "optional": false,
+      "unit": "time",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Gotch FA, Sargent JA. A mechanistic analysis of the National Cooperative Dialysis Study (NCDS). Kidney int. 1985; 28 (3): 526–34. doi:10.1038/ki.1985.160. PMID 3934452.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3934452",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Clinical practice guidelines for nutrition in chronic renal failure. K/DOQI, National Kidney Foundation. Am J Kidney Dis 35 (6 Suppl 2): S1–140. 2000.PMID 10895784.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10895784",
+      "kind": "other"
+    },
+    {
+      "text": "Bonert M, Saville BA. A non-dimensional analysis of hemodialysis. Open Biomed Eng J 2010; 4: 138–55. doi:10.2174/1874120701004010138. PMC 3111706. PMID 21673980.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21673980",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+    "calc.arterial-blood-gas-abg-analyzer",
+    "calc.anion-gap"
+  ],
+  "source_logic_hash": "6e378cc8043c77f6c1da1246cfb9a891",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3904,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate-electrolytes-lactique",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.electrolytes-icodextrine",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

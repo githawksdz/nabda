@@ -1,0 +1,118 @@
+{
+  "id": "calc.oxygenation-index",
+  "slug": "oxygenation-index",
+  "language": "fr",
+  "title": "Indice d'oxygénation",
+  "short_title": "Indice d'oxygénation",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "peds",
+    "extracorporeal membrane oxygenation",
+    "ortho",
+    "ecmo",
+    "oi"
+  ],
+  "dosing": false,
+  "formula": "Indice d'oxygénation = (FiO~2~ x P~AW~) / PaO~2~\n\noù les variables sont les suivantes :\n\n- FiO~2~ = fraction d'oxygène inhalé, %\n- P~AW~ = pression moyenne des voies aériennes, cmH~2~O\n- PaO~2~ = pression partielle en oxygène artériel, mmHg",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisé en pédiatrie pour définir le SDRA et la LPA et évaluer l'indication potentielle d'un traitement par ECMO.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- OI <25 : bon pronostic\n- OI 25-40 : mortalité >40 %\n- OI >40 : envisager l'ECMO",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Determines need pour ECMO.",
+  "medium_description": "Predicts outcomes, especially dans pédiatrique patients; helps determine need pour ECMO.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "o2_fraction",
+      "label": "FiO₂",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "mean_airway_pressure",
+      "label": "Pression moyenne des voies aériennes (P~AW~)",
+      "tips": "Attention aux unités (mm Hg vs cm H~2~O)",
+      "optional": false,
+      "unit": "paw",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "partial_pressure_oxygen",
+      "label": "PaO~2~",
+      "optional": false,
+      "unit": "pao2",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Hallman M, Merritt TA, Jarvenpaa AL, et al. Exogenous human surfactant for treatment of severe respiratory distress syndrome: a randomized prospective clinical trial. J Pediatr. 1985;106(6):963-969.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/3889259/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ortiz RM, Cilley RE, Bartlett RH. Extracorporeal membrane oxygenation in pediatric respiratory failure. Pediatr Clin North Am. 1987;34(1):39-46.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/3808772/",
+      "kind": "other"
+    },
+    {
+      "text": "Trachsel D, McCrindle BW, Nakagawa S, Bohn D. Oxygenation index predicts outcome in children with acute hypoxemic respiratory failure. Am J Respir Crit Care Med. 2005 Jul 15;172(2):206-11. Epub 2005 Apr 7. PubMed PMID: 15817802.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15817802",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.save-survival-veno-arterial-ecmo-score",
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.resp-respiratory-ecmo-survival-prediction-score"
+  ],
+  "source_logic_hash": "df5656a52a880e35f91e0e9cdfeab4e3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 80,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

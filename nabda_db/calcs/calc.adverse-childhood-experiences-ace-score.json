@@ -1,0 +1,310 @@
+{
+  "id": "calc.adverse-childhood-experiences-ace-score",
+  "slug": "adverse-childhood-experiences-ace-score",
+  "language": "en",
+  "title": "Score des expériences adverses de l'enfance (ACE)",
+  "short_title": "Score ACE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Anxiété",
+    "Dépression / Suicidalité",
+    "Diabète sucré",
+    "Insuffisance cardiaque",
+    "Hépatite",
+    "Obésité",
+    "Traumatisme",
+    "Bronchopneumopathie chronique obstructive",
+    "AVC / Accident ischémique transitoire (AIT)",
+    "Torsion testiculaire"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxieux",
+    "Cancer",
+    "Déprimé",
+    "Fatigue",
+    "Lésion/Traumatisme",
+    "Intoxication / Surdosage",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidaire",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Adverse Childhood Experiences (ACE) Score",
+    "ace",
+    "ace score",
+    "adverse experiences",
+    "trauma",
+    "childhood trauma",
+    "abuse",
+    "child abuse"
+  ],
+  "dosing": false,
+  "formula": "The ACE Score is calculated by the addition of the selected points:\n\n| During your first 18 years of life… | | |\n| --- | --- | --- |\n| Variable | Points | |\n| Did a parent or other adult in the household often or very often ... Swear at you, insult you, put you down, or humiliate you? or Act in a way that made you afraid that you might be physically hurt? | No | 0 |\n| Yes | 1 | |\n| Did a parent or other adult in the household often or very often ... Push, grab, slap, or throw something at you? or Ever hit you so hard that you had marks or were injured? | No | 0 |\n| Yes | 1 | |\n| Did an adult or person at least five years older than you ever ... Touch or fondle you or have you touch their body in a sexual way? or Attempt or actually have oral, anal, or vaginal intercourse with you? | No | 0 |\n| Yes | 1 | |\n| Did you often or very often feel that... No one in your family loved you or thought you were important or special? or Your family didn’t look out for each other, feel close to each other, or support each other? | No | 0 |\n| Yes | 1 | |\n| Did you often or very often feel that... You didn’t have enough to eat, had to wear dirty clothes, and had no one to protect you? or Your parents were too drunk or high to take care of you or take you to the doctor if you needed it? | No | 0 |\n| Yes | 1 | |\n| Were your parents ever separated or divorced? | No | 0 |\n| Yes | 1 | |\n| Was your mother or stepmother: Often or very often pushed, grabbed, slapped, or had something thrown at her? or Sometimes, often, or very often kicked, bitten, hit with a fist, or hit with something hard? or Ever repeatedly hit at least a few minutes or threatened with a gun or knife? | No | 0 |\n| Yes | 1 | |\n| Did you live with anyone who was a problem drinker or alcoholic or who used street drugs? | No | 0 |\n| Yes | 1 | |\n| Was a household member depressed or mentally ill, or did a household member attempt suicide? | No | 0 |\n| Yes | 1 | |\n| Did a household member go to prison? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Ce score donne un aperçu de l’exposition d’un patient à des événements potentiellement indésirables pendant l’enfance, lesquels sont liés à une augmentation des risques pour la santé physique, mentale et sociale.\n- L’identification précoce des ACEs peut aider à la prévention et à l’intervention précoce.",
+    "when": "- Utilisez cet outil pour dépister et surveiller les expériences négatives de l’enfance (ACEs) chez",
+    "pearls": "- Il est crucial de ne pas surinterpréter le score : des scores ACE plus élevés indiquent un risque accru de résultats de santé indésirables, mais ils ne permettent pas de prédire des problèmes spécifiques.\n- Les discussions sur les traumatismes peuvent être source de détresse pour certains patients ; abordez ces conversations avec sensibilité et créez un environnement bienveillant et soutenant."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats pour déterminer la nécessité d'un soutien en santé mentale, d'un accompagnement psychologique ou d'une orientation vers des spécialistes des soins tenant compte des traumatismes ou vers des travailleurs sociaux.\n- Informer les patients de leurs résultats, en discutant de leur pertinence, des risques pour la santé associés et des ressources disponibles en santé mentale afin d'aider à atténuer les effets à long terme des ACEs.",
+    "critical_actions": "Lors de l’évaluation d’un mineur, s’il existe une inquiétude immédiate de maltraitance ou de négligence, contactez les services de protection de l’enfance (CPS) afin d’assurer la sécurité et le bien-être de l’enfant. Le signalement est une obligation légale et éthique dans la plupart des juridictions.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Un score ACE plus élevé correspond à un risque plus élevé de problèmes de santé, sociaux et émotionnels.",
+  "short_description": "Dépistage ACE.",
+  "medium_description": "Dépistage des expériences négatives de l'enfance.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Did parent ou other adulte dans household **often ou very often**... Swear at you, insult you, put you down, ou humiliate you? **ou** Act dans way that made you afraid that you might be physically hurt?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Did parent ou other adulte dans household **often ou very often**... Push, grab, slap, orthrow something at you? **ou** Ever hit you so hard that you had marks ou were injured?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Did adulte ou person at least five years older than you **ever**... Touch ou fondle you orhave you touch their body dans sexual way? **ou** Attempt ou actually have oral, anal, orvaginal intercourse avec you?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Did you **often ou very often** feel that... No one dans your family loved you ou thought you were important ou special? **ou** Your family didn’t look out pour each other, feel close pour each other, ou support each other?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Did you **often ou very often** feel that... You didn’t have enough pour eat, had pour wear dirty clothes, et had no one pour protect you? **ou** Your parents were too drunk ou élevé pour take care de you ou take you pour doctor if you needed it?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Vos parents ont-ils déjà été séparés ou divorcés?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Was your mother ou stepmother: **Often ou very often** pushed, grabbed, slapped, orhad something thrown at her? **ou** **Sometimes, often, ou very often** kicked, bitten, hit avec fist, ou hit avec something hard? **ou** **Ever** repeatedly hit at least few minutes orthreatened avec gun ou knife?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "Did you live avec anyone who was problem drinker ou alcoholic ou who used street drugs?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "Was household member déprimé ou mentally ill, ou did household memberattempt suicide?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "Un membre du foyer -t-il déjà été incarcéré?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Felitti VJ, Anda RF, Nordenberg D, et al. Relationship of childhood abuse and household dysfunction to many of the leading causes of death in adults. The Adverse Childhood Experiences (Ace) Study. Am J Prev Med. 1998;14(4):245-258.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/9635069/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Watson P. How to screen for ACEs in an efficient, sensitive, and effective manner. Paediatr Child Health. 2019;24(1):37-38.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30792599/",
+      "kind": "other"
+    },
+    {
+      "text": "Zarse EM, Neff MR, Yoder R, Hulvershorn L, Chambers JE, Chambers RA. The adverse childhood experiences questionnaire: Two decades of research on childhood trauma as a primary cause of adult mental illness, addiction, and medical diseases. Schumacher U, ed. Cogent Medicine. 2019;6(1):1581447.",
+      "href": "https://www.tandfonline.com/doi/full/10.1080/2331205X.2019.1581447",
+      "kind": "other"
+    },
+    {
+      "text": "Centers for Disease Control and Prevention. Adverse Childhood Experiences (ACEs). ",
+      "href": "https://www.cdc.gov/violenceprevention/aces/index.html",
+      "kind": "other"
+    },
+    {
+      "text": "Dong M, Anda RF, Felitti VJ, et al. The interrelatedness of multiple forms of childhood abuse, neglect, and household dysfunction. Child Abuse Negl. 2004;28(7):771-784.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15261471/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hurt-insult-threaten-scream-hits-score",
+    "calc.brief-addiction-monitor-bam",
+    "calc.drug-abuse-screening-test-10-dast-10"
+  ],
+  "source_logic_hash": "466ba7bd10c441990b270ea4533c222d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10464,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\nvar q7 = parseFloat(q7);\nvar q8 = parseFloat(q8);\nvar q9 = parseFloat(q9);\nvar q10 = parseFloat(q10);\n\nvar score = q1 + q2 + q3 + q4 + q5 + q6 + q7 + q8 + q9 + q10;\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'A higher ACE Score corresponds with a higher risk of health, social, and emotional problems.'\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'ACE Score<br/><br/>A higher ACE Score corresponds with a higher risk of health, social, and emotional problems.'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Vincent J. Felitti"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "21a6d67cbf43a6f566df77d602206f2764ec5862d352c50a0286029ba12f1d98"
+}

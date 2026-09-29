@@ -1,0 +1,197 @@
+{
+  "id": "calc.international-prognostic-index-chronic-lymphocytic-leukemia-cll-ipi",
+  "slug": "international-prognostic-index-chronic-lymphocytic-leukemia-cll-ipi",
+  "language": "en",
+  "title": "International Prognostic index pour chronique Lymphocytic Leukemia (CLL-IPI)",
+  "short_title": "CLL-IPI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Lymphadenopathy"
+  ],
+  "abbreviations": [
+    "chronic lymphocytic leukemia",
+    "CLL",
+    "prognostic markers",
+    "prognostic index",
+    "CLL-IPI",
+    "TP53 status",
+    "IGHV mutational status",
+    "international prognostic index",
+    "iWCLL criteria",
+    "chronic lymphocytic leukaemia",
+    "hematology",
+    "oncology",
+    "blood cancer",
+    "serum β2-microglobulin concentration"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected criteria:\n\n| Criteria | Selection | Points |\n| --- | --- | --- |\n| Age | ≤65 years | 0 |\n| >65 years | 1 | |\n| Clinical stage | Binet A or Rai 0 | 0 |\n| Binet B-C or Rai I-IV | 1 | |\n| Serum β2 microglobulin, mg/L (or µg/mL) | ≤3.5 | 0 |\n| >3.5 | 2 | |\n| IGHV mutational status | Mutated | 0 |\n| Unmutated | 2 | |\n| TP53 status | No abnormalities | 0 |\n| Deletion 17p (FISH) and/or TP53 mutation (sequencing) | 4 | |",
+  "how_to_use": {
+    "why": "De nombreux patients atteints de C",
+    "when": "Patients avec un diagnostic récent de leucémie lymphoïde chronique (CLL), pour estimer le pronostic et le délai jusqu'au premier traitement.",
+    "pearls": "- Developed using patient data from before use of targeted agents such as ibrutinib and venetoclax, which are known to have greater efficacy in patients with TP53 alterations.\n- While treatment type was not an independent factor in the CLL-IPI, TP53 status was, and thus the use of novel agents may have an effect not currently measured in the CLL-IPI."
+  },
+  "next_steps": {
+    "advice": "- Le CLL-IPI classe les patients en quatre groupes de risque, du risque faible au risque très élevé. La décision de traiter ne doit *pas* être fondée sur le score de risque, car il n'a pas été évalué dans cette optique.\n- Les indications de traitement restent les mêmes, mais les patients présentant un risque plus élevé peuvent nécessiter une surveillance initiale plus rapprochée.",
+    "critical_actions": "",
+    "management": "- Les recommandations n'ont pas encore intégré le système de score CLL-IPI dans les algorithmes de prise en charge.\n- Les catégories de risque doivent être utilisées pour éclairer le pronostic, et une surveillance plus rapprochée des patients à risque plus élevé doit être envisagée.\n- Il est à noter que les estimations de survie étaient fondées sur des évaluations antérieures à l'ère des thérapies ciblées pour la CLL, et cela doit être pris en compte lors du conseil aux patients."
+  },
+  "evidence": "The CLL-IPI was described in 2016 using data on 3,472 patients from 8 clinical trials ranging from 1997-2007. The patients were randomly divided with 2/3 (2,308) in the training set and 1/3 (1,164) in the validation set. The main endpoint for statistical analysis was overall survival as calculated by the Kaplan-Meier method.\n\nAfter deriving a weighted score based on multivariate Cox regression they calculated a discriminatory statistic c=0.72 (where 1.0 is full discrimination) and the different subgroups' survivals were statistically different from one another. The internal validation confirmed these results.\n\nThe CLL-IPI was independently validated in two follow-up studies in 2016 ([Gentile](https://www.ncbi.nlm.nih.gov/pubmed/27549308)and[Da Cunha-Bang](https://www.ncbi.nlm.nih.gov/pubmed/27605511)). In the first follow-up study, 858 patients from Italy who were not part of clinical trials were used to validate the CLL-IPI and confirmed the previous results; however, most of the patients were not evaluable due to missing data. In the second study, 1,514 patients from a Danish CLL registry were evaluated and confirmed the prognostic value of the CLL-IPI.",
+  "more_info": "Interprétation :\n\n| Score CLL-IPI | Risque | Survie à 5 ans |\n| --- | --- | --- |\n| 0-1 | Risque faible | 93,2 % |\n| 2-3 | Risque intermédiaire | 79,3 % |\n| 4-6 | Risque élevé | 63,3 % |\n| 7-10 | Risque très élevé | 23,3 % |",
+  "short_description": "CLL : stratification du risque.",
+  "medium_description": "Stratifies patients avec chronique lymphocytic leukemia into four risque categories.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ 65 ans",
+          "value": 0
+        },
+        {
+          "label": ">65 ans",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stage",
+      "label": "Stade clinique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Binet ou Rai 0",
+          "value": 0
+        },
+        {
+          "label": "Binet B-C ou Rai I-IV",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "microglobulin",
+      "label": "β2-microglobuline sérique, mg/L (ou µg/mL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤3.5",
+          "value": 0
+        },
+        {
+          "label": ">3.5",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mutational",
+      "label": "Statut mutationnel IGHV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Mutated",
+          "value": 0
+        },
+        {
+          "label": "Unmutated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tp53",
+      "label": "Statut TP53",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucune anomalie",
+          "value": 0
+        },
+        {
+          "label": "Délétion 17p (FISH) et/ou mutation TP53 (séquençage)",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "An international prognostic index for patients with chronic lymphocytic leukaemia (CLL-IPI): a meta-analysis of individual patient data. Lancet Oncol. 2016;17(6):779-90.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27185642 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gentile M, Shanafelt TD, Rossi D, et al. Validation of the CLL-IPI and comparison with the MDACC prognostic index in newly diagnosed patients. Blood. 2016;128(16):2093-2095.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27549308",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Molica S, Shanafelt TD, Giannarelli D, et al. The chronic lymphocytic leukemia international prognostic index predicts time to first treatment in early CLL: Independent validation in a prospective cohort of early stage patients. Am J Hematol. 2016;91(11):1090-1095.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27465919 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Da Cunha-Bang C, Christiansen I, Niemann CU. The CLL-IPI applied in a population-based cohort. Blood. 2016;128(17):2181-2183.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27605511 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi"
+  ],
+  "source_logic_hash": "6cb5749e91edd3d3b169ccff1629a7dc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4054,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.ibrutinib",
+    "s.venetoclax"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

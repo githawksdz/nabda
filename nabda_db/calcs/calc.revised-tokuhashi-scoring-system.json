@@ -1,0 +1,272 @@
+{
+  "id": "calc.revised-tokuhashi-scoring-system",
+  "slug": "revised-tokuhashi-scoring-system",
+  "language": "fr",
+  "title": "Révisé Tokuhashi système de score",
+  "short_title": "Révisé Tokuhashi système de score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer rachidien"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Douleur des extrémités",
+    "Incontinence fécale",
+    "Cervicalgie",
+    "Pain",
+    "Incontinence urinaire",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Revised Tokuhashi Scoring System",
+    "Tokuhashi Scoring System",
+    "Tokuhashi",
+    "spinal tumor",
+    "spinal tumor risk",
+    "spinal tumor survival",
+    "tumor risk",
+    "tumor survival",
+    "metastatic spine tumor",
+    "metastatic tumor"
+  ],
+  "dosing": false,
+  "formula": "Le Revised Tokuhashi Score est calculé par addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| État général ( [Karnofsky Performance Status](nabda:calc.karnofsky-performance-status-scale\\) ) | Bon (KPS 80 %-100 %) | 2 |\n| Modéré (KPS 50 %-70 %) | 1 | |\n| Mauvais (KPS 10 %-40 %) | 0 | |\n| Nombre de foyers de métastases osseuses extrarachidiennes | 0 | 2 |\n| 1-2 | 1 | |\n| ≥3 | 0 | |\n| Nombre de métastases dans le corps vertébral | 1 | 2 |\n| 2 | 1 | |\n| ≥3 | 0 | |\n| Métastases aux organes internes majeurs | Absence de métastases | 2 |\n| Résécables | 1 | |\n| Non résécables | 0 | |\n| Site primitif du cancer | Thyroïde, prostate, sein, tumeur carcinoïde | 5 |\n| Rectum | 4 | |\n| Rein, utérus | 3 |\n| Autres | 2 |\n| Foie, vésicule biliaire, non identifié | 1 |\n| Poumon, ostéosarcome, estomac, vessie, œsophage, pancréas | 0 |\n| Paraplégie médullaire (Grade de Frankel*) | Absente (Frankel E) | 2 |\n| Incomplète (Frankel C, D) | 1 | |\n| Complète (Frankel A, B) | 0 | |\n\n*Grade de Frankel :\n\n- Grade A : atteinte motrice et sensitive complète.\n- Grade B : atteinte motrice complète, préservation sensitive partielle, y compris la présentation sacrée.\n- Grade C : préservation motrice sans fonction utile.\n- Grade D : préservation motrice fonctionnelle.\n- Grade E : absence d'atteinte neurologique.",
+  "how_to_use": {
+    "why": "- L'un des modèles pronostiques les plus rigoureusement validés pour les maladies rachidiennes métastatiques.\n- Peut guider la décision chirurgicale, équilibrer les besoins de contrôle des symptômes avec le risque opératoire, et étayer les discussions sur les objectifs de soins avec les patients et leurs familles.",
+    "when": "À utiliser pour estimer la survie chez les patients présentant une maladie rachidienne métastatique symptomatique, en particulier lors de la planification préopératoire d'une chirurgie rachidienne ou d'autres interventions.",
+    "pearls": "- Il s'agit d'une révision de l'outil Tokuhashi original ; il prédit le pronostic indépendamment du modalité thérapeutique ou de l'extension tumorale locale.\n- Plusieurs études contemporaines indiquent que, les thérapies systémiques modernes ayant prolongé la survie, le score peut sous-estimer l'espérance de vie, orientant potentiellement les cliniciens vers une prise en charge non chirurgicale ou purement symptomatique."
+  },
+  "next_steps": {
+    "advice": "- Interpréter le score dans le contexte d'une évaluation clinique complète et d'une expertise multidisciplinaire.\n- Aligner l'intensité du traitement sur la survie prédite :\n\n - Les individus avec une survie prédite plus longue peuvent bénéficier de procédures chirurgicales plus agressives et de traités modificateurs de la maladie.\n - Ceux avec un pronostic plus sombre peuvent mieux évoluer avec des soins mini-invasifs ou non opératoires, centrés sur les symptômes.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Revised Tokuhashi Score | Survie moyenne |\n| --- | --- |\n| 0-8 | <6 mois |\n| 9-11 | ≥6 mois |\n| 12-15 | ≥12 mois |",
+  "short_description": "Survie dans les tumeurs rachidiennes.",
+  "medium_description": "Predicts survie chez les patients avec spinal tumors.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "kps",
+      "label": "État général ( [Karnofsky Performance Status](nabda:calc.karnofsky-performance-status-scale) )",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Bon (KPS 80 %-100 %)",
+          "value": 2
+        },
+        {
+          "label": "modéré (KPS 50%-70%)",
+          "value": 1
+        },
+        {
+          "label": "Mauvais (KPS 10 %-40 %)",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "foci",
+      "label": "Nombre de foyers de métastases osseuses extrarachidiennes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0",
+          "value": 2
+        },
+        {
+          "label": "1-2",
+          "value": 1
+        },
+        {
+          "label": "≥3",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vert",
+      "label": "Number de metastases dans vertebral body",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1",
+          "value": 2
+        },
+        {
+          "label": "2",
+          "value": 1
+        },
+        {
+          "label": "≥3",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "organs",
+      "label": "Metastases pour major internal organs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absence de métastases",
+          "value": 2
+        },
+        {
+          "label": "Removable",
+          "value": 1
+        },
+        {
+          "label": "Unremovable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "site",
+      "label": "Site primitif du cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Thyroïde, prostate, sein, tumeur carcinoïde",
+          "value": 5
+        },
+        {
+          "label": "Rectum",
+          "value": 4
+        },
+        {
+          "label": "Rein, utérus",
+          "value": 3
+        },
+        {
+          "label": "Others",
+          "value": 2
+        },
+        {
+          "label": "Foie, vésicule biliaire, non identifié",
+          "value": 1
+        },
+        {
+          "label": "Poumon, ostéosarcome, estomac, vessie, œsophage, pancréas",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "grade",
+      "label": "Paraplégie médullaire (Grade de Frankel)",
+      "tips": "Grade de Frankel :\n\nGrade A : atteinte motrice et sensitive complète.Grade B : atteinte motrice complète, préservation sensitive partielle, y compris la préservation sacrée.Grade C : préservation motrice sans fonction utile.Grade D : préservation motrice fonctionnelle.Grade E : absence d'atteinte neurologique.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absente (Frankel E)",
+          "value": 2
+        },
+        {
+          "label": "Incomplète (Frankel C, D)",
+          "value": 1
+        },
+        {
+          "label": "Complète (Frankel A, B)",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tokuhashi Y, Matsuzaki H, Oda H, Oshima M, Ryu J. A revised scoring system for preoperative evaluation of metastatic spine tumor prognosis. Spine (Phila Pa 1976). 2005;30(19):2186-2191.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16205345/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tokuhashi Y, Uei H, Oshima M, Ajiro Y. Scoring system for prediction of metastatic spine tumor prognosis. World J Orthop. 2014;5(3):262-271.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4095019/",
+      "kind": "other"
+    },
+    {
+      "text": "Zoccali C, Skoch J, Walter CM, Torabi M, Borgstrom M, Baaj AA. The Tokuhashi score: effectiveness and pitfalls. Eur Spine J. 2016;25(3):673-678.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26626082/",
+      "kind": "other"
+    },
+    {
+      "text": "Aoude A, Fortin M, Aldebeyan S, et al. The revised Tokuhashi score; analysis of parameters and assessment of its accuracy in determining survival in patients afflicted with spinal metastasis. Eur Spine J. 2018;27(4):835-840.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28012079/",
+      "kind": "other"
+    },
+    {
+      "text": "Morgen SS, Fruergaard S, Gehrchen M, Bjørck S, Engelholm SA, Dahl B. A revision of the Tokuhashi revised score improves the prognostic ability in patients with metastatic spinal cord compression. J Cancer Res Clin Oncol. 2018;144(1):33-38.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28986702/",
+      "kind": "other"
+    },
+    {
+      "text": "Quraishi NA, Manoharan SR, Arealis G, et al. Accuracy of the revised Tokuhashi score in predicting survival in patients with metastatic spinal cord compression (Mscc). Eur Spine J. 2013;22(Suppl 1):21-26.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3578515/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mezei T, Horváth A, Pollner P, Czigléczki G, Banczerowski P. Research on the predicting power of the revised Tokuhashi system: how much time can surgery give to patients with short life expectancy? Int J Clin Oncol. 2020;25(4):755-764.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31993865/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.spinal-instability-neoplastic-scale-sins-score",
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+    "calc.karnofsky-performance-status-scale"
+  ],
+  "source_logic_hash": "6d8cfa9f61a12d5a6c55b534cec48191",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Performance Status"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10475,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

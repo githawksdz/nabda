@@ -1,0 +1,257 @@
+{
+  "id": "calc.nottingham-hip-fracture-score-nhfs",
+  "slug": "nottingham-hip-fracture-score-nhfs",
+  "language": "en",
+  "title": "Nottingham Hip fracture score (NHFS)",
+  "short_title": "NHFS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "geriatrie",
+    "medecine-interne",
+    "orthopedie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Fracture"
+  ],
+  "chief_complaints": [
+    "Douleur des extrémités",
+    "Lésion/Traumatisme",
+    "Douleur articulaire",
+    "Douleur"
+  ],
+  "abbreviations": [
+    "Nottingham Hip Fracture Score",
+    "NHFS",
+    "hip fracture mortality",
+    "30 day mortality hip fracture",
+    "mortality hip fracture",
+    "hip fracture surgery mortality",
+    "postop mortality hip fracture",
+    "hip fracture risk",
+    "Nottingham score",
+    "hip fracture",
+    "hip surgery risk"
+  ],
+  "dosing": false,
+  "formula": "Le NHFS est obtenu en additionnant les points sélectionnés :\n\n| Variable | Score | |\n| --- | --- | --- |\n| Âge, années | <66 | 0 |\n| 66-85 | 3 | |\n| ≥86 | 4 | |\n| Sexe | Femme | 0 |\n| Homme | 1 | |\n| Hémoglobine à l'admission, g/dL | >10 | 0 |\n| ≤10 | 1 | |\n| [MMTS](nabda:calc.abbreviated-mental-test-amt-10\\) * | >6 | 0 |\n| ≤6 | 1 | |\n| Vivre en institution (p. ex., maison de retraite) | Non | 0 |\n| Oui | 1 | |\n| Nombre de comorbidités | <2 | 0 |\n| ≥2 | 1 | |\n| Néoplasie | Non | 0 |\n| Oui | 1 | |\n\n* MMTS désigne le Modified Mini-Mental Test Score, qui est équivalent au test mental abrégé (AMT-10). Dans l'AMT-10, « Quels métiers ces personnes exercent-elles ? » peut être remplacé par « Nommez ce lieu/cette ville », selon la version locale. « Année du début de la Première Guerre mondiale » peut être remplacé par l'année de la Seconde Guerre mondiale.",
+  "how_to_use": {
+    "why": "- Prédit la mortalité à 30 jours après chirurgie de fracture de la hanche et présente des preuves d'association avec la mortalité à 1 an, la durée d'hospitalisation et le devenir fonctionnel.\n- Repose sur des données d'admission facilement disponibles.\n- Recommandé par les [recommandations de l'Association of Anaesthetists sur la fracture de la hanche (2020)](https://pubmed.ncbi.nlm.nih.gov/33289066/) dans le cadre d'une évaluation du risque multicomposante.",
+    "when": "À utiliser à l’admission chez les personnes âgées présentant une fracture aiguë de la hanche chez qui une réparation chirurgicale est envisagée.",
+    "pearls": "- Developed in a UK hospital cohort of 2,492 patients with femoral neck fracture (1999–2006) and validated in a separate cohort of 2,475; later external validation supported use in a Chinese cohort including femoral neck, intertrochanteric, and subtrochanteric fractures.\n- In the derivation cohort, the mean age was 79.9 years (range 17–102), and 76.4% were women.\n- Demonstrated an AUROC of 0.719 in the original study.\n- Later work found the original model could overestimate mortality in higher risk groups, prompting an updated equation ([published in 2012](https://pubmed.ncbi.nlm.nih.gov/22728204/)).\n- “Living in an institution” is included as a variable and functions as a proxy for frailty/baseline functional reserve.\n- Provides risk stratification for perioperative planning; it does not “clear” (or disqualify) a patient for surgery on its own."
+  },
+  "next_steps": {
+    "advice": "- Results from this tool should not be the sole determinant of treatment.\n- Use results in conjunction with a thorough clinical evaluation, complementary surgical risk tools, and clinical expertise to support:\n\n - Shared decision-making with the patient and family about the risks and benefits of operative versus non-operative management.\n - Timing of surgery.\n - Decisions about appropriate level of care before and after surgery.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Mortalité à 30 jours (%) = 100 / [1 + exp(5,012 - NHFS × 0,481)]",
+  "short_description": "Mortalité à 30 jours après chirurgie pour fracture de la hanche.",
+  "medium_description": "Prédit la mortalité à 30 jours après chirurgie pour fracture de la hanche.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "a",
+      "label": "Âge, années",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤65",
+          "value": 0
+        },
+        {
+          "label": "66-85",
+          "value": 3
+        },
+        {
+          "label": "≥86",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Hémoglobine à l'admission, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">10",
+          "value": 0
+        },
+        {
+          "label": "≤10",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "[MMTS](nabda:calc.abbreviated-mental-test-amt-10)",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "> 6",
+          "value": 0
+        },
+        {
+          "label": "≤6",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Vivre en institution",
+      "tips": "P. ex., maison de retraite",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Nombre de comorbidités",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 2",
+          "value": 0
+        },
+        {
+          "label": "≥2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "Néoplasie maligne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Griffiths R, Babu S, Dixon P, et al. Guideline for the management of hip fractures 2020: Guideline by the Association of Anaesthetists: Guideline by the Association of Anaesthetists. Anaesthesia. 2021;76(2):225-237. doi:10.1111/anae.15291",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33289066/",
+      "kind": "international"
+    },
+    {
+      "text": "Maxwell MJ, Moran CG, Moppett IK. Development and validation of a preoperative scoring system to predict 30 day mortality in patients undergoing hip fracture surgery. Br J Anaesth. 2008;101(4):511-517. doi:10.1093/bja/aen236",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18723517/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wiles MD, Moran CG, Sahota O, Moppett IK. Nottingham Hip Fracture Score as a predictor of one year mortality in patients undergoing surgical repair of fractured neck of femur. Br J Anaesth. 2011;106(4):501-504. doi:10.1093/bja/aeq405",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21278153/",
+      "kind": "other"
+    },
+    {
+      "text": "Moppett IK, Wiles MD, Moran CG, Sahota O. The Nottingham Hip Fracture Score as a predictor of early discharge following fractured neck of femur. Age Ageing. 2012;41(3):322-326. doi:10.1093/ageing/afr142",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22083839/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moppett IK, Parker M, Griffiths R, Bowers T, White SM, Moran CG. Nottingham Hip Fracture Score: longitudinal and multi-assessment. Br J Anaesth. 2012;109(4):546-550. doi:10.1093/bja/aes187",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22728204/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sun L, Liu Z, Wu H, Liu B, Zhao B. Validation of the Nottingham Hip Fracture Score in predicting postoperative outcomes following hip fracture surgery. Orthop Surg. 2023;15(4):1096-1103. doi:10.1111/os.13624",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36794402/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abbreviated-mental-test-amt-10"
+  ],
+  "source_logic_hash": "437367b9229a0485a05caa0997247b44",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.abbreviated-mental-test-amt-10",
+      "text": "MMTS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.abbreviated-mental-test-amt-10",
+      "text": "MMTS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10660,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\n\n// Calculate score\nvar score = a + b + c + d + e + f + g;\n\nvar mort = 100 / (1 + Math.exp(5.012 - score * 0.481));\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'NHFS (30-day mortality: ' + mort.toFixed(1) + '%)'\n});\ncalc_output.push({\n    name: '10660_NHFS_result',\n    value: score,\n    value_text: 'points',\n    message: 'NHFS'\n});\ncalc_output.push({\n    name: '10660_NHFS_interpretation',\n    value: mort.toFixed(1),\n    value_text: '%',\n    message: '30-day mortality'\n});\n",
+  "before_use": "Plusieurs versions de cet outil ont été publiées (notamment le modèle original de 2008 et les mises à jour ultérieures de 2012 et 2015). Ce calculateur utilise la version 2012, car elle a été largement validée dans des cohortes externes et est la version citée dans les [recommandations de l’Association of Anaesthetists](https://pubmed.ncbi.nlm.nih.gov/33289066/).",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. M. J. Maxwell"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "5660cf386abd7dd6b82c56efecf49c3dec9ea8c33265ca4d117eb6db3af269e4"
+}

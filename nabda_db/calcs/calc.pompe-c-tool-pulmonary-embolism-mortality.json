@@ -1,0 +1,225 @@
+{
+  "id": "calc.pompe-c-tool-pulmonary-embolism-mortality",
+  "slug": "pompe-c-tool-pulmonary-embolism-mortality",
+  "language": "en",
+  "title": "Outil POMPE-C pour la mortalité de l'embolie pulmonaire",
+  "short_title": "Outil POMPE-C",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Chimiothérapie",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Pompe-C",
+    "VTE",
+    "DVT",
+    "PE",
+    "clotting",
+    "chest pain",
+    "shortness of breath",
+    "DNR",
+    "CA",
+    "Cancer"
+  ],
+  "dosing": false,
+  "formula": "**Probability (P) of death using the POMPE-C formula:**\n\nP = 100*(1 - 1 / (1 + Exp(3.718 + 1.551*DNR + 0.799*RespDistress + 0.734*Leg Swelling + 1.473*AMS + 1.027*HR + 0.044*RR + (-0.0636*SAT) + (-0.012*Body Weight))))",
+  "how_to_use": {
+    "why": "POMPE-C offre une meilleure prédiction du risque chez les patients atteints de cancer que les outils généraux de stratification du risque.",
+    "when": "Pour déterminer la mortalité à 30 jours chez les patients atteints d'une néoplasie active ayant reçu un diagnostic de PE.",
+    "pearls": "- Risk stratifies patients diagnosed with acute, symptomatic PE and who have active cancer.\n- Estimates the probability of 30-day mortality, which can be later stratified into risk categories.\n- Was not developed for incidental PE (i.e., asymptomatic PE found on imaging).\n- May more accurately predict mortality outcomes in patients with active cancer than the [PESI Score](nabda:calc.pulmonary-embolism-severity-index-pesi) .\n- Major clinical guidelines have not yet incorporated POMPE-C."
+  },
+  "next_steps": {
+    "advice": "- L’outil POMPE-C ne doit pas être la seule base de la prise en charge ; les cliniciens doivent utiliser leur jugement et procéder à une évaluation clinique complète.\n- Bien que l’outil ait été validé chez les patients atteints d’un cancer actif chez qui l’imagerie a mis en évidence une PE aiguë symptomatique, il peut être utile pour ceux présentant des PE identifiées de façon fortuite ou un cancer inactif.",
+    "critical_actions": "- Quel que soit le score calculé, les cliniciens doivent peser les risques et les bénéfices de l'anticoagulation et formuler des recommandations thérapeutiques en accord avec les valeurs et les préférences du patient.\n- Ne jamais retarder les manœuvres de réanimation au motif d'une stratification du risque.",
+    "management": "- For patients with an **estimated mortality risk ≤5%:**\n\n - Overall risk of mortality is low.\n - None of the 27 patients in the validation sample with this level of mortality risk died within 30 days, consistent with 100% sensitivity.\n- For patients with an **estimated** **mortality risk >5%:**\n\n - Overall risk of mortality in this group is higher.\n - In the validation sample, 50 of the 156 patients with this level of mortality risk died within 30 days, consistent with 32% specificity.\n- For patients with an **estimated** **mortality risk >50%:**\n\n - Overall risk of mortality was very high.\n - 10 of 13 patients with this level of mortality risk died within 30 days, consistent with 77% specificity."
+  },
+  "evidence": "",
+  "more_info": "Predictor Variables\n\n| Variable | Odds Ratio (95%CI) |\n| --- | --- |\n| Weight | 0.99 (0.98-1) |\n| Highest RR | 1.05 (1.01-1.09) |\n| SaO2 | 0.94 (0.89-0.99) |\n| HR > 99 | 2.8 (1.38-5.64) |\n| AMS | 4.36 (1.47-13) |\n| Resp. Distress | 2.22 (1.12-4.43) |\n| DNR | 4.72 (1.75-12.76) |\n| Unilateral Limb Swelling | 2.08 (1-4.36) |",
+  "short_description": "Mortalité chez les patients atteints de cancer avec EP.",
+  "medium_description": "Prédit la mortalité chez les patients atteints de cancer avec PE.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "dnr",
+      "label": "Ne pas réanimer",
+      "tips": "New or existing desire of patient to not be resuscitated from death (verbal or written)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp_dist",
+      "label": "Détresse respiratoire",
+      "tips": "Anxiété manifeste liée à une dyspnée ou à une augmentation du travail respiratoire",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "uls",
+      "label": "Gonflement unilatéral de la jambe",
+      "tips": "Leg or arm with new, noticeable swelling causing asymmetry",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ams",
+      "label": "Altération de l'état de conscience",
+      "tips": "Nouveau ou différent par rapport à l'état de base",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "Fréquence cardiaque ≥ 100 au cours des 6 dernières heures",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "rr",
+      "label": "Fréquence respiratoire la plus élevée au cours des 6 dernières heures",
+      "optional": false,
+      "unit": "rr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "sat",
+      "label": "O2 Sat à l'air ambiant",
+      "optional": false,
+      "unit": "sat",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kline JA, Roy PM, Than MP, Hernandez J, Courtney DM, Jones AE, Penaloza A, Pollack CV Jr. Derivation and validation of a multivariate model to predict mortality from pulmonary embolism with cancer: The POMPE-C tool. Thromb Res. 2012 May;129(5):e194-9. doi: 10.1016/j.thromres.2012.03.015. Epub 2012 Apr 3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22475313",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nguyen E, Caranfa JT, Lyman GH, et al. Clinical prediction rules for mortality in patients with pulmonary embolism and cancer to guide outpatient management: a meta-analysis. J Thromb Haemost. 2018;16(2):279-292. doi:10.1111/jth.13921",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29215781/",
+      "kind": "other"
+    },
+    {
+      "text": "Li X, Hu Y, Lin P, et al. Comparison of different clinical prognostic scores in patients with pulmonary embolism and active cancer. Thromb Haemost. 2021;121(6):834-844. doi:10.1055/a-1355-3549",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33450779/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.khorana-risk-score-venous-thromboembolism-cancer-patients",
+    "calc.dash-prediction-score-recurrent-vte",
+    "calc.pulmonary-embolism-severity-index-pesi"
+  ],
+  "source_logic_hash": "f8883b3d84421a46b38bcfc54690a3b4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2022,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar r, u, x, y, z;\nvar wt = parseFloat(wt);\n\nvar dnr = parseFloat(dnr);\nvar resp_dist = parseFloat(resp_dist);\nvar uls = parseFloat(uls);\nvar ams = parseFloat(ams);\nvar hr = parseFloat(hr);\nvar rr = parseFloat(rr);\nvar sat = parseFloat(sat);\nvar wt = parseFloat(wt) * 2.2; // weight comes to us in kilos but for this study actually uses lbs\n\nvar r = 3.718 + (1.551711 * dnr) + (0.799617 * resp_dist) + (0.734339 * uls) +\n  (1.473451 * ams) + (hr * 1.027895) + (0.04422 * rr) + (-0.063644 * sat) + (-\n    0.011613 * wt);\n\nvar u = 1 + (Math.exp(r));\nvar x = 1 / u;\nvar y = 100 * (1 - x);\nvar z = Math.round(y);\n\ncalc_output.push({\n  name: 'mini',\n  value: z,\n  value_text: '%',\n  message: 'Chance of 30-day mortality'\n});\ncalc_output.push({\n  name: '2022_POMPE-C Tool_result',\n  value: z,\n  value_text: '%',\n  message: 'Chance of mortality within 30 days.'\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "austin-wesevich-md-mph-ms"
+  ],
+  "creator_names": [
+    "Dr. Jeffrey Kline"
+  ],
+  "measurement_ids": [
+    "Weight"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7545d2d508e6ce1ef8ea5c3c38b73b6f37d511d7d9a71ecb154aa96aafff80bc"
+}

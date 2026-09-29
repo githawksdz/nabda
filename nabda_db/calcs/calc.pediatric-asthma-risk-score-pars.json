@@ -1,0 +1,232 @@
+{
+  "id": "calc.pediatric-asthma-risk-score-pars",
+  "slug": "pediatric-asthma-risk-score-pars",
+  "language": "en",
+  "title": "Score de risque d'asthme pédiatrique (PARS)",
+  "short_title": "PARS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthme",
+    "Eczéma"
+  ],
+  "chief_complaints": [
+    "Toux",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "Pediatric Asthma Risk Score (PARS)",
+    "PARS",
+    "asthma risk",
+    "asthma",
+    "asthma score",
+    "pediatric asthma",
+    "asthma young children",
+    "asthma children",
+    "asthma prediction",
+    "asthma prediction score",
+    "childhood asthma",
+    "wheezing",
+    "API",
+    "Asthma Predictive Index"
+  ],
+  "dosing": false,
+  "formula": "The PARS is derived by summing the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Parental asthma | No | 0 |\n| Yes | 2 | |\n| Eczema before 3 years of age | No | 0 |\n| Yes | 2 | |\n| Wheezing, apart from colds | No | 0 |\n| Yes | 3 | |\n| Early wheezing 1 (before age 3 years) | No | 0 |\n| Yes | 3 | |\n| SPT + 2 to ≥2 aero- and/or food allergens | No | 0 |\n| Yes | 2 | |\n| African American race | No | 0 |\n| Yes | 2 | |\n\n1. Defined as present if the parent reported any wheeze in the last 12 months at the age 1-, 2- and/or 3-year exam.\n2. Defined as present if the allergen wheal was ≥3 mm greater than the saline control.",
+  "how_to_use": {
+    "why": "- L'un des systèmes de score prédictif les plus couramment utilisés pour l'asthme dans l'enfance.\n- Plus sensible que l'[Asthma Predictive Index (API)](nabda:calc.asthma-predictive-index-api) et plus performant chez les enfants présentant un risque léger à modéré de développer un asthme (une cohorte souvent la plus difficile à stratifier sur le plan du risque).",
+    "when": "Use in children aged ≤3–4 years presenting with wheezing episodes.",
+    "pearls": "- Based on an epidemiologic study of 762 children born to atopic parents.\n- Study population was examined annually from ages 1–4 and again at age 7, when an objective evaluation for asthma was performed.\n- Children were defined as having asthma if both of the following were present:\n\n - Parent reported asthma symptoms (tight or clogged chest or throat in the past 12 months, difficulty breathing or wheezy after exercise, wheezing or whistling in the chest in the past 12 months, or a prior doctor’s diagnosis of asthma).\n - Child demonstrated either significant airway reversibility (>12% increase in FEV1) or a positive methacholine challenge.\n- Overall sensitivity is modest (68%), with good negative predictive value (93%)."
+  },
+  "next_steps": {
+    "advice": "- Ce score n'a pas de valeur diagnostique pour l'asthme.\n- Les résultats peuvent étayer les discussions avec les parents concernant le risque qu'un enfant développe de l'asthme et la nécessité d'une surveillance rapprochée.\n- Il n'existe actuellement pas de consensus dans la littérature concernant une stratégie optimale de prévention primaire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| PARS | Risk of Future Asthma | Risk of Asthma by Age 7 Years |\n| --- | --- | --- |\n| 0-4 | Low | 3-11% |\n| 5-8 | Moderate | 15-32% |\n| 9-14 | High | 40-79% |",
+  "short_description": "Prédiction du risque d'asthme chez le jeune enfant.",
+  "medium_description": "Prédit le développement de l'asthme chez les jeunes enfants.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Asthme parental",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Eczéma avant l’âge de 3 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Sibilants, en dehors des rhumes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Sifflements respiratoires précoces (avant l’âge de 3 ans)",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Positive skin prick test pour ≥2 aero- et/ou food allergens",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Origine afro-américaine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Biagini Myers JM, Schauberger E, He H, et al. A Pediatric Asthma Risk Score to better predict asthma development in young children. J Allergy Clin Immunol. 2019;143(5):1803-1810.e2. doi:10.1016/j.jaci.2018.09.037",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30554722/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "C Fabiano Filho R, Geller RJ, Candido Santos L, et al. Performance of three asthma predictive tools in a cohort of infants hospitalized with severe bronchiolitis. Front Allergy. 2021;2:758719. doi:10.3389/falgy.2021.758719",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35387011/",
+      "kind": "other"
+    },
+    {
+      "text": "Romero-Tapia S de J, Becerril-Negrete JR, Castro-Rodriguez JA, Del-Río-Navarro BE. Early prediction of asthma. J Clin Med. 2023;12(16):5404. doi:10.3390/jcm12165404",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37629446/",
+      "kind": "other"
+    },
+    {
+      "text": "Biagini JM, Martin LJ, He H, et al. Performance of the Pediatric Asthma Risk Score across diverse populations. NEJM Evid. 2023;2(10):EVIDoa2300026. doi:10.1056/EVIDoa2300026",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38320177/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.asthma-predictive-index-api"
+  ],
+  "source_logic_hash": "c043b0ba759a46920a726d283806e415",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asthma-predictive-index-api",
+      "text": "Asthma Predictive Index (API)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.asthma-predictive-index-api",
+      "text": "Asthma Predictive Index (API)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10667,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\n\n// Calculate score\nvar score = a + b + c + d + e + f;\n\nvar risk;\nif (score <= 4) {\n    risk = 'Low';\n} else if (score >= 5 && score <= 8) {\n    risk = 'Moderate';\n} else {\n    risk = 'High';\n}\n\nvar pct;\nif (score == 0) {\n    pct = 3;\n} else if (score == 2) {\n    pct = 6;\n} else if (score == 3) {\n    pct = 8;\n} else if (score == 4) {\n    pct = 11;\n} else if (score == 5) {\n    pct = 15;\n} else if (score == 6) {\n    pct = 19;\n} else if (score == 7) {\n    pct = 25;\n} else if (score == 8) {\n    pct = 32;\n} else if (score == 9) {\n    pct = 40;\n} else if (score == 10) {\n    pct = 49;\n} else if (score == 11) {\n    pct = 58;\n} else if (score == 12) {\n    pct = 66;\n} else if (score == 14) {\n    pct = 79;\n}\n \n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10667_PARS_result',\n    value: score,\n    value_text: 'points',\n    message: 'PARS'\n});\ncalc_output.push({\n    name: '10667_PARS_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of asthma by age 7 years: ' + pct + '%'\n});",
+  "before_use": "Ce calculateur inclut des paramètres fondés sur la race, qui peuvent ou non fournir de meilleures estimations. Voir [ici](https://www.mdcalc.com/race) pour en savoir plus sur notre approche concernant la prise en compte de la race et des biais sur MDCalc.",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Jocelyn M. Biagini",
+    "Dr. Gurjit K. Khurana Hershey"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.methacholine",
+    "s.cetalkonium-choline"
+  ],
+  "engine_sha256": "3697698bf98f75ae44b1f822f8fe455950dde639c470a77ef707f9c7af158399"
+}

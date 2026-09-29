@@ -1,0 +1,245 @@
+{
+  "id": "calc.mayo-alliance-prognostic-system-maps-score",
+  "slug": "mayo-alliance-prognostic-system-maps-score",
+  "language": "en",
+  "title": "Score Mayo Alliance Prognostic System (MAPS)",
+  "short_title": "Score MAPS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Asthme",
+    "Maladies auto-immunes",
+    "Ostéoporose",
+    "Mastocytose systémique",
+    "Anaphylaxie"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhée",
+    "Vertiges",
+    "Adénopathie",
+    "Myalgies",
+    "Nausée",
+    "Soins préventifs / Dépistage",
+    "Éruption cutanée",
+    "Dyspnée",
+    "Syncope",
+    "Vomissements",
+    "Sibilants",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Mayo Alliance Prognostic System (MAPS) Score",
+    "MAPS Score",
+    "Mast cell activation disorders",
+    "MCAD",
+    "bone marrow",
+    "mast cell",
+    "MC",
+    "mast cell activation",
+    "systemic mastocytosis",
+    "SM",
+    "MC clonality",
+    "serum baseline tryptase",
+    "sBt",
+    "indolent systemic mastocytosis",
+    "ISM",
+    "clonal MCAD",
+    "c-MCAD",
+    "nonclonal MCAD",
+    "nc-MCAD",
+    "clonal sMCAD",
+    "c-sMCAD",
+    "nonclonal sMCAD",
+    "nc-sMCAD",
+    "cutaneous mastocytosis",
+    "CM",
+    "MC sarcoma",
+    "MCS",
+    "smoldering SM",
+    "SSM",
+    "indolent SM",
+    "ISM",
+    "aggressive SM",
+    "ASM",
+    "SM-AHN",
+    "MC leukemia",
+    "MCL",
+    "MC activation syndrome",
+    "MCAS"
+  ],
+  "dosing": false,
+  "formula": "The MAPS Score is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| SM type | Indolent SM/smoldering SM | 0 |\n| Advanced SM | 2 | |\n| Age, years | ≤60 | 0 |\n| >60 | 1 | |\n| Platelets | ≥150×10 9 /L | 0 |\n| <150×10 9 /L | 1 | |\n| Serum ALP | Within normal range | 0 |\n| Above normal range | 1 | |\n| Adverse mutations* | No | 0 |\n| Yes | 1 | |\n\n*Includes *ASXL1, RUNX1,* and *NRAS* mutations",
+  "how_to_use": {
+    "why": "Provides prognosis estimates in SM using clinical and molecular information.",
+    "when": "Conçu pour être utilisé au chevet du patient afin de stratifier le risque des patients adultes atteints de mastocytose systémique (SM).",
+    "pearls": "- Nécessite une stratification initiale de la SM selon le système de classification de l'OMS.\n- Cette version hybride clinico-moléculaire de l'outil s'applique aux sous-types de SM indolente/smoldering (ISM/SSM) et de SM avancée.\n- Une variante de cet outil est disponible ; elle n'intègre que les données cliniques.\n- Remarque : la « SM avancée » englobe les variantes de SM qui dépassent les formes indolentes ou smoldering."
+  },
+  "next_steps": {
+    "advice": "- Un score plus élevé est associé à un pronostic moins favorable.\n- Les résultats doivent être intégrés à une évaluation globale afin d’éclairer les décisions de prise en charge, comme le recours à des stratégies thérapeutiques plus agressives lorsque cela est nécessaire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| MAPS Score | Risk | Median Overall Survival |\n| --- | --- | --- |\n| ≤2 | Low | 198 months |\n| 3 | Intermediate | 85 months |\n| 4 | 36 months | |\n| ≥5 | High | 12 months |",
+  "short_description": "Pronostic de la mastocytose systémique.",
+  "medium_description": "Évalue le pronostic de la mastocytose systémique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "SMtype",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Indolent SM/smoldering SM",
+          "value": 0
+        },
+        {
+          "label": "Advanced SM",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Âge, années",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤60",
+          "value": 0
+        },
+        {
+          "label": "> 60",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Plaquettes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥150×10⁹/L",
+          "value": 0
+        },
+        {
+          "label": "< 150×10⁹/L",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "ALP sérique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Dans les limites de la normale",
+          "value": 0
+        },
+        {
+          "label": "Au-dessus de la plage normale",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Adverse mutations",
+      "tips": "(c.-à-d. *ASXL1*, *RUNX1*, *NRAS*)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Pardanani A, Shah S, Mannelli F, et al. Mayo alliance prognostic system for mastocytosis: clinical and hybrid clinical-molecular models. Blood Advances. 2018;2(21):2964-2972.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30413432/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pardanani A, Lasho TL, Reichard KK, Hanson CA, Tefferi A. World Health Organization class-independent risk categorization in mastocytosis. Blood Cancer J. 2019;9(3):29.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30833549/",
+      "kind": "other"
+    },
+    {
+      "text": "Pardanani A. Systemic mastocytosis in adults: 2023 update on diagnosis, risk stratification and management. American J Hematol. 2023;98(7):1097-1116.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37309222/",
+      "kind": "other"
+    },
+    {
+      "text": "Li JY, Ryder CB, Zhang H, et al. Review and updates on systemic mastocytosis and related entities. Cancers. 2023;15(23):5626.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38067330/",
+      "kind": "other"
+    },
+    {
+      "text": "Mannelli F, Gesullo F, Rotunno G, et al. Validation of the Mayo alliance prognostic system for mastocytosis. Blood Cancer Journal. 2019;9(2):18.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30741929/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.world-health-organization-who-diagnostic-criteria-systemic-mastocytosis",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-systemic-mastocytosis",
+    "calc.spanish-network-mastocytosis-rema-score"
+  ],
+  "source_logic_hash": "8d8ed73fe73a053ae77698358427a63b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10557,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\n\nvar score = q1 + q2 + q3 + q4 + q5;\n\nvar risk;\nif (score <= 2) {\n    risk = \"Low\";\n} else if (score == 3 || score == 4) {\n    risk = \"Intermediate\";\n} else {\n    risk = \"High\";\n} \n\nvar surv;\nif (score <= 2) {\n    surv = \"198 months\";\n} else if (score == 3) {\n    surv = \"85 months\";\n} else if (score == 4) {\n    surv = \"36 months\";\n} else {\n    surv = \"12 months\";\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'MAPS Score'\n});\ncalc_output.push({\n    name: '10557_MAPS_score_result',\n    value: score,\n    value_text: 'points',\n    message: 'MAPS Score'\n});\ncalc_output.push({\n    name: '10557_MAPS_score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Median overall survival: ' + surv\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Animesh Pardanani"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "f6c5ef443adff069be964bf86741beae4df5275c293746ce45412d60fab613e5"
+}

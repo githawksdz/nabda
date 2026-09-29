@@ -1,0 +1,198 @@
+{
+  "id": "calc.decaf-score-acute-exacerbation-copd",
+  "slug": "decaf-score-acute-exacerbation-copd",
+  "language": "en",
+  "title": "DECAF score pour aigu Exacerbation de COPD",
+  "short_title": "Score DECAF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma",
+    "Coronavirus",
+    "Pneumonia",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Decaf score",
+    "coad",
+    "acute copd",
+    "coronavirus",
+    "covid-19",
+    "covid"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| | Points | | |\n| --- | --- | --- | --- |\n| 0 | 1 | 2 | |\n| Échelle de dyspnée MRC étendue (eMRCD) | Pas trop dyspnéique pour quitter la maison (eMRCD 1–4) | Trop dyspnéique pour quitter la maison mais autonome pour se laver/s'habiller (eMRCD 5a) | Trop dyspnéique pour quitter la maison et pour se laver/s'habiller (eMRCD 5b) |\n| Éosinopénie (éosinophiles <0,05×10⁹/L) | Non | Oui | -- |\n| Consolidation à la radiographie thoracique | Non | Oui | -- |\n| Acidémie (pH <7,30) | Non | Oui | -- |\n| Fibrillation atriale (y compris antécédent de FA paroxystique) | Non | Oui | -- |",
+  "how_to_use": {
+    "why": "- Peut aider à la prise de décision clinique en termes de sortie précoce, d'escalade des soins ou de discussion des objectifs de soins :\n\n - Les patients à faible risque (score 0-1) peuvent être candidats à une sortie précoce avec soutien.\n - Les patients à haut risque (score 3-6) peuvent être candidats à des niveaux de soins plus élevés et/ou à une discussion des objectifs de soins.\n- Des scores plus élevés peuvent être corrélés à une durée de séjour prolongée.",
+    "when": "Patients hospitalisés avec un diagnostic principal d'exacerbation aiguë de BPCO, comme suit :\n\n- Âge ≥35 ans.\n\n- Avec ou sans pneumonie.\n\n- Arguments en faveur d'une obstruction des débits aériens à la spirométrie avant l'admission (VEMS/CVF <0,70).\n- Tabagisme cumulé de ≥10 paquets-années.\n\nNe pas utiliser si le patient a une espérance de vie <12 mois ou est sous O₂ à domicile.",
+    "pearls": "- Le score DECAF prédit la mortalité intrahospitalière chez les patients admis à l'hôpital pour une exacerbation aiguë de BPCO.\n- Peut être utilisé chez les patients présentant à la fois une pneumonie et une BPCO.\n- Meilleur prédicteur de la mortalité intrahospitalière que le [CURB-65](nabda:calc.curb-65-score-pneumonia-severity) chez les patients présentant à la fois une pneumonie et une exacerbation aiguë de BPCO.\n- Utilise des variables disponibles en routine.\n- Les variables issues des analyses initiales sont utilisées pour calculer le score.\n- Nécessite le score de dyspnée étendu du Medical Research Council (eMRCD), qui peut être difficile à obtenir chez les patients présentant une encéphalopathie aiguë, une démence, ou chez ceux qui sont intubés.\n- Validé pour une utilisation au moment de l'admission dans les hôpitaux du Royaume-Uni, mais pas encore validé dans les services d'urgences américains."
+  },
+  "next_steps": {
+    "advice": "- Des scores DECAF croissants sont corrélés à un risque accru de mortalité intrahospitalière.\n- Les scores DECAF élevés (3-6) sont associés à la fois à un risque élevé de décès et à un délai court jusqu'au décès. Envisager une escalade précoce et un niveau de surveillance plus élevé plutôt que des soins palliatifs pour ces patients.\n- Les scores DECAF faibles (0-1) sont associés à un faible risque de mortalité et ces patients peuvent être candidats à une sortie précoce.",
+    "critical_actions": "- Ne doit être utilisé que chez les patients hospitalisés avec un diagnostic principal d'exacerbation aiguë de BPCO, et non en ambulatoire ni chez les patients dont la BPCO est stable.\n- Les scores DECAF 5–6 se sont avérés associés au risque de décès le plus élevé et au délai le plus court jusqu'au décès, et peuvent justifier une évaluation précoce en vue d'une escalade des soins, d'un niveau de surveillance plus élevé ou de soins palliatifs potentiels.",
+    "management": "N'a pas été étudié pour dicter la prise en charge ou les options thérapeutiques. Le score ne doit pas remplacer le jugement clinique concernant le bilan, le diagnostic ou le traitement."
+  },
+  "evidence": "Le score DECAF a été dérivé par [Steer et al](https://www.ncbi.nlm.nih.gov/pubmed/22895999) à partir de l'évaluation des variables associées à la mortalité intrahospitalière dans une cohorte prospective de 920 patients recrutés sur deux ans dans deux établissements au Royaume-Uni. À partir de cette cohorte, cinq variables indépendantes ayant la meilleure capacité prédictive de la mortalité intrahospitalière ont été sélectionnées pour créer le score DECAF.\n\nLes patients recrutés étaient âgés de ≥35 ans, avaient un tabagisme cumulé de ≥10 paquets-années, des arguments en faveur d'une limitation des débits aériens avant l'admission (VEMS/CVF <0,70) et étaient hospitalisés avec un diagnostic principal d'exacerbation aiguë de BPCO. Les patients exclus étaient ceux présentant une comorbidité susceptible de limiter la survie à moins de 12 mois et ceux sous oxygène à domicile.\n\nLe score DECAF a été validé en interne et a montré de bonnes performances pour prédire la mortalité intrahospitalière. Il a ensuite été [validé en externe](https://www.ncbi.nlm.nih.gov/pubmed/26769015) dans deux cohortes de patients. La première cohorte comprenait 880 patients issus des mêmes hôpitaux que l'étude de dérivation initiale. La seconde cohorte comprenait 845 patients issus de 4 hôpitaux différents au Royaume-Uni.\n\nDans ces deux cohortes de validation, le score DECAF a montré de bonnes performances pour prédire la mortalité intrahospitalière et a de nouveau surpassé d'autres systèmes de score, notamment [BAP-65](nabda:calc.bap-65-score-acute-exacerbation-copd), CAPS, [APACHE II](nabda:calc.apache-ii-score) et [CURB-65](nabda:calc.curb-65-score-pneumonia-severity).",
+  "more_info": "Interprétation :\n\n| Score DECAF | Risque | Recommandation | Mortalité intrahospitalière* |\n| --- | --- | --- | --- |\n| 0 | Faible | Prise en charge habituelle | 0% |\n| 1 | 1,5% | | |\n| 2 | Intermédiaire | Recourir au jugement du clinicien pour l'orientation | 5,4% |\n| 3 | Élevé | Envisager une escalade des soins vs. des soins palliatifs | 15,3% |\n| 4 | 31% | | |\n| 5 | 40,5% | | |\n| 6 | 50% | | |\n\n*D'après [Echevarria 2016](https://thorax.bmj.com/content/thoraxjnl/71/2/133.full.pdf).",
+  "short_description": "COPD mortalité, aigu exacerbation.",
+  "medium_description": "Predicts dans-hôpital mortalité dans aigu COPD exacerbation.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "emrcd",
+      "label": "Extended MRC Dyspnea échelle (eMRCD)",
+      "tips": "Lors d'une bonne journée, au cours des 3 derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not too dyspneic pour leave house (eMRCD 1–4)",
+          "value": 0
+        },
+        {
+          "label": "Too dyspneic pour leave house but independent avec washing/dressing (eMRCD 5)",
+          "value": 1
+        },
+        {
+          "label": "Too dyspneic pour leave house et wash/dress (eMRCD 5b)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eos",
+      "label": "Eosinopenia",
+      "tips": "Éosinophiles <0,05×10⁹/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cons",
+      "label": "Consolidation à la radiographie thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aci",
+      "label": "Acidemia",
+      "tips": "pH <7.30",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "afib",
+      "label": "Fibrillation atriale",
+      "tips": "À l'ECG lors de la présentation et/ou antécédent de FA paroxystique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Steer J, Gibson J, Bourke SC. The DECAF Score: predicting hospital mortality in exacerbations of chronic obstructive pulmonary disease. Thorax. 2012;67(11):970-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22895999 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Echevarria C, Steer J, Heslop-marshall K, et al. Validation of the DECAF score to predict hospital mortality in acute exacerbations of COPD. Thorax. 2016;71(2):133-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26769015 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bap-65-score-acute-exacerbation-copd",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.lung-injury-prediction-score-lips"
+  ],
+  "source_logic_hash": "bd1b6b6147d49ec42d29702b214f4a72",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4018,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,307 @@
+{
+  "id": "calc.abbreviated-mental-test-amt-10",
+  "slug": "abbreviated-mental-test-amt-10",
+  "language": "en",
+  "title": "Test mental abrégé (AMT-10)",
+  "short_title": "AMT-10",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Delirium",
+    "Dementia"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Déficit neurologique"
+  ],
+  "abbreviations": [
+    "AMTS",
+    "Amt 10",
+    "amt",
+    "amt-10",
+    "abbreviated mental test score",
+    "abbreviated mental test"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points (ask the patient):\n\n| Question | Correct | Incorrect |\n| --- | --- | --- |\n| Age | 1 point | 0 points |\n| Time (to the nearest hour) | 1 point | 0 points |\n| Give the patient the following address for recall at end of test: “42 West Street” (have patient repeat to ensure it has been heard correctly) | | |\n| Current year | 1 point | 0 points |\n| Patient’s home address | 1 point | 0 points |\n| What jobs do these people do? (show the patient two pictures: a postman and a cook) | 1 point | 0 points |\n| Date of birth | 1 point | 0 points |\n| Year World War I started | 1 point | 0 points |\n| Current president (use setting-specific equivalent, e.g. “monarch” in the UK) | 1 point | 0 points |\n| Count backwards from 20 to 1 | 1 point | 0 points |\n| Ask to recall address given earlier (i.e., 42 West Street) | 1 point | 0 points |\n\nFrom[Abbreviated Mental Test Score 1993](https://www.ncbi.nlm.nih.gov/pubmed/19790838).",
+  "how_to_use": {
+    "why": "- Ce score est bien étudié dans divers contextes cliniques.\n- Il a été traduit dans plusieurs langues.\n- Il peut être réalisé rapidement et utilisé pour déterminer si des examens complémentaires sont indiqués.",
+    "when": "- Utilisez cet outil pour évaluer une éventuelle atteinte cognitive chez les patients gériatriques.\n- Peut être utilisé en milieu hospitalier ou en consultation externe.",
+    "pearls": "- Il s'agit uniquement d'un outil de dépistage et il ne doit pas être utilisé pour poser formellement un diagnostic de démence chez les patients.\n- Si le score est inférieur à 7, un bilan complémentaire doit être réalisé."
+  },
+  "next_steps": {
+    "advice": "- Un score <7 suggère la présence possible d'une atteinte cognitive.\n- Il s'agit uniquement d'un outil de dépistage. Un score bas doit faire l'objet d'une exploration plus approfondie avant tout diagnostic formel.\n- Le bilan doit comprendre la recherche d'éventuels processus pathologiques sous-jacents, ainsi qu'une évaluation cognitive complémentaire une fois les autres causes écartées.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score AMT-10 | Sévérité du delirium |\n| --- | --- |\n| 0-3 | Trouble cognitif sévère |\n| 4-6 | Trouble cognitif modéré |\n| >6 | Absence de delirium |\n\nD'après [Abbreviated Mental Test Score 1993](https://www.ncbi.nlm.nih.gov/pubmed/19790838).\n\nRemarque : certains auteurs (p. ex. [Foroughan 2017](https://onlinelibrary.wiley.com/doi/full/10.1111/psyg.12276)) suggèrent un seuil de 7 pour le trouble cognitif.",
+  "short_description": "État mental.",
+  "medium_description": "Assesses mental impairment dans elderly patients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "time",
+      "label": "Time",
+      "tips": "To the nearest hour",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "year",
+      "label": "Current year",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "homeaddress",
+      "label": "Patient’s home address",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "jobs",
+      "label": "What jobs do these people do?",
+      "tips": "Show the patient two pictures: a postman and a cook",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "date",
+      "label": "Date de naissance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ww1",
+      "label": "Year World War I started",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "president",
+      "label": "Current president",
+      "tips": "Use setting-specific equivalent, e.g. “monarch” in the UK",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "count",
+      "label": "Count backwards de 20 pour 1",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "recall",
+      "label": "Ask pour recall address given earlier",
+      "tips": "i.e., 42 West Street",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Correct",
+          "value": 1
+        },
+        {
+          "label": "Incorrect",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hodkinson HM. Evaluation of a mental test score for assessment of mental impairment in the elderly. Age Ageing. 1972;1(4):233-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4669880",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abbreviated Mental Test Score (AMTS). Occas Pap R Coll Gen Pract. 1993;(59):28.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19790838",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bonaiuto S, Rocca WA, Lippi A, et al. Study on the validity of the Hodkinson Abbreviated Mental Test Score (AMTS) in detecting dementia of elderly subjects in appignano (Macerata province), Italy. Arch Gerontol Geriatr. 1992;15 Suppl 1:75-85.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18647677",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Foroughan M, Wahlund LO, Jafari Z, Rahgozar M, Farahani IG, Rashedi V. Validity and reliability of Abbreviated Mental Test Score (AMTS) among older Iranian. Psychogeriatrics. 2017;17(6):460-465.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/psyg.12276",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Piotrowicz K, Romanik W, Skalska A, et al. The comparison of the 1972 Hodkinson's Abbreviated Mental Test Score (AMTS) and its variants in screening for cognitive impairment. Aging Clin Exp Res. 2019;31(4):561-566.",
+      "href": "https://link.springer.com/article/10.1007/s40520-018-1009-7",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abbreviated-mental-test-4-amt-4",
+    "calc.4-test-delirium-assessment",
+    "calc.abbreviated-injury-score-ais-inhalation-injury"
+  ],
+  "source_logic_hash": "59b680adba5bc0162a6693866cd200d1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10208,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

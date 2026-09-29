@@ -1,0 +1,181 @@
+{
+  "id": "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+  "slug": "nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+  "language": "en",
+  "title": "Score de fibrose NAFLD (maladie du foie gras non alcoolique)",
+  "short_title": "Score de fibrose NAFLD (NAFLD Fibrosis Score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Diabète sucré",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "hepatic",
+    "nafld",
+    "fibrosis",
+    "cirrhosis",
+    "prognosis",
+    "calculation",
+    "hepatitis"
+  ],
+  "dosing": false,
+  "formula": "NAFLD Score = -1.675 + (0.037*age [years]) + (0.094*BMI [kg/m^2^]) + (1.13*IFG/diabetes [yes = 1, no = 0]) + (0.99*AST/ALT ratio) – (0.013*platelet count [×10^9^/L]) – (0.66*albumin [g/dl])",
+  "how_to_use": {
+    "why": "- Patients with nonalcoholic fatty liver disease (NAFLD) and advanced liver cirrhosis are high risk for progression to end-stage liver disease.\n- Patients with known liver fibrosis should have their fibrosis trended over time to evaluate for progression or stabilization.",
+    "when": "Patients chez qui une NAFLD a été identifiée.",
+    "pearls": "- Nonalcoholic fatty liver disease (NAFLD) is now the leading cause of chronic liver disease in the world.\n- Many NAFLD patients will have little progression in their disease, however a subset will progress to liver fibrosis and cirrhosis.\n- Patients studied to develop this score were screened for other causes of liver disease and were specifically evaluated closely for concomitant alcohol. Patients with already-decompensated liver disease by clinical or imaging evidence were also excluded.\n- Patients with NAFLD should have their fibrosis scores trended over time to evaluate for progression or stabilization.\n- The NAFLD can reduce liver biopsies in those patients predicted to have a low risk of fibrosis by their score: “a liver biopsy to determine severity of fibrosis would be required in only 25% of patients with NAFLD, that is, those identified as ‘indeterminate’.”"
+  },
+  "next_steps": {
+    "advice": "Selon le score et la prévalence locale de fibrose avancée, le score peut être utilisé pour prédire de manière fiable (avec une précision de 80 % à 90 %) quels patients sont peu susceptibles de présenter des signes cellulaires de fibrose à la biopsie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| Score NAFLD | Sévérité de la fibrose corrélée |\n| --- | --- |\n| < -1.455 | F0-F2 |\n| -1.455 – 0.675 | Score indéterminé |\n| > 0.675 | F3-F4 |\n\nÉchelle de sévérité de la fibrose\n\n- F0 = absence de fibrose\n- F1 = fibrose légère\n- F2 = fibrose modérée\n- F3 = fibrose sévère\n- F4 = cirrhose",
+  "short_description": "Estime l’importance de la fibrose hépatique.",
+  "medium_description": "Estimates amount de scarring dans liver basé sur several laboratoire tests.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "BMI",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "ifg",
+      "label": "Impaired fasting glucose/diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "platelets",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Angulo P, Hui JM, Marchesini G, Bugianesi E, George J, Farrell GC, Enders F, Saksena S, Burt AD, Bida JP, Lindor K, Sanderson SO, Lenzi M, Adams LA, Kench J, Therneau TM, Day CP. The NAFLD fibrosis score: a noninvasive system that identifies liver fibrosis in patients with NAFLD. Hepatology. 2007 Apr;45(4):846-54. PMID: 17393509.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17393509",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tapper EB, Lok AS. Use of Liver Imaging and Biopsy in Clinical Practice. N Engl J Med. 2017;377(8):756-768.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28834467",
+      "kind": "other"
+    },
+    {
+      "text": "A D, S W, Mh W, et al. Performance of non-invasive fibrosis scores in non-alcoholic fatty liver disease with and without morbid obesity. International journal of obesity (2005). 2021;45(10)",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34168277/",
+      "kind": "other"
+    },
+    {
+      "text": "Arnouk J, Rachakonda VP, Jaiyeola D, Behari J. Differential outcomes and clinical challenges of nafld with extreme obesity. Hepatol Commun. 2020;4(10):1419-1429.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33024913/20population",
+      "kind": "other"
+    },
+    {
+      "text": "S Q, N A, I L, et al. Obesity modifies the performance of fibrosis biomarkers in nonalcoholic fatty liver disease. The Journal of clinical endocrinology and metabolism. 2022;107(5)",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34971370/",
+      "kind": "other"
+    },
+    {
+      "text": "Treeprasertsuk S, Björnsson E, Enders F, Suwanwalaikorn S, Lindor KD. NAFLD fibrosis score: A prognostic predictor for mortality and liver complications among NAFLD patients. World Journal of Gastroenterology. 2013;19(8):1219-1229. doi:10.3748/wjg.v19.i8.1219.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3587478/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+    "calc.fibrotic-nash-index-fni",
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease"
+  ],
+  "source_logic_hash": "3aedc6482f47e1cc0dda0e14a6b74d2a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3081,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

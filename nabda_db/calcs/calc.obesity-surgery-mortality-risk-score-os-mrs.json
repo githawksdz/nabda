@@ -1,0 +1,196 @@
+{
+  "id": "calc.obesity-surgery-mortality-risk-score-os-mrs",
+  "slug": "obesity-surgery-mortality-risk-score-os-mrs",
+  "language": "en",
+  "title": "Obesity Surgery risque de mortalité score (OS-MRS)",
+  "short_title": "OS-MRS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Obesity"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Fatigue",
+    "Douleur articulaire",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Obesity Surgery Mortality Risk Score",
+    "OS-MRS",
+    "gastric bypass",
+    "bariatric surgery",
+    "GBP",
+    "GBP surgery",
+    "gastric bypass surgery",
+    "obesity",
+    "obesity surgery"
+  ],
+  "dosing": false,
+  "formula": "The OS-MRS is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| BMI ≥50 kg/m 2 | No | 0 |\n| Yes | 1 | |\n| Male gender | No | 0 |\n| Yes | 1 | |\n| Hypertension | No | 0 |\n| Yes | 1 | |\n| Risk of PE i.e., OHS, venous stasis ulcers, previous PE, and/or previous IVC filter | No | 0 |\n| Yes | 1 | |\n| Age ≥45 years | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- May help facilitate the informed consent process for bariatric surgery and guide surgical decision-making.\n- Provides some standardization for outcome comparisons between surgical treatment centers, which may have variations in their case risk levels.",
+    "when": "Can be used to predict mortality risk during the preoperative assessment for patients undergoing gastric bypass surgery.",
+    "pearls": "- This tool was originally derived from data regarding patients undergoing primary bariatric operations, namely open and laparoscopic Roux-en-Y gastric bypass (RYGB). Subsequent studies have evaluated its use for other bariatric procedures.\n- Results should not necessarily rule patients out for surgery, since high-risk patients may greatly benefit from gastric bypass procedures.\n- The assessment does not take into account surgeon and institutional experience.\n- Factors to consider in assessing postoperative PE risk may include venous stasis, obesity-hypoventilation syndrome, right heart failure, pulmonary hypertension, and previous venous thromboembolism."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Consider risk reduction strategies for individuals at highest risk of mortality (Class C). These strategies may include choosing lower-risk procedures, opting for staged or sequential treatment approaches, or increasing emphasis on a preoperative reduction in BMI."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Class | OS-MRS | Mortality rate |\n| --- | --- | --- |\n| A | 0-1 | 0.31% |\n| B | 2-3 | 1.90% |\n| C | 4-5 | 7.56% |",
+  "short_description": "Gastric bypass risque de mortalité.",
+  "medium_description": "Predicts risque de mortalité dans patients undergoing gastric bypass surgery.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "BMI ≥50 kg/m^2^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Male gender",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Risque ofPE",
+      "tips": "i.e.,OHS, venous stasis ulcers, previous PE, and/or previous IVC filter",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Âge ≥45 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "DeMaria EJ, Portenier D, Wolfe L. Obesity surgery mortality risk score: proposal for a clinically useful score to predict mortality risk in patients undergoing gastric bypass. Surg Obes Relat Dis. 2007;3(2):134-140.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17386394/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "García-García ML, Martín-Lorenzo JG, Lirón-Ruiz R, Torralba-Martínez JA, García-López JA, Aguayo-Albasini JL. Failure of the Obesity Surgery Mortality Risk Score (OS-MRS) to Predict Postoperative Complications After Bariatric Surgery. A Single-Center Series and Systematic Review. Obes Surg. 2017;27(6):1423-1429.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27975153/",
+      "kind": "other"
+    },
+    {
+      "text": "Efthimiou E, Court O, Sampalis J, Christou N. Validation of Obesity Surgery Mortality Risk Score in patients undergoing gastric bypass in a Canadian center. Surg Obes Relat Dis. 2009;5(6):643-647.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19837010/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Thomas H, Agrawal S. Systematic review of obesity surgery mortality risk score--preoperative risk stratification in bariatric surgery. Obes Surg. 2012;22(7):1135-1140.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22535443/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "DeMaria EJ, Murr M, Byrne TK, et al. Validation of the obesity surgery mortality risk score in a multicenter study proves it stratifies mortality risk in patients undergoing gastric bypass for morbid obesity. Ann Surg. 2007;246(4):578-582; discussion 583-584.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17893494/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.acef-ii-risk-score-cardiac-surgery",
+    "calc.pancreatic-fistula-risk-score"
+  ],
+  "source_logic_hash": "3d1af73bf844dd8a5100e57a7a4b38ec",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10520,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

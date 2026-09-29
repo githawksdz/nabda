@@ -1,0 +1,162 @@
+{
+  "id": "calc.anion-gap",
+  "slug": "anion-gap",
+  "language": "en",
+  "title": "Trou anionique sérique",
+  "short_title": "Trou anionique (Anion Gap)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "nephrologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Diabète sucré",
+    "Ingestion/Surdosage",
+    "Insuffisance rénale",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Dyspnée",
+    "Vomissements"
+  ],
+  "abbreviations": [
+    "acidosis",
+    "ph",
+    "delta ratio",
+    "sodium",
+    "chloride",
+    "bicarbonate",
+    "ions",
+    "metabolic acidosis"
+  ],
+  "dosing": false,
+  "formula": "Key formulas include:\n\n1. Anion Gap = Na - (Cl + HCO3-) or Anion gap, mEq/L = sodium, mEq/L - (chloride, mEq/L+ bicarbonate, mEq/L)\n2. Delta Gap = the patient’s Anion Gap – the “normal” anion gap (considered to be 10 to 12)\n3. Albumin corrected anion gap, mEq/L = anion gap + [ 2.5 × (4 - albumin, g/dL) ]\n4. Albumin corrected delta gap, mEq/L = albumin corrected anion gap - “normal” anion gap (considered to be 10 to 12)\n5. Delta ratio = delta anion gap / (24 - bicarbonate, mEq/L)\n6. Albumin corrected delta ratio = albumin corrected delta gap / (24 - bicarbonate, mEq/L)",
+  "how_to_use": {
+    "why": "Une acidose avec augmentation du trou anionique a un diagnostic différentiel distinct comparé à une acidose sans trou anionique.",
+    "when": "À utiliser pour déterminer si l’acidose métabolique d’un patient comporte également un trou anionique élevé.",
+    "pearls": "- Une valeur « normale » du trou anionique suppose que les protéines chargées non mesurées (p. ex., immunoglobulines chargées positivement, albumine chargée négativement) se situent dans leurs intervalles de référence respectifs.\n- Les patients présentant une albuminémie basse ou des immunoglobulines élevées peuvent avoir un trou anionique de base plus bas, ce qui peut masquer la reconnaissance d’un trou anionique augmenté dans un contexte d’acidose."
+  },
+  "next_steps": {
+    "advice": "En cas d’hypoalbuminémie ou d’hyperalbuminémie, le résultat du trou anionique corrigé peut être plus précis.\n\nSi aucune albuminémie n’est saisie, ou si l’albumine se situe dans l’intervalle normal, aucune correction n’est nécessaire.",
+    "critical_actions": "",
+    "management": "Management of an anion gap acidosis focuses on correcting the underlying cause and varies based on the specific etiology.\n\n**Anion Gap Metabolic Acidosis** : MUDPILERS\n\n- Methanol\n- Uremia\n- Diabetic ketoacidosis/alcoholic ketoacidosis\n- Paraldehyde\n- Isoniazid\n- Lactic acidosis\n- Ethanol/ethylene glycol\n- Rhabdomyolysis/renal failure\n- Salicylates\n\n**Non-Anion Gap Acidosis** : HARDUPS\n\n- Hyperalimentation\n- Acetazolamide\n- Renal tubular acidosis\n- Diarrhea\n- Ureteroenterostomy (or ureteroenteric fistula)\n- Post-hypocapnia\n- Spironolactone\n\n**Acute Respiratory Acidosis:**\n\n- CNS depression (drugs/CVA)\n- Airway obstruction\n- Pneumonia\n- Pulmonary edema\n- Hemo/pneumothorax\n- Myopathy\n\n**Chronic Respiratory Acidosis:**\n\n- COPD\n- Restrictive lung disease\n- Any hypoventilation state\n\n**Metabolic Alkalosis** : CLEVER PD\n\n- Contraction\n- Licorice\n- Endocrine causes (Conn's, Cushings, or Bartter's Syndrome)\n- Vomiting\n- Excess alkali\n- Refeeding alkalosis\n- Post-hypercapnia\n- Diuretics\n\n**Respiratory Alkalosis** : CHAMPS (think speed up breathing)\n\n- Central Nervous System (CNS) disease\n- Hypoxia\n- Anxiety\n- Mechanical ventilators\n- Progesterone\n- Salicylates/sepsis"
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\nThe delta ratio is the ratio of the amount of additional anion in a body to the amount of additional H^+^. The anion's volume of distribution and its excretion affect this ratio. Organic acids with a greater distribution may produce lower anion gaps compared to inorganic acids, which may be confined to the extracellular compartment.\n\n| Delta ratio | Suggests... |\n| --- | --- |\n| <0.4 | Pure normal anion gap acidosis |\n| 0.4-0.8 | Mixed high and normal anion gap acidosis |\n| 0.8-2.0 | Pure anion gap acidosis |\n| >2 | High anion gap acidosis with pre-existing metabolic alkalosis |",
+  "short_description": "Évalue les états d’acidose métabolique.",
+  "medium_description": "Évalue les états d’acidose métabolique.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "chloride",
+      "label": "Chlorure",
+      "optional": false,
+      "unit": "cl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bicarbonate",
+      "label": "Bicarbonate",
+      "optional": false,
+      "unit": "bicarb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumine",
+      "optional": true,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Oh MS, Carroll HJ. The anion gap. N. Engl. J. Med. 1977; 297 (15): 814–7.doi:10.1056/NEJM197710132971507. PMID 895822",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/895822",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Criner GJ. Metabolic Disturbance of Acid-Base and Electrolytes. In: Critical Care Study Guide: Text and Review. 2nd ed. Philadelphia, PA: Springer; 2010:696.",
+      "href": "https://link.springer.com/chapter/10.1007/978-0-387-77452-7_35",
+      "kind": "other"
+    },
+    {
+      "text": "Berend K, De vries AP, Gans RO. Physiological approach to assessment of acid-base disturbances. N Engl J Med. 2014;371(15):1434-45.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25295502",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.arterial-blood-gas-abg-analyzer",
+    "calc.winters-formula-metabolic-acidosis-compensation",
+    "calc.urine-anion-gap"
+  ],
+  "source_logic_hash": "e126e3ec0c9782059ede286ecd49bf03",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1669,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar aniongap = parseFloat(sodium) - parseFloat(chloride) - parseFloat(bicarbonate);\n// delta gap\n\nvar deltagap = aniongap - 12;\nvar deltaratio = deltagap / (24 - parseFloat(bicarbonate));\nvar msg = '';\nvar units;\nvar alb = parseFloat(albumin);\n\nif (UOMSYSTEM == false) { // convert albumin to US units\n  alb = alb / 10\n}\n\n// delta ratio\nif (deltaratio < 0.4) {\n  msg = 'Pure normal anion gap acidosis';\n}\nif (deltaratio >= 0.4 && deltaratio < 0.8) {\n  msg = 'Mixed high and normal anion gap acidosis';\n}\nif (deltaratio >= 0.8 && deltaratio <= 2) {\n  msg = 'Pure anion gap acidosis';\n}\nif (deltaratio > 2) {\n  msg =\n    'High anion gap acidosis with pre-existing metabolic alkalosis';\n}\n\nif (UOMSYSTEM == true) { // US units, no change\n units = 'mEq/L';\n} else {\n  units = 'mmol/L';\n}\n\n//Corrected AG\nvar cag;\nvar string;\nif (alb == 0) {\n  cag = 'N/A';\n  string = 'Corrected Anion Gap for Albumin';\n} else {\n  var albCorrect =  (2.5 * (4 - alb));\n  cag = aniongap + albCorrect;\n  var acdp = cag - 12; \n  var acdr = acdp / (24 - bicarbonate);\nif (cag >= 16) {\n  string = 'Albumin corrected anion gap; suggests high anion gap acidosis' + '<br/><br/>Albumin corrected delta gap: ' + acdp.toFixed(1) + ' ' + units + '<br/><br/>Albumin corrected delta ratio: ' + acdr.toFixed(1);\n} if (cag < 16) {\n  string = 'Albumin corrected anion gap; suggests non-anion gap acidosis' + '<br/><br/>Albumin corrected delta gap: ' + acdp.toFixed(1) + ' ' + units + '<br/><br/>Albumin corrected delta ratio: ' + acdr.toFixed(1);\n}\n}\n\n\n  calc_output.push({\n    name: 'mini',\n    value: aniongap.toFixed(1),\n    value_text: units,\n    message: 'Anion gap'\n  });\n  calc_output.push({\n    name: '1669_Anion Gap_result (gap)',\n    value: aniongap.toFixed(1),\n    value_text: units,\n    message: 'Anion gap' + '<br/><br/>Delta gap: ' +deltagap.toFixed(1) + ' ' + units + '<br/><br/>Delta ratio: ' + deltaratio.toFixed(1) + '; ' +msg \n  });\n  if (alb > 0) {\n  calc_output.push({\n    name: '1669_Anion Gap_result (corrected)',\n    value: cag.toFixed(1),\n    value_text: units,\n    message: string\n  });\n}",
+  "before_use": null,
+  "instructions": "Nous disposons également d'un [ABG Analyzer](nabda:calc.arterial-blood-gas-abg-analyzer) pour aider à l'analyse acido-basique.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Man S. Oh"
+  ],
+  "measurement_ids": [
+    "Sodium",
+    "Chloride",
+    "Bicarbonate",
+    "Albumin"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium"
+  ],
+  "engine_sha256": "290832f4ceb03ab2d6961611655d42958b1583e5844e94ba9b42b1eeea4a0ac1"
+}

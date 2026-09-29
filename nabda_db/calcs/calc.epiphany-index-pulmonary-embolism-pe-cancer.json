@@ -1,0 +1,324 @@
+{
+  "id": "calc.epiphany-index-pulmonary-embolism-pe-cancer",
+  "slug": "epiphany-index-pulmonary-embolism-pe-cancer",
+  "language": "en",
+  "title": "Indice EPIPHANY pour l'embolie pulmonaire (EP) dans le contexte du cancer",
+  "short_title": "Indice EPIPHANY",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Risk of PE",
+    " epiphany score"
+  ],
+  "dosing": false,
+  "formula": "**Step 1.** Clinical decision rule (CDR).\n\n| Variable | Points | |\n| --- | --- | --- |\n| Systolic BP, mmHg | ≥100 | 0 |\n| <100 | 1 | |\n| Arterial O₂ saturation | ≥90% | 0 |\n| <90% | 1 | |\n| Respiratory rate, breaths/min | <30 | 0 |\n| ≥30 | 1 | |\n| Pulse, beats/min | <110 | 0 |\n| ≥110 | 1 | |\n| Sudden or progressive dyspnea | No | 0 |\n| Yes | 1 | |\n| Clinically relevant hemorrhage, risk of bleeding, or platelets <50,000/mm³ | No | 0 |\n| Yes | 1 | |\n\nIf sum of points ≥1, then CDR is positive; if sum = 0, then CDR is negative.\n\n**Step 2.** Follow decision tree to determine risk level.\n\n![](https://cdn-web-img.mdcalc.com/content/Epiphany_2.png)\n\n*PE-specific symptoms included chest pain, syncope, and dyspnea (sudden, progressive, or self-limiting).",
+  "how_to_use": {
+    "why": "- Contrairement à l'outil [POMPE-C](nabda:calc.pompe-c-tool-pulmonary-embolism-mortality), l'EPIPHANY Index incluait les EP de découverte fortuite.\n- Il a été conçu comme un arbre décisionnel afin de mieux reproduire la prise de décision clinique, guidée par la présence de prédicteurs dichotomiques forts plutôt que par les contributions modestes de nombreuses covariables dans un seul modèle de régression logistique.",
+    "when": "- Développé et validé pour les patients adultes atteints d'un cancer actif ou sous chimiothérapie chez qui une PE a été diagnostiquée à l'imagerie.\n- La PE peut être de découverte fortuite.",
+    "pearls": "[The original study](https://pmc.ncbi.nlm.nih.gov/articles/PMC5396106/)excluded patients who:\n\n- Had a PE diagnosed more than 1 month prior to their cancer diagnosis.\n- Completed adjuvant chemotherapy more than 1 month ago.\n- Received anticoagulation without justification."
+  },
+  "next_steps": {
+    "advice": "- This tool should not be the sole basis for care; clinicians should use their judgment and a full clinical evaluation.\n- While the index allows clinicians to stratify risk of complications for patients with a PE, it has not yet been incorporated into clinical guidelines.",
+    "critical_actions": "Quel que soit le score, les cliniciens doivent peser les risques et les bénéfices de l’anticoagulation et formuler des recommandations thérapeutiques qui concordent avec les valeurs et les préférences du patient.",
+    "management": "- La stratification du risque peut aider à la prise de décision clinique, mais il n’existe pas de recommandations formelles issues de lignes directrices cliniques utilisant les catégories de risque de l’EPIPHANY Index.\n- Un score plus élevé est associé à un risque plus élevé de complications graves (saignement majeur, nécessité d’admission en soins intensifs, RCP, ventilation mécanique non invasive, intubation orotrachéale, fibrinolyse, ou tout autre événement jugé grave par l’investigateur) et de mortalité."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Risk group | Risk of serious complications* at 15 days | 30-day mortality risk |\n| --- | --- | --- |\n| Low | 1.6% | 1.3% |\n| Intermediate | 9.4% | 8.9% |\n| High | 30.6% | 23.3% |\n\n*Events leading to “serious clinical downturn or death,” including major bleeding, need for ICU admission, CPR, non-invasive mechanical ventilation, orotracheal intubation, fibrinolysis, or any other event deemed serious by the investigator.",
+  "short_description": "Complications de l’EP chez les patients atteints de cancer.",
+  "medium_description": "Predicts risque de serious complications dans cancer patients avec embolie pulmonaire.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "bp",
+      "label": "Pression artérielle systolique, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥100",
+          "value": 0
+        },
+        {
+          "label": "< 100",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "o2",
+      "label": "Saturation artérielle en O₂",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥ 90 %",
+          "value": 0
+        },
+        {
+          "label": "< 90%",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rr",
+      "label": "Fréquence respiratoire, respirations/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 30",
+          "value": 0
+        },
+        {
+          "label": "≥30",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Pouls, battements/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 110",
+          "value": 0
+        },
+        {
+          "label": "≥110",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dyspnea",
+      "label": "Dyspnée soudaine ou progressive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemorrhage",
+      "label": "Hémorragie cliniquement pertinente, risque de saignement, ou plaquettes <50,000/mm³",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "[ECOG Performance Status](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "bp + o2 + rr + pulse + dyspnea + hemorrhage > 0",
+      "options": [
+        {
+          "label": "< 2",
+          "value": 0
+        },
+        {
+          "label": "≥2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "symptoms",
+      "label": "Symptômes spécifiques de l'EP",
+      "tips": "Chest pain, syncope, or dyspnea (sudden, progressive, or self-limiting)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "ecog == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "tumor",
+      "label": "Évaluation de la réponse tumorale au moment de l’EP",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "bp + o2 + rr + pulse + dyspnea + hemorrhage == 0 && hemorrhage == 0",
+      "options": [
+        {
+          "label": "Maladie progressive, inconnue ou non évaluée",
+          "value": 0
+        },
+        {
+          "label": "Réponse complète ou partielle, stable, ou aucune évidence de maladie",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "surgery",
+      "label": "Chirurgie de la tumeur primitive",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "tumor == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Muñoz-Guglielmetti D, Cooksley T, Ahn S, et al. Risk stratification for clinical severity of pulmonary embolism in patients with cancer: a narrative review and MASCC clinical guidance for daily care. Support Care Cancer. 2022;30(10):8527-8538. doi:10.1007/s00520-022-07131-1",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35579753/",
+      "kind": "international"
+    },
+    {
+      "text": "Cancer-Associated Venous Thromboembolic Disease.  National Comprehensive Cancer Network. Updated 2025-11-06.",
+      "href": "https://www.nccn.org/guidelines/guidelines-detail?category=3&id=1423",
+      "kind": "international"
+    },
+    {
+      "text": "Carmona-bayonas A, Jiménez-fonseca P, Font C, et al. Predicting serious complications in patients with cancer and pulmonary embolism using decision tree modelling: the EPIPHANY Index. Br J Cancer. 2017;116(8):994-1001.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28267709 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nguyen E, Caranfa JT, Lyman GH, et al. Clinical prediction rules for mortality in patients with pulmonary embolism and cancer to guide outpatient management: a meta-analysis. J Thromb Haemost. 2018;16(2):279-292. doi:10.1111/jth.13921",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29215781/",
+      "kind": "other"
+    },
+    {
+      "text": "Ahn S et al. Validation of the EPIPHANY Index for Predicting Risk of Serious Complications in Cancer Patients with Incidental Pulmonary Embolism. Support Care Cancer. 2018; 265(26):1-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29725804 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sánchez-Cánovas M, Jimenez-Fonseca P, Garay DF, et al. Prediction of serious complications in patients with pulmonary thromboembolism and solid cancer: Validation of the EPIPHANY Index in a prospective cohort of patients from the PERSEO study. PLOS ONE. 2023;18(5):e0266305. doi:10.1371/journal.pone.0266305",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10168567/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pompe-c-tool-pulmonary-embolism-mortality"
+  ],
+  "source_logic_hash": "95e6d68a935b2f79e9185e50faecd2d1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pompe-c-tool-pulmonary-embolism-mortality",
+      "text": "POMPE-C"
+    },
+    {
+      "type": "calc",
+      "id": "calc.pompe-c-tool-pulmonary-embolism-mortality",
+      "text": "POMPE-C"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10015,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n// CDR variables\nvar bp = parseFloat(bp)\nvar o2 = parseFloat(o2)\nvar rr = parseFloat(rr)\nvar pulse = parseFloat(pulse)\nvar dyspnea = parseFloat(dyspnea)\nvar hemorrhage = parseFloat(hemorrhage)\n\nvar cdr = bp + o2 + rr + pulse + dyspnea + hemorrhage\n\nvar risk\n\nif (cdr > 0) { // CDR positive\n    var ecog = parseFloat(ecog)\n    var symptoms = parseFloat(symptoms)\n    if (ecog == 0) {\n        if (symptoms == 0) {\n            risk = 'High'\n        } else {\n            risk = 'Intermediate'\n        }\n    } else if (ecog == 1) {\n        if (o2 == 0) {\n            risk = 'Intermediate'\n        } else {\n            risk = 'Intermediate'\n        }\n    }\n} else { // CDR negative\n    var tumor = parseFloat(tumor)\n    var surgery = parseFloat(surgery)\n    if (tumor == 0) {\n        if (surgery == 1) {\n            risk = 'High'\n        } else {\n            risk = 'Low'\n        }\n    } else {\n        risk = 'Low'\n    }\n}\n\nvar comp, mort\n\nif (risk == 'Low') {\n    comp = 1.6\n    mort = 1.3\n} else if (risk == 'Intermediate') {\n    comp = 9.4\n    mort = 8.9\n} else {\n    comp = 30.6\n    mort = 23.3\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk',\n    message: comp + '% complication rate'\n});\ncalc_output.push({\n    name: 'Risk group',\n    value: risk,\n    value_text: 'risk',\n    message: 'EPIPHANY Index'\n});\ncalc_output.push({\n    name: 'Risk percent',\n    value: comp,\n    value_text: '%',\n    message: 'Risk of serious complications at 15 days, including major bleeding, need for ICU admission, CPR, etc'\n});\ncalc_output.push({\n    name: 'Mortality',\n    value: mort,\n    value_text: '%',\n    message: '30-day mortality'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "austin-wesevich-md-mph-ms"
+  ],
+  "creator_names": [
+    "Dr. Alberto Carmona-Bayonas",
+    "Dr. Paula Jiménez Fonseca"
+  ],
+  "measurement_ids": [
+    "pulse",
+    "ECOG"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "e1db05ea3d08b19713aca29ac52118a28137d66b9b5c91688b1cf95579bd6b6f"
+}

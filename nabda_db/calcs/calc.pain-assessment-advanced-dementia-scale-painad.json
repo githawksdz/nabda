@@ -1,0 +1,213 @@
+{
+  "id": "calc.pain-assessment-advanced-dementia-scale-painad",
+  "slug": "pain-assessment-advanced-dementia-scale-painad",
+  "language": "en",
+  "title": "Douleur évaluation dans Advanced Dementia échelle (PAINAD)",
+  "short_title": "PAINAD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "douleur",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Dementia"
+  ],
+  "chief_complaints": [
+    "Pain"
+  ],
+  "abbreviations": [
+    "cognition",
+    "impaired"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "L'évaluation de la douleur dans la démence avancée est intuitivement difficile ; une échelle validée peut aider.",
+    "when": "- Patients atteints de démence avancée susceptibles de présenter des douleurs.\n- Particulièrement utile chez les patients aphasiques ou ceux qui ne peuvent pas autrement rapporter l'intensité de leur douleur.",
+    "pearls": "- L'échelle Pain Assessment in Advanced Dementia (PAINAD) est un outil d'évaluation fiable pour les patients déments.\n- Elle peut être utilisée chez les patients non verbaux comme verbaux.\n- Bien que l'outil fournisse un score continu entre 0 et 10, il n'existe pas de preuve formelle qu'il soit corrélé aux gradations auto-évaluées de la douleur ; l'étude originale ne définit que 0 comme « absence de douleur » et 10 comme « douleur sévère ». La prudence s'impose lors du titrage des doses d'antalgiques en fonction du score.\n- Valide à différents niveaux de troubles cognitifs, de légers à sévères.\n- Peut également être utile chez les patients âgés réticents à rapporter leur douleur, car elle est plus objective que l'auto-évaluation."
+  },
+  "next_steps": {
+    "advice": "- Comme pour la prise en charge de la douleur en général, la douleur doit être évaluée de manière répétée et les médicaments titrés en conséquence.\n- L'échelle PAINAD nécessite une observation attentive et rapprochée du patient.",
+    "critical_actions": "Les médicaments antalgiques doivent être utilisés avec discernement dans la démence, de manière guidée par les objectifs de soins du patient (ou de son représentant/proche). Gardez toujours à l'esprit le « double effet » des opioïdes.",
+    "management": ""
+  },
+  "evidence": "L'échelle PAINAD a été créée par Warden et al. sur la base de l'observation de dix-neuf patients hospitalisés dans des unités de soins de démence au sein d'hôpitaux des Veterans Administration. Chaque patient a été évalué par l'investigateur principal et deux autres évaluateurs (issus d'un groupe de six). Un niveau adéquat de fiabilité inter-évaluateurs a été retrouvé pour chaque dyade. Le score PAINAD était bien corrélé avec la Discomfort Scale-Dementia of Alzheimer Type, et une diminution statistiquement significative du score a été observée après l'administration d'antalgiques.\n\nL'échelle PAINAD a été validée auprès de vingt-cinq patients âgés hospitalisés pour la chirurgie d'une fracture de la hanche ; douze présentaient des troubles cognitifs tandis que treize étaient intacts sur le plan cognitif. L'échelle PAINAD était positivement corrélée avec une échelle auto-évaluée, démontrant une validité concourante, et les scores étaient plus élevés lorsque les patients étaient susceptibles de ressentir de la douleur que lorsqu'ils ne l'étaient pas, démontrant une validité discriminante.\n\nL'échelle PAINAD a été validée de manière prospective par Mosele et al. par son application à six cents patients consécutivement admis dans le secteur de gériatrie aiguë de l'université de Padoue (Italie). Elle présentait une bonne cohérence interne et une validité concourante ainsi qu'une fiabilité inter-évaluateurs supérieures à celles d'une échelle numérique auto-évaluée.",
+  "more_info": "Interprétation :\n\n| Score | Évaluation de la douleur |\n| --- | --- |\n| 1-3 | Douleur légère |\n| 4-6 | Douleur modérée |\n| 7-10 | Douleur sévère |",
+  "short_description": "Douleur level dans dementia patients.",
+  "medium_description": "Assesses douleur chez les patients avec dementia.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "breath",
+      "label": "Respiration (indépendante de la vocalisation)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Respiration laborieuse occasionnelle ou courtes périodes d'hyperventilation",
+          "value": 1
+        },
+        {
+          "label": "Respiration laborieuse bruyante, longues périodes d'hyperventilation ou respiration de Cheyne-Stokes",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vocal",
+      "label": "Vocalisation négative",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Occasional moan/groan ou faible-level speech avec negative quality",
+          "value": 1
+        },
+        {
+          "label": "Appels répétés et angoissés, gémissements bruyants/plaines/pleurs",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Expression faciale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Souriant ou inexpressif",
+          "value": 0
+        },
+        {
+          "label": "Sad/frightened/frown",
+          "value": 1
+        },
+        {
+          "label": "Grimaces faciales",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "body",
+      "label": "Langage corporel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Relaxed",
+          "value": 0
+        },
+        {
+          "label": "Tendu, déambulation anxieuse/agitation",
+          "value": 1
+        },
+        {
+          "label": "Rigide, poings serrés, genoux ramenés, tire/pousse/refoule/frappe",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "consolability",
+      "label": "Consolability",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No need pour console",
+          "value": 0
+        },
+        {
+          "label": "Distrait ou apaisé par la voix/le toucher",
+          "value": 1
+        },
+        {
+          "label": "Unable pour console, distract ou reassure",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Warden V, Hurley AC, Volicer L. Development and psychometric evaluation of the Pain Assessment in Advanced Dementia (PAINAD) scale. J Am Med Dir Assoc. 2003;4(1):9-15.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12807591",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hutchison RW, Tucker WF, Kim S, Gilder R. Evaluation of a behavioral assessment tool for the individual unable to self-report pain. Am J Hosp Palliat Care. 2006;23(4):328-31.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17060298",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cohen-mansfield J, Lipson S. The utility of pain assessment for analgesic use in persons with dementia. Pain. 2008;134(1-2):16-23.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17481819",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dewaters T, Faut-callahan M, Mccann JJ, et al. Comparison of self-reported pain and the PAINAD scale in hospitalized cognitively impaired and intact older adults after hip fracture surgery. Orthop Nurs. 2008;27(1):21-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18300684",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mosele M, Inelmen EM, Toffanello ED, et al. Psychometric properties of the pain assessment in advanced dementia scale compared to self assessment of pain in elderly patients. Dement Geriatr Cogn Disord. 2012;34(1):38-43",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22907210",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.4-test-delirium-assessment",
+    "calc.abbey-pain-scale-dementia-patients",
+    "calc.abbreviated-mental-test-4-amt-4"
+  ],
+  "source_logic_hash": "8b17ee779e1f297c7e4e96d19c531b98",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3701,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

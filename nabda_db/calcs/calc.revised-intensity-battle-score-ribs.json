@@ -1,0 +1,200 @@
+{
+  "id": "calc.revised-intensity-battle-score-ribs",
+  "slug": "revised-intensity-battle-score-ribs",
+  "language": "fr",
+  "title": "Révisé Intensity Battle score (RIBS)",
+  "short_title": "RIBS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Fracture"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Injury/Trauma",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Revised Intensity Battle Score",
+    "RIBS",
+    "rib fracture score",
+    "rib fractures",
+    "rib injury",
+    "blunt chest trauma",
+    "trauma scoring",
+    "thoracic injury",
+    "pulmonary contusion",
+    "COPD",
+    "chest tube",
+    "Glasgow Coma Scale",
+    "trauma risk calculator",
+    "ICU risk",
+    "rib fracture complications",
+    " thoracic trauma prognosis",
+    "trauma surgery",
+    "mechanical ventilation risk",
+    "unplanned ICU admission",
+    "rib fracture triage",
+    "rib fracture outcome prediction",
+    "chest trauma management",
+    "RIBS calculator",
+    "trauma outcome model",
+    "injury severity scoring",
+    "trauma mortality risk",
+    "rib fracture ICU prediction"
+  ],
+  "dosing": false,
+  "formula": "Les valeurs des coefficients des variables prédictives dans le modèle de régression sont :\n\n| Prédicteur | Coefficient |\n| --- | --- |\n| Côtes fracturées* | 2.275 |\n| Contusions pulmonaires | 1.525 |\n| BPCO | 2.83 |\n| Drain thoracique posé/présent/anticipé | 4.08 |\n| [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) <15 | 8.137 |\n\n*Le nombre de côtes fracturées est compté par niveau costal, et non par le nombre de fractures individuelles (c.-à-d. 6 fractures au total touchant 3 côtes seront saisies comme 3).\n\nScore RIBS = Σβ~i~x~i~ (arrondi à l'entier le plus proche)\nOù (β~i~, x~i~) sont les paires prédicteur-coefficient ci-dessus.\n\nLe risque d'événements peut être calculé à l'aide de la formule suivante.\nlogit = a × (Score RIBS) + b\n%Risque = e^logit^/(1 + e^logit^) × 100\nOù (a, b) sont :\n\n| Événement | a | b |\n| --- | --- | --- |\n| Toute complication | 0.1879 | -2.8823 |\n| Passage non programmé en soins intensifs ou intubation non programmée | 0.0717 | -3.1618 |\n| Ventilation >7 jours ou trachéotomie | 0.2056 | -4.3737 |\n| Pneumonie ou PAV | 0.1549 | -3.7889 |\n| Mortalité | 0.1745 | -3.9039 |",
+  "how_to_use": {
+    "why": "- Prédictif de toute complication associée à un traumatisme thoracique fermé, ce qui peut guider les décisions concernant le niveau de soins en hospitalisation.\n- Par rapport à des outils similaires, ce score a été conçu pour des populations de patients traumatisés hospitalisés et peut être plus approprié pour les patients présentant une charge lésionnelle plus importante.\n- Surpasse le [score STUMBL/Battle](nabda:calc.stumbl-battle-score) initial pour la prédiction d'événements défavorables (AUROC 0.858 vs 0.649).",
+    "when": "À utiliser à l'admission pour les patients adultes (18 ans et plus) présentant au moins une fracture costale traumatique.",
+    "pearls": "- Dérivé et validé de manière externe à l'aide de cohortes rétrospectives monocentriques ; des études prospectives sur l'impact sur les soins sont encore nécessaires.\n- Les patients présentant des lésions thoraciques pénétrantes ont été exclus de l'étude de dérivation.\n- Met l'accent sur la charge lésionnelle et les antécédents de maladie pulmonaire ; notons que l'âge n'était pas prédictif dans la cohorte de développement.\n- Les patients atteints de démence, en l'absence d'autres déficits neurologiques, ont reçu un GCS de 14 dans la cohorte de dérivation.\n- La sédation et l'intoxication peuvent abaisser le GCS indépendamment du traumatisme thoracique ; à interpréter selon le contexte.\n- Ne s'agit pas d'un outil de suivi dynamique ; l'aggravation de la douleur, des volumes de spirométrie incitative et/ou de l'hypoxie au fil du temps doivent prévaloir sur un score initial bas."
+  },
+  "next_steps": {
+    "advice": "Utiliser les résultats conjointement avec une évaluation approfondie, le jugement clinique et les parcours traumatologiques locaux pour guider l'orientation et la prise en charge.",
+    "critical_actions": "",
+    "management": "- **Les scores plus élevés** sont associés à un profil de risque plus élevé ; envisager :\n\n - Un niveau de soins supérieur (p. ex., soins intensifs, unité de soins intensifs de relais) ; [Buchholz et al. (2023)](https://pubmed.ncbi.nlm.nih.gov/36120831/) suggèrent d'utiliser un score de 12 comme seuil pour l'orientation en soins intensifs.\n - Une surveillance rapprochée.\n - Une analgésie régionale/neuroaxiale précoce.\n - Des soins pulmonaires énergiques (p. ex., spirométrie incitative à haute fréquence, surveillance par kinésithérapie respiratoire, mobilisation précoce).\n - Un seuil plus bas pour l'escalade thérapeutique et l'avis chirurgical.\n- Les patients avec des **scores plus bas** peuvent relever d'une analgésie standard, de soins d'hygiène pulmonaire et d'une admission en service médical/chirurgical."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nLe seuil recommandé pour l'orientation en unité de soins intensifs est un score de 12.",
+  "short_description": "Prédit la probabilité d'un mauvais devenir après une fracture de côtes.",
+  "medium_description": "Predicts likelihood de poor devenir dans adulte traumatisme patients avec rib fractures.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "ribs",
+      "label": "Côtes fracturées",
+      "tips": "Voir [Preuves](#evidence) pour plus d'informations.",
+      "optional": false,
+      "unit": "ribs",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "pulm",
+      "label": "Contusions pulmonaires",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "copd",
+      "label": "COPD",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chest",
+      "label": "Drain thoracique posé/présent/anticipé",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) <15",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Buchholz CJ, Jia L, Manea C, et al. Revised Intensity Battle Score (RIBS): Development of a Clinical Score for Predicting Poor Outcomes After Rib Fractures. Am Surg. 2023;89(11):4668-4674. doi:10.1177/00031348221123087",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36120831/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Buchholz CJ, D'Aquila ML, Lollar DI. External validation of novel Revised Intensity Battle Score and comparison of static rib fracture scoring systems. J Trauma Acute Care Surg. 2024;96(3):466-470. doi:10.1097/TA.0000000000004199",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37966462/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.stumbl-battle-score"
+  ],
+  "source_logic_hash": "807caa1b341a8d57649886575584908c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.stumbl-battle-score",
+      "text": "STUMBL/Battle Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10625,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

@@ -1,0 +1,254 @@
+{
+  "id": "calc.cambridge-diabetes-risk-score",
+  "slug": "cambridge-diabetes-risk-score",
+  "language": "fr",
+  "title": "Cambridge diabète risque score",
+  "short_title": "Cambridge diabète risque score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Polyuria",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "diabetes risk score",
+    "griffin score",
+    "cambridge risk score",
+    "cambridge diabetes risk score"
+  ],
+  "dosing": false,
+  "formula": "Probabilité de présenter un DT2 (HgbA1c ≥7.0 %) =\n\n1 / (1 + *e* ^-(α + β~1~x~1~+ β~2~x~2~+ β~3~x~3~+...+ β~n~x~n~)^)\n\nOù :\n\nα = -6.322, et les constantes et variables supplémentaires sont les suivantes :\n\n| | β | x |\n| --- | --- | --- |\n| | | |\n| 1. Sexe | -0.879 | 0 si homme, 1 si femme |\n| 2. Traitement antihypertenseur prescrit | 1.222 | 0 si non, 1 si oui |\n| 3. Corticoïdes prescrits | 2.191 | 0 si non, 1 si oui |\n| 4. Âge | 0.063 | Âge en années |\n| 5. IMC, kg/m 2 | β 5 x 5 = 0 si <25 β 5 x 5 = 0.699 si ≥25 et <27.5 β 5 x 5 = 1.97 si ≥27.5 et <30 β 5 x 5 = 2.518 si ≥30 | |\n| 6. Antécédents familiaux | β 6 x 6 = 0 si aucun parent du 1er degré diabétique β 6 x 6 = 0.728 si parent ou fratrie diabétique β 6 x 6 = 0.753 si parent et fratrie diabétiques | |\n| 7. Antécédents de tabagisme | β 7 x 7 = 0 si non-fumeur β 7 x 7 = -0.218 si ex-fumeur β 7 x 7 = 0.855 si fumeur actuel | |",
+  "how_to_use": {
+    "why": "La plupart des scores de risque de diabète sont validés par rapport à un critère de jugement de diabète diagnostiqué cliniquement plutôt qu’en utilisant un schéma dans lequel toute la population de l’étude subit le test diagnostique. Cela entraîne un biais, car les variables incluses dans les scores de risque sont liées aux caractéristiques des patients susceptibles d’inciter les médecins à réaliser un test diagnostique. Le Cambridge Diabetes Risk Score est validé dans des populations ayant subi le test diagnostique afin de réduire ce biais.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les recommandations varient, mais le seuil de recours à un dépistage formel devrait être abaissé chez les patients présentant un risque plus élevé de diabète non diagnostiqué.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Seuil du score de Griffin | Sensibilité | Spécificité | Valeur prédictive positive | Valeur prédictive négative |\n| --- | --- | --- | --- | --- |\n| 0,11 | 85 % | 51 % | 2,2 % | 99,6 % |\n| 0,15 | 72 % | 60 % | 2,2 % | 99,4 % |\n| 0,17 | 70 % | 64 % | 2,4 % | 99,4 % |\n| 0,23 | 63 % | 72 % | 2,8 % | 99,4 % |\n| 0,29 | 51 % | 78 % | 2,9 % | 99,2 % |",
+  "short_description": "Risque de DT2",
+  "medium_description": "Predicts risque de having previously undiagnosed type 2 diabète.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": -0.88
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "anti",
+      "label": "Traitement antihypertenseur prescrit",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.22
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "steroids",
+      "label": "Corticoïdes prescrits",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.19
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m²",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 25",
+          "value": 0
+        },
+        {
+          "label": "≥25 et <27.5",
+          "value": 0.7
+        },
+        {
+          "label": "≥27.5 et <30",
+          "value": 1.97
+        },
+        {
+          "label": "≥30",
+          "value": 2.52
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hx",
+      "label": "Antécédents familiaux",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "No diabetic 1st-degree relative",
+          "value": 0
+        },
+        {
+          "label": "Parent ou sibling avec diabète",
+          "value": 0.73
+        },
+        {
+          "label": "Parent et sibling avec diabète",
+          "value": 0.75
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "smoker",
+      "label": "Antécédents tabagiques",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non-smoker",
+          "value": 0
+        },
+        {
+          "label": "Ex-smoker",
+          "value": -0.22
+        },
+        {
+          "label": "Fumeur actuel",
+          "value": 0.86
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Griffin SJ, Little PS, Hales CN, Kinmonth AL, Wareham NJ. Diabetes risk score: towards earlier detection of type 2 diabetes in general practice. Diabetes Metab Res Rev. 2000;16(3):164-71.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10867715 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wareham NJ, Griffin SJ. Risk scores for predicting type 2 diabetes: comparing axes and spades. Diabetologia. 2011;54(5):994-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21380593",
+      "kind": "other"
+    },
+    {
+      "text": "Simmons RK, Harding AH, Wareham NJ, Griffin SJ. Do simple questions about diet and physical activity help to identify those at risk of Type 2 diabetes?. Diabet Med. 2007;24(8):830-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17490419",
+      "kind": "other"
+    },
+    {
+      "text": "Heldgaard PE, Griffin SJ. Routinely collected general practice data aids identification of people with hyperglycaemia and metabolic syndrome. Diabet Med. 2006;23(9):996-1002.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16922706",
+      "kind": "other"
+    },
+    {
+      "text": "Spijkerman A, Griffin S, Dekker J, Nijpels G, Wareham NJ. What is the risk of mortality for people who are screen positive in a diabetes screening programme but who do not have diabetes on biochemical testing? Diabetes screening programmes from a public health perspective. J Med Screen. 2002;9(4):187-90.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12518011",
+      "kind": "other"
+    },
+    {
+      "text": "Park PJ, Griffin SJ, Sargeant L, Wareham NJ. The performance of a risk score in predicting undiagnosed hyperglycemia. Diabetes Care. 2002;25(6):984-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12032103",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chamnan P, Simmons RK, Hori H, et al. A simple risk score using routine data for predicting cardiovascular disease in primary care. Br J Gen Pract. 2010;60(577):e327-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20822683",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rahman M, Simmons RK, Harding AH, Wareham NJ, Griffin SJ. A simple risk score identifies individuals at high risk of developing Type 2 diabetes: a prospective cohort study. Fam Pract. 2008;25(3):191-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18515811",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Spijkerman AM, Yuyun MF, Griffin SJ, Dekker JM, Nijpels G, Wareham NJ. The performance of a risk score as a screening test for undiagnosed hyperglycemia in ethnic minority groups: data from the 1999 health survey for England. Diabetes Care. 2004;27(1):116-22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14693976",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kengne AP, Beulens JW, Peelen LM, et al. Non-invasive risk scores for prediction of type 2 diabetes (EPIC-InterAct): a validation of existing models. Lancet Diabetes Endocrinol. 2014;2(1):19-29.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24622666",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.diabetic-ketoacidosis-mortality-prediction-model-dka-mpm-score",
+    "calc.american-diabetes-association-ada-risk-calculator",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "327600fc9d7ba076c868227611f2cc5f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4001,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

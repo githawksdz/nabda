@@ -1,0 +1,217 @@
+{
+  "id": "calc.pediatric-early-warning-score-pews",
+  "slug": "pediatric-early-warning-score-pews",
+  "language": "fr",
+  "title": "Pédiatrique Early Warning score (PEWS)",
+  "short_title": "Score PEWS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Hyperglycemia",
+    "Hypernatremia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Fever",
+    "Seizure"
+  ],
+  "abbreviations": [
+    "peds",
+    "early",
+    "triggering",
+    "vitals"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Fournit une mesure objective pour les patients qui « paraissent malades ».",
+    "when": "Patients hospitalisés en pédiatrie.",
+    "pearls": "- Développé initialement pour fournir une méthode pratique et objective d'identifier les patients hospitalisés en pédiatrie à risque d'arrêt cardiaque.\n- Peut être utilisé par le personnel et les soignants de tous niveaux pour escalader la prise en charge des patients graves."
+  },
+  "next_steps": {
+    "advice": "Envisager une escalade de soins chez les patients ayant un PEWS élevé (≥3), incluant l'escalade vers le personnel senior, l'augmentation de la fréquence des mesures des constantes vitales et des évaluations cliniques, et/ou un avis en unité de soins intensifs.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Le Pediatric Early Warning Score (PEWS) a été développé par consensus d'experts par un groupe pluridisciplinaire du Brighton and Sussex University Hospitals NHS Trust au Royaume-Uni afin de permettre aux infirmiers et au personnel médical junior d'identifier les patients pédiatriques à risque de détérioration clinique.\n\nLes déclencheurs ont été identifiés en interrogeant un groupe pluridisciplinaire à tous les niveaux de la prise en charge des patients sur les signes cliniques qu'ils considéraient comme préoccupants, incluant à la fois l'aspect général et les constantes vitales. Les critères ont été révisés sur la base d'une étude pilote ayant identifié des patients qui s'étaient détériorés et qui n'avaient pas été détectés par le score initial.\n\nPlusieurs études ont validé le PEWS, notamment une étude de Duncan et al. qui a trouvé une aire sous la courbe ROC de 0,90, avec une sensibilité de 78 % et une spécificité de 95 % pour un score de 5.",
+  "more_info": "**Interprétation du score :**\n\n- PEWS ≤2 : risque faible\n\n - Réévaluer si nécessaire\n- PEWS 3-4 : risque intermédiaire\n\n - Recommandé d'alerter l'infirmier responsable et le médecin\n- PEWS ≥5 : risque élevé\n\n - Recommandé de déclencher l'équipe de réponse rapide\n\n**Paramètres normaux selon l'Université du Maryland :**\n\n| Âge | Fréquence cardiaque à l'éveil (bpm) | Fréquence cardiaque pendant le sommeil (bpm) | Fréquence respiratoire au repos (cycles/min) | Pression artérielle systolique | Pression artérielle diastolique | Hypotension systolique |\n| --- | --- | --- | --- | --- | --- | --- |\n| Nouveau-né ≤1 mois | 100-205 | 90-160 | 40-60 | 67-84 | 35-53 | <60 |\n| Nourrisson (1-12 mois) | 100-180 | 90-160 | 30-53 | 72-104 | 37-56 | <70 |\n| Jeune enfant (13 mois - 3 ans) | 98-140 | 80-120 | 22-37 | 86-106 | 42-63 | <70 + (2 x âge en années)* |\n| Âge préscolaire (4-6 ans) | 80-120 | 65-100 | 20-28 | 89-112 | 47-72 | |\n| Âge scolaire (7-12 ans) | 75-118 | 58-90 | 18-26 | 97-120 | 57-80 | |\n| Adolescent (13-19 ans) | 60-100 | 50-90 | 12-20 | 110-131 | 64-83 | <90** |",
+  "short_description": "Identifies pédiatrique patients at risque pour deterioration.",
+  "medium_description": "Identifies pédiatrique patients at risque pour clinique deterioration.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "behavior",
+      "label": "Behavior",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Playing/appropriate",
+          "value": 0
+        },
+        {
+          "label": "Sleeping",
+          "value": 1
+        },
+        {
+          "label": "Irritable",
+          "value": 2
+        },
+        {
+          "label": "Lethargic/confused ou reduced response pour douleur",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cardiovascular",
+      "label": "Cardiovascular",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Rose OU temps de recoloration capillaire 1–2 secondes",
+          "value": 0
+        },
+        {
+          "label": "Pâle OU temps de recoloration capillaire 3 secondes",
+          "value": 1
+        },
+        {
+          "label": "Gris OU temps de recoloration capillaire 4 secondes OU tachycardie de 20 bpm au-dessus de la normale",
+          "value": 2
+        },
+        {
+          "label": "Gris et marbré OU temps de recoloration capillaire ≥5 secondes OU tachycardie de 30 bpm au-dessus de la normale OU bradycardie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "respiratory",
+      "label": "Respiratory",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Dans les paramètres normaux, pas de tirage",
+          "value": 0
+        },
+        {
+          "label": ">10 au-dessus des paramètres normaux avec utilisation des muscles accessoires OU 30+ %FiO2 ou 4+ L/min",
+          "value": 1
+        },
+        {
+          "label": ">20 au-dessus des paramètres normaux et tirage OU 40+ %FiO2 ou 6+ L/min",
+          "value": 2
+        },
+        {
+          "label": "Five below normal parameters avec retractions et grunting OR 50% FiO2 ou 8+ L/min",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neb",
+      "label": "Nébulisations toutes les 15 minutes (toutes les 15 minutes)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vom",
+      "label": "Vomissements persistants après chirurgie",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Monaghan A. Detecting and managing deterioration in children. Paediatr Nurs. 2005;17:32–5.",
+      "href": "https://journals.rcni.com/doi/pdfplus/10.7748/paed2005.02.17.1.32.c964 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gold DL, Mihalov LK, Cohen DM. Evaluating the Pediatric Early Warning Score (PEWS) system for admitted patients in the pediatric emergency department. Acad Emerg Med. 2014 Nov;21(11):1249-56. doi: 10.1111/acem.12514.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4300231/",
+      "kind": "other"
+    },
+    {
+      "text": "Akre M, Finkelstein M, Erickson M, Liu M, Vanderbilt L, Billman G.  Sensitivity of the pediatric early warning score to identify patient deterioration .Pediatrics 2010 Apr;125(4):e763-9. doi: 10.1542/peds.2009-0338. Epub 2010 Mar 22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20308222",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Seiger N, Maconochie I, Oostenbrink R, Moll HA. Validity of different pediatric early warning scores in the emergency department. Pediatrics. 2013 Oct;132(4):e841-50. doi: 10.1542/peds.2012-3594. Epub 2013 Sep 9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24019413",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Duncan H, Hutchison J, Parshuram CS. The Pediatric Early Warning System score: a severity of illness score to predict urgent medical need in hospitalized children. J Crit Care. 2006 Sep;21(3):271-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16990097 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-early-warning-score-mews-clinical-deterioration",
+    "calc.national-early-warning-score-news",
+    "calc.pediatric-endotracheal-tube-ett-size"
+  ],
+  "source_logic_hash": "f4320df020f73cb906345af844f41bed",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3901,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

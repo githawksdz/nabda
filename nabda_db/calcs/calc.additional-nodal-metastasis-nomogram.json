@@ -1,0 +1,219 @@
+{
+  "id": "calc.additional-nodal-metastasis-nomogram",
+  "slug": "additional-nodal-metastasis-nomogram",
+  "language": "fr",
+  "title": "Nomogramme des métastases ganglionnaires supplémentaires",
+  "short_title": "Nomogramme des métastases ganglionnaires supplémentaires",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cancer du sein"
+  ],
+  "chief_complaints": [
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "additional",
+    "lymph",
+    "mets",
+    "breast CA"
+  ],
+  "dosing": false,
+  "formula": "Nomogramme multivarié, avec attribution de points à 8 critères.",
+  "how_to_use": {
+    "why": "- De nombreux patients avec un SLN positif n’auront pas de maladie résiduelle.\n- Cet outil estime la probabilité de métastases supplémentaires non-SLN, ce qui peut aider à déterminer si un curage ganglionnaire axillaire est justifié.",
+    "when": "À utiliser chez les patientes atteintes d’un cancer du sein invasif avec un ganglion sentinelle (SLN) positif, pour décider des prochaines étapes de la prise en charge.",
+    "pearls": "- Les techniques anatomopathologiques et les traitements systémiques ont évolué depuis l’élaboration de cet outil, ce qui peut modifier les risques de base et affecter la calibration dans les cohortes modernes.\n- Les validations externes montrent une discrimination modérée et une calibration variable ; la fiabilité des nomogrammes pour une utilisation clinique a été remise en question."
+  },
+  "next_steps": {
+    "advice": "Utiliser les résultats avec l’apport d’une équipe multidisciplinaire pour déterminer la prise en charge axillaire appropriée, qui peut inclure :\n\n- Chimiothérapie adjuvante.\n- Radiothérapie régionale.\n- Dissection axillaire ciblée.\n- Curage ganglionnaire axillaire.\n\nVeuillez consulter les recommandations de votre société savante locale pour des recommandations de prise en charge complémentaires, telles que celles de l’[American Society of Breast Surgeons](https://www.breastsurgeons.org/docs/statements/asbrs-ccs-management-of-the-axilla.pdf) et du [National Comprehensive Cancer Network](https://jnccn.org/view/journals/jnccn/20/5.5/article-p1_4.xml).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "![](https://cdn-web-img.mdcalc.com/content/additional-lymph-node-metastasis-nomogram_pdf__page_2_of_7_.png)",
+  "short_description": "Additional lymph node mets dans breast CA.",
+  "medium_description": "Predicts likelihood de breast cancer avec sentinel lymph node metastasis has also spread pour additional lymph nodes.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "nuc",
+      "label": "Grade nucléaire",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Ductal I",
+          "value": 0
+        },
+        {
+          "label": "Ductal II",
+          "value": 1
+        },
+        {
+          "label": "Ductal III",
+          "value": 10
+        },
+        {
+          "label": "Lobular",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lvi",
+      "label": "Invasion lymphovasculaire (LVI)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "multi",
+      "label": "Multifocal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "er",
+      "label": "Statut des récepteurs aux œstrogènes (ER)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "numneg",
+      "label": "Nombre de ganglions sentinelles négatifs (SLNs)",
+      "tips": "Plage : 0-14",
+      "optional": false,
+      "unit": "neg_sln",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "numpos",
+      "label": "Nombre de SLNs positifs",
+      "tips": "Plage : 0-7",
+      "optional": false,
+      "unit": "pos_sln",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "size",
+      "label": "Taille pathologique de la tumeur",
+      "tips": "Plage : 0-9 cm",
+      "optional": false,
+      "unit": "path_tum_size",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "meth",
+      "label": "Méthode de détection des métastases du SLN",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Immunohistochimie (IHC)",
+          "value": 0
+        },
+        {
+          "label": "Hématoxyline et éosine (HE) sur coupes sériées",
+          "value": 23
+        },
+        {
+          "label": "Routine",
+          "value": 35
+        },
+        {
+          "label": "Frozen",
+          "value": 81
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Specht MC, Kattan MW, Gonen M, Fey J, Van Zee KJ. Predicting nonsentinel node status after positive sentinel lymph biopsy for breast cancer: clinicians versus nomogram. Ann Surg Oncol. 2005 Aug;12(8):654-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16021535",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Goyal A, Douglas-Jones A, Newcombe RG, Mansel RE; ALMANAC Trialists Group. Predictors of non-sentinel lymph node metastasis in breast cancer patients. Eur J Cancer. 2004 Jul;40(11):1731-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15251163",
+      "kind": "other"
+    },
+    {
+      "text": "Van Zee KJ, et. al. A nomogram for predicting the likelihood of additional nodal metastases in breast cancer patients with a positive sentinel node biopsy. Ann Surg Oncol. 2003 Dec;10(10):1140-51.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/14654469/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gail-model-breast-cancer-risk",
+    "calc.nomogram-breast-cancer-brain-metastasis",
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence"
+  ],
+  "source_logic_hash": "28e09573ac81176b5c455ff1da84454b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3909,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

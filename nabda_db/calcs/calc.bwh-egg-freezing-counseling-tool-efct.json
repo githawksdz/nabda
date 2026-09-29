@@ -1,0 +1,120 @@
+{
+  "id": "calc.bwh-egg-freezing-counseling-tool-efct",
+  "slug": "bwh-egg-freezing-counseling-tool-efct",
+  "language": "en",
+  "title": "Outil de conseil sur la congélation d’ovocytes du BWH (EFCT)",
+  "short_title": "Outil de conseil du BWH sur la congélation d'ovocytes",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Infertility",
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Infertility"
+  ],
+  "abbreviations": [
+    "egg freezing",
+    "male factor",
+    "Egg",
+    "oocyte",
+    "oocytes",
+    "cryopreservation",
+    "infertility",
+    "fertility",
+    "pregnancy",
+    "birth",
+    "ivf",
+    "intracytoplasmic sperm injection",
+    "tubal",
+    "in vitro fertilization",
+    "icsi"
+  ],
+  "dosing": false,
+  "formula": "p(Livebirth) = 1 – [1 – 0.6 × p(Euploid) × p(Blast)] ^ (Number of mature eggs)\n\nwhere\n\np(Blast) = 0.95 × exp(2.8043 – 0.1112 × Age) if Age <36\n\np(Blast) = 0.85 × exp(2.8043 – 0.1112 × Age) if Age ≥36\n\nand\n\np(Euploid) is from table below\n\n*Note:* number of mature eggs assumes 95% survival of thawed eggs (85% if age is ≥36 years).",
+  "how_to_use": {
+    "why": "- Prédit la probabilité d’obtenir au moins une, deux ou trois naissances vivantes à partir de seulement deux données.\n- Intègre la probabilité qu’un embryon ait un nombre normal de chromosomes.\n- Aide à déterminer si la réalisation de cycles supplémentaires de congélation d’ovocytes entraînerait une augmentation significative de la probabilité d’obtenir une naissance vivante.",
+    "when": "Patientes souhaitant une préservation de la fertilité par congélation élective d’ovocytes.",
+    "pearls": "- Uses a woman’s age at egg retrieval and the number of mature eggs frozen to predict the probability of having at least one, two, or three live births.\n- Since limited data exist regarding live births following elective egg freezing, the BWH Egg Freezing Counseling Tool was developed from a surrogate population of presumably fertile women (egg donor, male-factor, and tubal-factor only infertility).\n- No number of frozen eggs can guarantee a live birth.\n- IVF stimulation cycles produce a variable number of eggs, even among women of similar ages. Older women typically obtain fewer eggs per stimulation cycle.\n- May be less reliable for women ≥39 years old.\n- May overestimate live birth rates for women undergoing non-elective egg freezing for medical reasons, such as cancer.\n- Data are retrospective and from a single academic institution in an insurance-mandated state.\n- Individual IVF clinics with different thaw survival and live birth rates may need to modify and customize this model.\n- Has yet to be prospectively validated."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les décisions concernant la congélation des ovocytes doivent être prises par la patiente en concertation avec son médecin, en tenant compte des caractéristiques propres à la patiente."
+  },
+  "evidence": "The BWH Egg Freezing Counseling Tool was developed by[Goldman and Fox et al](https://www.ncbi.nlm.nih.gov/pubmed/28166330)at Brigham and Women’s Hospital based on a data set of 520 patients who underwent first fresh autologous cycles using ICSI (intracytoplasmic sperm injection).\n\nPoisson regression was used to predict the proportion of mature eggs that ultimately developed into usable blastocysts, using patient age as the primary parameter.\n\nEstimates of live birth rates were found to be similar to other models, including by[Doyle et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/26604065), which used broader age groups instead of age by individual years.\n\nThe authors assumed that 60% of euploid blastocysts, on average, would ultimately result in a live birth based on published data, but the actual rate is known to vary among IVF clinics ([Harton 2013](https://www.ncbi.nlm.nih.gov/pubmed/24034939)).",
+  "more_info": "| Âge (années) | p(Euploïde) |\n| --- | --- |\n| Donneuses d'ovocytes (à titre de référence) | 0.647 |\n| ≤35 | 0.574 |\n| 36 | 0.564 |\n| 37 | 0.486 |\n| 38 | 0.466 |\n| 39 | 0.440 |\n| 40 | 0.359 |\n| 41 | 0.327 |\n| 42 | 0.285 |\n| 43 | 0.206 |\n| 44 | 0.127 |\n\n*Note :* Dans l'étude, les âges 24–35 ont été regroupés, car la fertilité est relativement stable jusqu'à 35 ans et commence à diminuer sensiblement après cet âge.",
+  "short_description": "Predicts likelihood de live birth pour elective egg freezing dans women.",
+  "medium_description": "Predicts likelihood de live birth pour elective egg freezing dans women.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_bwh",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "eggs",
+      "label": "Nombre d’ovocytes matures",
+      "optional": false,
+      "unit": "eggs",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Goldman RH, Racowsky C, Farland LV, Munné S, Ribustello L, Fox JH. Predicting the likelihood of live birth for elective oocyte cryopreservation: a counseling tool for physicians and patients. Hum Reprod. 2017;32(4):853-859. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28166330",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Doyle JO, Richter KS, Lim J, Stillman RJ, Graham JR, Tucker MJ. Successful elective and medically indicated oocyte vitrification and warming for autologous in vitro fertilization, with predicted birth probabilities for fertility preservation according to number of cryopreserved oocytes and age at retrieval. Fertil Steril. 2016;105(2):459-66.e2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26604065",
+      "kind": "other"
+    },
+    {
+      "text": "Harton GL, Munné S, Surrey M, et al. Diminished effect of maternal age on implantation after preimplantation genetic diagnosis with array comparative genomic hybridization. Fertil Steril. 2013;100(6):1695-703.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24034939 ",
+      "kind": "other"
+    },
+    {
+      "text": "Cascante SD, Blakemore JK, DeVore S, et al. Fifteen years of autologous oocyte thaw outcomes from a large university-based fertility center. Fertility and Sterility. 2022;118(1):158-166.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35597614/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vaginal-birth-after-cesarean-vbac",
+    "calc.bishop-score-vaginal-delivery-induction-labor",
+    "calc.pregnancy-due-dates-calculator"
+  ],
+  "source_logic_hash": "ad89c50960553a5a78a1521a4b6337ff",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3937,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

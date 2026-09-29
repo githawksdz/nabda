@@ -1,0 +1,341 @@
+{
+  "id": "calc.canadian-ct-head-injury-trauma-rule",
+  "slug": "canadian-ct-head-injury-trauma-rule",
+  "language": "en",
+  "title": "Canadian CT Head lésion/traumatisme règle",
+  "short_title": "Canadian CT Head règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Traumatisme crânien",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "trauma",
+    "cchr",
+    "injury",
+    "ct",
+    "head ct",
+    "Canadian CT Head Rule",
+    "Canadian CT Head Injury/Trauma Rule"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "There are more than 8 million patients who present annually to US Emergency Departments for evaluation of head trauma. The vast majority of these patients have minor head trauma that will not require specialized or neurosurgical treatment. At the same time, rates of CT imaging of the head have more than doubled from the early 1990s through the 2000s.",
+    "when": "- The Canadian CT Head Rule is a well-validated clinical decision aid that allows physicians to safely rule out the presence of intracranial injuries that would require neurosurgical intervention without the need for CT imaging.\n- The CCHR has been found to be 70% sensitive for “clinically important” brain injury in EtOH intox patients ([Easter 2013](https://www.ncbi.nlm.nih.gov/pubmed/24033617)).",
+    "pearls": "The Canadian CT Head Rule (CCHR) was developed to help physicians determine which minor head injury patients need head CT imaging.\n\n- The original validation trial and multiple subsequent studies ([Stiell 2001](https://www.ncbi.nlm.nih.gov/pubmed/11356436),[Stiell 2005](https://www.ncbi.nlm.nih.gov/pubmed/16189364),[Stiell 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2950184/)) each found the CCHR’s High Risk Criteria to be 100% sensitive for injuries requiring neurosurgical intervention. It has an 87-100% sensitivity for detecting “clinically important” brain injuries that don’t require neurosurgery.\n- The rule excluded patients on oral anticoagulants and anti-platelet agents, so no data is available for these patients.\n- Patients with minimal head injury (i.e., no history of loss of consciousness, amnesia, and confusion) generally do not need a CT scan. For example, patients over 65 years may not need a CT scan just based on their age if they do not have the history mentioned above. When a patient fails the CCHR, use clinical judgment on whether a CT scan is necessary.\n- [One study](https://www.ncbi.nlm.nih.gov/pubmed/21818031)found the CCHR the most consistent, validated, and effective clinical decision rule for minor head injury patients.\n\n**Points to keep in mind:**\n\n- While there is only one US validation study for the CCHR, it was 100% sensitive for clinically important injuries and injuries requiring neurosurgery.\n- A[retrospective study in the United Kingdom](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1726365/pdf/v021p00426.pdf)found that applying the CCHR would have actually resulted in an increase in the number of patients undergoing CT scan in that particular practice setting.\n- There is debate about whether the goal should be to find all intracranial injuries or to find patient-important ones that would require neurosurgical intervention."
+  },
+  "next_steps": {
+    "advice": "- Envisager de réaliser une TDM si l’une des questions de la règle reçoit une réponse affirmative.\n- Cette règle ne peut être appliquée qu’aux patients présentant une LOC/Amnésie ou des modifications de l’état mental.\n- L’étude originale n’incluait pas de sujets <16 ans.",
+    "critical_actions": "The Canadian CT Head Rules have been validated in multiple settings and have consistently demonstrated that they are 100% sensitive for detecting injuries that will require neurosurgery.\n\n- Depending on practice environment, it may not be considered acceptable to miss any intracranial injuries, regardless of whether they would have required intervention.\n- Providers may want to consider applying the New Orleans Criteria (NOC) for head trauma, as there has been at least one trial finding it to be more sensitive for detecting clinically significant intracranial injuries (99.4% vs 87.3%). Though this comes at the price of markedly decreased specificity (5.6% vs. 39.7%).\n\n - Furthermore, there are other trials in which the CCHR was found to be more sensitive than the NOC for detecting clinically important brain injuries.",
+    "management": "- N'oubliez pas de toujours discuter des symptômes post-commotionnels et de leur prise en charge avec le patient, en particulier si vous lui donnez son congé sans TDM cérébrale. Sinon, lorsqu'il ressent des symptômes post-commotionnels, il pourrait craindre qu'une TDM ait été nécessaire.\n- En l'informant sur les symptômes des lésions nécessitant une intervention neurochirurgicale par rapport aux symptômes"
+  },
+  "evidence": "- [Validation study](https://www.ncbi.nlm.nih.gov/pubmed/16189364)included a convenience sample of 2702 patients, aged 16 years or greater, who presented to 9 Canadian emergency departments with blunt head trauma resulting in witnessed loss of consciousness, disorientation, or definite amnesia and a [GCS](nabda:calc.glasgow-coma-scale-score-gcs) of 13 to 15.\n- 8.5% (231/2707) had a clinically important brain injury and 1.5% (41/2707) had an injury that required neurosurgical intervention.\n- In the[validation trial](https://www.ncbi.nlm.nih.gov/pubmed/16189364), CCHR was **100%** sensitive for both clinically important brain injuries and injuries that required neurosurgical intervention and was 76.3% and 50.6% specific for these injuries respectively.\n- Subsequent studies have all found the CCHR to be 100% for identifying injuries that require neurosurgical intervention.\n- Applying the CCHR would allow physicians to safely reduce head CT imaging by around 30% (range 6-40% with most studies showing an estimated 30% reduction).\n- In most studies 7-10% of patients had positive CT's, considered “clinically important” brain injuries. But typically <2% require neurosurgical intervention. The “High Risk Criteria” have consistently shown 100% sensitivity at ruling out the latter group.",
+  "more_info": "",
+  "short_description": "Very sensitive, rules out imaging dans many.",
+  "medium_description": "Rules out need pour head CT dans minor head traumatisme.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge <16 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blood",
+      "label": "Patient sous anticoagulants",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seizure",
+      "label": "Seizure after lésion",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "glasgow_coma_score",
+      "label": "GCS <15 at 2 hours post-lésion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fracture",
+      "label": "Suspected open ou déprimé skull fracture",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "basilar_fracture",
+      "label": "Existe-t-il un signe de fracture de la base du crâne ?",
+      "tips": "Hémotympan, signe du raton laveur (yeux de raton laveur), signe de Battle, oto-/rhinorrhée de LCR",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomiting",
+      "label": "≥2 épisodes de vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_65",
+      "label": "Âge ≥65 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "amnesia",
+      "label": "Retrograde amnesia pour event ≥ 30 minutes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "danger_mechanism",
+      "label": "Mécanisme « dangereux » ?",
+      "tips": "Pedestrian struck by motor vehicle, occupant ejected from motor vehicle, or fall from >3 feet or >5 stairs.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age + blood + seizure == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Stiell IG, Wells GA, Vandemheen K, Clement C, Lesiuk H, Laupacis A, McKnight RD, Verbeek R, Brison R, Cass D, Eisenhauer ME, Greenberg G, Worthington J. The Canadian CT Head Rule for patients with minor head injury. Lancet. 2001 May 5;357(9266):1391-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11356436",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stiell IG, Clement CM, Grimshaw JM, et al. A prospective cluster-randomized trial to implement the Canadian CT Head Rule in emergency departments. CMAJ : Canadian Medical Association Journal. 2010;182(14):1527-1532. doi:10.1503/cmaj.091974.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2950184/",
+      "kind": "other"
+    },
+    {
+      "text": "Boyle A, Santarius L, Maimaris C. Evaluation of the impact of the Canadian CT head rule on British practice. Emerg Med J. 2004 Jul;21(4):426-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15208223",
+      "kind": "other"
+    },
+    {
+      "text": "Smits M, Dippel DW, de Haan GG, Dekker HM, Vos PE, Kool DR, Nederkoorn PJ, Hofman PA, Twijnstra A, Tanghe HL, Hunink MG.External validation of the Canadian CT Head Rule and the New Orleans Criteria for CT scanning in patients with minor head injury.JAMA. 2005 Sep 28;294(12):1519-25.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189365",
+      "kind": "other"
+    },
+    {
+      "text": "Harnan SE, Pickering A, Pandor A, Goodacre SW. Clinical decision rules for adults with minor head injury: a systematic review. J Trauma. 2011 Jul;71(1):245-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21818031",
+      "kind": "other"
+    },
+    {
+      "text": "Papa L, Stiell IG, Clement CM, Pawlowicz A, Wolfram A, Braga C, Draviam S, Wells GA.Performance of the Canadian CT Head Rule and the New Orleans Criteria for predicting any traumatic intracranial injury on computed tomography in a United States Level I trauma center. Acad Emerg Med. 2012 Jan;19(1):2-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22251188",
+      "kind": "other"
+    },
+    {
+      "text": "Bouida W, Marghli S, Souissi S, Ksibi H, Methammem M, Haguiga H, Khedher S, Boubaker H, Beltaief K, Grissa MH, Trimech MN, Kerkeni W, Chebili N, Halila I, Rejeb I, Boukef R, Rekik N, Bouhaja B, Letaief M, Nouira S. Prediction value of the Canadian CT head rule and the New Orleans criteria for positive head CT scan and acute neurosurgical procedures in minor head trauma: a multicenter external validation study. Ann Emerg Med. 2013 May;61(5):521-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22921164",
+      "kind": "other"
+    },
+    {
+      "text": "Easter JS et al. Traumatic intracranial injury in intoxicated patients with minor head trauma. Acad Emerg Med. 2013 Aug;20(8):753-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24033617",
+      "kind": "other"
+    },
+    {
+      "text": "Schuur JD, Carney DP, Lyn ET, et al. A Top-Five List for Emergency Medicine: A Pilot Project to Improve the Value of Emergency Care. JAMA Intern Med. 2014;174(4):509-515.",
+      "href": "https://archinte.jamanetwork.com/article.aspx?articleid=1830019",
+      "kind": "other"
+    },
+    {
+      "text": "Stiell IG, Clement CM, Rowe BH, Schull MJ, Brison R, Cass D, Eisenhauer MA, McKnight RD, Bandiera G, Holroyd B, Lee JS, Dreyer J, Worthington JR, Reardon M, Greenberg G, Lesiuk H, MacPhail I, Wells GA. Comparison of the Canadian CT Head Rule and the New Orleans Criteria in patients with minor head injury. JAMA. 2005 Sep 28;294(12):1511-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189364",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nexus-head-ct-instrument",
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule",
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma"
+  ],
+  "source_logic_hash": "5a1a2f6e93c51a1a0be8da42f299045d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 608,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

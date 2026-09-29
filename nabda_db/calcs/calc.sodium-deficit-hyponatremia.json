@@ -1,0 +1,179 @@
+{
+  "id": "calc.sodium-deficit-hyponatremia",
+  "slug": "sodium-deficit-hyponatremia",
+  "language": "fr",
+  "title": "Sodium Deficit dans Hyponatremia",
+  "short_title": "Sodium Deficit dans Hyponatremia",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "endocrinologie",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Hyponatremia"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Seizure",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "na"
+  ],
+  "dosing": false,
+  "formula": "Déficit en sodium = eau corporelle totale × (Na souhaité – Na du patient)\n\nChez l'adulte, l'eau corporelle totale (TBW) est calculée selon l'équation de Watson :\n\n- Hommes : TBW, litres = 2,447 – 0,09516 × âge, années + 0,1074 × taille, cm + 0,3362 × poids, kg\n- Femmes : TBW, litres = -2,097 + 0,1069 × taille, cm + 0,2466 × poids, kg\n\nChez l'enfant, TBW = 0,6 × poids, kg",
+  "how_to_use": {
+    "why": "Estime la quantité totale de sodium à reconstituer chez les patients présentant une hyponatrémie.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Corriger l'hyponatrémie avec prudence. Ne pas oublier de corriger la natrémie chez les patients hyperglycémiques à l'aide du [calculateur de correction du sodium pour hyperglycémie](nabda:calc.sodium-correction-hyperglycemia) . À utiliser avec le [calculateur du taux de correction du sodium dans l'hyponatrémie](nabda:calc.sodium-correction-rate-hyponatremia-hypernatremia), qui estime la vitesse de correction ainsi que la tonicité du soluté utilisé. En général, les solutés hypertoniques sont réservés aux patients très symptomatiques, tels que les convulsions et les déficits neurologiques sévères.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Ne pas corriger trop rapidement afin d'éviter la myélinolyse centro-pontine !\n\nLe [calculateur du taux de correction de la natrémie](nabda:calc.sodium-correction-rate-hyponatremia-hypernatremia) peut également être utilisé pour choisir un soluté et un volume appropriés.",
+  "short_description": "Total sodium missing dans hyponatremia.",
+  "medium_description": "Calculates sodium quantity missing dans hyponatremia.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge range",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Child",
+          "value": 0
+        },
+        {
+          "label": "adulte",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age_no",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": "age == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": "age == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "desired_sodium",
+      "label": "Natrémie souhaitée",
+      "optional": false,
+      "default": 140,
+      "unit": "na",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Adrogué HJ, Madias NE. Hyponatremia. N Engl J Med 2000; 342:1581.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10824078",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Oh MS, Uribarri J, Barrido D, et al. Danger of central pontine myelinolysis in hypotonic dehydration and recommendation for treatment. Am J Med Sci 1989; 298:41",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2750773",
+      "kind": "other"
+    },
+    {
+      "text": "Mohmand HK, Issa D, Ahmad Z, et al. Hypertonic saline for hyponatremia: risk of inadvertent overcorrection. Clin J Am Soc Nephrol 2007; 2:1110.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17913972",
+      "kind": "other"
+    },
+    {
+      "text": "Watson PE, Watson ID, Batt RD. Total body water volumes for adult males and females estimated from simple anthropometric measurements. Am J Clin Nutr. 1980;33(1):27-39.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6986753",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sodium-correction-rate-hyponatremia-hypernatremia",
+    "calc.sodium-correction-hyperglycemia",
+    "calc.free-water-deficit-hypernatremia"
+  ],
+  "source_logic_hash": "5500e5e5941b2bacde438c133273fe4d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sodium-correction-hyperglycemia",
+      "text": "Sodium Correction for Hyperglycemia calculator"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sodium-correction-rate-hyponatremia-hypernatremia",
+      "text": "Sodium Correction Rate in Hyponatremia calculator"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 95,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

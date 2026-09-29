@@ -1,0 +1,205 @@
+{
+  "id": "calc.mutation-adjusted-risk-score-mars",
+  "slug": "mutation-adjusted-risk-score-mars",
+  "language": "en",
+  "title": "Score de risque ajusté selon les mutations (MARS)",
+  "short_title": "MARS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "hematologie",
+    "medecine-interne",
+    "biologie"
+  ],
+  "diseases": [
+    "Hémopathie maligne",
+    "Mastocytose systémique"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Masse abdominale",
+    "Douleur abdominale",
+    "Cancer",
+    "Fatigue",
+    "Weakness",
+    "Perte/Gain de poids",
+    "B-Symptoms",
+    "Dysfonction organique",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Mutation-Adjusted Risk Scor",
+    "MARS",
+    "MARS score",
+    "MARS risk score",
+    "advanced systemic mastocytosis",
+    "AdvSM",
+    "systemic mastocytosis",
+    "SM-AHN",
+    "mast cell leukemia",
+    "mastocytosis prognosis",
+    "mastocytosis risk stratification",
+    "SRSF2",
+    "ASXL1",
+    "RUNX1",
+    "anemia",
+    "thrombocytopenia",
+    "leukemia-free survival",
+    "mastocytosis prognostic model",
+    "cladribine",
+    "avapritinib",
+    "IPSM",
+    "GPSM",
+    "systemic mastocytosis prognostic scores"
+  ],
+  "dosing": false,
+  "formula": "The MARS is obtained by summing the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤60 | 0 |\n| >60 | 1 | |\n| Hemoglobin | ≥10 g/dL (≥6.2 mmol/L) | 0 |\n| <10 g/dL (<6.2 mmol/L) | 1 | |\n| Platelets | ≥100×10 9 /L | 0 |\n| <100×10 9 /L | 1 | |\n| Presence of adverse mutations ( SRSF2 , ASXL1 , and/or RUNX1 ) | None | 0 |\n| One mutation | 1 | |\n| Two or more mutations | 2 | |",
+  "how_to_use": {
+    "why": "- Intègre des mutations somatiques pronostiquement pertinentes et des paramètres cliniques pour évaluer la survie globale et la survie sans leucémie.\n- La distinction des niveaux de risque peut aider à orienter les discussions concernant les objectifs thérapeutiques, la possibilité d’une greffe et la fréquence de surveillance.",
+    "when": "À utiliser chez les patients adultes au diagnostic de mastocytose systémique avancée (SM) lors de la planification de l’intensité du traitement.",
+    "pearls": "- Developed and validated using data from European and US mastocytosis centers of excellence, including 383 patients with advanced SM treated with midostaurin, cladribine, or midostaurin followed by cladribine, with a median follow-up of 2.2 years.\n- Specifically validated in advanced SM, including systemic mastocytosis with an associated hematologic neoplasm (SM-AHN), aggressive systemic mastocytosis (ASM), and mast cell leukemia (MCL); not validated for indolent or smoldering SM.\n- Not validated in pediatric patients."
+  },
+  "next_steps": {
+    "advice": "- Interpréter les résultats en tenant compte du variant spécifique de la maladie, des symptômes cliniques, de l’étendue du dysfonctionnement d’organe et de la charge mastocytaire lors de la détermination des stratégies thérapeutiques.\n- Un score plus élevé est associé à un pronostic plus défavorable, et ces patients peuvent être prioritaires pour une prise en charge plus agressive.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation\n\n| MARS | Risque | Survie globale médiane, années* | Survie sans leucémie médiane, années* |\n| --- | --- | --- | --- |\n| 0-1 | Faible | Non atteinte | 12,4 |\n| 2 | Intermédiaire | 4,3 | 3,9 |\n| 3-5 | Élevé | 1,9 | 1,4 |\n\n* Voir [Jawhar et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31509472/) pour plus de détails.",
+  "short_description": "Risque pronostique de la mastocytose systémique avancée.",
+  "medium_description": "Stratifies prognostic risque pour adultes avec advanced systemic mastocytosis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤60",
+          "value": 0
+        },
+        {
+          "label": ">60",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Hemoglobin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥10 g/dL (≥6.2 mmol/L)",
+          "value": 0
+        },
+        {
+          "label": "< 10 g/dL (< 6,2 mmol/L)",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Platelets",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥100×10⁹/L",
+          "value": 0
+        },
+        {
+          "label": "< 100×10⁹/L",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d",
+      "label": "Présence de mutations délétères",
+      "tips": "( *SRSF2* , *ASXL1* , et/ou *RUNX1* )",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Une mutation",
+          "value": 1
+        },
+        {
+          "label": "Deux mutations ou plus",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Reiter A, George TI, Gotlib J. New developments in diagnosis, prognostication, and treatment of advanced systemic mastocytosis. Blood. 2020;135(16):1365-1376. doi:10.1182/blood.2019000932",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32106312/",
+      "kind": "international"
+    },
+    {
+      "text": "Ustun C, Keklik Karadag F, Linden MA, Valent P, Akin C. Systemic mastocytosis: Current status and challenges in 2024. Blood Adv. 2025;(bloodadvances.2024012612). doi:10.1182/bloodadvances.2024012612",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39853317/",
+      "kind": "international"
+    },
+    {
+      "text": "Jawhar M, Schwaab J, Álvarez-Twose I, et al. MARS: Mutation-adjusted risk score for advanced systemic mastocytosis. J Clin Oncol. 2019;37(31):2846-2856. doi:10.1200/JCO.19.0064",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31509472/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pardanani A. How I treat patients with indolent and smoldering mastocytosis (rare conditions but difficult to manage). Blood. 2013;121(16):3085-3094. doi:10.1182/blood-2013-01-453183",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23426950/",
+      "kind": "other"
+    },
+    {
+      "text": "Lübke J, Schwaab J, Naumann N, et al. Superior efficacy of midostaurin over cladribine in advanced systemic mastocytosis: A registry-based analysis. J Clin Oncol. 2022;40(16):1783-1794. doi:10.1200/JCO.21.01849",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35235417/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heiblig M, Gourguechon C, Guilpain P, et al. Comparison of prognostic scores according to WHO classification in 170 patients with advanced mastocytosis and C-finding treated with midostaurin. Am J Hematol. 2024;99(11):2127-2139. doi:10.1002/ajh.27478",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39287048/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "a0724d305eb7eea555a0f049a8a714c3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10651,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cladribine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

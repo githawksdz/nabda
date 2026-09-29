@@ -1,0 +1,278 @@
+{
+  "id": "calc.veterans-aging-cohort-study-vacs-1.0-index",
+  "slug": "veterans-aging-cohort-study-vacs-1.0-index",
+  "language": "en",
+  "title": "Indice Veterans Aging Cohort Study (VACS) 1.0",
+  "short_title": "Indice VACS 1.0",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "infectiologie",
+    "medecine-interne",
+    "general"
+  ],
+  "diseases": [
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "tia",
+    "cva",
+    "neuro",
+    "VACS",
+    "Veterans Aging Cohort Study index",
+    "veterans aging index",
+    "veterans hiv index",
+    "vacs score",
+    "vacs index",
+    "VA hcv score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Les estimations traditionnelles de mortalité fondées uniquement sur la charge virale ou le taux de CD4 dans le VIH, ou sur le [FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis) dans l'hépatite C, sont imprécises ; l'indice VACS ajoute des marqueurs supplémentaires afin d'estimer l'atteinte multi-organique et de prédire la mortalité avec plus de précision.",
+    "when": "Aide au pronostic chez les patients atteints du VIH ou d'une hépatite C. Potentiellement utile pour la planification des objectifs de soins ou l'intensité du traitement.",
+    "pearls": "- L'indice VACS provient d'une population de l'ancien système de santé des vétérans américains (VA) ; la plupart des patients des cohortes de dérivation et de validation étaient donc des hommes.\n- La moitié des patients avaient débuté les antirétroviraux avant 2004 ; on ignore donc comment les antirétroviraux plus récents pourraient affecter ces estimations.\n- <5 % des patients de cette étude étaient âgés de ≥65 ans ; le score est donc probablement moins précis dans les populations plus âgées.\n- Peu de patients de l'étude présentaient une maladie rénale significative : >90 % avaient un DFG ≥60."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Étant donné que la moitié des patients de l'étude avaient débuté les antirétroviraux avant 2004, on ignore comment les antirétroviraux plus récents pourraient affecter les estimations du score. Utiliser le jugement clinique lors de la planification des soins ou du choix de l'intensité thérapeutique.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| Criteria | Value | Points |\n| --- | --- | --- |\n| Age | <50 years | 0 |\n| 50-64 years | +12 | |\n| ≥60 years | +27 | |\n| CD4 | ≥500 cells/mm 3 | 0 |\n| 350-499 cells/mm 3 | +6 | |\n| 200-349 cells/mm 3 | +6 | |\n| 100-199 cells/mm 3 | +10 | |\n| 50-100 cells/mm 3 | +28 | |\n| <50 cells/mm 3 | +29 | |\n| HIV-1 RNA | <500 copies/mL | 0 |\n| 500-99,999 copies/mL | +7 | |\n| ≥1x10& 5 copies/mL | +14 | |\n| Hemoglobin | ≥14 g/dL | 0 |\n| 12-13.9 g/dL | +10 | |\n| 10-11.9 g/dL | +22 | |\n| <10 g/dL | +38 | |\n| [FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis\\) | <1.45 | 0 |\n| 1.45-3.25 | +6 | |\n| >3.25 | +25 | |\n| [eGFR](nabda:calc.mdrd-gfr-equation\\) | ≥60 mL/min | 0 |\n| 45-59.9 mL/min | +6 | |\n| 30-44.9 mL/min | +8 | |\n| <30 mL/min | +26 | |\n| Hepatitis C Co-Infection | No | 0 |\n| Yes | +5 | |",
+  "short_description": "All-cause mortalité pour patients avec HIV ou HCV.",
+  "medium_description": "Estimates risque de 5-year all-cause mortalité chez les patients avec HIV et/ou HCV.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 50 ans",
+          "value": 0
+        },
+        {
+          "label": "50 - 64 ans",
+          "value": 12
+        },
+        {
+          "label": "≥65 ans",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cd4",
+      "label": "Numération des CD4",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥500 cellules/mm³",
+          "value": 0
+        },
+        {
+          "label": "350 - 499 cellules/mm³",
+          "value": 6
+        },
+        {
+          "label": "200 - 349 cellules/mm³",
+          "value": 6
+        },
+        {
+          "label": "100 - 199 cellules/mm³",
+          "value": 10
+        },
+        {
+          "label": "50 - 100 cellules/mm³",
+          "value": 28
+        },
+        {
+          "label": "< 50 cellules/mm³",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rna",
+      "label": "HIV-1 RNA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 500 copies/mL",
+          "value": 0
+        },
+        {
+          "label": "500 - 99,999 copies/mL",
+          "value": 7
+        },
+        {
+          "label": "≥1x10⁵ copies/mL",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hgb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥14 g/dL",
+          "value": 0
+        },
+        {
+          "label": "12 - 13.9 g/dL",
+          "value": 10
+        },
+        {
+          "label": "10 - 11.9 g/dL",
+          "value": 22
+        },
+        {
+          "label": "< 10 g/dL",
+          "value": 38
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fib4",
+      "label": "[Indice FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis)",
+      "tips": "Indice Fibrosis-4 pour la fibrose hépatique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.45",
+          "value": 0
+        },
+        {
+          "label": "1.45 - 3.25",
+          "value": 6
+        },
+        {
+          "label": ">3.25",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "egfr",
+      "label": "[DFG](nabda:calc.mdrd-gfr-equation)",
+      "tips": "Débit de filtration glomérulaire estimé",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥60 mL/min",
+          "value": 0
+        },
+        {
+          "label": "45 - 59.9 mL/min",
+          "value": 6
+        },
+        {
+          "label": "30 - 44.9 mL/min",
+          "value": 8
+        },
+        {
+          "label": "< 30 mL/min",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hepc",
+      "label": "Co-infection par le virus de l'hépatite C",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tate JP, Justice AC, Hughes MD, Bonnet F, Reiss P, Mocroft A, et al. An internationally generalizable risk index for mortality after one year of antiretroviral therapy. AIDS 2013;27(4):563-72.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23095314",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bebu I, Tate J, Rimland D, et al. The VACS Index Predicts Mortality In A Young, Healthy HIV Population Starting Highly Active Antiretroviral Therapy. Journal of acquired immune deficiency syndromes (1999). 2014;65(2):226-230. doi:10.1097/QAI.0000000000000045.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4091811/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Justice A, Modur S, Tate J, et al. Predictive Accuracy of the Veterans Aging Cohort Study (VACS) Index for Mortality with HIV Infection: A North American Cross Cohort Analysis. Journal of acquired immune deficiency syndromes (1999). 2013;62(2):149-163. doi:10.1097/QAI.0b013e31827df36c.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3619393/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-prediction-hiv-patients",
+    "calc.charlson-comorbidity-index-cci",
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis"
+  ],
+  "source_logic_hash": "dcf0cde0ec5f643162f81be2067df77d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+      "text": "FIB-4"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2201,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

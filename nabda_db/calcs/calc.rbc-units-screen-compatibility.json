@@ -1,0 +1,1297 @@
+{
+  "id": "calc.rbc-units-screen-compatibility",
+  "slug": "rbc-units-screen-compatibility",
+  "language": "en",
+  "title": "RBC Units pour Screen pour Compatibility",
+  "short_title": "Épreuves de compatibilité des globules rouges",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie"
+  ],
+  "diseases": [
+    "Anémie"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "inventory screen",
+    "antigen profile",
+    "red blood cell",
+    "APPROXIMATE NUMBER OF UNITS FOR COMPATIBILITY TESTING"
+  ],
+  "dosing": false,
+  "formula": "x = number of units required / frequency of units negative for the antigen\n\nwhere x = minimum number of units to antigen type\n\nExample for patients with single antibodies:\n\n- Four c-negative donors are required for a patient with anti-c.\n- The frequency of the c antigen is 80%.\n- x = 4 / (1 - 0.8) = 20\n- Answer: a minimum of 20 donors should be antigen typed.\n\n*Antigen frequencies forRh C, c, E, e, and D; Kell K and k; Kidd Jk(a) and Jk(b); Duffy Fy(a) and Fy(b); MNS M, N, S, and s; Lewis Le(a) and Le(b); and P1were sourced from the[Laposata’s Laboratory Medicine: Diagnosis of Disease in the Clinical Laboratory, 4th ed.](https://accessmedicine.mhmedical.com/book.aspx?bookid=3574)Frequencies forRh C(w), Kell Kp(a) and Kp(b), and Lutheran Lu(a) and Lu(b)were sourced from the[AABB Technical Manual, 21st ed.](https://www.aabb.org/aabb-store/product/technical-manual-21st-edition---print-16919010)",
+  "how_to_use": {
+    "why": "An accurate estimate of the number of RBC units to screen helps in the management of blood bank workflow. A prohibitively large estimate of the number of units to screen may require contact outside of the patient’s blood bank (i.e., regional blood donor center, rare blood unit registry).",
+    "when": "- À utiliser en contexte de banque de sang pour garantir la compatibilité du receveur avec les RBCs en vue d’une transfusion.\n- Le calculateur est généralement utilisé pour les patients présentant un ou plusieurs allo-anticorps, ou pour les patients à risque de développer des allo-anticorps. Le personnel de laboratoire de banque de sang pourrait trouver ce calculateur particulièrement utile.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Follow AABB Standards for respective compatibility testing steps.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Donneurs pour le type d'antigène.",
+  "medium_description": "Estimates number de donor RBC units pour screen pour obtain desired number de antigen-negative units.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "units",
+      "label": "Nombre d'unités souhaitées",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race",
+      "tips": "Race may/may not provide better estimates; optional\nIf no race is selected, results will be calculated using antigen frequencies for the White population.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Blanc",
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "value": 1
+        },
+        {
+          "label": "Asiatique",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "bigc",
+      "label": "C",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bigc_value_w",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 68,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigc == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bigc_value_b",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 27,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigc == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bigc_value_a",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 93,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigc == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "lilc",
+      "label": "C",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lilc_value_w",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 80,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilc == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lilc_value_b",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 98,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilc == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lilc_value_a",
+      "label": "Fréquence C",
+      "optional": true,
+      "default": 47,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilc == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "bige",
+      "label": "E",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bige_value_w",
+      "label": "E frequency",
+      "optional": true,
+      "default": 29,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bige == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bige_value_b",
+      "label": "Fréquence E",
+      "optional": true,
+      "default": 22,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bige == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bige_value_a",
+      "label": "Fréquence E",
+      "optional": true,
+      "default": 39,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bige == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "lile",
+      "label": "E",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lile_value_w",
+      "label": "Fréquence E",
+      "optional": true,
+      "default": 98,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lile == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lile_value_b",
+      "label": "Fréquence E",
+      "optional": true,
+      "default": 98,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lile == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lile_value_a",
+      "label": "Fréquence E",
+      "optional": true,
+      "default": 96,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lile == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "cw",
+      "label": "C(w)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "cw_value_w",
+      "label": "Fréquence de C(w)",
+      "optional": true,
+      "default": 2,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "cw == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "cw_value_b",
+      "label": "Fréquence de C(w)",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "cw == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "cw_value_a",
+      "label": "Fréquence de C(w)",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "cw == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "D",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "d_value_w",
+      "label": "D. Fréquence",
+      "optional": true,
+      "default": 85,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "d == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "d_value_b",
+      "label": "D. Fréquence",
+      "optional": true,
+      "default": 92,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "d == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "d_value_a",
+      "label": "D. Fréquence",
+      "optional": true,
+      "default": 99,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "d == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "bigk",
+      "label": "K",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bigk_value_w",
+      "label": "Fréquence du K",
+      "optional": true,
+      "default": 9,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigk == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bigk_value_b",
+      "label": "Fréquence du K",
+      "optional": true,
+      "default": 2,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigk == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bigk_value_a",
+      "label": "Fréquence du K",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigk == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "lilk",
+      "label": "K",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lilk_value_w",
+      "label": "Fréquence du K",
+      "optional": true,
+      "default": 99,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilk == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lilk_value_b",
+      "label": "Fréquence du K",
+      "optional": true,
+      "default": 99,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilk == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lilk_value_a",
+      "label": "Fréquence du K",
+      "optional": true,
+      "default": 99,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lilk == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "kpa",
+      "label": "Kp()",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "kpa_value_w",
+      "label": "Fréquence de Kp()",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpa == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "kpa_value_b",
+      "label": "Fréquence de Kp()",
+      "optional": true,
+      "default": 0,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpa == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "kpa_value_a",
+      "label": "Fréquence de Kp()",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpa == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "kpb",
+      "label": "Kp(b)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "kpb_value_w",
+      "label": "Fréquence de Kp(b)",
+      "optional": true,
+      "default": 97.7,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpb == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "kpb_value_b",
+      "label": "Fréquence de Kp(b)",
+      "optional": true,
+      "default": 100,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpb == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "kpb_value_a",
+      "label": "Fréquence de Kp(b)",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "kpb == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "jka",
+      "label": "Aucun contenu traduisible n’a été fourni : « Jk() » ne comporte ni titre, ni consigne, ni libellé, ni tableau de score clinique. Merci de transmettre le texte source complet à traduire.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "jka_value_w",
+      "label": "Fréquence de Jk()",
+      "optional": true,
+      "default": 77,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jka == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "jka_value_b",
+      "label": "Fréquence de Jk()",
+      "optional": true,
+      "default": 92,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jka == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "jka_value_a",
+      "label": "Fréquence de Jk()",
+      "optional": true,
+      "default": 72,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jka == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "jkb",
+      "label": "Jk(b)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "jkb_value_w",
+      "label": "Fréquence de Jk(b)",
+      "optional": true,
+      "default": 74,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jkb == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "jkb_value_b",
+      "label": "Fréquence de Jk(b)",
+      "optional": true,
+      "default": 49,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jkb == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "jkb_value_a",
+      "label": "Fréquence de Jk(b)",
+      "optional": true,
+      "default": 76,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "jkb == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "fya",
+      "label": "*(Aucun contenu à traduire n'a été fourni : le texte source est vide.)*",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "fya_value_w",
+      "label": "Fy() fréquence",
+      "optional": true,
+      "default": 66,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fya == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "fya_value_b",
+      "label": "Fy() fréquence",
+      "optional": true,
+      "default": 10,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fya == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "fya_value_a",
+      "label": "Fy() fréquence",
+      "optional": true,
+      "default": 99,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fya == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "fyb",
+      "label": "Fy(b)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "fyb_value_w",
+      "label": "Fréquence de Fy(b)",
+      "optional": true,
+      "default": 83,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fyb == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "fyb_value_b",
+      "label": "Fréquence de Fy(b)",
+      "optional": true,
+      "default": 33,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fyb == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "fyb_value_a",
+      "label": "Fréquence de Fy(b)",
+      "optional": true,
+      "default": 19,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "fyb == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "bigm",
+      "label": "M",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bigm_value_w",
+      "label": "Fréquence M",
+      "optional": true,
+      "default": 78,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigm == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bigm_value_b",
+      "label": "Fréquence M",
+      "optional": true,
+      "default": 74,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigm == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bigm_value_a",
+      "label": "Fréquence M",
+      "optional": true,
+      "default": 50,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigm == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "bign",
+      "label": "N",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bign_value_w",
+      "label": "Fréquence (N)",
+      "optional": true,
+      "default": 72,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bign == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bign_value_b",
+      "label": "Fréquence (N)",
+      "optional": true,
+      "default": 75,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bign == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bign_value_a",
+      "label": "Fréquence (N)",
+      "optional": true,
+      "default": 67,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bign == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "bigs",
+      "label": "Le contenu source à traduire est incomplet : seul « S » a été transmis. Merci de renvoyer le texte intégral du score clinique (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) pour que je puisse en fournir la traduction française.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bigs_value_w",
+      "label": "S frequency",
+      "optional": true,
+      "default": 55,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigs == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "bigs_value_b",
+      "label": "Fréquence S",
+      "optional": true,
+      "default": 31,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigs == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "bigs_value_a",
+      "label": "Fréquence S",
+      "optional": true,
+      "default": 9,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "bigs == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "lils",
+      "label": "Le contenu source à traduire est incomplet : seul « S » a été transmis. Merci de renvoyer le texte intégral du score clinique (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) pour que je puisse en fournir la traduction française.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lils_value_w",
+      "label": "Fréquence S",
+      "optional": true,
+      "default": 89,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lils == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lils_value_b",
+      "label": "Fréquence S",
+      "optional": true,
+      "default": 93,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lils == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lils_value_a",
+      "label": "Fréquence S",
+      "optional": true,
+      "default": 100,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lils == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "lea",
+      "label": "Le()",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lea_value_w",
+      "label": "Le() frequency",
+      "optional": true,
+      "default": 22,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lea == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lea_value_b",
+      "label": "Le() frequency",
+      "optional": true,
+      "default": 23,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lea == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lea_value_a",
+      "label": "Le() fréquence",
+      "optional": true,
+      "default": 19,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lea == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "leb",
+      "label": "Le(b)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "leb_value_w",
+      "label": "Fréquence Le(b)",
+      "optional": true,
+      "default": 72,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "leb == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "leb_value_b",
+      "label": "Fréquence Le(b)",
+      "optional": true,
+      "default": 55,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "leb == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "leb_value_a",
+      "label": "Fréquence Le(b)",
+      "optional": true,
+      "default": 81,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "leb == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "lua",
+      "label": "Lu()",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lua_value_w",
+      "label": "Fréquence Lu()",
+      "optional": true,
+      "default": 8,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lua == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lua_value_b",
+      "label": "Fréquence Lu()",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lua == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lua_value_a",
+      "label": "Fréquence Lu()",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lua == 1 && race == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "lub",
+      "label": "Lu(b)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "lub_value_w",
+      "label": "Fréquence Lu(b)",
+      "optional": true,
+      "default": 99.9,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lub == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "lub_value_b",
+      "label": "Fréquence Lu(b)",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lub == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "lub_value_a",
+      "label": "Fréquence Lu(b)",
+      "tips": "Veuillez saisir la fréquence.",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "lub == 1 && race == 2"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "p1",
+      "label": "P1",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "p1_value_w",
+      "label": "Fréquence P1",
+      "optional": true,
+      "default": 79,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "p1 == 1 && (race != 1 && race != 2)"
+    },
+    {
+      "type": "textbox",
+      "name": "p1_value_b",
+      "label": "Fréquence P1",
+      "optional": true,
+      "default": 94,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "p1 == 1 && race == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "p1_value_a",
+      "label": "Fréquence P1",
+      "optional": true,
+      "default": 20,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "p1 == 1 && race == 2"
+    }
+  ],
+  "references": [
+    {
+      "text": "AABB Technical Manual 18th Ed 2014.pdf. By Mark K. Fung, Brenda J. Grossman, Christopher D. Hillyer, and Connie Westhoff.",
+      "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shulman IA, Downes KA, Sazama K, Maffei LM. Pretransfusion compatibility testing for red blood cell administration. Curr Opin Hematol 2001;8:397-404.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11604582 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.mentzer-index",
+    "calc.sickle-cell-rbc-exchange-volume"
+  ],
+  "source_logic_hash": "a9550b2075633d586835bfb798633a85",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10011,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar d, kpa, kpb, bigk, lilk, bigm, bign, bigs, lils, fya, fyb, jka, jkb, bigc, lilc, bige, lile, cw, lea, leb, p1, lua, lub\n\nif (bigk == 1) {\n  if (race == 0) {\n    bigk = 1 - parseFloat(bigk_value_w) / 100\n  } else if (race == 1) {\n    bigk = 1 - parseFloat(bigk_value_b) / 100\n  } else if (race == 2) {\n    bigk = 1 - parseFloat(bigk_value_a) / 100\n  } \n}\nelse if (bigk == 0) {\n  bigk = 1\n}\n\nif (lilk == 1) {\n  if (race == 0) {\n    lilk = 1 - parseFloat(lilk_value_w) / 100\n  } else if (race == 1) {\n    lilk = 1 - parseFloat(lilk_value_b) / 100\n  } else if (race == 2) {\n    lilk = 1 - parseFloat(lilk_value_a) / 100\n  } \n}\nelse if (lilk == 0){\n  lilk = 1\n}\n\nif (bigm == 1) {\n  if (race == 0) {\n    bigm = 1 - parseFloat(bigm_value_w) / 100\n  } else if (race == 1) {\n    bigm = 1 - parseFloat(bigm_value_b) / 100\n  } else if (race == 2) {\n    bigm = 1 - parseFloat(bigm_value_a) / 100\n  } \n}\nelse if (bigm == 0){\n  bigm = 1\n}\n\nif (bign == 1) {\n  if (race == 0) {\n    bign = 1 - parseFloat(bign_value_w) / 100\n  } else if (race == 1) {\n    bign = 1 - parseFloat(bign_value_b) / 100\n  } else if (race == 2) {\n    bign = 1 - parseFloat(bign_value_a) / 100\n  } \n}\nelse if (bign == 0){\n  bign = 1\n}\n\nif (d == 1) {\n  if (race == 0) {\n    d = 1 - parseFloat(d_value_w) / 100\n  } else if (race == 1) {\n    d = 1 - parseFloat(d_value_b) / 100\n  } else if (race == 2) {\n    d = 1 - parseFloat(d_value_a) / 100\n  }\n}\nelse if (d == 0){\n  d = 1\n}\n\n\nif (kpa == 1) {\n  if (race == 0) {\n    kpa = 1 - parseFloat(kpa_value_w) / 100\n  } else if (race == 1) {\n    kpa = 1 - parseFloat(kpa_value_b) / 100\n  } else if (race == 2) {\n    kpa = 1 - parseFloat(kpa_value_a) / 100\n  } \n}\nelse if (kpa == 0){\n  kpa = 1\n}\n\nif (kpb == 1) {\n  if (race == 0) {\n    kpb = 1 - parseFloat(kpb_value_w) / 100\n  } else if (race == 1) {\n    kpb = 1 - parseFloat(kpb_value_b) / 100\n  } else if (race == 2) {\n    kpb = 1 - parseFloat(kpb_value_a) / 100\n  } \n}\nelse if (kpb == 0){\n  kpb = 1\n}\n\nif (bigs == 1) {\n  if (race == 0) {\n    bigs = 1 - parseFloat(bigs_value_w) / 100\n  } else if (race == 1) {\n    bigs = 1 - parseFloat(bigs_value_b) / 100\n  } else if (race == 2) {\n    bigs = 1 - parseFloat(bigs_value_a) / 100\n  } \n}\nelse if (bigs == 0){\n  bigs = 1\n}\n\nif (lils == 1) {\n  if (race == 0) {\n    lils = 1 - parseFloat(lils_value_w) / 100\n  } else if (race == 1) {\n    lils = 1 - parseFloat(lils_value_b) / 100\n  } else if (race == 2) {\n    lils = 1 - parseFloat(lils_value_a) / 100\n  } \n}\nelse if (lils == 0){\n  lils = 1\n}\n\nif (fya == 1) {\n  if (race == 0) {\n    fya = 1 - parseFloat(fya_value_w) / 100\n  } else if (race == 1) {\n    fya = 1 - parseFloat(fya_value_b) / 100\n  } else if (race == 2) {\n    fya = 1 - parseFloat(fya_value_a) / 100\n  }\n}\nelse if (fya == 0){\n  fya = 1\n}\n\nif (fyb == 1) {\n  if (race == 0) {\n    fyb = 1 - parseFloat(fyb_value_w) / 100\n  } else if (race == 1) {\n    fyb = 1 - parseFloat(fyb_value_b) / 100\n  } else if (race == 2) {\n    fyb = 1 - parseFloat(fyb_value_a) / 100\n  }\n}\nelse if (fyb == 0){\n  fyb = 1\n}\n\nif (jka == 1) {\n  if (race == 0) {\n    jka = 1 - parseFloat(jka_value_w) / 100\n  } else if (race == 1) {\n    jka = 1 - parseFloat(jka_value_b) / 100\n  } else if (race == 2) {\n    jka = 1 - parseFloat(jka_value_a) / 100\n  }\n}\nelse if (jka == 0){\n  jka = 1\n}\n\nif (jkb == 1) {\n  if (race == 0) {\n    jkb = 1 - parseFloat(jkb_value_w) / 100\n  } else if (race == 1) {\n    jkb = 1 - parseFloat(jkb_value_b) / 100\n  } else if (race == 2) {\n    jkb = 1 - parseFloat(jkb_value_a) / 100\n  }\n}\nelse if (jkb == 0){\n  jkb = 1\n}\n\nif (bigc == 1) {\n  if (race == 0) {\n    bigc = 1 - parseFloat(bigc_value_w) / 100\n  } else if (race == 1) {\n    bigc = 1 - parseFloat(bigc_value_b) / 100\n  } else if (race == 2) {\n    bigc = 1 - parseFloat(bigc_value_a) / 100\n  }\n \n}\nelse if (bigc == 0){\n  bigc = 1\n}\n\nif (lilc == 1) {\n  if (race == 0) {\n    lilc = 1 - parseFloat(lilc_value_w) / 100\n  } else if (race == 1) {\n    lilc = 1 - parseFloat(lilc_value_b) / 100\n  } else if (race == 2) {\n    lilc = 1 - parseFloat(lilc_value_a) / 100\n  }\n}\nelse if (lilc == 0){\n  lilc = 1\n}\n\nif (bige == 1) {\n  if (race == 0) {\n    bige = 1 - parseFloat(bige_value_w) / 100\n  } else if (race == 1) {\n    bige = 1 - parseFloat(bige_value_b) / 100\n  } else if (race == 2) {\n    bige = 1 - parseFloat(bige_value_a) / 100\n  }\n}\nelse if (bige == 0){\n  bige = 1\n}\n\nif (lile == 1) {\n  if (race == 0) {\n    lile = 1 - parseFloat(lile_value_w) / 100\n  } else if (race == 1) {\n    lile = 1 - parseFloat(lile_value_b) / 100\n  } else if (race == 2) {\n    lile = 1 - parseFloat(lile_value_a) / 100\n  }\n}\nelse if (lile == 0){\n  lile = 1\n}\n\nif (cw == 1) {\n  if (race == 0) {\n    cw = 1 - parseFloat(cw_value_w) / 100\n  } else if (race == 1) {\n    cw = 1 - parseFloat(cw_value_b) / 100\n  } else if (race == 2) {\n    cw = 1 - parseFloat(cw_value_a) / 100\n  }\n}\nelse if (cw == 0){\n  cw = 1\n}\n\nif (lea == 1) {\n  if (race == 0) {\n    lea = 1 - parseFloat(lea_value_w) / 100\n  } else if (race == 1) {\n    lea = 1 - parseFloat(lea_value_b) / 100\n  } else if (race == 2) {\n    lea = 1 - parseFloat(lea_value_a) / 100\n  }\n}\nelse if (lea == 0){\n  lea = 1\n}\n\nif (leb == 1) {\n  if (race == 0) {\n    leb = 1 - parseFloat(leb_value_w) / 100\n  } else if (race == 1) {\n    leb = 1 - parseFloat(leb_value_b) / 100\n  } else if (race == 2) {\n    leb = 1 - parseFloat(leb_value_a) / 100\n  }\n}\nelse if (leb == 0){\n  leb = 1\n}\n\nif (p1 == 1) {\n  if (race == 0) {\n    p1 = 1 - parseFloat(p1_value_w) / 100\n  } else if (race == 1) {\n    p1 = 1 - parseFloat(p1_value_b) / 100\n  } else if (race == 2) {\n    p1 = 1 - parseFloat(p1_value_a) / 100\n  }\n}\nelse if (p1 == 0){\n  p1 = 1\n}\n\nif (lua == 1) {\n  if (race == 0) {\n    lua = 1 - parseFloat(lua_value_w) / 100\n  } else if (race == 1) {\n    lua = 1 - parseFloat(lua_value_b) / 100\n  } else if (race == 2) {\n    lua = 1 - parseFloat(lua_value_a) / 100\n  }\n}\nelse if (lua == 0){\n  lua = 1\n}\n\nif (lub == 1) {\n  if (race == 0) {\n    lub = 1 - parseFloat(lub_value_w) / 100\n  } else if (race == 1) {\n    lub = 1 - parseFloat(lub_value_b) / 100\n  } else if (race == 2) {\n    lub = 1 - parseFloat(lub_value_a) / 100\n  }\n}\nelse if (lub == 0){\n  lub = 1\n}\n\nvar prod = parseFloat(bigk) * parseFloat(lilk) * parseFloat(bigm) * parseFloat(bign) * parseFloat(bigs) * parseFloat(lils) * parseFloat(fya) * parseFloat(fyb) * parseFloat(jka) * parseFloat(jkb) * parseFloat(bigc) * parseFloat(lilc) * parseFloat(bige) * parseFloat(lile) * parseFloat(cw) * parseFloat(lea) * parseFloat(leb) * parseFloat(p1) * parseFloat(lua) * parseFloat(lub) * parseFloat(d) * parseFloat(kpa) * parseFloat(kpb)\n\nvar screening = parseFloat(units) / prod\n\n// if ((screening - Math.floor(screening)) != 0) {\n//  screening = Math.ceil(screening)\n// }\n// else {\n//  screening = screening\n// }\n\nvar msg \n\nif (screening >= 25) {\n  msg = '. Screening a large number of units (≥25) may be impractical for certain blood banks. Consideration of alternative methods to obtain rare units may be desirable (i.e., regional blood donor center, rare blood unit registry).'\n}\nelse {\n  msg = ''\n}\n\nprod = prod*100;\n\ncalc_output.push({\n   name: 'mini',\n   value: screening.toFixed(0),\n   value_text: 'units',\n   message: 'Number of units estimated to be screened'\n});\ncalc_output.push({\n   name: '10011_RBC Compatibility Testing_result (units)',\n   value: screening.toFixed(0),\n   value_text: 'units',\n   message: 'Number of units estimated to be screened' + msg\n});\ncalc_output.push({\n   name: '10011_RBC Compatibility Testing_result (percent)',\n   value: prod.toFixed(0),\n   value_text: '%',\n   message: 'Approximate percent of compatible donor units'\n});",
+  "before_use": "Ce calculateur inclut des variables fondées sur la race, qui peuvent ou non fournir de meilleures estimations ; nous avons donc décidé de rendre la race facultative. En savoir plus sur[notre approche](https://www.mdcalc.com/race)de la prise en compte de la race et des biais sur MDCalc.notionvc: 8d8266ae-5341-4471-afce-6878071edeb2",
+  "instructions": "- Les valeurs par défaut fournies correspondent à une population de donneurs blancs. Elles peuvent être remplacées par les fréquences antigéniques de populations de donneurs non blancs (ou par les fréquences antigéniques d’antigènes non explicitement listés).",
+  "contributor_ids": [
+    "george-hauser",
+    "alex-ryder-md-phd",
+    "christopher-tormey-md"
+  ],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "dc48df1e30c6f2aad5c972530bd2db1dc54dd5887cbf350cd3bc95a638584bfe"
+}

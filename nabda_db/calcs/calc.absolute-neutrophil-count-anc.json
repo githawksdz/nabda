@@ -1,0 +1,157 @@
+{
+  "id": "calc.absolute-neutrophil-count-anc",
+  "slug": "absolute-neutrophil-count-anc",
+  "language": "en",
+  "title": "Numération absolue des neutrophiles (ANC)",
+  "short_title": "Numération absolue des polynucléaires neutrophiles (PNN)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "infectiologie",
+    "medecine-interne",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "cancer",
+    "fever",
+    "chemo",
+    "anc"
+  ],
+  "dosing": false,
+  "formula": "Absolute neutrophil count = 10 x WBC count x (%PMNs+ % bands)\n\nNote: assumes WBC count in 1,000s (i.e., x 10³ cells/µL, also equivalent to x 10³ cells/mm³).\n\nExample, normal patient:\n\n- CBC shows WBC 9.2 (units are x 10³ cells/µL), 33% neutrophils, and 1% bands.\n- ANC = 10 x 9.2 x (33 + 1)\n- ANC = 10 x 9.2 x 34\n- ANC = 3,128 cells/µL → normal, no neutropenia\n\nExample, neutropenic patient:\n\n- CBC shows WBC 1.0 (units are x 10³ cells/µL), 11% neutrophils, and 5% bands.\n- ANC = 10 x 1 x (11 + 5)\n- ANC = 160 cells/µL → severe neutropenia",
+  "how_to_use": {
+    "why": "Le calcul peut être réalisé à partir d'un hémogramme de routine avec formule leucocytaire. Il s'agit d'un outil permettant une stratification rapide du risque. Aucun examen de laboratoire supplémentaire n'est nécessaire pour effectuer le calcul.",
+    "when": "L’ANC peut être essentielle pour évaluer le risque d’infections opportunistes chez un patient immunodéprimé. Elle est couramment utilisée en milieu hospitalier, en consultation et aux urgences. Si un patient recevant une chimiothérapie myélosuppressive active présente une fièvre persistante (avec ou sans symptômes de localisation), il existe un risque d’évolution vers un sepsis. Il est donc impératif de calculer l’ANC pour aider à déterminer si une antibiothérapie probabiliste doit être initiée.",
+    "pearls": "- Le calcul de l’ANC n’est pas une mesure statique réalisée une seule fois lors de l’admission à l’hôpital. Au contraire, il est souvent mesuré quotidiennement chez les patients gravement malades, par exemple pour évaluer la réponse de la moelle osseuse après une chimiothérapie.\n- Rappelons que l’ANC est dynamique : il s’agit d’une valeur absolue et il est **attendu** qu’elle diminue pendant le nadir du patient après une chimiothérapie."
+  },
+  "next_steps": {
+    "advice": "- La fièvre neutropénique (sans source d'infection identifiée) résulte typiquement des effets toxiques directs de la chimiothérapie sur les surfaces muqueuses et le système immunitaire, en plus de l'impact de l'hémopathie ou du cancer sous-jacent. Elle est définie par une température buccale unique de 38.3ºC (101ºF) ou une température supérieure à 38.0ºC (100.4ºF) maintenue pendant plus de 1 heure chez un patient présentant une neutropénie. Elle s'observe généralement chez les patients ayant reçu des traitements anticancéreux au cours des 6 dernières semaines. Le filgrastim (Neupogen), également appelé G-CSF, peut stimuler la production de polynucléaires neutrophiles, mais il est rarement indiqué dans l'évaluation et le traitement de la fièvre neutropénique.\n- Les autres outils permettant de stratifier le risque d'un patient atteint de fièvre neutropénique et de prédire les complications comprennent le [Clinical Index of Stable Febrile Neutropenia (CISNE)](nabda:calc.clinical-index-stable-febrile-neutropenia-cisne) et le [Multinational Association for Supportive Care in Cancer (MASCC) Score](nabda:calc.mascc-risk-index-febrile-neutropenia).",
+    "critical_actions": "Si le tableau clinique évoque une fièvre neutropénique, des cultures appropriées et un bilan infectieux doivent être entrepris, parallèlement à l’instauration rapide d’une antibiothérapie empirique à large spectre destinée à couvrir principalement la flore endogène.",
+    "management": "- Obtain a complete blood count with differential.\n- ANC is calculated as 10 x WBC count in 1000s x (%PMNs+ % bands).\n- Classify neutropenia as mild, moderate, or severe as in[Evidence](#evidence).\n- ANC values can also be interpreted by NCI risk categories:\n\n| NCI Risk Category | ANC |\n| --- | --- |\n| 0 | Within normal limits |\n| 1 | ≥1,500 to <2,000 cells/mm 3 |\n| 2 | ≥1,000 to <1,500 cells/mm 3 |\n| 3 | ≥500 to <1,000 cells/mm 3 |\n| 4 | <500 cells/mm 3 |"
+  },
+  "evidence": "[Une étude](https://www.ncbi.nlm.nih.gov/pubmed/17709921) testant l'application de l'ANC a été réalisée pour prédire les infections bactériennes. Ils ont examiné 105 frottis de sang périphérique et, parallèlement à l'ANC, ont déterminé la sensibilité de la prédiction des infections bactériennes. L'ANC et les granulations toxiques sont plus sensibles que la numération des cellules en bande pour prédire les infections bactériennes. [Une étude de validation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC314422/) a testé si le nadir de l'ANC du premier cycle prédisait le risque de neutropénie fébrile. Il s'agissait d'une étude de validation croisée. Un ANC inférieur ou égal à 0,5 x 10^9^/litre était associé à un rapport de cotes relatif de 4,8. L'objectif de cette étude était de fournir une base permettant de réaliser les ajustements de dose de chimiothérapie afin d'offrir une thérapie antinéoplasique maximale tout en minimisant les effets indésirables.",
+  "more_info": "Neutropénie : ANC <1,500 cellules/mm^3^\n\n- Neutropénie légère : 1,000-1,500 cellules/mm³\n- Neutropénie modérée : 500-999 cellules/mm³\n- Neutropénie sévère : <500 cellules/mm³\n\nNeutrophilie : ANC >7,700 cellules/mm^3^",
+  "short_description": "Neutropénie (après chimiothérapie).",
+  "medium_description": "Frequently used pour assess neutropenic fièvre dans chemotherapy patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "neutrophils",
+      "label": "% de neutrophiles",
+      "optional": false,
+      "unit": "neut",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bands",
+      "label": "% de bandes",
+      "optional": false,
+      "unit": "band",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "white_blood_cell_count",
+      "label": "Numération des globules blancs (WBC)",
+      "tips": "Pour 1000. Saisir 8.4, et non 8400.",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Al-Gwaiz LA, Babay HH. The diagnostic value of absolute neutrophil count, band count and morphologic changes of neutrophils in predicting bacterial infections. Med Princ Pract. 2007;16(5):344–7. doi:10.1159/000104806.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17709921",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klastersky J, et. al. The Multinational Association for Supportive Care in Cancer risk index: A multinational scoring system for identifying low-risk febrile neutropenic cancer patients. J Clin Oncol. 2000 Aug;18(16):3038-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10944139/",
+      "kind": "other"
+    },
+    {
+      "text": "Carmona-Bayonas A, et al. Prediction of serious complications in patients with seemingly stable febrile neutropenia: validation of theClinical Index of Stable Febrile Neutropenia in a prospective cohort of patients from the FINITE study. J Clin Oncol. 2015 Feb 10;33(5):465-71. doi: 10.1200/JCO.2014.57.2347. Epub 2015 Jan 5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25559804",
+      "kind": "other"
+    },
+    {
+      "text": "Thomas BN, Karen MP, Soora W, David D, Gabriel JE. Interpreting Complete Blood Counts Soon After Birth in Newborns at Risk for Sepsis. Pediatrics 2010;126(5):903-909. doi:10.1542/peds.2010-0935.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3197862/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rivera E, Haim Erder M, Fridman M, Frye D, Hortobagyi GN. First-cycle absolute neutrophil count can be used to improve chemotherapy-dose delivery and reduce the risk of febrile neutropenia in patients receiving adjuvant therapy: a validation study. Breast Cancer Research : BCR. 2003;5(5):R114-R120.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC314422/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mascc-risk-index-febrile-neutropenia",
+    "calc.clinical-index-stable-febrile-neutropenia-cisne",
+    "calc.common-terminology-criteria-adverse-events-ctcae"
+  ],
+  "source_logic_hash": "1728dd69664c65b96084a758e5c39cd1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.clinical-index-stable-febrile-neutropenia-cisne",
+      "text": "Clinical Index of Stable Febrile Neutropenia (CISNE)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mascc-risk-index-febrile-neutropenia",
+      "text": "Multinational Association for Supportive Care in Cancer (MASCC) Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.clinical-index-stable-febrile-neutropenia-cisne",
+      "text": "Clinical Index of Stable Febrile Neutropenia (CISNE)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mascc-risk-index-febrile-neutropenia",
+      "text": "Multinational Association for Supportive Care in Cancer (MASCC) Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 19,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar v = 10 * parseFloat(white_blood_cell_count) * (parseFloat(bands) +\n  parseFloat(neutrophils));\nvar msg;\n\nif (v < 500) {\n  msg = 'Severe';\n}\nif (v >= 500 && v < 1000) {\n  msg = 'Moderate';\n}\nif (v >= 1000 && v < 1500) {\n  msg = 'Mild';\n}\nif (v >= 1500 && v <= 7700) {\n  msg = 'Normal; no'\n}\nif (v > 7700) {\n  msg = 'Neutrophilia'\n}\n\nif (v <= 7700) {\n  calc_output.push({\n    name: 'mini',\n    value: v,\n    value_text: 'cells/µL',\n    message: msg + ' neutropenia'\n  });\n} else {\n  calc_output.push({\n    name: 'mini',\n    value: v,\n    value_text: 'cells/µL',\n    message: 'High ANC'\n  });\n}\ncalc_output.push({\n  name: '19_Absolute Neutrophil Count_result',\n  value: v,\n  value_text: 'cells/µL',\n  message: 'Absolute Neutrophil Count'\n});\nif (v < 1500) {\ncalc_output.push({\n  name: '19_Absolute Neutrophil Count_interpretation',\n  value: msg,\n  value_text: 'neutropenia',\n  message: ''\n});\n} else if (v <= 7700) {\n  calc_output.push({\n  name: '19_Absolute Neutrophil Count_interpretation',\n  value: 'Normal',\n  value_text: '',\n  message: 'No neutropenia'\n  });\n} else {\n  calc_output.push({\n    name: '19_Absolute Neutrophil Count_interpretation',\n    value: 'High ANC',\n    value_text: '',\n    message: msg\n  });\n}",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "sagar-patel"
+  ],
+  "creator_names": [
+    "Dr. Layla A. Al-Gwaiz"
+  ],
+  "measurement_ids": [
+    "% Neutrophils",
+    "% Bands"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "cf64bacdc273e2ae5f39373596d3085f5c62b9e9582d533f56ce2043cbec824b"
+}

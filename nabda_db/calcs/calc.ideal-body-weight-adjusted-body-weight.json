@@ -1,0 +1,136 @@
+{
+  "id": "calc.ideal-body-weight-adjusted-body-weight",
+  "slug": "ideal-body-weight-adjusted-body-weight",
+  "language": "en",
+  "title": "Poids idéal et Adjusted Body poids",
+  "short_title": "Poids idéal et Adjusted Body poids",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "geriatrie",
+    "medecine-interne",
+    "pediatrie",
+    "pharmacotherapie",
+    "general",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hypertension",
+    "Obesity"
+  ],
+  "chief_complaints": [
+    "Soins préventifs / Dépistage"
+  ],
+  "abbreviations": [
+    "obesity",
+    "ibw",
+    "devine formula"
+  ],
+  "dosing": false,
+  "formula": "Ideal Body Weight (Devine formula):\n\n- Ideal body weight (IBW) (men) = 50 kg + 2.3 kg x (height, in - 60)\n- Ideal body weight (IBW) (women) = 45.5 kg + 2.3 kg x (height, in - 60)\n- Note: this formula is only an approximation, and is generally only applicable for people 60 inches (5 foot) tall or greater. For patients under 5 feet, one commonly-used modification is to subtract 2-5 lbs for each inch below 60 inches (written communication with leading expert Dr. Manjunath Pai, 2018).\n\nAdjusted Body Weight (ABW), for use in obese patients (where actual body weight > IBW):\n\n- ABW = IBW + 0.4 x (actual body weight - IBW)",
+  "how_to_use": {
+    "why": "Bien que de nombreux médicaments aient une posologie pondérale, il est souvent recommandé de les doser selon le poids corporel idéal.",
+    "when": "Cette formule n'est qu'une approximation et n'est généralement applicable qu'aux personnes mesurant ≥60 inches (5 feet). Pour les patients mesurant moins de 5 feet, une modification couramment utilisée consiste à soustraire 2-5 lbs pour chaque inch en dessous de 60 inches (communication écrite avec l'expert de premier plan Dr Manjunath Pai, 2018).",
+    "pearls": "- Il existe plusieurs formules de poids corporel idéal qui ont été développées ; elles présentent toutes des réserves et des problèmes différents. Votre hôpital peut utiliser une formule légèrement différente en fonction de sa population locale.\n- Le poids corporel idéal est la mesure de poids de référence dans de nombreux calculs cliniques, tels que le [volume courant](nabda:calc.endotracheal-tube-ett-depth-tidal-volume-calculator)."
+  },
+  "next_steps": {
+    "advice": "Confirmer le dosage des médicaments avec la pharmacie : certains dosages médicamenteux utilisent le poids corporel idéal, tandis que d’autres utilisent le poids corporel réel.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Poids idéal et poids corporel ajusté.",
+  "medium_description": "Calculates poids idéal (Devine formula) et adjusted body poids.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids réel",
+      "tips": "Facultatif, pour le calcul du poids corporel ajusté chez les patients obèses",
+      "optional": true,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Devine BJ. Gentamicin therapy. Drug Intell Clin Pharm. 1974;8:650–655.",
+      "href": "https://journals.sagepub.com/doi/10.1177/106002807400801104",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kang K, Absher R, Farrington E, Ackley R, So TY. Evaluation of different methods used to calculate ideal body weight in the pediatric population. J Pediatr Pharmacol Ther. 2019;24(5):421-430.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6782117/",
+      "kind": "other"
+    },
+    {
+      "text": "Pai MP, Paloucek FP. The origin of the 'ideal' body weight equations. Ann Pharmacother. 2000;34(9):1066-9. PMID 10981254.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10981254",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.endotracheal-tube-ett-depth-tidal-volume-calculator",
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.edmonton-obesity-staging-system-eoss"
+  ],
+  "source_logic_hash": "15614ba9d0531d3511f8a873eeaed8c7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.endotracheal-tube-ett-depth-tidal-volume-calculator",
+      "text": "tidal volume"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 68,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

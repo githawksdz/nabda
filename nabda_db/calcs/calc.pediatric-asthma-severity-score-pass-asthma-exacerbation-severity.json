@@ -1,0 +1,160 @@
+{
+  "id": "calc.pediatric-asthma-severity-score-pass-asthma-exacerbation-severity",
+  "slug": "pediatric-asthma-severity-score-pass-asthma-exacerbation-severity",
+  "language": "fr",
+  "title": "Pédiatrique asthme gravité score (PASS) pour asthme Exacerbation gravité",
+  "short_title": "Pédiatrique asthme gravité score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Asthma",
+    "peds",
+    "breathing",
+    "wheezing",
+    "gorelick",
+    "PASS",
+    "Pediatric Asthma Severity Score (PASS) for Asthma Exacerbation Severity",
+    "Pediatric Asthma Severity Score"
+  ],
+  "dosing": false,
+  "formula": "Le PASS est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sibilants | Absents ou légers | 0 |\n| Modérés | 1 | |\n| Sibilants sévères ou absents en raison d'une mauvaise circulation aérienne | 2 | |\n| Travail respiratoire (utilisation des muscles accessoires, tirage) | Normal ou légèrement diminué | 0 |\n| Modéré | 1 | |\n| Sévère | 2 | |\n| Prolongation de l'expiration (ratio expiration/inspiration) | Normale ou légèrement prolongée | 0 |\n| Modérément prolongée | 1 | |\n| Sévèrement prolongée | 2 | |",
+  "how_to_use": {
+    "why": "Ce score peut aider à décider quels patients nécessitent une hospitalisation, en particulier lorsque les cliniciens sont en désaccord ou lorsque le patient est « limite » quant au besoin d'hospitalisation.",
+    "when": "Patients pédiatriques (1-18 ans) présentant une exacerbation d'asthme.",
+    "pearls": "- Le Pediatric Asthma Severity Score (PASS) fournit une méthode pour prédire la probabilité d'hospitalisation ou de séjour prolongé aux urgences.\n- Le PASS utilise des variables telles que le travail respiratoire (couramment utilisé dans la décision d'hospitalisation), et peut donc surestimer l'utilité du score."
+  },
+  "next_steps": {
+    "advice": "Le score PASS fonctionne mieux lorsqu'il est réalisé initialement et après traitement afin de montrer une évolution, mais cela peut revenir au même que la réévaluation clinique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Le PASS utilise une valeur seuil de 2 points comme indication d'une admission potentielle en réanimation pédiatrique (PICU).",
+  "short_description": "Gravité de pédiatrique asthme.",
+  "medium_description": "Determines pédiatrique asthme gravité basé sur physical exam findings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "wheezing",
+      "label": "Wheezing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun ou léger",
+          "value": 0
+        },
+        {
+          "label": "Modéré",
+          "value": 1
+        },
+        {
+          "label": "Severe wheezing ou absent due pour poor air movement",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "amu",
+      "label": "Travail respiratoire",
+      "tips": "Utilisation des muscles accessoires, tirage",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal ou légèrement diminué",
+          "value": 0
+        },
+        {
+          "label": "Modéré",
+          "value": 1
+        },
+        {
+          "label": "Sévère",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "exp",
+      "label": "Prolongation de l'expiration",
+      "tips": "Ratio expiration/inspiration",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normale ou légèrement prolongée",
+          "value": 0
+        },
+        {
+          "label": "Modérément prolongée",
+          "value": 1
+        },
+        {
+          "label": "Sévèrement prolongée",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gorelick MH, et al. Performance of a novel clinical score, the Pediatric Asthma Severity Score (PASS), in the evaluation of acute asthma.Acad Emerg Med. 2004 Jan;11(1):10-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14709423",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gouin S, et al. Prospective evaluation of two clinical scores for acute asthma in children 18 months to 7 years of age. Acad Emerg Med. 2010 Jun;17(6):598-603",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20624139",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.respiratory-score-asthma-liu-et-al",
+    "calc.pediatric-trauma-score-pts",
+    "calc.modified-asthma-predictive-index-mapi"
+  ],
+  "source_logic_hash": "b70260b41f45864a584f2c508cb1f4fb",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3383,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

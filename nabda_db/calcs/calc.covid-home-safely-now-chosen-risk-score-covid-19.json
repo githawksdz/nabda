@@ -1,0 +1,258 @@
+{
+  "id": "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+  "slug": "covid-home-safely-now-chosen-risk-score-covid-19",
+  "language": "en",
+  "title": "COVID Home Safely Now (CHOSEN) risque score pour COVID-19",
+  "short_title": "Score de risque CHOSEN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Hypoxia",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "COVID Home Safely Now (CHOSEN) Risk Score for COVID-19, CHOSEN Risk Score, CHOSEN score, CHOSEN, covid-19, covid, coronavirus, covid risk, covid-19 risk, covid risk score, covid-19 risk score, chosen risk, chosen risk score, hypoxia, icu, covid mortality, covid death, covid-19 mortality, covid discharge, covid-19 discharge"
+  ],
+  "dosing": false,
+  "formula": "The CHOSEN Risk Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | 18-45 | 5 |\n| 46-59 | 2 | |\n| 60-73 | 1 | |\n| >73 | 0 | |\n| SpO 2 | <94% | 0 |\n| 94-96% | 9 | |\n| 97-98% | 14 | |\n| >98% | 21 | |\n| Albumin level | <2.8 g/dL (<28 g/L) | 0 |\n| 2.8-3.3 g/dL (28-33 g/L) | 5 | |\n| 3.4-3.7 g/dL (34-37 g/L) | 15 | |\n| >3.7 g/dL (>37 g/L) | 29 | |\n\nIf albumin lab value is not available, the Modified CHOSEN Risk Score is calculated by the addition of the selected points from table below:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | 18-45 | 12 |\n| 46-59 | 8 | |\n| 60-73 | 3 | |\n| >73 | 0 | |\n| SpO 2 | <94% | 0 |\n| 94-96% | 9 | |\n| 97-98% | 15 | |\n| >98% | 20 | |\n| Respiratory rate, breaths per minute | <18 | 16 |\n| 18-20 | 12 | |\n| 21-24 | 5 | |\n| >24 | 0 | |",
+  "how_to_use": {
+    "why": "- Prédit si un patient atteint de COVID-19 en milieu surveillé aura besoin d’oxygène supplémentaire, de soins de niveau réanimation, ou s’il présente un risque de décès dans les 14 jours suivants.\n- Peut aider à réduire les hospitalisations inutiles, en optimisant l’utilisation des ressources lors des pics.",
+    "when": "Envisager d'appliquer aux patients adultes (≥18 ans) présentant une COVID-19 confirmée ou suspectée aux urgences ou dans un service de médecine générale, en particulier lorsqu'une sortie est envisagée pour aider aux décisions d'orientation.",
+    "pearls": "- Ont démontré des performances similaires chez les patients hospitalisés et chez les patients pris en charge aux urgences.\n- Dans l'étude de dérivation, l'albumine, un réactif de phase aiguë négatif, était le facteur le plus prédictif d'événements indésirables, tandis que l'âge était le moins prédictif.\n- La fréquence respiratoire est souvent sujette à des erreurs de mesure, ce qui peut affecter les résultats du score CHOSEN modifié.\n- La version modifiée du score ne nécessite pas de données de laboratoire, mais s'est révélée moins performante que la version originale.\n- Le score ne prend pas en compte d'autres facteurs influençant la gravité de la COVID-19 (p. ex., les comorbidités) ; il doit toujours être appliqué dans le contexte clinique.\n- De plus, il ne tient pas compte du retour à domicile avec oxygénothérapie comme option d'orientation."
+  },
+  "next_steps": {
+    "advice": "- Cet outil ne doit pas remplacer le jugement clinique, en particulier lorsque l’état du patient évolue rapidement ; une évaluation clinique appropriée est nécessaire avant de décider de l’orientation.\n- **Scores bas (<30 ou ≤19 pour la version modifiée) :** Envisager une hospitalisation ou une surveillance ambulatoire renforcée, selon les ressources, le contexte clinique et les préférences du patient.\n- **Scores élevés (≥30 ou >19 pour la version modifiée) :** Envisager une surveillance à domicile avec des instructions claires sur le moment où il faut rechercher une prise en charge médicale supplémentaire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CHOSEN Score | Discharge Assessment* |\n| --- | --- |\n| 0-29 | Unlikely to be suitable |\n| 30-55 | Likely suitable |\n\n*The 30 point cutoff score showed an 83% sensitivity and 82% specificity in the original study[(Levine 2020)](https://pubmed.ncbi.nlm.nih.gov/33274414/).\n\n| Modified CHOSEN Score | Discharge Assessment* |\n| --- | --- |\n| 0-19 | Unlikely to be suitable |\n| >19 | Likely suitable |\n\n*The 19 point cutoff score showed an 72.2% sensitivity and 73.2% specificity in the original study[(Levine 2020)](https://pubmed.ncbi.nlm.nih.gov/33274414/).",
+  "short_description": "Pertinence d’une sortie hospitalière en cas de COVID-19",
+  "medium_description": "Predicts suitability pour discharge dans COVID-19 patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "avail",
+      "label": "Valeur de laboratoire d’albumine disponible",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 1
+        },
+        {
+          "label": "Non",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==1",
+      "options": [
+        {
+          "label": "18-45",
+          "value": 5
+        },
+        {
+          "label": "46-59",
+          "value": 2
+        },
+        {
+          "label": "60-73",
+          "value": 1
+        },
+        {
+          "label": ">73",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "spo2",
+      "label": "SpO~2~",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==1",
+      "options": [
+        {
+          "label": "< 94%",
+          "value": 0
+        },
+        {
+          "label": "94-96%",
+          "value": 9
+        },
+        {
+          "label": "97-98%",
+          "value": 14
+        },
+        {
+          "label": ">98%",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "albumin",
+      "label": "Taux d'albumine",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==1",
+      "options": [
+        {
+          "label": "< 2.8 g/dL (<28 g/L)",
+          "value": 0
+        },
+        {
+          "label": "2.8-3.3 g/dL (28-33 g/L)",
+          "value": 5
+        },
+        {
+          "label": "3.4-3.7 g/dL (34-37 g/L)",
+          "value": 15
+        },
+        {
+          "label": ">3.7 g/dL (>37 g/L)",
+          "value": 29
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age2",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==0",
+      "options": [
+        {
+          "label": "18-45",
+          "value": 12
+        },
+        {
+          "label": "46-59",
+          "value": 8
+        },
+        {
+          "label": "60-73",
+          "value": 3
+        },
+        {
+          "label": ">73",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oxysat",
+      "label": "SpO~2~",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==0",
+      "options": [
+        {
+          "label": "< 94%",
+          "value": 0
+        },
+        {
+          "label": "94-96%",
+          "value": 9
+        },
+        {
+          "label": "97-98%",
+          "value": 15
+        },
+        {
+          "label": ">98%",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Fréquence respiratoire, breaths per minute",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "avail==0",
+      "options": [
+        {
+          "label": "< 18",
+          "value": 16
+        },
+        {
+          "label": "18-20",
+          "value": 12
+        },
+        {
+          "label": "21-24",
+          "value": 5
+        },
+        {
+          "label": ">24",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Levine DM, Lipsitz SR, Co Z, Song W, Dykes PC, Samal L. Derivation of a clinical risk score to predict 14-day occurrence of hypoxia, icu admission, and death among patients with coronavirus disease 2019. J GEN INTERN MED. Published online December 3, 2020.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33274414/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wolfisberg S, Gregoriano C, Struja T, et al. Call, CHOSEN, HA₂T₂, ANDC: validation of four severity scores in COVID-19 patients. Infection. 2022;50(3):651-659.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34799814/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.covid-risk",
+    "calc.veterans-health-administration-covid-19-vaco-index-covid-19-mortality"
+  ],
+  "source_logic_hash": "53d14c55cea67da15afca5e9b1564ff2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10354,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

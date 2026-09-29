@@ -1,0 +1,155 @@
+{
+  "id": "calc.sokal-index-chronic-myelogenous-leukemia-cml",
+  "slug": "sokal-index-chronic-myelogenous-leukemia-cml",
+  "language": "fr",
+  "title": "Sokal index pour chronique Myelogenous Leukemia (CML)",
+  "short_title": "Score de Sokal",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Hémopathie maligne",
+    "Leucémie myéloïde chronique",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Lymphadenopathy"
+  ],
+  "abbreviations": [
+    "cml",
+    "blast",
+    "plt",
+    "platelets"
+  ],
+  "dosing": false,
+  "formula": "Score de Sokal = exp([0,0116 × (âge en années – 43,4)] + [0,0345 × (taille de la rate en cm – 7,51)] + [0,188 × ((plaquettes en 10^9^/L / 700)^2^– 0,563)] + [0,0887 × (blastes en % – 2,10)])",
+  "how_to_use": {
+    "why": "- Les [recommandations NCCN](https://www.nccn.org/professionals/physician_gls/pdf/cml.pdf) pour le traitement de la LMC recommandent l'utilisation des scores de Sokal et de Hasford plutôt que de l'[EUTOS](nabda:calc.eutos-score-chronic-myelogenous-leukemia-cml) pour la stratification du risque clinique.\n- Le score de Sokal est également utilisé de préférence dans les essais cliniques afin de permettre des comparaisons avec les essais antérieurs.",
+    "when": "Aux États-Unis, le score de Sokal peut être utilisé pour déterminer le risque et décider du traitement selon les [recommandations NCCN pour la LMC](https://www.nccn.org/professionals/physician_gls/pdf/cml.pdf). Bien que le score EUTOS soit plus facile à calculer et identifie plus précisément les patients à haut risque à l'ère des inhibiteurs de la tyrosine kinase, il n'a pas été adopté par les recommandations NCCN.",
+    "pearls": "- L'indice de Sokal, également appelé score de Sokal, a été développé à partir de patients traités avant l'ère des inhibiteurs de la tyrosine kinase et ne peut donc pas nécessairement être appliqué aujourd'hui. Les résultats en termes de survie se sont considérablement améliorés depuis.\n- Bien que les scores soient stratifiés en risque faible, intermédiaire et élevé, certaines études ont montré que les risques faible et intermédiaire ont des résultats similaires.\n- Certains préconisent de combiner les scores de Sokal et d'[EUTOS](nabda:calc.eutos-score-chronic-myelogenous-leukemia-cml) pour une meilleure valeur prédictive."
+  },
+  "next_steps": {
+    "advice": "L'atteinte des jalons de réponse cytogénétique et moléculaire par le patient est plus prédictive du résultat une fois le traitement commencé.",
+    "critical_actions": "Ne peut être appliqué qu'à un patient nouvellement diagnostiqué, avant le début du traitement.",
+    "management": "Bien que le score de Sokal ait aujourd'hui une utilité limitée en dehors des essais cliniques, en général, les patients à risque faible et intermédiaire peuvent être mis sous imatinib à dose standard, et les patients à haut risque devraient être envisagés pour les ITK de nouvelle génération ou faire l'objet d'une surveillance plus rapprochée afin d'assurer une réponse moléculaire complète."
+  },
+  "evidence": "L'[étude de dérivation originale](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1731441/pdf/v054p00491.pdf) incluait 813 patients européens et américains traités avant la disponibilité de l'imatinib. L'[étude de validation](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1731441/pdf/v054p00491.pdf) a été réalisée pendant l'ère du traitement par interféron et a montré que, même à cette époque, le score de Sokal n'était plus prédictif et que le score de Hasford était un meilleur prédicteur de survie. Les résultats se sont nettement améliorés après l'utilisation de l'imatinib, ce qui a conduit au développement d'un nouveau score appelé score EUTOS.\nDeux études majeures ([Uz 2013](https://www.ncbi.nlm.nih.gov/pubmed/23540886), Yahng 2012) suggèrent que le score EUTOS est supérieur au score de Sokal, et une étude ([Marin 2011](https://ascopubs.org/doi/full/10.1200/jco.2011.37.6962)) montre l'inverse.",
+  "more_info": "Interprétation :\n\n| Groupe de risque | Score de Sokal | Survie à 2 ans | Survie médiane |\n| --- | --- | --- | --- |\n| Faible | <0,8 | 90 % | 5 ans |\n| Intermédiaire | 0,8–1,2 | 65-90 % | 2,5-5 ans |\n| Élevé | >1,2 | 65 % | 2,5 ans |",
+  "short_description": "Survie dans la LMC.",
+  "medium_description": "Predicts survie de CML basé sur clinique et lab information.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "spl",
+      "label": "Taille de la rate",
+      "tips": "Distance maximale palpable sous le rebord costal",
+      "optional": false,
+      "unit": "spleen",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plt",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "blasts",
+      "label": "% myeloblasts dans peripheral blood",
+      "optional": false,
+      "unit": "myeloblasts",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Sokal JE, Cox EB, Baccarani M, Tura S, Gomez GA, Robertson JE et al. Prognostic discrimination in “good-risk” chronic granulocytic leukemia. Blood 1984; 63: 789-99.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6584184",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Uz B, Buyukasik Y, Atay H, et al. EUTOS CML prognostic scoring system predicts ELN-based 'event-free survival' better than Euro/Hasford and Sokal systems in CML patients receiving front-line imatinib mesylate. Hematology. 2013;18(5):247-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23540886 ",
+      "kind": "other"
+    },
+    {
+      "text": "Yahng SA, Jang EJ, Choi SY, et al. Comparison of Sokal, Hasford and EUTOS scores in terms of long-term treatment outcome according to the risks in each prognostic model: a single center data analyzed in 255 early chronic phase chronic myeloid leukemia patients treated with frontline imatinib mesylate. Blood 2012;120:Abstract 2794.",
+      "href": "https://ashpublications.org/blood/article/120/21/2794/102519/Comparison-of-Sokal-Hasford-and-EUTOS-Scores-in",
+      "kind": "other"
+    },
+    {
+      "text": "Marin D, Ibrahim AR, Goldman JM. European Treatment and Outcome Study (EUTOS) score for chronic myeloid leukemia still requires more confirmation. J Clin Oncol 2011;29:3944–5. ",
+      "href": "https://ascopubs.org/doi/full/10.1200/jco.2011.37.6962   \t",
+      "kind": "other"
+    },
+    {
+      "text": "Yamamoto E, Fujisawa S, Hagihara M, et al. European Treatment and Outcome Study score does not predict imatinib treatment response and outcome in chronic myeloid leukemia patients. Cancer Sci. 2014;105(1):105-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24450386 ",
+      "kind": "other"
+    },
+    {
+      "text": "Pfirrmann M, Baccarani M, Saussele S, et al. Prognosis of long-term survival considering disease-specific death in patients with chronic myeloid leukemia. Leukemia. 2016;30(1):48-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26416462 ",
+      "kind": "other"
+    },
+    {
+      "text": "Thomas M, Irving J, Lennard A, Proctor S, Taylor P. Validation of the Hasford score in a demographic study in chronic granulocytic leukaemia. Journal of Clinical Pathology. 2001;54(6):491-493. doi:10.1136/jcp.54.6.491.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1731441/pdf/v054p00491.pdf ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.eutos-score-chronic-myelogenous-leukemia-cml",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria"
+  ],
+  "source_logic_hash": "7eb834530a258d8003eafacf30427551",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.eutos-score-chronic-myelogenous-leukemia-cml",
+      "text": "EUTOS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2143,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.histidine-isoleucine-leucine-methionine-phenylalanine-threonine-tryptoph"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

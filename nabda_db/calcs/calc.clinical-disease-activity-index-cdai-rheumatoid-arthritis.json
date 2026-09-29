@@ -1,0 +1,304 @@
+{
+  "id": "calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis",
+  "slug": "clinical-disease-activity-index-cdai-rheumatoid-arthritis",
+  "language": "en",
+  "title": "Clinique maladie Activity index (CDAI) pour Rheumatoid Arthritis",
+  "short_title": "CDAI pour Rheumatoid Arthritis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "RA",
+    "clinical",
+    "rheumatoid arthritis"
+  ],
+  "dosing": false,
+  "formula": "CDAI = Nombre d'articulations douloureuses + Nombre d'articulations gonflées + Activité globale du patient + Activité globale du médecin",
+  "how_to_use": {
+    "why": "- Le CDAI offre un excellent aperçu de la gravité de la maladie d’un patient (il corrèle étroitement avec le [SDAI](nabda:calc.simple-disease-activity-index-sdai-rheumatoid-arthritis) qui nécessite des données de laboratoire) et le [DAS-28](nabda:calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp) (qui est une évaluation beaucoup plus longue, portant sur 28 articulations).\n- Le CDAI peut également aider à guider le traitement en fonction de la gravité de la maladie (voir « Étapes suivantes »).",
+    "when": "- Tous les patients atteints de polyarthrite rhumatoïde.\n- Réévaluation des patients après l'instauration d'un nouveau traitement de la polyarthrite rhumatoïde.",
+    "pearls": "- Assessment of disease activity in rheumatoid arthritis (RA) should be viewed as a dynamic, on-going process; many experts recommend assessing the Clinical Disease Activity Index (CDAI) at every patient visit.\n- Early treatment is important for optimal RA outcomes, and the CDAI can help give a gestalt view of a patient’s disease severity and activity."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Les patients présentant des scores d'activité élevés doivent recevoir précocement et de manière agressive des médicaments RA, avec un suivi rapproché, car l'obtention de scores d'activité faible ou de niveau de rémission peut prévenir la progression de la maladie et le handicap.\n\n![cdai algorithm](https://cdn-web-img.mdcalc.com/cdai.png)",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Intervalle du score CDAI | Sévérité de la maladie |\n| --- | --- |\n| ≤ 2.8 | Rémission |\n| > 2.8 - 10.0 | Faible |\n| > 10.0 - 22.0 | Modérée |\n| > 22.0 | Élevée |",
+  "short_description": "RA gravité, clinique data only.",
+  "medium_description": "Determines gravité de rheumatoid arthritis using only clinique data.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "tender",
+      "label": "Nombre d'articulations douloureuses",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "swollen",
+      "label": "Nombre d'articulations gonflées",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "pt",
+      "label": "Demandez au patient : En tenant compte de toutes les façons dont l’arthrite vous affecte, comment vous en sortez-vous ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0.0 - Très bien",
+          "value": 0
+        },
+        {
+          "label": "0.5",
+          "value": 0.5
+        },
+        {
+          "label": "1.0",
+          "value": 1
+        },
+        {
+          "label": "1.5",
+          "value": 1.5
+        },
+        {
+          "label": "2.0",
+          "value": 2
+        },
+        {
+          "label": "2.5",
+          "value": 2.5
+        },
+        {
+          "label": "3.0",
+          "value": 3
+        },
+        {
+          "label": "3.5",
+          "value": 3.5
+        },
+        {
+          "label": "4.0",
+          "value": 4
+        },
+        {
+          "label": "4.5",
+          "value": 4.5
+        },
+        {
+          "label": "5.0",
+          "value": 5
+        },
+        {
+          "label": "5.5",
+          "value": 5.5
+        },
+        {
+          "label": "6.0",
+          "value": 6
+        },
+        {
+          "label": "6.5",
+          "value": 6.5
+        },
+        {
+          "label": "7.0",
+          "value": 7
+        },
+        {
+          "label": "7.5",
+          "value": 7.5
+        },
+        {
+          "label": "8.0",
+          "value": 8
+        },
+        {
+          "label": "8.5",
+          "value": 8.5
+        },
+        {
+          "label": "9.0",
+          "value": 9
+        },
+        {
+          "label": "9.5",
+          "value": 9.5
+        },
+        {
+          "label": "10.0 - Très mauvais",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "md",
+      "label": "Selon l’avis médical : En tenant compte de toutes les manières dont l’arthrite affecte le patient, comment se porte-t-il ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0.0 - Très bien",
+          "value": 0
+        },
+        {
+          "label": "0.5",
+          "value": 0.5
+        },
+        {
+          "label": "1.0",
+          "value": 1
+        },
+        {
+          "label": "1.5",
+          "value": 1.5
+        },
+        {
+          "label": "2.0",
+          "value": 2
+        },
+        {
+          "label": "2.5",
+          "value": 2.5
+        },
+        {
+          "label": "3.0",
+          "value": 3
+        },
+        {
+          "label": "3.5",
+          "value": 3.5
+        },
+        {
+          "label": "4.0",
+          "value": 4
+        },
+        {
+          "label": "4.5",
+          "value": 4.5
+        },
+        {
+          "label": "5.0",
+          "value": 5
+        },
+        {
+          "label": "5.5",
+          "value": 5.5
+        },
+        {
+          "label": "6.0",
+          "value": 6
+        },
+        {
+          "label": "6.5",
+          "value": 6.5
+        },
+        {
+          "label": "7.0",
+          "value": 7
+        },
+        {
+          "label": "7.5",
+          "value": 7.5
+        },
+        {
+          "label": "8.0",
+          "value": 8
+        },
+        {
+          "label": "8.5",
+          "value": 8.5
+        },
+        {
+          "label": "9.0",
+          "value": 9
+        },
+        {
+          "label": "9.5",
+          "value": 9.5
+        },
+        {
+          "label": "10.0 - Très mauvais",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aletaha D, Nell VP, Stamm T, et al. Acute phase reactants add little to composite disease activity indices for rheumatoid arthritis: validation of a clinical activity score. Arthritis Research & Therapy. 2005;7(4):R796-R806. doi:10.1186/ar1740.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1175030/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aletaha D, Smolen JS. The Simplified Disease Activity Index (SDAI) and Clinical Disease Activity Index (CDAI) to monitor patients in standard clinical care.Best Pract Res Clin Rheumatol. 2007 Aug;21(4):663-75.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17678828",
+      "kind": "other"
+    },
+    {
+      "text": "Khan NA, Spencer HJ, Abda EA, et al. Patient’s global assessment of disease activity and patient’s assessment of general health for rheumatoid arthritis activity assessment: are they equivalent? Annals of the rheumatic diseases. 2012;71(12):1942-1949. doi:10.1136/annrheumdis-2011-201142.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3731741/",
+      "kind": "other"
+    },
+    {
+      "text": "Singh H, et al. Use of Clinical Disease Activity Index Score for Assessment of Disease Activity in Rheumatoid Arthritis Patients: An Indian Experience. Arthritis. vol. 2011, Article ID 146398, 5 pages, 2011. doi:10.1155/2011/146398",
+      "href": "https://www.hindawi.com/journals/arthritis/2011/146398",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simple-disease-activity-index-sdai-rheumatoid-arthritis",
+    "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+    "calc.disease-activity-score-28-rheumatoid-arthritis-esr-das28-esr"
+  ],
+  "source_logic_hash": "2be433b08b4cf6f9643c99e753e75159",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.simple-disease-activity-index-sdai-rheumatoid-arthritis",
+      "text": "SDAI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+      "text": "DAS-28"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2177,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

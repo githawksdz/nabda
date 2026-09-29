@@ -1,0 +1,296 @@
+{
+  "id": "calc.sirs-sepsis-septic-shock-criteria",
+  "slug": "sirs-sepsis-septic-shock-criteria",
+  "language": "en",
+  "title": "Critères de SIRS, de sepsis et de choc septique",
+  "short_title": "Critères SIRS et sepsis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "Systemic inflammatory response syndrome",
+    "sirs",
+    "sepsis",
+    "coronavirus",
+    "covid-19",
+    "covid 19",
+    "covid19",
+    "covid",
+    "septic shock"
+  ],
+  "dosing": false,
+  "formula": "Série de questions à réponse Oui/Non.",
+  "how_to_use": {
+    "why": "- Il a été démontré que l’instauration précoce d’une antibiothérapie à large spectre et de mesures agressives de réanimation diminue la mortalité chez les patients atteints de sepsis sévère et de choc septique. La reconnaissance précoce de ces états est donc de la plus haute importance.\n- Les critères SIRS sont principalement utilisés comme outil de dépistage pour identifier les patients susceptibles de nécessiter un bilan complémentaire pour un",
+    "when": "- Les patients qui présentent au moins deux critères SIRS et une infection suspectée ou confirmée doivent faire l’objet d’un dépistage de sepsis sévère.\n- Actuellement, de nombreuses institutions encouragent, voire imposent, l’obtention d’un dosage des lactates chez ces patients. Un lactate ≥2 mmol/L est considéré comme élevé et l’instauration d’une prise en charge standard du sepsis est justifiée si le patient répond à d’autres critères diagnostiques de sepsis.\n- Les patients qui répondent aux critères ci-dessus mais présentent une hypotension persistante malgré l’instauration d’une réanimation liquidienne par voie intraveineuse sont probablement en choc septique, et des mesures de réanimation agressives doivent être instaurées immédiatement.",
+    "pearls": "- Les critères du SIRS, du sepsis, du sepsis sévère et du choc septique ont été choisis par un panel d’experts et n’ont pas été dérivés prospectivement ou rétrospectivement à partir d’études de population à grande échelle ([SCCM 2021 Guidelines](https://pubmed.ncbi.nlm.nih.gov/34599691/)).\n- Il persiste une controverse sur la sensibilité et la spécificité de ces critères, même s’ils ont été largement adoptés à des fins de recherche et en pratique clinique.\n- Le jugement clinique reste important, car un nombre significatif de patients se présentant aux services d’urgence répondront aux critères de sepsis mais ne nécessiteront pas de dépistage ou de prise en charge supplémentaires.\n- Par exemple, un homme de 21 ans en bonne santé atteint d’une maladie virale peut se présenter avec de la fièvre et une tachycardie. Bien que ce patient réponde à la définition du sepsis, on peut facilement soutenir que des explorations complémentaires et des interventions agressives sont probablement inutiles si le patient a une apparence clinique rassurante."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Assess all patients presenting with two or more SIRS criteria for the possibility of an infectious etiology.\n- Screen for severe sepsis by obtaining a lactate level on patients with sepsis that are elderly, immunocompromised, or ill appearing.\n- Some experts recommend obtaining a lactate level on all patients in whom blood cultures are sent. This is institution dependent however and not mandated in any guidelines.\n- When severe sepsis or septic shock are identified, initiate broad spectrum antibiotics immediately. These antibiotics should be organism specific and therefore institutional antibiograms should be used.\n- The[Surviving Sepsis Campaign Guidelines](https://pubmed.ncbi.nlm.nih.gov/34599691/)recommend initiation of antimicrobials within one hour from the time of recognition of severe sepsis or septic shock, or within three hours of the patient’s arrival to the hospital.",
+    "management": "- When a patient presents with two or more SIRS criteria but with hemodynamic stability (i.e. blood pressure at baseline), a clinical assessment must be made to determine the possibility of an infectious etiology.\n- If an infection is suspected or confirmed, the patient is diagnosed with sepsis and a lactate level is obtained to determine the degree of hypoperfusion and inflammation. A lactate level ≥2 mmol/L is considered elevated *,* and aggressive management with broad spectrum antibiotics, intravenous fluids, and vasopressors should be considered.\n- Patients that present with a suspected or confirmed infection AND hemodynamic instability should immediately be treated for septic shock. While SIRS criteria will likely be present in these patients, aggressive management should not be delayed while waiting for laboratory values such as the WBC or lactate.\n- Early recognition of sepsis, severe sepsis, and septic shock, and early administration of broad spectrum and organism specific antibiotic are the most critical actions.\n- There remains controversy in the type of fluids that should be used, their quantity, and the timing of vasopressors and/or inotropes."
+  },
+  "evidence": "- [This paper](https://www.ncbi.nlm.nih.gov/pubmed/1303622)was released after the first consensus conference in 1991. The goal of this conference was to standardize the use of terms such as “SIRS”, “sepsis”, “severe sepsis”, and “septic shock” to facilitate enrollment of patients in clinical trials.\n- In 2001, the International Sepsis Definitions Conference expanded on these definitions by adding additional elements such as laboratory data. See[here](https://www.ncbi.nlm.nih.gov/pubmed/12682500).\n- The[Third Consensus Conference](https://pubmed.ncbi.nlm.nih.gov/26903338/)is the most recent iteration of this guidance.",
+  "more_info": "- SIRS - 2 YES answers meets criteria.\n- Sepsis Criteria - 2 YES of SIRS + Suspected Source of Infection.\n- Severe Sepsis Criteria - 2 YES of SIRS + Lactic Acidosis, SBP.\n- Multiple Organ Dysfunction Syndrome - 2 YES of SIRS + Evidence of ≥ 2 Organs Failing.\n\nCheck with your own hospital for its sepsis guidelines, sepsis 'bundle', or sepsis algorithm.",
+  "short_description": "Définit la gravité du sepsis et du choc septique.",
+  "medium_description": "Définit la gravité du sepsis et du choc septique.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "temperature",
+      "label": "Température >38°C (100,4°F) ou <36°C (96,8°F)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque > 90",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "respiratory_rate",
+      "label": "Fréquence respiratoire >20/min ou PaCO₂ <32 mm Hg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "white_blood_cell_count",
+      "label": "WBC >12,000/mm³, <4,000/mm³, ou >10% bands",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "infection",
+      "label": "Source d’infection suspectée ou présente",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "lactic_acidosis",
+      "label": "Acidose lactique, PAS <90 ou chute de la PAS ≥40 mm Hg par rapport à la normale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "severe_sepsis",
+      "label": "Severe sepsis avec hypotension, despite adequate fluid resuscitation",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "organ_failure",
+      "label": "Preuve de défaillance de ≥2 organes",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Surviving Sepsis Campaign: International Guidelines for Management of Sepsis and Septic Shock: Critical Care Medicine",
+      "href": "https://journals.lww.com/ccmjournal/Fulltext/2021/11000/Surviving_Sepsis_Campaign__International.21.aspx",
+      "kind": "international"
+    },
+    {
+      "text": "International Guidelines for Management of Severe Sepsis and Septic Shock: 2012",
+      "href": "https://content.guidelinecentral.com/guideline/get/pdf/3525",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bone RC, Balk RA, Cerra FB, Dellinger RP, Fein AM, Knaus WA, Schein RM, Sibbald WJ. Definitions for sepsis and organ failure and guidelines for the use of innovative therapies in sepsis. The ACCP/SCCM Consensus Conference Committee. American College of Chest Physicians/Society of Critical Care Medicine.Chest. 1992 Jun;101(6):1644-55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1303622",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Intensive Care Med. 2021;47(11):1181-1247.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34599691/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levy MM, Fink MP, Marshall JC, et al. 2001 SCCM/ESICM/ACCP/ATS/SIS International Sepsis Definitions Conference. Crit Care Med. 2003;31(4):1250–1256.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12682500",
+      "kind": "other"
+    },
+    {
+      "text": "Singer M, Deutschman CS, Seymour CW, et al. The third international consensus definitions for sepsis and septic shock(Sepsis-3). JAMA. 2016;315(8):801-810.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26903338/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.qsofa-quick-sofa-score-sepsis",
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "93c38cbb8e88ec0de1323462eeee779a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1096,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[];\nvar mini_msg=''; \nvar msgadd='';\nvar msg='';\n\nif(parseFloat(temperature)+parseFloat(heart_rate)+parseFloat(respiratory_rate)+parseFloat(white_blood_cell_count)>=2){\n  mini_msg='Meets SIRS criteria'; \n  msg='This patient meets SIRS criteria.';\n  if(parseFloat(infection)==1){\n    mini_msg='Meets sepsis criteria'; \n    msg='This patient meets sepsis criteria.';\n    msgadd=' Follow your guidelines for sepsis, which typically include aggressive fluid resuscitation, early, broad-spectrum antibiotics, ICU consultation, CVP evaluation, and occasionally pressors and transfusion.';}\n  if(parseFloat(lactic_acidosis)==1){\n    mini_msg='Severe sepsis'; \n    msg='This patient meets severe sepsis criteria.';\n  }\n  if(parseFloat(severe_sepsis)==1){\n    mini_msg='Septic shock'; \n    msg='This patient meets septic shock criteria.';\n  }if(parseFloat(organ_failure)==1){\n    mini_msg='Multi-organ dysfunction'; \n    msg='This patient meets multiple organ dysfunction syndrome.';\n}}\nelse{\n  mini_msg='Does not meet SIRS'; \n  msg='This patient does not meet SIRS criteria. For other causes of shock, see the Next Steps section.';\n}\n\nmsg+=msgadd; \n\ncalc_output.push({\n  name:'mini',\n  value:' ',\n  value_text:' ',\n  message:mini_msg\n});\ncalc_output.push({\n  name:'1096_SIRS & Sepsis Criteria_result',\n  value:' ',\n  value_text:' ',\n  message:msg\n}); \n",
+  "before_use": null,
+  "instructions": "- Note: sepsis definitions are evolving and difficult to finalize without a gold standard. These criteria are what is reported and the literature is listed, but note that nuances exist for all sepsis definitions and can differ locally, regionally, nationally, and internationally, as well as in clinical vs. administrative vs. research settings.[Sepsis-3 Consensus Definitions](https://pubmed.ncbi.nlm.nih.gov/26903338/)are frequently cited as one paradigm.\n- [For patients under 18, please use the Pediatric SIRS, Sepsis, and Septic Shock Criteria](nabda:calc.pediatric-sirs-sepsis-septic-shock-criteria) .",
+  "contributor_ids": [
+    "kamal-medlej"
+  ],
+  "creator_names": [
+    "Dr. Robert A. Balk"
+  ],
+  "measurement_ids": [
+    "Temperature"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "0bdc6263ca761d741dfda0c3311a4a39c94c5bcd8b174de79c3b289a2a2e589e"
+}

@@ -1,0 +1,246 @@
+{
+  "id": "calc.solitary-pulmonary-nodule-spn-malignancy-risk-score-mayo-clinic-model",
+  "slug": "solitary-pulmonary-nodule-spn-malignancy-risk-score-mayo-clinic-model",
+  "language": "en",
+  "title": "Solitary Pulmonary Nodule (SPN) Malignancy risque score (Mayo Clinic modèle)",
+  "short_title": "Risque de malignité d'un nodule pulmonaire solitaire (score de Mayo)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "pneumologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Cancer du poumon"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Fièvre",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "solitary pulmonary nodules",
+    "SPNs",
+    "radiologically indeterminate SPNs",
+    "radiologically indeterminate solitary pulmonary nodules",
+    "clinical predictors of malignancy",
+    "radiological predictors of malignancy",
+    "lung cancer",
+    "metastasis",
+    "metastatic cancer",
+    "indeterminate pulmonary nodules",
+    "primary bronchogenic carcinoma",
+    "carcinoid tumors",
+    "hemoptysis"
+  ],
+  "dosing": false,
+  "formula": "Probability of malignancy, % = 100×e^x^/ (1 + e^x^)\n\nProbability of malignancy with FDG-PET, % = 100 / (1 + e^-y^)\n\nwhere:\n\n- x = (0.0391 × age, years) + (0.1274 × nodule diameter, mm) + (0.7917 × smoker) + (1.3388 × cancer) + (0.7838 × upper lobe) + (1.0407 × spiculation) - 6.8272,\n- y = -4.739 + (3.691 × probability of malignancy*) + 2.322 (if faint uptake), or + 4.617 (if moderate uptake), or + 4.771 (if intense uptake),\n\nand other variables are as follows:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Current or former smoker | No | 0 |\n| Yes | 1 | |\n| Extrathoracic cancer diagnosis ≥5 years prior | No | 0 |\n| Yes | 1 | |\n| Upper lobe location of tumor | No | 0 |\n| Yes | 1 | |\n| Nodule spiculation | No | 0 |\n| Yes | 1 | |\n\n*Note: expressed as a decimal, e.g. 0.12 for 12%.",
+  "how_to_use": {
+    "why": "",
+    "when": "- Patients with solitary lung nodule on chest X-ray.\n- Do not use in patients with prior lung cancer diagnosis or with history of extrathoracic cancer diagnosed within 5 years of nodule presentation.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "One study ([Gould 2003](https://annals.org/aim/fullarticle/716394/cost-effectiveness-alternative-management-strategies-patients-solitary-pulmonary-nodules)) suggests watchful waiting only at very low post-test probabilities (<2%), biopsy at \"lower\" post-test probabilities (2% to 20%), and surgery at higher post-test probabilities (>70%).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque que le nodule pulmonaire soit malin.",
+  "medium_description": "Predicts malignancy risque dans solitary lung nodules sur chest X-ray.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diameter",
+      "label": "Diamètre du nodule",
+      "tips": "Doit être compris entre 4–30 mm",
+      "optional": false,
+      "unit": "nodule_diameter_spn",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur actuel ou ancien fumeur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Diagnostic de cancer extrathoracique ≥5 ans auparavant",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lobe",
+      "label": "Localisation de la tumeur au lobe supérieur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spiculation",
+      "label": "Spiculation du nodule",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pet1",
+      "label": "TEP-FDG",
+      "tips": "Facultatif, si réalisé",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "PET non réalisé",
+          "value": 0
+        },
+        {
+          "label": "Absence de fixation",
+          "value": 1
+        },
+        {
+          "label": "Faible fixation",
+          "value": 2
+        },
+        {
+          "label": "fixation modérée",
+          "value": 3
+        },
+        {
+          "label": "Fixation intense",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Swensen SJ, Silverstein MD, Ilstrup DM, Schleck CD, Edell ES. The probability of malignancy in solitary pulmonary nodules. Application to small radiologically indeterminate nodules. Arch Intern Med. 1997;157(8):849-55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9129544 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gould MK, Sanders GD, Barnett PG, et al. Cost-effectiveness of alternative management strategies for patients with solitary pulmonary nodules. Ann Intern Med. 2003;138(9):724-35.",
+      "href": "https://annals.org/aim/fullarticle/716394/cost-effectiveness-alternative-management-strategies-patients-solitary-pulmonary-nodules",
+      "kind": "other"
+    },
+    {
+      "text": "Herder GJ, Van tinteren H, Golding RP, et al. Clinical prediction model to characterize pulmonary nodules: validation and added value of 18F-fluorodeoxyglucose positron emission tomography. Chest. 2005;128(4):2490-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16236914 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Schultz EM, Sanders GD, Trotter PR, et al. Validation of two models to estimate the probability of malignancy in patients with solitary pulmonary nodules. Thorax. 2008;63(4):335-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17965070",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Al-ameri A, Malhotra P, Thygesen H, et al. Risk of malignancy in pulmonary nodules: A validation study of four prediction models. Lung Cancer. 2015;89(1):27-30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25864782",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fleischner-society-guidelines-incidental-pulmonary-nodules",
+    "calc.copd-assessment-test-cat",
+    "calc.4-level-pulmonary-embolism-clinical-probability-score-4peps"
+  ],
+  "source_logic_hash": "0d810123ce91c148487808a23224a3eb",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4057,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n// Declare vars\n\nvar age = parseFloat(age);\nvar diameter = parseFloat(diameter);\nvar smoker = parseFloat(smoker);\nvar cancer = parseFloat(cancer);\nvar spiculation = parseFloat(spiculation);\nvar lobe = parseFloat(lobe);\nvar pet1 = parseFloat(pet1);\n\nvar x = (0.0391*age) + (0.1274*diameter) + (0.7917*smoker) + (1.3388*cancer) + (1.0407*spiculation) + (0.7838*lobe) - 6.8272;\nvar z = Math.exp(x)/(1 + Math.exp(x));\nvar malignancy = z*100;\n\nvar pet, spn;\n\nif (pet1 == 0) {\n  pet = malignancy;\n  spn = pet;\n} else if (pet1 == 1) {\n  pet = -4.739 + 3.691*z;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 2) {\n  pet = -4.739 + 3.691*z + 2.322;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 3) {\n  pet = -4.739 + 3.691*z + 4.617;\n  spn = 100/(1 + Math.exp(-pet));\n} else if (pet1 == 4) {\n  pet = -4.739 + 3.691*z + 4.771;\n  spn = 100/(1 + Math.exp(-pet));\n}\n\n\ncalc_output.push({\n   name: 'mini',\n   value: spn.toFixed(1),\n   value_text: '%',\n   message: 'Probability of malignancy'\n});\ncalc_output.push({\n   name: '4057_Solitary Pulmonary Nodule Malignancy Risk (Mayo)_result',\n   value: spn.toFixed(1),\n   value_text: '%',\n   message: 'Probability of malignancy <br/><br/> One study suggests watchful waiting only at very low post-test probabilities (<2%), biopsy at \"lower\" post-test probabilities (2% to 20%), and surgery at higher post-test probabilities (>70%). See Next Steps.'\n});\n",
+  "before_use": null,
+  "instructions": "Do not use in patients with prior lung cancer diagnosis or with history of extrathoracic cancer diagnosed within 5 years of nodule presentation.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Stephen J. Swensen"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "3ea96377ce05990458f5936d4182c3fec875befd4624aa76e68e64d7ae9820fc"
+}

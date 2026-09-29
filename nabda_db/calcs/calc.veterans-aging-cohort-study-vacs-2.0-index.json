@@ -1,0 +1,213 @@
+{
+  "id": "calc.veterans-aging-cohort-study-vacs-2.0-index",
+  "slug": "veterans-aging-cohort-study-vacs-2.0-index",
+  "language": "fr",
+  "title": "Index Veterans Aging Cohort Study (VACS) 2.0",
+  "short_title": "Index VACS 2.0",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "infectiologie",
+    "medecine-interne",
+    "general"
+  ],
+  "diseases": [
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Veterans Aging Cohort Study (VACS) 2.0 Index, vacs, vacs 2, vacs 2.0, stroke, tia, hiv, Veterans Aging Cohort Study index, vacs score, vacs index, vacs 2 score, vacs 2 index, veterans aging index, veterans hiv index, veterans aging index 2, veterans hiv index 2, va hiv, hiv mortality"
+  ],
+  "dosing": false,
+  "formula": "Le risque est calculé à l'aide d'un modèle de régression des risques proportionnels de Cox d'après [Tate 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749990/).\n\nL'influence du VHC sur la mortalité toutes causes confondues n'a pas encore été déterminée. Cependant, la co-infection par le virus de l'hépatite C est la variable prédictive la moins influente.",
+  "how_to_use": {
+    "why": "Le modèle publié en 2020 ([Tate 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6749990/)) a montré une discrimination améliorée dans la prédiction de la mortalité dans 9 sous-groupes, ce qui le rend plus généralisable à d'autres populations de patients par rapport à l'index VACS original.",
+    "when": "Utilisez-vous l'Index Veterans Aging Cohort Study (VACS) 2.0 et souhaitez-vous partager votre expertise ? [Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les applications cliniques de l'Index VACS 2.0 comprennent :\n\n- Déterminer le bénéfice potentiel d'un dépistage préventif.\n- Suivre la progression de la fragilité physiologique.\n- Déterminer quand une planification des soins de fin de vie peut être indiquée.\n- Informer les patients sur leur espérance vie de manière plus générale.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "All-cause mortalité pour patients avec HIV.",
+  "medium_description": "Estimates risque de 5-year all-cause mortalité chez les patients avec HIV, update pour [Veterans Aging Cohort Study (VACS) 1.0 Index](nabda:calc.veterans-aging-cohort-study-vacs-1.0-index).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "BMI",
+      "optional": false,
+      "unit": "bmi_vacs2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cd4",
+      "label": "Numération des CD4",
+      "optional": false,
+      "unit": "cd4_vacs2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "[Débit de filtration glomérulaire estimé](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "unit": "gfr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hiv",
+      "label": "HIV-1 RNA",
+      "optional": false,
+      "unit": "hiv_rna",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hemoglobin",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hemoglobin",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "platelet",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "WBCcount",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "hcv",
+      "label": "Co-infection par le virus de l'hépatite C",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tate JP, Sterne JAC, Justice AC. Albumin, white blood cell count, and body mass index improve discrimination of mortality in HIV-positive individuals. AIDS. 2019;33(5):903-912.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30649058/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "McGinnis KA, Justice AC, Moore RD, et al. Discrimination and calibration of the veterans aging cohort study index 2. 0 for predicting mortality among people with human immunodeficiency virus in north america. Clinical Infectious Diseases. Published online October 5, 2021:ciab883.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34609485/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.veterans-aging-cohort-study-vacs-1.0-index",
+    "calc.veterans-aging-cohort-study-charlson-comorbidity-index-vacs-cci",
+    "calc.covid-risk"
+  ],
+  "source_logic_hash": "531edbfb3f6ca1ffc6c5abb528d4a7d0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10402,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

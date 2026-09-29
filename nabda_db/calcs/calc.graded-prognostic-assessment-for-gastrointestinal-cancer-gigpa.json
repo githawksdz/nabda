@@ -1,0 +1,199 @@
+{
+  "id": "calc.graded-prognostic-assessment-for-gastrointestinal-cancer-gigpa",
+  "slug": "graded-prognostic-assessment-for-gastrointestinal-cancer-gigpa",
+  "language": "en",
+  "title": "Graded Prognostic évaluation pour Gastrointestinal cancer (GI-GPA)",
+  "short_title": "GI-GPA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hematologie",
+    "neurologie",
+    "neurochirurgie",
+    "biologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer gastrique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Sang dans les selles",
+    "Cancer",
+    "Fatigue",
+    "Headache",
+    "Heartburn",
+    "Jaundice",
+    "Perte d'appétit",
+    "Nausea",
+    "Numbness",
+    "Seizure",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Graded Prognostic Assessment for Gastrointestinal Cancer (GI-GPA)",
+    "GI-GPA",
+    "brain metastasis",
+    "metastasis",
+    "brain tumor",
+    "brain cancer",
+    "brain metastasis prognosis",
+    "brain tumor prognosis",
+    "brain cancer prognosis",
+    "prognostic assessment",
+    "graded prognostic assessment",
+    "tumor",
+    "cancer",
+    "gastrointestinal cancer",
+    "gastrointestinal cancer prognosis",
+    "gastrointestinal cancer assessment",
+    "gigpa",
+    "gi gpa"
+  ],
+  "dosing": false,
+  "formula": "The GI-GPA is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≥60 | 0 |\n| <60 | 0.5 | |\n| [Karnofsky Performance Score](nabda:calc.karnofsky-performance-status-scale\\) | <80 | 0 |\n| 80 | 1 | |\n| 90-100 | 2 | |\n| Extracranial metastases | Present | 0 |\n| Absent | 0.5 | |\n| Number of brain metastases | >3 | 0 |\n| 2-3 | 0.5 | |\n| 1 | 1 | |",
+  "how_to_use": {
+    "why": "Fournit une estimation de survie fondée sur les preuves qui peut éclairer le caractère plus ou moins agressif du traitement, soutenir la prise de décision partagée et aligner l’intensité thérapeutique sur les objectifs du patient.",
+    "when": "À appliquer aux patients atteints de cancers gastro-intestinaux (p. ex., colorectal, œsophagien, gastrique) qui développent des métastases cérébrales, idéalement au moment de l’atteinte initiale du SNC afin de guider une prise de décision précoce.",
+    "pearls": "- Developed to generate more precise survival estimates across a heterogeneous GI‑cancer population with highly variable median survivals.\n- Derived and validated in 845 patients with newly diagnosed brain metastases from GI primaries (most commonly rectum, esophagus, right colon, rectosigmoid, and gastroesophageal junction) who received a variety of treatments.\n- Although patients in the derivation and validation studies received a range of treatments, this tool is not intended to compare or rank therapeutic modalities.\n- HER2‑positive status trended toward improved survival in the source data and may become a formal prognostic factor as testing becomes more widespread.\n- As systemic and local therapies evolve, recalibration of the GI‑GPA may be necessary to maintain accuracy."
+  },
+  "next_steps": {
+    "advice": "- Revoir les résultats avec le patient et sa famille lors de la discussion des objectifs de soins et des options thérapeutiques.\n- Les résultats peuvent influencer :\n\n - Le choix du traitement.\n - Les soins de fin de vie.\n - La stratification pour les essais cliniques.\n- Utiliser cet outil conjointement avec le jugement clinique, les recommandations actuelles et l’avis multidisciplinaire ; il ne doit jamais être le seul déterminant de la prise en charge.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score GI-GPA | Survie médiane (mois) |\n| --- | --- |\n| 0-1 | 3 |\n| 1,5-2 | 9 |\n| 2,5-3 | 12 |\n| 3,5-4 | 17 |",
+  "short_description": "Brain metastasis évaluation.",
+  "medium_description": "Estimates survie chez les patients avec gastrointestinal cancers et brain metastases.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥60",
+          "value": 0
+        },
+        {
+          "label": "< 60",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "kps",
+      "label": "[Karnofsky Performance Score](nabda:calc.karnofsky-performance-status-scale)",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 80",
+          "value": 0
+        },
+        {
+          "label": "80",
+          "value": 1
+        },
+        {
+          "label": "90-100",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "em",
+      "label": "Métastases extracrâniennes",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Présent",
+          "value": 0
+        },
+        {
+          "label": "Absent",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "num",
+      "label": "Nombre de métastases cérébrales",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">3",
+          "value": 0
+        },
+        {
+          "label": "2-3",
+          "value": 0.5
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sperduto PW, Fang P, Li J, et al. Estimating survival in patients with gastrointestinal cancers and brain metastases: An update of the graded prognostic assessment for gastrointestinal cancers (Gi-gpa). Clin Transl Radiat Oncol. 2019;18:39-45.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6612649/\\",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sperduto PW, Mesko S, Li J, et al. Survival in patients with brain metastases: summary report on the updated diagnosis-specific graded prognostic assessment and definition of the eligibility quotient. J Clin Oncol. 2020;38(32):3773-3784.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7655019/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nomogram-breast-cancer-brain-metastasis",
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.karnofsky-performance-status-scale"
+  ],
+  "source_logic_hash": "7aa3032c502a6594bb1606b52cc87944",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Performance Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10393,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

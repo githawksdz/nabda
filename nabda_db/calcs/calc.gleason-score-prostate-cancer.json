@@ -1,0 +1,184 @@
+{
+  "id": "calc.gleason-score-prostate-cancer",
+  "slug": "gleason-score-prostate-cancer",
+  "language": "fr",
+  "title": "Gleason score pour Prostate cancer",
+  "short_title": "Score de Gleason",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Hematuria",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "prostate",
+    "male",
+    "urological",
+    "CA"
+  ],
+  "dosing": false,
+  "formula": "Addition des scores primaire, secondaire et tertiaire.",
+  "how_to_use": {
+    "why": "Le score de Gleason est le critère de stadification standard du cancer de la prostate.",
+    "when": "Stadification du cancer de la prostate selon les résultats de biopsie.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Other scores like the [UCSF-CAPRA Score](nabda:calc.ucsf-capra-score-prostate-cancer-risk) or the [D’Amico Risk Classification](nabda:calc.damico-risk-classification-prostate-cancer) can help prognosticate using the Gleason Score and other clinical criteria.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Système de gradation :**\n\n| Score de Gleason | Groupe de grade pronostique |\n| --- | --- |\n| Score de Gleason ≤6 : | I |\n| Score de Gleason 3 + 4 = 7 : | II |\n| Score de Gleason 4 + 3 = 7 : | III |\n| Score de Gleason 8 : | IV |\n| Score de Gleason 9-10 : | V |\n\n**Voir ci-dessous le diagramme du score de Gleason :**\n\n![score de Gleason](https://cdn-web-img.mdcalc.com/gleason-pattern.jpeg)",
+  "short_description": "Pronostics du cancer de la prostate.",
+  "medium_description": "Prognoses prostate cancer basé sur microscopic tumor appearance.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "primary",
+      "label": "Grade primaire",
+      "tips": "Le pattern prédominant de la tumeur (>50% du pattern total observé)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Ressemble étroitement à une prostate normale. Les glandes sont petites, bien formées, étroitement tassées.",
+          "value": 1
+        },
+        {
+          "label": "Increased stroma avec well-formed glands, but larger avec more tissue between them.",
+          "value": 2
+        },
+        {
+          "label": "Recognizable glands, but cells are darker. Some cells have left glands et are beginning pour invade surrounding tissue ou have infiltrative pattern.",
+          "value": 3
+        },
+        {
+          "label": "Few recognizable glands. Many cells invading surrounding tissue dans clumps.",
+          "value": 4
+        },
+        {
+          "label": "Peu ou pas de glandes reconnaissables. Souvent, des nappes de cellules dans l’ensemble du tissu environnant.",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "secondary",
+      "label": "Grade secondaire",
+      "tips": "Le motif de grade le plus élevé observé après le motif primaire",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Ressemble étroitement à une prostate normale. Les glandes sont petites, bien formées, étroitement tassées.",
+          "value": 1
+        },
+        {
+          "label": "Increased stroma avec well-formed glands, but larger avec more tissue between them.",
+          "value": 2
+        },
+        {
+          "label": "Recognizable glands, but cells are darker. Some cells have left glands et are beginning pour invade surrounding tissue ou have infiltrative pattern.",
+          "value": 3
+        },
+        {
+          "label": "Few recognizable glands. Many cells invading surrounding tissue dans clumps.",
+          "value": 4
+        },
+        {
+          "label": "Peu ou pas de glandes reconnaissables. Souvent, des nappes de cellules dans l’ensemble du tissu environnant.",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tertiary",
+      "label": "Grade tertiaire",
+      "tips": "Composante mineure d’un troisième aspect (généralement plus agressif)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Ressemble étroitement à une prostate normale. Les glandes sont petites, bien formées, étroitement tassées.",
+          "value": 1
+        },
+        {
+          "label": "Increased stroma avec well-formed glands, but larger avec more tissue between them.",
+          "value": 2
+        },
+        {
+          "label": "Recognizable glands, but cells are darker. Some cells have left glands et are beginning pour invade surrounding tissue ou have infiltrative pattern.",
+          "value": 3
+        },
+        {
+          "label": "Few recognizable glands. Many cells invading surrounding tissue dans clumps.",
+          "value": 4
+        },
+        {
+          "label": "Peu ou pas de glandes reconnaissables. Souvent, des nappes de cellules dans l’ensemble du tissu environnant.",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Epstein JI, Allsbrook WC Jr, Amin MB, Egevad LL; ISUP Grading Committee. The 2005 International Society of Urological Pathology (ISUP) Consensus Conference on Gleason grading of prostatic carcinoma. Am J Surg Pathol 2005;29(9):1228-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16096414",
+      "kind": "other"
+    },
+    {
+      "text": "Pierorazio PM, Walsh PC, Partin AW, Epstein JI. Prognostic Gleason grade grouping: data based on the modified Gleason scoring system. BJU international. 2013;111(5):753-760. doi:10.1111/j.1464-410X.2012.11611.x.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16096414",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.damico-risk-classification-prostate-cancer",
+    "calc.ucsf-capra-score-prostate-cancer-risk",
+    "calc.prostate-tumor-volume-density"
+  ],
+  "source_logic_hash": "0a3b87cd7ca95da6d818cda6eb9863ff",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ucsf-capra-score-prostate-cancer-risk",
+      "text": "UCSF-CAPRA Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.damico-risk-classification-prostate-cancer",
+      "text": "D’Amico Risk Classification"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2048,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

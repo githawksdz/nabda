@@ -1,0 +1,281 @@
+{
+  "id": "calc.composite-pulmonary-embolism-shock-cpes-score",
+  "slug": "composite-pulmonary-embolism-shock-cpes-score",
+  "language": "en",
+  "title": "Score composite de choc de l'embolie pulmonaire (CPES)",
+  "short_title": "Score CPES",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thrombose",
+    "Choc cardiogénique",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Composite Pulmonary Embolism Shock (CPES) Score",
+    "CPES Score",
+    "CPES",
+    "PE",
+    "pulmonary embolism",
+    "DVT",
+    "embolism",
+    "PE risk",
+    "normotensive shock",
+    "shock",
+    "PE shock",
+    "PE score",
+    "CPES shock",
+    "cardiogenic shock"
+  ],
+  "dosing": false,
+  "formula": "To calculate the CPES Score, add the points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Elevated troponin 1 | No | 0 |\n| Yes | 1 | |\n| Elevated BNP 1 | No | 0 |\n| Yes | 1 | |\n| Moderate or severe RV dysfunction 2 | No | 0 |\n| Yes | 1 | |\n| Saddle PE location | No | 0 |\n| Yes | 1 | |\n| Concomitant DVT | No | 0 |\n| Yes | 1 | |\n| Tachycardia (≥100 beats/min) | No | 0 |\n| Yes | 1 | |\n\n1. Evaluations of troponin and BNP elevation were made according to standard clinical practice at each site and were not standardized.\n\n2. RV dysfunction was determined via CTPA and/or echocardiography.",
+  "how_to_use": {
+    "why": "- Le choc normotensif peut ne pas être détecté par les outils traditionnels de stratification du risque, tels que [sPESI](nabda:calc.simplified-pesi-pulmonary-embolism-severity-index) ou [Shock Index](nabda:calc.shock-index).\n- Cet outil est conçu pour identifier le choc normotensif, un",
+    "when": "À utiliser chez les patients adultes (≥18 ans) chez qui a été diagnostiquée une embolie pulmonaire (EP) de risque intermédiaire (submassive), hémodynamiquement stables, mais présentant des signes de souffrance ventriculaire droite ou un risque potentiel de détérioration clinique.",
+    "pearls": "- Derived and validated specifically in patients undergoing mechanical thrombectomy with measured pre- and post-procedure invasive cardiac indices.\n- “Normotensive shock” was defined as a systolic blood pressure ≥90 mmHg with a cardiac index ≤2.2 L/min/m^2^.\n- “Intermediate risk” was defined by the[European College of Cardiology (ESC)](https://academic.oup.com/eurheartj/article/41/4/543/5556136)as:\n\n - Normotensive.\n - [PESI](nabda:calc.pulmonary-embolism-severity-index-pesi) class III–V or sPESI ≥1.\n - +/- Signs of right ventricular dysfunction (on echocardiography or with biomarkers).\n- Relies on variables that require imaging and laboratory data (e.g., BNP, troponin, echocardiographic RV function, clot burden) that may not be immediately available at presentation in all settings and are not routinely obtained in all patients.\n- Prevalence of normotensive shock was 0% in patients with a score of 0 and 58.3% in those with a score of 6 in the derivation study.\n- Subsequent validation demonstrated that higher scores (≥3) were associated with increased risk for in-hospital mortality, resuscitated cardiac arrest, and hemodynamic decompensation.\n- Specificity at a score threshold of 3 has been found to be relatively low (46%), which may lead to overtreatment; however, a separate validation study found that raising the threshold to 4 increased specificity to 98.1%.\n- Should not be applied to all patients with suspected PE or to those who are already hypotensive or in overt shock."
+  },
+  "next_steps": {
+    "advice": "- This tool should not be the sole determinant of care; use in conjunction with thorough clinical evaluation and judgment.\n- Consider using the score alongside independent assessment of imaging and biomarkers to assess right ventricular strain and overall risk.\n- This score does not diagnose shock directly, but estimates the probability of reduced cardiac index despite preserved blood pressure.\n- Patients with higher scores may benefit from early involvement of a pulmonary embolism response team (PERT) and consideration of advanced therapies.",
+    "critical_actions": "Surveiller étroitement les signes de décompensation clinique, notamment une aggravation de la tachycardie, une hypoxie, une élévation du lactate ou une hypoperfusion d’organe cible.",
+    "management": "- Pour les **scores faibles (<3)**, les patients peuvent être pris en charge par une anticoagulation standard et une surveillance de routine.\n- Pour les **scores plus élevés (** **≥3),** envisager :\n\n - Une surveillance rapprochée (p. ex., unité de soins intermédiaires ou réanimation).\n - Une évaluation plus approfondie de la fonction du ventricule droit (VD).\n - Une implication précoce d’une équipe interventionnelle.\n- Chez certains patients à haut risque, envisager une escalade vers des thérapies avancées telles qu’une intervention dirigée par cathéter ou une thrombectomie mécanique, en particulier en cas de signes d’aggravation de la dysfonction du VD ou d’hypoperfusion."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score CPES | Risque 1 |\n| --- | --- |\n| 0-2 | Faible |\n| 3-6 | Élevé |\n\n1. Le risque comprend la mortalité intra-hospitalière, l'arrêt cardiaque réanimé ou la détérioration hémodynamique.",
+  "short_description": "Stratifie le risque de choc chez les patients présentant une EP (embolie pulmonaire).",
+  "medium_description": "Stratifies risque de normotensive shock chez les patients avec embolie pulmonaire (PE).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Troponine élevée",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "BNP élevé",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Modéré ou severeRVdysfunction",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "SaddlePElocation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "TVP concomitante",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Tachycardie",
+      "tips": "≥100 battements/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS). Eur Heart J. 2020;41(4):543-603. doi:10.1093/eurheartj/ehz405",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31504429/",
+      "kind": "international"
+    },
+    {
+      "text": "Writing Committee Members*, Creager MA, Barnes GD, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN guideline for the evaluation and management of Acute Pulmonary Embolism in Adults: A report of the American college of cardiology/American heart association joint committee on clinical practice guidelines. Circulation. 2026;(CIR.0000000000001415). doi:10.1161/CIR.0000000000001415",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+      "kind": "international"
+    },
+    {
+      "text": "Bangalore S, Horowitz JM, Beam D, et al. Prevalence and predictors of cardiogenic shock in intermediate-risk pulmonary embolism: Insights from the FLASH registry. JACC Cardiovasc Interv. 2023;16(8):958-972. doi:10.1016/j.jcin.2023.02.004",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37100559/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Henkin S, Krishnathasan D, Piazza G. Composite pulmonary embolism shock score: Another tool in the toolbox, but which tool is best? Circ Cardiovasc Interv. 2024;17(8):e014330. doi:10.1161/CIRCINTERVENTIONS.124.014330",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38994575/",
+      "kind": "other"
+    },
+    {
+      "text": "Zhang RS, Yuriditsky E, Zhang P, et al. Choosing the right tool: Comparing risk stratification models in intermediate-risk pulmonary embolism. Catheter Cardiovasc Interv. 2025;106(3):1928-1936. doi:10.1002/ccd.70016",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40692422/",
+      "kind": "other"
+    },
+    {
+      "text": "Najarro M, Briceño W, Rodríguez C, et al. Shock score for prediction of clinical outcomes among stable patients with acute symptomatic pulmonary embolism. Thromb Res. 2024;233:18-24. doi:10.1016/j.thromres.2023.11.011",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37988846/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang RS, Alam U, Sharp ASP, et al. Validating the composite pulmonary embolism shock score for predicting normotensive shock in intermediate-risk pulmonary embolism. Circ Cardiovasc Interv. 2024;17(2):e013399. doi:10.1161/CIRCINTERVENTIONS.123.013399",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38063026/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang RS, Yuriditsky E, Zhang P, et al. Composite Pulmonary Embolism Shock score and risk of adverse outcomes in patients with pulmonary embolism. Circ Cardiovasc Interv. 2024;17(8):e014088. doi:10.1161/CIRCINTERVENTIONS.124.014088",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38994599/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leupp S, Sarzilla S, Caruzzo CA, Landi A, Valgimigli M, Milzi A. Refining risk stratification in acute pulmonary embolism: A comparative validation of six prognostic scores in a real-life cohort. Int J Cardiol. 2026;451(134247):134247. doi:10.1016/j.ijcard.2026.134247",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41720405/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pulmonary-embolism-severity-index-pesi",
+    "calc.simplified-pesi-pulmonary-embolism-severity-index",
+    "calc.shock-index"
+  ],
+  "source_logic_hash": "59c3a1c4243dc3c2c31cda65e3359fa6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.simplified-pesi-pulmonary-embolism-severity-index",
+      "text": "sPESI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.shock-index",
+      "text": "Shock Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.simplified-pesi-pulmonary-embolism-severity-index",
+      "text": "sPESI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.shock-index",
+      "text": "Shock Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10664,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\n\n\n// Calculate score\nvar score = a + b + c + d + e + f;\n\nvar risk;\nif (score < 3) {\n    risk = 'Low';\n} else {\n    risk = 'High';\n}\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' normotensive shock risk'\n});\ncalc_output.push({\n    name: '10664_CPES Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'CPES Score'\n});\ncalc_output.push({\n    name: '10664_CPES Score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of normotensive shock'\n});",
+  "before_use": null,
+  "instructions": "Avant utilisation, s'assurer qu'un diagnostic d'EP à risque intermédiaire est posé et qu'il existe une préoccupation clinique concernant une souffrance du ventricule droit ou une décompensation potentielle.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Sripal Bangalore"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7460b0c9e06d599095cb868dd11537353ab5572be1be5b58241614f54e5ea8f5"
+}

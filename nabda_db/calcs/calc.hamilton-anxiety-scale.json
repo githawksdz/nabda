@@ -1,0 +1,525 @@
+{
+  "id": "calc.hamilton-anxiety-scale",
+  "slug": "hamilton-anxiety-scale",
+  "language": "fr",
+  "title": "Hamilton anxiété échelle",
+  "short_title": "Hamilton anxiété échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Anxious"
+  ],
+  "abbreviations": [
+    "Anxiety",
+    "psych",
+    "diagnosis",
+    "rule out",
+    "GAD",
+    "worrying",
+    "nervous"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.\n\n**Valeurs des points :**\n\n- 0=Absent\n- +1=Léger\n- +2=Modéré\n- +3=Sévère\n- +4=Très sévère",
+  "how_to_use": {
+    "why": "L’échelle d’anxiété de Hamilton peut aider à objectiver et à coter la sévérité de l’anxiété d’un patient.",
+    "when": "- Évaluation de nouveaux patients pour apprécier leur niveau d’anxiété et leur fonctionnement.\n- Suivi de l’évolution du niveau d’anxiété d’un patient au fil du temps.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les patients souffrant d’anxiété peuvent souvent bénéficier d’une thérapie cognitivo-comportementale (CBT) ; la plupart peuvent être pris en charge en ambulatoire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n- Des scores ≤ 17 indiquent une sévérité légère de l’anxiété.\n- Des scores de 18-24 indiquent une sévérité légère à modérée de l’anxiété.\n- Des scores de 25-30 indiquent une sévérité modérée à sévère de l’anxiété.\n- Des scores > 30 indiquent une anxiété sévère.",
+  "short_description": "Trends anxiété over time.",
+  "medium_description": "Rates level de anxiété basé sur clinique questions.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "mood",
+      "label": "1. Humeur anxieuse : inquiétudes, anticipation du pire, appréhension craintive, irritabilité.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tension",
+      "label": "2. Tension: Feelings de tension, fatigability, startle response, moved pour tears easily, trembling, feelings de restlessness, inability pour relax.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fears",
+      "label": "3. Peurs : du noir, des inconnus, d'être laissé seul, des animaux, de la circulation, des foules.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "insomnia",
+      "label": "4. Insomnia: Difficulty dans falling asleep, broken sleep, unsatisfying sleep et fatigue sur waking, dreams, nightmares, night terrors.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "intellectual",
+      "label": "5. Intellectual: Difficulty dans concentration, poor memory.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "depressed_mood",
+      "label": "6. déprimé mood: Loss de interest, lack de pleasure dans hobbies, dépression, early waking, diurnal swing.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "somatic_muscular",
+      "label": "7. Somatique (musculaire) : Douleurs et courbatures, fasciculations, raideur, secousses myocloniques, grincement des dents, voix instable, augmentation du tonus musculaire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "somatic_sensory",
+      "label": "8. Somatique (sensoriel) : Acouphènes, vision floue, bouffées de chaleur et de froid, sensations de faiblesse, sensation de picotement.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cardiovascular",
+      "label": "9. Cardiovascular symptoms: Tachycardia, palpitations, douleur dans chest, throbbing de vessels, fainting feelings, missing beat.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "respiratory",
+      "label": "10. Respiratory symptoms: Pressure ou constriction dans chest, choking feelings, sighing, dyspnea.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gastrointestinal",
+      "label": "11. Gastrointestinal symptoms: Difficulty dans swallowing, wind abdominal douleur, burning sensations, abdominal fullness, nausées, vomissements, borborygmi, looseness de bowels, loss de poids, constipation.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "genitourinary",
+      "label": "12. Genitourinary symptoms: Frequency de micturition, urgency de micturition, amenorrhea, menorrhagia, development de frigidity, premature ejaculation,loss de libido, impotence.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "autonomic",
+      "label": "13. Autonomic symptoms: Dry mouth, flushing, pallor, tendency pour sweat, giddiness, tension headache, raising de hair.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "behavior",
+      "label": "14. Behavior at interview: Fidgeting, restlessness ou pacing, tremor de hands, furrowed brow, strained face, sighing ou rapid respiration, facial pallor, swallowing, etc.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        },
+        {
+          "label": "Très sévère",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hamilton M. The assessment of anxiety states by rating. Br J Med Psychol 1959; 32:50–55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/13638508",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Per Bech. Measuring States of Anxiety with Clinician-Rated and Patient-Rated Scales, Different Views of Anxiety Disorders. 2011, DOI: 10.5772/21246.",
+      "href": "https://www.intechopen.com/books/different-views-of-anxiety-disorders/measuring-states-of-anxiety-with-clinician-rated-and-patient-rated-scales",
+      "kind": "other"
+    },
+    {
+      "text": "Maier W, Buller R, Philipp M, Heuser I. The Hamilton Anxiety Scale: reliability, validity and sensitivity to change in anxiety and depressive disorders. J Affect Disord 1988;14(1):61–8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2963053",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.audit-c-alcohol-use",
+    "calc.gad7-general-anxiety-disorder7",
+    "calc.quick-inventory-depressive-symptomatology-qids"
+  ],
+  "source_logic_hash": "9e2c6347fececcc94224266dc251e988",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1843,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

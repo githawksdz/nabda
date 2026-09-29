@@ -1,0 +1,174 @@
+{
+  "id": "calc.cardiac-output-ficks-formula",
+  "slug": "cardiac-output-ficks-formula",
+  "language": "en",
+  "title": "Débit cardiaque (formule de Fick)",
+  "short_title": "Débit cardiaque selon Fick",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Endocarditis",
+    "Insuffisance cardiaque",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Fick’s formula",
+    "cardiac output calculator",
+    "CO calculator",
+    "cardiac index calculator",
+    "CI calculator",
+    "stroke volume calculator",
+    "SV calculator",
+    "fick",
+    "ficks"
+  ],
+  "dosing": false,
+  "formula": "- CO (Cardiac Output), L/min = VO~2~/ [(SaO~2~- SvO~2~) x Hb x 13.4)],\n\n - where VO~2~= 125 mL O~2~/min x [BSA](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ,\n - andBSA= [(Height, cm x Weight, kg)/ 3,600 ]^1/2^\n - In elderly patients (age ≥70 years), use 110 mL O~2~x BSA for VO~2~.\n- CI (Cardiac Index), L/min/m^2^= CO/BSA\n- SV (Stroke Volume), mL/beat = CO/HR\n\nNote: SaO~2~should be acquired by arterial blood gas measurement. SvO~2~should be acquired by mixed venous gas from pulmonary artery catheter. Formula assumes decimal values, not percentages (this calculator automatically converts to decimal values).",
+  "how_to_use": {
+    "why": "- Évalue la capacité cardiaque et aide à l'évaluation hémodynamique.\n- Guide la prise en charge des patients en choc cardiogénique, en particulier pour évaluer l'efficacité du remplissage vasculaire, des vasopresseurs ou d'un soutien inotrope.",
+    "when": "- Patients hospitalisés avec suspicion de choc cardiogénique et cathéter artériel pulmonaire en place.\n- Pour les patients subissant un cathétérisme cardiaque droit ou gauche afin de déterminer le débit cardiaque (CO), l'index cardiaque (CI) et le volume d'éjection systolique (SV).",
+    "pearls": "- The two most widely used ways of calculating CO are Fick’s method and the thermodilution technique. Fick’s method is based on the principle that oxygen consumption is equal to the product of the organ’s blood flow (CO) and the difference in the concentration of the substance in the arterial and venous circulation (arterial-venous oxygen difference).\n- Fick’s method is less reliable in patients with pulmonary hypertension, heart failure, or abnormal body habitus.\n- The thermodilution technique is less reliable in patients with tricuspid regurgitation or intracardiac shunting."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- If CO or CI is low or decreasing, consider increasing fluid administration.\n- If the patient is not fluid responsive, consider adding vasopressors (norEPINEPHrine, DOPamine) via a central line, and use the CO/CI to guide adjustment of vasopressors as per goals of resuscitation (CI >2.5,MAP>60)."
+  },
+  "evidence": "",
+  "more_info": "**Normal values:**\n\n- CO = 4.0-8.0 L/min\n- CI = 2.5-4.0 L/min/m^~2~^\n- SV = 60-100 mL/beat\n- MAP ≥60 mmHg",
+  "short_description": "Calcule CO, CI et SV.",
+  "medium_description": "Calcule le débit cardiaque, l'index cardiaque et le volume d'AVC.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ht",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "arterialsat",
+      "label": "SaO₂",
+      "tips": "As measured on ABG",
+      "optional": false,
+      "unit": "sat",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "venoussat",
+      "label": "SvO₂",
+      "tips": "As measured on mixed venous gas from PA catheter",
+      "optional": false,
+      "unit": "svo2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hr",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 70 ans",
+          "value": 0
+        },
+        {
+          "label": "≥ 70 ans",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ragosta M. Textbook of Clinical Hemodynamics. Elsevier; 2017.",
+      "href": "https://www.google.com/books/edition/Textbook_of_Clinical_Hemodynamics_E_Book/H7nHDgAAQBAJ?hl=en&gbpv=0",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lafarge CG, Miettinen OS. The estimation of oxygen consumption. Cardiovasc Res. 1970;4(1):23-30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/5416840 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.benzodiazepine-conversion-calculator",
+    "calc.pack-years-calculator",
+    "calc.neonatal-early-onset-sepsis-calculator",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "1b282be5710eafad7022ad79f27ab466",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BSA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10095,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

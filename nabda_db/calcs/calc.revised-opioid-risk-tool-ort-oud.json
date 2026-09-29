@@ -1,0 +1,247 @@
+{
+  "id": "calc.revised-opioid-risk-tool-ort-oud",
+  "slug": "revised-opioid-risk-tool-ort-oud",
+  "language": "fr",
+  "title": "Révisé Opioid risque Tool (ORT-OUD)",
+  "short_title": "ORT-OUD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "douleur",
+    "psychiatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Douleur chronique"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Revised Opioid Risk Tool (ORT-OUD)",
+    "ORT-OUD",
+    "ort",
+    "opioid risk tool",
+    "drug abuse",
+    "opioid abuse",
+    "chronic pain",
+    "opioid abuse risk",
+    "drug abuse risk"
+  ],
+  "dosing": false,
+  "formula": "Le score ORT-OUD est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge 16-45 | Non | 0 |\n| Oui | 1 | |\n| Antécédent de dépression | Non | 0 |\n| Oui | 1 | |\n| Antécédent de TDAH, TOC, trouble bipolaire ou schizophrénie | Non | 0 |\n| Oui | 1 | |\n| Antécédent personnel d'abus d'alcool | Non | 0 |\n| Oui | 1 | |\n| Antécédent personnel d'abus de drogues illicites | Non | 0 |\n| Oui | 1 | |\n| Antécédent personnel d'abus de médicaments sur ordonnance | Non | 0 |\n| Oui | 1 | |\n| Antécédent familial d'abus d'alcool | Non | 0 |\n| Oui | 1 | |\n| Antécédent familial d'abus de drogues illicites | Non | 0 |\n| Oui | 1 | |\n| Antécédent familial d'abus de médicaments sur ordonnance | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Peut aider à identifier les patients à risque élevé de mésusage, d'abus ou de détournement d'opioïdes.\n- Conforme aux recommandations du CDC d'évaluer le risque avant et pendant un traitement par opioïdes.\n- Potentiellement plus performant que l'Opioid Risk Tool original.",
+    "when": "- À utiliser avant d'instaurer ou de renouveler un traitement opioïde au long cours chez l'adulte présentant une douleur chronique non cancéreuse.\n- Adapté à tout contexte où des opioïdes sont prescrits ou gérés — soins primaires, consultations douleur, période périopératoire et services d'urgence.",
+    "pearls": "- La cohorte de dérivation incluait des adultes (≥18 ans) d'ascendance européenne souffrant de douleur chronique musculosquelettique ou neuropathique, sans trouble lié à l'usage de substances antérieur ; les douleurs liées au cancer et autres étiologies douloureuses étaient exclues, ce qui limite la généralisabilité.\n- La valeur prédictive négative est élevée (~91 %), tandis que la valeur prédictive positive est modeste (~76 %)."
+  },
+  "next_steps": {
+    "advice": "- Faire preuve de prudence lors de l'instauration d'un traitement opioïde chronique chez tout patient.\n- Un score élevé doit déclencher des stratégies d'atténuation du risque, et non un refus automatique de l'analgésie.",
+    "critical_actions": "",
+    "management": "**Pour tous les patients :**\n\n- Éduquer sur l'utilisation sûre, le stockage, l'élimination et les risques du traitement.\n- Vérifier le PDMP.\n- Obtenir le consentement éclairé et compléter un contrat écrit de traitement par opioïdes.\n- Planifier un suivi régulier et des dépistages toxicologiques périodiques.\n\n**Pour les patients à risque élevé (score ≥3) :**\n\n- Envisager, lorsque c'est possible, une analgésie non opioïde ou multimodale.\n- Si les opioïdes sont inévitables, commencer à la dose efficace la plus faible et pour la durée la plus courte possible.\n- Ajouter des mesures de sécurité, notamment :\n\n - Co-prescription de naloxone.\n - Renouvellements obligatoires en présentiel.\n - Comptage des comprimés.\n- Suivi plus rapproché.\n- Envisager une orientation vers une consultation de prise en charge de la douleur."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Risque de trouble lié à l'usage d'opioïdes |\n| --- | --- |\n| <3 | Faible |\n| ≥3 | Élevé |",
+  "short_description": "Risque d'abus d'opioïdes.",
+  "medium_description": "Measures risque de opioid drug abuse chez les patients avec chronique douleur.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge 16-45",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "depression",
+      "label": "History de dépression",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "add",
+      "label": "Antécédent de TDAH, TOC, trouble bipolaire ou schizophrénie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "p_alc",
+      "label": "Antécédent personnel d'abus d'alcool",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "p_drug",
+      "label": "Antécédent personnel d'abus de drogues illicites",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "p_drug2",
+      "label": "Antécédent personnel d'abus de médicaments sur ordonnance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "f_alc",
+      "label": "Antécédent familial d'abus d'alcool",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "f_drug",
+      "label": "Antécédent familial d'abus de drogues illicites",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "f_drug2",
+      "label": "Antécédent familial d'abus de médicaments sur ordonnance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cheatle MD, Compton PA, Dhingra L, Wasser TE, O’Brien CP. Development of the revised opioid risk tool to predict opioid use disorder in patients with chronic nonmalignant pain. J Pain. 2019;20(7):842-851.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30690168/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.opioid-risk-tool-ort-narcotic-abuse",
+    "calc.cows-score-opiate-withdrawal",
+    "calc.dire-score-opioid-treatment"
+  ],
+  "source_logic_hash": "8560a48590fe7a77e9ca30422793f18a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10483,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

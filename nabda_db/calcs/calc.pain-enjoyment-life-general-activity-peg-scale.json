@@ -1,0 +1,123 @@
+{
+  "id": "calc.pain-enjoyment-life-general-activity-peg-scale",
+  "slug": "pain-enjoyment-life-general-activity-peg-scale",
+  "language": "fr",
+  "title": "Douleur, Enjoyment de Life et General Activity (PEG) échelle",
+  "short_title": "PEG échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "douleur"
+  ],
+  "diseases": [
+    "Douleur chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur anorectale",
+    "Douleur dorsale",
+    "Douleur thoracique",
+    "Douleur chronique",
+    "Douleur des extrémités",
+    "Douleur du flanc",
+    "Douleur articulaire",
+    "Cervicalgie",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Pain, Enjoyment of Life and General Activity (PEG) Scale",
+    "PEG scale",
+    "PEG",
+    "pain",
+    "pain scale",
+    "pain assessment",
+    "chronic pain",
+    "chronic pain scale",
+    "chronic pain assessment"
+  ],
+  "dosing": false,
+  "formula": "Le score PEG est calculé comme la moyenne des scores des items suivants :\n\n| Variable | | Points |\n| --- | --- | --- |\n| Quel chiffre décrit le mieux votre douleur en moyenne au cours de la semaine écoulée ? | Aucune douleur | 0 |\n| | 1 | |\n| | 2 | |\n| | 3 | |\n| | 4 | |\n| | 5 | |\n| | 6 | |\n| | 7 | |\n| | 8 | |\n| | 9 | |\n| Douleur la plus intense imaginable | 10 | |\n| Quel chiffre décrit le mieux comment, au cours de la semaine écoulée, la douleur a interféré avec votre plaisir de vivre ? | N'interfère pas | 0 |\n| | 1 | |\n| | 2 | |\n| | 3 | |\n| | 4 | |\n| | 5 | |\n| | 6 | |\n| | 7 | |\n| | 8 | |\n| | 9 | |\n| Interfère complètement | 10 | |\n| Quel chiffre décrit le mieux comment, au cours de la semaine écoulée, la douleur a interféré avec votre activité générale ? | N'interfère pas | 0 |\n| | 1 | |\n| | 2 | |\n| | 3 | |\n| | 4 | |\n| | 5 | |\n| | 6 | |\n| | 7 | |\n| | 8 | |\n| | 9 | |\n| Interfère complètement | 10 | |",
+  "how_to_use": {
+    "why": "- Soutient une approche multidimensionnelle de l'évaluation et de la prise en charge de la douleur, comme le recommandent les [Centers for Disease Control and Prevention (CDC)](https://www.cdc.gov/mmwr/volumes/71/rr/rr7103a1.htm#recommendations).\n- Fournit une mesure rapide et standardisée de la douleur et de son impact sur le plaisir de vivre et l'activité générale, en intégrant la perspective du patient.\n- Facilite la communication entre le patient et le clinicien concernant la sévérité de la douleur et ses effets plus larges.\n- Facile à administrer et à scorer, prenant généralement moins de 2 minutes.\n- Utile pour suivre les progrès au fil du temps et évaluer l'efficacité des interventions de prise en charge de la douleur.",
+    "when": "- À utiliser chez les patients souffrant de douleur chronique pour évaluer son impact sur la vie quotidienne et le fonctionnement.\n- Peut être calculé lors des visites initiales et de suivi liées à la douleur afin de surveiller les changements de la douleur et de ses effets au fil du temps.",
+    "pearls": "- Sachez que les patients peuvent sous-estimer ou surévaluer leur douleur en fonction de facteurs psychosociaux ou culturels.\n- Non conçu pour évaluer la douleur aiguë ; son utilité principale se situe dans les contextes de douleur chronique."
+  },
+  "next_steps": {
+    "advice": "- Les scores de chaque variable peuvent être consignés individuellement ou additionnés pour suivre l'évolution dans le temps.\n- Les questions de suivi doivent être guidées par les résultats individuels de chaque variable, aidant à fixer des objectifs de performance et à orienter les options de traitement.\n- Les scores devraient diminuer au fil du temps avec un traitement efficace.\n- Selon [Reed et al. (2024)](https://www.jpain.org/article/S1526-5900%2823%2900493-5/fulltext), une amélioration de 1 à 2 points par rapport à la valeur de base est considérée comme cliniquement significative.",
+    "critical_actions": "",
+    "management": "- **Scores bas (impact minimal) :** Renforcer les stratégies existantes de prise en charge de la douleur et assurer une surveillance périodique.\n- **Scores élevés (impact significatif) :**\n\n - Ajuster le plan de prise en charge de la douleur, en envisageant des options pharmacologiques et non pharmacologiques.\n - Rechercher des facteurs psychosociaux sous-jacents contribuant à la perception de la douleur (par exemple, dépression, anxiété).\n - Adresser aux spécialistes appropriés, tels que la prise en charge de la douleur, la santé comportementale ou la kinésithérapie, pour une évaluation et un traitement complémentaires."
+  },
+  "evidence": "",
+  "more_info": "Les cliniciens devraient observer une tendance à la baisse du score PEG au fil du temps avec un traitement efficace.",
+  "short_description": "Chronique douleur évaluation.",
+  "medium_description": "Assesses chronique douleur dans soins primaires patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "avgpain",
+      "label": "What number best describes your douleur sur average dans past week?",
+      "tips": "0 - Aucune douleur, 10 - Douleur la plus intense imaginable",
+      "optional": false,
+      "unit": "peg",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "eol",
+      "label": "What number best describes how, during past week, douleur has interfered avec your enjoyment de life?",
+      "tips": "0 - N'interfère pas, 10 - Interfère complètement",
+      "optional": false,
+      "unit": "peg",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ga",
+      "label": "What number best describes how, during past week, douleur has interfered avec your general activity?",
+      "tips": "0 - N'interfère pas, 10 - Interfère complètement",
+      "optional": false,
+      "unit": "peg",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Krebs EE, Lorenz KA, Bair MJ, et al. Development and initial validation of the peg, a three-item scale assessing pain intensity and interference. J Gen Intern Med. 2009;24(6):733-738.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2686775/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "O’Brien M. Pain coping skills training unlocks patient-centered pain care during the COVID- 19 lockdown. Pain Manag Nurs. Published online November 11, 2021.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8580817/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.face-legs-activity-cry-consolability-flacc-scale",
+    "calc.morphine-milligram-equivalents-mme-calculator",
+    "calc.migraine-disability-assessment-midas"
+  ],
+  "source_logic_hash": "05b75494d07f54ed8e189da8804eb681",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10405,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

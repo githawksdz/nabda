@@ -1,0 +1,321 @@
+{
+  "id": "calc.hemorr2hages-score-major-bleeding-risk",
+  "slug": "hemorr2hages-score-major-bleeding-risk",
+  "language": "en",
+  "title": "HEMORR₂HAGES score pour Major saignement risque",
+  "short_title": "Score HEMORR₂HAGES",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "Bleeding/Hemorrhage",
+    "Hémorragie intracrânienne",
+    "Hémorragie sous-arachnoïdienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "hemorr2hages",
+    "bleeding",
+    "coumadin",
+    "warfarin",
+    "afib",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, voir ci-dessous :",
+  "how_to_use": {
+    "why": "Combine des composantes de plusieurs autres scores de risque hémorragique précédemment validés en un seul.",
+    "when": "Envisager d’utiliser le score HEMORR₂HAGES pour stratifier le risque hémorragique des patients après anticoagulation pour une fibrillation atriale, conjointement avec les risques/bénéfices propres à la situation.",
+    "pearls": "Le score HEMORR₂HAGES a été développé pour quantifier le risque d’hémorragie chez les patients atteints de fibrillation atriale sous anticoagulation et pour aider à la prise en charge du traitement antithrombotique.\n\n- Combinaison de facteurs de risque hémorragique issus de trois règles de prédiction clinique préexistantes pour former le mnémonique HEMORR₂HAGES.\n- Validation du score par application rétrospective à une cohorte de patients issue de la base de données National Registry of Atrial Fibrillation.\n- Le système de score comprend onze critères, dont un (antécédent de saignement) vaut 2 points, tandis que les dix autres valent 1 point chacun.\n- Pour servir de base de comparaison avec d’autres schémas de risque hémorragique, les patients ayant un score de 0 ou 1 étaient classés à faible risque, 2 ou 3 à risque intermédiaire, ≥4 à haut risque.\n- L’étude a constaté que le nombre de saignements pour 100 patients-années sous warfarine augmentait à mesure que leur score HEMORR₂HAGES augmentait.\n- Chez les patients sous warfarine, l’étude a constaté que HEMORR₂HAGES était plus discriminant comparé aux autres schémas.\n\n**Points à garder à l’esprit :**\n\n- Le degré d’hémorragie n’a pas été examiné dans l’étude ; tous les patients de l’étude ayant des codes ICD-9 pour une hémorragie active, quelle qu’en soit la localisation, ont été inclus.\n- Le facteur de risque génétique a été inclus dans leur score, mais n’a pas réellement été testé dans leur cohorte de patients.\n- Il existait des définitions variables de maladie hépatique ou rénale et de thrombocytopénie selon l’État dans lequel vivait le patient.\n- Toutes les données ont été obtenues de manière rétrospective, via une revue de dossier et des codes ICD-9. Les événements survenus en dehors de l’hôpital ou mal codés n’ont pas été inclus.\n- L’anémie, la malignité et l’hypertension non contrôlée étaient incluses dans le score d’un patient si elles étaient saisies comme diagnostics ICD-9, qu’elles soient cliniquement importantes ou non (p. ex., un antécédent ancien de cancer en rémission complète compterait encore comme malignité selon ICD-9).\n- Le risque excessif de chute était déterminé par revue de dossier pour « high risk of falling, dementia, Parkinson's disease, or psychiatric disease ».\n- L’étude a également examiné l’usage d’ASA, mais ne présente pas de données spécifiques sur le risque d’hémorragie sous ASA avec différents scores HEMORR₂HAGES.\n- Il n’y a pas eu de comparaison avec des scores de risque hémorragique plus récemment dérivés tels que [ATRIA](nabda:calc.atria-bleeding-risk-score) ou [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk).\n\nUne revue systématique et méta-analyse ultérieure comparant les performances de [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk), [ATRIA](nabda:calc.atria-bleeding-risk-score) et HEMORR₂HAGES a recommandé HAS-BLED pour l’évaluation du risque d’hémorragie majeure chez les patients atteints de fibrillation atriale. L’analyse a constaté que HEMORR₂HAGES avait une exactitude diagnostique plus élevée, mais l’a considéré difficile à utiliser en raison de sa complexité."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Les risques et les bénéfices de l’anticoagulation doivent être soigneusement évalués chez TOUS les patients avant d’initier le traitement.\n- D’autres scores de stratification du risque tels que [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) ou [ATRIA](nabda:calc.atria-bleeding-risk-score) doivent également être pris en considération avant de débuter l’anticoagulation.\n- Des options alternatives doivent souvent être envisagées chez les patients à haut risque d’événements hémorragiques majeurs nécessitant une anticoagulation.",
+    "management": ""
+  },
+  "evidence": "One meta analysis (see references, below) specifically recommends using the [HAS-BLED Score](nabda:calc.has-bled-score-major-bleeding-risk) over the HEMORR₂HAGES Score because of the former's greater sensitivity (the latter, however, did have better specificity).",
+  "more_info": "| Criteria | Points |\n| --- | --- |\n| Hepatic or renal disease | +1 |\n| Ethanol abuse | +1 |\n| Malignancy | +1 |\n| Older (age > 75) | +1 |\n| Reduced platelet count or function | +1 |\n| Rebleeding (Prior Bleed) | +2 |\n| Hypertension (uncontrolled) | +1 |\n| Anemia | +1 |\n| Genetic factors (CYP 2C9 single-nucleotide polymorphisms) | +1 |\n| Excessive fall risk | +1 |\n| Stroke | +1 |",
+  "short_description": "Saignement risque dans elderly AF.",
+  "medium_description": "Quantifies risque de hémorragie dans elderly patients avec AFib.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "hepatic_renal_disease",
+      "label": "Maladie hépatique ou rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ethanol_alcohol_abuse",
+      "label": "Abus d'éthanol (alcool)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "malignancy",
+      "label": "Antécédents de néoplasie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_75",
+      "label": "Older (âge >75)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "reduced_platelet",
+      "label": "Diminution de la numération ou de la fonction plaquettaire",
+      "tips": "Inclut la prise d’aspirine, toute thrombopénie ou dyscrasie sanguine, telle que l’hémophilie.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rebleeding",
+      "label": "Risque de rehémorragie",
+      "tips": "Antécédents de saignement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Hypertension (non contrôlée)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anemia",
+      "tips": "Hgb <13 g/dL chez les hommes ; Hgb <12 g/dL chez les femmes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "genetic",
+      "label": "Facteurs génétiques",
+      "tips": "Polymorphismes mononucléotidiques du CYP 2C9",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fall_risk",
+      "label": "Risque de chute excessif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke_history",
+      "label": "Antécédents d’AVC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gage BF, Yan Y, Milligan PE, et al. Clinical classification schemes for predicting hemorrhage: results from the National Registry of Atrial Fibrillation. Am Heart J 2006; 151:713-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16504638",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Caldeira D, Costa J, Fernandes RM, Pinto FJ, Ferreira JJ. Performance of the HAS-BLED high bleeding-risk category, compared to ATRIA and HEMORR2HAGES in patients with atrial fibrillation: a systematic review and meta-analysis. J Interv Card Electrophysiol. 2014;40(3):277-284.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25012972",
+      "kind": "other"
+    },
+    {
+      "text": "Apostolakis S, Lane DA, Guo Y, Buller H, Lip GYH. Performance of the HEMORR(2)HAGES, ATRIA, and HAS-BLED bleeding risk-prediction scores in patients with atrial fibrillation undergoing anticoagulation: the AMADEUS (Evaluating the use of sr34006 compared to warfarin or acenocoumarol in patients with atrial fibrillation) study. J Am Coll Cardiol. 2012;60(9):861-867.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22858389/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.atria-bleeding-risk-score",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.garfield-af"
+  ],
+  "source_logic_hash": "35cee10601064eeebf701b6cb9c64450",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1785,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

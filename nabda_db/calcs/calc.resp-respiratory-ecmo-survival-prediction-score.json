@@ -1,0 +1,372 @@
+{
+  "id": "calc.resp-respiratory-ecmo-survival-prediction-score",
+  "slug": "resp-respiratory-ecmo-survival-prediction-score",
+  "language": "fr",
+  "title": "RESP (Respiratory ECMO survie prédiction) score",
+  "short_title": "RESP score pour ECMO",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "acute respiratory failure",
+    "respiratory failure",
+    "ecmo survival",
+    "prediction",
+    "Ecmo",
+    "resp survival",
+    "resp score",
+    "ards"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | 18-49 | 0 |\n| 50-59 | -2 | |\n| ≥60 | -3 | |\n| État d'immunodépression au moment de l'ECMO (toute néoplasie, transplantation d'organe solide, VIH ou cirrhose) | Non | 0 |\n| Oui | -2 | |\n| Ventilation mécanique avant l'ECMO | >7 jours | 0 |\n| 48 heures à 7 jours | 1 | |\n| <48 heures | 3 | |\n| Diagnostic | Pneumonie virale | 3 |\n| Pneumonie bactérienne | 3 |\n| Asthme | 11 | |\n| Traumatisme ou brûlure | 3 | |\n| Pneumonite d'inhalation | 5 | |\n| Autre diagnostic respiratoire aigu | 1 | |\n| Diagnostic non respiratoire ou respiratoire chronique | 0 | |\n| Antécédent de dysfonction du système nerveux central (neurotraumatisme, accident vasculaire cérébral, encéphalopathie, embolie cérébrale ou crise convulsive/épilepsie) | Non | 0 |\n| Oui | -7 | |\n| Infection aiguë associée non pulmonaire (toute autre infection bactérienne, virale, parasitaire ou fongique n'impliquant pas le poumon) | Non | 0 |\n| Oui | -3 | |\n| Curare neuromusculaire avant l'ECMO | Non | 0 |\n| Oui | 1 | |\n| Monoxyde d'azote avant l'ECMO | Non | 0 |\n| Oui | -1 | |\n| Perfusion de bicarbonate avant l'ECMO | Non | 0 |\n| Oui | -2 | |\n| Arrêt cardiaque avant l'ECMO | Non | 0 |\n| Oui | -2 | |\n| PaCO₂ ≥75 mmHg (≥10 kPa) | Non | 0 |\n| Oui | -1 | |\n| Pression inspiratoire maximale ≥42 cm H₂O (≥4,1 kPa) | Non | 0 |\n| Oui | -1 | |",
+  "how_to_use": {
+    "why": "L'ECMO est une technique consommatrice de ressources, associée à une morbidité élevée, et les patients doivent être sélectionnés avec soin. Les estimations de survie peuvent aider à la décision.",
+    "when": "- Patients recevant une oxygénation par membrane extracorporelle (ECMO) veino-veineuse (VV) ou veino-artérielle (VA) pour une insuffisance respiratoire aiguë.\n- Ne pas utiliser chez les patients recevant une ECMO VA pour un choc cardiogénique (voir [Score SAVE](nabda:calc.save-survival-veno-arterial-ecmo-score) ).",
+    "pearls": "- Le score RESP prédit uniquement la survie à la sortie de l'hôpital et ne prédit pas la fonction neurologique ou l'état fonctionnel, qui peuvent être des considérations importantes.\n- Le score a été dérivé d'une cohorte de patients mis sous ECMO, et a probablement exclu de nombreux patients qui auraient pu avoir des taux de survie différents.\n- Le décubitus ventral n'a pas été inclus dans la dérivation du score RESP, et son effet sur la valeur prédictive du score est inconnu."
+  },
+  "next_steps": {
+    "advice": "D'autres facteurs peuvent contribuer à la décision d'initier une ECMO (p. ex. espérance de vie, qualité de vie, disponibilité des ressources).",
+    "critical_actions": "La décision globale ne doit pas reposer uniquement sur une règle de prédiction, et le seuil d'initiation d'une ECMO peut varier selon les établissements.",
+    "management": "Nous ne connaissons aucune recommandation intégrant ce score, mais la prédiction de survie peut être intégrée dans la décision d'initier une ECMO VA."
+  },
+  "evidence": "The RESP Score was derived in a retrospective cohort study by[Schmidt et al (2014)](https://www.ncbi.nlm.nih.gov/pubmed/24693864), which included 2,355 patients in the Extracorporeal Life Support Organization (ELSO) registry who received ECMO for acute respiratory failure. Patients receiving ECMO for indications other than acute respiratory failure (e.g. cardiogenic shock) were excluded. The outcome measured was survival to hospital discharge, and results are summarized in Facts & Figures above. Predictive variables with p-values ≤0.05 were included to derive the final score.\n\nThe score was prospectively validated in 140 patients (included in initial publication) (c = 0.92, CI 0.89-0.97). In a small retrospective study of 41 patients ([Brunet 2017](https://www.ncbi.nlm.nih.gov/pubmed/28536282)), the score was found to have low predictive value for mortality (c-index 0.60).",
+  "more_info": "Interprétation :\n\n| Score RESP | Classe de risque | Survie hospitalière |\n| --- | --- | --- |\n| ≥6 | I | 92% |\n| 3-5 | II | 76% |\n| -1 à 2 | III | 57% |\n| -5 à -2 | IV | 33% |\n| ≤-6 | V | 18% |",
+  "short_description": "Survie after VA/VV ECMO pour aigu respiratory défaillance.",
+  "medium_description": "Predicts dans-hôpital survie dans adulte patients after ECMO pour aigu respiratory défaillance.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "18-49",
+          "value": 0
+        },
+        {
+          "label": "50-59",
+          "value": -2
+        },
+        {
+          "label": "≥60",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "status",
+      "label": "État d'immunodépression au moment de l'ECMO",
+      "tips": "Toute néoplasie, transplantation d'organe solide, VIH ou cirrhose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "venti",
+      "label": "Ventilation mécanique avant l'initiation de l'ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">7 jours",
+          "value": 0
+        },
+        {
+          "label": "48 hours pour 7 days",
+          "value": 1
+        },
+        {
+          "label": "<48 heures",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "diag",
+      "label": "Diagnostic",
+      "optional": false,
+      "default": 6,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pneumonie virale",
+          "value": 3
+        },
+        {
+          "label": "Pneumonie bactérienne",
+          "value": 3
+        },
+        {
+          "label": "asthme",
+          "value": 11
+        },
+        {
+          "label": "Traumatisme ou brûlure",
+          "value": 3
+        },
+        {
+          "label": "Pneumonite d'inhalation",
+          "value": 5
+        },
+        {
+          "label": "Autre diagnostic respiratoire aigu",
+          "value": 1
+        },
+        {
+          "label": "Diagnostic non respiratoire ou respiratoire chronique",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cns",
+      "label": "Antécédent de dysfonction du système nerveux central",
+      "tips": "Neurotraumatisme, accident vasculaire cérébral, encéphalopathie, embolie cérébrale ou crise convulsive/épilepsie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "acute",
+      "label": "Aigu associé nonpulmonary infection",
+      "tips": "Toute autre infection bactérienne, virale, parasitaire ou fongique n'impliquant pas le poumon",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ecmo",
+      "label": "Curare neuromusculaire avant l'ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nitric",
+      "label": "Monoxyde d'azote avant l'ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bicarb",
+      "label": "Perfusion de bicarbonate avant l'ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cardiac",
+      "label": "Arrêt cardiaque avant l'ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pa",
+      "label": "PaCO₂ ≥75 mmHg (≥10 kPa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "peak",
+      "label": "Pression inspiratoire maximale ≥42 cm H₂O (≥4,1 kPa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schmidt M, Bailey M, Sheldrake J, et al. Predicting survival after extracorporeal membrane oxygenation for severe acute respiratory failure. The Respiratory Extracorporeal Membrane Oxygenation Survival Prediction (RESP) score. Am J Respir Crit Care Med. 2014;189(11):1374-82.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24693864",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brunet J, Valette X, Buklas D, et al. Predicting Survival After Extracorporeal Membrane Oxygenation for ARDS: An External Validation of RESP and PRESERVE Scores. Respir Care. 2017;62(7):912-919.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28536282",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.prediction-survival-ecmo-therapy-preset-score",
+    "calc.noninvasive-ventilation-outcomes-nivo-score",
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.save-survival-veno-arterial-ecmo-score"
+  ],
+  "source_logic_hash": "7f5f349989619fe2ab9529ba3c751acc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.save-survival-veno-arterial-ecmo-score",
+      "text": "SAVE Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10143,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

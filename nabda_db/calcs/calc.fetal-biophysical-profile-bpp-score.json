@@ -1,0 +1,208 @@
+{
+  "id": "calc.fetal-biophysical-profile-bpp-score",
+  "slug": "fetal-biophysical-profile-bpp-score",
+  "language": "en",
+  "title": "Score de profil biophysique fœtal (BPP)",
+  "short_title": "Score BPP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "BPP",
+    "biophysical profile",
+    "sono",
+    "fetal distress"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 2 points |\n| --- | --- | --- |\n| Fetal breathing | <30 sec of breathing within 30 min | ≥1 episode of rhythmic breathing lasting ≥30 sec within 30 min |\n| Fetal movement | <3 discrete movements | ≥3 discrete body or limb movements within 30 min |\n| Fetal tone | 0 extension/flexion events | ≥1 episode of extremity extension and subsequent return to flexion |\n| Amniotic fluid volume* | Largest single vertical pocket ≤2 cm | A pocket of amniotic fluid ≥2 cm in 2 perpendicular planes (2x2 cm pocket) |\n| Nonstress test** | 0 or 1 acceleration within 20–40 min | ≥2 accelerations of ≥15 beats/min for ≥15 sec within 20–40 min |\n\n*If largest vertical amniotic fluid pocket ≤2 cm.\n\n**May omit if all four sonographic components are normal.",
+  "how_to_use": {
+    "why": "Aide à déterminer si un accouchement en urgence est nécessaire.",
+    "when": "- Use in pregnant patients, generally in the third trimester.\n- Should be administered by users familiar with interpretation of fetal heart rate monitoring and fetal ultrasound.\n- Indicated in pregnancies with risk of antepartum fetal demise, including maternal conditions (e.g. antiphospholipid syndrome, poorly-controlled hyperthyroidism) and pregnancy-related conditions (e.g. gestational hypertension, intrauterine growth restriction). For full list, see[ACOG Practice Bulletin, Antepartum Fetal Surveillance](https://www.wesleyobgyn.com/pdf/links/abog/2014_practice_bulletin_no__145.pdf)(box 1, page 186).",
+    "pearls": "- Nonstress test can be omitted and presumed normal if all four sonography parameters are normal (2 points for each).\n- Of five fetal parameters, four are acute (nonstress test, fetal breathing, fetal movement, and fetal tone) and one is chronic (amniotic fluid volume)."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Consulter la néonatologie en cas de suspicion d’asphyxie fœtale.",
+    "management": ""
+  },
+  "evidence": "The Biophysical Profile (BPP) was proposed by[Manning in 1980](https://www.ncbi.nlm.nih.gov/pubmed/7355965). He derived and applied the BPP to 216 high-risk pregnancy patients and compared their perinatal outcomes. Results suggested that BPP can be an accurate method of antepartum fetal evaluation.\n\nA subsequent study was performed in 2,712 patients receiving 7,851 tests of BPP evaluation but with reduced use of non-stress test (NST). Results showed no measurable change in test accuracy if other four ultrasound parameters are normal. Therefore, NST can be omitted and presumed normal if ultrasound parameters are normal ([Manning 1987](https://www.ncbi.nlm.nih.gov/pubmed/3548386)).\n\nKim et al validated the BPP Score in 100 patients with singleton pregnancies in active labor phase. Results showed that BPP is a good predictor for cesarean delivery and need for NICU admission. The use of oxytocics, prostaglandins, or epidural anesthesia did not influence BPP score ([Kim 2003](https://www.ncbi.nlm.nih.gov/pubmed/12962926)).\n\nA modified BPP exists, which takes less time to perform and seems to have similar accuracy in predicting perinatal outcome ([Nagoette 1994](https://www.ncbi.nlm.nih.gov/pubmed/8203424)). Still, the full BPP provides more detailed information to help decision-making when facing suspected fetal distress.",
+  "more_info": "Interpretation:\n\n| BPP Score | Interpretation | Recommendation |\n| --- | --- | --- |\n| 10 | Normal, non-asphyxiated fetus | No fetal indication for intervention; repeat test weekly except in diabetic patients and post-term pregnancy (twice weekly) |\n| 8/10, Normal AFV | Normal, non-asphyxiated fetus | No fetal indication for intervention; repeat testing per protocol |\n| 8/8, NST not done | Normal, non-asphyxiated fetus | No fetal indication for intervention; repeat testing per protocol |\n| 8/10, Decreased AFV | Chronic fetal asphyxia suspected | Deliver |\n| 6 | Possible fetal asphyxia | If abnormal AFV, deliver. If normal AFV, delivery recommended if >36 weeks with favorable cervix or repeat test ≤6; if repeat test >6, observe and repeat per protocol |\n| 4 | Probable fetal asphyxia | Repeat testing same day; if ≤6, deliver |\n| 0–2 | Almost certain fetal asphyxia | Deliver |\n\nFrom[Manning 1980](https://www.ncbi.nlm.nih.gov/pubmed/7355965).",
+  "short_description": "Accouchement urgent.",
+  "medium_description": "Predicts need pour urgent delivery basé sur sonographic et nonstress testing.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "breathing",
+      "label": "Mouvements respiratoires fœtaux",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 30 sec de respiration en 30 min",
+          "value": 0
+        },
+        {
+          "label": "≥1 épisode de respiration rythmique durant ≥30 sec dans les 30 min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "movement",
+      "label": "Mouvements fœtaux",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3 mouvements distincts",
+          "value": 0
+        },
+        {
+          "label": "≥3 mouvements corporels ou des membres distincts en 30 min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tone",
+      "label": "Tonus fœtal",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 événement d’extension/flexion",
+          "value": 0
+        },
+        {
+          "label": "≥1 episode de extremity extension et subsequent return pour flexion",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "volume",
+      "label": "Volume de liquide amniotique (AFV)",
+      "tips": "Si la plus grande citerne verticale de liquide amniotique ≤ 2 cm",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Plus grande citerne verticale unique ≤ 2 cm",
+          "value": 0
+        },
+        {
+          "label": "pocket de amniotic fluid ≥2 cm dans 2 perpendicular planes (2x2 cm pocket)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "test",
+      "label": "Test de non-stress (NST)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "breathing + movement + tone + volume < 8",
+      "options": [
+        {
+          "label": "0 ou 1 accélération dans les 20–40 min",
+          "value": 0
+        },
+        {
+          "label": "≥2 accelerations de ≥15 beats/min pour ≥15 sec within 20–40 min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "test_normal",
+      "label": "Test de non-stress (NST)",
+      "tips": "Peut être omis si les quatre composantes échographiques sont normales",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "breathing + movement + tone + volume == 8",
+      "options": [
+        {
+          "label": "0 ou 1 accélération dans les 20–40 min",
+          "value": 0
+        },
+        {
+          "label": "≥2 accelerations de ≥15 beats/min pour ≥15 sec within 20–40 min",
+          "value": 2
+        },
+        {
+          "label": "NST non réalisé",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Practice bulletin no. 145: antepartum fetal surveillance. Obstet Gynecol. 2014;124(1):182-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24945455",
+      "kind": "international"
+    },
+    {
+      "text": "Manning FA, Platt LD, Sipos L. Antepartum fetal evaluation: development of a fetal biophysical profile. Am J Obstet Gynecol. 1980;136(6):787-95.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7355965",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bloom S, Cunningham F, Spong CY et al. Williams Obstetrics 24/E. McGraw-Hill Education / Medical; 2014.",
+      "href": "",
+      "kind": "other"
+    },
+    {
+      "text": "Nageotte MP, Towers CV, Asrat T, Freeman RK. Perinatal outcome with the modified biophysical profile. Am J Obstet Gynecol. 1994;170(6):1672-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8203424",
+      "kind": "other"
+    },
+    {
+      "text": "Kim SY, Khandelwal M, Gaughan JP, Agar MH, Reece EA. Is the intrapartum biophysical profile useful?. Obstet Gynecol. 2003;102(3):471-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12962926 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vaginal-birth-after-cesarean-vbac",
+    "calc.vbac-risk-score-successful-vaginal-delivery-flamm-model",
+    "calc.bishop-score-vaginal-delivery-induction-labor"
+  ],
+  "source_logic_hash": "9d87a46ef4d1b9499ba5dc33970b0b44",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4024,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

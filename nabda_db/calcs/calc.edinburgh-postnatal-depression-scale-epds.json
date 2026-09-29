@@ -1,0 +1,375 @@
+{
+  "id": "calc.edinburgh-postnatal-depression-scale-epds",
+  "slug": "edinburgh-postnatal-depression-scale-epds",
+  "language": "en",
+  "title": "Edinburgh Postnatal dépression échelle (EPDS)",
+  "short_title": "EPDS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gynecologie-obstetrique",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Pleurs excessifs",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal"
+  ],
+  "abbreviations": [
+    "Edinburgh Postnatal Depression Scale (EPDS)",
+    "epds",
+    "postnatal depression",
+    "postpartum depression",
+    "depression"
+  ],
+  "dosing": false,
+  "formula": "The EPDS Score is calculated by the addition of the selected points:\n\n| In the past 7 days… | | |\n| --- | --- | --- |\n| Variable | Points | |\n| I have been able to laugh and see the funny side of things | As much as I always could | 0 |\n| Not quite so much now | 1 | |\n| Definitely not so much now | 2 | |\n| Not at all | 3 | |\n| I have looked forward with enjoyment to things | As much as I ever did | 0 |\n| Rather less than I used to | 1 | |\n| Definitely less than I used to | 2 | |\n| Hardly at all | 3 | |\n| I have blamed myself unnecessarily when things went wrong | No, never | 0 |\n| Not very often | 1 | |\n| Yes, some of the time | 2 | |\n| Yes, most of the time | 3 | |\n| I have been anxious or worried for no good reason | No, not at all | 0 |\n| Hardly ever | 1 | |\n| Yes, sometimes | 2 | |\n| Yes, very often | 3 | |\n| I have felt scared or panicky for no very good reason | No, not at all | 0 |\n| No, not much | 1 | |\n| Yes, sometimes | 2 | |\n| Yes, quite a lot | 3 | |\n| Things have been getting on top of me | No, I have been coping as well as ever | 0 |\n| No, most of the time I have coped quite well | 1 | |\n| Yes, sometimes I haven’t been coping as well as usual | 2 | |\n| Yes, most of the time I haven’t been able to cope at all | 3 | |\n| I have been so unhappy that I have had difficulty sleeping | No, not at all | 0 |\n| Not very often | 1 | |\n| Yes, sometimes | 2 | |\n| Yes, most of the time | 3 | |\n| I have felt sad or miserable | No, not at all | 0 |\n| Not very often | 1 | |\n| Yes, quite often | 2 | |\n| Yes, most of the time | 3 | |\n| I have been so unhappy that I have been crying | No, never | 0 |\n| Only occasionally | 1 | |\n| Yes, quite often | 2 | |\n| Yes, most of the time | 3 | |\n| The thought of harming myself has occurred to me | Never | 0 |\n| Hardly ever | 1 | |\n| Sometimes | 2 | |\n| Yes, quite often | 3 | |",
+  "how_to_use": {
+    "why": "- Some[evidence](https://www.acog.org/clinical/clinical-guidance/clinical-practice-guideline/articles/2023/06/screening-and-diagnosis-of-mental-health-conditions-during-pregnancy-and-postpartum)estimates that 1 in 5 patients will be affected by perinatal mental health concerns.\n- Unrecognized perinatal mental health conditions can adversely affect maternal morbidity and in severe cases, lead to mortality.",
+    "when": "- This tool can be used to screen for depression in the perinatal period.\n- Although universal postpartum depression screening is recommended in the United States by[USPSTF](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/perinatal-depression-preventive-interventions)and[ACOG](https://www.acog.org/clinical/clinical-guidance/committee-opinion/articles/2018/05/optimizing-postpartum-care), these recommendations may vary by country. Know your local best practices.\n- Screening should occur within the postpartum period and should be accompanied by a comprehensive postpartum visit.\n- Recommendations for exact timing of screening varies by medical organization, generally between 2-12 weeks after delivery.\n- High risk patients may be evaluated sooner or with more frequency.",
+    "pearls": "- This tool does not diagnose depression. Rather, it is used to indicate the presence of depression symptoms and highlight the need for further evaluation.\n- This tool does not screen for other serious postpartum conditions such as bipolar disorder or psychosis.\n- Patients who have an elevated score should be referred for additional mental health evaluation and care."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Scores≥10 are considered a positive screen. Refer your patient for further psychiatric evaluation and treatment plan.\n- Keep in mind that some studies and institutions may use a different cutoff value to indicate a positive screen; be sure to know your local best practices."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| EPDS Score | Screening Result |\n| --- | --- |\n| <10 | Negative |\n| ≥10 | Positive, further evaluation recommended |",
+  "short_description": "Postnatal dépression dépistage.",
+  "medium_description": "Screens pour dépression dans postnatal period.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "I have been able pour laugh et see funny side de things",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "As much as I always could",
+          "value": 0
+        },
+        {
+          "label": "Not quite so much now",
+          "value": 1
+        },
+        {
+          "label": "Definitely not so much now",
+          "value": 2
+        },
+        {
+          "label": "Not at all",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "I have looked forward avec enjoyment pour things",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "As much as I ever did",
+          "value": 0
+        },
+        {
+          "label": "Rather less than I used pour",
+          "value": 1
+        },
+        {
+          "label": "Definitely less than I used pour",
+          "value": 2
+        },
+        {
+          "label": "Hardly at all",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "I have blamed myself unnecessarily when things went wrong",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, never",
+          "value": 0
+        },
+        {
+          "label": "Not very often",
+          "value": 1
+        },
+        {
+          "label": "Yes, some de time",
+          "value": 2
+        },
+        {
+          "label": "Yes, most de time",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "I have been anxious ou worried pour no good reason",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, not at all",
+          "value": 0
+        },
+        {
+          "label": "Hardly ever",
+          "value": 1
+        },
+        {
+          "label": "Yes, sometimes",
+          "value": 2
+        },
+        {
+          "label": "Yes, very often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "I have felt scared ou panicky pour no very good reason",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, not at all",
+          "value": 0
+        },
+        {
+          "label": "No, not much",
+          "value": 1
+        },
+        {
+          "label": "Yes, sometimes",
+          "value": 2
+        },
+        {
+          "label": "Yes, quite lot",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Things have been getting sur top de me",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, I have been coping as well as ever",
+          "value": 0
+        },
+        {
+          "label": "No, most de time I have coped quite well",
+          "value": 1
+        },
+        {
+          "label": "Yes, sometimes I haven’t been coping as well as usual",
+          "value": 2
+        },
+        {
+          "label": "Yes, most de time I haven’t been able pour cope at all",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "I have been so unhappy that I have had difficulty sleeping",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, not at all",
+          "value": 0
+        },
+        {
+          "label": "Not very often",
+          "value": 1
+        },
+        {
+          "label": "Yes, sometimes",
+          "value": 2
+        },
+        {
+          "label": "Yes, most de time",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "I have felt sad ou miserable",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, not at all",
+          "value": 0
+        },
+        {
+          "label": "Not very often",
+          "value": 1
+        },
+        {
+          "label": "Yes, quite often",
+          "value": 2
+        },
+        {
+          "label": "Yes, most de time",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "I have been so unhappy that I have been crying",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No, never",
+          "value": 0
+        },
+        {
+          "label": "Only occasionally",
+          "value": 1
+        },
+        {
+          "label": "Yes, quite often",
+          "value": 2
+        },
+        {
+          "label": "Yes, most de time",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "Thought de harming myself has occurred pour me",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Hardly ever",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Yes, quite often",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cox JL, Holden JM, Sagovsky R. Detection of postnatal depression. Development of the 10-item edinburgh postnatal depression scale. Br J Psychiatry. 1987;150:782-786.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/3651732/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levis B, Negeri Z, Sun Y, Benedetti A, Thombs BD, DEPRESsion Screening Data (DEPRESSD) EPDS Group. Accuracy of the Edinburgh Postnatal Depression Scale (Epds) for screening to detect major depression among pregnant and postpartum women: systematic review and meta-analysis of individual participant data. BMJ. 2020;371:m4022.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33177069/",
+      "kind": "other"
+    },
+    {
+      "text": "Cox JL, Chapman G, Murray D, Jones P. Validation of the edinburgh postnatal depression scale (Epds) in non-postnatal women. J Affect Disord. 1996;39(3):185-189.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/8856422/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rubertsson C, Börjesson K, Berglund A, Josefsson A, Sydsjö G. The swedish validation of edinburgh postnatal depression scale (Epds) during pregnancy. Nord J Psychiatry. 2011;65(6):414-418.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21728782/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gibson J, McKenzie-McHarg K, Shakespeare J, Price J, Gray R. A systematic review of studies validating the Edinburgh Postnatal Depression Scale in antepartum and postpartum women. Acta Psychiatr Scand. 2009;119(5):350-364.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19298573/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Boyce P, Stubbs J, Todd A. The edinburgh postnatal depression scale: validation for an australian sample. Aust N Z J Psychiatry. 1993;27(3):472-476.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/8250792/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.geriatric-depression-scale-gds-15",
+    "calc.quick-inventory-depressive-symptomatology-qids",
+    "calc.montgomery-asberg-depression-rating-scale-madrs"
+  ],
+  "source_logic_hash": "05e82d239407cc34099b18464de38ca4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10466,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,514 @@
+{
+  "id": "calc.european-system-cardiac-operative-risk-evaluation-euroscore-ii",
+  "slug": "european-system-cardiac-operative-risk-evaluation-euroscore-ii",
+  "language": "en",
+  "title": "European System pour Cardiac Operative risque évaluation (EuroSCORE) II",
+  "short_title": "EuroSCORE II",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "In-hospital mortality",
+    "in hospital",
+    "euroscore",
+    "euroscore 2",
+    "euroscore ii",
+    "cardiac surgery",
+    "cardiac surgical mortality"
+  ],
+  "dosing": false,
+  "formula": "Predicted mortality = e^y^/ (1 + e^y^)\n\nWhere y = -5.324537 + ∑ β~i~x~i~\n\n**Patient factors**\n\n| Variable | Coefficient (β) | |\n| --- | --- | --- |\n| Age* | 0.0285181 | |\n| Sex | Male | 0 |\n| Female | 0.2196434 | |\n| Insulin-dependent diabetes mellitus | 0.3542749 | |\n| Chronic pulmonary dysfunction | 0.1886564 | |\n| Neurological or musculoskeletal dysfunction severely affecting mobility | 0.2407181 | |\n| Renal dysfunction ( [creatinine clearance](nabda:calc.creatinine-clearance-cockcroft-gault-equation\\) by Cockcroft-Gault formula) | >85 mL/min | 0 |\n| 51-85 mL/min | 0.303553 | |\n| ≤50 mL/min | 0.8592256 | |\n| On dialysis, regardless of serum creatinine | 0.6421508 | |\n| Critical preop state (≥1 of the following in the same hospital admission as the operation: ventricular tachycardia or fibrillation or aborted sudden death; cardiac massage; ventilation before arrival to OR; inotropes; IABP or VAD before arrival to OR; acute renal failure, defined as anuria or oliguria <10 mL/hr) | 1.086517 | |\n\n*For age, x~i~= 1 if patient age ≤60; x~i~increases by one point per year thereafter (age ≤60, x~i~= 1; age 61, x~i~= 2; age 62, x~i~= 3, etc).\n\n**Cardiac-specific factors**\n\n| Variable | Coefficient (β) | |\n| --- | --- | --- |\n| [NYHA](nabda:calc.new-york-heart-association-nyha-functional-classification-heart-failure\\) class | Class I: no symptoms on moderate exertion | 0 |\n| Class II: symptoms on moderate exertion | 0.1070545 | |\n| Class III: symptoms on light exertion | 0.2958358 | |\n| Class IV: symptoms at rest | 0.5597929 | |\n| [CCS](nabda:calc.canadian-cardiovascular-society-ccs-angina-grade\\) class 4 (inability to perform any activity without angina or angina at rest) | 0.2226147 | |\n| Extracardiac arteriopathy (≥1 of the following: claudication; carotid occlusion or >50% stenosis (NASCET criteria); amputation for arterial disease; previous or planned intervention on abdominal aorta, limb arteries, or carotids) | 0.5360268 | |\n| Previous cardiac surgery (≥1 previous major cardiac operation involving opening the pericardium) | 1.118599 | |\n| Active endocarditis (i.e., on antibiotics for endocarditis at time of surgery) | 0.6194522 | |\n| LV function or LVEF | Good (LVEF ≥51%) | 0 |\n| Moderate (LVEF 31-50%) | 0.3150652 | |\n| Poor (LVEF 21-30%) | 0.8084096 | |\n| Very poor (LVEF ≤20%) | 0.9346919 | |\n| Recent MI (≤90 days before operation) | 0.1528943 | |\n| Pulmonary artery systolic pressure, mm Hg | <31 | 0 |\n| 31-54 | 0.1788899 | |\n| ≥55 | 0.3491475 | |\n\n**Procedural factors**\n\n| Variable | Coefficient (β) | |\n| --- | --- | --- |\n| Urgency | Elective: routine admission for operation | 0 |\n| Urgent: not electively admitted for operation but require surgery on current admission for medical reasons and cannot be discharged without definitive procedure | 0.3174673 | |\n| Emergency: operation before the beginning of the next working day after the decision to operate | 0.7039121 | |\n| Salvage: patients requiring CPR (external) en route to the OR or before induction of anesthesia (excludes CPR after induction of anesthesia) | 1.362947 | |\n| “Weight” of procedure (i.e., extent of intervention) | Isolated CABG | 0 |\n| Isolated non-CABG major procedure (e.g. single valve procedure, replacement of ascending aorta, correction of septal defect, etc) | 0.0062118 | |\n| 2 major procedures (e.g. CABG and AVR), or CABG and mitral valve repair (MVR), or AVR and replacement of ascending aorta, or CABG and maze procedure, or AVR and MVR, etc | 0.5521478 | |\n| ≥3 major procedures (e.g. AVR, MVR, and CABG, or MVR, CABG, and tricuspid annuloplasty, etc), or aortic root replacement when it includes AVR or repair, coronary reimplantation, and root and ascending replacement | 0.9724533 | |\n| Thoracic aorta surgery | 0.6527205 | |",
+  "how_to_use": {
+    "why": "- Aide à la décision clinique en fournissant une estimation quantitative du risque de mortalité opératoire, ce qui peut influencer la planification chirurgicale et les stratégies de prise en charge du patient.\n- Utiliser le score pour étayer les discussions avec les patients sur les risques et les bénéfices potentiels de la chirurgie cardiaque.",
+    "when": "Utilisé lors d’une évaluation préopératoire pour estimer le risque de mortalité chez les patients adultes subissant une chirurgie cardiaque majeure, y compris un pontage aorto-coronarien, une chirurgie valvulaire cardiaque ou des interventions combinées.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- May inform adjustments in preoperative management, surgical approach, or postoperative care to mitigate identified risks.\n- Consider consultations with other specialties based on the risk assessment to optimize patient outcomes.\n- Risk scores only provide a starting point in estimating morbidity and mortality. Ensure that other clinical variables, which may not be included in this tool, are also considered in preoperative assessments and planning.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Dans-hôpital mortalité after major cardiac surgery.",
+  "medium_description": "Predicts risque de dans-hôpital mortalité after major cardiac surgery.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 0.22
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Insulin-dependent diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulmonary",
+      "label": "Dysfonction pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.19
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neuro",
+      "label": "Dysfonction neurologique ou musculo-squelettique affectant gravement la mobilité",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.24
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "renal",
+      "label": "[Clairance de la créatinine](nabda:calc.creatinine-clearance-cockcroft-gault-equation)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">85 mL/min",
+          "value": 0
+        },
+        {
+          "label": "51-85 mL/min",
+          "value": 0.3
+        },
+        {
+          "label": "≤50 mL/min",
+          "value": 0.86
+        },
+        {
+          "label": "sur dialysis (regardless de créatinine sérique)",
+          "value": 0.64
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "État préopératoire critique",
+      "tips": "≥1 of the following in the same hospital admission as the operation: ventricular tachycardia or fibrillation or aborted sudden death; cardiac massage; ventilation before arrival toOR; inotropes;IABPorVADbefore arrival to OR; acute renal failure, defined as anuria or oliguria <10 mL/hr",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.09
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "nyha",
+      "label": "Classe [NYHA](nabda:calc.new-york-heart-association-nyha-functional-classification-heart-failure)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Class I: no symptoms sur modéré exertion",
+          "value": 0
+        },
+        {
+          "label": "Class II: symptoms sur modéré exertion",
+          "value": 0.11
+        },
+        {
+          "label": "Classe III : symptômes lors d'un effort léger",
+          "value": 0.3
+        },
+        {
+          "label": "Classe IV : symptômes au repos",
+          "value": 0.56
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ccs",
+      "label": "Classe 4 de la [CCS](nabda:calc.canadian-cardiovascular-society-ccs-angina-grade)",
+      "tips": "Incapacité à effectuer toute activité sans angor, ou angor de repos",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.22
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eca",
+      "label": "Artériopathie extracardiaque",
+      "tips": "≥1 des éléments suivants : claudication ; occlusion carotidienne ou sténose > 50 % (critères NASCET) ; amputation pour maladie artérielle ; intervention antérieure ou planifiée sur l'aorte abdominale, les artères des membres ou les carotides",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.54
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "previous",
+      "label": "Chirurgie cardiaque antérieure",
+      "tips": "≥1 antécédent de chirurgie cardiaque majeure avec ouverture du péricarde",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.12
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "endo",
+      "label": "Endocardite active",
+      "tips": "c.-à-d., sous antibiothérapie pour une endocardite au moment de la chirurgie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.62
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lv",
+      "label": "Fonction ventriculaire gauche ou FEVG",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Bon (LVEF ≥51%)",
+          "value": 0
+        },
+        {
+          "label": "modéré (LVEF 31-50%)",
+          "value": 0.32
+        },
+        {
+          "label": "Mauvais (FEVG 21-30%)",
+          "value": 0.81
+        },
+        {
+          "label": "Très altérée (FEVG ≤20%)",
+          "value": 0.93
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mi",
+      "label": "RecentMI",
+      "tips": "≤90 jours avant l'intervention",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sbp",
+      "label": "Pression artérielle pulmonaire systolique, mm Hg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 31",
+          "value": 0
+        },
+        {
+          "label": "31-54",
+          "value": 0.18
+        },
+        {
+          "label": "≥55",
+          "value": 0.35
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "urgency",
+      "label": "Urgency",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Elective: routine admission pour operation",
+          "value": 0
+        },
+        {
+          "label": "urgent: not electively admitted pour operation but require surgery sur current admission pour medical reasons et cannot be discharged sans definitive procedure",
+          "value": 0.32
+        },
+        {
+          "label": "Emergency: operation before beginning de next working day after decision pour operate",
+          "value": 0.7
+        },
+        {
+          "label": "Salvage: patients requiring CPR (external) en route pour OR ou before induction de anesthesia (excludes CPR after induction de anesthesia)",
+          "value": 1.36
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weight",
+      "label": "“poids” de procedure",
+      "tips": "c.-à-d. l’ampleur de l’intervention",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "CABG isolé",
+          "value": 0
+        },
+        {
+          "label": "Intervention majeure isolée hors CABG (p. ex. intervention valvulaire unique, remplacement de l’aorte ascendante, correction de communication septale, etc.)",
+          "value": 0.01
+        },
+        {
+          "label": "2 major procedures (e.g. CABG et AVR), ou CABG et mitral valve repair (MVR), ou AVR et replacement de ascending aorta, ou CABG et maze procedure, ou AVR et MVR, etc",
+          "value": 0.55
+        },
+        {
+          "label": "≥3 major procedures (e.g. AVR, MVR, et CABG, ou MVR, CABG, et tricuspid annuloplasty, etc), ou aortic root replacement when it includes AVR ou repair, coronary reimplantation, et root et ascending replacement",
+          "value": 0.97
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aorta",
+      "label": "Chirurgie de l'aorte thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.65
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nashef SA, Roques F, Sharples LD, et al. EuroSCORE II. Eur J Cardiothorac Surg. 2012;41(4):734-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22378855",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chalmers J, Pullan M, Fabri B, et al. Validation of EuroSCORE II in a modern cohort of patients undergoing cardiac surgery. Eur J Cardiothorac Surg. 2013;43(4):688-94.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22833541",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kalender M, Adademir T, Tasar M, et al. Validation of EuroSCORE II risk model for coronary artery bypass surgery in high-risk patients. Kardiochir Torakochirurgia Pol. 2014;11(3):252-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4283878/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Garcia-valentin A, Mestres CA, Bernabeu E, et al. Validation and quality measurements for EuroSCORE and EuroSCORE II in the Spanish cardiac surgical population: a prospective, multicentre study. Eur J Cardiothorac Surg. 2016;49(2):399-405.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25762397",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acef-ii-risk-score-cardiac-surgery",
+    "calc.save-survival-veno-arterial-ecmo-score",
+    "calc.gwtg-heart-failure-risk-score",
+    "calc.creatinine-clearance-cockcroft-gault-equation",
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure",
+    "calc.canadian-cardiovascular-society-ccs-angina-grade"
+  ],
+  "source_logic_hash": "44e3f3ec44025c3e845c080ecd156508",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "creatinine clearance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.new-york-heart-association-nyha-functional-classification-heart-failure",
+      "text": "NYHA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.canadian-cardiovascular-society-ccs-angina-grade",
+      "text": "CCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10179,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

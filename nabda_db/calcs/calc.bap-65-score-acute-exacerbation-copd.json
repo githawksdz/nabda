@@ -1,0 +1,191 @@
+{
+  "id": "calc.bap-65-score-acute-exacerbation-copd",
+  "slug": "bap-65-score-acute-exacerbation-copd",
+  "language": "en",
+  "title": "BAP-65 score pour aigu Exacerbation de COPD",
+  "short_title": "BAP-65",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma",
+    "Coronavirus",
+    "Pneumonia",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "bap-65",
+    "bap 65",
+    "bap65",
+    "aecopd",
+    "copd",
+    "coad",
+    "covid",
+    "covid-19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points, then class assigned by age:\n\n| | 0 points | 1 point |\n| --- | --- | --- |\n| BUN ≥25 mg/dL (8.9 mmol/L) | No | Yes |\n| Altered mental status* | No | Yes |\n| Pulse ≥109 beats/min | No | Yes |\n| Class | BAP | Age |\n| I | 0 | <65 years |\n| II | 0 | ≥65 years |\n| III | 1 | Any age |\n| IV | 2 | Any age |\n| V | 3 | Any age |\n\n*InitialGCS [glasgow-coma-scale-score-gcs](nabda:calc.glasgow-coma-scale-score-gcs) <14, or disorientation, stupor, or coma as determined by physician.",
+  "how_to_use": {
+    "why": "- May assist in clinical decision-making to risk-stratify patients to a higher level of care, or potentially observation or early discharge.\n- With higher scores, there may be higher in-hospital mortality, risk of mechanical ventilation, length of stay, and cost.\n- The [DECAF Score](nabda:calc.decaf-score-acute-exacerbation-copd) is an alternative that can be used to calculate in-hospital mortality for patients admitted to the hospital with an acute COPD exacerbation and may outperform BAP-65 in this regard.",
+    "when": "Patients >40 years of age presenting to the emergency department with acute COPD exacerbation. Do not use in patients ≤40 years old, as asthma is a confounder in this population.",
+    "pearls": "- Does not require COPD-specific information such as FEV₁ or [6 Minute Walk Test](nabda:calc.6-minute-walk-distance) .\n- Variables are easily obtained at the time of presentation. Only requires one laboratory value.\n- Excludes patients who had an alternative primary diagnosis other than acute COPD exacerbation.\n- May predict need for mechanical ventilation within 48 hours of admission.\n- Based on data fromICD-9andDRGcodes, which may be imprecise and may lead to coding bias or up-coding.\n- Both internal and external validation were completed in retrospective cohorts of patients from a research database."
+  },
+  "next_steps": {
+    "advice": "- Consider early non-invasive ventilation and/or ICU care in patients with higher in-hospital mortality.\n- May predict the need for mechanical ventilation within 48 hours, and these patients should be considered for higher level of care to provide non-invasive and/or invasive ventilation.\n- There may be a role for early discharge or observation in lower BAP-65 classes.",
+    "critical_actions": "- Should only be used in patients presenting to the ED with a primary diagnosis of an acute COPD exacerbation, not in the outpatient setting or in patients whose COPD is stable.\n- BAP-65 class V have the highest risk of in-hospital mortality and need for mechanical ventilation, and these patients should be closely monitored.",
+    "management": "Was not studied to dictate management or treatment options. The score should not replace clinical judgment regarding workup, diagnosis, or treatment."
+  },
+  "evidence": "The[original BAP-65 Score](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/224759)was derived by examining a cohort of 88,074 patients from the Cardinal Health Clinical Outcomes Research Database. Patients studied were >40 years of age, with a primary/principal discharge diagnosis of acute exacerbation of COPD (using ICD-9 codes). Patients with a primary diagnosis of acute respiratory failure and secondary diagnoses of acute exacerbation of COPD were excluded. The authors selected four variables with the highest discriminative power for mortality to create the BAP-65 Score. The original study was internally validated, and a separate cohort in the same database was used as an additional validation.\n\nThe BAP-65 was also[externally validated](https://www.ncbi.nlm.nih.gov/pubmed/21527510)in a retrospective cohort of 34,669 patients using a different database than the original study. In the external validation, patients with a primary diagnosis of acute respiratory failure were also included (in the original study, these patients were excluded). The external validation found that BAP-65 correlates well with in-hospital mortality, need for mechanical ventilation, length of stay, and cost.",
+  "more_info": "Interpretation:\n\n| BAP-65 Class | In-hospital mortality | Need for mechanical ventilation within 48 hours | Recommendation |\n| --- | --- | --- | --- |\n| I | 0.3% | 0.3% | Routine management of COPD exacerbation |\n| II | 1.0% | 0.2% | |\n| III | 2.2% | 1.2% | Consider early non-invasive ventilation and/or ICU care |\n| IV | 6.4% | 5.5% | |\n| V | 14.1% | 12.4% | |\n\nData from validation cohort in[Tabak 2009](https://linkinghub.elsevier.com/retrieve/pii/S0012-3692(11)60583-7).",
+  "short_description": "COPD mortalité, aigu exacerbation.",
+  "medium_description": "Predicts mortalité dans aigu COPD exacerbation.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bun",
+      "label": "BUN ≥25 mg/dL (8.9 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ams",
+      "label": "Altération de l'état de conscience",
+      "tips": "Initial [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs) <14, or disorientation, stupor, or coma as determined by physician",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulse",
+      "label": "Pulse ≥109 beats/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "tips": "BAP-65 is not validated in patients ≤40 years old (see When to Use).",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "41-64",
+          "value": 0
+        },
+        {
+          "label": "≥65",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tabak YP, Sun X, Johannes RS, Gupta V, Shorr AF. Mortality and need for mechanical ventilation in acute exacerbations of chronic obstructive pulmonary disease: development and validation of a simple risk score. Arch Intern Med. 2009;169(17):1595-602.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/224759",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shorr AF, Sun X, Johannes RS, Derby KG, Tabak YP. Predicting the need for mechanical ventilation in acute exacerbations of chronic obstructive pulmonary disease: comparing the CURB-65 and BAP-65 scores. J Crit Care. 2012;27(6):564-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22520489",
+      "kind": "other"
+    },
+    {
+      "text": "Shorr AF, Sun X, Johannes RS, Yaitanes A, Tabak YP. Validation of a novel risk score for severity of illness in acute exacerbations of COPD. Chest. 2011;140(5):1177-1183.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21527510",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.decaf-score-acute-exacerbation-copd",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.6-minute-walk-distance"
+  ],
+  "source_logic_hash": "e97309f2ae1b7e02f7f0edf938e78848",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": null
+    },
+    {
+      "type": "calc",
+      "id": "calc.6-minute-walk-distance",
+      "text": "6 Minute Walk Test"
+    },
+    {
+      "type": "calc",
+      "id": "calc.decaf-score-acute-exacerbation-copd",
+      "text": "DECAF Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4019,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

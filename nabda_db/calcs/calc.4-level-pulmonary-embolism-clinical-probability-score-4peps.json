@@ -1,0 +1,338 @@
+{
+  "id": "calc.4-level-pulmonary-embolism-clinical-probability-score-4peps",
+  "slug": "4-level-pulmonary-embolism-clinical-probability-score-4peps",
+  "language": "en",
+  "title": "Score de probabilité clinique d'embolie pulmonaire à 4 niveaux (4PEPS)",
+  "short_title": "Score 4PEPS pour l'EP (embolie pulmonaire)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "4-Level Pulmonary Embolism Clinical Probability Score (4PEPS), 4PEPS Score for PE, 4PEPS, PE, pulmonary embolism, DVT"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | <50 | -2 |\n| 50-64 | -1 | |\n| >64 | 0 | |\n| Sexe | Femme | 0 |\n| Homme | 2 | |\n| Maladie respiratoire chronique | Non | 0 |\n| Oui | -1 | |\n| Fréquence cardiaque <80 | Non | 0 |\n| Oui | -1 | |\n| Douleur thoracique ET dyspnée aiguë | Non | 0 |\n| Oui | 1 | |\n| Utilisation actuelle d'œstrogènes | Non | 0 |\n| Oui | 2 | |\n| Antécédents de VTE | Non | 0 |\n| Oui | 2 | |\n| Syncope | Non | 0 |\n| Oui | 2 | |\n| Immobilité au cours des quatre dernières semaines* | Non | 0 |\n| Oui | 2 | |\n| Saturation en O 2 <95 % | Non | 0 |\n| Oui | 3 | |\n| Douleur du mollet et/ou œdème unilatéral d'un membre inférieur | Non | 0 |\n| Oui | 3 | |\n| L'EP est le diagnostic le plus probable | Non | 0 |\n| Oui | 5 | |\n\n*Chirurgie, plâtre du membre inférieur ou alitement >3 jours pour une affection médicale aiguë au cours des quatre dernières semaines.",
+  "how_to_use": {
+    "why": "- Fournit une approche structurée pour estimer la probabilité d’EP, en réduisant la dépendance au seul jugement clinique.\n- Aide à minimiser la réalisation inutile d’une angiographie pulmonaire par tomodensitométrie (CTPA) dans les cas à risque faible et modéré, en réduisant les coûts et l’exposition des patients aux rayonnements et aux produits de contraste.\n- Chez les patients à très faible risque, le dosage des D-dimères peut être totalement évité, contrairement à d’autres outils similaires.",
+    "when": "- Utilize in patients presenting with signs and symptoms suggestive of pulmonary embolism (PE).\n- Apply before ordering diagnostic imaging to categorize patients into different risk levels.\n- Do NOT use in:\n\n - Patients with acute COPD exacerbation (failure rate exceeds safety threshold).\n - Patients with active malignancy.\n - Pregnancy (use [pregnancy-adapted YEARS](nabda:calc.years-algorithm-for-pulmonary-embolism-pe) instead).\n - Pediatric patients (no validation data).\n - Inpatients or critically ill patients (limited validation in non ED settings).",
+    "pearls": "- Does rely on a subjective component (i.e., “PE is the most likely diagnosis”), which can lead to some scoring variability between clinicians.\n- Studies have demonstrated an efficiency in correctly identifying PE cases ranging from 54%-68%, with a failure rate of 0.71%-1.3%.\n- No prospective management/outcome study has been published using 4PEPS; all validations are retrospective post-hoc analyses.\n- Not currently endorsed by major society guidelines.\n- In high-prevalence settings, the \"very low\" probability category may have PE rates up to 5.6%, exceeding the conventional 2% safety threshold and potentially leading to a missed PE diagnosis ([Chiang 2024](https://pubmed.ncbi.nlm.nih.gov/38444614/))."
+  },
+  "next_steps": {
+    "advice": "Les résultats de cet outil ne doivent pas remplacer le jugement clinique ; tenez toujours compte du contexte individuel du patient et des présentations atypiques.",
+    "critical_actions": "Considérations relatives au dosage des D-dimères\n\n- Le seuil de 1000 μg/mL pour la strate de probabilité prétest clinique faible suppose un dosage quantitatif avec une calibration spécifique.\n- Tous les dosages de D-dimères ne sont pas interchangeables à ce seuil ; vérifier les caractéristiques du dosage local.",
+    "management": "- Suggested management based on clinical probability results:\n\n - **Very low (<0):** PE can be ruled out based on clinical criteria without further testing.\n - **Low (0-5):** Check a D-dimer level. If <1.0 μg/mL, PE can be ruled out. Otherwise, proceed to imaging.\n - **Moderate (6-12):** Check a D-dimer level. If <0.5 μg/mL OR <(age x 0.01) μg/mL, PE can be ruled out. Otherwise, proceed to imaging.\n - **High (≥13):** Proceed to imaging.\n- If results suggests very-low or low probability but clinical suspicion remains high, consider imaging or use [Wells'](nabda:calc.wells-criteria-pulmonary-embolism) or [YEARS](nabda:calc.years-algorithm-for-pulmonary-embolism-pe) as confirmation.\n- If results suggest moderate or high probability but suspicion is low, re-examine whether \"PE most likely\" was scored appropriately; consider alternative diagnoses before imaging."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score 4PEPS pour l'EP | Probabilité clinique d'EP | Diagnostic d'EP |\n| --- | --- | --- |\n| <0 | CPP très faible (<2%) | EP peut être exclue |\n| 0-5 | CPP faible (2-20%) | EP peut être exclue si le taux de D-dimères est <1.0 μg/mL |\n| 6-12 | CPP modérée (20-65%) | EP peut être exclue si le taux de D-dimères est <0.5 μg/mL OU <(âge x 0.01) μg/mL |\n| ≥13 | CPP élevée (>65%) | EP ne peut être exclue sans examen d'imagerie |",
+  "short_description": "Élimine une PE.",
+  "medium_description": "Élimine une EP sur la base de critères cliniques.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp",
+      "label": "Maladie respiratoire chronique",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bpm",
+      "label": "Fréquence cardiaque <80",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chest",
+      "label": "Douleur thoracique ET dyspnée aiguë",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "estrogen",
+      "label": "Utilisation actuelle d'œstrogènes",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vte",
+      "label": "Antécédents de maladie thromboembolique veineuse (MTEV)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sync",
+      "label": "Syncope",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "imm",
+      "label": "Immobilité au cours des quatre dernières semaines",
+      "tips": "Chirurgie, plâtre du membre inférieur, ou alitement >3 jours pour une affection médicale aiguë au cours des quatre dernières semaines",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulse",
+      "label": "Saturation en O~2~ <95 %",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "calf",
+      "label": "Douleur du mollet et/ou œdème unilatéral du membre inférieur",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pediag",
+      "label": "L’EP est le diagnostic le plus probable.",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Roy P-M, Friou E, Germeau B, et al. Derivation and validation of a 4-level clinical pretest probability score for suspected pulmonary embolism to safely decrease imaging testing. JAMA Cardiol. Published online March 3, 2021.",
+      "href": "https://jamanetwork.com/journals/jamacardiology/fullarticle/2776853",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yang J, Wang H, Han J, et al. Study on the diagnostic value of clinical decision rules for malignant tumors complicated with pulmonary thromboembolism: a retrospective analysis. Clin Appl Thromb Hemost. 2025;31:10760296251388990. doi:10.1177/10760296251388990",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41129715/",
+      "kind": "other"
+    },
+    {
+      "text": "Stals MAM, Beenen LFM, Coppens M, et al. Performance of the 4-Level Pulmonary Embolism Clinical Probability Score (4peps) in the diagnostic management of pulmonary embolism: An external validation study. Thromb Res. 2023;231:65-75. doi:10.1016/j.thromres.2023.09.010",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37816274/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chiang P, Robert-Ebadi H, Perrier A, et al. Pulmonary embolism risk stratification: external validation of the 4-level Clinical Pretest Probability Score (4peps). Res Pract Thromb Haemost. 2024;8(1):102348. doi:10.1016/j.rpth.2024.102348",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38444614/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Seghda TAA, Dan Naibé T, Dabiré YE, et al. [Performance of the 4-level probability score 4PEPS for the diagnosis of pulmonary embolism in a sub-Saharan African population: Data from the Pulmonary Embolism Registry of the Bogodogo University Hospital, Burkina Faso]. Ann Cardiol Angeiol (Paris). 2024;73(5):101798. doi:10.1016/j.ancard.2024.101798",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39317081/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.altitude-adjusted-perc-rule",
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.years-algorithm-for-pulmonary-embolism-pe",
+    "calc.wells-criteria-pulmonary-embolism"
+  ],
+  "source_logic_hash": "de6b4cf80a5386e2ab952d4d7973a9f1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.years-algorithm-for-pulmonary-embolism-pe",
+      "text": "pregnancy-adapted YEARS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells'"
+    },
+    {
+      "type": "calc",
+      "id": "calc.years-algorithm-for-pulmonary-embolism-pe",
+      "text": "pregnancy-adapted YEARS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells'"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10370,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[];\n\nvar age = parseFloat(age);\nif (age<50) {\n  var age_points = -2;\n} else if (age >= 50 && age <= 64) {\n  var age_points = -1;\n} else if (age>64) { \n   var age_points = 0;\n}\n\nvar criteria= age_points + parseFloat(sex) + parseFloat(resp) + parseFloat(bpm) + parseFloat(chest) + parseFloat(estrogen) + parseFloat(vte) + parseFloat(sync) + parseFloat(imm) + parseFloat(pulse) + parseFloat(calf) + parseFloat(pediag);\n\n\nif (criteria <0){\n  var prob = '<2';\n  var prob_msg = 'Very low CPP';\n  var diag = 'PE can be ruled out';\n}\nif (criteria >=0 && criteria <=5){\n  var prob = '2-20';\n  var prob_msg = 'Low CPP';\n  var diag = 'PE can be ruled out if D-dimer level <1.0 µg/mL';\n\n}\n\nif (criteria >=6 && criteria <=12){\n  var prob = '20-65';\n  var prob_msg = 'Moderate CPP';\n  var diag = 'PE can be ruled out if D-dimer level <0.5 µg/mL OR <(age x 0.01) µg/mL';\n}\n\nif (criteria >=13){\n  var prob = '>65';\n  var prob_msg = 'High CPP';\n  var diag = 'PE cannot be ruled out without imaging testing';\n}\n\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text:'points',\n    message:prob_msg\n});\ncalc_output.push({\n    name: '4PEPS Score',\n    value: criteria,\n    value_text:'points',\n    message:'4PEPS Score'\n});\ncalc_output.push({\n    name: 'Probability',\n    value: prob,\n    value_text:'%',\n    message:prob_msg\n});\ncalc_output.push({\n    name: 'PE diagnosis',\n    value: '',\n    value_text:'',\n    message:diag\n});",
+  "before_use": null,
+  "instructions": "Le moment de la mesure des valeurs des signes vitaux n'a pas été formellement évalué par cette étude ; nous recommandons de recourir au jugement clinique pour déterminer quel signe vital doit être utilisé pour le score 4PEPS.",
+  "contributor_ids": [
+    "abbas-husain-md"
+  ],
+  "creator_names": [
+    "Dr. Pierre-Marie Roy"
+  ],
+  "measurement_ids": [
+    "Age",
+    "pulse"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "da933b83f41365fb1c3140a4d11e55e2b57ce16dc2a0b8e8044357e7debf4c00"
+}

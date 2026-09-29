@@ -1,0 +1,109 @@
+{
+  "id": "calc.therapeutic-plasmapheresis-calculator",
+  "slug": "therapeutic-plasmapheresis-calculator",
+  "language": "fr",
+  "title": "Calculateur de plasmaphérèse thérapeutique",
+  "short_title": "Plasmaphérèse thérapeutique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Therapeutic Plasmapheresis",
+    "Plasmapheresis",
+    "Apheresis",
+    "plasma exchange"
+  ],
+  "dosing": false,
+  "formula": "Concentration résiduelle relative, % = 100 * e^-x^\n\noù x = volume plasmatique, mL x nombre de volumes plasmatiques à échanger / volume sanguin total, mL",
+  "how_to_use": {
+    "why": "- Peut être utile pour déterminer le nombre de volumes plasmatiques à échanger afin d'obtenir une réduction d'une substance ciblée, en particulier au début d'une procédure d'échange plasmatique thérapeutique.\n- Donne une idée de la futile d'effectuer de nombreux échanges plasmatiques, car elle montre le degré de rendement décroissant une fois qu'un plateau d'élimination efficace est atteint.",
+    "when": "Les patients nécessitant un échange plasmatique thérapeutique présentent généralement une substance pathologique en circulation (par exemple un autoanticorps) devant être éliminée. La quantité restante de cette substance varie selon le nombre de volumes plasmatiques échangés, avec un plateau généralement atteint au fil du temps, car l'efficacité de la procédure diminue à mesure que des quantités plus élevées de liquides de substitution sont éliminées par rapport à la substance initialement ciblée.",
+    "pearls": "- Il s'agit d'un calcul théorique applicable principalement aux procédures d'échange plasmatique ; les efficacités d'élimination varieront quelque peu en pratique selon la substance éliminée et sa distribution corporelle totale.\n- L'équation suppose une substance strictement intravasculaire ; ce n'est pas nécessairement le cas en pratique clinique courante et moins la substance est intravasculaire, plus l'efficacité d'élimination est faible."
+  },
+  "next_steps": {
+    "advice": "Discuter avec le personnel infirmier et technique d'aphérèse du nombre de volumes plasmatiques à échanger.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Élimination d'une substance par échange plasmatique.",
+  "medium_description": "Estimates amount de substance (e.g. antibody) remaining dans intravascular space after given number de plasma volume exchanges.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bv",
+      "label": "[Volume sanguin total](nabda:calc.blood-volume-calculation)",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pv",
+      "label": "[Volume plasmatique](nabda:calc.blood-volume-calculation)",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "volumes",
+      "label": "Number de plasma volumes pour be exchanged",
+      "optional": false,
+      "unit": "plasma",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Reverberi R, Reverberi L. Removal kinetics of therapeutic apheresis. Blood Transfus. 2007;5(3):164-74.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2535895/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kellogg RM, Hester JP. Kinetics modeling of plasma exchange: intra- and post-plasma exchange. J Clin Apher. 1988;4(4):183-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3220819/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.plasma-dosage",
+    "calc.sickle-cell-rbc-exchange-volume"
+  ],
+  "source_logic_hash": "16131709a6e44776155558bfbc3040b3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10013,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

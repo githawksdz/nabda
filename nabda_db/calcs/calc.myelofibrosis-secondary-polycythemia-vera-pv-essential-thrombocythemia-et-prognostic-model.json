@@ -1,0 +1,220 @@
+{
+  "id": "calc.myelofibrosis-secondary-polycythemia-vera-pv-essential-thrombocythemia-et-prognostic-model",
+  "slug": "myelofibrosis-secondary-polycythemia-vera-pv-essential-thrombocythemia-et-prognostic-model",
+  "language": "en",
+  "title": "Myelofibrosis secondaire pour Polycythemia Vera (PV) et Essential Thrombocythemia (ET) Prognostic modèle",
+  "short_title": "MYSEC-PM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "general"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémopathie maligne",
+    "Thrombocytopenia",
+    "Polycythémie vraie",
+    "Myelofibrosis",
+    "Pancytopenia",
+    "Thrombocytémie essentielle"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Fatigue",
+    "Perte d'appétit",
+    "Numbness",
+    "Dyspnée",
+    "Douleur osseuse",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "Myelofibrosis Secondary to Polycythemia Vera (PV) and Essential Thrombocythemia (ET) Prognostic Model",
+    "MYSEC-PM",
+    "Polycythemia Vera",
+    "PV",
+    "Essential Thrombocythemia",
+    "ET",
+    "myelofibrosis",
+    "secondary myelofibrosis",
+    "myelofibrosis prognosis",
+    "secondary myelofibrosis prognosis",
+    "PV prognosis",
+    "ET prognosis",
+    "MF",
+    "SMF",
+    "PPV",
+    "PET"
+  ],
+  "dosing": false,
+  "formula": "The MYSEC-PM is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age at diagnosis of SMF | 0.15 per patient’s year of age | |\n| Hemoglobin | ≥11 g/dL | 0 |\n| <11 g/dL | 2 | |\n| Platelets | ≥150×10 9 /L | 0 |\n| <150×10 9 /L | 1 | |\n| Circulating blast cells | <3% | 0 |\n| ≥3% | 2 | |\n| CALR -unmutated genotype | No | 0 |\n| Yes | 2 | |\n| Constitutional symptoms (Fever, weight loss, night sweats) | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Aide à prédire la survie médiane, ce qui permet d'identifier les patients susceptibles de bénéficier de traitements agressifs tels que la greffe allogénique de cellules souches.\n- Facilite des discussions éclairées avec les patients sur l'évolution de leur maladie et les options thérapeutiques disponibles.\n- Comparé à d'autres modèles pronostiques de la myélofibrose, cet outil a été spécifiquement conçu et validé pour la myélofibrose secondaire, et non pour la myélofibrose primitive.",
+    "when": "- Apply to patients diagnosed with myelofibrosis secondary to polycythemia vera (PV) or essential thrombocytopenia (ET).\n- Utilize at the time of diagnosis to assess prognosis and guide initial treatment decisions.",
+    "pearls": "- Les stratégies thérapeutiques plus récentes peuvent procurer un bénéfice de survie non reflété dans l’étude de dérivation initiale.\n- N’intègre pas l’ensemble des anomalies cytogénétiques à haut risque ou des mutations moléculaires pertinentes pouvant influencer le pronostic."
+  },
+  "next_steps": {
+    "advice": "- Utilisez les catégories de risque et les estimations de survie médiane pour adapter les plans de prise en charge et guider les discussions sur les objectifs de soins avec les patients.\n- Les patients appartenant aux catégories de risque intermédiaire-2 et élevé, en particulier les sujets plus jeunes ayant un bon état fonctionnel, peuvent bénéficier d’une transplantation allogénique de cellules souches hématopoïétiques.\n- Les personnes à faible risque peuvent relever d’une approche thérapeutique plus conservatrice.\n- Ne fondez pas les décisions de prise en charge uniquement sur ces résultats ; intégrez-les au jugement clinique, aux consultations spécialisées et aux préférences des patients.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| MYSEC-PM | Risk | Median Survival |\n| --- | --- | --- |\n| <11 | Low | N/A |\n| 11-<14 | Intermediate-1 | 9.3 years |\n| 14-<16 | Intermediate-2 | 4.5 years |\n| ≥16 | High | 2.0 years |",
+  "short_description": "Post-PV/ET secondaire myelofibrosis survie prédiction.",
+  "medium_description": "Predicts survie dans post-PV et post-ET patients avec secondaire myelofibrosis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge at diagnostic ofSMF",
+      "optional": false,
+      "unit": "age_fib4",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "hb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥11 g/dL",
+          "value": 0
+        },
+        {
+          "label": "< 11 g/dL",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "plt",
+      "label": "Platelets",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥150×10⁹ /L",
+          "value": 0
+        },
+        {
+          "label": "< 150×10⁹ /L",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blst",
+      "label": "Cellules blastiques circulantes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 3%",
+          "value": 0
+        },
+        {
+          "label": "≥3%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "calr",
+      "label": "génotype *CALR* non muté",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "symp",
+      "label": "Symptômes généraux",
+      "tips": "Fièvre, amaigrissement, sueurs nocturnes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Passamonti F, Giorgino T, Mora B, et al. A clinical-molecular prognostic model to predict survival in patients with post polycythemia vera and post essential thrombocythemia myelofibrosis. Leukemia. 2017;31(12):2726-2731.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28561069/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hernández-Boluda JC, Pereira A, et al. Performance of the myelofibrosis secondary to PV and ET-prognostic model (Mysec-pm) in a series of 262 patients from the Spanish registry of myelofibrosis. Leukemia. 2018;32(2):553-555.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28935991/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Palandri F, Palumbo GA, Iurlo A, et al. Differences in presenting features, outcome and prognostic models in patients with primary myelofibrosis and post-polycythemia vera and/or post-essential thrombocythemia myelofibrosis treated with ruxolitinib. New perspective of the MYSEC-PM in a large multicenter study⁎. Seminars in Hematology. 2018;55(4):248-255.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30502854/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mora B, Rumi E, Guglielmelli P, et al. Impact of bone marrow fibrosis grade in post-polycythemia vera and post-essential thrombocythemia myelofibrosis. A study of the mysec group. Blood. 2019;134(Supplement_1):2946-2946.",
+      "href": "https://ashpublications.org/blood/article/134/Supplement_1/2946/423588/Im",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gagelmann N, Eikema DJ, de Wreede LC, et al. Comparison of dynamic international prognostic scoring system and myelofibrosis secondary to pv and et prognostic model for prediction of outcome in polycythemia vera and essential thrombocythemia myelofibrosis after allogeneic stem cell transplantation. Biology of Blood and Marrow Transplantation. 2019;25(6):e204-e208.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30930192/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.genetically-inspired-prognostic-scoring-system-gipss-primary-myelofibrosis-pmf",
+    "calc.mutation-enhanced-international-prognostic-score-system-mipss70-mipss70+",
+    "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis"
+  ],
+  "source_logic_hash": "458504c42deb55c5f0ad4be352c54f99",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10577,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

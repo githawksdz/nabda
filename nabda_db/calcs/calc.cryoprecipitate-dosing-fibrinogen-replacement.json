@@ -1,0 +1,119 @@
+{
+  "id": "calc.cryoprecipitate-dosing-fibrinogen-replacement",
+  "slug": "cryoprecipitate-dosing-fibrinogen-replacement",
+  "language": "en",
+  "title": "Cryoprecipitate posologie pour Fibrinogen Replacement",
+  "short_title": "Posologie du cryo (remplacement du fibrinogène)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "Cryo",
+    "Fibrinogen replacement"
+  ],
+  "dosing": true,
+  "formula": "Dose, units = desired fibrinogen increment, mg/dL × (plasma volume, mL / 100) / 250 mg/unit\n\nWhere desired fibrinogen increment = goal fibrinogen – initial fibrinogen\n\nand plasma volume = (1 – hematocrit) × 70 mL/kg × weight, kg\n\nNote: the equation used here assumes a typical fibrinogen content of 250 mg per unit of cryo. As a biological product, fibrinogen content can vary somewhat from unit-to-unit, but should contain at least 150 mg / unit.",
+  "how_to_use": {
+    "why": "Le cryoprécipité est un composant sanguin important, mais rarement utilisé, et les professionnels de santé cherchant à administrer ce produit peuvent ne pas connaître les stratégies posologiques appropriées. Ce calcul devrait favoriser une posologie précise et fondée sur les données probantes de ce produit sanguin.",
+    "when": "- Patients présentant une diminution acquise isolée ou exagérée du fibrinogène (hypofibrinogénémie ou hyperfibrinolyse) nécessitant une transfusion de cryoprécipités (également appelés cryo et facteur anti-hémophilique cryoprécipité).\n- Ne pas utiliser pour doser les autres facteurs présents dans le cryo (p. ex. facteur XIII, facteur VIII, facteur de von Willebrand) ni pour doser le concentré de fibrinogène.",
+    "pearls": "- For the bleeding patient, target fibrinogen levels of 150-200 mg/dL are often appropriate to ensure adequate hemostasis, and may be generally utilized as end points for desired fibrinogen increments (although individual goals may vary on a case-by-case basis).\n- As a small volume product (generally 5-20 mL of plasma per individual unit) cryo may be preferred over fresh frozen plasma (FFP) for fibrinogen replacement.\n- Primarily for use in adults.\n- If not all clinical or laboratory values are readily available for use in the equation, a commonly used shortcut is administration of one unit of cryo for every 7-10 kg of body weight of the recipient, which should result in a fibrinogen increase of 50-75 mg/dL in general."
+  },
+  "next_steps": {
+    "advice": "Demandez à votre banque de sang/service de transfusion local le nombre calculé d’unités de cryoprécipité ; les banques de sang regroupent fréquemment ces unités dans un seul contenant pour faciliter l’administration.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Posologie du cryoprécipité",
+  "medium_description": "Estimates volume de cryoprecipitate recommended pour fibrinogen replacement.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "pv",
+      "label": "[Volume plasmatique](nabda:calc.blood-volume-calculation)",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fibr_initial",
+      "label": "Fibrinogène initial",
+      "optional": false,
+      "unit": "fibrinogen",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fibr_goal",
+      "label": "Fibrinogène cible",
+      "optional": false,
+      "unit": "fibrinogen",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fibr_unit",
+      "label": "Fibrinogen content de unit",
+      "optional": false,
+      "default": 250,
+      "unit": "fibrinogen",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Roback JD. Technical Manual. American Association of Blood Banks (AABB); 2014.",
+      "href": "https://books.google.com/books/about/Technical_Manual.html?id=zLrWXwAACAAJ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Circular of Information for the Use of Human Blood and Blood Components, version 10-2017",
+      "href": "https://www.aabb.org/tm/coi/Documents/coi1017.pdf",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.sickle-cell-rbc-exchange-volume",
+    "calc.plasma-dosage"
+  ],
+  "source_logic_hash": "402f7fcf74196bc2e5f3e6a7e14f4b93",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10005,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

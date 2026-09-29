@@ -1,0 +1,324 @@
+{
+  "id": "calc.findrisc-finnish-diabetes-risk-score",
+  "slug": "findrisc-finnish-diabetes-risk-score",
+  "language": "en",
+  "title": "FINDRISC (Finnish diabète risque score)",
+  "short_title": "FINDRISC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "findrisc",
+    "findrisk",
+    "finnish",
+    "find risc"
+  ],
+  "dosing": false,
+  "formula": "The FINDRISC is calculated by adding the selected points for each variable:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Age, years | <45 | 0 | |\n| 45-54 | 2 | | |\n| 55-64 | 3 | | |\n| >64 | 4 | | |\n| BMI, kg/m 2 | <25 | 0 | |\n| 25-29.9 | 1 | | |\n| ≥30 | 3 | | |\n| Waist circumference | Men | <94 cm (37 in) | 0 |\n| 94 to <102 cm (37 to <40 in) | 3 | | |\n| ≥102 cm (≥40 in) | 4 | | |\n| Women | <80 cm (31 in) | 0 | |\n| 80 to <88 cm (31 to <35 in) | 3 | | |\n| ≥88 cm (≥35 in) | 4 | | |\n| Use of blood pressure medication | No | 0 | |\n| Yes | 2 | | |\n| History of high blood glucose | No | 0 | |\n| Yes | 5 | | |\n| Physical activity | ≥4 hr/week | 0 | |\n| <4 hr/week | 2 | | |\n| Daily consumption of vegetables, fruits, or berries | Yes | 0 | |\n| No | 1 | | |\n| Family history of diabetes | No | 0 | |\n| Yes, 2nd degree relative | 3 | | |\n| Yes, 1st degree relative | 5 | | |",
+  "how_to_use": {
+    "why": "- Identifie les personnes à risque de développer un diabète de type 2, oriente d’éventuels dépistages en laboratoire (p. ex., hémoglobine A1c) et permet la mise en œuvre d’interventions préventives.\n- Recommandé comme calculateur de risque validé par le Groupe d’étude canadien sur les soins de santé préventifs (CTFPHC).",
+    "when": "Utilisé pour évaluer le risque de diabète de type 2 chez un patient lors des consultations de suivi médical de routine.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Cet outil peut être utilisé pour identifier les facteurs de risque modifiables (p. ex., alimentation, activité physique), qui peuvent être ciblés par l’éducation du patient et des modifications du mode de vie.",
+    "critical_actions": "",
+    "management": "Suggested management based on the CTFPHC recommendations:\n\n| Score | Recommendation |\n| --- | --- |\n| 0–14 points | Routine screening for type 2 diabetes is not recommended. |\n| 15–20 points | Hemoglobin A1c screening every 3–5 years. |\n| ≥21 points | Hemoglobin A1c screening annually. |\n\nFor additional guidance on type 2 diabetes screening, please refer to the[Canadian Task Force on Preventive Health Care guidelines](https://canadiantaskforce.ca/the-canadian-task-force-on-preventive-health-care-releases-updated-guideline-for-screening-adults-for-type-2-diabetes/)."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| FINDRISC | Risk | 10-year risk of developing T2DM | |\n| --- | --- | --- | --- |\n| Men | Women | | |\n| 0-3 | Very low | 0.3% | 0.1% |\n| 4-8 | Low | 0.8% | 0.4% |\n| 9-12 | Moderate | 2.6% | 2.2% |\n| 13-20 | High | 23.1% | 14.1% |\n| ≥ 21 | Very high | ~50%* | ~50%* |\n\n*From[Lindström 2010](https://www.ncbi.nlm.nih.gov/pubmed/20513271).",
+  "short_description": "Risque de DT2",
+  "medium_description": "Identifies patients at élevé risque pour type 2 diabète.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 45",
+          "value": 0
+        },
+        {
+          "label": "45-54",
+          "value": 2
+        },
+        {
+          "label": "55-64",
+          "value": 3
+        },
+        {
+          "label": ">64",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m²",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 25",
+          "value": 0
+        },
+        {
+          "label": "25-29.9",
+          "value": 1
+        },
+        {
+          "label": "≥30",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "waistM",
+      "label": "Tour de taille",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "gender==1",
+      "options": [
+        {
+          "label": "< 94 cm (37 dans)",
+          "value": 0
+        },
+        {
+          "label": "94 pour <102 cm (37 pour <40 dans)",
+          "value": 3
+        },
+        {
+          "label": "≥102 cm (≥40 dans)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "waistW",
+      "label": "Tour de taille",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "gender==0",
+      "options": [
+        {
+          "label": "< 80 cm (31 dans)",
+          "value": 0
+        },
+        {
+          "label": "80 pour <88 cm (31 pour <35 dans)",
+          "value": 3
+        },
+        {
+          "label": "≥88 cm (≥35 dans)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bpmed",
+      "label": "Use de pression artérielle medication",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "glucose",
+      "label": "History de élevé blood glucose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "physical",
+      "label": "Activité physique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 4 h/semaine",
+          "value": 0
+        },
+        {
+          "label": "< 4 h/semaine",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "daily",
+      "label": "Consommation quotidienne de légumes, de fruits ou de baies",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "famhx",
+      "label": "Family history de diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui, parent du 2ᵉ degré",
+          "value": 3
+        },
+        {
+          "label": "Yes, 1st degree relative",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Pottie K, Jaramillo A, Lewin G, et al. Recommendations on screening for type 2 diabetes in adults. CMAJ. 2012;184(15):1687-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3478353/",
+      "kind": "international"
+    },
+    {
+      "text": "Lindström J, Tuomilehto J. The diabetes risk score: a practical tool to predict type 2 diabetes risk. Diabetes Care. 2003;26(3):725-31.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12610029 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lindström J, Absetz P, Hemiö K, Peltomäki P, Peltonen M. Reducing the risk of type 2 diabetes with nutrition and physical activity - efficacy and implementation of lifestyle interventions in Finland. Public Health Nutr. 2010;13(6A):993-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20513271 ",
+      "kind": "other"
+    },
+    {
+      "text": "Noble D, Mathur R, Dent T, Meads C, Greenhalgh T. Risk models and scores for type 2 diabetes: systematic review. BMJ. 2011;343:d7163.",
+      "href": "https://www.bmj.com/content/343/bmj.d7163 ",
+      "kind": "other"
+    },
+    {
+      "text": "Makrilakis K, Liatis S, Grammatikou S, et al. Validation of the Finnish diabetes risk score (FINDRISC) questionnaire for screening for undiagnosed type 2 diabetes, dysglycaemia and the metabolic syndrome in Greece. Diabetes Metab. 2011;37(2):144-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21144787 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang L, Zhang Z, Zhang Y, Hu G, Chen L. Evaluation of Finnish Diabetes Risk Score in screening undiagnosed diabetes and prediabetes among U.S. adults by gender and race: NHANES 1999-2010. PLoS ONE. 2014;9(5):e97865.",
+      "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0097865",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.cambridge-diabetes-risk-score",
+    "calc.body-roundness-index-bri"
+  ],
+  "source_logic_hash": "eca1fbcdc9887ec2292bea5abc20eabc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4000,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

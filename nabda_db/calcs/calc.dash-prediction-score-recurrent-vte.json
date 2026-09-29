@@ -1,0 +1,220 @@
+{
+  "id": "calc.dash-prediction-score-recurrent-vte",
+  "slug": "dash-prediction-score-recurrent-vte",
+  "language": "en",
+  "title": "Score de prédiction DASH pour la VTE récurrente",
+  "short_title": "Score DASH",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Douleur des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Clotting",
+    "VTE",
+    "DVT",
+    "PE",
+    "prediction",
+    "prognosis",
+    "d-dimer",
+    "hormone use",
+    "age",
+    "risk factors"
+  ],
+  "dosing": false,
+  "formula": "The DASH Prediction Score for Recurrent VTE is calculated by adding the selected points. See the formula table below:\n\n| Criteria | Weighted Score |\n| --- | --- |\n| D-dimer abnormal | +2 |\n| Age ≤50 years | +1 |\n| Sex - Male | +1 |\n| Hormone use at time of initial VTE (if female) | -2 |",
+  "how_to_use": {
+    "why": "- De nombreux patients diagnostiqués avec une VTE sont mis sous anticoagulation à long terme, voire à vie.\n- Cet outil prédit quels individus peuvent avoir un risque suffisamment faible pour arrêter l’anticoagulation après une période appropriée de 3-6 mois.",
+    "when": "Use as a shared decision-making aid forpatients with a first unprovoked proximal DVT or PE who have completed ≥3 months of anticoagulation and are considering stopping therapy.",
+    "pearls": "- Patients were excluded from the DASH study if they had antiphospholipid antibodies or antithrombin deficiency, or surgery, trauma, active cancer, immobility, or pregnancy/peripartum status, as these were thought to be “provoked” or “secondary” VTE.\n- The tool has been externally validated; however, recurrence risk in patients >65 years old is still >5% annually, even in patients with low scores ([Tosetto 2017](https://pubmed.ncbi.nlm.nih.gov/28762665/)).\n- Controversy exists regarding the length of time a patient should be anticoagulated after their first VTE.\n- D-dimer is measured ~1 month after stopping anticoagulation.\n- The cited 5-year recurrence rate of unprovoked VTE after stopping anticoagulation is 25%-30% ([Khan 2019](https://pubmed.ncbi.nlm.nih.gov/31340984/)), however the recurrence risk of VTE decreases with time.\n- The risk of bleeding complications due to anticoagulation increases with time of use.\n- Anticoagulation in the original study was limited to vitamin K antagonists, and its use with other drug classes has yet to be established.\n- The[2020 ASH guidelines](https://ashpublications.org/bloodadvances/article/4/19/4693/463998/American-Society-of-Hematology-2020-Guidelines-for)and[2021 CHEST guidelines](https://pubmed.ncbi.nlm.nih.gov/34352278/)suggest against routine use of prognostic scores to guide anticoagulation duration, instead favoring indefinite anticoagulation for most unprovoked VTE or VTE due to a chronic risk factor, unless bleeding risk is high."
+  },
+  "next_steps": {
+    "advice": "- A score≤1 does not mean it is safe to stop anticoagulation.\n- The decision to stop anticoagulation should consider the entire clinical scenario and a discussion of risk-benefit with the patient.\n- Some real world applications of this tool have identified populations, particularly over 65 years old, where the VTE recurrence rate was higher than 5% annually.",
+    "critical_actions": "- No decision rule should trump clinical gestalt; consider the clinical scenario before continuing or discontinuing anticoagulation for VTE.\n- This tool is meant to be applied to stable patients; it should not be applied to patients with active hemorrhage or those with signs and symptoms of VTE.\n- Plan the D-dimer draw in advance and counsel patients on VTE symptoms during the window of stopping anticoagulation.\n- If stopping anticoagulation, counsel the patient on signs and symptoms of recurrent VTE.",
+    "management": "In a patient with previously diagnosed VTE who has completed a 3-6 month course of anticoagulation:\n\n- Score ≤1: Consider **discontinuing** anticoagulation, as this group has an annual recurrence risk of 3.1%.\n- Score ≥2: Consider **continuing** anticoagulation, as this group has an annual recurrence risk of 9.3%(6.4%-12.3%)."
+  },
+  "evidence": "",
+  "more_info": "| DASH Score | Annual Recurrence Rate |\n| --- | --- |\n| -2 | 1.8%* |\n| -1 | 1.0% |\n| 0 | 2.4% |\n| 1 | 3.9% |\n| 2 | 6.3% |\n| 3 | 10.8% |\n| 4 | 19.9% |\n\n*A very small sample had DASH Score of -2 in the derivation study.",
+  "short_description": "Prédit la probabilité de récidive d'une première VTE.",
+  "medium_description": "Prédit la probabilité de récidive d'une première VTE.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ddimer",
+      "label": "D-dimères anormaux",
+      "tips": "Mesuré ~1 mois après l’arrêt de l’anticoagulation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_50",
+      "label": "Âge ≤ 50 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "male",
+      "label": "Patient de sexe masculin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hormone",
+      "label": "Utilisation d'hormones au moment de la survenue de la VTE (chez la femme)",
+      "tips": "Si le patient est de sexe masculin, sélectionner « Non »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ortel TL, Neumann I, Ageno W, et al. American Society of Hematology 2020 guidelines for management of venous thromboembolism: treatment of deep vein thrombosis and pulmonary embolism. Blood Adv. 2020;4(19):4693-4738. doi:10.1182/bloodadvances.2020001830",
+      "href": "https://ashpublications.org/bloodadvances/article/4/19/4693/463998/American-Society-of-Hematology-2020-Guidelines-for",
+      "kind": "international"
+    },
+    {
+      "text": "Stevens SM, Woller SC, Kreuziger LB, et al. Antithrombotic Therapy for VTE Disease: Second Update of the CHEST Guideline and Expert Panel Report. Chest. 2021;160(6):e545-e608. doi:10.1016/j.chest.2021.07.055",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34352278/",
+      "kind": "international"
+    },
+    {
+      "text": "Tosetto A, Iorio A, Marcucci M, Baglin T, Cushman M, Eichinger S, Palareti G, Poli D, Tait RC, Douketis J. Predicting disease recurrence in patients with previous unprovoked venous thromboembolism: a proposed prediction score (DASH).J Thromb Haemost. 2012 Jun;10(6):1019-25. doi: 10.1111/j.1538-7836.2012.04735.x.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22489957",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ensor J, Riley RD, Moore D, Snell KI, Bayliss S, Fitzmaurice D. Systematic review of prognostic models for recurrent venous thromboembolism (VTE) post-treatment of first unprovoked VTE. BMJ Open. 2016;6(5):e011190.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27154483/",
+      "kind": "other"
+    },
+    {
+      "text": "Timp JF, Lijfering WM, Rosendaal FR, le Cessie S, Cannegieter SC. Risk prediction of recurrent venous thrombosis; where are we now and what can we add? J Thromb Haemost. 2019;17(9):1527-1534.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31188515/",
+      "kind": "other"
+    },
+    {
+      "text": "Khan F, Rahman A, Carrier M, et al. Long term risk of symptomatic recurrent venous thromboembolism after discontinuation of anticoagulant treatment for first unprovoked venous thromboembolism event: systematic review and meta-analysis. BMJ. 2019;366:l4363. doi:10.1136/bmj.l4363",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31340984/",
+      "kind": "other"
+    },
+    {
+      "text": "Raj L, Presles E, Le Mao R, et al. Evaluation of venous thromboembolism recurrence scores in an unprovoked pulmonary embolism population: a post-hoc analysis of the padis-pe trial. Am J Med. 2020;133(8):e406-e421. doi:10.1016/j.amjmed.2020.03.040",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32333853/",
+      "kind": "other"
+    },
+    {
+      "text": "de Winter MA, van Es N, Büller HR, Visseren FL, Nijkeuter M. Prediction models for recurrence and bleeding in patients with venous thromboembolism: a systematic review and critical appraisal. Thromb Res. 2021;199:85-96.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33485094/",
+      "kind": "other"
+    },
+    {
+      "text": "Kearon C, Iorio A, Palareti G. Risk of recurrent venous thromboembolism after stopping treatment in cohort studies: recommendation for acceptable rates and standardized reporting. J Thromb Haemost 2010; 8: 2313–5.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/j.1538-7836.2010.03991.x/full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tosetto A, Testa S, Martinelli I, et al. External validation of the DASH prediction rule: a retrospective cohort study. J Thromb Haemost. 2017;15(10):1963-1970.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/jth.13781/abstract",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.padua-prediction-score-risk-vte",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+    "calc.caprini-score-venous-thromboembolism-2005"
+  ],
+  "source_logic_hash": "81780aedf8eb27e47c6490c0e3dcedbe",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2011,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = []; var msg = ''; var msgAppend = ''; var consider = ''; var u = parseFloat(ddimer) + parseFloat(age_50) + parseFloat(male) + parseFloat(hormone); if (u == -2) {msg = '1.8% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; msgAppend = '<br/><br/>NOTE: A very small group (2.3% of studied sample) had DASH Score of -2 in the derivation study.'; } else if (u == -1) {msg = '1.0% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 0) {msg = '2.4% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 1) {msg = '3.9% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider discontinuing anticoagulation.'; } else if (u == 2) {msg = '6.3% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } else if (u == 3) {msg = '10.8% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } else if (u == 4) {msg = '19.9% annual risk of VTE recurrence.'; consider = '<br/><br/>Consider continuing anticoagulation.'; } \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points',\n    message: msg \n}); \ncalc_output.push({\n    name: '2011_DASH Score_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg + consider + msgAppend \n});",
+  "before_use": null,
+  "instructions": "À ne PAS utiliser chez les patients présentant :\n\n- Hémorragie active.\n- Signes/symptômes de VTE.\n- Cancer actif.\n- Grossesse ou puerpéralité.\n- Syndrome des antiphospholipides.\n- Déficit en antithrombine.\n- VTE récurrente.\n- DVT distale comme événement index.\n- VTE associée à une chirurgie, un traumatisme ou une immobilisation (il s'agit d'événements « provoqués »).",
+  "contributor_ids": [
+    "abbas-husain-md"
+  ],
+  "creator_names": [
+    "Dr. Alberto Tosetto"
+  ],
+  "measurement_ids": [
+    "ddimer"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "ba1b095836e3802396130b005e3939ea41d388b2febd9640894b1b2a5b70167d"
+}

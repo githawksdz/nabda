@@ -1,0 +1,261 @@
+{
+  "id": "calc.tash-score-trauma-associated-severe-hemorrhage",
+  "slug": "tash-score-trauma-associated-severe-hemorrhage",
+  "language": "en",
+  "title": "TASH score (traumatisme associé Severe hémorragie)",
+  "short_title": "Score TASH",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "trauma",
+    "transfusion",
+    "hemorrhage",
+    "trauma hemorrhage"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Les praticiens peuvent attendre trop longtemps avant de débuter une transfusion massive, augmentant ainsi la morbidité et la mortalité du patient en *ne* transfusant *pas* suffisamment tôt, ou peuvent augmenter la morbidité et la mortalité en transfusant des produits sanguins de manière inutile.",
+    "when": "Déterminer quand initier les protocoles de transfusion massive chez les patients traumatisés.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Les protocoles de transfusion massive sont propres à chaque institution, mais sont souvent de 1:1:1 ou 1:1:2 pour le plasma frais congelé, les plaquettes et les concentrés de globules rouges ([JAMA, 2015](https://www.ncbi.nlm.nih.gov/pubmed/25647203)).\n- Rappel : le score TASH n'indique pas *si* les patients traumatisés doivent recevoir une transfusion, mais seulement s'ils doivent recevoir du sang dans le cadre d'un protocole de transfusion massive.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "The Trauma Associated Severe Hemorrhage (TASH) Score is a derived (and then validated) score from a database of over 35,000 German trauma patients to predict the need for massive transfusion.",
+  "short_description": "Need pour massive transfusion; calculated after labs.",
+  "medium_description": "Predicts need pour massive transfusion basé sur clinique et laboratoire data.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hemoglobin",
+      "label": "Hemoglobin",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 7 g/dL",
+          "value": 8
+        },
+        {
+          "label": "< 9 g/dL",
+          "value": 6
+        },
+        {
+          "label": "< 10 g/dL",
+          "value": 4
+        },
+        {
+          "label": "< 11 g/dL",
+          "value": 3
+        },
+        {
+          "label": "< 12 g/dL",
+          "value": 2
+        },
+        {
+          "label": "≥ 12 g/dL",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "base_excess",
+      "label": "Déficit en bases",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< -10 mmol/L",
+          "value": 4
+        },
+        {
+          "label": "< -6 mmol/L",
+          "value": 3
+        },
+        {
+          "label": "< -2 mmol/L",
+          "value": 1
+        },
+        {
+          "label": "≥ -2 mmol/L",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "systolic_bp",
+      "label": "Systolic pression artérielle",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 100 mm Hg",
+          "value": 4
+        },
+        {
+          "label": "< 120 mm Hg",
+          "value": 1
+        },
+        {
+          "label": "≥ 120 mm Hg",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">120 bpm",
+          "value": 2
+        },
+        {
+          "label": "≤ 120 bpm",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fast",
+      "label": "Positive FAST pour Intra-Abdominal Fluid",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pelvic_fracture",
+      "label": "Fracture du bassin instable sur le plan clinique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "femur_fracture",
+      "label": "Fracture ouverte ou luxée du fémur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Yücel N, Lefering R, Maegele M, Vorweg M, Tjardes T, Ruchholtz S, Neugebauer EA, Wappler F, Bouillon B, Rixen D; Polytrauma Study Group of the German Trauma Society. Trauma Associated Severe Hemorrhage (TASH)-Score: probability of mass transfusion as surrogate for life threatening hemorrhage after multiple trauma. J Trauma. 2006 Jun;60(6):1228-36; discussion 1236-7. PubMed PMID: 16766965.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16766965",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Maegele M, Lefering R, Wafaisade A, Theodorou P, Wutzler S, Fischer P, Bouillon B, Paffrath T; Trauma Registry of Deutsche Gesellschaft für Unfallchirurgie (TR-DGU). Revalidation and update of the TASH-Score: a scoring system to predict the probability for massive transfusion as a surrogate for life-threatening haemorrhage after severe injury. Vox Sang. 2011 Feb;100(2):231-8. doi: 10.1111/j.1423-0410.2010.01387.x. Epub 2010 Aug 24. PubMed PMID: 20735809.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20735809",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shock-index-pediatric-age-adjusted-sipa",
+    "calc.abc-score-massive-transfusion",
+    "calc.shock-index"
+  ],
+  "source_logic_hash": "ba9990e8026597ba056c4ec3ff883813",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1236,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

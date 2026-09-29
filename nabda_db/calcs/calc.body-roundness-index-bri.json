@@ -1,0 +1,137 @@
+{
+  "id": "calc.body-roundness-index-bri",
+  "slug": "body-roundness-index-bri",
+  "language": "en",
+  "title": "Indice de rotondité corporelle (BRI)",
+  "short_title": "BRI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hypothyroidism",
+    "Obesity",
+    "Trouble du comportement alimentaire"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Body Roundness Index (BRI)",
+    "Body Roundness Index",
+    "BRI",
+    "VAT",
+    "body fat",
+    "visceral adipose tissue",
+    "waist circumference",
+    "hip circumference",
+    "body mass index",
+    "BMI",
+    "metabolic syndrome",
+    "obese",
+    "obesity",
+    "CVD",
+    "T2DM",
+    "WC",
+    "HC",
+    "body measure",
+    "fat free mass",
+    "FFM"
+  ],
+  "dosing": false,
+  "formula": "BRI = 364.2 - 365.5 × {1 − [(WC/2π)/(0.5 × H)]^2^}^0.5^\nWC : tour de taille, m\nH : taille (stature), m",
+  "how_to_use": {
+    "why": "La répartition des graisses, en particulier la graisse viscérale, est étroitement liée aux maladies cardiovasculaires et à la mortalité toutes causes confondues. Cela pourrait ne pas être reflété avec précision par d'autres outils tels que l'IMC.",
+    "when": "Utilisé dans les bilans de santé de routine pour évaluer la morphologie corporelle et estimer la masse grasse, permettant d’identifier les personnes présentant un risque accru de pathologies liées à l’obésité (p. ex. maladie cardiométabolique) et de mortalité toutes causes confondues.",
+    "pearls": "- Comparable to or better than BMI and waist-to-hip ratio in estimating percent body fat and total percent visceral adipose tissue.\n- Potentially superior in predicting the risk of mortality and cardiometabolic disease."
+  },
+  "next_steps": {
+    "advice": "- Des valeurs de BRI plus élevées indiquent une morphologie corporelle plus sphérique, associée à une graisse viscérale plus importante et à un risque métabolique accru.\n- Certaines études ont montré qu'une valeur de BRI très basse (<3.4) est également associée à une mortalité toutes causes confondues augmentée, en particulier chez les personnes ≥65 ans.\n- Pour les personnes présentant des valeurs élevées de BRI :\n\n - Des examens diagnostiques complémentaires (p. ex., bilan lipidique, glycémie à jeun) peuvent être recommandés.\n - Discuter des modifications du mode de vie (p. ex., alimentation, activité physique).\n- Assurer une surveillance régulière pour évaluer l'efficacité des interventions et l'évolution du BRI au fil du temps.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| BRI | HR of All-Cause Mortality (95% CI) |\n| --- | --- |\n| 1.05 to <3.41 | 0.57 (0.49-0.67) |\n| 3.41 to <4.45 | 0.81 (0.69-0.95) |\n| 4.45 to <5.46 | 1 (reference) |\n| 5.46 to <6.91 | 1.48 (1.30-1.69) |\n| ≥6.91 | 1.62 (1.42-1.85) |\n\nHazard Ratio is a statistical measurement used to define the frequency of an outcome event in one group versus another, over a given period of time.\n\nIn a recent study by[Zhang et al](https://pubmed.ncbi.nlm.nih.gov/38837158/), the period of time was 20 years.",
+  "short_description": "% de masse grasse corporelle et % de VAT.",
+  "medium_description": "Estime le % de masse grasse et le % de tissu adipeux viscéral (VAT).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wc",
+      "label": "Tour de taille",
+      "optional": false,
+      "unit": "waist_circumference",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ht",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Thomas DM, Bredlau C, Bosy-Westphal A, et al. Relationships between body roundness with body fat and visceral adipose tissue emerging from a new geometrical model: Body Roundness with Body Fat & Visceral Adipose Tissue. Obesity. 2013;21(11):2264-2271.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23519954/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wu L, Pu H, Zhang M, Hu H, Wan Q. Non-linear relationship between the body roundness index and incident type 2 diabetes in Japan: a secondary retrospective analysis. J Transl Med. 2022;20(1):110.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35255926/",
+      "kind": "other"
+    },
+    {
+      "text": "Cai X, Song S, Hu J, et al. Body roundness index improves the predictive value of cardiovascular disease risk in hypertensive patients with obstructive sleep apnea: a cohort study. Clinical and Experimental Hypertension. 2023;45(1):2259132.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37805984/",
+      "kind": "other"
+    },
+    {
+      "text": "Rico‐Martín S, Calderón‐García JF, Sánchez‐Rey P, Franco‐Antonio C, Martínez Alvarez M, Sánchez Muñoz‐Torrero JF. Effectiveness of body roundness index in predicting metabolic syndrome: A systematic review and meta‐analysis. Obesity Reviews. 2020;21(7):e13023.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32267621/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang X, Ma N, Lin Q, et al. Body roundness index and all-cause mortality among us adults. JAMA Netw Open. 2024;7(6):e2415051.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38837158/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.fat-free-mass-ffm",
+    "calc.relative-fat-mass-rfm"
+  ],
+  "source_logic_hash": "28e90643114f03349378367cecb7a9c2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10575,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

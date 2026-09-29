@@ -1,0 +1,251 @@
+{
+  "id": "calc.perioperative-nutrition-screen-pons",
+  "slug": "perioperative-nutrition-screen-pons",
+  "language": "en",
+  "title": "Dépistage nutritionnel périopératoire (PONS)",
+  "short_title": "PONS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "medecine-interne",
+    "neurochirurgie",
+    "orthopedie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Tout/Tous",
+    "Malnutrition"
+  ],
+  "chief_complaints": [
+    "Tout/Tous",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Perioperative Nutrition Screen",
+    "PONS",
+    "periop nutrition",
+    "nutrition periop",
+    "operation nutrition",
+    "nutrition operarion",
+    "postop nutrition",
+    "nutrition postop",
+    "preop nutrition",
+    "nutrition preop",
+    "nutrition surgery",
+    "nutrition screen",
+    "perioperative malnutrition",
+    "surgery malnutrition",
+    "periop screening",
+    "surgery screening",
+    "EN",
+    "IMN",
+    "ONS",
+    "PN",
+    "enteral nutrition",
+    "immunonutrition",
+    "oral nutritional supplement",
+    "parenteral nutrition"
+  ],
+  "dosing": false,
+  "formula": "The PONS is positive if any of the following are present:\n\n- [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) <18.5 kg/m² (<20 kg/m² if age >65).\n- Unplanned weight loss >10% in past 6 months.\n- Have been eating <50% of normal diet in preceding week.\n- Albumin <3.0 g/dL.",
+  "how_to_use": {
+    "why": "- La malnutrition est un prédicteur indépendant de la morbidité et de la mortalité postopératoires et est associée à une augmentation de la durée de séjour et des taux de réadmission.\n- Cet outil dépiste le risque de malnutrition, permettant une évaluation plus approfondie, une optimisation nutritionnelle périopératoire et une amélioration potentielle des résultats chirurgicaux.",
+    "when": "À utiliser lors de la consultation préopératoire chez les patients adultes (≥ 18 ans) devant bénéficier d'une chirurgie majeure ou programmée.",
+    "pearls": "- Developed within the American Society for Enhanced Recovery (ASER)/Perioperative Quality Initiative (POQI) framework and modified from the [Malnutrition Universal Screening Tool](nabda:calc.malnutrition-universal-screening-tool-must) .\n- Not diagnostic for malnutrition; this tool screens for nutrition risk.\n- Does not risk-stratify surgical outcomes; performance for predicting overall postoperative complications is modest and varies by population.\n- Although albumin is neither sensitive nor specific for malnutrition, it was included due to low cost, common use in perioperative testing, and strong associations with surgical risk and mortality.\n- Inflammatory states can lower serum albumin; interpret with caution if albumin is the only criterion met."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "For any **positive criteria** :\n\n- The patient is considered at high nutrition risk.\n- Refer the patient to a registered dietitian for a comprehensive assessment and a perioperative nutrition plan, such as:\n\n - Minimizing or avoiding preoperative fasting.\n - Early postoperative feeding, when appropriate.\n - Preoperative and postoperative supplementation, such as\n\n - High-protein oral nutrition supplements.\n - Enteral nutrition for patients unable to meet daily needs orally.\n - Parenteral nutrition if enteral nutrition does not meet nutritional goals.\n\nFor more detailed recommendations, please see the[ASER/POQI Joint Consensus Statement](https://pubmed.ncbi.nlm.nih.gov/29369092/)."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| PONS | Malnutrition Risk |\n| --- | --- |\n| Negative | Low |\n| Positive | High |",
+  "short_description": "Évalue le risque nutritionnel périopératoire.",
+  "medium_description": "Évalue le risque nutritionnel périopératoire.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤65",
+          "value": 0
+        },
+        {
+          "label": ">65",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi_young",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m²",
+      "optional": false,
+      "default": 1,
+      "show_points": false,
+      "conditionality": "age == 0",
+      "options": [
+        {
+          "label": "< 18,5",
+          "value": 0
+        },
+        {
+          "label": "≥18,5\n\nNote : en français médical, la virgule est le séparateur décimal. Toutefois, la consigne impose de ne changer aucun chiffre ; si le format doit rester strictement identique à la source, écrire :\n\n≥18.5",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi_old",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m²",
+      "optional": false,
+      "default": 1,
+      "show_points": false,
+      "conditionality": "age == 1",
+      "options": [
+        {
+          "label": "< 20",
+          "value": 0
+        },
+        {
+          "label": "≥20",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weight_loss",
+      "label": "Perte de poids involontaire >10 % au cours des 6 derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diet",
+      "label": "Have been eating <50% de normal diet dans preceding week",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alb",
+      "label": "Albumine, g/dL",
+      "optional": false,
+      "default": 1,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 3,0",
+          "value": 0
+        },
+        {
+          "label": "≥3,0",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Weimann A, Braga M, Carli F, et al. ESPEN practical guideline: Clinical nutrition in surgery. Clin Nutr. 2021;40(7):4745-4761. doi:10.1016/j.clnu.2021.03.031",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34850403/",
+      "kind": "international"
+    },
+    {
+      "text": "Wischmeyer PE, Carli F, Evans DC, et al. American society for enhanced recovery and Perioperative Quality Initiative joint consensus statement on nutrition screening and therapy within a surgical enhanced recovery pathway. Anesth Analg. 2018;126(6):1883-1895. doi:10.1213/ANE.0000000000002743",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29369092/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Evans DC, Corkins MR, Malone A, et al. The use of visceral proteins as nutrition markers: An ASPEN position paper. Nutr Clin Pract. 2021;36(1):22-28. doi:10.1002/ncp.10588",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33125793/",
+      "kind": "other"
+    },
+    {
+      "text": "Williams DG, Aronson S, Murray S, et al. Validation of the perioperative nutrition screen for prediction of postoperative outcomes. JPEN J Parenter Enteral Nutr. 2022;46(6):1307-1315. doi:10.1002/jpen.2310",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34850403/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.malnutrition-universal-screening-tool-must"
+  ],
+  "source_logic_hash": "3c44e3ce1f173247f83a4b317e527e28",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.malnutrition-universal-screening-tool-must",
+      "text": "Malnutrition Universal Screening Tool"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.malnutrition-universal-screening-tool-must",
+      "text": "Malnutrition Universal Screening Tool"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10657,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar age = parseFloat(age);\nvar bmi_young = parseFloat(bmi_young);\nvar bmi_old = parseFloat(bmi_old);\nvar weight_loss = parseFloat(weight_loss);\nvar diet = parseFloat(diet);\nvar alb = parseFloat(alb);\n\n// pos/neg\n\nvar pons, risk;\nif (age == 0) {\n    if (bmi_young == 0 || weight_loss == 1 || diet == 1 || alb == 0) {\n        pons = 'Positive';\n        risk = 'High';\n    } else {\n        pons = 'Negative';\n        risk = 'Low';\n    }\n} else if (age == 1) {\n    if (bmi_old == 0 || weight_loss == 1 || diet == 1 || alb == 0) {\n        pons = 'Positive';\n        risk = 'High';\n    } else {\n        pons = 'Negative';\n        risk = 'Low';\n    }\n} \n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: pons,\n    value_text: '',\n    message: 'PONS'\n});\ncalc_output.push({\n    name: '10657_PONS_result',\n    value: pons,\n    value_text: '',\n    message: 'PONS'\n});\ncalc_output.push({\n    name: '10657_PONS_interpretation',\n    value: risk,\n    value_text: '',\n    message: 'Malnutrition risk'\n});",
+  "before_use": null,
+  "instructions": "Pour les patients >65 ans, cet outil utilise intentionnellement le seuil d'**IMC ajusté selon l'âge** de 20 kg/m².",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Paul E. Wischmeyer"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "eb7633731b674fcf27d952924728de32015040000fc3fa9bedce243cc691d4bd"
+}

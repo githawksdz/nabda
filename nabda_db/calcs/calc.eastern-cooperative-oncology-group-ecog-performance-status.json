@@ -1,0 +1,130 @@
+{
+  "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+  "slug": "eastern-cooperative-oncology-group-ecog-performance-status",
+  "language": "en",
+  "title": "Indice de performance de l'Eastern Cooperative Oncology Group (ECOG)",
+  "short_title": "Indice de performance ECOG",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "chemo",
+    "chemotherapy",
+    "ability",
+    "special care",
+    "ecog",
+    "who"
+  ],
+  "dosing": false,
+  "formula": "| Critères | Score | Description |\n| --- | --- | --- |\n| Asymptomatique | 0 | Entièrement actif, capable de poursuivre toutes les activités antérieures à la maladie sans restriction. |\n| Symptomatique mais complètement ambulatoire | 1 | Activité physiquement exigeante limitée, mais ambulatoire et capable d’effectuer un travail de nature légère ou sédentaire. Par exemple, tâches ménagères légères, travail de bureau. |\n| Symptomatique, <50 % au lit pendant la journée | 2 | Ambulatoire et capable d’assurer tous les soins personnels, mais incapable d’exercer toute activité professionnelle. Levé et actif plus de 50 % des heures d’éveil. |\n| Symptomatique, >50 % au lit, mais non confiné au lit | 3 | Capable de soins personnels limités seulement, confiné au lit ou au fauteuil 50 % ou plus des heures d’éveil. |\n| Confiné au lit | 4 | Complètement incapable. Ne peut assurer aucun soin personnel. Totalement confiné au lit ou au fauteuil. |\n| Décès | 5 | |",
+  "how_to_use": {
+    "why": "L’indice de performance est fortement corrélé à la survie et aux besoins en services, et peut aider à prédire la capacité à tolérer les traitements.",
+    "when": "Patients atteints d’un cancer actif sous traitement.",
+    "pearls": "- L'ECOG Performance Status est une mesure simple du statut fonctionnel.\n- Ses scores vont de 0 à 5 et sont corrélés aux scores de 0 à 100 de l'[échelle de Karnofsky](nabda:calc.karnofsky-performance-status-scale).\n- Il est couramment utilisé comme outil pronostique, comme critère de sélection pour la recherche en oncologie et pour aider à déterminer le traitement."
+  },
+  "next_steps": {
+    "advice": "Le statut de performance ECOG peut être légèrement meilleur que [Karnofsky](nabda:calc.karnofsky-performance-status-scale) pour la discrimination pronostique et, en tant qu’adaptation de [Karnofsky](nabda:calc.karnofsky-performance-status-scale), est probablement au moins similaire dans les autres domaines. Il est également plus simple à utiliser, et peut donc être préféré.",
+    "critical_actions": "L’ECOG Performance Status et les autres échelles de performance doivent être utilisés dans l’évaluation holistique des patients atteints de cancer, bien que leur exactitude en tant qu’outils pronostiques dans des cas individuels ne soit pas encore démontrée.",
+    "management": "We are unaware of validated management algorithms using the ECOG Performance Status."
+  },
+  "evidence": "",
+  "more_info": "[Karnofsky](nabda:calc.karnofsky-performance-status-scale) vs. ECOG\n\n| ECOG PERFORMANCE STATUS | [KARNOFSKY PERFORMANCE STATUS](nabda:calc.karnofsky-performance-status-scale\\) |\n| --- | --- |\n| 0—Fully active, able to carry on all pre-disease performance without restriction | 100—Normal, no complaints; no evidence of disease |\n| 90—Able to carry on normal activity; minor signs or symptoms of disease | |\n| 1—Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work | 80—Normal activity with effort, some signs or symptoms of disease |\n| 70—Cares for self but unable to carry on normal activity or to do active work | |\n| 2—Ambulatory and capable of all selfcare but unable to carry out any work activities; up and about more than 50% of waking hours | 60—Requires occasional assistance but is able to care for most of personal needs |\n| 50—Requires considerable assistance and frequent medical care | |\n| 3—Capable of only limited selfcare; confined to bed or chair more than 50% of waking hours | 40—Disabled; requires special care and assistance |\n| 30—Severely disabled; hospitalization is indicated although death not imminent | |\n| 4—Completely disabled; cannot carry on any selfcare; totally confined to bed or chair | 20—Very ill; hospitalization and active supportive care necessary |\n| 10—Moribund | |\n| 5—Dead | 0—Dead |",
+  "short_description": "Tolérance à la chimiothérapie, plus simple que l’échelle de Karnofsky.",
+  "medium_description": "Determines ability de patient pour tolerate therapies dans serious maladie, specifically pour chemotherapy, simpler than [Karnofsky Scale](nabda:calc.karnofsky-performance-status-scale).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "zubrod",
+      "label": "Description du patient",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Asymptomatique",
+          "value": 0
+        },
+        {
+          "label": "Symptomatique mais complètement ambulatoire",
+          "value": 1
+        },
+        {
+          "label": "Symptomatique, <50 % de la journée au lit",
+          "value": 2
+        },
+        {
+          "label": "Symptomatique, >50 % du temps alité, mais non grabataire",
+          "value": 3
+        },
+        {
+          "label": "Alité",
+          "value": 4
+        },
+        {
+          "label": "Décès",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Oken MM, Creech RH, Tormey DC, et al. Toxicity and response criteria of the Eastern Cooperative Oncology Group. Am. J. Clin. Oncol. 1982; 5 (6): 649–55. doi:10.1097/00000421-198212000-00014.PMID 7165009.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7165009",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Buccheri G, Ferrigno D, Tamburini M. Karnofsky and ECOG performance status scoring in lung cancer: a prospective, longitudinal study of 536 patients from a single institution. Eur J Cancer. 1996 Jun;32A(7):1135-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8758243",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.karnofsky-performance-status-scale",
+    "calc.lansky-play-performance-scale-pediatric-functional-status",
+    "calc.common-terminology-criteria-adverse-events-ctcae"
+  ],
+  "source_logic_hash": "725dae944c23c8db4745f4e4a4be2218",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3170,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n    var u;\n    var msg = '';\n    var mini_msg = '';\n    u = parseFloat(zubrod);\n    if (u == 0) { mini_msg='Fully active'; msg = 'Fully active, able to carry on all predisease activities without restriction.'; }\n    if (u == 1) { mini_msg='Restricted in strenuous activity'; msg = 'Restricted in strenuous activity, ambulatory and able to do light work.'; }\n    if (u == 2) { mini_msg='Capable of all self care'; msg = 'Capable of all self care, but no work activities, out of bed >50% of day.'; }\n    if (u == 3) { mini_msg='Capable of limited self-care'; msg = 'Capable of limited self-care, confined to bed or chair >50% of day.'; }\n    if (u == 4) { mini_msg='Completely disabled, no self-care'; msg = 'Completely disabled, no self-care, confined to bed or chair.'; }\n    if (u == 5) { mini_msg='Dead'; msg = 'Dead.'; }\n    var addmsg = 'See definitions of the ECOG/Zubrod Score in the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3170_ECOG Performance Status_result',\n    value: u,\n    value_text: 'points',\n    message: msg+'<br/><br/>'+addmsg\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Martin Oken"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "5dff7fc105f4ee7001d2d214170efd086d6cc151fccbef3b2c236ce153106099"
+}

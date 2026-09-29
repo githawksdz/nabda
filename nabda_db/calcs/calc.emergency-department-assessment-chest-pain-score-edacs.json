@@ -1,0 +1,269 @@
+{
+  "id": "calc.emergency-department-assessment-chest-pain-score-edacs",
+  "slug": "emergency-department-assessment-chest-pain-score-edacs",
+  "language": "en",
+  "title": "Service d'accueil des urgences évaluation de douleur thoracique score (EDACS)",
+  "short_title": "EDACS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Chest pain",
+    "ACS",
+    "emergency",
+    "EDACS",
+    "Emergency department cp",
+    "ER chest pain score",
+    "early discharge chest pain score",
+    "ACS ED score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; les points sont attribués ci-dessous. Si le score est <16, le patient peut être évalué dans le groupe « faible risque » avec un ECG non ischémique et des troponines négatives à 0 h et à 2 h. Ces patients présentant ces deux caractéristiques supplémentaires sont à faible risque d'événement cardiaque indésirable majeur.\n\nSi le score est ≥16 ou si l'ECG montre une nouvelle ischémie ou si la troponine à 0 h est négative, alors le patient n'est pas à faible risque et ne relève pas d'une sortie précoce (de toute évidence, si la première troponine est négative et que le patient appartient au groupe à faible risque, mais que la deuxième troponine est positive, ce patient ne remplit plus les critères de faible risque).\n\nUn ECG négatif est défini comme l'absence de signes nouveaux ou préoccupants d'ischémie, notamment un sus-décalage ou un sous-décalage du segment ST, une inversion de l'onde T, ou d'autres modifications pathologiques évocatrices d'ischémie ou de lésion myocardique.\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge | 18-45 | 2 |\n| 46-50 | 4 | |\n| 51-55 | 6 | |\n| 56-60 | 8 | |\n| 61-65 | 10 | |\n| 66-70 | 12 | |\n| 71-75 | 14 | |\n| 76-80 | 16 | |\n| 81-85 | 18 | |\n| ≥86 | 20 | |\n| Sexe | Féminin | 0 |\n| Masculin | 6 | |\n| Coronaropathie connue ou ≥3 facteurs de risque* | Non | 0 |\n| Oui | 4 | |\n| Symptômes et signes | | |\n| Diaphorèse | Non | 0 |\n| Oui | 3 | |\n| Douleur irradiant vers le bras, l'épaule, le cou ou la mâchoire | Non | 0 |\n| Oui | 5 | |\n| Douleur apparue ou aggravée à l'inspiration | Non | 0 |\n| Oui | -4 | |\n| Douleur reproduite à la palpation | Non | 0 |\n| Oui | -6 | |\n\n*[Than et al.](https://www.ncbi.nlm.nih.gov/pubmed/24428678) définissent la coronaropathie (CAD) comme « un antécédent d'infarctus aigu du myocarde, un pontage aortocoronarien ou une intervention percutanée ». Les facteurs de risque comprennent la dyslipidémie, le diabète, l'hypertension, le tabagisme actif et des antécédents familiaux de CAD prématurée. Les facteurs de risque ne s'appliquent qu'aux patients de 18 à 50 ans.",
+  "how_to_use": {
+    "why": "- Patients who require serial troponin testing (typically at 0 and 6 hours to rule out MI, though many EDs now use 0/1-hour or 0/2-hour high-sensitivity troponin pathways) and additional risk stratification often require an extended ED evaluation.\n- The authors of the original study identified a low-risk group (~45%) that could safely be discharged from the ED after two biomarkers, ECG, and a history and physical examination.",
+    "when": "- Patients presenting with chest pain or other anginal symptoms who require evaluation for possible acute coronary syndrome (ACS), are potentially low risk, and may be appropriate for early discharge from the emergency department (ED).\n- Although initially created without ECG or cardiac biomarkers, this tool should now be applied as part of the EDACS-ADP (accelerated diagnostic protocol), which includes ECG and troponin testing at 0 and 2 hours.",
+    "pearls": "- The EDACS-ADP study included any symptoms lasting >5 minutes warranted evaluation for possible ACS; this definition is broader than other studies (e.g., [Vancouver Chest Pain Rule](nabda:calc.vancouver-chest-pain-rule) ), which included only patients with chest pain.\n- The tool safely identifies a higher proportion of patients as low risk for major adverse cardiac events (MACE) compared with other ACS clinical decision scores.\n- Substantial weight is placed on age, making it less likely for older adults to be classified as low risk (which may reflect underlying risk profile).\n- Like other chest pain evaluation studies, the primary outcome was MACE, defined as any of the following:\n\n - ST-elevation or non-ST-elevation myocardial infarction (MI).\n - Need for emergency revascularization.\n - Death from cardiovascular causes.\n - Ventricular arrhythmia.\n - Cardiac arrest.\n - Cardiogenic shock.\n - High-grade atrioventricular block.\n- The goal of these rules is to identify a low-risk population requiring less testing than higher-risk patients; it is a rule-out tool that prioritizes sensitivity over specificity.\n- The target sensitivity was ≥99%, which was achieved in the original study (see[Evidence Appraisal](#evidence)).\n- While known coronary artery disease (CAD) and cardiac risk factors are included in the final model to improve clinical relevance and face validity, they were not identified as independent predictors in the multivariate logistic regression.\n\n - As a result, there may be a paradoxical decrease in predicted risk after the age cutoff of 50 years.\n - Inclusion of these variables did not affect the tool's performance ([Than 2014](https://www.ncbi.nlm.nih.gov/pubmed/24428678))."
+  },
+  "next_steps": {
+    "advice": "Barring other concerning features for ACS or other life-threatening causes of chest pain (e.g., pneumothorax, pulmonary embolism, cardiac tamponade, aortic dissection, esophageal rupture), patients who meet low-risk criteria can be considered for discharge after negative 0- and 2-hour troponin testing, with close follow-up arranged with their primary care physician.\n\n**Patients who do not meet the low-risk criteria should undergo an MI rule-out in accordance with standard chest pain guidelines and institutional protocols.**",
+    "critical_actions": "- **Risque faible :** La sortie du patient peut être envisagée, avec un suivi ambulatoire précoce et des examens complémentaires si nécessaire.\n- **Risque non faible :** Poursuivre la prise en charge habituelle et la surveillance continue.",
+    "management": "- **Low risk:** Consider other causes of chest pain (e.g., aortic, esophageal, pulmonary, cardiac, abdominal, musculoskeletal sources) prior to discharge.\n- **Not low risk:** Manage according to standard chest pain protocols, including (but not limited to) consideration of aspirin, nitroglycerin, and serial ECGs and cardiac biomarkers at a minimum."
+  },
+  "evidence": "In the[original paper](https://www.ncbi.nlm.nih.gov/pubmed/24428678), the EDACS-ADP was 99-100% sensitive for correctly identifying patients as low-risk and identified 45% of its cohort as low-risk. The overall prevalence of MACE in the study population was 13%–15%. A notable strength of this work was its prospective derivation design.\n\nA 2015 U.S. single-center secondary analysis of the HEART Pathway randomized controlled trial ([Stopyra 2015](https://pubmed.ncbi.nlm.nih.gov/26569652/)) evaluated EDACS-ADP in 282 patients in the emergency department with suspected ACS. The protocol classified 66.7% of patients as low risk, with 1.1% experiencing 30-day MACE (sensitivity 88.2%, negative predictive value [NPV] 98.9%).\n\nA 2016 prospective, pragmatic randomized controlled trial of 558 patients in New Zealand ([Than 2016](https://www.ncbi.nlm.nih.gov/pubmed/?term=26947800)) comparing the EDACS-ADP and ADAPT-ADP found that the EDACS identified a higher proportion of low-risk patients (41.6% vs. 30.5%) with both groups having a NPV of 100%. However, the primary outcome of the proportion of patients safely discharged within 6 hours was the same in EDACS and ADAPT-ADP groups (32.3% vs. 34.4% respectively).\n\nA 2016 retrospective external validation ([Flaws 2016](https://www.ncbi.nlm.nih.gov/pubmed/?term=27406833)) of 763 patients in Vancouver, Canada found the EDACS-ADP to have 100% sensitivity and 100% negative predictive value, while correctly identifying 41.6% of its cohort as low risk.\n\nA very large 2018 retrospective study of 118,822 patients treated in the Kaiser system in Northern California from 2013-2015 ([Mark 2018](https://www.ncbi.nlm.nih.gov/pubmed/?term=29420956)), compared the modified HEART score to the original and simplified EDACS rules and found that while all scores predicted low risk 60-day MACE (NPVs of >99% in all cases), the original EDACS identified a larger proportion of low risk patients (60.8%) vs. the HEART score (51.8%) or simplified EDACS (48.1%).\n\nA 2021 systematic review and meta-analysis ([Boyle 2021](https://pubmed.ncbi.nlm.nih.gov/33461885/)) of 11,578 patients reported a pooled sensitivity of 96% and specificity of 61% for EDACS in predicting 30-day MACE. Approximately half of all chest pain patients were classified as low risk, with fewer than 1% experiencing a major adverse cardiac event. While the tool shows strong overall accuracy for early discharge decisions, its performance relies on consistent application of serial troponin testing.\n\nA 2025 prospective observational study in Turkey ([Ozkan 2025](https://pubmed.ncbi.nlm.nih.gov/40537295/)) involving more than 800 patients with chest pain found that EDACS alone identified low-risk patients with a 95.8% NPV, while EDACS-ADP achieved an NPV of 99.0%.",
+  "more_info": "**Low risk cohort:**\n\n- EDACS <16 **and**\n- ECG shows no new ischemia **and**\n- 0-hr and 2-hr troponin both negative.\n\nRecommendation for low risk cohort: safe for discharge to early outpatient follow-up investigation (or proceed to earlier inpatient testing).\n\n**Not low risk cohort:**\n\n- EDACS ≥16 **or**\n- ECG shows new ischemia **or**\n- 0-hr or 2-hr troponin positive.\n\nRecommendation for not low risk cohort: proceed with usual care with further observation and delayed troponin.",
+  "short_description": "Identifies faible risque douleur thoracique, longer but more specific than HEART.",
+  "medium_description": "Identifies chest pachez les patients avec faible risque de major adverse cardiac event.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "artery_disease_risk_factors",
+      "label": "Coronaropathie connue ou ≥3 facteurs de risque",
+      "tips": "- [Than et al](http://www.ncbi.nlm.nih.gov/pubmed/24428678)define coronary artery disease (CAD) as “previous acute myocardial infarction, coronary artery bypass graft, or percutaneous intervention”\n- Risk factors: dislipidaemia, diabetes, hypertension, current smoker, family history of premature CAD\n- The risk factors only apply to patients 18-50",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "age<=50",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "diaphoresis",
+      "label": "Diaphorèse",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "radiates",
+      "label": "Douleur irradiant vers le bras, l’épaule, le cou ou la mâchoire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain_inspiration",
+      "label": "Douleur survenue ou aggravée à l’inspiration",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain_palpation",
+      "label": "La douleur est reproduite à la palpation.",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Than M, et al. Emerg Med Australas. Development and validation of the Emergency Department Assessment of Chest pain Score and 2 h accelerated diagnostic protocol. 2014 Feb;26(1):34-44. doi: 10.1111/1742-6723.12164.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24428678",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Boyle RSJ, Body R. The Diagnostic Accuracy of the Emergency Department Assessment of Chest Pain (EDACS) Score: A Systematic Review and Meta-analysis. Ann Emerg Med. 2021 Apr;77(4):433-441.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33461885/",
+      "kind": "other"
+    },
+    {
+      "text": "Writing Committee; Kontos MC, de Lemos JA, Deitelzweig SB, Diercks DB, Gore MO, Hess EP, McCarthy CP, McCord JK, Musey PI Jr, Villines TC, Wright LJ; Writing Committee. 2022 ACC Expert Consensus Decision Pathway on the Evaluation and Disposition of Acute Chest Pain in the Emergency Department. J Am Coll Cardiol. 2022 Nov 15;80(20):1925-1960.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36241466/",
+      "kind": "other"
+    },
+    {
+      "text": "Stopyra JP, Miller CD, Hiestand BC, Lefebvre CW, Nicks BA, Cline DM, Askew KL, Riley RF, Russell GB, Hoekstra JW, Mahler SA. Performance of the EDACS-Accelerated Diagnostic Pathway in a Cohort of U.S. Patients With Acute Chest Pain. Crit Pathw Cardiol. 2015 Dec;14(4):134-138.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26569652/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Than MP, Pickering JW, Aldous SJ, Cullen L, Frampton CM, Peacock WF, Jaffe AS, Goodacre SW, Richards AM, Ardagh MW, Deely JM, Florkowski CM, George P, Hamilton  GJ, Jardine DL, Troughton RW, van Wyk P, Young JM, Bannister L, Lord SJ. Effectiveness of EDACS Versus ADAPT Accelerated Diagnostic Pathways for Chest Pain: A Pragmatic Randomized Controlled Trial Embedded Within Practice. Ann Emerg Med. 2016 Jul;68(1):93-102",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=26947800",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Flaws D, Than M, Scheuermeyer FX, Christenson J, Boychuk B, Greenslade JH, Aldous S, Hammett CJ, Parsonage WA, Deely JM, Pickering JW, Cullen L. External validation of the emergency department assessment of chest pain score accelerated diagnostic pathway (EDACS-ADP). Emerg Med J. 2016 Sep;33(9):618-25",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=27406833",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mark DG, Huang J, Chettipally U, Kene MV, Anderson ML, Hess EP, Ballard DW, Vinson DR, Reed ME; Kaiser Permanente CREST Network Investigators. Performance of Coronary Risk Scores Among Patients With Chest Pain in the Emergency Department.  J Am Coll Cardiol. 2018 Feb 13;71(6):606-616",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/?term=29420956",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Boyle RSJ, Body R. The diagnostic accuracy of the emergency department assessment of chest pain (Edacs) score: a systematic review and meta-analysis. Ann Emerg Med. 2021;77(4):433-441.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33461885/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ozkan A, Unal E, Akoglu H, Onur O, Denizbasi A.  Diagnostic Accuracy of the Emergency Department Assessment of Chest Pain Score (EDACS) and EDACS-Accelerated Diagnostic Pathway (ADP) for Risk Stratification in Patients Presenting With Chest Pain in the Emergency Department. J Emerg Med. 2025 Aug:75:327-334.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40537295/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.adapt-protocol-cardiac-event-risk",
+    "calc.heart-score-major-cardiac-events",
+    "calc.vancouver-chest-pain-rule"
+  ],
+  "source_logic_hash": "74a1975658b892ab68400bfed3c594e6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.vancouver-chest-pain-rule",
+      "text": "Vancouver Chest Pain Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.vancouver-chest-pain-rule",
+      "text": "Vancouver Chest Pain Rule"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1858,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = []; \n\nvar msg = ''; \n\nvar mini_msg = ''; \n\nvar artery_disease_risk_factors = parseFloat(artery_disease_risk_factors); \nvar u = parseFloat(sex)  + parseFloat(diaphoresis) + parseFloat(radiates) + parseFloat(pain_inspiration) + parseFloat(pain_palpation); \nage = parseFloat(age); \n\nif (age > 17) {u = u + 2; } \nif (age > 45) {u = u + 2; } \nif (age > 50) {u = u + 2; } \nif (age > 55) {u = u + 2; } \nif (age > 60) {u = u + 2; } \nif (age > 65) {u = u + 2; }\nif (age > 70) {u = u + 2; } \nif (age > 75) {u = u + 2; } \nif (age > 80) {u = u + 2; } \nif (age > 85) {u = u + 2; } \n\nif (age <=50) {\n    u = u + artery_disease_risk_factors;\n}\n\nif (u < 16) {\n    msg = 'Low risk by the EDACS Score.<br/><br/>If the patient also has: (1) ECG without new ischemic changes and (2) negative initial and 2-hour troponins, then this patient is safe for discharge to early outpatient follow-up investigation (or proceed to earlier inpatient testing). If ECG with ischemic changes or positive troponin, they are not low risk and require normal risk stratification.'; \n    mini_msg = 'Low Risk.'; \n} else {\n    msg = 'Not low risk. This patient is not a candidate for early discharge and should receive a standard chest pain evaluation with delayed troponin testing.'; \n    mini_msg = 'Not Low Risk.'; \n} \n\ncalc_output.push({\n    name: 'mini', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: mini_msg \n}); \ncalc_output.push({\n    name: '1858_EDACS_result', \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: msg \n});",
+  "before_use": null,
+  "instructions": "- Calculer d’abord le score en fonction des caractéristiques du patient et des caractéristiques des symptômes.\n- Ensuite, examiner l’électrocardiogramme (ECG) pour confirmer l’absence de nouvelles modifications ischémiques et doser la troponine à 0 et 2 heures.",
+  "contributor_ids": [
+    "daniel-runde",
+    "rahul-aggarwal-md"
+  ],
+  "creator_names": [
+    "Dr. Martin Than",
+    "Dr. Dylan Flaws"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "be8cc6d1d6c654a64424c81be8e716aaf6dfc6715cb7793f16572659822b6668"
+}

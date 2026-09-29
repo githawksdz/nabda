@@ -1,0 +1,229 @@
+{
+  "id": "calc.clinical-pulmonary-infection-score-cpis-ventilator-associated-pneumonia-vap",
+  "slug": "clinical-pulmonary-infection-score-cpis-ventilator-associated-pneumonia-vap",
+  "language": "fr",
+  "title": "Clinique Pulmonary infection score (CPIS) pour Ventilator-associé pneumonie (VAP)",
+  "short_title": "CPIS pour VAP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "VAP",
+    "culture",
+    "pulm cx",
+    "BAL",
+    "covid",
+    "covid-19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "La VAP est un diagnostic délicat comportant de nombreux facteurs de confusion. L’utilisation d’un système de score peut être préférable au jugement clinique global habituel.",
+    "when": "Patients en cours d’évaluation pour une possible pneumonie acquise sous ventilation mécanique.",
+    "pearls": "Le CPIS, à un seuil de >6 points pour diagnostiquer une pneumonie acquise sous ventilation mécanique (VAP), semble peu sensible et peu spécifique. Les quelques études de dérivation, de validation et d’autopsie, pour la plupart menées sur de petites cohortes sélectionnées, suggèrent que le score peut être inexact. Toutefois, un standard de référence raisonnable pour définir la VAP reste difficile à établir, ce qui rend cette analyse délicate."
+  },
+  "next_steps": {
+    "advice": "Le score CPIS repose sur des éléments pertinents, et la probabilité de VAP semble effectivement quelque peu plus élevée lorsque les scores sont >6 ; toutefois, l’utilité et le rôle du score restent inconnus.",
+    "critical_actions": "CPIS nécessite l'analyse d'un aspirat, une coloration de Gram et d'autres paramètres biologiques importants.",
+    "management": "Nous n’avons pas connaissance d’algorithmes de prise en charge validés utilisant le CPIS."
+  },
+  "evidence": "",
+  "more_info": "Scores ≥ 7 peuvent indiquer une probabilité plus élevée de VAP et la nécessité d’un BAL ou mini-BAL.",
+  "short_description": "Diagnostic de VAP par prédiction du bénéfice des cultures pulmonaires.",
+  "medium_description": "Assists dans diagnosing ventilator-associé pneumonie par predicting benefit de pulmonary cultures.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Température (°C)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "36.5-38.4",
+          "value": 0
+        },
+        {
+          "label": "38.5-38.9",
+          "value": 1
+        },
+        {
+          "label": "≥39.0 ou ≤36.0",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "leuks",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "4-11",
+          "value": 0
+        },
+        {
+          "label": "< 4 ou >11",
+          "value": 1
+        },
+        {
+          "label": "Soit <4 ou >11 plus des formes en bande ≥500",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "trach",
+      "label": "Sécrétions trachéales",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 14+",
+          "value": 0
+        },
+        {
+          "label": "≥14+",
+          "value": 1
+        },
+        {
+          "label": "≥14 + sécrétions plus purulentes",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oxy",
+      "label": "Oxygénation, PaO₂/FiO₂ mm Hg",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">240 ou ARDS",
+          "value": 0
+        },
+        {
+          "label": "≤240 et pas d'ARDS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pulm",
+      "label": "Radiographie pulmonaire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absence d'infiltrat",
+          "value": 0
+        },
+        {
+          "label": "Infiltrat diffus ou en foyers",
+          "value": 1
+        },
+        {
+          "label": "Infiltrat localisé",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "culture",
+      "label": "Culture d'un prélèvement d'aspiration trachéale",
+      "tips": "Semi-quantitatif, 0, 1, 2 ou 3+",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Bactéries pathogènes cultivées ≤1 ou absence de croissance",
+          "value": 0
+        },
+        {
+          "label": "Bactéries pathogènes en culture >1+",
+          "value": 1
+        },
+        {
+          "label": "Bactéries pathogènes en culture >1+ plus les mêmes bactéries pathogènes sur coloration de Gram >1+",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schurink CA, Van Nieuwenhoven CA, Jacobs JA, Rozenberg-Arska M, Joore HC, Buskens E, Hoepelman AI, Bonten MJ. Clinical pulmonary infection score for ventilator-associated pneumonia: accuracy and inter-observer variability. Intensive Care Med. 2004 Feb;30(2):217-24. Epub 2003 Oct 18.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14566455",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Parks NA, et al. Use of the clinical pulmonary infection score to guide therapy for ventilator-associated pneumonia risks antibiotic overexposure in patients with trauma. J Trauma Acute Care Surg. 2012 Jul;73(1):52-8; discussion 58-9. doi: 10.1097/TA.0b013e31825ac37b.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22743372",
+      "kind": "other"
+    },
+    {
+      "text": "Zilberberg MD, Shorr AF. Ventilator-Associated Pneumonia: The Clinical Pulmonary Infection Score as a Surrogate for Diagnostics and Outcome. Clinical Infectious Diseases 2010; 51(S1):S131–S135.",
+      "href": "https://cid.oxfordjournals.org/content/51/Supplement_1/S131.full",
+      "kind": "other"
+    },
+    {
+      "text": "Fartoukh M, Maitre B, HonoréS, Cerf C, Zahar JR, Brun-Buisson C. Diagnosing pneumonia during mechanical ventilation: the clinical pulmonary infection score revisited. Am J Respir Crit Care Med. 2003;168(2):173.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12738607",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shan J, Chen HL, Zhu JH. Diagnostic accuracy of clinical pulmonary infection score for ventilator-associated pneumonia: a meta-analysis. Respir Care. 2011 Aug;56(8):1087-94. doi: 10.4187/respcare.01097. Epub 2011 Feb 9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21310117",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.smart-cop-score-pneumonia-severity"
+  ],
+  "source_logic_hash": "420b4b84e6d110edd9d52509d42fcb18",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3278,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,151 @@
+{
+  "id": "calc.modified-sgarbossas-criteria-mi-left-bundle-branch-block",
+  "slug": "modified-sgarbossas-criteria-mi-left-bundle-branch-block",
+  "language": "en",
+  "title": "Modifié Sgarbossa's critères pour MI dans Left Bundle Branch Block",
+  "short_title": "Modifié Sgarbossa's critères pour MI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Modified Sgarbossa's Criteria for MI in Left Bundle Branch Block, Modified Sgarbossa's Criteria for MI, Sgarbossa's Criteria for MI in Left Bundle Branch Block, sgarbossa LBBB, sgarbossa MI, sgarbossa, sgarbossa MI LBBB, sgarbossa STEMI, sgarbossa MI calc, sgarbossa stemi calc, sgarbossa LBB calc, sgarbossa score, sgarbossa criteria, MI calc, stemi calc, stemi risk, MI LBBB risk score, MI LBB risk calc, left bundle branch block calc, left bundle branch block sgarbossa, left bundle branch block MI, left bundle branch block ACS calc, left bundle branch block criteria MI, Sgarbossa ACS, Sgarbossa ACS calc, Sgarbossa ACS criteria"
+  ],
+  "dosing": false,
+  "formula": "Les critères de Sgarbossa modifiés sont remplis si l'un des critères est positif.",
+  "how_to_use": {
+    "why": "- Améliore la sensibilité par rapport aux [critères de Sgarbossa](nabda:calc.sgarbossas-criteria-mi-left-bundle-branch-block) originaux, en particulier pour détecter une occlusion coronarienne aiguë dans les présentations ECG difficiles.\n- Facilite la détection précoce des modifications is",
+    "when": "Indiqué chez les patients chez qui l’on suspecte un infarctus du myocarde (MI) et qui présentent un bloc de branche gauche (LBBB) sous-jacent ou un rythme ventriculaire stimulé, situations dans lesquelles les modifications typiques du segment ST sont difficiles à interpréter.",
+    "pearls": "The presence of any criterion demonstrates approximately 80% sensitivity and 99% specificity for identifying acute MI in the setting of known LBBB."
+  },
+  "next_steps": {
+    "advice": "- **Positive result:** Strongly consider initiating standard MI treatment, including immediate reperfusion therapy options (e.g., PCI), based on clinical context and in consultation with cardiology.\n- **Negative result:** If MI suspicion remains, pursue further assessment with serial ECGs, cardiac biomarkers, and potentially imaging (e.g., echocardiography to evaluate wall motion abnormalities).\n- This tool is best applied alongside clinical judgment, specialist input, and additional indicators, such as cardiac biomarkers.\n- Sensitivity may improve with serial ECGs or comparison to previous ECGs.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Aigu MI diagnostic dans LBBB.",
+  "medium_description": "Diagnoses aigu MI chez les patients avec prior LBBB.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "concordant_st_elevation",
+      "label": "Concordant ST elevation ≥1 mm dans leads avec positive QRS complex",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "concordant_st_depression",
+      "label": "Concordant ST dépression ≥1 mm dans V1-V3",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "discordant_st_elevation",
+      "label": "ST Elevation at J-point, relative pour QRS onset, is at least 1 mm AND has amplitude at least 25% de preceding S-wave",
+      "tips": "An ST/S ratio of 0.20 is also very high and almost as specific as a 0.25 ratio",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sgarbossa EB, Pinski SL, Barbagelata A, Underwood DA, Gates KB, Topol EJ, Califf RM, Wagner GS. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. GUSTO-1 (Global Utilization of Streptokinase and Tissue Plasminogen Activator for Occluded Coronary Arteries) Investigators. N Engl J Med. 1996 Feb 22;334(8):481-7. Erratum in: N Engl J Med 1996 Apr 4;334(14):931. PubMed PMID: 8559200.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8559200?dopt=Abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cai Q, Mehta N, Sgarbossa EB, Pinski SL, Wagner GS, Califf RM, Barbagelata A. The left bundle-branch block puzzle in the 2013 ST-elevation myocardial infarction guideline: from falsely declaring emergency to denying reperfusion in a high-risk population. Are the Sgarbossa Criteria ready for prime time? Am Heart J. 2013 Sep;166(3):409-13. doi: 10.1016/j.ahj.2013.03.032. Epub 2013 Aug 6. PubMed PMID: 24016487.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24016487",
+      "kind": "other"
+    },
+    {
+      "text": "Smith SW, Dodd KW, Henry TD, Dvorak DM, Pearce LA. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012 Dec;60(6):766-76. doi: 10.1016/j.annemergmed.2012.07.119. Epub 2012 Aug 31. Erratum in: Ann Emerg Med. 2013 Oct;62(4):302. PubMed PMID: 22939607.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22939607",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.heart-score-major-cardiac-events",
+    "calc.crusade-score-post-mi-bleeding-risk",
+    "calc.vancouver-chest-pain-rule",
+    "calc.sgarbossas-criteria-mi-left-bundle-branch-block"
+  ],
+  "source_logic_hash": "1718a535925e204084bd2761837e5bcd",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sgarbossas-criteria-mi-left-bundle-branch-block",
+      "text": "Sgarbossa criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10353,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

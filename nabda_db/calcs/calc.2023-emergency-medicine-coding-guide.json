@@ -1,0 +1,330 @@
+{
+  "id": "calc.2023-emergency-medicine-coding-guide",
+  "slug": "2023-emergency-medicine-coding-guide",
+  "language": "en",
+  "title": "Guide de codage en médecine d’urgence 2023",
+  "short_title": "Guide de codage EM 2023",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme"
+  ],
+  "specialties": [
+    "urgences"
+  ],
+  "diseases": [
+    "Tout/Tous"
+  ],
+  "chief_complaints": [
+    "Tout/Tous"
+  ],
+  "abbreviations": [
+    "2023 Emergency Medicine Coding Guide",
+    "EM",
+    "emergency medicine",
+    "EM MDM",
+    "medical decision making",
+    "emergency medicine medical decision making",
+    "2023 EM MDM guide",
+    "MDM",
+    "EM coding guide",
+    "e&m coding",
+    "em code",
+    "em coding"
+  ],
+  "dosing": false,
+  "formula": "**Number and Complexity of Problems:**\n\n| Number and Complexity | Description |\n| --- | --- |\n| a. High: ≥1 chronic illnesses with severe exacerbation, progression, or side effects of treatment b. High: 1 acute or chronic illness or injury that poses a threat to life or bodily function | a. May require admission/aggressive treatment and care escalation b. Threat to life/body function without treatment |\n| c. Moderate: ≥1 chronic illnesses with exacerbation, progression, or side effects of treatment d. Moderate: 2 stable, chronic illnesses e. Moderate: 1 undiagnosed new problem with uncertain prognosis f. Moderate: 1 acute illness with systemic symptoms g. Moderate: 1 acute, complicated injury | c. Chronic problem that is worse than baseline d. Chronic illnesses are at baseline e. New, serious undiagnosed problem f. Serious systemic symptoms associated with acute illness g. Extensive injury, impacting multiple body systems, higher risk of morbidity with multiple treatment options |\n| h. Low: ≥2 self-limited/minor problems i. Low: 1 stable, chronic illness j. Low: ≥1 acute, uncomplicated illness or injury k. Low: 1 stable, acute illness l. Low: ≥1 acute, uncomplicated illness or injury requiring inpatient or observation care | h. ≥2 self-limited problems i. Chronic illness at baseline j. Limited injury, low risk of morbidity, little to no mortality risk k. Newer illness or diagnosis that is stable l. Minor, new problem or injury that requires hospital care |\n| m. Minimal: 1 self-limited/minor problem | m. Problem or illness that is self-limited |\n\n**Risk of Morbidity, Mortality, or Complications:**\n\n| Risk Level | Description |\n| --- | --- |\n| High | • Drug therapy requiring intensive monitoring for toxicity • Decision regarding elective major surgery with identified patient or procedure risk factors • Decision regarding emergency major surgery • Decision regarding hospitalization or escalation of hospital-level care • Decision not to resuscitate or to de-escalate care because of poor prognosis • Parenteral controlled substances |\n| Moderate | • Prescription drug management • Decision regarding minor surgery with identified patient or procedure risk factors • Decision regarding elective major surgery without identified patient or procedure risk factors • Diagnosis or treatment significantly limited by social determinants of health |\n| Low | - |\n| Minimal | - |\n\n**Amount and/or Complexity of Data:**\n\n| Criteria | Category |\n| --- | --- |\n| - | Minimal |\n| Must meet at least 1 of 2 categories: Category 1: Tests and documents Any combination of 2 from the following: • Ordering of each unique test • Review of the result(s) of each unique test • Review of prior external note(s) from unique source Category 2: Assessment requiring an independent historian | Limited |\n| Must meet at least 1 of 3 categories: Category 1: Tests, documents, or independent historian(s) Any combination of 3 from the following: • Ordering of each unique test • Review of the result(s) of each unique test • Review of prior external note(s) from unique source • Assessment requiring an independent historian Category 2: Independent interpretation of tests Category 3: Discussion of management or test interpretation with external professional | Moderate |\n| Must meet at least 2 of 3 categories: Category 1: Tests, documents, or independent historian(s) Any combination of 3 from the following: • Ordering of each unique test • Review of the result(s) of each unique test • Review of prior external note(s) from unique source • Assessment requiring an independent historian Category 2: Independent interpretation of tests Category 3: Discussion of management or test interpretation with external physician | Extensive |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Utilisez cet outil pour vous aider à déterminer le niveau correct de prise de décision médicale (MDM) pour votre patient.\n- Seules 2 des 3 sections doivent être remplies pour déterminer la MDM, ce qui correspond au niveau de service (LOS).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Utilisez-vous le Guide de codage en médecine d’urgence 2023 et souhaitez-vous apporter votre expertise ? [Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Évaluation du service des urgences.",
+  "medium_description": "Niveaux de service requis en médecine d'urgence.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "problems",
+      "label": "Nombre et complexité",
+      "tips": "a. Peut nécessiter une admission/un traitement agressif et une escalade des soins.\nb. Menace pour la vie/la fonction corporelle en l'absence de traitement.\nc. Problème chronique aggravé par rapport à l'état de base.\nd. Le problème est à son état de base.\ne. Problème nouveau, grave (non mineur) et non diagnostiqué.\nf. Symptômes systémiques graves dans une affection associée.\ng. Lésion étendue ou touchant plusieurs systèmes corporels, avec plusieurs options thérapeutiques, ou morbidité.\nh. ≥2 problèmes spontanément résolutifs.\ni. Le problème est à son état de base.\nj. Faible risque de morbidité, risque de mortalité faible à nul.\nk. Problème nouveau/récent, mais stable.\nl. Problème relativement mineur, mais nécessitant tout de même des soins hospitaliers.\nm. Problème spontanément résolutif.",
+      "optional": false,
+      "default": 12,
+      "show_points": false,
+      "options": [
+        {
+          "label": "5: maladie chronique avec exacerbation sévère ()",
+          "value": 1
+        },
+        {
+          "label": "5: maladie/lésion avec menace vitale ou corporelle (b)",
+          "value": 2
+        },
+        {
+          "label": "4: chronique maladie avec exacerbation (c)",
+          "value": 3
+        },
+        {
+          "label": "4 : ≥2 maladies chroniques stables (d)",
+          "value": 4
+        },
+        {
+          "label": "4: undiagnosed new problem, uncertain devenir (e)",
+          "value": 5
+        },
+        {
+          "label": "4: maladie aiguë avec symptômes systémiques (f)",
+          "value": 6
+        },
+        {
+          "label": "4: lésion aiguë compliquée (g)",
+          "value": 7
+        },
+        {
+          "label": "3: 2 problèmes mineurs (h)",
+          "value": 8
+        },
+        {
+          "label": "3 : 1 stable, maladie chronique (i)",
+          "value": 9
+        },
+        {
+          "label": "3: maladie/lésion aiguë non compliquée (j)",
+          "value": 10
+        },
+        {
+          "label": "3: stable, maladie aiguë (k)",
+          "value": 11
+        },
+        {
+          "label": "3: maladie/lésion non compliquée nécessitant une hospitalisation (l)",
+          "value": 12
+        },
+        {
+          "label": "2: 1 problème mineur (m)",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "risk",
+      "label": "Niveau de risque",
+      "tips": "High: parenteral controlled substances, elective/emergency major surgery decision, hospitalized considered, or DNR/de-esc considered\nModerate: prescription drug management, minor/major surgery decision, or limited by social DOH\nSee Evidence for details.",
+      "optional": false,
+      "default": 3,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Élevé",
+          "value": 4
+        },
+        {
+          "label": "Modéré",
+          "value": 3
+        },
+        {
+          "label": "Bas",
+          "value": 2
+        },
+        {
+          "label": "Minimal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ordered",
+      "label": "Examens demandés",
+      "tips": "Unique item like a CBC, troponin, CT scan, EKG, etc.",
+      "optional": false,
+      "default": 3,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥3",
+          "value": 3
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "results",
+      "label": "Résultats des examens revus (à l'exclusion des analyses de laboratoire)",
+      "tips": "Revue de l'imagerie, des EKG, etc.",
+      "optional": false,
+      "default": 3,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥3",
+          "value": 3
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "notes",
+      "label": "Comptes rendus externes antérieurs examinés",
+      "tips": "En dehors du service d'urgence/de l'hôpital ou d'une spécialité",
+      "optional": false,
+      "default": 3,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥3",
+          "value": 3
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "0",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hist",
+      "label": "Évaluation requiring et independent historian",
+      "tips": "Independent historian: anyone who provides additional information patient can’t provide, does not include interpreters",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "interp",
+      "label": "Interprétation indépendante des tests",
+      "tips": "Test interprété par le médecin urgentiste, mais la lecture formelle sera réalisée (et facturée) par un autre professionnel de santé.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ext",
+      "label": "Discussed prise en charge/test interprétation w/external professional",
+      "tips": "Avec un médecin externe/autre professionnel de santé qualifié/source appropriée, non rapporté séparément",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "CPT® Evaluation and Management (E/m) Code and Guideline Changes. American Medical Association, 2022. ",
+      "href": "https://www.ama-assn.org/system/files/2023-e-m-descriptors-guidelines.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.los-angeles-motor-scale-lams",
+    "calc.nedocs-score-emergency-department-overcrowding",
+    "calc.cedocs-score-emergency-department-overcrowding"
+  ],
+  "source_logic_hash": "05bbcecaebf2f6b25d2c3a148e84ad67",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10454,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar problems = parseFloat(problems);\nvar risk = parseFloat(risk);\nvar ordered = parseFloat(ordered);\nvar results = parseFloat(results);\nvar notes = parseFloat(notes);\nvar hist = parseFloat(hist);\nvar interp = parseFloat(interp);\nvar ext = parseFloat(ext);\n\nvar p_level;\nvar p_group;\n\nif (problems == 13) {\n    p_level = 2;\n    p_group = 'Minimal';\n} else if (problems <= 12 && problems >= 8) {\n    p_level = 3;\n    p_group = 'Low';\n} else if (problems <= 7 && problems >= 3) {\n    p_level = 4;\n    p_group = 'Moderate';\n} else {\n    p_level = 5;\n    p_group = 'High';\n}\n\nvar r_level;\nvar r_group;\n\nif (risk == 1) {\n    r_level = 2;\n    r_group = 'Minimal';\n} else if (risk == 2) {\n    r_level = 3;\n    r_group = 'Low';\n} else if (risk == 3) {\n    r_level = 4;\n    r_group = 'Moderate';\n} else {\n    r_level = 5;\n    r_group = 'High';\n}\n\nvar d_level;\nvar d_group;\nvar sum = ordered + results + notes + hist;\nvar sum2 = ordered + results + notes;\n\nif ((sum >= 3 && interp == 1) || (sum >= 3 && ext == 1) || (interp == 1 && ext == 1)) {\n    d_level = 5;\n    d_group = 'Extensive';\n} else if (sum >= 3 || interp == 1 || ext == 1) {\n    d_level = 4;\n    d_group = 'Moderate';\n} else if (sum2 == 2 || hist == 1) {\n    d_level = 3;\n    d_group = 'Limited';\n} else if (sum2 <= 1 && hist == 0 && interp == 0 && ext == 0) {\n    d_level = 2;\n    d_group = 'Minimal';\n}\n\nvar max2 = [p_level, r_level, d_level].sort(function(a, b) { \n    return b - a; \n})[1];\n\nlet full_results_text = '';\nlet problem_phrases = '';\nlet problem, risk_text, data, data_default;\nproblem = `This patient's problem complexity is ${p_group} as patient: `;\nrisk_text = `This patient's risk is ${r_group} due to: overall presentation requiring evaluation for a potentially ${r_group}-risk process.`;\ndata = `This patient's data complexity is ${d_group} due to: `;\ndata_default = `This patient's data complexity is ${d_group}.`;\n\n\n\n// problem phrases\nswitch (problems){\n    case 1:\n        problem_phrases = 'with chronic illness(es) with severe exacerbation/progression/side effects. ';\n        break;\n    case 2:\n        problem_phrases = 'may have an acute or chronic illness/injury posing a threat to life or body function. ';\n        break;\n    case 3:\n        problem_phrases = 'with chronic illness(es) with exacerbation/progression/side effects of treatment. ';\n        break;\n    case 4:\n        problem_phrases = 'has >1 chronic illnesses that appear to be at their baseline.';\n        break;\n    case 5:\n        problem_phrases = 'has a new undiagnosed problem with uncertain prognosis but that could be serious.';\n        break;\n    case 6:\n        problem_phrases = 'has an acute illness with systemic symptoms.';\n        break;\n    case 7:\n        problem_phrases = 'has an acute complicated injury requiring significant evaluation or with concern for morbidity or multiple treatment options.';\n        break;\n    case 8:\n        problem_phrases = 'has ≥2 minor problems.';\n        break;\n    case 9:\n        problem_phrases = 'has 1 chronic illness that appears to be at its baseline.';\n        break;\n    case 10:\n        problem_phrases = 'has ≥1 acute, uncomplicated illness(es)/injuries.';\n        break;\n    case 11:\n        problem_phrases = 'has 1 acute illness at its baseline/not worsening.';\n        break;\n    case 12:\n        problem_phrases = 'has ≥1 acute, uncomplicated illness(es)/injuries but still needs inpatient/observation-level care.';\n        break;\n    case 13:\n        problem_phrases = 'has 1 self-limited/minor problem.'\n        break;\n}\n\n// data phrases: \nlet data_phrases = '';\nif (ordered >= 2 && results < 2){\n    data_phrases += '-multiple tests ordered\\n';\n}\nelse if (ordered >= 2 && results >= 2){\n    data_phrases += '-multiple tests ordered/reviewed\\n'\n}\nif (notes >= 1){\n    data_phrases += '-external notes reviewed\\n'\n}\nif (hist == 1){\n    data_phrases += '-independent historian used to support history\\n'\n}\nif (interp == 1){\n    data_phrases += '-independent interpretation of imaging or EKG\\n'\n}\nif (ext == 1){\n    data_phrases += '-discussion of management/testing with external professional'\n}\n\nif (data_phrases == ''){\n    data = data_default;\n}\n\n// add'em up\nfull_results_text = '\\nNARRATIVE MDM:\\n' + problem + problem_phrases + '\\n' + risk_text + '\\n' + data + '\\n' + data_phrases;\n\ncalc_output.push({\n    name: 'mini',\n    value: max2,\n    value_text: 'Estimated Level of Service',\n    message: ''\n});\ncalc_output.push({\n    name: 'Level',\n    value: max2,\n    value_text: 'Estimated Level of Service',\n    message: 'Problems: ' + p_group + ' (' + p_level + ') <br/> Risk: ' + r_group + ' (' + r_level + ') <br/> Data: ' + d_group + ' (' + d_level + ')',\n    full_results_text: full_results_text,\n    button_text: 'Copy MDM'\n});",
+  "before_use": null,
+  "instructions": "Ce guide reflète les modifications 2023 de codification AMA CPT Évaluation et Gestion (E/M) pour la médecine d'urgence. Les définitions ont été simplifiées et reposent sur la directive de codification complète disponible [ici](https://www.ama-assn.org/system/files/2023-e-m-descriptors-guidelines.pdf).\n\nCliquez sur le bouton Copy MDM dans la zone de résultats ci-dessous pour coller le MDM narratif (web uniquement).",
+  "contributor_ids": [],
+  "creator_names": [
+    "American Medical Association"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "bb469f3b8b65858cfdf9834dd2351fe02ca32658b6c1103b14922b81498bafd8"
+}

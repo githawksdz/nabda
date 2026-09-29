@@ -1,0 +1,293 @@
+{
+  "id": "calc.mascc-risk-index-febrile-neutropenia",
+  "slug": "mascc-risk-index-febrile-neutropenia",
+  "language": "en",
+  "title": "Index de risque MASCC pour la neutropénie fébrile",
+  "short_title": "Index de risque MASCC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "infectiologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "VIH/SIDA",
+    "Leucémie myéloïde chronique",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "FN",
+    "sepsis",
+    "neutrophil",
+    "oncology",
+    "cancer",
+    "CA",
+    "outpatient",
+    "inpatient",
+    "solid tumor",
+    "fever"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 2 points | 3 points | 4 points | 5 points |\n| --- | --- | --- | --- | --- | --- |\n| Burden of illness (symptom severity) | Severe | -- | Moderate | -- | None or mild |\n| Hypotension (sBP <90 mmHg) | Yes | -- | -- | -- | No |\n| Active COPD | Yes | -- | -- | No | -- |\n| Solid tumor (or hematological malignancy without prior fungal infection) | No | -- | -- | Yes | -- |\n| Dehydration requiring IV therapy | Yes | -- | No | -- | -- |\n| Status at onset of fever | Inpatient | -- | Outpatient | -- | -- |\n| Age | ≥60 years | <60 years | -- | -- | -- |\n\n“Poor outcome” was defined as any of the following:\n\n- Hypotension: systolic blood pressure <90 mmHg or need for pressor support to maintain BP.\n- Respiratory failure: PaO~2~<60 mmHg while breathing room air, or need for mechanical ventilation.\n- ICU admission.\n- Disseminated intravascular coagulation.\n- Confusion or altered mental state.\n- CHF seen on chest x-ray and requiring treatment.\n- Bleeding severe enough to require transfusion.\n- Arrhythmia or EKG changes requiring treatment.\n- Renal failure requiring investigation and/or treatment with IV fluids, dialysis, or any other intervention.\n- Other complications judged serious and clinically significant by the investigator.",
+  "how_to_use": {
+    "why": "La neutropénie fébrile est une complication potentiellement mortelle de la chimiothérapie, mais certains patients présentent un faible risque de complications graves. Le MASCC Risk Index est un système de score validé au niveau international qui identifie ces patients à faible risque pouvant potentiellement être traités en ambulatoire avec une antibiothérapie précoce.",
+    "when": "- Use at fever onset to assess risk of complications in febrile neutropenia for patients undergoing chemotherapy treatment.\n- Use *after* addressing immediate concerns to identify patients who may not need to be admitted to the hospital or could be discharged early.",
+    "pearls": "- Only applies to adult patients.\n- Validated as a dichotomous outcome; i.e., low risk versus not low risk. Obviously, patients who are “not low risk” have varying degrees of risk."
+  },
+  "next_steps": {
+    "advice": "Des scores plus élevés indiquent un risque plus faible, avec un maximum de 26 points. L’utilisation d’une valeur seuil de >21 points permet de distinguer les patients à faible risque de ceux à haut risque (<21 points) pour les complications graves de la neutropénie fébrile, par ex. décès, admission en soins intensifs, hypotension (voir Formule pour la liste complète).",
+    "critical_actions": "L’IDSA recommande l’admission pour une antibiothérapie empirique chez les patients à haut risque qui ne sont pas déjà hospitalisés.",
+    "management": "- The MASCC has been endorsed by the Infectious Disease Society of America (IDSA) since 2002 with Level B (moderate) evidence supporting its use. However, most experts consider high risk patients to be those with anticipated prolonged neutropenia (>7 days), profound neutropenia (ANC <100) and/or co-morbid conditions (in addition to COPD)—Level A evidence—that are not necessarily accounted for in the MASCC. Therefore, clinical judgment by specialists (infectious disease, hematology/oncology or emergency medicine/internal medicine/critical care) with knowledge of predicted disease-specific chemotherapy effects may override the MASCC Score.\n- High risk patients require admission for IV antibiotics.\n- Carefully-selected low risk patients should receive oral or IV empiric antibiotics in a clinic or hospital setting and may be transitioned to outpatient regimens if they meet certain criteria (see algorithm below).\n\n![](https://cdn-web-img.mdcalc.com/content/MASCC_diagram.png)\n\n*Adapted from the[IDSA Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer, 2010](https://www.idsociety.org/uploadedFiles/IDSA/Guidelines-Patient_Care/PDF_Library/FN.pdf)."
+  },
+  "evidence": "L’étude de dérivation du MASCC Risk Index a été réalisée à la fin des années 1990 (1994-1997) et incluait 756 patients dans la cohorte de dérivation et 383 dans la cohorte de validation. Bien que beaucoup affirment que le MASCC ne peut pas être appliqué aux patients atteints d’hémopathies malignes, plus de 40 % des patients inclus avaient une hémopathie maligne. Une analyse de régression logistique a été utilisée pour déterminer un score de risque pondéré avec une valeur prédictive positive de 91 %, une spécificité de 68 % et une sensibilité de 71 %.\n\nÀ noter que les patients n’étaient inclus dans l’étude que pour un seul épisode de neutropénie fébrile et n’étaient pas autorisés à réintégrer l’étude pour des épisodes ultérieurs ; ainsi, on ne sait pas si le score doit être appliqué aux patients ayant de multiples épisodes de neutropénie fébrile (bien que cela soit fait en routine en pratique clinique).\n\nIl y a eu au moins 8 études de validation externes montrant une valeur prédictive positive (VPP) de 83 à 98 % avec une sensibilité de 59 à 95 %. Les études qui incluaient davantage de patients atteints d’hémopathies malignes avaient une VPP et une sensibilité plus faibles, ce qui suggère une performance moindre du score dans cette population.",
+  "more_info": "Interprétation :\n\n| Index de risque MASCC | Risque de neutropénie fébrile | Recommandation* |\n| --- | --- | --- |\n| ≥21 | Risque faible | Envisager une antibiothérapie empirique orale et/ou en ambulatoire. |\n| <21 | Risque élevé | Hospitaliser pour antibiothérapie empirique si le patient n'est pas déjà hospitalisé. |\n\n*D'après les [IDSA Clinical Practice Guideline for the Use of Antimicrobial Agents in Neutropenic Patients with Cancer, 2010](https://pubmed.ncbi.nlm.nih.gov/21258094/).",
+  "short_description": "Faible risque pour poor devenir febrile neutropenia.",
+  "medium_description": "Identifies patients at faible risque pour poor devenir avec febrile neutropenia.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "burden",
+      "label": "Fardeau de la maladie (gravité des symptômes)",
+      "tips": "Selon l'appréciation du médecin en charge lors de la présentation initiale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun ou léger",
+          "value": 5
+        },
+        {
+          "label": "Modéré",
+          "value": 3
+        },
+        {
+          "label": "Sévère",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bp",
+      "label": "Hypotension",
+      "tips": "PAS < 90 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 5
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "copd",
+      "label": "BPCO active",
+      "tips": "Active chronic bronchitis, emphysema, decreasedFEV, or need for oxygen therapy, corticosteroids, and/or bronchodilators",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 4
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "solid",
+      "label": "Type de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Tumeur solide",
+          "value": 4
+        },
+        {
+          "label": "Hematologic, no prior fungal infection",
+          "value": 4
+        },
+        {
+          "label": "Hématologique, infection fongique antérieure",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hyd",
+      "label": "Déshydratation nécessitant une perfusion intraveineuse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 3
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "outpt",
+      "label": "État à l'apparition de la fièvre",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "ambulatoire",
+          "value": 3
+        },
+        {
+          "label": "hospitalisé",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge (ans)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 60",
+          "value": 2
+        },
+        {
+          "label": "≥ 60",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Freifeld AG, Bow EJ, Sepkowitz KA, et al. Clinical practice guideline for the use of antimicrobial agents in neutropenic patients with cancer: 2010 update by the infectious diseases society of america. Clin Infect Dis. 2011;52(4):e56-93.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21258094/",
+      "kind": "international"
+    },
+    {
+      "text": "Klastersky J, Paesmans M, Rubenstein EB, Boyer M, Elting L, Feld R, Gallagher J, Herrstedt J, ,Rapoport B, Rolston K, Talcott J. The Multinational Association for Supportive Care in Cancer risk index: A multinational scoring system for identifying low-risk febrile neutropenic cancer patients. J Clin Oncol. 2002;Aug;18(16):3038-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10944139",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klastersky J, Paesmans M. The Multinational Association for Supportive Care in Cancer (MASCC) risk index score: 10 years of use for identifying low-risk febrile neutropenic cancer patients. Support Care Cancer. 2013;21(5):1487-95.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23443617 ",
+      "kind": "other"
+    },
+    {
+      "text": "Coyne CJ, Le V, Brennan JJ, et al. Application of the MASCC and CISNE Risk-Stratification Scores to Identify Low-Risk Febrile Neutropenic Patients in the Emergency Department. Ann Emerg Med. 2017;69(6):755-764.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28041827 ",
+      "kind": "other"
+    },
+    {
+      "text": "Carmona-bayonas A, Jiménez-fonseca P, Virizuela echaburu J, et al. Prediction of serious complications in patients with seemingly stable febrile neutropenia: validation of the Clinical Index of Stable Febrile Neutropenia in a prospective cohort of patients from the FINITE study. J Clin Oncol. 2015;33(5):465-71.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25559804 ",
+      "kind": "other"
+    },
+    {
+      "text": "Uys A, Rapoport BL, Anderson R. Febrile neutropenia: a prospective study to validate the Multinational Association of Supportive Care of Cancer (MASCC) risk-index score. Support Care Cancer. 2004;12(8):555-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15197637 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klastersky J, Paesmans M, Georgala A, et al. Outpatient oral antibiotics for febrile neutropenic cancer patients using a score predictive for complications. J Clin Oncol. 2006;24(25):4129-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16943529 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cherif H, Johansson E, Björkholm M, Kalin M. The feasibility of early hospital discharge with oral antimicrobial therapy in low risk patients with febrile neutropenia following chemotherapy for hematologic malignancies. Haematologica. 2006;91(2):215-22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16461306 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Innes H, Lim SL, Hall A, Chan SY, Bhalla N, Marshall E. Management of febrile neutropenia in solid tumours and lymphomas using the Multinational Association for Supportive Care in Cancer (MASCC) risk index: feasibility and safety in routine clinical practice. Support Care Cancer. 2008;16(5):485-91.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17899215",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Baskaran ND, Gan GG, Adeeba K. Applying the Multinational Association for Supportive Care in Cancer risk scoring in predicting outcome of febrile neutropenia patients in a cohort of patients. Ann Hematol. 2008;87(7):563-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18437382",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hui EP, Leung LK, Poon TC, et al. Prediction of outcome in cancer patients with febrile neutropenia: a prospective validation of the Multinational Association for Supportive Care in Cancer risk index in a Chinese population and comparison with the Talcott model and artificial neural network. Support Care Cancer. 2011;19(10):1625-35.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20820815 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Carmona-bayonas A, Gómez J, González-billalabeitia E, et al. Prognostic evaluation of febrile neutropenia in apparently stable adult cancer patients. Br J Cancer. 2011;105(5):612-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21811253 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.absolute-neutrophil-count-anc",
+    "calc.damico-risk-classification-prostate-cancer",
+    "calc.clinical-index-stable-febrile-neutropenia-cisne"
+  ],
+  "source_logic_hash": "81c24934dda661ca7074c60d0fdcdafa",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3913,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar burden = parseFloat(burden);\nvar bp = parseFloat(bp);\nvar copd = parseFloat(copd);\nvar solid = parseFloat(solid);\n// var fung = parseFloat(fung)\nvar hyd = parseFloat(hyd);\nvar outpt = parseFloat(outpt);\nvar age = parseFloat(age);\n\nvar u = burden + bp + copd + solid + hyd + outpt + age;\n\n// if (solid == 4) {\n// \tu = burden + bp + copd + solid + hyd + outpt + age\n// }\n// if (solid == 0){\n// \tu = burden + bp + copd + solid + hyd + outpt + age + parseFloat(fung)\n// }\n\nvar msg;\nvar rec;\n\nif (u >= 21) {\n\tmsg = \"Low risk for poor outcome.\"; \n\trec = \" Consider oral and/or outpatient empiric antibiotic therapy after discussion with oncology.\";\n}\nif (u < 21) {\n\tmsg = \"High risk for poor outcome.\";\n\trec = \" Admit for empiric antibiotics if not already inpatient.\";\n}\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3913_MASCC Risk Index_result', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg + rec\n});\n",
+  "before_use": null,
+  "instructions": "À utiliser chez les patients neutropéniques (voir le calculateur [ANC](nabda:calc.absolute-neutrophil-count-anc)) avec une fièvre d’au moins 100.4°F (38ºC). Ne pas utiliser chez les patients atteints de leucémie aiguë recevant une chimiothérapie d’induction ou un conditionnement pour allog",
+  "contributor_ids": [
+    "justin-taylor"
+  ],
+  "creator_names": [
+    "Dr. Jean Klastersky"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "dd7fa14eabd55811945012d89e15d0b87c52c4cda507279917a48c7fb24c335b"
+}

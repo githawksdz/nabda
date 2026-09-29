@@ -1,0 +1,278 @@
+{
+  "id": "calc.thrive-score-stroke-outcome",
+  "slug": "thrive-score-stroke-outcome",
+  "language": "en",
+  "title": "THRIVE score pour AVC devenir",
+  "short_title": "Score THRIVE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "tpa",
+    "neuro",
+    "tia",
+    "cva"
+  ],
+  "dosing": false,
+  "formula": "Le score THRIVE est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge | ≤59 | 0 |\n| 60-79 | 1 | |\n| ≥80 | 2 | |\n| [Échelle NIHSS (NIH Stroke Scale)](nabda:calc.nih-stroke-scale-score-nihss\\) | ≤10 | 0 |\n| 11-20 | 2 | |\n| ≥21 | 4 | |\n| Antécédent d'hypertension artérielle | Non | 0 |\n| Oui | 1 | |\n| Antécédent de diabète | Non | 0 |\n| Oui | 1 | |\n| Antécédent de fibrillation atriale | Non | 0 |\n| Oui | 1 | |\n\nLa probabilité d'une évolution favorable est calculée comme suit :\n\nCDS = Hypertension + Diabète + Fibrillation atriale\n\n- Si CDS = 1, alors CDS1 = 1, CDS2 = 0 et CDS3 = 0\n- Si CDS = 2, alors CDS1 = 0, CDS2 = 1 et CDS3 = 0\n- Si CDS = 3, alors CDS1 = 0, CDS2 = 0 et CDS3 = 1\n\nSi LVO = Non ou inconnu,\n\n- x = 4,942 – 0,035*Âge – 0,190*NIHSS – 0,105*CDS1 – 0,408*CDS2 – 0,702*CDS3\n\nSi LVO = Oui et ASPECTS = Inconnu,\n\n- Avec EVT : x = 2,864 – 0,025*Âge – 0,106*NIHSS – 0,469*CDS1 – 0,502*CDS2 – 1,665*CDS3 + 0,753*1\n- Sans EVT : x = 2,864 – 0,025*Âge – 0,106*NIHSS – 0,469*CDS1 – 0,502*CDS2 – 1,665*CDS3 + 0,753*0\n\nSi LVO = Oui et valeur ASPECTS renseignée,\n\n- Avec EVT : x = 1,828 – 0,031*Âge – 0,097*NIHSS – 0,462*CDS1 – 0,419*CDS2 – 1,798*CDS3 + 0,848*1 + 0,153*ASPECTS\n- Sans EVT : x = 1,828 – 0,031*Âge – 0,097*NIHSS – 0,462*CDS1 – 0,419*CDS2 – 1,798*CDS3 + 0,848*0 + 0,153*ASPECTS\n\nProbabilité d'évolution favorable = 1/(1+e^-x^)",
+  "how_to_use": {
+    "why": "- There are nearly 800,000 cases of acute stroke in the United States every year, with 130,000 associated deaths (4th leading cause of death in Americans).\n- The THRIVE score can help physicians predict functional outcome, death after stroke, and the risk of brain hemorrhage after IV tPA administration in patients who suffer an ischemic stroke.",
+    "when": "Le score THRIVE peut aider les médecins à prédire plusieurs résultats cliniques essentiels chez les patients victimes d'un AVC ischémique.",
+    "pearls": "Le score THRIVE (Total Health Risk In Vascular Events) utilise le score [NIHSS](nabda:calc.nih-stroke-scale-score-nihss), l'âge et les maladies chroniques pour prédire l'évolution neurologique à long terme des patients victimes d'un AVC.\n\n- Noté sur une échelle de 0 à 9 points, **plus le score est bas, meilleur est le pronostic.**\n\n - Un score de 0 prédit une probabilité de 79-88 % d'évolution neurologique favorable et une mortalité prédite de 0-2 % à 90 jours.\n - Un score de 9 prédit une probabilité de 7-16 % d'évolution neurologique favorable et une mortalité de 38-58 % à 90 jours.\n - **Remarque :** une mesure de résultat plus récente est désormais réalisée à l'aide du calcul THRIVE-c, qui utilise l'âge en variable continue et le [NIHSS](nabda:calc.nih-stroke-scale-score-nihss) pour déterminer plus précisément la probabilité d'évolution.\n- Le risque de transformation hémorragique augmente proportionnellement à chaque point supplémentaire du score THRIVE.\n- Le score THRIVE fonctionne bien lorsqu'il est appliqué aux patients victimes d'un AVC ayant reçu du tPA IV ainsi qu'aux patients n'ayant reçu ni thrombolyse ni intervention endovasculaire.\n\n**Points à retenir :**\n\n- Le score THRIVE n'a été validé que rétrospectivement dans diverses bases de données sur les AVC et n'a pas été appliqué de manière prospective."
+  },
+  "next_steps": {
+    "advice": "- Consulter immédiatement la Neurologie (si disponible) pour tout patient présentant un AVC ischémique.\n- Évaluer si le patient est un candidat potentiel à la thrombolyse intraveineuse (tPA).\n- Envisager des examens d'imagerie complémentaires, notamment un scanner (CT), une angio-CT et une IRM/ARM.",
+    "critical_actions": "- Le score THRIVE fournit des informations fiables et précoces sur les chances initiales de récupération et le pronostic d'un patient atteint d'AVC ischémique aigu.\n- Ces informations peuvent aider à guider les médecins ainsi qu'à éclairer les discussions avec les patients et leurs familles lors de la pesée des risques et des bénéfices des différentes options thérapeutiques.",
+    "management": "Chez les patients présentant des symptômes évocateurs d'un AVC ischémique :\n\n- Consulter immédiatement la Neurologie (si disponible) pour tout patient présentant un AVC ischémique.\n- Déterminer le début des symptômes de l'AVC (ou le moment où le patient s'est senti ou a été observé normal pour la dernière fois).\n- Envisager des examens d'imagerie complémentaires, notamment un scanner (CT), une angio-CT et une IRM/ARM.\n- Dans les circonstances appropriées et en concertation avec la neurologie et le patient, envisager une thrombolyse IV pour les AVC ischémiques chez les patients sans [contre-indications](nabda:calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke) .\n- Toujours envisager les diagnostics différentiels de mimiques d'AVC, en particulier dans les cas présentant des caractéristiques atypiques (âge, facteurs de risque, antécédents, examen clinique), notamment :\n\n - Réactivation d'un ancien AVC suite à un stress métabolique ou infectieux ;\n - Paralysie de Todd après une crise convulsive ;\n - Migraine compliquée ;\n - Pseudo-crise, trouble de conversion."
+  },
+  "evidence": "- Le score THRIVE a été initialement dérivé à partir des données de deux essais monocentriques à bras unique incluant des patients atteints d'AVC ischémique traités par un dispositif de thrombectomie.\n- Le score THRIVE a ensuite été validé pour prédire l'évolution post-AVC et le risque d'hémorragie intracrânienne symptomatique (sICH) dans divers contextes, notamment l'utilisation de la thrombolyse IV ([Kamel 2013](https://pubmed.ncbi.nlm.nih.gov/23122722/)), l'utilisation de dispositifs endovasculaires de stent récupérable ([Flint 2014](https://pubmed.ncbi.nlm.nih.gov/24844862/) ; [Flint 2013](https://pubmed.ncbi.nlm.nih.gov/24072003/)) et l'ensemble des patients victimes d'AVC ischémique ([Flint 2013](https://pubmed.ncbi.nlm.nih.gov/24072004/)).\n- En utilisant les données de 12207 patients de la Virtual International Stroke Trials Archive et de l'étude Safe Implementation of Thrombolysis in Stroke - Monitoring Study (SITS-MOST), une version plus précise a été développée et validée, estimant mieux l'évolution individuelle des patients : le calcul THRIVE-c ([Flint 2015](https://pubmed.ncbi.nlm.nih.gov/26045081/)).\n- En utilisant les données de 1582 patients randomisés dans 7 essais randomisés contrôlés (ERC) de traitement endovasculaire de l'AVC, une nouvelle série d'équations prédictives THRIVE (THRIVE-EVT) a été développée et validée pour estimer la probabilité d'évolution favorable avec ou sans traitement endovasculaire (EVT) ([Flint 2022](https://pubmed.ncbi.nlm.nih.gov/35319310/)).",
+  "more_info": "",
+  "short_description": "Pronostic après un AVC ; intègre le NIHSS.",
+  "medium_description": "Estime le pronostic après un AVC ischémique aigu.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "nihss",
+      "label": "[Échelle NIHSS (NIH Stroke Scale)](nabda:calc.nih-stroke-scale-score-nihss)",
+      "optional": false,
+      "unit": "nihss",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ht",
+      "label": "Antécédents d’hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "db",
+      "label": "History de diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "af",
+      "label": "Antécédent de fibrillation atriale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lvo",
+      "label": "Occlusion de gros vaisseau (LVO)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non ou inconnu",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "aspects",
+      "label": "[ASPECTS](nabda:calc.alberta-stroke-program-early-ct-score-aspects)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": -1
+        },
+        {
+          "label": "10",
+          "value": 10
+        },
+        {
+          "label": "9",
+          "value": 9
+        },
+        {
+          "label": "8",
+          "value": 8
+        },
+        {
+          "label": "7",
+          "value": 7
+        },
+        {
+          "label": "6",
+          "value": 6
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "0",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Flint AC, Cullen SP, Faigeles BS, Rao VA. Predicting long-term outcome after endovascular stroke treatment: the totaled health risks in vascular events score. AJNR Am J Neuroradiol. 2010 Aug;31(7):1192-6. doi: 10.3174/ajnr.A2050. Epub 2010 Mar 11. PubMed PMID: 20223889.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20223889",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Flint AC, Gupta R, Smith WS, Kamel H, Faigeles BS, Cullen SP, Rao VA, Bath PM, Wahlgren N, Ahmed N, Donnan GA; SITS International and VISTA-plus investigators. The THRIVE score predicts symptomatic intracerebral hemorrhage after intravenous tPA administration in SITS-MOST. Int J Stroke. 2014 Aug;9(6):705-10. doi: 10.1111/ijs.12335. Epub 2014 Jul 15. PubMed PMID: 25042855.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25042855",
+      "kind": "other"
+    },
+    {
+      "text": "Flint AC, Rao VA, Chan SL, et al. Improved ischemic stroke outcome prediction using model estimation of outcome probability: the THRIVE-c calculation. Int J Stroke. 2015;10(6):815-821.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26045081/",
+      "kind": "other"
+    },
+    {
+      "text": "Flint AC, Chan SL, Edwards NJ, et al. Outcome prediction in large vessel occlusion ischemic stroke with or without endovascular stroke treatment: THRIVE-EVT. Int J Stroke. 2023;18(3):331-337.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35319310/",
+      "kind": "other"
+    },
+    {
+      "text": "Flint AC, Kamel H, Rao VA, Cullen SP, Faigeles BS, Smith WS. Validation of the Totaled Heath Risks In Vascular Events (THRIVE) score for outcome prediction in endovascular stroke treatment. Int J Stroke. 2012 Aug 29. doi: 10.1111/j.1747-4949.2012.00872.x. [Epub ahead of print] PubMed PMID: 22928705.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22928705",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kamel H, Patel N, Rao VA, Cullen SP, Faigeles BS, Smith WS, Flint AC. The Totaled Health Risks in Vascular Events (THRIVE) Score Predicts Ischemic Stroke Outcomes Independent of Thrombolytic Therapy in the NINDS tPA Trial. J Stroke Cerebrovasc Dis. 2012 Nov 2. doi:pii: S1052-3057(12)00311-4. 10.1016/j.jstrokecerebrovasdis.2012.08.017. [Epub ahead of print] PubMed PMID: 23122722.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23122722",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Flint AC, Cullen SP, Rao VA, et al. The THRIVE score strongly predicts outcomes in patients treated with the Solitaire device in the SWIFT and STAR trials. Int J Stroke. 2014;9(6):698-704.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24844862/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Flint AC, Xiang B, Gupta R, et al. THRIVE score predicts outcomes with a third-generation endovascular stroke treatment device in the TREVO-2 trial. Stroke. 2013;44(12):3370-3375.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24072003/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Flint AC, Faigeles BS, Cullen SP, et al. THRIVE score predicts ischemic stroke outcomes and thrombolytic hemorrhage risk in VISTA. Stroke. 2013;44(12):3365-3369.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24072004/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+    "calc.modified-rankin-scale-neurologic-disability",
+    "calc.nih-stroke-scale-score-nihss"
+  ],
+  "source_logic_hash": "14b2e4814401f0ac92e5913837b3d573",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIH Stroke Scale (NIHSS)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIHSS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "contraindications"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1706,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

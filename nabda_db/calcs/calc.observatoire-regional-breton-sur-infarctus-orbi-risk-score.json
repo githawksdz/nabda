@@ -1,0 +1,370 @@
+{
+  "id": "calc.observatoire-regional-breton-sur-infarctus-orbi-risk-score",
+  "slug": "observatoire-regional-breton-sur-infarctus-orbi-risk-score",
+  "language": "en",
+  "title": "Observatoire Régional Breton sur l’Infarctus (ORBI) risque score",
+  "short_title": "Score de risque ORBI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "CAD",
+    "Maladie coronarienne",
+    "Choc cardiogénique"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "AMS (altération de l'état mental)",
+    "Douleur thoracique",
+    "Vertiges",
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Fatigue",
+    "Hypoxie",
+    "Nausée",
+    "Palpitations",
+    "Œdème périphérique",
+    "Dyspnée",
+    "Syncope",
+    "Vomissements",
+    "Faiblesse",
+    "Hypoxémie"
+  ],
+  "abbreviations": [
+    "Observatoire Régional Breton sur l’Infarctus (ORBI) Risk Score",
+    "ORBI Risk Score",
+    "ORBI",
+    "CS",
+    "PCI CS",
+    "ORBI PCI",
+    "PCI Risk",
+    "percutaneous coronary intervention",
+    "cardiogenic shock",
+    "PCI cardiogenic shock",
+    "STEMI CS",
+    "STEMI PCI",
+    "RICO",
+    "in-hospital CS",
+    "inpatient CS"
+  ],
+  "dosing": false,
+  "formula": "The OBRI Score is obtained by summing the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤70 | 0 |\n| >70 | 2 | |\n| Previous stroke/ TIA | No | 0 |\n| Yes | 2 | |\n| Presentation as cardiac arrest | No | 0 |\n| Yes | 3 | |\n| Anterior myocardial infarction | No | 0 |\n| Yes | 1 | |\n| First medical contact-to-primary PCI delay | ≤90 min | 0 |\n| >90 min | 2 | |\n| [Killip class](nabda:calc.killip-classification-heart-failure\\) on admission | I | 0 |\n| II | 2 | |\n| III | 6 | |\n| Heart rate on admission, beats/min | ≤90 | 0 |\n| >90 | 3 | |\n| SBP <125 mmHg and PP <45 mmHg on admission | No | 0 |\n| Yes | 4 | |\n| Glucose on admission | ≤10 mmol/L (≤180 mg/dL) | 0 |\n| >10 mmol/L (>180 mg/dL) | 3 | |\n| Left main coronary artery culprit lesion | No | 0 |\n| Yes | 5 | |\n| Post-primary PCI TIMI flow | ≥3 | 0 |\n| <3 | 5 | |",
+  "how_to_use": {
+    "why": "- Estime le risque qu'un patient développe un choc cardiogénique intrahospitalier.\n- Utilise des variables couramment disponibles pendant ou immédiatement après PCI.\n- L'identification des patients à haut risque peut favoriser une surveillance plus rapprochée et guider les décisions concernant l'orientation post-PCI et l'intensification proactive de la prise en charge.",
+    "when": "- À utiliser chez les patients adultes présentant un infarctus du myocarde avec sus-décalage du segment ST (STEMI) et bénéficiant d’une intervention coronarienne percutanée primaire (PCI).\n- Non indiqué chez les patients déjà en choc cardiogénique à l’arrivée.",
+    "pearls": "- Developed and externally validated in large French registries (derivation: Observatoire Régional Breton sur l’Infarctus [ORBI]; external validation: obseRvatoire des Infarctus de Côte-d’Or [RICO]).\n- Derivation cohort had a median age of 62 years (interquartile range 53–73) and was 77.8% men.\n- Cardiogenic shock was defined as systolic blood pressure ≤90 mmHg for >30 min following exclusion of hypovolemia, with clinical evidence of hypoperfusion, inotrope dependence, or mechanical left ventricular support to correct the situation, as diagnosed by the treating physician.\n- Patients presenting with cardiogenic shock on admission were excluded.\n- Demonstrated good discrimination (c-statistic 0.84 derivation, 0.80 validation).\n- External validation in Argentina and Indonesia demonstrated c-statistics of 0.80 and 0.91, respectively.\n- Not validated in non–ST-elevation myocardial infarction (NSTEMI) or in patients treated with non-PCI reperfusion strategies (e.g., thrombolysis)."
+  },
+  "next_steps": {
+    "advice": "- Un score faible n'exclut pas un choc cardiogénique ultérieur et ne doit pas remplacer l'évaluation clinique ; poursuivez la surveillance après PCI selon les protocoles de l'établissement et intensifiez rapidement la prise en charge en cas de signes de choc.\n- Cet outil ne prédit pas tous les risques cardiovasculaires post-STEMI, y compris la mortalité, et ne doit pas remplacer les autres outils de stratification précoce du risque (p. ex., [TIMI](nabda:calc.timi-risk-score-stemi), [GRACE](nabda:calc.grace-acs-risk-mortality-calculator)).",
+    "critical_actions": "",
+    "management": "- **Lower-risk individuals:**\n\n - May be suitable for routine post-PCI monitoring per institutional protocols.\n - Reassess if clinical status changes.\n- **Higher-risk individuals:**\n\n - Plan for a higher level of care (ICU versus stepdown) post-PCI.\n - Institute more frequent hemodynamic and urine output monitoring.\n - Consider deferring or using caution with early initiation of therapies that may worsen hemodynamics in borderline patients (e.g., beta-blockers, ACE/ARBs), based on the overall clinical picture and local practice.\n - Engage the institutional “shock team” and consult advanced heart failure specialists early.\n - Establish an early plan for clinical deterioration, ensuring rapid access to vasopressor and inotropic support and mechanical circulatory support pathways."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| ORBI Risk Score | Risque de choc cardiogénique |\n| --- | --- |\n| 0-7 | Faible |\n| 8-10 | Faible à intermédiaire |\n| 11-12 | Intermédiaire à élevé |\n| ≥13 | Élevé |\n\nL'incidence intrahospitalière prédite de choc cardiogénique pour chaque score est estimée à l'aide d'un modèle de régression logistique. Voir[Auffret et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/29554243/)pour plus de détails.",
+  "short_description": "Stratifies dans-hôpital cardiogenic shock risque after primaire PCI.",
+  "medium_description": "Stratifies risque de dans-hôpital cardiogenic shock dans patients undergoing primaire percutaneous coronary intervention (PCI).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Âge, années",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤70",
+          "value": 0
+        },
+        {
+          "label": ">70",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Antécédent d'AVC/AIT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Présentation en arrêt cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Infarctus du myocarde antérieur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Délai entre le premier contact médical et l'ICP primaire (PCI primaire)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ 90 min",
+          "value": 0
+        },
+        {
+          "label": ">90 min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "f",
+      "label": "[Killip class](nabda:calc.killip-classification-heart-failure) sur admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Je",
+          "value": 0
+        },
+        {
+          "label": "II",
+          "value": 2
+        },
+        {
+          "label": "III",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "Fréquence cardiaque à l'admission, beats/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ 90",
+          "value": 0
+        },
+        {
+          "label": ">90",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "PAS (SBP) <125 mmHg et pression pulsée (PP) <45 mmHg à l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "i",
+      "label": "Glycémie à l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤10 mmol/L (≤180 mg/dL)",
+          "value": 0
+        },
+        {
+          "label": "> 10 mmol/L (> 180 mg/dL)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "j",
+      "label": "Lésion coupable du tronc commun de l’artère coronaire gauche",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "k",
+      "label": "Flux TIMI après ICP primaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥3",
+          "value": 0
+        },
+        {
+          "label": "< 3",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Auffret V, Cottin Y, Leurent G, et al. Predicting the development of in-hospital cardiogenic shock in patients with ST-segment elevation myocardial infarction treated by primary percutaneous coronary intervention: the ORBI risk score. Eur Heart J. 2018;39(22):2090-2102. doi:10.1093/eurheartj/ehy127",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29554243/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kunkel J, Frydland M, Loenborg J, et al. ORBI risk score and inflammatory response in patients with acute ST-elevation myocardial infarction. Eur Heart J. 2024;45(Supplement_1). doi:10.1093/eurheartj/ehae666.1504",
+      "href": "https://academic.oup.com/eurheartj/article/45/Supplement_1/ehae666.1504/7836485?login=false",
+      "kind": "other"
+    },
+    {
+      "text": "Bertón F, Polero LD, Candiello A, Rodriguez L, Costabel JP. ORBI score validation as predictor of cardiogenic shock in patients with st elevation myocardial infarction in two medical centers in Argentina. Curr Probl Cardiol. 2023;48(7):101136. doi:10.1016/j.cpcardiol.2022.101136",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35139403/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.killip-classification-heart-failure",
+    "calc.timi-risk-score-stemi",
+    "calc.grace-acs-risk-mortality-calculator"
+  ],
+  "source_logic_hash": "d421db5d45e8fe0f350e538f1401a624",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.killip-classification-heart-failure",
+      "text": "Killip class"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-stemi",
+      "text": "TIMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.killip-classification-heart-failure",
+      "text": "Killip class"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-stemi",
+      "text": "TIMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10661,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\nvar h = parseFloat(h);\nvar i = parseFloat(i);\nvar j = parseFloat(j);\nvar k = parseFloat(k);\n\n// Calculate score\nvar score = a + b + c + d + e + f + g + h + i + j + k;\n\nvar risk;\nif (score <= 7) {\n    risk = 'Low';\n} else if (score >= 8 && score <= 10) {\n    risk = 'Low to intermediate';\n} else if (score >= 11 && score <= 12) {\n    risk = 'Intermediate to high';\n} else {\n    risk = 'High';\n}\n\n// cs risk pct\nvar csRiskByScore = {\n  0: 0.5,\n  1: 0.6,\n  2: 0.9,\n  3: 1.2,\n  4: 1.4,\n  5: 2.0,\n  6: 2.4,\n  7: 3.3,\n  8: 4.3,\n  9: 5.7,\n  10: 7.7,\n  11: 10.3,\n  12: 12.4,\n  13: 17.3,\n  14: 21.7,\n  15: 25.6,\n  16: 30.7,\n  17: 40.4,\n  18: 45.6,\n  19: 47.9,\n  20: 63.9,\n  21: 70.1,\n  22: 68.7,\n  23: 83.4,\n  24: 80.3\n};\n\nvar cspct;\nif (score <= 24) {\n        cspct = 'In-hospital cardiogenic shock risk: ' + csRiskByScore[score] + '%';\n    } else {\n        cspct = 'In-hospital cardiogenic shock risk (%) is not validated for this score.'\n    }\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10661_ORBI Risk Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'ORBI Risk Score'\n});\ncalc_output.push({\n    name: '10661_ORBI Risk Score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: cspct\n});\n",
+  "before_use": "**Alerte sur le nom !**\n\nCet outil évalue le risque de choc cardiogénique. Il n'est pas lié à [ORBIT](nabda:calc.orbit-bleeding-risk-score-atrial-fibrillation), qui estime le risque hémorragique chez les patients anticoagulés présentant une fibrillation atriale.",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Vincent Auffret"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.argent",
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.argent-cuivre-or",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "engine_sha256": "5a58b87c8f89a023bbb3240bc76bf3e07977e0e295b494dcf23174da9b5b40e7"
+}

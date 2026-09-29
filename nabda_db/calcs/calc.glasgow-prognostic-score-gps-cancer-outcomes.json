@@ -1,0 +1,148 @@
+{
+  "id": "calc.glasgow-prognostic-score-gps-cancer-outcomes",
+  "slug": "glasgow-prognostic-score-gps-cancer-outcomes",
+  "language": "en",
+  "title": "Glasgow Prognostic score (GPS) pour cancer Outcomes",
+  "short_title": "GPS pour cancer Outcomes",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "gastroenterologie",
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Cancer du pancréas"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Gps",
+    "cancer",
+    "colorectal",
+    "renal",
+    "CA",
+    "alb",
+    "crp"
+  ],
+  "dosing": false,
+  "formula": "Sélection des critères appropriés.",
+  "how_to_use": {
+    "why": "Multiple studies suggest significantly worse outcome in multiple types of cancer, including “increased weight loss, poor performance status, increased comorbidity, increased pro-inflammatory and angiogenic cytokines and complications on treatment.” ([McMillan DC 2013](https://www.ncbi.nlm.nih.gov/pubmed/17245566))",
+    "when": "Patients atteints d'un cancer connu.",
+    "pearls": "- The Glasgow Prognostic Score (GPS) has been evaluated across numerous different cancer cohorts and suggests incrementally worsening prognosis with increasing score.\n- Depending upon patient selection, stage, cancer and other factors the resulting survival numbers vary widely.\n- The [modified GPS](nabda:calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes) uses the same parameters as the original GPS (CRP and albumin), but weighs the inflammatory component more heavily; i.e., patients with low albumin are still assigned a score of 0 even if CRP is elevated. The [modified GPS](nabda:calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes) was shown to have better correlation with survival (in colon and rectal cancer from the original paper, and in other cancers from the validation papers)."
+  },
+  "next_steps": {
+    "advice": "Le Glasgow Prognosis Score (GPS) aide à stratifier les groupes pronostiques et pourrait être un ajout précieux aux évaluations multifactorielles.",
+    "critical_actions": "Le GPS nécessite des valeurs de laboratoire sériques et peut être pertinent lorsque celles-ci sont prélevées avant ou après le diagnostic de cancer.",
+    "management": "À notre connaissance, il n’existe pas d’algorithmes de prise en charge validés utilisant le GPS."
+  },
+  "evidence": "",
+  "more_info": "Le GPS s'est montré précis dans différents types de cancer, notamment les cancers du col de l'utérus, du rein, du poumon et de l'estomac, ainsi qu'en soins primaires. Cependant, le score a été [modifié](nabda:calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes) avec de meilleures valeurs prédictives.",
+  "short_description": "Cancer pronostic basé sur biomarkers.",
+  "medium_description": "Provides cancer pronostic basé sur serum biomarkers.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "CRP",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "CRP ≤10 mg/L",
+          "value": 1
+        },
+        {
+          "label": "CRP >10 mg/L",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Albumine < 3,5 g/dL (35 g/L)",
+          "value": 1
+        },
+        {
+          "label": "Albumine ≥3.5 g/dL (35 g/L)",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Forrest LM, McMillan DC, McArdle CS, Angerson WJ, Dunlop DJ. Evaluation of cumulative prognostic scores based on the systemic inflammatory response in patients with inoperable non-small-cell lung cancer. British Journal of Cancer. 2003;89(6):1028-1030. doi:10.1038/sj.bjc.6601242.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2376960/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Forrest LM, McMillan DC, McArdle CS, Angerson WJ, Dunlop DJ. Comparison of an inflammation-based prognostic score (GPS) with performance status (ECOG) in patients receiving platinum-based chemotherapy for inoperable non-small-cell lung cancer. British Journal of Cancer. 2004;90(9):1704-1706. doi:10.1038/sj.bjc.6601789.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2409737/",
+      "kind": "other"
+    },
+    {
+      "text": "McMillan DC et. al. Evaluation of an inflammation-based prognostic score (GPS) in patients undergoing resection for colon and rectal cancer. Int J Colorectal Dis. 2007 Aug;22(8):881-6. Epub 2007 Jan 24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17245566",
+      "kind": "other"
+    },
+    {
+      "text": "Roxburgh CS, McMillan DC. Role of systemic inflammatory response in predicting survival in patients with primary operable cancer. Future Oncol. 2010 Jan;6(1):149-63. doi: 10.2217/fon.09.136.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20021215",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Proctor MJ, Talwar D, Balmar SM, et al. The relationship between the presence and site of cancer, an inflammation-based prognostic score and biochemical parameters. Initial results of the Glasgow Inflammation Outcome Study. British Journal of Cancer. 2010;103(6):870-876. doi:10.1038/sj.bjc.6605855.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2966631/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence",
+    "calc.prognostic-index-cancer-outcomes"
+  ],
+  "source_logic_hash": "88662a711e53b7ba093929b924563203",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+      "text": "modified GPS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3311,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

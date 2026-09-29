@@ -1,0 +1,171 @@
+{
+  "id": "calc.pittsburgh-knee-rules",
+  "slug": "pittsburgh-knee-rules",
+  "language": "fr",
+  "title": "Règles du genou de Pittsburgh",
+  "short_title": "Règles du genou de Pittsburgh",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "ortho",
+    "patella"
+  ],
+  "dosing": false,
+  "formula": "Série de questions Oui/Non, voir ci-dessous :",
+  "how_to_use": {
+    "why": "- Les patients ne remplissant pas les critères d'imagerie selon les règles décisionnelles de Pittsburgh ont une probabilité très faible de présenter une fracture et n'ont pas besoin de radiographies standards.\n- Elle présente une spécificité plus élevée que la [règle du genou d'Ottawa](nabda:calc.ottawa-knee-rule), réduisant le nombre de faux positifs.\n- L'application des règles décisionnelles de Pittsburgh peut réduire le nombre de radiographies inutiles jusqu'à 78 %.",
+    "when": "The Pittsburgh decision rules can be applied to all patients with an acute knee injury in the past 1 week old, without prior knee surgery or ED evaluation.",
+    "pearls": "- Les règles du genou de Pittsburgh ont été élaborées pour favoriser l'utilisation rationnelle de la radiographie dans les traumatismes aigus du genou.\n- La plupart des études leur trouvent une spécificité plus élevée que celle de la [règle du genou d'Ottawa](nabda:calc.ottawa-knee-rule), ce qui signifierait moins de radiographies nécessaires, tout en maintenant une sensibilité proche de 100 %.\n- Non utiles chez les enfants de moins de 12 ans, car tous ces patients nécessiteraient une radiographie selon les règles décisionnelles de Pittsburgh.\n- Les règles décisionnelles de Pittsburgh sont moins bien validées que la [règle du genou d'Ottawa](nabda:calc.ottawa-knee-rule), avec moins d'études de validation externe."
+  },
+  "next_steps": {
+    "advice": "Les patients ne remplissant pas les critères des règles décisionnelles de Pittsburgh n'ont pas besoin de radiographie. Si l'une des conditions est remplie, une radiographie est recommandée.",
+    "critical_actions": "Les patients ne remplissant pas les critères des règles décisionnelles de Pittsburgh n'ont pas besoin de radiographie. Si l'une des conditions est remplie, une radiographie est recommandée.",
+    "management": "Pour les lésions non osseuses importantes, des béquilles et un immobilisateur de genou peuvent souvent être utiles pour faciliter la déambulation."
+  },
+  "evidence": "- L'étude originale a été publiée en 1994 et consistait en une revue rétrospective de dossiers suivie d'une étude de validation prospective. Les auteurs ont passé en revue tous les patients s'étant présentés aux urgences pour un traumatisme aigu du genou sur une période de 10 mois, en excluant les patients dont la lésion datait de plus de 1 semaine, présentant des lésions cutanées isolées, des antécédents de chirurgie du genou, ou revenant pour une réévaluation. Ils ont analysé 11 variables cliniques chez 201 patients présentant un traumatisme du genou, dont 12 (6 %) présentaient une fracture à la radiographie. De cette analyse, ils ont constaté que la combinaison d'un mécanisme de chute ou de traumatisme contondant avec une impossibilité de marcher, un âge <12 ou >50 ans, donnait une sensibilité de 100 % et une spécificité de 63 %. Ils ont appliqué ces règles de manière prospective à 133 patients et ont obtenu une sensibilité de 100 % et une spécificité de 79 %. Cela aurait permis de réduire l'utilisation des radiographies de 78 %.\n- La règle décisionnelle a été validée de manière prospective et externe, et comparée à la [règle du genou d'Ottawa](nabda:calc.ottawa-knee-rule) en 1998. 745 patients avec 91 fractures (12,2 %) remplissaient les critères d'inclusion de Pittsburgh, avec une sensibilité de 99 % et une spécificité de 60 %, tandis que les critères d'inclusion d'Ottawa étaient remplis par 750 patients avec 87 fractures (11,6 %), avec une sensibilité de 97 % et une spécificité de 27 %.\n- Une étude de 2005 a utilisé la règle décisionnelle de Pittsburgh avec des infirmiers(ères) de triage et des médecins. 152 sujets ont été inclus de manière prospective dans l'étude avec 13 fractures identifiées (8,6 %). Tous les patients inclus dans l'étude ont bénéficié d'une radiographie. La règle décisionnelle de Pittsburgh aurait manqué 4 des 13 fractures, avec une sensibilité de 77 % et une spécificité de 57 %. Cependant, l'une de ces fractures n'a été découverte que par IRM, tandis que deux autres étaient des fractures d'avulsion ou patellaires de faible signification clinique.\n- Une autre étude réalisée aux Pays-Bas en 2013 comparant les règles décisionnelles du [genou d'Ottawa](nabda:calc.ottawa-knee-rule) et de Pittsburgh a montré que, bien que les deux aient une sensibilité de 86 %, la règle décisionnelle de Pittsburgh avait une spécificité plus élevée de 51 %, tandis que la spécificité de la [règle du genou d'Ottawa](nabda:calc.ottawa-knee-rule) était de 27 %.",
+  "more_info": "| Critères | Réponse |\n| --- | --- |\n| Mécanisme : traumatisme contondant ou chute | O/N |\n| Âge <12 ans | O/N |\n| Âge >50 ans | O/N |\n| Incapable d'appuyer le poids aux urgences ? (4 pas, boiterie autorisée) | O/N |",
+  "short_description": "Sensitive; rules out imaging dans many.",
+  "medium_description": "Defines when knee x-rays are unnecessary, basé sur Pittsburgh rules.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "mechanism",
+      "label": "Mécanisme : traumatisme contondant ou chute",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_12",
+      "label": "Âge <12",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_50",
+      "label": "Âge >50",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bear_weight_unable",
+      "label": "Unable pour bear poids dans ED (4 steps, limping is allowed)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Seaberg DC and Jackson R. Clinical decision rule for knee radiographs. American Journal of Emergency Medicine. 1994; 12(5): 541-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8060409",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Simon LV, et al. The Pittsburgh decision rule: triage nurse versus physician utilization in the emergency department. Journal of Emergency Medicine. 2006; 31(3): 247-50.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/j.1553-2712.2010.00897.x/full",
+      "kind": "other"
+    },
+    {
+      "text": "Cheung TC, et al. Diagnostic accuracy and reproducibility of the Ottawa knee rule vs the Pittsburgh decision rule. 2013; 31: 641-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23399332",
+      "kind": "other"
+    },
+    {
+      "text": "Seaberg DC, et al. Multicenter comparison of two clinical decision rules for the use of radiography in acute, high-risk knee injuries. Annals of Emergency Medicine. 1998; 32(1): 8-13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9656942",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ottawa-knee-rule",
+    "calc.ottawa-ankle-rule",
+    "calc.canadian-c-spine-rule"
+  ],
+  "source_logic_hash": "233780abdc54595d70fd5181de0e4c90",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ottawa-knee-rule",
+      "text": "Ottawa Knee Rule"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1042,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

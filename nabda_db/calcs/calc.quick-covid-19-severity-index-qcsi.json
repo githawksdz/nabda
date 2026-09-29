@@ -1,0 +1,172 @@
+{
+  "id": "calc.quick-covid-19-severity-index-qcsi",
+  "slug": "quick-covid-19-severity-index-qcsi",
+  "language": "fr",
+  "title": "Quick COVID-19 gravité index (qCSI)",
+  "short_title": "Quick COVID-19 gravité index (qCSI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Quick COVID-19 Severity Index (qCSI), covid severity index, CSI, qCSI, covid-19 severity, covid severity, covid-19 severity index, covid risk, covid risk index, covid risk score, covid, covid19, covid-19, coronavirus, covid 19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Fréquence respiratoire, respirations/min | ≤22 | 0 |\n| 23-28 | 1 | |\n| >28 | 2 | |\n| Oxymétrie de pouls* | >92 % | 0 |\n| 89-92 % | 2 | |\n| ≤88 % | 5 | |\n| Débit d'O 2, L/min | ≤2 | 0 |\n| 3-4 | 4 | |\n| 5-6 | 5 | |\n\n*La valeur la plus basse enregistrée au cours des quatre premières heures de la prise en charge du patient.",
+  "how_to_use": {
+    "why": "- Estime rapidement le risque de décompensation respiratoire nécessitant un soutien respiratoire important (≥10 L/min, oxygénothérapie à haut débit, ventilation non invasive ou invasive) ou de décès dans les 24 heures.\n- Utilise des variables facilement accessibles au lit du patient.\n- Peut guider la décision quant à l'intensité de la surveillance et à l'allocation des ressources.",
+    "when": "Pour les patients adultes atteints de COVID-19 confirmé ou suspecté se présentant aux urgences ou à l'hôpital.",
+    "pearls": "- Dérivé d'une base de données de patients hospitalisés pour COVID-19 dans le nord-ouest des États-Unis.\n- L'étude de dérivation a utilisé des données recueillies au cours des 4 premières heures du passage aux urgences. Les patients nécessitant plus de 6 L/min d'oxygène à tout moment aux urgences ont été exclus.\n- Non validé pour les populations pédiatriques ou comme outil de sortie d'hôpital.\n- Ne prend pas en compte de nombreux facteurs de risque significatifs de COVID-19 sévère, notamment les comorbidités ; le score doit être interprété dans le contexte clinique."
+  },
+  "next_steps": {
+    "advice": "- Les auteurs suggèrent :\n\n - Un score ≤3 indique une faible probabilité de maladie respiratoire critique et de mortalité dans les 24 heures.\n - Un score >3 suggère une probabilité plus élevée de progression vers l'insuffisance respiratoire.\n- Plusieurs études ultérieures ont utilisé des seuils différents pour prédire la mortalité liée au COVID-19.\n- Aucune recommandation thérapeutique basée sur le score qCSI n'est actuellement disponible, mais les patients présentant des scores plus élevés pourraient bénéficier d'un niveau de soins supérieur.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score qCSI | Niveau de risque | Risque de maladie critique* à 24 h |\n| --- | --- | --- |\n| ≤3 | Faible | 4 % |\n| 4-6 | Faible-intermédiaire | 30 % |\n| 7-9 | Intermédiaire-élevé | 44 % |\n| 10-12 | Élevé | 57 % |\n\n*Défini par le besoin en oxygène (>10 L/min par dispositif à bas débit, dispositif à haut débit, ventilation non invasive ou invasive) ou le décès.",
+  "short_description": "Risque respiratoire COVID-19 à 24 h aux urgences.",
+  "medium_description": "Predicts 24-hr risque de critical respiratory maladie dans patients admitted de ED avec COVID-19.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "rate",
+      "label": "Fréquence respiratoire, breaths/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤22",
+          "value": 0
+        },
+        {
+          "label": "23-28",
+          "value": 1
+        },
+        {
+          "label": ">28",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Oxymétrie de pouls",
+      "tips": "Valeur la plus basse enregistrée au cours des quatre premières heures de la prise en charge du patient",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">92%",
+          "value": 0
+        },
+        {
+          "label": "89-92%",
+          "value": 2
+        },
+        {
+          "label": "≤88%",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "flow",
+      "label": "Débit d'O~2~, L/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤2",
+          "value": 0
+        },
+        {
+          "label": "3-4",
+          "value": 4
+        },
+        {
+          "label": "5-6",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Haimovich AD, Ravindra NG, Stoytchev S, et al. Development and validation of the quick covid-19 severity index: a prognostic tool for early clinical decompensation. Ann Emerg Med. 2020;76(4):442-453.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33012378/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Haimovich AD, Ravindra NG, Stoytchev S, et al. Development and validation of the quick covid-19 severity index: a prognostic tool for early clinical decompensation. Ann Emerg Med. 2020;76(4):442-453.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33012378/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rodriguez-Nava G, Yanez-Bello MA, Trelles-Garcia DP, Chung CW, Friedman HJ, Hines DW. Performance of the quick COVID-19 severity index and the Brescia-COVID respiratory severity scale in hospitalized patients with COVID-19 in a community hospital setting. Int J Infect Dis. 2021;102:571-576.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33181332/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Acar H, Kayalı A, Bilgin S, et al. Evaluation of the effectiveness of quick covid-19 severity index and covid-gram critical illness risk score in determining mortality and severity in covid-19: use of covid-gram and qcsi as an early warning tool for covid-19. Journal of Surgery and Medicine. 2022;6(12):956-959.",
+      "href": "https://jsurgmed.com/article/view/1093344",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dinesh AS, Prabu PA, Yogesh S, Sathyanarayanan M, Palanisamy S. Utility of Quick COVID-19 Severity Index in Predicting Early Clinical Decompensation in Hospitalized Patients with COVID-19. J Acad Med Pharm. 2023;5(3):151. doi:10.47009/jamp.2023.5.3.151",
+      "href": "https://www.academicmed.org/Uploads/Volume5Issue3/151.%20[58.%20JAMP_Mohamed%20Ali]%20735-738.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ngai K, Maher PP, Leibner E, Loo G, Legome E. 14 external validation of the quick covid-19 severity index: a prognostic tool for early clinical decompensation. Annals of Emergency Medicine. 2021;78(2):S7.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8335496/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm",
+    "calc.covid-risk"
+  ],
+  "source_logic_hash": "ac1e9664b474eae9006589e3866807d4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10304,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

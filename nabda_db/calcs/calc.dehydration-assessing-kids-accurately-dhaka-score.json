@@ -1,0 +1,179 @@
+{
+  "id": "calc.dehydration-assessing-kids-accurately-dhaka-score",
+  "slug": "dehydration-assessing-kids-accurately-dhaka-score",
+  "language": "en",
+  "title": "Déshydratation : évaluation précise des enfants (score DHAKA)",
+  "short_title": "Score DHAKA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Troubles gastro-intestinaux fonctionnels de l’enfant et de l’adolescent",
+    "Infection à Clostridium difficile",
+    "Colitis",
+    "Dehydration",
+    "Gastroenteritis",
+    "Hyponatremia",
+    "Malnutrition",
+    "Santé publique",
+    "Hypokalemia"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhea",
+    "Nausea",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "dehydration",
+    "Dehydration: Assessing Kids Accurately (DHAKA) Score",
+    "DHAKA",
+    "DHAKA Score",
+    "dehydration score",
+    "diarrhea",
+    "acute diarrhea",
+    "dehydration classification",
+    "child dehydration",
+    "infant dehydration",
+    "dehydration"
+  ],
+  "dosing": false,
+  "formula": "The DHAKA Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| General appearance | Normal | 0 |\n| Restless/irritable | 2 | |\n| Lethargic/unconscious | 4 | |\n| Respirations | Normal | 0 |\n| Deep | 2 | |\n| Skin pinch | Normal | 0 |\n| Slow | 2 | |\n| Very slow | 4 | |\n| Tears | Normal | 0 |\n| Decreased | 1 | |\n| Absent | 2 | |",
+  "how_to_use": {
+    "why": "- Provides a validated diagnostic model to assess dehydration severity.\n- More accurate than standard clinical judgment alone, especially in differentiating some versus severe dehydration.\n- Outperforms the WHO Integrated Management of Childhood Illness (IMCI) algorithm in classifying dehydration severity.\n- Helps optimize fluid management decisions, minimizing unnecessary IV fluids while ensuring appropriate treatment for severe cases.",
+    "when": "Utilisation chez les enfants de moins de 5 ans se présentant aux urgences ou en consultation externe avec une diarrhée aiguë et une suspicion de déshydratation, en particulier dans les contextes à ressources limitées.",
+    "pearls": "- Derived and validated in children under 5 years old with acute diarrhea (≥3 loose stools per day for <14 days) in Bangladesh.\n- Subjects were classified by percent weight change with rehydration into the following categories: severe dehydration (>9% weight change), some dehydration (3–9% weight change), or no dehydration (<3% weight change).\n- Not validated in older children or in cases of dehydration due to non-diarrheal causes."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne doit pas remplacer le jugement clinique — les signaux d’alerte (p. ex., choc, altération de l’état mental) doivent entraîner une intervention urgente, quel que soit le score.",
+    "critical_actions": "",
+    "management": "**No dehydration (score 0–1):**\n\n- Encourage fluid intake and continue a normal diet.\n- Provide education on warning signs for deterioration.\n\n**Some dehydration (score 2–3):**\n\n- Supervised oral rehydration therapy (ORT).\n- Consider short-term observation in a healthcare setting.\n\n**Severe dehydration (score ≥4):**\n\n- Initiate IV rehydration immediately.\n- Hospitalize if resources allow.\n- Monitor for complications (e.g., electrolyte abnormalities, worsening dehydration)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score DHAKA | Catégorie de déshydratation |\n| --- | --- |\n| 0-1 | Pas de déshydratation |\n| 2-3 | Déshydratation modérée |\n| ≥4 | Déshydratation sévère |",
+  "short_description": "Dehydration classification dans enfants <5 years.",
+  "medium_description": "Classifies dehydration dans enfants <5 years avec aigu diarrhea.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "general",
+      "label": "Aspect général",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Restless/irritable",
+          "value": 2
+        },
+        {
+          "label": "Lethargic/unconscious",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp",
+      "label": "Respirations",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Deep",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "skin",
+      "label": "Pli cutané",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Slow",
+          "value": 2
+        },
+        {
+          "label": "Very slow",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tears",
+      "label": "Tears",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Diminué",
+          "value": 1
+        },
+        {
+          "label": "Absent",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Levine AC, Glavis-Bloom J, Modi P, et al. Empirically derived dehydration scoring and decision tree models for children with diarrhea: assessment and internal validation in a prospective cohort study in dhaka, bangladesh. Glob Health Sci Pract. 2015;3(3):405-418.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26374802/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levine AC, Glavis-Bloom J, Modi P, et al. External validation of the DHAKA score and comparison with the current IMCI algorithm for the assessment of dehydration in children with diarrhoea: a prospective cohort study. Lancet Glob Health. 2016;4(10):e744-751",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27567350/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "14092277c3d618a68611c210024b8f89",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10592,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

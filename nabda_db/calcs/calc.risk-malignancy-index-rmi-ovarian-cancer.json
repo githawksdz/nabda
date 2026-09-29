@@ -1,0 +1,225 @@
+{
+  "id": "calc.risk-malignancy-index-rmi-ovarian-cancer",
+  "slug": "risk-malignancy-index-rmi-ovarian-cancer",
+  "language": "fr",
+  "title": "Risque de Malignancy index (RMI) pour Ovarian cancer",
+  "short_title": "RMI pour Ovarian cancer",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "cancerologie",
+    "medecine-interne",
+    "chirurgie",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Cancer de l'ovaire"
+  ],
+  "chief_complaints": [
+    "Cancer",
+    "Mass"
+  ],
+  "abbreviations": [
+    "Ovarian cancer index",
+    "metastases",
+    "CA125",
+    "menopause",
+    "ultrasound score",
+    "lesion",
+    "ascites",
+    "cyst",
+    "CA-125"
+  ],
+  "dosing": false,
+  "formula": "RMI = statut ménopausique x score échographique x CA-125 sérique, U/mL\n\nOù le statut ménopausique et le score échographique sont les suivants :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Signes échographiques | Kystes multiloculés | 1 si 0-1 présent 3 si ≥2 présents |\n| Zones solides | | |\n| Lésions bilatérales | | |\n| Ascite | | |\n| Métastases intra-abdominales | | |\n| Statut ménopausique* | Préménopausique ou péri-ménopausique | 1 |\n| Post-ménopausique | 3 | |\n\n*Statut post-ménopausique = >1 an d'aménorrhée ou âge ≥50 ans si la patiente a eu une hystérectomie.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Nécessite le dosage du CA-125 pour le calcul, qui ne serait pas sinon réalisé."
+  },
+  "next_steps": {
+    "advice": "Envisager un bilan complémentaire chez les patientes avec un RMI élevé.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| RMI | Risque de malignité |\n| --- | --- |\n| ≤200 | Faible |\n| >200 | Élevé* |\n\n*Sensibilité de 71 % et spécificité de 92 % pour le cancer de l'ovaire.",
+  "short_description": "Ovarian cancer risque pour adnexal mass.",
+  "medium_description": "Prédit le risque qu'une masse annexielle soit maligne.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cyst",
+      "label": "Kystes multiloculés",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "areas",
+      "label": "Zones solides",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lesions",
+      "label": "Lésions bilatérales",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ascites",
+      "label": "Ascites",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "intra",
+      "label": "Métastases intra-abdominales",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "meno",
+      "label": "Statut ménopausique",
+      "tips": "Statut post-ménopausique = >1 an d'aménorrhée ou âge ≥50 ans si la patiente a eu une hystérectomie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Préménopausique ou péri-ménopausique",
+          "value": 1
+        },
+        {
+          "label": "Postmenopausal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ca",
+      "label": "CA-125 sérique, U/mL",
+      "optional": false,
+      "unit": "ca125",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Jacobs I, Oram D, Fairbanks J, Turner J, Frost C, Grudzinskas JG. A risk of malignancy index incorporating CA 125, ultrasound and menopausal status for the accurate preoperative diagnosis of ovarian cancer. Br J Obstet Gynaecol. 1990;97(10):922-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2223684",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tingulstad S, Hagen B, Skjeldestad FE, Halvorsen T, Nustad K, Onsrud M. The risk-of-malignancy index to evaluate potential ovarian cancers in local hospitals. Obstetrics & Gynecology. 1999;93(3):448-452.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10074998",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.swede-score",
+    "calc.reids-colposcopic-index-rci"
+  ],
+  "source_logic_hash": "cd6326e8be022545c343f0a9d95874c8",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10103,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

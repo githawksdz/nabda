@@ -1,0 +1,193 @@
+{
+  "id": "calc.cahp-cardiac-arrest-hospital-prognosis-score",
+  "slug": "cahp-cardiac-arrest-hospital-prognosis-score",
+  "language": "en",
+  "title": "CAHP (Cardiac Arrest hôpital pronostic) score",
+  "short_title": "Score CAHP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Syncope",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Cardiac arrest, CAHP (Cardiac Arrest Hospital Prognosis) Score, CAHP Score, out-of-hospital cardiac arrest"
+  ],
+  "dosing": false,
+  "formula": "Ajout des points sélectionnés :\n\n| Variable | | Points |\n| --- | --- | --- |\n| Âge, années | | 1.1 x (Âge - 10) |\n| Contexte | Milieu public | 0 |\n| Domicile | 24 | |\n| Rythme initial | Chocable | 0 |\n| Non chocable | 27 | |\n| Durée de l'effondrement au début de la RCP, min | 2.8 x Durée | |\n| Durée de la RCP au ROSC, min | 0.8 x Durée | |\n| pH à l'admission | 585 - (77 x pH) | |\n| Dose totale d'épinéphrine administrée, mg | 0 | 0 |\n| 1-2 | 27 | |\n| ≥3 | 43 | |\n\nD'après [Bougoin 2018](https://www.sciencedirect.com/science/article/pii/S1936879817319453?via%3Dihub#appsec1).",
+  "how_to_use": {
+    "why": "Aide à stratifier le risque et à identifier les patients à haut risque d’événements neurologiques indésirables qui pourraient ne pas bénéficier d’un cathétérisme cardiaque immédiat, d’une coronarographie ou d’autres modalités de soins agressives telles que les dispositifs percutanés d’assistance ventriculaire gauche, l’ECMO.",
+    "when": "Patients adultes en arrêt cardiaque avec retour de la circulation spontanée (ROSC) se présentant aux urgences.",
+    "pearls": "- Élaboré et validé chez des patients en arrêt cardiaque extrahospitalier avec suspicion de maladie médicale/cardiaque. Il ne doit pas être utilisé chez les patients présentant un arrêt traumatique ou d'autres circonstances telles qu'une surdose médicamenteuse, une hypothermie environnementale et une asphyxie.\n- Les patients STEMI ont une indication de classe I pour la coronarographie, même après un arrêt cardiaque extrahospitalier."
+  },
+  "next_steps": {
+    "advice": "- A high CAHP score does not obviate the need for ongoing monitoring, detailed neurologic assessment, ICU care, etc.\n- High CAHP scores (>200) in the ED should not be used to withhold or withdraw standard care for any OHCA patient with ROSC such as ICU admission, therapeutic hypothermia, neurologic consultation, critical care management and other high quality post-resuscitation care.\n- Scores do not provide individual prediction and should therefore not be used alone to make a decision regarding aggressiveness of care. This should be made on an individualized basis based on all clinical factors by all clinical teams involved.\n- It is advisable to consult interventional cardiology for all OHCA patients with ROSC.",
+    "critical_actions": "Veiller à ce qu'une anamnèse complète soit recueillie auprès des EMS ou des témoins concernant l'exactitude de l'horaire.",
+    "management": "- For patients with high risk CAHP scores (>200), the majority of patients will not have a good neurologic outcome and aggressive care may not result in improved outcomes.\n- For patients with intermediate scores (150-200), a case by case decision including all clinical variables should be made.\n- For patients with low CAHP scores (<150), emergency, early or deferred coronary angiography is appropriate depending on clinical circumstances. Patient with active ischemic EKG or high risk EKG changes, persistent hypotension/shock, recurrent malignant arrhythmia or arrest may need immediate cath. In other patients without such high risk features, a deferred approach after neurologic improvement may be appropriate.\n\nPatient scoring less than 150 with no other obvious cause of cardiac arrest should be considered for early vs delayed coronary angiography depending on whether the patients have the following high risk features:\n\n1. All STEMI (immediate coronary angiography unless obvious contra-indication-consult cath lab immediately).\n2. High risk EKG abnormality apart from STEMI.\n3. Recurrent arrhythmia or arrest.\n4. Shock."
+  },
+  "evidence": "The CAHP Score was derived from a[retrospective registry](https://www.ncbi.nlm.nih.gov/pubmed/26497161)of the Sudden Death Expertise Center in Paris, consisting of 819 consecutive patients with OHCA with ROSC. Non-cardiac etiologies such as trauma, drowning, hanging, and overdose were excluded. The area under the curve (AUC) was 0.93 for multivariate predictors (95% CI, 0.91-0.95). Discrimination of the model was confirmed by bootstrapping and X2 Hosmer-Lemeshow test.\n\nAdditionally,[Bougouin et al](https://www.ncbi.nlm.nih.gov/pubmed/29413238)found that CAHP Score correlated with survival and benefit of angiography, and a small observational study of 349 patients admitted to ICU after OHCA assessed ability of the CAHP Score vs three alternate scores (OHCA, APACHE II, and SAPS II) to predict mortality found that CAHP Score was most discriminatory by logistic regression ([Isenschmid 2019](https://www.ncbi.nlm.nih.gov/pubmed/30391369)).",
+  "more_info": "Interpretation:\n\n| CAHP Score | Risk of poor outcome | Risk of poor neurological outcome* |\n| --- | --- | --- |\n| <150 | Low | 39% |\n| 150-200 | Moderate | 81% |\n| >200 | High | 100% |\n\n*Defined as Cerebral Performance Category of 3 (severe disability), 4 (vegetative state), and 5 (death) at hospital discharge.",
+  "short_description": "Pronostic de l'arrêt cardiaque.",
+  "medium_description": "Predicts poor pronostic after out-de-hôpital cardiac arrest et guides utility de cardiac catheterization.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "time_years",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "setting",
+      "label": "Setting",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Public setting",
+          "value": 0
+        },
+        {
+          "label": "Home",
+          "value": 24
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "shockable",
+      "label": "Rythme initial",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Shockable",
+          "value": 0
+        },
+        {
+          "label": "Non-shockable",
+          "value": 27
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "collapse",
+      "label": "Duration de collapse pour CPR begun",
+      "optional": false,
+      "unit": "min",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "rosc",
+      "label": "Durée de la RCP jusqu'au ROSC",
+      "optional": false,
+      "unit": "min",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ph",
+      "label": "pH à l'admission",
+      "optional": false,
+      "unit": "ph",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "epi",
+      "label": "Adrénaline totale administrée, mg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1-2",
+          "value": 27
+        },
+        {
+          "label": "≥3",
+          "value": 43
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Maupain C, Bougouin W, Lamhaut L, et al. The CAHP (Cardiac Arrest Hospital Prognosis) score: a tool for risk stratification after out-of-hospital cardiac arrest. Eur Heart J. 2016;37(42):3222-3228.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26497161",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Debaty G, Babaz V, Durand M, et al. Prognostic factors for extracorporeal cardiopulmonary resuscitation recipients following out-of-hospital refractory cardiac arrest. A systematic review and meta-analysis. Resuscitation. 2017;112:1-10.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0300957216305895",
+      "kind": "other"
+    },
+    {
+      "text": "Isenschmid C, Luescher T, Rasiah R, et al. Performance of clinical risk scores to predict mortality and neurological outcome in cardiac arrest patients. Resuscitation. 2019;136:21-29.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30391369 ",
+      "kind": "other"
+    },
+    {
+      "text": "Bougouin W, Dumas F, Karam N, et al. Should We Perform an Immediate Coronary Angiogram in All Patients After Cardiac Arrest?: Insights From a Large French Registry. JACC Cardiovasc Interv. 2018;11(3):249-256.",
+      "href": " https://www.ncbi.nlm.nih.gov/pubmed/29413238 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cart-cardiac-arrest-risk-triage-score",
+    "calc.resuscitation-using-ecpr-during-hospital-cardiac-arrest-rescue-ihca",
+    "calc.european-system-cardiac-operative-risk-evaluation-euroscore-ii"
+  ],
+  "source_logic_hash": "fd7023fe3129942c4a793dd32e624055",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10297,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

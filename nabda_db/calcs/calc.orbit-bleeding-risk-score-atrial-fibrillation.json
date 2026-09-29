@@ -1,0 +1,259 @@
+{
+  "id": "calc.orbit-bleeding-risk-score-atrial-fibrillation",
+  "slug": "orbit-bleeding-risk-score-atrial-fibrillation",
+  "language": "en",
+  "title": "ORBIT saignement risque score pour fibrillation atriale",
+  "short_title": "ORBIT score pour Afib",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "Orbit",
+    "orbit score",
+    "afib",
+    "bleeding risk",
+    "bleeding risk score",
+    "bleeding risk score in afib",
+    "orbit bleeding risk score",
+    "ORBIT Bleeding Risk Score for Atrial Fibrillation",
+    "ORBIT Score for Afib"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Hemoglobin <13 g/dL for males and <12 g/dL for females, or hematocrit <40% for males and <36% for females | No | 0 |\n| Yes | 2 | |\n| Age >74 years | No | 0 |\n| Yes | 1 | |\n| Bleeding history* | No | 0 |\n| Yes | 2 | |\n| [GFR](nabda:calc.mdrd-gfr-equation\\) <60 mL/min/1.73 m 2 | No | 0 |\n| Yes | 1 | |\n| Treatment with antiplatelet agents | No | 0 |\n| Yes | 1 | |\n\n*Any history of GI bleeding, intracranial bleeding, or hemorrhagic stroke.",
+  "how_to_use": {
+    "why": "- May be used in conjunction with the [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) to risk stratify patients for clinically significant bleeding to help guide decisions on anticoagulation in patients with atrial fibrillation.\n- May not be statistically superior to [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) (see[Evidence](#evidence)for details), but was more recently derived and validated in the era of DOACs, and may be more useful for that reason.",
+    "when": "Patients with atrial fibrillation in whom anticoagulation is being considered for stroke prevention.",
+    "pearls": "- Major bleeding was defined as fatal bleeding, symptomatic bleeding in a critical organ, or bleeding with a hemoglobin drop requiring transfusion of ≥2 units (ISTHcriteria).\n- ORBIT does not take into account choice of anticoagulant.\n- Unlike [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) , ORBIT does not take into account the time in therapeutic range, as there is no reliable or readily available objective measure for therapeutic range of the direct oral anticoagulants (DOACs).\n- Unlike HAS-BLED, ORBIT was derived in a patient population that included vitamin K antagonists (VKAs, such as warfarin) as well as DOACs."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Other risk factors not part of the ORBIT Score may influence the decision for anticoagulation. Patient preferences and values should go into the decision regarding anticoagulation as it pertains to risks vs. benefits of being on anticoagulation for stroke prevention in patients with atrial fibrillation.",
+    "management": ""
+  },
+  "evidence": "In patients with atrial fibrillation, stroke prevention is a part of the management plan. The [CHADS₂](nabda:calc.chads2-score-atrial-fibrillation-stroke-risk) or [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) are often used to calculate stroke risk in patients with atrial fibrillation.Stroke prevention for those patients with atrial fibrillation is usually achieved with anticoagulation.However, anticoagulation also creates bleeding risk. Prior existing risk calculators for risk of bleeding include [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) , [ATRIA](nabda:calc.atria-bleeding-risk-score) , and others. Of these, HAS-BLED is probably the most used and well-validated.\n\nWith the above in mind,[O’Brien et al (2015)](https://academic.oup.com/eurheartj/article/36/46/3258/2398371)derived and validated the ORBIT Score as a way to assess bleeding risk in patients with atrial fibrillation. Derivation was based on data from the Outcomes Registry for Better Informed Treatment of Atrial Fibrillation (ORBIT-AF), a prospective registry of patients with atrial fibrillation across 176 sites in the United States. Of the 10,132 patients in the registry, 7,411 were analyzed (the rest were excluded for not being on oral anticoagulants or if follow-up data was lacking).\n\nMajor bleeding was defined as fatal bleeding, symptomatic bleeding in a critical organ, or bleeding with hemoglobin drop requiring transfusion of ≥2 units. The simplified 5-item ORBIT Score was based on the 5 predictors with the strongest association with major bleeding.\n\nThe authors also validated the ORBIT Score with data from ROCKET-AF, a cohort of patients receiving rivaroxaban once-daily vs vitamin K antagonism. They showed that ORBIT showed better discrimination than ATRIA or HAS-BLED (c-index = 0.67, 0.66, 0.64, respectively).\n\nHowever, subsequent studies in different patient populations did not show ORBIT to be superior.[Senoo et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/26482233)studied 2,293 patients in the AMADEUS trial and showed HAS-BLED to perform better in predicting major bleeding than the ORBIT score (c-index = 0.65 vs 0.61, p = 0.001).[Esteve-Pastor et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27557850)showed ORBIT was not superior to HAS-BLED in predicting major bleeding in 406 patients undergoing electrocardioversion (c-index = 0.82 vs 0.77, p = 0.08), or in 1,276 patients with persistent atrial fibrillation in the FANTASIIA registry (c-index = 0.70 vs 0.63, p = 0.12).[Wang et al (2017)](https://www.ncbi.nlm.nih.gov/pubmed/29312640)conducted a meta-analysis showing that ORBIT was not superior to HAS-BLED in predicting major bleeding (8,079 total anticoagulated non-valvular atrial fibrillation patients from the United States, Britain, Spain, and the Netherlands).\n\nInterestingly, the studies above also showed that ORBIT places more patients in the low-risk category than does HAS-BLED, thus potentially under-predicting their major bleeding risk ([Senoo 2016](https://www.ncbi.nlm.nih.gov/pubmed/26482233),[Esteve-Pastor 2016](https://www.ncbi.nlm.nih.gov/pubmed/27557850),[Wang 2017](https://www.ncbi.nlm.nih.gov/pubmed/29312640)). The concern with this is that some at-risk patients may not be flagged correctly.[Lip et al (2018)](https://www.ncbi.nlm.nih.gov/pubmed/29274754)suggest that HAS-BLED has higher sensitivity but lower specificity for major bleeding risk when compared to the ORBIT Score. As a result, care must be taken when clinically applying the results of either score.",
+  "more_info": "Interpretation:\n\n| ORBIT Score | Risk group | Bleeds per 100 patient-years |\n| --- | --- | --- |\n| 0-2 | Low | 2.4 |\n| 3 | Medium | 4.7 |\n| 4-7 | High | 8.1 |\n\nFrom[O'Brien 2015](https://academic.oup.com/eurheartj/article/36/46/3258/2398371).",
+  "short_description": "Anticoagulation saignement risque dans afib.",
+  "medium_description": "Predicts saignement risque dans patients sur anticoagulation pour afib, similar pour [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemo1",
+      "label": "Hemoglobin <13 g/dL ou hematocrit <40%",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "sex == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemo2",
+      "label": "Hemoglobin <12 g/dL ou hematocrit <36%",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "sex == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge >74 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "Antécédents hémorragiques",
+      "tips": "Any history of GI bleeding, intracranial bleeding, or hemorrhagic stroke",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gfr",
+      "label": "[GFR](nabda:calc.mdrd-gfr-equation) <60 mL/min/1.73 m^2^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "treatment",
+      "label": "Traitement avec antiplatelet agents",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "O'Brien EC, Simon DN, Thomas LE, et al. The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation. Eur Heart J. 2015;36(46):3258-64.",
+      "href": "https://academic.oup.com/eurheartj/article/36/46/3258/2398371 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Senoo K, Proietti M, Lane DA, Lip GY. Evaluation of the HAS-BLED, ATRIA, and ORBIT Bleeding Risk Scores in Patients with Atrial Fibrillation Taking Warfarin. Am J Med. 2016;129(6):600-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26482233 ",
+      "kind": "other"
+    },
+    {
+      "text": "Esteve-Pastor MA, Garcia-Fernandez A, Macias M, et al. Is the ORBIT Risk Score Superior to the HAS-BLED Score in Anticoagulated Atrial Fibrillation Patients? Circ J. 2016;80(10):2102-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27557850 ",
+      "kind": "other"
+    },
+    {
+      "text": "Wang C, Yu Y, Zhu W, et al. Comparing the ORBIT and HAS-BLED Bleeding Risk Scores in Anticoagulated Atrial Fibrillation Patients: A Systematic Review and Meta-Analysis. Oncotarget. 2017;8(65):109703-11.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29312640",
+      "kind": "other"
+    },
+    {
+      "text": "Lip GYH, Skjoth F, Nielsen PB, et al. The HAS-BLED, ATRIA, and ORBIT Bleeding Scores in Atrial Fibrillation Patients Using Non-Vitamin K Antagonist Oral Anticoagulants. Am J Med. 2018;131(5):574.e13-574.e27.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29274754",
+      "kind": "other"
+    },
+    {
+      "text": "O'Brien EC, Simon DN, Thomas LE, et al. The ORBIT Bleeding Score: A Simple Bedside Score to Assess Bleeding Risk in Atrial Fibrillation. Eur Heart J. 2015;36(46):3258-64.",
+      "href": "https://academic.oup.com/eurheartj/article/36/46/3258/2398371 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.direct-acting-oral-anticoagulants-doac-score",
+    "calc.vte-bleed-score",
+    "calc.mdrd-gfr-equation",
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk"
+  ],
+  "source_logic_hash": "b82d2d4a7a53ae77cf6f63d224069ecb",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "GFR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10227,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

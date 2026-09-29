@@ -1,0 +1,391 @@
+{
+  "id": "calc.preoperative-mortality-predictor-pmp-score",
+  "slug": "preoperative-mortality-predictor-pmp-score",
+  "language": "en",
+  "title": "Score prédictif de mortalité préopératoire (PMP)",
+  "short_title": "Score prédictif de mortalité préopératoire",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Saignement / Hémorragie",
+    "Obésité",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Tout/Tous",
+    "Saignement",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "surgical risk",
+    "Perioperative death",
+    "perioperative risk",
+    "postoperative death",
+    "postoperative risk",
+    "periop death",
+    "preop death",
+    "periop risk",
+    "preop risk",
+    "pmp score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Inpatient | No | 0 |\n| Yes | 6 | |\n| Sepsis | No | 0 |\n| Yes | 4 | |\n| Poor functional status (total assistance required for all daily activities) | No | 0 |\n| Yes | 3 | |\n| Disseminated cancer | No | 0 |\n| Yes | 1 | |\n| Age, years | <65 | 0 |\n| 65-69 | 0.5 | |\n| 70-79 | 1 | |\n| ≥80 | 2 | |\n| Cardiac comorbidity (dyspnea and CHF history, past MI or angina, peripheral artery disease, hypertension requiring medication) | No | 0 |\n| Yes | 5 | |\n| Pulmonary comorbidity (on ventilator, COPD history, current pneumonia) | No | 0 |\n| Yes | 3 | |\n| Renal comorbidity (dialysis, renal failure) | No | 0 |\n| Yes | 1 | |\n| Liver comorbidity (ascites, esophageal varices) | No | 0 |\n| Yes | 1 | |\n| Steroids for chronic condition | No | 0 |\n| Yes | 1 | |\n| Weight loss (>10% body weight in last 6 months) | No | 0 |\n| Yes | 1 | |\n| Bleeding disorder | No | 0 |\n| Yes | 1 | |\n| DNR status | No | 0 |\n| Yes | 1 | |\n| Obesity | No | 0 |\n| Yes | -1 | |",
+  "how_to_use": {
+    "why": "- Uses easily obtainable information preoperatively.\n- Derived to aid in preoperative counseling and discussions of informed consent.",
+    "when": "Use in patients ≥18 years old undergoing general surgery (elective or emergent).",
+    "pearls": "- L’étude a examiné les données ACS NSQIP pour 7 interventions : pancréas ouvert, colorectal ouvert/cœlioscopique, hernie (ventrale, ombilicale ou inguinale) et chirurgies de la vésicule biliaire.\n- Simila"
+  },
+  "next_steps": {
+    "advice": "Pourrait potentiellement être utilisé comme mesure de la qualité des systèmes.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PMP | Risque de mortalité périopératoire |\n| --- | --- |\n| -1-5 | 0,1 % |\n| 6-10 | 0,6 % |\n| 11-15 | 2,4 % |\n| 16-20 | 12,6 % |\n| 21-25 | 37,5 % |\n| 26-30 | 40,0 % |",
+  "short_description": "Mortalité périopératoire.",
+  "medium_description": "Predicts risque de perioperative mortalité dans general surgery patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "inpatient",
+      "label": "Hospitalisé",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sepsis",
+      "label": "Sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pfs",
+      "label": "Mauvais état fonctionnel",
+      "tips": "Assistance totale requise pour toutes les activités de la vie quotidienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer disséminé",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 65",
+          "value": 0
+        },
+        {
+          "label": "65-69",
+          "value": 0.5
+        },
+        {
+          "label": "70-79",
+          "value": 1
+        },
+        {
+          "label": "≥ 80",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiac",
+      "label": "Comorbidité cardiaque",
+      "tips": "Dyspnea and CHF history, past MI or angina, peripheral artery disease, hypertension requiring medication",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulmonary",
+      "label": "Comorbidité pulmonaire",
+      "tips": "- Sous ventilation mécanique\n- Antécédents de BPCO\n- Pneumonie en cours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "Comorbidité rénale",
+      "tips": "Dialyse, insuffisance rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "liver",
+      "label": "Comorbidité hépatique",
+      "tips": "Ascite, varices œsophagiennes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "steroids",
+      "label": "Steroids pour chronique condition",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loss",
+      "label": "Perte de poids",
+      "tips": ">10% body weight in last 6 months",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bleeding",
+      "label": "Trouble hémorragique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dnr",
+      "label": "Statut DNR",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "obesity",
+      "label": "Obésité",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Vaid S, Bell T, Grim R, Ahuja V. Predicting risk of death in general surgery patients on the basis of preoperative variables using American College of Surgeons National Surgical Quality Improvement Program data. Perm J. 2012;16(4):10-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3523928/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+    "calc.danger-assessment-tool-domestic-abuse",
+    "calc.veterans-health-administration-covid-19-vaco-index-covid-19-mortality",
+    "calc.possum-operative-morbidity-mortality-risk",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "0bd07e62b22ebbe222c12229900f11be",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.possum-operative-morbidity-mortality-risk",
+      "text": "POSSUM"
+    },
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.possum-operative-morbidity-mortality-risk",
+      "text": "POSSUM"
+    },
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10097,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar a = parseFloat(obesity);\nvar b = parseFloat(dnr);\nvar c = parseFloat(bleeding);\nvar d = parseFloat(loss);\nvar e = parseFloat(steroids);\nvar f = parseFloat(cardiac);\nvar g = parseFloat(age);\nvar h = parseFloat(cancer);\nvar i = parseFloat(pfs);\nvar j = parseFloat(sepsis);\nvar k = parseFloat(inpatient);\nvar l = parseFloat(pulmonary);\nvar m = parseFloat(renal);\nvar n = parseFloat(liver);\n\nvar score = a + b + c + d + e + f + g + h + i + j + k + l + m + n; \n\nvar risk1;\n\nif (score >= -1 && score <= 5) {\n\trisk1 = '0.1';\n}\nelse if (score > 5 && score < 6) { \n\trisk1 = '0.1-0.6';\n}\nelse if (score >= 6 && score <= 10) { \n\trisk1 = '0.6';\n}\nelse if (score > 10 && score <  11) { \n\trisk1 = '0.6-2.4';\n}\nelse if (score >= 11 && score <= 15) { \n\trisk1 = '2.4';\n}\nelse if (score > 15 && score <  16) { \n\trisk1 = '2.4-12.6';\n}\nelse if (score >= 16 && score <= 20) { \n\trisk1 = '12.6';\n}\nelse if (score > 20 && score <  21) { \n\trisk1 = '12.6-37.5';\n}\nelse if (score >= 21 && score <= 25) { \n\trisk1 = '37.5';\n}\nelse if (score > 25 && score < 26) { \n\trisk1 = '37.5-40.0';\n}\nelse if (score >= 26 && score <= 30) { \n\trisk1 = '40.0';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk1 + '% risk of perioperative mortality'\n});\ncalc_output.push({\n    name: '10097_PMP Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'PMP Score'   \n    });\ncalc_output.push({\n    name: '10097_PMP Score_result (risk)',\n    value: risk1, \n    value_text: '%',\n    message: 'Risk of perioperative mortality'\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Sachin Vaid"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "2555fff9158e652a16428fdc62af09204a310e8c85a3c561a825a18dcd0d9bc6"
+}

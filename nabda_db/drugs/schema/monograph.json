@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/monograph.json",
+  "title": "Sectioned drug monograph",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "presentation_id", "sections", "source_context", "locale_status"],
+  "properties": {
+    "id": { "type": "string" },
+    "presentation_id": { "type": "string" },
+    "sections": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "section_locale": {
+      "type": "object",
+      "additionalProperties": { "type": "string" }
+    },
+    "source_context": { "type": "string", "enum": ["international", "france", "algeria"] },
+    "locale_status": { "type": "string", "enum": ["ok", "needs_adaptation", "france_specific", "not_applicable_dz"] },
+    "sources": { "type": "object" }
+  }
+}

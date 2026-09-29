@@ -1,0 +1,473 @@
+{
+  "id": "calc.academic-research-consortium-high-bleeding-risk-arc-hbr-criteria",
+  "slug": "academic-research-consortium-high-bleeding-risk-arc-hbr-criteria",
+  "language": "en",
+  "title": "Academic Research Consortium pour élevé saignement risque (ARC-HBR) critères",
+  "short_title": "ARC-HBR critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Anemia",
+    "CAD",
+    "Maladie coronarienne",
+    "Hémorragie intracrânienne",
+    "Hémorragie majeure"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Fatigue",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "ARC-HBR",
+    "high bleeding risk PCI",
+    "Academic Research Consortium bleeding criteria",
+    "PCI bleeding risk stratification",
+    "HBR criteria",
+    "ARC criteria",
+    "ARC HBR criteria",
+    "PCI bleeding",
+    "PCI risk",
+    "PCI hemorrhage",
+    "intracranial hemorrhage",
+    "PCI intracranial hemorrhage",
+    "high bleeding risk",
+    "post PCI risk",
+    "post PCI bleeding"
+  ],
+  "dosing": false,
+  "formula": "Patients are considered to be at high bleeding risk when at least 1 major or 2 minor criteria are met:\n\n| Major and Minor ARC-HBR Criteria |\n| --- |\n| Major criteria: Anticipated use of long-term oral anticoagulation 1 Severe or end-stage CKD (eGFR <30 mL/min) Hemoglobin <11 g/dL Spontaneous bleeding requiring hospitalization or transfusion in the past 6 months or at any time, if recurrent Moderate or severe baseline thrombocytopenia 2 (platelet count <100×10 9 /L) Chronic bleeding diathesis Liver cirrhosis with portal hypertension Active malignancy 3 (excluding nonmelanoma skin cancer) within the past 12 months Previous spontaneous ICH (at any time) Previous traumatic ICH within the past 12 months Presence of a brain AVM Moderate or severe ischemic stroke 4 within the past 6 months Nondeferrable major surgery on DAPT Recent major surgery or major trauma within 30 days before PCI Minor criteria: Age ≥75 years Moderate CKD (eGFR 30-59 mL/min) Hemoglobin 11-12.9 g/dL for men and 11-11.9 g/dL for women Spontaneous bleeding requiring hospitalization or transfusion within the past 12 months not meeting the major criterion Long-term use of oral NSAIDs or steroids Any ischemic stroke at any time not meeting the major criterion |\n\n1. This excludes vascular protection doses.\n2. Baseline thrombocytopenia is defined as thrombocytopenia before PCI.\n3. Active malignancy is defined as diagnosis within 12 months and/or ongoing requirement for treatment (including surgery, chemotherapy, or radiotherapy).\n4. [National Institutes of Health Stroke Scale (NIHSS)](nabda:calc.nih-stroke-scale-score-nihss) score ≥5.",
+  "how_to_use": {
+    "why": "- Identifie les patients présentant un risque significativement plus élevé d'hémorragie majeure et de mortalité toutes causes confondues, ce qui oriente la durée et l'intensité du traitement antiplaquettaire.\n- Cité dans les[2023 ESC guidelines](https://pubmed.ncbi.nlm.nih.gov/37622654/)pour la stratification du risque hémorragique en PCI.",
+    "when": "- Utilisation chez les patients adultes bénéficiant d'une intervention coronarienne percutanée (PCI) avant les décisions antithrombotiques.\n- Applicable à la fois au syndrome coronarien aigu (ACS) et à la maladie coronarienne chronique/stable.",
+    "pearls": "- Developed by the Academic Research Consortium (2019) to standardize high bleeding risk (HBR) in PCI.\n- Proposed using large, prospective all-comer PCI registries (e.g., Bern PCI Registry).\n- HBR is defined as ≥1 major or ≥2 minor criteria, calibrated to around ≥4% 1-year[Bleeding Academic Research Consortium (BARC) type 3–5](https://www.ncbi.nlm.nih.gov/books/NBK542934/)bleeding and/or ≥1% 1-year intracranial hemorrhage (ICH).\n- Meta-analyses show higher bleeding and modest discrimination (pooled relative risk around 2.6–2.7; c-statistic around 0.64–0.69) with suboptimal calibration (observed:expected ~1.47)."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats en complément d’une évaluation approfondie et du jugement d’un spécialiste.\n- Le risque hémorragique peut augmenter à mesure que davantage de critères sont remplis ; toutefois, l’outil constitue une classification binaire, et non un score de risque continu.",
+    "critical_actions": "Toujours mettre en balance le risque hémorragique et le risque ischémique.",
+    "management": "- **Meets criteria:**\n\n - Although bare-metal stents (BMS) were once preferred in high-bleeding-risk patients, drug-eluting stents (DES) are now favored in most cases.\n - Plan an abbreviated dual antiplatelet therapy (DAPT) course (often 1–3 months), followed by single antiplatelet therapy.\n - Monitor closely for evidence of bleeding\n- **Does not meet criteria:**\n\n - Use standard DAPT durations per cardiology guidelines (e.g., 6–12 months).\n - Monitor for interval changes or evidence of bleeding."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classification du risque hémorragique post-PCI.",
+  "medium_description": "Identifies patients undergoing percutaneous coronary intervention who are at élevé risque de major saignement ou intracranial hémorragie.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Utilisation prévue d’une anticoagulation orale au long cours",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Severe ou end-stage CKD (eGFR <30 mL/min)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Hémoglobine <11 g/dL",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Spontaneous saignement requiring hospitalization ou transfusion dans past 6 months ou at any time, if recurrent",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Modéré ou severe initial thrombocytopenia (platelet count <100×10^9^/L)",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Diathèse hémorragique chronique",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "Liver cirrhosis avec portal hypertension",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "Néoplasie maligne active (à l'exclusion du cancer cutané non mélanomateux) au cours des 12 derniers mois",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "i",
+      "label": "Hémorragie intracérébrale spontanée (ICH) antérieure (à tout moment)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "j",
+      "label": "Hémorragie intracrânienne traumatique antérieure au cours des 12 derniers mois",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "k",
+      "label": "Présence de brainAVM",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "l",
+      "label": "Modéré ou severe ischemic AVC within past 6 months",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "m",
+      "label": "Chirurgie majeure non différable sous DAPT",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "n",
+      "label": "Chirurgie majeure récente ou traumatisme majeur dans les 30 jours précédant la PCI",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "o",
+      "label": "Âge ≥75 years",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "p",
+      "label": "Modéré CKD (eGFR 30-59 mL/min)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q",
+      "label": "Hemoglobin 11-12.9 g/dL pour men et 11-11.9 g/dL pour women",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "r",
+      "label": "Saignement spontané nécessitant une hospitalisation ou une transfusion au cours des 12 derniers mois, ne répondant pas au critère majeur",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "s",
+      "label": "Utilisation à long terme d'AINS oraux ou de corticoïdes",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "t",
+      "label": "Tout AVC ischémique à tout moment ne répondant pas au critère majeur",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Urban P, Mehran R, Colleran R, et al. Defining High Bleeding Risk in patients undergoing percutaneous coronary intervention: A consensus document from the Academic Research Consortium for High Bleeding Risk. Circulation. 2019;140(3):240-261. doi:10.1161/CIRCULATIONAHA.119.040167",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31116032/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lim CE, Simonsson M, Pasternak B, Jernberg T, Edgren G, Ueda P. Discordance and performance of the ARC-HBR and PRECISE-DAPT High Bleeding Risk definitions after coronary stenting. JACC Cardiovasc Interv. 2025;18(5):637-650. doi:10.1016/j.jcin.2024.10.032",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39846914/",
+      "kind": "other"
+    },
+    {
+      "text": "Byrne RA, Rossello X, Coughlan JJ, et al; ESC Scientific Document Group. 2023 ESC guidelines for the management of acute coronary syndromes: developed by the Task Force on the Management of Acute Coronary Syndromes of the European Society of Cardiology (ESC). Eur Heart J. 2023;44(38):3720-3826. doi:10.1093/eurheartj/ehad191",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37622654/",
+      "kind": "other"
+    },
+    {
+      "text": "Montalto C, Munafò AR, Arzuffi L, et al. Validation of the ARC-HBR criteria in 68,874 patients undergoing PCI: A systematic review and meta-analysis. Hellenic J Cardiol. 2022;66:59-66. doi:10.1016/j.hjc.2022.04.008",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35550178/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nih-stroke-scale-score-nihss"
+  ],
+  "source_logic_hash": "af49ef588d48245ad3c5785ee5a1dd46",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "National Institutes of Health Stroke Scale (NIHSS)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10640,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

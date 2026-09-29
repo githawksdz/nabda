@@ -1,0 +1,215 @@
+{
+  "id": "calc.reids-colposcopic-index-rci",
+  "slug": "reids-colposcopic-index-rci",
+  "language": "fr",
+  "title": "Index colposcopique de Reid (RCI)",
+  "short_title": "RCI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "general",
+    "medecine-interne",
+    "infectiologie",
+    "gynecologie-obstetrique",
+    "biologie"
+  ],
+  "diseases": [
+    "Cancer du sein",
+    "Cancer du col utérin",
+    "Infection à HPV"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Bleeding",
+    "Cancer",
+    "Fatigue",
+    "Fever",
+    "Hematuria",
+    "Perte d'appétit",
+    "Pain",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Hematochezia"
+  ],
+  "abbreviations": [
+    "Reid's Colposcopic Index (RCI)",
+    "RCI",
+    "colposcopy",
+    "cervical lesion",
+    "premalignant",
+    "cervix",
+    "cervical dysplasia",
+    "cervical cancer",
+    "pap smear",
+    "cervical intraepithelial neoplasia",
+    "CIN",
+    "histopathology",
+    "colposcopy sign",
+    "iodine staining",
+    "acetowhitening",
+    "AWA",
+    "human papillomavirus",
+    "HPV",
+    "reids colposcopic index"
+  ],
+  "dosing": false,
+  "formula": "Le score RCI est calculé par l'addition des points sélectionnés :\n\n| Signe colposcopique | Points | |\n| --- | --- | --- |\n| Marges | Contour condylomateux ou micropapillaire. Bordures indistinctes. Marges floculées ou effilées, en plume. Lésions irrégulières, anguleuses. Lésions satellites, blanchiment à l'acide acétique s'étendant au-delà de la zone de transformation. | 0 |\n| Lésions régulières aux contours lisses et droits. Marges périphériques nettes. | 1 | |\n| Bords roulés, se desquamant. Bordures internes entre des zones d'aspect différent. | 2 | |\n| Couleur | Couleur blanche, brillante comme la neige. Blanchiment acétique indistinct, semi-transparent plutôt que complètement opaque. | 0 |\n| Blanc cassé, brillant. Blanc intermédiaire. | 1 | |\n| Gris terne, gris huître. | 2 | |\n| Vaisseaux | Calibre fin et uniforme. Disposition aléatoire avec des motifs peu structurés. Ansés capillaires non dilatées. Zones mal définies de ponctuation ou de mosaïque fine. | 0 |\n| Absence de vaisseaux de surface après application d'acide acétique. | 1 | |\n| Ponctuation ou mosaïque nettes. Vaisseaux individuels dilatés, disposés en motifs bien définis et nettement délimités. | 2 | |\n| Coloration à l'iode | Fixation positive de l'iode, produisant une couleur brun acajou. Absence de fixation de l'iode par une zone reconnaissable comme une lésion de bas grade selon les critères ci-dessus (≤2/6). | 0 |\n| Fixation partielle de l'iode. Aspect variegé, en écaille de tortue. | 1 | |\n| Absence de coloration d'une lésion correspondant à une lésion de haut grade selon les critères ci-dessus (≥3/6). Aspect jaune moutarde. | 2 | |",
+  "how_to_use": {
+    "why": "Fournit une méthode d'évaluation standardisée et peut aider à différencier les lésions de bas et de haut grade.",
+    "when": "- Doit être utilisé lors de la colposcopie pour évaluer les lésions du col utérin.\n- Les caractéristiques de la lésion peuvent aider à prédire une histologie anormale.\n- Ces caractéristiques comprennent la couleur de la lésion, le motif vasculaire, les marges et l'aspect après coloration à l'iode.",
+    "pearls": "- Cette méthode offre une évaluation structurée, mais ne tient pas pleinement compte de l'expertise du clinicien en colposcopie.\n- L'inspection visuelle peut être utile, mais le soupçon clinique et les antécédents pertinents de la patiente doivent être intégrés dans l'évaluation.\n- Ne tient pas compte d'autres facteurs de risque potentiellement élevés, comme le statut HPV."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Les lésions cervicales présentant un index de Reid intermédiaire ou élevé doivent faire l'objet d'une biopsie pour une évaluation histopathologique complémentaire.\n- Les lésions présentant un index de Reid bas peuvent ne pas nécessiter d'évaluation complémentaire. Toutefois, les antécédents et les facteurs de risque personnels de la patiente, ainsi que votre jugement clinique, doivent être utilisés pour déterminer si une biopsie est nécessaire au moment de l'examen colposcopique."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score RCI | Grade | Histologie prédite |\n| --- | --- | --- |\n| 0-2 | Bas | HPV ou CIN 1 |\n| 3-4 | Intermédiaire | CIN 1 ou CIN 2 |\n| 5-8 | Haut | CIN 2 ou CIN 3 |",
+  "short_description": "Gradation des lésions précancéreuses du col utérin.",
+  "medium_description": "Prédit colposcopiquement le grade histologique des lésions précancéreuses du col utérin.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Margin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Contour condylomateux ou micropapillaire. Bordures indistinctes. Marges floculées ou effilées, en plume. Lésions irrégulières, anguleuses. Lésions satellites, blanchiment à l'acide acétique s'étendant au-delà de la zone de transformation.",
+          "value": 0
+        },
+        {
+          "label": "Regular lesions avec smooth, straight outlines. Sharp peripheral margins.",
+          "value": 1
+        },
+        {
+          "label": "Bords roulés, se desquamant. Bordures internes entre des zones d'aspect différent.",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Color",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Couleur blanche, brillante comme la neige. Blanchiment acétique indistinct, semi-transparent plutôt que complètement opaque.",
+          "value": 0
+        },
+        {
+          "label": "Shiny, off white. intermédiaire white.",
+          "value": 1
+        },
+        {
+          "label": "Gris terne, gris huître.",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Vessels",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Uniform, fine caliber. Randomly arranged avec poorly formed patterns. Nondilated capillary loops. Ill-defined areas de fine punctation ou mosaic.",
+          "value": 0
+        },
+        {
+          "label": "Absence de vaisseaux de surface après application d'acide acétique.",
+          "value": 1
+        },
+        {
+          "label": "Definite punctuation ou mosaicism. Individual vessels dilated, arranged dans sharply demarcated, well-defined patterns.",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Coloration à l'iode",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Positive iodine uptake, producing mahogany-brown color. Negative iodine uptake par area that is recognizable as faible-grade lesion par above critères (≤2/6).",
+          "value": 0
+        },
+        {
+          "label": "Fixation partielle de l'iode. Aspect variegé, en écaille de tortue.",
+          "value": 1
+        },
+        {
+          "label": "Negative staining de lesion, which is élevé-grade lesion par above critères (≥3/6). Mustard-yellow appearance.",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wentzensen N, Massad LS, Mayeaux EJ Jr, et al. Evidence-Based Consensus Recommendations for Colposcopy Practice for Cervical Cancer Prevention in the United States. J Low Genit Tract Dis. 2017;21(4):216-222.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28953109/",
+      "kind": "international"
+    },
+    {
+      "text": "Reid R, Scalzi P. Genital warts and cervical cancer. VII. An improved colposcopic index for differentiating benign papillomaviral infections from high-grade cervical intraepithelial neoplasia. Am J Obstet Gynecol. 1985;153(6):611-618.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/2998190/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ferris DG, Greenberg MD. Reid’s Colposcopic Index. J Fam Pract. 1994;39(1):65-70.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/7517993/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pandey S, Saini V, Kalra K. Comparative analysis between Reid’s Colposcopic Index and Swede’s score for detection of premalignant lesions of cervix: A prospective study. J Clin Diagn Res. Published online 2023. doi:10.7860/jcdr/2023/62849.17761",
+      "href": "https://jcdr.net/article_abstract.asp?issn=0973-709x&year=2023&volume=17&issue=4&page=QC10&issn=0973-709x&id=17761",
+      "kind": "other"
+    },
+    {
+      "text": "Kaban I, Cengiz H, Kaban A, Yildiz S, Ekin M, Avci E. Agreement between colposcopy results using the Reid Colposcopic Index and histopathology. Ginekol Pol. 2015;86(7):537-540.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26376533/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.swede-score",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi"
+  ],
+  "source_logic_hash": "35d9c2dea13dfd7a5ac60c3b863dc008",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10530,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

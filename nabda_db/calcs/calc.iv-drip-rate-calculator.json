@@ -1,0 +1,99 @@
+{
+  "id": "calc.iv-drip-rate-calculator",
+  "slug": "iv-drip-rate-calculator",
+  "language": "fr",
+  "title": "Calculateur de débit de perfusion IV",
+  "short_title": "Calculateur de débit de perfusion IV",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "IV Drip Rate Calculator, iv drip, drip rate, covid, covid-19, covid19, covid 19, coronavirus, IV infusion rate"
+  ],
+  "dosing": false,
+  "formula": "Débit de perfusion IV, gtts/min = (Volume à administrer, mL x Facteur de goutte*, gtts/mL) / Temps, min\n\n| *Facteurs de goutte courants des tubulures de perfusion IV : |\n| --- |\n| 60 gtts/mL, tubulure à microgouttes (minidrip) |\n| 10 gtts/mL, tubulure à gouttes standard |\n| 15 gtts/mL, tubulure à gouttes standard |\n| 20 gtts/mL, tubulure à gouttes standard |",
+  "how_to_use": {
+    "why": "Certains médicaments doivent être administrés à un débit précis en raison de la toxicité ou des effets indésirables liés à une perfusion trop rapide ; d’autres médicaments sont vasoactifs et nécessitent une perfusion continue et une titration afin d’agir correctement.",
+    "when": "Les pompes à perfusion IV ont largement remplacé ce calcul dans de nombreux contextes de soins ; toutefois, dans les milieux à ressources limitées, voici comment calculer un débit de perfusion en comptant simplement les gouttes par minute et en ajustant en conséquence.",
+    "pearls": "Il est essentiel de connaître le facteur de goutte ; généralement, la tubulure de perfusion IV indique cette information sur son étiquette ou son emballage."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Il est essentiel de connaître le facteur de goutte ; généralement, la tubulure de perfusion IV indique cette information sur son étiquette ou son emballage.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Débit de perfusion IV en goutte-à-goutte.",
+  "medium_description": "Calcule le débit de perfusion IV en comptant les gouttes lorsque les pompes IV ne sont pas disponibles.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "vol",
+      "label": "Volume pour be given",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "drop",
+      "label": "Facteur de goutte",
+      "optional": false,
+      "unit": "drip factor",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "time",
+      "label": "Time",
+      "optional": false,
+      "unit": "min",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Gage CB, Toney-Butler TJ. Dose Calculation. Treasure Island (FL): StatPearls Publishing. 2020.",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK430836/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm",
+    "calc.tisdale-risk-score-qt-prolongation"
+  ],
+  "source_logic_hash": "bbe5f485a5d7c3fe3c957db20f171536",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10290,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

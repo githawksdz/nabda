@@ -1,0 +1,151 @@
+{
+  "id": "calc.modified-mallampati-classification",
+  "slug": "modified-mallampati-classification",
+  "language": "fr",
+  "title": "Modifié Mallampati classification",
+  "short_title": "Modifié Mallampati classification",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "et intubation",
+    "endotracheal intubation",
+    "et difficulty",
+    "mallampati",
+    "mallampati classification",
+    "malampati",
+    "laryngoscopy",
+    "Modified Mallampati Classification"
+  ],
+  "dosing": false,
+  "formula": "Classification de Mallampati modifiée :\n\n| Classe I | Piliers amygdaliens, voile du palais et luette visualisés |\n| --- | --- |\n| Classe II | Piliers amygdaliens et voile du palais visualisés, mais luette masquée par la base de la langue |\n| Classe III | Seul le voile du palais est visualisé |\n| Classe IV | Voile du palais non visualisé |\n\nClassification de Mallampati originale (pour intérêt historique) :\n\n| Classe I | Piliers amygdaliens, voile du palais et luette visualisés |\n| --- | --- |\n| Classe II | Piliers amygdaliens et voile du palais visualisés, mais luette masquée par la base de la langue |\n| Classe III | Seul le voile du palais est visualisé |",
+  "how_to_use": {
+    "why": "Simple à utiliser au chevet du patient, réalisable en moins d’une minute, et présente une bonne précision (AUC 0.83, [Lee 2006](https://www.ncbi.nlm.nih.gov/pubmed/16717341)) pour prédire une voie aérienne difficile (laryngoscopie difficile, intubation difficile ou ventilation difficile).",
+    "when": "Patients nécessitant une intubation endotrachéale.",
+    "pearls": "- La classification de Mallampati originale comportait trois classes de visualisation, mais une quatrième a été ajoutée plus tard par [Samsoon et Young (1987)](https://www.ncbi.nlm.nih.gov/pubmed/3592174) et a montré une meilleure valeur prédictive, et c’est la version la plus couramment utilisée aujourd’hui.\n- Bien que la classification de Mallampati soit habituellement déterminée avec le patient assis, une étude de cohorte prospective récente suggère que l’évaluation du patient en décubitus dorsal pourrait mieux prédire une intubation difficile (AUC 0.82 en décubitus dorsal contre 0.7 en position assise, [Hanouz 2018](https://www.ncbi.nlm.nih.gov/pubmed/28537983)).\n- Une classe 0 a été proposée par [Ezri et al (1998)](https://www.ncbi.nlm.nih.gov/pubmed/9728878) pour désigner une intubation « extrêmement facile », mais les preuves soutenant son exactitude sont limitées à des rapports de cas.\n- Un score faible peut prédire une laryngoscopie et une intubation faciles, mais ne le garantit pas. Bien qu’un score élevé doive inciter à la prudence, un score faible n’est pas destiné à rassurer."
+  },
+  "next_steps": {
+    "advice": "Envisager des stratégies pour améliorer la facilité d’intubation chez les patients avec une voie aérienne difficile prévue (classe III-IV), par ex. laryngoscopie vidéo-assistée, intubation vigile.",
+    "critical_actions": "Dans toute intubation, en particulier en situation d’urgence, déterminer le « Plan B » et le « Plan C » si les tentatives initiales échouent avant de commencer la procédure, chaque fois que possible.",
+    "management": "Pour les voies aériennes anticipées ou identifiées comme difficiles, envisager d’impliquer précocement d’autres spécialistes des voies aériennes, et identifier des alternatives à l’intubation endotrachéale telles que le masque laryngé, l’intubation guidée par bougie, ou d’autres adjuvants."
+  },
+  "evidence": "Le score de Mallampati a été initialement développé pour le bloc opératoire. De multiples grandes études portant sur des dizaines de milliers de patients ont montré une association fiable entre un score de Mallampati plus élevé (classe III ou IV) et une laryngoscopie et une intubation difficiles.\n\nMalgré cela, le score de Mallampati a ses détracteurs. Green & Roback soutiennent à juste titre dans leur [article de 2019](https://pubmed.ncbi.nlm.nih.gov/30782435/) que malgré la forte association observée entre une classe de Mallampati plus élevée et une intubation difficile, la sensibilité du score est plutôt faible, ce qui est sous-optimal pour un test de dépistage. Green & Roback préconisent l’utilisation du score de Mallampati dans le contexte du tableau clinique global. De plus, en situation d’urgence, un patient dont les voies aériennes ou l’effort respiratoire sont défaillants et nécessitant une intubation devra toujours être intubé, quel que soit le score de Mallampati. Bien qu’un score de Mallampati plus élevé puisse inciter à appeler plus tôt l’anesthésie ou d’autres spécialités pour assistance, son application en situation d’urgence (ED, ICU) peut être limitée, car le score a été initialement développé et a principalement été validé en salle d’opération.",
+  "more_info": "",
+  "short_description": "Prédiction de la difficulté d’intubation endotrachéale.",
+  "medium_description": "Stratifies predicted difficulty de endotracheal intubation basé sur anatomic features.",
+  "input_schema": [
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "classm",
+      "label": "Visualization:",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Piliers amygdaliens, voile du palais et luette visualisés",
+          "value": 1
+        },
+        {
+          "label": "Piliers amygdaliens et voile du palais visualisés, mais luette masquée par la base de la langue",
+          "value": 2
+        },
+        {
+          "label": "Seul le voile du palais est visualisé",
+          "value": 3
+        },
+        {
+          "label": "Voile du palais non visualisé",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Apfelbaum JL, Hagberg CA, Caplan RA, et al. Practice guidelines for management of the difficult airway: an updated report by the American Society of Anesthesiologists Task Force on Management of the Difficult Airway. Anesthesiology. 2013;118(2):251-70.",
+      "href": "https://anesthesiology.pubs.asahq.org/article.aspx?articleid=1918684",
+      "kind": "international"
+    },
+    {
+      "text": "Mallampati SR, Gatt SP, Gugino LD, et al. A clinical sign to predict difficult tracheal intubation: a prospective study. Can Anaesth Soc J. 1985;32(4):429-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4027773 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Samsoon GL, Young JR. Difficult tracheal intubation: a retrospective study. Anaesthesia. 1987;42(5):487-90.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3592174",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ezri T, Cohen I, Geva D, Szmuk P. Pharyngoscopic views. Anesth Analg. 1998;87(3):748.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9728878",
+      "kind": "other"
+    },
+    {
+      "text": "O'Leary AM, Sandison MR, Roberts KW. History of anesthesia; Mallampati revisited: 20 years on. Can J Anaesth. 2008;55(4):250-1.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18378973",
+      "kind": "other"
+    },
+    {
+      "text": "Hanouz JL, Bonnet V, Buléon C, et al. Comparison of the Mallampati Classification in Sitting and Supine Position to Predict Difficult Tracheal Intubation: A Prospective Observational Cohort Study. Anesth Analg. 2018;126(1):161-169.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28537983",
+      "kind": "other"
+    },
+    {
+      "text": "Green SM, Roback MG. Is the Mallampati score useful for emergency department airway management or procedural sedation? Ann Emerg Med. 2019;74(2):251-259",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30782435/",
+      "kind": "other"
+    },
+    {
+      "text": "Lee A, Fan LT, Gin T, Karmakar MK, Ngan kee WD. A systematic review (meta-analysis) of the accuracy of the Mallampati tests to predict the difficult airway. Anesth Analg. 2006;102(6):1867-78.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16717341 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.macocha-score",
+    "calc.pediatric-endotracheal-tube-ett-size",
+    "calc.endotracheal-tube-ett-depth-tidal-volume-calculator"
+  ],
+  "source_logic_hash": "1d1d83d0c7c862325eaaf3205a6a4c02",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3989,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,189 @@
+{
+  "id": "calc.ball-score-relapsed-refractory-cll",
+  "slug": "ball-score-relapsed-refractory-cll",
+  "language": "en",
+  "title": "BALL score pour Relapsed/Refractory CLL",
+  "short_title": "Score BALL",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anemia",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Lymphadenopathy",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "B2M, Anemia, LDH, Last Therapy (BALL) Score",
+    "chronic lymphocytic leukemia",
+    "CLL",
+    "β2-microglobulin",
+    "anemia",
+    "ldh",
+    "beta 2 microglobulin",
+    "BALL",
+    " ibrutinib",
+    "BTK",
+    "idelalisib",
+    "PI3Kδ",
+    "venetoclax",
+    "BCL2",
+    "CLL targeted therapy",
+    "progression free survival"
+  ],
+  "dosing": false,
+  "formula": "The BALL score is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| β 2-microglobulin | <5 mg/dL | 0 |\n| ≥5 mg/dL | 1 | |\n| A nemia (Hgb <12 g/dL (<120 g/L) for men; <11 g/dL (<110 g/L) for women) | No | 0 |\n| Yes | 1 | |\n| L DH | ≤ULN | 0 |\n| >ULN | 1 | |\n| L ast therapy (Time from initiation) | ≥24 months | 0 |\n| <24 months | 1 | |",
+  "how_to_use": {
+    "why": "- Identifie les patients présentant un risque accru de décès malgré le traitement, ce qui peut éclairer les décisions de prise en charge clinique.\n- Utilise des facteurs pronostiques facilement obtenables à partir des antécédents du patient et des résultats de laboratoire.",
+    "when": "À utiliser pour estimer les résultats de survie chez les patients atteints de leucémie lymphoïde chronique en rechute/réfractaire (R/R-CLL) qui nécessitent un traitement ultérieur par thérapies ciblées.",
+    "pearls": "- Les études de dérivation et de validation incluaient l'utilisation des thérapies ciblées suivantes : ibrutinib, idelalisib et venetoclax.\n- Cet outil ne couvre pas toutes les variables pronostiques potentielles de la LLC R/R. Les résultats doivent être interprétés dans le contexte clinique global de chaque patient."
+  },
+  "next_steps": {
+    "advice": "- Les résultats peuvent être utiles pour les discussions sur le traitement et les objectifs de soins entre cliniciens et patients, guidant les décisions concernant les étapes de prise en charge, y compris les stratégies thérapeutiques alternatives et l’inclusion dans des essais cliniques.\n- Les auteurs de l’étude de dérivation suggèrent que les individus à risque intermédiaire et élevé peuvent bénéficier d’une participation à des essais cliniques.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score BALL | Risque | Survie globale à 24 mois |\n| --- | --- | --- |\n| 0-1 | Faible | 89,7 % |\n| 2-3 | Intermédiaire | 79,5 % |\n| 4 | Élevé | 55,8 % |",
+  "short_description": "Pronostic de la LLC en rechute/réfractaire.",
+  "medium_description": "Evaluates pronostic de patients avec relapsed/refractory chronique lymphocytic leukemia (R/R-CLL) sur targeted therapies.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "**β**2-microglobuline",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 5 mg/dL",
+          "value": 0
+        },
+        {
+          "label": "≥5 mg/dL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "**** Anémie",
+      "tips": "Hgb <12 g/dL (<120 g/L) chez l'homme ; <11 g/dL (<110 g/L) chez la femme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "**L** DH",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ Limite supérieure de la normale",
+          "value": 0
+        },
+        {
+          "label": "Limite supérieure de la normale",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "**L** ast therapy",
+      "tips": "Temps écoulé depuis l’initiation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 24 mois",
+          "value": 0
+        },
+        {
+          "label": "< 24 mois",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Soumerai JD, Ni A, Darif M, et al. Prognostic risk score for patients with relapsed or refractory chronic lymphocytic leukaemia treated with targeted therapies or chemoimmunotherapy: a retrospective, pooled cohort study with external validations. The Lancet Haematology. 2019;6(7):e366-e374.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6620111/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bennett R, Seymour JF. Update on the management of relapsed/refractory chronic lymphocytic leukemia. Blood Cancer J. 2024;14(1):33.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38378673/",
+      "kind": "other"
+    },
+    {
+      "text": "Gentile M, Morabito F, Del Poeta G, et al. External validation of a novel risk model (Ball score) in real-world relapsed/refractory chronic lymphocytic leukemia patients receiving ibrutinib. A campus cll study. Blood. 2019;134(Supplement_1):4308-4308.",
+      "href": "https://ashpublications.org/blood/article/134/Supplement_1/4308/424511/External-Validation-of-a-Novel-Risk-Model-BALL",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Molica S, Baumann TS, Lentini M, Levato L, Delgado J, Montserrat E. The BALL prognostic score identifies relapsed/refractory CLL patients who benefit the most from single-agent ibrutinib therapy. Leukemia Research. 2020;95:106401.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32562875/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+    "calc.rai-staging-system-chronic-lymphocytic-leukemia-cll",
+    "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll"
+  ],
+  "source_logic_hash": "6c5740fd1f9a2e725e20e24ec7abd211",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10562,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.ibrutinib",
+    "s.idelalisib",
+    "s.venetoclax"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

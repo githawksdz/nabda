@@ -1,0 +1,140 @@
+{
+  "id": "calc.rebound-hyperbilirubinemia-risk-score",
+  "slug": "rebound-hyperbilirubinemia-risk-score",
+  "language": "fr",
+  "title": "Score de risque d'hyperbilirubinémie de rebond",
+  "short_title": "Score de risque d'hyperbilirubinémie de rebond",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Hyperbilirubinémie néonatale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur thoracique",
+    "Fatigue",
+    "Fever",
+    "Jaundice",
+    "Nausea",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Rebound Hyperbilirubinemia Risk Score",
+    "rebound hyperbilirubinemia",
+    "hyperbilirubinemia",
+    "hyperbilirubinemia risk score",
+    "infant rebound hyperbilirubinemia",
+    "hyperbilirubinemia risk",
+    "neonatal hyperbilirubinemia"
+  ],
+  "dosing": false,
+  "formula": "Le score de risque d'hyperbilirubinémie de rebond est calculé à partir des paramètres suivants :\n\n- Âge gestationnel (AG) <38 semaines (oui ou non).\n- Âge au début de la photothérapie, en heures.\n- Bilirubinémie totale sérique (TSB) à l'arrêt de la photothérapie.\n\nLe seuil de photothérapie de l'American Academy of Pediatrics (AAP) est déterminé comme suit :\n\n| Âge, heures | Seuil AAP, mg/dL |\n| --- | --- |\n| 25-48 | 15 mg/dL |\n| 49-72 | 18 mg/dL |\n| >72 | 20 mg/dL |\n\nRemarque : la formule suppose que la TSB et le seuil AAP sont exprimés en mg/dL.\n\nScore de risque d'hyperbilirubinémie de rebond = 15*(AG <38 semaines) - 7*(âge au début de la photothérapie, en jours) - 4*(seuil AAP - TSB) + 50",
+  "how_to_use": {
+    "why": "Les cliniciens et les parents peuvent prendre des décisions plus éclairées quant à savoir si le bénéfice d'un arrêt plus précoce de la photothérapie l'emporte sur le risque d'hyperbilirubinémie de rebond ([Chang 2017](https://www.ncbi.nlm.nih.gov/pubmed/28196932)).",
+    "when": "- À utiliser chez les nouveau-nés d'AG ≥35 semaines nécessitant une photothérapie pour estimer le risque d'hyperbilirubinémie de rebond avant l'arrêt de la photothérapie hospitalière.\n- À utiliser uniquement chez les nourrissons lors d'un premier épisode de photothérapie hospitalière.",
+    "pearls": "- L'hyperbilirubinémie de rebond, telle que définie par l'étude index, correspond au retour de la bilirubinémie totale sérique (TSB) à un niveau égal ou supérieur au seuil de photothérapie de l'American Academy of Pediatrics (AAP) ([recommandations](https://www.ncbi.nlm.nih.gov/pubmed/15231951)) dans les 72 heures suivant l'arrêt de la photothérapie.\n- Peut être moins applicable aux nourrissons plus âgés (≥6 jours) et aux patients présentant des valeurs de TSB relatives nettement plus élevées à l'arrêt de la photothérapie."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "La facilité de réaliser un dosage de contrôle de la TSB et les contraintes d'une réhospitalisation doivent être prises en compte dans la décision d'arrêter ou de poursuivre la photothérapie chez les nourrissons, indépendamment du score de risque.",
+    "management": "- Le calculateur ne recommande pas de niveau de risque défini auquel arrêter la photothérapie.\n- La décision de poursuivre la photothérapie doit être prise après pondération des risques et des coûts d'une prolongation du traitement par rapport au bénéfice de la réduction du risque d'hyperbilirubinémie de rebond.\n- Dans l'étude de dérivation, 34 % des nourrissons auraient potentiellement pu arrêter la photothérapie hospitalière un jour plus tôt avec un risque d'hyperbilirubinémie de rebond <4 %."
+  },
+  "evidence": "The prediction rule was derived from a retrospective cohort study of 7,048 infants treated with first episode inpatient phototherapy before age 14 days in a single integrated health system between 2012-2014 ([Chang 2017](https://www.ncbi.nlm.nih.gov/pubmed/28196932)). The study excluded infants who had ≥2 TSB measurements and infants with conjugated bilirubin level ≥2 mg/dl before or during their first phototherapy admission. Mean age at initiation of phototherapy in the derivation study was 2.3 days; mean age at termination of phototherapy was 3.6 days and mean estimated TSB at termination of phototherapy was 9.8 mg/dL.\n\nSignificant predictors of rebound hyperbilirubinemia identified in the study were: gestational age <38 weeks, younger age at phototherapy initiation, and TSB relative to the treatment threshold at phototherapy termination. The rule was internally validated using a split sample validation method. The area under the ROC curve was 0.89 in the derivation data set and 0.88 in the validation data set.",
+  "more_info": "| Score de risque RH | Risque d'hyperbilirubinémie de rebond |\n| --- | --- |\n| ≤9 | 0,3 % |\n| 10-19 | 1,8 % |\n| 20-29 | 6,1 % |\n| 30-39 | 17,4 % |\n| 40-49 | 25,8 % |\n| ≥50 | 40,5 % |",
+  "short_description": "Hyperbilirubinémie de rebond.",
+  "medium_description": "Estimates risque de rebound hyperbilirubinemia after hospitalisé phototherapy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gest",
+      "label": "Gestational âge (GA)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 38 semaines",
+          "value": 1
+        },
+        {
+          "label": "≥38 semaines",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge at phototherapy initiation, hours",
+      "optional": false,
+      "unit": "age_hours",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tsb",
+      "label": "Bilirubinémie totale sérique (TSB)",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kemper AR, Newman TB, Slaughter JL, et al. Clinical practice guideline revision: management of hyperbilirubinemia in the newborn infant 35 or more weeks of gestation. Pediatrics. 2022;150(3):e2022058859.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35927462/",
+      "kind": "international"
+    },
+    {
+      "text": "Chang PW, Kuzniewicz MW, McCulloch CE, Newman TB. A clinical prediction rule for rebound hyperbilirubinemia following inpatient phototherapy. Pediatrics. 2017;139(3):e20162896.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28196932/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Porter ML, Dennis MBL. Hyperbilirubinemia in the term newborn. AFP. 2002;65(4):599.",
+      "href": "https://www.aafp.org/afp/2002/0215/p599.html",
+      "kind": "other"
+    },
+    {
+      "text": "Chang PW, Newman TB. A simpler prediction rule for rebound hyperbilirubinemia. Pediatrics. 2019;144(1):e20183712.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31196939/",
+      "kind": "other"
+    },
+    {
+      "text": "Chou JH. Predictive models for neonatal follow-up serum bilirubin: model development and validation. JMIR Med Inform. 2020;8(10):e21222.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33118947/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hour-specific-risk-neonatal-hyperbilirubinemia",
+    "calc.virsta-score",
+    "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis"
+  ],
+  "source_logic_hash": "a3be106e9733300bdcc8bfbcc2c02c12",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10397,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

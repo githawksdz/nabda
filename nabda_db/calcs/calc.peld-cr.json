@@ -1,0 +1,193 @@
+{
+  "id": "calc.peld-cr",
+  "slug": "peld-cr",
+  "language": "fr",
+  "title": "PELD Cr (pédiatrique End-Stage Liver maladie)",
+  "short_title": "PELD Cr",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hepatologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Jaundice",
+    "Perte d'appétit",
+    "Nausea",
+    "Swelling",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "PELD",
+    "PELD Cr",
+    "peld creatinine",
+    "peld score",
+    "pediatric liver disease",
+    "liver transplant",
+    "liver transplant planning"
+  ],
+  "dosing": false,
+  "formula": "PELD Cr = (x + 1,5287)*10 + 2,82, arrondi à l'entier le plus proche,\n\noù x est la somme des termes suivants :\n\n| Variable | Terme | |\n| --- | --- | --- |\n| Âge, années | <1 | -0,1967 |\n| 1 à 5,5 | -0,1967*âge | |\n| >5,5 à <12 | -0,1967*5,5 | |\n| Albumine, g/dL | 1 à 1,9 | -1,842*ln(albumine) |\n| >1,9 | -1,842*ln(1,9) | |\n| Bilirubine, mg/dL | 1 à 4 | 0,7854*ln(bilirubine) + 0,3434*ln(4) |\n| >4 à 40 | 0,7854*ln(4) + 0,3434*ln(bilirubine) | |\n| >40 | 0,7854*ln(4) + 0,3434*ln(40) | |\n| INR | 1 à 2 | 1,981*ln(INR) + 0,7298*ln(2) |\n| >2 à 10 | 1,981*ln(2) + 0,7298*ln(INR) | |\n| >10 | 1,981*ln(2) + 0,7298*ln(10) | |\n| Min(z-score de taille CDC, z-score de poids CDC) | <-5 | -0,1807*(-5) |\n| -5 à -2,1 | -0,1807*(z-score min) | |\n| >-2,1 | -0,1807*(-2,1) | |\n| Créatinine, mg/dL | <0,2 | 1,453*ln(0,2) |\n| 0,2 à 1,3 | 1,453*ln(créatinine) | |\n| >1,3 | 1,453*ln(1,3) | |\n\n- Les valeurs de bilirubine, d'albumine et d'INR inférieures à 1,0 sont ramenées à 1,0.\n- Les candidats suivants recevront une valeur de créatinine de 1,3 mg/dL :",
+  "how_to_use": {
+    "why": "- La version précédente du PELD était considérée comme sous-estimant la mortalité jusqu'à 17 %, et jusqu'à 66 % des candidats à la greffe étaient inscrits avec une exception médicale (en raison de l'incapacité de la formule antérieure à refléter la sévérité médicale).\n- Le score PELD Cr inclut la créatinine pour tenir compte du degré de dysfonction rénale, qui est un prédicteur indépendant de la mortalité à 90 jours chez les candidats pédiatriques sur liste de greffe.\n- Ce score met également à jour le retard de croissance, qui passe d'une variable catégorielle à une variable continue, ainsi que le facteur d'ajustement pour l'âge.",
+    "when": "- Semblable au score MELD, mais en pédiatrie : détermine le pronostic et hiérarchise l'accès à la transplantation hépatique.\n- À utiliser chez les patients pédiatriques de moins de 12 ans pour la stratification du risque et la priorisation de la greffe.\n- Le PELD Cr a été adopté comme nouvelle norme pour la priorité de transplantation hépatique par l'Organ Procurement and Transplantation Network (OPTN) aux États-Unis en juillet 2023.\n- Le PELD Cr inclut la créatinine pour une meilleure stratification du risque. Voir la section [Données probantes](#evidence) pour de nouvelles recherches et la politique officielle de l'OPTN.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Le score PELD permet d'estimer le pronostic des patients pédiatriques atteints d'une maladie hépatique terminale et est utilisé pour prioriser les receveurs de greffe.\n- Si vous vous trouvez aux États-Unis, référez-vous à la politique officielle de l'OPTN pour les directives de priorisation de la transplantation hépatique. Sinon, suivez les directives locales/nationales.\n- En général, plus le résultat du PELD Cr augmente, plus la sévérité de la maladie hépatique est grande (et donc plus la priorité attribuée pour la transplantation est élevée).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Un score PELD Cr plus élevé est associé à une plus grande sévérité de la maladie hépatique.",
+  "short_description": "Version actualisée de la planification de la greffe hépatique pédiatrique.",
+  "medium_description": "Updates PELD modèle as standard pour pédiatrique liver transplant planning.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_peld",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "dialysis",
+      "label": "Had dialysis twice, ou 24 hours de CVVHD, within week prior pour créatinine sérique test?",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hsu E, Schladt DP, Wey A, Perito ER, Israni AK. Improving the predictive ability of the pediatric end-stage liver disease score for young children awaiting liver transplant. Am J Transplant. 2021;21(1):222-228.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32306489/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "OPTN. Briefing to the OPTN Board of Directors on Improving Liver Allocation: MELD, PELD, Status 1A, Status 1B. 2022.",
+      "href": "https://optn.transplant.hrsa.gov/media/hsdn4bgc/liver_improving-liver-allocation-meld-peld-status-1a-status-1b_bp.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "OPTN. Notice of OPTN Policy and Guidance Changes Improving Liver Allocation: MELD, PELD, Status 1A, Status 1B. 2022.",
+      "href": "https://optn.transplant.hrsa.gov/media/3idbp5vq/policy-guid-change_impr-liv-alloc-meld-peld-sta-1a-sta-1b_liv.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Thalji L, Thalji NM, Heimbach JK, et al. Renal function parameters and serum sodium enhance prediction of wait-list outcomes in pediatric liver transplantation. Hepatology. 2021;73(3):1117-1131.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32485002/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "d41d8cd98f00b204e9800998ecf8427e",
+  "logic_language": "r",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10507,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

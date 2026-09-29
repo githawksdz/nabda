@@ -1,0 +1,137 @@
+{
+  "id": "calc.fatty-liver-index",
+  "slug": "fatty-liver-index",
+  "language": "en",
+  "title": "Fatty Liver index",
+  "short_title": "Fatty Liver index",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "Nafld",
+    "nash",
+    "FLI",
+    "ASH"
+  ],
+  "dosing": false,
+  "formula": "Fatty Liver Index (FLI) = e^y^/ (1 + e^y^) × 100\n\nWhere y = 0.953 × ln(triglycerides, mg/dL) + 0.139 × BMI, kg/m^2^+ 0.718 × ln (GGT, U/L) + 0.053 × waist circumference, cm – 15.745",
+  "how_to_use": {
+    "why": "- Peut aider à la sélection des patients en vue d’une échographie ou d’une biopsie hépatique.\n- Validé dans de multiples cohortes externes.\n- Peut être utilisé en contexte de recherche pour identifier les patients afin de planifier des études observationnelles ou interventionnelles.",
+    "when": "Patients chez lesquels une stéatose hépatique est suspectée (p. ex. stéatose hépatique alcoolique, NAFLD, NASH).",
+    "pearls": "- Among liver enzymes,GGTwas the only independent predictor of fatty liver in the original study, though it is not always part of routine liver enzymes across settings.\n- Originally derived in a Northern Italian cohort but has since been validated in multiple cohorts including North America, China, and the UK."
+  },
+  "next_steps": {
+    "advice": "Envisager l'échographie pour confirmation/clarification chez les patients ayant un FLI indéterminé ou élevé.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Fatty Liver Index | Risk | Diagnosis |\n| --- | --- | --- |\n| <30 | Low | Fatty liver ruled out (LR- = 0.2) |\n| 30 to <60 | Indeterminate | Fatty liver neither ruled in nor ruled out |\n| ≥60 | High | Fatty liver ruled in (LR+ = 4.3) |",
+  "short_description": "Diagnostic de stéatose hépatique",
+  "medium_description": "Diagnoses fatty liver using labs et exam findings.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "circ",
+      "label": "Tour de taille",
+      "optional": false,
+      "unit": "waist_circumference",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ggt",
+      "label": "GGT",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "trig",
+      "label": "Triglycerides",
+      "optional": false,
+      "unit": "trig",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Bedogni G, Bellentani S, Miglioli L, et al. The Fatty Liver Index: a simple and accurate predictor of hepatic steatosis in the general population. BMC Gastroenterol. 2006;6:33.",
+      "href": "https://bmcgastroenterol.biomedcentral.com/articles/10.1186/1471-230X-6-33 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cuthbertson DJ, Weickert MO, Lythgoe D, et al. External validation of the fatty liver index and lipid accumulation product indices, using 1H-magnetic resonance spectroscopy, to identify hepatic steatosis in healthy controls and obese, insulin-resistant individuals. Eur J Endocrinol. 2014;171(5):561-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25298375 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Koehler EM, Schouten JN, Hansen BE, Hofman A, Stricker BH, Janssen HL. External validation of the fatty liver index for identifying nonalcoholic fatty liver disease in a population-based study. Clin Gastroenterol Hepatol. 2013;11(9):1201-4.",
+      "href": "http://www.cghjournal.org/article/S1542-3565(13)00089-X/abstract ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Huang X, Xu M, Chen Y, et al. Validation of the Fatty Liver Index for Nonalcoholic Fatty Liver Disease in Middle-Aged and Elderly Chinese. Medicine (Baltimore). 2015;94(40):e1682.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26448014 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yang BL, Wu WC, Fang KC, et al. External validation of fatty liver index for identifying ultrasonographic fatty liver in a large-scale cross-sectional study in Taiwan. PLoS ONE. 2015;10(3):e0120443.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4363626/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fibrotic-nash-index-fni",
+    "calc.nafld-non-alcoholic-fatty-liver-disease-activity-score",
+    "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10001,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,171 @@
+{
+  "id": "calc.kocher-criteria-septic-arthritis",
+  "slug": "kocher-criteria-septic-arthritis",
+  "language": "en",
+  "title": "Kocher critères pour Septic Arthritis",
+  "short_title": "Kocher critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "infectiologie",
+    "orthopedie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Arthrite septique",
+    "Synovite transitoire"
+  ],
+  "chief_complaints": [
+    "Douleur des extrémités",
+    "Fever",
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "hip",
+    "synovitis",
+    "transient"
+  ],
+  "dosing": false,
+  "formula": "Série de questions Oui/Non ; chaque « Oui » augmente la probabilité de risque d'arthrite septique.",
+  "how_to_use": {
+    "why": "- La distinction entre une arthrite septique et une synovite transitoire de la hanche chez l’enfant peut être difficile en raison de tableaux cliniques similaires et non traumatiques.\n- Les critères de Kocher permettent d’identifier rapidement certains sous-groupes de patients nécessitant une consultation orthopédique urgente ou pouvant être simplement mis en observation.",
+    "when": "Les critères de Kocher peuvent être appliqués à tous les patients pédiatriques présentant une hanche aiguë irritable chez qui une arthrite septique et une synovite transitoire figurent au diagnostic différentiel.",
+    "pearls": "The Kocher Criteria was derived to identify factors important in distinguishing septic arthritis and transient synovitis.\n\n- Patients falling on either extreme of the criteria can be readily ruled in or out for septic arthritis in the right clinical setting.\n- Patients in the intermediate range may need further work-up or intervention.\n- Criteria did not perform as well in the validation study though may still be clinically useful for those on either extreme of the criteria."
+  },
+  "next_steps": {
+    "advice": "- Obtain a thorough history and physical exam on all pediatric patients presenting with an acutely irritable hip, paying particular concern to presence or history of fever and inability to bear weight.\n- Draw a CBC, ESR and CRP in all patients with a clinical concern for septic arthritis or transient synovitis.",
+    "critical_actions": "Les patients ne remplissant aucun ou la totalité des critères de Kocher peuvent potentiellement recevoir leur congé (0 prédicteur) ou nécessiter une consultation urgente en orthopédie pour lavage articulaire (4 prédicteurs). Ceux qui présentent certains prédicteurs peuvent nécessiter une arthrocentèse de hanche.",
+    "management": "- Envisager une ponction diagnostique de la hanche chez les patients présentant une suspicion clinique d’arthrite septique et ayant au moins un prédicteur d’arthrite septique.\n- En cas de forte suspicion clinique, ne pas retarder l’avis orthopédique.\n- Envisager une surveillance et/ou une sortie avec un suivi rapproché chez les patients d’aspect général conservé, avec une faible suspicion clinique d’arthrite septique et aucun prédicteur présent."
+  },
+  "evidence": "**[Original derivation study published in 1999](https://www.ncbi.nlm.nih.gov/pubmed/10608376)**\n\n- Retrospective chart review of 282 patients who were evaluated between 1979 and 1996 for an acutely irritable hip for which the differential diagnosis included transient synovitis and septic arthritis.\n- Septic arthritis diagnosed with positive joint fluid culture or > 50,000 WBCs/mm3 in joint fluid.\n- 82 patients were diagnosed with septic arthritis while 86 were diagnosed with transient synovitis (<50,000 WBCs/mm3 with negative joint fluid culture and resolution of symptoms without antimicrobial therapy).\n- Found four independent multivariate predictors for differentiation between septic arthritis and transient synovitis: history of fever, non-weight-bearing, ESR > 40 mm/hour, serum WBC > 12,000.\n- **Probability for septic arthritis based on number of predictors. Zero predictors: < 0.2% risk, 1 predictor: 3.0%, 2 predictors: 40%, 3 predictors: 93.1%, 4 predictors: 99.6%.**\n\n**[Validation study in 2004](https://www.ncbi.nlm.nih.gov/pubmed/15292409)**\n\n- Criteria was prospectively applied to patients presenting to a major tertiary-care children’s hospital between 1997 and 2002 with an acutely irritable hip.\n- Included 213 consecutive patients, 51 were diagnosed with septic arthritis and 103 were diagnosed with transient synovitis.\n- Probability for septic arthritis based on number of predictors. Zero predictors: 2.0% risk, 1 predictor: 9.5%, 2 predictors: 35.0%, 3 predictors: 72.8%, 4 predictors: 93.0%.\n\n**Other studies**\n\n- Outside group retrospectively applied the Kocher criteria to their population and found that having all four predictors yielded a probability for septic arthritis of just 59%.\n- Did not publish its rate of septic arthritis when no predictors were present.\n- Another group did the same retrospective application of the Kocher criteria and found a predicted probability of 59.9% when all predictors were present.\n\n - Study only had five patients with septic arthritis.\n - Did not have a single case of septic arthritis in a patient with no predictors present.",
+  "more_info": "+ 1 criterion - 3% probability for septic arthritis\n+ 2 criteria - 40% probability for septic arthritis\n+ 3 criteria - 93% probability for septic arthritis\n+ 4 criteria - 99.6% probability for septic arthritis",
+  "short_description": "Septic arthritis vs transient synovitis dans pédiatrique inflamed hip.",
+  "medium_description": "Distinguishes septic arthritis de transient synovitis dans child avec inflamed hip.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "weight_bearing_inability",
+      "label": "Sans mise en charge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "temperature",
+      "label": "Température > 38,5 °C / 101,3 °F",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "esr_40",
+      "label": "ESR> 40mm/hr",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "white_blood_cell_count",
+      "label": "GB > 12,000 cellules/mm3",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kocher MS, Zurakowski D, Kasser JR. Differentiating between septic arthritis and transient synovitis of the hip in children: an evidence-based clinical prediction algorithm. J Bone Joint Surg Am. 1999 Dec;81(12):1662-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10608376",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Luhmann SJ, et al. Differentiation between septic arthritis and transient synovitis of the hip in children with clinical prediction algorithms. JBJS. 2004; 86(5): 956-62.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15118038",
+      "kind": "other"
+    },
+    {
+      "text": "Sultan J and Hughes PJ. Septic arthritis or transient synovitis of the hip in children: The value of clinical prediction algorithms. JBJS Britain. 2010; 92(9): 1289-93.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20798450",
+      "kind": "other"
+    },
+    {
+      "text": "Kocher MS, et al. Validation of a clinical prediction rule for the differentiation between septic arthritis and transient synovitis of the hip in children. JBJS. 2004; 86(8): 1629-35.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15292409",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lrinec-score-necrotizing-soft-tissue-infection",
+    "calc.2010-acr-eular-classification-criteria-rheumatoid-arthritis-ra",
+    "calc.jones-criteria-acute-rheumatic-fever-diagnosis"
+  ],
+  "source_logic_hash": "6a43e895839d6ee8e80bdd958e8b0d17",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1817,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

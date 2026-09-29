@@ -1,0 +1,210 @@
+{
+  "id": "calc.sudbury-vertigo-risk-score",
+  "slug": "sudbury-vertigo-risk-score",
+  "language": "fr",
+  "title": "Score de risque de vertige de Sudbury",
+  "short_title": "Score de risque de vertige de Sudbury",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "general"
+  ],
+  "diseases": [
+    "Any/All",
+    "Dehydration",
+    "Migraine",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Syncope",
+    "Vertigo"
+  ],
+  "abbreviations": [
+    "Sudbury Vertigo Score",
+    "ED dizziness",
+    "central vertigo",
+    "posterior stroke",
+    "cerebellar infarct",
+    "serious vertigo"
+  ],
+  "dosing": false,
+  "formula": "Le score de risque de vertige de Sudbury est calculé en additionnant les points de chaque variable :\n\n| Variable | Description | Points |\n| --- | --- | --- |\n| Sexe masculin | Le sexe du patient est masculin | +1 |\n| Âge >65 ans | Le patient a plus de 65 ans | +1 |\n| Diabète | Le patient a un diagnostic de diabète | +1 |\n| Hypertension | Le patient a des antécédents d'hypertension | +3 |\n| Déficit moteur ou sensitif | Le patient présente des déficits neurologiques moteurs ou sensitifs | +5 |\n| Déficit cérébelleux | Inclut diplopie, dysarthrie, dysphagie, dysmétrie ou ataxie | +6 |\n| Diagnostic de VPPB (protecteur) | Présence d'un diagnostic clinique de vertige positionnel paroxystique bénin (VPPB) | −5 |",
+  "how_to_use": {
+    "why": "- Stratifie la probabilité d'une cause centrale (vasculaire ou structurelle) du vertige, orientant les décisions sur les patients pouvant reporter l'imagerie en toute sécurité versus ceux nécessitant une exploration accélérée.\n- En identifiant avec précision les patients à faible risque, le score peut réduire les imageries inutiles, les coûts et l'exposition aux radiations.",
+    "when": "- À utiliser chez les adultes (≥18 ans) se présentant aux urgences ou dans un centre de soins urgents dans les 14 jours suivant l'apparition de vertiges, étourdissements ou troubles de l'équilibre aigus, avant de prescrire une neuro-imagerie.\n- À appliquer uniquement si le patient est conscient (GCS = 15), hémodynamiquement stable (PAS ≥90 mmHg) et sans traumatisme récent de la tête/du cou, syncope ou cancer actif.",
+    "pearls": "- L'étude de dérivation chez l'adulte a montré une sensibilité de 100 %, une spécificité de 72 % et une excellente discrimination (statistique C 0,97) pour les causes centrales graves (AVC, AIT, dissection de l'artère vertébrale ou tumeur cérébrale).\n- La validation à ce jour se limite aux urgences de centres hospitaliers universitaires canadiens ; la généralisation externe est incertaine.\n- Un score précis dépend d'un examen neurologique ciblé ; les déficits moteurs, sensitifs et cérébelleux doivent être recherchés activement, sous peine de sous-estimer le risque."
+  },
+  "next_steps": {
+    "advice": "- Cet outil doit compléter, et non remplacer, une anamnèse approfondie, un examen physique et le jugement clinique.\n- Si une cause centrale du vertige est suspectée, réaliser une neuro-imagerie en urgence et toute autre évaluation nécessaire, quel que soit le résultat de cet outil.",
+    "critical_actions": "En cas de suspicion d'AVC, activer immédiatement le protocole AVC de votre établissement.",
+    "management": "- **Risque faible (score <5) :**\n\n - L'imagerie est généralement inutile en l'absence de signes d'alarme.\n - Prendre en charge les causes bénignes (p. ex. VPPB) et assurer le soulagement des symptômes.\n - Sortie avec consignes de retour et organisation d'un suivi ambulatoire.\n- **Risque modéré (score 5–8) :**\n\n - Si une cause périphérique est incertaine, réaliser une IRM (± imagerie vasculaire).\n - Adapter les explorations complémentaires selon la suspicion clinique, les comorbidités et les facteurs sociaux.\n- **Risque élevé (score >8) :**\n\n - Accélérer l'évaluation et la neuro-imagerie (IRM/A ou angio-CT) pour une cause centrale de vertige.\n- Optimiser les facteurs de risque cardiovasculaire.\n - Envisager une hospitalisation pour exploration et prise en charge complémentaires."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score de risque de vertige de Sudbury | Risque de diagnostic grave | Implication clinique |\n| --- | --- | --- |\n| <5 | 0 % | Risque faible – aucune exploration complémentaire nécessaire |\n| 5–8 | ~2–4 % | Risque modéré – investigations complémentaires si le tableau est douteux |\n| >8 | Jusqu'à 41 % ou plus | Risque élevé – évaluation urgente et neuro-imagerie |",
+  "short_description": "Stratification du risque chez les patients présentant des vertiges.",
+  "medium_description": "Identifies patients avec vertigo who are at increased risque de serious central diagnostic.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "male",
+      "label": "Homme",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge >65 years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "motor_sensory",
+      "label": "Déficit moteur ou sensitif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cerebellar",
+      "label": "Déficit cérébelleux",
+      "tips": "Inclut diplopie, dysarthrie, dysphagie, dysmétrie ou ataxie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bppv",
+      "label": "Diagnostic de VPPB (protecteur)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ohle R, Savage DW, Roy D, et al. Development of a Clinical Risk Score to Risk Stratify for a Serious Cause of Vertigo in Patients Presenting to the Emergency Department. Ann Emerg Med. 2025;85(2):122-131. doi:10.1016/j.annemergmed.2024.06.003",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39093245/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van Patot ET, Roy D, Baraku E, et al. Validation of the Sudbury Vertigo Risk Score to risk stratify for a serious cause of vertigo. Acad Emerg Med. Published online March 11, 2025. doi:10.1111/acem.70017",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40070159/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "bd27e31f4d2e58a986bb96b5f1aa3f86",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10614,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

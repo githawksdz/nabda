@@ -1,0 +1,252 @@
+{
+  "id": "calc.timi-risk-score-ua-nstemi",
+  "slug": "timi-risk-score-ua-nstemi",
+  "language": "en",
+  "title": "TIMI risque score pour UA/NSTEMI",
+  "short_title": "TIMI score pour UA/NSTEMI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "acs",
+    "cad",
+    "mi",
+    "myocardial infarction",
+    "heart disease",
+    "nstemi",
+    "ua",
+    "unstable",
+    "angina"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points |\n| --- | --- |\n| Âge ≥65 | 1 |\n| ≥3 facteurs de risque de coronaropathie* | 1 |\n| Coronaropathie connue (sténose ≥50 %) | 1 |\n| Prise d'ASA dans les 7 derniers jours | 1 |\n| Angor sévère (≥2 épisodes en 24 h) | 1 |\n| Modifications ST à l'ECG ≥0,5 mm | 1 |\n| Marqueur cardiaque positif | 1 |\n\n*Facteurs de risque de coronaropathie : antécédents familiaux de coronaropathie, hypertension, hypercholestérolémie, diabète ou tabagisme actuel (merci à Jeff Geske de la Mayo pour cette mise à jour !)",
+  "how_to_use": {
+    "why": "L'angor instable/NSTEMI peut parfois être méconnu. Traditionnellement, le score de risque TIMI pour l'angor instable/NSTEMI permet de corréler le risque d'événement indésirable chez les patients présentant une douleur thoracique.",
+    "when": "Peut être utilisé pour aider à stratifier le risque des patients avec douleur thoracique présumée ischémique. Cependant, il a été initialement dérivé chez des patients avec angor instable confirmé ou infarctus du myocarde sans sus-décalage de ST.",
+    "pearls": "- L'une des premières règles de décision pour la douleur thoracique à avoir été largement diffusée.\n- Initialement dérivé auprès de patients avec angor instable ou NSTEMI connu.\n- Des scores plus récents pour la douleur thoracique, comme le [score HEART](nabda:calc.heart-score-major-cardiac-events), se sont montrés supérieurs au score TIMI pour stratifier le risque, en particulier chez le patient avec douleur thoracique non différenciée.\n- Un score de risque TIMI de 0 ou 1 n'équivaut pas à un risque nul d'événement indésirable. L'étude initiale a montré que 4,7 % des patients avec un score de 0 ou 1 ont présenté des événements indésirables dans les 14 jours. Les études de validation ont montré que 1,7 à 2,1 % des patients avec un score de 0 présentaient encore des événements indésirables dans les 30 jours.\n- L'utilisation de ce score de risque chez les patients présentant une douleur thoracique dans un contexte de consommation de cocaïne reste incertaine.\n- Le score TIMI a été étudié plus avant dans le cadre d'un protocole diagnostique accéléré dans l'essai [ADAPT](nabda:calc.adapt-protocol-cardiac-event-risk), qui comprend l'estimation de la probabilité pré-test à l'aide du TIMI, associée à un ECG anormal et à la troponine (troponine I cardiaque ultrasensible)."
+  },
+  "next_steps": {
+    "advice": "- Les patients avec un score de 0 ou 1 point présentent un risque plus faible d'événement indésirable (décès, IDM, revascularisation urgente) par rapport aux patients ayant un score de risque plus élevé. Cependant, le risque n'est pas nul.\n- Les patients avec un score de risque plus élevé peuvent nécessiter une intervention médicale ou procédurale plus agressive.\n- Des scores de risque plus récents pour les douleurs thoraciques, comme le [HEART Score](nabda:calc.heart-score-major-cardiac-events), ont démontré une meilleure stratification du risque que le TIMI Score, en particulier chez les patients présentant une douleur thoracique non différenciée.",
+    "critical_actions": "Un TIMI Risk Score de 0 n'équivaut pas à un risque nul d'événement indésirable.",
+    "management": "Si les patients appartiennent au groupe 0 ou 1 point, ils doivent faire l'objet d'une stratification du risque supplémentaire à l'aide d'un autre score de risque ou selon les pratiques propres à leur établissement, car le risque n'est pas suffisamment bas pour autoriser une sortie de l'hôpital en toute sécurité. De nombreuses recommandations préconisent une intervention médicale plus agressive et/ou une prise en charge invasive précoce pour les niveaux de risque plus élevés."
+  },
+  "evidence": "[Antman et al (2000)](https://www.ncbi.nlm.nih.gov/pubmed/10938172)used a merged database of 7,081 UA/NSTEMI patients in the TIMI 11B and ESSENCE trails for the original derivation and validation of this TIMI risk score for UA/NSTEMI. The risk score was originally derived from 1,957 UA/NSTEMI patients receiving unfractionated heparin in the TIMI 11B trial and internally validated in 3 cohorts of patients from the rest of the merged data: 1,953 patients receiving enoxaparin in the TIMI 11B trial, 1,564 patient receiving unfractionated heparin in the ESSENCE trial, and 1,607 receiving enoxaparin in the ESSENCE trial. They included UA/NSTEMI patients with chest pain at rest who presented within 24 hours of symptoms who had ST-segment deviation on their presenting EKG, history of coronary artery disease, and a measured cardiac enzyme that was elevated. Patients were excluded if revascularization was within 24 hours or if the patient had a contraindication to anticoagulation. The primary endpoints were composite all-cause mortality, myocardial infarction, or urgent revascularization up to 14 days.\n\nBy the end of the 14 days, 16.7% of the derivation group died, had a myocardial infarction, or needed urgent revascularization. An increase of the TIMI Score correlated with an increase in all-cause mortality, MI, or urgent revascularization. The same pattern was seen in the internally validated groups. There have been many external validation studies since its derivation[.](https://www.ncbi.nlm.nih.gov/pubmed/12127617)\n\n[Scirica et al (2002)](https://www.ncbi.nlm.nih.gov/pubmed/12127617)externally validated the TIMI Score in 1,137 UA/NSTEMI patients from 9 sites in the TIMI III Registry. They included UA/NSTEMI patients with ischemic chest pain lasting more than five minutes, presenting within 96 hours of symptom onset. Patients were excluded if they had a STEMI, chest pain of other origin, planned revascularization, or if the patient was in a prior TIMI trial. Primary endpoints were death, myocardial infarction, and recurrent ischemia within 6 weeks and at 1 year. As in the original derivation study and internal validation studies, there was an increase in mortality, MI, and recurrent ischemia with each increase in the TIMI Score. However, they modified the TIMI Score definitions to some degree: they substituted a patient’s history of MI or revascularization history for “known coronary artery stenosis >50%” and assigned 1 point for aspirin use in the past 24 hours, not 7 days as in the original trial by Antman et al. Still, this population was in a registry for patients with known UA/NSTEMI. Thus, this validation is less useful for undifferentiated chest pain patients seen in the acute care setting of the emergency department.\n\n[Pollack et al (2006)](https://www.cardiocast.net/ohds/TIMI_Score.pdf)externally validated the TIMI Score in a prospective observational cohort study of 3,929 adult chest pain patients in the ED. They included adult chest pain patients older than 24 years old evaluated with EKG. Adults under 24 years old were included if the chest pain was preceded by cocaine use within the week prior. Patients were excluded if they had a STEMI. Whereas the original derivation study looked at adverse outcomes within 14 days and Scirica et al validated the risk score looking up to 6 weeks and even 1 year, Pollack et al followed-up patients up to 30 days from presentation for adverse outcomes of death, myocardial infarction, or revascularization. As in prior studies, the higher the TIMI Score, the higher the likelihood of adverse outcome within the measured time period, in this study 30 days. However, the patient population was different in that there were more black patients and more female patients. Also, if no cardiac markers were ordered, a score of zero was assumed and assigned to the category of cardiac enzymes.\n\n[Chase et al (2006)](https://www.ncbi.nlm.nih.gov/pubmed/16934646)externally validated the TIMI Score in a prospective observational study of 1,458 patient visits in the ED. They included non-traumatic chest pain patients older than 30 years old who had an EKG done in the ED. Whereas Pollack et al included patients with cocaine use, Chase et al *excluded* patients if cocaine was used in the 7 days prior to presentation. Like Pollack et al, this study assigned a score of zero to cardiac enzymes if they were not drawn. Chase et al also followed patients up to 30 days. Within 30 days, 12.8% of patients had an adverse outcome of death, MI, or revascularization. In patients with a TIMI Score of zero, 1.7% had an adverse outcome. Although there was a general correlation of an increase in adverse outcome with higher TIMI risk score, this study did not show a similar stepwise increase. This is likely secondary to having a study population that was dissimilar to the original derivation group or other validation studies; this study had patients with mostly low TIMI scores and also included STEMI patients into the study population.",
+  "more_info": "",
+  "short_description": "Mortalité after UA/NSTEMI.",
+  "medium_description": "Estimates mortalité pour patients avec unstable angina et non-ST elevation MI.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age_65",
+      "label": "Âge ≥65",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cad_risk_factors",
+      "label": "≥3 facteurs de risque de coronaropathie (CAD)",
+      "tips": "Hypertension, hypercholestérolémie, diabète, antécédents familiaux de coronaropathie (CAD) ou tabagisme actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "known_cad",
+      "label": "Coronaropathie connue (CAD) (sténose ≥50%)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "asa_use",
+      "label": "ASA use dans past 7 days",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "angina",
+      "label": "Severe angina (≥2 episodes dans 24 hrs)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ekg_changes",
+      "label": "Modifications ST à l'ECG ≥0,5 mm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiac_marker",
+      "label": "Marqueur cardiaque positif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Antman EM, Cohen M, Bernink PJLM, McCabe CH, Hoacek T, Papuchis G, Mautner B, Corbalan R, Radley D, Braunwald E. The TIMI risk score for unstable angina/non-ST elevation MI: a method for prognostication and therapeutic decision making JAMA. 2000;284(7):835-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10938172",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Than M, Cullen L, Aldous S, et al. 2-Hour accelerated diagnostic protocol to assess patients with chest pain symptoms using contemporary troponins as the only biomarker: the ADAPT trial. J Am Coll Cardiol. 2012;59(23):2091-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22578923",
+      "kind": "other"
+    },
+    {
+      "text": "Pollack CV, Sites FD, Shofer FS, Sease KL, Hollander JE. Application of the TIMI risk score for unstable angina and non-ST elevation acute coronary syndrome to an unselected emergency department chest pain population. Acad Emerg Med. 2006;13(1):13-18.",
+      "href": "https://www.cardiocast.net/ohds/TIMI_Score.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Scirica BM, Cannon CP, Antman EM, Murphy SA, Morrow DA, Sabatine MS, McCabe CH, Gibson CM, Braunwald E. Validation of the thrombolysis in myocardial infarction (TIMI) risk score for unstable angina pectoris and non-ST-elevation myocardial infarction in the TIMI III registry. Am J Cardiol. 2002;90(3):303-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12127617",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chase M, Robey JL, Zogby KE, Sease KL, Shofer FS, Hollander JE. Prospective validation of the thrombolysis in myocardial infarction risk score in the emergency department chest pain population. Ann Emerg Med. 2006;48(3):252-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16934646",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.timi-risk-index",
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+    "calc.heart-score-major-cardiac-events",
+    "calc.adapt-protocol-cardiac-event-risk"
+  ],
+  "source_logic_hash": "ae2ef7cd0206e94d40143bdf68fa8dc3",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.heart-score-major-cardiac-events",
+      "text": "HEART Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.adapt-protocol-cardiac-event-risk",
+      "text": "ADAPT"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 111,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

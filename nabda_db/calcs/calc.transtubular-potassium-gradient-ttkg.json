@@ -1,0 +1,125 @@
+{
+  "id": "calc.transtubular-potassium-gradient-ttkg",
+  "slug": "transtubular-potassium-gradient-ttkg",
+  "language": "fr",
+  "title": "Gradient transtubulaire de potassium (TTKG)",
+  "short_title": "TTKG",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Hyperkalemia",
+    "Insuffisance rénale",
+    "Hypokalemia"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Oliguria",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Transtubular k gradient",
+    "TTKG",
+    "transtubular",
+    "potassium",
+    "hyperkalemia",
+    "hypokalemia"
+  ],
+  "dosing": false,
+  "formula": "TTKG = (potassium urinaire / potassium sérique) / (osmolalité urinaire / osmolalité sérique)",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients présentant une hyper- ou une hypokaliémie (définie comme K^+^<3,5 ou >5,0 mEq/L dans ce calculateur).",
+    "pearls": "Le TTKG est parfois critiqué pour son manque de précision, notamment dans l'évaluation de l'hyperkaliémie."
+  },
+  "next_steps": {
+    "advice": "Faire preuve de jugement clinique dans la correction de l'hyper- ou de l'hypokaliémie et, comme toujours, ne jamais se fier uniquement à un calculateur pour prendre des décisions.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n- Des valeurs de TTKG entre 8 et 9 sont considérées comme normales chez les patients ayant une alimentation normale.\n- En cas d'hyperkaliémie (K⁺ >5,0 mEq/L), le TTKG devrait être ≥7 ; des valeurs inférieures suggèrent un hypoaldostéronisme.\n- En cas d'hypokaliémie (K⁺ <3,5 mEq/L), le TTKG devrait être <3 ; des valeurs supérieures suggèrent une fuite rénale de potassium.\n- Le TTKG attendu en cas d'hyperkaliémie est >10, ce qui suggère une excrétion rénale normale du potassium.",
+  "short_description": "Hyper/hypokalemia évaluation.",
+  "medium_description": "May help dans évaluation de hyperkalemia ou hypokalemia.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "uk",
+      "label": "Potassium urinaire",
+      "optional": false,
+      "unit": "k_urine",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pk",
+      "label": "Potassium sérique",
+      "optional": false,
+      "unit": "k",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "uosm",
+      "label": "Osmolalité urinaire",
+      "optional": false,
+      "unit": "urine_osm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "posm",
+      "label": "Osmolalité sérique",
+      "optional": false,
+      "unit": "osm",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Ethier JH, Kamel KS, Magner PO, Lemann J, Halperin ML. The transtubular potassium concentration in patients with hypokalemia and hyperkalemia. Am J Kidney Dis. 1990;15(4):309-15.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2321642",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Choi MJ, Ziyadeh FN. The utility of the transtubular potassium gradient in the evaluation of hyperkalemia. J Am Soc Nephrol. 2008;19(3):424-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18216310",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fractional-excretion-urea-feurea",
+    "calc.fractional-excretion-sodium-fena",
+    "calc.akin-classification-acute-kidney-injury-aki"
+  ],
+  "source_logic_hash": "25827a133c45a4d87ac09905ceb03ae0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3944,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

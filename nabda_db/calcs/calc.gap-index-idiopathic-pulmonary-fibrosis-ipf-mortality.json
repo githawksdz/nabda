@@ -1,0 +1,183 @@
+{
+  "id": "calc.gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality",
+  "slug": "gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality",
+  "language": "fr",
+  "title": "GAP index pour Idiopathic Pulmonary Fibrosis (IPF) mortalité",
+  "short_title": "GAP index pour IPF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "soins-palliatifs",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Fibrose pulmonaire idiopathique"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "IPF",
+    "staging",
+    "gap",
+    "ley",
+    "UCSF"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.\n\nLe score GAP correspond au « Gender, Age, and Physiology score ».\n\n- Le sexe et l'âge ont chacun un critère associé.\n- La physiologie a deux critères associés (FVC et DLCO).",
+  "how_to_use": {
+    "why": "Système de score simple, validé en externe, utilisant des paramètres de base facilement disponibles.",
+    "when": "Pronostic à 1, 2 et 3 ans pour les patients atteints de FPI nécessitant une transplantation pulmonaire.",
+    "pearls": "- L'indice GAP est plus sensible, mais moins spécifique, que le [score de du Bois](nabda:calc.du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality) pour prédire la mortalité.\n- La [validation externe](https://journal.publications.chestnet.org/article.aspx?articleid=1905083) conclut que l'indice GAP est bien corrélé à la mortalité à 1 an, mais PAS à la mortalité à 3 ans."
+  },
+  "next_steps": {
+    "advice": "Des stades et des scores GAP plus élevés correspondent à un besoin accru de transplantation et d'autres traitements.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Stadification GAP pour la FPI :**\n\n| | | Mortalité | | |\n| --- | --- | --- | --- | --- |\n| Points | Stade | 1 an | 2 ans* | 3 ans* |\n| 0-3 | I | 5.6% | 10.9% | 16.3% |\n| 4-5 | II | 16.2% | 29.9% | 42.1% |\n| 6-8 | III | 39.2% | 62.1% | 76.8% |\n\n*L'indice GAP est plus sensible, mais moins spécifique, que le [score de du Bois](nabda:calc.du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality) pour prédire la mortalité.",
+  "short_description": "Staging et pronostic dans IPF.",
+  "medium_description": "Provides 1, 2, et 3-year mortalité estimates pour IPF patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤60 ans",
+          "value": 0
+        },
+        {
+          "label": "61-65 ans",
+          "value": 1
+        },
+        {
+          "label": ">65 ans",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fvc",
+      "label": "Capacité vitale forcée (FVC) prédite",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">75%",
+          "value": 0
+        },
+        {
+          "label": "50-75%",
+          "value": 1
+        },
+        {
+          "label": "< 50%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dlco",
+      "label": "Predicted Diffusing Capacity de Lung pour Carbon Monoxide (DLCO)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">55%",
+          "value": 0
+        },
+        {
+          "label": "36-55%",
+          "value": 1
+        },
+        {
+          "label": "≤35%",
+          "value": 2
+        },
+        {
+          "label": "Unable pour perform",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ley B, Ryerson CJ, Vittinghoff E, Ryu JH, Tomassetti S, Lee JS, et al. A multidimensional index and staging system for idiopathic pulmonary fibrosis. Ann Intern Med. 2012;156:684–91. doi: 10.7326/0003-4819-156-10-201205150-00004.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22586007",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ley B, Bradford WZ, Weycker D, Vittinghoff E, du Bois RM, Collard HR. Unified baseline and longitudinal mortality prediction in idiopathic pulmonary fibrosis. Eur Respir J. 2015;45:1374–81. doi: 10.1183/09031936.00146314",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25614172",
+      "kind": "other"
+    },
+    {
+      "text": "Wilkie MEM, Chalmers JD, Smith RP, Schembri S. Asthma outcomes: P134 Comparison of Two Prognostic Tools For Identifying High Risk Patients with Idiopathic Pulmonary Fibrosis. Thorax 2012;67:Suppl 2 A120 doi:10.1136/thoraxjnl-2012-202678.417",
+      "href": "https://thorax.bmj.com/content/67/Suppl_2/A120.1",
+      "kind": "other"
+    },
+    {
+      "text": "Kim E, Choi S, Lee J, et al. Validation Of The Gap Score In Korean Patients With Idiopathic Pulmonary Fibrosis. Chest 2015;147(2):430-437. doi:10.1378/chest.14-0453.",
+      "href": "https://journal.publications.chestnet.org/article.aspx?articleid=1905083",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality",
+    "calc.gillmore-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+    "calc.edmonton-obesity-staging-system-eoss"
+  ],
+  "source_logic_hash": "e2a528b7f8e896c166479c23b02f1b98",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality",
+      "text": "du Bois Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2157,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,140 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-diarrhea",
+  "slug": "rome-iv-diagnostic-criteria-functional-diarrhea",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional Diarrhea",
+  "short_title": "Rome IV pour Diarrhea",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "Diarrhea, functional diarrhea, Rome IV Criteria, Rome IV Criteria for Functional Diarrhea, Rome IV for Diarrhea, Rome IV Criteria for Diarrhea, Rome IV for Functional Diarrhea, rome 4"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV de la diarrhée fonctionnelle, le patient doit présenter les éléments suivants (durant les 3 mois précédents, avec un début des symptômes ≥ 6 mois) :\n\n1. Selles molles ou liquides, sans douleur abdominale prédominante ni ballonnement gênant, présentes dans > 25 % des selles.\n2. Ne remplit pas les [[calc:|critères du syndrome de l'intestin irritable à prédominance de diarrhée]] [rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs) .",
+  "how_to_use": {
+    "why": "- Utilisé pour diagnostiquer la diarrhée fonctionnelle en l'absence de causes secondaires de diarrhée.\n- Poser un diagnostic permet d'orienter la nécessité d'explorations complémentaires et de la prise en charge.\n- Peut être utilisé pour discuter des signes et symptômes de la diarrhée fonctionnelle avec les patients.",
+    "when": "Patients présentant une diarrhée chronique depuis au moins les 6 derniers mois, sans cause systémique évidente de diarrhée chronique. Le diagnostic de diarrhée fonctionnelle doit être posé sur la base de l'anamnèse, de l'examen physique et des examens diagnostiques.",
+    "pearls": "- La diarrhée doit être définie par la consistance des selles et non par leur fréquence.\n- Utiliser l'[échelle de Bristol de la consistance des selles](nabda:calc.bristol-stool-form-scale) pour déterminer la consistance des selles. Il est important que les patients regardent à la fois les images et le texte. Les types 6 ou 7 de l'échelle de Bristol sont considérés comme une diarrhée. Veiller à évaluer la consistance des selles lorsque le patient ne prend pas de médicaments affectant le transit intestinal.\n- Si une douleur abdominale est présente en plus des symptômes de diarrhée, un diagnostic de [syndrome de l'intestin irritable à prédominance de diarrhée (SII-D)](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs) doit être envisagé.\n- Des biopsies du côlon droit et gauche à la recherche d'une colite microscopique doivent être réalisées lors d'une coloscopie. Cela doit être fait même si la muqueuse colique paraît normale."
+  },
+  "next_steps": {
+    "advice": "**Si le diagnostic n'est pas rempli (négatif) :**\n\nLes symptômes sont peu probablement causés par une diarrhée fonctionnelle. Envisager des évaluations complémentaires selon les besoins cliniques.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable de diarrhée fonctionnelle. Envisager d'initier un traitement.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients chez lesquels une cause secondaire de diarrhée n'est pas suspectée sur la base de l'anamnèse, de l'examen physique et des examens diagnostiques.",
+    "management": "La prise en charge de la diarrhée fonctionnelle peut inclure :\n\n- Modifications diététiques.\n- Apport et supplémentation adéquats en fibres alimentaires.\n- Agonistes opioïdes périphériques (p. ex. lopéramide).\n- Résines échangeuses d'ions liant les acides biliaires (p. ex. cholestyramine, cholésévélam).\n- Neuromodulateurs (p. ex. antidépresseurs tricycliques).\n- Antagonistes des récepteurs 5-HT3 (p. ex. ondansétron, alosetron).\n- Agoniste/antagoniste mixte des opioïdes (p. ex. eluxadoline).\n- Antibiotiques (p. ex. rifaximine).\n\nÀ noter que nombreuses de ces options thérapeutiques disposent de données probantes limitées spécifiquement dans la diarrhée fonctionnelle, mais sont souvent utilisées dans la pathologie apparentée, le [syndrome de l'intestin irritable à prédominance de diarrhée (SII-D)](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs) .\n\nLe choix du traitement dépasse le cadre de ce calculateur et dépendra du contexte clinique."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, functional diarrhea and irritable bowel syndrome (IBS) based primarily on symptoms.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms.",
+  "more_info": "",
+  "short_description": "Diagnostic de la diarrhée.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional diarrhea.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "stools",
+      "label": "Loose ou watery stools, sans predominant abdominal douleur ou bothersome ballonnement, occurring dans >25% de stools",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ibs",
+      "label": "Ne... pas remplir les [critères du SII à prédominance de diarrhée](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lacy BE, Mearin F, Chang L. et al. Bowel disorders. Gastroenterology. 2016;150:1393-1407.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27144631/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smalley W, Falck-Ytter C, Carrasco-Labra A, Wani S, Lytvyn L, Falck-Ytter Y. Aga clinical practice guidelines on the laboratory evaluation of functional diarrhea and diarrhea-predominant irritable bowel syndrome in adults(Ibs-d). Gastroenterology. 2019;157(3):851-854.",
+      "href": "https://www.gastrojournal.org/article/S0016-5085(19)41083-4/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Robin SG, Keller C, Zwiener R, et al. Prevalence of Pediatric Functional Gastrointestinal Disorders Utilizing the Rome IV Criteria. J Pediatr. 2018;195:134-139.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0022347617316347",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-infant-functional-diarrhea",
+    "calc.rome-iv-diagnostic-criteria-functional-chest-pain",
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn",
+    "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.bristol-stool-form-scale"
+  ],
+  "source_logic_hash": "708db23acd4369002b4abd79040ac851",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+      "text": null
+    },
+    {
+      "type": "calc",
+      "id": "calc.bristol-stool-form-scale",
+      "text": "Bristol Stool Form Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10271,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

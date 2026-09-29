@@ -1,0 +1,262 @@
+{
+  "id": "calc.heads-ed",
+  "slug": "heads-ed",
+  "language": "en",
+  "title": "HEADS-ED",
+  "short_title": "HEADS-ED",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Pleurs excessifs",
+    "Fatigue",
+    "Intoxication/Overdose",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "HEADS-ED",
+    "heads ed",
+    "heads",
+    "mental health",
+    "pediatric mental health",
+    "screening",
+    "pediatric heads",
+    "pediatric heads-ed",
+    "pediatric heads ed",
+    "mental health screening"
+  ],
+  "dosing": false,
+  "formula": "The HEADS-ED Score is calculated by the addition of the selected points:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| H ome | Example: How does your family get along with each other? | Supportive | 0 |\n| Conflicts | 1 | | |\n| Chaotic/dysfunctional | 2 | | |\n| E ducation, employment | Example: How is your school attendance? How are your grades? Are you working? | On track | 0 |\n| Grades dropping or absenteeism | 1 | | |\n| Failing/not attending | 2 | | |\n| A ctivities & peers | Example: What are your relationships like with your friends? | No change | 0 |\n| Reduction in activities/increased peer conflicts | 1 | | |\n| Increasingly to fully withdrawn/significant peer conflicts | 2 | | |\n| D rugs & alcohol | Example: How often are you using drugs or alcohol? | None or infrequent | 0 |\n| Occasional | 1 | | |\n| Frequent/daily | 2 | | |\n| S uicidality | Example: Do you have any thoughts of wanting to kill yourself? | No thoughts | 0 |\n| Ideation | 1 | | |\n| Plan or gesture | 2 | | |\n| E motions, behaviors, thought disturbance | Example: How have you been feeling lately? | Mildly anxious/sad/acting out | 0 |\n| Moderately anxious/sad/acting out | 1 | | |\n| Significantly distressed/unable to function/out of control/bizarre thoughts/significant change in functioning | 2 | | |\n| D ischarge or current resources | Example: Do you have any help or are you waiting to receive help (counseling etc.)? | Ongoing/well connected | 0 |\n| Some/not meeting needs | 1 | | |\n| None/on waitlist/noncompliant | 2 | | |\n\nwhere 0 = “No action needed”, 1 = “Needs action but not immediate/moderate functional impairment”, 2 = “Needs immediate action/severe functional impairment”",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous HEADS-ED et souhaitez-vous mettre à contribution votre expertise ? [Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Un score de 0 pour un item implique qu’aucune action n’est nécessaire pour cette catégorie d’item, 1 correspond à la recommandation d’une action non urgente et d’une éducation sur les ressources communautaires, et 2 indique qu’une action immédiate et une orientation sont nécessaires.\n- Une orientation vers une évaluation spécialisée en santé mentale doit également être envisagée si le score total est ≥8 ou si l’item « Suicidalité » est coté à 2.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Une orientation vers une évaluation spécialisée en santé mentale doit être envisagée si le score total est ≥8 ou si l'item « Suicidality » est coté à 2.",
+  "short_description": "Pédiatrique mental health dépistage.",
+  "medium_description": "Screens pour pédiatrique mental health needs.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "home",
+      "label": "**H** ome",
+      "tips": "Exemple : Comment les membres de votre famille s’entendent-ils entre eux ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Supportive",
+          "value": 0
+        },
+        {
+          "label": "Conflicts",
+          "value": 1
+        },
+        {
+          "label": "Chaotic/dysfunctional",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "education",
+      "label": "**É**ducation, emploi",
+      "tips": "Exemple : Comment se passe votre assiduité scolaire ? Quels sont vos résultats scolaires ? Travaillez-vous ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun contenu source n'a été fourni dans ton message (« sur track » ne contient pas de texte à traduire). Colle le score clinique à traduire (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) et je te renvoie la traduction française professionnelle, en conservant chiffres, unités, seuils, noms de scores, acronymes, liens et identifiants techniques.",
+          "value": 0
+        },
+        {
+          "label": "Baisse des notes ou absentéisme",
+          "value": 1
+        },
+        {
+          "label": "Échec / non-présentation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "peers",
+      "label": "**** Activités et pairs",
+      "tips": "Exemple : Comment décrirez-vous vos relations avec vos amis ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Pas de changement",
+          "value": 0
+        },
+        {
+          "label": "Reduction dans activities/increased peer conflicts",
+          "value": 1
+        },
+        {
+          "label": "Increasingly pour fully withdrawn/significant peer conflicts",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "drugs",
+      "label": "**D**rogues et alcool",
+      "tips": "À quelle fréquence consommez-vous des drogues ou de l’alcool ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun ou peu fréquent",
+          "value": 0
+        },
+        {
+          "label": "Occasional",
+          "value": 1
+        },
+        {
+          "label": "Frequent/daily",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "suicidality",
+      "label": "**S**uicidalité",
+      "tips": "Example: Do you have any thoughts of wanting to kill yourself?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No thoughts",
+          "value": 0
+        },
+        {
+          "label": "Ideation",
+          "value": 1
+        },
+        {
+          "label": "Plan ou geste",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "emotions",
+      "label": "**É**motions, comportements, troubles de la pensée",
+      "tips": "Exemple : Comment vous êtes-vous senti ces derniers temps ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Mildly anxious/sad/acting out",
+          "value": 0
+        },
+        {
+          "label": "Modérément anxieux/triste/agité",
+          "value": 1
+        },
+        {
+          "label": "Significantly distressed/unable pour function/out de control/bizarre thoughts/significant change dans functioning",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "discharge",
+      "label": "**D** ischarge ou current resources",
+      "tips": "Exemple : Disposez-vous d’une aide ou êtes-vous en attente d’une aide (soutien psychologique, etc.) ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Ongoing/well connected",
+          "value": 0
+        },
+        {
+          "label": "Partiellement/besoins non satisfaits",
+          "value": 1
+        },
+        {
+          "label": "Aucun / sur liste d'attente / non observant",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cappelli M, Gray C, Zemek R, et al. The HEADS-ED: a rapid mental health screening tool for pediatric patients in the emergency department. Pediatrics. 2012;130(2):e321-327.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22826567/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cappelli M, Zemek R, Polihronis C, et al. The heads-ed: evaluating the clinical use of a brief, action-oriented, pediatric mental health screening tool. Pediatr Emerg Care. 2020;36(1):9-15.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28538605/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.drug-abuse-screening-test-10-dast-10",
+    "calc.patient-safety-screener-3-pss-3",
+    "calc.geriatric-depression-scale-gds-15"
+  ],
+  "source_logic_hash": "5477b05ce06606c3b05cbc10a9980de6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10463,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

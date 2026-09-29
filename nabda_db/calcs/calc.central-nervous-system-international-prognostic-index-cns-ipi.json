@@ -1,0 +1,229 @@
+{
+  "id": "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+  "slug": "central-nervous-system-international-prognostic-index-cns-ipi",
+  "language": "fr",
+  "title": "Index pronostique international du système nerveux central (CNS-IPI)",
+  "short_title": "CNS-IPI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "biologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Constipation",
+    "Cough",
+    "Diarrhea",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Lymphadenopathy",
+    "Nausea",
+    "Rash",
+    "Dyspnée",
+    "Swelling",
+    "Vomiting",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "CNS-IPI",
+    "cns",
+    "central nervous system",
+    "international prognostic index",
+    "ipi",
+    "cns ipi",
+    "dlbcl",
+    "diffuse large b cell lymphoma",
+    "diffuse large b-cell lymphoma",
+    "dlbcl relapse",
+    "cancer",
+    "lymphoma",
+    "Central Nervous System International Prognostic Index (CNS-IPI)"
+  ],
+  "dosing": false,
+  "formula": "L'indice CNS-IPI est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge >60 ans | Non | 0 |\n| Oui | 1 | |\n| LDH > normale* | Non | 0 |\n| Oui | 1 | |\n| [ECOG Performance Status](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) >1 | Non | 0 |\n| Oui | 1 | |\n| Stades III ou IV d'Ann Arbor | Non | 0 |\n| Oui | 1 | |\n| >1 site extranodal de la maladie** | Non | 0 |\n| Oui | 1 | |\n| Atteinte rénale et/ou surrénalienne | Non | 0 |\n| Oui | 1 | |\n\n*La limite supérieure de la normale varie selon l'établissement et n'a pas été davantage précisée dans l'étude originale. Veuillez suivre les valeurs de référence de votre laboratoire local.\n\n**Atteinte de la moelle osseuse, du SNC, du foie/tube digestif ou des poumons.",
+  "how_to_use": {
+    "why": "- La rechute du SNC dans le DLBCL est associée à une morbidité et une mortalité élevées, ce qui rend cruciale l'identification précoce des patients à risque.\n- Cet outil fournit une stratification du risque validée et fondée sur les données probantes, en combinant des facteurs cliniques et des facteurs liés à la maladie, ce qui permet une intervention ciblée tout en évitant une prophylaxie du SNC inutile chez les patients à faible risque.",
+    "when": "- À utiliser chez les patients atteints de lymphome diffus à grandes cellules B (DLBCL) pour évaluer le risque de rechute du système nerveux central (SNC).\n- À appliquer lors de la stadification initiale ou de la planification du traitement afin d'identifier les patients à haut risque susceptibles de bénéficier d'une prophylaxie dirigée contre le SNC.",
+    "pearls": "- Élaboré à partir des données de 2,164 patients âgés de 18 à 80 ans atteints de lymphomes B agressifs traités par rituximab et une thérapie de type CHOP, et analysés pour une rechute ou une progression au SNC.\n- Ne permet pas d'identifier tous les patients à haut risque de rechute du SNC, notamment ceux présentant une atteinte testiculaire, mammaire, cutanée ou utérine.\n- Peut sous-estimer le risque de rechute du SNC dans certains sous-groupes, tels que ceux atteints de lymphomes double-hit ; des analyses moléculaires supplémentaires peuvent être bénéfiques."
+  },
+  "next_steps": {
+    "advice": "Le CNS-IPI ne doit pas être le seul déterminant de la prise en charge ; il doit être utilisé parallèlement au jugement clinique, aux facteurs individuels du patient et à la consultation d'experts pour guider la prise de décision.",
+    "critical_actions": "Une évaluation diagnostique complémentaire, incluant une imagerie du SNC ou une analyse du liquide céphalorachidien, est justifiée chez les patients présentant des anomalies neurologiques, quels que soient les résultats du CNS-IPI.",
+    "management": "- **Risque faible ou intermédiaire (score <4) :** La prophylaxie et les examens diagnostiques systématiques du SNC ne sont généralement pas indiqués ; poursuivre les protocoles de traitement standard.\n- **Risque élevé (score ≥4) :**\n\n - Envisager d'intégrer une prophylaxie dirigée contre le SNC (p. ex., chimiothérapie intrathécale, méthotrexate à forte dose) au traitement d'induction de la rémission.\n - Suivre les protocoles de l'établissement, car les stratégies de prophylaxie du SNC varient.\n - Une imagerie du SNC ou une ponction lombaire peuvent être envisagées pour rechercher une maladie infrachinique."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| CNS-IPI | Niveau de risque | Taux de rechute du SNC à 2 ans |\n| --- | --- | --- |\n| 0-1 | Faible | 0.6% |\n| 2-3 | Intermédiaire | 3.4% |\n| 4-6 | Élevé | 10.2% |",
+  "short_description": "DLBCL relapse dans CNS.",
+  "medium_description": "Predicts relapse dans CNS chez les patients avec diffuse large B-cell lymphoma (DLBCL).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge >60 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ldh",
+      "label": "LDH > normale",
+      "tips": "La limite supérieure de la normale varie selon l'établissement et n'a pas été davantage précisée dans l'étude originale. Veuillez suivre les valeurs de référence de votre laboratoire local.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "[ECOG Performance Status](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status) >1",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ann",
+      "label": "Stades III ou IV d'Ann Arbor",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eds",
+      "label": ">1 site extranodal de la maladie",
+      "tips": "Atteinte de la moelle osseuse, du SNC, du foie/tube digestif ou des poumons",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "kidney",
+      "label": "Atteinte rénale et/ou surrénalienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schmitz N, Zeynalova S, Nickelsen M, et al. Cns international prognostic index: a risk model for cns relapse in patients with diffuse large b-cell lymphoma treated with r-chop. J Clin Oncol. 2016;34(26):3150-3156.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27382100/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ma’koseh M, Tamimi F, Abufara A, et al. Impact of central nervous system international prognostic index on the treatment of diffuse large b cell lymphoma. Cureus. 13(8):e16802.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8407468/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi",
+    "calc.mantle-cell-lymphoma-international-prognostic-index-mipi",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status"
+  ],
+  "source_logic_hash": "9d4d1ff4efe8d50fb279358dac6eb4d0",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG Performance Status"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10488,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.rituximab"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

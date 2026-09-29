@@ -1,0 +1,220 @@
+{
+  "id": "calc.pedis-score-diabetic-foot-ulcers",
+  "slug": "pedis-score-diabetic-foot-ulcers",
+  "language": "fr",
+  "title": "PEDIS score pour Diabetic Foot Ulcers",
+  "short_title": "Score PEDIS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "medecine-interne",
+    "infectiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cellulitis/Abscess",
+    "Diabète sucré",
+    "Neuropathy"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Douleur des extrémités",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Diabetic foot ulcer",
+    "PEDIS score",
+    "clinical outcome",
+    "foot infection"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Perfusion | Absence de maladie artérielle périphérique | 0 |\n| Maladie artérielle périphérique, sans ischémie critique du membre | 1 | |\n| Ischémie critique du membre | 2 | |\n| Étendue | Peau intacte | 0 |\n| <1 cm 2 | 1 | |\n| 1–3 cm 2 | 2 | |\n| >3 cm 2 | 3 | |\n| Profondeur* | Peau intacte | 0 |\n| Superficielle | 1 | |\n| Fascia, muscle, tendon | 2 | |\n| Os ou articulation | 3 | |\n| Infection | Aucune | 0 |\n| Superficielle | 1 | |\n| Abcès, fasciite et/ou arthrite septique | 2 | |\n| Syndrome de réponse inflammatoire systémique | 3 | |\n| Sensibilité | Sensibilité intacte | 0 |\n| Perte de sensibilité | 1 | |\n\n*Évaluer à l'aide d'une sonde nasale mousse stérile et d'examens d'imagerie.",
+  "how_to_use": {
+    "why": "Utilise des critères plus objectifs que les précédents systèmes de classification des plaies diabétiques, tels que les systèmes SINBAD et Wagner.",
+    "when": "- Patients hospitalisés présentant un ulcère du pied diabétique, quelle que soit sa durée.\n- Ne pas utiliser chez les patients atteints de diabète secondaire ni chez ceux dont les ulcères du pied sont dus à une maladie auto-immune ou à une néoplasie.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "La prise en charge de l'ulcère du pied diabétique peut être complexe et devrait faire appel à une approche multidisciplinaire pour la prise en charge à long terme, incluant selon les besoins les soins primaires, l'endocrinologie, les spécialistes en plaies et cicatrisation, la podologie, etc.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PEDIS | Risque d'évolution défavorable* |\n| --- | --- |\n| <7 | Faible |\n| ≥7 | Élevé (AUROC 0,95, spécificité 82 %) |\n\n*Ulcère non cicatrisé, nécessité d'amputation ou décès.",
+  "short_description": "Évolution des ulcères diabétiques.",
+  "medium_description": "Predicts 6-month risque de amputation et mortalité dans diabetic foot ulcers.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "perfusion",
+      "label": "Perfusion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absence de maladie artérielle périphérique",
+          "value": 0
+        },
+        {
+          "label": "Maladie artérielle périphérique, sans ischémie critique du membre",
+          "value": 1
+        },
+        {
+          "label": "Ischémie critique du membre",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "extent",
+      "label": "Extent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Peau intacte",
+          "value": 0
+        },
+        {
+          "label": "< 1 cm²",
+          "value": 1
+        },
+        {
+          "label": "1–3 cm²",
+          "value": 2
+        },
+        {
+          "label": ">3 cm²",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "depth",
+      "label": "Depth",
+      "tips": "Évaluer à l'aide d'une sonde nasale mousse stérile et d'examens d'imagerie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Peau intacte",
+          "value": 0
+        },
+        {
+          "label": "Superficial",
+          "value": 1
+        },
+        {
+          "label": "Fascia, muscle, tendon",
+          "value": 2
+        },
+        {
+          "label": "Os ou articulation",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "infection",
+      "label": "Infection",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Surface",
+          "value": 1
+        },
+        {
+          "label": "Abcès, fasciite et/ou arthrite septique",
+          "value": 2
+        },
+        {
+          "label": "Syndrome de réponse inflammatoire systémique",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sensation",
+      "label": "Sensation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Sensibilité intacte",
+          "value": 0
+        },
+        {
+          "label": "Perte de sensibilité",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chuan F, Tang K, Jiang P, Zhou B, He X. Reliability and validity of the perfusion, extent, depth, infection and sensation (PEDIS) classification system and score in patients with diabetic foot ulcer. PLoS ONE. 2015;10(4):e0124739.",
+      "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0124739",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Uysal S, Arda B, Taşbakan MI, et al. Risk factors for amputation in patients with diabetic foot infection: a prospective study. Int Wound J. 2017;14(6):1219-1224.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28722354",
+      "kind": "other"
+    },
+    {
+      "text": "Ince P, Abbas ZG, Lutale JK, et al. Use of the SINBAD classification system and score in comparing outcome of foot ulcer management on three continents. Diabetes Care. 2008;31(5):964-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18299441",
+      "kind": "other"
+    },
+    {
+      "text": "Wagner FW. The dysvascular foot: a system for diagnosis and treatment. Foot Ankle. 1981;2(2):64-122.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7319435",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.american-diabetes-association-ada-risk-calculator",
+    "calc.lrinec-score-necrotizing-soft-tissue-infection",
+    "calc.hypoglycemia-risk-score"
+  ],
+  "source_logic_hash": "45c0cda736aea22f919bbc751c6d4657",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10059,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

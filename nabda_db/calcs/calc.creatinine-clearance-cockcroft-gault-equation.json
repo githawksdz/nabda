@@ -1,0 +1,216 @@
+{
+  "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+  "slug": "creatinine-clearance-cockcroft-gault-equation",
+  "language": "en",
+  "title": "Clairance de la créatinine (équation de Cockcroft-Gault)",
+  "short_title": "Clairance de la créatinine",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "gastroenterologie",
+    "geriatrie",
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "pharmacotherapie",
+    "cancerologie",
+    "radiologie",
+    "chirurgie",
+    "traumatologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Céphalée"
+  ],
+  "abbreviations": [
+    "cockcroft-gault",
+    "cr",
+    "crcl",
+    "renal",
+    "arf",
+    "gfr",
+    "aki",
+    "estimated gfr",
+    "egfr"
+  ],
+  "dosing": false,
+  "formula": "Cockcroft-Gault CrCl, mL/min = (140 – age) × (weight, kg) × (0.85 if female) / (72 × Cr, mg/dL)\n\n[Ideal body weight (IBW)](nabda:calc.ideal-body-weight-adjusted-body-weight) , Devine equation:\n\n- IBW, kg (male) = 50 + [ 2.3 × (height, inches – 60) ]\n- IBW, kg (female) = 45.5 + [ 2.3 × (height, inches – 60) ]\n\nAdjusted body weight (ABW), kg = IBW, kg + 0.4 × (actual body weight, kg – IBW, kg)",
+  "how_to_use": {
+    "why": "- Bien que l'équation de Cockcroft-Gault ait été la première et soit la plus connue des équations d'estimation de la fonction rénale, elle a été largement remplacée en pratique clinique, les équations [MDRD](nabda:calc.mdrd-gfr-equation) et [CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) offrant de meilleures performances dans une variété de populations.\n- Ces outils ont été développés dans des populations plus diverses et sont utilisés pour prédire le DFG dans le cadre d'études où le DFG était réellement mesuré. Cela permet de remédier à la tendance de la clairance de la créatinine à surestimer la fonction rénale.\n- Bien que de nombreuses recommandations posologiques chez les patients présentant une fonction rénale diminuée étaient historiquement fondées sur les calculs de clairance de la créatinine issus de l'équation de Cockcroft-Gault, celle-ci ne demeure qu'une option parmi d'autres pour déterminer la posologie et l'arrêt des médicaments. Les médicaments et les recherches plus récents utilisent les estimations du DFGe par [MDRD](nabda:calc.mdrd-gfr-equation) et [CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr), car elles montrent une meilleure corrélation avec le DFG mesuré que l'équation CG.",
+    "when": "- La première équation utilisée pour estimer la fonction rénale pour la stadification de la CKD.\n- La première équation utilisée pour ajuster ou interrompre les médicaments en fonction de la fonction rénale.",
+    "pearls": "- Creatinine clearance calculated using the Cockcroft-Gault equation was used to approximate GFR clinically prior to the availability of current eGFR equations.\n- Creatinine clearance is the amount of blood completely cleared of creatinine in a minute and is usually an overestimate of GFR because of the tubular secretion of creatinine.\n- The original Cockcroft-Gault equation, derived in 1976, relied on non-standardized creatinine measurements and has not been updated with the use of internationally standardized creatinine measurements. It was derived to estimate creatinine clearance measured by 24 hour urine creatinine excretion in approximately 500 patients in a Canadian hospital of whom 96% were male. An adjustment factor was added for female patients.\n- Because it includes weight in the equation, the output of the Cockcroft-Gault equation is in mL/min (compared to [MDRD](nabda:calc.mdrd-gfr-equation) or [CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) , with output units of mL/min/1.73m^2^)."
+  },
+  "next_steps": {
+    "advice": "- The relationship between creatinine and kidney function is curvilinear with a greater decline in kidney function occurring as serum creatinine rises from 1 to 2 mg/dL as compared to from 4 to 5 mg/dL.\n- The curvilinear nature of this relationship results in the need to estimate kidney function using an equation that takes into account factors that reflect underlying muscle mass (and subsequently creatinine generation) that have been developed where kidney function has been actually measured.\n- Patients with decreased eGFR have kidney disease and are at higher risk of both acute kidney injury and progressive kidney disease. Management of modifiable risk factors, such as bloodsugar and blood pressure control in diabetes mellitus and hypertension, is critical to slowing progression.\n- Medications should be dose-adjusted for the most recent available estimate of kidney function. In this setting, eGFR and creatinine clearance may be calculated and used similarly depending on the equation utilized when the medication was being developed, though they are physiologically different terms. Cutoffs for many medications are <60, <45 and <30 mL/min/1.73m^2^, as well as adjustments for advanced kidney disease and dialysis patients.",
+    "critical_actions": "",
+    "management": "Bien que la clairance de la créatinine puisse être calculée, les patients doivent être classés selon le stade de CKD (maladie rénale chronique) à la fois d'après le eGFR (débit de filtration glomérulaire estimé) calculé par les formules [MDRD](nabda:calc.mdrd-gfr-equation) ou [CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr), et d'après l'importance de l'excrétion urinaire de protéines. Les patients dont le eGFR est diminué, dont l'excrétion urinaire d'albumine est augmentée, ou les deux, présentent un risque élevé de CKD évolutive et doivent être adressés en néphrologie pour une prise en charge complémentaire.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/Screenshot+2025-12-03+at+10.46.49%E2%80%AFAM.png)\n\nD'après la [KDIGO 2012 Clinical Practice Guideline](https://kdigo.org/wp-content/uploads/2017/02/KDIGO_2012_CKD_GL.pdf)."
+  },
+  "evidence": "",
+  "more_info": "The Cockcroft-Gault formulaestimatescreatinine clearance toclinically approximateglomerular filtration rate (GFR). Creatinine clearance, however, may over-estimate GFR by 10-20% andhas largely been replaced clinically by equations to more directly estimate GFR.\n\nFurther, the Cockcroft-Gault equation uses body weight and is even less accurate in weight extremes (underweight and particularly overweight/obesity). As recommended by[Brown et al](http://www.ncbi.nlm.nih.gov/pubmed/23757387)and[Winter et al](http://www.ncbi.nlm.nih.gov/pubmed/22576791), adjustments and estimates are made as follows:\n\n| Underweight | [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) <18.5 | Calculation uses actual /total body weight (i.e., no adjustment) |\n| --- | --- | --- |\n| Normal weight | BMI 18.5-24.9 | Calculation uses ideal body weight, range uses actual body weight |\n| Overweight / obese | BMI ≥25 | Calculation uses adjusted body weight, range uses ideal body weight |",
+  "short_description": "Estime la clairance de la créatinine (fonction rénale).",
+  "medium_description": "Calcule la CrCl selon l’équation de Cockcroft-Gault.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Créatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "tips": "Facultatif",
+      "optional": true,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kidney Disease: Improving Global Outcomes (KDIGO) CKD Work Group. Kdigo 2024 clinical practice guideline for the evaluation and management of chronic kidney disease. Kidney Int. 2024;105(4S):S117-S314.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38490803/",
+      "kind": "international"
+    },
+    {
+      "text": "Navaneethan SD, Bansal N, Cavanaugh KL, et al. Kdoqi us commentary on the kdigo 2024 clinical practice guideline for the evaluation and management of ckd. Am J Kidney Dis. 2025;85(2):135-176.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39556063/",
+      "kind": "international"
+    },
+    {
+      "text": "Cockcroft DW, Gault MH. Prediction of creatinine clearance from serum creatinine. Nephron. 1976;16(1):31-41. PubMed PMID: 1244564.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1244564",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Winter MA, Guhr KN, Berg GM. Impact of various body weights and serum creatinine concentrations on the bias and accuracy of the Cockcroft-Gault equation. Pharmacotherapy. 2012 Jul;32(7):604-12. doi:10.1002/j.1875-9114.2012.01098.x. Epub 2012 May 10. PubMed PMID: 22576791.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22576791",
+      "kind": "other"
+    },
+    {
+      "text": "Brown DL, Masselink AJ, Lalla CD. Functional range of creatinine clearance for renal drug dosing: a practical solution to the controversy of which weight to use in the Cockcroft-Gault equation. Ann Pharmacother. 2013 Jul-Aug;47(7-8):1039-44. doi: 10.1345/aph.1S176. Epub 2013 Jun 11. Review. PubMed PMID: 23757387.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23757387",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mdrd-gfr-equation",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.revised-schwartz-equation-glomerular-filtration-rate-gfr-2009",
+    "calc.ideal-body-weight-adjusted-body-weight"
+  ],
+  "source_logic_hash": "6221dfa97e0fea6c6afdcd49d738696a",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ideal-body-weight-adjusted-body-weight",
+      "text": "Ideal body weight (IBW)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "MDRD"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ideal-body-weight-adjusted-body-weight",
+      "text": "Ideal body weight (IBW)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "MDRD"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 43,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar weight = parseFloat(weight); // no need to adjust, weight always comes in as SI\nvar height = parseFloat(height)/2.54; // height in inches\n\nif (UOMSYSTEM == true) { // US units\n    var creatinine = parseFloat(creatinine);\n} else if (UOMSYSTEM == false) {\n    var creatinine = parseFloat(creatinine)/88.4;\n}\n\nif (sex == 0) {\n    var mult = 1;\n} else if (sex == 1) {\n    var mult = 0.85;\n}\n\nvar crcl = (140 - age)*weight*mult / (72*creatinine);\n\ncalc_output.push({\n    name: 'mini',\n    value: crcl.toFixed(0),\n    value_text: 'mL/min',\n    message: 'Creatinine clearance'\n});\n\nif (!parseFloat(height)) {\n    calc_output.push({\n        name: '43_Creatinine Clearance_result (original)',\n        value: crcl.toFixed(0),\n        value_text: 'mL/min',\n        message: 'Creatinine clearance, original Cockcroft-Gault'\n    });\n}\nelse if (parseFloat(height)) {\n    if (sex == 0) {\n        var ibw = 50 + (2.3*(height - 60));\n    } else if (sex == 1) {\n        var ibw = 45.5 + (2.3*(height - 60));\n    }\n    var ibw_lbs = ibw*2.205;\n\n    var crcl_ibw = (140 - age)*ibw*mult / (72*creatinine);\n    var height_m = height*2.54 / 100;\n    var bmi = weight/Math.pow(height_m, 2);\n\n    var abw = ibw + 0.4*(weight - ibw);\n    var abw_lbs = abw*2.205;\n    var crcl_abw = (140 - age)*abw*mult / (72*creatinine);\n\n    if (bmi < 18.5) {\n        calc_output.push({\n            name: '43_Creatinine Clearance_result (original)',\n            value: crcl.toFixed(0),\n            value_text: 'mL/min',\n            message: 'Creatinine clearance for underweight patient (BMI ' + bmi.toFixed(1) + ' kg/m²), calculated using actual body weight (no adjustment).'\n        })\n\n    } else if (bmi >= 18.5 && bmi < 25) {\n        calc_output.push({\n            name: '43_Creatinine Clearance_result (original)',\n            value: crcl.toFixed(0),\n            value_text: 'mL/min',\n            message: 'Creatinine clearance, original Cockcroft-Gault'\n        });\n\n        var msg = '';\n        if (weight.toFixed(0) == ibw.toFixed(0)) {\n            msg = 'normal weight patient. Note: This patient\\'s IBW is equal to their actual weight, so this is likely near their true CrCl and no adjustment is made.';\n        } else {\n            msg = 'normal weight patient, using ideal body weight of ' + ibw.toFixed(0) + ' kg (' + (ibw_lbs).toFixed(0) + ' lbs).';\n        }\n            \n        calc_output.push({\n            name: '43_Creatinine Clearance_result (modified)',\n            value: crcl_ibw.toFixed(0),\n            value_text: 'mL/min',\n            message: 'Creatinine clearance for ' + msg\n        });\n\n        if (weight !== ibw) {\n            var range;\n            if (weight > ibw) {\n                    range = crcl_ibw.toFixed(1) + '-' + crcl.toFixed(1);\n            } else {\n                    range = crcl.toFixed(1) + '-' + crcl_ibw.toFixed(1);\n            }\n            calc_output.push({\n                name: '43_Creatinine Clearance_result (range)',\n                value: range,\n                value_text: 'mL/min',\n                message: \"Note: This range uses IBW and actual body weight. Controversy exists over which form of weight to use.\"\n            });\n        }\n    } else if (bmi >= 25) {\n        calc_output.push({\n            name: '43_Creatinine Clearance_result (original)',\n            value: crcl.toFixed(0),\n            value_text: 'mL/min',\n            message: 'Creatinine clearance, original Cockcroft-Gault'\n        });\n\n        calc_output.push({\n            name: '43_Creatinine Clearance_result (modified)',\n            value: crcl_abw.toFixed(0),\n            value_text: 'mL/min',\n            message: 'Creatinine clearance modified for overweight patient, using adjusted body weight of ' + abw.toFixed(0) + ' kg (' + abw_lbs.toFixed(0) + ' lbs).'\n        });\n\n        if (crcl_ibw !== crcl_abw) {\n            var range;\n            if (crcl_ibw < crcl_abw) {\n                range = crcl_ibw.toFixed(1) + '-' + crcl_abw.toFixed(1);\n            } else {\n                range = crcl_abw.toFixed(1) + '-' + crcl_ibw.toFixed(1);\n            }\n        }\n\n        calc_output.push({\n            name: '43_Creatinine Clearance_result (range)',\n            value: range,\n            value_text: 'mL/min',\n            message: \"Note: This range uses IBW and adjusted body weight. Controversy exists over which form of weight to use.\"\n        });\n    }\n}\n",
+  "before_use": null,
+  "instructions": "- For use in patients with stable renal function.\n- Equation may be inaccurate depending on body weight and [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ; by including height, we calculate BMI and provide a modified estimate/range.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Donald Cockcroft",
+    "Dr. Henry Gault"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Weight",
+    "Creatinine",
+    "Height"
+  ],
+  "popular": true,
+  "cat_ids": [
+    "g.fibrillation-atriale",
+    "g.prescription-et-populations-particulieres-medicaments-et-fonction-renale",
+    "g.thrombose-veineuse-profonde-prophylaxie-en-chirurgie",
+    "g.thrombose-veineuse-profonde-traitement"
+  ],
+  "substance_ids": [],
+  "engine_sha256": "57f8d9c69acff9ca67b1b7c939f7a6b99263a84b8ccdbb7bf8b2e7a9c3bfa117"
+}

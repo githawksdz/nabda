@@ -1,0 +1,222 @@
+{
+  "id": "calc.international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi",
+  "slug": "international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi",
+  "language": "en",
+  "title": "International Prognostic index pour Diffuse Large B-cell Lymphoma (IPI et R-IPI)",
+  "short_title": "IPI et R-IPI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Lymphadenopathy",
+    "Mass"
+  ],
+  "abbreviations": [
+    "ipi",
+    "ripi",
+    "r-ipi",
+    "lymphoma",
+    "CA",
+    "dlbcl"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point |\n| --- | --- | --- |\n| Age | ≤60 | >60 years |\n| Ann Arbor stage* | Stage I or II (localized disease) | Stage III or IV (advanced disease) |\n| ECOG performance status | 0 or 1 | ≥2 |\n| Serum LDH | ≤1× normal | >1× normal |\n| Extranodal sites | ≤1 | >1 |\n\n***Ann Arbor stages:**\n\n| I | Involvement of a single lymph node region or lymphoid structure (e.g. spleen, thymus, Waldeyer’s ring) |\n| --- | --- |\n| II | Involvement of two or more lymph node regions on the same side of the diaphragm |\n| III | Involvement of lymph regions or structures on both sides of the diaphragm |\n| IV | Involvement of extranodal site(s) beyond that designated E (see below) |\n| For all stages | |\n| A | No symptoms |\n| B | Fever (38ºC), drenching sweats, weight loss (10% body weight over 6 months) |\n| For stages I to III | |\n| E | Involvement of a single, extranodal site contiguous or proximal to known nodal site |",
+  "how_to_use": {
+    "why": "Using the same criteria as the older International Prognostic Index (IPI), the revised IPI (R-IPI) discriminates among *three* different prognostic groups (versus two by IPI), providing more clinical relevance.",
+    "when": "Use in CD20+ DLBCL patients. Do not use in patients with HIV, secondary malignancies, low grade lymphoproliferative disorders, or comorbidities precluding curative therapy attempt.",
+    "pearls": "- The International Prognostic Index for Diffuse Large B-cell Lymphoma (IPI and R-IPI) estimates 4-year progression-free survival and 4-year overall survival for patients with diffuse large B-cell non-Hodgkin’s lymphoma (DLBCL).\n- The R-IPI provides greater discrimination amongst DLBCL patients with differing survival based on easily obtained factors.\n- Does not identify any risk group with 4-year survival <50%; hence, other molecular or genetic markers are being researched to help select the worst-outcome patients for alternative treatment/clinical trials."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Une stadification correcte et la sélection d'un indice de performance correct sont les facteurs les plus potentiellement difficiles.",
+    "management": "Chez les patients ayant un mauvais pronostic, l’inclusion dans un essai clinique et l’orientation vers un centre tertiaire pour un traitement expérimental doivent être fortement envisagées."
+  },
+  "evidence": "Le R-IPI est issu d’une étude rétrospective portant sur 365 patients âgés d’au moins 16 ans atteints d’un DLBCL nouvellement diagnostiqué, traités en Colombie-Britannique par R-CHOP avant 2005. Une revue centralisée de pathologie a été réalisée dans 95 % des cas. Les patients ont été suivis pendant 7–64 mois après 6–8 cycles de R-CHOP. Les résultats de survie sans progression (PFS) et de survie globale (OS) ont été calculés à l’aide de l’IPI conventionnel pour comparaison. Les facteurs de risque ont ensuite été redistribués afin de créer un groupe de stratification plus pertinent.\n\nL’utilité du R-IPI a été validée dans les études suivantes :\n\n- [El-Galaly et al 2015](https://www.ncbi.nlm.nih.gov/pubmed/26260224):\n- [Olszewski et al 2015](https://www.ncbi.nlm.nih.gov/pubmed/26054914):\n- [Bari et al 2010](https://academic.oup.com/annonc/article/21/7/1486/163863/Prognostic-models-for-diffuse-large-B-cell):\n\nLes articles originaux et de validation abordent le manque de reconnaissance des patients au pronostic le plus défavorable, et il s’agit d’un domaine de recherche active.",
+  "more_info": "Interpretation:\n\n| | Risk group | 4-year overall survival, % | 4-year progression-free survival, % | |\n| --- | --- | --- | --- | --- |\n| R-IPI | 0 | Very good | 94 | 94 |\n| 1–2 | Good | 79 | 80 | |\n| 3–5 | Poor | 55 | 53 | |\n| IPI | 0–1 | Low | 82 | 85 |\n| 2 | Low-intermediate | 81 | 80 | |\n| 3 | High-intermediate | 49 | 57 | |\n| 4–5 | High | 59 | 51 | |\n\nNote: IPI is listed for historical comparison only.",
+  "short_description": "Survie du DLBCL.",
+  "medium_description": "Predicts overall et progression-free survie dans DLBCL basé sur risque factors.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤60 ans",
+          "value": 0
+        },
+        {
+          "label": "> 60 ans",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aarbor_stage",
+      "label": "Stade III-IV d'Ann Arbor",
+      "tips": "III : atteinte des deux côtés du diaphragme, IV : atteinte de sites extranodaux",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ecog",
+      "label": "[Indice de performance ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status) ≥2",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "serum",
+      "label": "Taux sérique de LDH > 1× la normale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nodal",
+      "label": ">1 site extranodal",
+      "tips": "Moelle osseuse, tractus gastro-intestinal, foie, poumon, SNC, peau, testicules, anneau de Waldeyer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "A predictive model for aggressive non-Hodgkin's lymphoma. The International Non-Hodgkin's Lymphoma Prognostic Factors Project. N Engl J Med. 1993;329(14):987-94.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8141877",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sehn LH, Berry B, Chhanabhai M, et al. The revised International Prognostic Index (R-IPI) is a better predictor of outcome than the standard IPI for patients with diffuse large B-cell lymphoma treated with R-CHOP. Blood. 2007;109(5):1857-61.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17105812 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Armitage JO. Staging non-Hodgkin lymphoma. CA Cancer J Clin. 2005;55(6):368-76.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16282281 ",
+      "kind": "other"
+    },
+    {
+      "text": "El-galaly TC, Villa D, Alzahrani M, et al. Outcome prediction by extranodal involvement, IPI, R-IPI, and NCCN-IPI in the PET/CT and rituximab era: A Danish-Canadian study of 443 patients with diffuse-large B-cell lymphoma. Am J Hematol. 2015;90(11):1041-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26260224 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Olszewski AJ, Winer ES, Castillo JJ. Validation of clinical prognostic indices for diffuse large B-cell lymphoma in the National Cancer Data Base. Cancer Causes Control. 2015;26(8):1163-72.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26054914 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bari A, Marcheselli L, Sacchi S, et al. Prognostic models for diffuse large B-cell lymphoma in the rituximab era: a never-ending story. Ann Oncol. 2010;21(7):1486-91.",
+      "href": "https://academic.oup.com/annonc/article/21/7/1486/163863/Prognostic-models-for-diffuse-large-B-cell ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Blay J, Gomez F, Sebban C, et al. The International Prognostic Index correlates to survival in patients with aggressive lymphoma in relapse: analysis of the PARMA trial. Parma Group. Blood. 1998;92(10):3562-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9808548 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fanin R, Silvestri F, Geromin A, et al. Autologous stem cell transplantation for aggressive non-Hodgkin's lymphomas in first complete or partial remission: a retrospective analysis of the outcome of 52 patients according to the age-adjusted International Prognostic Index. Bone Marrow Transplant. 1998;21(3):263-71.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9489649 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Foussard C, Desablens B, Sensebe L, et al. Is the International Prognostic Index for aggressive lymphomas useful for low-grade lymphoma patients? Applicability to stage III-IV patients. The GOELAMS Group, France. Ann Oncol. 1997;8 Suppl 1:49-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9187429 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hermans J, Krol AD, Van groningen K, et al. International Prognostic Index for aggressive non-Hodgkin's lymphoma is valid for all malignancy grades. Blood. 1995;86(4):1460-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7632953 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi"
+  ],
+  "source_logic_hash": "396139aebff60ae9c63965d2f993afb0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3936,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

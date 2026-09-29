@@ -1,0 +1,137 @@
+{
+  "id": "calc.acute-decompensated-heart-failure-national-registry-adhere-algorithm",
+  "slug": "acute-decompensated-heart-failure-national-registry-adhere-algorithm",
+  "language": "en",
+  "title": "Algorithme du registre national de l'insuffisance cardiaque aiguë décompensée (ADHERE)",
+  "short_title": "Algorithme ADHERE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "geriatrie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Hf",
+    "adhf"
+  ],
+  "dosing": false,
+  "formula": "![](https://cdn-web-img.mdcalc.com/content/lace.png)",
+  "how_to_use": {
+    "why": "Stratification du risque, triage et optimisation de la prise en charge médicale.",
+    "when": "Patients hospitalisés atteints d’insuffisance cardiaque aiguë décompensée.",
+    "pearls": "- L’algorithme ADHERE estime la mortalité intra-hospitalière chez les patients admis pour une insuffisance cardiaque aiguë décompensée.\n- Ce modèle utilise 3 variables (BUN, SBP, créatinine) pour classer les patients, mais il ne permet pas une caractérisation plus précise du risque individuel.\n- L’algorithme ADHERE ne peut PAS prédire les risques de mortalité à moyen et long terme.\n- L’analyse de la cohorte ADHERE a également identifié la fréquence cardiaque et l’âge comme prédicteurs indépendants significatifs du risque selon le modèle de régression, mais ces variables ont été omises de l’algorithme afin de simplifier le modèle en tant qu’outil au chevet du patient.\n- Les données utilisées reflètent des épisodes d’hospitalisation individuels, et non des patients individuels, et plusieurs hospitalisations d’un même patient peuvent être saisies dans le registre comme des enregistrements distincts.\n- Les résultats de l’étude étaient fondés sur un registre, dont l’exactitude peut être influencée par des différences dans l’évaluation de la maladie, le traitement et les pratiques de documentation au sein des établissements participants."
+  },
+  "next_steps": {
+    "advice": "- If the algorithm identifies the patient to be high risk, early consultation to cardiology is crucial to appropriately treat these patients and reduce risk of readmission.\n- Appropriate planning and care coordination between multidisciplinary teams, and early and frequent follow-up in the cardiologist’s office is essential.\n- Evidence-based guideline directed medical therapy is meant to be used for both high and low risk patients with CHF. However, in the era of resource constraints, these limited resources may not be allocated to low risk patients.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "- The Acute Decompensated Heart Failure National Registry (ADHERE) of patients hospitalized with a primary diagnosis of ADHF in 263 hospitals in the United States was studied and the baseline characteristics and main outcomes of the 33,046 hospitalization episodes (October 2001-February 2003) were used to develop the model and the 32,229 hospitalization episodes (March-July 2003) were used to validate the model.\n- BUN, systolic BP, heart rate, and age were found to be the most significant predictors of mortality.\n- ADHF patients were categorized into low, intermediate, and high risk for in-hospital mortality using vital sign and laboratory data obtained on hospital admission, with mortality ranging from 2.1% to 21.9%.\n- The CART (classification and regression tree) method was used for analyzing the study cohorts, which is an empirical, statistical technique based on recursive partitioning analysis (separating populations by multiple variables). 39 variables were evaluated by the CART method.",
+  "more_info": "",
+  "short_description": "Predicts dans-hôpital mortalité dans aigu decompensated HF.",
+  "medium_description": "Predicts dans-hôpital mortalité chez les patients avec insuffisance cardiaque (HF).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bun",
+      "label": "BUN ≥43 mg/dL (15,35 mmol/L)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sbp",
+      "label": "PAS <115 mmHg",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cr",
+      "label": "Créatinine ≥ 2,75 mg/dl (243,1 mmol/L)",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "bun == 1 && sbp == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fonarow GC, et al. Risk stratification for in-hospital mortality in acutely decompensated heart failure: classification and regression tree analysis. JAMA. 2005 Feb 2;293(5):572-80.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/200287",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rey HCV, et al. Validation of the ADHERE model for risk stratification in patients with acute heart failure admitted to the critical care unit. Critical Care20059(Suppl 2):P35",
+      "href": "https://ccforum.biomedcentral.com/articles/10.1186/cc3579",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gwtg-heart-failure-risk-score",
+    "calc.seattle-heart-failure-model",
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure"
+  ],
+  "source_logic_hash": "e30995e843a9b8a91bcb6380948b3efa",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3828,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

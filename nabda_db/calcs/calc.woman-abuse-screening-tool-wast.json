@@ -1,0 +1,308 @@
+{
+  "id": "calc.woman-abuse-screening-tool-wast",
+  "slug": "woman-abuse-screening-tool-wast",
+  "language": "fr",
+  "title": "Woman Abuse dépistage Tool (WAST)",
+  "short_title": "WAST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Injury/Trauma",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Woman Abuse Screening Tool (WAST)",
+    "WAST",
+    "abuse",
+    "woman abuse",
+    "abuse screening",
+    "abuse screening tool",
+    "domestic abuse",
+    "domestic abuse screening",
+    "domestic violence",
+    "domestic violence screening",
+    "IPV",
+    "intimate partner violence"
+  ],
+  "dosing": false,
+  "formula": "Le score WAST est calculé par l'addition des points sélectionnés :\n\n| Variable | | Points |\n| --- | --- | --- |\n| WAST-Short | | |\n| En général, comment décririez-vous votre relation ? | Aucune tension | 1 |\n| Une certaine tension | 2 | |\n| Beaucoup de tension | 3 | |\n| Vous et votre partenaire résolvez vos désaccords avec : | Aucune difficulté | 1 |\n| Une certaine difficulté | 2 | |\n| De grandes difficultés | 3 | |\n| Questions supplémentaires | | |\n| Les désaccords vous font-ils parfois vous sentir triste ou mal dans votre peau ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n| Les désaccords entraînent-ils parfois des coups, des coups de pied ou des poussées ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n| Avez-vous déjà été effrayée par ce que votre partenaire dit ou fait ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n| Votre partenaire vous a-t-il déjà maltraitée physiquement ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n| Votre partenaire vous a-t-il déjà maltraitée émotionnellement ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n| Votre partenaire vous a-t-il déjà maltraitée sexuellement ? | Jamais | 1 |\n| Parfois | 2 | |\n| Souvent | 3 | |\n\nLes questions supplémentaires ne sont affichées que si les deux premières questions obtiennent un score de 3.",
+  "how_to_use": {
+    "why": "Permet d'identifier les femmes subissant des violences émotionnelles, physiques ou sexuelles dans leurs relations intimes, permettant une intervention opportune et une orientation vers les services de soutien appropriés.",
+    "when": "- Lors des visites de santé de routine, notamment en soins primaires, en obstétrique/gynécologie ou en santé mentale.\n- En présence de signes ou symptômes évocateurs de violences conjugales (p. ex. blessures inexpliquées, consultations médicales fréquentes, anxiété et/ou dépression).",
+    "pearls": "- Assurez un environnement privé et sûr pour l'entretien ; administrer l'outil en présence du partenaire ou d'autres personnes peut compromettre la sécurité de la patiente et l'exactitude de ses réponses.\n- Banalisez les questions en expliquant qu'elles font partie intégrante des soins de routine.\n- Adoptez une approche empathique et sans jugement."
+  },
+  "next_steps": {
+    "advice": "- En cas de divulgation de violences :\n\n - Validez le vécu de la patiente et exprimez votre préoccupation.\n - Adaptez les questions de suivi aux réponses de la patiente pour encourager d'autres divulgations.\n - Évaluez la sécurité immédiate de la patiente et de toute personne à sa charge ; élaborez un plan de sécurité adapté à ses besoins.\n - Documentez minutieusement les constatations dans le dossier médical, conformément aux exigences médico-légales.\n - Orientez la patiente vers les ressources appropriées, telles que foyers d'hébergement, lignes d'écoute ou services de conseil.\n - Programmez des rendez-vous de suivi pour réévaluer la situation et offrir un soutien continu.\n- En l'absence de divulgation de violences mais en cas de préoccupations persistantes :\n\n - Poursuivez la surveillance et envisagez de revenir sur le sujet lors de visites ultérieures.\n - Fournissez à la patiente des informations sur les ressources de soutien locales.",
+    "critical_actions": "Connaître les exigences locales en matière de déclaration obligatoire, car celles-ci varient selon la juridiction. Faire preuve d'une prudence particulière dans les cas impliquant des enfants ou des adultes vulnérables.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score WAST | Résultat du dépistage |\n| --- | --- |\n| <13 | Négatif |\n| ≥13 | Positif |",
+  "short_description": "Detects domestic abuse dans women.",
+  "medium_description": "Detects domestic abuse (intimate partner violence) dans women dans healthcare settings.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Dans general, how would you describe your relationship?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucune tension",
+          "value": 1
+        },
+        {
+          "label": "Une certaine tension",
+          "value": 2
+        },
+        {
+          "label": "Beaucoup de tension",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Do you et your partner work out arguments avec:",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucune difficulté",
+          "value": 1
+        },
+        {
+          "label": "Une certaine difficulté",
+          "value": 2
+        },
+        {
+          "label": "De grandes difficultés",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Do arguments ever result dans you feeling down ou bad about yourself?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Do arguments ever result dans hitting, kicking, ou pushing?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "Avez-vous déjà été effrayée par ce que votre partenaire dit ou fait ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "six",
+      "label": "Votre partenaire vous a-t-il déjà maltraitée physiquement ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "seven",
+      "label": "Votre partenaire vous a-t-il déjà maltraitée émotionnellement ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eight",
+      "label": "Votre partenaire vous a-t-il déjà maltraitée sexuellement ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "one == 3 && two == 3",
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brown JB, Lent B, Brett PJ, Sas G, Pederson LL. Development of the woman abuse screening tool for use in family practice. Fam Med. 1996;28(6):422-428.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/8791071/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brown JB, Lent B, Brett PJ, Sas G, Pederson LL. Women abuse screening tool. WAST. Published online 2000.",
+      "href": "https://ncvc.dspacedirect.org/handle/20.500.11990/1584",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brown JB, Lent B, Schmidt G, Sas G. Application of the woman abuse screening tool (Wast) and wast-short in the family practice setting. J Fam Pract. 2000;49(10):896-903.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11052161/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Feltner C, Wallace I, Berkman N, et al. Screening for intimate partner violence, elder abuse, and abuse of vulnerable adults: evidence report and systematic review for the US preventive services task force. JAMA. 2018;320(16):1688.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2708120",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Iskandar L, Braun KL, Katz AR. Testing the woman abuse screening tool to identify intimate partner violence in indonesia. J Interpers Violence. 2015;30(7):1208-1225.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4697266/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hurt-insult-threaten-scream-hits-score",
+    "calc.ongoing-violence-assessment-tool-ovat",
+    "calc.abuse-assessment-screen-aas"
+  ],
+  "source_logic_hash": "100b3b6c2463d14654f10effeca47e1b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10396,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

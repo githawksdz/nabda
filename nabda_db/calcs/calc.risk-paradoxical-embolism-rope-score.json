@@ -1,0 +1,196 @@
+{
+  "id": "calc.risk-paradoxical-embolism-rope-score",
+  "slug": "risk-paradoxical-embolism-rope-score",
+  "language": "en",
+  "title": "Score de risque d'embolie paradoxale (RoPE)",
+  "short_title": "Score RoPE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Headache"
+  ],
+  "abbreviations": [
+    "RoPE score",
+    "RoPE",
+    "paradoxical embolism",
+    "embolic stroke",
+    "ischemic stroke",
+    "PFO"
+  ],
+  "dosing": false,
+  "formula": "| Caractéristique | Points |\n| --- | --- |\n| Absence d'antécédent d'hypertension | +1 |\n| Absence d'antécédent de diabète | +1 |\n| Absence d'antécédent d'AVC ou d'AIT | +1 |\n| Non-fumeur | +1 |\n| Infarctus cortical à l'imagerie | +1 |\n| Âge en années | |\n| 18-29 | +5 |\n| 30-39 | +4 |\n| 40-49 | +3 |\n| 50-59 | +2 |\n| 60-69 | +1 |\n| ≥70 | 0 |",
+  "how_to_use": {
+    "why": "- La prévalence du FOP dans la population générale est élevée (~25 %). Chez les patients présentant un AVC cryptogénique chez qui un FOP est découvert, il est difficile de déterminer si le FOP est la cause de l'AVC ou s'il s'agit d'une découverte fortuite.\n- Le score RoPE aide à stratifier le risque du lien causal entre le FOP et l'AVC.",
+    "when": "Patients présentant un AVC ischémique embolique cryptogénique chez qui un FOP a été mis en évidence.",
+    "pearls": "- Le score de risque d'embolie paradoxale (RoPE) a été développé pour identifier les patients avec AVC cryptogénique et FOP chez qui le FOP est vraisemblablement la cause de l'AVC.\n- Un score RoPE élevé chez un patient présentant un AVC ischémique embolique cryptogénique avec FOP, en l'absence d'une autre étiologie convaincante, suggère fortement un lien causal entre l'AVC et le FOP, mais ne le prouve pas.\n- Le FOP peut servir de conduit à une embolie paradoxale d'origine veineuse, ou constituer un nidus pour la formation d'un thrombus.\n- Ne doit PAS être utilisé pour décider quels patients victimes d'AVC doivent bénéficier d'une échocardiographie.\n- Ne doit PAS être utilisé pour décider quels patients avec AVC cryptogénique et FOP doivent bénéficier d'une fermeture du FOP."
+  },
+  "next_steps": {
+    "advice": "- Les décisions concernant la sélection des patients pour la fermeture du FOP doivent être soigneusement pesées par le neurologue et le cardiologue traitants. Le score RoPE fournit des informations importantes sur le mécanisme biologique probable, ce qui est essentiel pour prendre des décisions thérapeutiques spécifiques au mécanisme, comme la fermeture du FOP ou le traitement médical seul. Des études supplémentaires sont nécessaires pour établir des règles décisionnelles plus fermes de sélection des patients.\n- Demander un avis cardiologique pour les patients chez qui la suspicion d'AVC attribuable au FOP est élevée sur la base du score RoPE.",
+    "critical_actions": "Ne pas oublier d'exclure d'autres causes d'AVC, ou des causes contributives (p. ex. un état d'hypercoagulabilité).",
+    "management": "Envisager une orientation pour fermeture du FOP chez les patients appropriés présentant des scores RoPE plus élevés."
+  },
+  "evidence": "The RoPE score was developed by Kent, Thaler and colleagues at Tufts Medical Center ([Kent 2013](https://www.ncbi.nlm.nih.gov/pubmed/23864310)). Data on 3,023 patients from 12 databases were used to derive a predictive model for statistical relatedness of PFO to stroke etiology in patients with cryptogenic stroke.\n\nA subsequent study by the same group showed that predictors of PFO-related stroke recurrence differed in patients with higher RoPE scores (i.e., younger patients without other risk factors for stroke) versus those with lower RoPE scores ([Thaler 2014](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4117365/)).\n\n[Prefasi et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/26763040)conducted a prospective observational study of 58 consecutive patients ≤50 years old. Using a RoPE score cutoff point of 7, the PFO-attributable fraction was 0% (95% CI: 0–7.5) in patients with RoPE ≤7 and compared to 71.1% (95% CI: 35–87.3) for RoPE >7.\n\nA recent validation by[Kent et al (2020)](https://pubmed.ncbi.nlm.nih.gov/32921262/)found the RoPE score estimated attributable fraction to be highly correlated to the relative risk reduction of device versus medical therapy, suggesting that the score identifies cryptogenic stroke patients who are likely to have a pathogenic PFO.",
+  "more_info": "**Interprétation du score :**\n\n| Score RoPE | Fraction attribuable au FOP (IC à 95 %) | Récidive estimée d'AVC/AIT à 2 ans |\n| --- | --- | --- |\n| 0-3 | 0 % (0–4) | 20 % (12–28) |\n| 4 | 38 % (25–48) | 12 % (6–18) |\n| 5 | 34 % (21–45) | 7 % (3–11) |\n| 6 | 62 % (54–68) | 8 % (4–12) |\n| 7 | 72 % (66–76) | 6 % (2–10) |\n| 8 | 84 % (79–87) | 6 % (2–10) |\n| 9-10 | 88 % (83–91) | 2 % (0–4) |",
+  "short_description": "Identifies AVC-lié PFO dans cryptogenic AVC patients.",
+  "medium_description": "Identifies AVC-lié PFO chez les patients avec cryptogenic AVC.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "htn",
+      "label": "Antécédents d’hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dm",
+      "label": "History de diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "tia",
+      "label": "Antécédent d'AVC ou d'AIT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nonsmoker",
+      "label": "Smoker",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "infarct",
+      "label": "Infarctus cortical à l'imagerie",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kent DM, Ruthazer R, Weimar C, Mas JL, Serena J, Homma S, Di Angelantonio E, Di Tullio MR, Lutz JS, Elkind MS, Griffith J, Jaigobin C, Mattle HP, Michel P, Mono ML, Nedeltchev K, Papetti F, Thaler DE. An index to identify stroke-related vs incidental patent foramen ovale in cryptogenic stroke. Neurology. 2013 Aug 13;81(7):619-25. doi: 10.1212/WNL.0b013e3182a08d59. Epub 2013 Jul 17.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23864310",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Thaler DE, Ruthazer R, Weimar C, Mas JL, Serena J, Di Angelantonio E, Papetti F, Homma S, Mattle HP, Nedeltchev K, Mono ML, Jaigobin C, Michel P, Elkind MS, Di Tullio MR, Lutz JS, Griffith J, Kent DM. Recurrent stroke predictors differ in medically treated patients with pathogenic vs. other PFOs. Neurology. 2014 Jul 15;83(3):221-6. doi: 10.1212/WNL.0000000000000589. Epub 2014 Jun 13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4117365/",
+      "kind": "other"
+    },
+    {
+      "text": "Prefasi D, Martínez-Sánchez P, Fuentes B, Díez-Tejedor E. The utility of the RoPE score in cryptogenic stroke patients ≤50 years in predicting a stroke-related patent foramen ovale. Int J Stroke. 2016 Jan;11(1):NP7-8. doi: 10.1177/1747493015607505.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26763040",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kent DM, Saver JL, Ruthazer R, et al. Risk of Paradoxical Embolism (RoPE)-Estimated Attributable Fraction Correlates With the Benefit of Patent Foramen Ovale Closure: An Analysis of 3 Trials. Stroke. 2020;51(10):3119-3123.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32921262/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rapid-arterial-occlusion-evaluation-race-scale-stroke",
+    "calc.garfield-af",
+    "calc.astral-score-stroke"
+  ],
+  "source_logic_hash": "4834edd22a7d4621a8d5385bb004006e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3902,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

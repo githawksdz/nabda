@@ -1,0 +1,222 @@
+{
+  "id": "calc.2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr",
+  "slug": "2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr",
+  "language": "fr",
+  "title": "Critères de classification 2012 ACR/EULAR de la pseudopolyarthrite rhizomélique (PMR)",
+  "short_title": "Critères ACR/EULAR 2012 de la PMR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "soins-palliatifs",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde",
+    "Pseudopolyarthrite rhizomélique"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Douleur des extrémités",
+    "Asthénie",
+    "Douleur articulaire",
+    "Perte d'appétit",
+    "Douleur",
+    "Perte / Gain de poids"
+  ],
+  "abbreviations": [
+    "2012 EULAR/ACR Classification Criteria for Polymyalgia Rheumatica",
+    "2012 Criteria for PMR",
+    "Polymyalgia Rheumatica",
+    "pmr",
+    "pmr classification",
+    "EULAR",
+    "European League Against Rheumatism",
+    "American College of Rheumatology",
+    "ACR",
+    "2012 Classification Criteria for Polymyalgia Rheumatica",
+    "rheumatism",
+    "rheumatic disease",
+    "arthritis",
+    "EULAR classification",
+    "ACR classification",
+    "2012 ACR/EULAR Classification Criteria for Polymyalgia Rheumatica (PMR)",
+    " 2012 ACR/EULAR PMR Criteria",
+    "ACR/EULAR"
+  ],
+  "dosing": false,
+  "formula": "Les critères ACR/EULAR 2012 de la PRP sont les suivants :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Durée de la raideur matinale | ≤45 min | 0 |\n| >45 min | 2 | |\n| Douleur de hanche ou limitation de l'amplitude articulaire | Non | 0 |\n| Oui | 1 | |\n| FR ou ACPA | Présent | 0 |\n| Absent | 2 | |\n| Autre douleur articulaire | Présent | 0 |\n| Absent | 1 | |\n| Critères échographiques | | |\n| Au moins une épaule avec bursite subdeltoïdienne et/ou ténosynovite du biceps et/ou synovite glénohumérale (postérieure ou axillaire) et au moins une hanche avec synovite et/ou bursite trochantérienne | Non | 0 |\n| Oui | 1 | |\n| Les deux épaules avec bursite subdeltoïdienne, ténosynovite du biceps ou synovite glénohumérale | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Ce score peut être utilisé pour classer les patients qui présentent des symptômes évocateurs d'une pseudopolyarthrite rhizomélique (PPR).\n- Il ne doit être utilisé que chez les patients âgés de ≥50 ans, présentant des douleurs bilatérales des épaules et ayant une VS et/ou une CRP anormales.\n- Ce score peut être utilisé avec ou sans résultats échographiques, mais la valeur seuil de classification varie.",
+    "pearls": "- Sachez que les seuils du score diffèrent selon l’inclusion ou l’exclusion des résultats d’échographie.\n- Ce score n’est pas diagnostique de la pseudopolyarthrite rhizomélique, mais peut être utilisé à des fins de recherche et pour aider à la classification des symptômes.\n- Voir cet[article](https://pubmed.ncbi.nlm.nih.gov/25776731/)pour une lecture complémentaire sur les différences entre critères diagnostiques et critères de classification."
+  },
+  "next_steps": {
+    "advice": "- Les patients ayant un score ≥ 4 **sans** échographie sont classés comme ayant une PMR.\n- Les patients ayant un score ≥ 5 **avec** échographie sont classés comme ayant une PMR.\n- Le traitement initial comprend habituellement des corticoïdes par voie orale, mais le jugement clinique doit guider le choix de la stratégie thérapeutique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "- Les patients avec un score ≥4 **sans** échographie sont classés comme ayant une PMR.\n- Les patients avec un score ≥5 **avec** échographie sont classés comme ayant une PMR.",
+  "short_description": "Classification de la PMR.",
+  "medium_description": "Classe la pseudopolyarthrite rhizomélique selon les recommandations consensuelles d’experts.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "stiff",
+      "label": "Durée de la raideur matinale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ 45 min",
+          "value": 0
+        },
+        {
+          "label": ">45 min",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hip",
+      "label": "Douleur de hanche ou limitation de l'amplitude articulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rf",
+      "label": "RF ou ACPA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Présent",
+          "value": 0
+        },
+        {
+          "label": "Absent",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "other",
+      "label": "Autre douleur articulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Présent",
+          "value": 0
+        },
+        {
+          "label": "Absent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "u1",
+      "label": "At least one shoulder avec subdeltoid bursitis et/ou biceps tenosynovitis et/ou glenohumeral synovitis (either posterior ou axillary) et at least one hip avec synovitis et/ou trochanteric bursitis",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": -1
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "u2",
+      "label": "Both shoulders avec subdeltoid bursitis, biceps tenosynovitis ou glenohumeral synovitis",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": -1
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Dejaco C, Singh YP, Perel P, et al. 2015 recommendations for the management of polymyalgia rheumatica: a european league against rheumatism/american college of rheumatology collaborative initiative. Annals of the Rheumatic Diseases. 2015;74(10):1799-1807.",
+      "href": "https://ard.bmj.com/content/74/10/1799?etoc",
+      "kind": "international"
+    },
+    {
+      "text": "Dasgupta B, Cimmino MA, Maradit-Kremers H, et al. 2012 provisional classification criteria for polymyalgia rheumatica: a European League Against Rheumatism/American College of Rheumatology collaborative initiative. Ann Rheum Dis. 2012;71(4):484-492.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22388996/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aggarwal R, Ringold S, Khanna D, et al. Distinctions between diagnostic and classification criteria? Arthritis Care Res (Hoboken). 2015;67(7):891-897.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25776731/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-consensus-classification-icc-diagnostic-criteria-primary-myelofibrosis-pmf",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-systemic-mastocytosis"
+  ],
+  "source_logic_hash": "b8a3b2cbfbb75e0bf164bffb731c160e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10514,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar stiff = parseFloat(stiff);\nvar hip = parseFloat(hip);\nvar rf = parseFloat(rf);\nvar other = parseFloat(other);\n\nvar u1 = parseFloat(u1);\nvar u2 = parseFloat(u2);\n\nvar score = stiff + hip + rf + other;\n\nif (u1 == 1) {\n    score += 1;\n}\nif (u2 == 1) {\n    score += 1;\n} \n\nvar result;\nif (u1 != 0 || u2 != 0) {\n    if (score >= 5) {\n        result = 'Meets 2012 ACR/EULAR PMR Criteria.';\n    } else {\n        result = 'Does not meet 2012 ACR/EULAR PMR Criteria.';\n    }\n} else {\n    if (score >= 4) {\n        result = 'Meets 2012 ACR/EULAR PMR Criteria.';\n    } else {\n        result = 'Does not meet 2012 ACR/EULAR PMR Criteria.';\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: result\n});\ncalc_output.push({\n    name: '10514_2012 Criteria for PMR_result',\n    value: score,\n    value_text: 'points',\n    message: result\n});",
+  "before_use": null,
+  "instructions": "Cet outil ne doit être utilisé que chez les patients qui : sont âgés de ≥50 ans, présentent une douleur bilatérale des épaules et qui ont un ESR et/ou une CRP anormale.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Bhaskar Dasgupta"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7691871cb463822a60f829549821625233347bac6ffdb238a8c243e890c10ab8"
+}

@@ -1,0 +1,246 @@
+{
+  "id": "calc.heaven-criteria",
+  "slug": "heaven-criteria",
+  "language": "en",
+  "title": "HEAVEN critères",
+  "short_title": "Critères HEAVEN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthme",
+    "Obésité",
+    "Apnée obstructive du sommeil",
+    "Pneumonie",
+    "Insuffisance respiratoire",
+    "Sepsis",
+    "Traumatisme",
+    "Traumatisme crânien",
+    "Bronchopneumopathie chronique obstructive",
+    "Anaphylaxie"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "AMS (altération de l'état mental)",
+    "Dyspnée",
+    "Traumatisme crânien",
+    "Hypoxie",
+    "Dyspnée",
+    "Hypoxémie"
+  ],
+  "abbreviations": [
+    "HEAVEN Criteria",
+    "HEAVEN",
+    "hypoxemia",
+    "extremes of size",
+    "anatomic challenge",
+    "vomit",
+    "blood",
+    "fluid",
+    "exsanguination",
+    "neck",
+    "airway difficulty",
+    "airway prediction",
+    "HEAVEN airway",
+    "airway HEAVEN",
+    "airway criteria",
+    "difficult airway",
+    "LEMON criteria",
+    "rapid sequence intubation",
+    "RSI",
+    "intubation",
+    "airway",
+    "airway management",
+    "intubation difficulty",
+    "RSI prediction",
+    "RSI difficulty"
+  ],
+  "dosing": false,
+  "formula": "The HEAVEN Criteria is determined by summing the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| H ypoxemia (Oxygen saturation value ≤93% at the time of initial laryngoscopy) | No | 0 |\n| Yes | 1 | |\n| E xtremes of size (Pediatric patient ≤8 years of age or clinical obesity) | No | 0 |\n| Yes | 1 | |\n| A natomic challenge (Include trauma, mass, swelling, foreign body, or other structural abnormality limiting laryngoscopic view) | No | 0 |\n| Yes | 1 | |\n| V omit/blood/fluid (Clinically significant fluid present in the pharynx/hypopharynx at the time of laryngoscopy) | No | 0 |\n| Yes | 1 | |\n| E xsanguination (Suspected anemia that could potentially accelerate desaturation during RSI -associated apnea) | No | 0 |\n| Yes | 1 | |\n| N eck (Limited cervical range-of-motion due to immobilization or arthritis) | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Identifie les facteurs liés au patient associés à une diminution du succès à la première tentative lors d'une RSI.\n- L'anticipation d'une intubation difficile peut étayer l'évaluation du rapport bénéfices/risques et la planification de l'approche optimale.",
+    "when": "Use in patients undergoing emergent rapid sequence intubation (RSI) to identify a potentially difficult airway.",
+    "pearls": "- L’étude de dérivation a utilisé"
+  },
+  "next_steps": {
+    "advice": "Use this tool to guide intubation preparation and backup planning, alongside clinical judgment.",
+    "critical_actions": "",
+    "management": "More positive criteria correlate with lower first-attempt RSI success; consider:\n\n- Adjuncts such as video laryngoscopy or gum-elastic bougie.\n- Alternative strategies such as delayed-sequence intubation or surgical cricothyrotomy."
+  },
+  "evidence": "The HEAVEN Criteria were developed to predict difficult airways during emergency rapid sequence intubation (RSI) and to address limitations of prior tools like LEMON and Mallampati, which rely on patient cooperation and do not incorporate physiologic factors.\n\n[Kuzmack et al. (2018)](https://pubmed.ncbi.nlm.nih.gov/29331494/)evaluated these criteria in a retrospective aeromedical cohort of 2,419 patients and found that first-pass success declined as more criteria were present (94% with none vs 43% with five or more). Each criterion was also associated with lower first-attempt success, and the tool demonstrated a high negative predictive value, supporting its use for emergency airway planning. A follow-up study by[Nausheen et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31018857/)reported similar findings after adding more than 2,500 additional patients to the original cohort.\n\nTwo letters to the editor critiqued the Nausheen et al. paper.[Henschell et al.](https://link.springer.com/article/10.1186/s13049-020-00806-w)commented that optimal patient positioning, particularly in patients with anatomical challenges like obesity, was not addressed and questioned why some physiologic criteria (e.g., exsanguination) would be expected to correlate with difficult laryngoscopic views.[Shao et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC6691549/)raised concerns about predictive reliability, noting that individual anatomic components sometimes showed stronger associations with failed intubation than the total number of criteria combined. Both letters emphasized that HEAVEN is a predictive aid rather than a substitute for clinical judgment.\n\n[Tan et al. (2022)](https://pubmed.ncbi.nlm.nih.gov/35354232/)evaluated the criteria in the emergency department in a prospective cross-sectional study of 174 patients. In this cohort, the presence of any HEAVEN criterion was associated with first-pass failure; however, with the smaller sample size, only “anatomical challenge” was independently predictive.\n\nCollectively, these data suggest that the HEAVEN Criteria may help anticipate difficult airways during emergency RSI. While the evidence supports associations with poorer laryngoscopic view and reduced first-attempt success, most data come from specialized air medical settings with highly trained providers, which may limit generalizability to other clinical environments, patient populations, and operator experience levels. HEAVEN is also an unweighted scoring tool; given the consistent importance of “anatomic challenge,” a weighted model might have greater predictive value but at the price of greater complexity. This could be a direction for further study.\n\nOverall, HEAVEN Criteria should be used to supplement, not replace, clinical judgment, and additional prospective validation across diverse emergency settings would strengthen its applicability.",
+  "more_info": "Interpretation:\nAs more HEAVEN criteria are met, the likelihood of a difficult airway increases.",
+  "short_description": "Évaluation du risque de voies aériennes difficiles",
+  "medium_description": "Assesses risque de difficult airway dans patients undergoing emergency intubation.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "**H**ypoxémie",
+      "tips": "Valeur de saturation en oxygène ≤ 93 % au moment de la laryngoscopie initiale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "**E** xtremes de size",
+      "tips": "Patient pédiatrique ≤ 8 ans ou obésité clinique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "**** natomic challenge",
+      "tips": "Include trauma, mass, swelling, foreign body, or other structural abnormality limiting laryngoscopic view",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "**V** omit/blood/fluid",
+      "tips": "Clinically significant fluid present in the pharynx/hypopharynx at the time of laryngoscopy",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "**E** xsanguination",
+      "tips": "Suspected anemia that could potentially accelerate desaturation duringRSI-associated apnea",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "**N** uque",
+      "tips": "Limitation de l’amplitude des mouvements cervicaux due à une immobilisation ou à une arthrite.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Davis DP, Olvera DJ. HEAVEN criteria: Derivation of a new difficult airway prediction tool. Air Med J. 2017;36(4):195-197. doi:10.1016/j.amj.2017.04.001",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28739243/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kuzmack E, Inglis T, Olvera D, Wolfe A, Seng K, Davis D. A novel difficult-airway prediction tool for emergency airway management: Validation of the HEAVEN criteria in a large air medical cohort. J Emerg Med. 2018;54(4):395-401. doi:10.1016/j.jemermed.2017.12.005",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29331494/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nausheen F, Niknafs NP, MacLean DJ, et al. The HEAVEN criteria predict laryngoscopic view and intubation success for both direct and video laryngoscopy: a cohort analysis. Scand J Trauma Resusc Emerg Med. 2019;27(1):50. doi:10.1186/s13049-019-0614-6",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31018857/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tan NE, Yoong KPY, Yahya HMF. Use of HEAVEN criteria for predicting difficult intubation in the emergency department. Clin Exp Emerg Med. 2022;9(1):29-35. doi:10.15441/ceem.21.059",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35354232/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "882492b0f5895fc5b2a9abf35988d649",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10675,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\n\n// Calculate score\nvar score = a + b + c + d + e + f;\n\n\n// Output\nif (score == 1) {\n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'criterion met',\n        message: 'HEAVEN Criteria'\n    });\n    calc_output.push({\n        name: '10675_HEAVEN Criteria_result',\n        value: score,\n        value_text: 'criterion met',\n        message: 'HEAVEN Criteria<br/><br/>As more HEAVEN criteria are met, the likelihood of a difficult airway increases.'\n    });\n} else {\n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'criteria met',\n        message: 'HEAVEN Criteria'\n    });\n    calc_output.push({\n        name: '10675_HEAVEN Criteria_result',\n        value: score,\n        value_text: 'criteria met',\n        message: 'HEAVEN Criteria<br/><br/>As more HEAVEN criteria are met, the likelihood of a difficult airway increases.'\n    });\n}\n\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "kylie-prentice-md",
+    "ross-fleischman-md-mcr",
+    "meghan-prin-md"
+  ],
+  "creator_names": [
+    "Dr. Daniel P. Davis"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "61c44680e448f8d247d15a1d074039c2ce0a273b870e24bb7471152fc40de979"
+}

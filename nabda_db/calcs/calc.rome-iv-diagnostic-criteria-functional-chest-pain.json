@@ -1,0 +1,161 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-chest-pain",
+  "slug": "rome-iv-diagnostic-criteria-functional-chest-pain",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional douleur thoracique",
+  "short_title": "Rome IV pour douleur thoracique",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pathologies œsophagiennes",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Functional Chest Pain, Rome IV for Chest Pain, Rome IV for Functional Chest Pain, rome iv chest pain, Rome IV Criteria for Chest Pain, functional chest pain, fcp, rome 4, rome 4 criteria, rome iv criteria, functional chest pain diagnosis, fcp diagnosis, rome chest pain"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV pour la douleur thoracique fonctionnelle, le patient doit présenter les éléments suivants (pendant les 3 mois précédents, avec un début des symptômes ≥ 6 mois et une fréquence d'au moins une fois par semaine) :\n\n1. Douleur ou gêne rétrosternale ; les causes cardiaques doivent être éliminées.\n2. Absence de symptômes œsophagiens associés, tels que pyrosis et dysphagie.\n3. Absence de preuve que le reflux gastro-œsophagien ou l'œsophagite à éosinophiles soient à l'origine du symptôme.\n4. Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à la jonction gastro-œsophagienne, spasme œsophagien diffus, œsophage en marteau-pilon, absence de péristaltisme).",
+  "how_to_use": {
+    "why": "- Aide à poser un diagnostic de douleur thoracique fonctionnelle lorsque les causes cardiaques sont éliminées et qu'un bilan approprié (qui peut inclure une évaluation du RGO, de l'œsophagite à éosinophiles et des troubles majeurs de la motricité œsophagienne) est non contributif.\n- Aide à guider la prise en charge des symptômes une fois le diagnostic de douleur thoracique fonctionnelle établi.",
+    "when": "Patients présentant une douleur ou gêne thoracique récurrente et inexpliquée depuis au moins 6 mois, évocatrice d'une douleur thoracique fonctionnelle. Le diagnostic de douleur thoracique fonctionnelle ne doit être posé qu'après exclusion des causes cardiaques et d'un bilan œsophagien par ailleurs non contributif.",
+    "pearls": "- Les causes cardiaques doivent être exclues.\n- Étant donné la forte prévalence du reflux gastro-œsophagien (RGO) dans les douleurs thoraciques non cardiaques, un essai d'inhibiteur de la pompe à protons (IPP) à forte dose peut être envisagé afin de déterminer si le RGO peut déclencher les symptômes.\n- Une surveillance ambulatoire du reflux peut être envisagée chez les patients ne répondant pas au traitement par IPP.\n- Si une endoscopie haute est réalisée, des biopsies doivent être obtenues pour rechercher une œsophagite à éosinophiles.\n- Une fois le RGO exclu, une manométrie œsophagienne doit être envisagée pour rechercher un trouble majeur de la motricité œsophagienne.\n- Les diagnostics psychiatriques (p. ex. anxiété et dépression) sont fréquents dans la douleur thoracique fonctionnelle."
+  },
+  "next_steps": {
+    "advice": "**Si les critères diagnostiques ne sont pas remplis (négatif) :**\n\nIl est peu probable que les symptômes soient causés par une douleur thoracique fonctionnelle. Envisager une évaluation plus approfondie pour d'autres maladies ou un autre trouble fonctionnel gastro-intestinal.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable de douleur thoracique fonctionnelle.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients ne présentant pas de signes ou symptômes évocateurs d'une maladie cardiaque, ou d'une cause structurelle/mécanique, métabolique ou systémique de leurs symptômes, sur la base de l'anamnèse, de l'examen clinique et du bilan initial.",
+    "management": "La prise en charge de la douleur thoracique fonctionnelle peut inclure :\n\n- Antidépresseurs tricycliques (ATC).\n- Inhibiteurs sélectifs de la recapture de la sérotonine (ISRS).\n- Inhibiteurs de la recapture de la sérotonine et de la noradrénaline (IRSNa).\n- Trazodone.\n- Thérapies comportementales (p. ex. thérapie cognitivo-comportementale [TCC], hypnose)."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts.",
+  "more_info": "",
+  "short_description": "Douleur thoracique – diagnostic.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional douleur thoracique.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Retrosternal douleur thoracique ou discomfort; cardiac causes doit être ruled out",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Absence de associé esophageal symptoms, such as heartburn et dysphagia",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Absence de preuve que le reflux gastro-œsophagien ou l'œsophagite à éosinophiles soient à l'origine du symptôme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à l'écoulement de la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophagie en marteau-pilon, absence de péristaltisme)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Josefsson A, Palsson O, Simrén M, Sperber AD, Törnblom H, Whitehead W. Oesophageal symptoms are common and associated with other functional gastrointestinal disorders (FGIDs) in an English-speaking Western population. United European Gastroenterol J. 2018;6(10):1461-1469.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30574316",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-child-functional-abdominal-pain",
+    "calc.rome-iv-diagnostic-criteria-functional-anorectal-pain",
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn"
+  ],
+  "source_logic_hash": "0b26e70f7db5bfa5cb57f1efcaf569cd",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10275,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

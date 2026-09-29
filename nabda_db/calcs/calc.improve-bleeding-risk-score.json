@@ -1,0 +1,315 @@
+{
+  "id": "calc.improve-bleeding-risk-score",
+  "slug": "improve-bleeding-risk-score",
+  "language": "en",
+  "title": "Score de risque hémorragique IMPROVE",
+  "short_title": "Score de risque hémorragique IMPROVE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Douleur des extrémités",
+    "Dyspnée",
+    "Swelling"
+  ],
+  "abbreviations": [
+    "International Medical Prevention Registry on Venous Thromboembolism Bleeding Risk Score",
+    "improve",
+    "bleeding",
+    "improve bleeding risk score",
+    "bleeding risk",
+    "venous thromboembolism",
+    "deep vein thrombosis",
+    "pulmonary embolism"
+  ],
+  "dosing": false,
+  "formula": "The IMPROVE Bleeding Risk Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <40 | 0 |\n| 40-84 | 1.5 | |\n| ≥85 | 3.5 | |\n| Gender | Female | 0 |\n| Male | 1 | |\n| Renal function ( GFR ), mL/min/m 2 | ≥60 | 0 |\n| 30-59 | 1 | |\n| <30 | 2.5 | |\n| Current cancer (evidence of active malignancy within the last 6 months) | No | 0 |\n| Yes | 2 | |\n| Rheumatic disease | No | 0 |\n| Yes | 2 | |\n| Central venous catheter | No | 0 |\n| Yes | 2 | |\n| ICU/ CCU | No | 0 |\n| Yes | 2.5 | |\n| Evidence of hepatic failure ( INR >1.5) | No | 0 |\n| Yes | 2.5 | |\n| Platelet count, cells/L | ≥50 x 10 9 | 0 |\n| <50 x 10 9 | 4 | |\n| Bleeding in 3 months before admission | No | 0 |\n| Yes | 4 | |\n| Active gastroduodenal ulcer | No | 0 |\n| Yes | 4.5 | |",
+  "how_to_use": {
+    "why": "- Évalue le risque de saignement majeur ou cliniquement pertinent pendant une hospitalisation.\n- Aide à mettre en balance les bénéfices et les risques d’un traitement anticoagulant, ce qui peut améliorer la sécurité du patient.",
+    "when": "À utiliser à l’admission ou lors de l’instauration d’un traitement anticoagulant, principalement pour la prophylaxie de la thromboembolie veineuse (VTE), chez les patients hospitalisés.",
+    "pearls": "- Peut ne pas tenir compte de conditions cliniques en évolution rapide ; réévaluer régulièrement.\n- Peut ne pas prendre en compte tous les facteurs uniques propres au patient, tels que les prédispositions génétiques ou les comorbidités rares."
+  },
+  "next_steps": {
+    "advice": "- Envisager d’utiliser les résultats conjointement avec le [IMPROVE](nabda:calc.improve-risk-score-venous-thromboembolism-vte) ou l’[IMPROVEDD Risk Score for VTE](nabda:calc.improvedd-risk-score-venous-thromboembolism-vte) lors de l’évaluation de l’utilisation d’une thromboprophylaxie pendant l’hospitalisation.\n- Utiliser les résultats de cet outil pour compléter, et non remplacer, le jugement clinique et l’évaluation individualisée du patient au moment de décider de l’utilisation d’anticoagulants.",
+    "critical_actions": "",
+    "management": "- **Score <7 :** Poursuivre le traitement anticoagulant, s'il est indiqué, et la surveillance de routine.\n- **Score ≥7 :**\n\n - Éviter les anticoagulants dans la mesure du possible.\n - Envisager des interventions non pharmacologiques.\n - Si un traitement anticoagulant demeure nécessaire, prendre en charge les facteurs de risque de saignement modifiables et surveiller étroitement la survenue d'événements hémorragiques."
+  },
+  "evidence": "",
+  "more_info": "| IMPROVE Score | Risque hémorragique |\n| --- | --- |\n| <7 | Pas d'augmentation du risque hémorragique |\n| ≥7 | Risque hémorragique augmenté |\n\n- **Hémorragie majeure :** Événement hémorragique contribuant au décès, saignement associé à une baisse de Hg ≥2 g/dL, ou entraînant la transfusion de ≥2 unités de concentrés de globules rouges, ou survenant dans un organe critique (y compris saignement intracrânien, rétropéritonéal, intraoculaire, surrénalien, spinal ou péricardique).\n- **Hémorragie non majeure mais cliniquement pertinente :** Hémorragie digestive extériorisée (à l'exception d'un saignement hémorroïdaire insignifiant), hématurie macroscopique (macroscopique et durant plus de 24 heures), épistaxis importante nécessitant une intervention et récurrente et/ou durant ≥5 minutes, hématome ou ecchymose étendue (>5 cm de diamètre), saignement intra-articulaire (documenté par aspiration), ménorragie ou métrorragie (augmentation de la quantité ou de la durée), autre saignement suffisamment important pour être consigné dans le dossier hospitalier",
+  "short_description": "Saignement risque.",
+  "medium_description": "Evaluates saignement risque at hôpital admission.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40-84",
+          "value": 1.5
+        },
+        {
+          "label": "≥85",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gfr",
+      "label": "Fonction rénale (GFR), mL/min/m^2^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥60",
+          "value": 0
+        },
+        {
+          "label": "30-59",
+          "value": 1
+        },
+        {
+          "label": "< 30",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Cancer actuel",
+      "tips": "Preuve de malignité active au cours des 6 derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rd",
+      "label": "Maladie rhumatismale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cvc",
+      "label": "Cathéter veineux central",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "icu",
+      "label": "ICU/CCU",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inr",
+      "label": "Evidence de hepatic défaillance (INR>1.5)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "platelet",
+      "label": "Numération plaquettaire, cells/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥50 x 10 9",
+          "value": 0
+        },
+        {
+          "label": "< 50 x 10 9",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bleeding",
+      "label": "Saignement dans 3 months before admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ulcer",
+      "label": "Ulcère gastroduodénal actif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Decousus H, Tapson VF, Bergmann JF, et al. Factors at admission associated with bleeding risk in medical patients: findings from the IMPROVE investigators. Chest. 2011;139(1):69-79.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20453069/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rosenberg DJ, Press A, Fishbein J, et al. External validation of the improve bleeding risk assessment model in medical patients. Thromb Haemost. 2016;116(3):530-536.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27307054/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hostler DC, Marx ES, Moores LK, et al. Validation of the international medical prevention registry on venous thromboembolism bleeding risk score. Chest. 2016;149(2):372-379.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26867833/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vte-bleed-score",
+    "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+    "calc.improve-risk-score-venous-thromboembolism-vte",
+    "calc.improvedd-risk-score-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "f12748678d6c8594eba34f17ae766690",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.improve-risk-score-venous-thromboembolism-vte",
+      "text": "IMPROVE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.improvedd-risk-score-venous-thromboembolism-vte",
+      "text": "IMPROVEDD Risk Score for VTE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10465,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,253 @@
+{
+  "id": "calc.figo-staging-ovarian-cancer-2014",
+  "slug": "figo-staging-ovarian-cancer-2014",
+  "language": "fr",
+  "title": "FIGO Staging pour Ovarian cancer (2014)",
+  "short_title": "FIGO Staging pour Ovarian cancer",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "gynecologie-obstetrique",
+    "medecine-interne",
+    "hematologie",
+    "radiologie",
+    "cancerologie",
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Cancer de l'ovaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Nausea",
+    "Fatigue",
+    "Perte/Gain de poids",
+    "Cancer"
+  ],
+  "abbreviations": [
+    "fallopian tube",
+    "peritoneum",
+    "ovary",
+    "ovaries",
+    "mass"
+  ],
+  "dosing": false,
+  "formula": "| Stade I : Tumeur limitée aux ovaires | |\n| --- | --- |\n| IA | Tumeur limitée à 1 ovaire, capsule intacte, absence de tumeur en surface, lavages négatifs |\n| IB | Tumeur touchant les deux ovaires, par ailleurs identique à IA |\n| IC | Tumeur limitée à 1 ovaire ou aux deux ovaires |\n| IC1 | Rupture peropératoire (spillage chirurgical) |\n| IC2 | Rupture capsulaire avant la chirurgie ou tumeur à la surface de l'ovaire |\n| IC3 | Cellules malignes dans l'ascite ou les lavages péritonéaux |\n| Stade II : Tumeur touchant 1 ovaire ou les deux, avec extension pelvienne (sous le détroit supérieur) ou cancer péritonéal primitif | |\n| IIA | Extension et/ou implantation sur l'utérus et/ou les trompes de Fallope |\n| IIB | Extension à d'autres tissus intrapéritonéaux pelviens |\n| Stade III : Tumeur touchant 1 ovaire ou les deux, avec extension au péritoine en dehors du pelvis confirmée cytologiquement ou histologiquement et/ou métastases aux ganglions lymphatiques rétropéritonéaux | |\n| IIIA | Ganglions lymphatiques rétropéritonéaux positifs et/ou métastases microscopiques au-delà du pelvis |\n| IIIA1 | Ganglions lymphatiques rétropéritonéaux positifs uniquement |\n| IIIA1(i) | Métastase ≤10 mm |\n| IIIA1(ii) | Métastase >10 mm |\n| IIIA2 | Atteinte péritonéale microscopique extrapelvienne (au-dessus du détroit supérieur) ± ganglions lymphatiques rétropéritonéaux positifs |\n| IIIB | Métastases péritonéales macroscopiques extrapelviennes ≤2 cm ± ganglions lymphatiques rétropéritonéaux positifs ; inclut l'extension à la capsule du foie/de la rate |\n| IIIC | Métastases péritonéales macroscopiques extrapelviennes >2 cm ± ganglions lymphatiques rétropéritonéaux positifs ; inclut l'extension à la capsule du foie/de la rate |\n| Stade IV : Métastases à distance, à l'exclusion des métastases péritonéales | |\n| IVA | Épanchement pleural avec cytologie positive |\n| IVB | Métastases parenchymateuses hépatiques et/ou spléniques, métastases aux organes extra-abdominaux (y compris les ganglions inguinaux et les ganglions en dehors de la cavité abdominale) |",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser en postopératoire chez les patientes atteintes d'un cancer de l'ovaire confirmé histologiquement (un examen anatomopathologique de la pièce opératoire est nécessaire pour établir le stade).",
+    "pearls": "- Le stade IB (atteinte bilatérale) est rare et ne survient que dans 1-5 % des cas de stade I ([Heintz 2006](https://www.ncbi.nlm.nih.gov/pubmed/17161157)). Les tumeurs ovariennes volumineuses de stade IB associées à un ovaire controlatéral de taille normale avec de petits foyers tumoraux superficiels suggèrent que ces derniers sont métastatiques (⅓ des tumeurs de stade I avec atteinte bilatérale ont cet aspect) ([Prat 2013](https://obgyn.onlinelibrary.wiley.com/doi/full/10.1016/j.ijgo.2013.10.001)).\n- Une controverse existe quant à savoir si des ganglions lymphatiques positifs (macroscopiques) au-dessus des vaisseaux rénaux doivent être considérés comme un stade III ou IV, et ces situations ne sont pas abordées par les recommandations actuelles."
+  },
+  "next_steps": {
+    "advice": "Traiter selon le stade et en tenant compte des préférences du patient.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Stadification du cancer de l'ovaire.",
+  "medium_description": "Stades du cancer de l'ovaire, de la trompe de Fallope et du péritoine.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "location",
+      "label": "Localisation tumorale",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Tumor confined pour ovaries",
+          "value": 0
+        },
+        {
+          "label": "Tumor involves 1 ou both ovaries avec pelvic extension (below pelvic brim) ou primaire peritoneal cancer",
+          "value": 1
+        },
+        {
+          "label": "Tumor involves 1 ou both ovaries avec cytologically ou histologically confirmed spread pour peritoneum outside pelvis et/ou metastasis pour retroperitoneal lymph nodes",
+          "value": 2
+        },
+        {
+          "label": "Métastase à distance, à l’exclusion des métastases péritonéales",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ovaries",
+      "label": "Tumor confined pour ovaries",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "location == 0",
+      "options": [
+        {
+          "label": "Tumor limited pour 1 ovary, capsule intact, no tumor sur surface, negative washings",
+          "value": 0
+        },
+        {
+          "label": "La tumeur atteint les deux ovaires, sinon comme ci-dessus.",
+          "value": 1
+        },
+        {
+          "label": "Tumor limited pour 1 ou both ovaries",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "limited",
+      "label": "Tumor limited pour 1 ou both ovaries",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "ovaries == 2",
+      "options": [
+        {
+          "label": "Épanchement chirurgical",
+          "value": 0
+        },
+        {
+          "label": "Capsule rupture before surgery ou tumor sur ovarian surface",
+          "value": 1
+        },
+        {
+          "label": "Malignant cells dans ascites ou peritoneal washings",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "extension",
+      "label": "Tumor involves 1 ou both ovaries avec pelvic extension (below pelvic brim) ou primaire peritoneal cancer",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "location == 1",
+      "options": [
+        {
+          "label": "Extension et/ou implantation sur l'utérus et/ou les trompes de Fallope",
+          "value": 0
+        },
+        {
+          "label": "Extension pour other pelvic intraperitoneal tissues",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "spread",
+      "label": "Tumor involves 1 ou both ovaries avec cytologically ou histologically confirmed spread pour peritoneum outside pelvis et/ou metastasis pour retroperitoneal lymph nodes",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "location == 2",
+      "options": [
+        {
+          "label": "Ganglions lymphatiques rétropéritonéaux positifs et/ou métastase microscopique au-delà du pelvis",
+          "value": 0
+        },
+        {
+          "label": "Macroscopic, extrapelvic, peritoneal metastasis ≤2 cm ± positive retroperitoneal lymph nodes; includes extension pour capsule de liver/spleen",
+          "value": 1
+        },
+        {
+          "label": "Macroscopic, extrapelvic, peritoneal metastasis >2 cm ± positive retroperitoneal lymph nodes; includes extension pour capsule de liver/spleen",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lymph",
+      "label": "Ganglions lymphatiques rétropéritonéaux positifs et/ou métastase microscopique au-delà du pelvis",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "spread == 0",
+      "options": [
+        {
+          "label": "Adénopathies rétropéritonéales positives uniquement",
+          "value": 0
+        },
+        {
+          "label": "Atteinte péritonéale microscopique, extrapelvienne (au-dessus du détroit supérieur) ± ganglions lymphatiques rétropéritonéaux positifs",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "metastasis",
+      "label": "Metastasis",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "lymph == 0",
+      "options": [
+        {
+          "label": "Métastase ≤10 mm",
+          "value": 0
+        },
+        {
+          "label": "Métastase > 10 mm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "distant",
+      "label": "Métastase à distance, à l’exclusion des métastases péritonéales",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "location == 3",
+      "options": [
+        {
+          "label": "Pleural effusion avec positive cytology",
+          "value": 0
+        },
+        {
+          "label": "Hepatic et/ou splenic parenchymal metastasis, metastasis pour extra-abdominal organs (y compris inguinal lymph nodes et lymph nodes outside de abdominal cavity)",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Prat J. Staging classification for cancer of the ovary, fallopian tube, and peritoneum. Int J Gynaecol Obstet. 2014;124(1):1-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24219974",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heintz AP, Odicino F, Maisonneuve P, et al. Carcinoma of the ovary. FIGO 26th Annual Report on the Results of Treatment in Gynecological Cancer. Int J Gynaecol Obstet. 2006;95 Suppl 1:S161-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17161157",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.risk-malignancy-index-rmi-ovarian-cancer",
+    "calc.g8-geriatric-screening-tool"
+  ],
+  "source_logic_hash": "5da9c21d8e40f29db1594d6e3a9b5cd2",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10108,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,203 @@
+{
+  "id": "calc.rifle-criteria-acute-kidney-injury-aki",
+  "slug": "rifle-criteria-acute-kidney-injury-aki",
+  "language": "fr",
+  "title": "RIFLE critères pour insuffisance rénale aiguë (AKI)",
+  "short_title": "RIFLE critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Anuria",
+    "Oliguria"
+  ],
+  "abbreviations": [
+    "AKI score",
+    "RIFLE score",
+    "AKIN"
+  ],
+  "dosing": false,
+  "formula": "Sélection du critère approprié. Pour la créatininémie, le DFG et la diurèse, choisir le critère conduisant à la classification la plus sévère (ex. : si la créatininémie est à son niveau de base mais que le DFG est diminué de >50 % par rapport à la valeur de base, la classe RIFLE est RIFLE-I).\n\n| Critères RIFLE | Créatininémie | DFG | Diurèse |\n| --- | --- | --- | --- |\n| R isque, RIFLE-R | 1,5-2x au-dessus de la valeur de base | diminution >25 % en dessous de la valeur de base | <0,5 mL/kg/h x 6 h |\n| I atteinte, RIFLE-I | >2–3x au-dessus de la valeur de base | diminution >50 % en dessous de la valeur de base | <0,5 mL/kg/h x 12 h |\n| F aillite, RIFLE-F (RIFLE-FO si oligurie) | >3x au-dessus de la valeur de base, ≥4 mg/dL (350 µmol/L), ou élévation aiguë ≥0,5 mg/dL (44 µmol/L) | diminution >75 % en dessous de la valeur de base | <0,3 mL/kg/h x 24 h (oligurie) ou anurie x 12 h |\n| P erte, RIFLE-L | IRA persistante (épuration extrarénale pendant >4 semaines) | | |\n| I nsuffisance rénale terminale, RIFLE-E | Maladie rénale au stade terminal (dialyse pendant >3 mois) | | |",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Nécessite une créatininémie de base, souvent inconnue en pratique clinique. Chez les patients atteints d'IRC, une créatininémie de base déterminant un DFG de 75 mL/min/1,73 m² présente une faible corrélation avec la créatininémie réelle, entraînant une surestimation de l'incidence de l'IRA ([Lopes 2013](https://academic.oup.com/ckj/article/6/1/8/468698)).\n- Développé à l'aide de l'[équation MDRD du DFG](nabda:calc.mdrd-gfr-equation), validée chez les patients IRC avec fonction rénale stable mais non validée dans l'IRA."
+  },
+  "next_steps": {
+    "advice": "Rappel : une IRA peut être présente même avec une créatininémie « normale », si le DFG est diminué, ou si la créatininémie est significativement élevée par rapport à la valeur de base.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Insuffisance rénale aiguë classification.",
+  "medium_description": "Classifies gravité de insuffisance rénale aiguë, similar pour [AKIN Classification](nabda:calc.akin-classification-acute-kidney-injury-aki).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "esrd",
+      "label": "Maladie rénale au stade terminal",
+      "tips": "En dialyse depuis >3 mois",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arf",
+      "label": "Persistent insuffisance rénale aiguë",
+      "tips": "Sous EER depuis >4 semaines",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "esrd == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "arf == 0 ",
+      "options": [
+        {
+          "label": "1,5-2x au-dessus de la valeur initiale",
+          "value": 1
+        },
+        {
+          "label": ">2-3x au-dessus de la valeur initiale",
+          "value": 2
+        },
+        {
+          "label": ">3x au-dessus de la valeur initiale, ≥4 mg/dL (350 µmol/L), ou élévation aiguë ≥0,5 mg/dL (44 µmol/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gfr",
+      "label": "GFR",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "arf == 0 ",
+      "options": [
+        {
+          "label": "Diminution >25 % en dessous de la valeur initiale",
+          "value": 1
+        },
+        {
+          "label": "Diminution >50 % en dessous de la valeur initiale",
+          "value": 2
+        },
+        {
+          "label": "Diminution >75 % en dessous de la valeur initiale",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "uo",
+      "label": "Diurèse",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "arf == 0 ",
+      "options": [
+        {
+          "label": "< 0.5 mL/kg/hr x 6 hr",
+          "value": 1
+        },
+        {
+          "label": "< 0.5 mL/kg/hr x 12 hr",
+          "value": 2
+        },
+        {
+          "label": "< 0,3 mL/kg/h x 24 h (oligurie) ou anurie x 12 h",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bellomo R, Ronco C, Kellum JA, Mehta RL, Palevsky P. Acute renal failure - definition, outcome measures, animal models, fluid therapy and information technology needs: the Second International Consensus Conference of the Acute Dialysis Quality Initiative (ADQI) Group. Crit Care. 2004;8(4):R204-12.",
+      "href": "https://ccforum.biomedcentral.com/articles/10.1186/cc2872",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Van Biesen W, Vanholder R, Lameire N. Defining acute renal failure: RIFLE and beyond. Clin J Am Soc Nephrol. 2006;1(6):1314-9.",
+      "href": "https://cjasn.asnjournals.org/content/1/6/1314.full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lopes JA, Jorge S. The RIFLE and AKIN classifications for acute kidney injury: a critical and comprehensive review. Clinical Kidney Journal. 2013;6(1):8-14. doi:10.1093/ckj/sfs160.",
+      "href": "https://academic.oup.com/ckj/article/6/1/8/468698",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Xiong J, Tang X, Hu Z, Nie L, Wang Y, Zhao J. The RIFLE versus AKIN classification for incidence and mortality of acute kidney injury in critical ill patients: A meta-analysis. Sci Rep. 2015;5:17917.",
+      "href": "https://www.nature.com/articles/srep17917",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.akin-classification-acute-kidney-injury-aki",
+    "calc.mdrd-gfr-equation",
+    "calc.licurse-score-renal-ultrasound"
+  ],
+  "source_logic_hash": "04c415a67b5f8922456f5d10236e71d8",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "MDRD GFR Equation"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10019,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

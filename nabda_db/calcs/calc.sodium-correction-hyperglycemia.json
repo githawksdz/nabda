@@ -1,0 +1,137 @@
+{
+  "id": "calc.sodium-correction-hyperglycemia",
+  "slug": "sodium-correction-hyperglycemia",
+  "language": "fr",
+  "title": "Sodium Correction pour Hyperglycemia",
+  "short_title": "Sodium Correction pour Hyperglycemia",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hyperglycemia",
+    "Hypernatremia",
+    "Hyponatremia"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Seizure",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "na",
+    "glucose",
+    "dm",
+    "diabetes",
+    "sodium",
+    "hyperglycemia",
+    "hyponatremia"
+  ],
+  "dosing": false,
+  "formula": "Natrémie corrigée (Katz, 1973) = Natrémie mesurée + 0,016 * (Glycémie - 100)\n\nNatrémie corrigée (Hillier, 1999) = Natrémie mesurée + 0,024 * (Glycémie - 100)\n\nRemarque : la glycémie doit être exprimée en mg/dL pour que ces formules soient valides.",
+  "how_to_use": {
+    "why": "- Certains experts utilisent la sévérité de l'hyponatrémie corrigée comme [prédicteur](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7478195/) de l'évolution clinique.\n- L'hyperglycémie provoque des déplacements osmotiques d'eau du compartiment intracellulaire vers le compartiment extracellulaire, entraînant une hyponatrémie de dilution relative.",
+    "when": "À utiliser chez les patients présentant une glycémie élevée chez qui on constate également une natrémie basse au bilan biologique.",
+    "pearls": "- Le facteur de correction classique de 1,6 mEq/L de natrémie pour chaque augmentation de 100 mg/dL de glycémie a été remis en question par un article de [Hillier et al.](https://pubmed.ncbi.nlm.nih.gov/10225241/) en 1999 ; leur facteur de 2,4 mEq/L est parfois utilisé.\n- Répétez régulièrement les dosages de la natrémie, car le sodium varie au cours du remplissage liquidien.\n- Au bilan biologique initial, vérifiez l'osmolalité pour exclure un trou osmolaire, qui peut entraîner une fausse hyponatrémie ([pseudohyponatrémie](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7479837/)).\n- Chez les patients extrêmement hyperglycémiques, la natrémie corrigée peut révéler une vraie hyponatrémie, associée à un pronostic plus défavorable. Assurez donc une surveillance biologique régulière pendant le remplissage liquidien et le contrôle glycémique."
+  },
+  "next_steps": {
+    "advice": "- Agissez sur la base de la natrémie corrigée, et non de la natrémie mesurée.\n- Traitez la cause sous-jacente de l'hyperglycémie.\n- Réalisez régulièrement un contrôle biologique (la fréquence dépendra de l'état clinique et de la sévérité des anomalies) pour surveiller l'évolution.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "[Hillier et al.](https://www.ncbi.nlm.nih.gov/pubmed/10225241)(1999) ont évalué 6 sujets sains, induit une hyperglycémie et mesuré la natrémie réelle, constatant qu'un facteur de correction du sodium de 2,4 mEq/L était plus précis que le facteur de correction classique de 1,6 mEq/L enseigné, issu de [Katz](https://www.ncbi.nlm.nih.gov/pubmed/4763428)(1973).\n\nUne [étude](https://pubmed.ncbi.nlm.nih.gov/32773588/) récente a démontré une corrélation entre la sévérité de l'hyponatrémie corrigée et la mortalité.\n\nCette méthode de correction continue d'être étayée par la littérature plus [récente](https://pubmed.ncbi.nlm.nih.gov/32984372/).",
+  "more_info": "",
+  "short_description": "Calculates Na dans hyperglycemia.",
+  "medium_description": "Calculates actual sodium level chez les patients avec hyperglycemia.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "glucose",
+      "label": "Glucose",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Katz MA. Hyperglycemia-induced hyponatremia--calculation of expected serum sodium depression. N Engl J Med. 1973 Oct 18;289(16):843-4. PubMed PMID: 4763428.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4763428",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chuang C, Guo YW, Chen HS. Corrected sodium levels for hyperglycemia is a better predictor than measured sodium levels for clinical outcomes among patients with extreme hyperglycemia. J Chin Med Assoc. 2020 Sep;83(9):845-851. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32773588/",
+      "kind": "other"
+    },
+    {
+      "text": "Ing TS, Ganta K, Bhave G, Lew SQ, Agaba EI, Argyropoulos C, Tzamaloukas AH. The Corrected Serum Sodium Concentration in Hyperglycemic Crises: Computation and Clinical Applications. Front Med (Lausanne). 2020 Aug 25;7:477",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32984372/",
+      "kind": "other"
+    },
+    {
+      "text": "Hillier TA, Abbott RD, Barrett EJ. Hyponatremia: evaluating the correction factor for hyperglycemia. Am J Med. 1999 Apr;106(4):399-403. PubMed PMID: 10225241.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10225241",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.c-peptide-glucose-ratio",
+    "calc.glucose-infusion-rate-gir"
+  ],
+  "source_logic_hash": "8e3ebbb64fcaab3f9c72e12a49419122",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 50,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

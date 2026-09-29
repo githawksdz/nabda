@@ -1,0 +1,240 @@
+{
+  "id": "calc.history-electrocardiogram-manchester-acute-coronary-syndromes-macs",
+  "slug": "history-electrocardiogram-manchester-acute-coronary-syndromes-macs",
+  "language": "en",
+  "title": "Syndromes coronariens aigus de Manchester évalués uniquement par l’anamnèse et l’élect",
+  "short_title": "HE-MACS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Acs",
+    "acute coronary syndrome",
+    "rule out acs",
+    "ekg",
+    "hemacs",
+    "he-mac",
+    "he-macs",
+    "history and electrocardiogram",
+    "manchester",
+    "acute coronary syndromes",
+    "he macs",
+    "hemacs"
+  ],
+  "dosing": false,
+  "formula": "Probability of ACS = 1 / (1 + e^x^),\n\nwhere x = - [(1.426 x sweating) + (1.838 x EKG) + (0.734 x pain) + (0.996 x vomiting) + (1.353 x systolic BP) + (0.675 x tobacco) + (0.024 x age) + (0.462 x sex) − 4.416]\n\nand the variables are as follows:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age , years | Continuous | |\n| Sex | Female | 0 |\n| Male | 1 | |\n| Sweating observed | No | 0 |\n| Yes | 1 | |\n| Acute EKG ischemia | No | 0 |\n| Yes | 1 | |\n| Pain radiating to the right arm or shoulder | No | 0 |\n| Yes | 1 | |\n| Vomiting associated with pain | No | 0 |\n| Yes | 1 | |\n| Systolic BP <100 mmHg | No | 0 |\n| Yes | 1 | |\n| Current tobacco smoker | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Peut constituer un complément utile au jugement clinique, en particulier dans les contextes à ressources limitées où les biomarqueurs ne sont pas disponibles.\n- Une stratification précise du risque des patients avant l’obtention des informations sur les biomarqueurs peut améliorer le triage et aider à guider l’orientation.",
+    "when": "Patients ≥18 ans se présentant avec une suspicion de douleur thoracique d'origine cardiaque (symptômes survenus dans les dernières 24 heures).",
+    "pearls": "- 30-day major adverse cardiac event (MACE) was defined as acute MI, all-cause death, or coronary revascularization.\n- Not yet prospectively validated (externally validated in a single cohort retrospectively; see[Evidence](#evidence)for details).\n- Validated in emergency settings and not yet validated in paramedic, primary care, or triage-specific settings.\n\n**Point to keep in mind:**\n\n- Note that the authors chose the cutoff for ACS probability in the “very low risk” group (<4%) as determined by receiver operator curve (ROC) analysis to achieve 100% sensitivity (i.e., to miss no cases of ACS or 30-day MACE), not necessarily as a reasonable clinical risk threshold for rule-out."
+  },
+  "next_steps": {
+    "advice": "- In patients who are “very low” risk, ACS is unlikely. Consider discharge without cardiac biomarkers, with caution, and consider further investigation in an ambulatory setting.\n- “Very low” risk was <4.0% risk of ACS or MACE in 30 days, which was selected by the authors to achieve 100% sensitivity in the derivation cohort, and was subsequently found to be 99.5% sensitive (95% CI 97.1-100) in validation cohorts.\n- In patients who are not “very low” risk, further workup is recommended.",
+    "critical_actions": "- HE-MACS est un outil d'aide à la décision et non un test définitif, conçu pour aider à la stratification du risque chez les patients présentant une douleur thoracique. Le jugement clinique doit toujours être utilisé.\n- Lorsque toutes les composantes de l'outil d'aide à la décision HE-MACS sont négatives et qu'un risque « très faible » d'ACS ou de MACE à 30 jours est identifié, l'ACS est improbable et une sortie sans biomarqueurs cardiaques peut être envisagée, avec prudence.",
+    "management": ""
+  },
+  "evidence": "[Alghamdi et al (2018)](https://www.ncbi.nlm.nih.gov/pubmed/30289775)derived and validated the HE-MACS in a study of 1,929 patients in the UK. The derivation cohort (796 patients) and validation cohorts (474 and 659 patients, respectively, in two separate data sets) presented within the same paper were secondary analyses from three prospective diagnostic accuracy studies that included patients presenting to the ED with suspected cardiac chest pain. The cohort for derivation and one of the validations were the same cohort used to derive and validate the T-MACS Score ([Body 2014](https://www.ncbi.nlm.nih.gov/pubmed/24780911)).\n\nInclusion and exclusion criteria differed slightly between the derivation and validation sets, e.g. chest pain within 24 (derivation) vs 12 hours of onset (validation 2); age limits 25 years (derivation) vs 18 (validation 2) and exclusion of patients diagnosed with ST-elevation myocardial infarction (validation 2). While the negative predictive value (NPV) for \"very low\" risk patients was high, confidence intervals for the NPV in the validation studies are wide (up to 1 in 10 patients could be missed at the lowest end of the confidence interval).\n\nThe goal was to create a decision aid able to risk stratify patients presenting with suspected cardiac chest pain that did not rely on testing biomarkers enabling its use in environments where such testing is not available. Each study included ED patients presenting with chest pain that the treating clinician suspected might be cardiac in nature and warranted investigation for a possible ACS.\n\nAs a reference standard for acute MI, all patients underwent serial cardiac troponin testing at local analyser appropriate time intervals. Patients were followed up throughout their inpatient course and at 30 days. One patient in the second validation set grouped as \"very low\" risk had ACS in the study but was found to have myocarditis on further investigation.",
+  "more_info": "Interprétation :\n\n| Risque d'ACS ou de MACE à 30 jours | Groupe de risque |\n| --- | --- |\n| <4.0% | Très faible |\n| 4.0-6.9% | Faible |\n| 7.0-49.9% | Modéré |\n| ≥50.0% | Élevé |",
+  "short_description": "Stratifie le risque d’ACS (antécédents et EKG, non validé en externe).",
+  "medium_description": "Stratifies ACS risque avec history et EKG only (not yet externally validated).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sweating",
+      "label": "Sueurs observées",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ecg",
+      "label": "Ischémie aiguë à l’EKG",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain",
+      "label": "Douleur radiating pour right arm ou shoulder",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "Vomissements associé avec douleur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bp",
+      "label": "Pression artérielle systolique <100 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur de tabac actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Alghamdi A, Howard L, Reynard C, et al. Enhanced triage for patients with suspected cardiac chest pain: the History and Electrocardiogram-only Manchester Acute Coronary Syndromes (HE-MACS) decision aid. Eur J Emerg Med. 2018.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30289775",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Body R, Carley S, McDowell G, Pemberton P, Burrows G, Cook G, et al. The Manchester Acute Coronary Syndromes (MACS) decision rule for suspected cardiac chest pain: derivation and external validation. Heart. 2014.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24780911",
+      "kind": "other"
+    },
+    {
+      "text": "Burrows G, Carley S, et al. Troponin-only Manchester Acute Coronary Syndromes (T-MACS) decision aid: single biomarker re-derivation and external validation in three cohorts. Emerg Med J. 2017.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565197",
+      "kind": "other"
+    },
+    {
+      "text": "Alghamdi A, Howard L, Reynard C, et al. Enhanced triage for patients with suspected cardiac chest pain: the History and Electrocardiogram-only Manchester Acute Coronary Syndromes (HE-MACS) decision aid. Eur J Emerg Med. 2018.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30289775",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sex-shock-risk-score-development-cardiogenic-shock",
+    "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+    "calc.framingham-risk-score-hard-coronary-heart-disease"
+  ],
+  "source_logic_hash": "1c1088f7543fa915f4d95eb3d72e7d5c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10165,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

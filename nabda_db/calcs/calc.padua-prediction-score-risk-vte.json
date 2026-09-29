@@ -1,0 +1,374 @@
+{
+  "id": "calc.padua-prediction-score-risk-vte",
+  "slug": "padua-prediction-score-risk-vte",
+  "language": "en",
+  "title": "Score de prédiction de Padua pour le risque de VTE",
+  "short_title": "Score de prédiction de Padoue (Padua Prediction Score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Douleur des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "VTE",
+    "PE",
+    "DVT",
+    "d-dimer",
+    "cancer",
+    "age",
+    "surgery",
+    "infection"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, comme ci-dessus.",
+  "how_to_use": {
+    "why": "- Tous les patients hospitalisés présentent un risque accru de VTE.\n- Les patients à haut risque de VTE ne bénéficient souvent pas d’une prophylaxie adéquate.\n- La VTE est associée à une augmentation de la morbidité et de la mortalité.\n- Les patients à haut risque (Padua ≥4) pourraient bénéficier d’une thromboprophylaxie.",
+    "when": "Peut s’appliquer aux patients hospitalisés pour des diagnostics médicaux non chirurgicaux présentant un risque potentiel de VTE.",
+    "pearls": "- Several large studies have demonstrated that the Padua Score may be no better a predictor of VTE risk than age alone.\n- Many of the patients who developed VTE had active cancer or were older.\n- A retrospective review of patients with sepsis found no relationship between a Padua ≥4 and VTE, though it was a predictor of mortality.\n\n - The model was based off of a previously published clinical prediction rule and not derived from formal criteria.\n - The majority of patients who developed VTE had active cancer.\n - Follow-up VTE testing was only performed if the patient was symptomatic.\n - Patients with contraindications to prophylaxis were not included in the study."
+  },
+  "next_steps": {
+    "advice": "Dans le contexte approprié, lorsqu’un médecin envisage déjà une thromboprophylaxie pour un patient considéré à haut risque de VTE, un score ≥4 peut étayer son jugement clinique.",
+    "critical_actions": "- Cet outil a pour but de stratifier le risque chez les patients présentant un risque potentiel de VTE, et non de diagnostiquer une VTE.\n- Si cela est jugé approprié, l'anticoagulation ne doit pas être refusée aux patients qui en ont besoin dans le cadre du traitement de leur diagnostic.\n- Avant d'initier tout traitement anticoagulant, le risque hémorragique du patient doit être évalué.",
+    "management": "For patients admitted to a medical floor:\n\n- **Score <4:**\n\n - Low risk of VTE.\n - Thromboprophylaxis should be considered on a case-by-case basis.\n- **Score ≥4:**\n\n - High risk of VTE.\n - Thromboprophylaxis (e.g., heparin, enoxaparin) is recommended for non-pregnant patients without contraindications (major bleeding, low platelets, creatinine clearance <30 mL/min) who are >18 years."
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n- Padua Score ≥4 points - Pharmacologic prophylaxis is indicated. If high risk of bleeding, use mechanical prophylaxis.\n- Padua Score <4 points - Pharmacologic prophylaxis is **not** indicated, consider using mechanical prophylaxis.",
+  "short_description": "Hospitalisé à risque de VTE, nécessitant une anticoagulation.",
+  "medium_description": "Determines anticoagulation need dans hospitalized patients par risque de VTE.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Cancer actif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pvte",
+      "label": "Antécédent de VTE",
+      "tips": "À l’exclusion de la thrombose veineuse superficielle",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mobile",
+      "label": "Mobilité réduite",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thromcon",
+      "label": "Thrombophilie déjà connue",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ts",
+      "label": "Traumatisme et/ou chirurgie récents (≤ 1 mois)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge avancé (≥70 ans)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hf",
+      "label": "Défaillance cardiaque et/ou respiratoire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "miis",
+      "label": "IDM aigu et/ou AVC ischémique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "inf",
+      "label": "Infection aiguë et/ou affection rhumatologique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "Obesity ( [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ≥30)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hormones",
+      "label": "Traitement hormonal en cours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kahn SR, Lim W, Dunn AS, Cushman M, Dentali F, Akl EA, Cook DJ, Balekian AA, Klein RC, Le H, Schulman S, Murad MH. Prevention of VTE in nonsurgical patients: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):e195S-e226S. doi: 10.1378/chest.11-2296",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3278052/",
+      "kind": "international"
+    },
+    {
+      "text": "Schünemann HJ, Cushman M, Burnett AE, Kahn SR, Beyer-Westendorf J, Spencer FA, Rezende SM, Zakai NA, Bauer KA, Dentali F, Lansing J, Balduzzi S, Darzi A, Morgano GP, Neumann I, Nieuwlaat R, Yepes-Nuñez JJ, Zhang Y, Wiercioch W. American Society of Hematology 2018 guidelines for management of venous thromboembolism: prophylaxis for hospitalized and nonhospitalized medical patients. Blood Adv. 2018 Nov 27;2(22):3198-3225. doi: 10.1182/bloodadvances.2018022954. Erratum in: Blood Adv. 2023 May 09;7(9):1671. doi: 10.1182/bloodadvances.2022008147.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30482763/",
+      "kind": "international"
+    },
+    {
+      "text": "Barbar S, Noventa F, Rossetto V, Ferrari A, Brandolin B, Perlati M, De Bon E, Tormene D, Pagnan A, Prandoni P. A risk assessment model for the identification of hospitalized medical patients at risk for venous thromboembolism: the Padua Prediction Score. J Thromb Haemost. 2010 Nov;8(11):2450-7. doi: 10.1111/j.1538-7836.2010.04044.x.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20738765",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kucher N, Koo S, Quiroz R, Cooper JM, Paterno MD, Soukonni- kov B, Goldhaber SZ. Electronic alerts to prevent venous thrombo- embolism among hospitalized patients. N Engl J Med 2005; 352: 969–77.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15758007",
+      "kind": "other"
+    },
+    {
+      "text": "Decousus H, Tapson VF, Bergmann JF, et al. Factors at Admission Associated With Bleeding Risk in Medical Patients. Findings From the IMPROVE Investigators. Chest 2011;139(1):69-79",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20453069",
+      "kind": "other"
+    },
+    {
+      "text": "Pandor A, Tonkins M, Goodacre S, et al. Risk assessment models for venous thromboembolism in hospitalised adult patients: a systematic review. BMJ Open. 2021;11(7):e045672.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34326045/",
+      "kind": "other"
+    },
+    {
+      "text": "Lavon O, Tamir T. Evaluation of the Padua Prediction Score ability to predict venous thromboembolism in Israeli non-surgical hospitalized patients using electronic medical records. Sci Rep. 2022 Apr 12;12(1):6121. doi: 10.1038/s41598-022-10209-9.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35414101/",
+      "kind": "other"
+    },
+    {
+      "text": "Rothberg MB, Hamilton AC, Greene MT, Fox J, Lisheba O, Milinovich A, Gautier TN 4th, Kim P, Kaatz S, Hu B. Derivation and Validation of a Risk Factor Model to Identify Medical Inpatients at Risk for Venous Thromboembolism. Thromb Haemost. 2022 Jul;122(7):1231-1238. doi: 10.1055/a-1698-6506.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34784645/",
+      "kind": "other"
+    },
+    {
+      "text": "Yifang H, Jun D, Jingting Y, Ying S, Ping Z, Xiaomei D. Comparison of the PADUA and IMPROVE scores in assessing venous thromboembolism risk in 42,257 medical inpatients in China. J Thromb Thrombolysis. 2024 Jun;57(5):775-783. doi: 10.1007/s11239-024-02979-y.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38643438/",
+      "kind": "other"
+    },
+    {
+      "text": "Häfliger E, Kopp B, Darbellay Farhoumand P, Choffat D, Rossel JB, Reny JL, Aujesky D, Méan M, Baumgartner C. Risk Assessment Models for Venous Thromboembolism in Medical Inpatients. JAMA Netw Open. 2024 May 1;7(5):e249980. doi: 10.1001/jamanetworkopen.2024.9980.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38728035/",
+      "kind": "other"
+    },
+    {
+      "text": "Drozdinsky G, Zusman O, Kushnir S, Leibovici L, Gafter-Gvili A. The effect of obligatory Padua prediction scoring in hospitalized medically ill patients: A retrospective cohort study. PLoS One. 2024 Feb 7;19(2):e0292661. doi: 10.1371/journal.pone.0292661.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38324562/",
+      "kind": "other"
+    },
+    {
+      "text": "Pu J, Luo Y, Wei H, Ge H, Liu H, Zhang J, Li X, Pan P, Xie X, Yi M, Cheng L, Zhou H, Zhang J, Peng L, Zeng J, Chen X, Yi Q, Zhou H. Limited predictive value of Padua and Caprini scores for venous thromboembolism in AECOPD patients with atrial fibrillation. Sci Rep. 2026 Apr 24. doi: 10.1038/s41598-026-49751-1.",
+      "href": "https://www.nature.com/articles/s41598-026-49751-1",
+      "kind": "other"
+    },
+    {
+      "text": "Vardi M, Ghanem-Zoubi NO, Zidan R, Yurin V and Bitterman H. Venous thromboembolism and the utility of the Padua Prediction Score in patients with sepsis admitted to internal medicine departments. Journal of Thrombosis and Haemostasis, 11: 467–473.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23279085",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nendaz M, Spirk D, Kucher N, Aujesky D, Hayoz D, Beer JH, Husmann M, Frauchiger B, Korte W, Wuillemin WA, Jäger K, Righini M, Bounameaux H. Multicentre validation of the Geneva Risk Score for hospitalised medical patients at risk of venous thromboembolism. Explicit ASsessment of Thromboembolic RIsk and Prophylaxis for Medical PATients in SwitzErland (ESTIMATE).Thromb Haemost. 2014 Mar 3;111(3):531-8. doi: 10.1160/TH13-05-0427. Epub 2013 Nov 14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24226257",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Greene MT, Spyropoulos AC, Chopra V, Grant PJ, Kaatz S, Bernstein SJ, Flanders SA. Validation of Risk Assessment Models of Venous Thromboembolism in Hospitalized Medical Patients. Am J Med. 2016 Sep;129(9):1001.e9-1001.e18. doi: 10.1016/j.amjmed.2016.03.031. Epub 2016 Apr 21.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27107925/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Germini F, Agnelli G, Fedele M, Galli MG, Giustozzi M, Marcucci M, Paganelli G, Pinotti E, Becattini C. Padua prediction score or clinical judgment for decision making on antithrombotic prophylaxis: a quasi-randomized controlled trial. J Thromb Thrombolysis. 2016 Oct;42(3):336-9. doi: 10.1007/s11239-016-1358-z.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27052516/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moumneh T, Riou J, Douillet D, Henni S, Mottier D, Tritschler T, Le Gal G, Roy PM. Validation of risk assessment models predicting venous thromboembolism in acutely ill medical inpatients: A cohort study. J Thromb Haemost. 2020 Jun;18(6):1398-1407. doi: 10.1111/jth.14796. Epub 2020 Apr 16.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32168402/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Arakaki D, Iwata M, Terasawa T. External Validation of the Padua and IMPROVE-VTE Risk Assessment Models for Predicting Venous Thromboembolism in Hospitalized Adult Medical Patients: A Retrospective Single-Center Study in Japan. Ann Vasc Dis. 2023 Mar 25;16(1):60-68. doi: 10.3400/avd.oa.22-00108.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37006863/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dash-prediction-score-recurrent-vte",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+    "calc.khorana-risk-score-venous-thromboembolism-cancer-patients"
+  ],
+  "source_logic_hash": "c32635c71631ee7900faec6a34bf4b2b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2023,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \nvar u=parseFloat(ca)+parseFloat(pvte)+parseFloat(mobile)+parseFloat(thromcon)+parseFloat(ts)+parseFloat(age)+parseFloat(hf)+parseFloat(miis)+parseFloat(inf)+parseFloat(bmi)+parseFloat(hormones); \nvar msg=''; \nvar mini_msg=''; \nif(u<4){\n    msg='Pharmacologic prophylaxis is NOT indicated. Consider using mechanical prophylaxis.';\n    mini_msg='Pharmacologic prophylaxis NOT indicated.'\n} else if(u>=4){\n    msg='Pharmacologic Prophylaxis IS indicated. If high risk of bleeding, use mechanical prophylaxis.';\n    mini_msg='Pharmacologic prophylaxis indicated.'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'2023_Padua Prediction Score_result',\n    value:u,\n    value_text:'points',\n    message:msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "kabir-yadav-mdcm-ms-mshs"
+  ],
+  "creator_names": [
+    "Dr. Sofia Barbar",
+    "Dr. Paolo Prandoni"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "521c6d19e3e9e40dff201ebfe02be7808dce5806253d04b87975106dfc749ea9"
+}

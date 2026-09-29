@@ -1,0 +1,181 @@
+{
+  "id": "calc.humiliation-afraid-rape-kick-hark",
+  "slug": "humiliation-afraid-rape-kick-hark",
+  "language": "en",
+  "title": "Humiliation, Afraid, Rape, Kick (HARK)",
+  "short_title": "HARK",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Injury/Trauma",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Humiliation, Afraid, Rape, Kick (HARK)",
+    "hark",
+    "abuse",
+    "abuse screening",
+    "abuse screening tool",
+    "domestic abuse",
+    "domestic abuse screening",
+    "domestic violence",
+    "domestic violence screening",
+    "IPV",
+    "intimate partner violence"
+  ],
+  "dosing": false,
+  "formula": "The HARK screening result is determined according to the following points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Within the last year… | | |\n| Have you been humiliated or emotionally abused in other ways by your partner or your ex-partner? | No | 0 |\n| Yes | 1 | |\n| Have you been afraid of your partner or ex-partner? | No | 0 |\n| Yes | 1 | |\n| Have you been raped or forced to have any kind of sexual activity by your partner or ex-partner? | No | 0 |\n| Yes | 1 | |\n| Have you been kicked , hit, slapped or otherwise physically hurt by your partner or ex-partner? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Facilite la révélation de maltraitance que les patients ne signaleraient pas spontanément.\n- Permet une détection et une intervention plus précoces, améliorant la sécurité et les résultats cliniques.\n- Approuvé par l’USPSTF comme instrument acceptable pour le dépistage universel de l’IPV.",
+    "when": "- Use for routine intimate partner violence (IPV) screening of women (age >17 years) in primary care, OB-GYN, ED, and mental health settings.\n- Can be employed whenever clinical “red flags” for IPV arise (e.g., unexplained injuries, chronic pain, frequent missed appointments).",
+    "pearls": "- Recense les violences entre partenaires intimes (IPV) émotionnelles, physiques et sexuelles survenues au cours des 12 derniers mois.\n- L’étude de dérivation originale rapportait une sensibilité de 81 % et une spécificité de 95 % pour la détection d’une IPV au cours de l’année écoulée.\nLa performance chez les hommes n’a pas été validée.\n- Ne gradue pas la sévérité ; tout dépistage positif nécessite une évaluation complémentaire.\n- Administrer uniquement lorsque le patient est seul ; éviter la présence du partenaire, de proches ou d’amis dans la pièce.\n- Précéder l’utilisation d’une phrase de normalisation afin de réduire la stigmatisation.\n- Aborder le patient avec empathie et sans jugement."
+  },
+  "next_steps": {
+    "advice": "Interpréter les résultats en tenant compte du jugement clinique global.",
+    "critical_actions": "Connaître les exigences locales en matière de déclaration obligatoire, car celles-ci varient selon la juridiction. Faire preuve d'une prudence particulière dans les cas impliquant des enfants ou des adultes vulnérables.",
+    "management": "- **Positive screen (any “yes\" response):**\n\n - Validate the patient’s experience through empathetic and supportive communication.\n - Tailor follow-up questions to the patient's responses to encourage further disclosure.\n - Assess for immediate safety concerns and implement a safety plan if needed.\n - Document findings thoroughly in the medical record, adhering to medico-legal requirements.\n - Provide resources such as hotlines, shelters, and referrals to counseling, social work, and/or advocacy services (e.g., the National Domestic Violence Hotline).\n - Schedule follow-up appointments for ongoing support.\n- **Negative screen:**\n\n - Maintain vigilance and consider re-screening at future visits, especially if concerns persist.\n - Educate the patient on IPV resources as part of routine care, emphasizing their availability if needed."
+  },
+  "evidence": "",
+  "more_info": "Une réponse « oui » à l’une des questions de dépistage est considérée comme un résultat de dépistage positif.",
+  "short_description": "Détection de la violence domestique en soins primaires",
+  "medium_description": "Detects domestic abuse (intimate partner violence) dans women dans soins primaires settings.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "hum",
+      "label": "Have you beenhumiliatedor emotionally abused dans other ways par your partner ou your ex-partner?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "afraid",
+      "label": "Avez-vous eu peur de votre partenaire ou ex-partenaire ?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rape",
+      "label": "Have you beenrapedor forced pour have any kind de sexual activity par your partner ou ex-partner?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "kick",
+      "label": "Have you beenkicked, hit, slapped ou otherwise physically hurt par your partner ou ex-partner?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sohal H, Eldridge S, Feder G. The sensitivity and specificity of four questions (Hark) to identify intimate partner violence: a diagnostic accuracy study in general practice. BMC Fam Pract. 2007;8:49.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17727730/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Clark CJ, Renner LM, Wang Q, Flowers NI, Morrow G, Logeais M. Longitudinal trends in screening males and females for intimate partner violence as part of a systemic multi-specialty health system intervention. BMC Res Notes. 2021;14(1):344.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34479644/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Feltner C, Wallace I, Berkman N, et al. Screening for intimate partner violence, elder abuse, and abuse of vulnerable adults: evidence report and systematic review for the US preventive services task force. JAMA. 2018;320(16):1688.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2708120",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abuse-assessment-screen-aas",
+    "calc.woman-abuse-screening-tool-wast",
+    "calc.ongoing-violence-assessment-tool-ovat"
+  ],
+  "source_logic_hash": "45acb2d557d09ea151840a9b417a96d1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10420,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

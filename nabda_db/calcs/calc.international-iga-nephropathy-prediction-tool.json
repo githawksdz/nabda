@@ -1,0 +1,308 @@
+{
+  "id": "calc.international-iga-nephropathy-prediction-tool",
+  "slug": "international-iga-nephropathy-prediction-tool",
+  "language": "en",
+  "title": "International IgA Nephropathy prédiction Tool",
+  "short_title": "International IgA Nephropathy prédiction Tool",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Maladies auto-immunes",
+    "Maladie rénale chronique",
+    "Insuffisance rénale",
+    "Nephropathy"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Fatigue",
+    "Hematuria",
+    "Perte d'appétit",
+    "Œdème périphérique",
+    "Swelling",
+    "Vomiting",
+    "Weakness",
+    "Proteinuria"
+  ],
+  "abbreviations": [
+    "International IgA Nephropathy Prediction Tool, IgA, IgA nephropathy, IgAN, nephropathy, estimated glomerular filtration rate, egfr, kidney failure, kidney biopsy, end stage renal disease, ESRD, proteinuria, immunosuppression, hematuria",
+    "IgA",
+    "IgA nephropathy",
+    "IgAN",
+    "nephropathy",
+    "estimated glomerular filtration rate",
+    "egfr, kidney failure, kidney biopsy, end stage renal disease, ESRD, proteinuria, immunosuppression, hematuria",
+    "kidney failure",
+    "kidney biopsy",
+    "end stage renal disease",
+    "ESRD",
+    "proteinuria",
+    "immunosuppression",
+    "hematuria"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients to calculate the risk of 50% decline in eGFR or end-stage kidney disease are as follows:\n\n| Variable | Transformation | With Race | Without Race |\n| --- | --- | --- | --- |\n| [eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr\\) , mL/min/1.73 m 2 | sqrt(egfr) – 8.8 | -0.351 | -0.320 |\n| [MAP](nabda:calc.mean-arterial-pressure-map\\) , mm Hg | map – 97 | -0.0002 | 0.002 |\n| Urine protein, g/day | ln(protein) – 0.09 | -0.093 | -0.035 |\n| M1 | yes = 1, no = 0 | 0.155 | 0.201 |\n| E1 | yes = 1, no = 0 | -0.131 | -0.035 |\n| S1 | yes = 1, no = 0 | 0.097 | 0.084 |\n| T1 | yes = 1, no = 0 | 0.607 | 0.700 |\n| T2 | yes = 1, no = 0 | 1.189 | 1.237 |\n| Age, years | age – 38 | -0.016 | -0.017 |\n| Chinese (t ≤ 3 years) | yes = 1, no = 0 | -0.396 | – |\n| Chinese (t > 3 years) | yes = 1, no = 0 | 0.818 | – |\n| Japanese | yes = 1, no = 0 | 0.408 | – |\n| Other | yes = 1, no = 0 | -0.431 | – |\n| RASB | yes = 1, no = 0 | 0.246 | 0.118 |\n| Immunosuppression | yes = 1, no = 0 | -0.225 | -0.266 |\n| MAP*urine protein | map*ln(protein) – 8.73 | 0.006 | 0.004 |\n| T1*urine protein | t1*ln(protein) | 0.109 | 0.101 |\n| T2*urine protein | t2*ln(protein) | -0.339 | -0.321 |\n| RASB*urine protein | rasb*ln(protein) | – | 0.166 |\n\n**Risk, %** = [1 – S~0~(t)^exp(x)^]*100,\n\nwhere **x** = Σ[β*(transformed variables)]\n\nand S~0~(t) is as follows:\n\nWith race\n\n**S~0~(t)** = 0.9964303 + 0.04392517*[(t + 0.1)/100]^0.5^– 0.1257002*[(t + 0.1)/100]\n\nWithout race\n\n**S~0~(t)** = 1.0003754 – 0.1131641*[(t + 0.1)/100]^2^+ 0.0964763*[(t + 0.1)/100]^2^*ln[(t + 0.1)/100]",
+  "how_to_use": {
+    "why": "- Identifie les patients à haut risque afin de permettre des interventions précoces, ce qui peut potentiellement retarder la progression de la maladie.\n- Recommandé par les recommandations de pratique clinique de Kidney Disease: Improving Global Outcomes (KDIGO) pour les maladies glomérulaires.",
+    "when": "- Recommandé pour être utilisé autour du moment de la biopsie chez tous les patients atteints de néphropathie à IgA avant de débuter le traitement.\n- Utilisé pour prédire si un patient atteint de néphropathie à IgA présente un risque de déclin de 50 % de la fonction rénale ou de progression vers une insuffisance rénale terminale.",
+    "pearls": "- Derived from a large, international collaboration of data sets featuring diverse ethnic representation.\n- The suggested time period for generating predicted risk is 5 years; a French study demonstrated good performance even after 10 years.\n- Comprises two equations: one considers race, while the other does not.\n- The model excluding race has shown better performance up to 15 years post-biopsy; generally, studies favor this model.\n- Incorporates the Oxford MEST histologic score (mesangial and endocapillary hypercellularity, segmental sclerosis, and interstitial fibrosis/tubular atrophy).\n- Only adults were included in the original study. An adaptation of this tool is available for pediatric patients.\n- Primarily designed for use at the time of biopsy; predictions may be less applicable if generated at other stages of the disease. An adaptation of this tool has been developed to reevaluate patients 1-2 years post-biopsy."
+  },
+  "next_steps": {
+    "advice": "- All patients diagnosed with IgA nephropathy should receive optimized supportive care. This includes blood pressure control, reducing proteinuria with renin-angiotensin system blockade, lipid management, and lifestyle modifications. For some patients, sodium-glucose cotransporter 2 (SGLT2) inhibitors may also be appropriate.\n- The results of this tool may be used to guide discussions about treatment and prognosis with patients.\n- Patients identified as high-risk for disease progression may benefit from more aggressive treatment strategies, including immunosuppressive therapy. Conversely, low-risk patients might avoid the potential toxicity associated with unnecessary immunosuppression.\n- The risk assessment provided by this tool does not determine the likely impact of any particular treatment and should not be the sole determinant in treatment decisions. Other factors, such as patient characteristics, goals, response to supportive therapy, and treatment risks, should be considered.\n- For more detailed treatment guidance, please see the KDIGO[clinical practice guidelines for the management of glomerular diseases](https://kdigo.org/guidelines/gd/).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "IgAN : risque de progression de la maladie.",
+  "medium_description": "Predicts risque de 50% decline dans eGFR ou end-stage kidney maladie chez les patients avec IgA nephropathy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_igan",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "[eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "unit": "gfr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "map",
+      "label": "[PAM](nabda:calc.mean-arterial-pressure-map)",
+      "optional": false,
+      "unit": "map",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "protein",
+      "label": "Protéines urinaires",
+      "optional": false,
+      "unit": "urine_protein_igan",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "m",
+      "label": "Score MEST M",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Score MEST E",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "s",
+      "label": "Score MEST S",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "t",
+      "label": "MEST T score",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rasb",
+      "label": "UsingRASB",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "immuno",
+      "label": "Utilisation d’immunosuppresseurs",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "months",
+      "label": "At how many months after biopsy would you like pour determine risque?",
+      "tips": "Il est le plus courant de déterminer le risque à 60 mois (5 ans).",
+      "optional": false,
+      "default": 60,
+      "unit": "months_igan",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race (optional)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "White",
+          "value": 1
+        },
+        {
+          "label": "Chinese",
+          "value": 2
+        },
+        {
+          "label": "Japanese",
+          "value": 3
+        },
+        {
+          "label": "Autre",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Barbour SJ, Coppo R, Zhang H, et al. Evaluating a new international risk-prediction tool in iga nephropathy. JAMA Intern Med. 2019;179(7):942-952.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30980653/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang J, Huang B, Liu Z, et al. External validation of the international iga nephropathy prediction tool. Clin J Am Soc Nephrol. 2020;15(8):1112-1120.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32616496/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bon G, Jullien P, Masson I, et al. Validation of the international IgA nephropathy prediction tool in a French cohort beyond 10 years after diagnosis. Nephrol Dial Transplant. 2023;38(10):2257-2265.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37316441/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hu L, Fang Y, Huang J, Liu J, Xu L, He W. External validation of the international prognosis prediction model of iga nephropathy. Ren Fail. 2024;46(1):2313174.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38345077/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Barbour SJ, Coppo R, Zhang H, et al. Application of the International IgA Nephropathy Prediction Tool one or two years post-biopsy. Kidney Int. 2022;102(1):160-172.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35490842/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Haaskjold YL, Lura NG, Bjørneklett R, Bostad L, Bostad LS, Knoop T. Validation of two IgA nephropathy risk-prediction tools using a cohort with a long follow-up. Nephrol Dial Transplant. 2023;38(5):1183-1191.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35904322/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.chronic-kidney-disease-children-ckid-u25-egfr-calculator",
+    "calc.bun-creatinine-ratio",
+    "calc.mean-arterial-pressure-map"
+  ],
+  "source_logic_hash": "2e31a90cf8a3f7222ccaf699035b4bdc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "eGFR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "MAP"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10533,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

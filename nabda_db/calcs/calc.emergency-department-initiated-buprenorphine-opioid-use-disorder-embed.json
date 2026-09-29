@@ -1,0 +1,186 @@
+{
+  "id": "calc.emergency-department-initiated-buprenorphine-opioid-use-disorder-embed",
+  "slug": "emergency-department-initiated-buprenorphine-opioid-use-disorder-embed",
+  "language": "fr",
+  "title": "Service d'accueil des urgences-Initiated Buprenorphine pour Opioid Use Disorder (EMBED)",
+  "short_title": "EMBED",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "douleur",
+    "psychiatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Douleur chronique",
+    "Consommation de drogues/alcool",
+    "Ingestion/Overdose",
+    "Sevrage de substance"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Constipation",
+    "Depressed",
+    "Fatigue",
+    "Perte d'appétit",
+    "Nausea",
+    "Pain",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "embed",
+    "Emergency Department-Initiated Buprenorphine for Opioid Use Disorder (EMBED)",
+    "buprenorphin",
+    "emergency department",
+    "emergency room",
+    "opioid misuse",
+    "opioid use",
+    "opioid use disorder",
+    "oud",
+    "opioid withdrawal",
+    "drug withdrawal",
+    "withdrawal"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Buprenorphine readiness évaluation.",
+  "medium_description": "Assess OUD, opioid withdrawal, et traitement readiness pour ED-initiated buprenorphine.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "oud",
+      "label": "OUD présent",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "treatment",
+      "label": "How ready is patient pour start traitement avec Buprenorphine today? Brief Neogotiation Interview",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "oud == 1",
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Not Ready pour traitement",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "withdrawal",
+      "label": "Withdraw gravité Assessed COWS score",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "oud == 1 && treatment == 0",
+      "options": [
+        {
+          "label": "< 8 None pour Mild",
+          "value": 0
+        },
+        {
+          "label": "8-12 Mild pour modéré",
+          "value": 1
+        },
+        {
+          "label": ">12 modéré pour Severe",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pregnant",
+      "label": "La patiente est-elle enceinte ?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "oud == 1 && treatment == 0 && withdrawal >= 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "waiver",
+      "label": "Do you have waiver pour prescribe Buprenorphine?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "oud == 1 && treatment == 0 && withdrawal >= 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [],
+  "related_calc_ids": [],
+  "source_logic_hash": "f7e144653847bc9b092189fe9f007e5e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10484,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.buprenorphine",
+    "s.buprenorphine-naloxone"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

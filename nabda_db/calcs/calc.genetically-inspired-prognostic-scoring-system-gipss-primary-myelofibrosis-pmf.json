@@ -1,0 +1,210 @@
+{
+  "id": "calc.genetically-inspired-prognostic-scoring-system-gipss-primary-myelofibrosis-pmf",
+  "slug": "genetically-inspired-prognostic-scoring-system-gipss-primary-myelofibrosis-pmf",
+  "language": "en",
+  "title": "Genetically Inspired Prognostic système de score (GIPSS) pour primaire Myelofibrosis (PMF)",
+  "short_title": "GIPSS pour PMF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "general"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémopathie maligne",
+    "Thrombocytopenia",
+    "Myelofibrosis",
+    "Pancytopenia"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Fatigue",
+    "Perte d'appétit",
+    "Numbness",
+    "Dyspnée",
+    "Douleur osseuse",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "Genetically Inspired Prognostic Scoring System (GIPSS) for Primary Myelofibrosis (PMF)",
+    "GIPSS for PMF",
+    "GIPSS",
+    "PMF",
+    "primary myelofibrosis",
+    "PMF genetic",
+    "CALR mutation",
+    "PMF survival",
+    "PMF risk",
+    "PMF prognosis"
+  ],
+  "dosing": false,
+  "formula": "The GIPSS for PMF is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Karyotype classification | Favorable 1 | 0 |\n| Unfavorable 2 | 1 | |\n| Very high risk (VHR) 3 | 2 | |\n| Driver Mutations | | |\n| Type 1/like CALR mutation | Yes | 0 |\n| No | 1 | |\n| High Molecular Risk (HMR) Mutations | | |\n| ASXL1 mutation | No | 0 |\n| Yes | 1 | |\n| SRSF2 mutation | No | 0 |\n| Yes | 1 | |\n| U2AF1Q157 mutation | No | 0 |\n| Yes | 1 | |\n\n^1^Normal karyotype or sole abnormalities of 13q-, +9, 20q- , chromosome 1 translocation/duplication or sex chromosome abnormality including -Y.\n\n^2^All other abnormalities, except those listed below.\n\n^3^Single/multiple abnormalities of -7, i(17q), inv(3)/3q21, 12p-/12p11.2, 11q-/11q23, +21, or other autosomal trisomies, not including +8/+9.",
+  "how_to_use": {
+    "why": "Facilite les approches thérapeutiques personnalisées en identifiant les patients à haut risque susceptibles de bénéficier de traitements plus agressifs.",
+    "when": "Appliquer au moment du diagnostic de myélofibrose primitive pour établir un pronostic de référence.",
+    "pearls": "- Contrairement aux autres outils pronostiques pour la myélofibrose, cet outil repose uniquement sur le caryotype et les mutations de gènes clés pour stratifier le risque des patients.\n- Ne tient pas compte des caractéristiques cliniques à haut risque pouvant affecter la survie dans la myélofibrose."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats conjointement avec le jugement clinique et les préférences du patient pour guider les plans de prise en charge et éclairer les objectifs de soins et les discussions sur les résultats.\n- Combiner les résultats avec des outils pronostiques plus complets pour améliorer la stratification du risque et les décisions thérapeutiques, en particulier pour les personnes appartenant aux catégories intermédiaire-1 ou intermédiaire-2.\n- Les patients à haut risque, en particulier les jeunes individus ayant un bon état fonctionnel, peuvent bénéficier de traitements plus agressifs, tels qu’une allogreffe de cellules souches hématopoïétiques.\n- Les patients à faible risque peuvent opter pour des traitements conservateurs sans interventions agressives.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score GIPSS | Risque | Survie globale à 5 ans | Survie globale médiane |\n| --- | --- | --- | --- |\n| 0 | Faible | 94% | 26.4 ans |\n| 1 | Intermédiaire-1 | 73% | 8.0 ans |\n| 2 | Intermédiaire-2 | 40% | 4.2 ans |\n| 3-6 | Élevé | 14% | 2 ans |\n\nD'après [Tefferi et al](https://pubmed.ncbi.nlm.nih.gov/29654267/).",
+  "short_description": "Pronostic de la myélofibrose primitive.",
+  "medium_description": "Assesses pronostic de primaire myelofibrosis basé solely sur genomic markers.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Classification du caryotype",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Favorable 1",
+          "value": 0
+        },
+        {
+          "label": "Défavorable 2",
+          "value": 1
+        },
+        {
+          "label": "Very élevé risque (VHR) 3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Type 1/like *CALR* mutation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "*ASXL1* mutation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "mutation *SRSF2*",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "mutation *U2AF1Q157*",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tefferi A. Primary myelofibrosis: 2023 update on diagnosis, risk‐stratification, and management. American J Hematol. 2023;98(5):801-821.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36680511/",
+      "kind": "international"
+    },
+    {
+      "text": "Tefferi A, Guglielmelli P, Nicolosi M, et al. GIPSS: genetically inspired prognostic scoring system for primary myelofibrosis. Leukemia. 2018;32(7):1631-1642.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29654267/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kuykendall AT, Talati C, Padron E, et al. Genetically inspired prognostic scoring system (Gipss) outperforms dynamic international prognostic scoring system (Dipss) in myelofibrosis patients. American J Hematol. 2019;94(1):87-92.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30390311/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis",
+    "calc.mutation-enhanced-international-prognostic-score-system-mipss70-mipss70+",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-primary-myelofibrosis-pmf"
+  ],
+  "source_logic_hash": "d9bd5a5e93b30ff63d0d88ff920356a6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10578,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

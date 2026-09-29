@@ -1,0 +1,345 @@
+{
+  "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+  "slug": "cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+  "language": "fr",
+  "title": "CHA₂DS₂-VASc score pour fibrillation atriale AVC risque",
+  "short_title": "Score CHA₂DS₂-VASc",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Arythmie",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Palpitations",
+    "Dyspnée",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "chads",
+    "chads2",
+    "chads2-vasc",
+    "chads2vasc",
+    "stroke risk",
+    "anticoagulation",
+    "atrial fibrillation",
+    "afib"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Critères | Points | |\n| --- | --- | --- |\n| Âge | <65 ans | 0 |\n| 65-74 ans | +1 | |\n| ≥75 ans | +2 | |\n| Sexe | Homme | 0 |\n| Femme | +1 | |\n| Antécédent d’insuffisance cardiaque congestive | +1 | |\n| Antécédent d’hypertension artérielle | +1 | |\n| Antécédent d’AVC/AIT/thromboembolie | +2 | |\n| Antécédent de maladie vasculaire (IDM antérieur, artériopathie périphérique ou plaque aortique) | +1 | |\n| Antécédent de diabète sucré | +1 | |",
+  "how_to_use": {
+    "why": "Aide à stratifier le risque d’AVC thromboembolique et ischémique chez les patients atteints de fibrillation atriale non valvulaire pour lesquels une anticoagulation est envisagée.",
+    "when": "- L'un de plusieurs outils de stratification du risque utilisés pour estimer le risque à un an d'un événement thromboembolique (TE) chez un patient non anticoagulé atteint de fibrillation atriale non valvulaire (AF) et sans antécédent de chirurgie valvulaire.\n- Peut être utilisé dans les discussions avec les patients pour faciliter la décision partagée concernant leur risque d'événements TE.",
+    "pearls": "- Identifie à la fois les patients à faible risque et à haut risque d’événements thromboemboliques, bien qu’un débat persiste quant à savoir si une anticoagulation doit être envisagée même chez certains individus à faible risque.\n- Comme la discrimination globale du score est modeste, il doit toujours être interprété dans le contexte du jugement clinique.\n- Chez les patients atteints de cardiomyopathie hypertrophique ou d’amylose cardiaque, les [recommandations 2024 de la Société européenne de cardiologie](https://pubmed.ncbi.nlm.nih.gov/32860505/) ne recommandent pas de fonder les stratégies de prévention des accidents vasculaires cérébraux sur le score CHA₂DS₂-VASc.\n- La présence d’autres facteurs de risque thrombotique (p. ex., insuffisance rénale) peut également nuire à la performance du score.\n- L’interprétation dans ces populations doit être faite avec prudence et en tenant compte du contexte clinique individuel."
+  },
+  "next_steps": {
+    "advice": "- Les recommandations récentes soulignent le niveau élevé de preuve en faveur du bénéfice de l'anticoagulation et l'absence de bénéfice du traitement antiplaquettaire.\n- Des études suggèrent également que le sexe pourrait justifier d'être retiré du score CHA₂DS₂-VASc, qui constitue la base du [score CHA₂DS₂-VA](nabda:calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk).",
+    "critical_actions": "- Avant d’initier une anticoagulation, évaluer le risque hémorragique du patient à l’aide d’outils validés (p. ex., [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) ) et prendre en compte les facteurs de risque de saignement concomitants.\n- Peser attentivement les risques et les bénéfices, et en discuter en détail avec le patient dans le cadre d’une décision partagée.",
+    "management": "La plupart des recommandations suggèrent qu'un score de 0 (hommes) ou de 1 (femmes) ne nécessite pas d'anticoagulation ; tous les autres patients doivent recevoir une anticoagulation, de préférence par un anticoagulant oral direct (sauf contre-indication).\n\n- L'anticoagulation n'est pas recommandée chez les patients présentant une FA non valvulaire et un score CHA₂DS₂-VASc de 0 chez l'homme ou de 1 chez la femme.\n- Selon les préférences du patient et ses facteurs de risque individuels, une anticoagulation peut être envisagée pour un score de 1 chez l'homme et de 2 chez la femme.\n- Une anticoagulation doit être débutée chez les patients ayant un score CHA₂DS₂-VASc ≥ 2 chez l'homme ou ≥ 3 chez la femme.\n- Chez les patients pour lesquels une anticoagulation est envisagée, les scores de risque hémorragique (tels que le [score de risque hémorragique ATRIA](nabda:calc.atria-bleeding-risk-score), le [score DOAC](nabda:calc.direct-acting-oral-anticoagulants-doac-score), le [score HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk)) peuvent être utilisés pour déterminer le risque d'hémorragie associée à la warfarine ou aux anticoagulants. Toutefois, ces outils doivent avant tout servir de rappel pour aborder régulièrement les facteurs de risque hémorragique réversibles, car le rapport bénéfice-risque de l'anticoagulation reste généralement favorable.\n- Chez les patients ayant un score ≥ 2 et présentant des contre-indications à l'anticoagulation orale d'origine irréversible, une occlusion percutanée ou par voie endoscopique isolée de l'appendice auriculaire gauche (AAG) peut être envisagée. Si ces patients bénéficient d'une chirurgie cardiaque ou d'une ablation de la FA endoscopique ou hybride, une fermeture chirurgicale de l'AAG peut être envisagée.\n- Les cliniciens doivent évaluer attentivement l'ensemble des risques et des bénéfices avant d'initier une anticoagulation chez les patients atteints de FA non valvulaire.\n- Certains facteurs de risque, tels que la cardiomyopathie hypertrophique, justifient une anticoagulation indépendamment du score.\n- L'aspirine en monothérapie n'est pas étayée par les données probantes actuelles."
+  },
+  "evidence": "Le score CHA₂DS₂-VASc a été construit comme une mise à jour du score plus ancien [CHADS₂](nabda:calc.chads2-score-atrial-fibrillation-stroke-risk) et était destiné à être un outil clinique simple pour prédire et stratifier le risque thromboembolique à 1 an chez les patients atteints de FA non valvulaire[(Lip GYH et al., 2010](http://www.ncbi.nlm.nih.gov/pubmed/19762550)). Bien que l’étude de dérivation ait présenté certaines limites méthodologiques (p. ex., proportion significative de patients exclus en raison de données de résultat manquantes, absence de prise en compte du décès comme événement concurrent), le score CHA₂DS₂-VASc a depuis été validé dans un grand nombre d’études de cohorte, dans une large gamme de populations. Sa discrimination globale est constamment modeste, avec une statistique c d’environ 0,6-0,7 dans la plupart des études, ce qui n’est que marginalement supérieur à celle obtenue par le score CHADS₂. Toutefois, sa classification à faible risque a démontré une valeur prédictive négative raisonnable, ce qui signifie que les patients classés comme à faible risque avaient réellement un risque thromboembolique extrêmement faible à un an. Cela constituait une amélioration significative par rapport au score CHADS₂ et avait une pertinence clinique substantielle, car cela permettait aux cliniciens d’identifier de manière fiable les patients atteints de FA non valvulaire qui ne nécessitent pas d’anticoagulation. En conséquence, le score CHA₂DS₂-VASc est devenu l’un des scores de risque thromboembolique les plus largement validés pour la FA non valvulaire et a été systématiquement intégré dans les principales recommandations internationales de prise en charge de la FA. Le score a également été exploré comme marqueur pronostique dans d’autres groupes de patients (p. ex., [patients sans FA qui présentent un AVC ischémique aigu](https://pubmed.ncbi.nlm.nih.gov/23408865/)). Cependant, ces applications sont peu courantes et ne sont pas recommandées par les recommandations des sociétés savantes ; son utilisation principale reste inchangée par rapport à son intention initiale.\n\nDepuis sa publication initiale[(Lip GYH et al., 2010](http://www.ncbi.nlm.nih.gov/pubmed/19762550)), des changements substantiels sont survenus dans l’épidémiologie des facteurs de risque et la prise en charge de la FA non valvulaire. L’un des domaines les plus controversés et les mieux explorés concerne le rôle du sexe dans le score CHA₂DS₂-VASc. De multiples études ont démontré que retirer le sexe du score peut entraîner une discrimination non inférieure, voire supérieure. Cela a été formellement reconnu dans les [recommandations 2024 de la Société européenne de cardiologie](https://pubmed.ncbi.nlm.nih.gov/39210723/), qui préconisent d’utiliser le [score CHA₂DS₂-VA](nabda:calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk) (c’est-à-dire avec suppression de la variable « catégorie de sexe ») à la place du CHA₂DS₂-VASc. Cette approche unifie les seuils d’anticoagulation entre les sexes (c’est-à-dire pas d’anticoagulation pour un score de 0, envisager une anticoagulation pour un score de 1, et initier une anticoagulation pour des scores >2) et peut aussi offrir des avantages en termes d’inclusivité pour les personnes non binaires. [Une étude de 2024 menée par Teppo et collègues](https://pubmed.ncbi.nlm.nih.gov/39171253/) a constaté que le score CHA₂DS₂-VA a des performances similaires à celles du CHA₂DS₂-VASc, en particulier dans les cohortes plus récentes. Une [étude britannique ultérieure de Champsi et al.](https://pubmed.ncbi.nlm.nih.gov/39217497/) a rapporté que le CHA₂DS₂-VA est statistiquement supérieur au CHA₂DS₂-VASc en termes de discrimination globale, bien que la différence absolue soit faible. De plus, les données du registre GLORI-AF ([Lam et al., 2025](https://pubmed.ncbi.nlm.nih.gov/40289614/)) ont démontré des performances similaires entre les deux scores, mais ont noté une interaction potentielle entre le sexe féminin et l’âge.Globalement, bien que le score CHA₂DS₂-VASc reste l’un des principaux outils de prédiction du risque thromboembolique chez les patients atteints de FA non valvulaire, les changements continus dans l’épidémiologie, la prise en charge et la compréhension scientifique de la FA suggèrent que des mises à jour et modifications du score deviendront probablement de plus en plus courantes et pertinentes.",
+  "more_info": "Interprétation :\n\n| Score CHA₂DS₂-VASc | Risque d'AVC ischémique | Risque d'AVC/AIT/embolie systémique |\n| --- | --- | --- |\n| 0 | 0,2% | 0,3% |\n| 1 | 0,6% | 0,9% |\n| 2 | 2,2% | 2,9% |\n| 3 | 3,2% | 4,6% |\n| 4 | 4,8% | 6,7% |\n| 5 | 7,2% | 10,0% |\n| 6 | 9,7% | 13,6% |\n| 7 | 11,2% | 15,7% |\n| 8 | 10,8% | 15,2% |\n| 9 | 12,2% | 17,4% |\n\nD'après[Friberg 2012](https://www.ncbi.nlm.nih.gov/pubmed/22246443). Noter la diminution paradoxale du risque entre 7 et 8 points ; cela reflète les résultats publiés dans l'étude, mais en général, considérer que le risque augmente avec un score plus élevé.",
+  "short_description": "Risque d'AVC dans la FA; supérieur au CHADS₂.",
+  "medium_description": "Calculates AVC risque pour patients avec fibrillation atriale.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 65",
+          "value": 0
+        },
+        {
+          "label": "65-74",
+          "value": 1
+        },
+        {
+          "label": "≥ 75",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_failure",
+      "label": "Antécédents d'insuffisance cardiaque congestive (ICC)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Antécédents d'hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "Antécédents d'AVC/AIT/thromboembolie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vascular_disease",
+      "label": "Antécédents de maladie vasculaire (IDM antérieur, artériopathie périphérique ou plaque aortique)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Antécédents de diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Joglar JA, Chung MK, Armbruster AL, Benjamin EJ, Chyou JY, Cronin EM, Deswal A, Eckhardt LL, Goldberger ZD, Gopinathannair R, Gorenek B, Hess PL, Hlatky M, Hogan G, Ibeh C, Indik JH, Kido K, Kusumoto F, Link MS, Linta KT, Marcus GM, McCarthy PM, Patel N, Patton KK, Perez MV, Piccini JP, Russo AM, Sanders P, Streur MM, Thomas KL, Times S, Tisdale JE, Valente AM, Van Wagoner DR; Peer Review Committee Members. 2023 ACC/AHA/ACCP/HRS Guideline for the Diagnosis and Management of Atrial Fibrillation: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. 2024 Jan 2;149(1):e1-e156.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30686041/",
+      "kind": "international"
+    },
+    {
+      "text": "Van Gelder IC, Rienstra M, Bunting KV, Casado-Arroyo R, Caso V, Crijns HJGM, De Potter TJR, Dwight J, Guasti L, Hanke T, Jaarsma T, Lettino M, Løchen ML, Lumbers RT, Maesen B, Mølgaard I, Rosano GMC, Sanders P, Schnabel RB, Suwalski P, Svennberg E, Tamargo J, Tica O, Traykov V, Tzeis S, Kotecha D; ESC Scientific Document Group. 2024 ESC Guidelines for the management of atrial fibrillation developed in collaboration with the European Association for Cardio-Thoracic Surgery (EACTS). Eur Heart J. 2024 Aug 30:ehae176.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32860505/",
+      "kind": "international"
+    },
+    {
+      "text": "Lip GY, Nieuwlaat R, Pisters R, Lane DA, Crijns HJ. Refining clinical risk stratification for predicting stroke and thromboembolism in atrial fibrillation using a novel risk factor-based approach: the euro heart survey on atrial fibrillation. Chest. 2010 Feb;137(2):263-72. doi: 10.1378/chest.09-1584. Epub 2009 Sep 17. PubMed PMID: 19762550.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19762550",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freedman B, Potpara TS, Lip GY. Stroke prevention in atrial fibrillation. Lancet. 2016;388(10046):806-17.",
+      "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)31257-0/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Bungo B, Chaudhury P, Arustamyan M, Rikhi R, Hussain M, Collier P, Kanj M, Khorana AA, Mentias A, Moudgil R. Better prediction of stroke in atrial fibrillation with incorporation of cancer in CHA2DS2VASC score: CCHA2DS2VASC score. Int J Cardiol Heart Vasc. 2022 Jun 20;41:101072.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35757148/",
+      "kind": "other"
+    },
+    {
+      "text": "Teppo K, Lip GYH, Airaksinen KEJ, Halminen O, Haukka J, Putaala J, Mustonen P, Linna M, Hartikainen J, Lehto M. Comparing CHA2DS2-VA and CHA2DS2-VASc scores for stroke risk stratification in patients with atrial fibrillation: a temporal trends analysis from the retrospective Finnish AntiCoagulation in Atrial Fibrillation (FinACAF) cohort. Lancet Reg Health Eur. 2024 Jun 10;43:100967.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39171253/",
+      "kind": "other"
+    },
+    {
+      "text": "Champsi A, Mobley AR, Subramanian A, Nirantharakumar K, Wang X, Shukla D, Bunting KV, Molgaard I, Dwight J, Casado Arroyo R, Crijns HJGM, Guasti L, Lettino M, Lumbers RT, Maesen B, Rienstra M, Svennberg E, Țica O, Traykov V, Tzeis S, van Gelder I, Kotecha D. Gender and contemporary risk of adverse events in atrial fibrillation. Eur Heart J. 2024 Sep 1:ehae539",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39217497/",
+      "kind": "other"
+    },
+    {
+      "text": "Olesen JB, Lip GY, Hansen ML, Hansen PR, Tolstrup JS, Lindhardsen J, Selmer C, Ahlehoff O, Olsen AM, Gislason GH, Torp-Pedersen C. Validation of risk stratification schemes for predicting stroke and thromboembolism in patients with atrial fibrillation: nationwide cohort study. BMJ. 2011 Jan 31;342:d124.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21282258/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Friberg L, Rosenqvist M, Lip GY. Evaluation of risk stratification schemes for ischaemic stroke and bleeding in 182 678 patients with atrial fibrillation: the Swedish Atrial Fibrillation cohort study. Eur Heart J. 2012 Jun;33(12):1500-10. doi: 10.1093/eurheartj/ehr488. Epub 2012 Jan 13. PubMed PMID: 22246443.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22246443",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Okumura K, Inoue H, Atarashi H, Yamashita T, Tomita H, Origasa H; J-RHYTHM Registry Investigators.Validation of CHA₂DS₂-VASc and HAS-BLED scores in Japanese patients with nonvalvular atrial fibrillation: an analysis of the J-RHYTHM Registry. Circ J. 2014;78(7):1593-9. Epub 2014 Apr 22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24759791",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chao TF, Liu CJ, Wang KL, Lin YJ, Chang SL, Lo LW, Hu YF, Tuan TC, Chen TJ, Lip GY, Chen SA. Using the CHA2DS2-VASc score for refining stroke risk stratification in 'low-risk' Asian patients with atrial fibrillation. J Am Coll Cardiol. 2014 Oct 21;64(16):1658-65.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25323252/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lip GY, Nielsen PB. Should patients with atrial fibrillation and 1 stroke risk factor (CHA2DS2-VASc score 1 in men, 2 in women) be anticoagulated? Yes: even 1 stroke risk factor confers a real risk of stroke. Circulation 2016; 133: 1498–503.",
+      "href": "https://www.ahajournals.org/doi/full/10.1161/circulationaha.115.016713",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fauchier L, Clementy N, Ivanes F, Angoulvant D, Babuty D, Lip G. Should atrial fibrillation patients with only 1 nongender-related CHA2DS2-VASc risk factor be anticoagulated? Stroke 2016; 47: 1831–36.",
+      "href": "https://www.ahajournals.org/doi/10.1161/strokeaha.116.013253#:~:text=The%20NICE%20and%20European%20guidelines,males%20or%202%20in%20females).",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van Doorn S, Debray TPA, Kaasenbrood F, Hoes AW, Rutten FH, Moons KGM, Geersing GJ. Predictive performance of the CHA2DS2-VASc rule in atrial fibrillation: a systematic review and meta-analysis. J Thromb Haemost. 2017 Jun;15(6):1065-1077.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28375552/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lam SHM, Romiti GF, Corica B, Bucci T, Olshansky B, Chao T-F, Huisman MV, Lip GYH. Stroke risk stratifications according to CHA₂DS₂-VASc vs. CHA₂DS₂-VA in patients with atrial fibrillation: insights from the GLORIA-AF registry. Eur Heart J Cardiovasc Pharmacol. 2025;11(5):433-440. doi:10.1093/ehjcvp/pvaf031.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40289614/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chads2-score-atrial-fibrillation-stroke-risk",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.atria-bleeding-risk-score",
+    "calc.direct-acting-oral-anticoagulants-doac-score"
+  ],
+  "source_logic_hash": "2992a1b0233f6ba4eefcb4d619e711de",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VA score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA bleeding risk score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VA score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA bleeding risk score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 801,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseFloat(sex) + parseFloat(age) + parseFloat(heart_failure) + parseFloat(hypertension) + parseFloat(stroke) + parseFloat(vascular_disease) + parseFloat(diabetes);\nvar msg = '';\nvar mini_msg = '';\nvar webLanguage = webLanguage || \"english\"\n\nif (webLanguage == \"webProduction-chinese-traditional\") {\n    var msgalt = '0分(男性)或1分(女性)(無臨床風險因素)基本上為低風險，也不一定需要抗凝血劑使用；1分是低到中等風險，且應考慮抗凝血劑使用；2分或以上屬於中等到高風險，且應考慮抗凝血劑使用。';\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n    var msgalt = '0分(男性)为1分(女性)(无临床风险因素) 低风险，可能不需要使用抗凝剂；1分 低中度风险，应考虑使用抗凝剂；2分以上 中高度风险，应该使用抗凝剂。';\n} else if (webLanguage == \"webProduction-spanish\") {\n    var msgalt = 'Una recomendación sugiere que una puntuación de 0 para los hombres o 1 para las mujeres (sin factores de riesgo clínicos) es de riesgo “bajo” y puede no requerir anticoagulación; una puntuación de 1 para los hombres o 2 para las mujeres es de riesgo “bajo-moderado” y debe considerar la anticoagulación; y una puntuación de ≥2 para los hombres o ≥3 para las mujeres es de riesgo “moderado-alto” y de lo contrario debería ser un candidato para la anticoagulación.';\n} else {\n    var msgalt = 'One recommendation suggests a 0 score for men or 1 score for women (no clinical risk factors) is “low” risk and may not require anticoagulation; a 1 score for men or 2 score for women is “low-moderate” risk and should consider anticoagulation; and a score ≥2 for men or ≥3 for women is “moderate-high” risk and should otherwise be an anticoagulation candidate.';\n}\n\nvar calculations = {\n    \"0\": {\n        stroke_risk_percentage: \"0.2%\",\n        stroke_tia_systemic_percentage: \"0.3%\"\n    },\n    \"1\": {\n        stroke_risk_percentage: \"0.6%\",\n        stroke_tia_systemic_percentage: \"0.9%\"\n    },\n    \"2\": {\n        stroke_risk_percentage: \"2.2%\",\n        stroke_tia_systemic_percentage: \"2.9%\"\n    },\n    \"3\": {\n        stroke_risk_percentage: \"3.2%\",\n        stroke_tia_systemic_percentage: \"4.6%\"\n    },\n    \"4\": {\n        stroke_risk_percentage: \"4.8%\",\n        stroke_tia_systemic_percentage: \"6.7%\"\n    },\n    \"5\": {\n        stroke_risk_percentage: \"7.2%\",\n        stroke_tia_systemic_percentage: \"10.0%\"\n    },\n    \"6\": {\n        stroke_risk_percentage: \"9.7%\",\n        stroke_tia_systemic_percentage: \"13.6%\"\n    },\n    \"7\": {\n        stroke_risk_percentage: \"11.2%\",\n        stroke_tia_systemic_percentage: \"15.7%\"\n    },\n    \"8\": {\n        stroke_risk_percentage: \"10.8%\",\n        stroke_tia_systemic_percentage: \"15.2%\"\n    }\n}\n\nvar stroke_risk_percentage = calculations[u] ? calculations[u].stroke_risk_percentage : \"12.2%\"\n\nvar stroke_tia_systemic_percentage = calculations[u] ? calculations[u].stroke_tia_systemic_percentage : \"17.4%\"\n\n\n\nif (webLanguage == \"webProduction-chinese-traditional\") {\n\n    msg = '中風機會是每年' + stroke_risk_percentage + '大於九萬人( 來自 瑞士的心房顫動世代研究) 和' + stroke_tia_systemic_percentage + '的中風/暫時性中風/系統性血栓形成。';\n\n    if (u == 8) {\n        msg += '<br/><br/>在這篇文章，我們發現八分比7分的風險還要低，顯然的我們應該要假設所有大於7分的患者風險都大於10%'\n    }\n\n    mini_msg = stroke_risk_percentage + ' stroke risk per year'\n\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n\n    msg = '在90000多名病人中，中风风险为每年' + stroke_risk_percentage + '（来自瑞士的一个关于房颤的队列研究），中风/短暂性脑缺血/系统性血栓形成风险为' + stroke_tia_systemic_percentage + \"。\";\n\n    if (u == 8) {\n        msg += '<br/><br/>在这个研究中，我们发现8分比7分的风险还要低，显然，我们应该假设所有大于7分的患者风险都大于10%。'\n    }\n\n    mini_msg = stroke_risk_percentage + ' stroke risk per year'\n\n\n} else if (webLanguage == \"webProduction-spanish\") {\n\n\n    msg = 'El riesgo de derrame fue de ' + stroke_risk_percentage + '(estudio sueco de cohorte) y ' + stroke_tia_systemic_percentage + ' riesgo de derrame/AIT/embolismo sistémico.';\n\n    if (u == 8) {\n        msg += '<br/><br/>Nosotros realizamos que 8 puntos demuestran menos riesgo que 7 puntos, estos fueron las recomendaciones en el estudio, obviamente deberá asumir todos puntajes > 7 tienen un riesgo > 10%.'\n    }\n\n    mini_msg = stroke_risk_percentage + ' stroke risk per year'\n\n\n} else {\n    msg = 'Stroke risk was ' + stroke_risk_percentage + ' per year in >90,000 patients (the Swedish Atrial Fibrillation Cohort Study) and ' + stroke_tia_systemic_percentage + ' risk of stroke/TIA/systemic embolism.';\n\n    if (u == 8) {\n        msg += '<br/><br/>We realize that 8 points showed a lower risk than 7 points, these were the findings in the study, obviously one should assume all scores \\u22657 have a risk >10%.'\n    }\n\n    mini_msg = stroke_risk_percentage + ' stroke risk per year'\n}\n\nvar value_text = ''\n\nif (webLanguage == \"webProduction-chinese-traditional\" || webLanguage == \"webProduction-chinese-simplified\") {\n    var value_text = '分'\n} else if (webLanguage == \"webProduction-spanish\") {\n    if (u.toFixed(0) == 1) {\n        var value_text = 'punto'\n    } else {\n        var value_text = 'puntage'\n    }\n} else {\n    var value_text = 'points'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: value_text,\n    message: mini_msg\n});\ncalc_output.push({\n    name: '801_CHA2DS2-VASc Score_result',\n    value: u.toFixed(0),\n    value_text: value_text,\n    message: msg\n});\n",
+  "before_use": null,
+  "instructions": "Le score ne doit pas être appliqué à la fibrillation atriale valvulaire.",
+  "contributor_ids": [
+    "rahul-aggarwal-md"
+  ],
+  "creator_names": [
+    "Dr. Gregory Lip"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": true,
+  "cat_ids": [
+    "g.fibrillation-atriale"
+  ],
+  "substance_ids": [],
+  "engine_sha256": "6ea6a5e8e3764678a620fb0f6d5e4a3a1c933281b41bf5a150472de87fa88181"
+}

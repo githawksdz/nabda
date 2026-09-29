@@ -1,0 +1,249 @@
+{
+  "id": "calc.ribscore",
+  "slug": "ribscore",
+  "language": "en",
+  "title": "RibScore",
+  "short_title": "RibScore",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Traumatisme"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Douleur thoracique",
+    "Toux",
+    "Dyspnée",
+    "Gonflement",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "RibScore",
+    "rib score",
+    "rib fracture",
+    "fracture",
+    "bone fracture",
+    "fracture severity",
+    "trauma",
+    "ribs"
+  ],
+  "dosing": false,
+  "formula": "The RibScore is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| ≥6 fractures | No | 0 |\n| Yes | 1 | |\n| Bilateral fractures | No | 0 |\n| Yes | 1 | |\n| Flail chest 1 | No | 0 |\n| Yes | 1 | |\n| ≥3 severely (bicortical) displaced fractures 2 | No | 0 |\n| Yes | 1 | |\n| First rib fracture 3 | No | 0 |\n| Yes | 1 | |\n| ≥1 fracture in all three anatomic areas (anterior, lateral, and posterior) 4 | No | 0 |\n| Yes | 1 | |\n\n^1^“Flail chest” is defined as ≥3 consecutive rib fractures\nin ≥2 places.\n\n^2^“Severely displaced” is defined as displacement greater than\nthe diameter of the rib with a total loss of contact between the\nproximal and the distal segment.\n\n^3^“First rib fracture” refers to rib #1, not the patient’s first ever\nrib fracture.\n\n^4^The posterior rib segment is defined as the head and neck of\nthe rib to the costal angle, the lateral segment is defined as\nthe costal angle to the serratus anterior insertion tubercle,\nand the anterior segment is defined as the serratus anterior\ninsertion tubercle to the distal end of the rib.",
+  "how_to_use": {
+    "why": "Predicts clinically relevant pulmonary complications and, when combined with clinical assessment, may help guide disposition, level of care, or therapeutic decisions.",
+    "when": "À utiliser chez les patients présentant un traumatisme fermé au service des urgences, ayant bénéficié d’une imagerie par TDM et chez qui une ou plusieurs fractures costales ont été diagnostiquées.",
+    "pearls": "**Pearls:**\n\n- Combining RibScore (an anatomical score) with a physiological score (such as [SCARF](nabda:calc.sequential-clinical-assessment-of-respiratory-function-scarf-score) ) may significantly increase sensitivity for identifying patients at risk of complications (up to 96.3%) or requiring surgical stabilization of rib fractures (SSRF; up to 91.9%).\n- Currently intended only for initial evaluation, not subsequent reassessments.\n\n**Pitfalls:**\n\n- Available studies are retrospective; this tool requires prospective, multicenter validation before it can be widely recommended for use.\n- Inter-rater reliability has not been well studied, and there is no evidence that score-guided care improves outcomes.\nAvailable studies include primarily middle-aged men and may not be generalizable to other patient populations.\n- Has not been validated for rib injuries diagnosed by chest X-ray, clinical exam, or other diagnostic modalities."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne doit pas être utilisé comme seule base de la prise en charge ; il convient de recourir au jugement clinique et à une évaluation clinique complète.",
+    "critical_actions": "- Ne jamais retarder les manœuvres de réanimation pour réaliser des examens diagnostiques, en particulier chez un patient instable.\n- L’interrogatoire et l’examen clinique doivent toujours être réalisés avant les examens diagnostiques.",
+    "management": "- **Score ≤ 1:** Patients may be candidates for nonoperative management in a ward setting or early discharge.\n- **Score ≥ 2:** Patients may require inpatient management focused on multimodal pain control to ensure adequate pulmonary hygiene and secretion clearance, which may help prevent progression to pneumonia.\n- **Score: ≥ 4:**\n\n - Strongly associated with a risk of pulmonary complications.\n - Patients likely require intensive monitoring and aggressive interventions, including consideration for early surgical stabilization of rib fractures (SSRF)."
+  },
+  "evidence": "L’[étude de dérivation originale](https://pubmed.ncbi.nlm.nih.gov/26683395/) était une étude de cohorte rétrospective de patients des urgences présentant une fracture de côte confirmée au scanner. Le but de l’étude était de prédire les complications pulmonaires secondaires aux fractures de côtes et d’aider à guider la prise de décision thérapeutique. Les complications étaient définies comme une pneumonie, une trachéostomie ou une insuffisance respiratoire. Les facteurs de risque évalués dans l’étude étaient :\n\n- ≥6 fractures de côtes.\n- Fractures bilatérales.\n- Volet costal.\n- ≥3 fractures sévèrement déplacées.\n- Fracture de la première côte.\n- ≥1 fracture dans les trois localisations anatomiques : parties antérieure, postérieure et latérale des côtes.\n\nChaque facteur de risque individuel était indépendamment associé à une probabilité accrue de complications pulmonaires. Lorsqu’ils étaient combinés dans le RibScore formel, ces facteurs démontraient une spécificité nettement améliorée. Globalement, des valeurs plus élevées de RibScore étaient positivement corrélées à l’incidence des complications pulmonaires. Notamment, un RibScore ≥4 était associé à une spécificité >90 % pour prédire les complications pulmonaires.\n\nLes [recommandations](https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf) de l’American College of Surgeons recommandent d’utiliser des systèmes de score pour évaluer les patients présentant des fractures de côtes, aider aux décisions d’orientation, identifier les patients à haut risque, standardiser la documentation et élaborer des protocoles institutionnels. Cependant, les recommandations indiquent que les données sont insuffisantes pour guider le choix d’un outil de score spécifique.\n\nUn [document de position](https://pubmed.ncbi.nlm.nih.gov/39425134/) de la World Society of Emergency Surgery et de la Chest Wall Injury Society reconnaît le RibScore comme un système de score objectif supérieur, qui capture la sévérité anatomique associée à une augmentation des événements indésirables et au besoin de stabil",
+  "more_info": "Il n'existe pas de seuil de RibScore universellement accepté pour déterminer l'admission ou le besoin d'un niveau de soins plus élevé. Toutefois, des scores plus élevés sont corrélés à un risque plus important de complications pulmonaires, notamment la pneumonie, l'insuffisance respiratoire ou la trachéostomie.\n\nDans les analyses rétrospectives, un RibScore ≥4 présente une spécificité supérieure à 90 % pour prédire les complications pulmonaires.",
+  "short_description": "Devenir de la fracture costale",
+  "medium_description": "Prédit les complications pulmonaires indésirables des fractures de côtes.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "n_fractures",
+      "label": "≥ 6 fractures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bilat",
+      "label": "Fractures bilatérales",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "flail",
+      "label": "Volet thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "displaced",
+      "label": "≥3 fractures déplacées sévères (bicorticales)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "first",
+      "label": "Fracture de la première côte",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "anatomic",
+      "label": "≥1 fracture dans all three anatomic areas (anterior, lateral, et posterior)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sermonesi G, Bertelli R, Pieracci FM, et al. Surgical stabilization of rib fractures (SSRF): the WSES and CWIS position paper. World J Emerg Surg. 2024;19(1):33. Published 2024 Oct 18.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39425134/",
+      "kind": "international"
+    },
+    {
+      "text": "American College of Surgeons. Best Practices Guidelines: Management of Chest Wall Injuries. American College of Surgeons; November 2025.",
+      "href": "https://www.facs.org/media/qdgliayt/2025_tr_bestpracticesguidelines_chest-wall.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "Chapman BC, Herbert B, Rodil M, et al. RibScore: A novel radiographic score based on fracture pattern that predicts pneumonia, respiratory failure, and tracheostomy. J Trauma Acute Care Surg. 2016;80(1):95-101.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26683395/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Martin TJ, Eltorai AS, Dunn R, et al. Clinical management of rib fractures and methods for prevention of pulmonary complications: A review. Injury. 2019;50(6):1159-1165.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31047683/",
+      "kind": "other"
+    },
+    {
+      "text": "Wycech J, Fokin AA, Puente I. Evaluation of patients with surgically stabilized rib fractures by different scoring systems. Eur J Trauma Emerg Surg. 2020;46(2):441-445. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30132024/",
+      "kind": "other"
+    },
+    {
+      "text": "Henglein J, Margiotta E, Wenger IE, et al. A comparison of scoring systems to identify patients at increased risk from traumatic rib fractures. J Surg Res. 2024;304:315-321. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39586173/",
+      "kind": "other"
+    },
+    {
+      "text": "Al Tannir AH, Pokrzywa CJ, Dodgion C, et al. Physiologic parameters and radiologic findings can predict pulmonary complications and guide management in traumatic rib fractures. Injury. 2024;55(5):111508.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0020138324001955",
+      "kind": "other"
+    },
+    {
+      "text": "Chen K, Minasian B, Woodford E, et al. Together is better—RibScore and SCARF in the prediction of pulmonary complications and association with SSRF. Injury. 2024;55(7):111562.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38649314/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+    "calc.stumbl-battle-score",
+    "calc.thoracolumbar-injury-classification-severity-scale-tlics"
+  ],
+  "source_logic_hash": "d396cbe7ec9fb27bd982ec20321dfdb4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+      "text": "SCARF"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+      "text": "SCARF"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10485,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar n_fractures = parseFloat(n_fractures);\nvar bilat = parseFloat(bilat);\nvar flail = parseFloat(flail);\nvar displaced = parseFloat(displaced);\nvar first = parseFloat(first);\nvar anatomic = parseFloat(anatomic);\n\nvar score = n_fractures + bilat + flail + displaced + first + anatomic;\n\nvar msg = 'A RibScore of ≥4 corresponds to greater risk of pneumonia, respiratory failure, and tracheostomy.';\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'RibScore<br/><br/>' + msg\n});\ncalc_output.push({\n    name: '10485_RibScore_result',\n    value: score,\n    value_text: 'points',\n    message: 'RibScore<br/><br/>' + msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "kabir-yadav-mdcm-ms-mshs",
+    "brendan-freeman-do"
+  ],
+  "creator_names": [
+    "Dr. Brandon C. Chapman"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "108b06a66c19e0bfa1c159558db732171254e574adeca620f2f2d766aa3759ca"
+}

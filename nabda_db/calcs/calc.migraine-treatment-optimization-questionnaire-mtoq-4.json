@@ -1,0 +1,204 @@
+{
+  "id": "calc.migraine-treatment-optimization-questionnaire-mtoq-4",
+  "slug": "migraine-treatment-optimization-questionnaire-mtoq-4",
+  "language": "en",
+  "title": "Questionnaire d'optimisation du traitement de la migraine-4 (mTOQ-4)",
+  "short_title": "MTOq-4",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Migraine"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Headache",
+    "Nausea",
+    "Numbness",
+    "Perte de vision",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Migraine Treatment Optimization Questionnaire-4 (mTOQ-4)",
+    "mtoq",
+    "mtoq-4",
+    "mtoq 4",
+    "migraine",
+    "mtoq-5",
+    "mtoq 5",
+    "mtoq-15",
+    "mtoq 15",
+    "m-toq",
+    "headache",
+    "migraine treatment effectiveness"
+  ],
+  "dosing": false,
+  "formula": "The mTOQ-4 Score is calculated by the addition of the selected points:\n\n| Question | | Points |\n| --- | --- | --- |\n| After taking your migraine medication, are you pain-free within 2 hours for most attacks? | Never or rarely | 0 |\n| Less than half the time | 1 | |\n| Half the time or greater | 2 | |\n| Does 1 dose of your migraine medication usually relieve your headache and keep it away for at least 24 hours? | Never or rarely | 0 |\n| Less than half the time | 1 | |\n| Half the time or greater | 2 | |\n| Are you comfortable enough with your migraine medication to be able to plan your daily activities? | Never or rarely | 0 |\n| Less than half the time | 1 | |\n| Half the time or greater | 2 | |\n| After taking your migraine medication, do you feel in control of your migraines enough so that you feel you can return to normal function? | Never or rarely | 0 |\n| Less than half the time | 1 | |\n| Half the time or greater | 2 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous le Migraine Treatment Optimization Questionnaire-4 (mTOQ-4) et souhaitez-vous mettre votre expertise à contribution ?[Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Des scores plus élevés sont corrélés à une meilleure efficacité du traitement et à un meilleur contrôle des symptômes.\n- Envisager de modifier le traitement si les scores sont bas."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| mTOQ-4 Score | Treatment Effectiveness |\n| --- | --- |\n| 0 | Very poor treatment efficacy |\n| 1-5 | Poor treatment efficacy |\n| 6-7 | Moderate treatment efficacy |\n| 8 | Maximum treatment efficacy |",
+  "short_description": "Efficacité du traitement de la migraine.",
+  "medium_description": "Détermine l'efficacité du plan de traitement actuel de la migraine.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "After taking your migraine medication, are you douleur-free within 2 hours pour most attacks?",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Jamais ou rarement",
+          "value": 0
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 1
+        },
+        {
+          "label": "La moitié du temps ou plus",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Does 1 dose de your migraine medication usually relieve your headache et keep it away pour at least 24 hours?",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Jamais ou rarement",
+          "value": 0
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 1
+        },
+        {
+          "label": "La moitié du temps ou plus",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Are you comfortable enough avec your migraine medication pour be able pour plan your daily activities?",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Jamais ou rarement",
+          "value": 0
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 1
+        },
+        {
+          "label": "La moitié du temps ou plus",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "After taking your migraine medication, do you feel dans control de your migraines enough so that you feel you can return pour normal function?",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Jamais ou rarement",
+          "value": 0
+        },
+        {
+          "label": "Moins de la moitié du temps",
+          "value": 1
+        },
+        {
+          "label": "La moitié du temps ou plus",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lipton RB, Kolodner K, Bigal ME, et al. Validity and reliability of the migraine-treatment optimization questionnaire. Cephalalgia. 2009;29(7):751-759.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19239676/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Serrano D, Buse DC, Manack Adams A, Reed ML, Lipton RB. Acute treatment optimization in episodic and chronic migraine: results of the American Migraine Prevalence and Prevention (Ampp) Study. Headache. 2015;55(4):502-518.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25881676/",
+      "kind": "other"
+    },
+    {
+      "text": "Lipton RB, Munjal S, Buse DC, Fanning KM, Bennett A, Reed ML. Predicting inadequate response to acute migraine medication: results from the american migraine prevalence and prevention (Ampp) study. Headache. 2016;56(10):1635-1648.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27731896/",
+      "kind": "other"
+    },
+    {
+      "text": "Ailani J, Burch RC, Robbins MS, Board of Directors of the American Headache Society. The American Headache Society Consensus Statement: Update on integrating new migraine treatments into clinical practice. Headache. 2021;61(7):1021-1039.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34160823/",
+      "kind": "other"
+    },
+    {
+      "text": "Mack KJ, Digre K. Effectiveness in acute migraine treatment: how it might matter. Neurology. 2015;84(7):641-642.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25609759/",
+      "kind": "other"
+    },
+    {
+      "text": "Lipton RB, Fanning KM, Serrano D, Reed ML, Cady R, Buse DC. Ineffective acute treatment of episodic migraine is associated with new-onset chronic migraine. Neurology. 2015;84(7):688-695.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25609757/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.migraine-disability-assessment-midas",
+    "calc.rome-iv-diagnostic-criteria-child-abdominal-migraine",
+    "calc.neck-disability-index-ndi"
+  ],
+  "source_logic_hash": "dc913bb176348294a6de6705294cb60b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10496,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

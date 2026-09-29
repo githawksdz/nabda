@@ -1,0 +1,276 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-constipation",
+  "slug": "rome-iv-diagnostic-criteria-functional-constipation",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional constipation",
+  "short_title": "Rome IV pour Functional constipation",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Constipation"
+  ],
+  "abbreviations": [
+    "constipation",
+    "rome",
+    "rome 4",
+    "functional  constipation",
+    "Rome IV Diagnostic Criteria for Functional Constipation",
+    "rome iv for functional  constipation"
+  ],
+  "dosing": false,
+  "formula": "Les trois critères suivants doivent être remplis au cours des 3 derniers mois, avec un début des symptômes ≥6 mois avant :\n\n1. Présence d'au moins 2 des éléments suivants, chacun pour plus d'1/4 (25 %) des défécations, sauf (f) :\n2. Selles molles rarement présentes en l'absence de laxatifs.\n3. Ne remplit pas les [critères de Rome IV pour le SII.](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs)\n\n**Échelle de Bristol de la forme des selles :**\n\n![](https://cdn-web-img.mdcalc.com/content/romeiv-bristol.gif)\n\nD'après [Chumpitazi 2016](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/).",
+  "how_to_use": {
+    "why": "- Utilisés pour diagnostiquer une constipation fonctionnelle en l'absence de causes secondaires de constipation.\n- Poser le diagnostic aide à orienter la nécessité d'explorations complémentaires et la prise en charge.\n- Peut être utilisé pour discuter des signes et symptômes de la constipation avec les patients.",
+    "when": "Patients présentant des symptômes évocateurs d'une constipation depuis au moins les 6 derniers mois. Le diagnostic de constipation fonctionnelle doit être posé sur la base de l'anamnèse clinique, de l'examen physique et d'examens biologiques minimaux. Une coloscopie ou d'autres examens doivent être réalisés s'ils sont cliniquement indiqués.",
+    "pearls": "- En pratique clinique, la constipation fonctionnelle est également appelée constipation chronique idiopathique.\n- La constipation fonctionnelle est diagnostiquée en l'absence de causes secondaires de constipation. Ces causes secondaires peuvent inclure, sans s'y limiter, une obstruction mécanique, des effets indésirables médicamenteux (p. ex. opioïdes) et une maladie systémique.\n- Ces critères doivent être utilisés dans un contexte de symptômes survenant lorsque les patients ne prennent pas de médicaments contre la constipation.\n- Utiliser l'[échelle de Bristol de la forme des selles](nabda:calc.bristol-stool-form-scale) pour déterminer la forme des selles. Il est important que les patients regardent à la fois les images et le texte.\n- En cas de douleur abdominale en plus des symptômes de constipation, un diagnostic de [syndrome de l'intestin irritable à prédominance de constipation (SII-C)](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs) doit être envisagé."
+  },
+  "next_steps": {
+    "advice": "**Si le diagnostic n'est pas retenu (négatif) :**\n\nLes symptômes sont peu susceptibles d'être dus à une constipation fonctionnelle. Envisager une évaluation complémentaire selon les indications cliniques.\n\n**Si le diagnostic est retenu (positif) :**\n\nDiagnostic probable de constipation fonctionnelle. Envisager d'instaurer un traitement.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients chez lesquels une cause secondaire de constipation (p. ex. obstruction mécanique, maladie systémique, médicaments) n'est pas suspectée sur la base de l'anamnèse clinique, de l'examen physique et du bilan initial.",
+    "management": "La prise en charge de la constipation fonctionnelle (également appelée constipation chronique idiopathique) peut inclure :\n\n- Apport alimentaire adéquat en fibres et compléments en fibres.\n- Laxatifs osmotiques (p. ex. PEG-3350, lactulose).\n- Laxatifs stimulants (p. ex. bisacodyl, séné).\n- Sécrétagogues (p. ex. linaclotide, plécanatide, lubiprostone).\n- Agoniste des récepteurs 5-HT4 (p. ex. prucalopride).\n\nLe choix du traitement dépasse le cadre de ce calculateur et dépendra du contexte clinique."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various functional gastrointestinal disorders such as dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms. The updated Rome IV was designed to make the criteria easier to use clinically, incorporate investigations where appropriate and psychosocial aspects of these disorders, and improve its applicability to other countries and cultures.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90th percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts. These questionnaires were validated in 843 patients from gastroenterology clinics. In functional constipation, the sensitivity of this criteria was 32.2% and the specificity was 93.6%.",
+  "more_info": "",
+  "short_description": "Diagnostic de la constipation.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional constipation.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "strain",
+      "label": "Straining",
+      "tips": "Pour plus d'1/4 (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lumpy",
+      "label": "Selles grumeleuses ou dures",
+      "tips": "Forme 1 ou 2 sur l'[échelle de Bristol de la forme des selles](nabda:calc.bristol-stool-form-scale) ; pour plus d'1/4 (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "evacuation",
+      "label": "Sensation d'évacuation incomplète",
+      "tips": "Pour plus d'1/4 (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blockage",
+      "label": "Sensation d'obstruction/blocage anorectal",
+      "tips": "Pour plus d'1/4 (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "manual",
+      "label": "Manual maneuvers pour facilitate defecation",
+      "tips": "P. ex. évacuation digitale, support du plancher pelvien ; pour plus d'1/4 (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spontaneous",
+      "label": "Moins de 3 selles spontanées par semaine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "laxative",
+      "label": "Selles molles rarement présentes en l'absence de laxatifs",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ibs",
+      "label": "Ne remplit PAS les [critères de Rome IV pour le SII](nabda:calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Drossman DA. Functional Gastrointestinal Disorders: History, Pathophysiology, Clinical Features and Rome IV. Gastroenterology. 2016; 150(6):1262-1279.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144617",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mearin F, Lacy BE, Chang L, et al. Bowel Disorders. Gastroenterology. 2016; 150(6):1393-1407.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144627 ",
+      "kind": "other"
+    },
+    {
+      "text": "Chumpitazi BP, Self MM, Czyzewski DI, Cejka S, Swank PR, Shulman RJ. Bristol Stool Form Scale reliability and agreement decreases when determining Rome III stool form designations. Neurogastroenterol Motil. 2016;28(3):443-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4760857/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Palsson OS, Whitehead WE, Van tilburg MA, et al. Rome IV Diagnostic Questionnaires and Tables for Investigators and Clinicians. Gastroenterology. 2016; 150(6):1481-1491.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144634",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-infant-functional-constipation",
+    "calc.rome-iv-diagnostic-criteria-functional-dyspepsia",
+    "calc.rome-iv-diagnostic-criteria-functional-defecation-disorders",
+    "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.bristol-stool-form-scale"
+  ],
+  "source_logic_hash": "8dbbe595502f26fe81322059110fb5b5",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+      "text": "Rome IV Criteria for IBS."
+    },
+    {
+      "type": "calc",
+      "id": "calc.bristol-stool-form-scale",
+      "text": "Bristol Stool Form Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10003,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

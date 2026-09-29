@@ -1,0 +1,215 @@
+{
+  "id": "calc.modified-soar-score-stroke",
+  "slug": "modified-soar-score-stroke",
+  "language": "fr",
+  "title": "Modifié SOAR score pour AVC",
+  "short_title": "Score MSOAR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Déficit neurologique",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "soar",
+    "oxford",
+    "modified soar",
+    "cva",
+    "tia",
+    "ischemic stroke",
+    "brain attack"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- |\n| S troke type | Infarct | Hemorrhage | -- |\n| O xford Community Stroke Project classification | LACS/PACS | POCS | TACS |\n| A ge (years) | ≤65 | 66–85 | >85 |\n| Pre-stroke disability (Modified R ankin Score) | 0–2 | 3–4 | 5 |\n| NIH Stroke Scale Score | 0–4 | 5–10 | ≥11 |\n\nLACS, lacunar circulation stroke. PACS, partial anterior circulation stroke. POCS, posterior circulation stroke. TACS, total anterior circulation stroke.",
+  "how_to_use": {
+    "why": "- Peut être appliqué aux AVC ischémiques et hémorragiques.\n- Les variables composantes sont familières à la plupart des cliniciens.\n- Peut être calculé rapidement.\n- Ne nécessite pas d’algorithme de pondération.\n- Peut être administré par du personnel non-médecin.\n- Les variables composantes sont statiques au cours d’une hospitalisation donnée.",
+    "when": "Patients admis pour un accident vasculaire cérébral ischémique aigu ou hémorragique ayant fait l’ob",
+    "pearls": "- Il n’existe aucun score unique universellement accepté pour prédire la mortalité par AVC.\n- Le score est fondé sur les données présentes à l’admission et est statique.\n- Ne s’applique pas aux patients présentant un accident ischémique transitoire, une hémorragie sous-arachnoïdienne ou une hémorragie sous-durale."
+  },
+  "next_steps": {
+    "advice": "- Le score mSOAR peut être envisagé chez les patients présentant un AVC aigu, comme prédicteur de mortalité à court terme.\n- Le score ne doit pas être utilisé comme substitut au jugement clinique, ni comme seul outil prédictif de mortalité.",
+    "critical_actions": "Il est crucial d'identifier une ICH associée à un anticoagulant au moyen d'un interrogatoire médicamenteux minutieux, puis de la neutraliser avec des agents spécifiquement adaptés à l'anticoagulant en cause.\n\nLa transfusion plaquettaire n'est pas recommandée dans les cas d'ICH spontanée liée aux antiplaquettaires.",
+    "management": "Acute ischemic stroke and intracerebral hemorrhage (ICH) are both neurological emergencies. Patients with acute ischemic stroke, in particular, can benefit from time-sensitive treatments (e.g. tPA, mechanical thrombectomy) that can be administered if certain clinical conditions are met.\n\nIn cases of suspected acute ischemic stroke, the following is recommended:\n\n- STAT neurological consultation.\n- STAT CT head without contrast.\n- STAT laboratory testing (CBC, PT/INR/aPTT, basic metabolic panel, type & screen, troponin-I).\n- Consider STAT CT angiogram of the head & neck in cases of suspected acute stroke due to large-vessel occlusion (LVO).\n\nIn cases of confirmed acute intracerebral hemorrhage, the following is recommended:\n\n- Airway, breathing and circulation monitoring.\n- Immediate neurological and neurosurgical consultation.\n- Thorough medication history to identify anticoagulant and antiplatelet-associated hemorrhage.\n- Hypertensive patients with ICH should undergo blood pressure reduction with intravenous agents. The target blood pressure should be discussed with neurological or neurosurgical consultants if available.\n- Similarly, the decision to administer reversal agents (e.g. desmopressin, vitamin K), blood products (e.g. prothrombin complex concentrates, fresh frozen plasma), or anti-epileptic medications should not be made without discussion with the neurological or neurosurgical consultant if available."
+  },
+  "evidence": "The SOAR Score was originally derived by[Myint et al](https://www.ncbi.nlm.nih.gov/pubmed/23834262)in a UK-based prospectively-collected analysis from 2013 that investigated whether 4 static variables at presentation (stroke type, age, premorbid functional status, and[Oxfordshire Community Stroke Project (OCSP) classification](https://www.thelancet.com/journals/lancet/article/PII0140-6736(91)93206-O/abstract)) accurately predicted early mortality in a multi-center cohort of approximately 12,000, mainly elderly inpatients, who were mostly functionally independent (60%), and had suffered mostly ischemic (91%) and partial anterior-circulation stroke. The AUC for predicting either inpatient or 7-day mortality was 0.79 (95% CI 0.78-0.80). Importantly, this analysis was restricted to inpatient mortality only; stroke severity as measured by the NIH Stroke Scale (NIHSS) was unknown, and functional status was based on medical documentation rather than interview.\n\nThe SOAR Score was then externally validated by[Kwok et al](https://stroke.ahajournals.org/content/44/7/2010.long)in 2013 in an analysis of approximately 3,500 patients, also from a multi-center UK population, with the addition of investigating the predictive ability for 7-day mortality. The SOAR AUC (cut-point of ≥3) for inpatient mortality was 0.80 (95% CI 0.78–0.82) and 7-day mortality was 0.82 (95% CI 0.79-0.84).\n\nWhile the derivation and validation cohort populations were relatively similar in terms of the underlying SOAR component variables, approximately 20% of patients in the validation cohort (that had substantially higher rates of hemorrhagic stroke and overall mortality) were excluded due to incomplete data.\n\n[Abdul-Rahim et al](https://stroke.ahajournals.org/content/47/1/74.long)derived the mSOAR Score in a retrospective study from 2016 that incorporated baseline NIHSS scores into the SOAR Scores of approximately 1,000 inpatients from two UK-based stroke registries. The study compared both SOAR and mSOAR in their ability to predict mortality within 90 days of admission (rather than during admission). This study also externally validated both the SOAR and mSOAR Scores in an independent 1,000-patient stroke cohort also based in the UK.\n\nFor SOAR, AUC for mortality ≤90 days in the derivation and validation cohorts was 0.79 (95% CI 0.75-0.84) and 0.81 (95% CI 0.77-0.85), respectively. For mSOAR, AUC in the same cohorts were 0.83 (95%CI, 0.79-0.86) and 0.84 (95% CI 0.82-0.88), respectively. The AUCs of SOAR and mSOAR in derivation cohorts were statistically significantly different (p <0.0001), suggesting that the addition of the NIHSS score significantly improved the predictive accuracy of the original SOAR. While quite similar to the original SOAR derivation cohort, both mSOAR derivation and validation cohorts were more functional at baseline (mRS 0-1 84.8% vs 69%), and the comparative stroke severity of the cohort from[Myint et al](https://www.ncbi.nlm.nih.gov/pubmed/23834262)was unknown.",
+  "more_info": "Interprétation :\n\n| Score mSOAR | Mortalité hospitalière |\n| --- | --- |\n| 0 | 1,0 % |\n| 1 | 1,0 % |\n| 2 | 1,5 % |\n| 3 | 6,5 % |\n| 4 | 9,2 % |\n| 5 | 19,5 % |\n| 6 | 26,2 % |\n| 7 | 49,2 % |\n\nD'après [Abdul-Rahim 2016](https://stroke.ahajournals.org/content/47/1/74.long). Les scores > 7 n'ont pas été rapportés.",
+  "short_description": "Early AVC mortalité.",
+  "medium_description": "Predicts short-term mortalité dans aigu ischemic AVC.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Type d'AVC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Infarct",
+          "value": 0
+        },
+        {
+          "label": "hémorragie",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "classd",
+      "label": "Classification du projet communautaire d’AVC de l’Oxfordshire",
+      "tips": "LACS = lacunar circulation stroke, PACS = partial anterior circulation stroke, POCS = posterior circulation stroke, TACS = total anterior circulation stroke",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "LACS/PACS",
+          "value": 0
+        },
+        {
+          "label": "POCS",
+          "value": 1
+        },
+        {
+          "label": "TACS",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤65",
+          "value": 0
+        },
+        {
+          "label": "66-85",
+          "value": 1
+        },
+        {
+          "label": ">85",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "disability",
+      "label": "Handicap pré-AVC (score [mRS](nabda:calc.modified-rankin-scale-neurologic-disability))",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-2",
+          "value": 0
+        },
+        {
+          "label": "3-4",
+          "value": 1
+        },
+        {
+          "label": "5",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nih",
+      "label": "Score [NIHSS](nabda:calc.nih-stroke-scale-score-nihss)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-4",
+          "value": 0
+        },
+        {
+          "label": "5-10",
+          "value": 1
+        },
+        {
+          "label": "≥11",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Myint PK, Clark AB, Kwok CS, et al. The SOAR (Stroke subtype, Oxford Community Stroke Project classification, Age, prestroke modified Rankin) score strongly predicts early outcomes in acute stroke. Int J Stroke. 2014;9(3):278-83.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23834262 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kwok CS, Potter JF, Dalton G, et al. The SOAR stroke score predicts inpatient and 7-day mortality in acute stroke. Stroke. 2013;44(7):2010-2.",
+      "href": "https://stroke.ahajournals.org/content/44/7/2010.long ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abdul-rahim AH, Quinn TJ, Alder S, et al. Derivation and Validation of a Novel Prognostic Scale (Modified-Stroke Subtype, Oxfordshire Community Stroke Project Classification, Age, and Prestroke Modified Rankin) to Predict Early Mortality in Acute Stroke. Stroke. 2016;47(1):74-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26578661",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.astral-score-stroke",
+    "calc.plan-score-stroke",
+    "calc.los-angeles-motor-scale-lams",
+    "calc.modified-rankin-scale-neurologic-disability",
+    "calc.nih-stroke-scale-score-nihss"
+  ],
+  "source_logic_hash": "aa53ff14fabd64d36a4ea89f5a8067db",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-rankin-scale-neurologic-disability",
+      "text": "mRS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIH Stroke Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3966,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,292 @@
+{
+  "id": "calc.gupta-postoperative-respiratory-failure-risk",
+  "slug": "gupta-postoperative-respiratory-failure-risk",
+  "language": "en",
+  "title": "Gupta Postoperative Respiratory défaillance risque",
+  "short_title": "Gupta Postop Respiratory défaillance risque",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Respiratory failure",
+    "post-operative risk",
+    "postop risk",
+    "postoperative risk",
+    "postop respiratory failure",
+    "postoperative respiratory failure",
+    "post-operative respiratory failure",
+    "gupta",
+    "post op",
+    "post-op",
+    "postop"
+  ],
+  "dosing": false,
+  "formula": "Postoperative respiratory failure risk*, % = *e* ^x^/ (1 + *e* ^x^)\n\nWhere x = −1.7397 + sum of the values of the selected variables.\n\n*Defined as requiring mechanical ventilation >48 hrs after surgery, or unplanned intubation ≤30 days of surgery.\n\n| Variable | Options | Value |\n| --- | --- | --- |\n| Functional status | Independent | 0 |\n| Partially dependent | 0.7678 | |\n| Totally dependent | 1.4046 | |\n| [ASA class](nabda:calc.asa-physical-status-asa-classification\\) | 1: normal healthy patient | -3.5265 |\n| 2: mild systemic disease | -2.0008 | |\n| 3: severe systemic disease | -0.6201 | |\n| 4: severe systemic disease that is a constant threat to life* | 0.2441 | |\n| 5: moribund, not expected to survive without surgery | 0 | |\n| Sepsis | None | -0.7840 |\n| Preoperative systemic inflammatory response syndrome | 0 | |\n| Preoperative sepsis | 0.2752 | |\n| Preoperative septic shock | 0.9035 | |\n| Emergency case | No | -0.5739 |\n| Yes | 0 | |\n| Type of procedure | Anorectal | -1.3530 |\n| Aortic | 1.0781 | |\n| Bariatric | -1.0112 | |\n| Brain | 0.7336 | |\n| Breast | -2.6462 | |\n| Cardiac | 0.2744 | |\n| ENT (except thyroid/parathyroid) | 0.1060 | |\n| Foregut or hepatopancreatobiliary | 0.9694 | |\n| Gallbladder, appendix, adrenals, or spleen | -0.5668 | |\n| Hernia (ventral, inguinal, femoral) | 0 | |\n| Intestinal | 0.5737 | |\n| Neck (thyroid/parathyroid) | -0.5271 | |\n| Obstetric/gynecologic | -1.2431 | |\n| Orthopedic and non-vascular extremity | -0.8577 | |\n| Other abdominal | 0.2416 | |\n| Peripheral vascular | -0.2389 | |\n| Skin | -0.3206 | |\n| Spine | -0.5220 | |\n| Non-esophageal thoracic | 0.6715 | |\n| Vein | -2.0080 | |\n| Urology | 0.3093 | |\n\n*i.e., patient could die acutely without intervention.",
+  "how_to_use": {
+    "why": "Peut être utile dans les discussions relatives au consentement éclairé et dans la gestion des attentes du patient et de sa famille en période périopératoire.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Un risque élevé d’insuffisance respiratoire postopératoire ne doit pas être utilisé comme justification pour éviter une intervention nécessaire.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de ventilation >48 h en postopératoire ou de réintubation ≤30 jours.",
+  "medium_description": "Predicts risque de mechanical ventilation pour longer than 48 hrs postop ou reintubation within 30 days.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "status",
+      "label": "Statut fonctionnel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Independent",
+          "value": 0
+        },
+        {
+          "label": "Partiellement dépendant",
+          "value": 0.77
+        },
+        {
+          "label": "Totalement dépendant",
+          "value": 1.4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "class1",
+      "label": "[Classe ASA](nabda:calc.asa-physical-status-asa-classification)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1 : patient normal en bonne santé",
+          "value": -3.53
+        },
+        {
+          "label": "2 : maladie systémique légère",
+          "value": -2
+        },
+        {
+          "label": "3 : maladie systémique sévère",
+          "value": -0.62
+        },
+        {
+          "label": "4: severe systemic maladie that is constant threat pour life (i.e., patient could die acutely sans intervention)",
+          "value": 0.24
+        },
+        {
+          "label": "5: moribund, not expected pour survive sans surgery",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sepsis",
+      "label": "Sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": -0.78
+        },
+        {
+          "label": "Syndrome de réponse inflammatoire systémique préopératoire",
+          "value": 0
+        },
+        {
+          "label": "Sepsis préopératoire",
+          "value": 0.28
+        },
+        {
+          "label": "Choc septique préopératoire",
+          "value": 0.9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "emergency",
+      "label": "Cas d’urgence",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": -0.57
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "procedure",
+      "label": "Type de procédure",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Anorectal",
+          "value": -1.35
+        },
+        {
+          "label": "Aortic",
+          "value": 1.08
+        },
+        {
+          "label": "Bariatric",
+          "value": -1.01
+        },
+        {
+          "label": "Brain",
+          "value": 0.73
+        },
+        {
+          "label": "Breast",
+          "value": -2.65
+        },
+        {
+          "label": "Cardiac",
+          "value": 0.27
+        },
+        {
+          "label": "ORL (sauf thyroïde/parathyroïde)",
+          "value": 0.11
+        },
+        {
+          "label": "Intestin antérieur (œsophage, estomac) ou hépato-pancréatobiliaire",
+          "value": 0.97
+        },
+        {
+          "label": "Vésicule biliaire, appendice, surrénales ou rate",
+          "value": -0.57
+        },
+        {
+          "label": "Hernie (ventrale, inguinale, crurale)",
+          "value": 0
+        },
+        {
+          "label": "Intestinal",
+          "value": 0.57
+        },
+        {
+          "label": "Cou (thyroïde/parathyroïdes)",
+          "value": -0.53
+        },
+        {
+          "label": "Obstetric/gynecologic",
+          "value": -1.24
+        },
+        {
+          "label": "Extrémité orthopédique et non vasculaire",
+          "value": -0.86
+        },
+        {
+          "label": "Autre abdominal",
+          "value": 0.24
+        },
+        {
+          "label": "Vasculaire périphérique",
+          "value": -0.24
+        },
+        {
+          "label": "Skin",
+          "value": -0.32
+        },
+        {
+          "label": "Spine",
+          "value": -0.52
+        },
+        {
+          "label": "Thoracique non œsophagien (poumon, médiastin, etc.)",
+          "value": 0.67
+        },
+        {
+          "label": "Vein",
+          "value": -2.01
+        },
+        {
+          "label": "Urology",
+          "value": 0.31
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gupta H, Gupta PK, Fang X, et al. Development and validation of a risk calculator predicting postoperative respiratory failure. Chest. 2011;140(5):1207-1215.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21757571",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gupta H, Gupta PK, Fang X, et al. Development and validation of a risk calculator predicting postoperative respiratory failure. Chest. 2011;140(5):1207-1215.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21757571",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ariscat-score-postoperative-pulmonary-complications",
+    "calc.noninvasive-ventilation-outcomes-nivo-score",
+    "calc.gupta-postoperative-pneumonia-risk",
+    "calc.asa-physical-status-asa-classification"
+  ],
+  "source_logic_hash": "802504705f7e97e8768e7d142264438d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA class"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10193,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

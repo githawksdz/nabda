@@ -1,0 +1,770 @@
+{
+  "id": "calc.medication-regimen-complexity-icu-mrc-icu-score",
+  "slug": "medication-regimen-complexity-icu-mrc-icu-score",
+  "language": "en",
+  "title": "Medication Regimen Complexity-soins intensifs Unit (MRC-ICU) score",
+  "short_title": "Score MRC-ICU",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Tout/Tous"
+  ],
+  "chief_complaints": [
+    "Tout/Tous"
+  ],
+  "abbreviations": [
+    "Medication Regimen Complexity-ICU (MRC-ICU) Score",
+    "MRC-ICU Score",
+    "MRC-ICU",
+    "ICU pharmacy",
+    "pharmacy",
+    "ICU outcome",
+    "ICU pharmacy outcome",
+    "ICU pharmacist",
+    "pharmacist",
+    "ICU pharmacist outcome",
+    "pharmacist mortality",
+    "ICU mortality",
+    "ICU LOS",
+    "ICU length of stay",
+    "ICU"
+  ],
+  "dosing": false,
+  "formula": "The Medication Regimen Complexity-ICU (MRC-ICU) Score is determined by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| High Priority Medications | | |\n| Aminoglycosides (amikacin, gentamicin, tobramycin) | No | 0 |\n| Yes | 3× | |\n| Amphotericin B and liposomal amphotericin B | No | 0 |\n| Yes | 1 | |\n| Antiarrhythmics (amiodarone, dofetilide, sotalol) | No | 0 |\n| Yes | 1× | |\n| Anticoagulants (direct acting oral anticoagulants, fondaparinux) | No | 0 |\n| Yes | 1× | |\n| Anticonvulsants (carbamazepine, phenobarbital, phenytoin, valproic acid) | No | 0 |\n| Yes | 3× | |\n| Argatroban | No | 0 |\n| Yes | 2 | |\n| Azole antifungals (posaconazole, voriconazole) | No | 0 |\n| Yes | 2× | |\n| Blood Products (factor products, antithrombin III) | No | 0 |\n| Yes | 2× | |\n| Chemotherapy (active inpatient) | No | 0 |\n| Yes | 3× | |\n| Clozapine | No | 0 |\n| Yes | 3 | |\n| Digoxin | No | 0 |\n| Yes | 3 | |\n| Ganciclovir/valganciclovir | No | 0 |\n| Yes | 1× | |\n| Hyperosmolar fluids (hypertonic saline (1.5%, 3%, 23.4%), mannitol) | No | 0 |\n| Yes | 1× | |\n| Immunosuppressants (cyclosporine, sirolimus, tacrolimus) | No | 0 |\n| Yes | 3× | |\n| Lidocaine (continuous infusion) | No | 0 |\n| Yes | 2 | |\n| Lithium | No | 0 |\n| Yes | 3 | |\n| Prostacyclins (epoprostenol, iloprost, treprostinil) | No | 0 |\n| Yes | 2× | |\n| Theophylline | No | 0 |\n| Yes | 3 | |\n| Therapeutic heparins (enoxaparin, heparin infusion) | No | 0 |\n| Yes | 2× | |\n| Vancomycin (intravenous) | No | 0 |\n| Yes | 3 | |\n| Warfarin | No | 0 |\n| Yes | 3 | |\n| Neuromuscular blockade | No | 0 |\n| Yes | 2 | |\n| Continuous infusions (exclude those listed elsewhere) | No | 0 |\n| Yes | 1× | |\n| Parenteral Nutrition | | |\n| Managed by non-pharmacist service | No | 0 |\n| Yes | 1 | |\n| Managed by clinical specialist pharmacist | No | 0 |\n| Yes | 3 | |\n| Prophylaxis and FAST HUGS BID | | |\n| Thromboembolic prophylaxis | No | 0 |\n| Yes | 1 | |\n| Stress ulcer prophylaxis (exclude pantoprazole infusion) | No | 0 |\n| Yes | 1 | |\n| Glycemic control (subcutaneous insulin; exclude intravenous insulin) | No | 0 |\n| Yes | 1 | |\n| Bowel regimen | No | 0 |\n| Yes | 1 | |\n| Chlorhexidine | No | 0 |\n| Yes | 1 | |\n| Analgesia and Sedation | | |\n| Opioids and sedatives (scheduled and PRN) | No | 0 |\n| Yes | 1× | |\n| Continuous infusion opioids and sedatives | No | 0 |\n| Yes | 2× | |\n| Antimicrobial Agents | | |\n| Antimicrobials (include HIV medications; exclude those listed elsewhere) | No | 0 |\n| Yes | 1× | |\n| Restricted antimicrobials | No | 0 |\n| Yes | 2× | |\n| Devices | | |\n| Continuous renal replacement therapy | No | 0 |\n| Yes | 2 | |\n| Extracorporeal membrane oxygenation (ECMO) | No | 0 |\n| Yes | 2 | |\n| Intra-aortic balloon pump (IABP) / left ventricular assist device (LVAD) | No | 0 |\n| Yes | 1 | |\n| Mechanical ventilation | No | 0 |\n| Yes | 2 | |\n\n* The × symbol represents a multiplier function, indicating that points are added for each additional medication within the category.",
+  "how_to_use": {
+    "why": "- Une complexité élevée du schéma thérapeutique est associée à une acuité accrue des patients, à un risque plus élevé d’erreurs médicamenteuses, à une mortalité hospitalière et à une durée de séjour en soins intensifs plus longue.\n- Les résultats sont corrélés à la quantité et à l’intensité des interventions du pharmacien, ce qui pourrait permettre de prédire les besoins de soutien pharmaceutique.",
+    "when": "Apply in intensive care settings to quantify the complexity of a patient’s medication regimen.",
+    "pearls": "- Validated for use in both medical and surgical ICU settings.\n- Not intended as a standalone, overall prognostic indicator."
+  },
+  "next_steps": {
+    "advice": "- Peut aider à trier le besoin de soutien par un pharmacien clinicien et d’interventions ciblées ; un résultat à haut risque indique la nécessité d’une surveillance plus étroite.\n- Peut être utilisé en association avec d’autres outils pronostiques de soins critiques (p. ex., [APACHE II](nabda:calc.apache-ii-score) , [SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) ) pour mieux prédire le risque de mortalité intrahospitalière et de séjours prolongés en réanimation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score MRC-ICU | Risque |\n| --- | --- |\n| <10 | Faible |\n| ≥10 | Élevé |",
+  "short_description": "Devenir des patients en réanimation (ICU) et activité du pharmacien.",
+  "medium_description": "Predicts patient outcomes (mortalité, length de stay), ICU complications (fluid overload), et pharmacist workload (intervention quantity et intensity) dans ICU.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q1",
+      "label": "Aminosides",
+      "tips": "Amikacine, gentamicine, tobramycine",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Amphotéricine B et amphotéricine B liposomale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q3",
+      "label": "Antiarythmiques",
+      "tips": "Amiodarone, dofétilide, sotalol",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q4",
+      "label": "Anticoagulants",
+      "tips": "Anticoagulants oraux d'action directe, fondaparinux",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q5",
+      "label": "Anticonvulsivants",
+      "tips": "Carbamazépine, phénobarbital, phénytoïne, acide valproïque",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Argatroban",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q7",
+      "label": "Antifongiques azolés",
+      "tips": "Posaconazole, voriconazole",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q8",
+      "label": "Produits sanguins",
+      "tips": "Produits de facteurs, antithrombine III",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q9",
+      "label": "Chimiothérapie",
+      "tips": "Patient hospitalisé actif",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q10",
+      "label": "Clozapine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q11",
+      "label": "Digoxine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q12",
+      "label": "Ganciclovir/valganciclovir",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q13",
+      "label": "Solutés hyperosmolaires",
+      "tips": "Sérum salé hypertonique (1,5 %, 3 %, 23,4 %), mannitol",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q14",
+      "label": "Immunosuppresseurs",
+      "tips": "Ciclosporine, sirolimus, tacrolimus",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q15",
+      "label": "Lidocaïne",
+      "tips": "Perfusion continue",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q16",
+      "label": "Lithium",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q17",
+      "label": "Prostacyclines",
+      "tips": "Époprosténol, iloprost, tréprostinil",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q18",
+      "label": "Théophylline",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q19",
+      "label": "Héparines à dose thérapeutique",
+      "tips": "Énoxaparine, perfusion d'héparine",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q20",
+      "label": "Vancomycine",
+      "tips": "Intraveineux",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q21",
+      "label": "Warfarine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q22",
+      "label": "Bloc neuromusculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q23",
+      "label": "Perfusions continues",
+      "tips": "Exclure ceux listés ailleurs",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q24",
+      "label": "Prise en charge par un service non-pharmacien",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q25",
+      "label": "Prise en charge par un pharmacien clinicien spécialisé",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q26",
+      "label": "Prophylaxie thromboembolique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q27",
+      "label": "Prophylaxie des ulcères de stress",
+      "tips": "Exclure la perfusion de pantoprazole",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q28",
+      "label": "Contrôle glycémique",
+      "tips": "Insuline sous-cutanée ; exclure l’insuline intraveineuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q29",
+      "label": "Protocole de gestion du transit intestinal",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q30",
+      "label": "Chlorhexidine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q31",
+      "label": "Opioïdes et sédatifs",
+      "tips": "Programmé et PRN (si besoin)",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q32",
+      "label": "Opioïdes et sédatifs en perfusion continue",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q33",
+      "label": "Antimicrobiens",
+      "tips": "Include HIV medications; exclude those listed elsewhere",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "q34",
+      "label": "Antimicrobiens à usage restreint",
+      "optional": false,
+      "default": 0,
+      "unit": "mrc-icu",
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q35",
+      "label": "Épuration extra-rénale continue (CRRT)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q36",
+      "label": "Oxygénation par membrane extracorporelle (ECMO)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q37",
+      "label": "Intra-aortic balloon pump (IABP) / left ventricular assist device (LVAD)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q38",
+      "label": "Ventilation mécanique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gwynn ME, Poisson MO, Waller JL, Newsome AS. Development and validation of a medication regimen complexity scoring tool for critically ill patients. American Journal of Health-System Pharmacy. 2019;76(Supplement_2):S34-S40.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31067298/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sikora A, Ayyala D, Rech MA, et al. Impact of pharmacists to improve patient care in the critically ill: a large multicenter analysis using meaningful metrics with the medication regimen complexity-icu (Mrc-icu) score*. Critical Care Medicine. 2022;50(9):1318-1328.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35678204/",
+      "kind": "other"
+    },
+    {
+      "text": "Balaban U, Yalcin N, Kaya EK, Ortac Ersoy E, Demirkan K. Optimizing critical care pharmacotherapy: dynamic prospective evaluation of the medication regimen complexity-intensive care unit (MRC-ICU) score in critically ill patients. Sci Rep. 2026;16(1):4264. doi:10.1038/s41598-025-34552-9",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41495168/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Newsome AS, Smith SE, Olney WJ, Jones TW. Multicenter validation of a novel medication-regimen complexity scoring tool. American Journal of Health-System Pharmacy. 2020;77(6):474-478.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34086844/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.apache-ii-score",
+    "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "88953cd8347a0c90067360f97de0d2e0",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10582,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\nvar q7 = parseFloat(q7);\nvar q8 = parseFloat(q8);\nvar q9 = parseFloat(q9);\nvar q10 = parseFloat(q10);\nvar q11 = parseFloat(q11);\nvar q12 = parseFloat(q12);\nvar q13 = parseFloat(q13);\nvar q14 = parseFloat(q14);\nvar q15 = parseFloat(q15);\nvar q16 = parseFloat(q16);\nvar q17 = parseFloat(q17);\nvar q18 = parseFloat(q18);\nvar q19 = parseFloat(q19);\nvar q20 = parseFloat(q20);\nvar q21 = parseFloat(q21);\nvar q22 = parseFloat(q22);\nvar q23 = parseFloat(q23);\nvar q24 = parseFloat(q24);\nvar q25 = parseFloat(q25);\nvar q26 = parseFloat(q26);\nvar q27 = parseFloat(q27);\nvar q28 = parseFloat(q28);\nvar q29 = parseFloat(q29);\nvar q30 = parseFloat(q30);\nvar q31 = parseFloat(q31);\nvar q32 = parseFloat(q32);\nvar q33 = parseFloat(q33);\nvar q34 = parseFloat(q34);\nvar q35 = parseFloat(q35);\nvar q36 = parseFloat(q36);\nvar q37 = parseFloat(q37);\nvar q38 = parseFloat(q38);\n\nvar score = 3*q1 + q2 + 1*q3 + 1*q4 + 3*q5 + q6 + 2*q7 + 2*q8 + 3*q9 + q10 + q11 + 1*q12 + 1*q13 + 3*q14 + q15 + q16 + 2*q17 + q18 + 2*q19 + q20 + q21 + q22 + 1*q23 + q24 + q25 + q26 + q27 + q28 + q29 + q30 + 1*q31 + 2*q32 + 1*q33 + 2*q34 + q35 + q36 + q37 + q38;\n\nvar risk;\nif (score < 10) {\n    risk = \"Low\";\n} else {\n    risk = \"High\";\n} \n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10582_MRC-ICU_result',\n    value: score,\n    value_text: 'points',\n    message: 'MRC-ICU Score'\n});\ncalc_output.push({\n    name: '10582_MRC-ICU_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: ''\n});",
+  "before_use": null,
+  "instructions": "- Pour chaque champ numérique, saisissez le nombre de médicaments distincts appartenant à cette catégorie pharmacologique particulière.\n- Les médicaments listés sous chaque catégorie pharmacologique sont fournis à titre d'exemples ; les médicaments non listés peuvent également appartenir à cette catégorie.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Andrea Sikora"
+  ],
+  "measurement_ids": [
+    "mrc-icu"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.amiodarone",
+    "s.argatroban",
+    "s.carbamazepine",
+    "s.chlorhexidine",
+    "s.clozapine",
+    "s.epoprostenol",
+    "s.fondaparinux",
+    "s.ganciclovir",
+    "s.iloprost",
+    "s.lidocaine",
+    "s.lithium",
+    "s.mannitol",
+    "s.pantoprazole",
+    "s.phenobarbital",
+    "s.posaconazole",
+    "s.sirolimus",
+    "s.sotalol",
+    "s.tacrolimus",
+    "s.theophylline",
+    "s.treprostinil",
+    "s.valganciclovir",
+    "s.voriconazole",
+    "s.adrenaline-lidocaine",
+    "s.alcool-isopropylique-chlorhexidine",
+    "s.benzalkonium-lidocaine",
+    "s.benzalkonium-chlorhexidine",
+    "s.cafeine-phenobarbital",
+    "s.cetrimide-lidocaine",
+    "s.chlorhexidine-lidocaine",
+    "s.chlorhexidine-tetracaine",
+    "s.chlorhexidine-chlorobutanol",
+    "s.chlorhexidine-ethanol",
+    "s.chlorhexidine-tixocortol",
+    "s.hexamidine-lidocaine",
+    "s.lidocaine-prilocaine",
+    "s.lidocaine-zinc",
+    "s.lidocaine-magnesium",
+    "s.lidocaine-mefenidramium-methylsulfate",
+    "s.lidocaine-phenazone",
+    "s.lidocaine-nifedipine",
+    "s.lidocaine-naphazoline",
+    "s.alcool-benzylique-benzalkonium-chlorhexidine",
+    "s.alcool-dichlorobenzylique-amylmetacresol-lidocaine",
+    "s.chlorhexidine-lysozyme-tetracaine",
+    "s.chlorhexidine-chlorocresol-hexamidine",
+    "s.enoxolone-erysimum-lidocaine",
+    "s.hydrocortisone-lidocaine-mefenidramium-methylsulfate",
+    "s.lidocaine-phenylephrine-tropicamide",
+    "s.carraghenates-lidocaine-titane-dioxyde-zinc-oxyde",
+    "s.fludrocortisone-lidocaine-neomycine-polymyxine-b",
+    "s.glutamique-glutathion-histidine-hydroxyde-lactobionique-magnesium-mannit",
+    "s.lidocaine-epinephrine",
+    "s.metronidazole-miconazole-lidocaine",
+    "s.polymyxine-neomycine-fludrocortisone-lidocaine",
+    "s.tribenoside-lidocaine",
+    "s.carraghenates-dioxyde-titane-oxyde-zinc-lidocaine"
+  ],
+  "engine_sha256": "7e0bd325b71fab31f7ceacce45a9a0fb77be393777407adbb5fdc537561d5527"
+}

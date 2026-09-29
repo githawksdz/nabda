@@ -1,0 +1,279 @@
+{
+  "id": "calc.modified-sequential-organ-failure-assessment-msofa-score",
+  "slug": "modified-sequential-organ-failure-assessment-msofa-score",
+  "language": "en",
+  "title": "Modifié séquentiel organe défaillance évaluation (mSOFA) score",
+  "short_title": "Score MSOFA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "Modified Sequential Organ Failure Assessment (mSOFA) Score, mSOFA Score, msofa, sofa, sofa score, modified sofa score, qsofa, quick sofa score, ICU mortality, mortality"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Respiratory | | |\n| SpO₂/FiO₂ (see table below for estimating FiO₂ from oxygen flow/delivery rates) | >400 | 0 |\n| >315 to ≤400 | 1 | |\n| >235 to ≤315 | 2 | |\n| >150 to ≤235 | 3 | |\n| ≤150 | 4 | |\n| Liver | | |\n| Scleral icterus or jaundice present | No | 0 |\n| Yes | 3 | |\n| Cardiovascular | | |\n| Hypotension* | No hypotension | 0 |\n| MAP <70 mmHg | 1 | |\n| DOPamine ≤5 or DOBUTamine (any dose) | 2 | |\n| DOPamine >5, EPINEPHrine ≤0.1, or norEPINEPHrine ≤0.1 | 3 | |\n| DOPamine >15, EPINEPHrine >0.1, or norEPINEPHrine >0.1 | 4 | |\n| CNS | | |\n| [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs\\) ** | 15 | 0 |\n| 13-14 | 1 | |\n| 10-12 | 2 | |\n| 6-9 | 3 | |\n| <6 | 4 | |\n| Renal | | |\n| Creatinine, mg/dL | <1.2 | 0 |\n| 1.2-1.9 | 1 | |\n| 2.0-3.4 | 2 | |\n| 3.5-4.9 | 3 | |\n| >5.0 | 4 | |\n\n*Based on [mean arterial pressure](nabda:calc.mean-arterial-pressure-map) OR administration of vasoactive agents in mcg/kg/min).\n\n**Note: \"Best\"/highest GCS in 24 hr period recommended.\n\nEstimating FiO₂ from oxygen flow/delivery rates:\n\n| Type of O₂ delivery | Flow rates, L/min | FiO₂ |\n| --- | --- | --- |\n| Nasal cannula | 1-6 | ~4% FiO₂ added above room air* per 1 L/min Room air = 21% 1 L/min = 25% 2 L/min = 29% 3 L/min = 33% 4 L/min = 37% 5 L/min = 41% 6 L/min = 45% |\n| Simple face mask | ~6-12 | 35-60%* |\n| Non-rebreather mask | 10-15 | ~70-90% |\n| High-flow nasal cannula | Up to 60 | 30-100% |\n\n*Varies based on respiratory rate and minute ventilation.",
+  "how_to_use": {
+    "why": "Le score mSOFA présente une précision prédictive similaire, sans nécessiter d’examens de laboratoire qui peuvent ne pas être indiqués initialement chez un patient critique (ABG, LFTs).",
+    "when": "Nous devons traduire en français médical clair, en conservant les éléments spécifiés. La source est un paragraphe en anglais. Il n'y a pas de tableau markdown. Il faut traduire : titres, consignes, formules en prose, tableaux markdown, libellés, options, why/when/pearls, next_steps, evidence, more_info. Ici, c'est un paragraphe. Il mentionne mSOFA score, SOFA score avec lien nabda. Il faut conserver le lien markdown, href, identifiants nabda:, citations, noms de scores, acronymes, chiffres, unités, seuils, etc. Ne change aucun chiffre. N'invente aucune recommandation. Réponds uniquement par la traduction finale.\n\nTexte source : \"The mSOFA score has very similar predictive accuracy when compared to the full [SOFA score](nabda:calc.sequential-organ-failure-assessment-sofa-score) and does not require significant lab testing (ABG, LFTs) to complete. It still uses the same body system components for testing, but estimates P:F ratio using O~2~saturation and FiO~2~; it estimates liver dysfunction by looking for signs of jaundice or scleral icterus.\"\n\nTraduction : \n\"Le score mSOFA a une précision prédictive très similaire à celle du [score SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) complet et ne nécessite pas de tests de laboratoire significatifs (gaz du sang artériel, bilan hépatique) pour être réalisé. Il utilise toujours les mêmes composants de systèmes corporels pour l'évaluation, mais estime le rapport P:F en utilisant la saturation en O~2~ et la FiO~2~ ; il estime la dysfonction hépatique en recherchant des signes d'ictère ou d'ictère scléral.\"\n\nVérifions : ABG = arterial blood gas, souvent \"gaz du sang artériel\" ou \"gazométrie artérielle\". LFTs = liver function tests = bilan hépatique ou tests de la fonction hépatique. P:F ratio = rapport P:F ou PaO2/FiO2. O~2~ saturation = saturation en O2 (l'indice ~2~ est en exposant? Dans le texte source, O~2~saturation, le ~2~ est probablement un indice, mais on peut écrire O2 saturation. En markdown, ~2~ peut signifier indice? En fait, dans le texte source, O~2~saturation signifie O2 en indice? Souvent, on écrit O₂. Ici, le format est O~2~saturation, donc on peut garder O~2~ pour indice. En français : saturation en O~2~. FiO~2~ : FiO2. Ictère scléral = scleral icterus. \"jaundice\" = ictère. \"scleral icterus\" = ictère scléral. On peut dire \"signes d'ictère ou d'ictère scléral\". \"predictive accuracy\" = précision prédictive. \"does not require significant lab testing\" = ne nécessite pas de tests de laboratoire significatifs. \"to complete\" = pour être complété / pour être réalisé. \"It still uses the same body system components for testing\" = Il utilise toujours les mêmes composants de systèmes corporels pour l'évaluation. \"but estimates P:F ratio using O~2~saturation and FiO~2~\" =",
+    "pearls": "Le score mSOFA a été validé en externe, mais il est certainement moins largement étudié que le [score SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score)."
+  },
+  "next_steps": {
+    "advice": "La compréhension des objectifs de soins est d’une importance capitale chez tous les patients, en particulier ceux qui sont gravement malades. Savoir qu’un patient présente un risque élevé de mortalité peut être utile à l’équipe médicale traitante ainsi qu’au patient lui-même afin de prendre des décisions concernant son propre plan de traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score mSOFA | Mortalité à 30 jours |\n| --- | --- |\n| 0-7 | 4% |\n| 8-11 | 31% |\n| >11 | 58% |\n\nD’après [Grissom 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3811929/pdf/nihms-519811.pdf).",
+  "short_description": "ICU mortalité (only one lab parameter).",
+  "medium_description": "Predicts ICU mortalité using mostly clinique variables et fewer labs (similar pour [SOFA Score](nabda:calc.sequential-organ-failure-assessment-sofa-score) ).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sfratio",
+      "label": "SpO₂/FiO₂",
+      "tips": "Voir [Données probantes](#evidence) pour estimer la FiO₂ à partir des débits d'oxygène et des modes d'administration",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">400",
+          "value": 0
+        },
+        {
+          "label": ">315 pour ≤400",
+          "value": 1
+        },
+        {
+          "label": ">235 pour ≤315",
+          "value": 2
+        },
+        {
+          "label": ">150 pour ≤235",
+          "value": 3
+        },
+        {
+          "label": "≤150",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "jaundice",
+      "label": "Ictère scléral ou ictère présent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "hypo",
+      "label": "Hypotension",
+      "tips": "Basé sur [pression artérielle moyenne](nabda:calc.mean-arterial-pressure-map) OU administration d’agents vasoactifs en mcg/kg/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pas d’hypotension",
+          "value": 0
+        },
+        {
+          "label": "PAM <70 mmHg",
+          "value": 1
+        },
+        {
+          "label": "DOPamine ≤5 ou DOBUTamine (toute dose)",
+          "value": 2
+        },
+        {
+          "label": "DOPamine >5, EPINEPHrine ≤0,1, ou norEPINEPHrine ≤0,1",
+          "value": 3
+        },
+        {
+          "label": "DOPamine >15, EPINEPHrine >0.1, ou norEPINEPHrine >0.1",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "tips": "Remarque : il est recommandé d’utiliser le GCS « meilleur »/le plus élevé sur une période de 24 h.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "15",
+          "value": 0
+        },
+        {
+          "label": "13-14",
+          "value": 1
+        },
+        {
+          "label": "10-12",
+          "value": 2
+        },
+        {
+          "label": "6-9",
+          "value": 3
+        },
+        {
+          "label": "< 6",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine, mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.2",
+          "value": 0
+        },
+        {
+          "label": "1.2-1.9",
+          "value": 1
+        },
+        {
+          "label": "2.0-3.4",
+          "value": 2
+        },
+        {
+          "label": "3.5-4.9",
+          "value": 3
+        },
+        {
+          "label": ">5.0",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Grissom CK, Brown SM, Kuttler KG, et al. A modified sequential organ failure assessment score for critical care triage. Disaster Med Public Health Prep. 2010;4(4):277-84.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3811929/pdf/nihms-519811.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rahmatinejad Z, Reihani H, Tohidinezhad F, et al. Predictive performance of the SOFA and mSOFA scoring systems for predicting in-hospital mortality in the emergency department. Am J Emerg Med. 2019;37(7):1237-1241.",
+      "href": "https://www.ajemjournal.com/article/S0735-6757(18)30740-X/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.4c-mortality-score-covid-19",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.mean-arterial-pressure-map"
+  ],
+  "source_logic_hash": "5c35a8976c4ee5c83fd619bb8a0380f1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "mean arterial pressure"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10287,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.dobutamine",
+    "s.dopamine",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

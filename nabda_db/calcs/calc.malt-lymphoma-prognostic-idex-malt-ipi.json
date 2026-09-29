@@ -1,0 +1,174 @@
+{
+  "id": "calc.malt-lymphoma-prognostic-idex-malt-ipi",
+  "slug": "malt-lymphoma-prognostic-idex-malt-ipi",
+  "language": "en",
+  "title": "Index pronostique du lymphome du MALT (MALT-IPI)",
+  "short_title": "MALT-IPI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hematologie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "biologie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Maladies auto-immunes",
+    "Cancer",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Masse abdominale",
+    "Douleur abdominale",
+    "Sang dans les selles",
+    "Cancer",
+    "Douleur chronique",
+    "Diarrhea",
+    "Pleurs excessifs",
+    "Fatigue",
+    "Fever",
+    "Heartburn",
+    "Perte d'appétit",
+    "Lymphadenopathy",
+    "Mass",
+    "Rash",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "MALT Lymphoma Prognostic Index (MALT-IPI)",
+    "MALT-IPI",
+    "MALT Lymphoma Prognostic Index",
+    "MALT lymphoma",
+    "International Prognostic Index",
+    "IPI",
+    "mucosa-associated lymphoid tissue",
+    "lymphoma",
+    "Ann Arbor Stage",
+    "ldh",
+    "lymphoma prognosis",
+    "lymphoma outcome",
+    "event-free survival",
+    "EFS",
+    "progression-free survival",
+    "PFS",
+    "cause-specific survival",
+    "CSS",
+    "overall survival",
+    "OS"
+  ],
+  "dosing": false,
+  "formula": "The MALT-IPI is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age | <70 | 0 |\n| ≥70 | 1 | |\n| LDH level | Normal | 0 |\n| Elevated | 1 | |\n| Ann Arbor stage | I or II | 0 |\n| III or IV | 1 | |",
+  "how_to_use": {
+    "why": "Identifie les patients présentant un risque accru de progression de la maladie ou de décès, ce qui peut aider à adapter les approches thérapeutiques.",
+    "when": "- Utilisé en milieu clinique pour déterminer le pronostic des patients atteints d’un lymphome du tissu lymphoïde associé aux muqueuses (MALT).\n- Peut être employé dans les essais cliniques pour stratifier les patients selon le risque pronostique.",
+    "pearls": "- An adaptation of the International Prognostic Index (IPI) that is specific for MALT lymphoma.\n- Developed using the patient data set from the International Extranodal Lymphoma Study Group 19 (IELSG-19).\n- Factors such as age ≥70 years, elevated serum LDH, and Ann Arbor stage III or IV are associated with greater risks, including greater myelosuppression, increased comorbidities, and poorer outcomes.\n- Validated for use in both gastric and non-gastric MALT lymphoma."
+  },
+  "next_steps": {
+    "advice": "- Les patients classés comme présentant un risque faible ou intermédiaire peuvent souvent être pris en charge efficacement par des traitements moins agressifs.\n- Les patients à haut risque peuvent bénéficier d'un traitement plus précoce ou plus agressif.\n- Le MALT-IPI doit être utilisé comme un outil complémentaire plutôt que comme la seule base des décisions thérapeutiques. Il est nécessaire d'intégrer la valeur pronostique de l'outil à un jugement clinique global et de s'engager dans une décision médicale partagée avec les patients afin d'adapter les plans de traitement individuels.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| MALT-IPI | Niveau de risque | Survie à 5 ans | |\n| --- | --- | --- | --- |\n| 0 | Faible | EFS | 76.0 % |\n| | | PFS | 56.8 % |\n| | | CSS | 98.2 % |\n| | | OS | 96.7 % |\n| 1 | Intermédiaire | EFS | 48.4 % |\n| | | PFS | 48.0 % |\n| | | CSS | 94.7 % |\n| | | OS | 81.7 % |\n| ≥2 | Élevé | EFS | 15.7 % |\n| | | PFS | 22.7 % |\n| | | CSS | 74.3 % |\n| | | OS | 64.9 % |",
+  "short_description": "Pronostic du lymphome du MALT.",
+  "medium_description": "Identifie les patients atteints d'un lymphome MALT à risque d'évolution défavorable.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 70",
+          "value": 0
+        },
+        {
+          "label": "≥70",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Taux de LDH",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Elevated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Stade d'Ann Arbor",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "I ou II",
+          "value": 0
+        },
+        {
+          "label": "III ou IV",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Thieblemont C, Cascione L, Conconi A, et al. A MALT lymphoma prognostic index. Blood. 2017;130(12):1409-1417.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28720586/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hong J, Cho J, Ko YH, Kim SJ, Kim WS. Validation of the marginal zone lymphoma international prognostic index. Ann Hematol. 2019;98(2):457-464.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30310985/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.mantle-cell-lymphoma-international-prognostic-index-mipi"
+  ],
+  "source_logic_hash": "313aa5cefa3f313ea9d2e71099f99a59",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10539,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

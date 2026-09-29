@@ -1,0 +1,129 @@
+{
+  "id": "calc.simplified-motor-score-sms",
+  "slug": "simplified-motor-score-sms",
+  "language": "en",
+  "title": "Score moteur simplifié (SMS)",
+  "short_title": "Score moteur simplifié (Simplified Motor Score, SMS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "medecine-interne",
+    "neurologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Traumatisme"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Céphalée",
+    "Lésion/Traumatisme"
+  ],
+  "abbreviations": [
+    "gcs",
+    "head injury",
+    "trauma"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; points attribués ci-dessous :",
+  "how_to_use": {
+    "why": "The Simplified Motor Score allows providers to rapidly assess trauma patients using a score that is significantly simpler than the GCS, has higher inter-rater reliability and comparable sensitivity for significant traumatic brain injury, the need for neurosurgery and/or intubation and death.\n\nThough the composite GCS has been almost universally adopted, there are concerns about its poor reproducibility and the validity of using the composite score. The SMS offers a convenient and viable alternative.",
+    "when": "Pour l’évaluation des patients en contexte préhospitalier et de soins aigus pour un éventuel traumatisme craniocérébral.",
+    "pearls": "The Simplified Motor Score (SMS) has been suggested as a replacement for the [GCS](nabda:calc.glasgow-coma-scale-score-gcs) in the evaluation of patients for traumatic brain injury.\n\n- A meta-analysis of 5 studies (102,132 total subjects) found that for predicting clinically significant TBI, need for neurosurgery, and need for intubation, the SMS and [GCS](nabda:calc.glasgow-coma-scale-score-gcs) were statistically equivalent.\n- A prospective study involving 126 trauma patients found that the SMS had significantly greater inter-rater reliability (83%) than the [GCS](nabda:calc.glasgow-coma-scale-score-gcs) (32%) when performed within 5 minutes of each by two ED physicians who were blinded to the other’s assessments.\n\n**Points to keep in mind:**\n\n- It should be noted that all comparisons of the discriminatory value of the SMS compared to the [GCS](nabda:calc.glasgow-coma-scale-score-gcs) were retrospective reviews of prospectively collected registry data.\n- There is no published data on whether observed differences in performance between the SMS and [GCS](nabda:calc.glasgow-coma-scale-score-gcs) are truly clinically insignificant as is asserted by the authors of several of the comparative studies."
+  },
+  "next_steps": {
+    "advice": "The Simplifed Motor Score (SMS) is defined as:\n\n- Obeys commands = 2\n- Localizes to pain = 1\n- Withdrawals to pain or worse = 0.\n\nPatients with a SMS of <2 are at significantly increased risk of having a significant traumatic brain injury and prompt evaluation and head CT imaging is indicated for these patients.",
+    "critical_actions": "Comme pour le [GCS](nabda:calc.glasgow-coma-scale-score-gcs), les décisions de prise en charge doivent être fondées sur le tableau clinique global du patient. Toutefois, le SMS semble avoir une sensibilité similaire à celle du GCS pour prédire les patients à risque de TBI significatif.",
+    "management": "Les décisions de prise en charge clinique ne doivent pas être fondées uniquement sur le score SMS, bien que des scores <2 soient associés à un pronostic clinique plus défavorable. Le seuil pour réaliser une TDM cérébrale chez ces patients doit être bas."
+  },
+  "evidence": "- The SMS was initially validated in a retrospective analysis of 8,347 patients in a prospectively maintained trauma registry of a US Level I trauma center that found it comparable to GCS for its ability to predict the need for ED intubation, neurosurgical intervention, traumatic brain injury and mortality. ([Gill 2005](https://www.pubmed.gov/15635308/))\n- A secondary analysis of 21,170 patients from a large prospective trauma database found that the SMS also performed comparably to the total GCS with respect to the same 4 key outcome measures (need for ED intubation, neurosurgical intervention, traumatic brain injury and mortality) with a median difference of 5%. ([Haukoos 2006](https://www.pubmed.gov/17113193/))\n- A similar analysis of 19,408 patients in the out-of-hospital setting found the SMS had nearly equivalent discriminatory ability (small statistical differences, but no clinically significant [a priori defined as <5% absolute difference in the area under the receiver operating characteristic curve]) compared to the GCS. ([Thompson 2011](https://www.pubmed.gov/21803448/))\n- A large retrospective analysis of a statewide trauma registry of 52,412 again found the SMS had comparable sensitivity compared to the GCS for mortality (72.2% vs. 74.6%), traumatic brain injury (40.8 vs 45.4%), need for neurosurgery (52.9% vs. 60%) and intubation (72.7% vs. 75.5%) and conclude the performance of the two score to be “clinically indistinguishable.” ([Caterino 2011](https://www.pubmed.gov/21795294/))\n- According a large meta-analysis the SMS was 86-88% sensitive for predicting mortality vs. the GCS which was 90-91% sensitive. Given the large sample size this difference was found to be statistically significant (p = 0.01), though the authors found “the difference to be very small and the clinical significance remained undetermined.” ([Singh 2012](https://www.pubmed.gov/23252405/))",
+  "more_info": "| Criteria | Value |\n| --- | --- |\n| Obeys commands | +2 |\n| Localizes pain | +1 |\n| Withdrawal to pain or worse | 0 |",
+  "short_description": "GCS simplifié pour traumatisme crânien.",
+  "medium_description": "Simplifies évaluation de head traumatisme patients compared pour [GCS](nabda:calc.glasgow-coma-scale-score-gcs).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "patient_response",
+      "label": "Réponse du patient",
+      "tips": "Score de meilleure réponse",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Obéit aux ordres",
+          "value": 2
+        },
+        {
+          "label": "Localise la douleur",
+          "value": 1
+        },
+        {
+          "label": "Withdrawals pour douleur ou worse",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gill M, Windemuth R, Steele R, Green SM. A comparison of the Glasgow Coma Scale score to simplified alternative scores for the prediction of traumatic brain injury outcomes. Ann Emerg Med. 2005 Jan;45(1):37-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15635308",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Haukoos JS, Gill MR, Rabon RE, Gravitz CS, Green SM. Validation of the Simplified Motor Score for the prediction of brain injury outcomes after trauma. Ann Emerg Med. 2007 Jul;50(1):18-24. Epub 2006 Nov 16.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17113193",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Thompson DO, Hurtado TR, Liao MM, Byyny RL, Gravitz C, Haukoos JS.Validation of the Simplified Motor Score in the out-of-hospital setting for the prediction of outcomes after traumatic brain injury. Ann Emerg Med. 2011 Nov;58(5):417-25. doi: 10.1016/j.annemergmed.2011.05.033. Epub 2011 Jul 30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21803448",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.pediatric-glasgow-coma-scale-pgcs",
+    "calc.nexus-head-ct-instrument"
+  ],
+  "source_logic_hash": "efa6ed56e1c50f1c3cb7a3789f65f4bf",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1832,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \nvar mini_msg=''; \nvar msg='';\n\nif(parseFloat(patient_response)==2){mini_msg='Low risk'; msg='A SMS score of 2 correlates with a low risk of need for intubation, neurosurgical intervention or mortality (like a GCS of 14-15).'}else{mini_msg='Increased risk'; msg='Patients with an SMS of <2 are at significantly increased risk of having a significant traumatic brain injury and prompt evaluation and head CT imaging is indicated for these patients.'} \n\ncalc_output.push({\n    name:'mini',\n    value:parseFloat(patient_response),\n    value_text:'points',message:mini_msg\n}); \ncalc_output.push({\n    name:'1832_Simplified Motor Score_result',\n    value:parseFloat(patient_response),\n    value_text:'points',\n    message:msg\n});",
+  "before_use": null,
+  "instructions": "Coter la *meilleure* réponse du patient.",
+  "contributor_ids": [
+    "daniel-runde"
+  ],
+  "creator_names": [
+    "Dr. Steven Green"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "236a3723c1464e9f5b30c035bee00eb49e6e03bfe21220bc8fef7cdf71ccc768"
+}

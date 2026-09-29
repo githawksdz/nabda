@@ -1,0 +1,147 @@
+{
+  "id": "calc.a-a-o2-gradient",
+  "slug": "a-a-o2-gradient",
+  "language": "fr",
+  "title": "Gradient d'O₂",
+  "short_title": "Gradient d'O₂",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Insuffisance cardiaque",
+    "Pneumonia",
+    "Embolie pulmonaire",
+    "Insuffisance respiratoire",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "intubation",
+    "abg",
+    "aa",
+    "aaa",
+    "alveolar",
+    "PO2",
+    "PaO2",
+    "FiO2",
+    "alveolar gas",
+    "covid",
+    "covid-19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "A-a O₂ Gradient = [ (FiO₂) × (Atmospheric Pressure - H₂O Pressure) - (PaCO₂/0.8) ] – PaO₂ from ABG\n\nH₂O pressure = 47 mmHg\n\nNormal Gradient Estimate = (Age/4) + 4",
+  "how_to_use": {
+    "why": "Le gradient alvéolo-artériel (A-a) peut aider à déterminer la cause de l’hypoxie ; il permet de préciser la localisation de l’hypoxie, intra- ou extrapulmonaire.",
+    "when": "- Patients présentant une hypoxie inexpliquée.\n- Patients dont l’hypoxie dépasse le degré de gravité de leur tableau clinique.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Après avoir calculé le gradient alvéolo-artériel (A-a) et déterminé s’il est élevé ou normal, on peut exclure plusieurs causes d’hypoxie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**The 5 Causes of Hypoxemia**\n\n| | Causes of Hypoxemia | A-a O₂ Gradient Shift |\n| --- | --- | --- |\n| 1 | V/Q Mismatch (ex: PNA, CHF, PE, ARDS, atelectasis, etc) | Elevation |\n| 2 | Shunt (ex: PFO, ASD, pulmonary AVMs) | Elevation |\n| 3 | Alveolar Hypoventilation (ex: interstitial lung dz, environmental lung dz, PCP PNA) | Elevation |\n| 4 | Hypoventilation (ex: COPD, CNS d/o, neuromuscular dz, etc) | Depression |\n| 5 | High altitude | Depression |",
+  "short_description": "Shunt et inadéquation ventilation/perfusion (V/Q).",
+  "medium_description": "Assesses pour degree de shunting et V/Q mismatch.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "atmospheric_pressure",
+      "label": "Pression atmosphérique",
+      "tips": "Utiliser 760 mm Hg (101,33 kPa) au niveau de la mer",
+      "optional": false,
+      "unit": "atm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pao2",
+      "label": "PaO₂",
+      "optional": false,
+      "unit": "pao2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fio2",
+      "label": "FiO₂",
+      "tips": "Utiliser 21 % pour l'air ambiant",
+      "optional": false,
+      "default": 21,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "paco2",
+      "label": "PaCO₂",
+      "optional": false,
+      "unit": "paco2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge (pour expected - gradient)",
+      "optional": true,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Helmholz HF Jr. The abbreviated alveolar air equation. Chest. 1979 Jun;75(6):748",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/436542",
+      "kind": "pubmed"
+    },
+    {
+      "text": "McFarlane MJ, Imperiale TF. Use of the alveolar-arterial oxygen gradient in the diagnosis of pulmonary embolism. Am J Med. 1994 Jan;96(1):57-62.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8304364",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lights-criteria-exudative-effusions",
+    "calc.pediatric-endotracheal-tube-ett-size",
+    "calc.drug-resistance-pneumonia-drip-score"
+  ],
+  "source_logic_hash": "84cfe923d99539cce0b2baea798db149",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 243,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,164 @@
+{
+  "id": "calc.novel-pneumonia-risk-score-prs",
+  "slug": "novel-pneumonia-risk-score-prs",
+  "language": "en",
+  "title": "Novel pneumonie risque score (PRS)",
+  "short_title": "Pneumonie risque score (PRS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Pneumonia"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Novel Pneumonia Risk Score (PRS)",
+    "prs",
+    "novel pneumonia",
+    "pneumonia risk score",
+    "radiographic pneumonia",
+    "radiographic pneumonia risk",
+    "pneumonia risk",
+    "radiographic pneumonia risk score"
+  ],
+  "dosing": false,
+  "formula": "The probability of radiographic pneumonia is calculated based on the following inputs:\n\n- Age, years\n- Fever ***** at home or in ED (yes or no)\n- First O2 saturation obtained\n- Crackles (yes or no)\n- Wheezing (yes or no)\n\n% risk of radiographic pneumonia = e^x^/(1+e^x^)*100\n\nwhere x = 18.05624 + 0.098308*(Age, years) + 1.144985*(Fever) - 0.21636*(First O2 saturation obtained) + 0.407494*(Crackles) - 0.907087*(Wheezing)\n\nPneumonia Risk Score (PRS):\n\n| % Risk of Radiographic Pneumonia | Pneumonia Risk Score (PRS) |\n| --- | --- |\n| <5% (low) | 1 |\n| ≥5% and <11% (low) | 2 |\n| ≥11% and <21% (medium) | 3 |\n| ≥21% and <51% (medium) | 4 |\n| ≥51% and <75% (high) | 5 |\n| ≥75% (high) | 6 |\n\n***** A fever is defined as >38°C (>100.4°F).",
+  "how_to_use": {
+    "why": "",
+    "when": "Do you use the Novel Pneumonia Risk Score (PRS) and want to contribute your expertise?[Join](https://www.mdcalc.com/join-us)our contributor team!",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "| Pneumonia Risk Score | Recommendations |\n| --- | --- |\n| 1-2 | Low risk, consider deferring chest X-ray and antibiotics |\n| 3-4 | Moderate risk, consider chest X-ray to further evaluate for pneumonia |\n| 5-6 | High risk, consider chest X-ray vs. empiric antibiotics |\n\n*Scores were derived from a population of children presenting to an emergency department in whom a clinician obtained a CXR for suspicion for pneumonia. This score may over-estimate actual risk when applied to children with lower suspicion of pneumonia.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Pneumonie risque.",
+  "medium_description": "Predicts radiographic pneumonie dans enfants.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, months ou years",
+      "optional": false,
+      "unit": "prs_age",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "fever",
+      "label": "Fièvre at home ou dans ED",
+      "tips": "A fever is defined as >38°C (>100.4°F)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "oxygen",
+      "label": "First O~2~saturation obtained",
+      "optional": false,
+      "unit": "o2_sat",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "crackles",
+      "label": "Crackles",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wheezing",
+      "label": "Wheezing",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lipsett SC, Hirsch AW, Monuteaux MC, Bachur RG, Neuman MI. Development of the novel pneumonia risk score to predict radiographic pneumonia in children. Pediatric Infectious Disease Journal. 2022;41(1):24-30.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34694254/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lipsett SC, Hirsch AW, Monuteaux MC, Bachur RG, Neuman MI. Development of the novel pneumonia risk score to predict radiographic pneumonia in children. Pediatric Infectious Disease Journal. 2022;41(1):24-30.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34694254/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gupta-postoperative-pneumonia-risk",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.piro-score-community-acquired-pneumonia"
+  ],
+  "source_logic_hash": "633d40ee7410ecdb25ab815c73e2caa9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10394,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

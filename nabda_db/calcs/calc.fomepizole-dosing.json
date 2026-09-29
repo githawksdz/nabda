@@ -1,0 +1,119 @@
+{
+  "id": "calc.fomepizole-dosing",
+  "slug": "fomepizole-dosing",
+  "language": "en",
+  "title": "Posologie du fomépizole",
+  "short_title": "Posologie du fomépizole",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "urgences",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "methanol",
+    "ethylene glycol",
+    "poison",
+    "4-methylpyrazole",
+    "antizol",
+    "antifreeze",
+    "windshield wiper fluid"
+  ],
+  "dosing": true,
+  "formula": "Posologie du fomépizole :\n\n- Dose de charge de 15 mg/kg IV.\n- Après 12 heures, administrer 10 mg/kg pour les quatre doses suivantes.\n- Ensuite, administrer 15 mg/kg toutes les 12 heures par la suite.\n\nSi le patient est sous hémodialyse :\n\n- Administrer au début de la dialyse si la dernière dose remonte à >6 heures.\n- Administrer toutes les 4 heures pendant la dialyse.\n- À la fin de la dialyse, administrer la dose prévue si >3 heures se sont écoulées depuis la dernière dose, ou ½ dose si 1-3 heures se sont écoulées depuis la dernière dose.",
+  "how_to_use": {
+    "why": "Le fomépizole est un inhibiteur de l’alcool déshydrogénase utilisé pour prévenir la formation de métabolites toxiques formés après l’ingestion d’alcools toxiques.",
+    "when": "- Patients chez qui une ingestion d'[alcool toxique](nabda:calc.estimated-ethanol-toxic-alcohol-serum-concentration-based-ingestion) est suspectée, afin de prévenir la formation de métabolites toxiques.\n- Les indications comprennent les ingestions de méthanol, d'éthylène glycol et de diéthylène glycol, afin d'arrêter le métabolisme de l'acide formique, de l'acide oxalique et de l'acide diglycolique, respectivement.\n- Le fomépizole n'est pas indiqué en cas d'ingestion connue d'alcool isopropylique.",
+    "pearls": "- Fomepizole is safe in adults and children, and is a Category C drug in pregnancy (adverse fetal effects have been observed in animal studies but no adequate studies have been performed in humans, and potential benefits may warrant use).\n- Patients should be on telemetry and BP monitoring during infusion, as fomepizole can cause bradycardia and hypotension.\n- After 48 hours, dose should be increased to 15 mg/kg every 12 hours as fomepizole induces its own metabolism.\n- If fomepizole is not available, ethanol can be given to block alcohol dehydrogenase.\n- While [Anion Gap](nabda:calc.anion-gap) and [Serum Osmolality/Osmolarity](nabda:calc.serum-osmolality-osmolarity) may help with decision making, normal anion gap and osmol gap do not exclude toxic alcohol ingestion.\n- Patients with signs of end-organ damage from toxic alcohol should be referred for immediate hemodialysis in addition to fomepizole.\n- Lack of clinical intoxication cannot exclude toxic alcohol ingestion."
+  },
+  "next_steps": {
+    "advice": "If a patient has an unexplained [anion gap](nabda:calc.anion-gap) or [osmolar gap](nabda:calc.serum-osmolality-osmolarity) , resuscitate the patient with fluids and thiamine, with or without glucose (food or IV dextrose) and repeat the BMP and osmolar gap in an hour. If anion gap worsens, consider toxic alcohol ingestion.",
+    "critical_actions": "",
+    "management": "Relation entre le trou osmolaire et le trou anionique dans l'alcool toxique :\n![Relation entre le trou osmolaire et le trou anionique dans l'alcool toxique.](https://cdn-web-img.mdcalc.com/content/fomepizole.png)"
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Methanol et ethylene glycol reversal.",
+  "medium_description": "Doses fomepizole pour methanol et ethylene glycol reversal.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids corporel du patient",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Howland MA. Antidotes in Depth: Fomepizole. In: Flomenbaum NE, Goldfrank LR, Hoffman RS et al, eds: Goldfrank’s Toxicologic Emergencies. New York NY, 2006;1460-1464.",
+      "href": "https://accesspharmacy.mhmedical.com/Content.aspx?bookid=1163&sectionid=65087766",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. N Engl J Med. 2009;360(21):2216-23.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19458366 ",
+      "kind": "other"
+    },
+    {
+      "text": "Brent J, Mcmartin K, Phillips S, Aaron C, Kulig K. Fomepizole for the treatment of methanol poisoning. N Engl J Med. 2001;344(6):424-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172179 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.estimated-ethanol-toxic-alcohol-serum-concentration-based-ingestion",
+    "calc.anion-gap",
+    "calc.serum-osmolality-osmolarity"
+  ],
+  "source_logic_hash": "f57140eae8fb86f496b94d14cd5f553f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.anion-gap",
+      "text": "Anion Gap"
+    },
+    {
+      "type": "calc",
+      "id": "calc.serum-osmolality-osmolarity",
+      "text": "Serum Osmolality/Osmolarity"
+    },
+    {
+      "type": "calc",
+      "id": "calc.estimated-ethanol-toxic-alcohol-serum-concentration-based-ingestion",
+      "text": "toxic alcohol"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4051,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.fomepizole",
+    "s.ethanol",
+    "s.chlorhexidine-ethanol",
+    "s.ethanol-povidone-iodee"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

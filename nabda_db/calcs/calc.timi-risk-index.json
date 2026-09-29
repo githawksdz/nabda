@@ -1,0 +1,106 @@
+{
+  "id": "calc.timi-risk-index",
+  "slug": "timi-risk-index",
+  "language": "en",
+  "title": "Indice de risque TIMI",
+  "short_title": "Indice de risque TIMI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Arrhythmia",
+    "Dyslipidemia",
+    "Hypertension"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "acs",
+    "cad",
+    "mi",
+    "myocardial infarction",
+    "heart disease"
+  ],
+  "dosing": false,
+  "formula": "Indice de risque TIMI = fréquence cardiaque × (âge/10)^2^ / pression artérielle systolique",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "A simple calculator to predict 30-day mortality, which has been well validated against a registry of 150,000 STEMI patients, and shown to have a very good discriminatory capacity. It was also validated against a registry of over 300,000 NSTEMI patients. It has been shown to both predict in-hospital and long-term mortality."
+  },
+  "next_steps": {
+    "advice": "Les estimations de mortalité peuvent être utiles pour déterminer le niveau de prise en charge et l'intensité du traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Mortalité dans ACS.",
+  "medium_description": "Provides mortalité estimate chez les patients avec ACS using only pression artérielle, fréquence cardiaque, et âge.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque/pulse",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "systolic_blood_pressure",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Wiviott SD, Morrow DA, Frederick PD, Antman EM, Braunwald E; National Registry of Myocardial Infarction. Application of the Thrombolysis in Myocardial Infarction risk index in non-ST-segment elevation myocardial infarction: evaluation of patients in the National Registry of Myocardial Infarction. J Am Coll Cardiol. 2006 Apr 18;47(8):1553-8. Epub 2006 Mar 29. PubMed PMID: 16630990.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16630990",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid"
+  ],
+  "source_logic_hash": "0eb27f7ef5c9c7a1e23a4c0f65daa902",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 665,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

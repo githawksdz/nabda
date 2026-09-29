@@ -1,0 +1,194 @@
+{
+  "id": "calc.stumbl-battle-score",
+  "slug": "stumbl-battle-score",
+  "language": "fr",
+  "title": "Score STUMBL/Battle",
+  "short_title": "Score STUMBL/Battle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée",
+    "Swelling",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "STUdy evaluating the impact of a prognostic model for Management of BLunt chest wall trauma patients (STUMBL score)",
+    "stumbl",
+    "stumbl score",
+    "battle score",
+    "stumbl/battle score",
+    "blunt chest trauma",
+    "blunt chest wall trauma",
+    "trauma mortality",
+    "rib fracture",
+    "rib score"
+  ],
+  "dosing": false,
+  "formula": "Le score STUMBL/Battle est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | | 1 point par tranche de 10 ans, à partir de 10 ans |\n| Nombre de fractures de côtes | | 3 points par fracture de côte |\n| Maladie pulmonaire chronique | Non | 0 |\n| Oui | 5 | |\n| Anticoagulation avant le traumatisme | Non | 0 |\n| Oui | 4 | |\n| Niveau de saturation en oxygène | ≥95 % | 0 |\n| 90-94 % | 2 | |\n| 85-89 % | 4 | |\n| 80-84 % | 6 | |",
+  "how_to_use": {
+    "why": "Cet outil peut aider à guider les décisions d'hospitalisation et de prise en charge chez les patients se présentant aux urgences avec un traumatisme fermé de la paroi thoracique.",
+    "when": "- À utiliser chez les patients de plus de 18 ans présentant un traumatisme fermé de la paroi thoracique afin de déterminer leur risque de complications.\n- Les complications incluent la mortalité et la morbidité, telles que les complications pulmonaires, l'admission en soins intensifs et une durée d'hospitalisation prolongée.\n- L'étude originale excluait les patients présentant une lésion engageant le pronostic vital et ceux admis en unité de soins intensifs pour d'autres pathologies.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les complications des fractures de côtes comprennent la mortalité hospitalière, les complications pulmonaires (telles que infection thoracique, pneumopathie, hémothorax, pneumothorax, épanchement pleural et empyème), l'admission en soins intensifs ou une durée d'hospitalisation prolongée (définie dans l'étude originale comme ≥7 jours).",
+    "critical_actions": "",
+    "management": "- Les patients présentant des scores élevés (et donc un risque plus élevé de complications) doivent être envisagés pour une surveillance rapprochée.\n- Les patients présentant une fracture de côtes doivent bénéficier d'un contrôle adéquat de la douleur, être encouragés à utiliser la spirométrie incitative et mobilisés précocement au cours de leur convalescence. Si des complications supplémentaires sont suspectées, une imagerie thoracique peut être nécessaire."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score STUMBL/Battle | Risque de complications |\n| --- | --- |\n| 0-10 | 13 ± 6 % |\n| 11-15 | 29 ± 8 % |\n| 16-20 | 52 ± 8 % |\n| 21-25 | 70 ± 6 % |\n| 26-30 | 80 ± 6 % |\n| ≥31 | 88 ± 7 % |",
+  "short_description": "Morbidité liée aux traumatismes fermés de la paroi thoracique.",
+  "medium_description": "Predicts morbidity chez les patients avec blunt chest wall traumatisme.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_stumbl",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "fractures",
+      "label": "Nombre de fractures de côtes",
+      "optional": false,
+      "unit": "fractures",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "lung",
+      "label": "Maladie pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "anticoagulant",
+      "label": "Pre-lésion anticoagulant use",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "o2",
+      "label": "Niveau de saturation en oxygène",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥95%",
+          "value": 0
+        },
+        {
+          "label": "90-94%",
+          "value": 2
+        },
+        {
+          "label": "85-89%",
+          "value": 4
+        },
+        {
+          "label": "80-84%",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Battle C, Hutchings H, Lovett S, et al. Predicting outcomes after blunt chest wall trauma: development and external validation of a new prognostic model. Crit Care. 2014;18(3):R98.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24887537/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Battle C, Abbott Z, Hutchings HA, et al. Protocol for a multicentre randomised feasibility STUdy evaluating the impact of a prognostic model for Management of BLunt chest wall trauma patients: STUMBL trial. BMJ Open. 2017;7(7):e015972.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28698337/",
+      "kind": "other"
+    },
+    {
+      "text": "Battle CE, Hutchings H, Evans PA. Risk factors that predict mortality in patients with blunt chest wall trauma: a systematic review and meta-analysis. Injury. 2012;43(1):8-17.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21256488/",
+      "kind": "other"
+    },
+    {
+      "text": "Callisto E, Costantino G, Tabner A, Kerslake D, Reed MJ. The clinical effectiveness of the STUMBL score for the management of ED patients with blunt chest trauma compared to clinical evaluation alone. Intern Emerg Med. 2022;17(6):1785-1793.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35739456/",
+      "kind": "other"
+    },
+    {
+      "text": "Giamello JD, Martini G, Prato D, et al. A retrospective validation study of the STUMBL score for emergency department patients with blunt thoracic trauma. Injury. 2023;54(1):39-43.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36028375/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mukerji S, Tan E, May C, et al. Retrospective validation of a risk stratification tool developed for the management of patients with blunt chest trauma (The stumbl score). Emerg Med Australas. 2021;33(5):841-847.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33599054/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+    "calc.ribscore",
+    "calc.pediatric-trauma-big-score"
+  ],
+  "source_logic_hash": "21d88be8e7942be6870c488516c24044",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10468,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

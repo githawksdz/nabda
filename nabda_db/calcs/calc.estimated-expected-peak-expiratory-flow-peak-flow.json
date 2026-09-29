@@ -1,0 +1,177 @@
+{
+  "id": "calc.estimated-expected-peak-expiratory-flow-peak-flow",
+  "slug": "estimated-expected-peak-expiratory-flow-peak-flow",
+  "language": "en",
+  "title": "Débit expiratoire de pointe estimé/attendu (débit de pointe)",
+  "short_title": "Débit expiratoire de pointe estimé",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "asthma",
+    "estimated peak flow"
+  ],
+  "dosing": false,
+  "formula": "**Ages 5-7 years and any ethnicity:**\n\nPEFR = [(Height, cm - 100) × 5] + 100\n\n**Ages 8-80 years and Caucasian, African American, or Mexican American ethnicity:**\n\nSee regression equations in Tables 4-5 in[Hankinson 1999](https://www.atsjournals.org/doi/abs/10.1164/ajrccm.159.1.9712108?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed#readcube-epdf)(NHANES III).\n\n**Ages 8-17 years, all other ethnicities:**\n\nPEFR = [(Height, cm - 100) × 5] + 100\n\n**Ages 18-80 years, all other ethnicities:**\n\nPEFR, male = {[(Height, m × 5.48) + 1.58] - [Age × 0.041]} × 60\n\nPEFR, female = {[(Height, m × 3.72) + 2.24] - [Age × 0.03]} × 60\n\n**Peak flow variability:**\n\nPeak flow variability, % = (actual peak flow rate / estimated peak flow rate) x 100\n\nThis calculator uses the equations from[Hankinson 1999](https://www.atsjournals.org/doi/abs/10.1164/ajrccm.159.1.9712108?url_ver=Z39.88-2003&rfr_id=ori%3Arid%3Acrossref.org&rfr_dat=cr_pub%3Dpubmed#readcube-epdf)(NHANES III) where available, and equations from[Knudson 1983](https://www.ncbi.nlm.nih.gov/pubmed/6859656)where there are deficits in the data (patients not 8-80 years and Caucasian, African American, or Mexican American ethnicity).",
+  "how_to_use": {
+    "why": "Asthma exacerbation severity can be quantified by comparing a patient’s current peak expiratory flow rate (PEFR) to their most recent personal best value. In the absence of a known recent personal best, this calculator can be used to estimate an expected “personal best.” The difference between the predicted and actual value can therefore help the clinician determine how severe the current exacerbation is.",
+    "when": "Utilisation chez les patients âgés de 5 à 80 ans atteints d’asthme.",
+    "pearls": "- Utile chez les patients qui ne connaissent pas leur débit expiratoire de pointe (peak flow) de base.\n- La comparaison du débit de pointe actuel d’un patient avec son meilleur débit de pointe personnel connu ou attendu ne représente qu’un aspect de l’évaluation d’un enfant présentant une exacerbation aiguë de l’asthme. D’autres facteurs importants, tels que la fréquence respiratoire, l’auscultation pulmonaire, l’état mental et l’utilisation des muscles respiratoires accessoires, doivent également être pris en compte.\n- La taille et le sexe ont été les facteurs les plus fortement corrélés au débit de pointe dans de multiples études ; toutefois, d’autres différences, notamment l’origine ethnique et d’autres facteurs, peuvent également jouer un rôle dans les valeurs prédites."
+  },
+  "next_steps": {
+    "advice": "Les patients dont le débit de pointe réel est nettement inférieur à la valeur estimée nécessitent généralement un traitement supplémentaire de leur asthme.",
+    "critical_actions": "L’évaluation du débit expiratoire de pointe ne doit pas retarder l’administration des traitements essentiels en cas d’exacerbation aiguë de l’asthme.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Variabilité | Zone de débit de pointe |\n| --- | --- |\n| >80% | Vert |\n| 50-80% | Jaune |\n| <50% | Rouge |",
+  "short_description": "Quantifies asthme gravité.",
+  "medium_description": "Quantifies asthme exacerbation gravité.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_pef",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race/ethnicity",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Caucasian",
+          "value": 0
+        },
+        {
+          "label": "African-American",
+          "value": 1
+        },
+        {
+          "label": "Mexican-American",
+          "value": 2
+        },
+        {
+          "label": "Autre",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "(age >= 8 && age < 18 && race != 3 ) || (age >= 18 && age <= 80)",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "apfr",
+      "label": "Débit expiratoire de pointe actuel",
+      "tips": "Optional",
+      "optional": true,
+      "unit": "pef",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Knudson RJ, Lebowitz MD, Holberg CJ, Burrows B. Changes in the normal maximal expiratory flow-volume curve with growth and aging. Am Rev Respir Dis. 1983. Jun;127(6):725-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6859656 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hankinson JL, Odencrantz JR, Fedan KB. Spirometric reference values from a sample of the general U.S. population. Am J Respir Crit Care Med. 1999;159(1):179-87.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9872837",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Auld PA. Pulmonary function testing in children: techniques and standards. The Journal of Pediatrics. 1972;80(1):152.",
+      "href": "https://www.jpeds.com/article/S0022-3476(72)80475-X/abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Sanz J, Martorell A, Saiz R, Alvarez V, Carrasco JI. Peak expiratory flow measured with the Mini Wright Peak Flow Meter in children. Pediatr Pulmonol. 1990;9(2):86-90.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2144618",
+      "kind": "other"
+    },
+    {
+      "text": "Høst A, Høst AH, Ibsen T. Peak expiratory flow rate in healthy children aged 6-17 years. Acta Paediatr. 1994;83(12):1255-7.",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1651-2227.1994.tb13008.x",
+      "kind": "other"
+    },
+    {
+      "text": "Balasubramanian S, Ravikumar NR, Chakkarapani E, Shivbalan SO. Peak expiratory flow rate in children--a ready reckoner. Indian Pediatr. 2002. Jan;39(1):104-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=11805367",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.copd-assessment-test-cat",
+    "calc.global-initiative-obstructive-lung-disease-gold-criteria-copd",
+    "calc.asthma-impairment-risk-questionnaire-airq"
+  ],
+  "source_logic_hash": "a97823f7d8a034a5913f818a1bc4bfd4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 790,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

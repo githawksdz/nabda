@@ -1,0 +1,242 @@
+{
+  "id": "calc.macocha-score",
+  "slug": "macocha-score",
+  "language": "en",
+  "title": "MACOCHA score",
+  "short_title": "MACOCHA score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Apnée obstructive du sommeil",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Cough",
+    "Dyspnea",
+    "Fatigue",
+    "Fever",
+    "Headache",
+    "Injury/Trauma",
+    "Dyspnée",
+    "Wheezing",
+    "Mouvements involontaires"
+  ],
+  "abbreviations": [
+    "MACOCHA Score",
+    "MACOCHA",
+    "intubation",
+    "ICU intubation",
+    "respiratory failure",
+    "icu",
+    "mallampati score",
+    "obstructive sleep apnea",
+    "osa"
+  ],
+  "dosing": false,
+  "formula": "The MACOCHA Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Factors related to patient | | |\n| M [allampati score](nabda:calc.modified-mallampati-classification\\) III or IV | No | 0 |\n| Yes | 5 | |\n| Obstructive sleep a pnea syndrome | No | 0 |\n| Yes | 2 | |\n| Reduced mobility of c ervical spine | No | 0 |\n| Yes | 1 | |\n| Limited mouth o pening, <3 cm | No | 0 |\n| Yes | 1 | |\n| Factors related to pathology | | |\n| C oma | No | 0 |\n| Yes | 1 | |\n| Severe h ypoxemia (<80%) | No | 0 |\n| Yes | 1 | |\n| Factor related to operator | | |\n| Non a nesthesiologist | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Use in patients for whom intubation is being considered.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "As the score increases from 0, so does the possibility of a difficult intubation in your patient. If difficulties are anticipated, gather additional staff and equipment as warranted by the clinical situation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "A higher score corresponds to a higher difficulty of intubation.",
+  "short_description": "Difficult intubation prédiction.",
+  "medium_description": "Predicts difficult intubation dans ICU patients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "mal",
+      "label": "**M** [allampati score](nabda:calc.modified-mallampati-classification) III ou IV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "osa",
+      "label": "Obstructive sleep **** pnea syndrome",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "spine",
+      "label": "Reduced mobility de **c** ervical spine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "open",
+      "label": "Limited mouth **o** pening, <3 cm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "coma",
+      "label": "**C** oma",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "o2",
+      "label": "Severe **h** ypoxemia (<80%)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "doc",
+      "label": "Non **** nesthesiologist",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "De Jong A, Molinari N, Terzi N, et al. Early identification of patients at risk for difficult intubation in the intensive care unit: development and validation of the MACOCHA score in a multicenter cohort study. Am J Respir Crit Care Med. 2013;187(8):832-839.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23348979/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.noninvasive-ventilation-outcomes-nivo-score",
+    "calc.modified-mallampati-classification",
+    "calc.hacor-score"
+  ],
+  "source_logic_hash": "d1394a8b8aea50b784b14d0cdb03ee33",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-mallampati-classification",
+      "text": "allampati score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10476,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

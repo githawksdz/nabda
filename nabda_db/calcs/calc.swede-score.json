@@ -1,0 +1,243 @@
+{
+  "id": "calc.swede-score",
+  "slug": "swede-score",
+  "language": "fr",
+  "title": "Score de Swede",
+  "short_title": "Score de Swede",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "general",
+    "medecine-interne",
+    "infectiologie",
+    "gynecologie-obstetrique",
+    "biologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer du col utérin",
+    "Infection à HPV"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Bleeding",
+    "Cancer",
+    "Fatigue",
+    "Fever",
+    "Hematuria",
+    "Perte d'appétit",
+    "Pain",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Hematochezia"
+  ],
+  "abbreviations": [
+    "Swede Score",
+    "colposcopy",
+    "cervical lesion",
+    "premalignant",
+    "cervix",
+    "cervical",
+    "dysplasia",
+    "cervical cancer",
+    "pap smear",
+    "cervical intraepithelial neoplasia",
+    "CIN",
+    "histopathology",
+    "colposcopy sign",
+    "iodine staining",
+    "acetowhitening",
+    "AWA",
+    "human papillomavirus",
+    "HPV",
+    "lesion size"
+  ],
+  "dosing": false,
+  "formula": "Le score de Swede est calculé en additionnant les points attribués à chacune des variables suivantes :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Prise de l'acide acétique | Absente ou transparente | 0 |\n| Terne, laiteuse (ni transparente, ni opaque) | 1 | |\n| Nettement blanche, opaque | 2 | |\n| Bords/surface | Diffus | 0 |\n| Nets mais irréguliers, dentelés, satellites « géographiques » | 1 | |\n| Nets et réguliers, différence de niveau de surface, y compris « effondrement en marche d'escalier » (cuffing) | 2 | |\n| Vaisseaux | Fins, réguliers | 0 |\n| Absents | 1 | |\n| Grossiers ou atypiques | 2 | |\n| Taille de la lésion | <5 mm | 0 |\n| 5-15 mm ou 2 quadrants | 1 | |\n| >15 mm ou 3-4 quadrants ou extension endocervicale non délimitée | 2 | |\n| Coloration à l'iode | Brune | 0 |\n| Jaune pâle ou en plaques | 1 |\n| Nettement jaune | 2 | |",
+  "how_to_use": {
+    "why": "- Fournit une méthode systématique pour évaluer et rapporter les constatations colposcopiques. Cela améliore la standardisation entre cliniciens et institutions.\n- Peut aider les internes à développer et affiner leurs compétences cliniques pendant leur formation à la colposcopie.\n- Conçu pour être simple et facile à utiliser, utilisable par des cliniciens de tout niveau d'expérience.\n- Aide les cliniciens à identifier les lésions susceptibles d'être des précurseurs du cancer du col utérin.",
+    "when": "Conçu pour être utilisé par les cliniciens afin de caractériser et documenter leurs constatations colposcopiques, réduisant la variabilité des observations entre les spécialistes réalisant cet examen.",
+    "pearls": "- Cet outil est un système de score fondé sur des caractéristiques cliniques pour distinguer les lésions précancéreuses des lésions bénignes observées lors de la colposcopie.\n- L'objectif était d'encourager une évaluation systématique des constatations colposcopiques, afin de réduire la subjectivité associée à l'examen.\n- Les résultats dépendent de l'expérience et des compétences du clinicien. Il est recommandé que les cliniciens évaluent/auditent leurs performances.\n- Initialement conçu pour appuyer l'évaluation clinique, et non comme outil de dépistage du cancer du col utérin.\n- Semblable à l'[indice de Reid](nabda:calc.reids-colposcopic-index-rci), mais inclut également la taille de la lésion.\n- Des études ont démontré une bonne spécificité (souvent ≥90 %, selon les études) pour identifier les lésions dont le diagnostic final est un CIN 2 ou plus.\n- La prise de l'acide acétique désigne le degré de blancheur après application d'acide acétique. Cette variable semblait être le prédicteur le plus important des lésions de haut grade."
+  },
+  "next_steps": {
+    "advice": "- Le diagnostic et la prise en charge ne doivent pas reposer uniquement sur le score de Swede.\n- Le score de Swede a été conçu principalement pour uniformiser le compte rendu des constatations diagnostiques lors de la colposcopie. Bien que des études aient discuté d'implications potentielles pour la prise en charge, aucun consensus définitif n'existe. Les seuils suivants ont été proposés dans certaines études de validation :\n\n - ≥8 : Un traitement excisionnel immédiat lors de l'examen diagnostique peut être envisagé. Certains auteurs recommandent de prendre en compte les résultats antérieurs du frottis dans cette décision (c'est-à-dire un frottis de haut grade).\n - ≥4 ou 5 : Une biopsie est recommandée. Cependant, le soutien à ce seuil est fragile, car les études ont montré que l'exclusion des lésions de bas grade est moins fiable avec cet outil. Certains experts recommandent de réaliser systématiquement des biopsies, quel que soit le score.\n- Veuillez vous référer à vos recommandations locales pour décider des prochaines étapes de la prise en charge.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Interprétation :\n\n| Score de Swede | Recommandation |\n| --- | --- |\n| <8 | Envisager une biopsie de la lésion en fonction de la suspicion clinique et de l'examen. |\n| ≥8 | Évocateur d'une lésion de haut grade. Envisager un traitement excisionnel lors de la colposcopie. |",
+  "more_info": "",
+  "short_description": "Élevé-grade lesion prédiction.",
+  "medium_description": "Colposcopically ​​predicts élevé-grade lesions (HGL) dans histology.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Prise de l'acide acétique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absente ou transparente",
+          "value": 0
+        },
+        {
+          "label": "Terne, laiteuse (ni transparente, ni opaque)",
+          "value": 1
+        },
+        {
+          "label": "Nettement blanche, opaque",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Margins/surface",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Diffuse",
+          "value": 0
+        },
+        {
+          "label": "Nets mais irréguliers, dentelés, satellites « géographiques »",
+          "value": 1
+        },
+        {
+          "label": "Sharp et even, difference dans surface level y compris “cuffing”",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Vessels",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Fins, réguliers",
+          "value": 0
+        },
+        {
+          "label": "Absent",
+          "value": 1
+        },
+        {
+          "label": "Grossiers ou atypiques",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Taille de la lésion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 5 mm",
+          "value": 0
+        },
+        {
+          "label": "5-15 mm ou 2 quadrants",
+          "value": 1
+        },
+        {
+          "label": ">15 mm ou 3-4 quadrants ou extension endocervicale non délimitée",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Coloration à l'iode",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Brown",
+          "value": 0
+        },
+        {
+          "label": "Jaune pâle ou en plaques",
+          "value": 1
+        },
+        {
+          "label": "Nettement jaune",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Strander B, Ellström-Andersson A, Franzén S, Milsom I, Rådberg T. The performance of a new scoring system for colposcopy in detecting high-grade dysplasia in the uterine cervix. Acta Obstet Gynecol Scand. 2005;84(10):1013-1017.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16167921/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bowring J, Strander B, Young M, Evans H, Walker P. The Swede score: evaluation of a scoring system designed to improve the predictive value of colposcopy. J Low Genit Tract Dis. 2010;14(4):301-305.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20885156/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Campos PL, Guimarães ICC do V, Fialho SCAV, et al. Association of Swede Score and 2011 IFCPC Nomenclature in Women with Abnormal Cytology. Rev Bras Ginecol Obstet. 2022;44(10):938-944.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36446560/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bidhuri S, Shamsunder S, H. K, et al. Predictive value of swede colposcopy score for predicting cervical intra epithelial neoplasia in cervical cancer screening with visual inspection with acetic acid. Asian Pac J Canc Care. Published online August 12, 2022. doi:10.31557/apjcc.2022.7.3.445-449",
+      "href": "https://www.waocp.com/journal/index.php/apjcc/article/view/857",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alfonzo E, Holmberg E, Milsom I, Strander B. Colposcopic assessment by Swedescore, evaluation of effectiveness in the Swedish screening programme: a cross-sectional study. BJOG. 2022;129(8):1261-1267.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34894043/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.reids-colposcopic-index-rci",
+    "calc.spinal-instability-neoplastic-scale-sins-score",
+    "calc.subaxial-injury-classification-severity-scale-slics"
+  ],
+  "source_logic_hash": "c33a50c57bc0342b8ae37d74d3945846",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.reids-colposcopic-index-rci",
+      "text": "Reid's Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10531,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

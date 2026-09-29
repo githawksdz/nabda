@@ -1,0 +1,311 @@
+{
+  "id": "calc.ottawa-copd-risk-scale",
+  "slug": "ottawa-copd-risk-scale",
+  "language": "en",
+  "title": "Ottawa COPD risque échelle",
+  "short_title": "Ottawa COPD risque échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "COPD",
+    "Ottawa",
+    "copd risk",
+    "poor outcomes",
+    "adverse events",
+    "COPD exacerbation",
+    "copd risk score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| History | |\n| Coronary bypass graft | 1 |\n| Intervention for peripheral vascular disease | 1 |\n| Intubation for respiratory distress (any history) | 2 |\n| Examination | |\n| HR ≥110/min (on arrival to ED) | 2 |\n| Too ill to do walk test* after treatment in ED (SaO 2 <90% or HR ≥120/min) | 2 |\n| Investigations | |\n| Acute ischemic changes on EKG (by clinician judgment) | 2 |\n| Pulmonary congestion on chest x-ray (by clinician judgment) | 1 |\n| Hemoglobin <10 g/dL (100 g/L) | 3 |\n| Urea ≥12 mmol/L (BUN ≥34 mg/dL) | 1 |\n| Serum CO 2 ≥35 mEq/L (35 mmol/L) | 1 |\n\n*In the study, a structured 3 min walk test was performed with the patient walking at their own pace regardless of distance and their normal walking aids (but they could not be supported by another person).",
+  "how_to_use": {
+    "why": "Risk-stratifying patients with acute COPD exacerbation can allow for safer disposition decisions (i.e., avoid admitting patients suitable for discharge, and avoid discharging patients at risk for adverse event).",
+    "when": "- Patients se présentant aux urgences avec une exacerbation aiguë de BPCO.\n- Ne doit pas être appliqué chez les patients manifestement trop graves pour une sortie (p. ex. hypotension, démence sévère, douleur thoracique ischémique, etc.).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Consider local practices when making disposition decisions. The study was conducted at 6 Canadian hospitals; in Canada, approximately 37.5% of emergency patients with COPD exacerbation, compared with 80% in the US ([Stiell 2014](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3971051/)).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| COPD Risk Scale | Risk group | Risk of adverse event* |\n| --- | --- | --- |\n| 0 | Low | 2.2% |\n| 1 | Medium | 4.0% |\n| 2 | 7.2% | |\n| 3 | High | 12.5% |\n| 4 | 20.9% | |\n| 5 | Very high | 32.9% |\n| 6 | 47.5% | |\n| 7 | 62.6% | |\n| 8 | 75.6% | |\n| 9** | - | |\n| 10 | 91.4% | |\n| >10** | - | |\n\n*Defined as all-cause 30-day mortality or any of the following within 14 days of the index ED visit (regardless of whether patient was initially admitted):\n\n- Admission to a monitored unit (excluding monitoring by telemetry).\n- Intubation/need for noninvasive ventilation after hospital admission (unless already on home oxygen).\n- MI, as defined by international consensus standards ([Alpert 2000](https://www.ncbi.nlm.nih.gov/pubmed/10987628)).\n- Major procedure (CABG,PCI, other cardiac surgery, or new hemodialysis).\n- Return to the ED for any related medical problem within 14 days, followed by hospital admission (if discharged after initial visit).\n\n**No patient had a score of 9 or >10.",
+  "short_description": "Death ou serious adverse events dans COPD (ED setting).",
+  "medium_description": "Predicts 30-day mortalité ou serious adverse events (MI, intubation, etc) dans ED patients avec COPD.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cabg",
+      "label": "Pontage coronarien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "peri",
+      "label": "Intervention pour peripheral vascular maladie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "intu",
+      "label": "Intubation pour respiratory distress",
+      "tips": "Antécédents ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "HR ≥110/min",
+      "tips": "À l’arrivée aux urgences",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "walk",
+      "label": "Too ill pour do walk test after traitement dans ED",
+      "tips": "SaO~2~ < 90 % ou FC ≥ 120/min après un test de marche de 3 minutes (voir Preuves pour plus de détails)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ekg",
+      "label": "Modifications ischémiques aiguës à l'EKG",
+      "tips": "Selon le jugement du clinicien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "xray",
+      "label": "Congestion pulmonaire sur radiographie thoracique",
+      "tips": "Selon le jugement du clinicien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemo",
+      "label": "Hémoglobine <10 g/dL (100 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "urea",
+      "label": "Urée ≥12 mmol/L (BUN ≥34 mg/dL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "co2",
+      "label": "CO~2~ sérique ≥35 mEq/L (35 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Stiell IG, Clement CM, Aaron SD, et al. Clinical characteristics associated with adverse events in patients with exacerbation of chronic obstructive pulmonary disease: a prospective cohort study. CMAJ. 2014;186(6):E193-204.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24549125",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alpert JS, Thygesen K, Antman E, Bassand JP. Myocardial infarction redefined--a consensus document of The Joint European Society of Cardiology/American College of Cardiology Committee for the redefinition of myocardial infarction. J Am Coll Cardiol. 2000;36(3):959-69.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10987628",
+      "kind": "other"
+    },
+    {
+      "text": "Pan AM, Stiell IG, Clement CM, et al. Feasibility of a structured 3-minute walk test as a clinical decision tool for patients presenting to the emergency department with acute dyspnoea. Emergency Medicine Journal. 2009;26:278-282.",
+      "href": "https://emj.bmj.com/content/26/4/278.long",
+      "kind": "other"
+    },
+    {
+      "text": "Stiell IG, Perry JJ, Clement CM, et al. Clinical validation of a risk scale for serious outcomes among patients with chronic obstructive pulmonary disease managed in the emergency department. CMAJ. 2018;190(48):E1406-E1413.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30510045",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.noninvasive-ventilation-outcomes-nivo-score",
+    "calc.decaf-score-acute-exacerbation-copd",
+    "calc.copd-assessment-test-cat"
+  ],
+  "source_logic_hash": "3688ecb2e60535b460b89e83165e60c7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10188,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

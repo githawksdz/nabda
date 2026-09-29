@@ -1,0 +1,252 @@
+{
+  "id": "calc.assure-renal-cell-carcinoma-rcc-prognosis",
+  "slug": "assure-renal-cell-carcinoma-rcc-prognosis",
+  "language": "en",
+  "title": "Assure Renal Cell Carcinoma (RCC) pronostic",
+  "short_title": "Assure RCC pronostic",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Carcinome à cellules rénales",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Cancer",
+    "Fever",
+    "Perte d'appétit",
+    "Swelling",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Assure Renal Cell Carcinoma (RCC) Prognosis",
+    "Assure RCC Prognosis",
+    "Assure Renal Cell Carcinoma Prognosis",
+    "Renal Cell Carcinoma",
+    "kidney cancer",
+    "post-resection renal cell carcinoma",
+    "renal cancer prognosis",
+    "kidney cancer prognosis",
+    "post-resection RCC",
+    "high-risk renal cell carcinoma",
+    "ASSURE trial",
+    "adjuvant therapy RCC",
+    "sorafenib RCC",
+    "sunitinib RCC",
+    "Nephrectomy"
+  ],
+  "dosing": false,
+  "formula": "The risk point values to determineDFSandOSafter surgical resection of renal cell carcinoma are as follows:\n\n| Risk Factor | Disease-Free Survival | Overall Survival |\n| --- | --- | --- |\n| Age at RCC diagnosis, years | | |\n| ≥18–≤51 | 0 | 0 |\n| >51.0–≤60.0 | - | 1.0 |\n| >60.0 | - | 2.0 |\n| Tumor size (cm) | | |\n| ≤7.0 | 0 | 0 |\n| >7.0 – ≤10.0 | 1.5 | 1.5 |\n| >10.0 | 2.5 | 2.0 |\n| Renal histology | | |\n| Chromophobe or papillary type I | 0 | 0 |\n| Clear cell, papillary type II/mixed papillary, or variant histology >25% clear cell | 4.5 | 4.0 |\n| Unclassified or <25% clear cell | 5.5 | 4.5 |\n| [Fuhrman grade](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma\\) | | |\n| Grade I-III | 0 | 0 |\n| Grade IV | 2.0 | 2.0 |\n| Coagulative necrosis | | |\n| No | 0 | 0 |\n| Yes | 1.5 | 1.5 |\n| Regional lymph nodes (pN), pN1/2 vs pNO/X | | |\n| No | 0 | 0 |\n| Yes | 3.0 | 2.5 |\n| Vascular invasion E.g., Segmental vein/arteriole invasion, renal vein invasion, caval invasion | | |\n| No | 0 | 0 |\n| Yes | 1.0 | - |\n\nRegression coefficients to determineDFS,OS, andEDPafter surgical resection of renal cell carcinoma are as follows:\n\n| Risk Factor | DFS Coefficients | OS Coefficients | EDP Coefficients |\n| --- | --- | --- | --- |\n| Age at RCC diagnosis, years | | | |\n| >51.0–≤60.0 | - | -0.31 | - |\n| >60.0 | - | -0.57 | - |\n| Tumor size (cm) | | | |\n| >7.0 – ≤10.0 | -0.47 | -0.39 | 0.62 |\n| >10.0 | -0.82 | -0.62 | 0.62 |\n| Renal histology | | | |\n| Clear cell, papillary type II/mixed papillary, or variant histology >25% clear cell | -1.58 | -1.21 | 1.40 |\n| Unclassified or >25% clear cell | -1.98 | -1.44 | 1.92 |\n| Fuhrman (grade IV vs. I-III) | -0.75 | -0.58 | 0.57 |\n| Coagulative necrosis | -0.62 | -0.54 | 0.88 |\n| Regional lymph nodes | -1.02 | -0.84 | 0.94 |\n| Vascular invasion | -0.36 | - | - |\n| Sacromid features | - | - | 0.80 |\n| Intercept | 4.47 | 4.97 | 4.40 |\n\nDisease-free survival is calculated by the following:\n\n**S(t)** = 1-(Φ)[log(log(t)) - μ / σ], where Φ is the standard normal distribution function, t is the time (in years) of interest, μ is the risk score (or linear predictor including the mean of the lognormal model), and σ is the scale parameter of the lognormal model,\n\nwhere **μ** = Σ[β*(variables)]\n\nOverall survival is calculated by the following:\n\n**S(t)** = 1-(Φ)[log(log(t)) - μ / σ], where Φ is the standard normal distribution function, t is the time (in years) of interest, μ is the risk score (or linear predictor including the mean of the lognormal model), and σ is the scale parameter of the lognormal model,\n\nwhere **μ** = Σ[β*(variables)]\n\nEarly disease progression is calculated by the following:\n\n**P(EDP** **≤ 1y)** = 1/(1+e^-LP^)\n\nwhere **LP** = α∑βiXi",
+  "how_to_use": {
+    "why": "- Estimates disease-free survival (DFS), overall survival (OS), and early disease progression (EDP) at 1–10 years, which can inform surveillance intensity and patient counseling (and support discussion of adjuvant options or trials in appropriate risk groups).\n- Applicable across histologies (e.g., papillary, clear cell, chromophobe, variant/unclassified).\n- Comparable performance to similar prognostic models (e.g., [Leibovich Model](nabda:calc.2018-leibovich-model-renal-cell-carcinoma-rcc) ).",
+    "when": "- Use after partial or radical nephrectomy for nonmetastatic renal cell carcinoma (RCC) to stratify risk for progression and death.\n- Requires final pathology; intended for intermediate- or high-risk RCC, defined as pT1b and grade 3–4, pT2–pT4, and/or N1.",
+    "pearls": "- Developed from the prospective, centrally reviewed Eastern Cooperative Oncology Group–American College of Radiology Imaging Network (ECOG-ACRIN) E2805 (ASSURE) adjuvant RCC therapy trial, which enrolled 1,943 patients; 1,735 were used to derive the tool, with follow-up extending to 10 years.\n- Not designed for low-risk (e.g., pT1a G1–4, pT1b G1–2), metastatic at presentation, or non-surgical cases.\n- External real-world validation showed modest discrimination (C-index 0.65 for DFS and 0.63 for OS) with miscalibration versus the UISS and [Leibovich](nabda:calc.2018-leibovich-model-renal-cell-carcinoma-rcc) models.\n- Subject to variability in pathologic interpretation.\n- Prognostic only; it does not predict post-nephrectomy treatment benefit."
+  },
+  "next_steps": {
+    "advice": "Utiliser les résultats en association avec le tableau clinique complet et l'expertise spécialisée pour éclairer, et non dicter, les discussions sur les objectifs de soins et les décisions de prise en charge, notamment :\n\n- Traitements adjuvants.\n- Imagerie de surveillance et fréquence.\n- Éligibilité aux essais cliniques.\n- Prise en charge des comorbidités.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n**Survie sans maladie :**\n\n| Score de risque | Groupe de risque |\n| --- | --- |\n| 0-5,5 points | Risque faible |\n| 6-8 points | Risque intermédiaire |\n| ≥8,5 points | Risque élevé |\n\n**Survie globale :**\n\n| Score de risque | Groupe de risque |\n| --- | --- |\n| 0-4,5 points | Risque faible |\n| 5,0-7,0 points | Risque intermédiaire |\n| ≥7,5 points | Risque élevé |\n\n**Classification prédite de progression précoce de la maladie :**\n\n| Probabilité de EDP ≤1 an | Classification prédite de EDP |\n| --- | --- |\n| Probabilité logistique (LP) < –1,53 | Non à haut risque de EDP |\n| Probabilité logistique (LP) ≥ –1,53 | Haut risque de EDP |",
+  "short_description": "RCC survie et récidive after surgical resection.",
+  "medium_description": "Predicts survie et récidive dans intermédiaire et élevé risque localized renal cell carcinoma after surgical resection.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age_years",
+      "label": "Âge atRCCdiagnosis",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tumorsize",
+      "label": "Taille de la tumeur (cm)",
+      "optional": false,
+      "unit": "tumorsize_assure",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "renalhistology",
+      "label": "Histologie rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Chromophobe",
+          "value": 0
+        },
+        {
+          "label": "Type papillaire I",
+          "value": 1
+        },
+        {
+          "label": "Cellules claires",
+          "value": 2
+        },
+        {
+          "label": "Papillaire de type II / papillaire mixte",
+          "value": 3
+        },
+        {
+          "label": "Variante histologique >25 % de cellules claires",
+          "value": 4
+        },
+        {
+          "label": "Histologie de variante : <25 % à cellules claires ou non classée",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "grade",
+      "label": "[grade de Fuhrman](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "I-III",
+          "value": 0
+        },
+        {
+          "label": "IV",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "necrosis",
+      "label": "Nécrose de coagulation",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nodes",
+      "label": "Ganglions lymphatiques régionaux",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vascular_any",
+      "label": "Invasion vasculaire",
+      "tips": "E.g., Segmental vein/arteriole invasion, renal vein invasion, caval invasion",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sarcomatoid",
+      "label": "Caractéristiques sarcomatoïdes",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Correa AF, Jegede OA, Haas NB, et al. Predicting Disease Recurrence, Early Progression, and Overall Survival Following Surgical Resection for High-risk Localized and Locally Advanced Renal Cell Carcinoma. Eur Urol. 2021;80(1):20-31. doi:10.1016/j.eururo.2021.02.025",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33707112/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Khene ZE, Larcher A, Bernhard JC, et al. External Validation of the ASSURE Model for Predicting Oncological Outcomes After Resection of High-risk Renal Cell Carcinoma (RESCUE Study: UroCCR 88). Eur Urol Open Sci. 2021;33:89-93. Published 2021 Oct 5. doi:10.1016/j.euros.2021.09.004",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34661173/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+    "calc.2018-leibovich-model-renal-cell-carcinoma-rcc"
+  ],
+  "source_logic_hash": "a1484ae7b1f829f337fddf8975233630",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+      "text": "Fuhrman grade"
+    },
+    {
+      "type": "calc",
+      "id": "calc.2018-leibovich-model-renal-cell-carcinoma-rcc",
+      "text": "Leibovich"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10621,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

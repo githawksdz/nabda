@@ -1,0 +1,290 @@
+{
+  "id": "calc.ottawa-heart-failure-risk-scale-ohfrs",
+  "slug": "ottawa-heart-failure-risk-scale-ohfrs",
+  "language": "en",
+  "title": "Ottawa insuffisance cardiaque risque échelle (OHFRS)",
+  "short_title": "OHFRS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnea",
+    "Œdème des extrémités"
+  ],
+  "abbreviations": [
+    "ottawa",
+    "ottawa heart failure",
+    "otawa heart failure",
+    "otawa",
+    "heart failure",
+    "heart"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | No | Yes |\n| --- | --- | --- |\n| History | | |\n| Stroke or TIA | 0 | +1 |\n| Intubation for respiratory distress | 0 | +2 |\n| Examination | | |\n| HR ≥110 on ED arrival | 0 | +2 |\n| SaO 2 <90% on arrival | 0 | +1 |\n| Heart rate ≥110 during 3-minutes walk test (or too ill to perform walk test) | 0 | +1 |\n| Investigations | | |\n| New ischemic changes on EKG | 0 | +2 |\n| Urea ≥12 mmol/L | 0 | +1 |\n| Serum CO 2 ≥35 mmol/L (mEq/L) | 0 | +2 |\n| Troponin I or T elevated to MI level | 0 | +2 |\n| NT-proBNP ≥5,000 ng/L (pg/mL) | 0 | +1 |",
+  "how_to_use": {
+    "why": "- Les patients se présentant avec une IC aiguë ou des exacerbations d’une IC chronique présentent un risque élevé d’événements indésirables. Même avec une prise en charge appropriée aux urgences, beaucoup nécessitent une hospitalisation pour une évaluation et un traitement complémentaires. Ce score aide à identifier à la fois :\n\n  - Les patients à faible risque d’événements indésirables et donc potentiellement aptes à une sortie avec un suivi rapproché.\n  - Les patients à risque plus élevé qui nécessitent une hospitalisation et une surveillance rapprochée.\n- Plus largement validé que le [Emergency Heart Failure Mortality Risk Grade (EHMRG)](nabda:calc.emergency-heart-failure-mortality-risk-grade-ehmrg), mais avec des critères d’inclusion/d’exclusion plus stricts (voir Quand l’utiliser).",
+    "when": "- Patients se présentant aux urgences pour une exacerbation d’IC ayant répondu au traitement.\n\n- Ne pas utiliser si :",
+    "pearls": "- The Ottawa Heart Failure Risk Scale (OHFRS) identifies ED patients with HF at high risk for serious adverse events (SAE), including death, MI, need for ICU/intubation.\n- Best suited for ED patients presenting with HF exacerbation who have responded to treatment in the ED.\n- Not intended to be used in determining disposition until after ED intervention (in the study, OHFRS was assessed 2-8 hours after initial ED treatment).\n- Can be used even if NT-proBNP is unavailable without sacrificing accuracy significantly.\n- Derivation study was conducted in Canada, where only 38% of patients presenting to EDs with acute HF are admitted, compared with 80% in the US (citation). Regional practice patterns should be considered in applying this score."
+  },
+  "next_steps": {
+    "advice": "Interpreting medium risk scores can be the most difficult part of the OHFRS. Using scores >1 as an admission threshold increases sensitivity for serious adverse events (SAE) and increases admission rates, but a threshold of scores >2 leads to similar sensitivity to previous practice with a notable reduction in admission rates.\n\n- Consider patient-specific factors to help determine disposition for patients with scores 1–2, e.g. access to medical care and timely follow-up, comorbidities, living conditions, frequency of HF exacerbations.\n- As with all risk scores, use clinician judgment and shared decision-making model to ensure the patient is informed of the benefits and risks associated with their disposition regardless of whether they are admitted or discharged.\n- Patients being discharged should receive thorough return precautions, as heart failure patients are at higher risk for severe complications than the general population.",
+    "critical_actions": "Un score élevé ou en aggravation doit conduire à envisager un niveau de soins plus élevé, incluant l’implication précoce des intensivistes, des cardiologues et d’autres spécialistes.",
+    "management": "- For patients with higher OHFRS (>1 or 2 depending on preference) or a concerning clinical presentation after initial intervention, consider admission for monitoring and further treatment.\n- Patients with OHFRS <2, good response to ED intervention, and encouraging clinical presentation may be safe for discharge with close follow-up."
+  },
+  "evidence": "The OHFRS was derived from a prospective cohort study at six large Canadian EDs by[Stiell et al (2013)](https://onlinelibrary.wiley.com/doi/10.1111/acem.12056/abstract). A total of 559 patient visits were evaluated to determine the rates of admission and serious adverse events (SAE, defined as death, MI, or need for ICU or intubation). Variables from history, physical exam, imaging, ECG, and laboratory studies were assessed with univariate analysis. Statistically significant variables associated with SAE were included in a multivariate logistic regression model to determine independent predictors for SAE.\n\nUsing the predictors identified, the performance of the score was validated in the study population for sensitivity, specificity, positive likelihood ratio, and negative likelihood ratio across 1,000 replications using the bootstrap method. 52% of patients admitted from their first ER visit had documented SAE. Using OHFRS values of 1, 2, or 3 as a threshold for admission had higher sensitivity for identifying and admitting patients who had an SAE within 14 days of initial encounter (95.2, 80.6, and 64.5%, respectively).\n\nThe OHFRS was prospectively validated by[Stiell et al (2017)](https://onlinelibrary.wiley.com/doi/10.1111/acem.13141/full)in an observational cohort study including 1,100 patients who were enrolled and followed for occurrence of an SAE within 30 days of initial presentation. Similar inclusion and exclusion criteria were used for the validation study as the primary study. They found that an admission threshold of OHFRS >1 improved sensitivity compared to previous practice. OHFRS >2 had equivocal sensitivity for SAE as previous practice, but reduced admission rates substantially.\n\nThe study authors also compared sensitivity with and without the use of NT-proBNP and found results to be similar in improved sensitivity compared to previous practice. The use of NT-proBNP in the score improved sensitivity of the OHFRS compared to omitting the laboratory study from the score.",
+  "more_info": "Interpretation:\n\n| Total Score | Risk of Serious Adverse Event (SAE)* | Category |\n| --- | --- | --- |\n| 0 | 2.8% | Low |\n| 1 | 5.1% | Medium |\n| 2 | 9.2% | Medium |\n| 3 | 15.9% | High |\n| 4 | 26.1% | High |\n| 5 | 39.8% | Very high |\n| 6 | 55.3% | Very high |\n| 7 | 69.8% | Very high |\n| 8 | 81.2% | Very high |\n| 9 | 89.0% | Very high |\n| >9 | >89.0% | Very high |\n\n*Serious adverse events were defined as:\n\n- 30-day all cause mortality, or\n- Any of the following within 14 days of the index ED visit, regardless of whether initially admitted:",
+  "short_description": "Risque d'insuffisance cardiaque (patients des urgences)",
+  "medium_description": "Identifies ED patients avec insuffisance cardiaque at élevé risque pour serious adverse events.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC ou AIT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp",
+      "label": "Intubation pour respiratory distress",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "heart",
+      "label": "Fréquence cardiaque sur ED arrival ≥110",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sao",
+      "label": "SaO₂ <90 % à l'arrivée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "min",
+      "label": "Fréquence cardiaque ≥110 during 3-minutes walk test (ou too ill pour perform walk test)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ecg",
+      "label": "Nouvelles modifications ischémiques sur EKG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "urea",
+      "label": "Urée ≥12 mmol/L (33 mg/dL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "serum",
+      "label": "CO₂ sérique ≥35 mmol/L (mEq/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "troponin",
+      "label": "Troponin I ou T elevated pour MI level",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "probnp",
+      "label": "NT-proBNP≥5,000 ng/L (pg/mL)",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Stiell IG, Clement CM, Brison RJ, et al. A risk scoring system to identify emergency department patients with heart failure at high risk for serious adverse events. Acad Emerg Med. 2013;20(1):17-26.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/acem.12056/abstract ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stiell IG, Perry JJ, Clement CM, et al. Prospective and Explicit Clinical Validation of the Ottawa Heart Failure Risk Scale, With and Without Use of Quantitative NT-proBNP. Acad Emerg Med. 2017;24(3):316-327.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/acem.13141/full ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.emergency-heart-failure-mortality-risk-grade-ehmrg",
+    "calc.framingham-heart-failure-diagnostic-criteria",
+    "calc.seattle-heart-failure-model"
+  ],
+  "source_logic_hash": "98d51915f6ece3db957b4829aa454a25",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.emergency-heart-failure-mortality-risk-grade-ehmrg",
+      "text": "Emergency Heart Failure Mortality Risk Grade (EHMRG)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3994,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,251 @@
+{
+  "id": "calc.nutrition-risk-critically-ill-nutric-score",
+  "slug": "nutrition-risk-critically-ill-nutric-score",
+  "language": "en",
+  "title": "Nutrition risque dans Critically Ill (NUTRIC) score",
+  "short_title": "NUTRIC score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "soins-intensifs",
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Malnutrition",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "nutric",
+    "nurtrition",
+    "TPN",
+    "parenteral nutrition"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | Points | | | |\n| --- | --- | --- | --- | --- |\n| | 0 | 1 | 2 | 3 |\n| Age (years) | <50 | 50–74 | ≥75 | -- |\n| [APACHE II](nabda:calc.apache-ii-score\\) | <15 | 15–19 | 20–27 | ≥28 |\n| [SOFA Score](nabda:calc.sequential-organ-failure-assessment-sofa-score\\) * | <6 | 6–9 | ≥10 | -- |\n| Number of comorbidities | 0–1 | ≥2 | -- | -- |\n| Days in hospital to ICU admit | 0 | ≥1 | -- | -- |\n| IL-6 (µ/mL) | 0–399 | ≥400 | -- | -- |\n\n*Initial, on presentation.",
+  "how_to_use": {
+    "why": "- Other risk scores consider all ICU patients to be high risk. The NUTRIC Score identifies patients who are particularly likely to have a mortality benefit from aggressive nutrition therapy.\n- Recommended by[American College of Gastroenterology (ACG) guidelines for nutrition therapy](https://www.mdcalc.com/guidelines/acg/nutrition-therapy-adult-hospitalized-patient).",
+    "when": "",
+    "pearls": "- Can be calculated without IL-6, which is not commonly ordered in many ICU settings, without sacrificing significant predictive power.\n- Greater predictive power in ICU patients specifically, compared with other nutritional risk scores like [NRS-2002](nabda:calc.nutrition-risk-screening-2002-nrs-2002) ."
+  },
+  "next_steps": {
+    "advice": "Consider aggressive nutrition therapy (enteral or parenteral) for patients at high risk.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| NUTRIC Score | Risk | 28-day mortality |\n| --- | --- | --- |\n| 0 | Low risk | ~1% |\n| 1 | ~2% | |\n| 2 | ~3% | |\n| 3 | ~8% | |\n| 4 | ~11% | |\n| 5 | ~20% | |\n| 6 | High risk | ~30% |\n| 7 | ~45% | |\n| 8 | ~58% | |\n| 9 | ~70% | |\n| 10 | ~80% | |",
+  "short_description": "Nutrition dans ICU.",
+  "medium_description": "Identifies critically ill patients who can benefit de nutrition therapy, recommended par[ACG guidelines](https://www.mdcalc.com/guidelines/acg/nutrition-therapy-adult-hospitalized-patient).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 50",
+          "value": 0
+        },
+        {
+          "label": "50–74",
+          "value": 1
+        },
+        {
+          "label": "≥75",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "apache",
+      "label": "[APACHE II](nabda:calc.apache-ii-score)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 15",
+          "value": 0
+        },
+        {
+          "label": "15-19",
+          "value": 1
+        },
+        {
+          "label": "20-27",
+          "value": 2
+        },
+        {
+          "label": "≥28",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sofa",
+      "label": "[SOFA Score](nabda:calc.sequential-organ-failure-assessment-sofa-score)",
+      "tips": "Initial, on presentation.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 6",
+          "value": 0
+        },
+        {
+          "label": "6–9",
+          "value": 1
+        },
+        {
+          "label": "≥10",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "num",
+      "label": "Nombre de comorbidités",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-1",
+          "value": 0
+        },
+        {
+          "label": "≥2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "days",
+      "label": "Days dans hôpital pour ICU admit",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "≥1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "il",
+      "label": "IL-6, µ/mL",
+      "tips": "Optional",
+      "optional": true,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0–399",
+          "value": 0
+        },
+        {
+          "label": "≥400",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mcclave SA, Dibaise JK, Mullin GE, Martindale RG. ACG Clinical Guideline: Nutrition Therapy in the Adult Hospitalized Patient. Am J Gastroenterol. 2016;111(3):315-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26952578 ",
+      "kind": "international"
+    },
+    {
+      "text": "Heyland DK, Dhaliwal R, Jiang X, Day AG. Identifying critically ill patients who benefit the most from nutrition therapy: the development and initial validation of a novel risk assessment tool. Crit Care. 2011;15(6):R268.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22085763 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kalaiselvan MS, Renuka MK, Arunkumar AS. Use of Nutrition Risk in Critically ill (NUTRIC) Score to Assess Nutritional Risk in Mechanically Ventilated Patients: A Prospective Observational Study. Indian J Crit Care Med. 2017;21(5):253-256.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28584426 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rahman A, Hasan RM, Agarwala R, Martin C, Day AG, Heyland DK. Identifying critically-ill patients who will benefit most from nutritional therapy: Further validation of the \"modified NUTRIC\" nutritional risk assessment tool. Clin Nutr. 2016;35(1):158-62.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25698099 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rosa M, Heyland DK, Fernandes D, Rabito EI, Oliveira ML, Marcadenti A. Translation and adaptation of the NUTRIC Score to identify critically ill patients who benefit the most from nutrition therapy. Clin Nutr ESPEN. 2016;14:31-36.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28531396 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Compher C, Chittams J, Sammarco T, Nicolo M, Heyland DK. Greater Protein and Energy Intake May Be Associated With Improved Mortality in Higher Risk Critically Ill Patients: A Multicenter, Multinational Observational Study. Crit Care Med. 2017;45(2):156-163.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28098623",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nutrition-risk-screening-2002-nrs-2002",
+    "calc.glucose-infusion-rate-gir",
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "f5cc4243c274ee4fe01c5790449c8e5b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.nutrition-risk-screening-2002-nrs-2002",
+      "text": "NRS-2002"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4011,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

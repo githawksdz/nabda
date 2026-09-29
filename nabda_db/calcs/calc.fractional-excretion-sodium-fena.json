@@ -1,0 +1,159 @@
+{
+  "id": "calc.fractional-excretion-sodium-fena",
+  "slug": "fractional-excretion-sodium-fena",
+  "language": "en",
+  "title": "Excrétion fractionnée du sodium (FENa)",
+  "short_title": "FENa",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Insuffisance rénale aiguë",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Dizziness"
+  ],
+  "abbreviations": [
+    "renal",
+    "aki",
+    "arf",
+    "fena",
+    "pitaliou",
+    "feurea",
+    "sodium",
+    "pre renal",
+    "pre-renal",
+    "prerenal",
+    "AKI",
+    "ARF",
+    "acute renal failure",
+    "kidney injury",
+    "acute kidney injury",
+    "oliguria",
+    "ATN",
+    "acute tubular necrosis",
+    "Fractional Excretion of Sodium (FENa)"
+  ],
+  "dosing": false,
+  "formula": "Excrétion fractionnelle du sodium (FENa), % = 100 × (S~Cr~ × U~Na~) / (S~Na~ × U~Cr~)\n\nS~Cr~, créatinine sérique ; U~Na~, sodium urinaire ; S~Na~, sodium sérique ; U~Cr~, créatinine urinaire.\n\nDérivation de l’équation :\n\n- La FENa est une mesure de la réabsorption tubulaire du Na.\n- FENa = (Na excrété/Na filtré) × 100.\n- Na excrété = U~Na~ × volume urinaire.\n- Par conséquent, Na filtré = P~Na~ × (U~Cr~ × volume urinaire)/P~Cr~.",
+  "how_to_use": {
+    "why": "- Peut fournir une donnée supplémentaire chez les patients dont l’état volémique est difficile à évaluer.\n- Fournit une évaluation plus précise de la fonction rénale que le sodium urinaire seul (par exemple, un patient sévèrement hypovolémique peut avoir un sodium urinaire relativement élevé en fraction du volume urinaire total, malgré une faible quantité de sodium dans les urines).",
+    "when": "Patients présentant une oligurie et/ou une insuffisance rénale aiguë d’étiologie indéterminée.",
+    "pearls": "- FENa is only clinically validated in patients with oliguric acute kidney injury WITHOUT any of the following: diuretic use, chronic kidney disease (CKD), urinary tract obstruction, or acute glomerular disease.\n- Using urine sodium concentration alone is less accurate because it does not account for urine volume and the kidney’s water handling by antidiuretic hormone (ADH).\n- Single measurements of serum creatinine are “snapshots” in time and do not reflect the true glomerular filtration rate (GFR). The most accurate measurement of GFR is the average of the 24-hr creatinine clearance and urea clearance.\n- The etiology of renal dysfunction cannot be differentiated in those with a[FENa <1%](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5143430/)who have liver disease."
+  },
+  "next_steps": {
+    "advice": "- No absolute FENa percentage indicates true “prerenal” disease. Always consider the history, clinical context, physical exam, and current medications.\n- Obtaining repeat FENa or urine studies throughout a patient’s hospital course can give more clinical clues.\n- Non-volume-depleted states with low urine sodium (and consequently low FENa) include: acute glomerulonephritis, cardiorenal syndrome, hepatorenal syndrome, contrast-related nephropathy, and rarely, acute obstruction and early acute interstitial nephritis (AIN) or acute tubular necrosis (ATN).",
+    "critical_actions": "",
+    "management": "- In patients with acute kidney and suspected obstructive uropathy, consider bedside ultrasound to evaluate for hydronephrosis, bladder distention, etc.\n- Empiric Foley catheter placement may also be valid in some settings, though it may also be associated with complications and does not rule out ureteral obstructions above the bladder."
+  },
+  "evidence": "[Espinel in 1976](https://www.ncbi.nlm.nih.gov/pubmed/947239)originally described a FENa cutoff of <1% for pre-renal azotemia in a study study of 17 adults with oliguria, defined as urine output <20mL/hr. Patients with urinary obstruction, acute glomerulonephritis, CKD, and diuretic use were excluded.\n\nA FENa cutoff of <1% for pre-renal azotemia was clinically validated in a prospective study, though there was overlap between patients with true prerenal azotemia and acute tubular necrosis. Specificity for prerenal azotemia (with a cutoff of <1%) was decreased in nonoliguric acute renal failure ([Miller 1978](https://www.ncbi.nlm.nih.gov/pubmed/666184)).\n\nAt a normal GFR of 180 L/day and sodium concentration of 140 mEq/L, the filtered sodium load is 25,200 mEq/day (=140 × 180). A FENa of 1% in this setting represents a sodium excretion of 252 mEq/day. This is higher than the average sodium intake of 80 to 250 mEq/day. This is the physiologic basis for hypothesizing that patients with normal GFR have a FENa below 1%.\n\nA recent[2022 review](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9269665/)article provided validation by pooling studies that showed a sensitivity and specificity for FENa of 95% and 91% in oliguric patients without CKD. Sensitivity and specificity decreased to 83% and 66% when CKD patients and those on diuretics were included.",
+  "more_info": "| | Pré-rénal | Indéterminé | Intrinsèque |\n| --- | --- | --- | --- |\n| FENa | <1 % | 1-2 % | >2 % |\n| U Na (mmol/L) | <20 | 20-40 | >40 |\n\n**Pré-rénal :** toute cause de diminution de la perfusion rénale efficace : hypovolémie, insuffisance cardiaque, sténose de l'artère rénale, [sepsis](nabda:calc.sirs-sepsis-septic-shock-criteria), etc. À noter que la néphropathie induite par les produits de contraste prend souvent un aspect pré-rénal.\n\n**Intrinsèque :** ATN (nécrose tubulaire aiguë), AIN (néphrite interstitielle aiguë), glomérulonéphrites, etc.",
+  "short_description": "Prerenal ou intrinsic kidney défaillance.",
+  "medium_description": "Determines if renal défaillance is due pour prerenal ou intrinsic pathology.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium sérique",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_sodium",
+      "label": "Sodium urinaire",
+      "optional": false,
+      "unit": "na_urine",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_creatinine",
+      "label": "Créatinine urinaire",
+      "optional": false,
+      "unit": "cr_urine",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Espinel CH. The FENa test. Use in the differential diagnosis of acute renal failure. JAMA. 1976;236(6):579-81.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/947239",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Steiner R. Interpreting the fractional excretion of sodium. Am J Med 1984; 77. (4): 699-702. doi:10.1016/0002-9343(84)90368-1. PMID 6486145",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6486145",
+      "kind": "other"
+    },
+    {
+      "text": "Pahwa AK, Sperati J. Urinary fractional excretion indices in the evaluation of acute kidney injury. J Hosp Med. 2016;11(1): 77-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26689284 ",
+      "kind": "other"
+    },
+    {
+      "text": "Seethapathy H, Fenves AZ. Fractional Excretion of Sodium (FENa): An Imperfect Tool for a Flawed Question. Clin J Am Soc Nephrol. 2022 Jun;17(6):777-778. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9269665/",
+      "kind": "other"
+    },
+    {
+      "text": "Alsaad AA, Wadei HM. Fractional excretion of sodium in hepatorenal syndrome: Clinical and pathological correlation. World J Hepatol. 2016 Dec 8;8(34):1497-1501.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5143430/",
+      "kind": "other"
+    },
+    {
+      "text": "Miller TR, Henrich WH, Schrier RW. Urinary diagnostic indices in acute renal failure. Ann Int Med. 1978; 89:47-50",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/666184",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fractional-excretion-urea-feurea",
+    "calc.licurse-score-renal-ultrasound",
+    "calc.akin-classification-acute-kidney-injury-aki"
+  ],
+  "source_logic_hash": "c2e4d764af766f3de83279b52c34b9cd",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 60,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

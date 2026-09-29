@@ -1,0 +1,183 @@
+{
+  "id": "calc.pancreatic-fistula-risk-score",
+  "slug": "pancreatic-fistula-risk-score",
+  "language": "fr",
+  "title": "Score de risque de fistule pancréatique",
+  "short_title": "Score de risque de fistule pancréatique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hematologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Pancréatite"
+  ],
+  "chief_complaints": [
+    "Cancer"
+  ],
+  "abbreviations": [
+    "Postoperative fistula risk",
+    "pancreatic surgery",
+    "pancreatic fistula",
+    "pancreas",
+    "whipple"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Gland texture | Firm | 0 |\n| Soft | 2 | |\n| Pathology | Pancreatic adenocarcinoma or pancreatitis | 0 |\n| Any other pathology (e.g. ampullary, duodenal, cystic, islet cell) | 1 | |\n| Pancreatic duct diameter | ≥5 mm | 0 |\n| 4 mm | 1 | |\n| 3 mm | 2 | |\n| 2 mm | 3 | |\n| ≤1 mm | 4 | |\n| Intraoperative blood loss | ≤400 mL | 0 |\n| 401-700 mL | 1 | |\n| 701-1,000 mL | 2 | |\n| >1,000 mL | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients subissant une résection pancréatique.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Consider preventative measures in patients at high risk for fistula (e.g. anastomotic stents, prophylactic octreotide, tissue sealants).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score de risque de fistule pancréatique | Groupe de risque | Taux de fistule pancréatique postopératoire cliniquement pertinente* |\n| --- | --- | --- |\n| 0 | Négligeable | ~0 % |\n| 1-2 | Faible | 6,6 % |\n| 3-6 | Intermédiaire | 12,9 % |\n| 7-10 | Élevé | 28,1 % |\n\n*Définie comme des fistules symptomatiques cliniquement apparentes nécessitant une évaluation diagnostique et une intervention thérapeutique, ou celles provoquant un sepsis et/ou une défaillance d'organe (nécessité de soins intensifs).\n\nChiffres issus de [Miller et al 2014](https://www.ncbi.nlm.nih.gov/pubmed/24002771).",
+  "short_description": "Risque de fistule postopératoire.",
+  "medium_description": "Predicts postoperative pancreatic fistula, basé sur intraoperative findings, after pancreatic resection.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gland",
+      "label": "Texture de la glande",
+      "tips": "Basé sur la palpation peropératoire par le chirurgien.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ferme",
+          "value": 0
+        },
+        {
+          "label": "Mou",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "path",
+      "label": "Pathologie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Adénocarcinome pancréatique ou pancréatite",
+          "value": 0
+        },
+        {
+          "label": "Any other pathology (e.g. ampullary, duodenal, cystic, islet cell)",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "diameter",
+      "label": "Diamètre du canal pancréatique",
+      "tips": "D’après la mesure du chirurgien en peropératoire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥5 mm",
+          "value": 0
+        },
+        {
+          "label": "4 mm",
+          "value": 1
+        },
+        {
+          "label": "3 mm",
+          "value": 2
+        },
+        {
+          "label": "2 mm",
+          "value": 3
+        },
+        {
+          "label": "≤ 1 mm",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "loss",
+      "label": "Perte sanguine peropératoire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ 400 mL",
+          "value": 0
+        },
+        {
+          "label": "401-700 mL",
+          "value": 1
+        },
+        {
+          "label": "701-1,000 mL",
+          "value": 2
+        },
+        {
+          "label": ">1,000 mL",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Callery MP, Pratt WB, Kent TS, Chaikof EL, Vollmer CM. A prospectively validated clinical risk score accurately predicts pancreatic fistula after pancreatoduodenectomy. J Am Coll Surg. 2013;216(1):1-14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23122535",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Miller BC, Christein JD, Behrman SW, et al. A multi-institutional external validation of the fistula risk score for pancreatoduodenectomy. J Gastrointest Surg. 2014;18(1):172-79.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24002771",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.obesity-surgery-mortality-risk-score-os-mrs",
+    "calc.rome-iv-diagnostic-criteria-functional-pancreatic-sphincter-oddi-disorder-sod",
+    "calc.preoperative-mortality-predictor-pmp-score"
+  ],
+  "source_logic_hash": "904ab00b72aa85962c4f3c0e0342aa74",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10194,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar loss = parseFloat(loss);\nvar diameter = parseFloat(diameter);\nvar path = parseFloat(path);\nvar gland = parseFloat(gland);\n\nvar score = loss + diameter + path + gland;\n\nvar risk, prevalence;\n\nif (score == 0) {\n  risk = 'Negligible';\n  prevalence = '~0';\n} else if (score >=1 && score <=2) {\n  risk = 'Low';\n  prevalence = '6.6';\n} else if (score >=3 && score <=6) {\n  risk = 'Intermediate';\n  prevalence = '12.9';\n} else if (score >=7 && score <=10) {\n  risk = 'High';\n  prevalence = '28.1';\n} \n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: prevalence,\n    value_text: '%',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '10194_Pancreatic Fistula Risk Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'Pancreatic Fistula Risk Score'   \n});\ncalc_output.push({\n    name: '10194_Pancreatic Fistula Risk Score_interpretation',\n    value: risk, \n    value_text: '',\n    message: 'Risk group'\n});\ncalc_output.push({\n    name: '10194_Pancreatic Fistula Risk Score_result (rate)',\n    value: prevalence, \n    value_text: '%',\n    message: 'Rate of clinically relevant postoperative pancreatic fistula (See Evidence for details)'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Mark P. Callery"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "48fa78899c0a0b3a6b08e4be84947ac616ec633441d954c2d29e2bf0aaf6b710"
+}

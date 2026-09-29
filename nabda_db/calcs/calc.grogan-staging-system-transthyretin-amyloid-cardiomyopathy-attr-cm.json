@@ -1,0 +1,157 @@
+{
+  "id": "calc.grogan-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+  "slug": "grogan-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+  "language": "fr",
+  "title": "Grogan Staging System pour Transthyretin Amyloid Cardiomyopathy (ATTR-CM)",
+  "short_title": "Grogan Staging System pour ATTR-CM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque",
+    "Cardiomyopathy",
+    "Amyloidosis"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Dyspnea",
+    "Œdème des extrémités",
+    "Fatigue",
+    "Palpitations",
+    "Dyspnée",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Grogan Staging System for Transthyretin Amyloid Cardiomyopathy (ATTR-CM)",
+    "Grogan Staging System for ATTR-CM",
+    "Transthyretin Amyloid Cardiomyopathy",
+    "ATTR-CM",
+    "cardiac amyloidosis",
+    "transthyretin",
+    "amyloidosis",
+    "ATTRc",
+    "ATTRwt",
+    "TTR",
+    "amyloid",
+    "cardiomyopathy",
+    "ATTR",
+    "amyloidosis"
+  ],
+  "dosing": false,
+  "formula": "Le système de stadification de Grogan pour l'ATTR-CM est déterminé par la définition suivante :\n\n| Stade | Définition |\n| --- | --- |\n| I | NT-proBNP ≤3000 pg/mL et troponine T ≤0,05 ng/mL |\n| II | NT-proBNP ≤3000 pg/mL et troponine T >0,05 ng/mL ; NT-proBNP >3000 pg/mL et troponine T ≤0,05 ng/mL |\n| III | NT-proBNP >3000 pg/mL et troponine T >0,05 ng/mL |",
+  "how_to_use": {
+    "why": "- Fournit des informations pronostiques sur les résultats de survie à partir de biomarqueurs cardiaques.\n- Peut éclairer les discussions sur les objectifs de soins et les décisions thérapeutiques, notamment l’orientation vers des thérapies avancées.\n- Peut être utilisé pour stratifier les patients dans les essais cliniques selon la gravité de leur maladie.",
+    "when": "Utilisez ce système de stadification lors de l’évaluation des patients ayant un diagnostic confirmé de cardiomyopathie amyloïde à transthyrétine de type sauvage (ATTR-CM).",
+    "pearls": "- Initialement développé alors que les traitements spécifiques à la maladie étaient encore en cours d’essais cliniques. L’avènement et l’évolution de ces traitements pour l’ATTR-CM peuvent affecter la précision pronostique de l’outil.\n- Spécifiquement étudié dans des populations atteintes d’ATTR-CM de type sauvage ; ne convient pas à l’ATTR-CM héréditaire, à l’amylose cardiaque à chaînes légères, ni à d’autres cardiomyopathies.\n- L’étude originale portait sur les valeurs de troponine T ; la variabilité des dosages de troponine, y compris la troponine I et les dosages de haute sensibilité plus récents, peut constituer un facteur de confusion pour les résultats."
+  },
+  "next_steps": {
+    "advice": "La stadification et le pronostic estimé doivent être utilisés dans le cadre d’une évaluation globale pour faciliter les discussions sur la survie globale, les décisions thérapeutiques et la probabilité de réponse au traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Stade | Survie globale à 4 ans |\n| --- | --- |\n| I | 57% |\n| II | 42% |\n| III | 18% |",
+  "short_description": "Classification pronostique ATTRwt-CM.",
+  "medium_description": "Classifies pronostic de patients avec wild-type transthyretin amyloid cardiomyopathy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "bnp",
+      "label": "NT-proBNP",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤3000 pg/mL",
+          "value": 0
+        },
+        {
+          "label": ">3000 pg/mL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "trop",
+      "label": "Troponine T",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤0.05 ng/mL",
+          "value": 0
+        },
+        {
+          "label": ">0.05 ng/mL",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kittleson MM, Maurer MS, Ambardekar AV, et al. Cardiac amyloidosis: evolving diagnosis and management: a scientific statement from the american heart association. Circulation. 2020;142(1).",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32476490/",
+      "kind": "international"
+    },
+    {
+      "text": "Garcia-Pavia P, Rapezzi C, Adler Y, et al. Diagnosis and treatment of cardiac amyloidosis: a position statement of the esc working group on myocardial and pericardial diseases. European Heart Journal. 2021;42(16):1554-1568.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33825853/",
+      "kind": "international"
+    },
+    {
+      "text": "Kittleson MM, Ruberg FL, Ambardekar AV, et al. 2023 acc expert consensus decision pathway on comprehensive multidisciplinary care for the patient with cardiac amyloidosis. Journal of the American College of Cardiology. 2023;81(11):1076-1126.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36697326/",
+      "kind": "international"
+    },
+    {
+      "text": "Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. European Heart Journal. 2023;44(37):3503-3626.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37622657/",
+      "kind": "international"
+    },
+    {
+      "text": "Grogan M, Scott CG, Kyle RA, et al. Natural history of wild-type transthyretin cardiac amyloidosis and risk stratification using a novel staging system. Journal of the American College of Cardiology. 2016;68(10):1014-1020.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27585505/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cappelli F, Martone R, Gabriele M, et al. Biomarkers and prediction of prognosis in transthyretin-related cardiac amyloidosis: direct comparison of two staging systems. Canadian Journal of Cardiology. 2020;36(3):424-431.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32145869/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gillmore-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+    "calc.precision-medicine-cardiomyopathy-primacy-score",
+    "calc.hcm-risk-scd"
+  ],
+  "source_logic_hash": "bc3e988f1378c2ccafb6e961210661fc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10559,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

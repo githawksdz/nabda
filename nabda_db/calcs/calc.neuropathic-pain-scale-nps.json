@@ -1,0 +1,214 @@
+{
+  "id": "calc.neuropathic-pain-scale-nps",
+  "slug": "neuropathic-pain-scale-nps",
+  "language": "fr",
+  "title": "Neuropathic douleur échelle (NPS)",
+  "short_title": "Neuropathic douleur échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "endocrinologie",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "douleur",
+    "general"
+  ],
+  "diseases": [
+    "Neuropathy",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Douleur chronique"
+  ],
+  "abbreviations": [
+    "neuropathy",
+    "pain"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "La douleur neuropathique est ressentie de façon très variable et peut être difficile à évaluer et à suivre.",
+    "when": "Patient atteint d’une neuropathie connue, suivi et évalué au fil du temps.",
+    "pearls": "Le Neuropathic Pain Scale (NPS) permet une évaluation standardisée de la douleur chez les patients atteints de neuropathie.\n\n**Points à garder à l'esprit :**\n\n- Le NPS quantifie une douleur neuropathique déjà diagnostiquée.\n- Ce n'est PAS un outil diagnostique permettant de déterminer si la douleur d'un patient est d'origine neuropathique."
+  },
+  "next_steps": {
+    "advice": "Le NPS est une méthode complète et judicieuse pour évaluer la douleur neuropathique et peut être particulièrement utile pour évaluer la réponse aux traitements.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Plus le score est élevé, plus la douleur neuropathique est importante. Envisager une analgésie appropriée.",
+  "short_description": "Neuropathic douleur gravité.",
+  "medium_description": "Quantifies gravité de neuropathic douleur.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "intense",
+      "label": "Quelle est l’intensité de la douleur ?",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sharp",
+      "label": "À quel point la douleur est-elle vive ?",
+      "tips": "Comme un coup de couteau",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hot",
+      "label": "How hot is douleur?",
+      "tips": "En feu",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "dull",
+      "label": "How dull is douleur?",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cold",
+      "label": "How cold is douleur?",
+      "tips": "‘Freezing’",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sensitive",
+      "label": "How sensitive is skin pour light touch?",
+      "tips": "Peau à vif",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "itch",
+      "label": "How itchy is douleur?",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "unpleasant",
+      "label": "À quel point la douleur est-elle désagréable ?",
+      "tips": "‘Intolerable’",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "deep",
+      "label": "Si la douleur est profonde, quelle est l’intensité de la douleur profonde ?",
+      "tips": "Coter 0 en l'absence de douleur profonde",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "surface",
+      "label": "Si la douleur est superficielle, quelle est l’intensité de la douleur superficielle ?",
+      "tips": "Marquer 0 en l'absence de douleur superficielle",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "time",
+      "label": "Quelle est la qualité temporelle de la douleur ?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Background douleur present all time, avec occasional flare-ups (breakthrough douleur)",
+          "value": 0
+        },
+        {
+          "label": "Un seul type de douleur, présent en permanence",
+          "value": 1
+        },
+        {
+          "label": "Un seul type de douleur, seulement parfois présent",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Galer BS, Jensen MP. Development and preliminary validation of a pain measure specific to neuropathic pain: the Neuropathic Pain Scale. Neurology. 1997 Feb;48(2):332-8",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9040716",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jensen MP, et al. The validity of the neuropathic pain scale for assessing diabetic neuropathic pain in a clinical trial. Clin J Pain. 2006 Jan;22(1):97-103",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16340598",
+      "kind": "other"
+    },
+    {
+      "text": "Rog DJ, et al. Validation and reliability of the Neuropathic Pain Scale (NPS) in multiple sclerosis. Clin J Pain. 2007 Jul-Aug;23(6):473-81",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17575486",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.neck-disability-index-ndi",
+    "calc.migraine-disability-assessment-midas",
+    "calc.abbey-pain-scale-dementia-patients"
+  ],
+  "source_logic_hash": "ba3f20a4ff5e536146a81a5fa6bbaab9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3626,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

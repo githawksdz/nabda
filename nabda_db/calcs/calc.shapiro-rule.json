@@ -1,0 +1,314 @@
+{
+  "id": "calc.shapiro-rule",
+  "slug": "shapiro-rule",
+  "language": "fr",
+  "title": "Shapiro règle",
+  "short_title": "Shapiro règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Infections bactériennes",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Anuria",
+    "Dyspnea",
+    "Fatigue",
+    "Fever",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Shapiro Rule",
+    "blood culture",
+    "bacteremia",
+    "sepsis",
+    "infection",
+    "bacterial infection"
+  ],
+  "dosing": false,
+  "formula": "The Shapiro Rule is as follows:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Major Criteria | | |\n| Suspect endocarditis | No | 0 |\n| Yes | 3 | |\n| Temperature ≥39.4°C (103.0°F) | No | 0 |\n| Yes | 3 | |\n| Indwelling vascular catheter | No | 0 |\n| Yes | 2 | |\n| Minor Criteria | | |\n| Age, years | ≤65 | 0 |\n| >65 | 1 | |\n| Temperature 38.3–39.3°C (101.0–102.9°F) | No | 0 |\n| Yes | 1 | |\n| Chills | No | 0 |\n| Yes | 1 | |\n| Vomiting | No | 0 |\n| Yes | 1 | |\n| Hypotension (SBP <90 mm Hg) | No | 0 |\n| Yes | 1 | |\n| White blood cell count >18,000 cell/mm 3 | No | 0 |\n| Yes | 1 | |\n| Bands >5% | No | 0 |\n| Yes | 1 | |\n| Platelets <150,000 cells/mm 3 | No | 0 |\n| Yes | 1 | |\n| Creatinine >2.0 mg/dL | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- À utiliser chez un patient des Urgences présentant une infection suspectée, pour aider à déterminer si une hémoculture doit être prélevée.\n- En cas de suspicion de sepsis, la Society of Critical Care Medicine ([SCCM](https://www.sccm.org/SurvivingSepsisCampaign/Guidelines/Adult-Patients)) recommande les [critères SIRS](nabda:calc.sirs-sepsis-septic-shock-criteria), le [NEWS](nabda:calc.national-early-warning-score-news) ou le [MEWS](nabda:calc.modified-early-warning-score-mews-clinical-deterioration) comme outils de dépistage du sepsis.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Si 1 critère majeur ou ≥2 critères mineurs sont remplis, une hémoculture est recommandée selon la règle de Shapiro.\n- Cependant, aucune règle clinique ne doit être utilisée isolément pour déterminer la prise en charge du patient. Utilisez votre jugement clinique pour déterminer si les résultats s'appliquent à votre patient.\n- Suivez les recommandations locales sur le sepsis et les hémocultures pour le traitement."
+  },
+  "evidence": "",
+  "more_info": "Si 1 critère majeur ou ≥2 critères mineurs sont remplis, une hémoculture est indiquée selon la règle de Shapiro.",
+  "short_description": "Indication d'hémoculture.",
+  "medium_description": "Indicates if ED patient qualifies pour blood culture.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤65",
+          "value": 0
+        },
+        {
+          "label": ">65",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Temperature",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 38.3°C (101.0°F)",
+          "value": 0
+        },
+        {
+          "label": "38.3–39.3°C (101.0–102.9°F)",
+          "value": 1
+        },
+        {
+          "label": "≥39.4°C (103.0°F)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "endo",
+      "label": "Suspicion d'endocardite",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ivc",
+      "label": "Cathéter vasculaire implanté",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chills",
+      "label": "Chills",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vomiting",
+      "label": "Vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sbp",
+      "label": "Hypotension (PAS <90 mm Hg)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wbc",
+      "label": "White blood cell count >18,000 cell/mm^3^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bands",
+      "label": "Polynucléaires neutrophiles en bandes >5%",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "platelets",
+      "label": "Platelets <150,000 cells/mm^3^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine >2,0 mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Long B, Koyfman A. Best clinical practice: blood culture utility in the emergency department. J Emerg Med. 2016;51(5):529-539.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27639424/",
+      "kind": "international"
+    },
+    {
+      "text": "Shapiro NI, Wolfe RE, Wright SB, Moore R, Bates DW. Who needs a blood culture? A prospectively derived and validated prediction rule. J Emerg Med. 2008;35(3):255-264.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18486413/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jessen MK, Mackenhauer J, Hvass AMSW, et al. Prediction of bacteremia in the emergency department: an external validation of a clinical decision rule. Eur J Emerg Med. 2016;23(1):44-49.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25222426/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pecarn-rule-low-risk-febrile-infants-29-60-days-old",
+    "calc.rochester-criteria-febrile-infants",
+    "calc.sirs-sepsis-septic-shock-criteria",
+    "calc.national-early-warning-score-news",
+    "calc.modified-early-warning-score-mews-clinical-deterioration"
+  ],
+  "source_logic_hash": "88e55a368c732d2dcd7e5c230d3f5d32",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sirs-sepsis-septic-shock-criteria",
+      "text": "SIRS criteria"
+    },
+    {
+      "type": "calc",
+      "id": "calc.national-early-warning-score-news",
+      "text": "NEWS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.modified-early-warning-score-mews-clinical-deterioration",
+      "text": "MEWS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10513,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

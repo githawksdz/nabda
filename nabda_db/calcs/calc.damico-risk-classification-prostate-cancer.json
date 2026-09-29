@@ -1,0 +1,209 @@
+{
+  "id": "calc.damico-risk-classification-prostate-cancer",
+  "slug": "damico-risk-classification-prostate-cancer",
+  "language": "fr",
+  "title": "Classification du risque de D’Amico pour le cancer de la prostate",
+  "short_title": "Classification de D'Amico",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Hématurie",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "d'amico",
+    "damico",
+    "dam",
+    "prostate",
+    "CA",
+    "cancer",
+    "oncology",
+    "gleason",
+    "PSA",
+    "t2c",
+    "t3",
+    "t2b",
+    "t1c",
+    "t2a"
+  ],
+  "dosing": false,
+  "formula": "Risque calculé par la combinaison des facteurs ci-dessus.",
+  "how_to_use": {
+    "why": "Fournit une stratification du risque pour étayer la planification pré-thérapeutique.",
+    "when": "Use following a recent biopsy-confirmed diagnosis of localized prostate cancer to estimate post-treatment risk of biochemical (prostate-specific antigen [PSA]) recurrence.",
+    "pearls": "- Développé en 1998, cet outil estime le risque de récidive du cancer de la prostate (faible, moyen ou élevé) en fonction du taux de PSA, du [score de Gleason](nabda:calc.gleason-score-prostate-cancer) et du stade tumoral.\n- Peut être moins précis chez les hommes présentant de multiples facteurs de risque.\n- La distribution des groupes de risque observée dans la pratique actuelle a évolué vers une maladie davantage détectée par dépistage, ce qui peut limiter sa pertinence contemporaine."
+  },
+  "next_steps": {
+    "advice": "Cet outil doit soutenir, et non remplacer, le jugement clinique et la décision partagée ; ne pas utiliser les résultats comme seul déterminant du traitement.",
+    "critical_actions": "",
+    "management": "The following are based on guidelines from the American Urological Association (AUA), American Society for Radiation Oncology (ASTRO), and Society of Urologic Oncology (SUO) (also endorsed by the American Society of Clinical Oncology [ASCO]):\n\n- **Very low-risk disease:** Active surveillance is the best available option.\n- **Low-risk disease:**\n\n - Active surveillance is the preferred option for most patients.\n - Select low-risk patients at high probability of progressing on active surveillance may instead be offered definitive treatment (radical prostatectomy or radiotherapy).\n- **Intermediate-risk disease:** Treatment options depend on shared decision-making between the patient and clinician and on whether the disease is determined to be favorable or unfavorable after further evaluation.\n\n - **For unfavorable disease:** Radical prostatectomy or radiotherapy combined with androgen-deprivation therapy are the standard treatment options.\n - **For favorable disease:**\n\n - Radiation alone is an option, although the supporting evidence is less robust than for radiation combined with androgen-deprivation therapy.\n - Active surveillance may be offered to select patients with counseling that this carries a higher risk of eventual metastasis than definitive treatment.\n- **High-risk disease:** Radical prostatectomy or radiotherapy combined with androgen-deprivation therapy are the standard treatment options."
+  },
+  "evidence": "",
+  "more_info": "**Low risk:**\n\n- [Gleason Score](nabda:calc.gleason-score-prostate-cancer) <6 **and**\n- PSA <10 ng/ml **and**\n- Clinical stage T1c or T2a\n\n**Intermediate risk:**\n\n- [Gleason Score](nabda:calc.gleason-score-prostate-cancer) of 7 **or**\n- PSA of 10-20 ng/ml **or**\n- Clinical stage T2b\n\n**High risk:**\n\n- [Gleason Score](nabda:calc.gleason-score-prostate-cancer) >8 **or**\n- PSA >20 ng/ml **or**\n- Clinical stage T2c or T3",
+  "short_description": "Assesses 5 year défaillance de prostate CA traitement défaillance.",
+  "medium_description": "Assesses 5 year risque de biochemical récidive after traitement basé sur clinique factors.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "psa",
+      "label": "Taux de PSA",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Inférieur à 10 ng/mL",
+          "value": 1
+        },
+        {
+          "label": "10-20 ng/mL",
+          "value": 2
+        },
+        {
+          "label": ">20 ng/mL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gleason",
+      "label": "[Gleason Score](nabda:calc.gleason-score-prostate-cancer)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤6",
+          "value": 1
+        },
+        {
+          "label": "7",
+          "value": 2
+        },
+        {
+          "label": "≥8",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stage",
+      "label": "Stade clinique",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "T1-T2",
+          "value": 1
+        },
+        {
+          "label": "T2b",
+          "value": 2
+        },
+        {
+          "label": "≥T2c",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "D'Amico AV, Whittington R, Malkowicz S, et al. Biochemical Outcome After Radical Prostatectomy, External Beam Radiation Therapy, or Interstitial Radiation Therapy for Clinically Localized Prostate Cancer. JAMA.1998;280(11):969-974. doi:10.1001/jama.280.11.969.",
+      "href": "https://jama.jamanetwork.com/article.aspx?articleid=187980",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moul JW. The Evolving Definition of Advanced Prostate Cancer. Reviews in Urology. 2004;6(Suppl 8):S10-S17",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1472896/",
+      "kind": "other"
+    },
+    {
+      "text": "Rodrigues G, Warde P, Pickles T, et al. Pre-treatment risk stratification of prostate cancer patients: A critical review. Canadian Urological Association Journal. 2012;6(2):121-127. doi:10.5489/cuaj.11085.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3328553/",
+      "kind": "other"
+    },
+    {
+      "text": "Hernandez DJ, Nielsen ME, Han M. Contemporary evaluation of the D'amico risk classification of prostate cancer. Urology. 2007 Nov;70(5):931-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18068450",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Boorjian SA, Karnes RJ, Rangel LJ. Mayo Clinic validation of the D'amico risk group classification for predicting survival following radical prostatectomy. J Urol. 2008 Apr;179(4):1354-60; discussion 1360-1. Epub 2008 Mar 4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18289596",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lughezzani G, Budäus L, Isbarn H, Sun M, Perrotte P, Haese A, Chun FK, Schlomm T, Steuber T, Heinzer H, Huland H. Head-to-head comparison of the three most commonly used preoperative models for prediction of biochemical recurrence after radical prostatectomy. European urology. 2010 Apr 1;57(4):562-8.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20018437/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Koie T, Mitsuzuka K, Narita S, Yoneyama T, Kawamura S, Tsuchiya N, Tochigi T, Habuchi T, Arai Y, Ohyama C. Efficiency of pretreatment risk stratification systems for prostate cancer in a Japanese population treated with radical prostatectomy. International Journal of Urology. 2015 Jan;22(1):70-3.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25115632/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gabriele D, Guarneri A, Bartoncini S, Munoz F, Tamponi M, Russo F, Stamatakos G, Guiot C, Regge D, Ricardi U. An external validation of the Candiolo nomogram in a cohort of prostate cancer patients treated by external‐beam radiotherapy. Radiation Oncology. 2021 May 5;16(1):85.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33952288/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kutluhan MA, Ünal S, Özsoy E, Şahin A, Özayar A, Okulu E, Kayıgil Ö. Evaluation of four pre‐operative models for prediction of biochemical recurrence after radical prostatectomy in localised prostate cancer. International Journal of Clinical Practice. 2021 Oct;75(10):e14682.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34331823/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Epstein M, Syed K, Danella J, Ginzburg S, Belkoff L, Tomaszewski J, Trabulsi E, Singer EA, Jacobs BL, Raman JD, Guzzo TJ. Model risk scores may underestimate rate of biochemical recurrence in African American men with localized prostate cancer: a cohort analysis of over 3000 men. Prostate cancer and prostatic diseases. 2024 Jun;27(2):257-63.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37821578/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gleason-score-prostate-cancer",
+    "calc.prostate-tumor-volume-density",
+    "calc.prevail-model-prostate-cancer-survival"
+  ],
+  "source_logic_hash": "8cab483f212502237bc5eb34364210a7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2049,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar psa = parseFloat(psa);\nvar gleason = parseFloat(gleason);\nvar stage = parseFloat(stage);\nvar msg = '';\nvar valuetxt = '';\nif (psa == 1 && gleason == 1 && stage == 1) { msg = '<25% failure at 5 years post treatment.';\n    valuetxt = 'Low' }\nif (psa == 2 || gleason == 2 || stage == 2) { msg = '25-50% failure at 5 years post treatment.';\n    valuetxt = 'Intermediate' }\nif (psa == 3 || gleason == 3 || stage == 3) { msg = '>50% failure at 5 years post treatment.';\n    valuetxt = 'High' }\n\ncalc_output.push({ \n    name: 'mini', \n    value:'', \n    value_text: ' ', \n    message: valuetxt+' risk of recurrence.' \n});\ncalc_output.push({ \n    name: \"2049_D'Amico Classification_result\", \n    value: valuetxt, \n    value_text: '', \n    message:' Risk of recurrence.<br/><br/>'+msg \n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Anthony D'Amico"
+  ],
+  "measurement_ids": [
+    "psa"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "607fa6ed6f63a4ae83264ca051836477718d4a01179a5e7dcd24e7482fc8ce01"
+}

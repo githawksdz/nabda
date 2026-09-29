@@ -1,0 +1,348 @@
+{
+  "id": "calc.smart-cop-score-pneumonia-severity",
+  "slug": "smart-cop-score-pneumonia-severity",
+  "language": "en",
+  "title": "Score SMART-COP pour la gravité de la pneumonie",
+  "short_title": "Score SMART-COP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonie",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Toux",
+    "Dyspnée",
+    "Fièvre",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pna",
+    "smrtco",
+    "smartcop",
+    "SMART",
+    "COP",
+    "CAP",
+    "pneumonia",
+    "prognosis",
+    "cough",
+    "shortness of breath",
+    "pna",
+    "covid",
+    "covid-19",
+    "coronavirus",
+    "covid 19",
+    "covid19"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- |\n| S ystolic BP <90 | No | -- | Yes |\n| M ultilobar CXR involvement | No | Yes | -- |\n| A lbumin <3.5 g/dL | No | Yes | -- |\n| R espiratory rate | <25, if age ≤50 <30, if age >50 | ≥25, if age ≤50 ≥30, if age >50 | -- |\n| Tachycardia ≥125 | No | Yes | -- |\n| C onfusion (new onset) | No | Yes | -- |\n| O xygen low | PaO2 ≥60 (or SaO2 >90% or P/F ratio ≥250), if age >50 PaO2 ≥70 (or SaO2 >93% or P/F ratio ≥333), if age ≤50 | -- | PaO2 <60 (or SaO2 ≤90% or P/F ratio <250), if age >50 PaO2 <70 (or SaO2 ≤93% or P/F ratio <333), if age ≤50 |\n| Arterial p H <7.35 | No | -- | Yes |",
+  "how_to_use": {
+    "why": "- Uses readily available patient information.\n- Can help identify which patients need ICU admission, with 92.3% sensitivity, 62.3% specificity, and an AUC of 0.87, leading to better utilization of resources and treatment initiation.\n- Delayed admission to the ICU is associated with higher 30-day mortality in patients with CAP ([Restrepo 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3021366/)).\n- Performs comparably well with the 2007IDSA/ATSguidelines’ minor criteria.",
+    "when": "Patients with CAP who may require ICU care.",
+    "pearls": "- The SMART-COP Score for Pneumonia Severity was developed to identify patients at increased risk for intensive respiratory or vasopressor support (IRVS).\n- Can help stratify which patients need ICU admission.\n- Does not estimate mortality.\n- Includes age-adjusted cutoffs for respiratory rate and oxygen levels, but otherwise does not explicitly include patient age as a variable, in contrast with [PSI](nabda:calc.psi-port-score-pneumonia-severity-index-cap) or [CURB-65](nabda:calc.curb-65-score-pneumonia-severity) scores. This may preserve the positive predictive value with advancing age.\n- CAP is the single most common cause of sepsis in older patients, but can be difficult to recognize due to blunted fever and tachycardic responses to infection.\n- Consideration of other variables *not* included in the SMART-COP Score, such as comorbidities, functional status, frailty, and physician gestalt, may still recommend ICU admission."
+  },
+  "next_steps": {
+    "advice": "- Les patients qui ne remplissent pas les critères d’admission en soins intensifs selon le score SMART-COP doivent tout de même être évalués pour la nécessité d’une admission en hospitalisation.\n- Ils doivent également recevoir une antibiothérapie empirique appropriée et rapide pour une PAC, généralement un bêta-lactame associé à un macrolide, ou une fluoroquinolone.\n- Les objectifs de soins et d’autres variables peuvent déconseiller une admission en soins intensifs même si le score SMART-COP est élevé.",
+    "critical_actions": "For patients with high SMART-COP Scores, consider broadening antibiotic regimen to include MRSA coverage (for ICU admission, necrotizing or cavitary infiltrates, or empyema, previous MRSA infection) and/or to include antipseudomonal coverage (for history of structural lung disease, immunocompromise, or previous *Pseudomonas* infection). Also, consider if the patient has associated sepsis and treat accordingly.",
+    "management": ""
+  },
+  "evidence": "The original SMART-COP study by[Charles et al in 2008](https://www.ncbi.nlm.nih.gov/pubmed/18558884)prospectively examined patients with CAP at six hospitals in Australia over a 28 month period. It included 865 CAP episodes, with a mean patient age of 65.1 years. The SMART-COP Score was developed to stratify patients into need for ICU admission based on risk for intensive respiratory or vasopressor support (IRVS).\n\nThe study cohort had a 13.4% ICU admission rate, a 10.3% IRVS rate, and a 5.7% 30-day mortality rate. In the derivation study, the SMART-COP Score demonstrated 92.3% sensitivity and 62.3% specificity (AUC 0.87) for accurately predicting need for IRVS, compared with 73.6% sensitivity for PSI classes IV and V, and 38.5% sensitivity for CURB-65 group 3 patients.\n\nThe original study also then validated the SMART-COP Score using 5 existing databases (including the PORT database) with a total of 7,464 patients. When applied to these five external databases, the SMART-COP Score had an AUC 0.72-0.87.\n\nOne database analysis study ([Valley 2015](https://www.ncbi.nlm.nih.gov/pubmed/26393850)) found that among hospitalized Medicare patients with pneumonia, ICU admission of patients for whom the decision appeared to be discretionary was associated a 5.7% absolute survival advantage at 30 days compared with patients admitted to general wards.",
+  "more_info": "Interpretation:\n\n| SMART-COP Score | Risk Group | Risk* |\n| --- | --- | --- |\n| 0–2 | Low | Minimal |\n| 3–4 | Moderate | 1 in 8 |\n| 5–6 | High Consider ICU admission | 1 in 3 |\n| ≥7 | Very high Consider ICU admission | 2 in 3 |\n\n*Of requiring intensive respiratory or vasopressor support (IRVS).",
+  "short_description": "Gravité de la pneumonie.",
+  "medium_description": "Predicts need pour intensive respiratory ou vasopressor support (IRVS) dans pneumonie communautaire (CAP).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge (ans)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤50",
+          "value": 0
+        },
+        {
+          "label": ">50",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cxr",
+      "label": "Atteinte multilobaire sur radiographie thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "albumin",
+      "label": "Albumine < 3,5 g/dL (35 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rr25",
+      "label": "Fréquence respiratoire ≥25",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rr30",
+      "label": "Fréquence respiratoire ≥30",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "Tachycardie ≥125",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "confusion",
+      "label": "Confusion (d'apparition récente)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "oxygen60",
+      "label": "PaO₂ < 60 mmHg, SaO₂ ≤ 90 %, ou PaO₂/FiO₂ < 250",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "oxygen70",
+      "label": "PaO₂ <70 mmHg, SaO₂ ≤93 %, ou PaO₂/FiO₂ <333",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ph",
+      "label": "pH < 7.35",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sbp",
+      "label": "PAS < 90 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "age == 0 || age == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Charles PG, Wolfe R, Whitby M, et al. SMART-COP: a tool for predicting the need for intensive respiratory or vasopressor support in community-acquired pneumonia. Clin Infect Dis. 2008;47(3):375-84.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18558884 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Valley TS, Sjoding MW, Ryan AM, Iwashyna TJ, Cooke CR. Association of Intensive Care Unit Admission With Mortality Among Older Patients With Pneumonia. JAMA. 2015;314(12):1272-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26393850 ",
+      "kind": "other"
+    },
+    {
+      "text": "Restrepo MI, Mortensen EM, Rello J, Brody J, Anzueto A. Late admission to the ICU in patients with community-acquired pneumonia is associated with higher mortality. Chest. 2010;137(3):552-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3021366/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Marti C, Garin N, Grosgurin O, et al. Prediction of severe community-acquired pneumonia: a systematic review and meta-analysis. Crit Care. 2012;16(4):R141.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22839689 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.psi-port-score-pneumonia-severity-index-cap",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.shorr-score-mrsa-pneumonia"
+  ],
+  "source_logic_hash": "df077e5adca50ff7604e4e48f933ba4c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.psi-port-score-pneumonia-severity-index-cap",
+      "text": "PSI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    },
+    {
+      "type": "calc",
+      "id": "calc.psi-port-score-pneumonia-severity-index-cap",
+      "text": "PSI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3914,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sbp = parseFloat(sbp);\nvar cxr = parseFloat(cxr);\nvar albumin = parseFloat(albumin);\nvar hr = parseFloat(hr);\nvar confusion = parseFloat(confusion);\nvar ph = parseFloat(ph);\n\n\nvar age = parseFloat(age);\nvar u, pri_u;\n\nif (age == \"0\") {\n    // var rr25 = parseFloat(rr25) ? 1 : 0;\n   // var oxygen70 = parseFloat(oxygen70) ? 1 : 0;\n    var rr25 = parseFloat(rr25);\n    var oxygen70 = parseFloat(oxygen70);\n    u = sbp + cxr + albumin + hr + confusion + ph + rr25 + oxygen70; \n    pri_u = sbp + cxr + hr + confusion + rr25;   \n}\nif (age == \"1\") {\n    // var rr30 = parseFloat(rr30) ? 1 : 0;\n    // var oxygen60 = parseFloat(oxygen60) ? 1 : 0;\n    var rr30 = parseFloat(rr30);\n    var oxygen60 = parseFloat(oxygen60);\n    u = sbp + cxr + albumin + hr + confusion + ph + rr30 + oxygen60;\n    pri_u = sbp + cxr + hr + confusion + rr30; \n}\n\n//interpretation\nvar msg, risk;\nvar add = '';\nif (u <= 2) {\n    msg = 'Low';\n    risk = 'Minimal';\n}else if (u == 3 || u == 4) {\n    msg = 'Moderate';\n    risk = '1 in 8';\n}else if (u == 5 || u == 6) {\n    msg = 'High';\n    add = 'Consider ICU admission.';\n    risk = '1 in 3';\n}else { //if (u >= 7) \n    msg = 'Very high';\n    add = 'Consider ICU admission.';\n    risk = '2 in 3';\n}\n\n//primary care interpretation\nvar pri_msg, pri_risk;\nif (pri_u == 0) {\n    pri_msg = 'Very low';\n    pri_risk = 'Minimal';\n}else if (pri_u == 1) {\n    pri_msg = 'Low';\n    pri_risk = '1 in 20';\n}else if (pri_u == 2) {\n    pri_msg = 'Moderate';\n    pri_risk = '1 in 10';\n}else if (pri_u == 3) {\n    pri_msg = 'High';\n    pri_risk = '1 in 6';\n}else {  //if (u >= 4) \n    pri_msg = 'High';\n    pri_risk = '1 in 3';\n}\n\ncalc_output.push({ \n    name: 'mini',\n    value: u, \n    value_text: 'points', \n    message: msg + ' risk' \n});\ncalc_output.push({ \n    name: '3914_SMART-COP Score_result', \n    value: u, \n    value_text: 'points', \n    message: 'SMART-COP Score'\n});\ncalc_output.push({ \n    name: '3914_SMART-COP Score_interpretation', \n    value: msg, \n    value_text: 'risk ', \n    message: risk + ' risk of IRVS. ' + add\n});\n\n",
+  "before_use": "**Tips for COVID-19:** Use to determine floor vs. ICU. Perhaps best performing to predict ICU admissions for CAP, but unclear applicability in COVID/viral pneumonias/ARDS.",
+  "instructions": "À utiliser chez les patients ≥18 ans présentant des signes cliniques et radiographiques compatibles avec une pneumonie communautaire (CAP). Ne s’applique pas aux patients présentant une immunosuppression significative.",
+  "contributor_ids": [
+    "jennifer-chen-md"
+  ],
+  "creator_names": [
+    "Dr. Patrick Charles"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Albumin",
+    "pH"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "a3c3eae0b6b590672430db9008959ca51f28af49ab2ada9eecb6eb756dcf2238"
+}

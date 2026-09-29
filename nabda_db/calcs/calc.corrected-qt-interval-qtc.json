@@ -1,0 +1,288 @@
+{
+  "id": "calc.corrected-qt-interval-qtc",
+  "slug": "corrected-qt-interval-qtc",
+  "language": "en",
+  "title": "Intervalle QT corrigé (QTc)",
+  "short_title": "QT corrigé (QTc)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Coronavirus",
+    "Hyperkalemia",
+    "Hypocalcemia",
+    "Hypomagnesemia",
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Palpitations",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "ekg",
+    "cardiology",
+    "cards",
+    "prolongation",
+    "q-t",
+    "qtcf",
+    "qtcl",
+    "bazzett",
+    "fredericia",
+    "Bazett",
+    "Fridericia",
+    "Framingham",
+    "Hodges",
+    "covid19",
+    "covid-19",
+    "covid 19",
+    "covid",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "RR interval = 60 / HR\n\n**Bazett Formula:** QTc = QT interval / √ (RR interval)\n\n**Fridericia Formula:** QTc = QT interval / (RR interval)^1/3^\n\n**Framingham Formula:** QTc = QT interval + 154 x (1 - RR interval)\n\n**Hodges Formula:** QTc = QT interval + 1.75 x [(60 / RR interval) − 60]\n\n**Rautaharju Formula:** QTc = QT interval x (120 + HR) / 180",
+  "how_to_use": {
+    "why": "- Un intervalle QT prolongé est associé à un risque accru de torsades de pointes.\n- Le QT se raccourcit à des fréquences cardiaques plus élevées et s'allonge à des fréquences cardiaques plus basses ; ce calculateur corrige le QT en fonction de ce qu'il serait à une fréquence cardiaque de 60 bpm.",
+    "when": "- Utile dans l’évaluation des patients présentant une syncope.\n- Important lors de l’évaluation d’un allongement de l’intervalle QT chez les patients recevant plusieurs médicaments allongeant le QT.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Ensure the QT interval measurement does not mistakenly include a U wave. If it does, re-measure, recalculate, and consider potential etiologies of U waves.\n\nIf there is no U wave, consider common causes of a prolonged QT interval, including:\n\n- Electrolyte abnormalities.\n- Intrinsic cardiac causes.\n- Central causes.\n- Medications.\n\nIf a short QT interval is observed, confirm measurement accuracy and consider short QT syndrome (see[Facts & Figures](#evidence)).",
+    "critical_actions": "",
+    "management": "La prise en charge dépend de l’étiologie spécifique d’un intervalle QT prolongé ou raccourci. De façon générale, minimiser l’utilisation de médicaments allongeant le QT chez les patients présentant une prolongation du QT et ne les utiliser qu’après une évaluation approfondie du rapport bénéfice-risque."
+  },
+  "evidence": "QT correction formulas were derived to correct for the inverse correlation between QT interval and heart rate. The most common formula used – and taught in medical schools – is the Bazett formula. Though commonly linked to[a paper by Dr. H.C. Bazett in 1920](https://onlinelibrary.wiley.com/doi/epdf/10.1111/j.1542-474X.1997.tb00325.x), that very paper only adapted the 1891 equations by Dr. A.D. Waller to the QT interval. This formula was derived empirically (with few details offered about its mathematical methods) and essentially defined the ideal QT interval for any individual at a given heart rate. This formed the basis of the modern Bazett formula, which was first mentioned by[Drs. Taran and Szilagyi in a 1947 paper](https://pubmed.ncbi.nlm.nih.gov/20280672/).\n\nMeanwhile, the lesser-known[Fridericia](https://www.ncbi.nlm.nih.gov/pubmed/14516292),[Hodges](https://www.jacc.org/doi/epdf/10.1016/S0735-1097%2883%2980095-3),[Framingham](https://www.ncbi.nlm.nih.gov/pubmed/1519533), and[Rautaharju](https://pubmed.ncbi.nlm.nih.gov/24825030/)formulas were successively derived over a span of 94 years, with the Fridericia formula being the oldest (1920) and the Rautaharju formula (2014) the newest. Most of these formulas were derived using regression-based methods.\n\nSubsequently, there has been constant debate about the ideal formula for QT interval correction. While some researchers have validated the Bazett formula in specific conditions (e.g.,[Dahlberg et al](https://pubmed.ncbi.nlm.nih.gov/33070409/).in patients with long QT syndrome), most studies have shown the superiority of other formulas over Bazett's in adjusting for heart rate dependency and predicting mortality, for instance,[Patel et al.](https://pubmed.ncbi.nlm.nih.gov/26552754/)(in a cohort without atrial fibrillation),[Tian et al.](https://pubmed.ncbi.nlm.nih.gov/39476810/)(in a cohort of Chinese patients without cardiovascular disease), and Vandenberk et al. ([in a cohort of adult hospital attendees](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937268/)and, separately,[in a retrospective cohort of adult patients](https://pubmed.ncbi.nlm.nih.gov/29928779/)). In most studies, Bazett was consistently found to over-correct the QT interval at higher heart rates and under-correct at lower heart rates, with the potential of drastically over-diagnosing QT prolongation (e.g.,[Vandenberk et al.,](https://pubmed.ncbi.nlm.nih.gov/27317349/)[Luo et al.](https://pubmed.ncbi.nlm.nih.gov/15534815/)). For similar reasons,[others advise against using the Bazett formula for diagnosing short QT syndrome](https://pubmed.ncbi.nlm.nih.gov/18328853/). However, at least[one report suggests Bazett is superior in predicting cardiac mortality](https://pubmed.ncbi.nlm.nih.gov/35172723/), and[another shows that Bazett has better adjustment consistency than other formulas in infants and young children](https://pmc.ncbi.nlm.nih.gov/articles/PMC4380641/).\n\nOf note, two particular scenarios have been frequently investigated. The first is monitoring drug-induced QT prolongation to stratify the risk of torsades de pointes, for which[a QT nomogram was developed](https://pubmed.ncbi.nlm.nih.gov/17881416/). That same study also found the Bazett-corrected QT interval useful for identifying those at risk of drug-induced torsades de pointes. Others have reported that[both the Bazett and Fredericia formulas (but not the Hodges or Framingham) may interfere with QT monitoring](https://pubmed.ncbi.nlm.nih.gov/16945790/), and that[the Rautaharju formula may perform as well as or better than the nomogram for predicting drug-induced torsades de pointes](https://pubmed.ncbi.nlm.nih.gov/30260244/). The second scenario is QT interval monitoring in athletes and young people. A[2023 systematic review by Mahendran et al.](https://pmc.ncbi.nlm.nih.gov/articles/PMC10540007/)found no study supporting the use of the Bazett formula in these individuals, while indicating that alternatives, especially the Fredericia formula, may be superior.\n\nOverall, there is no clear consensus on the ideal method of QT interval correction for heart rate. Although a[2013 expert consensus of the Heart Rhythm Society, European Heart Rhythm Association, and the Asia Pacific Heart Rhythm Society](https://pubmed.ncbi.nlm.nih.gov/24011539/)relied on the Bazett formula for diagnosing long QT syndrome, the newer[2022 European arrhythmia guidelines](https://pubmed.ncbi.nlm.nih.gov/36017572/)recommend a specific correction formula. The[aforementioned expert consensus](https://pubmed.ncbi.nlm.nih.gov/24011539/)also warned that QTc \"should be calculated avoiding tachycardia and bradycardia to prevent the use of the Bazett formula at rates in which its correction is not linear and may lead to underestimation or overestimation of QTc values.” While the Bazett formula remains popular due to its simplicity and years of widespread dissemination, clinicians should be aware of its potential shortcomings and the uncertainties surrounding the performance of different formulas.",
+  "more_info": "**Long QT Syndrome:**\n\nThe[2022 ESC guidelines](https://pubmed.ncbi.nlm.nih.gov/36017572/)recommend a cutoff QTc≥480 ms (regardless of symptom) or an LQTS diagnostic score >3, or≥460 ms (in individuals with arrhythmic syncope without secondary causes for QT prolongation)for the diagnosis of long QT syndrome (including acquired long QT syndrome). Meanwhile, a[2013 expert consensus](https://pubmed.ncbi.nlm.nih.gov/24011539/)of the Heart Rhythm Society, European Heart Rhythm Association, and the Asia Pacific Heart Rhythm Society recommended the following diagnostic criteria for long QT syndrome:\n\n- Long QT syndrome is diagnosed:\n\n1. In the presence of an LQTS risk score > 3.5 in the absence of a secondary cause for QT prolongation, and/or\n2. In the presence of an unequivocally pathogenic mutation in one of the LQTS genes, or\n3. In the presence of a QTc >500 ms in repeated 12-lead ECG and in the absence of a secondarycause for QT prolongation.\n\nLong QT syndrome can be diagnosed in the presence of a QTc between 480-499 ms in repeated 12-lead ECGs in a patient with unexplained syncope in the absence of a secondary cause for QT prolongation and in the absence of a pathogenic mutation.\n\nA longer QTc puts the patient at increased risk for torsades de pointes. A QTc >500 ms indicates especially high risk of torsades de pointes.\n\nSome causes of prolonged QT:\n\n- Electrolyte abnormalities:\n\n - Hypocalcemia.\n - Hypokalemia.\n - Hypomagnesemia.\n- Intrinsic cardiac causes:\n\n - Myocardial. ischemia.\n - After cardiac arrest.\n - CAD.\n - Cardiomyopathy.\n - Severe bradycardia, high-grade AV block.\n - Congenital long QT syndrome.\n- Central causes:\n\n - Raised intracranial pressure.\n - Autonomic dysfunction.\n - Hypothyroidism.\n - Hypothermia.\n- Medications:\n\n - Anti-arrhythmics.\n - Psychotropic drugs.\n - Other drugs.\n\n**QT Nomogram:**\n\nThis tool is for evaluating patients at high risk of torsades de pointes – the QT interval here is the absolute / uncorrected QT interval. Patients with parameters plotted above the line are at high risk of torsades de pointes:\n\n![](https://cdn-web-img.mdcalc.com/qtc.png)\n\n**Short QT Syndrome:**\n\nIn the rarer case of a short QT interval, the[2022 European guidelines](https://pubmed.ncbi.nlm.nih.gov/36017572/)recommend that short QT syndrome be diagnosed in the presence of a QTc ≤360 ms and one or more of the following:\n\n- A pathogenic mutation.\n- A family history of short QT syndrome.\n- Survival from a ventricular tachycardia or fibrillation episode in the absence of heart disease.\n\nThese same guidelines recommend short QT syndrome to be considered in the presence of a QTc ≤320 ms, and in the presence of a QTc between 320-360 ms with arrhythmic syncope and a family history of sudden death at age <40 years.\n\nMeanwhile, the aforementioned[2013 expert consensus](https://pubmed.ncbi.nlm.nih.gov/24011539/)recommended the following diagnostic criteria for short QT syndrome:\n\n- Short QT syndrome is diagnosedin the presence of a QTc <330 ms.\n- Short QT syndrome can be diagnosed in the presence of a QTc <360 ms and one or more of the following:\n\n - Pathogenic mutation.\n - Family history of SQTS.\n - Family history of sudden death at age <40.\n - Survival of a VT/VF episode in the absence of heart disease.",
+  "short_description": "Corrige l’intervalle QT.",
+  "medium_description": "Corrects QT interval pour fréquence cardiaque extremes (choose de Bazett, Fridericia, Framingham, Hodges, ou Rautaharju formulas).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "formula",
+      "label": "Formula",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Bazett",
+          "value": 0
+        },
+        {
+          "label": "Fridericia",
+          "value": 1
+        },
+        {
+          "label": "Framingham",
+          "value": 2
+        },
+        {
+          "label": "Hodges",
+          "value": 3
+        },
+        {
+          "label": "Rautaharju",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque/pulse",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "speed",
+      "label": "Vitesse du papier, mm/sec",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "25",
+          "value": 25
+        },
+        {
+          "label": "50",
+          "value": 50
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "qt_interval",
+      "label": "Intervalle QT",
+      "tips": "Basculer l'unité pour utiliser les msec ou les petits carreaux ; 1 petit carreau = 40 msec (voir ci-dessous l'exemple où l'intervalle QT = 4 petits carreaux)",
+      "optional": false,
+      "unit": "qt2",
+      "show_points": false,
+      "conditionality": "speed==25"
+    },
+    {
+      "type": "textbox",
+      "name": "qt_interval2",
+      "label": "Intervalle QT",
+      "tips": "Basculer l'unité pour utiliser des msec ou des petits carreaux ; 1 petit carreau = 20 msec (voir ci-dessous l'exemple où l'intervalle QT = 4 petits carreaux)",
+      "optional": false,
+      "unit": "qt3",
+      "show_points": false,
+      "conditionality": "speed==50"
+    },
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Zeppenfeld K, Tfelt-Hansen J, de Riva M, Winkel BG, Behr ER, Blom NA, Charron P, Corrado D, Dagres N, de Chillou C, Eckardt L, Friede T, Haugaa KH, Hocini M, Lambiase PD, Marijon E, Merino JL, Peichl P, Priori SG, Reichlin T, Schulz-Menger J, Sticherling C, Tzeis S, Verstrael A, Volterrani M; ESC Scientific Document Group. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022 Oct 21;43(40):3997-4126. doi: 10.1093/eurheartj/ehac262.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36017572/",
+      "kind": "international"
+    },
+    {
+      "text": "Priori SG, Wilde AA, Horie M, Cho Y, Behr ER, Berul C, Blom N, Brugada J, Chiang CE, Huikuri H, Kannankeril P, Krahn A, Leenhardt A, Moss A, Schwartz PJ, Shimizu W, Tomaselli G, Tracy C. HRS/EHRA/APHRS expert consensus statement on the diagnosis and management of patients with inherited primary arrhythmia syndromes: document endorsed by HRS, EHRA, and APHRS in May 2013 and by ACCF, AHA, PACES, and AEPC in June 2013. Heart Rhythm. 2013 Dec;10(12):1932-63. doi: 10.1016/j.hrthm.2013.05.014.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24011539/",
+      "kind": "international"
+    },
+    {
+      "text": "Taran LM, Szilagyi N. The duration of the electrical systole, Q-T, in acute rheumatic carditis in children. Am Heart J. 1947 Jan;33(1):14-26. doi: 10.1016/0002-8703(47)90421-3.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20280672/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bazett HC. An analysis of the time-relations of electrocardiograms. Heart 1920; (7): 353–37.",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1111/j.1542-474X.1997.tb00325.x",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fridericia LS. The duration of systole in an electrocardiogram in normal humans and in patients with heart disease. 1920. Ann Noninvasive Electrocardiol. 2003;8(4):343-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14516292",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hodges MS, Salerno D, Erlinen D. Bazett's QT correction reviewed: evidence that a linear QT correction for heart rate is better. J Am Coll Cardiol. 1983;1:694.",
+      "href": "https://www.jacc.org/doi/epdf/10.1016/S0735-1097%2883%2980095-3",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sagie A, Larson MG, Goldberg RJ, Bengston JR, Levy D. An improved method for adjusting the QT interval for heart rate (the Framingham Heart Study) The American Journal of Cardiology 1992; 70; 797-801.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1519533",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rautaharju PM, Mason JW, Akiyama T. New age- and sex-specific criteria for QT prolongation based on rate correction formulas that minimize bias at the upper normal limits. Int J Cardiol. 2014;174(3):535-540.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24825030/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cobos Gil MA, García Rubira JC. Who was the creator of Bazett's formula? Rev Esp Cardiol. 2008 Aug;61(8):896-7.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18684378/",
+      "kind": "other"
+    },
+    {
+      "text": "Patel PJ, Borovskiy Y, Killian A, Verdino RJ, Epstein AE, Callans DJ, Marchlinski FE, Deo R. Optimal QT interval correction formula in sinus tachycardia for identifying cardiovascular and mortality risk: Findings from the Penn Atrial Fibrillation Free study. Heart Rhythm. 2016 Feb;13(2):527-35. doi: 10.1016/j.hrthm.2015.11.008.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26552754/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tian WB, Zhang WS, Jiang CQ, Liu XY, Zhu F, Jin YL, Zhu T, Lam TH, Cheng KK, Xu L. Optimal QT Correction Formula for Older Chinese: Guangzhou Biobank Cohort Study. Cardiology. 2024 Oct 30:1-12. doi: 10.1159/000542238.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39476810/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yazdanpanah MH, Naghizadeh MM, Sayyadipoor S, Farjam M. The best QT correction formula in a non-hospitalized population: the Fasa PERSIAN cohort study. BMC Cardiovasc Disord. 2022 Feb 16;22(1):52. doi: 10.1186/s12872-022-02502-2.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35172723/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dahlberg P, Diamant UB, Gilljam T, Rydberg A, Bergfeldt L. QT correction using Bazett's formula remains preferable in long QT syndrome type 1 and 2. Ann Noninvasive Electrocardiol. 2021 Jan;26(1):e12804. doi: 10.1111/anec.12804.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33070409/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahendran S, Gupta I, Davis J, Davis AJ, Orchard JW, Orchard JJ. Comparison of methods for correcting QT interval in athletes and young people: A systematic review. Clin Cardiol. 2023 Sep;46(9):1106-1115. doi: 10.1002/clc.24093",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10540007/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vandenberk B, Vandael E, Robyns T, et al. Which QT Correction Formulae to Use for QT Monitoring?. J Am Heart Assoc. 2016;5(6).",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4937268/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Extramiana F, Maury P, Maison-Blanche P, Duparc A, Delay M, Leenhardt A. Electrocardiographic biomarkers of ventricular repolarisation in a single family of short QT syndrome and the role of the Bazett correction formula. Am J Cardiol. 2008 Mar 15;101(6):855-60. doi: 10.1016/j.amjcard.2007.10.049.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18328853/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vandenberk B, Vandael E, Robyns T, Vandenberghe J, Garweg C, Foulon V, Ector J, Willems R. QT correction across the heart rate spectrum, in atrial fibrillation and ventricular conduction defects. Pacing Clin Electrophysiol. 2018 Sep;41(9):1101-1108. doi: 10.1111/pace.13423.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29928779/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Phan DQ, Silka MJ, Lan YT, Chang RK. Comparison of formulas for calculation of the corrected QT interval in infants and young children. J Pediatr. 2015 Apr;166(4):960-4.e1-2. doi: 10.1016/j.jpeds.2014.12.037.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4380641/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chan A, Isbister GK, Kirkpatrick CMJ, Dufful SB. Drug-induced QT prolongation and torsades de pointes: evaluation of a QT nomogram. QJM. 2007;100(10):609-615.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17881416/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Othong R, Wattanasansomboon S, Kruutsaha T, Chesson D, Arj-Ong Vallibhakara S, Kazzi Z. Utility of QT interval corrected by Rautaharju method to predict drug-induced torsade de pointes. Clin Toxicol (Phila). 2019;57(4):234-239.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30260244/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Indik JH, Pearson EC, Fried K, Woosley RL. Bazett and Fridericia QT correction formulas interfere with measurement of drug-induced changes in QT interval. Heart Rhythm. 2006 Sep;3(9):1003-7. doi: 10.1016/j.hrthm.2006.05.023.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16945790/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Luo S, Michler K, Johnston P, Macfarlane PW. A comparison of commonly used QT correction formulae: the effect of heart rate on the QTc of normal ECGs. J Electrocardiol. 2004;37 Suppl:81-90. doi: 10.1016/j.jelectrocard.2004.08.030.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15534815/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lights-criteria-exudative-effusions",
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.modified-early-warning-score-mews-clinical-deterioration"
+  ],
+  "source_logic_hash": "15820a787e12e7febf5b27706b47e84e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 48,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

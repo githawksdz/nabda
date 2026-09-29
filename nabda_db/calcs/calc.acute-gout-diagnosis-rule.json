@@ -1,0 +1,213 @@
+{
+  "id": "calc.acute-gout-diagnosis-rule",
+  "slug": "acute-gout-diagnosis-rule",
+  "language": "en",
+  "title": "Aigu Gout diagnostic règle",
+  "short_title": "Aigu Gout diagnostic règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Gout"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "gout",
+    "arthritis",
+    "septic joint",
+    "fluid",
+    "aspiration",
+    "mtp",
+    "janssen",
+    "jansen"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, voir ci-dessous.",
+  "how_to_use": {
+    "why": "- L'Acute Gout Diagnosis Rule peut aider à confirmer ou à exclure le diagnostic de goutte, et aider à déterminer quels patients bénéficient d'une ponction articulaire et lesquels pourraient être traités empiriquement pour la goutte spécifiquement.\n- La règle surpasse également le jugement clinique global du clinicien et améliore l'exactitude diagnostique.",
+    "when": "Un patient présentant une monoarthrite récente.",
+    "pearls": "- The Acute Gout Diagnosis Rule helps reduce unnecessary joint aspirations by predicting gout risk based on clinical criteria.\n- It was originally studied and validated in two primary care cohorts in Europe, so may not be as applicable in non-European populations.\n- Score correlates with likelihood of gout, with scores ≤4 unlikely to be gout, scores ≥8 likely to be gout, and 4-8 indeterminate.\n- False positives in the studies were mostly “unknown arthritis” and management typically did not change. Septic arthritis was not seen in these high scores.\n- Low scores are unlikely to be gout and other causes of gout should be considered, including pseudogout, septic arthritis, reactive arthritis, psoriatic, rheumatoid, or osteoarthritis."
+  },
+  "next_steps": {
+    "advice": "The authors provide several recommendations based on a patient's score:\n\n- ≤4 points: Unlikely gout. Other causes of monoarthritis should be considered, for example: pseudogout, septic arthritis, reactive arthritis, psoriatic, rheumatoid, or osteoarthritis.\n- 4-8 points: These patients are most likely to benefit from joint aspiration and fluid analysis for urate crystals.\n- ≥8 points: Gouty arthritis is very likely, and empiric gout medications can be started as opposed to more generic arthritis treatments (like NSAIDs).",
+    "critical_actions": "",
+    "management": "- Les poussées de goutte sont souvent traitées par une association de corticoïdes, d'AINS (classiquement, l'indométhacine), d'opioïdes pour les douleurs extrêmes et de colchicine, selon l'âge du patient et d'autres facteurs de risque de complications.\n- Après la poussée initiale, les patients peuvent bénéficier de traitements hypouricémiants comme l'allopurinol."
+  },
+  "evidence": "- As mentioned above, this rule was developed and validated twice in Europe, and may be less applicable to non-European populations.\n- The AUC for the receiver operator curves from the original and validation studies ranged from 0.86-0.89, suggesting overall **good** diagnostic accuracy.\n- The rule improves on clinician gestalt: “PPV of the clinical diagnosis may improve from 0.64 to 0.87 and the NPV from 0.87 to 0.95.”\n- The authors note that even the “gold standard” of monosodium urate crystals in fluid analysis is falsely negative about 5% of the time, suggesting that some of the “false positive” patients in the study with an “unknown arthritis” may have actually had gout as well.",
+  "more_info": "**Score interpretation:**\n\n| Score | Prevalence of gout |\n| --- | --- |\n| ≤4 points | 2.2% |\n| >4 and <8 points | 31.2% |\n| ≥8 points | 80.4% |\n\nMidrange scores (>4 to <8) are unable to rule out or rule in gout diagnosis. Further laboratory testing is suggested by the original study, using analysis of synovial fluid from the affected joint for the presence of monosodium urate (MSU) crystals.",
+  "short_description": "Risque pour gout.",
+  "medium_description": "Risque stratifies pour gout vs non-gout arthritis et helps determine which patients benefit most de joint aspiration.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "male",
+      "label": "Sexe masculin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "attack",
+      "label": "Antécédent de crise d'arthrite rapportée par le patient",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "onset",
+      "label": "Début dans un délai de 1 jour",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "red",
+      "label": "Rougeur articulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mtp",
+      "label": "Atteinte de la 1re articulation métatarsophalangienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cvd",
+      "label": "Hypertension ou ≥1 cardiopathie",
+      "tips": "Angina, MI, CHF, Stroke/TIA, PVD",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "uric",
+      "label": "Acide urique sérique > 5,88 mg/dL (0,35 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Janssens HM, Fransen J, van de Lisdonk EH, van Riel PM, van Weel C, Janssen M. A Diagnostic Rule for Acute Gouty Arthritis in Primary Care Without Joint Fluid Analysis.Arch Intern Med. 2010;170(13):1120-1126. doi:10.1001/archinternmed.2010.196.",
+      "href": "https://archinte.jamanetwork.com/article.aspx?articleid=225738",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Keinhorst LBE, et. al. The validation of a diagnostic rule for gout without joint fluid analysis: a prospective study. Rheumatology (Oxford). 2015 Apr;54(4):609-14. doi: 10.1093/rheumatology/keu378. Epub 2014 Sep 16.",
+      "href": "https://www.researchgate.net/publication/265717594_The_validation_of_a_diagnostic_rule_for_gout_without_joint_fluid_analysis_a_prospective_study",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr",
+    "calc.caspar-criteria-psoriatic-arthritis"
+  ],
+  "source_logic_hash": "204d051923635d49b003a5d9fae2ca59",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2175,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

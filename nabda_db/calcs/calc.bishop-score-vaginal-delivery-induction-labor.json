@@ -1,0 +1,212 @@
+{
+  "id": "calc.bishop-score-vaginal-delivery-induction-labor",
+  "slug": "bishop-score-vaginal-delivery-induction-labor",
+  "language": "en",
+  "title": "Bishop score pour Vaginal Delivery et Induction de Labor",
+  "short_title": "Score de Bishop",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "vbac",
+    "vaginal",
+    "birth",
+    "cesarian",
+    "c section",
+    "csection",
+    "csection risk calc",
+    "c section score",
+    "labor",
+    "pregnancy",
+    "induction"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Prédire quelles femmes accoucheront avec succès par déclenchement est difficile, et le Bishop Score est un système standardisé utilisé pour l’évaluation.",
+    "when": "Patientes en cours d’évaluation pour un travail obstétrical (y compris un éventuel déclenchement).",
+    "pearls": "- The Bishop Score for Vaginal Delivery and Induction of Pregnancy was originally developed to predict failure of elective induction in multiparous women.\n- It is commonly considered for predicting the need for caesarean section after induction and preterm labor.\n- Some centers recommend using the Modified Bishop Score which was developed in 1982 as an update to Bishop's original 1964 scoring system.\n- The scoring system was developed prior to cervical ripening agents.\n- Typically a score ≥ 8 is used to predict spontaneous vaginal delivery without induction and a score ≤5 suggests an unfavorable cervix likely to require induction."
+  },
+  "next_steps": {
+    "advice": "Le déclenchement est souvent envisagé pour un score de Bishop ≤5.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n- Les scores ≤ 5 suggèrent un col défavorable et qu'une induction peut être nécessaire pour un accouchement vaginal réussi.\n- Les scores 6-7 ne permettent pas de prédire de façon définitive si l'induction sera réussie ou non. Envisager une induction ou une augmentation du travail selon le jugement clinique.\n- Les scores ≥ 8 suggèrent qu'un accouchement vaginal spontané est plus probable et qu'une augmentation ou une induction peut être inutile.",
+  "short_description": "Probabilité d'accouchement vaginal réussi.",
+  "medium_description": "Prédit la probabilité d'un accouchement par voie basse réussi.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "dil",
+      "label": "Dilation",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Closed",
+          "value": 0
+        },
+        {
+          "label": "1-2 cm",
+          "value": 1
+        },
+        {
+          "label": "3-4 cm",
+          "value": 2
+        },
+        {
+          "label": "≥5 cm",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eff",
+      "label": "Effacement",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0-30%",
+          "value": 0
+        },
+        {
+          "label": "40-50%",
+          "value": 1
+        },
+        {
+          "label": "60-70%",
+          "value": 2
+        },
+        {
+          "label": "≥80%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stat",
+      "label": "Station",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "-3",
+          "value": 0
+        },
+        {
+          "label": "-2",
+          "value": 1
+        },
+        {
+          "label": "-1, 0",
+          "value": 2
+        },
+        {
+          "label": "+1, +2",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pos",
+      "label": "Position",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Posterior",
+          "value": 0
+        },
+        {
+          "label": "Mid-position",
+          "value": 1
+        },
+        {
+          "label": "Anterior",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "con",
+      "label": "Consistency",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Firm",
+          "value": 0
+        },
+        {
+          "label": "Modérément ferme",
+          "value": 1
+        },
+        {
+          "label": "Soft",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol. 1964;24: 266–8. PMID 14199536.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14199536",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Laughon SK, Zhang J, Troendle J, Sun L, Reddy UM. Using a Simplified Bishop Score to Predict Vaginal Delivery. Obstetrics and Gynecology 2011;117(4):805-811. doi:10.1097/AOG.0b013e3182114ad2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3297470/",
+      "kind": "other"
+    },
+    {
+      "text": "Newman RB, Goldenberg RL, Iams JD et al. Preterm Prediction Study: Comparison of the Cervical Score and Bishop Score for Prediction of Spontaneous Preterm Delivery. Obstet Gynecol. 2008;112 (3): 508–15. doi:10.1097/AOG.0b013e3181842087. PMID 18757646.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18757646",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vaginal-birth-after-cesarean-vbac",
+    "calc.vbac-risk-score-successful-vaginal-delivery-flamm-model",
+    "calc.atlas-score-clostridium-difficile-infection"
+  ],
+  "source_logic_hash": "e9f489bbbdfa333a62ec02f48ea46c03",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3320,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

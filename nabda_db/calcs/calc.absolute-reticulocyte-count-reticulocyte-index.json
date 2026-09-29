@@ -1,0 +1,134 @@
+{
+  "id": "calc.absolute-reticulocyte-count-reticulocyte-index",
+  "slug": "absolute-reticulocyte-count-reticulocyte-index",
+  "language": "fr",
+  "title": "Pourcentage de réticulocytes corrigé / Indice de production réticulocytaire (RPI)",
+  "short_title": "Pourcentage de réticulocytes corrigé / Indice de production réticulocytaire (RPI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hematologie",
+    "medecine-interne",
+    "general"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage",
+    "Hémorragie gastro-intestinale",
+    "Drépanocytose"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Dizziness",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "anemia",
+    "hgb",
+    "hct",
+    "arc",
+    "arc index",
+    "Reticulocyte Index",
+    "rpi",
+    "Reticulocyte production index",
+    "absolute",
+    "absolute reticulocyte",
+    "Corrected Reticulocyte Percentage/Reticulocyte Production Index (RPI)",
+    "corrected reticulocyte %"
+  ],
+  "dosing": false,
+  "formula": "Absolute reticulocyte count (cells/μL) = reticulocyte % × RBC count (cells/μL) × 10⁶\n\nCorrected reticulocyte % = reticulocyte % × [measured hematocrit/normal hematocrit]\n\nReticulocyte production index (RPI) = corrected reticulocyte % / (maturation factor)\n\n| Hematocrit | Maturation Factor |\n| --- | --- |\n| ≥35% | 1.0 |\n| 25 to <35% | 1.5 |\n| 20 to <25% | 2.0 |\n| <20% | 2.5 |",
+  "how_to_use": {
+    "why": "- Les réticulocytes servent de marqueur de la production des RBC ; en réponse à une anémie, une moelle osseuse normale devrait être capable d’augmenter le taux de production des RBC.\n- Ces facteurs de correction peuvent aider à distinguer les anémies hypoprolifératives de celles avec érythropoïèse efficace, en guidant le bilan et le traitement appropriés.",
+    "when": "- Utilisez cet outil pour évaluer si un patient présente une réponse médullaire adéquate à son anémie.\n- Permet également d'évaluer la réactivité de la moelle osseuse après une supplémentation en fer, en B12, en folate, ou après l'administration d'agents stimulant l'érythropoïèse.",
+    "pearls": "- Des transfusions sanguines récentes ou d'autres traitements modifiant les globules rouges (RBC) peuvent fausser les résultats ; il convient donc de les interpréter en fonction du contexte clinique.\n- Cet outil doit être utilisé conjointement avec une évaluation clinique approfondie."
+  },
+  "next_steps": {
+    "advice": "Un RI ou RPI élevé suggère une moelle osseuse réactive, pouvant s’observer dans :\n\n- Un saignement récent.\n- Une hémolyse.\n- Une réponse aux traitements de l’anémie (p. ex., supplémentation en fer ou en vitamines).\n- Une récupération médullaire (p. ex., après chimiothérapie ou transplantation).\n\nUn RI ou RPI abaissé suggère une suppression médullaire ou une érythropoïèse inefficace, pouvant s’observer dans :\n\n- Des carences nutritionnelles (p. ex., vitamine B12, fer, folates).\n- Une production réduite d’érythropoïétine (p. ex., insuffisance rénale chronique).\n- Des syndromes d’insuffisance médullaire (p. ex., anémie aplasique).\n- Un remplacement de la moelle osseuse (p. ex., maladie de surcharge métabolique, sarcoïdose).\n- Des affections malignes (p. ex., lymphome, leucémie).\n\nUne évaluation de la réponse médullaire inadéquate peut inclure :\n\n- Des dosages du fer, de la ferritine, de la capacité totale de fixation du fer (TIBC), de la vitamine B12 et des folates pour rechercher une anémie ferriprive ou d’autres carences nutritionnelles.\n- Une revue des antécédents du patient à la recherche de maladies inflammatoires chroniques, rénales ou endocriniennes pouvant causer une anémie des maladies chroniques.\n- Si aucune cause claire n’est identifiée lors des examens initiaux, envisager une biopsie de moelle osseuse pour évaluer des affections médullaires primitives, telles qu’une anémie aplasique, un syndrome myélodysplasique ou d’autres processus d’infiltration médullaire.\n- Dans les cas où l’étiologie de l’anémie reste incertaine ou si un trouble de la moelle osseuse est suspecté, une consultation en hématologie est justifiée pour une évaluation et une prise en charge complémentaires.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Reticulocyte Production Index | Interprétation |\n| --- | --- |\n| >3 | Réponse appropriée |\n| 2-3 | Réponse limite |\n| <2 | Réponse inadéquate |",
+  "short_description": "Adequacy de marrow response pour anemia.",
+  "medium_description": "Evaluates bone marrow response pour anemia, often dans sickle cell patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "reticulocytes",
+      "label": "% de réticulocytes",
+      "optional": false,
+      "unit": "retic",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "rbc",
+      "label": "Numération des globules rouges (érythrocytes)",
+      "optional": false,
+      "unit": "rbc",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hematocrit",
+      "label": "Hématocrite mesuré",
+      "optional": false,
+      "unit": "hct",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hematocrit_normal",
+      "label": "Hématocrite normal",
+      "tips": "Remarque : selon l'âge/le sexe",
+      "optional": false,
+      "unit": "hct",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Priya P P, A.R. S. Role of Absolute Reticulocyte Count in Evaluation of Pancytopenia-A Hospital Based Study. Journal of Clinical and Diagnostic Research : JCDR 2014;8(8):FC01-FC03. doi:10.7860/JCDR/2014/8949.4704.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4190718/#__ffn_sectitle",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Furman E, et. al. A retrospective study of 1,098 blood samples with anemia from adult cats: frequency, classification, and association with serum creatinine concentration. J Vet Intern Med. 2014 Sep-Oct;28(5):1391-7. doi: 10.1111/jvim.12422.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25274437",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mentzer-index",
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi",
+    "calc.shock-index-pediatric-age-adjusted-sipa"
+  ],
+  "source_logic_hash": "53d622d121be2b7e5f38421dc0276d0e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1667,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

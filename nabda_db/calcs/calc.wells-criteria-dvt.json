@@ -1,0 +1,390 @@
+{
+  "id": "calc.wells-criteria-dvt",
+  "slug": "wells-criteria-dvt",
+  "language": "en",
+  "title": "Critères de Wells pour la TVP",
+  "short_title": "Score de Wells pour la TVP (thrombose veineuse profonde)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "geriatrie",
+    "hematologie",
+    "medecine-interne",
+    "orthopedie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde"
+  ],
+  "chief_complaints": [
+    "Œdème des extrémités",
+    "Douleur des extrémités"
+  ],
+  "abbreviations": [
+    "well’s",
+    "dvt",
+    "wells",
+    "deep vein thrombosis score",
+    "wells score",
+    "wells dvt",
+    "wells vte"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Cancer actif (traitement ou soins palliatifs dans les 6 mois) | Non | 0 |\n| Oui | 1 | |\n| Alitement récent >3 jours ou chirurgie majeure dans les 12 semaines | Non | 0 |\n| Oui | 1 | |\n| Œdème du mollet >3 cm par rapport à l'autre jambe (mesuré 10 cm sous la tubérosité tibiale) | Non | 1 |\n| Oui | 1 | |\n| Veines superficielles collatérales (non variqueuses) présentes | Non | 0 |\n| Oui | 1 | |\n| Œdème de toute la jambe | Non | 0 |\n| Oui | 1 | |\n| Sensibilité localisée le long du système veineux profond | Non | 0 |\n| Oui | 1 | |\n| Œdème prenant le godet, limité à la jambe symptomatique | Non | 0 |\n| Oui | 1 | |\n| Paralysie, parésie ou immobilisation plâtrée récente du membre inférieur | Non | 0 |\n| Oui | 1 | |\n| TVP documentée antérieurement | Non | 0 |\n| Oui | 1 | |\n| Diagnostic alternatif à la TVP aussi probable ou plus probable | Non | 0 |\n| Oui | -2 | |\n\nRemarque : il existe plusieurs versions des critères, avec des différences mineures selon l'étude ; cet ensemble est le plus largement validé, d'après [Wells 2003](https://www.ncbi.nlm.nih.gov/pubmed/14507948).",
+  "how_to_use": {
+    "why": "- L'évaluation traditionnelle de la TVP conduit souvent à une imagerie par échographie (US) chez de nombreux patients, avec le temps et le coût associés.\n- Ces critères aident à identifier les patients chez qui une TVP est peu probable et qui peuvent poursuivre par un dosage des D-dimères, permettant potentiellement d'éviter l'US lorsque les D-dimères sont négatifs.",
+    "when": "Use in the outpatient and emergency department setting to estimate the pretest probability of deep vein thrombosis (DVT).",
+    "pearls": "- Patients with low clinical suspicion (<25% pretest probability) have a low prevalence of DVT.\n- A score ≤1 (“DVT unlikely”) combined with a negative D-dimer can safely exclude DVT in up to ~30% of patients, with <1% subsequently diagnosed with VTE during follow-up.\n- The score incorporates clinical judgment via the −2 point adjustment when an alternative diagnosis is at least as likely as DVT.\n- Sequelae from DVT include pulmonary embolism (PE) and pulmonary hypertension, which have an associated mortality of 1%–8%\n- May be less useful in hospitalized patients ([Silveira et al., 2015](https://www.ncbi.nlm.nih.gov/pubmed/25985219)) and/or patients with cancer ([Geersing et al., 2014](https://pubmed.ncbi.nlm.nih.gov/24615063)).\n- Validated internationally, but data across race and ethnicity remain more limited despite known ethnic differences in VTE prevalence.\n- Intended to guide diagnostic next steps rather than to establish a diagnosis on its own."
+  },
+  "next_steps": {
+    "advice": "- As with all clinical decision aids, this tool is meant to support clinical decision-making, not dictate management.\n- Apply these criteria only after a detailed history and physical examination is performed.\n- Use only when DVT is being considered; if there is no clinical concern for DVT, risk stratification is unnecessary.",
+    "critical_actions": "- Do not rely on the Wells’ Criteria alone to rule out DVT in high-risk patients or when clinical concern remains high.\n- Evaluate for concurrent pulmonary embolism symptoms (e.g., chest pain, dyspnea) that may require urgent escalation in workup and management; decision aids, such as the [Wells’ Criteria for PE](nabda:calc.wells-criteria-pulmonary-embolism) or [PERC Rule](nabda:calc.perc-rule-pulmonary-embolism) , should be considered.\n- Before starting anticoagulation, assess bleeding risk and contraindications; consider applying the [RIETE Score](nabda:calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment) .",
+    "management": "Patients can be categorized as “DVT unlikely” and “DVT likely;” an additional “moderate risk” group can be added depending on the sensitivity of the D-dimer being used.\n\n**Score ≤0:**\n\n- DVT is unlikely (cited prevalence of 5%).\n- Proceed to D-dimer testing.\n\n - A negative moderate- or high-sensitivity D-dimer reduces post-test probability to <1%; no further imaging is required.\n - A positive D-dimer should prompt US testing.\n\n - Negative US: Sufficient for DVT rule out.\n - Positive US: Consider anticoagulation for DVT.\n\n**Score 1–2:**\n\n- Moderate risk for DVT (pretest probability 17%).\n- Proceed to **high-sensitivity D-dimer** testing (moderate-sensitivity assays are not sufficient).\n\n - Negative high-sensitivity D-dimer: Sufficiently rules out DVT (post-test probability <1%).\n - Positive high sensitivity D-dimer: Proceed to US testing.\n\n - Negative US: Sufficient for ruling out DVT.\n - Positive US: Consider anticoagulation for DVT.\n\n**Score ≥3:**\n\n- DVT is likely (pretest probability 17%–53%).\n- Proceed directly to diagnostic US:\n\n - Positive US: Treat DVT.\n - Negative US: D-dimer testing can further risk-stratify patients.\n\n - Negative D-dimer:\n\n - DVT is sufficiently ruled out.\n - Consider discharge.\n - Positive D-dimer:\n\n - Still concerning for DVT.\n - Repeat US should be performed within 1 week for re-evaluation.\n\nA note on US options:\n\n- A negative **whole-leg US** (proximal + calf) usually rules out DVT without repeat imaging.\n- A negative **proximal US** may require alternative imaging or repeat US in ~1 week if suspicion remains in moderate- to high-risk patients."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Wells' Score | Risk group | Prevalence of DVT |\n| --- | --- | --- |\n| ≤0 | Low/unlikely | 5% |\n| 1–2 | Moderate | 17% |\n| ≥3 | High/likely | 17-53% |",
+  "short_description": "Risque de DVT basé sur des critères cliniques.",
+  "medium_description": "Calculates risque de DVT basé sur clinique critères.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer actif",
+      "tips": "Traitement ou palliation dans les 6 mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bedridden",
+      "label": "Alité récemment >3 jours ou chirurgie majeure dans les 12 semaines",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "calf_swelling",
+      "label": "Gonflement du mollet >3 cm par rapport à l'autre jambe",
+      "tips": "Mesuré 10 cm sous la tubérosité tibiale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "superficial_veins",
+      "label": "Veines superficielles collatérales (non variqueuses) présentes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leg_swollen",
+      "label": "Gonflement de toute la jambe",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "localized_tenderness",
+      "label": "Sensibilité localisée le long du système veineux profond",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pitting_edema",
+      "label": "Œdème prenant le godet, limité à la jambe symptomatique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "paralysis",
+      "label": "Paralysie, parésie ou immobilisation plâtrée récente du membre inférieur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dvt",
+      "label": "Previously documented DVT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alt_diagnosis_dvt",
+      "label": "Alternative diagnostic pour DVT as probablement ou more probablement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bates SM, Jaeschke R, Stevens SM, et al. Diagnosis of DVT: antithrombotic therapy and prevention of thrombosis, 9th ed: American College of Chest Physicians evidence-based clinical practice guidelines. Chest. 2012;141(2 Suppl):e351S. doi:10.1378/chest.11-2299",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC3278048/",
+      "kind": "international"
+    },
+    {
+      "text": "Guyatt GH, Akl EA, Crowther M, Gutterman DD, Schuünemann HJ. Executive Summary: Antithrombotic Therapy and Prevention of Thrombosis, 9th ed: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines. Chest. 2012 Feb;141(2 Suppl):7S-47S. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22315257/",
+      "kind": "international"
+    },
+    {
+      "text": "Lim W, Le Gal G, Bates SM, Righini M, Haramati LB, Lang E, Kline JA, Chasteen S, Snyder M, Patel P, Bhatt M, Patel P, Braun C, Begum H, Wiercioch W, Schünemann HJ, Mustafa RA. American Society of Hematology 2018 guidelines for management of venous thromboembolism: diagnosis of venous thromboembolism. Blood Adv. 2018 Nov 27;2(22):3226-3256. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30482764/",
+      "kind": "international"
+    },
+    {
+      "text": "Stevens SM, Woller SC, Kreuziger LB, Bounameaux H, Doerschug K, Geersing GJ, Huisman MV, Kearon C, King CS, Knighton AJ, Lake E, Murin S, Vintch JRE, Wells PS, Moores LK. Antithrombotic Therapy for VTE Disease: Second Update of the CHEST Guideline and Expert Panel Report. Chest. 2021 Dec;160(6):e545-e608. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34352278/",
+      "kind": "international"
+    },
+    {
+      "text": "National Institute for Health and Care Excellence (NICE). Venous Thromboembolic Diseases: Diagnosis, Management and Thrombophilia Testing. London: National Institute for Health and Care Excellence; 2023.",
+      "href": "https://www.nice.org.uk/guidance/ng158",
+      "kind": "international"
+    },
+    {
+      "text": "Writing Committee Members. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. 2026 Mar 24;153(12):e977-e1051.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+      "kind": "international"
+    },
+    {
+      "text": "Wells PS, Hirsh J, Anderson DR, et al. Accuracy of clinical assessment of deep-vein thrombosis. Lancet. 1995;345(8961):1326-30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7752753",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wells PS, Anderson DR, Bormanis J, et al. Value of assessment of pretest probability of deep-vein thrombosis in clinical management. Lancet. 1997;350(9094):1795-8.",
+      "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(97)08140-3/fulltext",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wells PS, Anderson DR, Rodger M, Forgie M, Kearon C, Dreyer J, Kovacs G, Mitchell M, Lewandowski B, Kovacs MJ. Evaluation of D-dimer in the diagnosis of suspected deep-vein thrombosis. N Engl J Med. 2003 Sep 25;349(13):1227-35.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14507948",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tamariz LJ, Eng J, Segal JB, Krishnan JA, Bolger DT, Streiff MB, Jenckes MW, Bass EB. Usefulness of clinical prediction rules for the diagnosis of venous thromboembolism: A systematic review. Am J Med. 2004 Nov 1;117(9):676-684.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15501206/",
+      "kind": "other"
+    },
+    {
+      "text": "Wells PS, Owen C, Doucette S, Fergusson D, Tran H. Does this patient have deep vein thrombosis? JAMA. 2006 Jan 11;295(2):199-207. Review.",
+      "href": "http://www.ncbi.nlm.nih.gov/pubmed/14507948",
+      "kind": "other"
+    },
+    {
+      "text": "Scarvelis D, Wells PS. Diagnosis and treatment of deep-vein thrombosis. CMAJ. 2006 Oct 24;175(9):1087-92. Review. Erratum in: CMAJ. 2007 Nov 20;177(11):1392.",
+      "href": "http://www.ncbi.nlm.nih.gov/pubmed/17060659",
+      "kind": "other"
+    },
+    {
+      "text": "Geersing GJ, Zuithoff NP, Kearon C, Anderson DR, Ten Cate-Hoek AJ, Elf JL, Bates SM, Hoes AW, Kraaijenhagen RA, Oudega R, Schutgens RE, Stevens SM, Woller SC, Wells PS, Moons KG. Exclusion of deep vein thrombosis using the Wells rule in clinically important subgroups: Individual patient data meta-analysis. BMJ. 2014 Mar 10;348:g1340.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24615063/",
+      "kind": "other"
+    },
+    {
+      "text": "Di Nisio M, van Es N, Büller HR. Deep vein thrombosis and pulmonary embolism. Lancet. 2016 Dec 17;388(10063):3060-3073. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27375038/",
+      "kind": "other"
+    },
+    {
+      "text": "Chopard R, Albertsen IE, Piazza G. Diagnosis and Treatment of Lower Extremity Venous Thromboembolism: A Review. JAMA. 2020 Oct 27;324(16):1765-1776.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33141212/",
+      "kind": "other"
+    },
+    {
+      "text": "Silveira PC, Ip IK, Goldhaber SZ, Piazza G, Benson CB, Khorasani R. Performance of Wells Score for Deep Vein Thrombosis in the Inpatient Setting. JAMA Intern Med. 2015 Jul;175(7):1112-7. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25985219/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.villalta-score-post-thrombotic-syndrome-pts",
+    "calc.wells-criteria-pulmonary-embolism",
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment"
+  ],
+  "source_logic_hash": "19d4a35d5dea334cae63294bd1e5c8f7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’ Criteria for PE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+      "text": "RIETE Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’ Criteria for PE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+      "text": "RIETE Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 362,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseInt(cancer) + parseInt(bedridden) + parseInt(calf_swelling) + parseInt(superficial_veins) + parseInt(leg_swollen) + parseInt(localized_tenderness) + parseInt(pitting_edema) + parseInt(paralysis) + parseInt(dvt) + parseInt(alt_diagnosis_dvt);\nvar msg = '';\nvar mini_msg = '';\n\nvar webLanguage = webLanguage || \"english\"\n\nif (u <= 0) {\n\n    if (webLanguage == \"webProduction-chinese-traditional\") {\n    \tmsg = \"æ·±é¨éèæ´å¡çä½é¢¨éªæç¾¤ãWells' DVTè©åçµæçº\\\"ä½å¯è½æ§\\\"ã\"\n    } else if (webLanguage == \"webProduction-chinese-simplified\") {\n        msg = \"æ·±é¨éèæ´å¡çä½é£é©æç¾¤ãWells' DVTè¯åç»æä¸º\\\"ä½å¯è½æ§\\\"ã\"\n    } else {\n    \tmsg = 'Low risk group for DVT. \\u201cUnlikely\\u201d according to Wells\\u2019 DVT studies.';\n    }\n\n    mini_msg = 'Low Risk'\n}\nif (u >= 3) {\n\n    if (webLanguage == \"webProduction-chinese-traditional\") {\n    \tmsg = \"æ·±é¨éèæ´å¡çé«é¢¨éªæç¾¤ãWells' DVTè©åçµæçº\\\"ç¸ç¶å¯è½\\\"ã\"\n    } else if (webLanguage == \"webProduction-chinese-simplified\") {\n        msg = \"æ·±é¨éèæ´å¡çé«é£é©æç¾¤ãWells' DVTè¯åç»æä¸º\\\"ç¸å½å¯è½\\\"ã\"\n    } else {\n    \tmsg = 'High risk group for DVT. \\u201cLikely\\u201d according to Wells\\u2019 DVT studies.';\n    }\n\n    mini_msg = 'High Risk'\n}\n\nif (u == 1 || u == 2) {\n msg = 'Moderate risk group for DVT. See Next Steps for details.'\n  mini_msg = 'Moderate Risk'\n}\n\n\nvar value_text = \"\"\n\nif (webLanguage == \"webProduction-chinese-traditional\" || webLanguage == \"webProduction-chinese-simplified\") {\n\tvalue_text = \"å\"\n} else {\n\tvalue_text = 'points'\n}\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: u, \n    value_text: 'points', \n    message: mini_msg\n});\n\ncalc_output.push({ \n    name: \"362_Wells' Score for DVT_result\", \n    value: u, \n    value_text: value_text, \n    message: msg\n});\n",
+  "before_use": null,
+  "instructions": "Il existe plusieurs versions de ces critères, avec des variations mineures selon les études ; cette version, fondée sur [Wells 2003](https://www.ncbi.nlm.nih.gov/pubmed/14507948), figure parmi les plus largement validées.",
+  "contributor_ids": [
+    "eric-steinberg",
+    "benjamin-slovis"
+  ],
+  "creator_names": [
+    "Dr. Phil Wells"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "04d5566cf2e20c77ed7d650316db527a7036dfd5f904f07c74270993145c56ea"
+}

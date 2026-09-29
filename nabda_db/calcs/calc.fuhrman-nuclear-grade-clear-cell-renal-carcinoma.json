@@ -1,0 +1,194 @@
+{
+  "id": "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+  "slug": "fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+  "language": "en",
+  "title": "Fuhrman Nuclear Grade pour Clear Cell Renal Carcinoma",
+  "short_title": "Grade nucléaire de Fuhrman",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "cancerologie",
+    "radiologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Chemotherapy",
+    "Carcinome à cellules rénales"
+  ],
+  "chief_complaints": [
+    "Douleur du flanc",
+    "Hematuria"
+  ],
+  "abbreviations": [
+    "rcc",
+    "renal",
+    "kidney cancer",
+    "kidney",
+    "nucleus",
+    "nucleoli",
+    "chomatic"
+  ],
+  "dosing": false,
+  "formula": "- **Grade 1**\n\n - Les noyaux des cellules tumorales sont petits (< 10 µm), hyperchromatiques et ronds (ressemblant à des lymphocytes matures), sans nucléoles visibles et avec peu de détails dans la chromatine, comme illustré ci-dessous.\n- **Grade 2**\n\n - À l’objectif 10×, les noyaux des cellules tumorales sont légèrement plus grands (15 µm) avec une chromatine finement granulaire « ouverte », mais des nucléoles petits et peu visibles (voir l’image suivante). Les nucléoles sont souvent présents, et beaucoup apparaissent comme de petits chromocentres à l’objectif 10×, leur nature étant confirmée à plus fort grossissement, mais cela ne compte pas.\n- **Grade 3**\n\n - À l’objectif 10×, les noyaux des cellules tumorales sont plus grands (20 µm de taille) et peuvent être de forme ovale, avec une chromatine grossièrement granulaire (voir l’image ci-dessous). Les nucléoles sont facilement et sans équivoque reconnaissables.\n- **Grade 4**\n\n - Les noyaux sont pléomorphes avec une chromatine ouverte ou hyperchromatique et un ou plusieurs macronucléoles, comme illustré dans l’image suivante :\n\n![](https://cdn-web-img.mdcalc.com/fuhrman.jpeg)",
+  "how_to_use": {
+    "why": "Il n'existe aucun système de score validé pour prédire la survie dans le carcinome rénal à cellules claires (RCC). Le recours au grade de Fuhrman ou à des systèmes de score qui l'intègrent peut aider à mieux délimiter les catégories de durée de survie que le jugement clinique seul.",
+    "when": "Patients atteints de RCC à cellules claires avec évaluation anatomopathologique disponible.",
+    "pearls": "The Fuhrman Nuclear Grade is a pathology component of renal cell cancers and an independent predictor of cancer-specific survival. Virtually all data are from chart or database reviews and predate modern targeted therapies, but typically worsening nuclear grade correlates with worsening prognosis."
+  },
+  "next_steps": {
+    "advice": "Le grade de Fuhrman, comme la plupart des autres prédicteurs du pronostic du carcinome rénal à cellules claires (RCC), n’a pas été testé et valid",
+    "critical_actions": "Le grade de Fuhrman n’est pas reconnu comme précis pour la prédiction de la survie individuelle et doit être considéré comme un guide général plutôt que comme un prédicteur fiable. La constance de la gradation pathologique est essentielle.",
+    "management": "Nous n’avons connaissance d’aucun algorithme de prise en charge validé utilisant ce score."
+  },
+  "evidence": "",
+  "more_info": "Des études plus récentes ont montré que les systèmes de gradation à 2 et 3 niveaux de l’échelle de Fuhrman sont tout aussi efficaces.",
+  "short_description": "Prognose RCC basé sur cellular appearance.",
+  "medium_description": "Provides prognostic grading system pour tumor cells basé sur physical cellular appearance.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "dia",
+      "label": "Diamètre nucléaire",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Petit (~10 µm)",
+          "value": 1
+        },
+        {
+          "label": "Plus large (~15 µm)",
+          "value": 2
+        },
+        {
+          "label": "Encore plus grands (~20 µm)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "shape",
+      "label": "Forme nucléaire",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Rond, uniforme",
+          "value": 1
+        },
+        {
+          "label": "Irregularities dans outline",
+          "value": 2
+        },
+        {
+          "label": "Obvious irregular outline",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nucleoli",
+      "label": "Nucleoli",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Absent, discret",
+          "value": 1
+        },
+        {
+          "label": "Visible à x400",
+          "value": 2
+        },
+        {
+          "label": "Proéminent à x100",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "biz",
+      "label": "Noyaux bizarres, souvent multilobés, et/ou cellules fusiformes",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fuhrman SA, Lasky LC, Limas C. Prognostic significance of morphologic parameters in renal cell carcinoma. Am J Surg Pathol. 1982 Oct;6(7):655-63.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7180965",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zisman A, Pantuck AJ, Dorey F, et al. Improved prognostication of renal cell carcinoma using an integrated staging system. J Clin Oncol. 2001 Mar 15. 19(6):1649-57. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11250993",
+      "kind": "other"
+    },
+    {
+      "text": "Zisman A, Pantuck AJ, Wieder J, et al. Risk group assessment and clinical outcome algorithm to predict the natural history of patients with surgically resected renal cell carcinoma. J Clin Oncol. 2002 Dec 1. 20(23):4559-66.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12454113",
+      "kind": "other"
+    },
+    {
+      "text": " Minervini A, et al. Prognostic value of nuclear grading in patients with intracapsular (pT1-pT2) renal cell carcinoma. Long-term analysis in 213 patients. Cancer. 2002 May 15;94(10):2590-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12173325",
+      "kind": "other"
+    },
+    {
+      "text": "Ficarra V, Martignoni G, Maffei N, et al. Original and reviewed nuclear grading according to the Fuhrman system: a multivariate analysis of 388 patients with conventional renal cell carcinoma. Cancer. 2005 Jan 1. 103(1):68-75.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15573369",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rioux-Leclercq N, Karakiewicz PI, Trinh QD, Ficarra, V, Cindolo L, et. al. Prognostic ability of simplified nuclear grading of renal cell carcinoma. Cancer, 2007; 109: 868–874. doi: 10.1002/cncr.22463",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/cncr.22463/full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klatte T, Anterasian C, Said JW, de Martino M, Kabbinavar FF, Belldegrun AS, Pantuck AJ. Fuhrman grade provides higher prognostic accuracy than nucleolar grade for papillary renal cell carcinoma. J Urol. 2010 Jun;183(6):2143-7. doi: 10.1016/j.juro.2010.02.023.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20399450",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+    "calc.renal-nephrometry-score",
+    "calc.ssign-score-renal-cell-carcinoma-rcc"
+  ],
+  "source_logic_hash": "957bea302f824dd201b7628484f2d75c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3012,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

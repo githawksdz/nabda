@@ -1,0 +1,129 @@
+{
+  "id": "calc.asa-physical-status-asa-classification",
+  "slug": "asa-physical-status-asa-classification",
+  "language": "en",
+  "title": "Statut physique ASA / Classification ASA",
+  "short_title": "Statut physique ASA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "ASA physical status",
+    "operative risk",
+    "surgical risk",
+    "ASA class",
+    "physical state"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate description:\n\n| Description | Examples (not comprehensive) | ASA Classification |\n| --- | --- | --- |\n| Normal healthy patient | Healthy, nonsmoker, minimal or no alcohol use | ASA 1 |\n| Patient with mild systemic disease | Mild disease(s) without functional limitations, e.g. current smoker, social alcohol use, pregnant, obesity, well-controlled diabetes or hypertension, mild lung disease | ASA 2 |\n| Patient with severe systemic disease | Substantive functional limitations, ≥1 moderate to severe diseases, e.g. poorly controlled diabetes or hypertension, COPD, morbid obesity, active hepatitis, alcohol dependence or abuse, implanted pacemaker, moderately reduced ejection fraction, ESRD on dialysis, premature infant <60 weeks post-conceptional age, history (>3 months) of MI, CVA/TIA, or CAD/stents | ASA 3 |\n| Patient with severe systemic disease that is a constant threat to life | Recent (within 3 months) MI, CVA/TIA, or CAD/stents, ongoing cardiac ischemia or severe valve dysfunction, severely reduced ejection fraction, sepsis, DIC, ARD, or ESRD not undergoing regularly scheduled dialysis | ASA 4 |\n| Moribund patient not expected to survive without the operation | Ruptured abdominal/thoracic aneurysm, massive trauma, intracranial bleed with mass effect, ischemic bowel with cardiac pathology, or multiple organ/system dysfunction | ASA 5 |\n| Declared brain-dead patient whose organs are being removed for donor purposes | -- | ASA 6 |\n\nNote: for emergency surgery, add suffix E. Emergency = delay would lead to “significant increase in the threat to life or body part”.\n\nFrom[American Society of Anesthesiologists (ASA) 2014](https://www.asahq.org/resources/clinical-information/asa-physical-status-classification-system).",
+  "how_to_use": {
+    "why": "",
+    "when": "- Utilisé principalement par les anesthésistes dans le cadre de l’évaluation préopératoire d’un patient devant subir une intervention chirurgicale.\n- Ne doit pas être utilisé seul pour déterminer la pertinence de l’intervention chirurgicale.\n- D’autres évaluations à envisager avant la chirurgie peuvent inclure la capacité fonctionnelle, la classification du type de chirurgie et d’autres affections chroniques.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Un grade plus élevé suggère un risque préopératoire plus élevé.\n- Ce score doit être utilisé dans le cadre d'une évaluation préopératoire complète.\n- D'autres facteurs peuvent jouer un rôle dans la détermination du risque périopératoire du patient, notamment le type de chirurgie, d'autres affections médicales et le statut fonctionnel.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classification préopératoire.",
+  "medium_description": "Classifies health de patients prior pour surgery.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "asa",
+      "label": "Description",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Patient normal en bonne santé",
+          "value": 1
+        },
+        {
+          "label": "patient avec mild systemic maladie",
+          "value": 2
+        },
+        {
+          "label": "patient avec severe systemic maladie",
+          "value": 3
+        },
+        {
+          "label": "patient avec severe systemic maladie that is constant threat pour life",
+          "value": 4
+        },
+        {
+          "label": "Moribund patient not expected pour survive sans operation",
+          "value": 5
+        },
+        {
+          "label": "Declared brain-dead patient whose organs are being removed pour donor purposes",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "emergency",
+      "label": "Chirurgie d’urgence",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Saklad M. Grading of Patients for Surgical Procedures. Anesthesiology. 1941;2(3):281-284.",
+      "href": "https://anesthesiology.pubs.asahq.org/article.aspx?articleid=1973837",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+    "calc.preoperative-mortality-predictor-pmp-score",
+    "calc.simplified-acute-physiology-score-saps-ii"
+  ],
+  "source_logic_hash": "5d6bb071a5673a6de48bc1e1edd66c09",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10024,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

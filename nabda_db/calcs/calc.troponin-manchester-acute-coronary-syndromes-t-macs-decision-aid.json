@@ -1,0 +1,219 @@
+{
+  "id": "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+  "slug": "troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+  "language": "en",
+  "title": "Aide à la décision Troponin-only Manchester Acute Coronary Syndromes (T-MACS)",
+  "short_title": "T-MACS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Anxious",
+    "Douleur thoracique",
+    "Dizziness",
+    "Dyspnea"
+  ],
+  "abbreviations": [
+    "ACS",
+    "MACS",
+    "TMACS",
+    "T MACS",
+    "T-MACS",
+    "troponin",
+    "trop",
+    "heart attack",
+    "MI",
+    "myocardial infarction",
+    "angina",
+    "crescendo angina",
+    "ecg",
+    "ekg"
+  ],
+  "dosing": false,
+  "formula": "Probabilité de SCA (p) =\n\n![](https://cdn-web-img.mdcalc.com/content/t-macs.png)\n\noù :\n\n| | Non | Oui |\n| --- | --- | --- |\n| E : Ischémie à l'ECG | 0 | 1 |\n| A : Angor croissant ou en crescendo | 0 | 1 |\n| R : Irradiation de la douleur vers le bras ou l'épaule droits | 0 | 1 |\n| V : Douleur associée à des vomissements | 0 | 1 |\n| S : Sueurs observées | 0 | 1 |\n| H : Hypotension | 0 | 1 |\n| T : Concentration de hs-cTnT à l'arrivée | valeur de hs-cTnT | |\n\nRappelons que la hs-cTnT a une faible spécificité — la troponine peut être élevée dans de nombreuses étiologies autres que le SCA, notamment :\n\n| Causes cardiaques | | |\n| --- | --- | --- |\n| Contusion cardiaque (traumatisme) | Insuffisance cardiaque, aiguë et chronique | Tachy- ou bradyarythmie, bloc auriculo-ventriculaire |\n| Chirurgie cardiaque | Dissection aortique | Syndrome de ballooning apical |\n| Cardioversion | Valvulopathie aortique | Post-ICP |\n| Biopsie endomyocardique | Cardiomyopathie hypertrophique | Rhabdomyolyse avec nécrose myocytaire |\n| Myocardite | Endocardite | Péricardite |\n| Causes non cardiaques | | |\n| EP | HTAP sévère | Insuffisance rénale |\n| AVC, HSA | Amylose, autres maladies infiltratives | Médicaments cardiotoxiques |\n| Maladie critique | Sepsis | Brûlures étendues |\n| Effort extrême | | |\n\nD'après [Mahajan 2011](https://circ.ahajournals.org/content/124/21/2350/tab-figures-data#fig-data-figures).",
+  "how_to_use": {
+    "why": "- Permet essentiellement d'exclure le SCA chez les patients à très faible risque.\n- Permet essentiellement de confirmer le SCA chez les patients à haut risque.\n- Peut éviter des hospitalisations coûteuses ou le risque de préjudice lié aux examens invasifs chez les patients prédits sans SCA ni risque de MACE à 30 jours.",
+    "when": "Patients présentant une douleur thoracique pouvant être d'origine cardiaque.",
+    "pearls": "- L'aide à la décision T-MACS prédit un syndrome coronarien aigu (SCA) ou des événements cardiaques indésirables majeurs (MACE) à 30 jours chez les patients avec douleur thoracique suspectée d'origine cardiaque.\n- Le MACE à 30 jours était défini comme un infarctus du myocarde aigu (IDM), un décès ou une revascularisation coronaire.\n- Utilise la troponine T cardiaque de haute sensibilité (hs-cTnT), ainsi que des symptômes subjectifs et des signes objectifs pour stratifier le risque des patients présentant une douleur thoracique suspectée d'origine cardiaque.\n- Utilise une mesure unique de la hs-cTnT à l'arrivée, et non des valeurs répétées comme d'autres scores de douleur thoracique.\n- Les critères d'inclusion et d'exclusion différaient légèrement entre les cohortes de dérivation et de validation, p. ex. douleur thoracique survenue dans les 12 vs 24 heures après le début ; limites d'âge de 16 vs 18 vs 25 ans.\n\n**Point à garder à l'esprit :**\n\n- Rappelons que la hs-cTnT est également une troponine de *faible spécificité*. Bien qu'elle puisse suggérer un SCA chez les patients à haut risque, elle peut être élevée pour de nombreuses autres raisons que les syndromes coronariens aigus. Voir les preuves pour les diagnostics différentiels."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Le T-MACS est une aide à la décision et non un test définitif. Il est conçu pour assister dans la démarche diagnostique de la douleur thoracique d'un patient. Le jugement clinique doit toujours primer.\n- Si tous les éléments de l'aide à la décision T-MACS sont négatifs, le SCA peut essentiellement être exclu sans avoir à calculer le score.",
+    "management": ""
+  },
+  "evidence": "La dérivation originale de l'aide à la décision T-MACS était une étude prospective de [Body et al](https://www.ncbi.nlm.nih.gov/pubmed/27565197) au Royaume-Uni. L'objectif était de comparer la capacité du T-MACS à celle du MACS original, ce dernier incluant à la fois la hs-cTnT et la H-FABP (heart-type fatty acid binding protein, protéine de liaison des acides gras de type cardiaque) pour prédire un SCA ou un MACE.\n\n**Cohortes de patients :**\n\n- Dérivée de 703 patients des urgences du Manchester Royal Infirmary.\n- Validée sur un ensemble de 3 cohortes : 462 patients du Stepping Hill Hospital, 191 du Manchester Royal Infirmary et 806 du Poole NHS Foundation Trust.\n- Incluait des patients des urgences se plaignant de douleur thoracique que le clinicien suspectait d'être d'origine cardiaque.\n- Réserve : contrairement aux patients des 2 autres cohortes de validation, les patients de Poole présentant des signes d'ischémie à l'ECG étaient exclus de l'étude.\n\n**Suivi :**\n\nDosage standard de la troponine >12 heures après le pic des symptômes ou au moins 6 heures après la présentation aux urgences. Les patients (ou leur médecin traitant) ont également été contactés à 30 jours.\n\n**Critères de jugement :**\n\nLe critère de jugement principal était le diagnostic de SCA ou de MACE (IDM, décès, revascularisation coronaire) à 30 jours, avec comme critère secondaire une sténose coronaire >50 %, même en l'absence d'intervention.\n\n**Résultats dans la cohorte de dérivation :**\n\n- 22,3 % présentaient un SCA (18,5 % avec IDM).\n- 37,7 % ont été classés comme à très faible risque de SCA (VPN 99,3 %).\n- Deux patients classés comme à très faible risque présentaient un SCA.\n- 10,1 % ont été classés comme à haut risque de SCA (VPP 100 %).\n\n**Résultats dans la cohorte de validation :**\n\n- 14,5 % présentaient un SCA (11,8 % avec IDM).\n- 40,4 % ont été classés comme à très faible risque de SCA (VPN 99,3 %).\n- Quatre patients classés comme à très faible risque présentaient un SCA.\n- Sept patients (1,2 %) classés comme à très faible risque présentaient une sténose à l'angiographie mais n'ont pas eu d'intervention.\n- 4,7 % ont été classés comme à haut risque de SCA (VPP 84 %).\n\n**Comparaison du T-MACS au MACS :**\n\n- Par rapport à son prédécesseur, le MACS (qui incorporait à la fois la hs-cTnT et la H-FABP), le T-MACS utilise un seuil de hs-cTnT plus bas sans sacrifier considérablement la sensibilité.\n- MACS : 18,0 % classés comme à très faible risque contre 40,5 % pour le T-MACS.\n- La sensibilité du MACS était de 100 % contre 98,4 % pour le T-MACS (*p* =0,25).\n\n**Conclusion :**\n\n- ~40 % peuvent être classés comme à très faible risque avec une probabilité de SCA <1 %.\n- ~5 % peuvent être classés comme à haut risque de SCA.",
+  "more_info": "Interprétation :\n\n| Probabilité | Risque | Interprétation |\n| --- | --- | --- |\n| <0.02 | Très faible | SCA exclu. Envisager le retour à domicile. |\n| ≥0.02 et <0.05 | Faible | Envisager une troponine répétée en unité d'observation aux urgences, p. ex. troponine à 3 h ; envisager le retour à domicile si normale. |\n| ≥0.05 et <0.95 | Modéré | Troponine répétée en hospitalisation conventionnelle, puis envisager une épreuve d'effort et/ou une angioscanner coronaire. |\n| ≥0.95 | Élevé | SCA confirmé. Adresser en cardiologie, traiter pour un SCA. |",
+  "short_description": "Exclut le SCA.",
+  "medium_description": "Exclut le syndrome coronarien aigu.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ecg",
+      "label": "Ischémie à l'ECG",
+      "tips": "Selon l'appréciation du clinicien traitant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ang",
+      "label": "Angor croissant ou en crescendo",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pnrad",
+      "label": "Douleur radiating pour right arm ou shoulder",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "Douleur associé avec vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sweat",
+      "label": "Sueurs observées",
+      "tips": "Tel qu'observé par le clinicien traitant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypo",
+      "label": "Hypotension",
+      "tips": "PAS <100 mmHg à l'arrivée aux urgences",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "tnt",
+      "label": "Concentration de hs-cTnT à l'arrivée",
+      "optional": false,
+      "unit": "hsctnt",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Body R, Carlton E, Sperrin M, et al. Troponin-only Manchester Acute Coronary Syndromes (T-MACS) decision aid: single biomarker re-derivation and external validation in three cohorts. Emerg Med J. 2016; Epub ahead of print.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565197 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Body R, Carlton E, Sperrin M, et al. Troponin-only Manchester Acute Coronary Syndromes (T-MACS) decision aid: single biomarker re-derivation and external validation in three cohorts. Emerg Med J. 2016; Epub ahead of print.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27565197",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Greenslade JH, Nayer R, Parsonage W, et al. Validating the Manchester Acute Coronary Syndromes (MACS) and Troponin-only Manchester Acute Coronary Syndromes (T-MACS) rules for the prediction of acute myocardial infarction in patients presenting to the emergency department with chest pain. Emerg Med J. 2017;",
+      "href": "https://emj.bmj.com/content/early/2017/03/30/emermed-2016-206366",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.canadian-cardiovascular-society-ccs-angina-grade",
+    "calc.timi-risk-index"
+  ],
+  "source_logic_hash": "5cc063743bec6bcf829b4cc8b00c9379",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3942,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

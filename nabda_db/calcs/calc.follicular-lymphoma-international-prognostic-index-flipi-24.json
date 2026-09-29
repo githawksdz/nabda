@@ -1,0 +1,180 @@
+{
+  "id": "calc.follicular-lymphoma-international-prognostic-index-flipi-24",
+  "slug": "follicular-lymphoma-international-prognostic-index-flipi-24",
+  "language": "en",
+  "title": "Index pronostique international du lymphome folliculaire (FLIPI) 24",
+  "short_title": "FLIPI24",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Hémopathie maligne",
+    "Leucémie / Lymphome"
+  ],
+  "chief_complaints": [
+    "Masse abdominale",
+    "Douleur abdominale",
+    "Cancer",
+    "Toux",
+    "Diarrhée",
+    "Dyspnée",
+    "Fatigue",
+    "Fièvre",
+    "Adénopathie",
+    "Nausée",
+    "Douleur",
+    "Éruption cutanée",
+    "Vomissements",
+    "Perte/Gain de poids",
+    "Symptômes B",
+    "Hépatosplénomégalie"
+  ],
+  "abbreviations": [
+    "FLIPI24",
+    "FL",
+    "follicular lymphoma",
+    "1L FL",
+    "first-line immunotherapy",
+    "first-line immunochemotherapy",
+    "FL 1L",
+    "follicular lymphoma immunotherapy",
+    "lymphoma risk",
+    "immunotherapy risk",
+    "immunochemotherapy risk",
+    "1L risk",
+    "FL 24",
+    "FL event risk",
+    "FL 24 risk",
+    "FL treatment",
+    "FL survival",
+    "FL chemotherapy"
+  ],
+  "dosing": false,
+  "formula": "FLIPI24 (24-month event risk*) = 1 - 0.89^exp(η)^\n\nwhere\n\nη = -0.7115 + 0.01 × Age60 + 0.038 × Age75 + 0.364 × LDH + 0.159 ×B2M- 0.081 ×Hgb+ 0.075 × WBC\n\nAge60: Age truncated to the range of 60 to 90 years.\nAge75:Additional age term equal to age - 75 for ages 75 to 90 years; otherwise 0.\nLDH ratio: cap to 0.5-5\nHgb, g/dL: cap to 8-17\nB2M, mg/L: cap to 1-10\nWBC count, × 10⁹ cells/L: cap to 4-11\n\n* Events include disease progression, relapse, initiation of second line therapy, transformation toDLBCLor high-grade lymphoma, or death due to any cause.",
+  "how_to_use": {
+    "why": "- Estime à la fois le risque d'événement à 24 mois (p. ex., progression de la maladie, rechute, transformation, décès toutes causes confondues) et la survie globale à 5 ans chez les patients atteints de lymphome folliculaire.\n- Distingue les patients susceptibles d'évoluer favorablement sous traitement standard de ceux à haut risque de progression de la maladie.\n- Surpasse le [FLIPI](nabda:calc.follicular-lymphoma-international-prognostic-index-flipi) original dans la stratification du risque en intégrant des valeurs de laboratoire supplémentaires.",
+    "when": "Use in adults initiating first-line immunochemotherapy for follicular lymphoma.",
+    "pearls": "- Développé et validé à l’aide de vastes cohortes internationales regroupées de patients traités par immunochimiothérapie de première ligne (R-CHOP, R-CVP, R-bendamustine ou schémas similaires) ; dans la cohorte de construction du modèle, 61 % ont reçu un traitement d’entretien par anti-CD20.\n- Ne vise pas à déterminer le socle de chimiothérapie préféré.\n- La bêta-2-microglobuline peut être élevée en cas d’insuffisance rénale ; interpréter avec prudence chez les patients atteints de maladie rénale.\n- Les données probantes sont limitées en cas de maladie en rechute ou réfractaire et en dehors d’une immunochimiothérapie standard de première ligne.\n- Les résultats ne reflètent pas nécessairement la probabilité de guérison ; une progression peut survenir après la période pronostique de 5 ans."
+  },
+  "next_steps": {
+    "advice": "Les scores doivent être interprétés en parallèle du jugement clinique, de la charge de morbidité, du statut de performance du patient et des objectifs thérapeutiques.\n\n- Utiliser les résultats pour guider le pronostic et les discussions sur le traitement avec les patients.\n- Les patients présentant un risque élevé pourraient être considérés pour des thérapies innovantes ou une inclusion dans un essai clinique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| FLIPI24 | Risk | 5-Year Overall Survival |\n| --- | --- | --- |\n| ≤0.10 | Low | 98% |\n| >0.10 and ≤0.15 | Intermediate | 92% |\n| >0.15 | High | 75% |\n\nIn addition to 5-year overall survival, this tool estimates **24-month event-free rates** as follows:\n\n- Low risk: 88%–90%.\n- Intermediate risk: 81%–88%.\n- High risk: 65%–78%.",
+  "short_description": "Risque d'événement FL à 24 mois après immunochimiothérapie de première ligne.",
+  "medium_description": "Assesses 24-month event risque chez les patients avec follicular lymphoma (FL) starting first-line immunochemotherapy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "sldh",
+      "label": "LDH sérique",
+      "optional": false,
+      "unit": "ldh",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "uldh",
+      "label": "Limite supérieure de la normale de la LDH sérique",
+      "optional": false,
+      "default": 222,
+      "unit": "ldh_labmax",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "b2m",
+      "label": "Bêta-2-microglobuline",
+      "optional": false,
+      "unit": "beta_2_microglobulin",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hgb",
+      "label": "Hémoglobine",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Maurer MJ, Prochazka VK, El-Galaly TC, et al. FLIPI24: A modern prognostic model and clinical trial enrichment tool for newly diagnosed follicular lymphoma. J Clin Oncol. 2026;44(2):117-128. doi:10.1200/JCO-25-00892",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41329901/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Maurer MJ, Prochazka VK, Flowers CR, et al. FLIPI24: An improved international prognostic model developed on early events in follicular lymphoma. Blood. 2022;140(Supplement 1):2292-2295. doi:10.1182/blood-2022-157194",
+      "href": "https://ashpublications.org/blood/article/140/Supplement%201/2292/488120/FLIPI24-An-Improved-International-Prognostic-Model",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.follicular-lymphoma-international-prognostic-index-flipi"
+  ],
+  "source_logic_hash": "142b805dadd2cd3b5c43a2187c854375",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.follicular-lymphoma-international-prognostic-index-flipi",
+      "text": "FLIPI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.follicular-lymphoma-international-prognostic-index-flipi",
+      "text": "FLIPI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10668,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar sldh = parseFloat(sldh);\nvar uldh = parseFloat(uldh);\nvar b2m = parseFloat(b2m);\n// var hgb= parseFloat(hgb);\nvar wbc = parseFloat(wbc);\nif (UOMSYSTEM == false) { // US units\n    var hgb = hgb / 10;\n}\n\n// LDH ratio\nvar ldh_ratio = sldh / uldh;\n\n// Truncate variables\nvar age60 = (age > 0 && age < 60) ? 60 : (age > 90 ? 90 : age);\nvar age75 = Math.min(15, Math.max(0, age - 75));\n\nldh_ratio = (ldh_ratio >= 5) ? 5 : ((ldh_ratio > 0 && ldh_ratio <= 0.5) ? 0.5 : ldh_ratio);\n// hgb = (hgb >= 17) ? 17 : ((hgb > 0 && hgb <= 8) ? 8 : hgb);\nb2m = (b2m >= 10) ? 10 : ((b2m > 0 && b2m < 1) ? 1 : b2m);\nwbc = (wbc >= 11) ? 11 : ((wbc > 0 && wbc < 4) ? 4 : wbc);\n\n\nvar sum = 0.5 * (-0.561)\n    + age60 * 0.01\n    + age75 * 0.038\n    + ldh_ratio * 0.364\n    + b2m * 0.159\n    + hgb * (-0.081)\n    + wbc * 0.075;\n\nvar diff = sum - 0.431;\nvar surv24 = Math.pow(0.89, Math.exp(diff));\nvar flipi24 = 1 - surv24;\n\nvar evt = flipi24 * 100;\n\nvar risk, surv;\nif (flipi24 <= 0.1) {\n    risk = 'Low';\n    surv = '98';\n} else if (flipi24 > 0.1 && flipi24 <= 0.15) {\n    risk = 'Intermediate';\n    surv = '92';\n} else if (flipi24 > 0.15) {\n    risk = 'High';\n    surv = '75';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: evt.toFixed(0),\n    value_text: '%',\n    message: 'Event within 24 months'\n});    \ncalc_output.push({\n    name: '10668_FLIPI24_result',\n    value: flipi24.toFixed(2),\n    value_text: '',\n    message: 'FLIPI24<br/><br/>Event within 24 months: ' + evt.toFixed(0) + '%'\n});\ncalc_output.push({\n    name: '10668_FLIPI24_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: '5-year overall survival: ' + surv + '%'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Matthew J. Maurer"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Serum LDH",
+    "Upper Limit of Normal Serum LDH",
+    "beta_2_microglobulin",
+    "Hemoglobin"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bendamustine"
+  ],
+  "engine_sha256": "7ffea119d494a80d33775b1db0ccda021e17ac3cc005403cb938713a669beee1"
+}

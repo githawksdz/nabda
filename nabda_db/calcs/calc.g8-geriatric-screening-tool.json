@@ -1,0 +1,331 @@
+{
+  "id": "calc.g8-geriatric-screening-tool",
+  "slug": "g8-geriatric-screening-tool",
+  "language": "en",
+  "title": "G8 Geriatric dépistage Tool",
+  "short_title": "G8 dépistage Tool",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "geriatrie",
+    "hematologie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Cancer",
+    "Constipation",
+    "Diarrhea",
+    "Fatigue",
+    "Headache",
+    "Infertility",
+    "Perte d'appétit",
+    "Nausea",
+    "Numbness",
+    "Pain",
+    "Seizure",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "G8",
+    "cancer",
+    "cga",
+    "comprehensive geriatric assessment",
+    "geriatrics",
+    "g-8",
+    "cancer assessment",
+    "G8 geriatric screening tool",
+    "G-8 geriatric screening tool",
+    "geriatric screening tool",
+    "g8 screening tool",
+    "g-8 screening tool"
+  ],
+  "dosing": false,
+  "formula": "The G8 Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | >85 | 0 |\n| 80-85 | 1 | |\n| <80 | 2 | |\n| Has food intake declined over the past 3 months due to loss of appetite, digestive problems, chewing, or swallowing difficulties? | Severe decrease in food intake | 0 |\n| Moderate decrease in food intake | 1 | |\n| No decrease in food intake | 2 | |\n| Weight loss during the last 3 months, kg | >3 kg (>6.6 lb) | 0 |\n| Does not know | 1 | |\n| 1-3 kg (2.2 - 6.6 lb) | 2 | |\n| No weight loss | 3 | |\n| Mobility | Bed or chair bound | 0 |\n| Able to get out of bed/ chair but does not go out | 1 | |\n| Goes out | 2 | |\n| Neuropsychological conditions | Severe dementia or depression | 0 |\n| Mild dementia | 1 | |\n| No psychological conditions | 2 | |\n| Body mass index (BMI), kg/m 2 | <19 kg/m 2 | 0 |\n| 19 to <21 kg/m 2 | 1 | |\n| 21 to <23 kg/m 2 | 2 | |\n| ≥23 kg/m 2 | 3 | |\n| Takes more than three prescription drugs per day | Yes | 0 |\n| No | 1 | |\n| In comparison with other people of the same age, how does the patient consider their health status? | Not as good | 0 |\n| Does not know | 0.5 | |\n| As good | 1 | |\n| Better | 2 | |",
+  "how_to_use": {
+    "why": "Identifie les patients nécessitant une évaluation plus complète afin d’adapter les schémas thérapeutiques, d’optimiser les facteurs modifiables et de prendre en charge les comorbidités, ce qui pourrait améliorer la survie et les résultats.",
+    "when": "À utiliser avant certains traitements oncologiques (p. ex., chimiothérapie) pour évaluer l’aptitude des adultes plus âgés (≥70 ans) et déterminer la nécessité d’une évaluation gériatrique complète (CGA).",
+    "pearls": "- Validé pour une utilisation chez les patients adultes âgés atteints de cancer et prédictif de la mortalité et de la tolérance au traitement.\n- Ne remplace pas une CGA—c’est un outil de dépistage, et non un outil diagnostique.\n- Les résultats peuvent être influencés par des réponses subjectives du patient ou une altération cognitive ; l’intégration des informations de l’aidant peut améliorer la précision."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne doit pas être utilisé comme seul déterminant des décisions de prise en charge ; il doit être intégré au jugement clinique et à une évaluation formelle.",
+    "critical_actions": "",
+    "management": "**Score ≤14:** Proceed with a CGA to evaluate specific vulnerabilities and guide interventions.\n\n- While there is no universal CGA tool, this assessment may include (referenced tools/scores are merely suggestions):\n\n - Assessment of chemotherapy toxicity (e.g., [CRASH Score](nabda:calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score) , [CARG-TT](nabda:calc.cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt) ).\n - Estimation of (noncancer) life expectancy.\n - Functional assessment (e.g., instrumental activities of daily living).\n - Comorbidity review (e.g., [CIRS-G](nabda:calc.cumulative-illness-rating-scale-geriatric-cirs-g) ).\n - Fall risk screening (e.g., Get Up and Go test, [BBS](nabda:calc.berg-balance-scale-bbs) ).\n - Depression screening (e.g., [GDS-15](nabda:calc.geriatric-depression-scale-gds-15) ).\n - Cognitive impairment screening (e.g., Mini-Cog, [MoCA](nabda:calc.montreal-cognitive-assessment-moca) ).\n - Nutritional status assessment (e.g., weight loss, [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ).\n- Please see the[ASCO guidelines](https://ascopubs.org/doi/10.1200/JCO.2018.78.8687)for additional recommendations and potential guided interventions.\n\n**Score >14:** Consider proceeding with planned oncologic treatments, but remain vigilant for signs of emerging frailty or functional decline."
+  },
+  "evidence": "",
+  "more_info": "Un score G8 plus élevé indique un meilleur état de santé.\n\n| Score G8 | Recommandation |\n| --- | --- |\n| ≤14 | Évaluation gériatrique complète |\n| >14 | Évaluation gériatrique complète non nécessaire |",
+  "short_description": "Identification du bénéfice de l'évaluation gériatrique globale (CGA).",
+  "medium_description": "Identifies elderly cancer patients who could benefit de comprehensive geriatric évaluation (CGA).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">85",
+          "value": 0
+        },
+        {
+          "label": "80-85",
+          "value": 1
+        },
+        {
+          "label": "< 80",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "food",
+      "label": "Has food intake declined over past 3 months due pour anorexie, digestive problems, chewing, ou swallowing difficulties?",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Severe decrease dans food intake",
+          "value": 0
+        },
+        {
+          "label": "modéré decrease dans food intake",
+          "value": 1
+        },
+        {
+          "label": "No decrease dans food intake",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weight",
+      "label": "Perte de poids au cours des 3 derniers mois, kg",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">3 kg (>6.6 lb)",
+          "value": 0
+        },
+        {
+          "label": "Ne… pas savoir",
+          "value": 1
+        },
+        {
+          "label": "1-3 kg (2.2 - 6.6 lb)",
+          "value": 2
+        },
+        {
+          "label": "Absence de perte de poids",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mobility",
+      "label": "Mobility",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Alité ou confiné au fauteuil",
+          "value": 0
+        },
+        {
+          "label": "Able pour get out de bed/ chair but ne... pas go out",
+          "value": 1
+        },
+        {
+          "label": "Goes out",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "neuro",
+      "label": "Troubles neuropsychologiques",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Severe dementia ou dépression",
+          "value": 0
+        },
+        {
+          "label": "Démence légère",
+          "value": 1
+        },
+        {
+          "label": "Aucun trouble psychologique",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "Indice de masse corporelle (BMI), kg/m^2^",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 19 kg/m 2",
+          "value": 0
+        },
+        {
+          "label": "19 pour <21 kg/m 2",
+          "value": 1
+        },
+        {
+          "label": "21 pour <23 kg/m 2",
+          "value": 2
+        },
+        {
+          "label": "≥23 kg/m 2",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "drugs",
+      "label": "Prend plus de 3 médicaments sur ordonnance par jour",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "health",
+      "label": "Dans comparison avec other people de same âge, how does patient envisager their health status?",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not as good",
+          "value": 0
+        },
+        {
+          "label": "Ne… pas savoir",
+          "value": 0.5
+        },
+        {
+          "label": "Aussi bien",
+          "value": 1
+        },
+        {
+          "label": "Better",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bellera CA, Rainfray M, Mathoulin-Pélissier S, et al. Screening older cancer patients: first evaluation of the G-8 geriatric screening tool. Ann Oncol. 2012;23(8):2166-2172.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22250183/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hamaker ME, Mitrovic M, Stauder R. The G8 screening tool detects relevant geriatric impairments and predicts survival in elderly patients with a haematological malignancy. Ann Hematol. 2014;93(6):1031-1040.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24488257/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Takahashi M, Takahashi M, Komine K, et al. The G8 screening tool enhances prognostic value to ECOG performance status in elderly cancer patients: A retrospective, single institutional study. PLoS One. 2017;12(6):e0179694.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28640844/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+    "calc.cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt",
+    "calc.geriatric-depression-scale-gds-15",
+    "calc.cumulative-illness-rating-scale-geriatric-cirs-g",
+    "calc.berg-balance-scale-bbs",
+    "calc.montreal-cognitive-assessment-moca",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "e167b67464195aedfb1f19a54a3d5327",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+      "text": "CRASH Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt",
+      "text": "CARG-TT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cumulative-illness-rating-scale-geriatric-cirs-g",
+      "text": "CIRS-G"
+    },
+    {
+      "type": "calc",
+      "id": "calc.berg-balance-scale-bbs",
+      "text": "BBS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.geriatric-depression-scale-gds-15",
+      "text": "GDS-15"
+    },
+    {
+      "type": "calc",
+      "id": "calc.montreal-cognitive-assessment-moca",
+      "text": "MoCA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10426,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

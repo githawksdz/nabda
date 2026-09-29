@@ -1,0 +1,147 @@
+{
+  "id": "calc.evendo-score-esophageal-varices",
+  "slug": "evendo-score-esophageal-varices",
+  "language": "en",
+  "title": "EVendo score pour Esophageal Varices",
+  "short_title": "EVendo score pour Esophageal Varices",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hypertension"
+  ],
+  "chief_complaints": [
+    "Sang dans les selles",
+    "Dizziness",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Ev",
+    "endoscopy",
+    "pre-endoscopy",
+    "ev endo",
+    "esophagus",
+    "ev score",
+    "endo"
+  ],
+  "dosing": false,
+  "formula": "A = (8,5 x INR) + (AST, U/L / 35)\n\nB = (Numération plaquettaire, x 10³/µL / 150) + (BUN, mg/dL / 20) + (Hémoglobine, g/dL / 15)\n\nEVendo Score = (A / B) + 1 (si ascite présente)",
+  "how_to_use": {
+    "why": "Aide à identifier les personnes qui bénéficieront le plus d’un dépistage des varices et qui pourraient potentiellement éviter les risques et les coûts d’une endoscopie de dépistage inutile, tant au niveau individuel qu’au niveau de la santé publique.",
+    "when": "- Patients >18 ans avec cirrhose connue ou suspectée.\n- Ne pas utiliser chez les patients présentant une hémorragie gastro-intestinale patente ou des antécédents d’hémorragie variqueuse aiguë.",
+    "pearls": "- Noninvasively predicts patients with low probability of any esophageal varices or varices needing treatment (defined as medium to large varices or varices with high-risk features, such as red wale marks) on screening endoscopy.\n- Uses readily available clinical information to calculate.\n- Likely to be less accurate in patients with conditions that, unrelated to severity of liver disease or portal hypertension, could alter the values of the EVendo score inputs (e.g. hemoglobinopathies, Coumadin use, and severe renal dysfunction).\n- Prospectively validated in a cohort of 100 patients."
+  },
+  "next_steps": {
+    "advice": "- Not a substitute for an individual treatment plan developed by a clinician with personal knowledge of a specific patient. As such, it should not be used alone to determine a patient's medical treatment.\n- Screening endoscopy may be deferred when the EVendo score is ≤3.90, and instead patients may be monitored clinically, with reassessment of the EVendo Score at a future date (e.g. in 3-6 months).\n- If access to endoscopy is limited, patients with EVendo scores >3.90 should be prioritized to undergo screening upper endoscopy over patients with lower EVendo scores.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Data from over 200 patients with cirrhosis undergoing endoscopy for variceal screening were collected from three centers (a tertiary care hospital, a county hospital, and a Veterans Affairs hospital).\n\nThe EVendo score was developed using a random forest algorithm to identify factors significantly associated with the presence of esophageal varices and varices needing treatment, and subsequently validated prospectively in over 100 cirrhotic patients undergoing screening endoscopy.\n\nAn EVendo score of ≤3.90 identified the subset of patients who are unlikely to have esophageal varices or varices needing treatment with high sensitivity.",
+  "more_info": "Interpretation:\n\n| EVendo Score | Probability of finding varices* | Recommendation |\n| --- | --- | --- |\n| ≤3.90 | <5%** | Expectant management |\n| >3.90 | ≥5% | Endoscopy |\n\n*Any esophageal varices or varices needing treatment.\n\n**95.1% sensitivity, 95.8% NPV.\n\nFrom[Dong 2019](https://www.cghjournal.org/article/S1542-3565(19)30072-2/pdf).",
+  "short_description": "Diagnostic pré-endoscopique des varices œsophagiennes.",
+  "medium_description": "Predicts presence et size de esophageal varices before dépistage endoscopy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "platelet",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hemo",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "ascites",
+      "label": "Ascites",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Dong T, Kalani A, Aby E, et al. Machine Learning-based Development and Validation of a Scoring System for Screening High Risk Esophageal Varices. Clin Gastroenterol Hepatol. 2019.",
+      "href": "https://www.cghjournal.org/article/S1542-3565(19)30072-2/pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.peld-cr",
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.clif-c-aclf-acute-chronic-liver-failure"
+  ],
+  "source_logic_hash": "3c747b9bbf195f0b0d872d183a6595a4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10175,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,141 @@
+{
+  "id": "calc.pack-years-calculator",
+  "slug": "pack-years-calculator",
+  "language": "en",
+  "title": "Calculateur de paquets-années (pack-years)",
+  "short_title": "Calculateur de paquets-années (pack-years)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool"
+  ],
+  "chief_complaints": [
+    "Anxieux",
+    "Douleur thoracique",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Pack years",
+    "pack year calculator",
+    "smoking",
+    "tobacco",
+    "lung cancer",
+    "non small cell lung cancer",
+    "NSCLC",
+    "non-small cell lung cancer"
+  ],
+  "dosing": false,
+  "formula": "Pack years = number of packs of cigarettes smoked per day × number of years the patient has smoked (excluding nonsmoking years)\n\nNote: 1 pack = 20 cigarettes.\n\nFrom[National Cancer Institute](https://www.cancer.gov/dictionary?CdrID=306510).",
+  "how_to_use": {
+    "why": "- Standard clinical measure of quantifying smoking history.\n- Correlates with survival, particularly in patients with diagnosed lung cancer. In one study of patients with advanced lung cancer (stage IIIB/IVNSCLC), median overall survival was 10.8 months in patients with >15 pack year history, compared to 14.6 months in those with ≤15 pack year history ([Janjigian 2010](https://www.ncbi.nlm.nih.gov/pubmed/20029977)).",
+    "when": "Patients déclarant un antécédent de tabagisme, quel qu'il soit.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Selon les recommandations de pratique clinique, les patients adultes âgés de 50 à 80 ans ayant un antécédent tabagique de ≥20 paquets-années et qui fument actuellement ou ont arrêté au cours des 15 dernières années sont généralement considérés comme à haut risque de cancer du poumon et doivent bénéficier d’un dépistage annuel par TDM à faible dose ([USPSTF](https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening),[AAFP](https://www.aafp.org/afp/2014/0715/od1.html),[NCCN](https://jnccn.org/view/journals/jnccn/16/4/article-p412.xml), et autres).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nUn nombre plus élevé de paquets-années est corrélé à un risque plus élevé de maladie pulmonaire, y compris le cancer du poumon. Envisager un dépistage par TDM à faible dose chez les patients adultes âgés de 50 à 80 ans ayant un tabagisme cumulé ≥20 paquets-années et qui fument actuellement ou ont arrêté au cours des 15 dernières années. Conseiller aux patients l’arrêt du tabagisme.",
+  "short_description": "Quantifier l'historique tabagique.",
+  "medium_description": "Calculates pack years chez les patients avec any smoking history.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "packs",
+      "label": "Paquets de cigarettes fumés par jour",
+      "tips": "1 paquet = 20 cigarettes (p. ex. saisir 2 pour 40 cigarettes/jour)",
+      "optional": false,
+      "unit": "packs",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "start",
+      "label": "Âge de début du tabagisme",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "stop",
+      "label": "Âge d’arrêt du tabac ou âge actuel si le patient fume encore",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ns",
+      "label": "Années sans tabac",
+      "tips": "Example: A patient who smoked for 20 years but reports a 2-year cessation period before returning to smoking should be entered as “2”.",
+      "optional": true,
+      "unit": "nonsmoking_years",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Moyer VA. Screening for lung cancer: U.S. Preventive Services Task Force recommendation statement. Ann Intern Med. 2014;160(5):330-8.",
+      "href": "https://www.aafp.org/afp/2014/0715/od1.html",
+      "kind": "international"
+    },
+    {
+      "text": "Wood DE, Kazerooni EA, Baum SL, et al. Lung Cancer Screening, Version 3.2018, NCCN Clinical Practice Guidelines in Oncology. J Natl Compr Canc Netw. 2018;16(4):412-441.",
+      "href": "https://jnccn.org/view/journals/jnccn/16/4/article-p412.xml",
+      "kind": "international"
+    },
+    {
+      "text": "Moyer VA. Screening for lung cancer: u. S. Preventive services task force recommendation statement. Ann Intern Med. 2014;160(5):330-338.",
+      "href": "https://www.uspreventiveservicestaskforce.org/uspstf/recommendation/lung-cancer-screening",
+      "kind": "international"
+    },
+    {
+      "text": "Janjigian YY, Mcdonnell K, Kris MG, et al. Pack-years of cigarette smoking as a prognostic factor in patients with stage IIIB/IV nonsmall cell lung cancer. Cancer. 2010;116(3):670-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20029977",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.manchester-score-prognosis-small-cell-lung-cancer",
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+    "calc.solitary-pulmonary-nodule-spn-malignancy-risk-score-mayo-clinic-model"
+  ],
+  "source_logic_hash": "51a613dd1fa5c640b5cb045d0f1eff97",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10187,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar start = parseFloat(start);\nvar stop = parseFloat(stop);\nvar packs = parseFloat(packs);\nvar ns = isNaN(parseFloat(ns)) ? 0 : parseFloat(ns);\n\nvar score = ((stop - start) - ns) * packs;\n\nvar warn;\nif ((stop - start) < 0) {\n    warn = 'Please ensure the starting age is before the stopping/current age.';\n} else if ((stop - start) > 0 & (stop - start) < ns) {\n    warn = 'Nonsmoking years must be less than total smoking years.' ;\n}\n\nscore = score.toFixed(0);\n\nif (score == 0) {\n    score = '<1';\n}\n\n//results\nif (score < 0){\n    calc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: warn\n    });\n    calc_output.push({\n        name: '10187_Pack Years_result',\n        value: '',\n        value_text: '',\n        message: warn\n    });\n} else {\n    calc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'pack years',\n    message: 'More pack years correlates with higher lung disease risk'\n    });\n    calc_output.push({\n        name: '10187_Pack Years_result',\n        value: score,\n        value_text: 'pack years',\n        message: 'More pack years correlates with higher lung disease risk, including lung cancer. Consider screening with low-dose CT in adult patients ages 50-80 years with ≥20 pack year history of smoking and who currently smoke or have quit within the last 15 years. Counsel patients on smoking cessation.'   \n    });\n}\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [
+    "packs",
+    "Nonsmoking years"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "4455401d1d59aeb1fb1602a52b8f4c07db24f1aa9eec629db89e3204611825b2"
+}

@@ -1,0 +1,156 @@
+{
+  "id": "calc.apfel-score-postoperative-nausea-vomiting",
+  "slug": "apfel-score-postoperative-nausea-vomiting",
+  "language": "fr",
+  "title": "Apfel score pour Postoperative nausées et vomissements",
+  "short_title": "Score d'Apfel",
+  "calc_type": null,
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [],
+  "chief_complaints": [
+    "Nausea",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "anesthesia risk",
+    "Ponv",
+    "postop nausea",
+    "postop vomiting"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sexe | Homme | 0 |\n| Femme | 1 | |\n| Statut tabagique | Fumeur | 0 |\n| Non-fumeur | 1 | |\n| Antécédents de mal des transports ou de PONV | Non | 0 |\n| Oui | 1 | |\n| Utilisation d'opioïdes postopératoires | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser chez les patients bénéficiant d'une anesthésie générale.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Envisager des antiémétiques prophylactiques chez les patients ayant des scores plus élevés.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score d'Apfel | Risque de PONV à 24 heures |\n| --- | --- |\n| 0 | 10% |\n| 1 | 21% |\n| 2 | 39% |\n| 3 | 61% |\n| 4 | 79% |",
+  "short_description": "Postoperative nausées et vomissements.",
+  "medium_description": "Predicts risque de postoperative nausées et vomissements (PONV).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "smoking",
+      "label": "Statut tabagique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Smoker",
+          "value": 0
+        },
+        {
+          "label": "Nonsmoker",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "Antécédents de mal des transports ou de PONV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "opiods",
+      "label": "Utilisation d'opioïdes postopératoires",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Apfel CC, Läärä E, Koivuranta M, Greim CA, Roewer N. A simplified risk score for predicting postoperative nausea and vomiting: conclusions from cross-validations between two centers. Anesthesiology. 1999;91(3):693-700.",
+      "href": "http://anesthesiology.pubs.asahq.org/article.aspx?articleid=1946036",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Weilbach C, Rahe-meyer N, Raymondos K, Weissig A, Scheinichen D, Piepenbrock S. Postoperative nausea and vomiting (PONV) : usefulness of the Apfel-score for identification of high risk patients for PONV. Acta Anaesthesiol Belg. 2006;57(4):361-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17236637",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ariscat-score-postoperative-pulmonary-complications",
+    "calc.gupta-postoperative-respiratory-failure-risk",
+    "calc.gupta-postoperative-pneumonia-risk"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10104,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

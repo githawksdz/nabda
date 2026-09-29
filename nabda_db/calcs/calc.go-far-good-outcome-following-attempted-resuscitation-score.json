@@ -1,0 +1,359 @@
+{
+  "id": "calc.go-far-good-outcome-following-attempted-resuscitation-score",
+  "slug": "go-far-good-outcome-following-attempted-resuscitation-score",
+  "language": "en",
+  "title": "Score GO-FAR (Good Outcome Following Attempted Resuscitation — bon devenir après tentative de réanimation)",
+  "short_title": "score GO-FAR",
+  "calc_type": null,
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Déficit neurologique"
+  ],
+  "abbreviations": [
+    "Neurologic function",
+    "IHCA",
+    "GO-FAR",
+    "go far",
+    "gofar"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <70 | 0 |\n| 70-74 | 2 | |\n| 75-79 | 5 | |\n| 80-84 | 6 | |\n| ≥85 | 11 | |\n| Neurologically intact or with minimal deficits at admission | -15 | |\n| Major trauma (injury associated with shock or altered mental status during current admission) | 10 | |\n| Acute stroke (ischemic or hemorrhagic stroke during current admission) | 8 | |\n| Metastatic or hematologic cancer | 7 | |\n| Septicemia (documented bloodstream infection with antibiotics not yet started or still ongoing) | 7 | |\n| Medical noncardiac diagnosis on admission | 7 | |\n| Hepatic insufficiency (total bilirubin >2 mg/dL or 34 µmol/L and AST >2x upper limit of normal, or cirrhosis) | 6 | |\n| Admit from skilled nursing facility | 6 | |\n| Hypotension or hypoperfusion within 4 hrs prior to arrest (SBP <90, MAP <60, pressors or inotropes other than dopamine ≤3 µmol/kg/min after volume expansion, or intra-aortic balloon pump) | 5 | |\n| Renal insufficiency or dialysis | 4 | |\n| Respiratory insufficiency within 4 hrs of arrest (any of the following: P/F ratio <300, PaO 2 <60, SaO 2 <90%; PaCO 2 , ETCO 2 , or transcutaneous CO 2 >50, spontaneous RR >40 or <5, or noninvasive or invasive ventilation) | 4 | |\n| Pneumonia (documented active pneumonia with antibiotics not yet started or still ongoing) | 1 | |",
+  "how_to_use": {
+    "why": "Les patients et leurs familles ont parfois des attentes irréalistes concernant la qualité de vie après avoir survécu à un arrêt cardiaque intrahospitalier. Le score GO-FAR peut aider dans les discussions concernant le statut de réanimation et le pronostic.",
+    "when": "",
+    "pearls": "Dérivé à partir de données de registre réparties en ensembles de dérivation et de validation."
+  },
+  "next_steps": {
+    "advice": "Tenir compte des préférences du patient et du pronostic médical global lors des discussions sur le statut de réanimation et l’intensité des interventions.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation :**\n\n| Score GO-FAR | Groupe de risque | Survie jusqu’à la sortie avec handicap neurologique minime* |\n| --- | --- | --- |\n| ≥24 | Survie très faible | <1% |\n| 14 à 23 | Survie faible | 1-3% |\n| -5 à 13 | Survie moyenne | 3-15% |\n| -15 à -6 | Survie supérieure à la moyenne | >15% |\n\n*Défini comme une catégorie de performance cérébrale de 1 ou une bonne performance cérébrale (patient conscient, alerte et capable de travailler, mais pouvant présenter des déficits neurologiques ou psychologiques légers, tels qu’une dysphagie légère ou des anomalies mineures des nerfs crâniens).",
+  "short_description": "Survie et évolution favorable après arrêt cardiaque.",
+  "medium_description": "Predicts survie pour discharge avec good devenir after dans-hôpital cardiac arrest.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 70",
+          "value": 0
+        },
+        {
+          "label": "70-74",
+          "value": 2
+        },
+        {
+          "label": "75-79",
+          "value": 5
+        },
+        {
+          "label": "80-84",
+          "value": 6
+        },
+        {
+          "label": "≥85",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "admitneuro",
+      "label": "Neurologically intact ou avec minimal deficits at admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "trauma",
+      "label": "Traumatisme grave",
+      "tips": "Traumatisme associé à un choc ou à une altération de l’état mental au cours de l’hospitalisation actuelle",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC aigu",
+      "tips": "AVC ischémique ou hémorragique au cours de l’hospitalisation actuelle",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Cancer métastatique ou hémopathie maligne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "septicemia",
+      "label": "Septicemia",
+      "tips": "Infection sanguine documentée avec antibiothérapie non encore débutée ou toujours en cours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "noncardiacdx",
+      "label": "Diagnostic médical non cardiaque à l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hepinsuffiiency",
+      "label": "Insuffisance hépatique",
+      "tips": "Bilirubine totale > 2 mg/dL ou 34 µmol/L et AST > 2 fois la limite supérieure de la normale, ou cirrhose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "admitfromsnf",
+      "label": "Admis depuis un établissement de soins infirmiers qualifiés (SNF)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hypotension",
+      "label": "Hypotension ou hypoperfusion within 4 hrs prior pour arrest",
+      "tips": "PAS <90, PAM <60, vasopresseurs ou inotropes autres que la dopamine ≤3 µmol/kg/min après expansion volémique, ou ballon de contre-pulsion intra-aortique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dialysis",
+      "label": "Insuffisance rénale ou dialyse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "respinsuff",
+      "label": "Insuffisance respiratoire",
+      "tips": "L’un des critères suivants : rapport P/F <300, PaO₂ <60, SaO₂ <90 % ; PaCO₂, ETCO₂ ou CO₂ transcutané >50, FR spontanée >40 ou <5, ou ventilation non invasive ou invasive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pneuomnia",
+      "label": "Pneumonie",
+      "tips": "Pneumonie active documentée avec antibiothérapie non encore débutée ou toujours en cours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ebell MH, Jang W, Shen Y, Geocadin RG, for the Get With the Guidelines–Resuscitation Investigators. Development and Validation of the Good Outcome Following Attempted Resuscitation (GO-FAR) Score to Predict Neurologically Intact Survival After In-Hospital Cardiopulmonary Resuscitation. JAMA Intern Med.2013;173(20):1872–1878.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1735894 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ajam K, Gold LS, Beck SS, Damon S, Phelps R, Rea TD. Reliability of the Cerebral Performance Category to classify neurological status among survivors of ventricular fibrillation arrest: a cohort study. Scandinavian Journal of Trauma, Resuscitation and Emergency Medicine. 2011;19:38.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3132724/ ",
+      "kind": "other"
+    },
+    {
+      "text": "D'arrigo S, Cacciola S, Dennis M, et al. Predictors of favourable outcome after in-hospital cardiac arrest treated with extracorporeal cardiopulmonary resuscitation: A systematic review and meta-analysis. Resuscitation. 2017;121:62-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29020604 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.berg-balance-scale-bbs",
+    "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+    "calc.resuscitation-using-ecpr-during-hospital-cardiac-arrest-rescue-ihca"
+  ],
+  "source_logic_hash": "12e77f326fdf3422082adc94fd78eb16",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10033,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.dopamine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

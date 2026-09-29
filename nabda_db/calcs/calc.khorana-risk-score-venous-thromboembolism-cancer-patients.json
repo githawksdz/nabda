@@ -1,0 +1,279 @@
+{
+  "id": "calc.khorana-risk-score-venous-thromboembolism-cancer-patients",
+  "slug": "khorana-risk-score-venous-thromboembolism-cancer-patients",
+  "language": "en",
+  "title": "Khorana risque score pour Venous Thromboembolism dans cancer patients",
+  "short_title": "Score de risque de Khorana pour la VTE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Chimiothérapie",
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "Vte",
+    "dvt",
+    "cancer",
+    "ca",
+    "pe",
+    "embolism",
+    "thrombosis",
+    "chemo"
+  ],
+  "dosing": false,
+  "formula": "The Khorana Risk Score is calculated by adding the selected points.",
+  "how_to_use": {
+    "why": "- Stratifie le risque de VTE chez les patients atteints de cancer avant l’initiation d’une chimiothérapie systémique.\n- Nécessite uniquement le type de cancer, des paramètres de l’hémogramme et l’[indice de masse corporelle](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) pour le calcul.\n- L’identification des patients ambulatoires à risque plus élevé peut aider à orienter les discussions concernant la thromboprophylaxie.",
+    "when": "- À utiliser chez les patients adultes en ambulatoire ayant un diagnostic confirmé de cancer (le plus souvent étudié dans les cancers du sein, du côlon, du poumon, de l’ovaire et du pancréas, ainsi que dans le lymphome et le sarcome) qui débutent un nouveau schéma de chimiothérapie systémique et dont la réception d’au moins 4 cycles de traitement est prévue.\n- Ne pas utiliser chez les patients atteints de leucémie aiguë, de cancer du cerveau, de myélome ou de cancer du rein.",
+    "pearls": "- Most derivation and validation studies were performed in outpatient populations receiving chemotherapy for higher-risk cancers.\n- Higher-risk populations (e.g., hospitalized patients or those with poor performance status) may have substantially greater VTE risk than estimated by the score.\n- Intended to predict future risk of VTE, not to diagnose acute DVT or PE.\n- Do not use in patients:\n\n - Receiving concurrent cytotoxic, biologic, or immunologic therapy for another condition.\n - Receiving continuous single-agent chemotherapy.\n - Who are pregnant or lactating.\n - With an active infection requiring treatment."
+  },
+  "next_steps": {
+    "advice": "- À utiliser comme complément au jugement clinique plutôt que comme outil décisionnel autonome.\n- Bien que les tumeurs cérébrales, le myélome et le cancer rénal soient fortement associés à la VTE, ces néoplasies étaient sous-représentées dans les cohortes de validation initiales ; chez les patients atteints de myélome multiple, envisager l'utilisation de l'outil [IMPEDE-VTE](nabda:calc.impede-vte).",
+    "critical_actions": "",
+    "management": "- Per the[2020 American Society of Clinical Oncology (ASCO) VTE prophylaxis clinical practice guidelines](https://ascopubs.org/doi/10.1200/JCO.23.00294), outpatients with a solid malignancy should undergo risk assessment with a validated tool, such as the Khorana Risk Score, before initiation of a new chemotherapy regimen.\n- In patients with a **score ≥2** who do not have significant bleeding risk factors or clinically important drug interactions, the risks and benefits of thromboprophylaxis should be considered.\n\n - Specifically, this could include apixaban, rivaroxaban, or low molecular weight heparin.\n - The[AVERT trial](https://pubmed.ncbi.nlm.nih.gov/30511879/)assessed apixaban 2.5 mg twice daily, while the[CASSINI trial](https://www.nejm.org/doi/full/10.1056/NEJMoa1814630)evaluated rivaroxaban 10 mg daily."
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation**\n\n| Risk Group | Score | 2.5-month rate of VTE |\n| --- | --- | --- |\n| Low | 0 | 0.3-0.8% |\n| Intermediate | 1 - 2 | 1.8-2.0% |\n| High | ≥3 | 6.7-7.1% |",
+  "short_description": "Prédit le risque de VTE chez les patients atteints de cancer.",
+  "medium_description": "Predicts risque de VTE pour cancer patients depending sur type de cancer et other factors.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ca",
+      "label": "Type de cancer",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Estomac",
+          "value": 2
+        },
+        {
+          "label": "Pancréas",
+          "value": 2
+        },
+        {
+          "label": "Poumon",
+          "value": 1
+        },
+        {
+          "label": "Lymphome",
+          "value": 1
+        },
+        {
+          "label": "Gynécologique",
+          "value": 1
+        },
+        {
+          "label": "Vessie",
+          "value": 1
+        },
+        {
+          "label": "Testiculaire",
+          "value": 1
+        },
+        {
+          "label": "Autre",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "plt",
+      "label": "Numération plaquettaire avant chimiothérapie ≥350x10⁹/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hb",
+      "label": "Taux d'hémoglobine <10 g/dL ou utilisation de facteurs de croissance des RBC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leuk",
+      "label": "Numération leucocytaire avant chimiothérapie >11x10⁹/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "IMC ≥ 35 kg/m²",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lyman GH, Khorana AA, Kuderer NM, et al. Venous thromboembolism prophylaxis and treatment in patients with cancer: American Society of Clinical Oncology clinical practice guideline update. J Clin Oncol. 2013;31(17):2189-2204. doi:10.1200/JCO.2013.49.1118.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25873061",
+      "kind": "international"
+    },
+    {
+      "text": "Key NS, Khorana AA, Kuderer NM, et al. Venous thromboembolism prophylaxis and treatment in patients with cancer: ASCO clinical practice guideline update. J Clin Oncol. 2020;38(5):496-520. doi:10.1200/JCO.19.01461.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31381464/",
+      "kind": "international"
+    },
+    {
+      "text": "Khorana AA, Kuderer NM, Culakova E, Lyman GH, Francis CW. Development and validation of a predictive model for chemotherapy-associated thrombosis. Blood. 2008;111(10):4902-4907. doi:10.1182/blood-2007-10-116327. ",
+      "href": "https://www.bloodjournal.org/content/bloodjournal/111/10/4902.full.pdf?sso-checked=true",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Khorana AA, Soff GA, Kakkar AK, et al. Rivaroxaban for thromboprophylaxis in high-risk ambulatory patients with cancer. N Engl J Med. 2019;380(8):720-728. doi:10.1056/NEJMoa1814630.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa1814630",
+      "kind": "other"
+    },
+    {
+      "text": "Carrier M, Abou-Nassar K, Mallick R, et al. Apixaban to prevent venous thromboembolism in patients with cancer. N Engl J Med. 2019;380(8):711-719. doi:10.1056/NEJMoa1814468.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa1814468",
+      "kind": "other"
+    },
+    {
+      "text": "Addo-Tabiri NO, Chudasama R, Vasudeva R, et al. Black patients experience highest rates of cancer-associated venous thromboembolism. Am J Clin Oncol. 2020;43(2):94-100. doi:10.1097/COC.0000000000000639.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC9743359/",
+      "kind": "other"
+    },
+    {
+      "text": "Chen S, Sun W, Dan M, Sun Y, Jiang Y. A nomogram for predicting the risk of venous thromboembolism in patients with solid cancers. Journal of Thrombosis and Thrombolysis. 2023;56(3):414. doi:10.1007/s11239-023-02856-0",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC10439043/",
+      "kind": "other"
+    },
+    {
+      "text": "Englisch C, Nopp S, Moik F, et al. The Vienna CATScore for predicting cancer-associated venous thromboembolism: an external validation across multiple time points. ESMO Open. 2025;10(2):104130. doi:10.1016/j.esmoop.2024.104130.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39891990/",
+      "kind": "other"
+    },
+    {
+      "text": "Dutia M, White RH, Wun T, Chew HK, Harvey D, Zhou H, Tuscano JM. Risk assessment models for cancer-associated venous thromboembolism. Cancer. 2012;118(13):3468-3476. doi:10.1002/cncr.26694. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22086826",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van Es N, Ventresca M, Di Nisio M, et al; IPDMA Heparin Use in Cancer Patients Research Group. The Khorana score for prediction of venous thromboembolism in cancer patients: an individual patient data meta-analysis. J Thromb Haemost. 2020;18(8):1940-1951. doi:10.1111/jth.14824.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32336010/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Li A, Jafari O, Lam BD, et al. Validation of a risk score for cancer-associated thrombosis using nationwide EHR data. JAMA Netw Open. 2025;8(11):e2544428. doi:10.1001/jamanetworkopen.2025.44428.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41288979/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pompe-c-tool-pulmonary-embolism-mortality",
+    "calc.hestia-criteria-outpatient-pulmonary-embolism-treatment",
+    "calc.dash-prediction-score-recurrent-vte",
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.impede-vte"
+  ],
+  "source_logic_hash": "c1ecdb3da8974dece7595a8f46341582",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "body mass index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.impede-vte",
+      "text": "IMPEDE-VTE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "body mass index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.impede-vte",
+      "text": "IMPEDE-VTE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3315,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar ca = parseInt(ca);\nvar plt = parseInt(plt);\nvar hb = parseInt(hb);\nvar leuk = parseInt(leuk);\nvar bmi = parseInt(bmi);\nvar u = ca + plt + hb + leuk + bmi;\nvar msg;\n\nif (u == 0) { mini_msg = 'Low Risk';\n    msg = 'Low Risk (0 Points)<br/><br/>Rate of VTE at 2.5 months* = 0.3 - 0.8%'; }\nif (u == 1 || u == 2) { mini_msg = 'Intermediate Risk';\n    msg = 'Intermediate Risk (1-2 Points)<br/><br/>Rate of VTE at 2.5 months* = 1.8 - 2.0%'; }\nif (u > 2) { mini_msg = 'High Risk';\n    msg = 'High Risk (≥3 Points)<br/><br/>Rate of VTE at 2.5 months* = 6.7 - 7.1%'; }\nmsg += \"<br/><br/>*Note: Median follow-up time was 2.5 months.\";\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3315_Khorana Risk Score_result',\n    value: u.toFixed(0),\n    value_text: 'points',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "austin-wesevich-md-mph-ms"
+  ],
+  "creator_names": [
+    "Dr. Alok Khorana"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "457c109adbc0860f6f1d96c87c8072d5358a35312f126b997eb84ffc9e340af4"
+}

@@ -1,0 +1,190 @@
+{
+  "id": "calc.pedsrc-pediatric-surgery-research-collaborative-rule-blunt-abdominal-trauma",
+  "slug": "pedsrc-pediatric-surgery-research-collaborative-rule-blunt-abdominal-trauma",
+  "language": "en",
+  "title": "Pédiatrique Surgery Research Collaborative (PedSRC) règle pour Blunt Abdominal traumatisme",
+  "short_title": "PedSRC règle pour Blunt Abdominal traumatisme",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "pediatrie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "Pedsrc",
+    "pedsrc rule",
+    "blunt trauma",
+    "blunt abdominal trauma",
+    "pediatric",
+    "trauma",
+    "iai",
+    "intra abdominal injury",
+    "intra-abdominal injury"
+  ],
+  "dosing": false,
+  "formula": "Le score PedSRC est calculé en additionnant les points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| AST >200 U/L | Non | 0 |\n| Oui | 1 | |\n| Traumatisme de la paroi abdominale, distension ou sensibilité à l'examen | Non | 0 |\n| Oui | 1 | |\n| Radiographie thoracique anormale | Non | 0 |\n| Oui | 1 | |\n| Plainte de douleur abdominale | Non | 0 |\n| Oui | 1 | |\n| Amylase ou lipase anormale | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Peut aider à éviter de manière sûre un scanner abdominal chez les patients de traumatologie à faible risque.\n- La réduction de l'utilisation du scanner abdominal en pédiatrie contribue à limiter le risque de cancer radio-induit sur la durée de vie.\n- Comparée à l'[algorithme PECARN IAI](nabda:calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm), cette règle peut être moins pratique au lit du patient car elle nécessite des examens biologiques et une radiographie thoracique.",
+    "when": "- À utiliser chez les patients pédiatriques <16 ans se présentant pour un traumatisme abdominal fermé dans les 6 heures suivant le traumatisme et n'ayant pas encore bénéficié d'un scanner abdominal.\n- Ne pas utiliser en cas de traumatisme isolé de la tête ou d'un membre.",
+    "pearls": "- Parmi les variables individuelles :\n\n - Un AST élevé (>200) présentait l'association la plus forte avec toute lésion intra-abdominale (IAI).\n - L'examen abdominal anormal (traumatisme de la paroi abdominale, sensibilité ou distension) pesait le plus pour l'IAI nécessitant une intervention aiguë (IAI-I).\n - Un signe de la ceinture de sécurité positif était associé à un risque d'IAI de 22,9 % et un risque d'IAI-I de 10,8 % dans l'étude de validation.\n- Dans une analyse secondaire chez les enfants <3 ans, la règle a montré une VPN de 100 % à la fois pour l'IAI et l'IAI-I.\n- Chez les patients avec GCS <14, la VPN pour toute IAI diminue avec la baisse du GCS ; la validation publiée montrait néanmoins une excellente VPN pour l'IAI-I dans ce sous-groupe.\n- Lors de la validation, un petit nombre d'IAI ont été mal classées comme très faible risque, mais aucune n'a nécessité d'intervention aiguë.\n\n - Parmi ces 6 patients, on comptait 5 lésions d'organes pleins et 1 lésion vasculaire intra-abdominale.\n - 3 de ces 6 patients ont nécessité une intervention chirurgicale en urgence pour d'autres lésions associées."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats pour compléter, et non remplacer, le jugement clinique ; l'outil identifie une cohorte à très faible risque plutôt que de dicter la réalisation d'imagerie.\n- Le pourcentage de risque estimé peut appuyer la décision médicale partagée avec les familles concernant une imagerie impliquant des radiations ionisantes.\n- Chez l'enfant, chaque scanner abdominal augmente le risque estimé à vie de cancer fatal induit par les radiations jusqu'à ~0,14 % ([Brenner et Hall, 2007](https://www.ncbi.nlm.nih.gov/pubmed/18046031)).",
+    "critical_actions": "Prioriser la prise en charge ABC et stabiliser l'enfant présentant un traumatisme abdominal contondant avant les décisions d'imagerie ; réévaluer fréquemment à mesure que de nouvelles informations (examen clinique, bilan biologique, imagerie) deviennent disponibles.",
+    "management": "- Les patients jugés à très faible risque de lésion intra-abdominale nécessitant une intervention aiguë peuvent éviter le scanner abdominal ; réaliser un scanner si la suspicion clinique de lésion intra-abdominale (IAI) significative persiste ou si l'état clinique évolue.\n- Prendre en compte les ressources locales, la capacité d'observation et la capacité de la famille à revenir rapidement lors de la planification du bilan et de l'orientation du patient."
+  },
+  "evidence": "The PedSRC Rule for Blunt Abdominal Trauma was derived by[Streck et al. (2017)](https://www.ncbi.nlm.nih.gov/pubmed/28130170)using data on a subset of 2,188 pediatric patients from the Pediatric Surgery Research Collaborative, a prospective observational study of children ages 16 years and younger presenting to pediatric level I trauma centers with blunt abdominal trauma.\n\nThe goal was to derive a prediction rule using information quickly obtained in a trauma bay to determine patients at very low risk for intra-abdominal injury (IAI) after blunt abdominal trauma. The authors distinguished their decision rule from the [PECARN Intraabdominal Injury Algorithm](nabda:calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm) by including labs and imaging readily available in the trauma room and used recursive partitioning to derive a rule from 25 history, physical, lab, and imaging variables.\n\nIAI was defined as “any injury apparent on abdominal CT scan or identified in surgery to one of the following: spleen, liver, kidney, mesentery, duodenum, jejunum, ileum, colon, adrenal, pancreas, major intra-abdominal vascular structure, bladder, ureter, gallbladder, or abdominal wall fascial disruption.” Acute interventions that qualified an intra-abdominal injury as IAI-I were:\n\n- Blood transfusion for anemia or hypotension related to the injury.\n- Therapeutic laparoscopy or laparotomy for IAI.\n- Angiographic embolization to treat IAI.\n- Death caused by IAI.\n\nIAI was diagnosed in 261 (11.9%) patients, and of those, IAI-I was found in 62 (23.8%) patients. The most frequent intervention was blood transfusion, followed by laparotomy.\n\nOf note, several statistically significant variables were excluded from the prediction rule due to missing data in more than 30% of cases: base deficit, FAST exam, urinalysis, pelvic X-ray, and individual pancreatic enzymes. Although individual pancreatic enzymes were excluded, enough data between amylase and lipase were present to make abnormal pancreatic enzymes a variable. Femur fracture and emesis after injury were identified as statistically significant but were omitted from the final decision rule because their addition led to only a 0.3% reduction in IAI risk.\n\nThe prediction rule did not misclassify any patients with IAI-I as very low risk. Five patients with IAI were misclassified as very low risk, all of which were solid organ injuries (grade I and II) with significant extra-abdominal injuries.\n\nThe rule was externally validated using data from the PECARN abdominal trauma database ([Arbra et al., 2018](https://www.ncbi.nlm.nih.gov/pubmed/29659473)). Patients missing more than one of the five variables in the prediction rule were excluded, and the PECARN dataset excluded patients who were pregnant, had already received CT or diagnostic peritoneal lavage prior to arrival, had pre-existing neurological disease affecting mental status or physical examination, or had IAI within 30 days prior to presentation.\n\nOf the 12,044 pediatric patients in the PECARN dataset, 2,435 were included in the validation dataset; 235 (9.7%) had IAI and 60 (2.5%) had IAI-I. Blood transfusion was the most common intervention, followed by laparotomy. The study found similar sensitivity (97.5% for IAI and 100% for IAI-I) and NPV (99.3% for IAI and 100% for IAI-I). No patients with IAI-I were misclassified as very low risk, but 6 patients with IAI were misclassified as very low risk (5 solid organ injuries and 1 intra-abdominal vascular injury), and 3 of the 6 needed emergent surgical intervention for other injuries sustained at the same time. None of the intra-abdominal injuries required intervention.\n\nThe validation cohort was slightly older than the derivation cohort (mean age 9.4 years vs 7.8 years, respectively), with a slightly higher number of patients with IAI requiring ICU admission in the derivation dataset. The clinical prediction rule showed remarkably similar sensitivity and NPV between the two datasets.\n\nA 2025 study by[Frederick et al.](https://pubmed.ncbi.nlm.nih.gov/40170217/)compared the [PECARN IAI](nabda:calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm) rule and PedSRC rule. While both had similar NPV for intra-abdominal injuries requiring intervention, the PedSRC rule captured nearly all intra-abdominal injuries, even those that may not require intervention but may still be clinically significant.",
+  "more_info": "Interprétation :\n\n| Score PedSRC | Risque de lésion intra-abdominale* | Risque de lésion intra-abdominale nécessitant une intervention aiguë** |\n| --- | --- | --- |\n| 0 | 0,7 % | 0 % |\n| 1 | 4,5 % | 0,6 % |\n| 2 | 16,8 % | 4,8 % |\n| 3 | 37,8 % | 8,9 % |\n| ≥4 | 62,6 % | 15,2 % |\n\nD'après [Streck 2017](https://www.ncbi.nlm.nih.gov/pubmed/28130170).\n\n*Toute lésion des structures suivantes visible sur le scanner abdominal ou en peropératoire : rate, foie, rein, mésentère, duodénum, jéjunum, iléon, côlon, glande surrénale, pancréas, vaisseau intra-abdominal majeur, vessie, uretère, vésicule biliaire, ou aponévrose de la paroi abdominale.\n\n**Transfusion sanguine, laparoscopie ou laparotomie thérapeutique, angioembolisation, ou décès lié à l'IAI.",
+  "short_description": "Intra-abdominal lésion risque.",
+  "medium_description": "Identifies patients at very faible risque pour intra-abdominal lésion after traumatisme.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "AST >200 U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Traumatisme de la paroi abdominale, distension ou sensibilité à l'examen",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Radiographie thoracique anormale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Plainte de douleur abdominale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Amylase ou lipase anormales",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Streck CJ, Vogel AM, Zhang J, et al. Identifying Children at Very Low Risk for Blunt Intra-Abdominal Injury in Whom CT of the Abdomen Can Be Avoided Safely. J Am Coll Surg. 2017;224(4):449-458.e3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28130170",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Arbra CA, Vogel AM, Plumblee L, et al. External validation of a five-variable clinical prediction rule for identifying children at very low risk for intra-abdominal injury after blunt abdominal trauma. J Trauma Acute Care Surg. 2018;85(1):71-77.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29659473",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Frederick AB, Vogel AM, Williams RF, et al. Multicenter external validation of the Pediatric Emergency Care Applied Research Network rule to identify children at very low risk for intra-abdominal injury requiring acute intervention. J Trauma Acute Care Surg. 2025;98(6):966-972. doi:10.1097/TA.0000000000004597",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40170217/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm"
+  ],
+  "source_logic_hash": "49263c7e95ff79347e1eef14bdc6e335",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm",
+      "text": "PECARN IAI Algorithm"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10630,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.amylase"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

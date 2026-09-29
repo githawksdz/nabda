@@ -1,0 +1,250 @@
+{
+  "id": "calc.severe-community-acquired-pneumonia-scap-score",
+  "slug": "severe-community-acquired-pneumonia-scap-score",
+  "language": "en",
+  "title": "Score de pneumonie communautaire sévère (SCAP)",
+  "short_title": "Score SCAP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Severe Community-Acquired Pneumonia (SCAP) Score, SCAP score,Severe Community-Acquired Pneumonia Score, community acquired pneumonia, community-acquired pneumonia, SCAP diagnosis, CAP, severe pneumonia, severe pneumonia diagnosis, pneumonia score, severe pneumonia score, pneumonia severity, scap, coronaivirus, corona virus, covid-19, covid 19, covid19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| pH artériel <7,30 | Oui | 13 |\n| Non | 0 | |\n| Pression systolique <90 mmHg | Oui | 11 |\n| Non | 0 | |\n| Fréquence respiratoire >30/min | Oui | 9 |\n| Non | 0 | |\n| Urée sanguine (BUN) >30 mg/dL (>10,7 mmol/L) | Oui | 5 |\n| Non | 0 | |\n| Altération de l'état mental (p. ex. confusion) | Oui | 5 |\n| Non | 0 | |\n| PaO~2~ <54 mmHg (ou PaO~2~/FiO~2~ <250 mmHg) | Oui | 6 |\n| Non | 0 | |\n| Âge ≥80 ans | Oui | 5 |\n| Non | 0 | |\n| Radiographie multilobaire/bilatérale | Oui | 5 |\n| Non | 0 | |",
+  "how_to_use": {
+    "why": "Aide à la décision d'orientation (disposition) après un diagnostic de PAC aux urgences.",
+    "when": "Aux urgences, après le diagnostic d'une pneumonie communautaire, le calcul du score SCAP peut aider à prédire la probabilité de « PAC sévère », définie par des évènements indésirables incluant la mortalité hospitalière, le choc septique et/ou la nécessité de ventilation mécanique.",
+    "pearls": "- Le risque élevé de SCAP a montré des taux d'évènements indésirables plus élevés que le risque élevé du [PSI](nabda:calc.psi-port-score-pneumonia-severity-index-cap) et du [CURB-65](nabda:calc.curb-65-score-pneumonia-severity), ce qui peut aider à identifier les patients ayant le plus besoin de soins intensifs avec une spécificité plus élevée ([Yandiola 2009](https://www.ncbi.nlm.nih.gov/pubmed/19141524)).\n- Toutes les validations ont été réalisées dans le même réseau hospitalier espagnol, par des chercheurs du même hôpital ; les résultats peuvent donc ne pas être généralisables et une validation externe robuste reste nécessaire.\n- Si appliqué à un patient suspect de COVID-19, garder à l'esprit que l'âge présente un odds ratio bien plus important pour augmenter le risque de mortalité chez les patients COVID-19 que chez les patients atteints de pneumonie virale autre."
+  },
+  "next_steps": {
+    "advice": "Le seuil de décision d'orientation peut varier dans des situations de ressources limitées (comme l'épidémie de COVID-19).",
+    "critical_actions": "Si appliqué à un patient suspect de COVID-19, utiliser ce score en association avec la suspicion clinique et les facteurs de risque — en particulier l'âge avancé et les comorbidités.",
+    "management": ""
+  },
+  "evidence": "The[initial paper](https://www.ncbi.nlm.nih.gov/pubmed/16973986)attempted to derive (N=1,057), internally validate (N=719), and externally validate (N=1,121) the SCAP simultaneously. However, the external validation was taken from a cohort of patients from four other hospitals in the same medical network in Spain. An[external validation](https://www.ncbi.nlm.nih.gov/pubmed/19141524)was done by a separate set of researchers in the same medical center.",
+  "more_info": "| Score SCAP* | Risque de SCAP** |\n| --- | --- |\n| 0 | 0,27-3,43 % |\n| 1-9 | 0,66-3,25 % |\n| 10-19 | 9,23-11,24 % |\n| 20-29 | 36,62-41,82 % |\n| ≥30 | 50 % |\n\n*Les patients avec un score ≥10 sont classés comme ayant une pneumonie communautaire sévère et une admission en soins intensifs, un lit surveillé et/ou une intervention immédiate est recommandée.\n\n**Défini comme décès hospitalier, choc septique et/ou nécessité de ventilation mécanique.",
+  "short_description": "Risque de pneumonie communautaire sévère.",
+  "medium_description": "Predicts risque de adverse outcomes dans CAP patients dans ED.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "pH artériel <7.30",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Pression systolique <90 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Fréquence respiratoire >30 breaths/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "BUN >30 mg/dL (>10,7 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Altération de l'état de conscience",
+      "tips": "P. ex. confusion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "PaO~2~<54 mmHg (ou PaO~2~/FiO~2~<250 mmHg)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seven",
+      "label": "Âge ≥80 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eight",
+      "label": "Radiographie multilobaire/bilatérale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "España PP, Capelastegui A, Gorordo I, et al. Development and validation of a clinical prediction rule for severe community-acquired pneumonia. Am J Respir Crit Care Med. 2006;174(11):1249-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16973986",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yandiola PPE, Capelastegui A, Quintana J, et al. Prospective comparison of severity scores for predicting clinically relevant outcomes for patients hospitalized with community-acquired pneumonia. Chest. 2009;135(6):1572-1579.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19141524",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.psi-port-score-pneumonia-severity-index-cap"
+  ],
+  "source_logic_hash": "02f7ae2957d8e1f02323af4296142267",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.psi-port-score-pneumonia-severity-index-cap",
+      "text": "PSI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10280,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

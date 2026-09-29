@@ -1,0 +1,241 @@
+{
+  "id": "calc.grace-acs-risk-mortality-calculator",
+  "slug": "grace-acs-risk-mortality-calculator",
+  "language": "en",
+  "title": "GRACE ACS risque et mortalité calculateur",
+  "short_title": "Score GRACE ACS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "MI",
+    "ACS risk",
+    "ACS",
+    "chest pain"
+  ],
+  "dosing": false,
+  "formula": "Nomogramme, comme détaillé sous [8. Modèle de Fox pour le décès entre l’admission hospitalière et 6 mois plus tard](https://www.outcomes-umassmed.org/grace/files/GRACE_RiskModel_Coefficients.pdf).",
+  "how_to_use": {
+    "why": "- This score is an extensively validated and guideline-endorsed tool for risk stratification in acute coronary syndromes.\n- By combining readily available clinical, ECG, and laboratory data, it provides a reliable estimate of short- and long-term mortality, helping clinicians identify high-risk patients who benefit most from early invasive strategies and intensified medical therapy.\n- Additionally, it supports meaningful prognostic discussions with patients and families, promotes standardized decision-making across providers, and aligns care with evidence-based recommendations.\n- Consistent performance across large, diverse international cohorts makes the tool valuable for improving both clinical outcomes and communication in the care of ACS patients.",
+    "when": "- Appliquer aux patients présentant un ACS confirmé pour estimer le risque de mortalité, guider le choix du moment des stratégies invasives et étayer les discussions pronostiques.\n- Ne doit pas être utilisé chez les patients présentant une douleur thoracique non différenciée avant que le diagnostic d’ACS ne soit posé.",
+    "pearls": "- This is a widely validated, guideline-endorsed prognostic model.\n- GRACE 2.0 improves accuracy with non-linear modeling and extended (1–3 year) mortality predictions.\n- Uses readily available clinical, ECG, and lab variables.\n- Has strong discrimination across multiple populations (>20,000 patients in external validations).\n- Helps guide timing of invasive strategies.\n- Very useful for structured communication of risk with patients/families.\n- Prognostic only and is not designed for diagnosing ACS or undifferentiated chest pain.\n- Use of this tool should not delay time-sensitive reperfusion in STEMI.\n- Calibration can drift over time or vary by setting; local validation/recalibration may be required.\n- May over- or underestimate risk in elderly/frail patients; does not include frailty or comorbidity burden.\n- Omits social determinants (e.g., socioeconomic deprivation) that might influence outcomes.\n- Requires [Killip class](nabda:calc.killip-classification-heart-failure) and creatinine; missing or subjective inputs can affect accuracy."
+  },
+  "next_steps": {
+    "advice": "- Le score GRACE est un outil pronostique d'aide à la décision ; l'utiliser conjointement au jugement clinique, à l'ECG, à la troponine et à l'évaluation de la stabilité du patient.\n- Discuter des résultats avec les patients et leurs proches afin de guider les attentes et les décisions partagées.",
+    "critical_actions": "- Mortality estimate increases as the GRACE score increases.\n- Results can be used as one factor in determining a course of care and may assist in communication with the patient about their risk; it should not be used in isolation when determining a treatment plan.\n- Ensure high-risk patients have guideline-directed care during their hospitalization, as well as appropriate specialist and primary care follow-up upon discharge.",
+    "management": "- The[ESC 2023](https://pubmed.ncbi.nlm.nih.gov/37740496/)and[ACC/AHA 2025](https://pubmed.ncbi.nlm.nih.gov/40014670/)acute coronary syndrome guidelines support the use of the GRACE score to identify high-risk patients with acute coronary syndrome for risk stratification to early invasive strategy (score >140).\n- In patients with STEMI, results should not delay an invasive strategy but can be used to provide prognostic information."
+  },
+  "evidence": "The GRACE 2.0 score is a well-validated, guideline-endorsed tool for risk stratification in acute coronary syndromes, with strong discrimination (area under the curve [AUC] ≈0.8) and clear clinical utility in guiding invasive strategy timing and prognostic discussions.\n\nDerived from a large, multinational registry (n=21,688) and externally validated in diverse populations, it demonstrates broad applicability; however, calibration may drift over time and across healthcare systems, necessitating local validation and potential recalibration.\n\nStrengths include clinical relevance, feasibility, and ease of use. Limitations include reliance on subjective inputs (e.g., [Killip class](nabda:calc.killip-classification-heart-failure) ), lack of frailty and socioeconomic factors, and possible over- or underestimation of risk in elderly or socioeconomically deprived groups.\n\nOverall, GRACE 2.0 is a robust prognostic aid to inform management and communication in ACS, but it should always be used alongside clinical judgment, local validation, and consideration of patient context.",
+  "more_info": "Interprétation du score :\n\n| Plage du score GRACE | Risque de mortalité |\n| --- | --- |\n| 0-87 | 0-2 % |\n| 88-128 | 3-10 % |\n| 129-149 | 10-20 % |\n| 150-173 | 20-30 % |\n| 174-182 | 40 % |\n| 183-190 | 50 % |\n| 191-199 | 60 % |\n| 200-207 | 70 % |\n| 208-218 | 80 % |\n| 219-284 | 90 % |\n| ≥285 | 99 % |",
+  "short_description": "Mortalité dans ACS admissions.",
+  "medium_description": "Estimates admission pour 6 month mortalité pour patients avec aigu coronary syndrome.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque/pulse",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "systolic_blood_pressure",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "cardiac_arrest",
+      "label": "Arrêt cardiaque à l'admission",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "st_segment_deviation",
+      "label": "Déviation du segment ST à l’EC",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "elevated_cardiac_enzymes",
+      "label": "Enzymes cardiaques anormales",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "signs_symptoms",
+      "label": "[Classe de Killip](nabda:calc.killip-classification-heart-failure) (signes/symptômes)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No CHF",
+          "value": 1
+        },
+        {
+          "label": "Crépitants et/ou turgescence jugulaire (JVD)",
+          "value": 2
+        },
+        {
+          "label": "Pulmonary œdème",
+          "value": 3
+        },
+        {
+          "label": "Choc cardiogénique",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Byrne RA, Rossello X, Coughlan JJ, et al. 2023 ESC Guidelines for the management of acute coronary syndromes. Eur Heart J. 2023;44(38):3720-3826. doi:10.1093/eurheartj/ehad191",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37622654/",
+      "kind": "international"
+    },
+    {
+      "text": "Rao SV, O’Donoghue ML, Ruel M, et al. 2025 acc/aha/acep/naemsp/scai guideline for the management of patients with acute coronary syndromes: a report of the american college of cardiology/american heart association joint committee on clinical practice guidelines. Circulation. 2025;151(13):e771-e862. doi:10.1161/CIR.0000000000001309",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40014670/",
+      "kind": "international"
+    },
+    {
+      "text": "Fox KA, Dabbous OH, Goldberg RJ, Pieper KS, Eagle KA, Van de Werf F, Avezum A,Goodman SG, Flather MD, Anderson FA Jr, Granger CB. Prediction of risk of death and myocardial infarction in the six months after presentation with acute coronary syndrome: prospective multinational observational study (GRACE). BMJ. 2006 Nov 25;333(7578):1091. Epub 2006 Oct 10. PubMed PMID: 17032691; PubMed Central PMCID: PMC1661748.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17032691",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fox KA, Fitzgerald G, Puymirat E, et al. Should patients with acute coronary disease be stratified for management according to their risk? Derivation, external validation and outcomes using the updated GRACE risk score. BMJ Open. 2014;4(2):e004425.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24561498",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Anderson F, FitzGerald G. Methods and formulas used to calculate the GRACE Risk Scores for patients presenting to hospital with an acute coronary syndrome: Center for Outcomes Research, University of Massachusetts Medical School.",
+      "href": "https://www.outcomes-umassmed.org/grace/files/GRACE_RiskModel_Coefficients.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Jobs A, Mehta SR, Montalescot G, et al. Optimal timing of an invasive strategy in patients with non-ST-elevation acute coronary syndrome: a meta-analysis of randomised trials. Lancet. 2017;390(10096):737-746. doi:10.1016/S0140-6736(17)31490-3",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28778541/",
+      "kind": "other"
+    },
+    {
+      "text": "Elbarouni B, Goodman SG, et al. Validation of the Global Registry of Acute Coronary Event (GRACE) risk score for in-hospital mortality in patients with acute coronary syndrome in Canada. Am Heart J. 2009 Sep;158(3):392-9. doi: 10.1016/j.ahj.2009.06.010.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19699862",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Huang W, FitzGerald G, Goldberg RJ, et al. Performance of the grace risk score 2. 0 simplified algorithm for predicting 1-year death after hospitalization for an acute coronary syndrome in a contemporary multiracial cohort. Am J Cardiol. 2016;118(8):1105-1110. doi:10.1016/j.amjcard.2016.07.029.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27561191/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van der Sangen NMR, Azzahhafi J, Chan Pin Yin DRPP, et al. External validation of the GRACE risk score and the risk-treatment paradox in patients with acute coronary syndrome. Open Heart. 2022;9(1):e001984. doi:10.1136/openhrt-2022-001984   ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35354660/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.crusade-score-post-mi-bleeding-risk",
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.killip-classification-heart-failure"
+  ],
+  "source_logic_hash": "98b6565ad4aee4b0adc57e45ed1e6ea2",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.killip-classification-heart-failure",
+      "text": "Killip class"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1099,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

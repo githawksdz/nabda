@@ -1,0 +1,192 @@
+{
+  "id": "calc.resuscitation-using-ecpr-during-hospital-cardiac-arrest-rescue-ihca",
+  "slug": "resuscitation-using-ecpr-during-hospital-cardiac-arrest-rescue-ihca",
+  "language": "en",
+  "title": "Resuscitation Using ECPR During dans-hôpital Cardiac Arrest (RESCUE-IHCA)",
+  "short_title": "RESCUE-IHCA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dizziness",
+    "Fatigue",
+    "Nausea",
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Resuscitation Using ECPR During In-Hospital Cardiac Arrest (RESCUE-IHCA)",
+    "ECPR",
+    "cardiac arrest",
+    "rescue-ihca",
+    "rescue",
+    "ihca",
+    "in-hospital cardiac arrest",
+    "resuscitation",
+    "extracorporeal cardiopulmonary resuscitation",
+    "rescueihca",
+    "rescue ihca"
+  ],
+  "dosing": false,
+  "formula": "The RESCUE-IHCA Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤20 | 2 |\n| Each additional 10 years | 2 | |\n| Pre-existing renal insufficiency | No | 0 |\n| Yes | 8 | |\n| Time of day | 7 AM - 2:59 PM | 0 |\n| 3 PM - 10:59 PM | 4 | |\n| 11 PM - 6:59 AM | 13 | |\n| Illness category | Medical cardiac | -2 |\n| Surgical noncardiac | -6 | |\n| Surgical cardiac | -11 | |\n| Presenting rhythm | Pulseless electrical activity | -1 |\n| Pulseless ventricular tachycardia | -5 | |\n| Palpable pulse initially | -5 | |\n| Ventricular fibrillation | -8 | |\n| Duration of cardiac arrest, min | Each 10 minutes | 2 |\n\nRisk is calculated using the Bayesian model from[Tonna 2022](https://pubmed.ncbi.nlm.nih.gov/35033471/).",
+  "how_to_use": {
+    "why": "L'utilisation de l'ECPR connaît une croissance exponentielle, mais les taux de survie varient considérablement selon les populations, avec peu de données pour guider le pronostic des patients.",
+    "when": "Patients présentant un arrêt cardiaque intrahospitalier (IHCA) recevant une réanimation cardiopulmonaire extracorporelle (ECPR).",
+    "pearls": "- Prédit la mortalité intrahospitalière mais ne prédit pas la survie sans séquelle neurologique (bien que 75 % de la cohorte de dérivation aient eu un CPC 1-2 à la sortie).\n- Ne nécessite pas de valeurs biologiques pour le calcul ; requiert uniquement les caractéristiques du patient et de l'arrêt cardiaque.\n- À appliquer uniquement aux patients recevant une ECPR — et non aux candidats chez qui une ECPR est envisagée.\n- Diffère de la cohorte du score SAVE (choc cardiogénique réfractaire), car l'ECPR désigne l'ECMO pendant la réanimation cardiopulmonaire (c.-à-d. en l'absence de pouls)."
+  },
+  "next_steps": {
+    "advice": "- Destiné à la prédiction de survie une fois le patient mis sous ECMO pendant l'arrêt cardiaque — et non à guider la décision de mise sous ECMO pour un IHCA.\n- Le RESCUE-IHCA a été dérivé à partir d'une cohorte IHCA et validé sur une population IHCA.",
+    "critical_actions": "Le score RESCUE-IHCA utilise 6 caractéristiques du patient et de l'arrêt cardiaque pour prédire la probabilité de décès après un IHCA et une ECPR ; toutefois, il ne prend pas en compte la prise de décision clinique globale ni les variables liées au procédé (p. ex., l'habileté de l'opérateur de cannulation).",
+    "management": "- Bien qu'aucune recommandation n'intègre le score RESCUE-IHCA, ce score peut aider les cliniciens à prédire la mortalité intrahospitalière une fois le patient mis sous ECMO pendant la RCP.\n- Des scores similaires (p. ex. le score SAVE) excluaient l'ECMO dans les populations de RCP."
+  },
+  "evidence": "The RESCUE-IHCA score was derived by[Tonna et al.](https://pubmed.ncbi.nlm.nih.gov/35033471/)(2022) in an observational cohort study of 1,075 patients in the Get With The Guidelines-Resuscitation registry who received ECMO for in-hospital cardiac arrest and found to have an AUC of 0.72 for in-hospital mortality. In the same study, subsequent validation was performed in 297 patients from the Extracorporeal Life Support Organization (ELSO) registry (an IHCA population) with similar findings of AUC 0.68.",
+  "more_info": "",
+  "short_description": "ECPR mortalité.",
+  "medium_description": "Predicts probabilité de death pour adulte extracorporeal cardiopulmonary resuscitation (ECPR).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "renal",
+      "label": "Insuffisance rénale préexistante",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "time",
+      "label": "Moment de la journée",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "7 AM - 2:59 PM",
+          "value": 0
+        },
+        {
+          "label": "3 PM - 10:59 PM",
+          "value": 4
+        },
+        {
+          "label": "11 PM - 6:59 AM",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "illness",
+      "label": "Catégorie de la maladie",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Chirurgicale cardiaque",
+          "value": -11
+        },
+        {
+          "label": "Chirurgicale non cardiaque",
+          "value": -6
+        },
+        {
+          "label": "Cardiaque médicale",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rhythm",
+      "label": "Rythme initial",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Fibrillation ventriculaire",
+          "value": -8
+        },
+        {
+          "label": "Tachycardie ventriculaire sans pouls ou pouls palpable initialement",
+          "value": -5
+        },
+        {
+          "label": "Activité électrique sans pouls",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "duration",
+      "label": "Durée de l'arrêt cardiaque, min",
+      "optional": false,
+      "unit": "min",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Tonna JE, Selzman CH, Girotra S, et al. Resuscitation using ecpr during in-hospital cardiac arrest (Rescue-ihca) mortality prediction score and external validation. JACC Cardiovasc Interv. 2022;15(3):237-247.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35033471/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tonna JE, Selzman CH, Girotra S, et al. Resuscitation using ecpr during in-hospital cardiac arrest (Rescue-ihca) mortality prediction score and external validation. JACC Cardiovasc Interv. 2022;15(3):237-247.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35033471/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cahp-cardiac-arrest-hospital-prognosis-score",
+    "calc.cart-cardiac-arrest-risk-triage-score",
+    "calc.hypothermia-outcome-prediction-after-ecls-hope-score"
+  ],
+  "source_logic_hash": "6c0990d950bad66ea9da0671d7f35fb6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10431,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

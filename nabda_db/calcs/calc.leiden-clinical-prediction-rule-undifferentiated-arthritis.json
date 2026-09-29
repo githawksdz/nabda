@@ -1,0 +1,292 @@
+{
+  "id": "calc.leiden-clinical-prediction-rule-undifferentiated-arthritis",
+  "slug": "leiden-clinical-prediction-rule-undifferentiated-arthritis",
+  "language": "en",
+  "title": "Leiden clinique prédiction règle pour Undifferentiated Arthritis",
+  "short_title": "Leiden règle pour Arthritis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Douleur chronique",
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Douleur des extrémités",
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "Arthritis",
+    "undifferentiated arthritis",
+    "rheumatoid arthritis",
+    "Leiden Rule"
+  ],
+  "dosing": false,
+  "formula": "Age ×notionvc: c2d4aeb5-588c-456b-b56e-c59d32fd70060.02 + sum of all other selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | Multiply by 0.02 | |\n| Sex | Male | 0 |\n| Female | 1 | |\n| Distribution of involved joints | Small joints in hands/feet | 0.5 |\n| Upper extremities only | 1 | |\n| Upper and lower extremities | 1.5 | |\n| Other | 0 | |\n| Symmetric distribution | No | 0 |\n| Yes | 0.5 | |\n| Duration of morning stiffness | <30 min | 0 |\n| 30-59 min | 0.5 | |\n| ≥60 min | 1 | |\n| Number of tender joints (out of 68) | <4 | 0 |\n| 4-10 | 0.5 | |\n| ≥11 | 1 | |\n| Number of swollen joints (out of 66) | <4 | 0 |\n| 4-10 | 0.5 | |\n| ≥11 | 1 | |\n| C-reactive protein level, mg/L | <5 | 0 |\n| 5-50 | 0.5 | |\n| ≥51 | 1.5 | |\n| Rheumatoid factor | Negative | 0 |\n| Positive | 1 | |\n| Anti-CCP antibodies | Negative | 0 |\n| Positive | 2 | |",
+  "how_to_use": {
+    "why": "Estime la probabilité individuelle à 1 an qu’une arthrite indifférenciée évolue vers une PR persistante/érosive, aidant les cliniciens à peser les bénéfices d’une initiation précoce des DMARD contre les risques de surtraitement.",
+    "when": "À appliquer chez les adultes présentant une synovite clinique d'apparition récente qui ne remplissent pas encore les critères de classification d'une maladie rhumatologique spécifique, y compris la polyarthrite rhumatoïde (RA).",
+    "pearls": "- Derived and chiefly validated in Dutch early-arthritis cohorts; calibration may drift in populations with different seropositive rates or disease spectra.\n- Obtain laboratory studies (RF, anti-CCP, CRP) and joint counts before starting DMARDs or glucocorticoids to preserve accuracy.\n- A score ≥8 carries a 97% risk of RA within 6–12 months, whereas ≤6 yields a 70%–90 % negative predictive value for non-progression; reported AUC ranges 0.87–0.97."
+  },
+  "next_steps": {
+    "advice": "Utilisez le résultat pour étayer, et non remplacer, une évaluation clinique complète et un jugement clinique solide.",
+    "critical_actions": "",
+    "management": "- **Low risk (score ≤6):**\n\n - Provide symptomatic care (e.g., NSAIDs, brief steroid taper if needed).\n - Re-evaluate regularly; re-score if new joint involvement or laboratory abnormalities emerge.\n- **Indeterminate risk (score 6.1–7.9):**\n\n - Follow closely with repeat assessments.\n - Consider early rheumatology referral and discussion of DMARD therapy.\n- **High risk (score ≥8.0):** Refer to rheumatology for DMARD therapy and further management."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Score | Risk Group* |\n| --- | --- |\n| ≤6.0 | Low |\n| >6.0 and <8.0 | Indeterminate |\n| ≥8.0 | High |\n\n*In the validation study including 3 separate cohorts, combined negative predictive value for developing rheumatoid arthritis was 83% for scores ≤6.0, and combined positive predictive value for scores ≥8.0 was 97%.",
+  "short_description": "Diagnostic de polyarthrite rhumatoïde.",
+  "medium_description": "Diagnoses rheumatoid arthritis chez les patients avec recent-onset undifferentiated arthritis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "joints",
+      "label": "Distribution des articulations atteintes",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Small joints dans hands/feet",
+          "value": 0.5
+        },
+        {
+          "label": "Membres supérieurs uniquement",
+          "value": 1
+        },
+        {
+          "label": "Membres supérieurs et inférieurs",
+          "value": 1.5
+        },
+        {
+          "label": "Autre",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "symmetric",
+      "label": "Distribution symétrique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stiffness",
+      "label": "Durée de la raideur matinale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 30 min",
+          "value": 0
+        },
+        {
+          "label": "30-59 min",
+          "value": 0.5
+        },
+        {
+          "label": "≥60 min",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tender",
+      "label": "Nombre d'articulations douloureuses (sur 68)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 4",
+          "value": 0
+        },
+        {
+          "label": "4-10",
+          "value": 0.5
+        },
+        {
+          "label": "≥11",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "swollen",
+      "label": "Nombre d'articulations gonflées (sur 66)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 4",
+          "value": 0
+        },
+        {
+          "label": "4-10",
+          "value": 0.5
+        },
+        {
+          "label": "≥11",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "Taux de protéine C-réactive, mg/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 5",
+          "value": 0
+        },
+        {
+          "label": "5-50",
+          "value": 0.5
+        },
+        {
+          "label": "≥51",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rf",
+      "label": "Facteur rhumatoïde",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ccp",
+      "label": "Anticorps anti-CCP",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Van der helm-van mil AH, Le cessie S, Van dongen H, Breedveld FC, Toes RE, Huizinga TW. A prediction rule for disease outcome in patients with recent-onset undifferentiated arthritis: how to guide individual treatment decisions. Arthritis Rheum. 2007;56(2):433-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17265478",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Van der helm-van mil AH, Detert J, Le cessie S, et al. Validation of a prediction rule for disease outcome in patients with recent-onset undifferentiated arthritis: moving toward individualized treatment decision-making. Arthritis Rheum. 2008;58(8):2241-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18668546",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mcnally E, Keogh C, Galvin R, Fahey T. Diagnostic accuracy of a clinical prediction rule (CPR) for identifying patients with recent-onset undifferentiated arthritis who are at a high risk of developing rheumatoid arthritis: a systematic review and meta-analysis. Semin Arthritis Rheum. 2014;43(4):498-507.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0049017213001728",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.2010-acr-eular-classification-criteria-rheumatoid-arthritis-ra",
+    "calc.age-adjusted-esr-crp-rheumatoid-arthritis",
+    "calc.2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr"
+  ],
+  "source_logic_hash": "6c6b5278e4007dae3a2714edd00a0cb8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10023,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

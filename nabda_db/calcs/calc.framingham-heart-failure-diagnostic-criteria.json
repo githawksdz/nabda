@@ -1,0 +1,358 @@
+{
+  "id": "calc.framingham-heart-failure-diagnostic-criteria",
+  "slug": "framingham-heart-failure-diagnostic-criteria",
+  "language": "fr",
+  "title": "Framingham insuffisance cardiaque Diagnostic critères",
+  "short_title": "Framingham HF critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Heart failure",
+    "congestive heart failure",
+    "HF",
+    "CHF",
+    "Framingham"
+  ],
+  "dosing": false,
+  "formula": "Le diagnostic d'IC nécessite 2 critères majeurs OU 1 critère majeur et 2 critères mineurs :\n\n**Critères majeurs**\n\n- Œdème pulmonaire aigu.\n- Cardiomégalie.\n- Reflux hépato-jugulaire.\n- Turgescence des veines du cou.\n- Dyspnée paroxystique nocturne ou orthopnée.\n- Râles pulmonaires.\n- Troisième bruit cardiaque (rythme de galop S3).\n- Perte de poids >4.5 kg en 5 jours en réponse au traitement.\n\n**Critères mineurs**\n\n- Œdème des chevilles.\n- Dyspnée à l'effort.\n- Hépatomégalie.\n- Toux nocturne.\n- Épanchement pleural.\n- Tachycardie (FC >120)",
+  "how_to_use": {
+    "why": "- L'insuffisance cardiaque est un diagnostic clinique. Les critères diagnostiques d'IC de Framingham constituent un ensemble de critères acceptable pour poser le diagnostic.\n- D'autres critères diagnostiques existent, notamment la classification de la New York Heart Association (NYHA).",
+    "when": "Patients présentant des signes et symptômes d'insuffisance cardiaque (IC).",
+    "pearls": "Les critères mineurs ne doivent être retenus que s'ils ne peuvent pas être expliqués par une autre comorbidité, par ex. une dyspnée à l'effort secondaire à une bronchopneumopathie chronique obstructive."
+  },
+  "next_steps": {
+    "advice": "Traiter le patient pour une insuffisance cardiaque. Envisager une orientation vers un cardiologue.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Les critères diagnostiques d'insuffisance cardiaque de Framingham ont été élaborés en 1971 à partir des données de la Framingham Heart Study, une étude de cohorte prospective à long terme menée auprès de patients à Framingham, Massachusetts.",
+  "more_info": "",
+  "short_description": "Diagnostique une insuffisance cardiaque.",
+  "medium_description": "Diagnoses insuffisance cardiaque basé sur major et minor critères.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ape",
+      "label": "Aigu pulmonary œdème",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiomegaly",
+      "label": "Cardiomegaly",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hepjug",
+      "label": "Reflux hépato-jugulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nvd",
+      "label": "Turgescence des veines du cou",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dysporth",
+      "label": "Dyspnée paroxystique nocturne ou orthopnée",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rales",
+      "label": "Râles pulmonaires",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "s3",
+      "label": "Troisième bruit cardiaque (rythme de galop S3)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weightloss",
+      "label": "Perte de poids >4.5 kg dans 5 days dans response pour traitement",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "edema",
+      "label": "Ankle œdème",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dyspexert",
+      "label": "Dyspnée à l'effort",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hepatomegaly",
+      "label": "Hepatomegaly",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "noccough",
+      "label": "Toux nocturne",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pleff",
+      "label": "Épanchement pleural",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "tachy",
+      "label": "Tachycardie (FC >120)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McKee PA, Castelli WP, McNamara PM, Kannel WB. The natural history of congestive heart failure: the Framingham study. N Engl J Med. 1971 Dec 23;285(26):1441-6.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJM197112232852601",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure",
+    "calc.seattle-heart-failure-model",
+    "calc.maggic-risk-calculator-heart-failure"
+  ],
+  "source_logic_hash": "6080cd93255e556790af2e916426f3f8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3800,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

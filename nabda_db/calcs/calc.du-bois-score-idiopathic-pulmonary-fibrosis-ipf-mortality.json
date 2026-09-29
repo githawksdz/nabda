@@ -1,0 +1,184 @@
+{
+  "id": "calc.du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality",
+  "slug": "du-bois-score-idiopathic-pulmonary-fibrosis-ipf-mortality",
+  "language": "fr",
+  "title": "Du Bois score pour Idiopathic Pulmonary Fibrosis (IPF) mortalité",
+  "short_title": "Du Bois score pour IPF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "soins-palliatifs",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Fibrose pulmonaire idiopathique"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "dubois",
+    "mortality",
+    "ipf"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Outil simple, validé en interne, pour déterminer le pronostic de l’IPF et guider la prise en charge clinique à partir de données longitudinales.",
+    "when": "Pronostic à 1 an des patients atteints de fibrose pulmonaire idiopathique (IPF) nécessitant une transplantation pulmonaire.",
+    "pearls": "Le score de du Bois est plus spécifique, mais moins sensible, comparé au [GAP Index](nabda:calc.gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality) pour prédire la mortalité."
+  },
+  "next_steps": {
+    "advice": "Des scores plus élevés correspondent à un besoin accru de transplantation et d’autres traitements.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Score de risque total | Probabilité de décès attendue à 1 an |\n| --- | --- |\n| 0–4 | <2% |\n| 8–14 | 2-5% |\n| 16–21 | 5–10% |\n| 22–29 | 10–20% |\n| 30–33 | 20–30% |\n| 34–37 | 30–40% |\n| 38–40 | 40–50% |\n| 41–43 | 50–60% |\n| 44–45 | 60–70% |\n| 47–49 | 70–80% |\n| >50 | >80% |",
+  "short_description": "Risque de mortalité dans IPF.",
+  "medium_description": "Determines 1-year mortalité dans IPF patients using PFT et clinique indicators.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 60 ans",
+          "value": 0
+        },
+        {
+          "label": "60-69 ans",
+          "value": 4
+        },
+        {
+          "label": "≥ 70 ans",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hosp",
+      "label": "Respiratory hospitalization dans past 6 months",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fvc",
+      "label": "Predicted initial forced vital capacity (FVC)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥80%",
+          "value": 0
+        },
+        {
+          "label": "66-79%",
+          "value": 8
+        },
+        {
+          "label": "51-65%",
+          "value": 13
+        },
+        {
+          "label": "≤50%",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fvc24",
+      "label": "24-Week change dans predicted FVC",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤-10%",
+          "value": 21
+        },
+        {
+          "label": "-5% - -9.9%",
+          "value": 10
+        },
+        {
+          "label": "≥-4.9%",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "du Bois RM, Weycker D, Albera C, Bradford WZ, Costabel U, Kartashov A, et al. Ascertainment of individual risk of mortality for patients with idiopathic pulmonary fibrosis. Am J Respir Crit Care Med.2011;184:459–66. doi: 10.1164/rccm.201011-1790OC.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21616999",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kolb M, Collard HR. Staging of idiopathic pulmonary fibrosis: past, present and future Eur Respir Rev 2014; 23: 220–224.",
+      "href": "https://err.ersjournals.com/content/errev/23/132/220.full.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Wilkie MEM, Chalmers JD, Smith RP, Schembri S. Asthma outcomes: P134 Comparison of Two Prognostic Tools For Identifying High Risk Patients with Idiopathic Pulmonary Fibrosis. Thorax 2012;67:Suppl 2 A120 doi:10.1136/thoraxjnl-2012-202678.417",
+      "href": "https://thorax.bmj.com/content/67/Suppl_2/A120.1",
+      "kind": "other"
+    },
+    {
+      "text": "du Bois RM, et. al. Forced Vital Capacity in Patients with Idiopathic Pulmonary Fibrosis. American Journal of Respiratory and Critical Care Medicine 2011 184:12, 1382-1389.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21940789",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality",
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.noninvasive-ventilation-outcomes-nivo-score"
+  ],
+  "source_logic_hash": "4db1827b364463f85dcab7a5548eaed1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality",
+      "text": "GAP Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2156,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

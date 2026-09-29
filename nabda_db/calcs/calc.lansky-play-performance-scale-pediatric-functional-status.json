@@ -1,0 +1,142 @@
+{
+  "id": "calc.lansky-play-performance-scale-pediatric-functional-status",
+  "slug": "lansky-play-performance-scale-pediatric-functional-status",
+  "language": "en",
+  "title": "Lansky Play-Performance échelle pour pédiatrique Functional Status",
+  "short_title": "Échelle de Lansky",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "pediatrie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "peds performance",
+    "peds",
+    "play",
+    "ability",
+    "activity",
+    "chemo",
+    "chemotherapy",
+    "cancer"
+  ],
+  "dosing": false,
+  "formula": "| Criteria | Score | Description |\n| --- | --- | --- |\n| Fully active, normal. | 100 | Able to carry on normal activity; no special care is needed. |\n| Minor restrictions in strenuous physical activity. | 90 | |\n| Active, but gets tired more quickly. | 80 | |\n| Greater restriction of play and less time spent in play activity. | 70 | Mild to moderate restriction. |\n| Up and around, but active play minimal; keeps busy by being involved in quieter activities. | 60 | |\n| Lying around much of the day, but gets dressed; no active playing participates in all quiet play and activities. | 50 | |\n| Mainly in bed; participates in quiet activities. | 40 | Moderate to severe restriction. |\n| Bedbound; needing assistance even for quiet play. | 30 | |\n| Sleeping often; play entirely limited to very passive activities. | 20 | |\n| Doesn't play; does not get out of bed. | 10 | |\n| Unresponsive. | 0 | |",
+  "how_to_use": {
+    "why": "Le statut de performance chez l’adulte est fortement corrélé à la durée de survie et au besoin de services à domicile. Il peut également aider à prédire la tolérance aux traitements. Cela peut aussi s’appliquer aux enfants.",
+    "when": "Pediatric cancer patients — or possibly other children with serious chronic or life-threatening diseases.",
+    "pearls": "- L’échelle Lansky Play-Performance Scale offre une méthode accessible pour décrire le statut fonctionnel chez l’enfant.\n- Elle a été dérivée et validée en interne chez des enfants atteints de cancer afin d’évaluer la réponse aux traitements et le statut global."
+  },
+  "next_steps": {
+    "advice": "Quantifying functional status is useful in all facets of patient care and may improve understanding of patient needs and abilities, as well as prognosis.",
+    "critical_actions": "L’échelle de Lansky et les autres échelles de performance devraient être utilisées dans l’",
+    "management": "We are unaware of validated management algorithms using the Lansky Scale."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Child activity évaluation pour serious maladie.",
+  "medium_description": "Uses parent description de child’s activity pour assess ability et response pour traitement.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "lansky",
+      "label": "Description du patient",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Totalement actif, normal",
+          "value": 100
+        },
+        {
+          "label": "Minor restrictions dans strenuous physical activity",
+          "value": 90
+        },
+        {
+          "label": "Actif, mais se fatigue plus rapidement",
+          "value": 80
+        },
+        {
+          "label": "Greater restriction de play et less time spent dans play activity",
+          "value": 70
+        },
+        {
+          "label": "Up et around, but active play minimal; keeps busy par being involved dans quieter activities",
+          "value": 60
+        },
+        {
+          "label": "Lying around much de day, but gets dressed; no active playing participates dans all quiet play et activities",
+          "value": 50
+        },
+        {
+          "label": "Principalement au lit ; participe à des activités calmes",
+          "value": 40
+        },
+        {
+          "label": "Alité ; nécessitant une aide même pour des activités calmes.",
+          "value": 30
+        },
+        {
+          "label": "Sleeping often; play entirely limited pour very passive activities",
+          "value": 20
+        },
+        {
+          "label": "Doesn't play; ne... pas get out de bed",
+          "value": 10
+        },
+        {
+          "label": "Aucune réponse",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lansky DA, List MA, Lansky LL, Ritter-Sterr C, Miller DR (1987). The measurement of performance in childhood cancer patients. Cancer 60 (7): 1651–6.doi:10.1002/1097-0142(19871001)60:73.0.CO;2-J. PMID 3621134.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3621134",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klaasen RJ, et. al. Evaluating the Ability to Detect Change of Health-Related Quality of Life in Children With Hodgkin Disease. Cancer 2010;116:1608–14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20143448",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.karnofsky-performance-status-scale",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+    "calc.common-terminology-criteria-adverse-events-ctcae"
+  ],
+  "source_logic_hash": "e086ac7735d510a749ed212b0ff32378",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3176,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n    var u;\n    var msg = '';\n    u = parseFloat(lansky);\n    if (u <= 40) { msg = 'Moderate to severe restriction.'; }\n    if (u > 40 && u <= 70) { msg = 'Mild to moderate restriction.'; }\n    if (u > 70) { msg = 'Able to carry on normal activity; no special care is needed.'; }\n    var addmsg = 'See definitions of the Lansky Scale in the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: msg\n});\ncalc_output.push({\n    name: '3176_Lansky Scale_result',\n    value: u,\n    value_text: 'points',\n    message: msg+'<br/><br/>'+addmsg\n});\n",
+  "before_use": null,
+  "instructions": "For patients < 16 years old. Useful to use over time to track disease progression.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Shirley B. Lansky"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "1e962030adad513bcecda7a37cad9368794653dd12829f09f22c086e37bfe3a0"
+}

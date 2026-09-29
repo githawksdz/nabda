@@ -1,0 +1,183 @@
+{
+  "id": "calc.sepsis-induced-coagulopathy-sic-score",
+  "slug": "sepsis-induced-coagulopathy-sic-score",
+  "language": "fr",
+  "title": "Score de coagulopathie induite par le sepsis (SIC)",
+  "short_title": "Score de coagulopathie induite par le sepsis (SIC)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "Sic, sic score, Sepsis-Induced Coagulopathy (SIC) Score, coagulopathy, sepsis, covid19, covid, coronavirus, covid-19, covid 19"
+  ],
+  "dosing": false,
+  "formula": "Le diagnostic de coagulopathie induite par le sepsis est posé lorsque le score total ci-dessous est ≥4 ET que le score total du temps de prothrombine et de la coagulation est ≥3.\n\n| Variable | Points | |\n| --- | --- | --- |\n| INR | ≤1,2 | 0 |\n| >1,2 à 1,4 | 1 | |\n| >1,4 | 2 | |\n| Numération plaquettaire, cellules x 10 9 /L | ≥150 | 0 |\n| 100 à <150 | 1 | |\n| <100 | 2 | |\n| [Score SOFA total](nabda:calc.sequential-organ-failure-assessment-sofa-score\\) * | 0 | 0 |\n| 1 | 1 | |\n| ≥2 | 2 | |\n\n*Somme des composantes respiratoire, cardiovasculaire, hépatique et rénale du score SOFA.",
+  "how_to_use": {
+    "why": "Le score SIC peut aider à suggérer une coagulopathie, qui est souvent un précurseur d'une CIVD overt.",
+    "when": "Le score SIC peut être utilisé chez les patients septiques pour lesquels les cliniciens suspectent une possible coagulopathie induite par le sepsis.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Certains experts recommandent que les patients atteints d'une coagulopathie induite par le sepsis confirmée soient ensuite évalués pour une CIVD overt.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score SIC | Mortalité approximative à 28 jours |\n| --- | --- |\n| 0-1 | 0% |\n| 2 | 20% |\n| 3 | 19% |\n| 4 | 30% |\n| 5 | 32% |\n| 6 | 46% |",
+  "short_description": "Probabilité de coagulopathie induite par le sepsis.",
+  "medium_description": "Prédit la probabilité de coagulopathie induite par le sepsis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤1.2",
+          "value": 0
+        },
+        {
+          "label": ">1.2 pour 1.4",
+          "value": 1
+        },
+        {
+          "label": ">1.4",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "platelet",
+      "label": "Numération plaquettaire, cellules x 10^9^/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥150",
+          "value": 0
+        },
+        {
+          "label": "100 pour <150",
+          "value": 1
+        },
+        {
+          "label": "< 100",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sofa",
+      "label": "[Score SOFA total](nabda:calc.sequential-organ-failure-assessment-sofa-score)",
+      "tips": "Additionner les composantes respiratoire, cardiovasculaire, hépatique et rénale du score SOFA complet",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "≥2",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Iba T, Nisio MD, Levy JH, Kitamura N, Thachil J. New criteria for sepsis-induced coagulopathy (SIC) following the revised sepsis definition: a retrospective analysis of a nationwide survey. BMJ Open. 2017;7(9):e017046.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28963294?dopt=Abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Iba T, Arakawa M, Di nisio M, et al. Newly Proposed Sepsis-Induced Coagulopathy Precedes International Society on Thrombosis and Haemostasis Overt-Disseminated Intravascular Coagulation and Predicts High Mortality. J Intensive Care Med. 2018;885066618773679.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29720054?dopt=Abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Ding R, Wang Z, Lin Y, Liu B, Zhang Z, Ma X. Comparison of a new criteria for sepsis-induced coagulopathy and International Society on Thrombosis and Haemostasis disseminated intravascular coagulation score in critically ill patients with sepsis 3.0: a retrospective study. Blood Coagul Fibrinolysis. 2018;29(6):551-558.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30015646?dopt=Abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Iba T, Arakawa M, Levy JH, et al. Sepsis-Induced Coagulopathy and Japanese Association for Acute Medicine DIC in Coagulopathic Patients with Decreased Antithrombin and Treated by Antithrombin. Clin Appl Thromb Hemost. 2018;24(7):1020-1026.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29695178?dopt=Abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Iba T, Levy JH, Warkentin TE, et al. Diagnosis and management of sepsis-induced coagulopathy and disseminated intravascular coagulation. J Thromb Haemost. 2019;17(11):1989-1994.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/jth.14578",
+      "kind": "other"
+    },
+    {
+      "text": "Yamakawa K, Yoshimura J, Ito T, Hayakawa M, Hamasaki T, Fujimi S. External Validation of the Two Newly Proposed Criteria for Assessing Coagulopathy in Sepsis. Thromb Haemost. 2019;119(2):203-212.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30593085?dopt=Abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tang N, Bai H, Chen X, Gong J, Li D, Sun Z. Anticoagulant treatment is associated with decreased mortality in severe coronavirus disease 2019 patients with coagulopathy. J Thromb Haemost. 2020.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/32220112",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.roth-score-hypoxia-screening",
+    "calc.tisdale-risk-score-qt-prolongation",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "023048ff869d1f84d235588b878f6e81",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "Total SOFA score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10301,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,266 @@
+{
+  "id": "calc.atria-stroke-risk-score",
+  "slug": "atria-stroke-risk-score",
+  "language": "fr",
+  "title": "Score ATRIA de risque d’AVC",
+  "short_title": "Score ATRIA de risque d’AVC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Palpitations",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "atrial fibrillation",
+    "CVA",
+    "ATRIA",
+    "risk",
+    "prognosis",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; points attribués ci-dessous :",
+  "how_to_use": {
+    "why": "The ATRIA Stroke Risk score, like the [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) can help objectify stroke risk, and perform better than the more well-known [CHADS₂ Score](nabda:calc.chads2-score-atrial-fibrillation-stroke-risk) .",
+    "when": "- Patients atteints de fibrillation atriale présentant des risques hémorragiques potentiels, afin d'aider à quantifier le risque d'AVC.\n- Patients appréhendant l'anticoagulation, afin de mieux comprendre leur risque d'AVC.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les patients doivent faire l’objet d’une évaluation du risque hémorragique avant l’instauration d’une anticoagulation ; le risque hémorragique peut être estimé à l’aide du [score HAS-BLED de risque de saignement majeur](nabda:calc.has-bled-score-major-bleeding-risk) ou de plusieurs autres scores.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| Criteria | Points without previous Stroke | Points with Previous Stroke | |\n| --- | --- | --- | --- |\n| Age (Years) | ≥85 | +6 | +9 |\n| 75 to 84 | +5 | +7 | |\n| 65 to 74 | +3 | +7 | |\n| <65 | +0 | +8 | |\n| Sex | Female | +1 | +1 |\n| Male | 0 | 0 | |\n| Comorbidities | Diabetes | +1 | +1 |\n| CHF | +1 | +1 | |\n| Hypertension | +1 | +1 | |\n| Proteinuria | +1 | +1 | |\n| eGFR <45 or ESRD | +1 | +1 | |\n\n**Scoring**\n\n- Low risk of stroke (<1%): 0-5 points\n- Intermediate risk of stroke (1-<2%): 6 points\n- High risk of stroke (≥2%): >6 points",
+  "short_description": "AVC risque dans Afib.",
+  "medium_description": "Determines AVC risque chez les patients avec fibrillation atriale.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "Antécédent d'AVC",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "tips": "Note : les valeurs des points changent si le patient a déjà eu un AVC.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 65 ans",
+          "value": 0
+        },
+        {
+          "label": "65-74 ans",
+          "value": 3
+        },
+        {
+          "label": "75-84 ans",
+          "value": 5
+        },
+        {
+          "label": "≥85 ans",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "female",
+      "label": "Femme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "History de diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "congestive_heart_failure",
+      "label": "Antécédents d’insuffisance cardiaque congestive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Antécédents d’hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "proteinuria",
+      "label": "Proteinuria",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "egfr_esrd",
+      "label": "[DFGe](nabda:calc.mdrd-gfr-equation) <45 ou insuffisance rénale terminale",
+      "tips": "Le DFGe est calculé à partir de l'équation MDRD.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Singer DE, Chang Y, et. al. A new risk scheme to predict ischemic stroke and other thromboembolism in atrial fibrillation: the ATRIA studystroke risk score. J Am Heart Assoc. 2013 Jun 21;2(3):e000250. doi: 10.1161/JAHA.113.000250.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3698792/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mary Ann Moon. New Risk Scheme to Predict Stroke in AF. Internal Medicine News Digital Network. 9/29/2014.",
+      "href": "https://www.anticoagulationhub.com/single-article/new-risk-scheme-to-predict-stroke-in-af/d351a3d78a66142c2d922f7e8fecd809.html?tx_ttnews%5BsViewPointer%5D=1",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.chads2-score-atrial-fibrillation-stroke-risk",
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk"
+  ],
+  "source_logic_hash": "0543cb1d683182a0f005694bb89e0feb",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.chads2-score-atrial-fibrillation-stroke-risk",
+      "text": "CHADS₂ Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED Score for Major Bleeding Risk"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1842,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

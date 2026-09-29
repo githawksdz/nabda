@@ -1,0 +1,143 @@
+{
+  "id": "calc.endotracheal-tube-ett-depth-tidal-volume-calculator",
+  "slug": "endotracheal-tube-ett-depth-tidal-volume-calculator",
+  "language": "en",
+  "title": "Calculateur de la profondeur de la sonde endotrachéale (ETT) et du volume courant",
+  "short_title": "Calculateur de profondeur de sonde endotrachéale (ETT) et de volume courant",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Dyspnea",
+    "Injury/Trauma",
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "intubation",
+    "intubate",
+    "endotracheal",
+    "ET tube",
+    "ETT",
+    "depth",
+    "tidal volume",
+    "ARDS",
+    "ARDSNet",
+    "lung protective ventilation",
+    "mechanical ventilation",
+    "chula formula",
+    "chula"
+  ],
+  "dosing": false,
+  "formula": "**Formule de Chula :** profondeur de la sonde endotrachéale (ETT) = 0.1 * [taille (cm)] + 4\n\n**Formules supplémentaires :**\n\n- [Poids corporel idéal](nabda:calc.ideal-body-weight-adjusted-body-weight) (IBW), hommes = 50 kg + 2.3 * [taille (in) – 60]\n- IBW, femmes = 45.5 kg + 2.3 * [taille (in) – 60]\n- Volume courant habituel cible = 6-8 (mL/kg)*IBW",
+  "how_to_use": {
+    "why": "- Placing the ETT too deeply may cause right mainstem intubation, hypoxemia, and pneumothorax. However, placing the ETT too shallowly may risk injury to the vocal cords and accidental extubation. Standard approaches to verify ETT depth (e.g. bilateral auscultation) are insensitive.\n- Use of lower tidal volumes appears to prevent the development of acute respiratory distress syndrome, even in patients who do not have lung injury.",
+    "when": "Patients adultes nécessitant une intubation orotrachéale.",
+    "pearls": "- ETT depth is measured based on the patient’s front teeth (not the molars).\n- Larger tidal volumes may be temporarily required for patients with severe metabolic acidosis.\n- This tool uses the Devine formula to approximate ideal body weight (IBW), which is most accurate in patients who are at least 60 inches tall. Currently, there is no universally accepted alternative formula for shorter adults."
+  },
+  "next_steps": {
+    "advice": "- ETT position should still be verified with a chest radiograph among patients who will remain intubated for an extended period of time.\n- Tidal volume: (6-8 mL/kg)* [ideal body weight](nabda:calc.ideal-body-weight-adjusted-body-weight) (IBW) is generally a safe initial setting, but further ventilator adjustment may be required depending on the adequacy of ventilation and airway pressures.",
+    "critical_actions": "Radiographie thoracique et mesure du CO₂ (p. ex. CO₂ en fin d’expiration ou gazométrie sanguine) pour confirmer la position de l’ETT et l’adéquation de la ventilation.",
+    "management": "Intubation endotrachéale et ventilation mécanique."
+  },
+  "evidence": "The Chula formula was developed and validated by Techanivate and colleagues at King Chulalongkorn Memorial Hospital in Thailand.\n\nThese authors prospectively validated the use of this formula among 100 patients in Thailand. Patients were intubated and the ETT placed according to the formula. Subsequently, a bronchoscope was used to determine the relationship among the ETT, carina, and vocal cords:\n\n- The distance between the ETT and carina ranged between 1.9-7.5 cm. No patient was at immediate risk of endobronchial intubation.\n- The upper border of the ETT cuff was always >1.9 cm below the vocal cords, avoiding risk of laryngeal trauma or inadvertent extubation.\n\n[Pak et al in 2010](https://www.ncbi.nlm.nih.gov/pubmed/21057614)and[Hunyady et al in 2008](https://www.ncbi.nlm.nih.gov/pubmed/18497600)developed similar assessments of optimal ETT placement. The average of the three scores (Pak, Hunyady, and Chula) is nearly identical to the Chula formula.",
+  "more_info": "",
+  "short_description": "Estime la profondeur de la sonde endotrachéale (ETT) et le volume courant.",
+  "medium_description": "Estime la profondeur optimale de placement de l’ETT et le volume courant cible selon la taille.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "ARDSnet investigators.  Ventilation with lower tidal volumes as compared with traditional tidal volumes for acute lung injury and the acute respiratory distress syndrome.  N Engl J Med.  2000; May;342(18): 1301-1308.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10793162",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Techanivate A, Kumwilaisak K, Samranrean S. Estimation of the proper length of orotracheal intubation by Chula formula. J Med Assoc Thai. 2005 Dec;88(12):1838-46",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16518983",
+      "kind": "pubmed"
+    },
+    {
+      "text": "PulmCrit: Devil in the details: Endotracheal tube depth",
+      "href": "https://emcrit.org/pulmcrit/endotracheal-tube-depth/",
+      "kind": "other"
+    },
+    {
+      "text": "Pak HJ, Hong BH, Lee WH. Assessment of airway length of Korean adults and children for otolaryngology and ophthalmic surgery using a fiberoptic bronchoscope. Korean J Anesthesiol. 2010 Oct;59(4):249-55. doi: 10.4097/kjae.2010.59.4.249. Epub 2010 Oct 21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21057614",
+      "kind": "other"
+    },
+    {
+      "text": "Hunyady AI, Pieters B, Johnston TA, Jonmarker C. Front teeth-to-carina distance in children undergoing cardiac catheterization. Anesthesiology. 2008 Jun;108(6):1004-8. doi: 10.1097/ALN.0b013e3181730288.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18497600",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.a-a-o2-gradient",
+    "calc.modified-mallampati-classification",
+    "calc.pediatric-endotracheal-tube-ett-size",
+    "calc.ideal-body-weight-adjusted-body-weight"
+  ],
+  "source_logic_hash": "30bb8e6094b956c8f4b50c3c4bd0b29d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ideal-body-weight-adjusted-body-weight",
+      "text": "Ideal body weight"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3928,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

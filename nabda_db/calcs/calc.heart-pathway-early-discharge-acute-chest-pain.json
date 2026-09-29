@@ -1,0 +1,292 @@
+{
+  "id": "calc.heart-pathway-early-discharge-acute-chest-pain",
+  "slug": "heart-pathway-early-discharge-acute-chest-pain",
+  "language": "en",
+  "title": "HEART Pathway pour Early Discharge dans aigu douleur thoracique",
+  "short_title": "HEART Pathway",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Heart",
+    "heart score",
+    "heart path",
+    "rule out"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- |\n| History 1 | Slightly suspicious | Moderately suspicious | Highly suspicious |\n| ECG | Normal | Non-specific repolarization disturbance 2 | Significant ST depression 3 |\n| Age (years) | <45 | 45-64 | ≥65 |\n| Risk factors 4 | No known risk factors | 1-2 risk factors | ≥3 risk factors or history of atherosclerotic disease |\n| Initial troponin 5 | ≤normal limit | 1-3x normal limit | >3x normal limit |\n\n1. e.g. Retrosternal pain, pressure, radiation to jaw/left shoulder/arms, duration 5–15 min, initiated by exercise/cold/emotion, perspiration, nausea/vomiting, reaction on nitrates within mins, patient recognizes symptoms. Low risk features of chest pain include: well localized, sharp, non-exertional, no diaphoresis, no nausea or vomiting, and reproducible with palpation.\n2. LBBB, typical changes suggesting LVH, repolarization disorders suggesting digoxin, unchanged known repolarization disorders.\n3. Significant ST-segment depression or elevation without LBBB, LVH, or digoxin.\n4. HTN, hypercholesterolemia, DM, obesity (BMI >30 kg/m²), smoking (current, or smoking cessation ≤3 mo), positive family history (parent or sibling with CVD before age 65).\n5. Use local assays and corresponding cutoffs.",
+  "how_to_use": {
+    "why": "- Chest pain is one of the most common and potentially life-threatening chief complaints in emergency medicine, and many patients undergo unnecessarily extensive and costly evaluations to rule out ACS.\n- Use of this pathway can reduce prolonged ED stays and unnecessary invasive testing while maintaining high sensitivity and negative predictive value for ACS.\n- Unlike other scoring systems such as [TIMI Risk Index](nabda:calc.timi-risk-index) or [GRACE](nabda:calc.grace-acs-risk-mortality-calculator) , which are used to risk stratify patients already diagnosed with ACS, this tool is designed to predict the likelihood of ACS in patients presenting to the ED with acute chest pain.",
+    "when": "Use in patients ≥21 years old presenting in the emergency department (ED) with acute chest pain concerning for ACS.",
+    "pearls": "- Designed to facilitate efficient evaluation of patients with acute chest pain by building on the previously validated [HEART Score;](nabda:calc.heart-score-major-cardiac-events) and incorporating a 3-hour troponin into an accelerated diagnostic pathway (ADP).\n- Identifies patients who are safe for early discharge (low risk for ACS) versus those who require observation, admission, and/or emergent cardiology assessment.\n- Although some patients with new ischemic ECG changes may be classified as low risk using the HEART Pathway, the tool’s creators did not consider these patients low risk in the validation study; **new ischemic ECG changes require further evaluation and should not be considered low risk.**\n- Similarly, the Pathway was not relied upon in patients with known coronary artery disease in the validation study, as this population has a significantly increased baseline risk of ACS.\n- Designed for patients presenting to the ED with chest pain; this ADP has not been tested in hospitalized patients who develop chest pain."
+  },
+  "next_steps": {
+    "advice": "- Le HEART Pathway est une voie diagnostique accélérée (ADP) et n’est pas destiné à remplacer le jugement clinique.\n- Tout patient présentant une présentation ou une progression clinique préoccupante doit bénéficier d’une évaluation et d’un traitement complémentaires à la discrétion du clinicien, quel que soit le risque prédit par le HEART Pathway.\n- La décision médicale partagée est un élément essentiel de la prise en charge après stratification du risque d’ACS, en particulier pour les patients à risque modéré pour lesquels une mise en observation et une évaluation cardiaque complète sont recommandées.\n\n - L’hospitalisation comporte des risques inhérents, tout comme les tests faussement positifs ou non diagnostiques, qui peuvent conduire à des procédures invasives inutiles telles que le cathétérisme cardiaque.\n - Les patients doivent être informés du risque à la fois d’ACS manqué et d’hospitalisation pour bilan complémentaire.\n - Les aides à la décision spécifiques au risque (p. ex., [Chest Pain Choice Decision Aid de la Mayo Clinic](https://www.ahajournals.org/cms/asset/7fae345d-bb7b-4488-97a3-cfc8bc526bcf/hcq0031203820001.jpeg)) peuvent être utiles.\n- Tout patient ayant obtenu son congé après une évaluation pour douleur thoracique doit être informé que, malgré un bilan négatif, un faible risque résiduel d’ACS persiste.\n\n - Pour les patients présentant un risque d’ACS <1 % dans les 30 jours, il est important de souligner que la stratification automatique du risque cardiaque en ambulatoire comporte une probabilité plus élevée de résultats faussement positifs que de résultats vrais positifs, ce qui peut conduire à des procédures invasives inutiles avec les risques associés.\n - Au lieu de cela, les patients doivent bénéficier d’un suivi rapproché en soins primaires et de consignes explicites de retour.",
+    "critical_actions": "- Clinician judgment should supersede results, even when patients are classified as low risk.\n- If other features raise concern for ACS, further evaluation should be individualized to the patient.\n- All patients presenting to the ED with chest pain concerning for ACS should receive aspirin contraindicated (e.g., known allergy, active bleeding, or receipt of a therapeutic dose prior to arrival).",
+    "management": "- **Low risk patients:** Those with a follow-up troponin obtained 3 hours after ED presentation can be considered for safe discharge home with appropriate outpatient follow-up.\n- **High risk patients:** Admit or observe with serial ECGs, cardiac biomarkers, and/or cardiology consultation.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/heart-pathway.png)\n\nFrom[Mahler 2015](https://www.ncbi.nlm.nih.gov/pubmed/25737484)."
+  },
+  "evidence": "The HEART Pathway was developed by[Mahler et al](https://www.ncbi.nlm.nih.gov/pubmed/25737484)in 2015 in a randomized controlled single-center trial.\n\n- Control arm was managed at the discretion of care providers encouraged to follow American College of Cardiology/American Heart Association guidelines for acute chest pain.\n- The use of the HEART Pathway in this study was designed to mimic the real world in that it was used as an ADP. Patient care was at the discretion of the health care provider and not mandated by the outcome of the HEART Pathway.\n- *n* = 282, with 141 patients in each treatment group.\n- Primary outcome: rate of objective cardiac testing (stress test, coronary CTA, or invasive coronary angiography) within 30 days of presentation.\n- Secondary outcomes: early discharge rate, index length of stay, cardiac related recurrent ED visits, and non-index hospitalization at 30 days.\n- The rate of objective cardiac testing in the HEART Pathway group was 12% less than the usual care group.\n- The rate of early discharge in the HEART Pathway was 21% higher than the usual care group.\n- The index length of stay was 12 hours shorter using the HEART Pathway.\n- There was no significant difference between the two groups for cardiac related recurrent ED visits or non-index hospitalization at 30 days.\n- No patients identified for early discharge in either group had missed MACE during the first 30 day follow up period.\n- Study was not powered to adequately detect difference in major adverse cardiac event (MACE) between the two study groups.\n\n[Riley et al in 2017](https://www.ncbi.nlm.nih.gov/pubmed/27765481)published a cost analysis of the HEART Pathway compared to usual care using the same dataset as the original HEART Pathway trial.\n\n- *n* = 270, missing billing data of 12 patients from the original study.\n- Cost metrics considered in each group were index visit cost, total cost at 30 days, cardiac related health care cost at 30 days, cardiac and noncardiac diagnostic testing cost, ED cost, inpatient cost for index visit, and outpatient cost.\n- HEART Pathway patients had a significantly lower mean and median cost for both index visit and 30 day follow up.\n- There was not a significant difference in cost between the median and mean costs of the other metrics.\n- Average savings per patient was $216 using the HEART Pathway. On a larger scale, this would mean approximately $2 billion in savings per year for undifferentiated chest pain.\n\n[Mahler and colleagues (2017)](https://www.ncbi.nlm.nih.gov/pubmed/28087371)also published a secondary analysis looking at high sensitivity cardiac troponin (hs-cTnI and hs-cTnT).\n\n- Compared risk stratification using cardiac troponin I (cTnI) vs. high sensitivity cardiac troponin (hs-cTnI and hs-cTnT) in calculating the HEART Pathway score.\n- *n* = 133, patients had blood samples sent for cTnI, hs-cTnI, and hs-cTnT.\n- All of the troponin assays had poor sensitivity for predicting MACE when used separately from the HEART Score.\n- There was no difference in the predicted risk of MACE between the use of serial cTnI and 3-hour hs-cTnI in the HEART Pathway.\n- Using hs-cTnT in the HEART Pathway led one patient with an NSTEMI to be misclassified as low risk.\n- The study found the HEART Pathway using serial cTnI or 3-hour hs-cTnI to have sensitivity and NPV of 100% for 30-day MACE.\n- Although hs-cTnT use in the HEART Pathway caused an NSTEMI to be misclassified as low risk, the reduction in sensitivity was not statistically significant, given the small study population. The authors recommend further appropriately-powered studies to determine small differences in the accuracy of the high sensitivity troponin assays.",
+  "more_info": "Interpretation:\n\n| HEART Score | Initial troponin | Risk | Recommendation |\n| --- | --- | --- | --- |\n| ≤3 | 0 points | Low (0.9-1.7% 30-day MACE) | If no new ischemic ECG changes or history of CAD, repeat troponin at 3 hours and if negative, discharge home with outpatient follow-up. |\n| 1-2 points | High (12-65% 30-day MACE) | Cardiology consultation and admission recommended. Further testing indicated. | |\n| ≥4 | 0 points | High (12-65% 30-day MACE) | Admit to hospital or observation. Further testing indicated. |\n| 1-2 points | High (12-65% 30-day MACE) | Cardiology consultation and admission recommended. Further testing indicated. | |",
+  "short_description": "Early discharge dans aigu douleur thoracique.",
+  "medium_description": "Identifies service d'accueil des urgences patients avec aigu douleur thoracique pour early discharge.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "history",
+      "label": "Antécédents",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Légèrement suspect",
+          "value": 0
+        },
+        {
+          "label": "Suspicion modérée",
+          "value": 1
+        },
+        {
+          "label": "Fortement suspect",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ekg",
+      "label": "ECG",
+      "tips": "1 point: No ST depression but LBBB, LVH, repolarization changes (ex: digoxin); 2 points: ST depression/elevation not due to LBBB, LVH, or digoxin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Trouble de la repolarisation non spécifique",
+          "value": 1
+        },
+        {
+          "label": "Sous-décalage significatif du segment ST",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 45",
+          "value": 0
+        },
+        {
+          "label": "45-64 ans",
+          "value": 1
+        },
+        {
+          "label": "≥65",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "risk_factors",
+      "label": "Facteurs de risque",
+      "tips": "Risk factors: HTN, hypercholesterolemia, DM, obesity (BMI >30 kg/m^2^), smoking (current, or smoking cessation ≤3 mo), positive family history (parent or sibling with CVD before age 65); atherosclerotic disease: prior MI, PCI/CABG, CVA/TIA, or peripheral arterial disease",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun facteur de risque connu",
+          "value": 0
+        },
+        {
+          "label": "1-2 facteurs de risque",
+          "value": 1
+        },
+        {
+          "label": "≥3 facteurs de risque ou antécédents de maladie athéroscléreuse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "troponin",
+      "label": "Troponine initiale",
+      "tips": "Utilisez les dosages locaux et les seuils correspondants.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ limite de la normale",
+          "value": 0
+        },
+        {
+          "label": "1-3x normal limit",
+          "value": 1
+        },
+        {
+          "label": "> 3 fois la limite de la normale",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mahler SA, Riley RF, Hiestand BC, et al. The HEART Pathway randomized trial: identifying emergency department patients with acute chest pain for early discharge. Circ Cardiovasc Qual Outcomes. 2015;8(2):195-203.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25737484",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Poldervaart JM, Reitsma JB, Backus BE, et al. Effect of Using the HEART Score in Patients With Chest Pain in the Emergency Department: A Stepped-Wedge, Cluster Randomized Trial. Ann Intern Med. 2017;",
+      "href": "https://annals.org/aim/article/2622872/effect-using-heart-score-patients-chest-pain-emergency-department-stepped  ",
+      "kind": "other"
+    },
+    {
+      "text": "Riley RF, Miller CD, Russell GB, et al. Cost analysis of the History, ECG, Age, Risk factors, and initial Troponin (HEART) Pathway randomized control trial. Am J Emerg Med. 2017;35(1):77-81.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27765481 ",
+      "kind": "other"
+    },
+    {
+      "text": "Mahler SA, Stopyra JP, Apple FS, et al. Use of the HEART Pathway with high sensitivity cardiac troponins: A secondary analysis. Clin Biochem. 2017;",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28087371 ",
+      "kind": "other"
+    },
+    {
+      "text": "American College of Emergency Physicians Clinical Policies Subcommittee (Writing Committee) on Suspected Non–ST-Elevation Acute Coronary Syndromes:; Tomaszewski CA, Nestler D, Shah KH, Sudhir A, Brown MD. Clinical Policy: Critical Issues in the Evaluation and Management of Emergency Department Patients With Suspected Non-ST-Elevation Acute Coronary Syndromes. Ann Emerg Med. 2018 Nov;72(5):e65-e106.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30342745/",
+      "kind": "other"
+    },
+    {
+      "text": "Gershon CA, Yagapen AN, Lin A, Yanez D, Sun BC. Inter-rater Reliability of the HEART Score. Acad Emerg Med. 2019 May;26(5):552-555.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30428149/",
+      "kind": "other"
+    },
+    {
+      "text": "Sharp AL, Baecker AS, Shen E, Redberg R, Lee MS, Ferencik M, Natsui S, Zheng C, Kawatkar A, Gould MK, Sun BC. Effect of a HEART Care Pathway on Chest Pain Management Within an Integrated Health System. Ann Emerg Med. 2019 Aug;74(2):171-180.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30797573/",
+      "kind": "other"
+    },
+    {
+      "text": "Stopyra J, Snavely AC, Hiestand B, Wells BJ, Lenoir KM, Herrington D, Hendley N, Ashburn NP, Miller CD, Mahler SA. Comparison of accelerated diagnostic pathways for acute chest pain risk stratification. Heart. 2020;106:977–984.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32269131/",
+      "kind": "other"
+    },
+    {
+      "text": "Mark DG, Huang J, Kene MV, Sax DR, Cotton DM, Lin JS, Bouvet SC, Chettipally UK, Anderson ML, McLachlan ID, Simon LE, Shan J, Rauchwerger AS, Vinson DR, Ballard DW, Reed ME; Kaiser Permanente CREST Network Investigators. Prospective Validation and Comparative Analysis of Coronary Risk Stratification Strategies Among Emergency Department Patients with Chest Pain. J Am Heart Assoc. 2021 Apr 6;10(7):e020082.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33787290/",
+      "kind": "other"
+    },
+    {
+      "text": "Gulati M, Levy PD, Mukherjee D, Amsterdam E, Bhatt DL, Birtcher KK, Blankstein R, Boyd J, Bullock-Palmer RP, Conejo T, Diercks DB, Gentile F, Greenwood JP, Hess EP, Hollenberg SM, Jaber WA, Jneid H, Joglar JA, Morrow DA, O’Connor RE, Ross MA, Shaw LJ, et al. 2021 AHA/ACC/ASE/CHEST/SAEM/SCCT/SCMR Guideline for the Evaluation and Diagnosis of Chest Pain: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. 2021 Nov 30;144(22):E368-E454.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34756653/",
+      "kind": "other"
+    },
+    {
+      "text": "Hu Z, Miao L, Wang M, Cheng S, Jin S. A meta-analysis on the safety and accuracy of the HEART pathway for risk stratification in patients with acute chest pain. BMC Cardiovasc Disord. 2025 May 27;25(1):407.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40426028/",
+      "kind": "other"
+    },
+    {
+      "text": "Mahler SA, Lenoir KM, Wells BJ, Burke GL, Duncan PW, Case LD, Herrington DM, Diaz-Garelli JF, Futrell WM, Hiestand BC, Miller CD. Safely Identifying Emergency Department Patients With Acute Chest Pain for Early Discharge. Circulation. 2018 Nov 27;138(22):2456-2468. doi: 10.1161/CIRCULATIONAHA.118.036528. PMID: 30571347; PMCID: PMC6309794.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30571347/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.heart-score-major-cardiac-events",
+    "calc.timi-risk-index",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.grace-acs-risk-mortality-calculator"
+  ],
+  "source_logic_hash": "3efaaa5ab77f29a97010191a382cd4d3",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.heart-score-major-cardiac-events",
+      "text": "HEART Score;"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-index",
+      "text": "TIMI Risk Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.heart-score-major-cardiac-events",
+      "text": "HEART Score;"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-index",
+      "text": "TIMI Risk Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.grace-acs-risk-mortality-calculator",
+      "text": "GRACE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3975,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n\n\n//addition of points\nvar v = parseInt(history) + parseInt(ekg) + parseInt(age) + parseInt(risk_factors) + parseInt(troponin);\n\n\n//interpretation\nvar risk, risk2, rec;\nif (v < 4) { \n\tif(troponin == 0){\n\t\trisk = 'Low';\n\t\trisk2 = '0.9-1.7% 30-day MACE';\n    \trec = 'Repeat troponin at 3 hours and if negative, discharge home with outpatient follow-up.'; \n    }else if(0 < troponin < 3){\n    \trisk = 'High';\n    \trisk2 = '12-65% 30-day MACE';\n    \trec = 'Cardiology consultation and admission recommended. Further testing indicated.';\n    }\n    \n}\nif (v > 3) { \n\trisk = 'High';\n    risk2 = '12-65% 30-day MACE';\n    if(troponin == 0){\n    \trec = 'Admit to hospital or observation. Further testing indicated.'; \n    }else if(0 < troponin < 3){\n    \trec = 'Cardiology consultation and admission recommended. Further testing indicated.';\n    }\n}\n\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: risk2\n});\ncalc_output.push({ \n\tname: '3975_HEART Pathway_result', \n\tvalue: v, \n\tvalue_text: 'points', \n\tmessage: 'HEART Pathway Score'\n});\ncalc_output.push({ \n\tname: '3975_HEART Pathway_interpretation', \n\tvalue: risk, \n\tvalue_text: 'risk', \n\tmessage: risk2 + '<br/><br/>' + rec\n});",
+  "before_use": null,
+  "instructions": "- Use in patients ≥21 years old presenting with symptoms suggestive of acute coronary syndrome (ACS).\n- Do not use in patients with new ST-segment elevation ≥1 mm, hypotension, life expectancy <1 year, or a noncardiac medical/surgical/psychiatric condition determined by the clinician to require hospital admission.",
+  "contributor_ids": [
+    "abbas-husain-md",
+    "kabir-yadav-mdcm-ms-mshs",
+    "cullen-clark"
+  ],
+  "creator_names": [
+    "Dr. Simon A. Mahler"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Troponin"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "51d7322a832838f018ea94420689b4e3157032ea81dbb04143118bea8e28a770"
+}

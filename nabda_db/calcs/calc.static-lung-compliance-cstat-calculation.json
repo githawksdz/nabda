@@ -1,0 +1,110 @@
+{
+  "id": "calc.static-lung-compliance-cstat-calculation",
+  "slug": "static-lung-compliance-cstat-calculation",
+  "language": "fr",
+  "title": "Calcul de la compliance pulmonaire statique (Cstat)",
+  "short_title": "Compliance pulmonaire statique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Static Compliance (Cstat) Calculation, cstat calculation, cstat, static compliance, compliance, ventilation pressure, lung compliance, ventilation, ventilator, ventilator pressure, elastic resistance, resistance, lung resistance, lung pressure, covid19, covid-19, covid 19, covid, coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Compliance pulmonaire statique (Cstat), mL/cm H~2~O = Volume courant corrigé/délivré (ΔV), mL / (Pression de plateau (P~plat~), cm H~2~O – PEEP, cm H~2~O)",
+  "how_to_use": {
+    "why": "- La compliance pulmonaire statique correspond à la variation de volume pour toute pression appliquée donnée.\n- Le travail respiratoire est largement déterminé par la compliance pulmonaire, et la compliance peut être importante pour surveiller la progression de la maladie, en particulier chez les patients critiques sous ventilation mécanique en réanimation.\n- Une compliance pulmonaire basse suggère une « rigidité » – observée par exemple dans les pathologies fibrosantes.\n- Une compliance pulmonaire élevée suggère une grande souplesse – observée par exemple dans des pathologies comme l'emphysème.\n- Le SDRA en particulier entraîne une diminution de la compliance pulmonaire par collapsus alvéolaire et diminution de l'activité du surfactant ; le traitement du SDRA sévère comprend notamment des mesures visant à améliorer la compliance pulmonaire (décubitus ventral, curarisation, etc.).",
+    "when": "La P~plat~ est mesurée avant l'expiration (fin de l'inspiration) à l'aide d'une manœuvre de pause inspiratoire. Le débit aérien est brièvement « bloqué », éliminant ainsi les effets de la résistance des voies aériennes.",
+    "pearls": "La C~stat~ (compliance statique) est statique (lors d'une pause inspiratoire, en l'absence de tout flux gazeux), et ne doit pas être confondue avec la C~dyn~ (compliance dynamique), calculée en présence d'un flux gazeux."
+  },
+  "next_steps": {
+    "advice": "En cas de détérioration ou de mauvaise compliance pulmonaire (en particulier dans le SDRA), des méthodes visant à améliorer la compliance pulmonaire peuvent être bénéfiques ; l'amélioration de la compliance améliore souvent les pressions de plateau et l'oxygénation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nUne compliance pulmonaire statique normale est de 50-100 mL/cm H~2~O.",
+  "short_description": "Calcul des pressions de ventilation.",
+  "medium_description": "Calculates pressure needed pour overcome elastic resistance pour ventilation.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "vol",
+      "label": "Volume courant corrigé/délivré (ΔV)",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pressure",
+      "label": "Pression de plateau (P~plat~)",
+      "optional": false,
+      "unit": "cm_water",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "peep",
+      "label": "PEEP",
+      "optional": false,
+      "unit": "cm_water",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Marshall R. The physical properties of the lungs in relation to the subdivisions of lung volume. Clin Sci. 1957;16(3):507-15.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/13473164",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fry DL, Hyatt RE. Pulmonary mechanics. A unified analysis of the relationship between pressure, volume and gasflow in the lungs of normal and diseased human subjects. Am J Med. 1960;29:672-89.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/13702319",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lung-injury-prediction-score-lips",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.horowitz-index-lung-function-p-f-ratio"
+  ],
+  "source_logic_hash": "584432a4d46ec37da19c102a48d47b13",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10289,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

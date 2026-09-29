@@ -1,0 +1,505 @@
+{
+  "id": "calc.simplified-acute-physiology-score-saps-ii",
+  "slug": "simplified-acute-physiology-score-saps-ii",
+  "language": "en",
+  "title": "Simplifié aigu Physiology score (SAPS) II",
+  "short_title": "SAPS II",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "SAPS",
+    "SAPS II",
+    "Simplified Acute Physiology Score II",
+    "ICU",
+    "critical care",
+    "sapsii",
+    "saps 2",
+    "mortality risk"
+  ],
+  "dosing": false,
+  "formula": "SAPS II Score is calculated by addition of the selected points below.\n\nIn-hospital mortality, % = *e^x^* / 1+ *e^x^* where *x* = −7.7631 + 0.0737 x (SAPS II Score) + 0.9971 x [ ln(SAPS II Score + 1) ]\n\nSAPS II Score:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Age, years | | <40 | 0 |\n| 40-59 | 7 | | |\n| 60-69 | 12 | | |\n| 70-74 | 15 | | |\n| 75-79 | 16 | | |\n| ≥80 | 18 | | |\n| Heart rate | Worst value in 24 hours; if patient has had both cardiac arrest (11 points) and extreme tachycardia (7 points), assign 11 points | <40 | 11 |\n| 40-69 | 2 | | |\n| 70-119 | 0 | | |\n| 120-159 | 4 | | |\n| ≥160 | 7 | | |\n| Systolic BP, mm Hg | Worst value in 24 hours | <70 | 13 |\n| 70-99 | 5 | | |\n| 100-199 | 0 | | |\n| ≥200 | 2 | | |\n| Temperature ≥39ºC (102.2ºF) | Highest temperature in 24 hours | No | 0 |\n| Yes | 3 | | |\n| [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) | Lowest value in 24 hours; if patient is sedated, use estimated GCS before sedation | 14-15 | 0 |\n| 11-13 | 5 | | |\n| 9-10 | 7 | | |\n| 6-8 | 13 | | |\n| <6 | 26 | | |\n| PaO₂/FiO₂, if on mechanical ventilation or CPAP | Lowest value in 24 hours; if patient was extubated <24 hours ago, use lowest value while on mechanical ventilation | <100 mm Hg/% (13.3 kPa/%) | 11 |\n| 100-199 mm Hg/% (13.3-26.5 kPa/%) | 9 | | |\n| ≥200 mm Hg/% (26.6 kPa/%) | 6 | | |\n| Not on mechanical ventilation or CPAP within the last 24 hours | 0 | | |\n| BUN, mg/dL (serum urea, mmol/L) | Highest value in 24 hours | BUN <28 or urea <10 | 0 |\n| BUN 28-83 or urea 10-29.6 | 6 | | |\n| BUN ≥84 or urea ≥30 | 10 | | |\n| Urine output, mL/day | If patient in ICU <24 hours, calculate for 24 hours (e.g. if 1 L in 8 hours, then mark 3 L in 24 hours) | <500 | 11 |\n| 500-999 | 4 | | |\n| ≥1,000 | 0 | | |\n| Sodium, mEq/L or mmol/L | Worst value in 24 hours | <125 | 5 |\n| 125-144 | 0 | | |\n| ≥145 | 1 | | |\n| Potassium, mEq/L | Worst value in 24 hours | <3.0 | 3 |\n| 3.0-4.9 | 0 | | |\n| ≥5.0 | 3 | | |\n| Bicarbonate, mEq/L | Lowest value in 24 hours | <15 | 6 |\n| 15-19 | 3 | | |\n| ≥20 | 0 | | |\n| Bilirubin | Highest value in 24 hours | <4.0 mg/dL (<68.4 µmol/L) | 0 |\n| 4.0-5.9 mg/dL (68.4-102.5 µmol/L) | 4 | | |\n| ≥6.0 mg/dL (≥102.6 µmol/L) | 9 | | |\n| WBC, x 10³/mm³ | Worst value in 24 hours | <1.0 | 12 |\n| 1.0-19.9 | 0 | | |\n| ≥20.0 | 3 | | |\n| Chronic disease | | None | 0 |\n| Metastatic cancer | 9 | | |\n| Hematologic malignancy | 10 | | |\n| AIDS | 17 | | |\n| Type of admission | Scheduled surgical = surgery scheduled ≥24 hours in advance Medical = no surgery within one week of admission Unscheduled surgical = surgery scheduled ≤24 hours in advance | Scheduled surgical | 0 |\n| Medical | 6 | | |\n| Unscheduled surgical | 8 | | |",
+  "how_to_use": {
+    "why": "Peut être utilisé pour mesurer la qualité des soins en soins intensifs (mais ne doit pas être utilisé pour prédire la survie d'un individu).",
+    "when": "Patients en soins intensifs.",
+    "pearls": "- Les variables physiologiques les plus défavorables, correspondant au nombre de points le plus élevé, doivent être recueillies au cours des premières 24 heures suivant l'admission en soins intensifs.\n- Supérieur au système SAPS original, avec une AUROC plus élevée (0,86) que l'original (0,80).\n- Les patients brûlés et cardiaques ont été exclus de l'étude originale ; bien que certaines données suggèrent que le SAPS II pourrait bien fonctionner pour ces groupes de patients, des études sont nécessaires avant d'utiliser le SAPS II chez ces patients.\n- Estime le risque de mortalité pour un groupe de patients, mais n'est pas destiné à décrire les chances de survie d'un patient individuel."
+  },
+  "next_steps": {
+    "advice": "Les scores peuvent être étudiés au sein d'une même unité de soins intensifs dans le cadre d'initiatives d'amélioration de la qualité et d'autres projets.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nMortalité hospitalière, % = *e^x^* / 1+ *e^x^* où *x* = −7,7631 + 0,0737 x (score SAPS II) + 0,9971 x [ ln(score SAPS II + 1) ]",
+  "short_description": "ICU mortalité.",
+  "medium_description": "Estimates mortalité dans ICU patients, comparable pour APACHE II.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40-59",
+          "value": 7
+        },
+        {
+          "label": "60-69",
+          "value": 12
+        },
+        {
+          "label": "70-74",
+          "value": 15
+        },
+        {
+          "label": "75-79",
+          "value": 16
+        },
+        {
+          "label": "≥80",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heartrate",
+      "label": "Fréquence cardiaque",
+      "tips": "Si le patient a présenté à la fois un arrêt cardiaque (11 points) et une tachycardie extrême (7 points), attribuer 11 points",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 40",
+          "value": 11
+        },
+        {
+          "label": "40-69",
+          "value": 2
+        },
+        {
+          "label": "70-119",
+          "value": 0
+        },
+        {
+          "label": "120-159",
+          "value": 4
+        },
+        {
+          "label": "≥160",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bloodpressure",
+      "label": "Pression artérielle systolique, mmHg",
+      "tips": "Valeur la plus défavorable sur 24 heures",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 70",
+          "value": 13
+        },
+        {
+          "label": "70-99",
+          "value": 5
+        },
+        {
+          "label": "100-199",
+          "value": 0
+        },
+        {
+          "label": "≥200",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "temperature",
+      "label": "Température ≥39 ºC (102,2 ºF)",
+      "tips": "Température la plus élevée sur 24 heures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "tips": "Valeur la plus basse sur 24 heures ; si le patient est sédaté, noter le GCS estimé avant la sédation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "14-15",
+          "value": 0
+        },
+        {
+          "label": "11-13",
+          "value": 5
+        },
+        {
+          "label": "9-10",
+          "value": 7
+        },
+        {
+          "label": "6-8",
+          "value": 13
+        },
+        {
+          "label": "< 6",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mmhg",
+      "label": "PaO₂/FiO₂, si sous ventilation mécanique ou CPAP",
+      "tips": "Utiliser la valeur la plus basse sur 24 heures ; si le patient a été extubé depuis <24 heures, utiliser la valeur la plus basse sous ventilation mécanique",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 100 mm Hg/% (13.3 kPa/%)",
+          "value": 11
+        },
+        {
+          "label": "100-199 mm Hg/% (13.3-26.5 kPa/%)",
+          "value": 9
+        },
+        {
+          "label": "≥200 mm Hg/% (26.6 kPa/%)",
+          "value": 6
+        },
+        {
+          "label": "Absence de ventilation mécanique ou de CPAP au cours des dernières 24 heures",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bun",
+      "label": "Urée sanguine (BUN), mg/dL ou urée sérique, mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "BUN <28 ou urée <10",
+          "value": 0
+        },
+        {
+          "label": "BUN 28-83 ou urée 10-29,6",
+          "value": 6
+        },
+        {
+          "label": "BUN ≥84 ou urée ≥30",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "urine",
+      "label": "Diurèse, mL/jour",
+      "tips": "Si en soins intensifs depuis <24 heures, calculer sur 24 heures (p. ex. si 1 L en 8 heures, alors compter 3 L en 24 heures)",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 500",
+          "value": 11
+        },
+        {
+          "label": "500-999",
+          "value": 4
+        },
+        {
+          "label": "≥1000",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sodium",
+      "label": "Sodium, mEq/L ou mmol/L",
+      "tips": "Valeur la plus défavorable sur 24 heures",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 125",
+          "value": 5
+        },
+        {
+          "label": "125-144",
+          "value": 0
+        },
+        {
+          "label": "≥145",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "potassium",
+      "label": "Potassium, mEq/L",
+      "tips": "Valeur la plus défavorable sur 24 heures",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 3.0",
+          "value": 3
+        },
+        {
+          "label": "3.0-4.9",
+          "value": 0
+        },
+        {
+          "label": "≥5.0",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bicarbonate",
+      "label": "Bicarbonate, mEq/L",
+      "tips": "Valeur la plus basse sur 24 heures",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 15",
+          "value": 6
+        },
+        {
+          "label": "15-19",
+          "value": 3
+        },
+        {
+          "label": "≥20",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bilirubin",
+      "label": "Bilirubin",
+      "tips": "Valeur la plus élevée sur 24 heures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 4.0 mg/dL (<68.4 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": "4.0-5.9 mg/dL (68.4-102.5 µmol/L)",
+          "value": 4
+        },
+        {
+          "label": "≥6.0 mg/dL (≥102.6 µmol/L)",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wbc",
+      "label": "WBC, x 10³/mm³",
+      "tips": "Valeur la plus défavorable sur 24 heures",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 1.0",
+          "value": 12
+        },
+        {
+          "label": "1.0-19.9",
+          "value": 0
+        },
+        {
+          "label": "≥20.0",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chronic",
+      "label": "Maladie chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Cancer métastatique",
+          "value": 9
+        },
+        {
+          "label": "Hémopathie maligne",
+          "value": 10
+        },
+        {
+          "label": "AIDS",
+          "value": 17
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "admission",
+      "label": "Type d'admission",
+      "tips": "Scheduled surgical = surgery scheduled ≥24 hours prior; medical = no surgery within 1 week of admission; unscheduled surgical = surgery scheduled ≤24 hours prior",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Chirurgie programmée",
+          "value": 0
+        },
+        {
+          "label": "Medical",
+          "value": 6
+        },
+        {
+          "label": "Chirurgie non programmée",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Le Gall JR, Lemeshow S, Saulnier F. A new Simplified Acute Physiology Score (SAPS II) based on a European/North American multicenter study. JAMA. 1993;270(24):2957-63.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/409979",
+      "kind": "pubmed"
+    },
+    {
+      "text": "McNelis J, Marini C, Kalimi R, Jurkiewicz A, Ritter G, Nathan I. A comparison of predictive outcomes of APACHE II and SAPS II in a surgical intensive care unit. Am J Med Qual. 2001;16(5):161-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11591015 ",
+      "kind": "other"
+    },
+    {
+      "text": "Katsaragakis S, Papadimitropoulos K, Antonakis P, Strergiopoulos S, Konstadoulakis MM, Androulakis G. Comparison of Acute Physiology and Chronic Health Evaluation II (APACHE II) and Simplified Acute Physiology Score II (SAPS II) scoring systems in a single Greek intensive care unit. Crit Care Med. 2000;28(2):426-32.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10708178 ",
+      "kind": "other"
+    },
+    {
+      "text": "Beck DH, Smith GB, Pappachan JV, Millar B. External validation of the SAPS II, APACHE II and APACHE III prognostic models in South England: a multicentre study. Intensive Care Med. 2003;29(2):249-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12536271",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Capuzzo M, Valpondi V, Sgarbi A, et al. Validation of severity scoring systems SAPS II and APACHE II in a single-center population. Intensive Care Med. 2000;26(12):1779-85.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11271085",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-acute-physiology-score-saps-3",
+    "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+    "calc.apache-ii-score",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "2d9d487e0f3c8c2ef6fb9bf8148b1e32",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4044,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

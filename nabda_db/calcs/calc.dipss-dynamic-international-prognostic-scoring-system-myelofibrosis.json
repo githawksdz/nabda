@@ -1,0 +1,289 @@
+{
+  "id": "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis",
+  "slug": "dipss-dynamic-international-prognostic-scoring-system-myelofibrosis",
+  "language": "en",
+  "title": "DIPSS/DIPSS Plus (Dynamic International Prognostic système de score) pour Myelofibrosis",
+  "short_title": "DIPSS/DIPSS Plus",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "general"
+  ],
+  "diseases": [
+    "Anemia",
+    "Maladies auto-immunes",
+    "Cancer",
+    "Douleur chronique",
+    "Hémopathie maligne",
+    "Thrombocytopenia",
+    "Myelofibrosis",
+    "Pancytopenia"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Fatigue",
+    "Fever",
+    "Douleur du flanc",
+    "Perte d'appétit",
+    "Numbness",
+    "Dyspnée",
+    "Weakness",
+    "Douleur osseuse",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "PMF",
+    "DIPSS score",
+    " DIPSS",
+    "myleofibrosis",
+    "Dynamic International Prognostic Scoring System (DIPSS) Plus Score",
+    "DIPSS Plus Score",
+    "primary myelofibrosis",
+    "PMF prognosis",
+    "primary myelofibrosis prognosis",
+    "DIPSS PMF",
+    "PMF karyotype",
+    "primary myelofibrosis risk",
+    "PMF risk"
+  ],
+  "dosing": false,
+  "formula": "The DIPSS Score and DIPSS Plus Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| DIPSS Score | | |\n| Age >65 years | No | 0 |\n| Yes | 1 | |\n| White blood cell count >25,000 /μL | No | 0 |\n| Yes | 1 | |\n| Hemoglobin <10 g/dL | No | 0 |\n| Yes | 2 | |\n| Peripheral blood blast ≥1% | No | 0 |\n| Yes | 1 | |\n| Constitutional symptoms | No | 0 |\n| Yes | 1 | |\n| DIPSS Plus Score | | |\n| DIPSS Score | Low (0) | 0 |\n| Intermediate-1 (1-2) | 1 | |\n| Intermediate-2 (3-4) | 2 | |\n| High (5-6) | 3 | |\n| Unfavorable karyotype (Complex karyotype or sole or two abnormalities that include 8, 7/7q-, i(17q), 5/5q-, 12p-, inv(3), or 11q23 rearrangement) | No | 0 |\n| Yes | 1 | |\n| Platelets <100,000 /μL | No | 0 |\n| Yes | 1 | |\n| Red cell transfusion dependent | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Fournit une méthode standardisée pour estimer la survie des patients atteints de PMF.\n- Aide à identifier les patients à haut risque susceptibles de bénéficier d’interventions plus précoces et plus agressives, y compris l’allogreffe de cellules souches hématopoïétiques.\n- Ces outils sont particulièrement utiles dans les contextes où les données moléculaires ne sont pas disponibles.",
+    "when": "- Use in patients with primary myelofibrosis (PMF) to assess prognosis.\n- Appropriate for initial risk stratification at diagnosis and throughout the disease course to reassess prognosis.",
+    "pearls": "- DIPSS Plus doit être utilisé lorsque des informations sur le caryotype sont disponibles pour une évaluation plus affinée du risque.\n- DIPSS et DIPSS Plus n'utilisent pas les données moléculaires, ce qui peut modifier le pronostic ; d'autres modèles pronostiques peuvent être préférés lorsque des informations moléculaires sont disponibles.\n- Les deux sont des outils dynamiques pouvant être appliqués à tout moment au cours de l'évolution de la PMF."
+  },
+  "next_steps": {
+    "advice": "- Use results in conjunction with clinical judgment and patient preference to guide management care plans and inform goals of care discussions.\n\n - **High and intermediate-2 risk:** Consider more aggressive treatments, such as referral to a transplant center for allogeneic stem cell transplantation evaluation, particularly in younger patients with good functional status.\n - **Intermediate-1 and low risk:** Consider more conservative, symptom-directed treatment with regular follow-up.\n- Results are prognostic, not predictive of treatment response; clinical judgment and specialist consultation remain essential.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Risque | Survie globale médiane |\n| --- | --- | --- |\n| Score DIPSS | | |\n| 0 | Faible | N/A |\n| 1-2 | Intermédiaire-1 | 14,2 ans |\n| 3-4 | Intermédiaire-2 | 4 ans |\n| 5-6 | Élevé | 1,5 an |\n| Score DIPSS Plus | | |\n| 0 | Faible | 185 mois |\n| 1 | Intermédiaire-1 | 78 mois |\n| 2-3 | Intermédiaire-2 | 35 mois |\n| 4-6 | Élevé | 16 mois |",
+  "short_description": "Survie de la myélofibrose primitive.",
+  "medium_description": "Estimates survie chez les patients avec primaire myelofibrosis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Âge >65 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "White blood cell count >25,000 /μL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Hémoglobine < 10 g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "Blastes dans le sang périphérique ≥1 %",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Symptômes généraux",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Des informations sur le caryotype sont-elles disponibles ?",
+      "tips": "Sélectionnez « Oui » pour activer le calcul du score DIPSS plus avec les informations de caryotype.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q7",
+      "label": "Caryotype défavorable",
+      "tips": "Complex karyotype or sole or two abnormalities that include 8, 7/7q-, i(17q), 5/5q-, 12p-, inv(3), or 11q23 rearrangement",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "q6 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q8",
+      "label": "Plaquettes <100,000 /μL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "q6 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q9",
+      "label": "Dépendant des transfusions de globules rouges",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "q6 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Passamonti F, Cervantes F, Vannucchi AM, et al. A dynamic prognostic model to predict survival in primary myelofibrosis: a study by the IWG-MRT (International Working Group for Myeloproliferative Neoplasms Research and Treatment). Blood. 2010;115(9):1703-8.",
+      "href": "https://www.bloodjournal.org/content/115/9/1703.long?sso-checked=true",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gangat N, Caramazza D, Vaidya R, et al. Dipss plus: a refined dynamic international prognostic scoring system for primary myelofibrosis that incorporates prognostic information from karyotype, platelet count, and transfusion status. JCO. 2011;29(4):392-397.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21149668/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hussein K, Pardanani AD, Van Dyke DL, Hanson CA, Tefferi A. International Prognostic Scoring System–independent cytogenetic risk categorization in primary myelofibrosis. Blood. 2010;115(3):496-499.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19901264/",
+      "kind": "other"
+    },
+    {
+      "text": "Hong J. Prognostication in myeloproliferative neoplasms, including mutational abnormalities. Blood Res. 2023;58(S1):S37-S45.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36922447/",
+      "kind": "other"
+    },
+    {
+      "text": "Rumi E, Cazzola M. Diagnosis, risk stratification, and response evaluation in classical myeloproliferative neoplasms. Blood. 2017;129(6):680-692.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5335805/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mutation-enhanced-international-prognostic-score-system-mipss70-mipss70+",
+    "calc.genetically-inspired-prognostic-scoring-system-gipss-primary-myelofibrosis-pmf",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-primary-myelofibrosis-pmf"
+  ],
+  "source_logic_hash": "89bfb3186e4da1c2eb07b370185ac2ad",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10066,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

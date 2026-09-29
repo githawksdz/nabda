@@ -1,0 +1,555 @@
+{
+  "id": "calc.modified-finnegan-neonatal-abstinence-score-nas",
+  "slug": "modified-finnegan-neonatal-abstinence-score-nas",
+  "language": "en",
+  "title": "Modifié Finnegan néonatal Abstinence score (NAS)",
+  "short_title": "Néonatal Abstinence score (NAS)",
+  "calc_type": null,
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "gynecologie-obstetrique",
+    "pediatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Sevrage de substance"
+  ],
+  "chief_complaints": [
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "neonatal drug withdrawal",
+    "Finnegan score",
+    "neonatal abstinence syndrome",
+    "NAS",
+    "Finnegan",
+    "neonatal abstinence score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Central nervous system disturbances | | |\n| Cry | Normal | 0 |\n| Excessive high-pitched cry <5 minutes | 2 | |\n| Continuous high-pitched cry >5 minutes | 3 | |\n| Sleep | Normal | 0 |\n| Sleeps <3 hours after feeding | 1 | |\n| Sleeps <2 hours after feeding | 2 | |\n| Sleeps <1 hour after feeding | 3 | |\n| Moro reflex | Normal | 0 |\n| Hyperactive | 2 | |\n| Markedly hyperactive | 3 | |\n| Tremors | None | 0 |\n| Mild tremors when disturbed | 1 | |\n| Moderate-severe tremors when disturbed | 2 | |\n| Mild tremors when undisturbed | 3 | |\n| Moderate-severe tremors when undisturbed | 4 | |\n| Increased muscle tone | No | 0 |\n| Yes | 1 | |\n| Excoriation (e.g. chin, knees, elbow, toes, nose) | No | 0 |\n| Yes | 1 | |\n| Myoclonic jerks (twitching/jerking of limbs) | No | 0 |\n| Yes | 3 | |\n| Generalized convulsions | No | 0 |\n| Yes | 5 | |\n| Metabolism, vasomotor, and respiratory disturbances | | |\n| Sweating | No | 0 |\n| Yes | 1 | |\n| Hyperthermia | None | 0 |\n| 37.2-38.3ºC (99.0-100.9ºF) | 1 | |\n| >38.3ºC (>100.9ºF) | 2 | |\n| Frequent yawning (>3-4 times per scoring interval) | No | 0 |\n| Yes | 1 | |\n| Mottling | No | 0 |\n| Yes | 1 | |\n| Nasal stuffiness | No | 0 |\n| Yes | 1 | |\n| Sneezing (>3-4 times per scoring interval) | No | 0 |\n| Yes | 1 | |\n| Nasal flaring | No | 0 |\n| Yes | 2 | |\n| Respiratory rate | Normal | 0 |\n| >60 breaths/minute, no retractions | 1 | |\n| >60 breaths/minute with retractions | 2 | |\n| Gastrointestinal disturbances | | |\n| Excessive sucking | No | 0 |\n| Yes | 1 | |\n| Poor feeding (infrequent/uncoordinated suck) | No | 0 |\n| Yes | 2 | |\n| Regurgitation | No | 0 |\n| ≥2 times during/post feeding | 2 | |\n| Projectile vomiting | No | 0 |\n| Yes | 3 | |\n| Stools | Normal | 0 |\n| Loose (curds/seedy) | 2 | |\n| Watery (water ring on diaper around stool) | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Nouveau-nés chez qui l'on suspecte un syndrome d'abstinence néonatale (NAS), c.-à-d. un abus de drogues maternel positif d'après les antécédents ou la toxicologie urinaire.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les protocoles de prise en charge fondés sur le score peuvent varier selon l’établissement, mais une étude ([Kocherlakota 2014](http://pediatrics.aappublications.org/content/134/2/e547.long)) suggère ce qui suit :\n\n- Commencer le calcul du score dans les 24 heures suivant la naissance et surveiller toutes les 3 à 4 heures.\n- En cas de deux scores consécutifs ≥12 ou de trois scores consécutifs ≥8, débuter un traitement pharmacologique.\n- Si aucune de ces situations ne s’applique, poursuivre la surveillance des scores à intervalles de 3 à 4 heures."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Opioid withdrawal dans newborns.",
+  "medium_description": "Stratifies gravité de opioid withdrawal dans newborns.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "cry",
+      "label": "Cry",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Excessive élevé-pitched cry <5 min",
+          "value": 2
+        },
+        {
+          "label": "Continuous élevé-pitched cry >5 min",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sleep",
+      "label": "Sleep",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Dort < 3 heures après la tétée",
+          "value": 1
+        },
+        {
+          "label": "Sleeps <2 hrs after feeding",
+          "value": 2
+        },
+        {
+          "label": "Dort < 1 heure après la tétée",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "moro",
+      "label": "Réflexe de Moro",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Hyperactive",
+          "value": 2
+        },
+        {
+          "label": "Nettement hyperactif",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tremors",
+      "label": "Tremors",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Tremblements légers lorsqu'il est stimulé",
+          "value": 1
+        },
+        {
+          "label": "modéré-severe tremors when disturbed",
+          "value": 2
+        },
+        {
+          "label": "Mild tremors when undisturbed",
+          "value": 3
+        },
+        {
+          "label": "modéré-severe tremors when undisturbed",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "muscle",
+      "label": "Tonus musculaire augmenté",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "excoriation",
+      "label": "Excoriation",
+      "tips": "p. ex. menton, genoux, coudes, orteils, nez",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "jerks",
+      "label": "Myoclonies",
+      "tips": "Fasciculations/secousses des membres",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "convulsions",
+      "label": "Convulsions généralisées",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sweating",
+      "label": "Sweating",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fever",
+      "label": "Hyperthermia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "37.2-38.3ºC (99.0-100.9ºF)",
+          "value": 1
+        },
+        {
+          "label": ">38.3ºC (>100.9ºF)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "yawning",
+      "label": "Bâillements fréquents",
+      "tips": ">3-4 fois par intervalle de cotation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mot",
+      "label": "Mottling",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stuff",
+      "label": "Congestion nasale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sneezing",
+      "label": "Sneezing",
+      "tips": ">3-4 fois par intervalle de cotation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nasal",
+      "label": "Battement des ailes du nez",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rr",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": ">60 respirations/minute, absence de tirage",
+          "value": 1
+        },
+        {
+          "label": ">60 breaths/minute avec retractions",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sucking",
+      "label": "Succion excessive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "feeding",
+      "label": "Alimentation insuffisante",
+      "tips": "Succion peu fréquente/non coordonnée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "regurg",
+      "label": "Regurgitation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "≥2 fois pendant/après l’alimentation",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "proj",
+      "label": "Vomissements en jet",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stools",
+      "label": "Stools",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Molle (grumeaux/granuleuse)",
+          "value": 2
+        },
+        {
+          "label": "Liquide (auréole d'eau sur la couche autour des selles)",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Finnegan LP. Neonatal abstinence syndrome: assessment and pharmacotherapy. In: Nelson N, editor. Current therapy in neonatal-perinatal medicine. 2 ed. Ontario: BC Decker. 1990:262–70.",
+      "href": null,
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bagley SM, Wachman EM, Holland E, Brogly SB. Review of the assessment and management of neonatal abstinence syndrome. Addict Sci Clin Pract. 2014;9(1):19.",
+      "href": "https://ascpjournal.biomedcentral.com/articles/10.1186/1940-0640-9-19",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kocherlakota P. Neonatal Abstinence Syndrome. Pediatrics Aug 2014, 134;(2):e547-e561.",
+      "href": "http://pediatrics.aappublications.org/content/134/2/e547.long ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "McQueen K, Murphy-oikonen J. Neonatal Abstinence Syndrome. N Engl J Med. 2016;375(25):2468-2479.",
+      "href": "https://www.nejm.org/doi/pdf/10.1056/NEJMra1600879 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.eat-sleep-console-esc",
+    "calc.rebound-hyperbilirubinemia-risk-score",
+    "calc.cows-score-opiate-withdrawal"
+  ],
+  "source_logic_hash": "30e22a76a8f4f826855fca78156e3ab3",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10048,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

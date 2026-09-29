@@ -1,0 +1,262 @@
+{
+  "id": "calc.canadian-syncope-risk-score",
+  "slug": "canadian-syncope-risk-score",
+  "language": "fr",
+  "title": "Score canadien de risque de syncope (Canadian Syncope Risk Score)",
+  "short_title": "Score canadien de risque de syncope (Canadian Syncope Risk Score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Vertiges",
+    "Crise convulsive",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "Canadian Syncope Risk Score",
+    "Risk Stratification of Syncope in the Emergency Department",
+    "syncope",
+    "syncope score",
+    "fainting",
+    "vasovagal",
+    "LOC",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Catégorie | Points | |\n| --- | --- | --- |\n| Évaluation clinique | | |\n| Prédisposition aux symptômes vasovagaux* | -1 | |\n| Antécédents de cardiopathie | 1 | |\n| Toute mesure de pression systolique <90 ou >180 mmHg | 2 | |\n| Explorations | | |\n| Taux de troponine élevé (>99e percentile de la population normale) | 2 | |\n| Axe QRS anormal (<-30° ou >100°) | 1 | |\n| Durée du QRS >130 ms | 1 | |\n| Intervalle QT corrigé >480 ms | 2 | |\n| Diagnostic au service des urgences | | |\n| Diagnostic aux urgences (d'après l'évaluation aux urgences) | Syncope vasovagale | -2 |\n| Syncope cardiaque | 2 | |\n| Aucun des deux | 0 | |\n\n*Déclenchés par le fait de se trouver dans un lieu chaud et bondé, la station debout prolongée, la peur, l'émotion ou la douleur.",
+  "how_to_use": {
+    "why": "- La syncope est un motif de consultation fréquent aux urgences, souvent bénin, mais parfois lié à des causes sous-jacentes potentiellement mortelles. Le Canadian Syncope Risk Score identifie les patients atteints de syncope qui présentent un risque plus élevé d’événements indésirables.\n- Peut potentiellement éviter des investigations et/ou une hospitalisation inutiles.",
+    "when": "- Patients ≥16 ans consultant ≤24 heures après une syncope.\n- Ne pas utiliser chez les patients présentant l’un des éléments suivants :",
+    "pearls": "- Prédit le risque d'événements indésirables graves à **30 jours** associés à une syncope, définis comme l'un des éléments suivants : décès, arythmie, causes cardiaques non arythmiques ou causes non cardiaques (voir [Evidence](#evidence) pour la liste complète).\n- En 2020, le CSRS a été validé avec succès (voir [Evidence](#evidence), ci-dessous)."
+  },
+  "next_steps": {
+    "advice": "Les patients à risque moyen ou élevé (≥1 point) doivent bénéficier d’explorations complémentaires à la recherche de causes cardiaques et non cardiaques de syncope.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "The Canadian Syncope Risk Score was derived by[Thiruganasambandamoorthy et al](https://www.cmaj.ca/content/early/2016/07/04/cmaj.151469.full.pdf+html)in a prospective cohort study based on six large Canadian emergency departments. 4,030 patients with syncope were enrolled (mean age was 53.6 years, 55.5% women).\n\n43 predictors of serious adverse events were studied, with nine being included in the final model. “Serious adverse event” was defined as death, arrhythmia, myocardial infarction, serious structural heart disease, aortic dissection, pulmonary embolism, severe pulmonary hypertension, severe hemorrhage, subarachnoid hemorrhage, or any other serious condition causing syncope and procedural interventions for the treatment of syncope. 3.6% of patients sustained a serious adverse event within 30 days of disposition from the ED.\n\nOn internal validation, scores of -2 or higher were found to have sensitivity 99% and specificity 26%. Scores of -1 or higher had sensitivity 98%, specificity 46%.\n\nOn[secondary validation](https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2763181)in a group of Canadian EDs, very low and low risk category patients appeared to have even lower actual percentage risks, with very low and low having only 0.3% and 0.7% risks of serious outcome.",
+  "more_info": "Interprétation :\n\n| Score | Risque estimé d'événement indésirable grave** | Catégorie de risque |\n| --- | --- | --- |\n| -3 | 0,4 % | Très faible |\n| -2 | 0,7 % | |\n| -1 | 1,2 % | Faible |\n| 0 | 1,9 % | |\n| 1 | 3,1 % | Modéré |\n| 2 | 5,1 % | |\n| 3 | 8,1 % | |\n| 4 | 12,9 % | Élevé |\n| 5 | 19,7 % | |\n| 6 | 28,9 % | Très élevé |\n| 7 | 40,3 % | |\n| 8 | 52,8 % | |\n| 9 | 65,0 % | |\n| 10 | 75,5 % | |\n| 11 | 83,6 % | |\n\n**Décès, arythmie, infarctus du myocarde, cardiopathie structurelle grave, dissection aortique, embolie pulmonaire, hypertension pulmonaire sévère, hémorragie sévère, hémorragie sous-arachnoïdienne, ou toute autre affection grave à l'origine d'une syncope, ainsi que les interventions procédurales pour le traitement de la syncope.",
+  "short_description": "Morbidité et mortalité chez les patients présentant une syncope.",
+  "medium_description": "Predicts 30-day serious adverse events dans patients presenting avec syncope.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "predis",
+      "label": "Prédisposition aux symptômes vasovagaux",
+      "tips": "Déclenché par le fait de se trouver dans un endroit chaud et bondé, une station debout prolongée, la peur, l’émotion ou la douleur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hx",
+      "label": "Antécédents de maladie cardiaque",
+      "tips": "Coronaropathie (CAD), fibrillation atriale ou flutter, insuffisance cardiaque congestive (CHF), valvulopathie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sys",
+      "label": "PAS < 90 ou > 180 mmHg",
+      "tips": "À toute lecture",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "trop",
+      "label": "Troponine élevée",
+      "tips": "> 99e percentile de la population normale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "abn",
+      "label": "Axe QRS anormal",
+      "tips": "<-30° ou >100°",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "qrs",
+      "label": "Durée du QRS >130 ms",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cqt",
+      "label": "[Intervalle QT corrigé](nabda:calc.corrected-qt-interval-qtc) > 480 ms",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "syncope",
+      "label": "Diagnostic aux urgences",
+      "tips": "D’après l’évaluation aux urgences",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Syncope vasovagale",
+          "value": -2
+        },
+        {
+          "label": "Syncope cardiaque",
+          "value": 2
+        },
+        {
+          "label": "Ni l'un ni l'autre",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Thiruganasambandamoorthy V, Kwong K, Wells GA, et al. Development of the Canadian Syncope Risk Score to predict serious adverse events after emergency department assessment of syncope. CMAJ. 2016;188(12):E289-98.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27378464/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Thiruganasambandamoorthy V, Sivilotti MLA, Le sage N, et al. Multicenter Emergency Department Validation of the Canadian Syncope Risk Score. JAMA Intern Med. 2020.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2763181",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zimmermann T, du Fay de Lavallaz J, Nestelberger T, et al. International validation of the canadian syncope risk score : a cohort study. Ann Intern Med. 2022;175(6):783-794.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35467933/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.san-francisco-syncope-rule",
+    "calc.egsys-evaluation-guidelines-syncope-study-score-syncope",
+    "calc.oesil-score-syncope"
+  ],
+  "source_logic_hash": "814e50f9149d9dc163d841c8690f3ab7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3951,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n//user inputs\nvar predis = parseFloat(predis);\nvar hx = parseFloat(hx);\nvar sys = parseFloat(sys);\nvar trop = parseFloat(trop);\nvar abn = parseFloat(abn);\nvar qrs = parseFloat(qrs);\nvar cqt = parseFloat(cqt);\nvar syncope = parseFloat(syncope);\n\n//calculation & interpretation\nvar est;\nvar risk;\n\nvar u = predis + hx + sys + trop + abn + qrs + cqt + syncope;\n\nvar assign ={'-3': 0.4, '-2': 0.7, '-1': 1.2, '0': 1.9, '1': 3.1, '2': 5.1, '3': 8.1, '4': 12.9, '5': 19.7, '6': 28.9, '7': 40.3, '8': 52.8, '9': 65.0, '10': 75.5, '11': 83.6};\n\nfor(var key in assign){\n    if (u == key){\n        est = assign[key];\n    }\n}\n\nif (u == -3 || u == -2){\n    risk = 'Very low';\n}else if(u == -1 || u == 0){\n    risk = 'Low';\n}else if(u >= 1 && u <= 3){\n    risk = 'Medium';\n }else if(u == 4 || u == 5){\n    risk = 'High';\n}else if(u >= 6){\n    risk = 'Very high';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: risk + ' risk'\n});\ncalc_output.push({\n    name: '3951_Canadian Syncope Risk Score_result',\n    value: u,\n    value_text: 'points',\n    message: 'Canadian Syncope Risk Score'\n});\ncalc_output.push({\n    name: '3951_Canadian Syncope Risk Score_interpretation',\n    value: risk,\n    value_text: ' risk',\n    message: est + '% risk of 30-day serious adverse event (death, arrhythmia, MI — full list in Evidence)'\n});\n",
+  "before_use": null,
+  "instructions": "Applicable to patients ≥16 years old presenting ≤24 hours of syncope. Do not use if: prolonged (>5 min)LOC, change in mental status from baseline, obvious witnessed seizure, major trauma, intoxication, language barrier, or head trauma causing LOC.",
+  "contributor_ids": [
+    "thomas-yang"
+  ],
+  "creator_names": [
+    "Dr. Venkatesh Thiruganasambandamoorthy"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "1716f653ce4e46424c5bd93457c233619f3e1b26bfdb7ca9b5ec9630088a5cfe"
+}

@@ -1,0 +1,198 @@
+{
+  "id": "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+  "slug": "pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+  "language": "en",
+  "title": "Embolie pulmonaire Syncope-Anemia-Renal Dysfunction (PE-SARD) score",
+  "short_title": "Score PE-SARD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anémie",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Anxieux",
+    "Saignement",
+    "Douleur thoracique",
+    "Dyspnée",
+    "Vomissements",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "Pulmonary Embolism Syncope Anemia Renal Dysfunction",
+    "PE-SARD",
+    "Pulmonary embolism",
+    "PE",
+    "acute pulmonary embolism",
+    "bleeding in PE",
+    "thrombus extension",
+    "major bleeding"
+  ],
+  "dosing": false,
+  "formula": "Points were assigned to variables to create a point-score model for prediction of early major bleeding:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Anemia | Absent | 0 |\n| Present | 2.5 | |\n| Syncope | Absent | 0 |\n| Present | 1.5 | |\n| Renal dysfunction | Absent | 0 |\n| Present | 1 | |",
+  "how_to_use": {
+    "why": "- Most major bleeds after initiating anticoagulation for PE occur within the first week.\n- This score is purpose-built for this very-early risk window, unlike broader bleeding scores.\n- It is quick and bedside-friendly, requiring only 3 routinely-available variables.",
+    "when": "- À appliquer chez les patients adultes (≥18 ans) chez qui une embolie pulmonaire (EP) est diagnostiquée au service des urgences ou en début d’hospitalisation.\n- À utiliser idéalement avant, ou immédiatement après, la première dose d’anticoagulation, afin d’estimer le risque d’hémorragie majeure précoce dans les 7 premiers jours du traitement.",
+    "pearls": "- Derived from cohorts that included both hemodynamically stable and unstable patients managed with anticoagulation +/- reperfusion.\n- Designed to predict in-hospital major bleeding, defined by ISTH criteria:\n\n - Fatal bleed.\n - Symptomatic bleed in a critical area or organ (e.g., ICH, intraspinal, intraocular, retroperitoneal, intra-articular, pericardial, intramuscular with compartment syndrome).\n - Hemoglobin drop ≥2 g/dL or requiring transfusion of ≥2 units.\n- Not validated for long-term or post-discharge events.\n- Renal function was expressed as eGFR calculated with the [CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) formula.\n- Discrimination in the derivation study was good (C-index ≈ 0.74) and outperformed similar tools (e.g., [VTE-BLEED](nabda:calc.vte-bleed-score) , [RIETE](nabda:calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment) , BACS); subsequent external validations have yielded mixed results.\n- A Swiss validation in older adults (≥65 years of age) did not show accurate prediction for early major bleeding ([Villiger et al., 2023](https://pubmed.ncbi.nlm.nih.gov/37149148/)); more patients were classified into higher-risk strata than the derivation sample, but this did not translate to an observed increased bleeding risk."
+  },
+  "next_steps": {
+    "advice": "- Ce score ne prend pas en compte tous les facteurs de risque hémorragique et doit compléter, et non remplacer, une évaluation clinique approfondie.\n- Les résultats de l’évaluation du risque peuvent orienter les décisions concernant la thrombolyse systémique, l’anticoagulation et les stratégies alternatives de reperfusion.",
+    "critical_actions": "",
+    "management": "- **Low-risk individuals:** Proceed with guideline-concordant anticoagulation +/- reperfusion.\n- **Higher-risk individuals:**\n\n - Address modifiable risk factors, such as concomitant antiplatelet or NSAID use.\n - Consider catheter-based therapy or surgical embolectomy rather than systemic thrombolysis.\n - Consider placement of an inferior vena cava filter, particularly if anticoagulation is contraindicated.\n - Favor anticoagulants with lower bleeding risk (e.g., LMWH or DOACs over unfractionated heparin).\n - Institute closer monitoring."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| PE-SARD Score | Risk of Early Major Bleeding |\n| --- | --- |\n| 0 | Low risk |\n| 1-2.5 | Intermediate risk |\n| >2.5 | High risk |",
+  "short_description": "Saignement risque dans PE.",
+  "medium_description": "Estimates risque de early major saignement chez les patients avec aigu embolie pulmonaire (PE).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "anemia",
+      "label": "Anémie",
+      "tips": "Hgb <12 g/dL",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "syncope",
+      "label": "Syncope",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "renaldys",
+      "label": "Dysfonction rénale",
+      "tips": "eGFR <60 mL/min",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chopard R, Piazza G, Falvo N, et al. An Original Risk Score to Predict Early Major Bleeding in Acute Pulmonary Embolism: The Syncope, Anemia, Renal Dysfunction (PE-SARD) Bleeding Score. Chest. 2021;160(5):1832-1843. doi:10.1016/j.chest.2021.06.048",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34217683/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Villiger R, Méan M, Stalder O, et al. Prediction of very early major bleeding risk in acute pulmonary embolism: an independent external validation of the Pulmonary Embolism-Syncope, Anemia, and Renal Dysfunction (PE-SARD) bleeding score. J Thromb Haemost. 2023;21(10):2884-2893. doi:10.1016/j.jtha.2023.04.025",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37149148/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chopard R, Bertoletti L, Piazza G, et al. External validation of the PE-SARD risk score for predicting early bleeding in acute pulmonary embolism in the RIETE Registry. Thromb Res. 2024;235:22-31. doi:10.1016/j.thromres.2024.01.013",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38295598/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nishimoto Y, Yamashita Y, Morimoto T, et al. External validation of the Pulmonary Embolism-Syncope, Anemia, and Renal Dysfunction bleeding score for early major bleeding in patients with acute pulmonary embolism: from the COMMAND VTE Registry-2. J Thromb Haemost. 2024;22(10):2784-2796. doi:10.1016/j.jtha.2024.06.011",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38944241/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tao Y, Chen H, Dong C, Zhang J, Shi Y, Xu X, Wang M, Zhu L, Shi J, Ji Y, Cheng Z. Performance of bleeding risk scores for major bleeding in anticoagulated patients with pulmonary embolism: insights from the CURES Registry-2. Thromb Haemost. 2026 May;126(5):496-508. doi: 10.1055/a-2642-0241",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40555360/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.vte-bleed-score",
+    "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment"
+  ],
+  "source_logic_hash": "a3a21289f7ad9ecf7cab0de1648123ac",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.vte-bleed-score",
+      "text": "VTE-BLEED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+      "text": "RIETE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.vte-bleed-score",
+      "text": "VTE-BLEED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+      "text": "RIETE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10602,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar anemia = parseFloat(anemia) || 0;\nvar syncope = parseFloat(syncope) || 0;\nvar renaldys = parseFloat(renaldys) || 0;\n\nvar score = anemia + syncope + renaldys;\n\nvar risk;\n\nif (score === 0) {\n    risk = 'Low';\n} else if (score >= 1 && score <= 2.5) {\n    risk = 'Intermediate';\n} else {\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of early major bleeding'\n});\ncalc_output.push({\n    name: '10602_PE-SARD_result',\n    value: score,\n    value_text: 'points',\n    message: 'PE-SARD Score'\n});\ncalc_output.push({\n    name: '10602_PE-SARD_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of early major bleeding'\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "lindsay-jones-md",
+    "eric-steinberg"
+  ],
+  "creator_names": [
+    "Dr. Romain Chopard"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "8612b3cfe0a93a29408cedb43180a8c9c444c20bd3787305a58e2ebbf1fccb58"
+}

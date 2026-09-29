@@ -1,0 +1,143 @@
+{
+  "id": "calc.abic-score-alcoholic-hepatitis",
+  "slug": "abic-score-alcoholic-hepatitis",
+  "language": "fr",
+  "title": "ABIC score pour Alcoholic Hepatitis",
+  "short_title": "ABIC score pour Alcoholic Hepatitis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Alcohol hepatitis",
+    "Alcoholic hepatitis score"
+  ],
+  "dosing": false,
+  "formula": "ABIC Score = ( **A** ge, years × 0.1) + (Serum **B** ilirubin, mg/dL × 0.08) + ( **I** NR × 0.8) + (Serum **C** reatinine, mg/dL × 0.3)",
+  "how_to_use": {
+    "why": "Performs similarly to [Maddrey's Discriminant Function](nabda:calc.maddreys-discriminant-function-alcoholic-hepatitis) at predicting mortality, and better than the [MELD Score](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) and [Lille Model](nabda:calc.lille-model-alcoholic-hepatitis) , in one retrospective study ([Garcia-Saenz-de-Sicilia 2017](https://www.ncbi.nlm.nih.gov/pubmed/27922027)).",
+    "when": "Patients atteints d’hépatite alcoolique.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Nous n’avons pas connaissance de recommandations qui préconisent l’administration de corticoïdes sur la base de l’ABIC Score, mais il pourrait être raisonnable de l’envisager dans la décision, compte tenu de sa prédiction de la mortalité selon la gravité.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| ABIC Score | Groupe de risque | Survie à 90 jours | Survie à 1 an |\n| --- | --- | --- | --- |\n| <6,71 | Faible | 100 % | 97,1 % |\n| 6,71 à <9,00 | Intermédiaire | 70 % | 64,3 % |\n| ≥9,00 | Élevé | 25 % | 33,3 % |",
+  "short_description": "Alcohol hepatitis survie.",
+  "medium_description": "Predicts survie dans alcoholic hepatitis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bili",
+      "label": "Bilirubine sérique",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cr",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Dominguez M, Rincón D, Abraldes JG, et al. A new scoring system for prognostic stratification of patients with alcoholic hepatitis. Am J Gastroenterol. 2008;103(11):2747-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18721242",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Papastergiou V, Tsochatzis EA, Pieri G, et al. Nine scoring models for short-term mortality in alcoholic hepatitis: cross-validation in a biopsy-proven cohort. Aliment Pharmacol Ther. 2014;39(7):721-32.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/apt.12654",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Garcia-saenz-de-sicilia M, Duvoor C, Altamirano J, et al. A Day-4 Lille Model Predicts Response to Corticosteroids and Mortality in Severe Alcoholic Hepatitis. Am J Gastroenterol. 2017;112(2):306-315.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27922027",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lafferty H, Stanley AJ, Forrest EH. The management of alcoholic hepatitis: a prospective comparison of scoring systems. Aliment Pharmacol Ther. 2013;38(6):603-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23879668",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lille-model-alcoholic-hepatitis",
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.maddreys-discriminant-function-alcoholic-hepatitis"
+  ],
+  "source_logic_hash": "a3ef709f03a0015557de64f3c06a01ac",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.maddreys-discriminant-function-alcoholic-hepatitis",
+      "text": "Maddrey's Discriminant Function"
+    },
+    {
+      "type": "calc",
+      "id": "calc.meld-score-model-end-stage-liver-disease-12-older",
+      "text": "MELD Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.lille-model-alcoholic-hepatitis",
+      "text": "Lille Model"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10136,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

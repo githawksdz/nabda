@@ -1,0 +1,451 @@
+{
+  "id": "calc.possum-operative-morbidity-mortality-risk",
+  "slug": "possum-operative-morbidity-mortality-risk",
+  "language": "en",
+  "title": "POSSUM pour Operative Morbidity et risque de mortalité",
+  "short_title": "Calculateur POSSUM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Appendicitis",
+    "Cholecystitis",
+    "Insuffisance cardiaque",
+    "Hernia",
+    "Sepsis",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "POSSUM",
+    "surgery",
+    "risk"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.\n\nREMARQUE : Le score physiologique et le score de sévérité opératoire sont pondérés différemment.\n\n« Sous la composante respiratoire du score de sévérité physiologique, les anomalies radiologiques s'ajoutent aux constatations cliniques, et ces dernières sont plus importantes », selon le Dr Copeland (créateur du POSSUM). Voir notre entretien sous « De la part du créateur » pour plus d'informations du Dr Copeland.",
+  "how_to_use": {
+    "why": "Le POSSUM calcule le risque de morbidité et de mortalité opératoires, ce qui peut aider les patients et les familles à prendre des décisions éclairées concernant la chirurgie.\n\n**Outils similaires / alternatifs :**\n\n- Il existe des modèles spécifiques à chaque procédure pour la chirurgie colorectale (CR-POSSUM), la chirurgie vasculaire (Vascular-POSSUM) et la chirurgie œsophagogastrique (O-POSSUM, O pour œsophagogastrique).\n- [APACHE II](nabda:calc.apache-ii-score) est un outil d'évaluation similaire mais s'applique aux patients de soins intensifs et n'évalue que le risque de mortalité.\n- Le [Surgical Apgar Score (SAS)](nabda:calc.surgical-apgar-score-sas-postoperative-risk) fournit des estimations similaires de morbidité et de mortalité.\n- Le POSSUM est plus complet que le SAS (calculé à partir de 3 paramètres), mais le SAS est plus objectif.\n- Le SAS utilise exclusivement des paramètres peropératoires, tandis que le POSSUM utilise des paramètres préopératoires.\n- Le calculateur de risque ACS NSQIP est une évaluation similaire plus récente. Il n'a pas encore été validé aussi rigoureusement que le POSSUM.\n- D'autres scores spécifiques à certaines maladies peuvent être utilisés pour évaluer le risque, p. ex. [Revised Cardiac Risk Index pour le risque préopératoire](nabda:calc.revised-cardiac-risk-index-pre-operative-risk) .",
+    "when": "Patients subissant des procédures de chirurgie générale, en urgence ou programmées.",
+    "pearls": "- Le Physiological and Operative Severity Score for the enUmeration of Mortality and morbidity (POSSUM) évalue la morbidité et la mortalité en chirurgie générale.\n- Il peut être utilisé pour la chirurgie en urgence comme pour la chirurgie programmée.\n- Le POSSUM original a été modifié par des chercheurs de Portsmouth qui ont établi une prédiction plus précise de la mortalité, et le modèle P-POSSUM est désormais plus couramment utilisé pour calculer la composante mortalité.\n- L'ensemble de données du POSSUM exclut les patients traumatisés ; le POSSUM ne doit donc PAS être utilisé pour prédire la morbidité et la mortalité après une chirurgie traumatique.\n- Le POSSUM ne doit pas dicter la décision d'opérer, qui est une décision clinique.\n- Le score physiologique doit être calculé au moment de la chirurgie, et non au moment de l'admission.\n- Les définitions des procédures chirurgicales ne sont que des lignes directrices. Toutes les procédures ne sont pas listées, et l'approximation la plus proche doit être sélectionnée.\n- Le POSSUM peut surestimer le risque en chirurgie hépato-pancréatico-biliaire."
+  },
+  "next_steps": {
+    "advice": "Les estimations de risque peuvent aider les patients et les familles dans le processus de consentement éclairé et la gestion des attentes.",
+    "critical_actions": "",
+    "management": "Le POSSUM doit être calculé au moment où la décision d'opérer est prise. Les pourcentages peuvent être partagés avec le patient lors de la discussion des risques de l'intervention."
+  },
+  "evidence": "- The POSSUM was originally developed by Copeland and colleagues in 1991 to assess quality of care and provide a scoring system for surgical audit.\n\n - Physiological and operative severity score data were obtained from 1,372 patients who underwent elective or emergency surgery from August 1988 to February 1989 at Walton Hospital in Liverpool, UK.\n - Logistic regression analysis yielded statistically significant equations for morbidity and mortality, e.g. POSSUM score.\n - The POSSUM’s predicted risk correlates well with observed rates for mortality and morbidity ( *p* < 0.001).\n- The original POSSUM was modified to the Portsmouth POSSUM, or P-POSSUM, in 1998 by Prytherch and colleagues, who derived a more accurate prediction for the mortality component.\n\n - The study showed that the original POSSUM logistic regression equation for mortality overpredicted the overall risk of death by more than twofold and the risk of death for patients at lowest risk (5% or less) by more than sevenfold.\n - Both the POSSUM and P-POSSUM slightly overestimate both morbidity and mortality.\n- Since the original publication of POSSUM, the score has been modified and validated for numerous subtypes of surgeries and clinical scenarios, including:\n\n - Colorectal surgery.\n - Vascular surgery.\n - Oncologic gastric surgery.\n - Hepatectomy.\n - Emergency laparotomy.\n - Orthopedic surgery.",
+  "more_info": "**Sévérité des chirurgies :**\n\n- Modérée : appendicectomie, cholécystectomie, mastectomie, RTUP.\n- Majeure : laparotomie, résection intestinale, cholécystectomie avec cholédocotomie, procédure vasculaire périphérique ou amputation majeure.\n- Majeure+ : procédure aortique, résection abdominopérinéale, résection pancréatique ou hépatique, œsophagogastrectomie.\n\n**La morbidité était définie comme l'un des éléments suivants :**\n\n- Hémorragie.\n- Infection (y compris pneumonie, infection de plaie, infection urinaire, infection profonde, septicémie et fièvre d'origine inconnue).\n- Éviscération de plaie ou fistule anastomotique.\n- Thrombose (y compris) TVP, EP, AVC ou IM.\n- Insuffisance cardiaque.\n- Altération de la fonction rénale (augmentation de l'urée >5 mmol/L par rapport au préopératoire).\n- Hypotension (insuffisance respiratoire).\n- « Toute autre complication ».",
+  "short_description": "Estimates morbidity et mortalité pour general surgery patients.",
+  "medium_description": "Estimates morbidity et mortalité pour general surgery patients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "card",
+      "label": "Cardiac",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No défaillance",
+          "value": 1
+        },
+        {
+          "label": "Diurétique, digoxine ou médicaments pour angine/hypertension",
+          "value": 2
+        },
+        {
+          "label": "œdème périphérique, warfarin, ou borderline cardiomegaly sur chest X-ray (CXR)",
+          "value": 4
+        },
+        {
+          "label": "Élévation de la pression veineuse jugulaire ou cardiomyégalie sur la radiographie thoracique",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Respiratory",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pas de dyspnée",
+          "value": 1
+        },
+        {
+          "label": "Dyspnée d'effort ou BPCO légère sur la radiographie thoracique",
+          "value": 2
+        },
+        {
+          "label": "Limiting dyspnea ou modéré COPD sur CXR",
+          "value": 4
+        },
+        {
+          "label": "Dyspnée de repos ou fibrose/consolidation sur la radiographie thoracique",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Systolic pression artérielle",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pulse",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "gcs",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "unit": "gcs",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "k",
+      "label": "Potassium",
+      "optional": false,
+      "unit": "k",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "ekg",
+      "label": "ECG",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 1
+        },
+        {
+          "label": "Fibrillation atriale (FC 60-90)",
+          "value": 2
+        },
+        {
+          "label": "5 battements ectopiques/min, ondes Q ou modifications de l'onde ST/T",
+          "value": 8
+        },
+        {
+          "label": "Tout autre rythme anormal",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "opsev",
+      "label": "Operative gravité",
+      "tips": "Voir la section À propos pour des exemples de chirurgies dans chaque catégorie.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Minor",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Major",
+          "value": 4
+        },
+        {
+          "label": "Major+",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "proc",
+      "label": "Nombre de procédures",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 4
+        },
+        {
+          "label": ">2",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bloodloss",
+      "label": "Perte sanguine estimée",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "soil",
+      "label": "Contamination péritonéale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 1
+        },
+        {
+          "label": "Mineure (liquide séreux)",
+          "value": 2
+        },
+        {
+          "label": "Pus localisé",
+          "value": 4
+        },
+        {
+          "label": "Contenu intestinal libre, pus ou sang",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "malig",
+      "label": "Présence de malignité",
+      "tips": "Diagnostiquée avant ou pendant la chirurgie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 1
+        },
+        {
+          "label": "Primaire uniquement",
+          "value": 2
+        },
+        {
+          "label": "Métastases ganglionnaires",
+          "value": 4
+        },
+        {
+          "label": "Métastases à distance",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mode",
+      "label": "Mode de chirurgie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Elective",
+          "value": 1
+        },
+        {
+          "label": "Urgence (dans les 24 h), réanimation >2 h possible",
+          "value": 4
+        },
+        {
+          "label": "Urgence (dans les 2 h)",
+          "value": 8
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Copeland GP, Jones D, Walters M. POSSUM: a scoring system for surgical audit. Br J Surg 1991;78(3):355-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2021856",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Prytherch DR, Whiteley MS, Higgins B, Weaver PC, Prout WG, Powell SJ. POSSUM and Portsmouth POSSUM for predicting mortality. Physiological and Operative Severity Score for the enUmeration of Mortality and morbidity. Br J Surg 1998 Sep;85(9):1217-20.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9752863",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Copeland GP. The POSSUM System of Surgical Audit. Arch Surg. 2002;137(1):15-19. doi:10.1001/archsurg.137.1.15.",
+      "href": "https://jamanetwork.com/journals/jamasurgery/fullarticle/212013",
+      "kind": "other"
+    },
+    {
+      "text": "Ramkumar T, Ng V, Fowler L, Farouk R. A comparison of POSSUM, P-POSSUM and colorectal POSSUM for the prediction of postoperative mortality in patients undergoing colorectal resection. Dis Colon Rectum. 2006 Mar;49(3):330-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16421662",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tez M, Yoldaş O, Gocmen E, Külah B, Koc M. Evaluation of P-POSSUM and CR-POSSUM scores in patients with colorectal cancer undergoing resection. World J Surg. 2006 Dec;30(12):2266-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17103102",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lam CM, Fan ST, Yuen AW, Law WL, Poon K. Validation of POSSUM scoring systems for audit of major hepatectomy. Br J Surg. 2004 Apr;91(4):450-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15048745",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mohil RS, Bhatnagar D, Bahadur L, Rajneesh, Dev DK, Magan M. POSSUM and P-POSSUM for risk-adjusted audit of patients undergoing emergency laparotomy. Br J Surg. 2004 Apr;91(4):500-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15048756",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van Zeeland ML, Genovesi IP, Mulder JW, Strating PR, Glas AS, Engel AF. POSSUM predicts hospital mortality and long-term survival in patients with hip fractures. J Trauma. 2011 Apr;70(4):E67-72.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21613973",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chen T, Wang H, Wang H, Song Y, Li X, Wang J. POSSUM and P-POSSUM as predictors of postoperative morbidity and mortality in patients undergoing hepato-biliary-pancreatic surgery: a meta-analysis. Ann Surg Oncol. 2013 Aug;20(8):2501-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23435569",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.surgical-apgar-score-sas-postoperative-risk",
+    "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.apache-ii-score",
+    "calc.revised-cardiac-risk-index-pre-operative-risk"
+  ],
+  "source_logic_hash": "d6ea18352df2ba1d3492746f89cdd711",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.surgical-apgar-score-sas-postoperative-risk",
+      "text": "Surgical Apgar Score (SAS)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.revised-cardiac-risk-index-pre-operative-risk",
+      "text": "Revised Cardiac Risk Index for Pre-Operative Risk"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3927,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

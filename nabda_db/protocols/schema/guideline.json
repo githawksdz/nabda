@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/cat/guideline.json",
+  "title": "Vidal reco as CAT (conduite à tenir)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "title", "body_html", "source_context", "locale_status"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^g\\." },
+    "title": { "type": "string" },
+    "body_html": { "type": "string" },
+    "substance_ids": { "type": "array", "items": { "type": "string" } },
+    "presentation_ids": { "type": "array", "items": { "type": "string" } },
+    "related_cat_ids": { "type": "array", "items": { "type": "string" } },
+    "calc_ids": { "type": "array", "items": { "type": "string" } },
+    "source_context": { "type": "string" },
+    "locale_status": { "type": "string" },
+    "notes": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "object" },
+    "adaptation": { "type": "object" }
+  }
+}

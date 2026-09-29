@@ -1,0 +1,247 @@
+{
+  "id": "calc.murray-score-acute-lung-injury",
+  "slug": "murray-score-acute-lung-injury",
+  "language": "en",
+  "title": "Murray score pour aigu Lung lésion",
+  "short_title": "Score de Murray",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "murray score",
+    "ards",
+    "ali",
+    "murry score",
+    "ecmo",
+    "covid",
+    "covid19",
+    "covid 19",
+    "coronavirus",
+    "covid-19"
+  ],
+  "dosing": false,
+  "formula": "Additionner les points sélectionnés, puis diviser par le nombre d'entrées sélectionnées :\n\n| Variable | Points |\n| --- | --- |\n| Consolidation à la radiographie thoracique (CXR) | |\n| Aucune | 0 |\n| 1 quadrant | 1 |\n| 2 quadrants | 2 |\n| 3 quadrants | 3 |\n| 4 quadrants | 4 |\n| Rapport PaO2/FiO2 | |\n| ≥300 | 0 |\n| 225–299 | 1 |\n| 175–224 | 2 |\n| 100–174 | 3 |\n| <100 | 4 |\n| PEEP, cm H2O | |\n| ≤5 | 0 |\n| 6–8 | 1 |\n| 9–11 | 2 |\n| 12–14 | 3 |\n| ≥15 | 4 |\n| Compliance, ml/cm H2O VT / (PIP – PEEP) | |\n| ≥80 | 0 |\n| 60–79 | 1 |\n| 40–59 | 2 |\n| 20–39 | 3 |\n| ≤19 | 4 |",
+  "how_to_use": {
+    "why": "- Fournit une méthode relativement standardisée d’évaluation de la gravité de l’atteinte pulmonaire dans le contexte du SDRA et aide à déterminer quels patients peuvent bénéficier d’une assistance extracorporelle.\n- L’ECMO a élargi les options de prise en charge des patients atteints de formes sévères de SDRA ; toutefois, les critères optimaux et le moment optimal d’instauration de l’ECMO ne sont pas établis. Le score de Murray est un système qui peut aider les praticiens à sélectionner les candidats appropriés pour ce traitement.",
+    "when": "- Patients with severe hypoxemic respiratory failure from acute respiratory distress syndrome (ARDS).\n- May be used in conjunction with other clinical factors (e.g. age, comorbidities, etiology of respiratory failure, presence of other organ dysfunction, duration of endotracheal intubation) to help determine whether a patient may benefit from extracorporeal life support.",
+    "pearls": "- Indique la sévérité du SDRA ; ne doit pas être utilisé seul pour déterminer l’admissibilité à l’ECMO.\n- Ne doit pas être utilisé pour caractériser la sévérité d’autres formes d’insuffisance respiratoire aiguë ou chronique, ni pour attribuer un degré de sévérité à des patients atteints de SDRA se manifestant par une acidose respiratoire sévère non compensée.\n- Non applicable aux patients chez qui une ECMO est envisagée pour une insuffisance cardiaque."
+  },
+  "next_steps": {
+    "advice": "According to the[Extracorporeal Life Support Organization (ELSO)](https://www.elso.org/resources/guidelines.aspx)guidelines:\n\n- Patients with ARDS and a Murray Score of 3-4 may be considered for ECMO cannulation in the correct clinical setting.\n- Patients with a Murray Score >2 could be considered for transfer to a center with ECMO capabilities.\n\nIt is important to consider all other patient factors as well as contraindications and risks of ECMO. Relative contraindications include:\n\n- Any condition that would limit the benefit of ECMO (such as severe neurologic injury or advanced malignancy).\n- Any contraindication to anticoagulation.\n- High FiO₂requirements or high-pressure mechanical ventilation >7 days.\n- Limited vascular access.",
+    "critical_actions": "The Murray Score is only a guide and should not supercede clinical judgement by clinicians about the appropriateness of ECMO initiation.\n\nIn the only modern clinical trial evaluating ECMO for ARDS (the[CESAR Trial in Lancet 2009](https://www.ncbi.nlm.nih.gov/pubmed/19762075)), the indications for ECMO in patients with ARDS included Murray Scores 3-4 or a pH <7.20 despite optimal conventional treatment. Patients with Murray Scores >2 and P/F ratio <150 should be considered for transfer to an ECMO center.",
+    "management": "Once the decision is made to initiate ECMO, the patient should be transferred and managed at a center experienced at treating patients with extracorporeal life support. The following algorithm highlights the basic considerations for types of ECMO cannulation strategies based on the different pathophysiological indications.\n\nOnce the patient is supported on extracorporeal life support with direct oxygenation and removal of carbon dioxide from the blood, it may be possible to apply low-volume, low-pressure ventilation strategies, which is the underlying principle for ARDS management.\n\n![](https://cdn-web-img.mdcalc.com/content/murray-score.png)\n\nAdapted from the[ELSO Red Book, 5th Edition](https://www.elso.org/Publications/RedBook5thEdition.aspx)(Brogan et al)."
+  },
+  "evidence": "Initialement développé par [John Murray](https://www.ncbi.nlm.nih.gov/pubmed/3202424) pour évaluer la gravité de la lésion pulmonaire aiguë dans le SDRA, le Murray Score a ensuite été utilisé dans l’essai Conventional Ventilation or ECMO for Severe Adult Respiratory Failure ([CESAR](https://www.ncbi.nlm.nih.gov/pubmed/19762075)) pour aider à déterminer quels patients atteints de SDRA étaient appropriés pour l’ECMO.\n\nL’essai CESAR est le seul essai randomisé moderne comparant une prise en charge ventilatoire « conventionnelle » chez des patients atteints de SDRA à une prise en charge protocolisée dans un centre spécialisé incluant l’ECMO lorsqu’elle était jugée nécessaire.\n\n180 patients ont été randomisés, et 53 % dans le groupe conventionnel sont décédés ou présentaient un handicap sévère à 6 mois, contre 37 % dans le groupe ECMO (p = 0,03). À noter, une ventilation à faible volume courant n’a été utilisée que chez 70 % des patients du groupe conventionnel, et tous les patients randomisés dans le groupe de traitement n’ont pas fini par recevoir l’ECMO.",
+  "more_info": "Interpretation:\n\n| Murray Score | Severity |\n| --- | --- |\n| 0 | No lung injury |\n| 0.1–2.5 | Mild to moderate |\n| >2.5 | Severe |\n\nIf Murray Score ≥3.0, then patient should be considered for ECMO referral.",
+  "short_description": "Aigu lung lésion gravité.",
+  "medium_description": "Stratifies gravité de aigu lung lésion, et is also used pour ECMO patient selection.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "cxr",
+      "label": "Consolidation sur CXR",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": 5
+        },
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "1 quadrant",
+          "value": 1
+        },
+        {
+          "label": "2 quadrants",
+          "value": 2
+        },
+        {
+          "label": "3 quadrants",
+          "value": 3
+        },
+        {
+          "label": "4 quadrants",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ratio",
+      "label": "Rapport PaO₂/FiO₂",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": 5
+        },
+        {
+          "label": "≥300",
+          "value": 0
+        },
+        {
+          "label": "225-299",
+          "value": 1
+        },
+        {
+          "label": "175-224",
+          "value": 2
+        },
+        {
+          "label": "100-174",
+          "value": 3
+        },
+        {
+          "label": "< 100",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "peep",
+      "label": "PEEP, cm H₂O",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": 5
+        },
+        {
+          "label": "≤5",
+          "value": 0
+        },
+        {
+          "label": "6–8",
+          "value": 1
+        },
+        {
+          "label": "9–11",
+          "value": 2
+        },
+        {
+          "label": "12–14",
+          "value": 3
+        },
+        {
+          "label": "≥15",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "comp",
+      "label": "Compliance, ml/cm H₂O",
+      "tips": "V~T~/ (PIP– PEEP )",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": 5
+        },
+        {
+          "label": "≥80",
+          "value": 0
+        },
+        {
+          "label": "60–79",
+          "value": 1
+        },
+        {
+          "label": "40–59",
+          "value": 2
+        },
+        {
+          "label": "20–39",
+          "value": 3
+        },
+        {
+          "label": "≤19",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "(ELSO). Extracorporeal Life Support Organization (ELSO) Guidelines for Adult Respiratory Failure. 2013. ",
+      "href": "https://www.elso.org/resources/guidelines.aspx",
+      "kind": "international"
+    },
+    {
+      "text": "Murray JF, Matthay MA, Luce JM, Flick MR. An expanded definition of the adult respiratory distress syndrome. Am Rev Respir Dis. 1988;138(3):720-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3202424 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gundre PR, Shah T, Kupfer Y, et al. Murray's Acute Lung Injury Score As A Predictor Of Tracheostomy In Critically Ill Patients. Chest.  2009;136(4_MeetingAbstracts).",
+      "href": "https://journal.chestnet.org/article/S0012-3692(16)48145-6/abstract ",
+      "kind": "other"
+    },
+    {
+      "text": "Brogan TV, Lequier L, Lorusso R et al. Extracorporeal Life Support: The ELSO Red Book, 5th edition. Extracorporeal Life Support Organization 2017.",
+      "href": "https://www.elso.org/Publications/RedBook5thEdition.aspx",
+      "kind": "other"
+    },
+    {
+      "text": "Peek GJ, Mugford M, Tiruvoipati R, et al. Efficacy and economic assessment of conventional ventilatory support versus extracorporeal membrane oxygenation for severe adult respiratory failure (CESAR): a multicentre randomised controlled trial. Lancet. 2009;374(9698):1351-63.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19762075",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lung-injury-prediction-score-lips",
+    "calc.prediction-survival-ecmo-therapy-preset-score",
+    "calc.horowitz-index-lung-function-p-f-ratio"
+  ],
+  "source_logic_hash": "d0bc4483c417dc60ed2530e8bbb47b8b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3996,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

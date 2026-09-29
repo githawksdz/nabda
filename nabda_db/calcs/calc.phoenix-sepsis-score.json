@@ -1,0 +1,428 @@
+{
+  "id": "calc.phoenix-sepsis-score",
+  "slug": "phoenix-sepsis-score",
+  "language": "en",
+  "title": "Score de sepsis de Phoenix",
+  "short_title": "Score de sepsis de Phoenix",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "infectiologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Anurie",
+    "Dyspnée",
+    "Fatigue",
+    "Fièvre",
+    "Dyspnée",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "Phoenix Sepsis Score",
+    "pediatric sepsis",
+    "pediatric septic shock",
+    "sepsis",
+    "septic shock",
+    "sepsis score",
+    "septic shock score",
+    "pediatric sepsis score",
+    "pediatric septic shock score"
+  ],
+  "dosing": false,
+  "formula": "The Phoenix Sepsis Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Respiratory (max 3 points) | | |\n| PaO 2 /FiO 2 , SpO 2 /FiO 2 1 | PaO 2 /FiO 2 ≥400 or SpO 2 /FiO 2 ≥292 | 0 |\n| PaO 2 /FiO 2 <400 on any respiratory support or SpO 2 /FiO 2 <292 on any respiratory support | 1 | |\n| PaO 2 /FiO 2 100-200 and IMV or SpO 2 /FiO 2 148-220 and IMV | 2 | |\n| PaO 2 /FiO 2 <100 and IMV or SpO 2 /FiO 2 <148 and IMV | 3 | |\n| Cardiovascular (max 6 points) | | |\n| Vasoactive medications 2 | None | 0 |\n| 1 | 1 | |\n| ≥2 | 2 | |\n| Lactate 3 | <5 mmol/L | 0 |\n| 5-10.9 mmol/L | 1 | |\n| >10.9 mmol/L | 2 | |\n| Age | [MAP](nabda:calc.mean-arterial-pressure-map\\) , mm Hg | |\n| <1 month | >30 | 0 |\n| <1 month | 17-30 | 1 |\n| <1 month | <17 | 2 |\n| 1 to 11 months | >38 | 0 |\n| 1 to 11 months | 25-38 | 1 |\n| 1 to 11 months | <25 | 2 |\n| 1 to <2 years | >43 | 0 |\n| 1 to <2 years | 31-43 | 1 |\n| 1 to <2 years | <31 | 2 |\n| 2 to <5 years | >44 | 0 |\n| 2 to <5 years | 32-44 | 1 |\n| 2 to <5 years | <32 | 2 |\n| 5 to <12 years | >48 | 0 |\n| 5 to <12 years | 36-48 | 1 |\n| 5 to <12 years | <36 | 2 |\n| 12 to 17 years | >51 | 0 |\n| 12 to 17 years | 38-51 | 1 |\n| 12 to 17 years | <38 | 2 |\n| Coagulation (max 2 points) | | |\n| Platelets | ≥100 x 10 3 μL | 0 |\n| <100 x 10 3 μL | 1 | |\n| INR | ≤1.3 | 0 |\n| >1.3 | 1 | |\n| D-dimer | ≤2 μg/mL FEU | 0 |\n| >2 μg/mL FEU | 1 | |\n| Fibrinogen | ≥100 mg/dL | 0 |\n| <100 mg/dL | 1 | |\n| Neurological (max 2 points) | | |\n| [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) | GCS >10; pupils reactive | 0 |\n| GCS ≤10 | 1 | |\n| Fixed pupils bilaterally | 2 | |\n\n^1^SpO~2~/FiO~2~ratio is only calculated if SpO~2~≤97%.\n\n^2^Vasoactive medications include any dose of epinephrine, norepinephrine, dopamine, dobutamine, milrinone, and/or vasopressin (for shock).\n\n^3^Lactate can be arterial or venous.",
+  "how_to_use": {
+    "why": "- Dérivé d'une base de données cliniques de 3,6 millions de rencontres hospitalières pédiatriques, couvrant à la fois des contextes à ressources élevées et limitées, ce qui favorise une meilleure généralisabilité.\n- Surpasse les critères antérieurs de l'International Pediatric Sepsis Consensus Conference (IPSCC) pour le sepsis pédiatrique.",
+    "when": "- À utiliser chez les patients pédiatriques avec suspicion d’infection pour déterminer s’ils répondent aux critères de sepsis ou de choc septique.\n- Nécessite des informations provenant de 4 systèmes pour calculer un résultat : respiratoire, cardiovasculaire, coagulation et neurologique.\n- Utiliser le score total le plus défavorable à un moment donné pour estimer le risque et le devenir du patient.",
+    "pearls": "- The Phoenix Sepsis Score is the result of a large retrospective study conducted by the Society of Critical Care Medicine Pediatric Sepsis Definition Task Force and improves upon criteria that were initially developed in 2005.\n- High-resource settings included in the study were exclusively from tertiary care centers in the United States.\n- A score ≥2 points is associated with higher in-hospital mortality in both high- and low-resource settings.\n- An elevated score requires a significant degree of end-organ dysfunction; a “normal” score should not delay or negate treatment in patients with suspected sepsis.\n- The score does not account for chronic organ dysfunction."
+  },
+  "next_steps": {
+    "advice": "- Une thérapie guidée par des objectifs (par ex. fixer des objectifs concrets pour la pression artérielle moyenne, la saturation en oxygène et d'autres indicateurs physiologiques) peut contribuer à améliorer la survie.\n- Le choix de l'antibiotique doit être adapté à la source ou au site suspecté de l'infection (s'il peut être déterminé) et à l'antibiogramme local.\n- Les pathologies sous-jacentes (par ex. néoplasie, immunodépression, mucoviscidose, antécédents de germes résistants aux antibiotiques) doivent également guider le choix de l'antibiotique.",
+    "critical_actions": "- Patients with suspected septic shock should be admitted to a pediatric critical care unit.\n- Hypotension is a late finding in children and signals impending cardiovascular collapse and cardiac arrest.\n- Consider vasoactive agents if blood pressure remains hypotensive after 40–60 mL/kg of isotonic fluids.\n- Vasoactive medications may be safely administered through a peripheral line initially if central access is unavailable, provided the site is monitored closely for signs of extravasation.",
+    "management": "- **Sepsis** requires a **score ≥2** in children with a suspected infection.\n- **Septic shock** requires a **score ≥2** plus **≥1 cardiovascular point.**\n- Follow your local standard of care for initiating treatment of sepsis and septic shock if supported by clinical condition; the Society of Critical Care Medicine’s[Surviving Sepsis Campaign](https://www.sccm.org/SurvivingSepsisCampaign/Guidelines/Pediatric-Patients), maintains information on management and treatment of pediatric sepsis."
+  },
+  "evidence": "The[Phoenix Sepsis Score](https://pubmed.ncbi.nlm.nih.gov/38245889/)was derived from a retrospective cohort of 172,984 children (age <18 years) admitted to 10 hospitals across 5 countries (United States, Bangladesh, Colombia, China, and Kenya). Children presenting with suspected infection were included regardless of care setting: emergency department, inpatient ward, or intensive care unit. Those within their birth hospitalization or born before 37 weeks gestational age were excluded.\n\nThe primary end point was in-hospital mortality; secondary end points were death within 72 hours of hospitalization or need for ECMO. The Phoenix Score achieved an AUROC of 0.82 for predicting mortality. Positive predictive values for in-hospital mortality, 72 hour mortality, and need for ECMO were higher than those for both the prior International Pediatric Sepsis Consensus Conference (IPSCC) criteria and the SIRS criteria-based definition of sepsis.\n\nKey strengths of the derivation include a study population drawn from a broad range of high- and low-resource settings, as well as improved outcome prediction and diagnostic specificity relative to prior definitions such as the SIRS criteria. Sepsis criteria based on vital signs alone tend to overestimate the likelihood of sepsis in children. For example, children presenting with fever are often tachycardic and tachypneic as a direct result of the fever itself, yet the majority are well-appearing and not experiencing the severe systemic inflammatory response that characterizes true sepsis. The main weakness of the tool is that its higher specificity depends on lab-based identification of end-organ system dysfunction, and its overall positive predictive value is low, though still higher than that of prior sepsis definitions.\n\nA[validation study](https://pubmed.ncbi.nlm.nih.gov/38245889/)conducted prospectively at multiple centers in Australia and New Zealand included 6,232 pediatric patients (age <18 years) with suspected sepsis from 2021 to 2023. Sepsis was defined as hospital admission for parental antibiotics plus either an admission diagnosis of sepsis or treatment of sepsis with one or more fluid boluses of 20 mL/kg administered in under 30 minutes. Patients not admitted through the ED, those transferred from another hospital, and those presenting with trauma were excluded.\n\nThe validation study found a similar AUROC (0.81) for predicting in-hospital mortality, and notably had fewer missing data points and lab values than the derivation study. However, the inclusion criteria were not identical to those of the derivation study, and overall accuracy for predicting in-hospital mortality was somewhat lower. Prediction of death within 24 hours of admission and need for ECMO within 24 hours were similar to analogous end-points in the derivation study.\n\nIn both studies, outcome events were infrequent, and missing lab values were presumed to be normal, factors that may limit validity, though the large sample sizes partially offset these concerns. In light of these findings, the Society of Critical Care Medicine adopted the Phoenix Score in its[consensus criteria](https://pubmed.ncbi.nlm.nih.gov/38245889/)for pediatric sepsis and septic shock.",
+  "more_info": "Interpretation:\n\n| Sepsis | Suspected infection and score ≥2 points |\n| --- | --- |\n| Septic shock | Sepsis with ≥1 cardiovascular point |",
+  "short_description": "Sepsis et choc septique pédiatriques.",
+  "medium_description": "Évalue le sepsis et le choc septique chez l'enfant.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 1 mois",
+          "value": 0
+        },
+        {
+          "label": "1 pour 11 mois",
+          "value": 1
+        },
+        {
+          "label": "1 pour <2 ans",
+          "value": 2
+        },
+        {
+          "label": "2 pour <5 ans",
+          "value": 3
+        },
+        {
+          "label": "5 pour <12 ans",
+          "value": 4
+        },
+        {
+          "label": "12 pour 17 years",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "choice",
+      "label": "Enter PaO~2~ou SpO~2~?",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "PaO₂",
+          "value": 0
+        },
+        {
+          "label": "SpO₂",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "pao2",
+      "label": "PaO~2~",
+      "optional": false,
+      "unit": "pao2",
+      "show_points": false,
+      "conditionality": "choice == 0"
+    },
+    {
+      "type": "radio",
+      "name": "spo2_check",
+      "label": "La SpO~2~ est-elle ≤ 97 % ?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "choice == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "spo2",
+      "label": "SpO~2~",
+      "optional": false,
+      "unit": "o2_sat",
+      "show_points": false,
+      "conditionality": "choice == 1 && spo2_check == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "fio2",
+      "label": "FiO~2~",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": "choice == 0 || (choice == 1 && spo2_check == 1)"
+    },
+    {
+      "type": "radio",
+      "name": "resp_support",
+      "label": "Assistance respiratoire",
+      "tips": "IMV : ventilation mécanique invasive",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Tout, à l'exclusion de l'IMV",
+          "value": 1
+        },
+        {
+          "label": "Ventilation mandatée intermittente (IMV)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "vaso_meds",
+      "label": "Médicaments vasoactifs",
+      "tips": "Includes any dose of epinephrine, norepinephrine, dopamine, dobutamine, milrinone, and/or vasopressin (for shock).",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "≥2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lactate",
+      "label": "Lactate",
+      "tips": "Peut être artériel ou veineux.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 5 mmol/L (45.1 mg/dL)",
+          "value": 0
+        },
+        {
+          "label": "5-10.9 mmol/L (45.1-98.2 mg/dL)",
+          "value": 1
+        },
+        {
+          "label": ">10,9 mmol/L (98,2 mg/dL)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "map",
+      "label": "[PAM](nabda:calc.mean-arterial-pressure-map)",
+      "optional": false,
+      "unit": "map_phoenix",
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "platelets",
+      "label": "Plaquettes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 100 x 10³ μL",
+          "value": 0
+        },
+        {
+          "label": "< 100 × 10³ μL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤1,3",
+          "value": 0
+        },
+        {
+          "label": ">1,3",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ddimer",
+      "label": "D-dimères",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ 2 mg/L FEU",
+          "value": 0
+        },
+        {
+          "label": ">2 mg/L FEU",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fibrinogen",
+      "label": "Fibrinogène",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 100 mg/dL",
+          "value": 0
+        },
+        {
+          "label": "< 100 mg/dL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">10 ; pupilles réactives",
+          "value": 0
+        },
+        {
+          "label": "≤10",
+          "value": 1
+        },
+        {
+          "label": "Pupilles fixes bilatérales",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schlapbach LJ, Watson RS, Sorce LR, et al. International consensus criteria for pediatric sepsis and septic shock. JAMA. 2024;331(8):665-674.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38245889/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sanchez-Pinto LN, Bennett TD, DeWitt PE, et al. Development and validation of the phoenix criteria for pediatric sepsis and septic shock. JAMA. 2024;331(8):675-686.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38245897/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Long E, Borland ML, George S, et al. External validation of the phoenix sepsis score in children with suspected community-acquired sepsis. JAMA Netw Open. 2025;8(3):e251412.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40116825/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.neonatal-early-onset-sepsis-calculator",
+    "calc.sirs-sepsis-septic-shock-criteria",
+    "calc.qsofa-quick-sofa-score-sepsis",
+    "calc.mean-arterial-pressure-map",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "28c2d701184825fefca46088db5e3629",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "MAP"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "MAP"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10509,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar age = parseFloat(age);\nvar choice = parseFloat(choice);\nvar resp_support = parseFloat(resp_support);\nvar imv = parseFloat(imv);\nvar vaso_meds = parseFloat(vaso_meds);\nvar lactate = parseFloat(lactate);\nvar map = parseFloat(map);\nvar platelets = parseFloat(platelets);\nvar inr = parseFloat(inr);\nvar ddimer = parseFloat(ddimer);\nvar gcs = parseFloat(gcs);\nvar fibrinogen = parseFloat(fibrinogen);\n\nvar resp_score;\nif (choice == 0) {\n    if(UOMSYSTEM == true) {\n        var pao2 = parseFloat(pao2);\n    }\n    if (UOMSYSTEM == false) {\n        var pao2 = parseFloat(pao2)/0.133;\n    }\n    var fio2 = parseFloat(fio2);\n    \n    var pf_ratio = pao2/(fio2/100);\n\n    if (pf_ratio < 100 && resp_support == 2) {\n        resp_score = 3;\n    } else if (pf_ratio <= 200 && resp_support == 2) {\n        resp_score = 2;\n    } else if (pf_ratio < 400 && (resp_support == 1 || resp_support == 2)) {\n        resp_score = 1;\n    } else {\n        resp_score = 0;\n    }\n} else if (choice == 1) {\n    var spo2_check = parseFloat(spo2_check);\n    if (spo2_check == 0) {\n        resp_score = 0;\n    } else if (spo2_check == 1) {\n        var spo2 = parseFloat(spo2);\n        var fio2 = parseFloat(fio2);\n        var sf_ratio = spo2 / (fio2 / 100);\n\n        if (sf_ratio < 148 && resp_support == 2) {\n            resp_score = 3;\n        } else if (sf_ratio <= 220 && resp_support == 2) {\n            resp_score = 2;\n        } else if (sf_ratio < 292 && (resp_support == 1 || resp_support == 2)) {\n            resp_score = 1;\n        } else {\n            resp_score = 0;\n        }\n    }\n}\n\nvar am_score;\nif (age == 0) {\n    if (map > 30) {\n        am_score = 0;\n    } else if (map >= 17) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n} else if (age == 1) {\n    if (map > 38) {\n        am_score = 0;\n    } else if (map >= 25) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n} else if (age == 2) {\n    if (map > 43) {\n        am_score = 0;\n    } else if (map >= 31) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n} else if (age == 3) {\n    if (map > 44) {\n        am_score = 0;\n    } else if (map >= 32) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n} else if (age == 4) {\n    if (map > 48) {\n        am_score = 0;\n    } else if (map >= 36) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n} else if (age == 5) {\n    if (map > 51) {\n        am_score = 0;\n    } else if (map >= 38) {\n        am_score = 1;\n    } else {\n        am_score = 2;\n    }\n}\n\nvar cardio_score = vaso_meds + lactate + am_score;\n\nvar coag_score = platelets + inr + ddimer + fibrinogen;\nif (coag_score > 2) {\n    coag_score = 2;\n}\n\nvar score = resp_score + cardio_score + coag_score + gcs;\n\nvar result;\nif (score >= 2 && cardio_score >= 1) {\n    result = 'Meets septic shock criteria.';\n} else if (score >= 2) {\n    result = 'Meets sepsis criteria.';\n} else {\n    result = 'Does not meet sepsis criteria.';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: result\n});\ncalc_output.push({\n    name: '10509_Phoenix Sepsis Score',\n    value: score,\n    value_text: 'points',\n    message: 'Phoenix Sepsis Score<br/><br/>' + result\n});",
+  "before_use": null,
+  "instructions": "À utiliser chez les patients pédiatriques présentant une suspicion de sepsis.\n\n- L’âge n’est pas ajusté pour la prématurité.\n- Ne pas utiliser chez les patients >18 ans ou ceux nés prématurément (<37 semaines de gestation à la naissance).\n- Ne pas utiliser lors de l’hospitalisation pour la naissance.",
+  "contributor_ids": [
+    "derek-tam"
+  ],
+  "creator_names": [
+    "Dr. Luregn J. Schlapbach"
+  ],
+  "measurement_ids": [
+    "Age",
+    "lactate",
+    "INR",
+    "ddimer",
+    "fibrinogen"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.dobutamine",
+    "s.dopamine",
+    "s.milrinone",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine",
+    "s.lactate"
+  ],
+  "engine_sha256": "b3bc453192cd9d9cfacae14ee27da3fe6f9b885f99be5f317674eb130a9ca4bb"
+}

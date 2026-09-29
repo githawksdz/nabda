@@ -1,0 +1,141 @@
+{
+  "id": "calc.subtle-anterior-stemi-calculator-4-variable",
+  "slug": "subtle-anterior-stemi-calculator-4-variable",
+  "language": "fr",
+  "title": "Calculateur de STEMI antérieur subtil (4 variables)",
+  "short_title": "STEMI antérieur subtil (4 variables)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "early repolarization",
+    "repol",
+    "jpoint",
+    "benign",
+    "ekg",
+    "myocardial infarction",
+    "normal ST elevation",
+    "NVSTE",
+    "NV-STE",
+    "lad occlusion",
+    "MI",
+    "STE"
+  ],
+  "dosing": false,
+  "formula": "Calcul du STEMI antérieur subtil à 4 variables = 0,052 x ( [intervalle QT corrigé selon Bazett](nabda:calc.corrected-qt-interval-qtc) , ms) - 0,151 x (amplitude du QRS dans la dérivation V2, mm) - 0,268 x (amplitude de l'onde R dans la dérivation V4, mm) + 1,062 x (élévation du segment ST 60 ms après le point J dans la dérivation V3, mm)",
+  "how_to_use": {
+    "why": "- La repolarisation précoce bénigne comme le STEMI provoquent une élévation du segment ST. L'enjeu est de différencier ces deux entités.\n- Certains patients présentent des modifications ECG subtiles, non diagnostiques de STEMI, mais présentent néanmoins une occlusion coronaire à 100 % et bénéficient d'une angioplastie coronaire transluminale percutanée (PTCA) en urgence.\n- L'utilisation de l'équation dans ces cas peut permettre une activation rapide de la salle de cathétérisme ou une évaluation plus approfondie.",
+    "when": "À utiliser chez les patients présentant une douleur thoracique avec un ECG non diagnostique mais évocateur d'un infarctus antérieur.",
+    "pearls": "- Les auteurs ont spécifiquement exclu les patients présentant un infarctus évident. L'utilisation du calculateur dans des cas exclus de l'étude peut conduire à un résultat erroné.\n\n**Conseils pour l'interprétation de l'ECG :**\n\n- Mesurer le STE à 60 ms dans la dérivation V3 :\n- ![](https://cdn-web-img.mdcalc.com/content/subtle-stemi-ste.png)\n- Élévation du segment ST 60 ms après le point J dans la dérivation V3, par rapport au segment PR\n\n - Mesurer le STE à 60 ms (1½ petit carreau après le point J).\n - La ligne de base est le segment PR.\n - Dans cet exemple, STE 60 = 4 mm.\n- Mesurer l'amplitude de l'onde R en V4 : ![](https://cdn-web-img.mdcalc.com/content/subtle-stemi-r-wave.png)"
+  },
+  "next_steps": {
+    "advice": "- L'activation de la salle de cathétérisme est appropriée chez les patients positifs selon Smith, dans le contexte clinique adéquat. À tout le moins, elle doit conduire à des ECG sériés très rapprochés et à une échocardiographie.\n- La formule est particulièrement utile pour identifier les patients avec occlusion de l'IVA initialement considérés comme présentant une repolarisation précoce d'aspect normal.\n- Si les résultats indiquent l'absence de STEMI, poursuivre avec prudence si un STEMI était par ailleurs suspecté.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation :**\n\nUn score ≥18,2 est évocateur d'un STEMI antérieur (sensibilité de 83,3 %, spécificité de 87,7 % et précision diagnostique de 85,9 %).\n\nUn score <18,2 est évocateur d'une repolarisation précoce bénigne.",
+  "short_description": "Suspicion d'élévation du segment ST d'aspect normal vs véritable STEMI antérieur.",
+  "medium_description": "Différencie l'élévation du segment ST d'aspect normal (repolarisation précoce bénigne) du STEMI antérieur, plus sensible que la version à 3 variables.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bazett",
+      "label": "[Intervalle QT corrigé selon Bazett](nabda:calc.corrected-qt-interval-qtc)",
+      "optional": false,
+      "unit": "qt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "qrs",
+      "label": "QRS amplitude dans lead V2",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "rwave",
+      "label": "R wave amplitude dans lead V4",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "st",
+      "label": "ST segment elevation 60 ms after J point dans lead V3",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Driver BE, Khalil A, Henry T, Kazmi F, Adil A, Smith SW. A new 4-variable formula to differentiate normal variant ST segment elevation in V2-V4 (early repolarization) from subtle left anterior descending coronary occlusion - Adding QRS amplitude of V2 improves the model. J Electrocardiol. 2017;50(5):561-569.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0022073617301073",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smith SW, Khalil A, Henry TD, et al. Electrocardiographic differentiation of early repolarization from subtle anterior ST-segment elevation myocardial infarction. Ann Emerg Med. 2012;60(1):45-56.e2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22520989",
+      "kind": "other"
+    },
+    {
+      "text": "Bozbeyoğlu E, Aslanger E, Yıldırımtürk Ö, et al. A tale of two formulas: Differentiation of subtle anterior MI from benign ST segment elevation. Ann Noninvasive Electrocardiol. 2018;:e12568.",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1111/anec.12568",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.timi-risk-index",
+    "calc.corrected-qt-interval-qtc"
+  ],
+  "source_logic_hash": "6109fb16629b46112f0f7fd205fb8bc8",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.corrected-qt-interval-qtc",
+      "text": "Bazett-corrected QT interval"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10079,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

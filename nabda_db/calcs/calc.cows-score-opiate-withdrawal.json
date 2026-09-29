@@ -1,0 +1,417 @@
+{
+  "id": "calc.cows-score-opiate-withdrawal",
+  "slug": "cows-score-opiate-withdrawal",
+  "language": "en",
+  "title": "COWS score pour Opiate Withdrawal",
+  "short_title": "Score COWS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "douleur",
+    "soins-palliatifs",
+    "psychiatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Ingestion/Overdose",
+    "Sevrage de substance"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Diarrhea",
+    "Headache",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "cows",
+    "COWS",
+    "opiates",
+    "drug abuse",
+    "drugs",
+    "withdrawal",
+    "w/d",
+    "piloerection",
+    "pulse",
+    "sweating",
+    "anxiety",
+    "clinical opiate severity score",
+    "opioid"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; comme ci-dessus.",
+  "how_to_use": {
+    "why": "- Comme indiqué ci-dessus, il associe des composantes subjectives et objectives, ce qui limite la possibilité de réponses simulées.\n- Il peut être administré de façon répétée afin de suivre l'évolution de la sévérité des symptômes de sevrage au fil du temps ou en réponse au traitement.",
+    "when": "- COWS may be used in both inpatient and outpatient settings:\n\n - During Detox: for the general monitoring of opiate withdrawal during opioid detoxification.\n - During Pain Treatment: for patients receiving opiates for the treatment of acute or chronic pain who may show subtle signs of opiate withdrawal.\n - In the ED & More: for patients requesting methadone for opiate withdrawal symptoms and their enrollment in methadone maintenance treatment has not been verified.\n- COWS is most commonly used in buprenorphine induction, and is recommended specifically for this use.",
+    "pearls": "- The Clinical Opiate Withdrawal Score (COWS) limits possibility of feigned responses by combining subjective symptoms with objective signs. ([Wesson DR 2003](https://www.ncbi.nlm.nih.gov/pubmed/12924748))\n- COWS was first published in a training manual for buprenorphine treatment.\n- While commonly used for buprenorphine or buprenorphine/naloxone induction, it can also be useful in a variety of office, clinic and hospital settings. Examples include the assessment of acute opiate withdrawal during an opiate detoxification program, methadone maintenance treatment, and the treatment of chronic pain.\n- The scale is designed to be used quickly (< 2 minutes) by clinicians.\n- Be aware that the prescribing of buprenorphine and buprenorphine/naloxone in the context of opioid addiction treatment requires additional credentialing by the DEA."
+  },
+  "next_steps": {
+    "advice": "Utilisation du COWS dans le traitement d’induction par buprénorphine :\n\n- La buprénorphine est un agoniste opiacé partiel qui peut précipiter un sevrage opiacé floride s’il est administré à un patient physiquement dépendant.\n- Lors de l’induction par buprénorphine, il est important que le patient soit déjà en sevrage opiacé léger à modéré avant l’administration. Cela équivaudrait à un score COWS >5-6 (>10 préférable).\n- Ce point est important, car sinon les patients présentent un *sevrage précipité*, une apparition rapide et intense de symptômes de sevrage déclenchée par le médicament.\n- Il n’est pas fiable d’utiliser le « temps depuis la dernière consommation d’opioïdes », car les patients ne sont pas toujours sincères lorsqu’ils rapportent leur dernière consommation, et le métabolisme varie d’un patient à l’autre.",
+    "critical_actions": "Toujours envisager la possibilité de troubles de sevrage comorbides à l’alcool, aux benzodiazépines ou aux sédatifs-hypnotiques, qui peuvent être potentiellement mortels seuls ou en association.",
+    "management": "- COWS can help set patient expectations prior to buprenorphine treatment, as they will likely experience a certain amount of discomfort.\n- Opioid detoxification works best with adjunctive treatments such as psychotherapy and support groups."
+  },
+  "evidence": "**[Original article](https://www.ncbi.nlm.nih.gov/pubmed/12924748)**\n\nThis article presents the COWS scale and discusses the rationale for its development. As described in detail above, the scale consists of an 11-item rating system that can be completed within two minutes by a trained observer and can track opioid withdrawal as differentiated from opioid toxicity through serial measurements. It was designed to be administered quickly and was intended to improve upon existing measurement tools.\n\n**[Validation study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2774236/)**\n\nThis study validated the COWS in comparison to the validated Clinical Institute Narcotic Assessment (CINA) scale. It used a double-blind randomized design to compare opioid withdrawal symptoms for intramuscularly administered placebo vs. naloxone to 46 opioid-dependent participants. COWS and CINA scores during the naloxone challenge session were well correlated with Pearson correlation coefficient of 0.85 (p<0.001) while placebo was not associated with any significant elevation in either score. Additional evidence of concurrent validity was provided by comparing COWS with the self-reporting visual analog scale (VAS); COWS scores correlated well with peak VAS scores of bad drug effect (r=0.57, p<0.001) and feeling sick (r=0.57, p<0.001). Cronbach’s alpha for the COWS was 0.78, indicating good internal consistency (reliability).",
+  "more_info": "**Interprétation du score :**\n\n- <5 - pas de sevrage actif\n- 5-12 - sevrage léger\n- 13-24 - sevrage modéré\n- 25-36 - sevrage modérément sévère\n- >36 - sevrage sévère",
+  "short_description": "Gravité de opiate withdrawal.",
+  "medium_description": "Quantifies gravité de opiate withdrawal.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Fréquence du pouls au repos (BPM)",
+      "tips": "Mesurer la fréquence du pouls après que le patient est resté assis ou allongé pendant 1 minute",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤80",
+          "value": 0
+        },
+        {
+          "label": "81-100",
+          "value": 1
+        },
+        {
+          "label": "101-120",
+          "value": 2
+        },
+        {
+          "label": ">120",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sweat",
+      "label": "Sweating",
+      "tips": "Sweating not accounted for by room temperature or patient activity over the last 0.5 hours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun frisson ni flush rapporté",
+          "value": 0
+        },
+        {
+          "label": "Signalement subjectif de frissons ou de bouffées vasomotrices (flushing)",
+          "value": 1
+        },
+        {
+          "label": "Rougeur (flush) ou moiteur observable du visage",
+          "value": 2
+        },
+        {
+          "label": "Gouttes de sueur sur le front ou le visage",
+          "value": 3
+        },
+        {
+          "label": "Sueurs ruisselant sur le visage",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "restless",
+      "label": "Restlessness observation during évaluation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Able pour sit still",
+          "value": 0
+        },
+        {
+          "label": "Reports difficulty sitting still, but is able pour do so",
+          "value": 1
+        },
+        {
+          "label": "Changements de position fréquents ou mouvements parasites des jambes/bras",
+          "value": 3
+        },
+        {
+          "label": "Unable pour sit still pour more than few seconds",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pupil",
+      "label": "Taille de la pupille",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pupils pinned ou normal size pour room light",
+          "value": 0
+        },
+        {
+          "label": "Pupils possibly larger than normal pour room light",
+          "value": 1
+        },
+        {
+          "label": "Pupilles modérément dilatées",
+          "value": 2
+        },
+        {
+          "label": "Pupilles dilatées au point que seul le rebord de l’iris est visible",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bone",
+      "label": "Douleurs osseuses ou articulaires",
+      "tips": "Si le patient présentait déjà une douleur auparavant, seule la composante supplémentaire attribuée au sevrage aux opiacés est cotée.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Inconfort diffus léger",
+          "value": 1
+        },
+        {
+          "label": "patient reports severe diffuse aching de joints/ muscles",
+          "value": 2
+        },
+        {
+          "label": "patient is rubbing joints ou muscles et is unable pour sit still because de discomfort",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "noise",
+      "label": "Runny nose ou tearing",
+      "tips": "Not accounted for by cold symptoms or allergies",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Nasal stuffiness ou unusually moist eyes",
+          "value": 1
+        },
+        {
+          "label": "Nose running ou tearing",
+          "value": 2
+        },
+        {
+          "label": "Nose constantly running ou tears streaming down cheeks",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gi",
+      "label": "GI Upset",
+      "tips": "Over last 0.5 hours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No GI symptoms",
+          "value": 0
+        },
+        {
+          "label": "Stomach Cramps",
+          "value": 1
+        },
+        {
+          "label": "nausées ou loose stool",
+          "value": 2
+        },
+        {
+          "label": "vomissements ou diarrhea",
+          "value": 3
+        },
+        {
+          "label": "multiple episodes de vomissements ou diarrhea",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tremor",
+      "label": "Tremor observation de outstretched hands",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absence de tremblement",
+          "value": 0
+        },
+        {
+          "label": "Tremor can be felt, but not observed",
+          "value": 1
+        },
+        {
+          "label": "Slight tremor observable",
+          "value": 2
+        },
+        {
+          "label": "Gross tremor ou muscle twitching",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "yawn",
+      "label": "Yawning observation during évaluation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No yawning",
+          "value": 0
+        },
+        {
+          "label": "Yawning once ou twice during évaluation",
+          "value": 1
+        },
+        {
+          "label": "Yawning three ou more times during évaluation",
+          "value": 2
+        },
+        {
+          "label": "Yawning several times/minute",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "anxiety",
+      "label": "Anxiété ou irritability",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "patient reports increasing irritability ou anxiousness",
+          "value": 1
+        },
+        {
+          "label": "patient obviously irritable/anxious",
+          "value": 2
+        },
+        {
+          "label": "patient so irritable ou anxious that participation dans évaluation is difficult",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "skin",
+      "label": "Gooseflesh skin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Skin is smooth",
+          "value": 0
+        },
+        {
+          "label": "Piloerection de skin can be felt ou hairs standing up sur arms",
+          "value": 3
+        },
+        {
+          "label": "Prominent piloerection",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wesson DR, Ling W. The Clinical Opiate Withdrawal Scale (COWS) J Psychoactive Drugs.2003;35:253–259.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12924748",
+      "kind": "pubmed"
+    },
+    {
+      "text": "The National Alliance of Advocates for Buprenorphine Treatment COWS Flow sheet. Published Nov. 2011.",
+      "href": "https://www.naabt.org/documents/cows_induction_flow_sheet.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Tompkins DA, Bigelow GE, Harrison JA, Johnson RE, Fudala PJ, Strain EC. Concurrent Validation of the Clinical Opiate Withdrawal Scale (COWS) and Single-Item Indices against the Clinical Institute Narcotic Assessment (CINA) Opioid Withdrawal Instrument. Drug and alcohol dependence 2009;105(1-2):154-159. doi:10.1016/j.drugalcdep.2009.07.001.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2774236/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.car-relax-alone-forget-friends-trouble-crafft-questionnaire",
+    "calc.brief-addiction-monitor-bam",
+    "calc.drug-abuse-screening-test-10-dast-10"
+  ],
+  "source_logic_hash": "1ec53609dd60530a52717162dd86df34",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1985,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.naloxone",
+    "s.buprenorphine",
+    "s.methadone",
+    "s.buprenorphine-naloxone",
+    "s.naloxone-oxycodone"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

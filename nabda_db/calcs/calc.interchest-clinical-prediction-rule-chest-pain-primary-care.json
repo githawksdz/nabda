@@ -1,0 +1,217 @@
+{
+  "id": "calc.interchest-clinical-prediction-rule-chest-pain-primary-care",
+  "slug": "interchest-clinical-prediction-rule-chest-pain-primary-care",
+  "language": "en",
+  "title": "INTERCHEST clinique prédiction règle pour douleur thoracique dans soins primaires",
+  "short_title": "INTERCHEST règle pour douleur thoracique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladie coronarienne"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Cad",
+    "coronary artery disease",
+    "chest pain",
+    "interchest",
+    "prediction rule"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| History of CAD | 1 |\n| Female ≥65 years or male ≥55 years | 1 |\n| Chest pain related to effort | 1 |\n| Pain reproducible by palpation | -1 |\n| Physician initially suspected a serious condition | 1 |\n| Chest discomfort feels like “pressure” | 1 |",
+  "how_to_use": {
+    "why": "- Only ~1.5% of patients seen in primary care for chest pain have unstable CAD ([Cayley 2005](https://www.ncbi.nlm.nih.gov/pubmed/16342831),[Klinkman 1994](https://www.ncbi.nlm.nih.gov/pubmed/8163958)); the most common causes of chest pain in primary care are chest wall pain, gastrointestinal disease, and stable heart disease.\n- Helps determine which outpatients with chest pain are at sufficiently low risk of unstable CAD to allow for further follow-up; testing and management to be done on a non-urgent outpatient basis (scores ≤1) or on an urgent or inpatient basis (scores ≥2).\n- Better at predicting presence of CAD (higher PPV) than the [Marburg Heart Score](nabda:calc.marburg-heart-score-mhs) , but has been less well studied (see[Evidence](#evidence)for details).",
+    "when": "- Patients âgés de ≥30 ans se présentant avec une douleur thoracique en soins primaires.\n- Ne doit pas être utilisé chez les patients ayant une cause de douleur thoracique immédiatement évidente (p. ex. traumatisme, infection), des symptômes clairs d’équivalent angineux (p. ex. douleur de la mâchoire, dyspnée à l’effort, douleur du bras), ou si d’autres examens (p. ex. électrocardiographie, analyses de laboratoire) ont suggéré une étiologie clairement cardiaque.",
+    "pearls": "- Not to be used for a *positive* diagnosis of angina or CAD, but as a *negative* tool to help assess who is low-enough risk to not need further evaluation.\n- While scores ≤1 make unstable CAD highly unlikely (NPV98%), scores ≥2 are only modestly predictive of CAD (PPV43%).\n- Most applicable to patients 30 years or older."
+  },
+  "next_steps": {
+    "advice": "- When evaluating patients with chest pain in primary care, INTERCHEST scores ≤1 mean the chest pain is highly unlikely to be due to unstable CAD (NPV 98%), and further outpatient evaluation is generally safe and appropriate.\n- A primary care patient with an INTERCHEST score of ≤1 generally does not need urgent evaluation of chest pain (unless there is clear evidence of clinical instability), and further evaluation may be done through non-urgent outpatient follow up.\n- A primary care patient with an INTERCHEST score ≥2 does not necessarily have unstable CAD, but should have further testing done more urgently.",
+    "critical_actions": "Aucune règle de décision ne doit primer sur l’impression clinique globale, et tout patient présentant une douleur thoracique et cliniquement instable (détresse respiratoire ou signes vitaux anormaux) justifie une admission hospitalière urgente ou en ur",
+    "management": "- For any primary care patient with chest pain, clinical stability can quickly be determined by evaluating the ABCs (airway, breathing, and circulation).\n- A patient who shows no signs of respiratory distress and has appropriate vital signs is unlikely to be acutely unstable and can be further evaluated the office with appropriately targeted history, physical examination, and testing.\n- If there is a readily apparent cause of chest pain other than CAD (e.g. trauma, infection), attention should be directed to these causes.\n- If there are clearly anginal equivalent symptoms (e.g. jaw pain, dyspnea on exertion, arm pain), or if there are ischemic changes on the ECG, then the INTERCHEST score does not apply and urgent inpatient admission is warranted.\n- A patient with undiagnosed chest pain and a low risk INTERCHEST score (≤1) can have further testing, including chest x-ray and stress testing, electively as an outpatient.\n- A patient with a higher risk INTERCHEST score (≥2) does not necessarily have unstable CAD, but since unstable CAD cannot be excluded if the INTERCHEST score is ≥3, such patients generally warrant more urgent evaluation or inpatient admission."
+  },
+  "evidence": "La règle de prédiction clinique INTERCHEST a été développée en combinant les données au niveau des patients de cinq études sur la douleur thoracique en soins primaires.\n\nLes données individuelles au niveau des patients ont été combinées mathématiquement, et une modélisation par régression a été utilisée pour identifier les caractéristiques cliniques les plus prédictives de l’exclusion de la CAD.\n\nLes études originales ont été menées en Belgique, en Suède, en Suisse, en Allemagne et aux États-Unis. On ne sait pas dans quelle mesure cette règle peut être généralisée à des patients présentant des contextes sociaux ou culturels différents.\n\nLes études ayant contribué au développement du [Marburg Heart Score (MHS)](nabda:calc.marburg-heart-score-mhs) ont été incluses dans cette méta-analyse. Bien que la règle INTERCHEST ait une NPV comparable (2 %) et une PPV plus élevée (43 %) par rapport au MHS, la règle INTERCHEST n’a pas encore été validée en externe dans une population distincte de l’étude de dérivation.\n\nBien qu’INTERCHEST et le MHS aient une NPV comparable pour exclure la CAD (~97-98 %), INTERCHEST a une PPV plus élevée pour prédire la présence de la CAD (43 % vs 23 %). Toutefois, la règle de prédiction INTERCHEST n’a pas encore été validée par des études séparées dans la même mesure que le MHS. En bref, la règle INTERCHEST est meilleure pour prédire la présence de la CAD, mais elle a été moins bien étudiée.",
+  "more_info": "Interprétation :\n\n| Score | Risque de coronaropathie | Probabilité de coronaropathie |\n| --- | --- | --- |\n| ≤1 | Faible | 2,1 % |\n| 2-5 | Non faible | 43,0 % |\n\nD'après [Aerts 2017](https://www.ncbi.nlm.nih.gov/pubmed/27773828).",
+  "short_description": "Écarte une CAD (soins primaires).",
+  "medium_description": "Rules out coronary artery maladie (CAD) dans soins primaires patients avec douleur thoracique.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "Antécédents de coronaropathie (CAD)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Femme ≥65 ans ou homme ≥55 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chest",
+      "label": "Douleur thoracique lié pour effort",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain",
+      "label": "Douleur reproductible à la palpation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "phys",
+      "label": "Le médecin a initialement suspecté une affection grave",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pressure",
+      "label": "La gêne thoracique est ressentie comme une « pression »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aerts M, Minalu G, Bösner S, et al. Pooled individual patient data from five countries were used to derive a clinical prediction rule for coronary artery disease in primary care. J Clin Epidemiol. 2017;81:120-128.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27773828",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klinkman MS, Stevens D, Gorenflo DW. Episodes of care for chest pain: a preliminary report from MIRNET. Michigan Research Network. J Fam Pract. 1994;38(4):345-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8163958 ",
+      "kind": "other"
+    },
+    {
+      "text": "Cayley WE. Diagnosing the cause of chest pain. Am Fam Physician. 2005;72(10):2012-21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16342831 ",
+      "kind": "other"
+    },
+    {
+      "text": "Sox HC, Aerts M, Haasenriter J. Applying a Clinical Decision Rule for CAD in Primary Care to Select a Diagnostic Test and Interpret the Results. Am Fam Physician. 2019;99(9):584-586.",
+      "href": "https://www.aafp.org/afp/2019/0501/p584.html",
+      "kind": "other"
+    },
+    {
+      "text": "Harskamp RE, Laeven SC, Himmelreich JC, Lucassen WAM, Van weert HCPM. Chest pain in general practice: a systematic review of prediction rules. BMJ Open. 2019;9(2):e027081.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30819715",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.marburg-heart-score-mhs",
+    "calc.history-electrocardiogram-manchester-acute-coronary-syndromes-macs"
+  ],
+  "source_logic_hash": "e24488a55c5590f1d5ee92c83646fcaf",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.marburg-heart-score-mhs",
+      "text": "Marburg Heart Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10225,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,295 @@
+{
+  "id": "calc.multiple-myeloma-diagnostic-criteria",
+  "slug": "multiple-myeloma-diagnostic-criteria",
+  "language": "en",
+  "title": "Multiple Myeloma Diagnostic critères",
+  "short_title": "Multiple Myeloma Diagnostic critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Myélome multiple"
+  ],
+  "chief_complaints": [
+    "Cancer",
+    "Douleur des extrémités"
+  ],
+  "abbreviations": [
+    "Mm",
+    "Multiple Myeloma Diagnostic Criteria (IMWG)",
+    "multiple myeloma",
+    "disease definition",
+    "multiple myeloma disease definition",
+    "myeloma",
+    "imwg"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate criteria:\n\n| Criteria |\n| --- |\n| (A) Clonal bone marrow plasma cells ≥10% or (B) biopsy-proven bony or extramedullary plasmacytoma AND (C) ≥1 myeloma defining event (C1 or C2): (C1) End organ damage attributable underlying plasma cell proliferative disorder, specifically: Hypercalcemia: serum calcium >1 mg/dL (>0.25 mmol/L) higher than upper limit of normal or >11 mg/dL (>2.75 mmol/L) Renal insufficiency: [creatinine clearance](nabda:calc.creatinine-clearance-cockcroft-gault-equation\\) <40 mL per min or serum creatinine >2 mg/dL (177 μmol/L) Anemia: hemoglobin >2 g/dL (20 g/L) below lower limit of normal, or hemoglobin <10 g/dL (100 g/L) Bone lesions: ≥1 osteolytic lesion on skeletal x-ray, CT, or PET-CT (C2) ≥1 of the following biomarkers of malignancy: Clonal bone marrow plasma cells ≥60% Involved:uninvolved sFLC ratio ≥100 >1 focal lesion on MRI |",
+  "how_to_use": {
+    "why": "- Fournit un cadre standardisé et fondé sur les preuves pour le diagnostic du myélome multiple.\n- Facilite un diagnostic précoce, permettant une prise en charge rapide et la prévention des atteintes des organes cibles.",
+    "when": "À utiliser pour confirmer un diagnostic de myélome multiple chez les patients présentant des signes et/ou symptômes évocateurs d'une dyscrasie plasmocytaire.",
+    "pearls": "Des pathologies concomitantes, telles qu’une maladie rénale chronique, une anémie due à d’autres causes ou une maladie osseuse métabolique, peuvent fausser les résultats et conduire à une incertitude diagnostique ou à une erreur de classification."
+  },
+  "next_steps": {
+    "advice": "- **If the criteria are met:**\n\n - Initiate further staging, including cytogenetic analyses and the use of the [International Staging System (ISS)](nabda:calc.multiple-myeloma-international-staging-system-iss) or [Revised International Staging System (R-ISS)](nabda:calc.revised-multiple-myeloma-international-staging-system-r-iss) , to guide treatment decisions.\n - Refer to a hematologist/oncologist for potential initiation of treatment.\n - Evaluate for transplant eligibility and consider supportive care measures.\n- **If criteria are not met:**\n\n - Monitor for progression in patients with smoldering myeloma or monoclonal gammopathy of undetermined significance (MGUS).\n - Consider and evaluate for other diagnoses.\n - Reassess if new symptoms or complications arise.\n - Provide patient education about symptoms that warrant re-evaluation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Diagnostic du myélome multiple.",
+  "medium_description": "Diagnoses multiple myeloma, according pour International Myeloma Working Group (IMWG).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Plasmocytes clonaux médullaires ≥ 10 %",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "B. Plasmocytome osseux ou extramédullaire confirmé par biopsie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "c1",
+      "label": "Hypercalcemia",
+      "tips": "Calcium sérique dépassant la limite supérieure de la normale de >1 mg/dL (>0,25 mmol/L), ou >11 mg/dL (>2,75 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c2",
+      "label": "Insuffisance rénale",
+      "tips": "[Clairance de la créatinine](nabda:calc.creatinine-clearance-cockcroft-gault-equation) <40 mL par minute ou créatinine sérique >2 mg/dL (177 μmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c3",
+      "label": "Anemia",
+      "tips": "Hémoglobine > 2 g/dL (20 g/L) en dessous de la limite inférieure de la normale, ou < 10 g/dL (100 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c4",
+      "label": "Lésions osseuses",
+      "tips": "≥1 lésion ostéolytique à la radiographie du squelette, au TDM ou au TEP-TDM",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "d1",
+      "label": "Plasmocytes clonaux médullaires ≥60 %",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d2",
+      "label": "Ratio sFLC impliquée:non impliquée ≥100",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d3",
+      "label": ">1 lésion focale à l'IRM",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rajkumar SV, Dimopoulos MA, Palumbo A, et al. International Myeloma Working Group updated criteria for the diagnosis of multiple myeloma. Lancet Oncol. 2014;15(12):e538-48.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25439696",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.multiple-myeloma-response-criteria",
+    "calc.revised-multiple-myeloma-international-staging-system-r-iss",
+    "calc.asymptomatic-myeloma-prognosis",
+    "calc.creatinine-clearance-cockcroft-gault-equation",
+    "calc.multiple-myeloma-international-staging-system-iss"
+  ],
+  "source_logic_hash": "3ea78ad31fff9cc84390ed03ad8d0176",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "creatinine clearance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.multiple-myeloma-international-staging-system-iss",
+      "text": "International Staging System (ISS)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.revised-multiple-myeloma-international-staging-system-r-iss",
+      "text": "Revised International Staging System (R-ISS)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10233,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

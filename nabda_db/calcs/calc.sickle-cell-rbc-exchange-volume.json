@@ -1,0 +1,161 @@
+{
+  "id": "calc.sickle-cell-rbc-exchange-volume",
+  "slug": "sickle-cell-rbc-exchange-volume",
+  "language": "en",
+  "title": "Volume d'échange érythrocytaire dans la drépanocytose",
+  "short_title": "Volume d'échange érythrocytaire dans la drépanocytose",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Drépanocytose"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "rbc",
+    "exchange",
+    "replacement",
+    "blood volume",
+    "sickle cell",
+    "transfusion"
+  ],
+  "dosing": false,
+  "formula": "Volume de remplacement des GR = volume érythrocytaire × ln (HbS initiale / HbS cible) / Hct du donneur\n\nOù volume érythrocytaire = [volume sanguin total](nabda:calc.blood-volume-calculation) × Hct du patient\n\nRemarque : HbS et Hct sont exprimés en % entier (c.-à-d. 30 %, et non 0,3). Le nombre d'unités de GR suppose 350 mL par unité et est arrondi à l'unité entière supérieure.",
+  "how_to_use": {
+    "why": "- La drépanocytose est associée à plusieurs complications, notamment les crises vaso-occlusives douloureuses, le syndrome thoracique aigu et l'accident vasculaire cérébral. L'échange érythrocytaire automatisé est une modalité thérapeutique efficace, tant dans le traitement aigu des complications drépanocytaires sévères qu'en traitement d'entretien à long terme.\n- Le calcul du volume de GR donneurs nécessaire pour atteindre la réduction souhaitée du taux d'HbS% est utile lors de la commande de produits sanguins pour les procédures d'échange érythrocytaire.",
+    "when": "Patients présentant des complications de la drépanocytose nécessitant un échange érythrocytaire.",
+    "pearls": "- En raison des expositions fréquentes aux GR donneurs, les patients drépanocytaires présentent un risque élevé d'allo-immunisation érythrocytaire, et de nombreux centres exigent une compatibilité phénotypique (appariement antigénique) à un degré plus ou moins élevé.\n- Chez les patients nécessitant un échange érythrocytaire pour une complication aiguë, si le pourcentage d'hémoglobine S pré-échange (HbS%) n'est pas disponible, supposer qu'il est égal à 100 % peut constituer une mesure prudente.\n- Le sang transfusé aux patients drépanocytaires doit être négatif pour les antigènes correspondant à tout alloanticorps anti-GR du patient, compatible au test de compatibilité croisée, et drépanocytaire négatif.\n- Ce calcul vise à obtenir un hématocrite post-procédure identique à l'hématocrite pré-procédure. Les séparateurs cellulaires d'aphérèse disposent de calculateurs intégrés permettant d'ajuster l'hématocrite selon les préférences saisies par l'utilisateur, ce qui peut nécessiter des ajustements du volume de remplacement des GR."
+  },
+  "next_steps": {
+    "advice": "Le volume calculé de GR de remplacement peut être divisé par 350 mL pour estimer le nombre d'unités de GR à commander. Les ajustements de l'hématocrite du patient peuvent nécessiter des modifications de ces calculs.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Donor RBC volume pour exchange.",
+  "medium_description": "Estimates volume de donor RBCs needed pour RBC exchange chez les patients avec sickle cell maladie.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe du patient",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Patient taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids du patient",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hct",
+      "label": "Hématocrite du patient",
+      "tips": "« Normal » indique des valeurs probablement dans les intervalles normaux pour les patients drépanocytaires",
+      "optional": false,
+      "unit": "hct_sickle",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hgbs_initial",
+      "label": "HbS initiale du patient",
+      "tips": "Si l'échange est nécessaire pour une complication aiguë et que le % d'HbS pré-échange est inconnu, on peut présumer un taux d'HbS de 100 %",
+      "optional": false,
+      "unit": "hct_sickle_init",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hgbs_goal",
+      "label": "HbS cible",
+      "optional": false,
+      "unit": "hct_sickle_goal",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hct_donor",
+      "label": "Hématocrite des globules rouges transfusés",
+      "optional": false,
+      "unit": "hct_sickle_donor",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Brecher ME, Shaz BH, Schwartz J. Look This Up, Too! A Quick Reference in Apheresis. 3rd Ed. AABB Press, Bethesda MD 2013.",
+      "href": "https://www.ncbi.nlm.nih.gov/nlmcatalog/101666102",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.mentzer-index",
+    "calc.rbc-units-screen-compatibility"
+  ],
+  "source_logic_hash": "308e1b56228d9de1c542d0cc76bcb871",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.blood-volume-calculation",
+      "text": "total blood volume"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4066,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

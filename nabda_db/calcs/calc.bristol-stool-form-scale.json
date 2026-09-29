@@ -1,0 +1,136 @@
+{
+  "id": "calc.bristol-stool-form-scale",
+  "slug": "bristol-stool-form-scale",
+  "language": "fr",
+  "title": "Bristol Stool Form échelle",
+  "short_title": "Bristol Stool échelle",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladies inflammatoires chroniques de l'intestin (MICI)",
+    "Syndrome de l'intestin irritable"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Constipation",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "Stool form",
+    "stool classification"
+  ],
+  "dosing": false,
+  "formula": "Sélection du type approprié :\n\n![](https://cdn-web-img.mdcalc.com/content/romeiv-bristol.gif)",
+  "how_to_use": {
+    "why": "- Standardise les descriptions des selles dans les communications cliniques et de recherche.\n- Offre une référence visuelle validée pour classer la consistance des selles.\n- Aide à corréler la forme des selles avec le temps de transit colique et une éventuelle pathologie sous-jacente.",
+    "when": "- Can be used when evaluating patients with suspected or known gastrointestinal complaints or changes in bowel habits (e.g., diarrhea, constipation, IBS).\n- Can assist in monitoring stool consistency over time or in response to treatment.",
+    "pearls": "- N'est pas destiné à être un outil diagnostique ; la classification doit être interprétée dans le contexte clinique.\n- Les descripteurs verbaux peuvent conduire à un compte rendu subjectif du patient et à des incohérences ; utilisez les aides visuelles lorsque cela est possible.\n- La forme des selles peut fluctuer selon l'alimentation, l'hydratation et le stress ; insistez sur l'importance des tendances plutôt que sur des changements ponctuels."
+  },
+  "next_steps": {
+    "advice": "If stool patterns suggest potential pathology (persistent type 1–2 or 6–7):\n\n- Investigate further with lab tests or imaging, as appropriate.\n- Assess for diarrhea- or constipation-inducing medications; consider adjustments or alternatives.\n- Advise changes in fiber intake, hydration, and exercise.\n- If chronic changes persist or red-flag symptoms appear (e.g., GI bleeding, significant weight loss), escalate care to gastroenterology.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Type sur l'échelle de Bristol | Interprétation |\n| --- | --- |\n| 1-2 | Associé à une constipation |\n| 3-4 | Normal |\n| 5 | Associé à une diarrhée dans une certaine mesure |\n| 6-7 | Associé à une diarrhée |\n\nD'après[Lacy 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5704116/).",
+  "short_description": "Classification des selles.",
+  "medium_description": "Classifies stool (correlates avec intestinal transit time).",
+  "input_schema": [
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "stool",
+      "label": "Type de selles",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Separate hard lumps, like nuts (hard pour pass)",
+          "value": 0
+        },
+        {
+          "label": "En forme de saucisse mais grumeleuse",
+          "value": 1
+        },
+        {
+          "label": "Like sausage but avec cracks sur its surface",
+          "value": 2
+        },
+        {
+          "label": "Like sausage ou snake, smooth et soft",
+          "value": 3
+        },
+        {
+          "label": "Soft blobs avec clear-cut edges (passed easily)",
+          "value": 4
+        },
+        {
+          "label": "Fluffy pieces avec ragged edges, mushy stool",
+          "value": 5
+        },
+        {
+          "label": "Liquide, sans morceaux solides, entièrement liquide",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lewis SJ, Heaton KW. Stool form scale as a useful guide to intestinal transit time. Scand J Gastroenterol. 1997;32(9):920-4.",
+      "href": "https://www.tandfonline.com/doi/abs/10.3109/00365529709011203 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lacy BE, Patel NK. Rome Criteria and a Diagnostic Approach to Irritable Bowel Syndrome. J Clin Med. 2017;6(11).",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5704116/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Blake MR, Raker JM, Whelan K. Validity and reliability of the Bristol Stool Form Scale in healthy adults and patients with diarrhoea-predominant irritable bowel syndrome. Aliment Pharmacol Ther. 2016;44(7):693-703.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27492648",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Amarenco G. Bristol Stool Chart: Prospective and monocentric study of \"stools introspection\" in healthy subjects. Prog Urol. 2014;24(11):708-13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25214452 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.rome-iv-diagnostic-criteria-functional-constipation",
+    "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "f0e305ebe5fda453538f41da6706e5ae",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10017,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

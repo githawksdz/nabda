@@ -1,0 +1,123 @@
+{
+  "id": "calc.ganzoni-equation-iron-deficiency-anemia",
+  "slug": "ganzoni-equation-iron-deficiency-anemia",
+  "language": "fr",
+  "title": "Ganzoni équation pour Iron Deficiency Anemia",
+  "short_title": "Ganzoni équation pour Anemia",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anemia"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "iron deficiency",
+    "ida",
+    "equation",
+    "anemic",
+    "ganzoni",
+    "iron",
+    "dosing",
+    "IV"
+  ],
+  "dosing": false,
+  "formula": "Déficit total en fer, mg = poids, kg ×notionvc: a89bf0ba-3694-4a13-83b0-9717fe0cd515(hémoglobine cible, g/dL – hémoglobine actuelle, g/dL) ×notionvc: a89bf0ba-3694-4a13-83b0-9717fe0cd5152.4 + réserves en fer, mg",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients atteints d'anémie ferriprive chez qui une supplémentation en fer est envisagée.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "La voie et le moment de l'administration du fer dépendent de multiples facteurs, notamment le déficit en fer, le taux d'hémoglobine actuel, la formulation du supplément, et d'autres.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Iron deficit évaluation.",
+  "medium_description": "Assesses total body iron deficit pour iron replacement therapy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "thb",
+      "label": "Hémoglobine cible",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ahb",
+      "label": "Hémoglobine réelle",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "stores",
+      "label": "Réserves en fer",
+      "tips": "Utiliser 500 mg chez l'adulte et l'enfant ≥35 kg ; utiliser 15 mg/kg si <35 kg",
+      "optional": false,
+      "default": 500,
+      "unit": "iron_stores_mg",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Ganzoni AM. [Intravenous iron-dextran: therapeutic and experimental possibilities]. Schweiz Med Wochenschr. 1970;100(7):301-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/5413918/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Koch TA, Myers J, Goodnough LT. Intravenous Iron Therapy in Patients with Iron Deficiency Anemia: Dosing Considerations. Anemia. 2015;2015:763576.",
+      "href": "https://www.hindawi.com/journals/anemia/2015/763576/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mentzer-index",
+    "calc.tenecteplase-dosing",
+    "calc.absolute-reticulocyte-count-reticulocyte-index"
+  ],
+  "source_logic_hash": "b6a8aac431e59da3562c3cde46498aeb",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10139,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

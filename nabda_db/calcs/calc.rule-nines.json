@@ -1,0 +1,292 @@
+{
+  "id": "calc.rule-nines",
+  "slug": "rule-nines",
+  "language": "fr",
+  "title": "Règle de Nines",
+  "short_title": "Règle de Nines",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Burns",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Rule of Nines",
+    "rule of 9s",
+    "rule of 9",
+    "burn",
+    "rules of nine",
+    "rules of 9",
+    "burn estimation",
+    "burn injury",
+    "burn severity",
+    "burn prognosis",
+    "burn body surface area",
+    "burn index",
+    "thermal injury",
+    "burned",
+    "wallace rule of nines",
+    "wallace rule of 9s",
+    "Wallace Rule-of-Nines",
+    "Wallace Rule-of-9s"
+  ],
+  "dosing": false,
+  "formula": "SCT atteinte par les brûlures = Σ(SC de chaque région corporelle atteinte)",
+  "how_to_use": {
+    "why": "- Permet une évaluation rapide sans nécessiter d'outils de mesure détaillés ni de calculs, ce qui le rend utile en situation d'urgence.\n- Fournit une méthode standardisée, facile à mémoriser et à appliquer par les cliniciens, garantissant la cohérence de la prise en charge initiale des patients brûlés.",
+    "when": "- Principalement utilisé en contexte d'urgence pour estimer rapidement la surface corporelle totale (SCT) atteinte par les brûlures.\n- Au-delà des brûlures, cet outil peut être utilisé pour évaluer la SCT atteinte par d'autres dermatoses sévères, comme le syndrome de Stevens-Johnson (SJS) et la nécrolyse épidermique toxique (NET).",
+    "pearls": "- Conçu principalement pour les adultes ; il est moins précis chez l'enfant en raison de ses proportions corporelles différentes.\n- Moins précis pour estimer les surfaces en cas de brûlures très étendues ou très limitées et chez les personnes dont les proportions corporelles sont nettement modifiées.\n- Chez les personnes obèses, cet outil peut sous-estimer l'étendue des brûlures du tronc et la surestimer au niveau des membres.\n- Les brûlures du premier degré ne doivent pas être incluses dans l'évaluation de la SCT brûlée."
+  },
+  "next_steps": {
+    "advice": "- Utiliser la SCT estimée pour guider les décisions concernant la réanimation liquidienne, la prise en charge de la douleur et le transfert éventuel vers des centres spécialisés de brûlés.\n- Bien qu'aucune formule d'estimation des besoins hydriques ne soit précise, les estimations initiales peuvent être guidées par la [formule de Parkland](nabda:calc.parkland-formula-burns), la formule de Brook modifiée ou la règle des dizaines.\n- Pour une évaluation plus précise après stabilisation, envisager des méthodes détaillées de calcul de la SCT, comme la grille de Lund et Browder.",
+    "critical_actions": "Attention au risque de surestimation des besoins hydriques, qui peut être dangereuse. Ajuster les besoins liquidiens en fonction de facteurs tels que l'âge et les comorbidités, en utilisant le jugement clinique pour adapter les interventions.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Proportions approximatives de la surface corporelle totale représentées par la tête et le visage (9 %), le tronc (18 % à l'avant et 18 % au dos), les bras (9 % chacun), la région génitale (1 %) et les jambes (18 % chacune).\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/rule_of_nines_2.png)",
+  "short_description": "Surface corporelle brûlée.",
+  "medium_description": "Calcule la surface corporelle totale atteinte par les brûlures.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Tête et visage",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "4.5%",
+          "value": 4.5
+        },
+        {
+          "label": "9%",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Torso",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "9%",
+          "value": 9
+        },
+        {
+          "label": "18%",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Back",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "9%",
+          "value": 9
+        },
+        {
+          "label": "18%",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "Bras droit",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "4.5%",
+          "value": 4.5
+        },
+        {
+          "label": "9%",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Bras gauche",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "4.5%",
+          "value": 4.5
+        },
+        {
+          "label": "9%",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Région génitale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "1%",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q7",
+      "label": "Jambe droite",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "9%",
+          "value": 9
+        },
+        {
+          "label": "18%",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q8",
+      "label": "Jambe gauche",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "9%",
+          "value": 9
+        },
+        {
+          "label": "18%",
+          "value": 18
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wallace AB. The exposure treatment of burns. The Lancet. 1951;257(6653):501-504.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0140673651919757",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yu CY, Lin CH, Yang YH. Human body surface area database and estimation formula. Burns. 2010;36(5):616-629.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19900761/",
+      "kind": "other"
+    },
+    {
+      "text": "Giretzlehner M, Ganitzer I, Haller H. Technical and medical aspects of burn size assessment and documentation. Medicina (Kaunas). 2021;57(3):242.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33807630/",
+      "kind": "other"
+    },
+    {
+      "text": "Choi J, Patil A, Vendrow E, et al. Practical computer vision application to compute total body surface area burn: reappraising a fundamental burn injury formula in the modern era. JAMA Surg. 2022;157(2):129-135.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34817552/",
+      "kind": "other"
+    },
+    {
+      "text": "Wachtel TL, Berry CC, Wachtel EE, Frank HA. The inter-rater reliability of estimating the size of burns from various burn area chart drawings. Burns. 2000;26(2):156-170.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10716359/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.parkland-formula-burns",
+    "calc.rule-7s-lyme-meningitis",
+    "calc.index-severity-eosinophilic-esophagitis-i-see"
+  ],
+  "source_logic_hash": "5795f54708171e19f1501c039e328e95",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.parkland-formula-burns",
+      "text": "Parkland formula"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10568,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

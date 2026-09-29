@@ -1,0 +1,113 @@
+{
+  "id": "calc.urine-anion-gap",
+  "slug": "urine-anion-gap",
+  "language": "fr",
+  "title": "Trou anionnaire urinaire",
+  "short_title": "Trou anionnaire urinaire",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "gastroenterologie",
+    "medecine-interne",
+    "nephrologie",
+    "pediatrie",
+    "urologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "metabolic acidosis",
+    "nh4",
+    "urine anion gap",
+    "anion gap",
+    "urine ag",
+    "urine nh4"
+  ],
+  "dosing": false,
+  "formula": "Trou anionnaire urinaire (mEq/L) = Na^+^+ K^+^- Cl^-^",
+  "how_to_use": {
+    "why": "Ce simple test urinaire peut aider à différencier les causes d'une acidose métabolique hyperchlorémique sans trou anionnaire (mnémonique HARDUP) :\n\n- Hyperchlorémie\n- Acétazolamide, maladie d'Addison\n- Acidose tubulaire rénale\n- Diarrhée, vomissements, iléostomies, fistules\n- Fistules urétéro-entériques\n- Fistules pancréatoduodénales",
+    "when": "- Le patient présentant une acidose métabolique sans trou anionnaire inexpliquée.\n- Le patient présentant une acidose métabolique mixte.\n- Évaluation d'une ATR suspectée.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Rappel : les solutés hyperchlorémiques peuvent aggraver ces acidoses ; envisager des solutés à concentration en chlorure plus faible (comme le RL)."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Detects urine acidosis pour metabolic acidosis eval.",
+  "medium_description": "Detects urine acidosis pour évaluation de non-gap metabolic acidosis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium urinaire",
+      "optional": false,
+      "unit": "na_urine",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "k",
+      "label": "Potassium urinaire",
+      "optional": false,
+      "unit": "k_urine",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "cl",
+      "label": "Chlorure urinaire",
+      "optional": false,
+      "unit": "cl_urine",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Goldstein MB, Bear R, Richardson RM, Marsden PA, Halperin ML. The urine anion gap: a clinically useful index of ammonium excretion. Am J Med Sci. 1986 Oct;292(4):198-202.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3752165",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kim GH, Han JS, Kim YS, Joo KW, Kim S, Lee JS. Evaluation of urine acidification by urine anion gap and urine osmolal gap in chronic metabolic acidosis. Am J Kidney Dis. 1996 Jan;27(1):42-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8546137",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.serum-osmolality-osmolarity",
+    "calc.winters-formula-metabolic-acidosis-compensation",
+    "calc.urine-output-fluid-balance"
+  ],
+  "source_logic_hash": "4c164efdd5dc6e73bccc3196969b9ad1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2045,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

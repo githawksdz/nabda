@@ -1,0 +1,162 @@
+{
+  "id": "calc.karnofsky-performance-status-scale",
+  "slug": "karnofsky-performance-status-scale",
+  "language": "en",
+  "title": "Échelle Karnofsky Performance Status (KPS)",
+  "short_title": "Échelle de Karnofsky",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "chemo",
+    "chemotherapy",
+    "ability",
+    "special care",
+    "KPS",
+    "KPSS",
+    "Karnofsky Performance Status",
+    "Karnofsky Performance Status Scale",
+    "Karnofsky Performance Scale",
+    "Karnofsky",
+    "performance status",
+    "cancer performance status",
+    "status scale",
+    "status"
+  ],
+  "dosing": false,
+  "formula": "| Description | Points assigned* | Description |\n| --- | --- | --- |\n| Normal no complaints; no evidence of disease. | 100 | Able to carry on normal activity and to work; no special care needed. |\n| Able to carry on normal activity; minor signs or symptoms of disease. | 90 | |\n| Normal activity with effort; some signs or symptoms of disease. | 80 | |\n| Cares for self; unable to carry on normal activity or to do active work. | 70 | Unable to work; able to live at home and care for most personal needs; varying amount of assistance needed. |\n| Requires occasional assistance, but is able to care for most of his personal needs. | 60 | |\n| Requires considerable assistance and frequent medical care. | 50 | |\n| Disabled; requires special care and assistance. | 40 | Unable to care for self; requires equivalent of institutional or hospital care; disease may be progressing rapidly. |\n| Severely disabled; hospital admission is indicated although death not imminent. | 30 | |\n| Very sick; hospital admission necessary; active supportive treatment necessary. | 20 | |\n| Moribund; fatal processes progressing rapidly. | 10 | |\n| Dead. | 0 | |\n\n*% Survival correlates with points assigned.",
+  "how_to_use": {
+    "why": "Performance status is highly correlated with survival time and need for services in the home. It may also help predict ability to thrive with invasive and intensive treatment.",
+    "when": "Patients atteints d'un cancer évolutif ou d'autres maladies chroniques — voire d'une progression de la fragilité chez les personnes âgées.",
+    "pearls": "- The Karnofsky Performance Status Scale (KPS) is used extensively and for many purposes, including response to chemotherapy in cancer and chronic disease assessment.\n- It quantifies a patient's functional abilities and impact of treatments like chemotherapy on their basic functional capacities.\n- It is sometimes also used prognostically and to help determine treatment."
+  },
+  "next_steps": {
+    "advice": "The Karnofsky Performance Status Scale is clearly useful to clinicians, and either this or another functional status scale should be used to improve understanding of patient needs and abilities, as well as potentially to prognose.",
+    "critical_actions": "L’échelle de Karnofsky et d’autres échelles de performance doivent être utilisées dans l’évaluation holistique des patients atteints de cancer, bien que sa précision comme outil pronostique dans des cas individuels ne soit pas encore bien prouvée.",
+    "management": "We are unaware of validated management algorithms using the Karnofsky Scale."
+  },
+  "evidence": "",
+  "more_info": "The lower the Karnofsky Scale, the worse the prognosis:\n\n- Unable to tolerate therapies\n- Survival rates decrease\n\nKarnofsky vs. [ECOG/Zubrod Scores](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)\n\n| [ECOG PERFORMANCE STATUS](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) | KARNOFSKY PERFORMANCE STATUS |\n| --- | --- |\n| 0—Fully active, able to carry on all pre-disease performance without restriction | 100—Normal, no complaints; no evidence of disease |\n| 90—Able to carry on normal activity; minor signs or symptoms of disease | |\n| 1—Restricted in physically strenuous activity but ambulatory and able to carry out work of a light or sedentary nature, e.g., light house work, office work | 80—Normal activity with effort, some signs or symptoms of disease |\n| 70—Cares for self but unable to carry on normal activity or to do active work | |\n| 2—Ambulatory and capable of all selfcare but unable to carry out any work activities; up and about more than 50% of waking hours | 60—Requires occasional assistance but is able to care for most of personal needs |\n| 50—Requires considerable assistance and frequent medical care | |\n| 3—Capable of only limited selfcare; confined to bed or chair more than 50% of waking hours | 40—Disabled; requires special care and assistance |\n| 30—Severely disabled; hospitalization is indicated although death not imminent | |\n| 4—Completely disabled; cannot carry on any selfcare; totally confined to bed or chair | 20—Very ill; hospitalization and active supportive care necessary |\n| 10—Moribund | |\n| 5—Dead | 0—Dead |",
+  "short_description": "Tolérance à la chimiothérapie.",
+  "medium_description": "Détermine la capacité du patient à tolérer une chimiothérapie.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "karnofsky",
+      "label": "Description du patient",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Normal, aucune plainte ; aucun signe de maladie",
+          "value": 100
+        },
+        {
+          "label": "Able pour carry sur normal activity; minor signs ou symptoms de maladie",
+          "value": 90
+        },
+        {
+          "label": "Normal activity avec effort; some signs ou symptoms de maladie",
+          "value": 80
+        },
+        {
+          "label": "Cares pour self; unable pour carry sur normal activity ou pour do active work",
+          "value": 70
+        },
+        {
+          "label": "nécessite occasional assistance, but is able pour care pour most de his personal needs",
+          "value": 60
+        },
+        {
+          "label": "nécessite une assistance considérable et des soins médicaux fréquents",
+          "value": 50
+        },
+        {
+          "label": "Disabled; nécessite special care et assistance",
+          "value": 40
+        },
+        {
+          "label": "Severely disabled; hôpital admission is indicated although death not imminent",
+          "value": 30
+        },
+        {
+          "label": "Very sick; hôpital admission necessary; active supportive traitement necessary",
+          "value": 20
+        },
+        {
+          "label": "Moribond ; processus fatals d'évolution rapide",
+          "value": 10
+        },
+        {
+          "label": "Décès",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Karnofsky DA Burchenal JH. (1949). 'The Clinical Evaluation of Chemotherapeutic Agents in Cancer.' In: MacLeod CM (Ed), Evaluation of Chemotherapeutic Agents. Columbia Univ Press. Page 196.",
+      "href": "",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Crooks, V, Waller S, et al. The use of the Karnofsky Performance Scale in determining outcomes and risk in geriatric outpatients. J Gerontol. 1991; 46: M139-M144.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2071835",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hollen PJ, Gralla RJ, et al. Measurement of quality of life in patients with lung cancer in multicenter trials of new therapies. Cancer. 1994; 73: 2087-2098.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8156514",
+      "kind": "pubmed"
+    },
+    {
+      "text": "O'Toole DM, Golden AM. Evaluating cancer patients for rehabilitation potential. West J Med. 1991; 155:384-387.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1003019/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Schag CC, Heinrich RL, Ganz PA. Karnofsky performance status revisited: Reliability, validity, and guidelines. J Clin Oncology. 1984; 2:187-193.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6699671",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lansky-play-performance-scale-pediatric-functional-status",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+    "calc.international-prognostic-index-chronic-lymphocytic-leukemia-cll-ipi"
+  ],
+  "source_logic_hash": "2434e511418cea35b150d243422f86b8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3168,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n    var msg = '';\n    var ecog;\n    var u = parseFloat(karnofsky);\n    if (u >= 10) { ecog = 'Correlates to an ECOG Performance Status of 4.<br/><br/>'; }\n    if (u >= 30) { ecog = 'Correlates to an ECOG Performance Status of 3.<br/><br/>'; }\n    if (u >= 50) { ecog = 'Correlates to an ECOG Performance Status of 2.<br/><br/>'; }\n    if (u >= 70) { ecog = 'Correlates to an ECOG Performance Status of 1.<br/><br/>'; }\n    if (u >= 90) { ecog = 'Correlates to an ECOG Performance Status of 0.<br/><br/>'; }\n    if (u == 0) { ecog = 'Correlates to an ECOG Performance Status of 5.<br/><br/>'; }\n    if (u <= 40) { mini_msg= 'Unable to care for self.'; msg = 'Unable to care for self; requires equivalent of institutional or hospital care; disease may be progressing rapidly.<br/><br/>'; }\n    if (u > 40 && u <= 70) { mini_msg= 'Unable to work; able to live at home and care for most personal needs.'; msg = 'Unable to work; able to live at home and care for most personal needs; varying amount of assistance needed.<br/><br/>'; }\n    if (u > 70) { mini_msg= 'Able to carry on normal activity and to work.'; msg = 'Able to carry on normal activity and to work; no special care needed.<br/><br/>'; }\n    \n    var addmsg = 'See definitions of the Karnofsky Scale on the About section.';\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3168_Karnofsky Scale_result',\n    value: u,\n    value_text: 'points',\n    message: msg+ecog+addmsg\n});",
+  "before_use": null,
+  "instructions": "For patients ≥ 16 years old. Useful to use over time to track disease progression.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. David Karnofsky"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "050af73377703dbcd73707cbf3493aeab8a86fd4905a9a6588cc474a9a188091"
+}

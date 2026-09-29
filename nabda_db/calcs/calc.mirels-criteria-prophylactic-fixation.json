@@ -1,0 +1,184 @@
+{
+  "id": "calc.mirels-criteria-prophylactic-fixation",
+  "slug": "mirels-criteria-prophylactic-fixation",
+  "language": "en",
+  "title": "Mirels’ critères pour Prophylactic Fixation",
+  "short_title": "Mirels’ critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "orthopedie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Fracture"
+  ],
+  "chief_complaints": [
+    "Douleur des extrémités",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Mirel",
+    "mirel's",
+    "mirels",
+    "mirel criteria",
+    "Harrington",
+    "long bone",
+    "bone mets",
+    "bony mets",
+    "prophylactic fixation",
+    "IF",
+    "pathologic fracture",
+    "fracutre"
+  ],
+  "dosing": false,
+  "formula": "Addition of selected points:\n\n| Score | 1 | 2 | 3 |\n| --- | --- | --- | --- |\n| Site of lesion | Upper limb | Lower limb | Trochanteric region |\n| Size of lesion | <⅓ of bone diameter | ⅓-⅔ of bone diameter | >⅔ of bone diameter |\n| Nature of lesion | Blastic | Mixed | Lytic |\n| Pain | Mild | Moderate | Functional |",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients atteints de métastases osseuses connues des os longs, sans antécédent de fracture ni d’irradiation préalable.",
+    "pearls": "- Shown to have greater variability in agreement when scored by medical and radiation oncologists, to whom these patients are most likely to present.\n- Can only be used to predict fracture risk in long bones (i.e., not in vertebral mets).\n- Better validated than the earlier Harrington Criteria.\n- While the original paper describes the size of the lesion as a percentage of the cortex, in practice it is classified as a percentage of the width (diameter) of the bone at that level.\n- Predicts fracture risk in the 6 months after radiotherapy, which may not be relevant for many patients (i.e., if no plans for radiotherapy and/or short life expectancy)."
+  },
+  "next_steps": {
+    "advice": "En plus des critères de Mirels, tenir compte de facteurs propres au patient tels que les comorbidités, la survie prévue, d’autres sites de la maladie, le niveau d’activité et la densité minérale osseuse lorsqu’il s’agit de décider s’il faut ou non recommander une fixation prophylactique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation :**\n\n| Score | Risque de fracture* | Recommandation |\n| --- | --- | --- |\n| ≤7 | 0-4% | Irradiation possible avec un risque minimal de fracture |\n| 8 | 15% | Envisager une fixation prophylactique |\n| ≥9 | >33% | Fixation prophylactique indiquée |\n\n*À 6 mois après irradiation.",
+  "short_description": "Fracture risque avec bone mets.",
+  "medium_description": "Predicts risque de pathologic fracture chez les patients avec long bone metastasis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "site",
+      "label": "Site de lesion",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Membre supérieur",
+          "value": 1
+        },
+        {
+          "label": "Membre inférieur",
+          "value": 2
+        },
+        {
+          "label": "Région trochantérienne",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "size",
+      "label": "Taille de la lésion",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Moins de 1/3 du diamètre de l'os",
+          "value": 1
+        },
+        {
+          "label": "1/3 pour 2/3 de bone diameter",
+          "value": 2
+        },
+        {
+          "label": "Plus de 2/3 du diamètre de l'os",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nature",
+      "label": "Nature de la lésion",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Blastic",
+          "value": 1
+        },
+        {
+          "label": "Mixed",
+          "value": 2
+        },
+        {
+          "label": "Lytic",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pain",
+      "label": "Douleur",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Functional",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mirels H. Metastatic disease in long bones: A proposed scoring system for diagnosing impending pathologic fractures. 1989. Clin Orthop Relat Res. 2003;(415 Suppl):S4-13. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14600587 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jawad MU, Scully SP. In brief: classifications in brief: Mirels' classification: metastatic disease in long bones and impending pathologic fracture. Clin Orthop Relat Res. 2010;468(10):2825-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049613/",
+      "kind": "other"
+    },
+    {
+      "text": "Damron TA, Morgan H, Prakash D, Grant W, Aronowitz J, Heiner J. Critical evaluation of Mirels' rating system for impending pathologic fractures. Clin Orthop Relat Res. 2003;(415 Suppl):S201-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14600611/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fracture-index",
+    "calc.wisconsin-criteria",
+    "calc.ribscore"
+  ],
+  "source_logic_hash": "baff6a0882bff7d85f6c031425d278c9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3946,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

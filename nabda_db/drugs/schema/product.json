@@ -1,0 +1,26 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/product.json",
+  "title": "Algerian commercial product",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name", "availability_dz"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^c\\." },
+    "name": { "type": "string" },
+    "presentation_id": { "type": ["string", "null"] },
+    "substance_id": { "type": ["string", "null"] },
+    "manufacturer_id": { "type": ["string", "null"] },
+    "forme": { "type": ["string", "null"] },
+    "dosage": { "type": ["string", "null"] },
+    "pack": { "type": ["string", "null"] },
+    "liste": { "type": ["string", "null"] },
+    "type": { "type": ["string", "null"] },
+    "prix_ppa": { "type": ["number", "null"] },
+    "registration": { "type": ["string", "null"] },
+    "image": { "type": ["string", "null"] },
+    "local_only": { "type": "boolean" },
+    "availability_dz": { "type": "string", "enum": ["registered", "historical", "unavailable_dz"] },
+    "sources": { "type": "object" }
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/presentation.json",
+  "title": "Presentation (brandless forme + dose + route)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "substance_id", "label", "availability_dz"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^p\\." },
+    "substance_id": { "type": "string" },
+    "label": { "type": "string" },
+    "forme": { "type": ["string", "null"] },
+    "forme_family": { "type": ["string", "null"] },
+    "route": { "type": ["string", "null"] },
+    "dose_tokens": { "type": "array", "items": { "type": "string" } },
+    "atc_id": { "type": ["string", "null"] },
+    "monograph_id": { "type": ["string", "null"] },
+    "indication_ids": { "type": "array", "items": { "type": "string" } },
+    "availability_dz": { "type": "string", "enum": ["registered", "unavailable_dz"] },
+    "local_names": { "type": "array", "items": { "type": "string" } },
+    "cat_ids": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "object" }
+  }
+}

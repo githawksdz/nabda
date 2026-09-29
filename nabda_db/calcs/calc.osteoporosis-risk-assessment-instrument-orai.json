@@ -1,0 +1,180 @@
+{
+  "id": "calc.osteoporosis-risk-assessment-instrument-orai",
+  "slug": "osteoporosis-risk-assessment-instrument-orai",
+  "language": "en",
+  "title": "Osteoporosis risque évaluation Instrument (ORAI)",
+  "short_title": "ORAI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "orthopedie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Osteoporosis"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Douleur chronique",
+    "Injury/Trauma",
+    "Pain",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Osteoporosis Risk Assessment Instrument (ORAI)",
+    "ORAI",
+    "Osteoporosis Risk Assessment Instrument",
+    "osteoporosis",
+    "DXA",
+    "dual-energy x-ray absorptiometry",
+    "neck",
+    "lumbar",
+    "spine",
+    "t score",
+    "bone mineral density",
+    "BMD",
+    "bone mass"
+  ],
+  "dosing": false,
+  "formula": "The ORAI is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | 45-54 | 0 |\n| 55-64 | 5 | |\n| 65-74 | 9 | |\n| ≥75 | 15 | |\n| Weight | >69 kg (>152.1 lbs) | 0 |\n| 60-69 kg (132.3-152.1 lbs) | 3 | |\n| <60 kg (<132.3 lbs) | 9 | |\n| Current estrogen use | Yes | 0 |\n| No | 2 | |",
+  "how_to_use": {
+    "why": "- In contrast to other tools that calculate fracture risk, this tool was specifically created to predict who is at risk of low BMD, aiding in the decision-making for additional screening.\n- Enables targeted BMD screening, potentially reducing the necessity for all women to undergo bone densitometry testing.",
+    "when": "- Can be used during routine health visits to determine the appropriateness of osteoporosis screening in women.\n- Particularly beneficial for women under 65 years of age, as clinical guidelines often base the recommendation for bone mineral density (BMD) testing on clinical risk factors.",
+    "pearls": "- Not intended for use in patients at high-risk for osteoporosis due to secondary causes (e.g., chronic corticosteroid therapy, primary hyperparathyroidism).\n- Results are not diagnostic for osteoporosis and do not replace bone densitometry.\n- Does not offer recommendations for subsequent bone densitometry testing or for monitoring the efficacy of osteoporosis treatment."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- A score of 9 or higher suggests a high risk for osteoporosis, warranting further investigation through bone densitometry screening.\n- While the ORAI provides guidance on which patients may require additional screening, it does not account for all potential risk factors for osteoporosis. Therefore, clinical judgment is crucial in determining the appropriate next steps for each patient."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| ORAI Score | Bone Densitometry |\n| --- | --- |\n| <9 | Bone densitometry may not be needed in this patient. |\n| ≥9 | Bone densitometry should be considered for this patient. |",
+  "short_description": "Osteoporosis bone densitometry recommendation.",
+  "medium_description": "Identifies women at risque pour osteoporosis et recommends bone densitometry.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "45-54",
+          "value": 0
+        },
+        {
+          "label": "55-64",
+          "value": 5
+        },
+        {
+          "label": "65-74",
+          "value": 9
+        },
+        {
+          "label": "≥75",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Poids",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">69 kg (>152.1 lbs)",
+          "value": 0
+        },
+        {
+          "label": "60-69 kg (132.3-152.1 lbs)",
+          "value": 3
+        },
+        {
+          "label": "< 60 kg (<132.3 lbs)",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Utilisation actuelle d'œstrogènes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cadarette SM, Jaglal SB, Kreiger N, McIsaac WJ, Darlington GA, Tu JV. Development and validation of the Osteoporosis Risk Assessment Instrument to facilitate selection of women for bone densitometry. CMAJ. 2000;162(9):1289-1294.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10813010/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pecina JL, Romanovsky L, Merry SP, Kennel KA, Thacher TD. Comparison of clinical risk tools for predicting osteoporosis in women ages 50-64. J Am Board Fam Med. 2016;29(2):233-239.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26957380/",
+      "kind": "other"
+    },
+    {
+      "text": "Zheng HW, Bui AAT, Ensrud KE, et al. Identifying younger postmenopausal women with osteoporosis using uspstf-recommended osteoporosis risk assessment tools. JAMA Netw Open. 2025;8(3):e250626.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40100219/",
+      "kind": "other"
+    },
+    {
+      "text": "El Maghraoui A, Habbassi A, Ghazi M, et al. Validation and comparative evaluation of four osteoporosis risk indexes in Moroccan menopausal women. Arch Osteoporos. 2006;1(1-2):1-6.",
+      "href": "https://link.springer.com/article/10.1007/s11657-006-0001-6",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rubin KH, Abrahamsen B, Friis-Holmberg T, et al. Comparison of different screening tools (FRAX®, OST, ORAI, OSIRIS, SCORE and age alone) to identify women with increased risk of fracture. A population-based prospective study. Bone. 2013;56(1):16-22.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23669650/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.osteoporosis-index-risk-osiris",
+    "calc.osteoporosis-self-assessment-tool-ost",
+    "calc.canadian-association-radiologists-osteoporosis-canada-caroc-system"
+  ],
+  "source_logic_hash": "c4985aaedd57baa0da4bfe60af8f88b0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10541,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

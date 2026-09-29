@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/media-manifest.json",
+  "title": "Media download manifest entry",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "kind", "dest", "status"],
+  "properties": {
+    "id": { "type": "string" },
+    "kind": { "type": "string", "enum": ["product", "manufacturer", "monograph", "guideline"] },
+    "url": { "type": ["string", "null"] },
+    "dest": { "type": "string" },
+    "status": { "type": "string", "enum": ["pending", "ready"] },
+    "source": { "type": ["string", "null"] }
+  }
+}

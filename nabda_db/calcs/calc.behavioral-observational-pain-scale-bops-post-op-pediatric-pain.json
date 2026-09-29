@@ -1,0 +1,155 @@
+{
+  "id": "calc.behavioral-observational-pain-scale-bops-post-op-pediatric-pain",
+  "slug": "behavioral-observational-pain-scale-bops-post-op-pediatric-pain",
+  "language": "en",
+  "title": "Behavioral Observational douleur échelle (BOPS) pour Post-Op pédiatrique douleur",
+  "short_title": "Behavioral Observational douleur échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "anesthesie",
+    "medecine-interne",
+    "douleur",
+    "pediatrie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Anxiety"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Pain"
+  ],
+  "abbreviations": [
+    "peds",
+    "child",
+    "pediatrics",
+    "pain"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "",
+    "when": "Children after undergoing surgery.",
+    "pearls": "Allows for simple, quick pain assessment in children 1-7 years old after surgery."
+  },
+  "next_steps": {
+    "advice": "The BOPS is easy to use when assessing pediatric pain.",
+    "critical_actions": "The BOPS requires close and attentive clinical evaluation of facial expressions, vocalization and body language.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Pain assessments should be performed:\n\n- Every 3 hours\n- 15-20 minutes after IV administration of analgesics\n- 30-45 minutes after oral/rectal administration\n\n**Consider analgesia for scores ≥ 3.**",
+  "short_description": "Post-op douleur échelle pour enfants.",
+  "medium_description": "Quantifies post-operative douleur pour enfants aged 1-7 years.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Expression faciale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Neutral/positive facial expression, composed, calm",
+          "value": 0
+        },
+        {
+          "label": "Negative facial expression, concerned",
+          "value": 1
+        },
+        {
+          "label": "Negative facial expression, grimace, distorted face",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "verbal",
+      "label": "Verbalization",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal conversation, laugh, crow",
+          "value": 0
+        },
+        {
+          "label": "Completely quiet, sobbing et/ou complaining but not because de douleur",
+          "value": 1
+        },
+        {
+          "label": "Crying, screaming et/ou complaining about douleur",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "body",
+      "label": "Body position",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inactive, laying, relaxed avec all extremities ou sitting, walking",
+          "value": 0
+        },
+        {
+          "label": "Restless movements, shifting fashion et/ou touching wound ou wound area",
+          "value": 1
+        },
+        {
+          "label": "Lying rigid et/ou drawn up avec arms et legs pour body",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Anand KJ, Craig KD. New perspectives on definition of pain. Pain 1996; 67:3-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8895225",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hesselgard K, Larsson S, Romner B, Strömblad LG, Reinstrup P. Validity and reliability of the Behavioural Observational Pain Scale for postoperative pain measurement in children 1-7 years of age. Pediatr Crit Care Med. 2007 Mar;8(2):102-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17273124",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.childrens-hospital-eastern-ontario-pain-scale-cheops-post-op-pediatric-pain",
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule"
+  ],
+  "source_logic_hash": "ba577c5b45142c36d1cc388c4b843deb",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3625,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

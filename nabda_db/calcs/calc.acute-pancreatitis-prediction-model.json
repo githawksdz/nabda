@@ -1,0 +1,273 @@
+{
+  "id": "calc.acute-pancreatitis-prediction-model",
+  "slug": "acute-pancreatitis-prediction-model",
+  "language": "en",
+  "title": "Aigu Pancreatitis prédiction modèle",
+  "short_title": "Aigu Pancreatitis prédiction modèle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "gastroenterologie",
+    "medecine-interne",
+    "general",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Pancreatitis"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Douleur abdominale",
+    "Distention",
+    "Fever",
+    "Jaundice",
+    "Perte d'appétit",
+    "Nausea",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "acute pancreatitis prediction model",
+    "pancreatitis diagnosis",
+    "ED pancreatitis",
+    "early pancreatitis detection",
+    "lipase",
+    "amylase",
+    "abdominal pain",
+    "AP diagnosis",
+    "Jin model",
+    "AP",
+    "AP prediction",
+    "acute pancreatitis",
+    "acute pancreatitis risk",
+    "pancreatitis risk",
+    "pancreatitis score",
+    "pancreatitis prediction"
+  ],
+  "dosing": false,
+  "formula": "The Acute Pancreatitis Prediction Model score is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| No. of prior acute pancreatitis episodes | 0 | 0 |\n| 1 | 1 | |\n| 2 | 2 | |\n| 3 | 3 | |\n| ≥4 | 4 | |\n| History of cholelithiasis | No | 0 |\n| Yes | 2 | |\n| Abdominal surgery in prior 2 months | Yes | -2 |\n| No | 0 | |\n| Epigastric pain | No | 0 |\n| Yes | 2 | |\n| Worsening severity | No | 0 |\n| Yes | 1 | |\n| Duration of pain (days) | ≥5 | -1 |\n| <5 | 0 | |\n| Pain severity (out of 10) | Mild (0-3) | 0 |\n| Moderate (4-6) | 2 | |\n| Severe (7-10) | 3 | |\n| Serum lipase level | ≥3 to <10 times the ULN | 0 |\n| ≥10 to <20 times the ULN | 1 | |\n| ≥20 times the ULN | 2 | |",
+  "how_to_use": {
+    "why": "- Ce modèle de prédiction peut aider à réduire la nécessité d’une imagerie CT précoce dans la pancréatite aiguë, ce qui pourrait diminuer les coûts de santé et optimiser l’allocation des ressources.\n- Une étude de validation prospective a montré qu’un seuil d’au moins 6 maximisait la performance diagnostique.",
+    "when": "Utiliser cet outil chez les patients présentant une suspicion de pancréatite aiguë et une lipase sérique ≥3x la limite supérieure de la normale (ULN) avant l’obtention d’une imagerie.",
+    "pearls": "- Cet outil nécessite que le clinicien recueille les antécédents médicaux, réalise un examen physique et obtienne des examens de laboratoire.\n- Ne pas utiliser cet outil chez les patients qui n’ont pas une lipase sérique d’au moins 3x ULN."
+  },
+  "next_steps": {
+    "advice": "- Ce modèle peut être utilisé dans le processus décisionnel clinique pour la prise en charge de la pancréatite aiguë, mais il ne doit pas être utilisé de façon isolée.\n- Chez les patients à risque plus faible de pancréatite, envisager d'autres causes d'élévation de la lipase et/ou de douleur abdominale. L'imagerie abdominale peut être plus bénéfique chez les patients dont le diagnostic est incertain.",
+    "critical_actions": "",
+    "management": "- La pancréatite aiguë est généralement prise en charge de manière conservatrice, les efforts étant centrés sur l’identification de la cause sous-jacente.\n- Les causes fréquentes de pancréatite comprennent la cholédocolithiase, la consommation d’alcool, les médicaments, l’hypertriglycéridémie et une ERCP récente.\n- La prise en charge comprend la réanimation liquidienne, la réalimentation précoce et le contrôle de la douleur.\n- Une [étude prospective de 2024](https://pubmed.ncbi.nlm.nih.gov/38941094/) a suggéré qu’un seuil de score d’au moins 6 maximisait la précision diagnostique. L’imagerie chez ces patients pourrait ne pas ajouter au processus décisionnel clinique."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score du modèle prédictif de pancréatite aiguë | Risque |\n| --- | --- |\n| ≤2 | Faible |\n| 3-5 | Modéré |\n| 6-7 | Élevé |\n| ≥8 | Très élevé |",
+  "short_description": "Estimates aigu pancreatitis risque before imaging chez les patients avec élevé lipase.",
+  "medium_description": "Estimates likelihood de aigu pancreatitis chez les patients avec elevated serum lipase levels prior pour imaging confirmation.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "a",
+      "label": "Nombre d’épisodes antérieurs de pancréatite aiguë",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "≥4",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Antécédents de cholélithiase",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Abdominal surgery dans prior 2 months",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": -2
+        },
+        {
+          "label": "Non",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Douleur épigastrique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Worsening gravité",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Durée de la douleur (jours)",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥5",
+          "value": -1
+        },
+        {
+          "label": "< 5",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "g",
+      "label": "Douleur gravité (out de 10)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Léger (0-3)",
+          "value": 0
+        },
+        {
+          "label": "modéré (4-6)",
+          "value": 2
+        },
+        {
+          "label": "Sévère (7-10)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "h",
+      "label": "Taux de lipase sérique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥3 pour <10 times ULN",
+          "value": 0
+        },
+        {
+          "label": "≥10 pour <20 times ULN",
+          "value": 1
+        },
+        {
+          "label": "≥ 20 fois l'ULN",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tenner S, Vege SS, Sheth SG, et al. American college of gastroenterology guidelines: management of acute pancreatitis. Am J Gastroenterol. 2024;119(3):419-437. doi:10.14309/ajg.0000000000002645",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38857482/",
+      "kind": "international"
+    },
+    {
+      "text": "Crockett SD, Wani S, Gardner TB, Falck-Ytter Y, Barkun AN, American Gastroenterological Association Institute Clinical Guidelines Committee. American gastroenterological association institute guideline on initial management of acute pancreatitis. Gastroenterology. 2018;154(4):1096-1101. doi:10.1053/j.gastro.2018.01.032",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29409760/",
+      "kind": "international"
+    },
+    {
+      "text": "Jin DX, Lacson R, Cochon LR, et al. A clinical model for the early diagnosis of acute pancreatitis in the emergency department. Pancreas. 2018;47(7):871-879. doi:10.1097/MPA.0000000000001102",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29975351/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jin DX, Lacson R, Eskian M, et al. Prospective validation of a prediction model for the diagnosis of acute pancreatitis. JAMA Netw Open. 2024;7(6):e2419014. doi:10.1001/jamanetworkopen.2024.19014",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38941094/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "1913d080dc9ecbb559d655f60d9a45e0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10634,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

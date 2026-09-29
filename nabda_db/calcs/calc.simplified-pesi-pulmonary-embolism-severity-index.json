@@ -1,0 +1,267 @@
+{
+  "id": "calc.simplified-pesi-pulmonary-embolism-severity-index",
+  "slug": "simplified-pesi-pulmonary-embolism-severity-index",
+  "language": "en",
+  "title": "PESI simplifié (index de gravité de l'embolie pulmonaire)",
+  "short_title": "PESI simplifié",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "PE",
+    "pulmonary embolism",
+    "DVT",
+    "spesi"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤80 | 0 |\n| >80 | 1 | |\n| History of cancer | No | 0 |\n| Yes | 1 | |\n| History of chronic cardiopulmonary disease | No | 0 |\n| Yes | 1 | |\n| Heart rate, bpm | <110 | 0 |\n| ≥110 | 1 | |\n| Systolic BP, mmHg | ≥100 | 0 |\n| <100 | 1 | |\n| O 2 saturation | ≥90% | 0 |\n| <90% | 1 | |",
+  "how_to_use": {
+    "why": "- Fournit une méthode rapide, au lit du patient, pour identifier les patients atteints d’EP à faible risque, permettant potentiellement une prise en charge ambulatoire sûre et une réduction des coûts de santé.\n- Ne nécessite pas de résultats de laboratoire et est destiné uniquement à la stratification du risque après le diagnostic d’EP.\n- Dans l’étude de dérivation, le sPESI avait une meilleure valeur prédictive négative que l’original [PESI](nabda:calc.pulmonary-embolism-severity-index-pesi) pour la mortalité et la morbidité grave.\n- Sa simplicité et sa précision comparable en font un outil pratique pour la stratification du risque, soutenant la décision médicale partagée et une utilisation efficiente des ressources.",
+    "when": "- À utiliser au moment du diagnostic chez les patients adultes présentant une embol",
+    "pearls": "- Le sPESI est un outil d’exclusion (« rule-out ») : tous les critères doivent être négatifs pour qu’un patient soit considéré comme étant à faible risque.\n- Il est plus simple et plus facile à mémoriser que le [PESI](nabda:calc.pulmonary-embolism-severity-index-pesi) original, mais il peut classer moins de patients comme étant à faible risque.\n- Il ne tient pas compte de tous les prédicteurs possibles de morbidité ou de mortalité (p. ex., saignement majeur récent, hypoxie sévère ou nécessité de ventilation mécanique).\n- Les études de validation ont souvent exclu les patients présentant une insuffisance rénale sévère et d’autres comorbidités : insuffisance hépatique sévère, troubles cognitifs sévères, insuffisance respiratoire, instabilité hémodynamique, et saignement actif ou risque élevé de saignement.\n- Il devrait compléter, et non remplacer, l’évaluation clinique et la prise en compte des facteurs sociaux.\n- La prise en charge ambulatoire n’est appropriée que si l’anticoagulation et le suivi peuvent être gérés de manière fiable"
+  },
+  "next_steps": {
+    "advice": "- Cet outil doit être utilisé pour éclairer, et non dicter, les décisions cliniques.\n- Même si un patient est classé comme à faible risque, la prise en charge ambulatoire n’est appropriée que si le patient dispose d’un soutien social adéquat et d’un accès fiable au suivi et à l’anticoagulation.\n- Compte tenu de la faible mortalité et morbidité dans le groupe à faible risque, la prise en charge ambulatoire peut être considérée comme ayant un bon rapport coût-efficacité et comme sûre.\n- Les cliniciens doivent rester vigilants face à toute modification de l’état du patient et réévaluer la situation si de nouveaux facteurs de risque apparaissent.",
+    "critical_actions": "- Valable uniquement pour la stratification du risque après confirmation du diagnostic d'EP ; ne pas utiliser pour évaluer le risque chez les patients dont le diagnostic n'est pas confirmé.\n- Même en présence d'un score faible, ne pas négliger une autre pathologie grave ou une instabilité clinique susceptible d'augmenter le risque.\n- En cas de détérioration de l'état clinique du patient à tout moment, réévaluer et envisager une hospitalisation quel que soit le résultat initial du score.\n- Veiller à ce que tous les patients, en particulier ceux pris en charge à domicile, disposent de plans clairs de surveillance, d'anticoagulation et de suivi.",
+    "management": "- **Low Risk** (sPESI Score = 0):\n\n - The patient has a very low risk of mortality (1.1%) and severe morbidity (1.5%).\n - Outpatient management may be considered if:\n\n - Anticoagulation may be safely administered and monitored at home.\n - Social support and follow-up are available.\n - The patient is clinically stable and has no contraindications to outpatient care; close follow-up should be arranged.\n- **High Risk** (sPESI Score ≥ 1):\n\n - The patient has a higher risk of mortality (8.9%) and morbidity (2.7%).\n - Inpatient management and close monitoring are generally warranted unless contraindications exist or social circumstances demand alternative arrangements.\n- Refer to institutional protocols and clinical guidelines for detailed management of PE."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Groupe de risque | Interprétation |\n| --- | --- | --- |\n| 0 point | Faible | Risque de décès de 1,1 %, avec 1,5 % de récidive thromboembolique ou d'hémorragie non fatale |\n| ≥ 1 point | Élevé | Risque de décès de 8,9 % |\n\nD'après l'[étude de dérivation](https://www.ncbi.nlm.nih.gov/pubmed/20696966) :\n\n« Cette étude montre que le PESI simplifié prédit avec succès la mortalité à 30 jours après une EP symptomatique aiguë. Comparé au [PESI original](nabda:calc.pulmonary-embolism-severity-index-pesi), le PESI simplifié présente une précision pronostique similaire. Le score simplifié avait une bonne discrimination et un bon calibrage, et un jeu de données externe a validé la généralisabilité de sa précision prédictive. »\n\n**Remarque : bien que le PESI simplifié ait été appliqué à un groupe de patients dont les données ont été recueillies de manière prospective, la règle elle-même n'a pas été validée dans une cohorte nouvellement prospective.**",
+  "short_description": "Mortalité de l'EP.",
+  "medium_description": "Predicts 30-day devenir de patients avec PE, avec fewer critères than original PESI.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age_80",
+      "label": "Âge, années",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤80",
+          "value": 0
+        },
+        {
+          "label": "> 80",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Antécédent de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiopulmonary_disease",
+      "label": "Antécédents de maladie cardiopulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_rate_110",
+      "label": "Fréquence cardiaque, bpm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 110",
+          "value": 0
+        },
+        {
+          "label": "≥110",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "systolic_blood_pressure_100",
+      "label": "Pression artérielle systolique, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥100",
+          "value": 0
+        },
+        {
+          "label": "< 100",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "o2_saturation_90",
+      "label": "Saturation en O₂",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥ 90 %",
+          "value": 0
+        },
+        {
+          "label": "< 90%",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Jiménez D, Aujesky D, Moores L, Gómez V, Lobo JL, Uresandi F, Otero R, Monreal M, Muriel A, Yusen RD; RIETE Investigators. Simplification of the pulmonary embolism severity index for prognostication in patients with acute symptomatic pulmonary embolism. Arch Intern Med. 2010 Aug 9;170(15):1383-9. PubMed PMID:20696966.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20696966",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Squizzato A, Donadini MP, Galli L, Dentali F, Aujesky D, Ageno W. Prognostic clinical prediction rules to identify a low-risk pulmonary embolism: a systematic review and meta-analysis. J Thromb Haemost. 2012;10(7):1276-1290. doi:10.1111/j.1538-7836.2012.04739.x",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22498033/",
+      "kind": "other"
+    },
+    {
+      "text": "Elias A, Mallett S, Daoud-Elias M, Poggi JN, Clarke M. Prognostic models in acute pulmonary embolism: a systematic review and meta-analysis. BMJ open. 2016 Apr 1;6(4):e010324.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27130162/",
+      "kind": "other"
+    },
+    {
+      "text": "Jaquet E, Tritschler T, Stalder O, Limacher A, Méan M, Rodondi N, Aujesky D. Prediction of short‐term prognosis in elderly patients with acute pulmonary embolism: validation of the RIETE score. Journal of thrombosis and haemostasis. 2018 Jul 1;16(7):1313-20.",
+      "href": "https://www.jthjournal.org/article/S1538-7836(22)02326-1/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Zwierzina D, Limacher A, Méan M, et al. Prospective comparison of clinical prognostic scores in elder patients with a pulmonary embolism. J Thromb Haemost. 2012;10(11):2270-2276. doi:10.1111/j.1538-7836.2012.04929.x",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22985129/",
+      "kind": "other"
+    },
+    {
+      "text": "Gloor M, Stalder O, Tritschler T, et al. Comparison of easy-to-use clinical prognostic models to identify low-risk normotensive patients with pulmonary embolism. J Thromb Haemost. 2026;24(3):1056-1066. doi:10.1016/j.jtha.2025.11.023",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41422946/",
+      "kind": "other"
+    },
+    {
+      "text": "Venetz C, Jiménez D, Mean M, Aujesky D. A comparison of the original and simplified pulmonary embolism severity index. Thromb Haemost. 2011;106(3):423-428. doi:10.1160/TH11-04-0263",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21713328/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhou X-Y, Ben S-Q, Chen H-L, Ni S-S. The prognostic value of pulmonary embolism severity index in acute pulmonary embolism: a meta-analysis. Respiratory Research. 2012;13(1):111. doi:10.1186/1465-9921-13-111.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23210843",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kohn CG, Weeda ER, Kumar N, et al. External validation of a claims-based and clinical approach for predicting post-pulmonary embolism outcomes among United States veterans. Intern Emerg Med. 2017;12(5):613-619. doi:10.1007/s11739-017-1625-9",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28185131/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Palas M, Silva BV, Jorge C, Almeida AG, Pinto FJ, Caldeira D. The accuracy of hestia and simplified pesi to predict the prognosis in pulmonary embolism: systematic review with meta-analysis. TH Open. 2022;6(4):e347-e353. doi:10.1055/a-1942-2526",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36452203/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nishikawa R, Yamashita Y, Morimoto T, et al. Selection of home treatment and identification of low-risk patients with pulmonary embolism based on simplified pulmonary embolism severity index score in the era of direct oral anticoagulants. J Am Heart Assoc. 2024;13(19):e034953. doi:10.1161/JAHA.124.034953",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39344589/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang Y, Chen Y, Chen H, et al. Performance of the Simplified Pulmonary Embolism Severity Index in predicting 30-day mortality after acute pulmonary embolism: Validation from a large-scale cohort. Eur J Intern Med. 2024;124:46-53. doi:10.1016/j.ejim.2024.01.037",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38350784/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.altitude-adjusted-perc-rule",
+    "calc.pulmonary-embolism-severity-index-pesi"
+  ],
+  "source_logic_hash": "eb908319ded5f13998dbd60377127006",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.pulmonary-embolism-severity-index-pesi",
+      "text": "PESI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1247,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar mini_msg = '';\nvar msg = '';\nvar u = parseInt(age_80) + parseInt(cancer) + parseInt(cardiopulmonary_disease) + parseInt(heart_rate_110) + parseInt(systolic_blood_pressure_100) + parseInt(o2_saturation_90);\nif (u == 0) { mini_msg = 'Low';\n    msg = '1.1% risk of death in the \\u201cLow\\u201d risk group (0 points), with 1.5% having recurrent thromboembolism or non-fatal bleeding';}\nif (u > 0) { mini_msg = 'High';\n    msg = '8.9% risk of death in the \\u201cHigh\\u201d risk group (>0 points)';}\n\n\ncalc_output.push({ \n    name: 'mini', \n    value: mini_msg, \n    value_text: 'risk', \n    message:\"Simplified PESI\"\n});\ncalc_output.push({ \n    name: '1247_Simplified PESI_result', \n    value: mini_msg, \n    value_text: 'risk', \n    message:msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. David Jiménez"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [
+    "g.embolie-pulmonaire"
+  ],
+  "substance_ids": [],
+  "engine_sha256": "2b86bd250ae58fb7caec2a1d47076a9ae7dc7a80f832e9478d5141c298525518"
+}

@@ -1,0 +1,135 @@
+{
+  "id": "calc.pittsburgh-response-endovascular-therapy-pre-score",
+  "slug": "pittsburgh-response-endovascular-therapy-pre-score",
+  "language": "fr",
+  "title": "Pittsburgh Response pour Endovascular therapy (PRE) score",
+  "short_title": "Score PRE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Syncope",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "ischemic stroke",
+    "cva",
+    "cerebrovascular accident",
+    "endovascular",
+    "revascularization",
+    "pre",
+    "pre score"
+  ],
+  "dosing": false,
+  "formula": "Score PRE = Âge + (2 × [NIHSS](nabda:calc.nih-stroke-scale-score-nihss) ) – (10 × [ASPECTS](nabda:calc.alberta-stroke-program-early-ct-score-aspects) )",
+  "how_to_use": {
+    "why": "- Prédit la probabilité d'un bon résultat ( [mRS](nabda:calc.modified-rankin-scale-neurologic-disability) 0-2) afin de mieux stratifier les patients pour la thérapie de reperfusion endovasculaire et d'en tirer un bénéfice maximal.\n- Plus simple que d'autres scores similaires, sans sacrifier le pouvoir discriminant pour les bons résultats.",
+    "when": "Patients ≥18 ans, se présentant dans les 8 heures suivant le début des symptômes, avec un AVC antérieur par occlusion vasculaire de gros calibre (LVO) de la circulation antérieure (c.-à-d. artère carotide interne, M1 ou M2).",
+    "pearls": "- Le score PRE (Pittsburgh Response to Endovascular therapy) a été développé pour identifier les patients victimes d'AVC les plus susceptibles de bénéficier d'une thérapie de reperfusion endovasculaire.\n- Relativement simple à utiliser.\n- Utilise des variables continues (par opposition à catégorielles), améliorant la granularité du score.\n- Intègre à la fois l'âge en années ainsi qu'une mesure du décalage entre le noyau d'infarctus et la pénombre ischémique (2 × [NIHSS](nabda:calc.nih-stroke-scale-score-nihss) – 10 × [ASPECTS](nabda:calc.alberta-stroke-program-early-ct-score-aspects) ) dans l'équation.\n- Repose sur l'ASPECTS, dont la fiabilité inter-observateurs est modérée.\n- Ne prend pas en compte l'état physique antérieur à l'AVC.\n- Validé dans un [essai](https://www.ncbi.nlm.nih.gov/pubmed/27811307) comparant les stent-retrievers de troisième génération aux dispositifs de thérapie endovasculaire de deuxième génération ; n'a pas encore été validé dans des essais cliniques endovasculaires plus récents sur l'AVC.\n- Ne prend pas en compte les données d'imagerie de perfusion qui peuvent être utilisées dans la sélection des patients."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Utiliser le score PRE comme un complément au jugement clinique, et non comme un substitut.",
+    "management": "- Les patients avec un score PRE de −24 à +49 sont susceptibles de tirer le bénéfice maximal de la thérapie de reperfusion endovasculaire si une revascularisation réussie, c.-à-d. un grade TICI (Thrombolysis In Cerebral Infarction) 2b/3, est obtenue.\n- Les patients avec un score PRE ≥50 sont les moins susceptibles de bénéficier de la thérapie endovasculaire. Le taux de bon résultat (mRS 0-2) ou la taille finale de l'infarctus n'étaient pas influencés par une reperfusion de grade TICI 2b/3 dans le groupe avec score PRE ≥50."
+  },
+  "evidence": "Le score PRE a été développé par [Rangaraju et ses collègues](https://jnis.bmj.com/content/7/11/783.long) dans une cohorte de dérivation de 257 patients consécutivement traités au Grady Memorial Hospital à Atlanta, avec une validation externe dans deux cohortes institutionnelles (University of Pittsburgh Medical Center, n = 393 ; Unitat d'Ictus Vall d'Hebron [UIVH], n = 204).\n\nL'étude originale était une analyse rétrospective, avec des différences significatives des caractéristiques démographiques de base entre les cohortes de dérivation et de validation. Une régression logistique a été employée pour prédire les bons résultats fonctionnels, définis par un mRS 0-2 à 3 mois.\n\nMalgré les différences démographiques de base, le score PRE a prédit les résultats cliniques de manière comparable entre les cohortes, attestant ainsi de sa large applicabilité chez les patients présentant un AVC antérieur par occlusion vasculaire de gros calibre (LVO), indépendamment des disparités épidémiologiques. L'AUC pour un bon résultat dans la cohorte de dérivation était de 0,79, et de 0,79 et 0,72 dans les cohortes UPMC et UIVH, respectivement.\n\nUne validation externe a ensuite été réalisée dans l'[essai Trevo2](https://www.ncbi.nlm.nih.gov/pubmed/27811307) (comparant les dispositifs MERCI et Trevo) et l'[essai clinique randomisé IMS-3](https://www.nejm.org/doi/full/10.1056/NEJMoa1214300), avec des résultats comparables.",
+  "more_info": "**Interprétation :**\n\nPRE −24 à +49 : bénéfice probable de la thérapie endovasculaire si une revascularisation réussie (TICI 2b/3) est obtenue.\n\nPRE ≥50 : bénéfice peu probable de la thérapie endovasculaire.\n\n![](https://cdn-web-img.mdcalc.com/content/pre-score.jpeg)\n\n**Figure :** Amplitude du bénéfice de la thérapie endovasculaire selon le score PRE. TICI, Thrombolysis In Cerebral Infarction. mRS, Modified Rankin Scale. PRE, Pittsburgh Response to Endovascular therapy. D'après les données de [Rangaraju 2015](https://jnis.bmj.com/content/7/11/783.long), utilisé avec l'autorisation de l'auteur.",
+  "short_description": "LVO AVC patients pour endovascularization.",
+  "medium_description": "Identifies patients avec anterior circulation large vessel occlusion (LVO) strokes probablement pour benefit de endovascular therapy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "nih",
+      "label": "Score [NIHSS](nabda:calc.nih-stroke-scale-score-nihss)",
+      "optional": false,
+      "unit": "nihss",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "asp",
+      "label": "Score [ASPECTS](nabda:calc.alberta-stroke-program-early-ct-score-aspects)",
+      "optional": false,
+      "unit": "aspects",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Rangaraju S, Aghaebrahim A, Streib C, et al. Pittsburgh Response to Endovascular therapy (PRE) score: optimizing patient selection for endovascular therapy for large vessel occlusion strokes. J Neurointerv Surg. 2015;7(11):783-8.",
+      "href": "https://jnis.bmj.com/content/7/11/783.long",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rangaraju S, Haussen D, Nogueira R et al. Abstract WMP10: Validation of the Pittsburgh Response to Endovascular Therapy (PRE) Score in IMS3. Stroke. 2016;47:AWMP10",
+      "href": "https://stroke.ahajournals.org/content/47/Suppl_1/AWMP10",
+      "kind": "other"
+    },
+    {
+      "text": "Ali Raza S, Xiang B, Jovin TG, et al. Pittsburgh response to endovascular therapy score as a pre-treatment prognostic tool: External validation in Trevo2. Int J Stroke. 2016;",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27811307 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.los-angeles-motor-scale-lams",
+    "calc.astral-score-stroke",
+    "calc.plan-score-stroke",
+    "calc.nih-stroke-scale-score-nihss",
+    "calc.alberta-stroke-program-early-ct-score-aspects",
+    "calc.modified-rankin-scale-neurologic-disability"
+  ],
+  "source_logic_hash": "0178eee7ee753dfb0e9db906bd9c0bcf",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIHSS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.alberta-stroke-program-early-ct-score-aspects",
+      "text": "ASPECTS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.modified-rankin-scale-neurologic-disability",
+      "text": "mRS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3943,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

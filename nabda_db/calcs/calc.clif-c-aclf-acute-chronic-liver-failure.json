@@ -1,0 +1,350 @@
+{
+  "id": "calc.clif-c-aclf-acute-chronic-liver-failure",
+  "slug": "clif-c-aclf-acute-chronic-liver-failure",
+  "language": "en",
+  "title": "CLIF-C ACLF (aigu-sur-chronique Liver défaillance)",
+  "short_title": "CLIF-C ACLF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "CLIF-C ACLF",
+    "CLIF-C ACLF (Acute-on-Chronic Liver Failure)",
+    "clif aclf",
+    "clif-of",
+    "clif-c of",
+    "clif organ failure",
+    "aclf",
+    "acute on chronic liver failure",
+    "liver failure",
+    "aclf score",
+    "clif aclf score",
+    "clif-c aclf score"
+  ],
+  "dosing": false,
+  "formula": "CLIF-C ACLF Score = 10 x [0.33 x CLIF Organ Failure Score + 0.04 x age, years + 0.63 x ln(WBC count, 10^9^cells/L) - 2],\n\nwhere CLIF Organ Failure Score = addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Liver | | |\n| Bilirubin | <6 mg/dL (<102.6 µmol/L) | 1 |\n| 6 to <12 mg/dL (102.6 to <205.2 µmol/L) | 2 | |\n| ≥12 mg/dL (≥205.2 µmol/L) | 3 | |\n| Kidney | | |\n| Creatinine | <2 mg/dL (<176.8 µmol/L) | 1 |\n| 2 to <3.5 mg/dL (176.8 to <309.4 µmol/L) | 2 | |\n| ≥3.5 mg/dL (≥309.4 µmol/L) or renal replacement therapy | 3 | |\n| Brain | | |\n| [West-Haven Grade for Hepatic Encephalopathy](nabda:calc.west-haven-criteria\\) | 0 | 1 |\n| 1-2 | 2 | |\n| 3-4 (or if patient is intubated due to hepatic encephalopathy and not respiratory failure*) | 3 | |\n| Coagulation | | |\n| INR | <2.0 | 1 |\n| 2.0 to <2.5 | 2 | |\n| ≥2.5 | 3 | |\n| Circulatory | | |\n| [MAP](nabda:calc.mean-arterial-pressure-map\\) , mmHg | ≥70 | 1 |\n| <70 | 2 | |\n| Any MAP with vasopressors | 3 | |\n| Respiratory (use PaO 2 /FiO 2 ratio or SpO 2 /FiO 2 ratio) | | |\n| PaO 2 / FiO 2 ratio | >300 | 1 |\n| >200 to 300 | 2 | |\n| ≤200 (or if patient intubated for respiratory failure) | 3 | |\n| SpO 2 / FiO 2 ratio | >357 | 1 |\n| >214 to 357 | 2 | |\n| ≤214 (or if patient intubated for respiratory failure) | 3 | |\n\n*Patients submitted to mechanical ventilation due to hepatic encephalopathy and not due to a respiratory failure are considered as presenting a cerebral failure (cerebral subscore = 3).",
+  "how_to_use": {
+    "why": "- May be used to predict 1-, 3-, 6- and 12-month mortality.\n- A predicted mortality of 100% after 48 hours of ICU treatment might give insights on futility of ongoing organ support.\n- The score can be used dynamically; an increasing score despite intensive organ support might prompt a discussion about withdrawal of treatment, whereas a decrease in score after 48 hours might suggest a positive response to treatment.",
+    "when": "Patients adultes atteints d’une maladie hépatique cirrhotique décompensée et présentant une suspicion clinique de défaillance d’un ou plusieurs systèmes organiques.",
+    "pearls": "- Decompensated liver disease is generally defined as the development of jaundice, ascites, encephalopathy, upper GI bleed, bacterial infection, or a combination of these, in a patient with existing cirrhotic liver disease.\n- ACLF is a relatively new concept, characterized by a systemic inflammatory response as well as multiple organ failures (including decompensation of chronic liver disease).\n- Short term mortality in ACLF is high, around 25-75% at 28 days ([Moreau 2013](https://www.ncbi.nlm.nih.gov/pubmed/23474284)).\n- The first part of the score counts the number of failing organ systems; the second part incorporates age and white cell count to calculate an ACLF score and a predicted mortality rate.\n- A score of >65 is associated with 100% mortality 3-7 days after diagnosis of ACLF.\n- In up to 50% of patients, the precipitating cause of ACLF remains unidentified. Common causes include sepsis, ongoing alcohol consumption, and relapse of viral hepatitis.\n- This study is not validated in or designed for use in patients with acute liver failure (for example, those with acetaminophen overdose or fulminant but de novo viral hepatitis) in the absence of pre-existing chronic liver disease.\n- The derivation and validation studies were trialed in patients admitted to a critical care unit; therefore, its accuracy with regards to patients who are managed medically without a higher level care is not known."
+  },
+  "next_steps": {
+    "advice": "- Le score peut être recalculé après 48 heures comme marqueur de réponse au traitement.\n- En l’absence d’insuffisance hépatique aiguë sur chronique (ACLF grade 0), le score CLIF-C AD (décompensation aiguë) peut être utilisé à la place pour prédire la mortalité.",
+    "critical_actions": "Discuter avec le patient et, le cas échéant, avec les collègues de réanimation concernant les options d'escalade des soins.",
+    "management": "- Il n’existe pas de traitement spécifique unique de l’ACLF. La prise en charge est axée sur le soutien des organes et le traitement des causes réversibles.\n- Rappelez-vous que le sepsis est souvent difficile à repérer chez les patients atteints de cirrhose. Une infection a été identifiée comme facteur précipitant potentiel chez environ un tiers des patients dans l’étude de dérivation.\n- Prélevez des échantillons de sang, d’urine et de liquide d’ascite pour identifier une éventuelle infection. Envisagez une antibiothérapie probabiliste."
+  },
+  "evidence": "The initial study identified 275 patients with ACLF from a prospective observational study of 1,349 hospitalized patients with cirrhosis and acute decompensation ([Jalan 2014](https://www.journal-of-hepatology.eu/article/S0168-8278(14)00408-5/fulltext)). These patients were analyzed using an organ failure score combined with age and WBC, both independent predictors of outcome, to derive the CLIF-C ACLF score. Using a concordance index, the CLIF-C ACLF was shown to be more accurate than [MELD](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) , [MELD-Na](nabda:calc.meldna-meld-na-score-liver-cirrhosis) , and [Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) in predicting mortality, both in the CANONIC group and in an external cohort. The accuracy in predicting 28 day mortality is improved when the CLIF-C ACLF score is calculated at 48 hours (or 3-7 days) after ACLF diagnosis.\n\nThe[external validation study](https://ccforum.biomedcentral.com/articles/10.1186/s13054-018-2156-0)was a retrospective analysis of 202 patients with acute-on-chronic liver failure admitted to the intensive care unit at the Royal Free Hospital, London, UK. The authors calculated CLIF-C ACLF, [Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) , and [MELD](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) scores 48 hours after ICU admission and compared predictions of outcome at 28 days. CLIF-C ACLF outperformed the other scores onAUROCanalysis, and further demonstrated that CLIF-C ACLF >70 identified patients with 100% mortality at 28 days.",
+  "more_info": "Interpretation:\n\nProbability of death at a given time = 1 - e^y^, where y = -CI x exp(β x CLIF-C ACLF Score), where Cl and β are as follows:\n\n| Time | Cumulative baseline hazard (Cl) | Coefficient (β) |\n| --- | --- | --- |\n| 1 month | 0.0022 | 0.0995 |\n| 3 months | 0.0079 | 0.0869 |\n| 6 months | 0.0115 | 0.0824 |\n| 1 year | 0.0231 | 0.0731 |\n\nFrom[Jalan 2014](https://www.ncbi.nlm.nih.gov/pubmed/24950482).",
+  "short_description": "Mortalité dans liver défaillance.",
+  "medium_description": "Predicts mortalité dans aigu-sur-chronique liver défaillance.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "bili",
+      "label": "Bilirubin",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 6 mg/dL (<102.6 µmol/L)",
+          "value": 1
+        },
+        {
+          "label": "6 pour <12 mg/dL (102.6 pour <205.2 µmol/L)",
+          "value": 2
+        },
+        {
+          "label": "≥12 mg/dL (≥205.2 µmol/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Creatinine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 2 mg/dL (<176.8 µmol/L)",
+          "value": 1
+        },
+        {
+          "label": "2 pour <3.5 mg/dL (176.8 pour <309.4 µmol/L)",
+          "value": 2
+        },
+        {
+          "label": "≥3.5 mg/dL (≥309.4 µmol/L) ou traitement de remplacement rénal",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "grade",
+      "label": "[Grade de West-Haven pour l'encéphalopathie hépatique](nabda:calc.west-haven-criteria)",
+      "tips": "Les patients intubés pour encéphalopathie hépatique (et non pour insuffisance respiratoire) doivent recevoir un score de +3",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 1
+        },
+        {
+          "label": "1-2",
+          "value": 2
+        },
+        {
+          "label": "3-4",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 2.0",
+          "value": 1
+        },
+        {
+          "label": "2.0 pour <2.5",
+          "value": 2
+        },
+        {
+          "label": "≥2.5",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "map",
+      "label": "PAM, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥70",
+          "value": 1
+        },
+        {
+          "label": "< 70",
+          "value": 2
+        },
+        {
+          "label": "Any MAP avec vasopressors",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Information disponible",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "PaO 2 /FiO 2 ratio",
+          "value": 0
+        },
+        {
+          "label": "Rapport SpO2/FiO2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp1",
+      "label": "PaO~2~/FiO~2~ratio",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "resp == 0",
+      "options": [
+        {
+          "label": ">300",
+          "value": 1
+        },
+        {
+          "label": ">200 pour 300",
+          "value": 2
+        },
+        {
+          "label": "≤200 (ou if patient intubated pour respiratory défaillance)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp2",
+      "label": "SpO~2~/FiO~2~ratio",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "resp == 1",
+      "options": [
+        {
+          "label": ">357",
+          "value": 1
+        },
+        {
+          "label": ">214 pour 357",
+          "value": 2
+        },
+        {
+          "label": "≤214 (ou if patient intubated pour respiratory défaillance)",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Jalan R, Saliba F, Pavesi M, et al. Development and validation of a prognostic score to predict mortality in patients with acute-on-chronic liver failure. J Hepatol. 2014;61(5):1038-47.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24950482",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moreau R, Jalan R, Gines P, et al. Acute-on-chronic liver failure is a distinct syndrome that develops in patients with acute decompensation of cirrhosis. Gastroenterology. 2013;144(7):1426-37, 1437.e1-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23474284",
+      "kind": "other"
+    },
+    {
+      "text": "Lee M, Lee JH, Oh S, et al. CLIF-SOFA scoring system accurately predicts short-term mortality in acutely decompensated patients with alcoholic cirrhosis: a retrospective analysis. Liver Int. 2015;35(1):46-57.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/liv.12683/abstract;jsessionid=7DD64E523F2EBCDEB7BD8D4E0079DAE6.f04t03",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Engelmann C, Thomsen KL, Zakeri N, et al. Validation of CLIF-C ACLF score to define a threshold for futility of intensive care support for patients with acute-on-chronic liver failure. Crit Care. 2018;22(1):254.",
+      "href": "https://ccforum.biomedcentral.com/articles/10.1186/s13054-018-2156-0",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.child-pugh-score-cirrhosis-mortality",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.west-haven-criteria",
+    "calc.mean-arterial-pressure-map"
+  ],
+  "source_logic_hash": "9e85bda1ab127da8c6ac8cec3843a7b6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.west-haven-criteria",
+      "text": "West-Haven Grade for Hepatic Encephalopathy"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "MAP"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10240,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,219 @@
+{
+  "id": "calc.sampson-equation-low-density-lipoprotein-cholesterol-ldl-c",
+  "slug": "sampson-equation-low-density-lipoprotein-cholesterol-ldl-c",
+  "language": "en",
+  "title": "Sampson équation pour faible-Density Lipoprotein Cholesterol (LDL-C)",
+  "short_title": "Équation de Sampson pour le LDL-C",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "CAD",
+    "Maladie coronarienne",
+    "Hypercholestérolémie familiale",
+    "Hypertriglycéridémie"
+  ],
+  "chief_complaints": [
+    "Dyslipidémie",
+    "Soins préventifs / Dépistage"
+  ],
+  "abbreviations": [
+    "Sampson Equation for Low-Density Lipoprotein Cholesterol (LDL-C)",
+    "Sampson Equation for LDL-C",
+    "Sampson Equation",
+    "Sampson’s Equation",
+    "Sampson LDL",
+    "LDL",
+    "LDLC",
+    "LDL-C",
+    "low density lipoprotein",
+    "cholesterol",
+    "LDL Sampson",
+    "Sampson’s LDL",
+    "Sampson formula",
+    "Sampson’s formula",
+    "LDL calculation",
+    "hypertriglyceridemia",
+    "low LDL",
+    "NIH equation",
+    "NIH LDL",
+    "LDL NIH"
+  ],
+  "dosing": false,
+  "formula": "Sampson LDL-C =TC/0.948 -HDL-C/0.971 - [TG/8.56 + (TG × non-HDL-C)/2140 - TG^2^/16100] - 9.44\n\n**Modified** Sampson LDL-C = non-HDL-C - TG/8.37 - (TG × non-HDL-C)/2640 + TG^2^/17400\n\n*All values in mg/dL.\n*Non-HDL-C = TC - HDL-C",
+  "how_to_use": {
+    "why": "- Provides an indirect estimate of LDL-C using results from a standard lipid profile.\n- Both equations improve upon the [Friedewald](nabda:calc.friedewald-equation-low-density-lipoprotein-cholesterol-ldl-c) and [Martin/Hopkins](nabda:calc.martin-equation-low-density-lipoprotein-cholesterol-ldl-c) equations, particularly in patients with hypertriglyceridemia (up to 800 mg/dL) and/or low LDL-C levels.\n- The original equation is recommended by the[2026 ACC/AHA Guideline](https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423)on the Management of Dyslipidemia and the[2025 Joint Statement](https://pubmed.ncbi.nlm.nih.gov/39789723/)by HEART UK and the Association for Laboratory Medicine for LDL-C estimation.",
+    "when": "- Use in adults and children requiring an estimated LDL-C when a direct measurement is unavailable or impractical.\n- Especially useful in patients:\n\n - With hypertriglyceridemia, particularly with serum triglyceride levels up to 800 mg/dL (original equation) or 1,000 mg/dL (modified version).\n - Undergoing lipid-lowering therapy with low LDL-C targets (e.g., <55 mg/dL, <70 mg/dL).\n- Applicable to both fasting (preferred) and non-fasting samples.",
+    "pearls": "**Original equation:**\n\n- Also referred to as the NIH method.\n- Developed in 2020 using reference method data from 8,656 patients (18,715 LDL-C test results) seen at the NIH Clinical Center and validated with >250,000 external samples across multiple populations.\n- Patients with type III hyperlipoproteinemia were excluded from analysis.\n- Accuracy is limited in very extreme hypertriglyceridemia (>800 mg/dL).\n- Validated in pediatric populations.\n\n**Modified equation:**\n\n- Developed and published in 2025 to improve LDL-C estimation, particularly at lower LDL-C treatment thresholds (e.g., <55 mg/dL, <70 mg/dL).\n- Although the modified equation demonstrated improved performance in derivation and validation datasets from the Mayo Clinic and the FOURIER trial, its generalizability to broader clinical settings and diverse populations, including pediatric populations, has not yet been fully established through independent external validation.\n- Accuracy may be reduced when LDL-C exceeds 300 mg/dL.\n- Performance in extreme hypertriglyceridemia has not been as extensively validated, although the derivation study showed a slightly extended limit of up to 1,000 mg/dL."
+  },
+  "next_steps": {
+    "advice": "- Use the estimated LDL-C in conjunction with the patient's overall cardiovascular risk profile to guide lipid-lowering therapy decisions; examples of atherosclerotic cardiovascular disease (ASCVD) risk assessment tools include:\n\n - [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) .\n - [2013 AHA/ACC Risk Calculator](nabda:calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc) .\n - [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) .\n- For patients with nonfasting triglycerides >400 mg/dL, repeating a fasting lipid panel may help reduce variability associated with nonfasting measurements.\n- Additional tests to consider:\n\n - In adults on lipid-lowering therapy who have achieved LDL-C and non-HDL-C goals, apolipoprotein B (apoB) may be reasonable to guide further management decisions, particularly those with:\n\n - ASCVD.\n - Cardiovascular-kidney-metabolic (CKM) syndrome.\n - Type 2 diabetes.\n - Elevated triglycerides.\n - In all adults, measurement of lipoprotein(a) [Lp(a)] concentration is recommended at least once for ASCVD risk assessment.\n- Monitoring and management guidance:\n\n - Repeat lipid profile and LDL-C calculation:\n\n - 4 to 12 weeks after initiation or intensification of lipid-lowering therapy.\n - Every 6 to 12 months thereafter.\n - All patients should receive health behavior counseling.",
+    "critical_actions": "",
+    "management": "**PRIMARY PREVENTION**\n\nThe[2026 ACC/AHA Guideline](https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423)provides the following guidance based on 10-year ASCVD risk categories (for adults aged 30–79 years with LDL-C 70–189 mg/dL):\n\n- **Low** **(<3% risk):** Consider moderate-intensity statin therapy if:\n\n - LDL-C 160–189 mg/dL.\n - 30-year ASCVD risk is ≥10%.\n- **Borderline (3% to <5% risk):**\n\n - Moderate-intensity statin therapy, based on risk-enhancing factors and a clinician-patient risk-benefit discussion.\n - If shared decision-making does not produce a clear treatment path, consider coronary artery calcium (CAC) assessment.\n - Target a ≥30% LDL-C reduction with a goal of LDL-C <100 mg/dL and non-HDL-C <130 mg/dL.\n- **Intermediate (5% to <10% risk):**\n\n - Moderate- to high-intensity statin therapy.\n - Target a ≥30% LDL-C reduction with a goal of LDL-C <100 mg/dL and non-HDL-C <130 mg/dL.\n - If uncertainty remains regarding whether to initiate therapy or its appropriate intensity, consider CAC assessment.\n- **High (≥10% risk):**\n\n - High-intensity statin therapy, with additional therapies (e.g., ezetimibe, PCSK9 monoclonal antibodies [mAbs], bempedoic acid) as needed to meet goals.\n - Target a ≥50% LDL-C reduction with a goal of LDL-C <70 mg/dL and non-HDL-C <100 mg/dL.\n\nThe following groups should receive lipid-lowering therapy regardless of calculated risk:\n\n- Established clinical ASCVD.\n- LDL-C ≥190 mg/dL.\n- Aged 40–75 with diabetes, chronic kidney disease stage 3 or higher, or HIV on stable combination antiretroviral therapy.\n\n**SECONDARY PREVENTION**\n\n- Start or continue high-intensity statin therapy, aiming for a ≥50% reduction in LDL-C.\n- **Not very high risk:**\n\n - Goal LDL-C <70 mg/dL and non-HDL-C <100 mg/dL.\n - Add ezetimibe, a PCSK9 mAb, or bempedoic acid if goals are not met on maximally tolerated statin therapy.\n- **Very high risk** (≥2 ASCVD events, or 1 ASCVD event plus ≥2 high-risk conditions):\n\n - Goal LDL-C <55 mg/dL and non-HDL-C <85 mg/dL.\n - Add ezetimibe and/or a PCSK9 mAb and/or bempedoic acid if goals are not met on maximally tolerated statin therapy.\n - Inclisiran may be considered for patients who prefer less frequent dosing or cannot use PCSK9 mAbs.\n\nPlease refer to your local guidelines for more detailed guidance (e.g.,[2026 ACC/AHA Guideline](https://www.ahajournals.org/doi/pdf/10.1161/CIR.0000000000001423),[2025 Focused Update of the 2019 ESC/EAS Guidelines](https://academic.oup.com/eurheartj/article/46/42/4359/8234482))."
+  },
+  "evidence": "Dans l’[étude de dérivation originale, Sampson et collègues](https://pubmed.ncbi.nlm.nih.gov/32101259/) ont développé l’équation Sampson–NIH LDL-C à partir de 18,715 résultats de tests LDL-C par β-quantification issus de 8,656 patients au NIH Clinical Center. L’équation a ensuite été testée dans des jeux de données externes comprenant 28,891 résultats de LDL-C par β-quantification et 252,888 résultats de LDL-C direct. Comparée à la β-quantification, l’équation Sampson–NIH était plus précise que les équations de Friedewald et de Martin-Hopkins, avec une erreur quadratique moyenne (RMSE) plus faible (15.2 mg/dL vs 32.0 mg/dL et 25.7 mg/dL, respectivement) et moins de erreurs de classification chez les patients ayant des triglycérides de 400–800 mg/dL.\n\nL’équation Sampson–NIH modifiée a été [développée](https://pubmed.ncbi.nlm.nih.gov/40629956/) à partir de données de bilan lipidique de la Mayo Clinic (n = 24,590) et de l’essai FOURIER (n = 9,605). Les données ont été réparties de manière égale en cohortes d’entraînement et de validation. Le LDL-C a été modélisé par rapport au standard de référence β-quantification, à l’aide d’une régression des moindres carrés afin d’optimiser l’ajustement de l’équation.\n\nConçue pour améliorer l’équation Sampson–NIH originale, en particulier à des taux faibles de LDL-C, la version modifiée a démontré des performances potentiellement améliorées. Elle a obtenu un coefficient de corrélation de concordance de 0.992, surpassant les équations originales de Sampson, Martin–Hopkins et Friedewald. Lors de l’évaluation aux seuils cliniques clés de LDL-C, l’équation Sampson NIH modifiée a montré une meilleure concordance par analyse kappa à la fois à 55 mg/dL (κ = 0.98, P <0.001) et à 70 mg/dL (κ = 0.97, P <0.001), comparativement aux autres équations (plage : 0.92–0.96). Elle a également démontré un taux plus faible de fausse classification et une amélioration de la classification correcte des patients d’environ 10 %–20 %, ce qui soutient son utilité dans la prise de décision concernant le traitement hypolipémiant.\n\nUne [étude ultérieure de Meeusen et collègues](https://pubmed.ncbi.nlm.nih.gov/40899684/) a inclus 181 mesures provenant de patients ayant des triglycérides ≥400 mg/dL ou des triglycérides ≥150 mg/dL et un LDL-C <70 mg/dL. L’équation Sampson–NIH modifiée présentait la meilleure corrélation et le moins de biais avec la β-quantification (biais médian ~3–5 mg/dL), comparativement à Martin-Hopkins et à la mesure directe du LDL-C. Dans l’ensemble, ces données soutiennent l’utilisation de l’équation Sampson–NIH modifiée, avec des performances bien validées pour la détermination du LDL-C. L’étude utilise de grands jeux de données bien définis, avec des calculs de LDL-C comparés à la β-quantification considérée comme référence.\n\nLes deux équations restent des méthodes d’estimation indirecte et peuvent être moins fiables en cas d’hypertriglycéridémie sévère, de troubles lipidiques rares ou de situations avec des mesures lipidiques instables. Bien qu’elles soient étayées par de grands jeux de données de dérivation et de validation, une validation externe supplémentaire de l’équation modifiée dans des populations cliniques plus larges reste justifiée, et sa précision comparative par rapport aux autres équations continue de faire débat.",
+  "more_info": "",
+  "short_description": "LDL-C chez les patients avec faible LDL-C level et/ou hypertriglyceridemia.",
+  "medium_description": "Estimates LDL-C chez les patients avec faible LDL-C level et/ou hypertriglyceridemia.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "tc",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdl",
+      "label": "HDL-cholestérol (HDL-C)",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tg",
+      "label": "Triglycérides",
+      "optional": false,
+      "unit": "trig_sampson",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kenkre JS, Mazaheri T, Neely RDG, et al. Standardising lipid testing and reporting in the United Kingdom; a joint statement by HEART UK and The Association for Laboratory Medicine. Ann Clin Biochem. 2025;62(4):257-286. doi:10.1177/00045632251315303",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39789723/",
+      "kind": "international"
+    },
+    {
+      "text": "Writing Committee Members, Blumenthal RS, Morris PB, Gaudino M, et al. 2026 ACC/AHA/AACVPR/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA guideline on the management of dyslipidemia: a report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. Published online March 13, 2026. doi:10.1161/CIR.0000000000001423",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41824552/",
+      "kind": "international"
+    },
+    {
+      "text": "Sampson M, Ling C, Sun Q, et al. A new equation for calculation of low-density lipoprotein cholesterol in patients with normolipidemia and/or hypertriglyceridemia. JAMA Cardiol. 2020;5(5):540-548. doi:10.1001/jamacardio.2020.0013",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32101259/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sampson M, Zubiran R, Wolska A, Meeusen JW, Donato LJ, Jaffe AS, Melloni GEM, Giugliano RP, Sabatine MS, Marston NA, Remaley AT. A modified Sampson-NIH equation with improved accuracy for estimating low levels of low-density lipoprotein-cholesterol. Clin Chem. 2025;71(11):1125-1137. doi:10.1093/clinchem/hvaf073",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40629956/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Touhidul Islam SM, Muthukumar AR, Mary Jones P, Hashim I, Cao J. Comparison of Sampson and extended Martin/Hopkins methods of low-density lipoprotein cholesterol calculations with direct measurement in pediatric patients with hypertriglyceridemia. Lab Med. 2024;55(2):140-144. doi:10.1093/labmed/lmad047",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37253142/",
+      "kind": "other"
+    },
+    {
+      "text": "Ertürk Zararsız G, Bolat S, Cephe A, et al. Validation of Friedewald, Martin-Hopkins and Sampson low-density lipoprotein cholesterol equations. PLoS One. 2022;17(5):e0263860. doi:10.1371/journal.pone.0263860",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35559957/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Higgins V, Garcia L, Gifford JL, et al. Validating the NIH LDL-C equation for provincial implementation in Alberta. Clin Biochem. 2023;121-122(110678):110678. doi:10.1016/j.clinbiochem.2023.110678",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37866698/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Meeusen JW, Yi X, Cotten SW, Nielsen JB, Donato LJ, Jones PM, Muthukumar AR, Zubirán R, Remaley AT, Cao J. Modern low-density lipoprotein cholesterol formulas outperform direct methods in patients with hypertriglyceridemia and low levels of low-density lipoprotein cholesterol. Clin Chem. 2025;71(11):1138-1146. doi:10.1093/clinchem/hvaf099",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40899684/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.friedewald-equation-low-density-lipoprotein-cholesterol-ldl-c",
+    "calc.martin-equation-low-density-lipoprotein-cholesterol-ldl-c",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+    "calc.systematic-coronary-risk-evaluation-score2"
+  ],
+  "source_logic_hash": "5239e15d9b2eddd33abb2322ef796dab",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.friedewald-equation-low-density-lipoprotein-cholesterol-ldl-c",
+      "text": "Friedewald"
+    },
+    {
+      "type": "calc",
+      "id": "calc.martin-equation-low-density-lipoprotein-cholesterol-ldl-c",
+      "text": "Martin/Hopkins"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+      "text": "2013 AHA/ACC Risk Calculator"
+    },
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    },
+    {
+      "type": "calc",
+      "id": "calc.friedewald-equation-low-density-lipoprotein-cholesterol-ldl-c",
+      "text": "Friedewald"
+    },
+    {
+      "type": "calc",
+      "id": "calc.martin-equation-low-density-lipoprotein-cholesterol-ldl-c",
+      "text": "Martin/Hopkins"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+      "text": "2013 AHA/ACC Risk Calculator"
+    },
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10669,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar tc = parseFloat(tc);\nvar hdl = parseFloat(hdl);\nvar tg = parseFloat(tg);\n\nif (UOMSYSTEM == false) { \n    var tc = tc / 0.02586; \n    var hdl = hdl / 0.02586;\n    var tg = tg / 0.0113;\n}\n\nvar nonhdl = tc - hdl;\n\n// Calculate score\nvar score = tc / 0.948 - hdl / 0.971 - (tg / 8.56 + (tg * nonhdl) / 2140 - (tg ** 2) / 16100) - 9.44;\nvar score_mmol = score / 38.67;\n\nvar modscore = nonhdl - tg / 8.37 - (tg * nonhdl) / 2640 + (tg ** 2) / 17400;\nvar modscore_mmol = modscore / 38.67;\n\n// Output\nif (UOMSYSTEM == true) {\n    if (tc < hdl) {\n        calc_output.push({\n            name: 'mini',\n            value: '',\n            value_text: '',\n            message: 'TC must be greater than HDL-C. Please review the input values.'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: '',\n            value_text: '',\n            message: 'TC must be greater than HDL-C. Please review the input values.'\n        });\n    } else if (score < 0 || modscore < 0) {\n        calc_output.push({\n            name: 'mini',\n            value: '',\n            value_text: '',\n            message: 'The estimated LDL-C is below 0 mg/dL, which is not clinically plausible. Please review the input values.'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: '',\n            value_text: '',\n            message: 'The estimated LDL-C is below 0 mg/dL, which is not clinically plausible. Please review the input values.'\n        });\n    } else {\n        calc_output.push({\n            name: 'mini',\n            value: score.toFixed(0),\n            value_text: 'mg/dL',\n            message: 'Sampson Equation for LDL-C <br/>(Modified Sampson LDL-C: ' + modscore.toFixed(0) + 'mg/dL)'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: score.toFixed(0),\n            value_text: 'mg/dL',\n            message: 'Equivalent to ' +  score_mmol.toFixed(2) + ' mmol/L<br/>Non-HDL-C: ' + nonhdl.toFixed(0) + ' mg/dL<br/><br/>Sampson Equation for LDL-C'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: modscore.toFixed(0),\n            value_text: 'mg/dL',\n            message: 'Equivalent to ' +  modscore_mmol.toFixed(2) + ' mmol/L<br/><br/>Modified Sampson Equation for LDL-C'\n        });\n    }\n\n} else if (UOMSYSTEM == false) {\n    if (tc < hdl) {\n        calc_output.push({\n            name: 'mini',\n            value: '',\n            value_text: '',\n            message: 'TC must be greater than HDL-C. Please review the input values.'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: '',\n            value_text: '',\n            message: 'TC must be greater than HDL-C. Please review the input values.'\n        });\n    } else if (score < 0) {\n        calc_output.push({\n            name: 'mini',\n            value: '',\n            value_text: '',\n            message: 'The estimated LDL-C is below 0 mg/dL, which is not clinically plausible. Please review the input values.'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: '',\n            value_text: '',\n            message: 'The estimated LDL-C is below 0 mg/dL, which is not clinically plausible. Please review the input values.'\n        });\n    } else {\n        nonhdl = nonhdl * 0.02586;\n        calc_output.push({\n            name: 'mini',\n            value: score_mmol.toFixed(2),\n            value_text: 'mmol/L',\n            message: 'Sampson Equation for LDL-C<br/>(Modified Sampson LDL-C: ' + modscore_mmol.toFixed(2) + 'mmol/L)'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: score_mmol.toFixed(2),\n            value_text: 'mmol/L',\n            message: 'Equivalent to ' +  score.toFixed(0) + ' mg/dL<br/>Non-HDL-C: ' + nonhdl.toFixed(2) + ' mmol/L<br/><br/>Sampson Equation for LDL-C'\n        });\n        calc_output.push({\n            name: '10669_Sampson Equation for LDL-C_result',\n            value: modscore_mmol.toFixed(2),\n            value_text: 'mmol/L',\n            message: 'Equivalent to ' +  modscore.toFixed(0) + ' mg/dL<br/><br/>Modified Sampson Equation for LDL-C'\n        });\n    }\n}\n\n\n",
+  "before_use": null,
+  "instructions": "Cet outil fournit des résultats pour les équations de Sampson–NIH originale et modifiée, permettant aux cliniciens de comparer les estimations du LDL-C.\n\nVeillez à bien vérifier les unités.",
+  "contributor_ids": [
+    "rahul-aggarwal-md"
+  ],
+  "creator_names": [
+    "Dr. Maureen Sampson"
+  ],
+  "measurement_ids": [
+    "Total Cholesterol",
+    "Triglycerides"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "14b818c255b2b213328038bc2ffec37a59aa8a59458e4718e61a6a1b25cc688e"
+}

@@ -1,0 +1,145 @@
+{
+  "id": "calc.meld-score-original-pre-2016-model-end-stage-liver-disease",
+  "slug": "meld-score-original-pre-2016-model-end-stage-liver-disease",
+  "language": "en",
+  "title": "MELD score (Original, Pre-2016, modèle pour End-Stage Liver maladie)",
+  "short_title": "Score MELD (original)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "meld",
+    "cirrhosis",
+    "esrd",
+    "hepatitis"
+  ],
+  "dosing": false,
+  "formula": "Original MELD Score = (0.957*ln(Serum Cr) + 0.378*ln(Serum Bilirubin) + 1.120*ln(INR) + 0.643 )*10 (if hemodialysis, value for Creatinine is automatically set to 4.0)\n\nNote: If any score is <1, the MELD assumes the score is equal to 1.\n\nThis is the pre-2016 MELD which does not include serum sodium level, as non-US transplant societies are still using the original MELD formula. See the [newer MELD formula here.](nabda:calc.meld-score-model-end-stage-liver-disease-12-older)",
+  "how_to_use": {
+    "why": "MELD est le standard utilisé par l'Organ Procurement and Transplantation Network (OPTN) et détermine qui a la plus haute priorité pour recevoir une greffe de foie aux États-Unis.",
+    "when": "Détermine le pronostic et priorise l’accès à la transplantation hépatique.",
+    "pearls": "- Le [MELD](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) a été mis à jour en janvier 2016 et inclut désormais le taux sérique de sodium.\n- Il est préférable d’utiliser le calculateur pour calculer le MELD, car il existe plusieurs mises en garde concernant les valeurs minimales et maximales attribuées dans le MELD.\n- Les valeurs ne doivent pas dater de plus de 48 heures."
+  },
+  "next_steps": {
+    "advice": "Le score MELD permet d’estimer le pronostic des patients atteints d’une maladie hépatique terminale et sert à prioriser les receveurs de transplantation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Planification de la transplantation hépatique.",
+  "medium_description": "Quantifies end-stage liver maladie pour transplant planning.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "dialysis",
+      "label": "Dialysis at least twice dans past week",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kamath PS, Wiesner RH, Malinchoc M, Kremers W, Therneau TM, Kosberg CL, D'Amico G, Dickson ER, Kim WR. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001 Feb;33(2):464-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172350",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kremers WK, van IJperen M, Kim WR, Freeman RB, Harper AM, Kamath PS, Wiesner RH. MELD score as a predictor of pretransplant and posttransplant survival in OPTN/UNOS status 1 patients.Hepatology. 2004 Mar;39(3):764-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14999695",
+      "kind": "other"
+    },
+    {
+      "text": "Kamath PS, Kim WR; Advanced Liver Disease Study Group. The model for end-stage liver disease (MELD).Hepatology. 2007 Mar;45(3):797-805.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17326206",
+      "kind": "other"
+    },
+    {
+      "text": "Wiesner R, United Network for Organ Sharing Liver Disease Severity Score Committee, et al. Model for end-stage liver disease (MELD) and allocation of donor livers.Gastroenterology. 2003 Jan;124(1):91-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12512033",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.peld-score-pediatric-end-stage-liver-disease-younger-12",
+    "calc.model-end-stage-liver-disease-meld"
+  ],
+  "source_logic_hash": "dd2dfc5881c69a0c9f44c0d254def025",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.meld-score-model-end-stage-liver-disease-12-older",
+      "text": "newer MELD formula here."
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2693,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [
+    "g.hepatite-c"
+  ],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

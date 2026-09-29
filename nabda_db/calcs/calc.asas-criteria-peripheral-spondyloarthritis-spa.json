@@ -1,0 +1,371 @@
+{
+  "id": "calc.asas-criteria-peripheral-spondyloarthritis-spa",
+  "slug": "asas-criteria-peripheral-spondyloarthritis-spa",
+  "language": "fr",
+  "title": "ASAS critères pour Peripheral SpondyloArthritis (SpA)",
+  "short_title": "ASAS critères pour Peripheral SpA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire",
+    "Pain"
+  ],
+  "abbreviations": [
+    "ASAS",
+    "ASAS criteria",
+    "Peripheral SpondyloArthritis",
+    "SpA"
+  ],
+  "dosing": false,
+  "formula": "**Entry criterion**\n\n≥1 of the following:\n\n- Peripheral arthritis*\n- Enthesitis\n- Dactylitis\n\n**Required criteria**\n\n≥1 SpA features:\n\n- Uveitis\n- Psoriasis\n- Crohn‘s disease or ulcerative colitis\n- Preceding infection\n- HLA-B27\n- Sacroiliitis on imaging\n\nOr ≥2 additional SpA features:\n\n- Arthritis\n- Enthesitis\n- Dactylitis\n- Any history of inflammatory back pain\n- Positive family history of SpA\n\n*Predominantly lower limb and/or asymmetric arthritis.",
+  "how_to_use": {
+    "why": "",
+    "when": "- Patients présentant une arthrite périphérique chez qui une spondyloarthrite figure dans le diagnostic différentiel.\n- Peut être utilisé en association avec les [Critères ASAS pour la SpA axiale](nabda:calc.asas-criteria-axial-spondyloarthritis-spa) (utiliser les critères axiaux chez les patients présentant une douleur rachidienne avec ou sans manifestations périphériques, et les critères périphériques chez les patients présentant uniquement des manifestations périphériques).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "With the limited data on peripheral spondyloarthritis, an international task force recommends targeting treatment to remission or low disease activity([Smolen 2017](https://ard.bmj.com/content/early/2017/07/06/annrheumdis-2017-211734)).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classification de la SpA périphérique.",
+  "medium_description": "Classifies peripheral spondyloarthritis according pour évaluation de SpondyloArthritis International Society (ASAS) critères.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "p_arthritis",
+      "label": "Arthrite périphérique",
+      "tips": "Arthrite prédominant aux membres inférieurs et/ou asymétrique",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "enthesitis",
+      "label": "Enthesitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dactylitis",
+      "label": "Dactylitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "uveitis",
+      "label": "Uveitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "psoriasis",
+      "label": "Psoriasis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "crohns",
+      "label": "Crohn‘s maladie ou ulcerative colitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "infection",
+      "label": "Infection préalable",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hla",
+      "label": "HLA-B27",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sacroiliitis",
+      "label": "Sacro-iliite à l'imagerie",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "arthritis",
+      "label": "Arthritis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ent",
+      "label": "Enthesitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dac",
+      "label": "Dactylitis",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "backpain",
+      "label": "Any history de inflammatoire back douleur",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "Antécédents familiaux positifs de SpA",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "p_arthritis == 1 || dactylitis == 1 || enthesitis == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Smolen JS, Schöls M, Braun J, et al. Treating axial spondyloarthritis and peripheral spondyloarthritis, especially psoriatic arthritis, to target: 2017 update of recommendations by an international task force. Ann Rheum Dis. 2017.",
+      "href": "https://ard.bmj.com/content/early/2017/07/06/annrheumdis-2017-211734",
+      "kind": "international"
+    },
+    {
+      "text": "Rudwaleit M, Van der heijde D, Landewé R, et al. The Assessment of SpondyloArthritis International Society classification criteria for peripheral spondyloarthritis and for spondyloarthritis in general. Ann Rheum Dis. 2011;70(1):25-31.",
+      "href": "https://ard.bmj.com/content/annrheumdis/70/1/25.full.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.asas-criteria-axial-spondyloarthritis-spa",
+    "calc.2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr",
+    "calc.caspar-criteria-psoriatic-arthritis"
+  ],
+  "source_logic_hash": "04891378dc1836a09793f10d5b77d7e2",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asas-criteria-axial-spondyloarthritis-spa",
+      "text": "ASAS Criteria for Axial SpA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10032,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,296 @@
+{
+  "id": "calc.piro-score-community-acquired-pneumonia",
+  "slug": "piro-score-community-acquired-pneumonia",
+  "language": "en",
+  "title": "PIRO score pour pneumonie communautaire",
+  "short_title": "PIRO score pour CAP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "CAP-PIRO Score",
+    "CAP-PIRO",
+    "pneumonia severity",
+    "pneumonia severity score",
+    "ICU pneumonia",
+    "pneumonia ICU",
+    "community-acquired pneumonia",
+    "CAP",
+    "PIRO",
+    "ICU pneumonia severity",
+    "ICU pneumonia severity score",
+    "CAP-PIRO pneumonia",
+    "CAP-PIRO pneumonia score",
+    "community acquired pneumonia",
+    "icu mortality",
+    "piro score",
+    "piro score for cap",
+    "piro score for community acquired pneumonia",
+    "Coronavirus",
+    "Corona virus",
+    "COVID",
+    "COVID-19",
+    "COVID 19",
+    "COVID19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Prédisposition | | |\n| Comorbidités (BPCO ou immunodépression) | Oui | 1 |\n| Non | 0 | |\n| Âge >70 ans | Oui | 1 |\n| Non | 0 | |\n| Agression | | |\n| Bactériémie | Oui | 1 |\n| Non | 0 | |\n| Opacités multilobaires à la radiographie thoracique | Oui | 1 |\n| Non | 0 | |\n| Réponse | | |\n| Choc | Oui | 1 |\n| Non | 0 | |\n| Hypoxémie sévère | Oui | 1 |\n| Non | 0 | |\n| Dysfonction d'organe | | |\n| Insuffisance rénale aiguë | Oui | 1 |\n| Non | 0 | |\n| Syndrome de détresse respiratoire aiguë | Oui | 1 |\n| Non | 0 | |",
+  "how_to_use": {
+    "why": "- Comprend des variables facilement accessibles et connues pour influencer la mortalité des PAC.\n- Contrairement à des outils similaires, le score PIRO est spécifiquement conçu pour les cas de PAC sévères nécessitant une admission en réanimation.\n- Prédit la mortalité à 28 jours et l'utilisation des ressources de réanimation.\n- Identifie les patients à haut risque pouvant nécessiter une surveillance rapprochée et une prise en charge plus agressive.\n- Facilite la stratification du risque pour la recherche clinique sur de nouvelles thérapies ou thérapies ciblées.\n- A surpassé [APACHE II](nabda:calc.apache-ii-score) et les [critères ATS/IDSA 2007 de sévérité/prise en charge des PAC](https://www.thoracic.org/statements/resources/mtpi/idsaats-cap.pdf) pour la prédiction de la mortalité dans l'étude de dérivation.",
+    "when": "À utiliser dans les 24 heures suivant le diagnostic de pneumonie aiguë communautaire (PAC) chez l'adulte (≥18 ans) pour évaluer la sévérité de la maladie et prédire la mortalité.",
+    "pearls": "- Développé à partir des données de 529 patients atteints de PAC sévères admis en réanimation dans 33 hôpitaux en Espagne.\n- La variabilité des critères d'admission en réanimation pour les PAC peut entraîner des différences de taux de mortalité entre les établissements.\n- Bien que conçu pour les patients de réanimation, le score a été validé en service de médecine générale et aux urgences ; cependant, sa précision prédictive reste la plus forte pour les patients en état critique.\n- N'intègre pas les données de biomarqueurs (p. ex. procalcitonine), qui pourraient également aider à l'évaluation du risque."
+  },
+  "next_steps": {
+    "advice": "- Aucune recommandation de prise en charge spécifique n'est associée aux résultats du score PIRO.\n- Des scores plus élevés corrèlent avec une mortalité accrue, une durée prolongée de séjour en réanimation et une ventilation mécanique prolongée.\n- Les résultats peuvent orienter les discussions pronostiques et guider les décisions concernant le lieu de traitement (p. ex. réanimation, unité de soins intensifs de relais, service de médecine), les interventions agressives et les thérapies adjuvantes (p. ex. corticoïdes).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PIRO pour PAC | Niveau de risque | Mortalité à 28 jours |\n| --- | --- | --- |\n| 0-2 | Faible | 3,6 % |\n| 3 | Modéré | 13,0 % |\n| 4 | Élevé | 43,0 % |\n| 5-8 | Très élevé | 76,3 % |",
+  "short_description": "ICU mortalité dans CAP.",
+  "medium_description": "Predicts ICU mortalité chez les patients avec pneumonie communautaire.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Comorbidités (BPCO ou immunodépression)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Âge >70 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Bacteremia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Multilobar opacities dans chest radiograph",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Shock",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "Hypoxémie sévère",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "seven",
+      "label": "Aigu renal défaillance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eight",
+      "label": "Syndrome de détresse respiratoire aiguë",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rello J, Rodriguez A, Lisboa T, Gallego M, Lujan M, Wunderink R. PIRO score for community-acquired pneumonia: a new prediction rule for assessment of severity in intensive care unit patients with community-acquired pneumonia. Crit Care Med. 2009;37(2):456-62.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19114916/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fica A, Bunster N, Aliaga F, et al. Bacteremic pneumococcal pneumonia: serotype distribution, antimicrobial susceptibility, severity scores, risk factors, and mortality in a single center in Chile. Braz J Infect Dis. 2014;18(2):115-23.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24120831/",
+      "kind": "other"
+    },
+    {
+      "text": "Cardoso T, Rodrigues PP, Nunes C, et al. Prospective international validation of the predisposition, infection, response and organ dysfunction (Piro) clinical staging system among intensive care and general ward patients. Ann Intensive Care. 2021;11(1):180.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34950977/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.shorr-score-mrsa-pneumonia",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "5b6776a26a0fd1a139a1c57555f1b4aa",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10278,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

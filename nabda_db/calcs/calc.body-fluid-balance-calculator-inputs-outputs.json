@@ -1,0 +1,651 @@
+{
+  "id": "calc.body-fluid-balance-calculator-inputs-outputs",
+  "slug": "body-fluid-balance-calculator-inputs-outputs",
+  "language": "fr",
+  "title": "Body Fluid Balance calculateur par Inputs et Outputs",
+  "short_title": "Calculateur de bilan hydrique corporel (Body Fluid Balance)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "medecine-interne",
+    "nephrologie",
+    "pharmacotherapie",
+    "urologie"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "saline",
+    "free water",
+    "free h2o",
+    "body fluids lost",
+    "body fluids calculator",
+    "body fluid loss calculator",
+    "parenteral",
+    "enteral"
+  ],
+  "dosing": true,
+  "formula": "Total 0.9% saline gain/loss = sum of saline gain/loss for all body fluids/solutions\n\nTotal free H₂O gain/loss = sum of H₂O gain/loss for all body fluids/solutions\n\n| Body fluid LOST | Sodium content, mEq/L | 0.9% saline gain/loss, mL | Free H₂O gain/loss, mL |\n| --- | --- | --- | --- |\n| Gastric | 49.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Biliary | 185.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Pancreatic | 156.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Small bowel | 117.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Diarrhea, nonosmotic | 69.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Sorbitol-based osmotic diarrhea | 63.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Lactulose-based osmotic diarrhea | 26.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Osmotic diarrhea - PEG | 13.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Pleural or peritoneal fluid | 137.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Wound drainage | 137.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Dialysis net ultrafiltrate* | 134.0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Urine | Enter [Na⁺]** | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Insensible losses | 0 | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n| Other body fluid | Enter [Na⁺] | [Na⁺] x volume / -154 | -1 x volume - saline gain/loss |\n\n*Exclude pRBCs; enter pRBC volume under parenteral solutions given.\n\n**If available (otherwise, use 65 mEq/L as default).\n\n| Parenteral (IV) solutions administered | Sodium content, mEq/L | 0.9% saline gain/loss, mL | Free H₂O gain/loss, mL |\n| --- | --- | --- | --- |\n| Packed RBCs* | 154.0 | (0.6 x 4 x 154 + (1 - 0.6) x [Na⁺]) x volume / 154 | 0 |\n| Plasma, cryoprecipitate, platelets, or IVIG** | 154.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| 5%, 20%, 25% albumin*** | 154.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| 0.9% saline | 154.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| 0.45% saline | 77.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Plasma-lyte A | 140.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Ringer's lactate | 130.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| D5W | 0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| NaHCO₃ concentrate**** | 1000.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| 100 mEq NaHCO₃ in 1L D5W | 100.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Injectable sodium phosphates***** | 4000.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| TPN | Enter [Na⁺] | [Na⁺] x volume / 154 | volume - saline gain/loss |\n\n*1 unit of pRBCs ~ 350 mL; Hct ~ 60% in 0.9% saline; 1 mL pRBC ~ 2.8 mL 0.9% saline.\n\n**1 unit of platelets ~ 250 mL; 1 unit of FFP ~ 250 mL.\n\n***Albumin after equilibration is similar to 0.9% saline.\n\n****[Na⁺] is 50 mEq/50 mL.\n\n*****[Na⁺] is 4000 mEq/mL.\n\n| Enteral solutions administered | Sodium content, mEq/L | 0.9% saline gain/loss, mL | Free H₂O gain/loss, mL |\n| --- | --- | --- | --- |\n| Pulmocare | 57.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Nutren 2.0 | 56.5 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Fibersource HN | 52.2 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Impact Peptide1.5 | 50.9 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Nutren Pulmonary | 50.8 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Isosource HN | 48.7 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Diabetisource AC | 46.1 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Novasource Renal | 41.1 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Osmolyte | 40.4 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Jevity | 40.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Replete Fiber | 38.1 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Ensure | 36.8 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Nepro | 36.7 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Peptamen | 35.8 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Suplena | 34.3 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Vivonex RTF | 30.4 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| TwoCal HN | 15.0 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Beneprotein | 3.9 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Renalcal | 3.4 | [Na⁺] x volume / 154 | volume - saline gain/loss |\n| Other enteral solution* | Enter [Na⁺] | [Na⁺] x volume / 154 | volume - saline gain/loss |\n\n*Determine whether IV medications are in 0.9% saline or D5W.",
+  "how_to_use": {
+    "why": "- Daily changes in total body weights and total intakes and outputs do not correlate ([Testani 2015](https://www.ncbi.nlm.nih.gov/pubmed/25595470)) and include both volume and water components, making those measures less accurate for assessing fluid balance.\n- Calculating net changes in volume and water may allow for better management of volume status and changes in serum sodium concentrations.",
+    "when": "Patients hospitalisés avec apports parentéraux et/ou entéraux.",
+    "pearls": "- Le sérum physiologique (solution saline normale) peut ne pas toujours être le liquide de remplacement le plus approprié, selon le contexte clinique (voir [Étapes suivantes](#next-steps) pour plus de détails).\n- L'eau a un effet minimal sur le volume dans l'insuffisance cardiaque décompensée, mais elle entraîne des modifications des concentrations sériques de sodium ([Konstam 2007](https://www.ncbi.nlm.nih.gov/pubmed/17384437))."
+  },
+  "next_steps": {
+    "advice": "- Volume replacement may include sodium-containing solutions like 0.9% saline, sodium bicarbonate, buffered solutions like Ringer’s lactate, Plasmalyte, and blood products including albumin, fresh frozen plasma, platelets, and packed red blood cells.\n- Free water replacement may include oral or nasogastric solutions which contain primarily water, or IV 5% dextrose in water.\n- Remember, packed RBCs remain in the intravascular compartment, while all other inputs and losses equilibrate between the intravascular and extravascular compartment.",
+    "critical_actions": "",
+    "management": "Principles for treatment of concurrent sodium and water disorders:\n\n| | Hyponatremia | Normal plasma [Na+] | Hypernatremia |\n| --- | --- | --- | --- |\n| Hypovolemia* | Give isonatremic solution for volume expansion. Replace ongoing sodium losses. Restrict free water. Do not replace water losses (unless plasma [Na+] rises too rapidly). | Give isonatremic solution for volume expansion. Replace ongoing sodium and free water losses. | Give isonatremic solution for volume expansion. Replace ongoing sodium losses. Replace ½ free water deficit (decrease [Na+] <8-10 mEq/L per day). Replace ongoing water losses. |\n| Euvolemia* | Replace ongoing sodium losses with isonatremic solution. Loop diuretic to impair urine concentrating ability. Restrict free water. Do not replace water losses. | Replace ongoing sodium and free water losses. | Replace ongoing sodium losses with isonatremic solution. Replace ½ free water deficit and all ongoing free water losses. |\n| Hypervolemia* | Restrict sodium. Loop diuretic for volume and impaired urine concentrating. Restrict free water. Do not replace ongoing free water losses. | Restrict sodium. Loop diuretic for volume overload. Replace ongoing free water losses. | Restrict sodium Loop diuretic for volume overload. Replace ½ free water deficit and all ongoing free water losses. |\n\n*The patient’s volume status requires assessment based on the clinical findings.\n\n![](https://cdn-web-img.mdcalc.com/content/bodyfluids_background.png)\n\nTable and figure adapted from[Kaptein Clinical Nephrology 2016](https://www.ncbi.nlm.nih.gov/pubmed/27616761).\n\nExamples:\n\n- A patient with heart failure and anemia with hypernatremia is being treated with oral “fluid” restriction and diuretics.\n- A patient with heart failure and anemia with hypernatremia receives 1 unit of pRBCs (350 mL)."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Bilan hydrique.",
+  "medium_description": "Calculates fluid balance de sodium concentrations which indicate net 0.9% saline, et free water losses (GI, urine, etc) et gains (IV fluids, PO, etc).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "gastric_volume",
+      "label": "Gastric",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bile_volume",
+      "label": "Biliary",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pancreatic_volume",
+      "label": "Pancreatic",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "smallbowel_volume",
+      "label": "Intestin grêle",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diarrhea1_volume",
+      "label": "Diarrhée non osmotique",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diarrhea2_volume",
+      "label": "Sorbitol-basé osmotic diarrhea",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diarrhea3_volume",
+      "label": "Lactulose-basé osmotic diarrhea",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diarrhea4_volume",
+      "label": "Diarrhée osmotique - PEG",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pleural_volume",
+      "label": "Liquide pleural ou péritonéal",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wound_volume",
+      "label": "Drainage de la plaie",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "dialysis_volume",
+      "label": "Ultrafiltrat net de dialyse",
+      "tips": "Exclure les pRBCs ; saisir le volume de pRBCs sous solutions parentérales administrées",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_volume",
+      "label": "Urine",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_na",
+      "label": "Sodium urinaire",
+      "tips": "Si disponible (sinon, utiliser 65 mEq/L par défaut)",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "urine_volume > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "insensible_volume",
+      "label": "Pertes insensibles",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_volume",
+      "label": "Autre liquide biologique",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_na",
+      "label": "Sodium dans other body fluid",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherbody_volume > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_volume2",
+      "label": "Autre liquide biologique",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": "otherbody_na > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_na2",
+      "label": "Sodium dans other body fluid",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherbody_volume2 > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_volume3",
+      "label": "Autre liquide biologique",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": "otherbody_na2 > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherbody_na3",
+      "label": "Sodium dans other body fluid",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherbody_volume3 > 0"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "rbcs_volume",
+      "label": "Concentré de globules rouges (CGR)",
+      "tips": "1 unit of pRBCs ~ 350 mL; Hct ~ 60% in 0.9% saline; 1 mL pRBC ~ 2.8 mL 0.9% saline",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plasma_volume",
+      "label": "Plasma, cryoprécipité, plaquettes ou IVIG",
+      "tips": "1 unité de plaquettes ~ 250 mL ; 1 unité de FFP ~ 250 mL",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "albumin_volume",
+      "label": "Albumine 5 %, 20 %, 25 %",
+      "tips": "L’albumine après équilibration est similaire au sérum physiologique à 0,9 %.",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "saline1_volume",
+      "label": "Sérum physiologique à 0,9 %",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "saline2_volume",
+      "label": "Sérum salé à 0,45 %",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plasmalyte_volume",
+      "label": "Plasma-lyte",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "lactated_volume",
+      "label": "Ringer lactate",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "d5w_volume",
+      "label": "D5W",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "concentrate1_volume",
+      "label": "Concentré de NaHCO₃",
+      "tips": "[Na⁺] is 50 mEq/50 mL",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "concentrate2_volume",
+      "label": "100 mEq NaHCO₃ dans 1L D5W",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "injectable_volume",
+      "label": "Phosphates de sodium injectables",
+      "tips": "[Na⁺] is 4000 mEq/mL",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "tpn_volume",
+      "label": "TPN",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "tpn_na",
+      "label": "TPN sodium",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "tpn_volume > 0"
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "pulmocare_volume",
+      "label": "Pulmocare",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "nutren_volume",
+      "label": "Nutren 2.0",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fibersource_volume",
+      "label": "Fibersource HN",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "impact_volume",
+      "label": "Impact Peptide 1.5",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "nutren2_volume",
+      "label": "Nutren Pulmonary",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "isosource_volume",
+      "label": "Isosource HN",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ac_volume",
+      "label": "Diabetisource AC",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "nova_volume",
+      "label": "Novasource Renal",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "osmolyte_volume",
+      "label": "Osmolyte",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "jevity_volume",
+      "label": "Jevity",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "replete_volume",
+      "label": "Replete Fibres",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ensure_volume",
+      "label": "Ensure",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "nepro_volume",
+      "label": "Nepro",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "peptamen_volume",
+      "label": "Peptamen",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "suplena_volume",
+      "label": "Suplena",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "vivonex_volume",
+      "label": "Vivonex RTF",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "twocal_volume",
+      "label": "TwoCal HN",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "beneprotein_volume",
+      "label": "Beneprotein",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "renalcal_volume",
+      "label": "Renalcal",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_volume",
+      "label": "Autre solution entérale",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_na",
+      "label": "Sodium dans other enteral solution",
+      "tips": "Déterminer si les médicaments IV sont dans du sérum physiologique à 0.9 % ou du D5W",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherenteral_volume > 0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_volume2",
+      "label": "Autre solution entérale",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": "otherenteral_na>0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_na2",
+      "label": "Sodium dans other enteral solution",
+      "tips": "Déterminer si les médicaments IV sont dans du sérum physiologique à 0.9 % ou du D5W",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherenteral_volume2>0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_volume3",
+      "label": "Autre solution entérale",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": "otherenteral_na2>0"
+    },
+    {
+      "type": "textbox",
+      "name": "otherenteral_na3",
+      "label": "Sodium dans other enteral solution",
+      "tips": "Déterminer si les médicaments IV sont dans du sérum physiologique à 0.9 % ou du D5W",
+      "optional": false,
+      "unit": "na_bodyfluids",
+      "show_points": false,
+      "conditionality": "otherenteral_volume3>0"
+    }
+  ],
+  "references": [
+    {
+      "text": "Kaptein EM, Sreeramoju D, Kaptein JS, Kaptein MJ. A systematic literature search and review of sodium concentrations of body fluids . Clin Nephrol. 2016;86(10):203-28.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27616761",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Konstam MA, Gheorghiade M, Burnett JC, et al. Effects of oral tolvaptan in patients hospitalized for worsening heart failure: the EVEREST Outcome Trial. JAMA. 2007;297(12):1319-31.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17384437",
+      "kind": "other"
+    },
+    {
+      "text": "Testani JM, Brisco MA, Kociol RD, et al. Substantial Discrepancy Between Fluid and Weight Loss During Acute Decompensated Heart Failure Treatment. Am J Med. 2015;128(7):776-83.e4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25595470 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.parkland-formula-burns",
+    "calc.body-roundness-index-bri",
+    "calc.fat-free-mass-ffm"
+  ],
+  "source_logic_hash": "8a032b7da2c11caf22c3b0cfab87220f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10189,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactulose",
+    "s.sorbitol",
+    "s.lactulose-paraffine-liquide-vaseline",
+    "s.laurylsulfate-sorbitol",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.lactate",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

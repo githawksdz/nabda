@@ -1,0 +1,237 @@
+{
+  "id": "calc.vte-bleed-score",
+  "slug": "vte-bleed-score",
+  "language": "en",
+  "title": "Score VTE-BLEED",
+  "short_title": "Score VTE-BLEED",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Douleur thoracique",
+    "Douleur des extrémités",
+    "Dyspnée",
+    "Gonflement"
+  ],
+  "abbreviations": [
+    "VTE-BLEED Score",
+    "vte bleed score",
+    "vte",
+    "venous thromboembolism",
+    "bleeding risk",
+    "venous thromboembolism bleeding risk",
+    "vte bleeding risk",
+    "bleeding risk score",
+    "anticoagulation bleeding risk"
+  ],
+  "dosing": false,
+  "formula": "The VTE-BLEED Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age ≥60 years | No | 0 |\n| Yes | 1.5 | |\n| Active cancer | No | 0 |\n| Yes | 2 | |\n| Male patient with uncontrolled hypertension | No | 0 |\n| Yes | 1 | |\n| Anemia | No | 0 |\n| Yes | 1.5 | |\n| History of bleeding | No | 0 |\n| Yes | 1.5 | |\n| Renal dysfunction (creatinine clearance 30-60 mL/min) | No | 0 |\n| Yes | 1.5 | |",
+  "how_to_use": {
+    "why": "- Identifies patients at higher bleeding risk, which may guide discussions on anticoagulation duration and monitoring.\n- Facilitates shared decision-making by providing a structured estimate of bleeding risk during the first 6 months of therapy and may help individualize the intensity of follow-up.\n- Offers comparable or improved predictive value for bleeding risk in VTE compared to tools originally designed for atrial fibrillation-related anticoagulation.",
+    "when": "- Use in adults on stable anticoagulation for acute DVT or PE, at least 30 days after diagnosis and after initial therapy stabilization.\n- Appropriate for patients on warfarin or commonly used DOACs (e.g., apixaban, edoxaban, rivaroxaban).\n- Most useful in outpatient or otherwise stable inpatient settings when ongoing anticoagulation is being considered.",
+    "pearls": "- Derived in patients treated with warfarin or dabigatran and has since been evaluated in other anticoagulant-treated cohorts, including DOACs.\n- Best applied when renal function is known and stable; it is not validated in patients with severe renal impairment (creatinine clearance <30 mL/min) or rapidly changing clinical status.\n- Does not account for all bleeding risk factors (e.g., recent surgery, gastrointestinal pathology, concurrent antiplatelet use).\n- May underestimate bleeding risk in patients on dual antithrombotic therapy."
+  },
+  "next_steps": {
+    "advice": "- Ne pas utiliser ce score comme seule base des décisions cliniques ; tenir compte de l’ensemble du contexte clinique, y compris les comorbidités, les médicaments concomitants et les préférences du patient.\n- Cet outil n’a pas pour objectif d’exclure définitivement des patients d’un traitement anticoagulant.\n- Utiliser les résultats pour étayer la discussion sur le risque thrombotique versus hémorragique.\n- Adapter la prise en charge à chaque patient et consulter les recommandations pertinentes pour une prise en charge globale.",
+    "critical_actions": "- Always assess for active or recent bleeding before starting or continuing anticoagulation.\n- For significant bleeding, discontinue or hold anticoagulation and evaluate for reversal or hemostatic intervention as appropriate.\n- Be alert to red-flag symptoms (e.g., hematemesis, melena, uncontrolled epistaxis) that may require immediate intervention, regardless of score.\n- Ensure that all patients on anticoagulation have appropriate access to follow-up care and monitoring.\n- Do not use this tool in patients with severe renal impairment (creatinine clearance <30 mL/min).",
+    "management": "- **Score ≥2 (elevated bleeding risk):**\n\n - Manage modifiable risk factors.\n - Use closer monitoring, especially during higher-risk periods (e.g., around procedures).\n - Consider adjustments to the anticoagulation approach, such as:\n\n - Careful medication selection (e.g., DOAC versus VKA).\n - Dose adjustment (e.g., prophylactic versus therapeutic dosing after a designated period).\n - Shorter anticoagulation duration (e.g., 3 months versus 6 months).\n - Evaluate the possibility of non-anticoagulant strategies.\n - Engage the patient in a discussion about risks and benefits.\n- **Score <2 (lower bleeding risk):** Proceed with guideline-recommended anticoagulation, with routine follow-up and monitoring.\n\nFor detailed management, refer to guidelines from relevant medical societies (e.g.,[AHA/ACC/ACCP](https://www.ahajournals.org/doi/10.1161/CIR.0000000000001415),[ESC](https://pubmed.ncbi.nlm.nih.gov/31504429/))."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| VTE-BLEED Score | Bleeding Risk |\n| --- | --- |\n| <2 | Low |\n| ≥2 | Elevated |\n\n- **Major bleeding (from International Society of Thrombosis and Hemostasis):**\n- **Clinically relevant bleeding:** rectal bleeding, frequent nose bleeds, or hematuria.",
+  "short_description": "Risque hémorragique sous anticoagulation.",
+  "medium_description": "Évalue le risque de saignement sous anticoagulation.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer actif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Patient de sexe masculin avec hypertension artérielle non contrôlée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anémie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bleeding",
+      "label": "Antécédents de saignement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cc",
+      "label": "Insuffisance rénale (clairance de la créatinine 30-60 mL/min)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Klok FA, Hösel V, Clemens A, et al. Prediction of bleeding events in patients with venous thromboembolism on stable anticoagulation treatment. Eur Respir J. 2016;48(5):1369-1376.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27471209/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Schulman S, Kakkar AK, Goldhaber SZ, et al. Treatment of acute venous thromboembolism with dabigatran or warfarin and pooled analysis. Circulation. 2014;129(7):764-772.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24344086/",
+      "kind": "other"
+    },
+    {
+      "text": "Badescu MC, Ciocoiu M, Badulescu OV, et al. Prediction of bleeding events using the VTE-BLEED risk score in patients with venous thromboembolism receiving anticoagulant therapy (Review). Exp Ther Med. 2021;22(5):1344.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34630698/",
+      "kind": "other"
+    },
+    {
+      "text": "Klok FA, Barco S, Konstantinides SV. External validation of the VTE-BLEED score for predicting major bleeding in stable anticoagulated patients with venous thromboembolism. Thromb Haemost. 2017;117(6):1164-1170.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28276566/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klok FA, Barco S, Turpie AGG, Haas S, Kreutz R, Mantovani LG, Gebel M, Herpers M, Bugge JP, Konstantinides SV, Ageno W. Predictive value of venous thromboembolism (VTE)-BLEED to predict major bleeding and other adverse events in a practice-based cohort of patients with VTE: results of the XALIA study. Br J Haematol. 2018;183(3):457-465.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30117189/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lecumberri R, Jiménez L, Ruiz-Artacho P, Nieto JA, Ruiz-Giménez N, Visonà A, Skride A, Moustafa F, Trujillo J, Monreal M; RIETE Investigators. Prediction of major bleeding in anticoagulated patients for venous thromboembolism: comparison of the RIETE and the VTE-BLEED scores. TH Open. 2021;5(3):e319-e328.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34568742/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Guman NA, Becking AM, Weijers SS, Kraaijpoel N, Mulder FI, Carrier M, Jara-Palomares L, Di Nisio M, Ageno W, Beyer-Westendorf J, Klok FA. Risk assessment tools for bleeding in patients with unprovoked venous thromboembolism: an analysis of the PLATO-VTE study. J Thromb Haemost. 2024;22(9):2470-2481.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38866248/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "de Winter MA, van Es N, Büller HR, Visseren FLJ, Nijkeuter M. Prediction models for recurrence and bleeding in patients with venous thromboembolism: a systematic review and critical appraisal. Thromb Res. 2021;199:85-96.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33485094/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.improve-bleeding-risk-score",
+    "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+    "calc.improvedd-risk-score-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "d71d1c13377316a96b6f393425dbc44e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10467,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar cancer = parseFloat(cancer);\nvar hypertension = parseFloat(hypertension);\nvar anemia = parseFloat(anemia);\nvar bleeding = parseFloat(bleeding);\nvar cc = parseFloat(cc);\nvar age = parseFloat(age);\n\nvar score = cancer + hypertension + anemia + bleeding + cc + age;\nvar risk;\n\nif (score < 2) {\n    risk = 'Low';\n} else {\n    risk = 'Elevated';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' bleeding risk'\n});\ncalc_output.push({\n    name: 'Score',\n    value: score,\n    value_text: 'points',\n    message: 'VTE-BLEED Score'\n});\ncalc_output.push({\n    name: 'Risk',\n    value: risk,\n    value_text: '',\n    message: 'Bleeding risk'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Frederikus A. Klok"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "3b5993bdd63b6f78ebd79f1a0ec20fc476f285de9d21ab207a1169a98a398829"
+}

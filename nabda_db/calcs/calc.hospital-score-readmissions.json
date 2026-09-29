@@ -1,0 +1,222 @@
+{
+  "id": "calc.hospital-score-readmissions",
+  "slug": "hospital-score-readmissions",
+  "language": "fr",
+  "title": "HOSPITAL score pour Readmissions",
+  "short_title": "Score HOSPITAL",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "Hospital",
+    "informatics",
+    "readmission",
+    "readmit",
+    "HOSPITAL Score for Readmissions",
+    "hospital score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Taux d'hémoglobine à la sortie, g/dL | ≥12 | 0 |\n| <12 | 1 | |\n| Sortie d'un service d'oncologie | Non | 0 |\n| Oui | 2 | |\n| Natrémie à la sortie, mEq/L | ≥135 | 0 |\n| <135 | 1 | |\n| Tout acte codé en ICD-9 réalisé pendant le séjour hospitalier | Non | 0 |\n| Oui | 1 | |\n| Type d'admission index | Programmée | 0 |\n| Urgente ou émergente | 1 | |\n| Nombre d'hospitalisations au cours de l'année précédente | 0-1 | 0 |\n| 2-5 | 2 | |\n| >5 | 5 | |\n| Durée du séjour | <5 jours | 0 |\n| ≥5 jours | 2 | |",
+  "how_to_use": {
+    "why": "- Système de score validé au niveau international pour prédire le risque de réadmission évitable à 30 jours.\n- Intègre des données cliniques et administratives facilement disponibles.\n- Permet aux cliniciens d'identifier les patients à haut risque, de corriger de façon proactive les facteurs de risque modifiables avant la sortie et de réduire les coûts.\n- Aide à améliorer les indicateurs de performance des hôpitaux et les résultats pour les patients en réduisant les réadmissions évitables.",
+    "when": "À utiliser dans le cadre de la planification de la sortie et de l'après-sortie pour dépister les patients à haut risque de réadmission à 30 jours.",
+    "pearls": "- Conçu spécifiquement pour identifier les réadmissions potentiellement évitables, et non à la fois les réadmissions évitables et inévitables.\n- Ne tient pas compte des facteurs non médicaux, tels que les déterminants sociaux de la santé, qui peuvent avoir une influence significative sur le risque de réadmission."
+  },
+  "next_steps": {
+    "advice": "- Utiliser cet outil conjointement avec le jugement clinique pour guider la planification de la sortie et les soins après la sortie.\n- Prendre en compte d'autres facteurs critiques, tels que les déterminants sociaux de la santé, qui peuvent également influencer le risque de réadmission d'un patient.\n- Les patients à risque plus élevé peuvent bénéficier de :\n\n - L'optimisation des pathologies médicales avant la sortie.\n - L'attribution de services supplémentaires de gestion de cas et de transition des soins.\n - La programmation de rendez-vous de suivi ambulatoire et/ou de visites de soins à domicile.\n - Une conciliation médicamenteuse approfondie.\n - Une éducation sur les signes d'alerte, la gestion de la santé à domicile et le bon usage des médicaments.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score HOSPITAL | Groupe de risque | Risque de réadmission à 30 jours potentiellement évitable* **|\n| --- | --- | --- |\n| 0-4 | Faible | 5.8% |\n| 5-6 | Intermédiaire | 12.0% |\n| ≥7 | Élevé | 22.8% |\n\n*L'algorithme utilisé dans [Donzé et al](https://www.ncbi.nlm.nih.gov/pubmed/23529115) classait les réadmissions « prévisibles » comme **évitables**, p. ex. les réadmissions pour transplantation, travail et accouchement, chimiothérapie, radiothérapie, suivi, traitement de réadaptation, actes chirurgicaux spécifiques ou maladies spécifiques jugées difficiles à guérir (p. ex. sclérose en plaques, thrombopénie idiopathique). Ensuite, les réadmissions impliquant de nouveaux systèmes d'organes dont l'atteinte n'était pas connue lors de l'hospitalisation précédente étaient classées comme **inévitables**. Les complications du traitement (p. ex. TVP, infection urinaire associée au cathéter, troubles d'origine médicamenteuse) étaient considérées comme potentiellement évitables.\n\n**D'après [Donzé 2016](https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2498847) (étude de validation).",
+  "short_description": "Readmission prédiction.",
+  "medium_description": "Predicts 30-day potentially avoidable hôpital readmissions.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "hb",
+      "label": "Taux d'hémoglobine à la sortie, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥12",
+          "value": 0
+        },
+        {
+          "label": "< 12",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "onco",
+      "label": "Sortie d'un service d'oncologie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "na",
+      "label": "Natrémie à la sortie, mEq/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥135",
+          "value": 0
+        },
+        {
+          "label": "< 135",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "icd",
+      "label": "Any ICD-9 coded procedure performed during hôpital stay",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "admit",
+      "label": "Type d'admission index",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Elective",
+          "value": 0
+        },
+        {
+          "label": "urgente ou émergente",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "admitsyr",
+      "label": "Number de hôpital admissions during previous year",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-1",
+          "value": 0
+        },
+        {
+          "label": "2-5",
+          "value": 2
+        },
+        {
+          "label": ">5",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lengthofstay",
+      "label": "Durée du séjour",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 5 jours",
+          "value": 0
+        },
+        {
+          "label": "≥5 jours",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Donzé J, Aujesky D, Williams D, Schnipper JL. Potentially avoidable 30-day hospital readmissions in medical patients: derivation and validation of a prediction model. JAMA Intern Med. 2013;173(8):632-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23529115 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Donzé JD, Williams MV, Robinson EJ, et al. International Validity of the HOSPITAL Score to Predict 30-Day Potentially Avoidable Hospital Readmissions. JAMA Intern Med. 2016;176(4):496-502.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2498847 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.asa-physical-status-asa-classification",
+    "calc.lace-index-readmission"
+  ],
+  "source_logic_hash": "d41561a137b2254e666cc49d5dd8551e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10051,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,596 @@
+{
+  "id": "calc.montreal-cognitive-assessment-moca",
+  "slug": "montreal-cognitive-assessment-moca",
+  "language": "fr",
+  "title": "Montreal Cognitive évaluation (MoCA)",
+  "short_title": "Montreal Cognitive évaluation (MoCA)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Dementia"
+  ],
+  "chief_complaints": [
+    "Déficit neurologique"
+  ],
+  "abbreviations": [
+    "mild cognitive impairment",
+    "MCI",
+    "dementia",
+    "Alzheimer's disease",
+    "AD",
+    "cognition disorders",
+    "MoCA",
+    "psychometrics",
+    "Montreal Cognitive Assessment",
+    "cognitive screening tool",
+    "Mini-Mental State Examination",
+    "MMSE"
+  ],
+  "dosing": false,
+  "formula": "Demandez si le patient a plus de 12 années de scolarité, sans compter les années de maternelle.",
+  "how_to_use": {
+    "why": "- More sensitive for MCI than the Mini Mental Status Exam (MMSE) (90% vs 18%), with many patients who have a normal MMSE demonstrating an abnormal score on the MoCA.\n- Early identification of MCI allows for initiation of testing, treatment, and future planning by the patient and their family. For patients exhibiting symptoms of dementia, MMSE may be more appropriate.\n- Quick and easy tool that can be used in the primary care setting in <10 mins to screen for mild cognitive impairment.\n- Reliability has been validated with a high correlation coefficient for test and retest.\n- Validated to screen for MCI which may precede a variety of clinical conditions such as Alzheimer dementia, vascular dementia, and behavioral variant frontotemporal dementia.\n- Can also be useful for identifying cognitive impairment resulting from hypertensive arteriopathy after TIA or minor stroke.",
+    "when": "Patients chez qui l’on suspecte un trouble cognitif léger (MCI). Cela inclut une perte de mémoire progressive rapportée par le patient et sa famille, non expliquée par une autre cause psychiatrique, médicale ou neurologique, et présente depuis ≥6 mois.",
+    "pearls": "- Les patients ayant un niveau d'études <12^e^ année reçoivent un point supplémentaire, afin de tenir compte du biais lié au niveau d'études.\n- Permet une surveillance quantifiable du déclin cognitif."
+  },
+  "next_steps": {
+    "advice": "- Le MoCA ne doit pas remplacer un interrogatoire détaillé, un examen physique et un bilan complémentaire indiqué par l’interrogatoire.\n- Le score au MoCA ne diagnostique pas une pathologie clinique spécifique, mais il identifie la présence d’un trouble cognitif. Un bilan complémentaire pour déterminer la cause du trouble cognitif est généralement justifié.\n- Un raisonnement clinique reste nécessaire pour interpréter la cause du MCI du patient une fois celui-ci identifié par un score MoCA anormal, et pour évaluer un retentissement fonctionnel.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Le MoCA a été initialement élaboré par[Nasreddine et al 2005](https://www.ncbi.nlm.nih.gov/pubmed/15817019)dans une cohorte de 94 patients atteints de trouble cognitif léger (MCI), 93 atteints de maladie d'Alzheimer légère et 90 témoins sains. Les auteurs ont constaté qu'à un score seuil de 26, le MoCA identifiait 90 % des patients atteints de trouble cognitif léger, contre 18 % pour la référence de l'époque (MMSE). Le MoCA était également spécifique à 87 % au même seuil.\n\nOutre sa validation pour différencier le MCI de la maladie d'Alzheimer légère, le MoCA a depuis été validé dans plusieurs autres situations cliniques, notamment dans la démence vasculaire ([Freitas 2012](https://www.ncbi.nlm.nih.gov/pubmed/22676901)), la démence frontotemporale ([Freitas 2012](https://www.ncbi.nlm.nih.gov/pubmed/22859702)) et la démence due à une artériopathie hypertensive ([Webb 2014](https://www.ncbi.nlm.nih.gov/pubmed/25248911)).",
+  "more_info": "Interprétation :\n\n- Un score MoCA <26 points a une sensibilité de 90 % pour le trouble cognitif léger",
+  "short_description": "Cognitive impairment dépistage.",
+  "medium_description": "Screens pour mild cognitive impairment.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Le patient a-t-il plus de 12 années d’éducation ?",
+      "tips": "Ne pas inclure les années de maternelle.",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Ask patient pour trace diagram dans order",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Rempli correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas été complété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Ask patient pour copy cube",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Rempli correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas été complété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Ask patient pour draw clock (ten past eleven)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "A correctement dessiné tous les éléments (c.-à-d., contour, chiffres et aiguilles)",
+          "value": 3
+        },
+        {
+          "label": "A correctement dessiné deux des trois éléments (c.-à-d., deux parmi le contour, les chiffres et les aiguilles)",
+          "value": 2
+        },
+        {
+          "label": "A correctement dessiné le contour uniquement",
+          "value": 1
+        },
+        {
+          "label": "A correctement dessiné uniquement les chiffres",
+          "value": 1
+        },
+        {
+          "label": "N'a correctement dessiné que les aiguilles",
+          "value": 1
+        },
+        {
+          "label": "Aucune des propositions ci-dessus",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Ask patient pour name first animal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Lion nommé",
+          "value": 1
+        },
+        {
+          "label": "N'a pas nommé le lion",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "Ask patient pour name second animal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Named rhinoceros",
+          "value": 1
+        },
+        {
+          "label": "Did not name rhinoceros",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "six",
+      "label": "Ask patient pour name third animal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Chameau nommé",
+          "value": 1
+        },
+        {
+          "label": "N'a pas nommé de chameau.",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "seven",
+      "label": "Read \"Face\", \"Velvet\", \"Church\", \"Daisy\", \"Red\", et ask patient pour repeat (do two trials et recall later dans exam)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Completed both trials correctly",
+          "value": 1
+        },
+        {
+          "label": "N'a pas correctement effectué les deux essais",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "eight",
+      "label": "Read list de digits (2, 1, 8, 5, 4) at 1 digit/sec et ask patient pour repeat them dans forward order",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répété correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas répété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nine",
+      "label": "Read list de digits (7, 4, 2) at 1 digit/sec et ask patient pour repeat them dans backward order",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répété correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas répété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ten",
+      "label": "Read list de letters et ask patient pour tap avec their hand at each letter: FBAC MNAA JKLB AFAK DEAA AJAM OFAAB",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 2 erreurs",
+          "value": 1
+        },
+        {
+          "label": "≥2 erreurs",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eleven",
+      "label": "Ask patient pour do five serial 7 subtractions starting at 100; patient should say 93, 86, 79, 72, 65",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "4 ou 5 correct",
+          "value": 3
+        },
+        {
+          "label": "2 ou 3 correct",
+          "value": 2
+        },
+        {
+          "label": "1 correct",
+          "value": 1
+        },
+        {
+          "label": "0 correct",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "twelve",
+      "label": "Read et ask patient pour repeat: \"I only know that John is one pour help today\"",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répété correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas répété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "thirteen",
+      "label": "Read et ask patient pour repeat: \" cat always hid under couch when dogs were dans room\"",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répété correctement",
+          "value": 1
+        },
+        {
+          "label": "N'a pas répété correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fourteen",
+      "label": "Ask patient pour name maximum number de words dans 1 minute that begin avec letter F",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Named ≥11 words",
+          "value": 1
+        },
+        {
+          "label": "Nommé <11 mots",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "fifteen",
+      "label": "Ask patient similarity between train et bicycle (e.g. both are modes de transportation)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répondu correctement",
+          "value": 1
+        },
+        {
+          "label": "N’a pas répondu correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sixteen",
+      "label": "Ask patient similarity between watch et ruler (e.g. both are measuring tools)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Répondu correctement",
+          "value": 1
+        },
+        {
+          "label": "N’a pas répondu correctement",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "seventeen",
+      "label": "Ask patient pour recall words avec no cue de memory test previously conducted (\"Face\", \"Velvet\", \"Church\", \"Daisy\", \"Red\")",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "A rappelé tous les mots",
+          "value": 5
+        },
+        {
+          "label": "A rappelé 4 mots",
+          "value": 4
+        },
+        {
+          "label": "A rappelé 3 mots",
+          "value": 3
+        },
+        {
+          "label": "Se souvient de 2 mots",
+          "value": 2
+        },
+        {
+          "label": "Recalled 1 words",
+          "value": 1
+        },
+        {
+          "label": "N'a rappelé aucun mot",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "eighteen",
+      "label": "Demander au patient la date, le mois, l’année, le jour, le lieu et la ville.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Tout est correct",
+          "value": 6
+        },
+        {
+          "label": "5 correct",
+          "value": 5
+        },
+        {
+          "label": "4 correct",
+          "value": 4
+        },
+        {
+          "label": "3 correct",
+          "value": 3
+        },
+        {
+          "label": "2 correct",
+          "value": 2
+        },
+        {
+          "label": "1 correct",
+          "value": 1
+        },
+        {
+          "label": "Aucun contenu à traduire.",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nasreddine ZS, Phillips NA, Bédirian V, et al. The Montreal Cognitive Assessment, MoCA: a brief screening tool for mild cognitive impairment. J Am Geriatr Soc. 2005;53(4):695-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15817019",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freitas S, Simões MR, Alves L, Vicente M, Santana I. Montreal Cognitive Assessment (MoCA): validation study for vascular dementia. J Int Neuropsychol Soc. 2012;18(6):1031-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22676901",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freitas S, Simões MR, Alves L, Duro D, Santana I. Montreal Cognitive Assessment (MoCA): validation study for frontotemporal dementia. J Geriatr Psychiatry Neurol. 2012;25(3):146-54.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22859702 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freitas S, Simões MR, Alves L, Santana I. Montreal cognitive assessment: validation study for mild cognitive impairment and Alzheimer disease. Alzheimer Dis Assoc Disord. 2013;27(1):37-43.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22193353 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Webb AJ, Pendlebury ST, Li L, et al. Validation of the Montreal cognitive assessment versus mini-mental state examination against hypertension and hypertensive arteriopathy after transient ischemic attack or minor stroke. Stroke. 2014;45(11):3337-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25248911 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-working-group-iwg-2-criteria-alzheimers-disease-diagnosis",
+    "calc.nincds-adrda-criteria-alzheimers-disease",
+    "calc.abbey-pain-scale-dementia-patients"
+  ],
+  "source_logic_hash": "3aff167043c746d5f7c878186fad2e7c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10044,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [
+    "g.alcool-mesusage-et-prise-en-charge-du-sevrage"
+  ],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

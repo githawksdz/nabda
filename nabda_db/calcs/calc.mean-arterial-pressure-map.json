@@ -1,0 +1,113 @@
+{
+  "id": "calc.mean-arterial-pressure-map",
+  "slug": "mean-arterial-pressure-map",
+  "language": "en",
+  "title": "Pression artérielle moyenne (PAM)",
+  "short_title": "Pression artérielle moyenne (PAM)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "anesthesie",
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Hypertension",
+    "Hémorragie intracrânienne",
+    "Sepsis",
+    "Hémorragie sous-arachnoïdienne",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Dizziness"
+  ],
+  "abbreviations": [
+    "bp",
+    "hypertension",
+    "blood pressure"
+  ],
+  "dosing": false,
+  "formula": "Pression artérielle moyenne = 1/3*(SBP) + 2/3*(DBP)",
+  "how_to_use": {
+    "why": "La MAP doit être calculée lorsque le tableau clinique impose une adaptation de la pression artérielle fondée sur la MAP plutôt que sur la SBP, ainsi que pour la prise en charge de patients présentant des affections aiguës pour lesquelles l’adéquation de la perfusion des organes est préoccupante.",
+    "when": "- The Mean Arterial Pressure can be calculated in all patients in which blood pressure values are obtained.\n- Blood pressure targets have been shown to improve outcome in a number of conditions. These include sepsis, trauma, stroke, intracranial bleed, and hypertensive emergencies.\n- Clinical guidelines may use either SBP or MAP as a blood pressure goal.",
+    "pearls": "- The Mean Arterial Pressure (MAP) is derived from a patient’s Systolic Blood Pressure (SBP) and Diastolic Blood Pressure (DBP).\n- MAP is often used as a surrogate indicator of blood flow and believed to be a better indicator of tissue perfusion than SBP as it accounts for the fact that two thirds of the cardiac cycle are spent in diastole.\n- A MAP of 60 mmHg or greater is believed to be needed to maintain adequate tissue perfusion.\n- Since MAP is a product of Cardiac Output (CO) and Systemic Vascular Resistance (SVR) [MAP = CO x SVR], variations in SVR make the relationship between MAP and CO often unreliable (for example, a patient with a poor CO but high SVR such as a patient in cardiogenic shock may have an acceptable MAP but a CO that is too low to provide adequate perfusion to tissues)."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- A MAP ≥60 mmHg is believed to be needed to maintain adequate tissue perfusion.\n- A MAP ≥65 mmHg is recommended in patients with severe sepsis and septic shock by the *Surviving Sepsis Campaign Guidelines Committee* .",
+    "management": "- Les patients dont la MAP est inférieure ou supérieure aux valeurs cibles définies doivent être traités par des solutés, des produits sanguins, des vasopresseurs, des inotropes ou des vasodilatateurs selon le contexte clinique.\n- La prise en charge spécifique de la pression artérielle et les objectifs de MAP dépendront de l'étiologie d'une MAP élevée ou basse et doivent être individualisés afin d'optimiser la perfusion et de prévenir tout préjudice."
+  },
+  "evidence": "[Cet article](https://www.ncbi.nlm.nih.gov/pubmed/24736333) du Dr Sheldon A. Magder propose une analyse approfondie de la physiologie et des facteurs qui influent sur la pression artérielle. Il souligne la nécessité d’individualiser la prise en charge du patient en ce qui concerne les objectifs de pression artérielle.",
+  "more_info": "- A MAP ≥60 mmHg is believed to be needed to maintain adequate tissue perfusion.\n- A MAP ≥65 mmHg is recommended in patients with severe sepsis and septic shock by the Surviving Sepsis Campaign Guidelines Committee.",
+  "short_description": "Calcule la PAM.",
+  "medium_description": "Calcule la pression artérielle moyenne.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "systolic_blood_pressure",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "diastolic_blood_pressure",
+      "label": "PA diastolique",
+      "optional": false,
+      "unit": "dbp",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Magder SA. The highs and lows of blood pressure: toward meaningful clinical targets in patients with shock. Crit Care Med. 2014;42(5):1241–1251.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24736333",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Walsh M, Devereaux PJ, et. al. Relationship between Intraoperative Mean Arterial Pressure and Clinical Outcomes after Noncardiac Surgery: Toward an Empirical Definition of Hypotension. Anesthesiology 2013;119(3):507-515. doi: 10.1097/ALN.0b013e3182a10e26.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23835589",
+      "kind": "other"
+    },
+    {
+      "text": "Sesso HD, et al. Systolic and Diastolic Blood Pressure, Pulse Pressure, and Mean Arterial Pressure as Predictors of Cardiovascular Disease Risk in Men. Hypertension. 2000;36:801-807, doi:10.1161/01.HYP.36.5.801",
+      "href": "https://hyper.ahajournals.org/content/36/5/801.full",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.aap-pediatric-hypertension-guidelines",
+    "calc.garfield-af",
+    "calc.hemorr2hages-score-major-bleeding-risk"
+  ],
+  "source_logic_hash": "3c38f5d27ea9c34a1c8f1a2ad95180b5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 74,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

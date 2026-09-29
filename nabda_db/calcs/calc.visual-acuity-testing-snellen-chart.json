@@ -1,0 +1,151 @@
+{
+  "id": "calc.visual-acuity-testing-snellen-chart",
+  "slug": "visual-acuity-testing-snellen-chart",
+  "language": "fr",
+  "title": "Évaluation de l'acuité visuelle (échelle de Snellen)",
+  "short_title": "Échelle de Snellen",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All",
+    "Perte de vision"
+  ],
+  "abbreviations": [
+    "Snellen chart",
+    "eye test",
+    "vision test",
+    "visual acuity test"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "Fournit une méthode rapide et portable pour évaluer l'acuité visuelle.",
+    "when": "Évaluer l'acuité visuelle binoculaire et monoculaire chez les patients coopérants.",
+    "pearls": "- Les patients de plus de 40 ans peuvent présenter une presbytie et nécessitent souvent des lunettes de lecture ; ainsi, leurs résultats de test de vision de près peuvent être peu fiables si le test est réalisé sans verres correcteurs de lecture.\n\n- Des échelles alternatives existent pour les patients illettrés ou les jeunes enfants, mais les études évaluant leur utilisation sur smartphone sont limitées.\n\n- Bien que l'échelle de Snellen soit la méthode la plus largement utilisée pour tester l'acuité visuelle en pratique clinique, elle n'est pas exempte d'écueils, notamment des difficultés de standardisation de l'échelle ainsi que de fiabilité test-retest.\n\n**Instructions d'utilisation :**\n\n- Vérifier l'éclairage approprié de la pièce et régler la luminosité du téléphone à 100 %.\n- Tenir l'écran à 4 pieds (1,2 m) du patient (environ l'extrémité d'un lit d'hôpital standard si le patient est assis bien droit).\n\n- Tester chaque œil indépendamment. Le patient doit couvrir complètement l'œil opposé.\n- Si le patient est incapable de lire l'une des lettres de l'échelle, la personne effectuant le test de vision doit présenter des doigts à des distances variées et évaluer si le patient peut les compter ; cela est consigné comme une vision à « compte les doigts » (CF, counting fingers) (p. ex. CF à 4 pieds, 1,2 m).\n- Si le patient ne peut pas compter les doigts, la personne effectuant le test de vision doit déplacer sa main dans le champ visuel du patient pour évaluer s'il peut la percevoir ; cela est consigné comme une vision à « mouvement de la main » (HM, hand motion).\n- Enfin, si le patient est incapable de percevoir les mouvements de la main, un stylo lumineux doit être déplacé devant l'œil du patient pour évaluer s'il peut indiquer quand la lumière est dirigée vers l'œil. S'il parvient à identifier quand la lumière est dirigée vers l'œil, cela est consigné comme une vision avec « perception lumineuse » (LP, light perception). S'il est incapable d'identifier la lumière, cela est consigné comme une vision « sans perception lumineuse » (NLP, no light perception)."
+  },
+  "next_steps": {
+    "advice": "- Une acuité visuelle inférieure à 20/25 doit être évaluée par un professionnel de la vision agréé afin de déterminer si des verres correcteurs ou d'autres traitements sont nécessaires.\n- L'acuité visuelle ne constitue pas une mesure de la correction optique du patient. Il s'agit d'une valeur distincte qui doit être mesurée en cabinet.",
+    "critical_actions": "",
+    "management": "Tout patient présentant des modifications soudaines de l'acuité visuelle par rapport à son état de base ou de nouvelles obscurations de la vision nécessite une orientation immédiate vers un ophtalmologiste pour un examen du fond d'œil après dilatation et des examens complémentaires."
+  },
+  "evidence": "- Il existe deux principales échelles utilisées pour tester l'acuité visuelle – les échelles de Snellen, qui utilisent une échelle géométrique, et les échelles logMAR, qui utilisent une échelle logarithmique.\n- Bien que les deux aient été largement étudiées, les échelles de Snellen sont plus largement utilisées en pratique clinique et les échelles logMAR sont davantage utilisées dans le contexte des études de recherche, en raison de la facilité d'analyse statistique.\n- Des données portant sur onze applications smartphone différentes ont montré que la précision de ces applications était limitée (aucune n'était à moins d'une ligne de l'acuité visuelle réelle de Snellen) ([Perera 2015](https://www.ncbi.nlm.nih.gov/pubmed/25931170)).\n- Une étude a suggéré que l'acuité visuelle mesurée avec des applications smartphone peut ne pas être totalement exacte, mais que les résultats sont reproductibles, permettant à l'application de suivre l'évolution par rapport à l'état de base ([Phung 2016](https://www.ncbi.nlm.nih.gov/pubmed/26509223)).\n- Une seule étude a validé l'utilisation d'échelles sur smartphone pour mesurer l'acuité visuelle ; cependant, cette validation était propre à une application et des études supplémentaires sont donc nécessaires pour élucider la validité réelle de ces échelles ([Bastawrous 2015](https://www.ncbi.nlm.nih.gov/pubmed/26022921)).",
+  "more_info": "",
+  "short_description": "Acuité visuelle.",
+  "medium_description": "Évaluer l'acuité visuelle binoculaire et monoculaire.",
+  "input_schema": [
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "line",
+      "label": "Sélectionner la ligne la plus basse que le patient peut lire correctement.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ligne 1",
+          "value": 0
+        },
+        {
+          "label": "Ligne 2",
+          "value": 1
+        },
+        {
+          "label": "Ligne 3",
+          "value": 2
+        },
+        {
+          "label": "Ligne 4",
+          "value": 3
+        },
+        {
+          "label": "Ligne 5",
+          "value": 4
+        },
+        {
+          "label": "Ligne 6",
+          "value": 5
+        },
+        {
+          "label": "Ligne 7",
+          "value": 6
+        },
+        {
+          "label": "Ligne 8",
+          "value": 7
+        },
+        {
+          "label": "Ligne 9",
+          "value": 8
+        },
+        {
+          "label": "Ligne 10",
+          "value": 9
+        },
+        {
+          "label": "Ligne 11",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Snellen, H. Probebuchstaben zur Bestimmung der Sehschärfe. Utrecht, Van de Weijer, 1862.",
+      "href": "https://www.google.com/books/edition/Probebuchstaben_zur_Bestimmung_der_Sehsc/LEYJAAAAIAAJ?hl=en",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Perera C, Chakrabarti R, Islam FMA, Crowston J. The Eye Phone Study: reliability and accuracy of assessing Snellen visual acuity using smartphone technology. Eye 2015; 29(7): 888–894.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4506341/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bastawrous A, Rono HK, Livingstone IA,  et al.  Development and validation of a smartphone-based visual acuity test (Peek Acuity) for clinical practice and community-based fieldwork.  JAMA Ophthalmol. 2015;133(8):930-937.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26022921 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Phung L, Gregori NZ, Ortiz A, Shi W, Schiffman JC. Reproducibility and comparison of visual acuity obtained with sight book mobile application to near card and Snellen chart. Retina Phila Pa. 2016 May;36:1009–20. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26509223",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.color-vision-screening-ishihara-test",
+    "calc.4-test-delirium-assessment",
+    "calc.abbreviated-mental-test-4-amt-4"
+  ],
+  "source_logic_hash": "231ce2ff067a4160df8e2cecb0f0be2e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10060,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

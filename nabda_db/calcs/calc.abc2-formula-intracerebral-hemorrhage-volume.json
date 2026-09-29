@@ -1,0 +1,139 @@
+{
+  "id": "calc.abc2-formula-intracerebral-hemorrhage-volume",
+  "slug": "abc2-formula-intracerebral-hemorrhage-volume",
+  "language": "en",
+  "title": "ABC/2 Formula pour Intracerebral hémorragie Volume",
+  "short_title": "ABC/2 Formula",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Hémorragie intracrânienne"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Headache",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "ich",
+    "bleed",
+    "stroke",
+    "CT"
+  ],
+  "dosing": false,
+  "formula": "Volume of Hemorrhage = A × B × C × Slices / Hemorrhage Shape\n\nA = Length\nB = Width\nC = Slice Width\n# Slices with Hemorrhage Present\n\n**Hemorrhage Shape: If Round/Ellipsoid: 2; Otherwise: 3.** (See references below for this update to the formula.)\n\nOf note, the volume of an ellipsoid is 4/3 × π × (ABC/2); when you estimate π to be ~3, the volume becomes ABC/2.",
+  "how_to_use": {
+    "why": "Les radiologues comme les non-radiologues peuvent estimer la taille de l’ICH sans avoir besoin d’une analyse volumétrique 3D à partir de la TDM ou d’un logiciel de radiologie, que beaucoup de non-radiologues ne maîtrisent pas.",
+    "when": "Un patient présente une hémorragie intracrânienne/intracérébrale au CT et un clinicien souhaite une méthode rapide et précise pour estimer sa taille.",
+    "pearls": "Rappel : mesurez toujours avec précision en utilisant la longueur et la largeur de la plus grande zone hémorragique."
+  },
+  "next_steps": {
+    "advice": "Tous les patients présentant une ICH doivent bénéficier d'une consultation neurochirurgicale et d'une admission à l'hôpital.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "ICH volume de CT measurements.",
+  "medium_description": "Predicts volume de intracranial hémorragie de CT measurements.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "hemm_shape",
+      "label": "Hémorragie Shape",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Rond ou ellipsoïde",
+          "value": 2
+        },
+        {
+          "label": "Irrégulier, Séparé ou Multinodulaire",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bl_length",
+      "label": "Hémorragie Length",
+      "optional": false,
+      "unit": "length_si_cm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bl_width",
+      "label": "Hémorragie Width",
+      "optional": false,
+      "unit": "length_si_cm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "slices",
+      "label": "Nombre de coupes CT",
+      "tips": "Slice with ≥75% Area of Hemorrhage: Counts as 1 slice; Slice with 25-75% Area of Hemorrhage: Counts as 0.5 slices; Slice with <25% Area of Hemorrhage: Counts as 0 slices",
+      "optional": false,
+      "unit": "ct_slices",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "sl_thick",
+      "label": "Épaisseur de coupe TDM",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kothari RU, Brott T, Broderick JP, et. al. The ABCs of Measuring Intracerebral Hemorrhage Volumes. Stroke.1996; 27: 1304-1305. doi: 10.1161/01.STR.27.8.1304.",
+      "href": "https://stroke.ahajournals.org/content/27/8/1304.full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Broderick JP, Brott TG, et. al. Volume of intracerebral hemorrhage. A powerful and easy-to-use predictor of 30-day mortality. Stroke. 1993;24:987-93, doi:10.1161/01.STR.24.7.987.",
+      "href": "https://stroke.ahajournals.org/content/24/7/987.full.pdf+html",
+      "kind": "other"
+    },
+    {
+      "text": "Huttner HB, Steiner T, Hartmann M, Köhrmann M, Juettler E, Mueller S, Wikner J, Meyding-Lamade U, Schramm P, Schwab S and Schellinger PD. Comparison of ABC/2 Estimation Technique to Computer-Assisted Planimetric Analysis in Warfarin-Related Intracerebral Parenchymal Hemorrhage Stroke. 2006;37:404-408; doi: 10.1161/01.STR.0000198806.67472.5c.",
+      "href": "https://stroke.ahajournals.org/content/37/2/404.full.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.secondary-intracerebral-hemorrhage-sich-score",
+    "calc.hunt-hess-classification-subarachnoid-hemorrhage",
+    "calc.intracerebral-hemorrhage-ich-score"
+  ],
+  "source_logic_hash": "aa90caf915213a99930021315e18d581",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2031,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

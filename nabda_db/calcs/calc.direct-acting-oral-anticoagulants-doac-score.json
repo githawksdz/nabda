@@ -1,0 +1,341 @@
+{
+  "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+  "slug": "direct-acting-oral-anticoagulants-doac-score",
+  "language": "fr",
+  "title": "Direct-Acting Oral Anticoagulants (DOAC) score",
+  "short_title": "Score DOAC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "Bleeding/Hemorrhage",
+    "Hémorragie gastro-intestinale",
+    "Hémorragie intracrânienne",
+    "Hémorragie sous-arachnoïdienne"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Bleeding",
+    "Sang dans les selles",
+    "Hematemesis",
+    "Melena",
+    "Soins préventifs / Dépistage",
+    "Hematochezia"
+  ],
+  "abbreviations": [
+    "Direct-Acting Oral Anticoagulants (DOAC) Score",
+    "DOAC Score",
+    "atrial fibrillation",
+    "AF",
+    "AF bleeding risk",
+    "DOAC bleeding risk",
+    "apixaban",
+    "dabigatran",
+    "edoxaban",
+    "hemorrhage",
+    "rivaroxaban",
+    "bleeding risk",
+    "bleeding risk score",
+    "AF DOAC",
+    "major bleeding"
+  ],
+  "dosing": false,
+  "formula": "Le score DOAC est calculé en additionnant les points sélectionnés pour chaque variable :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | <65 | 0 |\n| 65-69 | 2 | |\n| 70-74 | 3 | |\n| 75-79 | 4 | |\n| ≥80 | 5 | |\n| [Clairance de la créatinine](nabda:calc.creatinine-clearance-cockcroft-gault-equation\\) / [débit de filtration glomérulaire estimé](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr\\) (mL/min) | >60 | 0 |\n| 30-60 | 1 | |\n| <30 | 2 | |\n| Insuffisance pondérale ( [indice de masse corporelle](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) <18,5 kg/m 2 ) | Non | 0 |\n| Oui | 1 | |\n| Antécédents d'AVC/accident ischémique transitoire/embolie | Non | 0 |\n| Oui | 1 | |\n| Diabète | Non | 0 |\n| Oui | 1 | |\n| Hypertension | Non | 0 |\n| Oui | 1 | |\n| Utilisation d'antiagrégants plaquettaires | Non | 0 |\n| Aspirine | 2 | |\n| Double antiagrégation plaquettaire | 3 | |\n| Utilisation d'anti-inflammatoires non stéroïdiens (AINS) | Non | 0 |\n| Oui | 1 | |\n| Antécédents hémorragiques | Non | 0 |\n| Oui | 3 | |\n| Maladie hépatique (ASAT ou ALAT ≥3X la limite supérieure de la normale, PAL ≥2X la limite supérieure de la normale, ou cirrhose) | Non | 0 |\n| Oui | 2 | |",
+  "how_to_use": {
+    "why": "- Favorise la prise de décision partagée en intégrant de multiples facteurs propres au patient dans une évaluation personnalisée et exhaustive du risque.\n- Aide à identifier les patients à haut risque de saignement, ce qui permet de réduire le risque potentiel et d’améliorer les résultats globaux pour le patient.",
+    "when": "Utilisé pour prédire les événements hémorragiques chez les patients atteints de fibrillation atriale chez qui un traitement par anticoagulants oraux directs (DOAC) est envisagé.",
+    "pearls": "- Contrairement à d'autres scores de risque hémorragique similaires, cet outil a été spécifiquement développé pour évaluer le risque associé à un traitement par DOAC, plutôt qu'à un traitement par antagonistes de la vitamine K.\n- Ce score de risque a été principalement validé pour les saignements sévères. Les cliniciens doivent également prendre en compte, dans leurs discussions, les risques et les répercussions sur la qualité de vie liés aux autres événements hémorragiques.\n- Cet outil ne couvre pas tous les risques potentiels de saignement ; il doit donc être utilisé conjointement avec le raisonnement clinique.\n- A initialement montré de meilleures performances que le score HAS-BLED, bien que des recherches supplémentaires soient nécessaires pour le confirmer."
+  },
+  "next_steps": {
+    "advice": "- La décision de recourir à un traitement anticoagulant par DOAC doit tenir compte de multiples facteurs. Cet outil ne doit pas être le seul déterminant de la planification du traitement, mais doit guider la prise de décision partagée entre le patient et le clinicien.\n- Un score élevé n’est pas nécessairement une contre-indication à un traitement par DOAC ; le contexte clinique est essentiel.\n- Dans la mesure du possible, des efforts doivent être faits pour agir sur les facteurs de risque modifiables de saignement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score DOAC | Risque d'hémorragie majeure à 1 an |\n| --- | --- |\n| 0-3 | Très faible |\n| 4-5 | Faible |\n| 6-7 | Modéré |\n| 8-9 | Élevé |\n| 10* | Très élevé |\n\n* Les personnes dont le score est ≥10 se voient attribuer un score de 10.",
+  "short_description": "DOAC saignement risque dans AF patients.",
+  "medium_description": "Predicts saignement risque chez les patients avec fibrillation atriale sur DOAC.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 65",
+          "value": 0
+        },
+        {
+          "label": "65-69",
+          "value": 2
+        },
+        {
+          "label": "70-74",
+          "value": 3
+        },
+        {
+          "label": "75-79",
+          "value": 4
+        },
+        {
+          "label": "≥80",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "[Clairance de la créatinine](nabda:calc.creatinine-clearance-cockcroft-gault-equation) / [débit de filtration glomérulaire estimé](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) (mL/min)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">60",
+          "value": 0
+        },
+        {
+          "label": "30-60",
+          "value": 1
+        },
+        {
+          "label": "< 30",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Insuffisance pondérale ( [indice de masse corporelle](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) <18.5 kg/m^2^)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "Antécédent d'AVC/accident ischémique transitoire/embolie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Utilisation d'antiplaquettaires",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Aspirin",
+          "value": 2
+        },
+        {
+          "label": "Dual-antiplatelet",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q8",
+      "label": "Utilisation d'anti-inflammatoires non stéroïdiens (AINS)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q9",
+      "label": "Antécédents hémorragiques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q10",
+      "label": "Maladie hépatique",
+      "tips": "AST or ALT ≥3X upper limit of normal, ALP ≥2X upper limit of normal, or cirrhosis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aggarwal R, Ruff CT, Virdone S, et al. Development and validation of the doac score: a novel bleeding risk prediction tool for patients with atrial fibrillation on direct-acting oral anticoagulants. Circulation. 2023;148(12):936-946.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37621213/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ezekowitz MD, Kamareddine M. Filling an important knowledge gap: the doac score. Circulation. 2023;148(12):947-949.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37621202/",
+      "kind": "other"
+    },
+    {
+      "text": "Zeng S, Zhu W, Guo S, Hong H. Predictive performance of HAS-BLED, ORBIT, ABC, and DOAC scores for major bleeding in atrial fibrillation patients on DOACs. Eur J Intern Med. Published online July 4, 2024:S0953-6205(24)00282-6.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38969572/",
+      "kind": "other"
+    },
+    {
+      "text": "Aggarwal R, Ruff CT, Virdone S, et al. Development and validation of the doac score: a novel bleeding risk prediction tool for patients with atrial fibrillation on direct-acting oral anticoagulants. Circulation. 2023;148(12):936-946.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37621213/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mei DA, Imberti JF, Bonini N, et al. Performance of HAS-BLED and DOAC scores to predict major bleeding events in atrial fibrillation patients treated with direct oral anticoagulants: A report from a prospective European observational registry. European Journal of Internal Medicine. Published online July 2024:S0953620524002772.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38969571/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abu-Assi E, Lizancos Castro A, Cespón-Fernández M, González-Bermúdez I, Raposeiras Roubin S. Relative performance evaluation of four bleeding risk scores in atrial fibrillation patients. What does the new DOAC score provide? Int J Cardiol. 2024;407:132018.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38579940/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.garfield-af",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.orbit-bleeding-risk-score-atrial-fibrillation",
+    "calc.creatinine-clearance-cockcroft-gault-equation",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "6d9075c2b65abe892fcdd09aefb48d22",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "Creatinine clearance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "estimated glomerular filtration rate"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "body mass index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10551,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

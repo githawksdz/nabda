@@ -1,0 +1,247 @@
+{
+  "id": "calc.therapy-disability-neurology-tdn-grade",
+  "slug": "therapy-disability-neurology-tdn-grade",
+  "language": "fr",
+  "title": "Grade Thérapie-Déficit-Neurologie (TDN)",
+  "short_title": "Grade TDN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Sclérose latérale amyotrophique",
+    "Saignement / Hémorragie",
+    "Hereditary Hemorrhagic Telangiectasia",
+    "Hémorragie intracrânienne",
+    "Leucémie / Lymphome",
+    "Sclérose en plaques",
+    "Maladie de Parkinson",
+    "Trouble convulsif",
+    "Hémorragie sous-arachnoïdienne",
+    "Anévrisme intracrânien",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Céphalée",
+    "Nausée",
+    "Engourdissement",
+    "Douleur",
+    "Vomissements",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "Therapy-Disability-Neurology (TDN) Grade",
+    "TDN grade",
+    "therapy",
+    "disability",
+    "neurology",
+    "therapy disability neurology grade",
+    "neurosurgery",
+    "adverse events",
+    "TDN classification"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "- Provides a standardized classification of neurosurgical complication severity.\n- Traditional therapy-based classifications (e.g., Clavien-Dindo-Grading system, Landriel-Ibañez Classification) can underestimate adverse events that require no intervention; this tool addresses this gap by explicitly incorporating new neurologic deficits and disability changes—even if no additional treatment is involved.\n- Useful in institutional or multi-center registries to compare outcomes, guide quality-improvement initiatives, and track complication severity trends over time.",
+    "when": "- Le système de gradation a été initialement développé pour classer la gravité des complications / événements indésirables après neurochirurgie.\n- Plus récemment, il s'est révélé utile pour classer les complications / événements indésirables d'autres modalités thérapeutiques (autres domaines chirurgicaux, traitement interventionnel, traitement conservateur).\n- Peut être appliqué à des fins d'amélioration de la qualité et de recherche pour comparer les résultats en interne et entre différents centres médicaux.",
+    "pearls": "- Dans l'étude de dérivation, les scores étaient corrélés positivement avec la durée de séjour hospitalier (LOS) et les coûts hospitaliers, et négativement avec le Karnofsky Performance Status (KPS).\n- Ne mesure pas explicitement la durée des nouveaux"
+  },
+  "next_steps": {
+    "advice": "- Consigner les résultats dans le dossier du patient et les partager avec l’équipe multidisciplinaire pour une surveillance continue des résultats et des besoins en ressources.\n- Suivre les résultats dans le temps afin d’identifier les domaines potentiels de réduction des complications et d’orienter des efforts ciblés d’amélioration de la qualité.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "![](https://cdn-web-img.mdcalc.com/content/TDN%20Grade%20Flowchart.png)\n\n*Allowed therapeutic modalities are antiemetics, antipyretics, analgesics, diuretics, electrolytes, and bedside opening of wound infections. Any other pharmacological therapeutic regimen are second grade severity criteria.",
+  "short_description": "Classification des événements indésirables en neurochirurgie.",
+  "medium_description": "Classifies gravité de adverse events et/ou complications basé sur associé therapy, disability, et neurological deficits, initially developed pour neurosurgery.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "therapy",
+      "label": "Événement indésirable :",
+      "tips": "*Allowed therapeutic modalities are antiemetics, antipyretics, analgesics, diuretics, electrolytes, and bedside opening of wound infections.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Not requiring any traitement ou intervention other than those allowed*",
+          "value": 0
+        },
+        {
+          "label": "Requiring pharmacological traitement, blood transfusion ou total parenteral nutrition",
+          "value": 1
+        },
+        {
+          "label": "Nécessitant une intervention chirurgicale, endoscopique ou radiologique",
+          "value": 2
+        },
+        {
+          "label": "Life-threatening et requiring prise en charge dans soins intensifs",
+          "value": 3
+        },
+        {
+          "label": "Aboutissant au décès",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "d1",
+      "label": "Is adverse event hindering at least one activity de daily living?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "therapy != null && therapy < 4",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d2",
+      "label": "Is adverse event hindering walking, preventing patient de attending their own bodily needs?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "d1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d3",
+      "label": "Is adverse event leaving patient bedridden, dans need de constant help, incontinent?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "d2 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "neuro",
+      "label": "Is adverse event resulting dans any new neurological deficit?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "d1 == 0 || d2 == 0 || d3 == 0 || d3 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Terrapon APR, Zattra CM, Voglis S, et al. Adverse events in neurosurgery: the novel therapy-disability-neurology grade. Neurosurgery. 2021;89(2):236-245.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33887774/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gómez Vecchio T, Corell A, Buvarp D, Rydén I, Smits A, Jakola AS. Classification of adverse events following surgery in patients with diffuse lower-grade gliomas. Front Oncol. 2021;11:792878.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34993147/",
+      "kind": "other"
+    },
+    {
+      "text": "Li H, Zheng D, Wang Y, et al. Decision-making tree for surgical treatment in meningioma: a geriatric cohort study. Neurosurg Rev. 2023;46(1):196. doi:10.1007/s10143-023-02103-3 doi:10.1038/s41598-025-21065-8",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37555964/",
+      "kind": "other"
+    },
+    {
+      "text": "Leistner T, Terrapon APR, Hostettler IC, Bozinov O, Zeitlberger AM, Neidert MC. Adverse events in meningioma surgery classified using the therapy-disability-neurology (TDN) grading system. J Neurooncol. 2025;176(2):125.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41400878/",
+      "kind": "other"
+    },
+    {
+      "text": "Kälin V, Terrapon APR, Zeitlberger AM, et al. Assessment of Adverse Events Using the Therapy–Disability–Neurology (TDN) Grading System in a Cohort of Aneurysmal Subarachnoid Hemorrhage Patients: A Single-Center Retrospective Cohort Study. Brain Sci. 2026;16(6):599. doi:10.3390/brainsci16060599",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/42352608/",
+      "kind": "other"
+    },
+    {
+      "text": "Terrapon APR, Kälin V, Zeitlberger AM, et al. International survey-based assessment of the reliability, validity, and interpretability of the TDN grade for neurosurgical adverse events. Sci Rep. 2025;15(1):37600.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41152337/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.common-terminology-criteria-adverse-events-ctcae",
+    "calc.neck-disability-index-ndi",
+    "calc.setscore"
+  ],
+  "source_logic_hash": "9f7399c423991bbee7fb76c18a29304d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10461,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar therapy = parseFloat(therapy);\nvar d1 = parseFloat(d1);\nvar d2 = parseFloat(d2);\nvar d3 = parseFloat(d3);\nvar neuro = parseFloat(neuro);\n\nvar grade;\nvar t;\nvar d;\nvar n;\n\nif (neuro == 0) {\n    grade = 'Grade 1';\n}\nif (therapy == 1 || d2 == 0 || neuro == 1) {\n    grade = 'Grade 2';\n}\nif (therapy == 2 || d3 == 0) {\n    grade = 'Grade 3';\n}\nif (therapy == 3 || d3 == 1) {\n    grade = 'Grade 4';\n}\nif (therapy == 4) {\n    grade = 'Grade 5';\n    t = 'T5';\n    d = 'D5';\n    n = 'N2';\n}\n\nif (therapy == 0) {\n    t = 'T1';\n} else if (therapy == 1) {\n    t = 'T2';\n} else if (therapy == 2) {\n    t = 'T3';\n} else if (therapy == 3) {\n    t = 'T4';\n}\n\nif (d1 == 0) {\n    d = 'D1';\n} else if (d2 == 0) {\n    d = 'D2';\n} else if (d3 == 0) {\n    d = 'D3';\n} else if (d3 == 1) {\n    d = 'D4';\n}\n\nif (neuro == 0) {\n    n = 'N1';\n} else if (neuro == 1) {\n    n = 'N2';\n}\n\nvar tdn = t + d + n;\n\ncalc_output.push({\n    name: 'mini',\n    value: grade + ', ' + tdn,\n    value_text: '',\n    message: 'TDN Grade'\n});\ncalc_output.push({\n    name: 'TDN Grade',\n    value: grade + ', ' + tdn,\n    value_text: '',\n    message: 'TDN Grade'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Alexis P. R. Terrapon",
+    "PD Dr. Marian C. Neidert"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "61bd87270adb0a813f5b6f1cd1c3a3aed4c89250b453287b59924494d15b7b99"
+}

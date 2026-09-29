@@ -1,0 +1,134 @@
+{
+  "id": "calc.immunization-schedule-calculator",
+  "slug": "immunization-schedule-calculator",
+  "language": "en",
+  "title": "Immunization Schedule calculateur",
+  "short_title": "Immunization Schedule calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Fever",
+    "Mal de gorge"
+  ],
+  "abbreviations": [
+    "vaccination",
+    "tdap",
+    "mmr",
+    "measles",
+    "rubella",
+    "mumps",
+    "varicella",
+    "zoster",
+    "pneumococcal",
+    "meningococcal",
+    "meningitis",
+    "flu",
+    "influenza",
+    "tetanus",
+    "whooping cough",
+    "pertussis",
+    "hpv",
+    "gardisil"
+  ],
+  "dosing": false,
+  "formula": "See full schedule at the CDC's website for[children](https://www.cdc.gov/vaccines/hcp/imz-schedules/child-adolescent-age.html)and[adults](https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-age.html).",
+  "how_to_use": {
+    "why": "",
+    "when": "Use for pediatric and adult patients to determine if they may be eligible for vaccination.",
+    "pearls": "- This calculator is meant to provide a general schedule of vaccination doses. Clinical judgment and knowledge of past vaccinations should guide the decision to provide vaccinations to patients.\n- Be aware of appropriate interval dosing and catch-up schedules. Giving a vaccine prior to the appropriate interval may invalidate it and require revaccination.\n- Live vaccines are ***contraindicated*** in pregnancy. If you are evaluating a patient who could be pregnant, ensure pregnancy is ruled out prior to administering a live vaccine."
+  },
+  "next_steps": {
+    "advice": "- Make sure to discuss vaccination and immunization safety with the patient, and have a full understanding of the patient's history before administration.\n- Determine pregnancy status if administering a live vaccine. Live vaccines are **contraindicated** in pregnancy.\n- COVID-19 vaccination recommendations change frequently; consult the[CDC website](https://www.cdc.gov/covid/vaccines/stay-up-to-date.html)for the most up-to-date information.\n- Pneumococcal vaccination is now recommended for adults ages 50 and older.\n- There are many pneumococcal vaccine options including pneumococcal conjugate vaccines (PCV15, PCV20, and PCV21) and pneumococcal polysaccharide vaccine (PPSV23); follow[CDC guidance](https://www.cdc.gov/pneumococcal/hcp/vaccine-recommendations/index.html)to ensure your patient receives the most appropriate vaccination based on their medical history.\n- Be aware of specific pneumococcal vaccination recommendations from the[CDC](https://www.cdc.gov/mmwr/volumes/73/wr/pdfs/mm7336a3-H.pdf)for those patients who live in areas with high rates of serotype 4 invasive pneumococcal disease (IPD).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Immunizations due basé sur âge.",
+  "medium_description": "Determines what immunizations/vaccinations are due basé sur patient's âge.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "agerange",
+      "label": "Âge Range",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥2 years",
+          "value": 1
+        },
+        {
+          "label": "< 2 years",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age_months",
+      "label": "Âge dans months",
+      "optional": false,
+      "unit": "age_months_imm",
+      "show_points": false,
+      "conditionality": "agerange == 0"
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge dans years",
+      "optional": false,
+      "unit": "age_years_imm",
+      "show_points": false,
+      "conditionality": "agerange == 1"
+    }
+  ],
+  "references": [
+    {
+      "text": "CDC. Child and adolescent immunization schedule by age(Addendum updated June 27, 2024). Vaccines & Immunizations.",
+      "href": "https://www.cdc.gov/vaccines/hcp/imz-schedules/child-adolescent-age.html",
+      "kind": "international"
+    },
+    {
+      "text": "CDC. Adult immunization schedule by age(Addendum updated June 27, 2024). Vaccines & Immunizations.",
+      "href": "https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-age.html",
+      "kind": "international"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bacterial-meningitis-score-children",
+    "calc.smart-cop-score-pneumonia-severity",
+    "calc.pecarn-rule-low-risk-febrile-infants-29-60-days-old"
+  ],
+  "source_logic_hash": "7a231c35f589e392f2ebc965cb4c7a88",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3401,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

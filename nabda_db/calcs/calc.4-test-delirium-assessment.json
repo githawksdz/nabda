@@ -1,0 +1,210 @@
+{
+  "id": "calc.4-test-delirium-assessment",
+  "slug": "4-test-delirium-assessment",
+  "language": "en",
+  "title": "**Test 4 's pour le dépistage du delirium**",
+  "short_title": "4AT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "geriatrie"
+  ],
+  "diseases": [
+    "Délirium",
+    "Démence"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "AMS (altération de l'état mental)",
+    "Anxieux"
+  ],
+  "abbreviations": [
+    "4at",
+    "4 A's Test",
+    "4as test",
+    "delirium screening",
+    "4a delirium",
+    "4as test",
+    "4a test",
+    "4as",
+    "4 a's",
+    "4 a's test",
+    "4a's test"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Alertness | Normal | 0 |\n| --- | --- | --- |\n| Mild sleepiness for <10 seconds after waking, then normal | 0 | |\n| Clearly abnormal | 4 | |\n| [AMT 4](nabda:calc.abbreviated-mental-test-4-amt-4\\) Age, date of birth, place (name of hospital or building), current year | No mistakes | 0 |\n| 1 mistake | 1 | |\n| ≥2 mistakes or untestable | 2 | |\n| Attention* | Lists ≥7 months correctly | 0 |\n| Starts but lists <7 months, or refuses to start | 1 | |\n| Untestable (cannot start because unwell, drowsy, inattentive) | 2 | |\n| Acute change or fluctuating course** | No | 0 |\n| Yes | 4 | |\n\n*Instruct patient to list months in reverse order, starting at December.\n\n**Evidence of significant change or fluctuation in mental status within the last 2 weeks and still persisting in the last 24 hours.",
+  "how_to_use": {
+    "why": "- Le delirium est diagnostiqué à tort, manqué ou diagnostiqué tardivement dans plus de 60% des cas ([Collins 2010](https://www.ncbi.nlm.nih.gov/pubmed/19917632)). Un outil de dépistage simple peut aider à identifier ces patients.\n- Peut être utilisé chez les patients considérés comme « non testables » par d’autres tests.",
+    "when": "Patients admis dans les services de gériatrie, pour le dépistage du delirium.",
+    "pearls": "- Dépiste avec une sensibilité plus élevée chez les patients *sans* démence.\n- Il n'existe pas de consensus pour l'évaluation de l'inattention.\n- Validation externe limitée dans certaines petites populations, y compris dans le contexte d'AVC aigu.\n- Validé chez des patients non anglophones avec une sensibilité de 91 % ([De 2016](https://onlinelibrary.wiley.com/doi/abs/10.1002/gps.4615))."
+  },
+  "next_steps": {
+    "advice": "Si un delirium est diagnostiqué, identifier et traiter la cause sous-jacente.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score 4AT | Niveau d'atteinte |\n| --- | --- |\n| ≥4 | Délirium et/ou trouble cognitif possibles |\n| 1–3 | Trouble cognitif possible |\n| 0 | Délirium ou trouble cognitif sévère peu probable (mais délirium encore possible si les informations sur « modification aiguë ou évolution fluctuante » sont incomplètes) |\n\n*4AT © 2011 Alasdair MacLullich, Tracy Ryan, and Helen Cash. Sous licence CC BY 4.0.*\n\n*Consultez [https://www.the4at.com](https://www.the4at.com) pour accéder au guide d'utilisation complet, aux traductions et à la littérature de validation.*",
+  "short_description": "Dépistage du delirium.",
+  "medium_description": "Diagnoses delirium dans older patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "alert",
+      "label": "Vigilance",
+      "tips": "Peut demander au patient d’énoncer son nom et son adresse pour faciliter la cotation.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Mild sleepiness pour <10 seconds after waking, then normal",
+          "value": 0
+        },
+        {
+          "label": "Nettement anormal",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "amt",
+      "label": "[AMT 4](nabda:calc.abbreviated-mental-test-4-amt-4)",
+      "tips": "Âge, date de naissance, lieu (nom de l'hôpital ou du bâtiment), année en cours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Le contenu à traduire n'a pas été fourni (seule la mention « No mistakes » figure dans votre message). Merci de coller le texte du score clinique à traduire.",
+          "value": 0
+        },
+        {
+          "label": "1 erreur",
+          "value": 1
+        },
+        {
+          "label": "≥2 erreurs ou non testable",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "atte",
+      "label": "Attention",
+      "tips": "Demander au patient d’énumérer les mois dans l’ordre inverse, en commençant par décembre.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Énumère correctement ≥7 mois",
+          "value": 0
+        },
+        {
+          "label": "Starts but lists <7 months, ou refuses pour start",
+          "value": 1
+        },
+        {
+          "label": "Non testable (impossible de commencer car le patient est souffrant, somnolent ou inattentif)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "acute",
+      "label": "Changement aigu ou évolution fluctuante",
+      "tips": "Preuve d'une modification significative ou d'une fluctuation de l'état mental au cours des 2 dernières semaines et persistant encore dans les dernières 24 heures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bellelli G, Morandi A, Davis DH, et al. Validation of the 4AT, a new instrument for rapid delirium screening: a study in 234 hospitalised older people. Age Ageing. 2014;43(4):496-502.",
+      "href": "https://academic.oup.com/ageing/article/43/4/496/2812210/Validation-of-the-4AT-a-new-instrument-for-rapid ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Collins N, Blanchard MR, Tookman A, Sampson EL. Detection of delirium in the acute hospital. Age Ageing. 2010;39(1):131-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19917632 ",
+      "kind": "other"
+    },
+    {
+      "text": "Lees R, Corbet S, Johnston C, Moffitt E, Shaw G, Quinn TJ. Test accuracy of short screening tests for diagnosis of delirium or cognitive impairment in an acute stroke unit setting. Stroke. 2013;44(11):3078-83.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23988641 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kuladee S, Prachason T. Development and validation of the Thai version of the 4 'A's Test for delirium screening in hospitalized elderly patients with acute medical illnesses. Neuropsychiatr Dis Treat. 2016;12:437-43.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26966365 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "De J, Wand APF, Smerdely PI, Hunt GE. Validating the 4A's test in screening for delirium in a culturally diverse geriatric inpatient population. Int J Geriatr Psychiatry. 2017;32(12):1322-1329.",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1002/gps.4615",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abbreviated-mental-test-4-amt-4",
+    "calc.abbreviated-mental-test-amt-10",
+    "calc.color-vision-screening-ishihara-test"
+  ],
+  "source_logic_hash": "90be72381203e09bdb359c7af902314e",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.abbreviated-mental-test-4-amt-4",
+      "text": "AMT 4"
+    },
+    {
+      "type": "calc",
+      "id": "calc.abbreviated-mental-test-4-amt-4",
+      "text": "AMT 4"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3982,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n//user inputs - addition of selected points\nvar score = parseFloat(alert) + parseFloat(amt) + parseFloat(atte) + parseFloat(acute);\n\n//interpretation\nvar msg, minimsg;\nif(score >= 4){\n\tmsg = 'Possible delirium and/or cognitive impairment';\n    minimsg = 'Delirium';\n}\nif(score > 0 && score < 4){\n\tmsg = 'Possible cognitive impairment';\n    minimsg = 'Cognition impaired';\n}\nif(score === 0){\n\tmsg = 'Delirium or severe cognitive impairment unlikely. Note that delirium is still possible if \"acute change or fluctuating course\" is questionable.';\n    minimsg = 'Unlikely';\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: minimsg\n});\ncalc_output.push({\n    name: '3982_4AT_result',\n    value: score,\n    value_text: 'points',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Alasdair MacLullich"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "73b94dfe29b2f80b8dd4d5df6958ef25e5e684c78db34f543ca689633a2b32ed"
+}

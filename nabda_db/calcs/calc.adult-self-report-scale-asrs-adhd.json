@@ -1,0 +1,276 @@
+{
+  "id": "calc.adult-self-report-scale-asrs-adhd",
+  "slug": "adult-self-report-scale-asrs-adhd",
+  "language": "en",
+  "title": "Adulte Self-Report échelle (ASRS v1.1) pour ADHD",
+  "short_title": "Adulte Self-Report échelle (ASRS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Trouble du déficit de l'attention avec ou sans hyperactivité (TDAH)"
+  ],
+  "chief_complaints": [
+    "Anxious"
+  ],
+  "abbreviations": [
+    "add",
+    "adhd"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "- Adult ADHD is thought to be relatively common (4.4% prevalence in[one study](https://www.ncbi.nlm.nih.gov/pubmed/17623385)) and underdiagnosed.\n- The ASRS provides an overview of symptoms that can guide further assessment.",
+    "when": "- Les professionnels des soins primaires et de la santé mentale peuvent réaliser un dépistage rapide pour identifier les patients qui nécessitent une évaluation plus approfondie du TDAH de l’adulte.\n- L’ASRS permet de déterminer la sévérité initiale des symptômes et de surveiller l’évolution des symptômes ou l’effet du traitement au fil du temps.",
+    "pearls": "- The Adult ADHD Self-Report Scale (ASRS) Screener v1.1 is used in primary care and mental health settings to screen for adult ADHD (Attention Deficit Hyperactivity Disorder).\n- The ASRS has been validated in the general population.\n- It is an abbreviated 6-item version of the full ASRS, which evaluates for the DSM criteria for adult ADHD.\n- Positive scores for these 6 items were found to be most predictive of a clinical diagnosis of ADHD (the current gold standard for diagnosis).\n- Items in the scale are frequently seen in other psychiatric disorders, and can even be normal variants in the general population. This scale is best used as a preliminary step in a more comprehensive clinical evaluation that includes assessment of the patient’s level of impairment in various domains of functioning."
+  },
+  "next_steps": {
+    "advice": "Cet outil de dépistage vise à détecter les cas qui justifient une évaluation clinique complémentaire et ne peut pas être utilisé seul pour établir un diagnostic.",
+    "critical_actions": "Les symptômes d'inattention et d'hyperactivité sont relativement non spécifiques et se rencontrent dans de nombreux troubles psychiatriques et certains troubles médicaux. Une évaluation clinique complète doit inclure la recherche de troubles de l'humeur, anxieux, des apprentissages ou liés à l'usage de substances comme cause sous-jacente ou affection comorbide. Un bilan des troubles organiques sous-jacents, en cas de suspicion clinique, doit être envisagé.",
+    "management": "- Presence of ≥4 points indicates symptoms highly consistent with adult ADHD; these cases warrant further clinical assessment.\n- Further clinical assessment includes:\n\n - Clinical interview\n - Mental status examination\n - Neuropsychological testing may be considered (e.g., subthreshold symptoms, diagnostic uncertainty)\n - Labs and medical work-up when clinically warranted\n- Clinical interview may be guided by questions in the screener and the remaining DSM criteria. Assess the level of impairment associated with each symptom (including at work, school and in social situations) and evaluate for presence of symptoms in childhood."
+  },
+  "evidence": "- The ASRS was initially developed as a screening tool for the World Health Organization (WHO) World Mental Health (WMH) Initiative Survey. It is now used both for research and clinical purposes.\n- The ASRS Screener has been shown to have adequate sensitivity (68.7%), excellent specificity (99.5%) and good κ (0.76) using the cutoff of ≥4 out of 6 positive criteria.\n- It is important to note that the validity of this scale is assessed by comparing it to the current gold standard which is the clinical interview. However, the clinical interview has not been formally validated.",
+  "more_info": "- Un score total ≥4 est compatible avec un TDAH de l'adulte.\n- Les symptômes de déficit de l'attention étant de plus en plus fréquents dans la société, l'ASRS aide à tenter de différencier les tendances normales d'une pathologie.\n- La version 1.1 est un test de dépistage plus court que le test original.",
+  "short_description": "Diagnoses adulte ADHD.",
+  "medium_description": "Diagnostics TDAH adulte.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "wrapping_up",
+      "label": "How often do you have trouble wrapping up final details de project, once challenging parts have been done?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 1
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "organization",
+      "label": "How often do you have difficulty getting things dans order when you have pour do task that nécessite organization?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 1
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "remembering",
+      "label": "À quelle fréquence avez-vous des difficultés à vous souvenir de vos rendez-vous ou de vos obligations ?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 1
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "delay_task",
+      "label": "When you have task that nécessite lot de thought, how often do you avoid ou delay getting started?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 0
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fidget",
+      "label": "How often do you fidget ou squirm avec your hands ou feet when you have pour sit down pour long time?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 0
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "overly_active",
+      "label": "How often do you feel overly active et compelled pour do things, like you were driven par motor?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 0
+        },
+        {
+          "label": "Sometimes",
+          "value": 0
+        },
+        {
+          "label": "Often",
+          "value": 1
+        },
+        {
+          "label": "Très souvent",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kessler RC, Adler L, Ames M, Demler O, Faraone S, Hiripi E, Howes MJ, Jin R, Secnik K, Spencer T, Ustun TB, Walters EE. The World Health Organization Adult ADHD Self-Report Scale (ASRS): a short screening scale for use in the general population. Psychol Med. 2005 Feb;35(2):245-56. PubMed PMID: 15841682.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15841682",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kessler RC, Adler LA, Gruber MJ, Sarawate CA, Spencer T, Van Brunt DL. Validity of the World Health Organization Adult ADHD Self-Report Scale (ASRS) Screener in a representative sample of health plan members. Int J Methods Psychiatr Res. 2007;16(2):52-65.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17623385",
+      "kind": "other"
+    },
+    {
+      "text": "Adler LA, Spencer T, Faraone SV, Kessler RC, Howes MJ, Biederman J, Secnik K. Validity of pilot Adult ADHD Self- Report Scale (ASRS) to Rate Adult ADHD symptoms. Ann Clin Psychiatry. 2006 Jul-Sep;18(3):145-8. PubMed PMID: 16923651.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16923651",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.short-michigan-alcoholism-screening-test-geriatric-version-smast-g",
+    "calc.cows-score-opiate-withdrawal",
+    "calc.hamilton-anxiety-scale"
+  ],
+  "source_logic_hash": "cd6310df3a2dd4a801e2dfcac9c801f3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1730,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

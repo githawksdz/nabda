@@ -1,0 +1,271 @@
+{
+  "id": "calc.mcmahon-score-rhabdomyolysis",
+  "slug": "mcmahon-score-rhabdomyolysis",
+  "language": "en",
+  "title": "McMahon score pour Rhabdomyolysis",
+  "short_title": "Score de McMahon",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "AMS",
+    "Fever",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "rhabdomylosis risk calculator",
+    "rabdo",
+    "Rhabdo"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤50 | 0 |\n| 51–70 | 1.5 | |\n| 71–80 | 2.5 | |\n| >80 | 3 | |\n| Sex | Male | 0 |\n| Female | 1 | |\n| Initial creatinine | <1.4 mg/dL (124 µmol/L) | 0 |\n| 1.4–2.2 mg/dL (124–195 µmol/L) | 1.5 | |\n| >2.2 mg/dL (195 µmol/L) | 3 | |\n| Initial calcium <7.5 mg/dL (1.88 mmol/L) | No | 0 |\n| Yes | 2 | |\n| Initial CPK >40,000 U/L | No | 0 |\n| Yes | 2 | |\n| Rhabdo secondary to seizures, syncope, exercise, statins, or myositis | Yes | 0 |\n| No | 3 | |\n| Initial phosphate | <4.0 mg/dL (1.0 mmol/L) | 0 |\n| 4.0–5.4 mg/dL (1.0-1.4 mmol/L) | 1.5 | |\n| >5.4 mg/dL (1.4 mmol/L) | 3 | |\n| Initial bicarbonate <19 mEq/L (19 mmol/L) | No | 0 |\n| Yes | 2 | |",
+  "how_to_use": {
+    "why": "- Uses readily available clinical demographic and laboratory values.\n- More specific than CPK alone at predicting need for RRT (AUROC0.775 vs 0.631).",
+    "when": "- Patients ≥18 years old with rhabdomyolysis (CPK >5,000 U/L within 72 hours of admission).\n- Do not use in patients with pre-existing end-stage renal disease or elevated CPK due to MI.",
+    "pearls": "- Can be used in both traumatic and atraumatic rhabdomyolysis.\n- Not validated for patients who have had renal replacement therapy (RRT) within 24 hours.\n- Not yet prospectively validated (has been[retrospectively validated](https://ccforum.biomedcentral.com/articles/10.1186/cc14363))."
+  },
+  "next_steps": {
+    "advice": "- CPK >1,000 U/L provides laboratory confirmation of the clinical diagnosis (CPK >40,000 U/L is used as a risk factor in the score).\n- Delayed increase in CPK is common and therefore serial levels should be obtained.",
+    "critical_actions": "Les traitements néphroprotecteurs doivent être envisagés chez tous les patients jugés à haut risque (score ≥6), indépendamment du taux de CPK à l'admission.",
+    "management": "Le traitement néphroprotecteur doit inclure une réanimation liquidienne visant l’euvolémie et une diurèse d’au moins 1–2 mL/kg/hr."
+  },
+  "evidence": "**Derivation study** ,[McMahon 2013](https://www.ncbi.nlm.nih.gov/pubmed/24000014).\n\n- **Design** :\n\nRetrospective study in two teaching hospitals, n = 2,371.\n- **Aim** :\n\nDerive and validate a risk prediction equation to estimate risk ofRRTor death in patients with rhabdomyolysis.\n- **Inclusion criteria** :\n- **Exclusion criteria** :\n- **Outcomes** :\n\n**Validation study** ,[Simpson 2016](https://www.ncbi.nlm.nih.gov/pubmed/27259093).\n\n- **Design** :\n\nRetrospective observational, n = 232.\n- **Aims** :\n- **Inclusion criteria** :\n- **Exclusion criteria** :\n\nNot listed.\n- **Outcomes** :",
+  "more_info": "Interpretation:\n\n| McMahon Score | Risk group | Recommendation |\n| --- | --- | --- |\n| <6 | Low risk | Usual care (3% risk of death or AKI requiring RRT) |\n| ≥6* | Not low risk | Initiate renal protective therapy including high-volume fluid resuscitation to urine output 1-2 mL/kg/hr (52% risk of death or AKI requiring RRT at scores ≥10) |\n\nFrom[Simpson 2016](https://www.ncbi.nlm.nih.gov/pubmed/27259093).\n\n*McMahon Score ≥6, calculated on admission, is 86% sensitive and 68% specific for identifying patients who will require RRT.",
+  "short_description": "Rhabdo mortalité.",
+  "medium_description": "Predicts mortalité ou insuffisance rénale aiguë (AKI) dans rhabdomyolysis patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤50",
+          "value": 0
+        },
+        {
+          "label": "51-70",
+          "value": 1.5
+        },
+        {
+          "label": "71-80",
+          "value": 2.5
+        },
+        {
+          "label": ">80",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cre",
+      "label": "Créatinine initiale",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.4 mg/dL (124 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": "1.4–2.2 mg/dL (124–195 µmol/L)",
+          "value": 1.5
+        },
+        {
+          "label": ">2.2 mg/dL (195 µmol/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Calcium initial <7,5 mg/dL (1,88 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cpk",
+      "label": "Initial CPK >40,000 U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rhabdo",
+      "label": "Rhabdo secondaire pour seizures, syncope, exercise, statins, ou myositis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "phos",
+      "label": "Phosphate initial",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 4.0 mg/dL (1.0 mmol/L)",
+          "value": 0
+        },
+        {
+          "label": "4.0–5.4 mg/dL (1.0-1.4 mmol/L)",
+          "value": 1.5
+        },
+        {
+          "label": ">5,4 mg/dL (1,4 mmol/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bicarb",
+      "label": "Bicarbonate initial <19 mEq/L (19 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McMahon GM, Zeng X, Waikar SS. A risk prediction score for kidney failure or mortality in rhabdomyolysis. JAMA Intern Med. 2013;173(19):1821-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24000014 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Simpson J, Taylor A, et al. Rhabdomyolysis: early prognostication of renal failure and other adverse outcomes. 35th International Symposium on Intensive Care and Emergency Medicine. Poster presentation. Critical Care. 2015;19(Suppl 1):P283",
+      "href": "https://ccforum.biomedcentral.com/articles/10.1186/cc14363",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-interstitial-nephritis-ain-risk-calculator",
+    "calc.cisplatin-associated-acute-kidney-iInjury-cp-aki-risk-calculator",
+    "calc.licurse-score-renal-ultrasound"
+  ],
+  "source_logic_hash": "9270b729aaf75fd37e0b59c0c220ac9a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4017,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

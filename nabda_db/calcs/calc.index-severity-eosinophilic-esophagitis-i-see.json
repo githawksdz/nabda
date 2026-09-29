@@ -1,0 +1,334 @@
+{
+  "id": "calc.index-severity-eosinophilic-esophagitis-i-see",
+  "slug": "index-severity-eosinophilic-esophagitis-i-see",
+  "language": "en",
+  "title": "Index de gravité pour Eosinophilic Esophagitis (I-SEE)",
+  "short_title": "I-SEE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "urgences",
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Œsophagite à éosinophiles"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur thoracique",
+    "Heartburn",
+    "Swelling",
+    "Vomiting",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Index of Severity for Eosinophilic Esophagitis (I-SEE)",
+    "i see",
+    "i-see",
+    "eosinophilic esophagitis",
+    "eoe",
+    "eoe severity",
+    "eosinophilic esophagitis severity",
+    "endoscopy",
+    "isee"
+  ],
+  "dosing": false,
+  "formula": "The I-SEE Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Symptoms and complications | | |\n| Symptoms | None | 0 |\n| Weekly | 1 | |\n| Daily | 2 | |\n| Multiple times per day or disrupting social functioning | 4 | |\n| Food impaction | None | 0 |\n| Food impaction with ER visit or endoscopy (patient ≥18 years) | 2 | |\n| Food impaction with ER visit or endoscopy (patient <18 years) | 4 | |\n| Hospitalization due to EoE | No | 0 |\n| Yes | 4 | |\n| Esophageal perforation | No | 0 |\n| Yes | 15 | |\n| Malnutrition | None | 0 |\n| Malnutrition with body mass <5th percentile or decreased growth trajectory | 15 | |\n| Inflammation | None | 0 |\n| Persistent inflammation requiring elemental formula, or systemic corticosteroid, or immunomodulatory 1 treatments | 15 | |\n| Inflammatory features | | |\n| Edema, furrows, and/or exudates | None | 0 |\n| Localized | 1 | |\n| Diffuse | 2 | |\n| Eosinophil count 2 | <15 eos/hpf | 0 |\n| 15-60 eos/hpf | 1 | |\n| >60 eos/hpf | 2 | |\n| Fibrostenotic features | | |\n| Rings, strictures | None | 0 |\n| Present, but endoscope passes easily | 1 | |\n| Present, but requires dilation or a snug fit when passing a standard endoscope 3 | 2 | |\n| Cannot pass standard upper endoscope; repeated dilations (in an adult ≥18 years); or any dilation (in a child <18 years) | 15 | |\n| BZH or LPF (or DEC / SEA if no LP) | No | 0 |\n| Yes | 2 | |\n\n^1^Immunomodulatory medications can include biologics, azathioprine/6MP, or other immune-targeted treatments.\n\n^2^The peak eosinophil count should be specifically quantified both for diagnosis and to allow monitoring; however, this table uses thresholds and ranges.\n\n^3^Seen with a 10–14 mm esophagus; esophageal diameter can be measured by balloon-sizing, dilation effect, barium esophagram, etc.",
+  "how_to_use": {
+    "why": "- Il existe peu d’outils permettant d’évaluer la gravité des symptômes et de la maladie.\n- Doit être utilisé dans le cadre d’un plan de traitement complet.",
+    "when": "Peut être utilisé lors de la visite initiale et des visites ultérieures chez l’enfant et l’adulte atteints d’œsophagite à éosinophiles (EoE).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Des scores élevés indiquent une maladie plus sévère. Travaillez avec votre patient pour suivre l’évolution et apporter des modifications diététiques si nécessaire, discuter d’un traitement médicamenteux le cas échéant et envisager une dilatation œsophagienne si justifiée.\n- Pour plus d’informations sur la prise en charge diététique dans l’EoE, veuillez consulter cet article de [Chang et al, 2023](https://www.cghjournal.org/article/S1542-3565(23)00186-6/fulltext)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score I-SEE | Sévérité de l'EoE |\n| --- | --- |\n| <1 | Inactive |\n| 1-6 | Légère |\n| 7-14 | Modérée |\n| ≥15 | Sévère |",
+  "short_description": "EoE gravité.",
+  "medium_description": "Classifies gravité de eosinophilic esophagitis (EoE).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "symptoms",
+      "label": "Symptoms",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Weekly",
+          "value": 1
+        },
+        {
+          "label": "Daily",
+          "value": 2
+        },
+        {
+          "label": "plusieurs fois par jour ou perturbant le fonctionnement social",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "food",
+      "label": "Impaction alimentaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Food impaction avec ER visit ou endoscopy (patient ≥18 years)",
+          "value": 2
+        },
+        {
+          "label": "Food impaction avec ER visit ou endoscopy (patient <18 years)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hosp",
+      "label": "Hospitalization due pour EoE",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "perf",
+      "label": "Perforation œsophagienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mal",
+      "label": "Malnutrition",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Malnutrition avec body mass <5th percentile ou decreased growth trajectory",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inf",
+      "label": "Inflammation",
+      "tips": "Les médicaments immunomodulateurs peuvent inclure des biothérapies, l'azathioprine/6MP ou d'autres traitements ciblant le système immunitaire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Persistent inflammation requiring elemental formula, ou systemic corticosteroid, ou immunomodulatory treatments",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "edema",
+      "label": "Œdème, furrows, et/ou exudates",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Localized",
+          "value": 1
+        },
+        {
+          "label": "Diffuse",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eos",
+      "label": "Numération des éosinophiles",
+      "tips": "Le pic de numération des éosinophiles doit être spécifiquement quantifié, à la fois pour le diagnostic et pour permettre le suivi ; toutefois, cet outil utilise des seuils et des intervalles.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 15 eos/hpf",
+          "value": 0
+        },
+        {
+          "label": "15-60 eos/hpf",
+          "value": 1
+        },
+        {
+          "label": ">60 eos/hpf",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "rings",
+      "label": "Anneaux, sténoses",
+      "tips": "*Seen with a 10–14 mm esophagus; esophageal diameter can be measured by balloon-sizing, dilation effect, barium esophagram, etc.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Présent, mais l'endoscope passe facilement",
+          "value": 1
+        },
+        {
+          "label": "Present, but nécessite dilation ou snug fit when passing standard endoscope*",
+          "value": 2
+        },
+        {
+          "label": "Cannot pass standard upper endoscope; repeated dilations (dans adulte ≥18 years); ou any dilation (dans child <18 years)",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bzh",
+      "label": "BZHorLPF(orDEC/SEAif no LP)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hirano I, Chan ES, Rank MA, et al. AGA institute and the joint task force on allergy-immunology practice parameters clinical guidelines for the management of eosinophilic esophagitis. Ann Allergy Asthma Immunol. 2020;124(5):416-423.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32336462/",
+      "kind": "international"
+    },
+    {
+      "text": "Dellon ES, Khoury P, Muir AB, et al. A clinical severity index for eosinophilic esophagitis: development, consensus, and future directions. Gastroenterology. 2022;163(1):59-76.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35606197/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chang JW, Kliewer K, Haller E, et al. Development of a practical guide to implement and monitor diet therapy for eosinophilic esophagitis. Clin Gastroenterol Hepatol. 2023;21(7):1690-1698.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36933603/",
+      "kind": "other"
+    },
+    {
+      "text": "Cotton CC, Moist SE, McGee SJ, Furuta GT, Aceves SS, Dellon ES. A newly proposed severity index for eosinophilic esophagitis is associated with baseline clinical features and successful treatment response. Clin Gastroenterol Hepatol. 2023;21(10):2534-2542.e1.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37061110/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.los-angeles-la-grading-esophagitis",
+    "calc.ulcerative-colitis-endoscopic-index-of-severity-uceis",
+    "calc.rule-nines"
+  ],
+  "source_logic_hash": "d1da001d08d30f6875ae918004dba52f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10497,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.azathioprine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,146 @@
+{
+  "id": "calc.relative-fat-mass-rfm",
+  "slug": "relative-fat-mass-rfm",
+  "language": "en",
+  "title": "Masse grasse relative (Relative Fat Mass, RFM)",
+  "short_title": "RFM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladie coronarienne",
+    "Diabète sucré",
+    "Hypertension",
+    "Obésité"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Fatigue",
+    "Douleur articulaire",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Relative Fat Mass (RFM)",
+    "rfm",
+    "fat mass",
+    "body fat",
+    "body mass",
+    "obesity",
+    "relative mass",
+    "fat"
+  ],
+  "dosing": false,
+  "formula": "RFM = 64 – (20 ×notionvc: a79f596b-b5c7-47f0-b26d-d087a663f7ab(height/waist)) + (12 ×notionvc: a79f596b-b5c7-47f0-b26d-d087a663f7absex*)\n\n*sex = 0 for male, 1 for female",
+  "how_to_use": {
+    "why": "- BMI is frequently used to estimate body fat-defined obesity, although it is known to have limited accuracy with distinguishing fat mass from non-fat mass.\n- Relative fat mass is a simple equation requiring only two readily available measurements.\n- Can avoid misclassification of adults with high muscle mass as obese.\n- Shown to predict fat mass percentage more consistently than BMI when compared to gold standard reference measures, such as DEXA.",
+    "when": "Use this tool to estimate whole body fat percentage in adults ≥20 years of age.",
+    "pearls": "- Obesity cut-points in the derivation study were derived based on corresponding first and second quintile values for each sex in the combined NHANES dataset.\n- These values correspond to ≥33.9% defining obesity in women and ≥22.8% defining obesity in men.\n- This tool was derived in Mexican-American, European-American, and African-American populations. Use caution when calculating RFM in other populations.\n- RFM has also been used to estimate risk for cardiovascular disease and diabetes in various populations."
+  },
+  "next_steps": {
+    "advice": "- Les patients répondant aux critères d'obésité doivent bénéficier de conseils pour la modification du mode de vie.\n- Tous les patients doivent être encouragés à se tenir à jour des dépistages préventifs et des conseils.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "L'obésité est définie par un RFM ≥ 33,9 % chez les femmes et ≥ 22,8 % chez les hommes.",
+  "short_description": "Estimation de la masse grasse corporelle",
+  "medium_description": "Estime le pourcentage de graisse corporelle totale chez les adultes.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "waist",
+      "label": "Tour de taille",
+      "optional": false,
+      "unit": "waist_circumference",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Woolcott OO, Bergman RN. Relative fat mass (Rfm) as a new estimator of whole-body fat percentage ─ A cross-sectional study in American adult individuals. Sci Rep. 2018;8(1):10980.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30030479/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Corrêa CR, Formolo NPS, Dezanetti T, Speretta GFF, Nunes EA. Relative fat mass is a better tool to diagnose high adiposity when compared to body mass index in young male adults: A cross-section study. Clin Nutr ESPEN. 2021;41:225-233.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33487268/",
+      "kind": "other"
+    },
+    {
+      "text": "Woolcott OO, Bergman RN. Defining cutoffs to diagnose obesity using the relative fat mass (Rfm): Association with mortality in NHANES 1999-2014. Int J Obes (Lond). 2020;44(6):1301-1310.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31911664/",
+      "kind": "other"
+    },
+    {
+      "text": "Woolcott OO, Bergman RN. Relative Fat Mass as an estimator of whole-body fat percentage among children and adolescents: A cross-sectional study using NHANES. Sci Rep. 2019;9(1):15279.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31649287/",
+      "kind": "other"
+    },
+    {
+      "text": "Guzmán-León AE, Velarde AG, Vidal-Salas M, Urquijo-Ruiz LG, Caraveo-Gutiérrez LA, Valencia ME. External validation of the relative fat mass (Rfm) index in adults from north-west Mexico using different reference methods. PLoS One. 2019;14(12):e0226767.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31891616/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-roundness-index-bri",
+    "calc.fat-free-mass-ffm",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "d70029b92062301dfe7f683c16864862",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10472,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar height = parseFloat(height);\nvar waist = parseFloat(waist);\nvar sex = parseFloat(sex);\n\nvar rfm = 64 - (20 * (height/waist)) + (12 * sex);\n\nvar c = 'Not obese';\nif (sex == 0 && rfm >= 22.8) {\n    c = 'Obese';\n}\nif (sex == 1 && rfm >= 33.9) {\n    c = 'Obese';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: rfm.toFixed(1),\n    value_text: '%',\n    message: c\n});\ncalc_output.push({\n    name: 'RFM',\n    value: rfm.toFixed(1),\n    value_text: '%',\n    message: 'Relative Fat Mass'\n});\ncalc_output.push({\n    name: 'Class',\n    value: c,\n    value_text: '',\n    message: 'Classification'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Orison O. Woolcott"
+  ],
+  "measurement_ids": [
+    "Height",
+    "Waist Circumference"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "1c53208aea7a30c164786e2a4089cc62ff386b81fb9fc523b0162a156988fd2f"
+}

@@ -1,0 +1,161 @@
+{
+  "id": "calc.shock-index-pediatric-age-adjusted-sipa",
+  "slug": "shock-index-pediatric-age-adjusted-sipa",
+  "language": "fr",
+  "title": "Shock index, pédiatrique âge-Adjusted (SIPA)",
+  "short_title": "Shock index, pédiatrique âge-Adjusted (SIPA)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "Shock index",
+    "SI",
+    "SIPA",
+    "pediatric shock index",
+    "age adjusted shock index",
+    "trauma",
+    "mortality",
+    "hemorrhage",
+    "pediatric adjusted"
+  ],
+  "dosing": false,
+  "formula": "SIPA = fréquence cardiaque maximale/pression artérielle systolique minimale, les valeurs normales étant les suivantes :\n\n| Âge | Fréquence cardiaque | Pression artérielle systolique | SIPA normal maximal |\n| --- | --- | --- | --- |\n| 4–6 ans | 65–110 | 90–110 | 1.22 |\n| 7–12 ans | 60–100 | 100–120 | 1.00 |\n| 13–16 ans | 55–90 | 100–135 | 0.90 |",
+  "how_to_use": {
+    "why": "- Différencie mieux les enfants gravement blessés de ceux présentant des lésions légères que l'[indice de choc (SI)](nabda:calc.shock-index). Dans l'étude initiale, un SIPA élevé permettait d'identifier environ 25 % des enfants les plus **gravement blessés**, quel que soit leur âge, tandis qu'un SI >0,9 a montré qu'il identifiait entre 32 et 71 % des enfants blessés, selon l'âge.\n- La capacité d'identifier avec précision les enfants gravement blessés est essentielle pour réduire le surtriage des enfants victimes de blessures.\n- Un SIPA élevé est associé aux évènements suivants ([Acker 2015](https://www.ncbi.nlm.nih.gov/pubmed/25638631);[Nordin 2017](https://www.ncbi.nlm.nih.gov/pubmed/29108845)) :",
+    "when": "- Patients de 4 à 16 ans victimes d'un traumatisme fermé.\n- **Ne pas utiliser** chez les nourrissons, les jeunes enfants ou les patients victimes d'un traumatisme pénétrant.",
+    "pearls": "- Le SIPA doit être calculé dès l'arrivée aux urgences.\n- Un SIPA en augmentation entre les lieux de l'accident et les urgences peut prédire une évolution défavorable, mais cela n'a pas été examiné par les auteurs initiaux.\n- L'utilisation du SIPA pour prédire la morbidité et la mortalité après l'admission n'a pas encore été validée. Cependant, une étude pronostique publiée dans le Journal of Pediatric Surgery ([Vandewalle 2018](https://www.ncbi.nlm.nih.gov/pubmed/29126550)) a montré que les patients développant un SIPA élevé au cours des 24 premières heures d'hospitalisation présentaient un risque accru de complications par rapport à ceux dont le SIPA est resté normal pendant les 48 premières heures d'hospitalisation. De plus, le délai de normalisation du SIPA était directement corrélé à la durée du séjour hospitalier et en soins intensifs.\n- Selon les auteurs, les seuils spécifiques à l'âge choisis initialement nécessiteront une validation supplémentaire dans une deuxième cohorte."
+  },
+  "next_steps": {
+    "advice": "Les patients présentant un SIPA élevé ont un risque plus élevé de morbidité et de mortalité après un traumatisme fermé. La reconnaissance et le traitement précoces dans ces cas, y compris une éventuelle décision de transfert vers un niveau de soins supérieur, amélioreront le pronostic de ces enfants.",
+    "critical_actions": "Rappelez-vous qu'aucune valeur ni aucun signe ne définit nécessairement le choc, et que les enfants peuvent compenser plus facilement que les adultes. L'hypotension est souvent un signe tardif chez les enfants en choc hypovolémique.",
+    "management": "- La prise en charge générale d'un traumatisme abdominal fermé chez l'enfant comprend l'examen primaire et secondaire ainsi que la détermination de l'étendue, du type et de la gravité des lésions.\n- Un examen abdominal minutieux est extrêmement important car les lésions abdominales ne sont souvent pas apparentes à l'examen. Le recours à l'imagerie peut être justifié selon les constatations cliniques."
+  },
+  "evidence": "**Derivation:**\n\n- The SIPA was originally developed by researchers at the Children’s Hospital of Colorado to help identify severely injured children following blunt trauma.\n- Mechanism alone has been found to be a poor predictor of injury severity in children ([Qazi 1998](https://www.ncbi.nlm.nih.gov/pubmed/9751551)), whereas clinical and physiologic parameters are better indicators ([Wang 2001](https://www.ncbi.nlm.nih.gov/pubmed/11584402)), and previous studies ([Rousseaux 2013](https://www.ncbi.nlm.nih.gov/pubmed/24076606);[Yasaka 2013](https://www.ncbi.nlm.nih.gov/pubmed/23962830)) have shown that the Shock Index (SI) helps identify a higher risk of mortality versus using HR and BP alone. The SIPA furthers builds on that by taking into account specific vital sign cutoffs by age group.\n- Realizing that pediatric vital signs vary with age and that the standard SI may not be as useful in children, the researchers sought and defined maximum normal heart rate and minimum normal systolic blood pressure using reference ranges from two pediatric textbooks and the U.S. Department of Health and Human Services’ Pediatric Basic and Advanced Life Support guidelines.\n- Using these numbers, they determined the maximum normal SI for each age group.\n- The researchers then retrospectively looked at 543 children who presented to Children’s Hospital Colorado and Denver Health Medical Center between 1/2007 and 6/2013 following blunt trauma with [Injury Severity Score](nabda:calc.injury-severity-score-iss) >15.\n- Elevated SI was present in 49% of children, while elevated SIPA was present in only 27.6% of children (all of whom had the same adverse outcomes identified by using the SI).\n- SIPA demonstrated improved discrimination of severe injury relative to SI in the following categories:\n- The researchers concluded that SIPA misses fewer children with severe injury while also minimizing over triage.\n\n**Validation studies:**\n\n- A multicenter prospective observational study of 386 patients aged 4-16 years ([Linnaus 2017](https://www.ncbi.nlm.nih.gov/pubmed/27717564)) validated the original study with level II quality evidence.\n\n**Follow-up studies:**\n\n- A study in the Journal of Pediatric Surgery ([Nordin 2017](https://www.ncbi.nlm.nih.gov/pubmed/29108845)), in which the authors developed cutoff values for SIPA for patients 1-3 years of age, found SIPA to be a significantly better predictor than SI of transfusion needs, injury severity, ICU admission, ventilator use, and mortality following blunt and penetrating trauma.\n- The authors of the original SIPA study conducted a follow-up study ([Acker 2017](https://www.ncbi.nlm.nih.gov/pubmed/27814956)) and found the SIPA to be superior to age-adjusted hypotension in identifying injured children that required trauma team activation. Criteria used as indicators included early blood transfusion, endotracheal intubation, and requiring emergency operation.\n- A[comparison](https://pediatrictraumasociety.org/meeting/abstracts/2017/8.cgi)of the SIPA, SI, and Revised Trauma Score (RTS) ([Nordin 2017](https://www.ncbi.nlm.nih.gov/pubmed/29108845)) presented at the 2017 Annual Pediatric Trauma Society meeting found that SIPA compares favorably to RTS in predicting pediatric trauma outcomes (and outperformed the SI).",
+  "more_info": "Interprétation :\n\n| Âge | SIPA | Risque de lésion par traumatisme fermé si le SIPA est élevé |\n| --- | --- | --- |\n| 4–6 ans | >1.22 | 22.0 % |\n| 7–12 ans | >1.00 | 25.1 % |\n| 13–16 ans | >0.90 | 32.0 % |\n\nLa mortalité hospitalière globale pour un SIPA élevé (à chaque seuil) était de 11 %, contre 7 % pour l'indice de choc non ajusté à l'âge.",
+  "short_description": "Shock dans enfants.",
+  "medium_description": "Predicts mortalité dans enfants avec blunt traumatisme.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "tips": "Âgés de 4 à 16 ans uniquement",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "heartrate",
+      "label": "Maximum fréquence cardiaque",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "systolic",
+      "label": "Minimum systolic pression artérielle",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Acker SN, Ross JT, Partrick DA, Tong S, Bensard DD. Pediatric specific shock index accurately identifies severely injured children. J Pediatr Surg. 2015;50(2):331-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25638631",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vandewalle RJ, Peceny JK, Dolejs SC, Raymond JL, Rouse TM. Trends in pediatric adjusted shock index predict morbidity and mortality in children with severe blunt injuries. J Pediatr Surg. 2018;53(2):362-366.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29126550",
+      "kind": "other"
+    },
+    {
+      "text": "Yasaka Y, Khemani RG, Markovitz BP. Is shock index associated with outcome in children with sepsis/septic shock?*. Pediatr Crit Care Med. 2013;14(8):e372-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23962830",
+      "kind": "other"
+    },
+    {
+      "text": "Rousseaux J, Grandbastien B, Dorkenoo A, Lampin ME, Leteurtre S, Leclerc F. Prognostic value of shock index in children with septic shock. Pediatr Emerg Care. 2013;29(10):1055-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24076606",
+      "kind": "other"
+    },
+    {
+      "text": "Qazi K, Wright MS, Kippes C. Stable pediatric blunt trauma patients: is trauma team activation always necessary?. J Trauma. 1998;45(3):562-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9751551",
+      "kind": "other"
+    },
+    {
+      "text": "Wang MY, Kim KA, Griffith PM, et al. Injuries from falls in the pediatric population: an analysis of 729 cases. J Pediatr Surg. 2001;36(10):1528-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11584402",
+      "kind": "other"
+    },
+    {
+      "text": "Linnaus ME, Notrica DM, Langlais CS, et al. Prospective validation of the shock index pediatric-adjusted (SIPA) in blunt liver and spleen trauma: An ATOMAC+ study. J Pediatr Surg. 2017;52(2):340-344.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27717564 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nordin A, Coleman A, Shi J, et al. Validation of the age-adjusted shock index using pediatric trauma quality improvement program data. J Pediatr Surg. 2017.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29108845",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Acker SN, Bredbeck B, Partrick DA, Kulungowski AM, Barnett CC, Bensard DD. Shock index, pediatric age-adjusted (SIPA) is more accurate than age-adjusted hypotension for trauma team activation. Surgery. 2017;161(3):803-807.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27814956",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shock-index",
+    "calc.phoenix-sepsis-score",
+    "calc.pediatric-trauma-big-score"
+  ],
+  "source_logic_hash": "d9875e33f699f526c4486790b372a846",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.shock-index",
+      "text": "Shock Index (SI)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10058,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

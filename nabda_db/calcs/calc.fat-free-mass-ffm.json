@@ -1,0 +1,134 @@
+{
+  "id": "calc.fat-free-mass-ffm",
+  "slug": "fat-free-mass-ffm",
+  "language": "fr",
+  "title": "Masse non grasse (FFM)",
+  "short_title": "FFM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul",
+    "Formule"
+  ],
+  "specialties": [
+    "anesthesie",
+    "nutrition",
+    "soins-intensifs"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Pain"
+  ],
+  "abbreviations": [
+    "Fat Free Mass",
+    "FFM",
+    "fat-free mass",
+    "dual-energy x-ray absorptiometry",
+    "DXA",
+    "BMI",
+    "body weight",
+    "BWt",
+    "lean body weight",
+    "LBW",
+    "lean body mass",
+    "LMB"
+  ],
+  "dosing": false,
+  "formula": "FFM (homme) = (9,27 × 10^3^ × BWt, kg) / (6,68 × 10^3^ + 216 × [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m^2^)\n\nFFM (femme) = (9,27 × 10^3^ × BWt, kg) / (8,78 × 10^3^ + 244 × BMI, kg/m^2^)\n\nBWt : poids corporel (body weight) ; BMI : indice de masse corporelle.",
+  "how_to_use": {
+    "why": "- Obesity impacts distribution of lipophilic medications, including some that are used in anesthesia.\n- This equation is recommended by some[guidelines](https://anaesthetists.org/Portals/0/PDFs/Guidelines%20PDFs/Guideline_perioperative_management_obese_patient_2015_final.pdf?ver=2018-07-11-163756-413&ver=2018-07-11-163756-413)for use in calculating anesthesia dosing in patients with obesity.",
+    "when": "- Peut être utile pour le calcul des posologies en fonction du poids, comme cela est nécessaire pour certains médicaments anesthésiques.\n- Peut également servir de mesure parmi d'autres pour évaluer la composition corporelle.",
+    "pearls": "- La masse corporelle maigre (Lean Body Weight, LBW) et la masse non grasse (Fat Free Mass, FFM) sont souvent utilisées de manière interchangeable dans la littérature médicale, bien qu'il existe de légères différences.\n- La LBW inclut les lipides présents dans les membranes cellulaires, tandis que la FFM cherche à exclure cette composante ([Yu et al. 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3833312/)).\n- La masse osseuse est incluse dans certaines versions des équations de la LBW."
+  },
+  "next_steps": {
+    "advice": "Il existe de nombreuses mesures similaires de la composition corporelle. Assurez-vous de bien comprendre les avantages et les limites de ce calculateur ([Janmahasatian et al. 2005](https://pubmed.ncbi.nlm.nih.gov/16176118/)).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Prédit la masse maigre.",
+  "medium_description": "Calculates predictive value de fat free mass de body poids et [body mass index (BMI)](nabda:calc.body-mass-index-bmi-body-surface-area-bsa).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids corporel",
+      "optional": false,
+      "unit": "wt_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "bmi_ffm",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Janmahasatian S, Duffull SB, Ash S, Ward LC, Byrne NM, Green B. Quantification of lean bodyweight: Clinical Pharmacokinetics. 2005;44(10):1051-1065.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16176118/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ingrande J, Lemmens HJM. Dose adjustment of anaesthetics in the morbidly obese. British Journal of Anaesthesia. 2010;105:i16-i23.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21148651/",
+      "kind": "other"
+    },
+    {
+      "text": "La Colla L, Albertin A, La Colla G, et al. Predictive performance of the ‘minto’ remifentanil pharmacokinetic parameter set in morbidly obese patients ensuing from a new method for calculating lean body mass: Clinical Pharmacokinetics. 2010;49(2):131-139.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20067337/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.body-roundness-index-bri",
+    "calc.relative-fat-mass-rfm"
+  ],
+  "source_logic_hash": "40f241715af0b8a8e4595b0cb3bc38cc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10560,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

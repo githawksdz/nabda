@@ -1,0 +1,198 @@
+{
+  "id": "calc.hiv-needle-stick-risk-assessment-stratification-protocol-rasp",
+  "slug": "hiv-needle-stick-risk-assessment-stratification-protocol-rasp",
+  "language": "en",
+  "title": "HIV Needle Stick risque évaluation Stratification Protocol (RASP)",
+  "short_title": "RASP — Piqûre d'aiguille VIH",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "VIH/SIDA"
+  ],
+  "chief_complaints": [
+    "Lésion/Traumatisme"
+  ],
+  "abbreviations": [
+    "aids",
+    "prophylaxis",
+    "pep"
+  ],
+  "dosing": false,
+  "formula": "Basic risk = 1 / (Source population ×notionvc: d69ee3d2-420d-4927-952e-077723dc86edInoculum type ×notionvc: d69ee3d2-420d-4927-952e-077723dc86edMethod of transmission)\n\nTotal risk, % = Basic risk ×notionvc: d69ee3d2-420d-4927-952e-077723dc86edVolume of inoculum\n\nWhere variables are as follows:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Source population* | Known HIV+: acute AIDS illness | 1 |\n| Known HIV+: asymptomatic HIV | 10 | |\n| Unknown HIV status: high-risk situation | 100 | |\n| Unknown HIV status: low-risk situation | 1,000 | |\n| Inoculum type | Fresh blood | 1 |\n| Body fluids at risk (e.g., semen) | 10 | |\n| Dried old blood | 100 | |\n| Low-risk secretions (e.g., tears, urine, saliva) | 1,000 | |\n| Method of transmission | Intravenous | 1 |\n| Deep intramuscular | 10 | |\n| Deep transcutaneous with visible bleeding | 100 | |\n| Superficial transcutaneous without bleeding | 200 | |\n| Mucosal contact only | 500 | |\n| Intact skin | 1,000 | |\n| Volume of inoculum | Massive (e.g., transfusion) | 100 |\n| Measurable (>1 mL) | 10 | |\n| Moderate (large-bore, hollow needle >22 g) | 5 | |\n| Small (small-bore, hollow needle <22 g) | 3 | |\n| Trace surface only (e.g., suture needle) | 1 | |\n\n*Acute AIDS illness defined as “end stage AIDS, hospitalized, high viral load”. Unknown HIV status, high-risk situation defined as “suspected HIV, IV drug user, unknown needle with high local HIV prevalence”.",
+  "how_to_use": {
+    "why": "The HIV Needle Stick Risk Assessment Protocol quantifies gives healthcare workers a more objective risk assessment of getting HIV after a needle stick.",
+    "when": "- Exposition à haut risque vs à faible risque ; aide à déterminer s'il faut ou non débuter une PEP.\n- Toujours essayer de tester le patient source pour le VIH et d'autres maladies infectieuses telles que l'hépatite C et l'hépatite B.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Si indiqué, la PEP doit être débutée conjointement avec une consultation en maladies infectieuses, ainsi qu’avec la collecte d’informations sur le patient source et son traitement médicamenteux.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Total risk | PEP recommendation |\n| --- | --- |\n| ≥1/1,000 | Definitely indicated |\n| 1/1,000-1/10,000 | Recommended but optional |\n| 1/10,001-1/100,000 | Optional but not recommended |\n| ≤1/100,000 | Not indicated |\n\nThe author also cites some everyday life risks to help provide risk perspective:\n\n| Risk of dying in the next 12 months | |\n| --- | --- |\n| Overall risk of dying in the next 12 months (all causes) | 1/3,000 |\n| Specific causes of death in the next 12 months | |\n| From a lightning strike | 1/2,000,000 |\n| In an accident in your bathtub or shower | 1/1,000,000 |\n| From a previously unknown allergy to a prescribed drug | 1/1,000,000 |\n| By choking to death on food | 1/160,000 |\n| In a bicycle accident (if you own a bicycle) | 1/130,000 |\n| From toxic shock if you use tampons | 1/100,000 |\n| By drowning | 1/50,000 |\n| From a fire | 1/50,000 |\n| As a pedestrian hit by a car or truck | 1/40,000 |\n| In a work-related accident (office workers) | 1/37,000 |\n| From a fall | 1/20,000 |\n| In a work-related accident (overall) | 1/11,000 |\n| By being murdered | 1/11,000 |\n| While jogging (average 2 h/wk) | 1/10,000 |\n| In a road accident | 1/6,000 |\n| From any kind of accident | 1/3,000 |\n| Other risks | |\n| Risk of dying on your next commercial jet flight | 1/5,000,000 |\n| Lifetime risk of being on a bridge when it collapses | 1/4,000,000 |\n| Risk of dying if you get influenza | 1/5,000 |\n| Risk of being diagnosed with cancer in the next 12 months (overall death rate 50%) | 1/3,600 |\n| Risk of being diagnosed with lung cancer in the next 12 months if you are (or were) a smoker (overall death rate about 90%) | 1/250 |\n| Risk of having a heart attack in the next 12 months if you are over 35 years of age | 1/77 |",
+  "short_description": "Quantifie le risque d’exposition et la nécessité d’une prophylaxie.",
+  "medium_description": "Quantifies HIV exposure risque par source et exposure type et need pour prophylaxis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "source",
+      "label": "Population source",
+      "tips": "Acute AIDS illness defined as “end stage AIDS, hospitalized, high viral load”\nUnknown HIV status, high-risk situation defined as “suspected HIV, IV drug user, unknown needle with high local HIV prevalence”",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "VIH+ connu : maladie aiguë définissant le sida",
+          "value": 1
+        },
+        {
+          "label": "VIH+ connu : VIH asymptomatique",
+          "value": 10
+        },
+        {
+          "label": "Statut VIH inconnu : situation à haut risque",
+          "value": 100
+        },
+        {
+          "label": "Statut VIH inconnu : situation à faible risque",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "innoculum",
+      "label": "Type d'inoculum",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Sang frais",
+          "value": 1
+        },
+        {
+          "label": "Autres liquides à haut risque (p. ex., sperme)",
+          "value": 10
+        },
+        {
+          "label": "Dried old blood",
+          "value": 100
+        },
+        {
+          "label": "Sécrétions à faible risque (p. ex., larmes, urine, salive)",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "transmission",
+      "label": "Mode de transmission",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Intraveineux",
+          "value": 1
+        },
+        {
+          "label": "Intramusculaire profond",
+          "value": 10
+        },
+        {
+          "label": "Transcutané profond avec saignement visible",
+          "value": 100
+        },
+        {
+          "label": "Transcutané superficiel sans saignement",
+          "value": 200
+        },
+        {
+          "label": "Contact muqueux uniquement",
+          "value": 500
+        },
+        {
+          "label": "Peau intacte",
+          "value": 1000
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "volume",
+      "label": "Volume d'inoculum",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Massive (p. ex., transfusion)",
+          "value": 100
+        },
+        {
+          "label": "Mesurable (>1 mL)",
+          "value": 10
+        },
+        {
+          "label": "modéré (à large calibre, aiguille creuse >22 g)",
+          "value": 5
+        },
+        {
+          "label": "Petit (de petit calibre, aiguille creuse <22 g)",
+          "value": 3
+        },
+        {
+          "label": "Trace superficielle uniquement (p. ex., aiguille de suture)",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Vertesi L. Risk Assessment Stratification Protocol (RASP) to help patients decide on the use of postexposure prophylaxis for HIV exposure. CJEM. 2003 Jan;5(1):46-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17659153",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.denver-hiv-risk-score",
+    "calc.menza-score",
+    "calc.geneva-risk-score-venous-thromboembolism-vte-prophylaxis"
+  ],
+  "source_logic_hash": "ed3c99a8d8ff11c254ca52f3c93a2e0b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 780,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar source = parseFloat(source);\nvar innoculum = parseFloat(innoculum);\nvar transmission = parseFloat(transmission);\nvar volume = parseFloat(volume);\n\nvar basic_risk = 1/(source*innoculum*transmission);\nvar total_risk = basic_risk*volume;\n\nvar risk;\nif (total_risk < 0.001) {\n    risk = '<0.001';\n}\n\nvar den = Math.round(1/total_risk * 100);\nvar round;\n\nif (den <= 1000) {\n    msg = 'Or, 1 in ' + den.toLocaleString() + '. PEP treatment definitely indicated, according to the article.';\n    mini_msg = 'PEP treatment definitely indicated.'\n    round = 1;\n}\n\nif (den > 1000 && den <= 10000) {\n    msg = 'Or, 1 in ' + den.toLocaleString() + '. PEP treatment recommended, but optional, according to the article.';\n    mini_msg = 'PEP treatment recommended.'\n    round = 2;\n}\n\nif (den > 10000 && den <= 100000) {\n    msg = 'Or, 1 in ' + den.toLocaleString() + '. PEP treatment optional but not recommended, according to the article.';\n    mini_msg = 'PEP treatment optional.'\n    round = 3;\n}\n\nif (den > 100000) {\n    msg = 'Or, less than 1 in 100,000. PEP treatment not indicated, according to the article.';\n    mini_msg = 'PEP treatment not indicated.'\n    round = 4;\n} \n\nif (total_risk == 100) {\n    risk = '>99.9';\n    msg = 'PEP treatment definitely indicated, according to the article.';\n    mini_msg = 'PEP treatment definitely indicated.'\n    \n}\n\nif (risk == '<0.001' || risk == '>99.9'){ \n    calc_output.push({\n        name: 'mini',\n        value: risk,\n        value_text: '%',\n        message: mini_msg\n    }); \n    calc_output.push({\n        name: '780_HIV Needle Stick RASP_result',\n        value: risk,\n        value_text: '%',\n        message: msg\n    }); \n} else { \n    calc_output.push({\n        name: 'mini',\n        value: total_risk.toFixed(round),\n        value_text: '%',\n        message: mini_msg\n    }); \n    calc_output.push({\n        name: '780_HIV Needle Stick RASP_result',\n        value: total_risk.toFixed(round),\n        value_text: '%',\n        message: msg\n    });  \n}",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Les Vertesi"
+  ],
+  "measurement_ids": [
+    "Volume"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "08b10b84a58d3c8faebad7873e8a1aaaed9893ab956d7150a54ce3f2a88bcd7c"
+}

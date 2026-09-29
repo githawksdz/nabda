@@ -1,0 +1,250 @@
+{
+  "id": "calc.appendicitis-inflammatory-response-air-score",
+  "slug": "appendicitis-inflammatory-response-air-score",
+  "language": "fr",
+  "title": "Score de réponse inflammatoire de l'appendicite (AIR, *Appendicitis Inflammatory Response*)",
+  "short_title": "AIR score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "pediatrie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Appendicitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Pain",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "appendicitis",
+    "appy",
+    "appendectomy",
+    "appendicectomy",
+    "air",
+    "alvarado",
+    "acute appendicitis",
+    "air score"
+  ],
+  "dosing": false,
+  "formula": "Addition of selected points:\n\n| Vomiting | No | 0 |\n| --- | --- | --- |\n| Yes | +1 | |\n| RIF pain | No | 0 |\n| Yes | +1 | |\n| Rebound tenderness | None | 0 |\n| Light | +1 | |\n| Medium | +2 | |\n| Strong | +3 | |\n| Temp ≥101.3ºF (38.5ºC) | No | 0 |\n| Yes | +1 | |\n| Polymorphonuclear leukocytes | <70% | 0 |\n| 70–84% | +1 | |\n| ≥85% | +2 | |\n| WBC count, ×10 9 /L | <10 | 0 |\n| 10.0–14.9 | +1 | |\n| ≥15 | +2 | |\n| CRP level, mg/L | <10 | 0 |\n| 10–49 | +1 | |\n| ≥50 | +2 | |",
+  "how_to_use": {
+    "why": "- Surpasse l'Alvarado Score dans une vaste cohorte de validation externe (n = 941 patients consécutifs) ([De Castro 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3368113/)) avec une AUROC de 0.96.\n\n- Peut aider à éviter le recours à l'imagerie par tomodensitométrie (TDM).",
+    "when": "À utiliser chez les patients pédiatriques ou adultes avec suspicion d'appendicite (large cohorte de validation externe incluant des âges de 2 à 96 ans).",
+    "pearls": "Nécessite la valeur de la protéine C-réactive, qui ne fait parfois pas partie du bilan d’examens de routine pour une douleur abdominale."
+  },
+  "next_steps": {
+    "advice": "Pour les patients ayant un score AIR indéterminé, le jugement clinique doit prévaloir.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| AIR Score | Risque | Recommandation |\n| --- | --- | --- |\n| 0–4 | Faible | Suivi ambulatoire (si état général inchangé) |\n| 5–8 | Indéterminé | Observation active en milieu hospitalier avec réévaluations répétées, imagerie ou laparoscopie diagnostique, selon les pratiques locales |\n| 9–12 | Élevé | Exploration chirurgicale |",
+  "short_description": "Diagnostique une appendicite.",
+  "medium_description": "Diagnoses appendicitis basé sur clinique et laboratoire findings.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "Vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain",
+      "label": "RIFpain",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rebound",
+      "label": "Douleur à la décompression",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Light",
+          "value": 1
+        },
+        {
+          "label": "Medium",
+          "value": 2
+        },
+        {
+          "label": "Strong",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "body",
+      "label": "Température ≥ 101.3 ºF (38.5 ºC)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "poly",
+      "label": "Leucocytes polynucléaires",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 70%",
+          "value": 0
+        },
+        {
+          "label": "70-84%",
+          "value": 1
+        },
+        {
+          "label": "≥85%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wbc",
+      "label": "Numération des globules blancs, ×10⁹/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 10",
+          "value": 0
+        },
+        {
+          "label": "10.0–14.9",
+          "value": 1
+        },
+        {
+          "label": "≥15",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "Taux de CRP, mg/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 10",
+          "value": 0
+        },
+        {
+          "label": "10–49",
+          "value": 1
+        },
+        {
+          "label": "≥50",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Andersson M, Andersson RE. The appendicitis inflammatory response score: a tool for the diagnosis of acute appendicitis that outperforms the Alvarado score. World J Surg. 2008;32(8):1843-9.",
+      "href": "https://link.springer.com/article/10.1007/s00268-008-9649-y",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ohle R, O'reilly F, O'brien KK, Fahey T, Dimitrov BD. The Alvarado score for predicting acute appendicitis: a systematic review. BMC Med. 2011;9:139.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3299622/ ",
+      "kind": "other"
+    },
+    {
+      "text": "De castro SM, Ünlü C, Steller EP, Van wagensveld BA, Vrouenraets BC. Evaluation of the appendicitis inflammatory response score for patients with acute appendicitis. World J Surg. 2012;36(7):1540-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3368113/ ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Andersson M, Kolodziej B, Andersson RE. Randomized clinical trial of Appendicitis Inflammatory Response score-based management of patients with suspected appendicitis. Br J Surg. 2017;104(11):1451-1461.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28730753",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ripasa-score-acute-appendicitis",
+    "calc.pediatric-appendicitis-score-pas",
+    "calc.alvarado-score-acute-appendicitis"
+  ],
+  "source_logic_hash": "91287063ab0e2dbc056bfd7198134c32",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3984,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

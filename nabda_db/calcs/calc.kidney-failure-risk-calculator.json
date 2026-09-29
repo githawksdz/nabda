@@ -1,0 +1,195 @@
+{
+  "id": "calc.kidney-failure-risk-calculator",
+  "slug": "kidney-failure-risk-calculator",
+  "language": "en",
+  "title": "Kidney défaillance risque calculateur",
+  "short_title": "Kidney défaillance risque calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "nephrologie"
+  ],
+  "diseases": [
+    "Maladie rénale chronique",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Dysuria",
+    "Œdème des extrémités",
+    "Dyspnée",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "CKD",
+    "chronic kidney disease",
+    "kidney failure risk",
+    "renal failure"
+  ],
+  "dosing": false,
+  "formula": "The probability of kidney failure at 5 years is calculated by the following formula:\n\n**North America**\n\nProbability = 1 - 0.9096^x^\n\n**Non-North America**\n\nProbability = 1 - 0.9245^x^\n\nWhere x = exp(-0.1992 × (age/10 - 7.036) + 0.1602 × (male - 0.5642) - 0.4919 × (eGFR/5 - 7.222) + 0.3364 × (log(ACR)- 5.137) - 0.3441 × (albumin - 3.997) + 0.2604 × (phosphorous - 3.916) - 0.07354 × (bicarbonate - 25.57) - 0.2228 × (calcium - 9.355))",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Élaboré et validé initialement à partir de données de patients suivis en consultation de néphrologie ; sa validité est probablement limitée chez les patients en situation aiguë."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les patients à faible risque peuvent être mieux pris en charge par un médecin de soins primaires, tandis que les patients à risque plus élevé bénéficieraient probablement d’une prise en charge par un néphrologue."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Kidney défaillance risque dans CKD.",
+  "medium_description": "Predicts progression pour kidney défaillance chez les patients avec maladie rénale chronique (CKD).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age-cp-aki",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "region",
+      "label": "Region",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Amérique du Nord",
+          "value": 0
+        },
+        {
+          "label": "Hors Amérique du Nord",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "EGFR",
+      "optional": false,
+      "unit": "egfr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "acr",
+      "label": "Urine albumin pour creatinine ratio",
+      "optional": false,
+      "unit": "uacr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "p",
+      "label": "Phosphorous",
+      "optional": false,
+      "unit": "phosphorous",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bc",
+      "label": "Bicarbonate",
+      "optional": false,
+      "unit": "bicarb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ca",
+      "label": "Calcium",
+      "optional": false,
+      "unit": "ca",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Tangri N, Stevens LA, Griffith J, et al. A predictive model for progression of chronic kidney disease to kidney failure. JAMA. 2011;305(15):1553-9.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/897102",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tangri N, Grams ME, Levey AS, et al. Multinational Assessment of Accuracy of Equations for Predicting Risk of Kidney Failure: A Meta-analysis. JAMA. 2016;315(2):164-74.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26757465",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bun-creatinine-ratio",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.international-iga-nephropathy-prediction-tool"
+  ],
+  "source_logic_hash": "2a7a8539343e4a3e0566d46caf6b3993",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10045,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

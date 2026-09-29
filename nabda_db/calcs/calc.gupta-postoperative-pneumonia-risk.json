@@ -1,0 +1,319 @@
+{
+  "id": "calc.gupta-postoperative-pneumonia-risk",
+  "slug": "gupta-postoperative-pneumonia-risk",
+  "language": "en",
+  "title": "Risque de pneumonie postopératoire (Gupta)",
+  "short_title": "Risque de pneumonie postopératoire (score de Gupta)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "general",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Pneumonia"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pneumonia",
+    "post-operative risk",
+    "postop risk",
+    "postoperative risk",
+    "postop pneumonia",
+    "postoperative pneumonia",
+    "post-operative pneumonia",
+    "gupta"
+  ],
+  "dosing": false,
+  "formula": "Postoperative pneumonia risk, % = e^x^/ (1 + e^x^)\n\nWhere x = −2.8977 + sum of the values of the selected variables.\n\n| Variable | Options | Value |\n| --- | --- | --- |\n| Age | 0.0144 (per year) | |\n| COPD* | No | -0.4553 |\n| Yes | 0 | |\n| Functional status | Independent | 0 |\n| Partially dependent | 0.7653 | |\n| Totally dependent | 0.9400 | |\n| [ASA class](nabda:calc.asa-physical-status-asa-classification\\) | 1: normal healthy patient | -3.0225 |\n| 2: mild systemic disease | -1.6057 | |\n| 3: severe systemic disease | -0.4915 | |\n| 4: severe systemic disease that is a constant threat to life** | 0.0123 | |\n| 5: moribund, not expected to survive without surgery | 0 | |\n| Sepsis | None | -0.7641 |\n| Preoperative systemic inflammatory response syndrome | 0 | |\n| Preoperative sepsis | -0.0842 | |\n| Preoperative septic shock | 0.1048 | |\n| Smoking within last year | No | -0.4306 |\n| Yes | 0 | |\n| Type of procedure | Anorectal | -0.8470 |\n| Aortic | 0.7178 | |\n| Bariatric | -0.6282 | |\n| Brain | 0.6841 | |\n| Breast | -2.3318 | |\n| Cardiac | 0.1382 | |\n| ENT (except thyroid/parathyroid) | -0.3665 | |\n| Foregut or hepatopancreatobiliary | 1.0660 | |\n| Gallbladder, appendix, adrenals, or spleen | -0.3951 | |\n| Hernia (ventral, inguinal, femoral) | 0 | |\n| Intestinal | 0.6169 | |\n| Neck | -0.0872 | |\n| Obstetric/gynecologic | -0.4101 | |\n| Orthopedic | -0.5415 | |\n| Other abdomen | 0.4021 | |\n| Peripheral vascular | -0.4519 | |\n| Skin | -0.5075 | |\n| Spine | -0.5672 | |\n| Non-esophageal thoracic | 0.8901 | |\n| Vein | -1.4760 | |\n| Urology | 0.1076 | |\n\n*COPD with forced expiratory volume in the first second <75% or causing functional disability or hospitalization.\n\n**i.e., patient could die acutely without intervention.",
+  "how_to_use": {
+    "why": "Aide à identifier les patients présentant un risque élevé ou faible de pneumonie, ce qui peut influencer la préparation préopératoire, les conseils aux patients et les stratégies de soins postopératoires.",
+    "when": "À utiliser chez les patients adultes subissant une intervention chirurgicale pour évaluer le risque de développer une pneumonie postopératoire.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- For patients identified at high risk, consider pursuing briefer procedures (where possible), enhanced prophylactic measures, closer monitoring, and possibly extending hospital stays or ICU monitoring.\n- Inform patients about their individual risk factors and the importance of adhering to preoperative and postoperative instructions to mitigate pneumonia risk.\n- As it is a preoperative tool, it may not account for intraoperative changes or postoperative complications that could affect the pneumonia risk.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de pneumonie postopératoire.",
+  "medium_description": "Prédit le risque de pneumonie après chirurgie.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "copd",
+      "label": "COPD",
+      "tips": "BPCO entraînant une incapacité fonctionnelle ou une hospitalisation, ou VEMS (FEV1) < 75 %",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": -0.46
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "status",
+      "label": "Statut fonctionnel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Independent",
+          "value": 0
+        },
+        {
+          "label": "Partiellement dépendant",
+          "value": 0.77
+        },
+        {
+          "label": "Totalement dépendant",
+          "value": 0.94
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "class1",
+      "label": "[Classe ASA](nabda:calc.asa-physical-status-asa-classification)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1 : patient normal en bonne santé",
+          "value": -3.02
+        },
+        {
+          "label": "2 : maladie systémique légère",
+          "value": -1.61
+        },
+        {
+          "label": "3 : maladie systémique sévère",
+          "value": -0.49
+        },
+        {
+          "label": "4: severe systemic maladie that is constant threat pour life (i.e., patient could die acutely sans intervention)",
+          "value": 0.01
+        },
+        {
+          "label": "5: moribund, not expected pour survive sans surgery",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sepsis",
+      "label": "Sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": -0.76
+        },
+        {
+          "label": "Syndrome de réponse inflammatoire systémique préopératoire",
+          "value": 0
+        },
+        {
+          "label": "Sepsis préopératoire",
+          "value": -0.08
+        },
+        {
+          "label": "Choc septique préopératoire",
+          "value": 0.1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smoking",
+      "label": "Tabagisme dans l'année écoulée",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": -0.43
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "procedure",
+      "label": "Type de procédure",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Anorectal",
+          "value": -0.85
+        },
+        {
+          "label": "Aortic",
+          "value": 0.72
+        },
+        {
+          "label": "Bariatric",
+          "value": -0.63
+        },
+        {
+          "label": "Brain",
+          "value": 0.68
+        },
+        {
+          "label": "Breast",
+          "value": -2.33
+        },
+        {
+          "label": "Cardiac",
+          "value": 0.14
+        },
+        {
+          "label": "ORL (sauf thyroïde/parathyroïde)",
+          "value": -0.37
+        },
+        {
+          "label": "Intestin antérieur (œsophage, estomac) ou hépato-pancréatobiliaire",
+          "value": 1.07
+        },
+        {
+          "label": "Vésicule biliaire, appendice, surrénales ou rate",
+          "value": -0.4
+        },
+        {
+          "label": "Hernie (ventrale, inguinale, crurale)",
+          "value": 0
+        },
+        {
+          "label": "Intestinal",
+          "value": 0.62
+        },
+        {
+          "label": "Cou (thyroïde/parathyroïdes)",
+          "value": -0.09
+        },
+        {
+          "label": "Obstetric/gynecologic",
+          "value": -0.41
+        },
+        {
+          "label": "Extrémité orthopédique et non vasculaire",
+          "value": -0.54
+        },
+        {
+          "label": "Other abdominal",
+          "value": 0.4
+        },
+        {
+          "label": "Vasculaire périphérique",
+          "value": -0.45
+        },
+        {
+          "label": "Skin",
+          "value": -0.51
+        },
+        {
+          "label": "Spine",
+          "value": -0.57
+        },
+        {
+          "label": "Thoracique non œsophagien (poumon, médiastin, etc.)",
+          "value": 0.89
+        },
+        {
+          "label": "Vein",
+          "value": -1.48
+        },
+        {
+          "label": "Urology",
+          "value": 0.11
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gupta H, Gupta PK, Schuller D, et al. Development and validation of a risk calculator for predicting postoperative pneumonia. Mayo Clin Proc. 2013;88(11):1241-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24182703",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gupta H, Gupta PK, Schuller D, et al. Development and validation of a risk calculator for predicting postoperative pneumonia. Mayo Clin Proc. 2013;88(11):1241-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24182703",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gupta-postoperative-respiratory-failure-risk",
+    "calc.novel-pneumonia-risk-score-prs",
+    "calc.ariscat-score-postoperative-pulmonary-complications",
+    "calc.asa-physical-status-asa-classification"
+  ],
+  "source_logic_hash": "e5774f881caef681db1e16bfa3dd5176",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA class"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10199,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

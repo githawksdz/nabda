@@ -1,0 +1,394 @@
+{
+  "id": "calc.chip-ct-head-injury-patients-prediction-rule",
+  "slug": "chip-ct-head-injury-patients-prediction-rule",
+  "language": "en",
+  "title": "Règle de prédiction CHIP (CT dans Head lésion patients — tomodensitométrie chez les patients présentant un traumatisme crânien)",
+  "short_title": "Règle de prédiction CHIP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Traumatisme"
+  ],
+  "chief_complaints": [
+    "Vertiges",
+    "Céphalée",
+    "Traumatisme crânien",
+    "Lésion/Traumatisme"
+  ],
+  "abbreviations": [
+    "head trauma",
+    "trauma",
+    "head injury",
+    "CT head",
+    "trauma imaging",
+    "intracranial hemorrhage",
+    "intracranial bleed"
+  ],
+  "dosing": false,
+  "formula": "If ≥1 major criterion OR ≥2 minor criteria are present, CT head is required.\n\n**Major criteria:**\n\n- Pedestrian or cyclist versus vehicle.\n- Ejected from vehicle.\n- Vomiting.\n- Post-traumatic amnesia ≥4 hours.\n- Clinical signs of skull fracture*.\n- GCS <15.\n- GCS deterioration ≥2 points (1 hour after presentation).\n- Use of anticoagulant therapy.\n- Post-traumatic seizure.\n- Age ≥60 years.\n\n**Minor criteria:**\n\n- Fall from any elevation.\n- Persistent anterograde amnesia**.\n- Post-traumatic amnesia of 2 to <4 hours.\n- Contusion of the skull.\n- Neurologic deficit.\n- Loss of consciousness.\n- GCS deterioration of 1 point (1 hour after presentation)\n- Age 40–60 years.\n\n*Any injury that suggests a skull fracture, such as palpable discontinuity of the skull, leakage of cerebrospinal fluid, “raccoon eye” bruising, and bleeding from the ear.\n\n**Persistent anterograde amnesia is any deficit of short-term memory.",
+  "how_to_use": {
+    "why": "- Fournit des critères structurés et validés pour identifier les patients à risque de pathologie intracrânienne significative.\n- Aide à mettre en balance les risques d’une irradiation ionisante potentiellement inutile et la nécessité d’un diagnostic rapide.\n- Contrairement à des outils similaires, ces critères ont été développés pour des patients présentant un traumatisme crânien léger, **avec ou sans perte de connaissance.**",
+    "when": "À utiliser pour évaluer si une TDM cérébrale est indiquée afin de détecter des lésions intracrâniennes après un traumatisme crânien léger.",
+    "pearls": "- Cet outil est fondé sur l’étude de dérivation originale. Une [mise à jour 2022](https://www.sciencedirect.com/science/article/pii/S0020138322004570) offre une meilleure sensibilité pour détecter d’éventuelles lésions neurochirurgicales sans augmenter les taux de TDM.\n- Non destiné aux populations pédiatriques de moins de 16 ans ; envisager d’utiliser un outil spécifique à la pédiatrie, comme [PECARN](nabda:calc.pecarn-pediatric-head-injury-trauma-algorithm) .\n- Repose sur la capacité du clinicien à détecter des signes cliniques subtils, tels que les fractures du crâne ou les hématomes du cuir chevelu."
+  },
+  "next_steps": {
+    "advice": "Cette règle de prédiction doit soutenir, et non remplacer, le jugement clinique.",
+    "critical_actions": "Si la suspicion clinique de pathologie intracrânienne est élevée, l’imagerie par tomodensitométrie (TDM) est indiquée indépendamment des résultats de l’outil.",
+    "management": "- **Risque faible :**\n\n - Envisager une surveillance sans imagerie immédiate si le patient reste cliniquement stable.\n - Informer le patient et ses aidants des signes d’alerte nécessitant une réévaluation.\n- **Risque non faible :** Procéder à une TDM cérébrale en urgence pour éliminer une pathologie intracrânienne menaçant le pronostic vital."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Predicts need pour CT dans minor head traumatisme.",
+  "medium_description": "Predicts intracranial traumatic CT findings chez les patients avec minor head traumatisme.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40 ans",
+          "value": 0
+        },
+        {
+          "label": "40-60 ans",
+          "value": 1
+        },
+        {
+          "label": "≥ 60 ans",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) <15",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcsd",
+      "label": "Aggravation du GCS à 1 heure après l’admission",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "1 point",
+          "value": 1
+        },
+        {
+          "label": "≥2 points",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "skull",
+      "label": "Lésion crânienne",
+      "tips": "Contusion du crâne = solution de continuité cutanée cliniquement significative ou ecchymoses étendues",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Contusion du crâne",
+          "value": 1
+        },
+        {
+          "label": "Any lésion suggesting skull fracture, e.g. palpable discontinuity de skull, CSF leakage, raccoon eyes, saignement de ear",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "amnesia",
+      "label": "Amnésie post-traumatique",
+      "tips": "Le patient ne peut pas se remémorer l’intégralité de l’événement traumatique.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "2 pour <4 h",
+          "value": 1
+        },
+        {
+          "label": "≥ 4 h",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ped",
+      "label": "Piéton ou cycliste contre véhicule",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eject",
+      "label": "Éjecté du véhicule",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "Vomissements",
+      "tips": "Défini comme un épisode de vomissements survenu après l’événement traumatique.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anti",
+      "label": "Utilisation des anticoagulants",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seiz",
+      "label": "Crise épileptique post-traumatique",
+      "tips": "Crise convulsive observée ou suspectée après le traumatisme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fall",
+      "label": "Chute de toute hauteur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "per",
+      "label": "Amnésie antérograde persistante",
+      "tips": "Tout déficit de la mémoire à court terme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neuro",
+      "label": "Déficit neurologique",
+      "tips": "Toute anomalie à l'examen neurologique clinique de routine indiquant une lésion cérébrale focale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loc",
+      "label": "Perte de connaissance",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Smits M, Dippel DW, Steyerberg EW, et al. Predicting intracranial traumatic findings on computed tomography in patients with minor head injury: the CHIP prediction rule. Ann Intern Med. 2007;146(6):397-405. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17371884 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Foks KA, Van den brand CL, Lingsma HF, et al. External validation of computed tomography decision rules for minor head injury: prospective, multicentre cohort study in the Netherlands. BMJ. 2018;362:k3527.",
+      "href": "https://www.bmj.com/content/362/bmj.k3527",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chalice-childrens-head-injury-algorithm-prediction-important-clinical-events-rule",
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule",
+    "calc.pecarn-pediatric-head-injury-trauma-algorithm"
+  ],
+  "source_logic_hash": "49030bab442f17f2122fa57988b71ec7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pecarn-pediatric-head-injury-trauma-algorithm",
+      "text": "PECARN"
+    },
+    {
+      "type": "calc",
+      "id": "calc.pecarn-pediatric-head-injury-trauma-algorithm",
+      "text": "PECARN"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3952,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n\nvar ped = parseFloat(ped);\nvar eject = parseFloat(eject);\nvar vomit = parseFloat(vomit);\nvar skull = parseFloat(skull);\nvar gcs = parseFloat(gcs);\nvar gcsd = parseFloat(gcsd);\nvar anti = parseFloat(anti);\nvar seiz = parseFloat(seiz);\nvar age = parseFloat(age);\nvar fall = parseFloat(fall);\nvar per = parseFloat(per);\nvar amnesia = parseFloat(amnesia);\nvar neuro = parseFloat(neuro);\nvar loc = parseFloat(loc);\n\nvar u = ped + eject + vomit + skull + gcs + gcsd + anti + seiz + age + fall + per + amnesia + neuro + loc\n\n\n//interpretation\nvar risk = 'Low';\nvar msg = 'CT not necessary.'\nvar sens = ' 100% sensitive for neurosurgical intervention, 96% sensitive for intracranial traumatic CT findings.'\nif(u >= 2){\n\trisk = 'Not low';\n\tmsg = 'Consider CT.'\n    sens = ''\n}\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});\ncalc_output.push({\n    name: '3952_CHIP Prediction Rule_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: msg + sens\n});",
+  "before_use": null,
+  "instructions": "- À utiliser chez les patients âgés d'au moins 16 ans se présentant dans les 24 heures suivant un traumatisme crânien fermé et un [GCS](nabda:calc.glasgow-coma-scale-score-gcs) 13-15.\n- Remarque : nous recommandons d'utiliser la [Canadian CT Head Rule](nabda:calc.canadian-ct-head-injury-trauma-rule) plutôt que d'autres règles de décision pour les traumatismes crâniens de l'adulte, car elle est la plus largement validée.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Marion Smits"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "cb383b5cf0ab2d35829bf4432063178ccd6f7abb3c17fd037d9bf28e5a6cc746"
+}

@@ -1,0 +1,117 @@
+{
+  "id": "calc.prognostic-index-cancer-outcomes",
+  "slug": "prognostic-index-cancer-outcomes",
+  "language": "fr",
+  "title": "Prognostic index pour cancer Outcomes",
+  "short_title": "Prognostic index pour cancer",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "cancer",
+    "prog",
+    "wbc",
+    "crp"
+  ],
+  "dosing": false,
+  "formula": "Sélection des niveaux appropriés de biomarqueurs sériques.",
+  "how_to_use": {
+    "why": "De multiples études suggèrent un pronostic significativement plus défavorable chez les patients atteints de divers types de cancer.",
+    "when": "Patients atteints d'un cancer connu.",
+    "pearls": "- L'indice pronostique (Prognostic Index, PI) a été évalué dans de nombreuses cohortes de cancer différentes et suggère un pronostic s'aggravant de façon progressive avec l'augmentation du score.\n- Selon la sélection des patients, le stade, le type de cancer et d'autres facteurs, les chiffres de survie obtenus varient considérablement."
+  },
+  "next_steps": {
+    "advice": "L'indice pronostique (PI) aide à stratifier les groupes pronostiques et peut constituer un ajout pertinent aux évaluations multifactorielles.",
+    "critical_actions": "Le PI nécessite des valeurs de laboratoire sériques et peut être pertinent lorsqu'il est dosé avant ou après le diagnostic de cancer.",
+    "management": "Nous ne connaissons pas d'algorithmes de prise en charge validés utilisant le PI."
+  },
+  "evidence": "![](https://cdn-web-img.mdcalc.com/prognostic-index-cancer.png)",
+  "more_info": "",
+  "short_description": "Predicts cancer mortalité.",
+  "medium_description": "Predicts cancer mortalité de serum biomarkers.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "CRP",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "CRP ≤10 mg/L",
+          "value": 0
+        },
+        {
+          "label": "CRP >10 mg/L",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "WBC ≤11 x 10⁹/L",
+          "value": 0
+        },
+        {
+          "label": "WBC >11 x 10⁹/L",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kasymjanova G, MacDonald N, Agulnik JS, et al. The predictive value of pre-treatment inflammatory markers in advanced non-small-cell lung cancer. Current Oncology. 2010;17(4):52-58.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2913830/",
+      "kind": "pubmed"
+    },
+    {
+      "text": " Proctor MJ, et al. A comparison of inflammation-based prognostic scores in patients with cancer. A Glasgow Inflammation Outcome Study. Eur J Cancer. 2011 Nov;47(17):2633-41. doi: 10.1016/j.ejca.2011.03.028. Epub 2011 Jul 1.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21724383",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-prognostic-score-gps-cancer-outcomes",
+    "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+    "calc.karnofsky-performance-status-scale"
+  ],
+  "source_logic_hash": "3b3f6667500ae2134fc004311beafb76",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3313,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,411 @@
+{
+  "id": "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+  "slug": "thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+  "language": "en",
+  "title": "Thrombosis risque prédiction Following Cast Immobilization (TRiP(cast)) score",
+  "short_title": "Score TRiP(cast)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "orthopedie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Traumatisme",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur thoracique",
+    "Toux",
+    "Vertiges",
+    "Douleur des extrémités",
+    "Engourdissement",
+    "Œdème périphérique",
+    "Dyspnée",
+    "Gonflement"
+  ],
+  "abbreviations": [
+    "Thrombosis Risk Prediction Following Cast Immobilization (TRiP(cast)) Score",
+    "TRiP(cast) Score",
+    "trip cast score",
+    "tripcast score",
+    "orthopedic trauma",
+    "lower limb orthopedic trauma",
+    "VTE risk",
+    "venous thromboembolism risk",
+    "cast immobilization",
+    "lower limb trauma"
+  ],
+  "dosing": false,
+  "formula": "The TRiP(cast) Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Trauma 1 | Low-risk | 1 |\n| Intermediate-risk | 2 | |\n| High-risk | 3 | |\n| Immobilization | Other cast or bracing with plantar support | 0 |\n| Foot cast (ankle free) or any semi-rigid without plantar support | 1 | |\n| Lower-leg cast | 2 | |\n| Upper-leg cast | 3 | |\n| Age, years | <35 years | 0 |\n| ≥35 and <55 years | 1 | |\n| ≥55 and <75 years | 2 | |\n| ≥75 years | 3 | |\n| Sex | Female | 0 |\n| Male | 1 | |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) , kg/m 2 | <25 kg/m 2 | 0 |\n| ≥25 and <35 kg/m 2 | 1 | |\n| ≥35 kg/m 2 | 2 | |\n| Family history of VTE (first-degree relative) | No | 0 |\n| Yes | 2 | |\n| Personal history of VTE or known major thrombophilia | No | 0 |\n| Yes | 4 | |\n| Current use of oral contraceptives or estrogenic hormone therapy | No | 0 |\n| Yes | 4 | |\n| Cancer diagnosis within the past 5 years | No | 0 |\n| Yes | 3 | |\n| Pregnancy or puerperium | No | 0 |\n| Yes | 3 | |\n| Other immobilization within the past 3 months 2 | No | 0 |\n| Yes | 2 | |\n| Surgery within the past 3 months | No | 0 |\n| Yes | 2 | |\n| Comorbidity 3 | No | 0 |\n| Yes | 1 | |\n| Chronic venous insufficiency (varicose veins) | No | 0 |\n| Yes | 1 | |\n\n^1^Choose the most severe trauma.\n\n**Low-risk trauma**\n\n- Single malleolar ankle fracture.\n- Patellar dislocation.\n- (Meta)Tarsal bone(s) or forefoot fracture.\n- Non-severe knee sprain or ankle sprain (grade 1 or 2).\n- Significant muscle injury.\n\n**Intermediate-risk trauma**\n\n- Bi or trimalleolar ankle fracture.\n- Patellar fracture.\n- Ankle dislocation, Lisfranc injury.\n- Severe knee sprain (with edema/hemarthrosis).\n- Severe ankle sprain (grade 3).\n\n**High-risk trauma**\n\n- Fibula and/or tibia shaft fracture.\n- Tibial plateau fracture.\n- Achilles tendon rupture.\n\n^2^Hospital admission, bedridden or flight >6 hours, and/or lower limb paralysis.\n\n^3^Heart failure, rheumatoid arthritis, chronic kidney disease, COPD, and/or IBD.\n\n**3-month risk of VTE, %** = [e^x^/(1+ e^x^)]*100,\n\nwhere **x** = -6.677015 + 0.3332203*TRiP(cast) Score",
+  "how_to_use": {
+    "why": "- While other models to predict VTE risk after lower limb trauma and immobilization exist, most are based on expert opinion or retrospective analysis.\n- This score was derived with retrospective data and validated prospectively.\n- Shown to decrease the rate of anticoagulation prescribing by 50% without showing an increase in the VTE rate in study population.",
+    "when": "- Utiliser cet outil pour déterminer le risque à 3 mois de VTE chez les patients adultes présentant un traumatisme des membres inférieurs nécessitant une immobilisation.\n- Ne pas utiliser chez les patients pédiatriques ou chez ceux devant subir une chirurgie élective programmée.",
+    "pearls": "- A TRiP(cast) <7 = very low VTE risk (~0.2–0.9%) at 3 months.\n- High NPV (~99%); useful to consider withholding prophylaxis in low-risk patients.\n- Integrates trauma severity, immobilization, patient factors into one score.\n- A high score should not equal automatic anticoagulation; even ≥7 has low absolute event rates (~2–3%). Bleeding risk, patient preference, and logistics should all be considered."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Un score ≥7 suggère que le patient présente un risque élevé de TEV.\n- Un traitement anticoagulant peut être envisagé chez ce patient, après s'être assuré qu'une discussion adéquate sur les risques et les bénéfices a été menée."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| TRiP(cast) Score | Risk of VTE |\n| --- | --- |\n| <7 | Low |\n| ≥7 | High |",
+  "short_description": "Risque de VTE avec traumatisme des membres inférieurs.",
+  "medium_description": "Predicts risque de VTE chez les patients avec lower limb traumatisme.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "trauma",
+      "label": "Traumatisme",
+      "tips": "Choose the most severe trauma.\n **Low-risk trauma**\n\nSingle malleolar ankle fracture.Patellar dislocation.(Meta)Tarsal bone(s) or forefoot fracture.Non-severe knee sprain or ankle sprain (grade 1 or 2).Significant muscle injury. **Intermediate-risk trauma** Bi or trimalleolar ankle fracture.Patellar fracture.Ankle dislocation, Lisfranc injury.Severe knee sprain (with edema/hemarthrosis).Severe ankle sprain (grade 3). **High-risk trauma** Fibula and/or tibia shaft fracture.Tibial plateau fracture.Achilles tendon rupture.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "faible risque",
+          "value": 1
+        },
+        {
+          "label": "risque intermédiaire",
+          "value": 2
+        },
+        {
+          "label": "élevé-risque",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "immobilization",
+      "label": "Immobilisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Autre plâtre ou orthèse avec support plantaire",
+          "value": 0
+        },
+        {
+          "label": "Foot cast (ankle free) ou any semi-rigid sans plantar support",
+          "value": 1
+        },
+        {
+          "label": "Plâtre de jambe",
+          "value": 2
+        },
+        {
+          "label": "Plâtre de la cuisse",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 35 ans",
+          "value": 0
+        },
+        {
+          "label": "≥35 et <55 ans",
+          "value": 1
+        },
+        {
+          "label": "≥55 et <75 ans",
+          "value": 2
+        },
+        {
+          "label": "≥ 75 ans",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 25 kg/m²",
+          "value": 0
+        },
+        {
+          "label": "≥25 et <35 kg/m²",
+          "value": 1
+        },
+        {
+          "label": "≥35 kg/m²",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fam_hx",
+      "label": "Antécéd",
+      "tips": "(parent au premier degré)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hx",
+      "label": "Antécédents personnels de MTEV ou thrombophilie majeure connue",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oc",
+      "label": "Utilisation actuelle de contraceptifs oraux ou d'une hormonothérapie estrogénique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Diagnostic de cancer au cours des 5 dernières années",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "preg",
+      "label": "Grossesse ou post-partum",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "other",
+      "label": "Autre immobilisation au cours des 3 derniers mois",
+      "tips": "Hospital admission, bedridden or flight >6 hours, and/or lower limb paralysis.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "surgery",
+      "label": "Chirurgie au cours des 3 derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "como",
+      "label": "Comorbidité",
+      "tips": "Heart failure, rheumatoid arthritis, chronic kidney disease, COPD, and/or IBD.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "veins",
+      "label": "Insuffisance veineuse chronique",
+      "tips": "(varices)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nemeth B, Douillet D, le Cessie S, et al. Clinical risk assessment model to predict venous thromboembolism risk after immobilization for lower-limb trauma. EClinicalMedicine. 2020;20:100270.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32300734/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Douillet D, Riou J, Thoma M, et al. Thromboembolic risk stratification by TRiP(Cast) score to rationalise thromboprophylaxis in patients with lower leg trauma requiring immobilisation: a study protocol of the casting stepped-wedge cluster randomised trial. BMJ Open. 2021;11(6):e045905.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34183341/",
+      "kind": "other"
+    },
+    {
+      "text": "Halloran TPO, Bassa BA, Nemeth B, et al. The (T) thrombosis (I) in patients with (L) lower (L) limb (I) injuries (R) requiring (I) immobilisation (Tilliri) study. J Thromb Haemost. 2025;23(3):947-956. doi:10.1016/j.jtha.2024.11.010",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39617185/",
+      "kind": "other"
+    },
+    {
+      "text": "Douillet D, Penaloza A, Viglino D, et al. Targeted prophylactic anticoagulation based on the TRiP(Cast) score in patients with lower limb immobilisation: a multicentre, stepped wedge, randomised implementation trial. Lancet. 2024;403(10431):1051-1060.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38368901/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.improve-bleeding-risk-score",
+    "calc.vte-bleed-score",
+    "calc.improvedd-risk-score-venous-thromboembolism-vte",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "20aebf64a18324b81ae91f594a6e16a6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10516,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar trauma = parseFloat(trauma);\nvar immobilization = parseFloat(immobilization);\nvar age = parseFloat(age);\nvar sex = parseFloat(sex);\nvar bmi = parseFloat(bmi);\nvar fam_hx = parseFloat(fam_hx);\nvar hx = parseFloat(hx);\nvar oc = parseFloat(oc);\nvar cancer = parseFloat(cancer);\nvar preg = parseFloat(preg);\nvar other = parseFloat(other);\nvar surgery = parseFloat(surgery);\nvar como = parseFloat(como);\nvar veins = parseFloat(veins);\n\nvar score = trauma + immobilization + age + sex + bmi + fam_hx + hx + oc + cancer + preg + other + surgery + como + veins;\n\nvar risk;\nif (score < 7) {\n    risk = 'Low';\n} else {\n    risk = 'High';\n}\n\nvar x = -6.677015 + 0.3332203*score;\nvar risk_perc = (Math.exp(x)/(1 + Math.exp(x)))*100;\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' (' + risk_perc.toFixed(1) + '%) 3-month risk of VTE'\n});\ncalc_output.push({\n    name: '10516_TRiP(cast) Score_result (score)',\n    value: score,\n    value_text: 'points',\n    message: 'TRiP(cast) Score'\n});\ncalc_output.push({\n    name: '10516_TRiP(cast) Score_result (risk)',\n    value: risk_perc.toFixed(1),\n    value_text: '%',\n    message: risk + ' 3-month risk of VTE'\n});",
+  "before_use": null,
+  "instructions": "Utilisez cet outil pour déterminer le risque à 3 mois de VTE chez les patients adultes présentant un traumatisme des membres inférieurs nécessitant une immobilisation.",
+  "contributor_ids": [
+    "eric-steinberg"
+  ],
+  "creator_names": [
+    "Dr. Banne Nemeth",
+    "Dr. Delphine Douillet"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "80248c17eb171015cc3f18bab72a0558a08005c9f8f0be824e8fe448543b42c1"
+}

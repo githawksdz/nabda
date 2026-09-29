@@ -1,0 +1,103 @@
+{
+  "id": "calc.pediatric-ins-outs",
+  "slug": "pediatric-ins-outs",
+  "language": "fr",
+  "title": "Pédiatrique Ins et Outs",
+  "short_title": "Pédiatrique Ins et Outs",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "nephrologie",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Dehydration",
+    "Gastroenteritis",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "peds"
+  ],
+  "dosing": false,
+  "formula": "Souvent dans les services de pédiatrie hospitalière, les entrées sont consignées en mL/kg et les sorties en mL/kg/heure.",
+  "how_to_use": {
+    "why": "",
+    "when": "- Effectuer la visite de routine des patients pédiatriques et vérifier les entrées/sorties.\n- Estimer le débit urinaire minimal approprié chez les enfants déshydratés.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Le débit urinaire minimal acceptable chez les patients pédiatriques est généralement fixé à 1 mL/kg/h.\n- Les pertes volumiques (comme les vomissements, la diarrhée) doivent être compensées ; les patients pédiatriques sont très prédisposés à la déshydratation en raison de leur faible volémie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "État hydrique.",
+  "medium_description": "Calculates fluid status dans volume per poids & volume per poids per time, pour pediatrics.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "volume",
+      "label": "Volume pour be calculated",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hours",
+      "label": "Période de temps",
+      "optional": false,
+      "default": 24,
+      "unit": "time",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Meyers RS. Pediatric Fluid and Electrolyte Therapy. The Journal of Pediatric Pharmacology and Therapeutics : JPPT. 2009;14(4):204-211. doi:10.5863/1551-6776-14.4.204.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3460795/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maintenance-fluids-calculations",
+    "calc.pediatric-sirs-sepsis-septic-shock-criteria",
+    "calc.pediatric-endotracheal-tube-ett-size"
+  ],
+  "source_logic_hash": "c52e97e2e2c044f35ae021c6dd812520",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 85,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

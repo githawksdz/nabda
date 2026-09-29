@@ -1,0 +1,386 @@
+{
+  "id": "calc.mood-disorder-questionnaire-mdq",
+  "slug": "mood-disorder-questionnaire-mdq",
+  "language": "en",
+  "title": "Questionnaire sur les troubles de l'humeur (MDQ)",
+  "short_title": "MDQ",
+  "calc_type": "calculator",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Anxiété",
+    "Trouble bipolaire",
+    "Dépression / Suicidalité"
+  ],
+  "chief_complaints": [
+    "Anxieux",
+    "Déprimé",
+    "Suicidaire"
+  ],
+  "abbreviations": [
+    "Mood Disorder Questionnaire (MDQ)",
+    "MDQ",
+    "bipolar spectrum disorder",
+    "bipolar screening",
+    "bipolar questionnaire",
+    "bipolar disorder",
+    "bipolar disorder screening",
+    "bipolar spectrum screening",
+    "bipolar I",
+    "bipolar II",
+    "bipolar 1",
+    "bipolar 2"
+  ],
+  "dosing": false,
+  "formula": "The MDQ is determined by the following three sections. Please select the response that best reflects the patient’s answer:\n\n| Variable | Score | |\n| --- | --- | --- |\n| Section 1. Has there ever been a period of time when you were not your usual self and… | | |\n| …you felt so good or so hyper that other people thought you were not your normal self or you were so hyper that you got into trouble? | No | 0 |\n| Yes | 1 | |\n| ...you were so irritable that you shouted at people or started fights or arguments? | No | 0 |\n| Yes | 1 | |\n| ...you felt much more self-confident than usual? | No | 0 |\n| Yes | 1 | |\n| ...you got much less sleep than usual and found you didn’t really miss it? | No | 0 |\n| Yes | 1 | |\n| ...you were much more talkative or spoke faster than usual? | No | 0 |\n| Yes | 1 | |\n| ...thoughts raced through your head or you couldn’t slow your mind down? | No | 0 |\n| Yes | 1 | |\n| ...you were so easily distracted by things around you that you had trouble concentrating or staying on track? | No | 0 |\n| Yes | 1 | |\n| ...you had much more energy than usual? | No | 0 |\n| Yes | 1 | |\n| ...you were much more active or did many more things than usual? | No | 0 |\n| Yes | 1 | |\n| ...you were much more social or outgoing than usual, for example, you telephoned friends in the middle of the night? | No | 0 |\n| Yes | 1 | |\n| ...you were much more interested in sex than usual? | No | 0 |\n| Yes | 1 | |\n| ...you did things that were unusual for you or that other people might have thought were excessive, foolish, or risky? | No | 0 |\n| Yes | 1 | |\n| ...spending money got you or your family into trouble? | No | 0 |\n| Yes | 1 | |\n| Section 2. If the patient answered YES to more than one of the above, did several of these occur during the same period of time? | No | |\n| Yes | | |\n| Section 3. Based on the patient’s response, how much of a problem did these cause, such as difficulty working or problems with family, finances, legal matters, arguments, or fights? | No problem | |\n| Minor problem | | |\n| Moderate problem | | |\n| Serious problem | | |",
+  "how_to_use": {
+    "why": "- A brief screening instrument to identify possible bipolar spectrum disorder (primarily bipolar I disorder) using symptom and functional impairment data.\n- Results can prompt further diagnostic evaluation, helping to reduce delays to appropriate diagnosis and treatment.",
+    "when": "- À utiliser chez les patients se présentant en ambulatoire avec des symptômes de l’humeur pour dépister un trouble bipolaire.\n- Envisager un dépistage chez les patients présentant des symptômes dépressifs afin de rechercher un trouble bipolaire sous-jacent avant d’instaurer un traitement antidépresseur.\n- Peut être administré par le clinicien ou en auto-administration.",
+    "pearls": "- Sensitivity and specificity vary by clinical setting:\n\n - In psychiatric outpatient populations from the derivation study, the tool demonstrated good sensitivity (0.73) and very good specificity (0.90) at a cutoff of 7.\n - In primary care and general population settings during validation studies, sensitivity dropped substantially (approximately 0.28–0.43) while specificity remained high (approximately 0.95–0.97).\n- Has lower sensitivity for bipolar II disorder than for bipolar I; maintain diagnostic suspicion even with a negative screen in patients with features suggestive of hypomania.\n- Not intended as a diagnostic tool and should not be used to establish a diagnosis of bipolar disorder.\n- Cannot reliably distinguish between bipolar disorder and conditions with overlapping symptoms (e.g., borderline personality disorder, complex trauma, ADHD)."
+  },
+  "next_steps": {
+    "advice": "Interpréter les résultats dans le contexte du tableau clinique complet, y compris les antécédents longitudinaux, la réponse aux traitements antérieurs et les antécédents familiaux de trouble bipolaire.",
+    "critical_actions": "",
+    "management": "- Un dépistage positif doit conduire à une évaluation clinique formelle, mais ne permet pas d’établir le diagnostic.\n- Un dépistage négatif n’exclut pas un trouble bipolaire, en particulier un trouble bipolaire de type II ; si la suspicion clinique persiste, envisager une orientation pour une évaluation diagnostique structurée."
+  },
+  "evidence": "",
+  "more_info": "A **positive screen** for bipolar spectrum disorder was defined as 7 or more symptoms in Section 1, “Yes” in Section 2, and a problem severity of “moderate” or “serious” in Section 3.",
+  "short_description": "Dépistage du trouble du spectre bipolaire.",
+  "medium_description": "Screens pour bipolar spectrum disorder dans psychiatric outpatients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "…you felt so good ou so hyper that other people thought you were not your normal self ou you were so hyper that you got into trouble?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "...you were so irritable that you shouted at people ou started fights ou arguments?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "...you felt much more self-confident than usual?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "...you got much less sleep than usual et found you didn’t really miss it?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "...you were much more talkative ou spoke faster than usual?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "...thoughts raced through your head ou you couldn’t slow your mind down?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "...you were so easily distracted par things around you that you had trouble concentrating ou staying sur track?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "...vous aviez beaucoup plus d’énergie que d’habitude ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "i",
+      "label": "...you were much more active ou did many more things than usual?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "j",
+      "label": "...you were much more social ou outgoing than usual, par exemple, you telephoned friends dans middle de night?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "k",
+      "label": "...you were much more interested dans sex than usual?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "l",
+      "label": "...you did things that were unusual pour you ou that other people might have thought were excessive, foolish, ou risky?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "m",
+      "label": "...spending money got you ou your family into trouble?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "s2",
+      "label": "If patient answered YES pour more than one de above, did several de these occur during same period de time?",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "a + b + c + d + e + f + g + h + i + j + k + l + m >= 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "s3",
+      "label": "Basé sur patient’s response, how much de problem did these cause, such as difficulty working ou problems avec family, finances, legal matters, arguments, ou fights?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun problème",
+          "value": 0
+        },
+        {
+          "label": "Problème mineur",
+          "value": 1
+        },
+        {
+          "label": "problème modéré",
+          "value": 2
+        },
+        {
+          "label": "Problème grave",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hirschfeld RM, Williams JB, Spitzer RL, et al. Development and validation of a screening instrument for bipolar spectrum disorder: the Mood Disorder Questionnaire. Am J Psychiatry. 2000;157(11):1873-1875. doi:10.1176/appi.ajp.157.11.1873",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11058490/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dines M, Hernandorena C, Grasso V, Vazquez G. Critical overview of screening tools for detecting bipolar disorders. Actas Esp Psiquiatr. 2025;53(5):1122-1130. doi:10.62641/aep.v53i5.1924",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41117249/",
+      "kind": "other"
+    },
+    {
+      "text": "Hirschfeld RMA, Holzer C, Calabrese JR, et al. Validity of the mood disorder questionnaire: a general population study. Am J Psychiatry. 2003;160(1):178-180. doi:10.1176/appi.ajp.160.1.178",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/12505821/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Twiss J, Jones S, Anderson I. Validation of the Mood Disorder Questionnaire for screening for bipolar disorder in a UK sample. J Affect Disord. 2008;110(1-2):180-184. doi:10.1016/j.jad.2007.12.235",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18261804/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "7111f6c33128e661681256d5268ee3f0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10671,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\nvar h = parseFloat(h);\nvar i = parseFloat(i);\nvar j = parseFloat(j);\nvar k = parseFloat(k);\nvar l = parseFloat(l);\nvar m = parseFloat(m);\nvar s2 = parseFloat(s2);\nvar s3 = parseFloat(s3);\n\n\n// Calculate score\nvar s1 = a + b + c + d + e + f + g + h + i + j + k + l + m;\n\nvar dig;\nif (s1 >= 7 & s2 == 1 & s3 >= 2) {\n    dig = 'Positive screen'\n} else {\n    dig = 'Negative screen'\n}\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: dig,\n    value_text: '',\n    message: 'MDQ'\n});\ncalc_output.push({\n    name: '10671_MDQ_result',\n    value: dig,\n    value_text: '',\n    message: 'MDQ'\n});\n\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Robert M.A. Hirschfeld"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "3deb3d5244eadaa42dfbf9394e26e0df3bba52957d64e717f1a5f40a2cd161e1"
+}

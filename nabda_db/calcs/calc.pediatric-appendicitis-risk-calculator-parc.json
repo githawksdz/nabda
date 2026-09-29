@@ -1,0 +1,295 @@
+{
+  "id": "calc.pediatric-appendicitis-risk-calculator-parc",
+  "slug": "pediatric-appendicitis-risk-calculator-parc",
+  "language": "fr",
+  "title": "Pédiatrique Appendicitis risque calculateur (pARC)",
+  "short_title": "Pédiatrique Appendicitis risque calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "medecine-interne",
+    "pediatrie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Appendicitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "Appendicitis",
+    "peds",
+    "pediatric",
+    "parc",
+    "appendicitis risk",
+    "abdominal pain"
+  ],
+  "dosing": false,
+  "formula": "pARC Score (ED) = e^x^/ (1 + e^x^)\n\npARC Score (Community) = e^-0.615 + 1.1x^/ (1 + e^-0.615 + 1.1x^)\n\nOù x = −8.6855 + somme des valeurs attribuées :\n\n| Variable | Valeur | |\n| --- | --- | --- |\n| Sexe | Féminin | 0 |\n| Masculin | 1.2780 | |\n| Âge (regroupé par sexe) | Homme >13 ans ou femme >11 ans | 0 |\n| Femme 5-7 ans | 0.3810 | |\n| Femme 8-11 ans | 0.6513 | |\n| Homme 5-7 ans | -0.6653 | |\n| Homme 8-13 ans | -0.0654 | |\n| Durée de la douleur, heures | <24 | 0 |\n| 24 à <48 | 0.4696 | |\n| 48 à 96 | 0.1003 | |\n| >96 | 0 | |\n| Inconnue (valeur par défaut : <24 heures) | 0 | |\n| ANC*, cellules × 10 3 /µL | <14 | 1.7734 × √ANC |\n| ≥14 | 6.6195 | |\n| Douleur à la marche | Non | 0 |\n| Oui | 1.0494 | |\n| Douleur maximale à la FID | Non | 0 |\n| Oui | 1.1435 | |\n| Défense abdominale | Non | 0 |\n| Oui | 0.6736 | |\n| Antécédent de migration de la douleur vers la FID | Non | 0 |\n| Oui | 0.4557 | |\n\n*ANC = (neutrophiles, % ×notionvc: cb391d77-d8ca-4549-8f60-65f2e5e7fc56leuco­cytes, cellules ×notionvc: cb391d77-d8ca-4549-8f60-65f2e5e7fc5610^3^/µL) / 100. Si le nombre de neutrophiles n'est pas disponible, ANC = (-0.8783 + 1.1008 ×notionvc: cb391d77-d8ca-4549-8f60-65f2e5e7fc56√leucocytes, cellules ×notionvc: cb391d77-d8ca-4549-8f60-65f2e5e7fc5610^3^/µL)^2^.",
+  "how_to_use": {
+    "why": "- Peut aider à déterminer la nécessité d'une imagerie avancée telle qu'une échographie formelle ou un scanner (CT).\n- Peut identifier les patients à faible risque pouvant être surveillés aux urgences ou sortis des urgences avec un suivi ou des consignes de retour.\n- Dans l'[étude de validation](https://www.ncbi.nlm.nih.gov/pubmed/29535251), Kharbanda et al. ont constaté que la formule avait de meilleures performances que le Pediatric Appendicitis Score (classe moins de patients dans les catégories de risque équivoque), ce qui la rend plus utile pour aider à la prise de décision clinique.",
+    "when": "- Enfants ≥ 5 ans se présentant aux urgences ou en consultation externe pour une douleur abdominale aiguë (durée < 96 heures).\n- Les patients présentant les pathologies suivantes ont été exclus de l'étude :",
+    "pearls": "- L'âge des patients inclus dans l'étude était de 5 à 18 ans. L'appendicite est relativement rare chez les enfants de moins de 5 ans et se présente plus souvent avec des signes atypiques non pris en compte par ce calculateur.\n- Les cas d'appendicite parmi les groupes à risque le plus faible (risque < 5 % ou 5-14 % selon le calculateur) n'ont été manqués que dans 0,4 % des cas pour chacun de ces groupes. La sensibilité de ce calculateur chez les enfants présentant un risque < 5 % était de 100 % ; elle était de 97,2 % chez les enfants déterminés comme ayant un risque d'appendicite aiguë de 5-14 %."
+  },
+  "next_steps": {
+    "advice": "La spécificité de ce calculateur pour les cas jugés à risque le plus élevé d'appendicite (score pARC > 85 %) était de 99,7 % ; la spécificité était de 97,5 % pour les cas situés dans la tranche intermédiaire-élevée (score pARC 75-84 %).",
+    "critical_actions": "Critically ill children, or children with emergent “surgical abdomens” (rigidity, visible ecchymosis or hematoma, etc) should not be considered for delayed surgical consultation or imaging. Those children will likely benefit from early involvement of pediatric surgeons as well as imaging when able to be transported to radiology.",
+    "management": "- Les enfants jugés par le calculateur comme étant à faible risque d'appendicite peuvent être considérés comme candidats à une sortie sécurisée ou à une observation aux urgences sans imagerie avancée telle qu'une échographie ou un scanner (CT), selon l'appréciation du clinicien et le confort de la famille.\n- Compte tenu de la spécificité du calculateur, les enfants classés à risque élevé ou à risque intermédiaire-élevé d'appendicite pourraient ne pas nécessiter d'imagerie avancée. 1,2 % des pièces d'appendicectomie du groupe à risque élevé étaient négatives pour une appendicite à l'analyse anatomopathologique. Dans le groupe à risque intermédiaire-élevé, 2,6 % des pièces étaient négatives en anatomopathologie."
+  },
+  "evidence": "The pARC formula was derived from a data set of 2,423 children (interquartile age range 8-14 years old). Candidate predictors with >10% missing data were not included. Also excluded were children with certain comorbid conditions (“pregnancy, previous abdominal surgery, inflammatory bowel disease, chronic pancreatitis, sickle cell anemia, cystic fibrosis, a medical condition affecting the ability to obtain an accurate history, or a history of abdominal trauma within the previous 7 days.”)\n\nIt is important to note that while absolute neutrophil count (ANC) was used in the pARC formula, ANC values were missing in 216 (9%) of cases in the derivation data set. For cases missing the ANC value, ANC was imputed as (-0.8783 + 1.1008 x sqrt(WBC))^2^. For cases missing both ANC and WBC count, ANC was imputed as 7 x 10^3^/mcL, the mean ANC in the derivation cohort. The proportion of missing values was less than the 10% cut-off point chosen by the authors, however imputation of missing values has the potential to introduce bias into the equation.\n\nAn independent validation study conducted at different centers again demonstrated the ability of the pARC to outperform the [Pediatric Appendicitis Score (PAS)](nabda:calc.pediatric-appendicitis-score-pas) ([Cotton 2019](https://www.annemergmed.com/article/S0196-0644(19)30346-4/abstract)). This article demonstrated a superior AUC with non-overlapping 95% confidence intervals compared to the PAS.",
+  "more_info": "Interprétation :\n\n| Contexte : urgences pédiatriques | | |\n| --- | --- | --- |\n| Score pARC (urgences) | Groupe de risque | Recommandations cliniques |\n| ≤5% | Ultra faible | Suivi ambulatoire approprié si une évaluation par le médecin traitant est disponible sous 24 h ; aucune imagerie diagnostique requise |\n| 6-15% | Faible | Envisager une observation aux urgences pendant 6 h avec examens répétés ; en cas d'amélioration, assurer un suivi ambulatoire sous 24 h ; aucune imagerie requise |\n| 16-25% | Faible à modéré | Si les symptômes du patient durent depuis <24 h, envisager une observation pendant 12 h ; en l'absence d'amélioration, réaliser une échographie et renouveler la NFS ; si la douleur évolue depuis ≥24 h, réaliser une échographie pour rechercher une appendicite |\n| 26-50% | Modéré | Échographie recommandée comme imagerie de première intention ; hospitalisation pour observation si l'échographie est non concluante |\n| 51-75% | Échographie recommandée comme imagerie de première intention ; TDM si l'échographie est non concluante | |\n| 76-90% | Modéré à élevé | Avis chirurgical ; envisager l'imagerie selon les recommandations du chirurgien |\n| >90% | Élevé | Avis chirurgical ; imagerie non requise |\n\nRemarque : Données issues d'une correspondance personnelle avec les auteurs de l'étude.\n\n| Contexte : soins de ville | |\n| --- | --- |\n| Score pARC (ville) | Groupe de risque |\n| <5% | Très faible |\n| 5-14% | Faible |\n| 15-24% | Intermédiaire |\n| 25-49% | |\n| 50-74% | |\n| 75-84% | |\n| ≥85% | Élevé |\n\nSource : [Cotton 2019](https://www.annemergmed.com/article/S0196-0644(19)30346-4/abstract).",
+  "short_description": "Appendicitis risque dans enfants.",
+  "medium_description": "Quantifies appendicitis risque dans pédiatrique patients avec abdominal douleur, possibly better than [Pediatric Appendicitis Score](nabda:calc.pediatric-appendicitis-score-pas).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "setting",
+      "label": "Setting",
+      "tips": "La sélection du contexte d'exercice fournit des informations personnalisées sur la prévalence dans les Résultats.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Community",
+          "value": 0
+        },
+        {
+          "label": "pédiatrique ED",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1.28
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age1",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "sex == 0",
+      "options": [
+        {
+          "label": "5 à 7 ans",
+          "value": 0.38
+        },
+        {
+          "label": "8-11 ans",
+          "value": 0.65
+        },
+        {
+          "label": "> 11 ans",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age2",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "sex == 1.28",
+      "options": [
+        {
+          "label": "5 à 7 ans",
+          "value": -0.67
+        },
+        {
+          "label": "8-13 ans",
+          "value": -0.07
+        },
+        {
+          "label": "> 13 ans",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "duration",
+      "label": "Durée de la douleur, h",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 24",
+          "value": 0
+        },
+        {
+          "label": "24 pour <48",
+          "value": 0.47
+        },
+        {
+          "label": "48 pour 96",
+          "value": 0.1
+        },
+        {
+          "label": ">96",
+          "value": 0
+        },
+        {
+          "label": "Unknown (defaults pour <24 hrs)",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "WBC",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "neu",
+      "label": "Neutrophil",
+      "tips": "Saisir une valeur pour les neutrophiles si elle est disponible ; sinon, laisser le champ vide",
+      "optional": true,
+      "unit": "neut",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "pain",
+      "label": "Presence de douleur avec walking",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.05
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rlq",
+      "label": "Douleur maximale dans la FID",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.14
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "guarding",
+      "label": "Défense abdominale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.67
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "history",
+      "label": "History de migration de douleur pour RLQ",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.46
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kharbanda AB, Vazquez-benitez G, Ballard DW, et al. Development and Validation of a Novel Pediatric Appendicitis Risk Calculator (pARC). Pediatrics. 2018;141(4).",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29535251",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cotton DM, Vinson DR, Vazquez-benitez G, et al. Validation of the Pediatric Appendicitis Risk Calculator (pARC) in a Community Emergency Department Setting. Ann Emerg Med. 2019.",
+      "href": "https://www.annemergmed.com/article/S0196-0644(19)30346-4/abstract",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pediatric-appendicitis-score-pas",
+    "calc.pecarn-pediatric-intra-abdominal-injury-iai-algorithm",
+    "calc.ripasa-score-acute-appendicitis"
+  ],
+  "source_logic_hash": "9986601f80a51bd7183beacedd820a6c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10201,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

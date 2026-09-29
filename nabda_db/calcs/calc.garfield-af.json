@@ -1,0 +1,399 @@
+{
+  "id": "calc.garfield-af",
+  "slug": "garfield-af",
+  "language": "en",
+  "title": "GARFIELD-AF",
+  "short_title": "GARFIELD-AF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "Saignement / Hémorragie",
+    "Hémorragie intracrânienne",
+    "Hémorragie sous-arachnoïdienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Douleur thoracique",
+    "Vertiges",
+    "Fatigue",
+    "Palpitations",
+    "Dyspnée",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "GARFIELD-AF",
+    "a fib",
+    "atrial fibrillation",
+    "afib",
+    "garfield af",
+    "garfield afib",
+    "garfield a fib",
+    "garfield atrial fibrillation",
+    "stroke",
+    "stroke risk",
+    "ischemic stroke",
+    "ischemic stroke risk",
+    "systemic embolism",
+    "systemic embolism risk",
+    "embolism risk",
+    "hemorrhagic stroke",
+    "hemorrhagic stroke risk",
+    "major bleeding",
+    "major bleeding risk",
+    "bleeding risk"
+  ],
+  "dosing": false,
+  "formula": "Mortality, stroke, and bleeding risks at 6 months, 1 year, and 2 years are calculated by the following:\n\n**Risk, %** = [1 – (baseline survival)^exp(x)^]*100\n\nBaseline survivals are as follows:\n\n| | 6 months | 1 year | 2 years |\n| --- | --- | --- | --- |\n| All-cause mortality | 0.9879 | 0.9791 | 0.9625 |\n| Ischemic stroke/systemic embolism | 0.9956 | 0.9925 | 0.9876 |\n| Major bleeding | 0.9969 | 0.9947 | 0.9917 |\n\nx is calculated by the following:\n\n**All-cause mortality x** = -0.306202287*female + 0.693789082*(heart failure) + 0.306120964*(vascular disease) + 0.26585298*(prior stroke) + 0.385407386*(history of bleeding) + 0.280133213*(diabetes) + 0.377903886*(moderate-to-severe CKD) + 0.489453313*(dementia) + 0.345481149*(current smoker) – 0.414591263*(OAC treatment: NOAC) – 0.18593561*(OAC treatment: VKA) + 0.157023564*(ethnicity: Hispanic Latino) – 0.609609055*(ethnicity: Asian) + 0.375675102*(ethnicity: Black/mixed/other) + 0.031050027*(age – 65)*(age≤65) + 0.064594824*(age – 65)*(age >65) – 0.021535182*(weight, kg – 75)*(weight, kg ​​≤75) + 0.007678035*(pulse – 120)*(pulse≤120) – 0.019304333*(diastolic blood pressure – 80)*(diastolic blood pressure≤80)\n\n**Ischemic stroke/systemic embolism x** = 0.233182644*(heart failure) + 0.197919709*(vascular disease) + 0.800863063*(prior stroke) + 0.29883967*(history of bleeding) + 0.211995445*(diabetes) + 0.349516938*(moderate-to-severe CKD) + 0.513221391*(dementia) + 0.478831506*(current smoker) – 0.572199357*(OAC treatment: NOAC) – 0.352373263*(OAC treatment: VKA) + 0.039138147*(age – 65) + 0.01590016*(diastolic blood pressure – 80)*(diastolic blood pressure >80)\n\n**Major bleeding x** = 0.168950627*(vascular disease) + 0.782237771*(history of bleeding) + 0.316245771*(carotid occlusive disease) + 0.498686574*(moderate-to-severe CKD) + 0.24232543*(OAC treatment: NOAC) + 0.609713354*(OAC treatment: VKA) + 0.236620846*(antiplatelet treatment) + 0.176898047*diabetes + 0.043476276*(age – 65) + 0.004167103*(pulse – 120)",
+  "how_to_use": {
+    "why": "- Calculates the risk of mortality, ischemic stroke, and major bleeding (including hemorrhagic stroke).\n- Calculates the risk at 6 months, 1 year, and 2 years after diagnosis of AF.\n- Risk can be calculated without anticoagulation, with an oral novel oral anticoagulant (NOAC), or with a vitamin K antagonist (VKA).\n- The GARFIELD-AF Registry is the largest prospective registry of patients with newly diagnosed atrial fibrillation.",
+    "when": "Utilisation chez les patients présentant une fibrillation atriale (AF) nouvellement diagnostiquée.",
+    "pearls": "- Cet outil comprend 16 champs de saisie ainsi que la possibilité de visualiser le risque selon le type de traitement choisi. Ce score a été dérivé du registre GARFIELD-AF.\n- Il a été validé en externe dans le registre ORBIT-AF."
+  },
+  "next_steps": {
+    "advice": "- Utilisez le champ OAC Treatment pour sélectionner le traitement pour lequel vous souhaitez afficher les calculs de risque spécifiques à 6 mois, 1 an et 2 ans après le diagnostic.\n- Le risque de mortalité, d’AVC ischémique et d’hémorragie majeure (y compris l’AVC hémorragique) est affiché pour chaque période.\n- Cela peut être utilisé dans le cadre d’un plan de prise en charge global pour les patients ayant une fibrillation atriale nouvellement diagnostiquée.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de mortalité, d’AVC et de saignement.",
+  "medium_description": "Predicts mortalité, AVC, et saignement dans patients w/ et w/out anticoagulation.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_impact",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "hf",
+      "label": "Insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vd",
+      "label": "Maladie vasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stroke",
+      "label": "AVC antérieur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bleeding",
+      "label": "Antécédents de saignement",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cod",
+      "label": "Maladie occlusive carotidienne",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ckd",
+      "label": "CKD modérée à sévère",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dementia",
+      "label": "Démence",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "smoker",
+      "label": "Fumeur actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ap",
+      "label": "Traitement antiplaquettaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ethnicity",
+      "label": "Origine ethnique",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Caucasien",
+          "value": 0
+        },
+        {
+          "label": "Hispanique ou Latino",
+          "value": 1
+        },
+        {
+          "label": "Asiatique",
+          "value": 2
+        },
+        {
+          "label": "Noir/Métis/Autre",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "pulse",
+      "label": "Pouls",
+      "optional": false,
+      "unit": "pulse",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "dbp",
+      "label": "Pression artérielle diastolique",
+      "optional": false,
+      "unit": "dbp",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "oac",
+      "label": "Traitement par OAC",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Pas d’anticoagulant oral",
+          "value": 0
+        },
+        {
+          "label": "NOAC (anticoagulant oral direct)",
+          "value": 1
+        },
+        {
+          "label": "AVK",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fox KAA, Lucas JE, Pieper KS, et al. Improved risk stratification of patients with atrial fibrillation: an integrated GARFIELD-AF tool for the prediction of mortality, stroke and bleed in patients with and without anticoagulation. BMJ Open. 2017;7(12):e017157.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29273652/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fox KAA, Virdone S, Pieper KS, et al. GARFIELD-AF risk score for mortality, stroke, and bleeding within 2 years in patients with atrial fibrillation. Eur Heart J Qual Care Clin Outcomes. 2022;8(2):214-227.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33892489/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dalgaard F, Pieper K, Verheugt F, et al. GARFIELD-AF model for prediction of stroke and major bleeding in atrial fibrillation: a Danish nationwide validation study. BMJ Open. 2019;9(11):e033283.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31719095/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.chads2-score-atrial-fibrillation-stroke-risk",
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk"
+  ],
+  "source_logic_hash": "f2c41f557615ec0140c6ef4a049e90a0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10504,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar weight = parseFloat(weight);\nvar hf = parseFloat(hf);\nvar vd = parseFloat(vd);\nvar stroke = parseFloat(stroke);\nvar bleeding = parseFloat(bleeding);\nvar cod = parseFloat(cod);\nvar diabetes = parseFloat(diabetes);\nvar ckd = parseFloat(ckd);\nvar dementia = parseFloat(dementia);\nvar smoker = parseFloat(smoker);\nvar oac = parseFloat(oac);\nvar ap = parseFloat(ap);\nvar ethnicity = parseFloat(ethnicity);\nvar pulse = parseFloat(pulse);\nvar dbp = parseFloat(dbp);\n\nvar noac;\nvar vka;\nif (oac == 0) {\n    noac = 0;\n    vka = 0;\n} else if (oac == 1) {\n    noac = 1;\n    vka = 0;\n} else if (oac == 2) {\n    noac = 0;\n    vka = 1;\n}\n\nvar hisp;\nvar asian;\nvar black;\nif (ethnicity == 0) {\n    hisp = 0;\n    asian = 0;\n    black = 0;\n} else if (ethnicity == 1) {\n    hisp = 1;\n    asian = 0;\n    black = 0;\n} else if (ethnicity == 2) {\n    hisp = 0;\n    asian = 1;\n    black = 0;\n} else if (ethnicity == 3) {\n    hisp = 0;\n    asian = 0;\n    black = 1;\n}\n\nvar age_l_65;\nvar age_g_65;\nif (age <= 65) {\n    age_l_65 = 1;\n    age_g_65 = 0;\n} else {\n    age_l_65 = 0;\n    age_g_65 = 1;\n}\n\nvar weight_l_75;\nif (weight <= 75) {\n    weight_l_75 = 1;\n} else {\n    weight_l_75 = 0;\n}\n\nvar pulse_l_120;\nif (pulse <= 120) {\n    pulse_l_120 = 1;\n} else {\n    pulse_l_120 = 0;\n}\n\nvar dbp_l_80;\nvar dbp_g_80;\nif (dbp <= 80) {\n    dbp_l_80 = 1;\n    dbp_g_80 = 0;\n} else {\n    dbp_l_80 = 0;\n    dbp_g_80 = 1;\n}\n\nvar all_x = -0.306202287*sex + 0.693789082*hf + 0.306120964*vd + 0.26585298*stroke + 0.385407386*bleeding + 0.280133213*diabetes + 0.377903886*ckd + 0.489453313*dementia + 0.345481149*smoker - 0.414591263*noac - 0.18593561*vka + 0.157023564*hisp - 0.609609055*asian + 0.375675102*black + 0.031050027*(age - 65)*age_l_65 + 0.064594824*(age - 65)*age_g_65 - 0.021535182*(weight - 75)*weight_l_75 + 0.007678035*(pulse - 120)*pulse_l_120 - 0.019304333*(dbp - 80)*dbp_l_80;\nvar stroke_x = 0.233182644*hf + 0.197919709*vd + 0.800863063*stroke + 0.29883967*bleeding + 0.211995445*diabetes + 0.349516938*ckd + 0.513221391*dementia + 0.478831506*smoker - 0.572199357*noac - 0.352373263*vka + 0.039138147*(age - 65) + 0.01590016*(dbp - 80)*dbp_g_80;\nvar bleeding_x = 0.168950627*vd + 0.782237771*bleeding + 0.316245771*cod + 0.498686574*ckd + 0.24232543*noac + 0.609713354*vka + 0.236620846*ap + 0.176898047*diabetes + 0.043476276*(age - 65) + 0.004167103*(pulse - 120);\n\nvar all_6_mo = (1 - Math.pow(0.987921904, Math.exp(all_x)))*100\nvar stroke_6_mo = (1 - Math.pow(0.9955506465, Math.exp(stroke_x)))*100;\nvar bleeding_6_mo = (1 - Math.pow(0.9968755499, Math.exp(bleeding_x)))*100;\n\nvar all_1_yr = (1 - Math.pow(0.9790643336, Math.exp(all_x)))*100;\nvar stroke_1_yr = (1 - Math.pow(0.9925445321, Math.exp(stroke_x)))*100;\nvar bleeding_1_yr = (1 - Math.pow(0.9946821686, Math.exp(bleeding_x)))*100;\n\nvar all_2_yrs = (1 - Math.pow(0.962450119, Math.exp(all_x)))*100;\nvar stroke_2_yrs = (1 - Math.pow(0.987574311, Math.exp(stroke_x)))*100;\nvar bleeding_2_yrs = (1 - Math.pow(0.991720115, Math.exp(bleeding_x)))*100;\n\ncalc_output.push({\n    name: 'mini',\n    value: all_6_mo.toFixed(1),\n    value_text: '%',\n    message: '6 months all-cause mortality'\n})\ncalc_output.push({\n    name: '10504_GARFIELD_AF_result (6 months)',\n    value: '',\n    value_text: '6 months',\n    message: 'All-cause mortality: ' + all_6_mo.toFixed(1) + '%<br/>Ischemic stroke/SE: ' + stroke_6_mo.toFixed(1) + '%<br/>Major bleeding: ' + bleeding_6_mo.toFixed(1) + '%'\n});\ncalc_output.push({\n    name: '10504_GARFIELD_AF_result (1 year)',\n    value: '',\n    value_text: '1 year',\n    message: 'All-cause mortality: ' + all_1_yr.toFixed(1) + '%<br/>Ischemic stroke/SE: ' + stroke_1_yr.toFixed(1) + '%<br/>Major bleeding: ' + bleeding_1_yr.toFixed(1) + '%'\n});\ncalc_output.push({\n    name: '10504_GARFIELD_AF_result (2 year)',\n    value: '',\n    value_text: '2 years',\n    message: 'All-cause mortality: ' + all_2_yrs.toFixed(1) + '%<br/>Ischemic stroke/SE: ' + stroke_2_yrs.toFixed(1) + '%<br/>Major bleeding: ' + bleeding_2_yrs.toFixed(1) + '%'\n});",
+  "before_use": "Ce calculateur inclut des données de saisie fondées sur la race, qui peuvent ou non fournir de meilleures estimations. En savoir plus sur [notre approche](https://www.mdcalc.com/race) pour aborder la race et les biais sur MDCalc. notionvc: 1b02efd6-2a7a-4395-8bb5-b6b559802fc9",
+  "instructions": "À utiliser chez les patients présentant une fibrillation auriculaire (AF) nouvellement diagnostiquée pour aider à déterminer les risques du traitement anticoagulant.",
+  "contributor_ids": [
+    "katherine-davis"
+  ],
+  "creator_names": [
+    "Dr. Keith A. A. Fox"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Weight",
+    "pulse"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "2e18b288fabead59b52cc65c5cd4116195c34137e7cb52bc4b209deaec303b2c"
+}

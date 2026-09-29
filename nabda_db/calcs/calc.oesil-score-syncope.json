@@ -1,0 +1,169 @@
+{
+  "id": "calc.oesil-score-syncope",
+  "slug": "oesil-score-syncope",
+  "language": "en",
+  "title": "OESIL score pour Syncope",
+  "short_title": "OESIL score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dizziness",
+    "Seizure",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "OESIL",
+    "Osservatorio Epidemiologico sulla Sincope nel Lazio",
+    "syncope",
+    "syncope score",
+    "fainting",
+    "vasovagal",
+    "LOC",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Item | Points |\n| --- | --- |\n| Age >65 years | +1 |\n| Cardiovascular disease in clinical history* | +1 |\n| Syncope without prodrome | +1 |\n| Abnormal EKG** | +1 |\n\n*Cardiovascular disease was defined as any of the following:\n\n- Previous clinical or laboratory diagnosis of any form of structural heart disease, including ischemic heart disease, valvular dysfunction, and primary myocardial disease.\n- Previous diagnosis or clinical evidence of congestive heart failure.\n- Previous diagnosis or clinical evidence of peripheral arterial disease.\n- Previous diagnosis of stroke or TIA.\n\n**Abnormal EKG was defined as any of the following:\n\n- Rhythm abnormalities (atrial fibrillation or flutter, supraventricular tachycardia, multifocal atrial tachycardia, frequent or repetitive premature supraventricular or ventricular complexes, sustained or non-sustained ventricular tachycardia, paced rhythms).\n- Atrioventricular (AV) or intraventricular conduction disorders (complete AV block, Mobitz I or Mobitz II AV block, bundle branch block, or intraventricular conduction delay).\n- Left or right ventricular hypertrophy.\n- Left axis deviation.\n- Old myocardial infarction.\n- ST segment and T wave abnormalities consistent with or possibly related to myocardial ischemia.\n\nNon-specific repolarization abnormalities were *not* considered abnormal.",
+  "how_to_use": {
+    "why": "- Provides a simple risk stratification tool to predict 1-year all-cause mortality after a syncopal episode, helping to identify patients at higher risk who may need a more aggressive evaluation and treatment.\n- Assists ED disposition decisions (admission vs. discharge) and potentially avoids unnecessary hospitalizations for low-risk patients.",
+    "when": "- Use in the evaluation of adult patients presenting with syncope in the emergency department (ED).\n- Particularly useful for risk stratification when the etiology of syncope is unclear after initial assessment.",
+    "pearls": "- Not appropriate for use in patients with significant underlying pathology and does not differentiate between specific causes of syncope (e.g., cardiac vs. neurogenic).\n- Designed to be used at the time of initial presentation to the ED; results may not be reliable if applied in other clinical settings or situations.\n- Developed and validated in patients aged ≥12 years.\n- The derivation study excluded patients with known seizure disorders, those presenting with presyncope, dizziness, or vertigo, and those without a clear loss of consciousness."
+  },
+  "next_steps": {
+    "advice": "This tool complements, but does not replace, clinical judgment, a careful history, and a thorough evaluation of syncope patients in the ED.",
+    "critical_actions": "",
+    "management": "**Low risk (score 0–1):**\n\n- Consider further outpatient evaluation and follow-up.\n- Provide patient education on warning signs and when to return to the ED.\n\n**Intermediate to high risk (score ≥2):**\n\n- Consider hospital admission for further monitoring and investigation (e.g., telemetry, echocardiography).\n- Initiate consultations with cardiology or neurology as needed."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| OESIL Score | Mortality |\n| --- | --- |\n| 0 points | 0% |\n| 1 point | 0.8% |\n| 2 points | 19.6% |\n| 3 points | 34.7% |\n| 4 points | 57.1% |",
+  "short_description": "Mortalité dans syncope patients.",
+  "medium_description": "Estimates 12-month all-cause mortalité dans patients presenting avec syncope.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge >65 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hx",
+      "label": "Cardiovascular maladie dans clinique history",
+      "tips": "Structural heart disease, CHF, PAD, stroke/TIA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wopro",
+      "label": "Syncope sans prodrome",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aecg",
+      "label": "Abnormal EKG",
+      "tips": "Arrhythmia, AV conduction disorders, BBB, conduction delay, LV or RV hypertrophy, left axis deviation, old MI, ST segment or T wave abnormalities related to ischemia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ammirati F, Colivicchi F, Santini M. Diagnosing syncope in clinical practice. Implementation of a simplified diagnostic algorithm in a multicentre prospective trial - the OESIL 2 study (Osservatorio Epidemiologico della Sincope nel Lazio). Eur Heart J. 2000;21(11):935-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10806018",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Colivicchi F, Ammirati F, Melina D, et al. Development and prospective validation of a risk stratification system for patients with syncope in the emergency department: the OESIL risk score. Eur Heart J. 2003;24(9):811-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12727148",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.canadian-syncope-risk-score",
+    "calc.egsys-evaluation-guidelines-syncope-study-score-syncope",
+    "calc.rose-risk-stratification-syncope-emergency-department-rule"
+  ],
+  "source_logic_hash": "790b77c46005e1f3e9d2f89acbba0a8e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3950,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

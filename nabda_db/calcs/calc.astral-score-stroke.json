@@ -1,0 +1,231 @@
+{
+  "id": "calc.astral-score-stroke",
+  "slug": "astral-score-stroke",
+  "language": "en",
+  "title": "ASTRAL score pour Ischemic AVC",
+  "short_title": "Score ASTRAL",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Déficit neurologique",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "astral",
+    "athens",
+    "stroke score",
+    "cva",
+    "tia",
+    "ischemic stroke",
+    "brain attack"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| A ge | 1 point for every 5 years | -- |\n| --- | --- | --- |\n| S everity | 1 point for every admission NIHSS point | -- |\n| T ime delay between symptom onset or last proof of good health and admission | 2 points if >3 hours | 0 points if ≤3 hours |\n| R ange of visual fields (new visual field defect) | 2 points if yes | 0 points if no |\n| Glucose at a dmission | 1 point if >7.3 or <3.7 mmol/L | 0 points if 3.7-7.3 mmol |\n| L evel of consciousness | 3 points if impaired | 0 points if normal |",
+  "how_to_use": {
+    "why": "- Peut fournir des informations complémentaires sur le devenir fonctionnel à moyen terme chez les patients ayant présenté un accident vasculaire cérébral ischémique aigu, en complément du jugement clinique fondé sur les variables cliniques et biologiques pertinentes.\n- Ne nécessite pas de données de neuro-imagerie pour être calculé.\n- Peut être utilisé pour ajuster sur le devenir fonctionnel dans des modèles multivariés lors d'études de recherche sur l'AVC à la phase aiguë.\n- Peut servir de critère de sélection des cohortes dans les études de recherche sur l'AVC à la phase aiguë.",
+    "when": "Patients atteints d’un accident vasculaire cérébral (AVC) ischémique aigu admis dans les 24 heures suivant le début de l’AVC.",
+    "pearls": "- The ASTRAL Score uses clinical characteristics and laboratory testing to predict the likelihood that a given patient with acute ischemic stroke will have a [Modified Rankin Scale](nabda:calc.modified-rankin-scale-neurologic-disability) result of 3–6 at 90 days after stroke.\n- Developed to predict a dichotomous outcome, not a discrete Modified Rankin Scale score at 90 days.\n\n- Does not predict mortality or degree of improvement from any form of rehabilitation.\n- Should not be used as a surrogate for stroke severity."
+  },
+  "next_steps": {
+    "advice": "- L’accident vasculaire cérébral ischémique aigu est une urgence neurologique pouvant bénéficier de traitements dépendants du temps (p. ex., tPA, thrombectomie mécanique)",
+    "critical_actions": "- Intravenous tissue plasminogen activator (IV tPA) is the standard-of-care treatment for adult patients presenting with acute ischemic stroke within 4.5 hours of symptom onset, if no [exclusion criteria](nabda:calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke) are met.\n- Mechanical thrombectomy is the standard-of-care treatment for selected adult patients presenting with acute ischemic stroke due to LVO presenting in the acute setting.\n- Note that the appropriateness of patient for endovascular intervention depends on multiple factors, such as time since onset, neuroimaging, baseline functional status, and others.\n- Appropriateness for intravenous thrombolysis or mechanical thrombectomy should be determined by neurological/neurosurgical consultant whenever available.",
+    "management": "- En cas de suspicion d’AVC ischémique, il est recommandé ce qui suit :"
+  },
+  "evidence": "The ASTRAL (Acute Stroke Registry and Analysis of Lausanne) Score was originally developed in a study by[Ntaios et al](https://www.ncbi.nlm.nih.gov/pubmed/22649218)in 2012, which identified six clinical and laboratory predictors of poor functional outcome, defined as a [Modified Rankin Scale](nabda:calc.modified-rankin-scale-neurologic-disability) result of 3–6 at 90 days in a registry of patients with acute ischemic stroke from Lausanne, Switzerland ( *n* = 1,645).\n\nThe AUC was 0.85 in the derivation cohort; this study also had an internal validation of the score using separate stroke registry cohorts from Athens ( *n* = 1,659; AUC 0.94) and Vienna ( *n* = 653; AUC 0.77). The Hosmer-Lemeshow goodness-of-fit test was non-significant in all cohorts, indicating a well-calibrated score (derivation, *p* = 0.43; Athens, *p* = 0.22; Vienna, *p* = 0.49).\n\nThe ASTRAL Score was determined to have the following specificities, sensitivities, and positive and negative predictive values for determining functional outcome (mRS 3–6) at 90 days at the cut-points below. Note: Due to low numbers of observations, numbers associated with the highest ASTRAL Scores should be interpreted with caution.\n\n| ASTRAL Score cut-point | Sensitivity, % | Specificity, % | Positive predictive value, % | Negative predictive value, % |\n| --- | --- | --- | --- | --- |\n| 18 | 97.3 | 28.5 | 40.7 | 95.4 |\n| 23 | 84.8 | 65.9 | 55.6 | 89.6 |\n| 31 | 59.6 | 90.2 | 75.5 | 81.6 |\n| 38 | 31.3 | 97.5 | 86.5 | 73.8 |\n| 43 | 17.4 | 99.6 | 96.0 | 70.5 |\n\nThe ASTRAL Score was subsequently validated by[Liu et al (2013)](https://stroke.ahajournals.org/content/44/5/1443)in a Chinese cohort ( *n* = 3,755). The AUC was comparable to that determined in the original derivation study by Ntaios et al (AUC 0.82, 95%CI, 0.81-0.83).\n\nIn the largest validation study of the ASTRAL Score to date,[Cooray et al (2016)](https://stroke.ahajournals.org/content/47/6/1493)examined the prediction of functional outcomes in patients with acute ischemic stroke treated with IV thrombolysis as part of the SITS-ISTR (Safe Implementation of Thrombolysis in Stroke-International Stroke Thrombolysis Register; *n* = 36,131). While the AUC of the ASTRAL score was 0.79 (95%CI, 0.786 – 0.795), the SITS-ISTR cohort had a higher mean NIH stroke scale (12.2 vs. 8.9, p<0.0001), a shorter time from onset to assessment (82.2 min vs. 395.8 min, p<0.0001) and a smaller proportion of patients achieving 0-2 at 90 days (57.4% vs 66%) than the original derivation cohort.\n\nMultiple external validations have been conducted for the ASTRAL Score’s ability to predict post-stroke outcomes not examined in the original ASTRAL Score derivation study, including:\n\n- 12-month functional outcome ([Liu 2013](https://stroke.ahajournals.org/content/44/5/1443)).\n- 5-year functional outcome ([Papavasileou 2013](https://stroke.ahajournals.org/content/44/6/1616)).\n- Mortality at 5 years ([Papavasileou 2013](https://stroke.ahajournals.org/content/44/6/1616)).\n- In-hospital functional outcome and mortality ([Kuster 2016](https://www.ncbi.nlm.nih.gov/pubmed/?term=26982991)).\n\nIn addition, a recent analysis of a large independent European dataset showed that the ASTRAL Score performed best when compared to 6 similar prognostic scores, though the authors cautioned that it still may not prognosticate well enough to be used as the only basis for clinical decision making ([Quinn 2017](https://www.ncbi.nlm.nih.gov/pubmed/28794250)).",
+  "more_info": "",
+  "short_description": "90-day poor devenir dans AVC.",
+  "medium_description": "Predicts 90-day poor devenir chez les patients avec aigu ischemic AVC.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "severe",
+      "label": "NIHSS [Score](nabda:calc.nih-stroke-scale-score-nihss)",
+      "optional": false,
+      "unit": "nihss",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "time",
+      "label": ">3 hrs de symptom onset (ou last time seen WITHOUT AVC symptoms) pour admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "defect",
+      "label": "Tout nouveau déficit du champ visuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "glucose",
+      "label": "Glycémie à l’admission > 131 mg/dL (7,3 mmol/L) ou < 66 mg/dL (3,7 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loc",
+      "label": "Altération de la conscience",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ntaios G, Faouzi M, Ferrari J, Lang W, Vemmos K, Michel P. An integer-based score to predict functional outcome in acute ischemic stroke: the ASTRAL score. Neurology. 2012;78(24):1916-22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22649218",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cooray C, Mazya M, Bottai M, Dorado L, Skoda O, Toni D, Ford GA, Wahlgren N, Ahmed N. External Validation of the ASTRAL and DRAGON Scores for Prediction of Functional Outcome in Stroke. Stroke. 2016;47:1493-1499.",
+      "href": "https://stroke.ahajournals.org/content/47/6/1493",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Liu G, Ntaios G, Zheng H, et al. External validation of the ASTRAL score to predict 3- and 12-month functional outcome in the China National Stroke Registry. Stroke. 2013;44(5):1443-5.",
+      "href": "https://stroke.ahajournals.org/content/44/5/1443 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Papavasileiou V, Milionis H, Michel P, et al. ASTRAL score predicts 5-year dependence and mortality in acute ischemic stroke. Stroke. 2013;44(6):1616-20.",
+      "href": "https://stroke.ahajournals.org/content/44/6/1616",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kuster GW, Dutra LA, Brasil IP, Pacheco EP, Arruda MJ, Volcov C, Domingues RB. Performance of four ischemic stroke prognostic scores in a Brazilian population. Arq Neuropsiquiatr. 2016;74(2):133-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26982991",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Quinn TJ, Singh S, Lees KR, Bath PM, Myint PK. Validating and comparing stroke prognosis scales. Neurology. 2017;89(10):997-1002.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28794250",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.plan-score-stroke",
+    "calc.modified-soar-score-stroke",
+    "calc.los-angeles-motor-scale-lams",
+    "calc.modified-rankin-scale-neurologic-disability",
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke"
+  ],
+  "source_logic_hash": "3d21c3361aa10f2da68af569e0378aa9",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-rankin-scale-neurologic-disability",
+      "text": "Modified Rankin Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "exclusion criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3967,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

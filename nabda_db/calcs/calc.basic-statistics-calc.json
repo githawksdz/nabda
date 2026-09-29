@@ -1,0 +1,247 @@
+{
+  "id": "calc.basic-statistics-calc",
+  "slug": "basic-statistics-calc",
+  "language": "en",
+  "title": "Calculateur de statistiques de base",
+  "short_title": "Statistiques de base",
+  "calc_type": null,
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "epidemiology",
+    "stats",
+    "statistics",
+    "sensitivity",
+    "specificity",
+    "likelihood ratio",
+    "positivie predictive value",
+    "negative predictive value",
+    "odds ratio",
+    "risk reduction",
+    "risk ratio",
+    "relative risk",
+    "relative risk increase",
+    "relative risk reduction",
+    "absolute risk reduction",
+    "absolute risk increase",
+    "number needed to treat",
+    "number needed to harm"
+  ],
+  "dosing": false,
+  "formula": "Note: Although the calculator uses percentages for clinical context (e.g. 67% instead of 0.67), formulae are displayed below in ratios for simplicity.\n\n**Diagnostic test:**\n\n![](https://cdn-web-img.mdcalc.com/content/basic_stats_dx.png)\nA = true positives\n\nB = false positives\n\nC = false negatives\n\nD = true negatives\n\nPrevalence (or pre-test probability) = (A + C) / (A + B + C + D)\n\nSensitivity = A / (A + C)\n\nSpecificity = D / (B + D)\n\nNegative likelihood ratio = (1 – sensitivity) / specificity\n\nPositive likelihood ratio = Sensitivity / (1 – specificity)\n\nPre-test odds = Prevalence / (1 – prevalence)\n\nPost-test odds = Prevalence × likelihood ratio\n\nPost-test probability = Post-test odds / (1 + post-test odds)\n\nPositive predictive value = A / (A + B)\n\n- Or, (sensitivity × prevalence) / [(sensitivity × prevalence) + (1 – specificity) × (1 – prevalence)\n\nNegative predictive value = D / (C + D)\n\n- Or, specificity × (1 – prevalence) / [(1 – sensitivity) × prevalence + specificity × (1 – prevalence)]\n\n**Treatment** :\n\n![](https://cdn-web-img.mdcalc.com/content/basic_stats_tx.png)\n\nExperimental event rate*, EER = A / (A + B)\n\nControl event rate**, CER = C / (C + D)\n\nRelative risk, RR = EER / CER\n\nOdds ratio, OR = (A / B) / (C / D)\n\nAbsolute risk reduction, ARR = EER – CER\n\nNumber needed to treat, NNT = 1 / ARR\n\nRelative risk reduction, RRR = ARR / CER\n\n*Risk of outcome (absolute risk) in the experimental group\n\n**Risk of outcome (absolute risk) in the control group.\n\nIf ARR <0, then it is an absolute risk *increase* .\n\nIf NNT <0, then it is the number needed to *harm* .",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser avec les données brutes pour évaluer des tests diagnostiques ou un traitement.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Pour pratiquer la médecine fondée sur les preuves, appliquer les statistiques et les résultats des études scientifiques à des patients individuels en faisant appel au jugement clinique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Sens, spec, LR+, LR-, PPV, NPV, OR, RR, ARR, NNT.",
+  "medium_description": "Calculates common epidemiologic values pour diagnostic tests et treatments.",
+  "input_schema": [
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Sélectionner le type de statistiques",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Test diagnostique",
+          "value": 0
+        },
+        {
+          "label": "traitement",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inputs",
+      "label": "Type d’entrées",
+      "tips": "TP = vrais positifs, FP = faux positifs, FN = faux négatifs,",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "type == 0",
+      "options": [
+        {
+          "label": "Prévalence, sensibilité et spécificité",
+          "value": 1
+        },
+        {
+          "label": "TP, FP, FN, TN",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "truePosZ",
+      "label": "Vrais positifs (TP)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "inputs==0"
+    },
+    {
+      "type": "textbox",
+      "name": "falsePosZ",
+      "label": "Faux positifs (FP)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "inputs==0"
+    },
+    {
+      "type": "textbox",
+      "name": "falseNegZ",
+      "label": "Faux négatifs (FN)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "inputs==0"
+    },
+    {
+      "type": "textbox",
+      "name": "trueNegZ",
+      "label": "Vrais négatifs (TN)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "inputs==0"
+    },
+    {
+      "type": "textbox",
+      "name": "truePos",
+      "label": "# de experimental patients avec expected devenir ()",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "type == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "falsePos",
+      "label": "# Nombre de patients expérimentaux sans devenir attendu (B)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "type == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "falseNeg",
+      "label": "# de controls avec expected devenir (C)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "type == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "trueNeg",
+      "label": "# de controls sans expected devenir (D)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": "type == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "preval",
+      "label": "Prevalence (ou pre-test probabilité), %",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "inputs == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "sens",
+      "label": "Sensibilité, %",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "inputs == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "spec",
+      "label": "Spécificité, %",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false,
+      "conditionality": "inputs == 1"
+    }
+  ],
+  "references": [
+    {
+      "text": "Altman DG, Bland JM. Diagnostic tests. 1: Sensitivity and specificity. BMJ. 1994;308(6943):1552.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8019315",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Van der helm HJ, Hische EA. Application of Bayes's theorem to results of quantitative clinical chemical determinations. Clin Chem. 1979;25(6):985-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/445835",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Akobeng AK. Understanding diagnostic tests 1: sensitivity, specificity and predictive values. Acta Paediatr. 2007;96(3):338-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17407452",
+      "kind": "pubmed"
+    },
+    {
+      "text": "How to calculate risk. In: Learn EBM: Understanding Risk. BMJ Clinical Evidence. 2012. Accessed 26 Jun 2017.",
+      "href": "http://clinicalevidence.bmj.com/x/set/static/ebm/learn/665075.html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Laupacis A, Sackett DL, Roberts RS. An assessment of clinically useful measures of the consequences of treatment. N Engl J Med. 1988;318(26):1728-33.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3374545",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.asa-physical-status-asa-classification"
+  ],
+  "source_logic_hash": "",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3993,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,154 @@
+{
+  "id": "calc.eutos-score-chronic-myelogenous-leukemia-cml",
+  "slug": "eutos-score-chronic-myelogenous-leukemia-cml",
+  "language": "fr",
+  "title": "EUTOS score pour chronique Myelogenous Leukemia (CML)",
+  "short_title": "Score EUTOS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Lymphadenopathy"
+  ],
+  "abbreviations": [
+    "survival",
+    "platelets",
+    "basophil",
+    "tyrosine kinase"
+  ],
+  "dosing": false,
+  "formula": "Score EUTOS = (7 × basophiles) + (4 × rate), où\n\n- « Basophiles » correspond aux basophiles exprimés en pourcentage des leucocytes du sang périphérique, et\n- « Rate » correspond à la taille de la rate palpable sous le rebord costal gauche, en cm.\n\nProbabilité de ***ne pas*** atteindre une réponse cytogénétique complète (CCyR) à 18 mois = x / (1 + x), où x = exp(−2.1007 + 0.0700 × basophiles + 0.0402 × taille de la",
+  "how_to_use": {
+    "why": "- Estimates response to therapy to, and survival on, the reference TKI (tyrosine kinase inhibitor) imatinib.\n- Only requires two values, which can be clinically detected prior to completing a bone marrow biopsy.",
+    "when": "Patients atteints de CML nouvellement diagnostiquée, avant les discussions concernant le pronostic et les options thérapeutiques.",
+    "pearls": "- Le score EUTOS (European Treatment and Outcome Study) prédit la survie et peut également servir à prédire la probabilité de réponse cytogénétique complète à 18 mois.\n- Possède une meilleure valeur prédictive que le [Sokal Score](nabda:calc.sokal-index-chronic-myelogenous-leukemia-cml) .\n- L'estimation de la taille de la rate est subjective ; toutefois, cette subjectivité est également présente dans d'autres scores pronostiques de la LMC.\n- Développé chez des patients traités par imatinib, de sorte que les résultats pourraient ne pas s'appliquer aux thérapies de nouvelle génération."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Ne peut être appliqué qu’à un patient nouvellement diagnostiqué avant l’instauration du traitement.",
+    "management": "Bien qu'il n'existe pas de consensus large sur la prise en charge, une stratégie conservatrice consiste à traiter les patients à faible risque par imatinib et à réserver les TKI de nouvelle génération aux patients à haut risque."
+  },
+  "evidence": "The original derivation of the EUTOS Score came from a retrospective analysis of 1,223 European patients in the European Leukemia Network CML registry. All patients were treated with imatinib and divided into a learning cohort and a validation cohort. The prediction is based on a surrogate endpoint for survival of complete cytogenetic response at 18 months, but was found to also predict progression-free survival (PFS).\n\nAn attempt to validate the score by a single institution found that the score was not predictive for survival ([Jabbour 2012](https://www.ncbi.nlm.nih.gov/pubmed/22431574)). There are six major studies showing the EUTOS score predicts outcomes ([Hoffman 2012](https://www.bloodjournal.org/content/120/21/3759),[Hoffman 2013](https://www.bloodjournal.org/content/120/21/3759),[Tiribelli 2012](https://www.bloodjournal.org/content/120/21/3778?sso-checked=true),[Breccia 2012](https://www.ncbi.nlm.nih.gov/pubmed/22770911),[Uz 2013](https://www.ncbi.nlm.nih.gov/pubmed/22770911), Yahng 2012) and three studies showing that it does not ([Marin 2011](https://www.ncbi.nlm.nih.gov/pubmed/22770911),[Jabbour 2012](https://www.ncbi.nlm.nih.gov/pubmed/22431574),[Yamamoto 2014](https://www.ncbi.nlm.nih.gov/pubmed/24450386)).\n\nThe EUTOS Score continues to evolve, with recent data from[Pfirrmann et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/26416462)showing that an EUTOS Long-Term Survival Score (ELTS) differentiated probability of death due to CML better than the original EUTOS Score.",
+  "more_info": "Interprétation :\n\n| Score EUTOS | Catégorie de risque | Survie sans progression à 5 ans* | CCyR à 18 mois* |\n| --- | --- | --- | --- |\n| ≤87 | Faible | 90% | 86% |\n| >87 | Élevé | 82% | 66% |\n\n*Taux de réponse basés uniquement sur le traitement par imatinib.\nCCyR, taux de réponse cytogénétique complète.",
+  "short_description": "Résultats de la CML.",
+  "medium_description": "Predicts outcomes after CML treatments, specifically adjusted pour tyrosine kinase treatments.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "spl",
+      "label": "Taille de la rate",
+      "tips": "Distance maximale palpable sous le rebord costal",
+      "optional": false,
+      "unit": "spleen",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "baso",
+      "label": "% basophiles",
+      "optional": false,
+      "unit": "basophils",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Hasford J, Baccarani M, Hoffmann V, Guilhot J, Saussele S, Rosti G, Guilhot F, Porkka K, Ossenkoppele G, Lindoerfer D, Simonsson B, Pfirrmann M, Hehlmann R. Predicting complete cytogenetic response and subsequent progression-free survival in 2060 patients with CML on imatinib treatment: the EUTOS score. Blood. 2011 Jul 21;118(3):686-92. doi: 10.1182/blood-2010-12-319038. Epub 2011 May 2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21536864",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Marin D, Ibrahim AR, Goldman JM. European Treatment and Outcome Study (EUTOS) score for chronic myeloid leukemia still requires more confirmation. J Clin Oncol 2011;29:3944–5. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21900102 ",
+      "kind": "other"
+    },
+    {
+      "text": "Jabbour E, Cortes J, Nazha A, O’Brien S, Quintas-Cardama A, Pierce S, Garcia-Manero G, Kantarjian H. EUTOS score is not predictive for survival and outcome in patients with early chronic phase chronic myeloid leukemia treated with tyrosine kinase inhibitors: a single institution experience. Blood 2012;119:4524–6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22431574 ",
+      "kind": "other"
+    },
+    {
+      "text": "Yamamoto E, Fujisawa S, Hagihara M, et al. European Treatment and Outcome Study score does not predict imatinib treatment response and outcome in chronic myeloid leukemia patients. Cancer Sci. 2014;105(1):105-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24450386 ",
+      "kind": "other"
+    },
+    {
+      "text": "Pfirrmann M, Baccarani M, Saussele S, et al. Prognosis of long-term survival considering disease-specific death in patients with chronic myeloid leukemia. Leukemia. 2016;30(1):48-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26416462 ",
+      "kind": "other"
+    },
+    {
+      "text": "Hoffmann VS, Mayer J, Turkina AG, Hellmann A, Indrak K, Steegmann JL, Zaritskey A, Colita A, Lindoerfer D, Baccarani M. EUTOS score is also valid in CML patients not involved in clinical studies. Blood 2012;120:Abstract 3759.",
+      "href": "https://www.bloodjournal.org/content/120/21/3759 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hoffmann VS, Baccarani M, Lindoerfer D, et al. The EUTOS prognostic score: review and validation in 1288 patients with CML treated frontline with imatinib. Leukemia 2013;27:2016–22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23752173 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tiribelli M, Bonifacio M, Calistri E, et al. EUTOS score identifies cases with poor outcome in patients with early chronic phase chronic myeloid leukemia, though not predictive for optimal response to imatinib. Blood 2012;120:Abstract 3778.\t",
+      "href": "https://www.bloodjournal.org/content/120/21/3778?sso-checked=true ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Breccia M, Finsinger P, Loglisci G, Latagliata R, Mancini M, Salaroli A, Serrao A, Zacheo I, Alimena G. The EUTOS score identifies chronic myeloid leukeamia patients with poor prognosis treated with imatinib first or second line. Leuk Res 2012;36:e209–10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22770911",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Uz B, Buyukasik Y, Atay H, et al. EUTOS CML prognostic scoring system predicts ELN-based ‘event-free survival’ better than Euro/Hasford and Sokal systems in CML patients receiving front-line imatinib mesylate. Hematology 2013;18:247–52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23540886 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yahng SA, Jang EJ, Choi SY, et al. Comparison of Sokal, Hasford and EUTOS scores in terms of long-term treatment outcome according to the risks in each prognostic model: a single center data analyzed in 255 early chronic phase chronic myeloid leukemia patients treated with frontline imatinib mesylate. Blood 2012;120:Abstract 2794. ",
+      "href": "",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sokal-index-chronic-myelogenous-leukemia-cml",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi"
+  ],
+  "source_logic_hash": "687b8ecd5f6b4c38734eae4445a18877",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sokal-index-chronic-myelogenous-leukemia-cml",
+      "text": "Sokal Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3906,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.imatinib"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

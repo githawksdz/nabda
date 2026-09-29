@@ -1,0 +1,134 @@
+{
+  "id": "calc.winters-formula-metabolic-acidosis-compensation",
+  "slug": "winters-formula-metabolic-acidosis-compensation",
+  "language": "fr",
+  "title": "Winters' Formula pour Metabolic Acidosis Compensation",
+  "short_title": "Formule de Winters",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "nephrologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Intoxication/Overdose",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "abg",
+    "vbg",
+    "winters'",
+    "winters",
+    "gap",
+    "ph",
+    "winters formula",
+    "winters' formula",
+    "metabolic acidosis",
+    "winters formula score",
+    "winters' formula calc",
+    "winters acidosis calc",
+    "winters acidosis score",
+    "winters compensation",
+    "acidosis calc",
+    "acidosis compensation",
+    "acidosis score",
+    "acidosis compensation formula",
+    "acidosis formula",
+    "acidosis compensation",
+    "metabolic acidosis score",
+    "metabolic acidosis calc",
+    "metabolic acidosis formula",
+    "respiratory compensation acidosis",
+    "pCO2 compensation acidosis",
+    "pCO2 compensation metabolic acidosis"
+  ],
+  "dosing": false,
+  "formula": "pCO₂ attendue = 1,5 ×notionvc: 33bc2a2e-555f-463a-9456-4a69344c2688HCO₃- + 8 ± 2\n\nRemarque : bien que la formule originale de Winters utilisait une erreur standard de ±2, des données plus récentes suggèrent que la pCO₂ peut varier jusqu'à ±5 ([Adrogué et Madias 2010](https://jasn.asnjournals.org/content/21/6/920)).",
+  "how_to_use": {
+    "why": "À l'état compensé, un patient présentant une acidose métabolique devrait pouvoir compenser en développant une alcalose respiratoire. La formule de Winters prédit ce niveau de compensation « appropriée ».",
+    "when": "- Un patient avec suspicion d'acidose métabolique pure.\n- Un patient avec une acidose mixte afin de déterminer le degré de compensation.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Les utilisateurs peuvent être intéressés par l'[Analyseur de GDS MDCalc](nabda:calc.arterial-blood-gas-abg-analyzer) qui peut tenter d'évaluer différentes formes de troubles acido-basiques.\n- Le calculateur du [Trou anionique](nabda:calc.anion-gap) peut également aider à déterminer le type d'acidose (avec ou sans trou anionique).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "pCO₂ attendue en cas d'acidose métabolique pure.",
+  "medium_description": "Calculates expected pCO₂ compensation dans purely metabolic acidosis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bicarbonate",
+      "label": "Bicarbonate",
+      "optional": false,
+      "unit": "bicarb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Albert MS, Dell RB, Winters RW. Quantitative Displacement of Acid-Base Equilibrium in Metabolic Acidosis. Ann Intern Med. 1967;66:312-322. doi:10.7326/0003-4819-66-2-312.",
+      "href": "https://annals.org/article.aspx?articleid=681186",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Adrogué HJ, Madias NE. Secondary responses to altered acid-base status: the rules of engagement. J Am Soc Nephrol. 2010;21(6):920-3.",
+      "href": "https://jasn.asnjournals.org/content/21/6/920",
+      "kind": "other"
+    },
+    {
+      "text": "Asch MJ, Dell RB, Williams GS, Cohen M, Winters RW. Time course for development of respiratory compensation in metabolic acidosis. J Lab Clin Med. 1969 Apr;73(4):610-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/5775132",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.urine-anion-gap",
+    "calc.anion-gap",
+    "calc.metabolic-score-insulin-resistance-mets-ir",
+    "calc.arterial-blood-gas-abg-analyzer"
+  ],
+  "source_logic_hash": "b5d0edd8b34b6c779fec66548f7cf197",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.arterial-blood-gas-abg-analyzer",
+      "text": "MDCalc ABG Analyzer"
+    },
+    {
+      "type": "calc",
+      "id": "calc.anion-gap",
+      "text": "Anion Gap"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 117,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

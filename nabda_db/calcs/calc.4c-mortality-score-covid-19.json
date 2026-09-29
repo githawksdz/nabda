@@ -1,0 +1,318 @@
+{
+  "id": "calc.4c-mortality-score-covid-19",
+  "slug": "4c-mortality-score-covid-19",
+  "language": "en",
+  "title": "4C mortalité score pour COVID-19",
+  "short_title": "4C mortalité score pour COVID-19",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "4C Mortality Score for COVID-19, 4C, 4C mortality, 4C covid-19, 4c covid, 4c covid mortality, covid mortality, covid score, covid mortality score, 4c covid-19 mortality, covid-19 mortality, covid-19 mortality score, coronavirus mortality score, coronavirus mortality, 4c coronavirus mortality, 4c coronavirus, coronavirus, covid-19, covid"
+  ],
+  "dosing": false,
+  "formula": "| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <50 | 0 |\n| 50-59 | 2 | |\n| 60-69 | 4 | |\n| 70-79 | 6 | |\n| ≥80 | 7 | |\n| Sex at birth | Female | 0 |\n| Male | 1 | |\n| Number of comorbidities* | 0 | 0 |\n| 1 | 1 | |\n| ≥2 | 2 | |\n| Respiratory rate, breaths/min | <20 | 0 |\n| 20-29 | 1 | |\n| ≥30 | 2 | |\n| Peripheral oxygen saturation on room air | ≥92% | 0 |\n| <92% | 2 | |\n| [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs\\) | 15 | 0 |\n| <15 | 2 | |\n| Urea or BUN (use measurement available) | Urea <7 mmol/L (<42 mg/dL) OR BUN <19.6 mg/dL | 0 |\n| Urea ≥7 to ≤14 mmol/L (≥42mg/dL to ≤84 mg/dL) OR BUN ≥19.6 to ≤39.2 mg/dL | 1 | |\n| Urea >14 mmol/L (>84 mg/dL) OR BUN >39.2 mg/dL | 3 | |\n| C-reactive protein, mg/L | <50 mg/L (<5 mg/dL) | 0 |\n| 50-99 mg/L (5-9.9 mg/dL) | 1 | |\n| ≥100 mg/L (≥10 mg/dL) | 2 | |\n\n*Comorbidities include chronic cardiac disease, chronic respiratory disease (excluding asthma), chronic renal disease (estimated glomerular filtration rate ≤30), mild to severe liver disease, dementia, chronic neurological conditions, connective tissue disease, diabetes mellitus (diet, tablet, or insulin controlled), HIV or AIDS, and malignancy.",
+  "how_to_use": {
+    "why": "Stratification du risque chez les patients hospitalisés pour la COVID-19 afin d’aider à déterminer le risque de mortalité, la décision du niveau de soins et le pronostic.",
+    "when": "À utiliser pour stratifier le risque chez les patients hospitalisés pour COVID-19.",
+    "pearls": "- Conçu spécifiquement pour les patients hospitalisés atteints de COVID-19. Cela peut ne pas s'appliquer aux patients vus en ambulatoire.\n- Nécessite huit prédicteurs spécifiques de mortalité, dont certains peuvent ne pas être immédiatement disponibles dans tous les contextes (p. ex. CRP).\n- La population de l'étude avait un âge médian de 73 ans, 82 % de personnes blanches, avec une mortalité globale de 32,2 %. Tous les patients provenaient d'Angleterre, d'Écosse et du Pays de Galles. À prendre en compte lors de l'application à votre population de patients."
+  },
+  "next_steps": {
+    "advice": "- Le seuil du niveau de prise en charge peut changer dans les situations où les ressources sont limitées, comme l’épidémie actuelle de COVID-19.\n- S’applique aux patients admis et n’est pas conçu pour influencer la décision de sortie lors de la présentation initiale.",
+    "critical_actions": "Lorsqu'il est appliqué à un patient hospitalisé atteint de COVID-19, le score peut être utilisé conjointement avec la suspicion clinique pour déterminer le risque de mortalité et le niveau de prise en charge approprié.",
+    "management": "- Low risk - May be suitable for outpatient management\n- Intermediate risk - May be suitable for general inpatient treatment\n- High risk - May require aggressive treatment and higher level of monitoring"
+  },
+  "evidence": "The 4C Mortality Score was derived from a prospective observational cohort study based upon positively tested COVID-19 patients admitted to 260 hospitals in England, Scotland and Wales. The score includes eight variables consisting of age, sex, number of comorbidities, respiratory rate, peripheral oxygen saturation, Glasgow coma scale score, urea level, and C-reactive protein. The score, ranging from 0-21, predicts in-hospital mortality from low risk to very high risk. The score, when compared against existing scores for CAP and COVID-19, performed better in predicting in-hospital mortality in the validation cohort.\n\nThe score performed well in the internal validation of the study along with external validation studies. The score is limited to determining in-patient hospital mortality and is not designed to be applicable to the outpatient setting. Overall generalizability of the score needs to be further investigated as it was derived and validated in a primarily homogeneous ethnic and age cohort.",
+  "more_info": "Interprétation :\n\n| 4C Mortality Score | Groupe de risque | Mortalité intrahospitalière |\n| --- | --- | --- |\n| 0-3 | Faible | 1,2-1,7 % |\n| 4-8 | Intermédiaire | 9,1-9,9 % |\n| 9-14 | Élevé | 31,4-34,9 % |\n| ≥15 | Très élevé | 61,5-66,2 % |\n\nNote : je conserve les chiffres tels quels ; l'usage typographique français voudrait toutefois la virgule décimale et une espace avant le signe %. Si vous préférez un rendu strictement identique aux valeurs sources (points et sans espace), dites-le-moi et je réajuste.",
+  "short_description": "Dans-hôpital COVID-19 mortalité.",
+  "medium_description": "Predicts dans-hôpital mortalité dans patients admitted avec COVID-19.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 50",
+          "value": 0
+        },
+        {
+          "label": "50-59",
+          "value": 2
+        },
+        {
+          "label": "60-69",
+          "value": 4
+        },
+        {
+          "label": "70-79",
+          "value": 6
+        },
+        {
+          "label": "≥80",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Sexe à la naissance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Nombre de comorbidités",
+      "tips": "Comorbidities include chronic cardiac disease, chronic respiratory disease (excluding asthma), chronic renal disease (estimated glomerular filtration rate ≤30), mild to severe liver disease, dementia, chronic neurological conditions, connective tissue disease, diabetes mellitus (diet, tablet, or insulin controlled), HIV or AIDS, and malignancy.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "≥2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Fréquence respiratoire, breaths/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 20",
+          "value": 0
+        },
+        {
+          "label": "20-29",
+          "value": 1
+        },
+        {
+          "label": "≥30",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "Saturation périphérique en oxygène à l'air ambiant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥92%",
+          "value": 0
+        },
+        {
+          "label": "< 92%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "six",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "15",
+          "value": 0
+        },
+        {
+          "label": "< 15",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "avail",
+      "label": "Sélectionner la mesure disponible",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "BUN",
+          "value": 1
+        },
+        {
+          "label": "Urea",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "seven",
+      "label": "Urea",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "avail==0",
+      "options": [
+        {
+          "label": "< 7 mmol/L (<42 mg/dL)",
+          "value": 0
+        },
+        {
+          "label": "≥7 pour ≤14 mmol/L (≥42mg/dL pour ≤84 mg/dL)",
+          "value": 1
+        },
+        {
+          "label": ">14 mmol/L (>84 mg/dL)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "avail==1",
+      "options": [
+        {
+          "label": "< 19.6 mg/dL",
+          "value": 0
+        },
+        {
+          "label": "≥19.6 pour ≤39.2 mg/dL",
+          "value": 1
+        },
+        {
+          "label": ">39.2 mg/dL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eight",
+      "label": "Protéine C-réactive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 50 mg/L (<5 mg/dL)",
+          "value": 0
+        },
+        {
+          "label": "50-99 mg/L (5-9.9 mg/dL)",
+          "value": 1
+        },
+        {
+          "label": "≥100 mg/L (≥10 mg/dL)",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Knight SR, Ho A, Pius R, et al. Risk stratification of patients admitted Kto hospital with covid-19 using the ISARIC WHO Clinical Characterisation Protocol: development and validation of the 4C Mortality Score. BMJ. 2020;370:m3339.",
+      "href": "https://www.bmj.com/content/370/bmj.m3339",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Knight SR, Ho A, Pius R, et al. Risk stratification of patients admitted Kto hospital with covid-19 using the ISARIC WHO Clinical Characterisation Protocol: development and validation of the 4C Mortality Score. BMJ. 2020;370:m3339.",
+      "href": "https://www.bmj.com/content/370/bmj.m3339",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jones A, Pitre T, Junek M, et al. External validation of the 4C mortality score among COVID-19 patients admitted to hospital in Ontario, Canada: a retrospective study. Sci Rep. 2021;11(1):18638.",
+      "href": "https://www.nature.com/articles/s41598-021-97332-1",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.covid-19-inpatient-risk-calculator-circ",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "683274ff813ad309324ed356440fb82a",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10338,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

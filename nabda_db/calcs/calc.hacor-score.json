@@ -1,0 +1,249 @@
+{
+  "id": "calc.hacor-score",
+  "slug": "hacor-score",
+  "language": "en",
+  "title": "Score HACOR",
+  "short_title": "Score HACOR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Anemia",
+    "Asthma",
+    "Insuffisance cardiaque",
+    "Fibrose pulmonaire idiopathique",
+    "Apnée obstructive du sommeil",
+    "Pneumonia",
+    "Pneumonitis",
+    "Embolie pulmonaire",
+    "Insuffisance respiratoire",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Headache",
+    "Dyspnée",
+    "Wheezing",
+    "Hypoxemia"
+  ],
+  "abbreviations": [
+    "HACOR Score",
+    "HACOR",
+    "NIV",
+    "noninvasive ventilation",
+    "hypoxemia",
+    "niv failure"
+  ],
+  "dosing": false,
+  "formula": "The HACOR Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| H eart rate, beats/min | ≤120 | 0 |\n| ≥121 | 1 | |\n| A cidosis (pH) | ≥7.35 | 0 |\n| 7.30–7.34 | 2 | |\n| 7.25–7.29 | 3 | |\n| <7.25 | 4 | |\n| C onsciousness ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) ) | 15 | 0 |\n| 13-14 | 2 | |\n| 11-12 | 5 | |\n| ≤10 | 10 | |\n| O xygenation ( [PaO₂/FiO₂](nabda:calc.horowitz-index-lung-function-p-f-ratio\\) ), mm Hg | ≥201 | 0 |\n| 176–200 | 2 | |\n| 151–175 | 3 | |\n| 126–150 | 4 | |\n| 101–125 | 5 | |\n| ≤100 | 6 | |\n| R espiratory rate, breaths/min | ≤30 | 0 |\n| 31–35 | 1 | |\n| 36–40 | 2 | |\n| 41–45 | 3 | |\n| ≥46 | 4 | |",
+  "how_to_use": {
+    "why": "Aide à prédire la probabilité d’échec de la VNI, ce qui aide les cliniciens dans la prise de décision précoce concernant la poursuite ou l’intensification de l’assistance respiratoire.",
+    "when": "Best used in critically ill patients with acute hypoxic respiratory failure who require NIV, helping predict the risk of NIV failure.",
+    "pearls": "While the score’s accuracy may vary depending on the underlying cause of respiratory failure, it has been derived and validated in multiple disease states, including pneumonia, pulmonary edema, COPD, and ARDS."
+  },
+  "next_steps": {
+    "advice": "- This tool should not be used as the sole determinant for intubation; consider it alongside clinical judgment and other indicators.\n- For patients with a high score (>5), early intubation may reduce in-hospital mortality.\n- If NIV appears successful (score ≤5), maintain close monitoring and consider other supportive measures to optimize respiratory function.\n- Reassess the patient frequently, as changes in the score over time may indicate a need for escalation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score HACOR | Risque d'échec de la VNI |\n| --- | --- |\n| ≤5 | Faible |\n| >5 | Élevé |",
+  "short_description": "NIV défaillance.",
+  "medium_description": "Predicts défaillance de noninvasive ventilation (NIV) dans hypoxemic patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "**H** fréquence cardiaque, battements/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤120",
+          "value": 0
+        },
+        {
+          "label": "≥121",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ph",
+      "label": "**** Acidose (pH)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥7.35",
+          "value": 0
+        },
+        {
+          "label": "7.30–7.34",
+          "value": 2
+        },
+        {
+          "label": "7.25–7.29",
+          "value": 3
+        },
+        {
+          "label": "< 7.25",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "**C**onscience ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs) )",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "15",
+          "value": 0
+        },
+        {
+          "label": "13-14",
+          "value": 2
+        },
+        {
+          "label": "11-12",
+          "value": 5
+        },
+        {
+          "label": "≤10",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pao2",
+      "label": "**O** xygénation ( [PaO₂/FiO₂](nabda:calc.horowitz-index-lung-function-p-f-ratio) ), mm Hg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥201",
+          "value": 0
+        },
+        {
+          "label": "176–200",
+          "value": 2
+        },
+        {
+          "label": "151–175",
+          "value": 3
+        },
+        {
+          "label": "126–150",
+          "value": 4
+        },
+        {
+          "label": "101–125",
+          "value": 5
+        },
+        {
+          "label": "≤100",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "**R** Fréquence respiratoire, respirations/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤30",
+          "value": 0
+        },
+        {
+          "label": "31–35",
+          "value": 1
+        },
+        {
+          "label": "36–40",
+          "value": 2
+        },
+        {
+          "label": "41–45",
+          "value": 3
+        },
+        {
+          "label": "≥46",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Duan J, Han X, Bai L, Zhou L, Huang S. Assessment of heart rate, acidosis, consciousness, oxygenation, and respiratory rate to predict noninvasive ventilation failure in hypoxemic patients. Intensive Care Med. 2017;43(2):192-199.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27812731/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Duan J, Chen L, Liu X, et al. An updated HACOR score for predicting the failure of noninvasive ventilation: a multicenter prospective observational study. Crit Care. 2022;26(1):196.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35786223/",
+      "kind": "other"
+    },
+    {
+      "text": "Carrillo A, Lopez A, Carrillo L, et al. Validity of a clinical scale in predicting the failure of non-invasive ventilation in hypoxemic patients. J Crit Care. 2020;60:152-158.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32814270/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.noninvasive-ventilation-outcomes-nivo-score",
+    "calc.macocha-score",
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "005f47e46200f6d32d6888f1650fb686",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.horowitz-index-lung-function-p-f-ratio",
+      "text": "PaO₂/FiO₂"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10460,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

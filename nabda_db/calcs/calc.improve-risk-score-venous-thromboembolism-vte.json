@@ -1,0 +1,279 @@
+{
+  "id": "calc.improve-risk-score-venous-thromboembolism-vte",
+  "slug": "improve-risk-score-venous-thromboembolism-vte",
+  "language": "en",
+  "title": "Score de risque IMPROVE pour la thromboembolie veineuse (VTE)",
+  "short_title": "IMPROVE pour VTE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thrombophilie",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "IMPROVE for VTE Risk Score, improve, vte, venous thromboembolism, vte risk, improve score, improve risk score, vte risk score, venous thromboembolism risk, venous thromboembolism risk score, improve for vte"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Previous VTE | Yes | 3 |\n| No | 0 | |\n| Known thrombophilia | Yes | 2 |\n| No | 0 | |\n| Current lower-limb paralysis | Yes | 2 |\n| No | 0 | |\n| Current cancer | Yes | 2 |\n| No | 0 | |\n| Immobilized ≥7 days* | Yes | 1 |\n| No | 0 | |\n| ICU/ CCU stay | Yes | 1 |\n| No | 0 | |\n| Age >60 years | Yes | 1 |\n| No | 0 | |\n\n*Immediately prior to and during hospital admission.",
+  "how_to_use": {
+    "why": "- Aide à la mise en œuvre de mesures préventives appropriées, ce qui peut diminuer la survenue d'événements thromboemboliques veineux (VTE).\n- Permet aux personnes à faible risque d'éviter une thromboprophylaxie inutile, ce qui peut réduire les coûts et les risques hémorragiques.\n- Le recours aux modèles d'évaluation du risque de VTE est préconisé par l'American Society of Hematology.",
+    "when": "Can be used to assess the risk of VTE in hospitalized patients to guide thromboprophylaxis decisions.",
+    "pearls": "- Prédit le risque de MTEV à 3 mois chez les patients hospitalisés et ne doit pas être utilisé chez les patients ambulatoires.\n- Repose sur une cohorte internationale de patients adultes hospitalisés pendant au moins 3 jours pour une affection médicale aiguë.\n- Certains facteurs peuvent ne pas être évaluables à l'admission ; une réévaluation attentive doit être réalisée tout au long du séjour hospitalier.\n- Bien que largement validé, IMPROVE a montré des performances discriminantes inconstantes ; le jugement clinique intégrant les facteurs de risque connus de MTEV reste essentiel, parallèlement à tout modèle d'évaluation du risque."
+  },
+  "next_steps": {
+    "advice": "- Les résultats doivent compléter, et non remplacer, le jugement clinique et l’évaluation individuelle du patient.\n- Évaluer continuellement l’efficacité et la sécurité des mesures prophylactiques, en les ajustant au besoin selon la réponse du patient et tout facteur de risque émergent.",
+    "critical_actions": "- Cet outil a pour but de stratifier le risque chez les patients présentant un risque potentiel de VTE, et non de diagnostiquer une VTE.\n- Si cela est jugé approprié, l'anticoagulation ne doit pas être refusée aux patients qui en ont besoin dans le cadre du traitement de leur diagnostic.\n- Avant d'initier tout traitement anticoagulant, le risque hémorragique du patient doit être évalué.",
+    "management": "- **Score ≥2:** Start appropriate pharmacologic (e.g., low molecular weight heparin) or mechanical (e.g., compression stockings, intermittent pneumatic compression) prophylaxis.\n- **Score <2:** Pharmacologic thrombophylaxis is not warranted. Instead, early ambulation with or without mechanical prophylaxis may be appropriate.\n\nIf pharmacologic prophylaxis is warranted, evaluate for and weigh the risk of bleeding. Consider combining this assessment with the [IMPROVE Bleeding Risk Score](nabda:calc.improve-bleeding-risk-score) ."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score IMPROVE | Risque de MTEV à 3 mois |\n| --- | --- |\n| 0 | 0,4 % |\n| 1 | 0,6 % |\n| 2 | 1,0 % |\n| 3 | 1,7 % |\n| 4 | 2,9 % |\n| 5-10 | 7,2 % |\n| >10 | >7,2 % |",
+  "short_description": "Risque de thromboembolie veineuse (VTE) à 3 mois chez le patient hospitalisé.",
+  "medium_description": "Prédit le risque de VTE à 3 mois chez les patients hospitalisés.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "vte",
+      "label": "Antécédent de VTE",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thrombophilia",
+      "label": "Thrombophilie connue",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "paralysis",
+      "label": "Paralysie actuelle des membres inférieurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "immobilized",
+      "label": "Immobilisé ≥ 7 jours",
+      "tips": "Immédiatement avant et pendant l’admission à l’hôpital",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "icu",
+      "label": "Séjour en USI/USIC (unité de soins intensifs / unité de soins intensifs cardiologiques)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge > 60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schünemann HJ, Cushman M, Burnett AE, et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: prophylaxis for hospitalized and nonhospitalized medical patients. Blood Adv. 2018;2(22):3198-3225. doi:10.1182/bloodadvances.2018022954",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30482763/",
+      "kind": "international"
+    },
+    {
+      "text": "Spyropoulos AC, Anderson FA, FitzGerald G, et al. Predictive and associative models to identify hospitalized medical patients at risk for VTE. Chest. 2011;140(3):706-714.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21436241/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Blondon M, Spirk D, Kucher N, et al. Comparative performance of clinical risk assessment models for hospital-acquired venous thromboembolism in medical patients. Thromb Haemost. 2018;118:82-89.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29304528/",
+      "kind": "other"
+    },
+    {
+      "text": "Häfliger E, Kopp B, Darbellay Farhoumand P, Choffat D, Rossel JB, Reny JL, Aujesky D, Méan M, Baumgartner C. Risk assessment models for venous thromboembolism in medical inpatients. JAMA Netw Open. 2024;7(5):e249980. doi:10.1001/jamanetworkopen.2024.9980",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38728035/",
+      "kind": "other"
+    },
+    {
+      "text": "Yifang H, Jun D, Jingting Y, Ying S, Ping Z, Xiaomei D. Comparison of the PADUA and IMPROVE scores in assessing venous thromboembolism risk in 42,257 medical inpatients in China. J Thromb Thrombolysis. 2024;57(5):775-783. doi:10.1007/s11239-024-02979-y",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38643438/",
+      "kind": "other"
+    },
+    {
+      "text": "Mahan CE, Liu Y, Turpie AG, Vu JT, Heddle N, Cook RJ, Dairkee U, Spyropoulos AC. External validation of a risk assessment model for venous thromboembolism in the hospitalised acutely-ill medical patient (VTE-VALOURR). Thromb Haemost. 2014;112(4):692-699. doi:10.1160/TH14-03-0239",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24990708/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rosenberg D, Eichorn A, Alarcon M, McCullagh L, McGinn T, Spyropoulos AC. External validation of the risk assessment model of the International Medical Prevention Registry on Venous Thromboembolism (Improve) for medical patients in a tertiary health system. J Am Heart Assoc. 2014;3(6):e001152.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25404191/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Greene MT, Spyropoulos AC, Chopra V, Grant PJ, Kaatz S, Bernstein SJ, Flanders SA. Validation of risk assessment models of venous thromboembolism in hospitalized medical patients. Am J Med. 2016;129(9):1001.e9-1001.e18. doi:10.1016/j.amjmed.2016.03.031",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27107925/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moumneh T, Riou J, Douillet D, Henni S, Mottier D, Tritschler T, Le Gal G, Roy PM. Validation of risk assessment models predicting venous thromboembolism in acutely ill medical inpatients: a cohort study. J Thromb Haemost. 2020;18(6):1398-1407. doi:10.1111/jth.14796",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32168402/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wilkinson KS, Sparks AD, Gergi M, Repp AB, Al-Samkari H, Thomas R, Roetker NS, Zakai NA. Validation of the International Medical Prevention Registry on Venous Thromboembolism (IMPROVE) risk scores for venous thromboembolism and bleeding in an independent population. Res Pract Thromb Haemost. 2024;8(4):102441.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38953050/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.improvedd-risk-score-venous-thromboembolism-vte",
+    "calc.improve-bleeding-risk-score",
+    "calc.caprini-score-venous-thromboembolism-2005"
+  ],
+  "source_logic_hash": "5097212314a9c6bd35ace4bcc597f44d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.improve-bleeding-risk-score",
+      "text": "IMPROVE Bleeding Risk Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.improve-bleeding-risk-score",
+      "text": "IMPROVE Bleeding Risk Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10349,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[];\n\nvar criteria=parseFloat(vte)+parseFloat(thrombophilia)+parseFloat(paralysis)+parseFloat(cancer)+parseFloat(immobilized)+parseFloat(icu)+parseFloat(age);\n\nvar risk;\n\nif (criteria==0) {\n  risk = '0.4';\n}\nif (criteria==1) {\n  risk = '0.6';\n}\nif (criteria==2) {\n  risk = '1.0';\n}\nif (criteria==3) {\n  risk = '1.7';\n}\nif (criteria==4) {\n  risk = '2.9';\n}\nif (criteria>=5 & criteria<=10) {\n  risk = '7.2';\n}\nif (criteria>10) {\n  risk = '>7.2';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text:'points',\n    message:'IMPROVE Score'\n});\ncalc_output.push({\n    name: 'IMPROVE Score',\n    value: criteria,\n    value_text:'points',\n    message:'IMPROVE Score'\n});\ncalc_output.push({\n    name: 'VTE Risk',\n    value: risk,\n    value_text:'%',\n    message:'3-month risk of VTE'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "kabir-yadav-mdcm-ms-mshs"
+  ],
+  "creator_names": [
+    "Dr. Alex C. Spyropoulos"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "3baf313bff11a5b27622df12fbd0b05e027ae142eacbcb965c6e5f47ba901bcd"
+}

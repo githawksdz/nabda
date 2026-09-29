@@ -1,0 +1,132 @@
+{
+  "id": "calc.revised-natural-history-model-primary-sclerosing-cholangitis",
+  "slug": "revised-natural-history-model-primary-sclerosing-cholangitis",
+  "language": "fr",
+  "title": "Révisé Natural History modèle pour primaire Sclerosing Cholangitis",
+  "short_title": "Révisé Natural History modèle pour PSC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladies auto-immunes",
+    "Cholangitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "mayo score for PSC",
+    "psc"
+  ],
+  "dosing": false,
+  "formula": "Score de risque = 0,03*(âge [ans]) + 0,54*log~e~(bilirubine [mg/dL]) + 0,54*log~e~(aspartate aminotransférase [U/L]) + 1,24*(hémorragie de varices [O=1, N=0]) - 0,84*(albumine [g/dL])",
+  "how_to_use": {
+    "why": "Le Revised Natural History Model pour la CSP est un système de score simple et pratique.",
+    "when": "Patients atteints de cholangite sclérosante primitive connue.",
+    "pearls": "- Le Revised Natural History Model (score de Mayo) pour la cholangite sclérosante primitive (CSP) fournit une évaluation standardisée permettant de prédire la survie et le besoin de transplantation.\n- Il ne nécessite pas d'examen histologique ni de biopsie hépatique, ce qui en fait un test utile et non invasif."
+  },
+  "next_steps": {
+    "advice": "Le Revised Natural History Model pour la CSP est un système de score simple et pratique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "- Scores ≤0 - groupe à faible risque.\n- Scores 0-2 - groupe à risque intermédiaire.\n- Scores >2 - groupe à risque élevé.",
+  "short_description": "Estimates survie dans primaire sclerosing cholangitis.",
+  "medium_description": "Estime la survie au cours de la cholangite sclérosante primitive.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bili",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "Aspartate aminotransférase (ASAT)",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "varic",
+      "label": "Hémorragie variqueuse",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Kim WR, et. al. A revised natural history model for primary sclerosing cholangitis. Mayo Clinic Proceedings 2000;75:688-694.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10907383",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ponsioen CY. Natural history of primary sclerosing cholangitis and prognostic value of cholangiography in a Dutch population. Gut. Oct 2002; 51(4): 562–566.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1773389/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.mayo-alliance-prognostic-system-maps-score"
+  ],
+  "source_logic_hash": "72c1520987118071183a59b06c65ab95",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3676,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.aspartate",
+    "s.aspartate-ascorbique"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,143 @@
+{
+  "id": "calc.shock-index",
+  "slug": "shock-index",
+  "language": "fr",
+  "title": "Indice de choc",
+  "short_title": "Indice de choc",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "trauma",
+    "hemorrhage",
+    "occult"
+  ],
+  "dosing": false,
+  "formula": "Indice de choc = FC/PAS",
+  "how_to_use": {
+    "why": "- La pression artérielle et la fréquence cardiaque, utilisées isolément, ne permettent pas de prédire avec précision la sévérité de l'hypovolémie et du choc dans les traumatismes graves.\n- La transfusion massive de produits sanguins peut être associée à un risque significatif si elle est initiée chez le mauvais patient. L'identification des patients à risque de transfusion massive peut être difficile, et des mesures objectives comme l'indice de choc peuvent y aider.\n- S'est montré plus sensible que le score ABC pour la transfusion massive ([Schroll 2018](https://www.injuryjournal.com/article/S0020-1383(17)30625-3/pdf)).",
+    "when": "À envisager dans les scénarios suivants :\n\n- Patients se présentant avec une hémorragie et un traumatisme, afin d'identifier les patients à risque accru de transfusion.\n- Patients nécessitant une intubation endotrachéale, afin d'aider à identifier les groupes de patients à risque d'hypotension post-intubation.\n- Patients suspects de sepsis (s'est révélé aussi sensible que les critères SIRS pour identifier les patients à risque de sepsis, [Berger 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3628475/)) ; toutefois, noter qu'un large essai randomisé contrôlé a montré que l'utilisation de l'indice de choc pour guider le remplissage vasculaire dans le sepsis n'a pas démontré d'amélioration de la mortalité ([ProCESS Investigators 2014](https://www.ncbi.nlm.nih.gov/pubmed/24635773)).",
+    "pearls": "- Il n'existe actuellement aucune étude prospective de grande envergure validant l'utilisation de l'indice de choc pour guider les interventions de réanimation.\n- S'est montré corrélé à un risque plus élevé de mortalité (rapport de vraisemblance 5,67) et d'hospitalisation (RV 6,64) avec un seuil >1,3 ([Al Jalbout 2019](https://emj.bmj.com/content/36/5/293)).\n- Un indice de choc ajusté à l'âge pédiatrique (SIPA) différencie mieux les enfants gravement blessés (jusqu'à 16 ans) ([Acker 2015](https://www.ncbi.nlm.nih.gov/pubmed/25638631))."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "La précision de l'indice de choc pour identifier les patients traumatisés nécessitant une transfusion sanguine massive n'a pas encore été étudiée de manière prospective.",
+    "management": ""
+  },
+  "evidence": "The shock index (SI, calculated as heart rate divided by systolic blood pressure) was first proposed in the literature as a measure of shock severity by[Allgöwer and Burri](https://www.thieme-connect.com/products/ejournals/abstract/10.1055/s-0028-1106070)in 1967. More recently, the shock index has been further studied with modern protocols.\n\nIn large retrospective study by[Mutschler et al (2013)](https://ccforum.biomedcentral.com/articles/10.1186/cc12851#B8), 21,853 patients were identified in a trauma registry, and SI was calculated based on emergency department arrival vital signs. The degree of shock was found to correlate with increasing SI value. The need for blood products, fluids and vasopressors was also found to increase with higher SI values.\n\nA retrospective study by[Cannon et al (2009)](https://www.ncbi.nlm.nih.gov/pubmed/20009697), performed at a single level I trauma center, identified 2,445 patients admitted over a five year period. Patients with SI >0.9 were found to have a significantly higher mortality (15.9%) when compared with patients with normal SI (6.3%)\n\nIn a retrospective registry study by[Vandromme et al (2011)](https://www.ncbi.nlm.nih.gov/pubmed/21307738), the authors identified 8,111 blunt trauma patients admitted at a single level I trauma center over an eight-year period. The shock index was calculated from recorded prehospital vital signs, and patients with SI >0.9 were found to have a 1.6-fold higher risk for massive transfusion.\n\nIn a retrospective study of 542 patients who underwent emergency intubation,[Heffner et al (2013)](https://www.ncbi.nlm.nih.gov/pubmed/23911630)identified a pre-intubation SI ≥0.9 to be independently associated with peri-intubation cardiac arrest.\n\nA retrospective study of 2,524 patients that were screened for severe sepsis at a single center found that SI ≥0.7 performed as well as SIRS in NPV and was the most sensitive screening test for hyperlactatemia and 28-day mortality ([Berger 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3628475/)).\n\nOf note, in the[ProCESS trial](https://www.ncbi.nlm.nih.gov/pubmed/24635773)(2014), a large multicenter prospective randomized control study that enrolled 1,341 patients, the investigators compared different protocols of resuscitation of septic patients, and one of these protocols included SI ≥0.8 as a fluid resuscitation goal. There was no significant difference in mortality between the three intervention groups.",
+  "more_info": "",
+  "short_description": "Indicateur sensible du choc occulte.",
+  "medium_description": "Peut être more sensitive indicator de occult shock, especially dans traumatisme ou aigu hémorragie.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque/Pulse",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "systolic_blood_pressure",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Allgöwer M, Burri C. The “shock-index”. Dtsch med Wochenschr 1967; 92(43): 1947-1950. DOI: 10.1055/s-0028-1106070",
+      "href": "https://www.thieme-connect.com/DOI/DOI?10.1055/s-0028-1106070",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heffner AC, Swords DS, Neale MN, Jones AE. Incidence and factors associated with cardiac arrest complicating emergency airway management. Resuscitation. 2013;84(11):1500–1504.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23911630",
+      "kind": "other"
+    },
+    {
+      "text": "Berger T, Green J, Horeczko T, et al. Shock Index and Early Recognition of Sepsis in the Emergency Department: Pilot Study. WestJEM. 2013;14(2):168–174.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3628475/",
+      "kind": "other"
+    },
+    {
+      "text": "ProCESS Investigators, Yealy DM, Kellum JA, et al. A randomized trial of protocol-based care for early septic shock. N Engl J Med. 2014;370(18):1683–1693.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24635773 ",
+      "kind": "other"
+    },
+    {
+      "text": "Acker SN, Ross JT, Partrick DA, Tong S, Bensard DD. Pediatric specific shock index accurately identifies severely injured children. J Pediatr Surg. 2015;50(2):331-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25638631",
+      "kind": "other"
+    },
+    {
+      "text": "Schroll R, Swift D, Tatum D, et al. Accuracy of shock index versus ABC score to predict need for massive transfusion in trauma patients. Injury. 2018;49(1):15-19.",
+      "href": "https://www.injuryjournal.com/article/S0020-1383(17)30625-3/pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Al Jalbout N, Balhara KS, Hamade B, Hsieh YH, Kelen GD, Bayram JD. Shock index as a predictor of hospital admission and inpatient mortality in a US national database of emergency departments. Emerg Med J. 2019;36(5):293-297.",
+      "href": "https://emj.bmj.com/content/36/5/293",
+      "kind": "other"
+    },
+    {
+      "text": "Cannon CM, Braxton CC, Kling-Smith M, Mahnken JD, Carlton E, Moncure M. Utility of the Shock Index in Predicting Mortality in Traumatically Injured Patients. J Trauma. 2009;67(6):1426–1430.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20009697",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vandromme MJ, Griffin RL, Kerby JD, McGwin G Jr., Rue LW III, Weinberg JA. Identifying Risk for Massive Transfusion in the Relatively Normotensive Patient: Utility of the Prehospital Shock Index. J Trauma. 2011;70(2):384–390.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21307738",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mutschler M, Nienaber U, et al. The Shock Index revisited – a fast guide to transfusion requirement? A retrospective analysis on 21,853 patients derived from the TraumaRegister DGU®. Critical Care 2013, 17:R172 doi:10.1186/cc12851",
+      "href": "https://ccforum.com/content/17/4/R172#B8",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shock-index-pediatric-age-adjusted-sipa",
+    "calc.tash-score-trauma-associated-severe-hemorrhage",
+    "calc.chip-ct-head-injury-patients-prediction-rule"
+  ],
+  "source_logic_hash": "5c07016ddef95a66ec2cc51fecf166e7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1316,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

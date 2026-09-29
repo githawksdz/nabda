@@ -1,0 +1,157 @@
+{
+  "id": "calc.nedocs-score-emergency-department-overcrowding",
+  "slug": "nedocs-score-emergency-department-overcrowding",
+  "language": "en",
+  "title": "NEDOCS score pour service d'accueil des urgences Overcrowding",
+  "short_title": "NEDOCS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme"
+  ],
+  "specialties": [
+    "urgences",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "DOCS",
+    "emergency",
+    "overcrowding",
+    "crowded"
+  ],
+  "dosing": false,
+  "formula": "Nomogram:",
+  "how_to_use": {
+    "why": "Fournir un score objectif et quantitatif peut aider les services d'urgence et leurs hôpitaux à fournir des ressources appropriées au service d'urgence et au reste de l'hôpital afin de réduire les retards de prise en charge et l'hébergement aux urgences, qui se sont avérés avoir des impacts significatifs sur la morbidité et la mortalité des patients.",
+    "when": "De nombreux services d'urgence utilisent ces scores à chaque poste, ou parfois en cours de poste en cas de variations importantes de l'encombrement (afflux massif de patients, par exemple).",
+    "pearls": "- The NEDOCS scoring system was created to assess and quantify ED overcrowding.\n- NEDOCS only targeted large, academic trauma centers.\n- Interestingly, its score was calibrated by comparing “busy-ness” to ratings by emergency physicians and emergency department charge nurses.\n- [CEDOCS](nabda:calc.cedocs-score-emergency-department-overcrowding) is calibrated to score 0-100, but usually the score is doubled so it can be compared to NEDOCS (0-200).\n- [CEDOCS](nabda:calc.cedocs-score-emergency-department-overcrowding) appears to be valid at EDs with at least 18,000 patients per year.\n\n**Points to keep in mind:**\n\n- These scores are “best guess” estimates to objectify over-crowding but will not always be able to account for all causes of over-crowding."
+  },
+  "next_steps": {
+    "advice": "Réaliser une évaluation du score de crowding à chaque relève, ainsi qu'en cas d'afflux important de patients aux urgences.",
+    "critical_actions": "",
+    "management": "Many hospitals have developed “surge plans” similar to disaster plans that provide additional resources to the hospital and ED when an ED goes above a certain score threshold (often level 4 or 5 - >100 or >140)."
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Niveau | Score | Interprétation |\n| --- | --- | --- |\n| Niveau 1 | 1-20 | Pas occupé |\n| Niveau 2 | 21-60 | Occupé |\n| Niveau 3 | 61-100 | Extrêmement occupé mais pas surchargé |\n| Niveau 4 | 101-140 | Surchargé |\n| Niveau 5 | 141-180 | Gravement surchargé |\n| Niveau 6 | 181-200 | Dangereusement surchargé |",
+  "short_description": "Estimates gravité de overcrowding dans EDs.",
+  "medium_description": "Estimates gravité de overcrowding dans service d'accueil des urgencess.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "edbeds",
+      "label": "Nombre de lits aux urgences",
+      "tips": "Nombre total de lits autorisés",
+      "optional": false,
+      "unit": "beds",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hospitalbeds",
+      "label": "Number de hôpital beds",
+      "optional": false,
+      "unit": "beds",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "totalpts",
+      "label": "Total patients dans ED",
+      "tips": "Inclure les patients en chambre double et dans les lits de couloir",
+      "optional": false,
+      "unit": "patients",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "vents",
+      "label": "Patients sur ventilators dans ED",
+      "optional": false,
+      "unit": "patients",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "admits",
+      "label": "Number de admits dans ED",
+      "optional": false,
+      "unit": "patients",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "waitingtime_admit",
+      "label": "Temps d’attente du patient admis depuis le plus longtemps",
+      "optional": false,
+      "unit": "time",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "waitingtime_wr",
+      "label": "Temps d'attente du patient en salle d'attente dont l'attente est la plus longue",
+      "tips": "Techniquement « temps d’attente antérieur du dernier patient installé en salle »",
+      "optional": false,
+      "unit": "time",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Weiss SJ, et al. Estimating the Degree of Emergency Department Overcrowding in Academic Medical Centers: Results of the National ED Overcrowding Study (NEDOCS). Acad Emerg Med. 2004 Jan;11(1):38-50.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14709427",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hoot N, Aronsky D. An Early Warning System for Overcrowding in the Emergency Department. AMIA Annual Symposium Proceedings 2006;2006:339-343.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1839284/",
+      "kind": "other"
+    },
+    {
+      "text": "Hwang U, et. al. Measures of Crowding in the Emergency Department: A Systematic Review. Acad Emerg Med. 2011; 18:527–538",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21569171",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cedocs-score-emergency-department-overcrowding",
+    "calc.pedocs-score-pediatric-emergency-department-overcrowding",
+    "calc.2023-emergency-medicine-coding-guide"
+  ],
+  "source_logic_hash": "7ed1afa8c55fd9110068e91ca9151ee3",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.cedocs-score-emergency-department-overcrowding",
+      "text": "CEDOCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3143,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

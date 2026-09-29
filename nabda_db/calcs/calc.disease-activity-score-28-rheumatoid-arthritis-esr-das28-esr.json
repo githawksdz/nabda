@@ -1,0 +1,222 @@
+{
+  "id": "calc.disease-activity-score-28-rheumatoid-arthritis-esr-das28-esr",
+  "slug": "disease-activity-score-28-rheumatoid-arthritis-esr-das28-esr",
+  "language": "en",
+  "title": "Maladie Activity score-28 pour Rheumatoid Arthritis avec ESR (DAS28-ESR)",
+  "short_title": "DAS28-ESR pour Rheumatoid Arthritis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "crp",
+    "esr",
+    "erythrocyte sedimentation rate",
+    "global health",
+    "rheum",
+    "arthritis",
+    "RA"
+  ],
+  "dosing": false,
+  "formula": "DAS28-ESR= (0,56*√(Nombre d'articulations douloureuses)+0,28*√(Nombre d'articulations gonflées)+0,7*ln(VS)+0,014*(santé globale))\n\nNote : je conserve la formule telle quelle ; en usage professionnel francophone, on écrit généralement les décimales avec une virgule (0,56 ; 0,28 ; 0,7 ; 0,014) et « VS » pour vitesse de sédimentation (ESR). Si vous souhaitez conserver les points décimaux et « ESR » à l'identique, la version suivante est également acceptable :\n\nDAS28-ESR= (0.56*√(Tender Joint Count)+0.28*√(Swollen Joint Count)+0.7*ln(ESR)+0.014*(global health))",
+  "how_to_use": {
+    "why": "Recently a “treat to target” approach has been recommended: that a DAS score be calculated at frequent intervals while therapies are being given, until a patient’s score suggests disease remission, or to a particular ESR or [CRP](nabda:calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp) level.",
+    "when": "Patients atteints de polyarthrite rhumatoïde confirmée.",
+    "pearls": "- The DAS Scores indicate how active a patient’s rheumatoid arthritis (RA) is currently, and can be trended over time.\n- They were initially developed for comparing clinical trial results of RA drugs, but are now used as overall markers of disease activity.\n- Recently a “treat to target” approach has been recommended: that a DAS score be frequently calculated until a patient’s score suggests disease remission, or to a particular ESR or [CRP](nabda:calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp) level.\n- The DAS scores were simplified, previously using 44 joints for assessment, and now instead use 28.\n\n**Points to keep in mind:**\n\n- There is some degree of inter-rater variability in assessing the DAS scores, as different raters may classify a joint as swollen or tender to different degrees.\n- The feet are not assessed in the DAS28 scores, since foot joint pains may be unrelated to RA activity (since we walk on our feet). Foot assessment, however, should still be considered in the patient’s broader gestalt, and foot complaints should obviously be considered and managed appropriately in RA patients."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "The EULAR Response Criteria allows clinicians to categorize the effectiveness of a particular therapy. Please see the table below:\n\n| | Improvement in DAS28 score | | | |\n| --- | --- | --- | --- | --- |\n| >1.2 | 0.6–1.2 | ≤0.6 | | |\n| Current DAS28 score | ≤3.2 | Good | Moderate | None |\n| 3.2–5.1 | Moderate | Moderate | None | |\n| >5.1 | Moderate | None | None | |"
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Valeur du score DAS28 | Sévérité de la maladie |\n| --- | --- |\n| < 2.6 | Rémission |\n| ≥ 2.6 - < 3.2 | Faible |\n| ≥ 3.2 - ≤ 5.1 | Modérée |\n| > 5.1 | Élevée |",
+  "short_description": "RA gravité, specifically basé sur ESR.",
+  "medium_description": "Describes gravité de rheumatoid arthritis using clinique et laboratoire data, specifically ESR.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "tender",
+      "label": "Nombre d'articulations douloureuses",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "swollen",
+      "label": "Nombre d'articulations gonflées",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "esr",
+      "label": "Vitesse de sédimentation érythrocytaire (VS)",
+      "optional": false,
+      "unit": "esr",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "pga",
+      "label": "Santé mondiale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0.0 - Très bien",
+          "value": 0
+        },
+        {
+          "label": "0.5",
+          "value": 0.5
+        },
+        {
+          "label": "1.0",
+          "value": 1
+        },
+        {
+          "label": "1.5",
+          "value": 1.5
+        },
+        {
+          "label": "2.0",
+          "value": 2
+        },
+        {
+          "label": "2.5",
+          "value": 2.5
+        },
+        {
+          "label": "3.0",
+          "value": 3
+        },
+        {
+          "label": "3.5",
+          "value": 3.5
+        },
+        {
+          "label": "4.0",
+          "value": 4
+        },
+        {
+          "label": "4.5",
+          "value": 4.5
+        },
+        {
+          "label": "5.0",
+          "value": 5
+        },
+        {
+          "label": "5.5",
+          "value": 5.5
+        },
+        {
+          "label": "6.0",
+          "value": 6
+        },
+        {
+          "label": "6.5",
+          "value": 6.5
+        },
+        {
+          "label": "7.0",
+          "value": 7
+        },
+        {
+          "label": "7.5",
+          "value": 7.5
+        },
+        {
+          "label": "8.0",
+          "value": 8
+        },
+        {
+          "label": "8.5",
+          "value": 8.5
+        },
+        {
+          "label": "9.0",
+          "value": 9
+        },
+        {
+          "label": "9.5",
+          "value": 9.5
+        },
+        {
+          "label": "10.0 - Très mauvais",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "van der Heijde DM, van 't Hof MA, van Riel PL, et al. Judging disease activity in clinical practice in rheumatoid arthritis: first step in the development of a disease activity score. Annals of the Rheumatic Diseases. 1990;49(11):916-920.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2256738/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hensor EMA, et al. Discrepancies in categorizing rheumatoid arthritis patients by DAS-28(ESR) and DAS-28(CRP): can they be reduced?Rheumatology (2010) 49 (8): 1521-1529 first published online April 30, 2010doi:10.1093/rheumatology/keq117",
+      "href": "https://rheumatology.oxfordjournals.org/content/49/8/1521.full",
+      "kind": "other"
+    },
+    {
+      "text": "Khan NA, Spencer HJ, Abda EA, et al. Patient’s global assessment of disease activity and patient’s assessment of general health for rheumatoid arthritis activity assessment: are they equivalent? Annals of the rheumatic diseases. 2012;71(12):1942-1949. doi:10.1136/annrheumdis-2011-201142.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3731741/",
+      "kind": "other"
+    },
+    {
+      "text": "Tamhane A, Redden DT, McGwin G, et al. Comparison of the Disease Activity Score using Erythrocyte Sedimentation Rate and C-reactive Protein in African-Americans with Rheumatoid Arthritis. The Journal of rheumatology. 2013;40(11):1812-1822. doi:10.3899/jrheum.121225.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3987124/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Inoue E, Yamanaka H, Hara M, Tomatsu T, Kamatani N. Comparison of Disease Activity Score (DAS)28‐ erythrocyte sedimentation rate and DAS28‐ C‐reactive protein threshold values. Annals of the Rheumatic Diseases. 2007;66(3):407-409. doi:10.1136/ard.2006.054205.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1856019/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+    "calc.age-adjusted-esr-crp-rheumatoid-arthritis",
+    "calc.simple-disease-activity-index-sdai-rheumatoid-arthritis"
+  ],
+  "source_logic_hash": "14fda404423d9ae110df7aa9036b58f3",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+      "text": "CRP"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2176,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

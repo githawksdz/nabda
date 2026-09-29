@@ -1,0 +1,164 @@
+{
+  "id": "calc.trauma-score-injury-severity-score-triss",
+  "slug": "trauma-score-injury-severity-score-triss",
+  "language": "fr",
+  "title": "Traumatisme score et lésion gravité score (TRISS)",
+  "short_title": "TRISS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma",
+    "Traumatisme crânien"
+  ],
+  "chief_complaints": [
+    "Headache",
+    "Traumatisme crânien",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "Trauma Score and Injury Severity Score (TRISS)",
+    "trauma score",
+    "trauma",
+    "injury",
+    "injury severity",
+    "injury severity score",
+    "injury score",
+    "severity",
+    "severity score",
+    "TRISS",
+    "TRISS method",
+    "mortality risk",
+    "mortality",
+    "survival",
+    "survival probability"
+  ],
+  "dosing": false,
+  "formula": "Probabilité de survie = 1/(1 + e^-b^)\n\noù b = b~0~+ b~1~( [RTS](nabda:calc.revised-trauma-score) ) + b~2~( [ISS](nabda:calc.injury-severity-score-iss) ) + b~3~(A)\n\nA est déterminé comme suit :\n\n| Âge, années | A |\n| --- | --- |\n| ≤54 | 0 |\n| >54 | 1 |\n\nValeurs des coefficients :\n\n| Type de traumatisme | b 0 | b 1 | b 2 | b 3 |\n| --- | --- | --- | --- | --- |\n| Contondant | -1.2470 | 0.9544 | -0.0768 | -1.9052 |\n| Pénétrant | -0.6029 | 1.1430 | -0.1516 | -2.6676 |",
+  "how_to_use": {
+    "why": "- Permet de traduire différentes sévérités de blessures en une caractérisation quantitative.\n- Destiné aux revues d'assurance qualité ou à la recherche afin de comparer les résultats réels et prédits.",
+    "when": "À utiliser pour prédire la probabilité de survie chez les patients victimes d'un traumatisme contondant ou pénétrant.",
+    "pearls": "Combine des données physiologiques ( [Revised Trauma Score](nabda:calc.revised-trauma-score) ), des données anatomiques des blessures ( [Injury Severity Score](nabda:calc.injury-severity-score-iss) ) et des données démographiques du patient (âge et mécanisme de la blessure)."
+  },
+  "next_steps": {
+    "advice": "- Nous ne connaissons aucune recommandation thérapeutique basée sur les résultats du TRISS.\n- Les résultats sont principalement utilisés pour la recherche, l'assurance qualité et l'amélioration des performances au sein des systèmes de traumatologie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Traumatisme survie.",
+  "medium_description": "Estimates probabilité de survie pour traumatisme patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "traumatype",
+      "label": "Type de traumatisme",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Blunt",
+          "value": 0
+        },
+        {
+          "label": "Penetrating",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "rts",
+      "label": "[Revised Trauma Score (RTS)](nabda:calc.revised-trauma-score)",
+      "optional": false,
+      "unit": "rts",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "iss",
+      "label": "[Injury Severity Score (ISS)](nabda:calc.injury-severity-score-iss)",
+      "optional": false,
+      "unit": "iss",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤54",
+          "value": 0
+        },
+        {
+          "label": ">54",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Boyd CR, Tolson MA, Copes WS. Evaluating trauma care: the triss method. Trauma score and the injury severity score. J Trauma. 1987;27(4):370-378.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/3106646/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Driessen MLS, Sturms LM, Bloemers FW, et al. The detrimental impact of the covid-19 pandemic on major trauma outcomes in the netherlands: a comprehensive nationwide study. Ann Surg. 2022;275(2):252-258.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35007227/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.thoracolumbar-injury-classification-severity-scale-tlics",
+    "calc.subaxial-injury-classification-severity-scale-slics",
+    "calc.blast-lung-injury-severity-score",
+    "calc.revised-trauma-score",
+    "calc.injury-severity-score-iss"
+  ],
+  "source_logic_hash": "cb9fe2cd5e1af9ac15aa0531bd6e3217",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.revised-trauma-score",
+      "text": "RTS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.injury-severity-score-iss",
+      "text": "ISS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10404,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

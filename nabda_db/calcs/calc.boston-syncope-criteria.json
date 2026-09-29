@@ -1,0 +1,606 @@
+{
+  "id": "calc.boston-syncope-criteria",
+  "slug": "boston-syncope-criteria",
+  "language": "en",
+  "title": "Critères de Boston pour la syncope (Boston Syncope critères)",
+  "short_title": "Critères de Boston pour la syncope (Boston Syncope critères)",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "general",
+    "gastroenterologie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Arythmie",
+    "Syncope",
+    "Hémorragie gastro-intestinale",
+    "Embolie pulmonaire",
+    "AVC / Accident ischémique transitoire (AIT)",
+    "Tachycardie ventriculaire",
+    "Fibrillation ventriculaire",
+    "Arterial Fibrillation"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Arythmie",
+    "Saignement",
+    "Douleur thoracique",
+    "Vertiges",
+    "Palpitations"
+  ],
+  "abbreviations": [
+    "Boston Syncope Criteria",
+    "Syncope",
+    "syncope ED",
+    "ED syncope",
+    "syncope risk",
+    "syncope outcome",
+    "syncope EM",
+    "EM syncope",
+    "syncope emergency",
+    "syncope criteria"
+  ],
+  "dosing": false,
+  "formula": "The Boston Syncope Criteria are met if any of the following risk factors are present:\n\n**Signs and symptoms of acute coronary syndrome**\n\n- Complaint of chest pain of possible cardiac origin\n- IschemicECGchanges (ST elevation or deep [>0.1 mV] ST depression)\n- Other ECG changes,VT,VF,SVT, rapid atrial fibrillation, or new (or not known to be old) ST/T wave changes\n- Complaint of shortness of breath\n\n**Signs of conduction disease**\n\n- Multiple syncopal episodes within the last 6 months\n- Rapid heart beat by patient history\n- Syncope during exercise\n- QT interval >500 ms\n- Second- or third-degree heart block or intraventricular block\n\n**Worrisome cardiac history**\n\n- History ofCAD, including deep q waves, hypertrophic or dilated cardiomyopathy\n- History of heart failure or LV dysfunction\n- History of ventricular tachycardia or ventricular fibrillation\n- History of pacemaker\n- History ofICD\n- Prehospital use of dysrhythmic medication excluding beta blockers or calcium channel blockers\n\n**Valvular heart disease**\n\n- Valvular heart disease noted in history or on ED examination\n\n**Family history of sudden death**\n\n- Family history (first-degree relative) with sudden death,HOCM, Brugada syndrome, or long QT syndrome\n\n**Volume depletion**\n\n- Gastrointestinal bleeding by hemoccult or history\n- Hematocrit <30%\n- Dehydration not corrected in the ED per treating physician discretion\n\n**Abnormal vital signs** Persistent (>15 min) in the ED without the need of concurrent interventions such as oxygen, pressors, or temporary pacemaker\n\n- Respiratory rate >24 breaths/min\n- O~2~saturation <90%\n- Sinus rate <50 or sinus rate >100\n- Blood pressure <90 mm Hg\n\n**Central nervous system**\n\n- Primary CNS event (i.e.,SAH, stroke)",
+  "how_to_use": {
+    "why": "Estime le risque d’événements indésirables à 30 jours ou la nécessité d’interventions critiques, ce qui peut aider à déterminer qui nécessite une hospitalisation pour un bilan complémentaire.",
+    "when": "À utiliser chez les patients adultes (âge ≥18 ans) se présentant au service des urgences pour une syncope.",
+    "pearls": "- Derived from American College of Emergency Physicians’ (ACEP) clinical policy elements, recommendations from the [San Francisco Syncope Rule](nabda:calc.san-francisco-syncope-rule) , and clinical judgment of a group of expert emergency physicians, cardiologists, electrophysiologists, and internists.\n- Applying the rule in the derivation study was estimated to reduce admissions by 48% in the derivation study.\n- Patients with near-syncope, alcohol- or drug-related loss of consciousness, seizure, coma, hypoglycemia, loss of consciousness from head trauma, and persistent altered mental status were excluded from the derivation study; a validation study noted the criteria may be used for near-syncope.\n- “Critical intervention” was defined as pacemaker/implantable cardioverter-defibrillator placement, percutaneous coronary intervention or surgery, blood transfusion, cardiopulmonary resuscitation, alterations in antidysrhythmic therapy, endoscopy with intervention, or correction of carotid stenosis.\n- “Adverse outcome” was defined as death, pulmonary embolus, stroke, severe infection/sepsis, ventricular dysrhythmia, atrial dysrhythmia, intracranial hemorrhage, major hemorrhage, myocardial infarction, cardiac arrest, or life-threatening sequelae of syncope (e.g., rhabdomyolysis, long-bone or cervical-spine fractures).\n- Demonstrates high sensitivity (97%) and negative predictive value (99%) for 30-day serious outcomes, with a specificity of 62%."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats conjointement avec le jugement clinique et un bilan approfondi.\n- Veiller à exclure les pathologies simulant une syncope (p. ex., crise convulsive, hypoglycémie, intoxication).",
+    "critical_actions": "",
+    "management": "- **Aucun critère n'est présent :**\n\n  - Le patient est probablement à faible risque.\n  - Envisager une sortie ou une brève observation avec des consignes de retour claires.\n  - Assurer un suivi ambulatoire rapide pour une évaluation complémentaire.\n- **Un ou plusieurs critères sont présents :**\n\n  - Le patient n'est pas à faible risque.\n  - Une admission pour évaluation en milieu hospitalier est appropriée pour une surveillance cardiaque et des tests ciblés (en fonction du domaine du critère positif et de l'étiologie sous-jacente suspectée)."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Évalue le risque d’événements indésirables chez les patients se présentant aux urgences pour une syncope.",
+  "medium_description": "Assesses risque de adverse events among patients presenting pour service d'accueil des urgences avec syncope.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Douleur thoracique possiblement d'origine cardiaque",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Modifications ECG ischémiques (sus-décalage du segment ST ou dépression profonde du segment ST [> 0.1 mV])",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Other ECG changes,VT,VF,SVT, rapid fibrillation atriale, ou new (ou not known pour be old) ST/T wave changes",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Dyspnée",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Épisodes syncopaux multiples au cours des 6 derniers mois",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Fréquence cardiaque rapide selon les antécédents du patient",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "Syncope à l'effort",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "Intervalle QT > 500 ms",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "i",
+      "label": "Bloc cardiaque du deuxième ou du troisième degré ou bloc intraventriculaire",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "j",
+      "label": "Antécédents de CAD, y compris ondes Q profondes, cardiomyopathie hypertrophique ou dilatée",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "k",
+      "label": "Antécédents d'insuffisance cardiaque ou de dysfonction ventriculaire gauche (LV)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "l",
+      "label": "Antécédents de tachycardie ventriculaire ou de fibrillation ventriculaire",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "m",
+      "label": "Antécédents de pacemaker",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "n",
+      "label": "Antécédents d’ICD",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "o",
+      "label": "Utilisation préhospitalière de médicaments antiarythmiques, à l’exclusion des bêtabloquants ou des inhibiteurs calciques.",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "p",
+      "label": "Valvular heart maladie noted dans history ou sur ED examination",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "q",
+      "label": "Family history (first-degree relative) avec sudden death,HOCM, Brugada syndrome, ou long QT syndrome",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "r",
+      "label": "Hémorragie digestive mise en évidence par Hémoccult ou rapportée dans les antécédents",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "s",
+      "label": "Hématocrite < 30 %",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "t",
+      "label": "Dehydration not corrected dans ED per treating physician discretion",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "u",
+      "label": "Fréquence respiratoire > 24 respirations/min",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "v",
+      "label": "Saturation O~2~ < 90 %",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "w",
+      "label": "Fréquence sinusale <50 ou fréquence sinusale >100",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "x",
+      "label": "Pression artérielle < 90 mm Hg",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "y",
+      "label": "Événement primaire du SNC (c.-à-d. SAH, AVC)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Grossman SA, Fischer C, Lipsitz LA, et al. Predicting adverse outcomes in syncope. J Emerg Med. 2007;33(3):233-239. doi:10.1016/j.jemermed.2007.04.001",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17976548/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mechanic OJ, Pascheles CY, Lopez GJ, et al. Using the Boston syncope observation management pathway to reduce hospital admission and adverse outcomes. West J Emerg Med. 2019;20(2):250-255. doi:10.5811/westjem.2018.11.39657",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30881544/",
+      "kind": "other"
+    },
+    {
+      "text": "Sweanor RAL, Redelmeier RJ, Simel DL, Albassam OT, Shadowitz S, Etchells EE. Multivariable risk scores for predicting short-term outcomes for emergency department patients with unexplained syncope: A systematic review. Acad Emerg Med. 2021;28(5):502-510. doi:10.1111/acem.14203",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33382159/",
+      "kind": "other"
+    },
+    {
+      "text": "Grossman SA, Bar J, Fischer C, et al. Reducing admissions utilizing the Boston Syncope Criteria. J Emerg Med. 2012;42(3):345-352. doi:10.1016/j.jemermed.2011.01.021",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21421292/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Grossman SA, Babineau M, Burke L, et al. Applying the Boston syncope criteria to near syncope. J Emerg Med. 2012;43(6):958-963. doi:10.1016/j.jemermed.2012.01.043",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22981659/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.san-francisco-syncope-rule"
+  ],
+  "source_logic_hash": "b7a502f62621bfe7dd5ac03854381ecd",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.san-francisco-syncope-rule",
+      "text": "San Francisco Syncope Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.san-francisco-syncope-rule",
+      "text": "San Francisco Syncope Rule"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10656,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\nvar h = parseFloat(h);\nvar i = parseFloat(i);\nvar j = parseFloat(j);\nvar k = parseFloat(k);\nvar l = parseFloat(l);\nvar m = parseFloat(m);\nvar n = parseFloat(n);\nvar o = parseFloat(o);\nvar p = parseFloat(p);\nvar q = parseFloat(q);\nvar r = parseFloat(r);\nvar s = parseFloat(s);\nvar t = parseFloat(t);\nvar u = parseFloat(u);\nvar v = parseFloat(v);\nvar w = parseFloat(w);\nvar x = parseFloat(x);\nvar y = parseFloat(y);\n\n\nvar score = a + b + c + d + e + f + g + h + i + j + k + l + m + n + o + p + q + r + s + t + u + v + w + x + y;\n\nvar mini, long;\nif (score >= 1) {\n    mini = 'Meets criteria';\n    long = 'Meets Boston Syncope Criteria';\n} else {\n    mini = 'Does not meet criteria';\n    long = 'Does not meet Boston Syncope Criteria';\n}\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: mini,\n    value_text: '',\n    message: 'Boston Syncope Criteria'\n});\ncalc_output.push({\n    name: '10656_Boston Syncope Criteria_result',\n    value: mini,\n    value_text: '',\n    message: long\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Shamai A. Grossman"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "engine_sha256": "79c083776e88d79f88246b8ad03ba7fb05d3bff2fa741f6a18429aca2dcbc9cd"
+}

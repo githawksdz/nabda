@@ -1,0 +1,271 @@
+{
+  "id": "calc.hiv-incidence-risk-index-hiri-msm",
+  "slug": "hiv-incidence-risk-index-hiri-msm",
+  "language": "en",
+  "title": "HIV Incidence risque index pour MSM (HIRI-MSM)",
+  "short_title": "HIRI-MSM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhea",
+    "Fatigue",
+    "Fever",
+    "Headache",
+    "Perte d'appétit",
+    "Rash",
+    "Mal de gorge",
+    "Swelling",
+    "Vomiting",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "HIV Incidence Risk Index for MSM (HIRI-MSM)",
+    "hiv risk",
+    "msm",
+    "hiv risk for msm",
+    "hiri msm",
+    "hiri-msm",
+    "hiv infection",
+    "msm hiv risk",
+    "hiv risk index",
+    "hiv risk index for msm"
+  ],
+  "dosing": false,
+  "formula": "The HIRI-MSM is calculated by the addition of the selected points:\n\n| Question | Points | |\n| --- | --- | --- |\n| Ask the patient the following questions: | | |\n| How old are you today (years)? | <18 | 0 |\n| 18-28 | 8 | |\n| 29-40 | 5 | |\n| 41-48 | 2 | |\n| ≥49 | 0 | |\n| How many men have you had sex with in the last 6 months? | 0-5 | 0 |\n| 6-10 | 4 | |\n| >10 | 7 | |\n| In the last 6 months, how many times did you have receptive anal sex (you were the bottom) with a man without a condom? | 0 | 0 |\n| ≥1 | 10 | |\n| How many of your male sex partners were HIV positive? | 0 | 0 |\n| 1 | 4 | |\n| >1 | 8 | |\n| In the last 6 months, how many times did you have insertive anal sex (you were the top) without a condom with a man who was HIV positive? | 0-4 | 0 |\n| ≥5 | 6 | |\n| In the last 6 months, have you used methamphetamines such as crystal or speed? | No | 0 |\n| Yes | 5 | |\n| In the last 6 months, have you used poppers (amyl nitrate)? | No | 0 |\n| Yes | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Can be used as part of a comprehensive sexual history for new or established patients.\n- Can assess the level of risk for acquiring HIV. This can be used in counseling for preventive medications and practices.",
+    "pearls": "- À utiliser uniquement chez les hommes ayant des rapports sexuels avec des hommes (MSM).\n- Ne doit pas être utilisé seul pour déterminer la pertinence d’un traitement par PrEP, car les patients appartenant à des catégories de risque plus faible peuvent tout de même être éligibles à la PrEP.\n- Peut être utile dans les zones à ressources limitées où la PrEP est limitée ou d’un coût prohibitif."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Les patients de la catégorie à haut risque doivent bénéficier en particulier de conseils concernant le traitement par PrEP. Il peut également être approprié que les patients des catégories à risque plus faible reçoivent la PrEP. Tous les patients doivent bénéficier de conseils sur les mesures préventives.\n- Suivre les recommandations locales de prescription de la PrEP et conseiller à tous les patients des pratiques sexuelles sûres.\n- Cliquez [ici](https://www.cdc.gov/hiv/clinicians/index.html) pour les ressources du CDC sur le traitement et la prévention du VIH."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| HIRI-MSM | Risque de VIH |\n| --- | --- |\n| <10 | Faible |\n| ≥10 | Élevé |",
+  "short_description": "HIV risque pour MSM.",
+  "medium_description": "Identifie les MSM à risque d’infection par le HIV.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Quel âge avez-vous aujourd’hui (années) ?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 18",
+          "value": 0
+        },
+        {
+          "label": "18-28",
+          "value": 8
+        },
+        {
+          "label": "29-40",
+          "value": 5
+        },
+        {
+          "label": "41-48",
+          "value": 2
+        },
+        {
+          "label": "≥49",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "How many men have you had sex avec dans last 6 months?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0-5",
+          "value": 0
+        },
+        {
+          "label": "6-10",
+          "value": 4
+        },
+        {
+          "label": ">10",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Dans last 6 months, how many times did you have receptive anal sex (you were bottom) avec man sans condom?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "≥1",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Combien de vos partenaires sexuels masculins étaient séropositifs au VIH ?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 4
+        },
+        {
+          "label": ">1",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Dans last 6 months, how many times did you have insertive anal sex (you were top) sans condom avec man who was HIV positive?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "0-4",
+          "value": 0
+        },
+        {
+          "label": "≥5",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Dans last 6 months, have you used methamphetamines such as crystal ou speed?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Dans last 6 months, have you used poppers (amyl nitrate)?",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "CDC. Preexposure Prophylaxis for the Prevention of HIV Infection in the United States - 2021 Update – A Clinical Practice Guideline. Published online 2021.",
+      "href": "https://www.cdc.gov/hiv/pdf/risk/prep/cdc-hiv-prep-guidelines-2021.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "CDC. Preexposure Prophylaxis for the Prevention of HIV Infection in the United States – 2021 Update – Clinical Providers’ Supplement. Published online November 2021.",
+      "href": "https://www.cdc.gov/hiv/pdf/risk/prep/cdc-hiv-prep-provider-supplement-2021.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "British Columbia Centre for Excellence in HIV/AIDS. Guidance for the use of Pre-Exposure Prophylaxis (PrEP) for the prevention of HIV acquisition in British Columbia. Published online June 2020.",
+      "href": "https://www.bccfe.ca/sites/default/files/uploads/publications/centredocs/prep_guidelines_17-jun-2020.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "Smith DK, Pals SL, Herbst JH, Shinde S, Carey JW. Development of a clinical screening index predictive of incident HIV infection among men who have sex with men in the United States. J Acquir Immune Defic Syndr. 2012;60(4):421-427.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22487585/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wilton J, Mishra S, Tan DHS. Considerations for using the hiri-msm screening tool to identify msm who would benefit most from prep. J Acquir Immune Defic Syndr. 2017;76(2):e58-e61.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28903127/",
+      "kind": "other"
+    },
+    {
+      "text": "Wilton J, Kain T, Fowler S, et al. Use of an HIV-risk screening tool to identify optimal candidates for PrEP scale-up among men who have sex with men in Toronto, Canada: disconnect between objective and subjective HIV risk. J Int AIDS Soc. 2016;19(1):20777.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27265490/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jones J, Hoenigl M, Siegler AJ, Sullivan PS, Little S, Rosenberg E. Assessing the performance of 3 human immunodeficiency virus incidence risk scores in a cohort of black and white men who have sex with men in the south. Sex Transm Dis. 2017;44(5):297-302.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28407646/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.menza-score",
+    "calc.denver-hiv-risk-score",
+    "calc.veterans-aging-cohort-study-charlson-comorbidity-index-vacs-cci"
+  ],
+  "source_logic_hash": "55b424b999373ee66ac777c87c1ba1de",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10518,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.amines-glucose-lipides"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

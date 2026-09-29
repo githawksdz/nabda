@@ -1,0 +1,172 @@
+{
+  "id": "calc.neonatal-early-onset-sepsis-calculator",
+  "slug": "neonatal-early-onset-sepsis-calculator",
+  "language": "en",
+  "title": "Néonatal Early-Onset sepsis calculateur",
+  "short_title": "Néonatal Early-Onset sepsis calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "infectiologie",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Anuria",
+    "Dyspnea",
+    "Fatigue",
+    "Fever",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Neonatal Early-Onset Sepsis Calculator",
+    "neonatal early-onset sepsis",
+    "neonatal early onset sepsis",
+    "early-onset sepsis",
+    "early onset sepsis",
+    "sepsis",
+    "neonatal sepsis",
+    "septic shock",
+    "neonatal early-onset sepsis risk",
+    "neonatal early onset sepsis risk",
+    "early-onset sepsis risk",
+    "early onset sepsis risk",
+    "sepsis risk",
+    "neonatal sepsis risk",
+    "septic shock risk",
+    "EOS",
+    "EOS risk"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients to calculate early-onset sepsis (EOS) risk at birth are as follows:\n\n| Variable | Transformation | Coefficient |\n| --- | --- | --- |\n| Gestational age (GA), weeks | ga | -6.9325 |\n| ga 2 | 0.0877 | |\n| Temperature, °F | temp | 0.8680 |\n| Duration of rupture of membranes (ROM), hours | trom = (rom + 0.05) 0.2 | 1.2256 |\n| Group B S treptococcus (GBS) positive | yes = 1, no = 0 | 0.5771 |\n| GBS unknown | yes = 1, no = 0 | 0.0427 |\n| Broad-spectrum antibiotics >4 hrs prior to birth | yes = 1, no = 0 | -1.1861 |\n| Broad-spectrum antibiotics 2-3.9 hrs prior to birth | yes = 1, no = 0 | -1.0488 |\n| GBS-specific antibiotics >2 hrs prior to birth | yes = 1, no = 0 | -1.0488 |\n| Constant | | 40.5656 |\n\n**EOS risk at birth** = 1/(1 + e^-x^),\n\nwhere **x** = Σ[β*(transformed variables)]\n\n**EOS risk per 1000/births** = (EOS risk at birth)*1000\n\nEOS risk after clinical exam is calculated as follows:\n\n**EOS risk per 1000/births** = y/(1 + y) * 1000,\n\nwhere **y** = z*[EOS risk at birth/(1 - EOS risk at birth)]\n\nz is defined as follows:\n\n| Clinical Exam | z |\n| --- | --- |\n| Well-appearing | 0.41 |\n| Equivocal | 5 |\n| Clinical illness | 21.2 |",
+  "how_to_use": {
+    "why": "Aide à identifier les nouveau-nés à risque de sepsis à début précoce.",
+    "when": "- Utiliser à la naissance pour déterminer le risque de sepsis néonatal précoce.\n- Nécessite les informations cliniques maternelles ainsi qu’un examen physique du nouveau-né.",
+    "pearls": "- L'examen physique doit être réalisé dans les 12-24 premières heures suivant la naissance.\n- Ne doit être utilisé que pour l'évaluation des nouveau-nés nés ≥34 semaines de gestation.\n- Cet outil utilise l'incidence nationale du CDC de 0.5/1000 naissances vivantes. L'incidence locale de sepsis néonatal précoce peut varier."
+  },
+  "next_steps": {
+    "advice": "Ce calculateur utilise l’incidence nationale du CDC du sepsis néonatal précoce (0.5/1000 naissances vivantes). Votre incidence locale peut être plus élevée ou plus faible ; veillez à suivre les recommandations locales.",
+    "critical_actions": "",
+    "management": "- In addition to calculating a numerical risk level, this calculator makes recommendations for follow-up care of the newborn.\n- If no additional care is recommended (i.e., no blood culture or antibiotics), the newborn can likely be observed with routine vitals.\n- If a blood culture is recommended, the newborn should have vitals obtained every 4 hours.\n- If empiric antibiotics are recommended, consider NICU evaluation and transfer."
+  },
+  "evidence": "",
+  "more_info": "Definitions of clinical exam:\n\nWell-appearing: No persistent physiologic abnormalities.\n\nEquivocal: One of the below physiologic abnormalities present for ≥4 hours OR ≥2 of the below physiologic abnormalities present for ≥2 hours.\n\n- Tachycardia (HR ≥160).\n- Tachypnea (RR ≥60).\n- Temperature instability (≥100.4 F or <97.5 F).\n- Respiratory distress (grunting, flaring, or retracting) but not requiring supplemental oxygen.\n\nCritical illness: Any one of the below clinical findings.\n\n- Need for NCPAP/HFNC/mechanical ventilation outside of the delivery room.\n- Hemodynamic instability requiring vasoactive medication.\n- Neonatal encephalopathy/perinatal depression, characterized by seizure or Apgar score @ 5 minutes <5.\n- Need for supplemental oxygen ≥2 hours to maintain oxygen saturations >90%.",
+  "short_description": "Néonatal early-onset sepsis risque.",
+  "medium_description": "Calculates néonatal early-onset sepsis risque basé sur maternal intrapartum risque factors.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "gestational_age",
+      "label": "Gestational âge",
+      "tips": "Format: e.g. 7w3d",
+      "optional": false,
+      "unit": "gestational_age",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "temp",
+      "label": "Température maternelle antepartum la plus élevée",
+      "optional": false,
+      "unit": "temp",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "rom",
+      "label": "Durée de rupture des membranes (ROM)",
+      "optional": false,
+      "unit": "rom",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "gbs",
+      "label": "MaternalGBSstatus",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 1
+        },
+        {
+          "label": "Inconnu",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "antibiotics",
+      "label": "Type d’antibiotiques per-partum",
+      "tips": "Si des antibiotiques à large spectre et des antibiotiques spécifiques du GBS ont tous deux été administrés en per-partum, veuillez sélectionner le moment approprié parmi les catégories à large spectre.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Broad-spectrum antibiotics >4 hrs prior pour birth",
+          "value": 0
+        },
+        {
+          "label": "Broad-spectrum antibiotics 2-3.9 hrs prior pour birth",
+          "value": 1
+        },
+        {
+          "label": "GBS-specific antibiotics >2 hrs prior pour birth",
+          "value": 2
+        },
+        {
+          "label": "No antibiotics ou any antibiotics <2 hrs prior pour birth",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Puopolo KM, Draper D, Wi S, et al. Estimating the probability of neonatal early-onset infection on the basis of maternal risk factors. Pediatrics. 2011;128(5):e1155-1163.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22025590/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kuzniewicz MW, Walsh EM, Li S, Fischer A, Escobar GJ. Development and implementation of an early-onset sepsis calculator to guide antibiotic management in late preterm and term neonates. Jt Comm J Qual Patient Saf. 2016;42(5):232-239.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27066927/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+    "calc.phoenix-sepsis-score",
+    "calc.sirs-sepsis-septic-shock-criteria"
+  ],
+  "source_logic_hash": "e2c6b850c8e2cc5095f7a7a45d7da194",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10528,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,728 @@
+{
+  "id": "calc.modified-fatigue-impact-scale-mfis",
+  "slug": "modified-fatigue-impact-scale-mfis",
+  "language": "fr",
+  "title": "Modifié fatigue Impact échelle (MFIS)",
+  "short_title": "Modifié fatigue Impact échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "mfis",
+    "ms",
+    "multiple sclerosis",
+    "daily life",
+    "function"
+  ],
+  "dosing": false,
+  "formula": "**MFIS:**\n\n- Total = Physical + Cognitive + Psychosocial\n- Physical Subscale: Items 4+6+7+10+13+14+17+20+21.\n- Cognitive Subscale: Items 1+2+3+5+11+12+15+16+18+19.\n- **Psychosocial Subscale: Items 8+9**",
+  "how_to_use": {
+    "why": "",
+    "when": "Quantification de l’impact de la fatigue sur le fonctionnement quotidien chez les patients atteints de sclérose en plaques.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Cet outil est utile pour le suivi longitudinal de la fatigue associée à la SEP chez un patient, mais il peut également servir à mesurer la sévérité de la fatigue.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "La [version abrégée du MFIS](nabda:calc.shortened-modified-fatigue-impact-scale-mfis) utilise les questions 1, 9, 10, 17 et 19 de la version longue du MFIS.",
+  "short_description": "Impact quotidien de la fatigue.",
+  "medium_description": "Mesure l’impact de la fatigue sur la vie quotidienne du patient.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "1. J'ai été moins alerte.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "2. J'ai eu des difficultés à me concentrer.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "3. I have been unable pour think clearly.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "4. J'ai été maladroit(e) et incoordonné(e).",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "5. J’ai des oublis.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "6. I have had pour pace myself dans my physical activities.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "7. I have been less motivated pour do anything that nécessite physical effort.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "8. I have been less motivated pour participate dans social activities.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "9. I have been limited dans my ability pour do things away de home.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "10. I have had trouble maintaining physical effort pour long periods.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q11",
+      "label": "11. J'ai eu des difficultés à prendre des décisions.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q12",
+      "label": "12. I have been less motivated pour do anything that nécessite thinking.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q13",
+      "label": "13. J’ai ressenti une faiblesse musculaire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q14",
+      "label": "14. J'ai éprouvé un inconfort physique.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q15",
+      "label": "15. J’ai eu des difficultés à terminer des tâches qui exigent un effort de réflexion.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q16",
+      "label": "16. J’ai eu des difficultés à organiser les choses.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q17",
+      "label": "17. I have been less able pour complete tasks that require physical effort.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q18",
+      "label": "18. Ma pensée est ralentie.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q19",
+      "label": "19. J'ai eu des difficultés à me concentrer.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q20",
+      "label": "20. J'ai limité mes activités physiques.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q21",
+      "label": "21. I have needed pour rest more often ou pour longer periods de time.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fisk JD, Pontefract A, Ritvo PG, Archibald CJ, Murray TJ. The impact of fatigue on patients with multiple sclerosis. Can J Neurol Sci. 1994 Feb;21(1):9-14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Larson RD. Psychometric Properties of the Modified Fatigue Impact Scale.International Journal of MS Care. 2013;15(1):15-20. doi:10.7224/1537-2073.2012-019.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3883028/",
+      "kind": "other"
+    },
+    {
+      "text": "Freal JE, Kraft GH, Coryell JK.Symptomatic fatigue in multiple sclerosis.Arch Phys Med Rehabil. 1984 Mar;65(3):135-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+      "kind": "other"
+    },
+    {
+      "text": "Kos D, Nagels G, D'Hooghe MB, Duportail M, Kerckhofs E. A rapid screening tool for fatigue impact in multiple sclerosis. BMC Neurology. 2006;6:27. doi:10.1186/1471-2377-6-27.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1579227/",
+      "kind": "other"
+    },
+    {
+      "text": "Tellez N et al. Does the Modified Fatigue Impact Scale offer a more comprehensive assessment of fatigue in MS? Mult Scler 2005;11(2):198– 202",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15794395",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shortened-modified-fatigue-impact-scale-mfis",
+    "calc.berg-balance-scale-bbs",
+    "calc.mcdonald-criteria-multiple-sclerosis-2017-revision"
+  ],
+  "source_logic_hash": "dadba7a32bbe28c957f1c17993854cc0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2196,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

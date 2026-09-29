@@ -1,0 +1,338 @@
+{
+  "id": "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+  "slug": "gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+  "language": "en",
+  "title": "Gupta Perioperative risque pour infarctus du myocarde ou Cardiac Arrest (MICA)",
+  "short_title": "Risque périopératoire de Gupta",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Douleur aiguë",
+    "Appendicite",
+    "Cholécystite",
+    "Maladie de Crohn",
+    "Fracture",
+    "Hernie",
+    "Maladies inflammatoires chroniques de l'intestin (MICI)",
+    "Mélanome"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Saignement",
+    "Sang dans les selles",
+    "Masse"
+  ],
+  "abbreviations": [
+    "gupta perioperative risk",
+    "perioperative risk",
+    "MICA",
+    "MICA risk",
+    "post-surgery risk",
+    "cardiac risk",
+    "surgical risk",
+    "periop",
+    "peri-op",
+    "post op",
+    "post-op",
+    "surgery risk",
+    "nsqip"
+  ],
+  "dosing": false,
+  "formula": "Cardiac risk, % = e^*x*^/ (1 + e^*x*^)\n\nWhere x = −5.25 + sum of the values of the selected variables.\n\n| Variable | Options | Value |\n| --- | --- | --- |\n| Age per year of increase | Age x 0.02 | |\n| Functional status | Independent | 0 |\n| Partially dependent | 0.65 | |\n| Totally dependent | 1.03 | |\n| [ASA class](nabda:calc.asa-physical-status-asa-classification\\) | 1: normal healthy patient | −5.17 |\n| 2: mild systemic disease | −3.29 | |\n| 3: severe systemic disease | −1.92 | |\n| 4: severe systemic disease that is a constant threat to life* | −0.95 | |\n| 5: moribund, not expected to survive without surgery | 0 | |\n| Creatinine | Normal (≤1.5 mg/dL, 133 µmol/L) | 0 |\n| Elevated (>1.5 mg/dL, 133 µmol/L) | 0.61 | |\n| Unknown | −0.10 | |\n| Type of procedure | Anorectal | −0.16 |\n| Aortic | 1.60 | |\n| Bariatric | −0.25 | |\n| Brain | 1.40 | |\n| Breast | −1.61 | |\n| Cardiac | 1.01 | |\n| ENT (except thyroid/parathyroid) | 0.71 | |\n| Foregut or hepatopancreatobiliary | 1.39 | |\n| Gallbladder, appendix, adrenals, or spleen | 0.59 | |\n| Hernia (ventral, inguinal, femoral) | 0 | |\n| Intestinal | 1.14 | |\n| Neck (thyroid/parathyroid) | 0.18 | |\n| Obstetric/gynecologic | 0.76 | |\n| Orthopedic and non-vascular extremity | 0.80 | |\n| Other abdominal | 1.13 | |\n| Peripheral vascular** | 0.86 | |\n| Skin | 0.54 | |\n| Spine | 0.21 | |\n| Non-esophageal thoracic | 0.40 | |\n| Vein | −1.09 | |\n| Urology | −0.26 | |\n\n*i.e., patient could die acutely without intervention.\n\n**Non-aortic, non-vein vascular surgeries.",
+  "how_to_use": {
+    "why": "- Few (<1%) of patients suffer perioperative major cardiac events, but 30-day mortality in this population is high (61%).\n- Identifying higher risk patients who will benefit from pre-operative medical cardiac optimization is important.\n- Also useful in preoperative counseling and discussions of informed consent.\n- Recommended as a validated risk estimation tool by[2014 ACC/AHA guidelines](https://www.onlinejacc.org/content/64/22/e77)on perioperative cardiac evaluation, alongside the ACS NSQIP risk estimator and the [Revised Cardiac Risk Index](nabda:calc.revised-cardiac-risk-index-pre-operative-risk) .\n- May be more accurate than RCRI in lower-risk patients ([Cohn 2018](https://www.ncbi.nlm.nih.gov/pubmed/29126584)).",
+    "when": "- Use in patients undergoing surgery, within 30 days of surgery (pre- or postoperatively).\n- May be used in cardiac or noncardiac procedures.",
+    "pearls": "- Améliore les calculateurs antérieurs de risque d’événements cardiaques majeurs périopératoires chez les patients chirurgicaux en utilisant des jeux de données construits selon les normes de soins modernes pour l’évaluation des événements cardiaques (p. ex. troponine vs marqueurs à base de CK), en plus de stratifier le risque selon le type d’intervention prévue.\n- Le critère d’ischémie myocardique était une élévation nouvelle de la troponine >3 fois la limite supérieure de la normale, ce qui peut exclure certains infarctus du myocarde.\n- Tend à sous-estimer les événements cardiaques chez les patients à risque élevé.\n- Utile chez les patients bénéficiant d’interventions à faible risque, ou dont l’hospitalisation prévue est <2 jours.\n- L’œdème pulmonaire et le bloc cardiaque complet, critères de jugement des calculateurs antérieurs de risque cardiaque périopératoire, ne faisaient pas partie de la base de données NSQIP à partir de laquelle ce calculateur a été dérivé."
+  },
+  "next_steps": {
+    "advice": "May help determine which patients require additional post-surgical cardiac monitoring.",
+    "critical_actions": "Les patients atteints d’une cardiopathie connue ou suspectée (pathologie cardiovasculaire, valvulopathie significative, arythmies symptomatiques) doivent faire l’objet d’une évaluation cardiaque préopératoire systématique si celle-ci est indiquée pour l’intervention chirurgicale envisagée.",
+    "management": "- Les patients identifiés comme à faible risque ne nécessitent aucun examen cardiovasculaire supplémentaire, selon[les recommandations ACC/AHA](https://www.onlinejacc.org/content/64/22/e77).\n- Les patients identifiés comme à haut risque peuvent nécessiter une évaluation cardiovasculaire supplémentaire, incluant une consultation de cardiologie, une épreuve d'effort et/ou une échocardiographie."
+  },
+  "evidence": "[Gupta et al (2011)](https://circ.ahajournals.org/content/124/4/381#xref-fn-9-1)used the NSQIP database to identify risk factors associated with intra- or postoperative MI or cardiac arrest in over 200,000 patients. Compared with other risk calculators, the Gupta Perioperative Risk Score (also sometimes called the MICA or Myocardial Infarction/Cardiac Arrest Score) factors in higher usage of minimally invasive surgery and differentiates between organ system and type of surgery. However, this score was only validated retrospectively, and therefore likely underestimates myocardial ischemia. Further, stress test results and beta-blocker therapy status were not a part of the NSQIP database data used to derive this score.\n\nLike the Gupta Score, the ACS NSQIP Surgical Risk Calculator predicts either myocardial infarction or cardiac arrest within 30 days of surgery, and has been shown to perform well in patients undergoing low-risk procedures or those with a shorter duration length of stay. The Gupta Score selects fewer patients as elevated risk compared to the ACS NSQIP Surgical Risk Calculator or the RCRI. RCRI tends to overestimate risk in lower risk patients; therefore, it is suggested to use ACS NSQIP or Gupta Score calculators for that group of patients ([Cohn 2018](https://www.ncbi.nlm.nih.gov/pubmed/29126584)).",
+  "more_info": "",
+  "short_description": "Risque cardiaque périopératoire.",
+  "medium_description": "Predicts risque de MI ou cardiac arrest after surgery.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "status",
+      "label": "Statut fonctionnel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Indépendant",
+          "value": 0
+        },
+        {
+          "label": "Partiellement dépendant",
+          "value": 0.65
+        },
+        {
+          "label": "Totalement dépendant",
+          "value": 1.03
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "asa",
+      "label": "[ASA class](nabda:calc.asa-physical-status-asa-classification)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1 : patient normal en bonne santé",
+          "value": -5.17
+        },
+        {
+          "label": "2 : maladie systémique légère",
+          "value": -3.29
+        },
+        {
+          "label": "3 : maladie systémique sévère",
+          "value": -1.92
+        },
+        {
+          "label": "4: severe systemic maladie that is constant threat pour life (i.e., patient could die acutely sans intervention)",
+          "value": -0.95
+        },
+        {
+          "label": "5 : moribond, ne devrait pas survivre sans chirurgie",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "creatinine",
+      "label": "Créatinine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal (≤1,5 mg/dL, 133 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": "Élevé (>1,5 mg/dL, 133 µmol/L)",
+          "value": 0.61
+        },
+        {
+          "label": "Inconnu",
+          "value": -0.1
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "surgery",
+      "label": "Type de procédure",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Anorectal",
+          "value": -0.16
+        },
+        {
+          "label": "Aortique",
+          "value": 1.6
+        },
+        {
+          "label": "Bariatrique",
+          "value": -0.25
+        },
+        {
+          "label": "Cerveau",
+          "value": 1.4
+        },
+        {
+          "label": "Sein",
+          "value": -1.61
+        },
+        {
+          "label": "Cardiaque",
+          "value": 1.01
+        },
+        {
+          "label": "ORL (sauf thyroïde/parathyroïde)",
+          "value": 0.71
+        },
+        {
+          "label": "Intestin antérieur (œsophage, estomac) ou hépato-pancréatobiliaire",
+          "value": 1.39
+        },
+        {
+          "label": "Vésicule biliaire, appendice, surrénales ou rate",
+          "value": 0.59
+        },
+        {
+          "label": "Hernie (ventrale, inguinale, crurale)",
+          "value": 0
+        },
+        {
+          "label": "Intestinal",
+          "value": 1.14
+        },
+        {
+          "label": "Cou (thyroïde/parathyroïdes)",
+          "value": 0.18
+        },
+        {
+          "label": "Obstétrique/gynécologique",
+          "value": 0.76
+        },
+        {
+          "label": "Extrémité orthopédique et non vasculaire",
+          "value": 0.8
+        },
+        {
+          "label": "Other abdominal",
+          "value": 1.13
+        },
+        {
+          "label": "Vasculaire périphérique",
+          "value": 0.86
+        },
+        {
+          "label": "Peau",
+          "value": 0.54
+        },
+        {
+          "label": "Rachis",
+          "value": 0.21
+        },
+        {
+          "label": "Thoracique non œsophagien (poumon, médiastin, etc.)",
+          "value": 0.4
+        },
+        {
+          "label": "Veine",
+          "value": -1.09
+        },
+        {
+          "label": "Urologie",
+          "value": -0.26
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fleisher LA, Fleischmann KE, Auerbach AD, et al. 2014 ACC/AHA guideline on perioperative cardiovascular evaluation and management of patients undergoing noncardiac surgery: a report of the American College of Cardiology/American Heart Association Task Force on practice guidelines. J Am Coll Cardiol. 2014;64(22):e77-137.",
+      "href": "https://www.onlinejacc.org/content/64/22/e77",
+      "kind": "international"
+    },
+    {
+      "text": "Halvorsen S, Mehilli J, Cassese S, et al. 2022 ESC Guidelines on cardiovascular assessment and management of patients undergoing non-cardiac surgery. Eur Heart J. 2022;43(39):3826-3924.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36017553/",
+      "kind": "international"
+    },
+    {
+      "text": "Gupta PK, Gupta H, Sundaram A, et al. Development and validation of a risk calculator for prediction of cardiac risk after surgery. Circulation. 2011;124(4):381-7.",
+      "href": "https://circ.ahajournals.org/content/124/4/381#xref-fn-9-1",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee TH, Marcantonio ER, Mangione CM, Thomas EJ, Polanczyk CA, Cook EF, Sugarbaker DJ, Donaldson MC, Poss R, Ho KK, Ludwig LE, Pedan A, Goldman L. Derivation and prospective validation of a simple index for prediction of cardiac risk of major noncardiac surgery. Circulation 1999;100:1043-1049.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10477528",
+      "kind": "other"
+    },
+    {
+      "text": "Bilimoria KY, Liu Y, Paruch JL, Zhou L, Kmiecik TE, Ko CY, Cohen ME. Development and evaluation of the universal ACS NSQIP surgical risk calculator: a decision aid and informed consent tool for patients and surgeons. J. Am Coll Surg 2013;217;833-842, e831-e833.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3805776/",
+      "kind": "other"
+    },
+    {
+      "text": "Davis C, Tait G, Carroll J, Wijeysundera DN, Beattie WS. The Revised Cardiac Risk Index in the new millennium: a single-centre prospective cohort re-evaluation of the original variables in 9,519 consecutive elective surgical patients. Can J Anaesth 2013;60:855–863.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23813289",
+      "kind": "other"
+    },
+    {
+      "text": "Cohn SL, Fernandez ros N. Comparison of 4 Cardiac Risk Calculators in Predicting Postoperative Cardiac Complications After Noncardiac Operations. Am J Cardiol. 2018;121(1):125-130.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29126584",
+      "kind": "other"
+    },
+    {
+      "text": "Gupta PK, Gupta H, Sundaram A, et al. Development and validation of a risk calculator for prediction of cardiac risk after surgery. Circulation. 2011;124(4):381-7.",
+      "href": "https://circ.ahajournals.org/content/124/4/381#xref-fn-9-1",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.preoperative-mortality-predictor-pmp-score",
+    "calc.revised-cardiac-risk-index-pre-operative-risk",
+    "calc.gupta-postoperative-respiratory-failure-risk",
+    "calc.asa-physical-status-asa-classification"
+  ],
+  "source_logic_hash": "072d3443704493c03ee606235675b8e4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA class"
+    },
+    {
+      "type": "calc",
+      "id": "calc.revised-cardiac-risk-index-pre-operative-risk",
+      "text": "Revised Cardiac Risk Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA class"
+    },
+    {
+      "type": "calc",
+      "id": "calc.revised-cardiac-risk-index-pre-operative-risk",
+      "text": "Revised Cardiac Risk Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4038,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n// Declare vars\n\nvar status = parseFloat(status);\nvar asa = parseFloat(asa);\nvar creatinine = parseFloat(creatinine);\nvar age = parseFloat(age) * 0.0198;\nvar surgery = parseFloat(surgery);\n\nvar b = -5.2529 + status + creatinine + age + surgery + asa;\n\nvar risk = Math.exp(b)/(1 + Math.exp(b)) * 100\n\ncalc_output.push({\n   name: 'mini',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'MICA risk'\n});\ncalc_output.push({\n   name: '4038_Gupta Perioperative Risk_result',\n   value: risk.toFixed(1),\n   value_text: '%',\n   message: 'Risk of myocardial infarction or cardiac arrest, intraoperatively or up to 30 days post-op'\n});",
+  "before_use": null,
+  "instructions": "Use within 30 days of surgery (pre- or postoperatively). May be used in cardiac or noncardiac procedures.",
+  "contributor_ids": [
+    "alice-race-md"
+  ],
+  "creator_names": [
+    "Dr. Prateek K. Gupta"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Creatinine"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "53ef13d66da202d22bf752cf4e1d067f08bc57f3058712552371139497424c2a"
+}

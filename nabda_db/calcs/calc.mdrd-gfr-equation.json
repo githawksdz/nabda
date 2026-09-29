@@ -1,0 +1,173 @@
+{
+  "id": "calc.mdrd-gfr-equation",
+  "slug": "mdrd-gfr-equation",
+  "language": "en",
+  "title": "MDRD GFR équation",
+  "short_title": "MDRD GFR équation",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "nephrologie",
+    "pharmacotherapie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Maladie rénale chronique",
+    "Diabète sucré",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dyspnea",
+    "Œdème des extrémités",
+    "Headache"
+  ],
+  "abbreviations": [
+    "cr",
+    "crcl",
+    "renal",
+    "arf",
+    "aki",
+    "creatinine",
+    "ckd",
+    "crf",
+    "egfr",
+    "estimated gfr"
+  ],
+  "dosing": false,
+  "formula": "GFR = 175 × Serum Cr^-1.154^× age^-0.203^× 1.212 (if patient is black*) × 0.742 (if female)\n\nUse serum Cr in mg/dL for this formula.\n\nFrom[Levey 2006](https://pubmed.ncbi.nlm.nih.gov/16908915/).\n\nNote: the original MDRD study equation used a constant of 186, which the authors later revised to 175 to accommodate for standardization of creatinine assays over IDMS. The evidence doesn't seem to strongly suggest that the revised version is demonstrably better than the original (furthermore, the same authors of MDRD also developed the newer [CKD-EPI equations](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) , which are more accurate at a broader range of estimated GFR than the MDRD equations).\n\n*Race may/may not provide better estimates of GFR; optional.[See here](https://www.mdcalc.com/race)for more on our approach to addressing race and bias on MDCalc.",
+  "how_to_use": {
+    "why": "Noninvasively estimates the measured GFR to determine degree or presence of decreased kidney function. The MDRD equation performs equally to the newer [CKD-EPI Equation](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr) in patients with GFR of <60 ml/min/1.73m2. Performs superiorly to the [Cockcroft-Gault Equation](nabda:calc.creatinine-clearance-cockcroft-gault-equation) .",
+    "when": "Patients atteints de maladie rénale chronique, pour estimer la fonction rénale.",
+    "pearls": "- The MDRD equation cannot be used for acute renal failure. It is only useful in estimating glomerular filtration rate (GFR) in stable chronic kidney disease.\n- Despite improvements to the MDRD equation, it tends to significantly underestimate measured GFR.\n- Underestimation of GFR is particularly significant in patients with a GFR >60 ml/min/m2; 29% in healthy patients undergoing evaluation for kidney donation."
+  },
+  "next_steps": {
+    "advice": "Patients with decreased GFR are at higher risk of progressive kidney disease. Management of contributing risk factors, such as diabetes and hypertension, is critical to slowing progression. Investigation of the underlying cause of decreased GFR is warranted if not clear from the history.\n\nMedications should be dose-adjusted for the most recent available eGFR. In this setting, eGFR and creatinine clearance may be used interchangeably, though they are physiologically different terms. Cutoffs for many medications are <60, <45 and <30 ml/min/m2, as well as adjustments for advanced kidney disease and dialysis patients.",
+    "critical_actions": "",
+    "management": "Les patients doivent être classés selon le stade de la MRC en tenant compte à la fois du DFGe et du statut d'albuminurie. Les patients présentant un DFG diminué, une augmentation de l'excrétion urinaire d'albumine, ou les deux, ont un risque élevé de MRC évolutive et doivent être adressés à un néphrologue pour une prise en charge complémentaire.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/Screenshot+2025-12-03+at+10.46.49%E2%80%AFAM.png)\n\nD'après[KDIGO 2012 Clinical Practice Guideline](https://kdigo.org/wp-content/uploads/2017/02/KDIGO_2012_CKD_GL.pdf)."
+  },
+  "evidence": "Derived and validated in patients from the Modification of Diet in Renal Disease (MDRD) cohort by[Levey et al in 1999](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2763564/). The derivation cohort included 1070 patients and the validation cohort 558 patients. The equation has since been validated more extensively in a variety of populations, though it remains useful primarily for patients with impaired kidney function (eGFR < 60 ml/min/1.73m). The equation has not been validated in patients greater than 70 years old, though it is still applied in these patients. Additional modifications exist for use in certain populations,[including East Asian populations](https://pubmed.ncbi.nlm.nih.gov/18037093/).\n\nDebate has arisen regarding the use of the adjustment coefficient for black patients. The extent to which self-reported race may be considered a variable in physiologic calculations is currently being scrutinized, and several large health systems have now removed the race coefficient from eGFR calculations.",
+  "more_info": "![tableau de clairance de la créatinine](https://cdn-web-img.mdcalc.com/content/creatinine-clearance-table.png)\n\nSource : [KDIGO 2012 Clinical Practice Guideline.](https://kdigo.org/wp-content/uploads/2017/02/KDIGO_2012_CKD_GL.pdf)",
+  "short_description": "Pour CKD patients (not pour AKI).",
+  "medium_description": "Estimates GFR dans CKD patients using creatinine et patient characteristics.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "black_race",
+      "label": "Race noire",
+      "tips": "La race peut ou non fournir de meilleures estimations du DFG ; facultatif",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 2
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Levey AS, Bosch JP, Lewis JB, Greene T, Rogers N, Roth D. A more accurate method to estimate glomerular filtration rate from serum creatinine: a new prediction equation. Modification of Diet in Renal Disease Study Group. Ann Intern Med. 1999;130(6):461-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10075613",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levey AS, Greene T, Kusek JW, Beck GJ. A simplified equation to predict glomerular filtration rate from serum creatinine [Abstract]. J Am Soc Nephrol. 2000;11:A0828.",
+      "href": "https://hero.epa.gov/hero/index.cfm/reference/details/reference_id/658418",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rule AD, Larson TS, Bergstralh EJ, Slezak JM, Jacobsen SJ, Cosio FG. Using serum creatinine to estimate glomerular filtration rate: accuracy in good health and in chronic kidney disease. Ann Intern Med. 2004;141(12):929-37.",
+      "href": "https://annals.org/aim/article-abstract/718024/using-serum-creatinine-estimate-glomerular-filtration-rate-accuracy-good-health?volume=141&issue=12&page=929#FN",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levey AS, Coresh J, Greene T, et al. Using standardized serum creatinine values in the modification of diet in renal disease study equation for estimating glomerular filtration rate. Ann Intern Med. 2006;145(4):247-54.",
+      "href": "https://annals.org/aim/article-abstract/727341/using-standardized-serum-creatinine-values-modification-diet-renal-disease-study?volume=145&issue=4&page=247",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.creatinine-clearance-cockcroft-gault-equation",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.revised-schwartz-equation-glomerular-filtration-rate-gfr-2009"
+  ],
+  "source_logic_hash": "f8d70ee0bbc37c09ef723100173783f4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI equations"
+    },
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "Cockcroft-Gault Equation"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 76,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

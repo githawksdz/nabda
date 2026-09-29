@@ -1,0 +1,452 @@
+{
+  "id": "calc.save-survival-veno-arterial-ecmo-score",
+  "slug": "save-survival-veno-arterial-ecmo-score",
+  "language": "en",
+  "title": "Score SAVE (survie après ECMO veino-artérielle)",
+  "short_title": "SAVE score pour ECMO",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dizziness",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Ecmo",
+    "cardiac shock",
+    "refractory cardiogenic shock",
+    "cardiogenic shock",
+    "mortality",
+    "risk",
+    "ECMO survival",
+    "VA ECMO",
+    "VA",
+    "extracorporeal"
+  ],
+  "dosing": false,
+  "formula": "Score SAVE = somme des points sélectionnés (ci-dessous) moins 6\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | 18-38 | 7 |\n| 39-52 | 4 | |\n| 53-62 | 3 | |\n| ≥63 | 0 | |\n| Poids | <65 kg (<143,3 lbs) | 1 |\n| 65-89 kg (143,3-196,2 lbs) | 2 | |\n| >89 kg (>196,2 lbs) | 0 | |\n| Étiologie du choc cardiogénique* | | |\n| Myocardite | 3 | |\n| TV/FV réfractaires | 2 | |\n| Post-transplantation cardiaque ou pulmonaire | 3 | |\n| Cardiopathie congénitale | -3 | |\n| Rénal | | |\n| Insuffisance rénale aiguë (définie comme une insuffisance rénale aiguë (p. ex. créatinine >1,5 mg/dL (132,6 µmol/L) avec ou sans EER) | -3 | |\n| Insuffisance rénale chronique (définie soit par une atteinte rénale, soit par un DFG <60 mL/min/1,73 m² depuis ≥3 mois) | -6 | |\n| HCO₃ avant ECMO ≤15 mmol/L (91,5 mg/dL) (valeur la plus basse dans les 6 h précédant la canulation pour ECMO) | -3 | |\n| Respiratoire | | |\n| Durée d'intubation avant l'initiation de l'ECMO, h | ≤10 | 0 |\n| 11-29 | -2 | |\n| ≥30 | -4 | |\n| Pression inspiratoire maximale ≤20 cm H₂O (≤2,0 kPa) | 3 | |\n| Cardiaque | | |\n| Arrêt cardiaque avant ECMO | -2 | |\n| Pression artérielle diastolique avant ECMO ≥40 mmHg (valeur la plus basse dans les 6 h précédant la canulation pour ECMO) | 3 | |\n| Pression différentielle avant ECMO ≤20 mmHg (valeur la plus basse dans les 6 h précédant la canulation pour ECMO) | -2 | |\n| Autres défaillances d'organes avant ECMO | | |\n| Défaillance hépatique (définie par une bilirubine ≥33 µmol/L (1,9 mg/dL) ou une élévation des aminotransférases sériques (ALT ou AST) >70 UI/L) | -3 | |\n| Dysfonction du SNC (inclut neurotraumatismes associés, AVC, encéphalopathie, embolie cérébrale, convulsions/syndromes épileptiques) | -3 | |\n\n*En cas de toute autre cause de choc cardiogénique, aucun point n'est ajouté.",
+  "how_to_use": {
+    "why": "L'ECMO est une technique consommatrice de ressources, associée à une morbidité élevée, et les patients doivent être sélectionnés avec soin. Les estimations de survie peuvent aider à la décision.",
+    "when": "- Patients en choc cardiogénique réfractaire chez qui une ECMO veino-artérielle (VA) est envisagée.\n- Ne pas utiliser chez les patients recevant une ECMO veino-veineuse (VV) (voir [Score RESP](nabda:calc.resp-respiratory-ecmo-survival-prediction-score) ).",
+    "pearls": "- Ne prédit que la survie jusqu'à la sortie de l'hôpital et ne prédit pas la fonction neurologique ni l'état fonctionnel, qui peuvent être des considérations importantes.\n- Le score a été dérivé d'une cohorte de patients mis sous ECMO VA et a probablement exclu de nombreux patients qui auraient pu avoir des taux de survie différents.\n- Les patients recevant une RCP pendant la canulation (eCPR) n'ont pas été inclus dans la dérivation du score SAVE ; par conséquent, le score peut ne pas s'appliquer à ces patients."
+  },
+  "next_steps": {
+    "advice": "D'autres facteurs peuvent contribuer à la décision d'initier une ECMO (p. ex. espérance de vie, qualité de vie, disponibilité des ressources).",
+    "critical_actions": "La décision globale ne doit pas reposer uniquement sur une règle de prédiction, et le seuil d'initiation d'une ECMO peut varier selon les établissements.",
+    "management": "Nous n'avons connaissance d'aucune recommandation intégrant le score SAVE, mais la prédiction de survie peut être intégrée dans la décision d'initier une ECMO VA."
+  },
+  "evidence": "The SAVE Score was derived by[Schmidt et al (2015)](https://www.ncbi.nlm.nih.gov/pubmed/26033984)in a retrospective cohort study of 3,846 patients in the ELSO registry who received VA ECMO primarily for cardiogenic shock. The following patients were excluded:\n\n- Patients receiving ECMO during CPR.\n- Patients not receiving VA ECMO.\n- Patients with primary diagnosis of respiratory failure (n = 117).\n- Patients not on first run of ECMO (n = 165).\n\nThe outcome measured was survival to hospital discharge (see Facts & Figures above).\n\n[Schmidt et al (2015)](https://www.ncbi.nlm.nih.gov/pubmed/26033984)also prospectively validated the SAVE Score in 161 patients receiving VA ECMO primarily for cardiogenic shock from a single institution from July 2006 to Dec 2013. 108 patients survived to hospital discharge (67%) and 53 patients died (33%). Patients with primary respiratory failure (n = 7) and insufficient data (n = 12) were excluded. The prediction rule performed with c = 0.90 and Hosmer-Lemeshow C-statistic of 13.97 (p = 0.08). The validation cohort was small, and was not compared to patients not receiving VA ECMO.\n\n[Chen et al (2016)](https://www.ncbi.nlm.nih.gov/pubmed/27769308)further validated the SAVE Score in a retrospective analysis of 154 patients receiving ECMO within 24 hrs of ED arrival and found an AUC of 0.73 when lactate was added to the SAVE Score.",
+  "more_info": "Interprétation :\n\n| Score SAVE | Classe de risque | Survie hospitalière |\n| --- | --- | --- |\n| >5 | I | 75 % |\n| 1 à 5 | II | 58 % |\n| -4 à 0 | III | 42 % |\n| -9 à -5 | IV | 30 % |\n| ≤-10 | V | 18 % |",
+  "short_description": "Survie after VA ECMO pour cardiogenic shock.",
+  "medium_description": "Predicts dans-hôpital survie dans adulte patients after VA ECMO pour refractory cardiogenic shock.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "18-38",
+          "value": 7
+        },
+        {
+          "label": "39-52",
+          "value": 4
+        },
+        {
+          "label": "53-62",
+          "value": 3
+        },
+        {
+          "label": "≥63",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 143 lbs (<65 kg)",
+          "value": 1
+        },
+        {
+          "label": "143-196 lbs (65-89 kg)",
+          "value": 2
+        },
+        {
+          "label": ">196 lbs (>89 kg)",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "myo",
+      "label": "Myocarditis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vt",
+      "label": "RefractoryVT/VF",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "post",
+      "label": "Post-transplantation cardiaque ou pulmonaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart",
+      "label": "Cardiopathie congénitale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "Aigu renal défaillance",
+      "tips": "Définie comme une insuffisance rénale aiguë (p. ex. créatinine >1,5 mg/dL (132,6 µmol/L) avec ou sans EER",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chronic",
+      "label": "Chronique renal défaillance",
+      "tips": "Définie soit par une atteinte rénale, soit par un DFG <60 mL/min/1,73 m² depuis ≥3 mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hco",
+      "label": "HCO₃ avant ECMO ≤15 mmol/L (91,5 mg/dL)",
+      "tips": "Valeur la plus basse dans les 6 h précédant la canulation pour ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "duration",
+      "label": "Duration de intubation prior pour initiation de ECMO, hrs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤10",
+          "value": 0
+        },
+        {
+          "label": "11-29",
+          "value": -2
+        },
+        {
+          "label": "≥30",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "peak",
+      "label": "Pression inspiratoire maximale ≤20 cm H₂O (≤2,0 kPa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "arrest",
+      "label": "Arrêt cardiaque avant ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dbp",
+      "label": "Diastolic pression artérielle before ECMO ≥40 mmHg",
+      "tips": "Valeur la plus basse dans les 6 h précédant la canulation pour ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulse",
+      "label": "Pression différentielle avant ECMO ≤20 mmHg",
+      "tips": "Valeur la plus basse dans les 6 h précédant la canulation pour ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "liver",
+      "label": "Liver défaillance",
+      "tips": "Définie par une bilirubine ≥33 µmol/L (1,9 mg/dL) ou une élévation des aminotransférases sériques (ALT ou AST) >70 UI/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cns",
+      "label": "CNSdysfunction",
+      "tips": "Inclut neurotraumatismes associés, AVC, encéphalopathie, embolie cérébrale, convulsions/syndromes épileptiques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schmidt M, Burrell A, Roberts L, et al. Predicting survival after ECMO for refractory cardiogenic shock: the survival after veno-arterial-ECMO (SAVE)-score. Eur Heart J. 2015;36(33):2246-56.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26033984",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chen WC, Huang KY, Yao CW, et al. The modified SAVE score: predicting survival using urgent veno-arterial extracorporeal membrane oxygenation within 24 hours of arrival at the emergency department. Crit Care. 2016;20(1):336.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27769308",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sex-shock-risk-score-development-cardiogenic-shock",
+    "calc.cardiac-power-output-cpo",
+    "calc.resp-respiratory-ecmo-survival-prediction-score"
+  ],
+  "source_logic_hash": "710ced718e9d3fca2090c8da824b4852",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.resp-respiratory-ecmo-survival-prediction-score",
+      "text": "RESP Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10144,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

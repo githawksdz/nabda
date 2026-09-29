@@ -1,0 +1,394 @@
+{
+  "id": "calc.phq9-patient-health-questionnaire9",
+  "slug": "phq9-patient-health-questionnaire9",
+  "language": "fr",
+  "title": "PHQ-9 (Patient Health Questionnaire-9)",
+  "short_title": "PHQ-9",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Depressed"
+  ],
+  "abbreviations": [
+    "depression",
+    "psych",
+    "si",
+    "suicidal",
+    "phq9",
+    "phq-9"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Détermine objectivement la sévérité des symptômes initiaux et permet également de suivre l'évolution des symptômes et les effets du traitement au fil du temps.",
+    "when": "Utilisation comme outil de dépistage :\n\n- Pour aider le clinicien à poser le diagnostic de dépression.\n- Pour quantifier les symptômes dépressifs et suivre leur sévérité.",
+    "pearls": "- Le Patient Health Questionnaire (PHQ)-9 est le module du trouble dépressif majeur (MDD) du PHQ complet.\n- Utilisé pour poser un diagnostic provisoire de dépression et grader la sévérité des symptômes en contexte médical général et de santé mentale.\n- Cote chacun des 9 critères DSM du trouble dépressif majeur de « 0 » (pas du tout) à « 3 » (presque tous les jours), fournissant un score de sévérité de 0 à 27.\n- Le dernier item (« À quel point ces difficultés ont-elles rendu votre travail, vos tâches à la maison ou vos relations avec les autres plus compliqués ? ») n'est pas inclus dans le score, mais constitue un bon indicateur du retentissement global chez le patient et peut être utilisé pour suivre la réponse au traitement.\n- Des scores PHQ-9 plus élevés sont associés à une altération de l'état fonctionnel et à une augmentation des difficultés liées aux symptômes, des jours d'arrêt de travail et du recours aux soins.\n- Peut présenter un taux élevé de faux positifs en soins primaires en particulier (une méta-analyse a retrouvé que seulement 50 % des patients dépistés positifs présentaient réellement une dépression majeure) ([Levis 2019](https://www.bmj.com/content/365/bmj.l1476))."
+  },
+  "next_steps": {
+    "advice": "Le diagnostic définitif doit être posé à l'aide d'un entretien clinique et d'un examen de l'état mental, incluant l'évaluation du niveau de détresse du patient et de son retentissement fonctionnel.",
+    "critical_actions": "- Réaliser une évaluation du risque suicidaire chez les patients répondant positivement à l'item 9 « Pensées qu'il serait préférable d'être mort, ou de vous faire du mal d'une manière ou d'une autre ».\n- Éliminer un trouble bipolaire, un deuil normal et des pathologies médicales pouvant causer une dépression.",
+    "management": "**Résumé de la prise en charge du PHQ-9**\n\n| Score | Sévérité de la dépression | Commentaires |\n| --- | --- | --- |\n| 0-4 | Minimale ou nulle | Surveillance ; traitement pouvant ne pas être nécessaire |\n| 5-9 | Légère | Utiliser le jugement clinique (durée des symptômes, retentissement fonctionnel) pour déterminer la nécessité d'un traitement |\n| 10-14 | Modérée | |\n| 15-19 | Modérément sévère | Justifie un traitement actif par psychothérapie, médicaments, ou une combinaison des deux |\n| 20-27 | Sévère | |"
+  },
+  "evidence": "The PHQ-9 was initially developed by[Kroenke et al (2001)](https://www.ncbi.nlm.nih.gov/pubmed/11556941), as a subset of 9 questions from the full PHQ, which had previously been derived and studied in a cohort of 6,000 patients in 8 primary care clinics and 7 obstetrics-gynecology clinics ([Spitzer 1999](https://www.ncbi.nlm.nih.gov/pubmed/10568646)). PHQ-9 scores ≥10 were found to be 88% sensitive and also 88% specific for detecting MDD. Criterion validity was also assessed in a sample of 580 patients.\n\n[Arroll et al (2010)](https://www.ncbi.nlm.nih.gov/pubmed/20644190)validated the PHQ-9 as a screener for MDD in a cohort of 2,642 primary care patients and found slightly higher specificity (91%) and lower sensitivity (74%) at the same cutoff of 10 points.\n\nThe PHQ-9 has also been validated in several additional subpopulations, including in psychiatric patients ([Beard 2016](https://www.ncbi.nlm.nih.gov/pubmed/26774513)), patients with medical comorbidities such as multiple sclerosis (Ferrando 2007) and Parkinson’s disease ([Chagas 2013](https://www.ncbi.nlm.nih.gov/pubmed/23761457)), pregnant patients ([Sidebottom 2012](https://www.ncbi.nlm.nih.gov/pubmed/22983357)), and in an occupational health setting ([Volker 2016](https://www.ncbi.nlm.nih.gov/pubmed/26377480)).\n\nA meta-analysis of 29 studies including 6,725 patients found similar sensitivity (88%, 95% CI 83-92%) and specificity (85%, 95% CI 82-88%) for a cutoff of ≥10 as did the previous studies, both overall and for subgroups. Notably, they found that when used in the primary care setting, only approximately 50% of patients screening positive on the PHQ-9 in fact had major depression ([Levis 2019](https://www.bmj.com/content/365/bmj.l1476)).",
+  "more_info": "Le PHQ-9 est un outil validé de 9 questions permettant d'évaluer le degré de dépression présent chez un individu ; la dernière question n'est pas cotée, mais elle est utile sur le plan fonctionnel pour aider le clinicien à évaluer l'impact des symptômes du patient sur sa vie.",
+  "short_description": "Degree de dépression gravité.",
+  "medium_description": "Objectifies degree de dépression gravité.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "interest",
+      "label": "Little interest ou pleasure dans doing things?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "depressed",
+      "label": "Feeling down, déprimé, ou hopeless?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sleep",
+      "label": "Difficultés à s'endormir ou à rester endormi, ou sommeil excessif ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tired",
+      "label": "Se sentir fatigué ou manquer d'énergie ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "appetite",
+      "label": "Appétit diminué ou hyperphagie ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "failure",
+      "label": "Feeling bad about yourself - ou that you are défaillance ou have let yourself ou your family down?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "concentration",
+      "label": "Difficultés de concentration sur des tâches, comme lire le journal ou regarder la télévision ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "slow",
+      "label": "Vous déplacer ou parler si lentement que d'autres personnes ont pu le remarquer ? Ou être si agité ou remuant que vous avez bougé beaucoup plus que d'habitude ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "death",
+      "label": "Thoughts that you would be better off dead, ou thoughts de hurting yourself dans some way?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 1
+        },
+        {
+          "label": "Plus de la moitié des jours",
+          "value": 2
+        },
+        {
+          "label": "Presque tous les jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "problems_difficult",
+      "label": "Ask patient: how difficult have these problems made it pour do work, take care de things at home, ou get along avec other people?",
+      "tips": "Facultatif, non inclus dans le score final, mais peut aider à évaluer l'atteinte globale",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "(death + slow + concentration + failure + appetite + tired + sleep + depressed + interest) > 0",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Plutôt difficile",
+          "value": 1
+        },
+        {
+          "label": "Très difficile",
+          "value": 2
+        },
+        {
+          "label": "Extrêmement difficile",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kroenke K, Spitzer RL, Williams JB. The PHQ-9: validity of a brief depression severity measure. J Gen Intern Med. 2001 Sep;16(9):606-13. PubMed PMID: 11556941; PubMed Central PMCID: PMC1495268.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11556941",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Spitzer RL, Kroenke K, Williams JB. Validation and utility of a self-report version of PRIME-MD: the PHQ primary care study. Primary Care Evaluation of Mental Disorders. Patient Health Questionnaire. JAMA. 1999;282(18):1737-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10568646",
+      "kind": "other"
+    },
+    {
+      "text": "Arroll B, Goodyear-Smith F, Crengle S, Gunn J, Kerse N, Fishman T, Falloon K, Hatcher S. Validation of PHQ-2 and PHQ-9 to screen for major depression in the primary care population. Ann Fam Med. 2010 Jul-Aug;8(4):348-53. doi: 10.1370/afm.1139. PubMed PMID: 20644190; PubMed Central PMCID: PMC2906530.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20644190",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chagas MH, Tumas V, Rodrigues GR, et al. Validation and internal consistency of Patient Health Questionnaire-9 for major depression in Parkinson's disease. Age Ageing. 2013;42(5):645-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23761457",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Volker D, Zijlstra-Vlasveld MC, Brouwers EP, et al. Validation of the Patient Health Questionnaire-9 for Major Depressive Disorder in the Occupational Health Setting. J Occup Rehabil. 2016;26(2):237-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26377480",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ferrando SJ, Samton J, Mor N, et al. Patient Health Questionnaire-9 to Screen for Depression in Outpatients With Multiple Sclerosis. International Journal of MS Care: 2007;9(3):99-103.",
+      "href": "https://meridian.allenpress.com/ijmsc/article/9/3/99/33342/Patient-Health-Questionnaire-9-to-Screen-for",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Beard C, Hsu KJ, Rifkin LS, et al. Validation of the PHQ-9 in a psychiatric sample. J Affect Disord. 2016;193:267-73.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26774513",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sidebottom AC, Harrison PA, Godecker A, Kim H. Validation of the Patient Health Questionnaire (PHQ)-9 for prenatal depression screening. Arch Womens Ment Health. 2012;15(5):367-74.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22983357",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levis B, Benedetti A, Thombs BD. Accuracy of Patient Health Questionnaire-9 (PHQ-9) for screening to detect major depression: individual participant data meta-analysis. BMJ. 2019;365:l1476.",
+      "href": "https://www.bmj.com/content/365/bmj.l1476",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.major-depression-index-mdi",
+    "calc.quick-inventory-depressive-symptomatology-qids",
+    "calc.dsm-5-criteria-major-depressive-disorder"
+  ],
+  "source_logic_hash": "db0b521c74d56da856a9fb700921e0cc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1725,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

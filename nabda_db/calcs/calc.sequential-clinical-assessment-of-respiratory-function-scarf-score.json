@@ -1,0 +1,170 @@
+{
+  "id": "calc.sequential-clinical-assessment-of-respiratory-function-scarf-score",
+  "slug": "sequential-clinical-assessment-of-respiratory-function-scarf-score",
+  "language": "en",
+  "title": "Score SCARF — évaluation clinique séquentielle de la fonction respiratoire (Sequential Clinical Assessment of Respiratory Function)",
+  "short_title": "Score SCARF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Traumatisme"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Douleur thoracique",
+    "Toux",
+    "Dyspnée",
+    "Gonflement",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "Sequential Clinical Assessment of Respiratory Function (SCARF) Score",
+    "scarf score",
+    "ribs",
+    "rib fracture",
+    "fracture",
+    "bone fracture",
+    "fracture severity",
+    "trauma",
+    "critical rib fracture"
+  ],
+  "dosing": false,
+  "formula": "The SCARF Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Incentive spirometry <50% of predicted | No | 0 |\n| Yes | 1 | |\n| Respiratory rate >20 breaths/min | No | 0 |\n| Yes | 1 | |\n| Numeric pain score ≥5 | No | 0 |\n| Yes | 1 | |\n| Cough inadequate to clear respiratory secretions | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "Fournit des recommandations thérapeutiques pour les patients atteints de fractures de côtes en état critique, en particulier ceux dont la douleur est mal contrôlée.",
+    "when": "- Pour les patients traumatisés présentant des fractures costales aiguës.\n- Les scores doivent être calculés à l’admission et quotidiennement pendant le séjour hospitalier afin d’évaluer un contrôle adéquat de la douleur et l’éventuelle survenue d’issues défavorables.",
+    "pearls": "- Les scores doivent être calculés à l’admission et quotidiennement pendant l’hospitalisation. L’analgésie doit être adaptée en conséquence.\n- Lorsqu’une analgésie est envisagée, éviter les médicaments susceptibles de provoquer une altération de l’état respiratoire."
+  },
+  "next_steps": {
+    "advice": "If patients’ SCARF score remains >2 after initial intervention, then considerincreasing level of analgesia.",
+    "critical_actions": "",
+    "management": "- Level 1 - opioid alternatives, topical anesthetics, oral opioids, lowdose IV opioids.\n- Level 2 - nerve blocks, pain pumps, erector spinae catheters.\n- Level 3 - opioid PCA, lidocaine/ketamine infusions."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| SCARF Score | Risk of ≥1 Adverse Outcome |\n| --- | --- |\n| 0 | Low |\n| 1-2 | Intermediate |\n| 3-4 | High |",
+  "short_description": "Pronostic des fractures costales.",
+  "medium_description": "Predicts adverse outcomes dans critically ill rib fracture patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "is",
+      "label": "Spirométrie incitative <50 % de la valeur prédite",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rr",
+      "label": "Fréquence respiratoire >20 respirations/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nps",
+      "label": "Score de douleur numérique ≥5",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cough",
+      "label": "Toux inefficace pour dégager les sécrétions respiratoires",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hardin KS, Leasia KN, Haenel J, Moore EE, Burlew CC, Pieracci FM. The Sequential Clinical Assessment of Respiratory Function (Scarf) score: A dynamic pulmonary physiologic score that predicts adverse outcomes in critically ill rib fracture patients. J Trauma Acute Care Surg. 2019;87(6):1260-1268.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31425473/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Martin TJ, Eltorai AS, Dunn R, et al. Clinical management of rib fractures and methods for prevention of pulmonary complications: A review. Injury. 2019;50(6):1159-1165.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31047683/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ribscore",
+    "calc.stumbl-battle-score",
+    "calc.thoracolumbar-injury-classification-severity-scale-tlics"
+  ],
+  "source_logic_hash": "40ebb18bf627b5042f0e31179d078fb1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10486,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar is = parseFloat(is);\nvar rr = parseFloat(rr);\nvar nps = parseFloat(nps);\nvar cough = parseFloat(cough);\n\nvar score = is + rr + nps + cough;\n\nvar risk;\nif (score == 0) {\n    risk = 'Low';\n} else if (score <= 2) {\n    risk = 'Intermediate';\n} else if (score <= 4) {\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of ≥1 adverse outcome'\n});\ncalc_output.push({\n    name: '10486_SCARF Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'SCARF Score'\n});\ncalc_output.push({\n    name: '10486_SCARF Score_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of ≥1 adverse outcome'\n});",
+  "before_use": null,
+  "instructions": "Utiliser pour évaluer la prise en charge de la douleur chez les patients présentant des fractures costales traumatiques aiguës. Si le score SCARF des patients reste >2, une augmentation du niveau d’analgésie doit être envisagée.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Kimberly S. Hardin"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "fbb2c713a3d54eed94088a3c2906fac7b2f45c9bf6ae1426de74199831aad043"
+}

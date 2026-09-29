@@ -1,0 +1,234 @@
+{
+  "id": "calc.recognition-stroke-emergency-room-rosier-scale",
+  "slug": "recognition-stroke-emergency-room-rosier-scale",
+  "language": "fr",
+  "title": "Recognition de AVC dans Emergency Room (ROSIER) échelle",
+  "short_title": "ROSIER échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Déficit neurologique",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Rosier",
+    "stroke",
+    "cva"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Signe | Points | |\n| --- | --- | --- |\n| Perte de connaissance ou syncope | Oui Non | -1 0 |\n| Activité convulsive (crise d'épilepsie) | Oui Non | -1 0 |\n| Apparition nouvelle et aiguë (ou au réveil) de l'un des signes suivants : | | |\n| Faiblesse faciale asymétrique | Oui Non | +1 0 |\n| Faiblesse du bras asymétrique | Oui Non | +1 0 |\n| Faiblesse de la jambe asymétrique | Oui Non | +1 0 |\n| Troubles du langage | Oui Non | +1 0 |\n| Déficit du champ visuel | Oui Non | +1 0 |",
+  "how_to_use": {
+    "why": "- Par rapport aux échelles plus simples de reconnaissance de l'AVC, cet outil inclut des items supplémentaires permettant d'exclure les diagnostics différentiels (AVC mimics) et d'améliorer la spécificité.\n- Différencie rapidement l'AVC des affections non vasculaires cérébrales en contexte d'urgence, aidant à prioriser les patients pour une neuro-imagerie urgente.",
+    "when": "À utiliser pour évaluer les patients se présentant aux urgences avec des symptômes neurologiques aigus afin de dépister un AVC aigu potentiel.",
+    "pearls": "- Cet outil ne remplace pas l'imagerie pour le diagnostic de certitude.\n- Des faux négatifs peuvent survenir, notamment en cas de crise convulsive ou de syncope, qui sont comptabilisés avec des points négatifs."
+  },
+  "next_steps": {
+    "advice": "Ce score ne doit pas être le seul élément déterminant d'une évaluation formelle de l'AVC ; utilisez ce score conjointement avec une évaluation complète et le jugement clinique pour aider à la prise de décision.",
+    "critical_actions": "",
+    "management": "- **Score >0 :**\n\n - Suggère la possibilité d'un AVC, justifiant une évaluation complémentaire immédiate.\n - Coordonnez-vous avec une équipe AVC (unité neurovasculaire) ou un neurologue consultant.\n - Priorisez la neuro-imagerie (p. ex., angio-TDM) et envisagez une thrombolyse si la fenêtre thérapeutique est respectée.\n- **Score ≤0 :**\n\n - L'AVC est improbable mais pas totalement exclu ; en cas de suspicion persistante, envisagez de consulter un spécialiste en neurologie.\n - Envisagez d'autres diagnostics et poursuivez la surveillance tout au long de l'évaluation du patient, car les symptômes peuvent évoluer ou justifier une réévaluation."
+  },
+  "evidence": "",
+  "more_info": "Probabilité d'AVC :\n\n| Score ROSIER | Interprétation |\n| --- | --- |\n| ≤0 | AVC improbable |\n| >0 | AVC possible |",
+  "short_description": "Reconnaissance de l'AVC aigu.",
+  "medium_description": "Distingue l'AVC aigu des diagnostics différentiels (AVC mimics).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "syncope",
+      "label": "Perte de connaissance ou syncope",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seizure",
+      "label": "Activité convulsive (crise d'épilepsie)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "facialweakness",
+      "label": "Faiblesse faciale asymétrique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "armweakness",
+      "label": "Faiblesse du bras asymétrique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "legweakness",
+      "label": "Faiblesse de la jambe asymétrique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "speech",
+      "label": "Troubles du langage",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "visualdefect",
+      "label": "Déficit du champ visuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nor AM, Davis J, Sen B, et al. The Recognition of Stroke in the Emergency Room (ROSIER) scale: development and validation of a stroke recognition instrument. Lancet Neurol. 2005;4(11):727-34.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16239179 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yock-Corrales A, Babl FE, Mosley IT, Mackay MT. Can the FAST and ROSIER adult stroke recognition tools be applied to confirmed childhood arterial ischemic stroke?. BMC Pediatr. 2011;11:93.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22014183",
+      "kind": "other"
+    },
+    {
+      "text": "Jackson A, Deasy C, Geary UM, Plunkett PK, Harbison J. Validation of the use of the ROSIER stroke recognition instrument in an Irish emergency department. Ir J Med Sci. 2008;177(3):189-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18584275",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jiang HL, Chan CP, Leung YK, Li YM, Graham CA, Rainer TH. Evaluation of the Recognition of Stroke in the Emergency Room (ROSIER) scale in Chinese patients in Hong Kong. PLoS ONE. 2014;9(10):e109762.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25343496 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mingfeng H, Zhixin W, Qihong G, Lianda L, Yanbin Y, Jinfang F. Validation of the use of the ROSIER scale in prehospital assessment of stroke. Ann Indian Acad Neurol. 2012;15(3):191-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22919191 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cincinnati-prehospital-stroke-severity-scale-cp-sss",
+    "calc.rapid-arterial-occlusion-evaluation-race-scale-stroke",
+    "calc.atria-stroke-risk-score"
+  ],
+  "source_logic_hash": "be5bcf25cfbab2e5acf83f6c242560a9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10027,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

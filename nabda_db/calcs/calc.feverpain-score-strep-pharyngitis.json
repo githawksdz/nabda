@@ -1,0 +1,223 @@
+{
+  "id": "calc.feverpain-score-strep-pharyngitis",
+  "slug": "feverpain-score-strep-pharyngitis",
+  "language": "en",
+  "title": "FeverPAIN score pour Strep Pharyngitis",
+  "short_title": "Score de FeverPAIN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique",
+    "Traitement"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Pharyngitis",
+    "Pharyngite streptococcique"
+  ],
+  "chief_complaints": [
+    "Mal de gorge"
+  ],
+  "abbreviations": [
+    "feverpain",
+    "fever",
+    "pain",
+    "strep throat",
+    "streptococcal",
+    "pharyngitis",
+    "sore throat",
+    "exudates",
+    "erythema"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "Identifier la minorité de patients atteints de pharyngite présentant une infection streptococcique peut aider les professionnels de santé à réduire l’utilisation inappropriée des antibiotiques dans la pharyngite. Les auteurs ayant élaboré le FeverPAIN Score ont mené une étude de mise en œuvre suggérant qu’il peut réduire en toute sécurité l’utilisation des antibiotiques de 30 % ([Little 2014](https://www.ncbi.nlm.nih.gov/pubmed/24467988)).",
+    "when": "Patients atteints de pharyngite en soins primaires.",
+    "pearls": "- Le score FeverPAIN pour la pharyngite streptococcique a été développé pour tenter d’aider à évaluer quels patients atteints de pharyngite ont des infections streptococciques.\n- Développé dans le contexte des tests de détection rapide des antigènes pour plusieurs souches streptococciques (groupe A, C, G).\n- Bien qu’il doive être davantage validé, il semblait avoir une meilleure utilité que les [critères de Centor](nabda:calc.centor-score-modified-mcisaac-strep-pharyngitis) aux valeurs basses pour identifier les patients qui pourraient renoncer à un traitement antibiotique ([Little 2014](https://www.ncbi.nlm.nih.gov/books/NBK261552/)).\n- La prudence est recommandée lorsqu’on utilise le score FeverPAIN pour déterminer la nécessité d’un traitement chez les patients dont les symptômes s’aggravent au-delà de 3 jours. Au-delà de ce point, le clinicien doit envisager la possibilité d’une infection plus grave ou invasive.\n- Ne doit pas être utilisé chez les enfants <3 ans, car ils sont plus susceptibles d’avoir des infections virales et/ou"
+  },
+  "next_steps": {
+    "advice": "Un score FeverPAIN faible suggère qu’une infection streptococcique est peu probable.",
+    "critical_actions": "Le score FeverPAIN nécessite un examen attentif du pharynx et un interrogatoire précis.",
+    "management": ""
+  },
+  "evidence": "The FeverPAIN Score was derived from a[study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3805475/#!po=87.5000)of 1,760 patients aged 3 years and up. The objective of the authors was to design a clinical tool that was able to predict streptococcal infection, thereby reducing the need for both rapid antigen detection tests and potentially unnecessary antibiotics. In the study, three groups were compared: a control group in which patients received a delayed antibiotic prescription (to fill in 3-5 days if no symptom relief), a clinical score group, and a rapid antigen detection test (RAT) group.\n\nIn the clinical score group, antibiotics were not offered to those with scores of 0/1, delayed antibiotics were offered for those with scores of 2/3 and immediate antibiotics were offered to those with scores of 4 or higher. Diagnostic studies in this group showed that 63% of those with scores of 4 or higher had a streptococcal infection. Lastly, in the RAT group, those with low scores of 0/1 were not offered a RAT, those with a score of 2 were offered a delayed prescription, and those with a score of 3 or more underwent a RAT on premises. Of that group, 55% had a streptococcal infection.\n\nThe authors concluded that the use of RAT according to a clinical score provided no clear advantage over a clinical score alone. Additionally, the authors looked at symptom relief and found that the use of a clinical score was shown to improve symptoms and reduce antibiotic usage in affected patients.\n\nA randomized controlled trial looking at the FeverPAIN Score was done by[Little et al in 2014](https://www.ncbi.nlm.nih.gov/pubmed/24467988). The authors found that use of the FeverPAIN score resulted in a reduction in symptom severity as well as a reduction in antibiotic usage as compared to a delayed treatment group. Moderate or worse symptom severity was also reduced as compared to a RAT group, however antibiotic usage was similar between the FeverPAIN group and the RAT group. The authors concluded that using a clinical score to target antibiotic use will both improve symptoms and reduce overall antibiotic use.",
+  "more_info": "**Score interpretation:**\n\n- A score of 0-1 is associated with 13-18% isolation of streptococcus (close to background carriage rates).\n- A score of 2 is associated with 30-35% isolation of streptococcus.\n- A score of 3 is associated with 39-48% isolation of streptococcus.\n- A score of 4 or more is associated with 62-65% isolation of streptococcus.",
+  "short_description": "Prédit la probabilité d'angine streptococcique.",
+  "medium_description": "Prédit la probabilité d'angine streptococcique.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "fev",
+      "label": "Fièvre dans past 24 hours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cough",
+      "label": "Absence de toux ou coryza",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "symp",
+      "label": "Début des symptômes ≤ 3 jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "pur",
+      "label": "Amygdales purulentes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "inf",
+      "label": "Inflammation sévère des amygdales",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Little P, et al. Incidence and clinical variables associated with streptococcal throat infections: a prospective diagnostic cohort study. Br J Gen Pract. 2012 Nov;62(604):e787-94.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23211183",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Little P, Hobbs FDR, Moore M, et al. Clinical score and rapid antigen detection test to guide antibiotic use for sore throats: randomised controlled trial of PRISM (primary care streptococcal management). BMJ : British Medical Journal. 2013;347:f5806. doi:10.1136/bmj.f5806.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3805475/#!po=87.5000",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Little P, Moore M, Hobbs FDR, et al. Chapter 3: Two diagnostic cohorts to identify clinical variables associated with Lancefield group A beta-haemolytic streptococci and Lancefield non-group A streptococcal throat infections. In: PRImary care Streptococcal Management (PRISM) study: in vitro study, diagnostic cohorts and a pragmatic adaptive randomised controlled trial with nested qualitative study and cost-effectiveness study.",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK261552/",
+      "kind": "other"
+    },
+    {
+      "text": "Little P, Moore M, Hobbs FDR, et al. Chapter 3: Two diagnostic cohorts to identify clinical variables associated with Lancefield group A beta-haemolytic streptococci and Lancefield non-group A streptococcal throat infections. In: PRImary care Streptococcal Management (PRISM) study: in vitro study, diagnostic cohorts and a pragmatic adaptive randomised controlled trial with nested qualitative study and cost-effectiveness study.",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK261552/",
+      "kind": "other"
+    },
+    {
+      "text": "Little P, et al. PRImary care Streptococcal Management (PRISM) study: identifying clinical variables associated with Lancefield group A β-haemolytic streptococci and Lancefield non-Group A streptococcal throat infections from two cohorts of patients presenting with an acute sore throat. BMJ Open. 2013 Oct 25;3(10):e003943.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24163209",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Little P, PRISM investigators, et. al. PRImary care Streptococcal Management (PRISM) study: in vitro study, diagnostic cohorts and a pragmatic adaptive randomised controlled trial with nested qualitative study and cost-effectiveness study. Health Technol Assess. 2014 Jan;18(6):vii-xxv, 1-101. doi: 10.3310/hta18060.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24467988",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.centor-score-modified-mcisaac-strep-pharyngitis",
+    "calc.jones-criteria-acute-rheumatic-fever-diagnosis",
+    "calc.rochester-criteria-febrile-infants"
+  ],
+  "source_logic_hash": "40d186a3068583cbac17ced4003fdd80",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.centor-score-modified-mcisaac-strep-pharyngitis",
+      "text": "Centor Criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3316,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

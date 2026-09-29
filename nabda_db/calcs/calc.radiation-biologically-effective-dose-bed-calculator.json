@@ -1,0 +1,123 @@
+{
+  "id": "calc.radiation-biologically-effective-dose-bed-calculator",
+  "slug": "radiation-biologically-effective-dose-bed-calculator",
+  "language": "fr",
+  "title": "Calculateur de dose biologiquement efficace (BED) en radiothérapie",
+  "short_title": "Calculateur de BED en radiothérapie",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "cancerologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Cancer",
+    "Masse"
+  ],
+  "abbreviations": [
+    "Gy fractions",
+    "biologically equivalent dose",
+    "tumor",
+    "2 Gy",
+    "dose fractionation",
+    "fractionation",
+    "radiation fractionation",
+    " 2Gy"
+  ],
+  "dosing": false,
+  "formula": "BED = D x (1 + [d / (α/β)])\n\nEQD~2~= D x ([d + (α/β)] / [2 Gy + (α/β)])\n\nWhere variables are as follows:\n\n| Variable | Description |\n| --- | --- |\n| BED | Biologically effective dose, in Gy |\n| EQD 2 | Equivalent dose in 2-Gy fractions, in Gy |\n| d | Dose per fraction, in Gy |\n| D | Total dose (number of fractions x dose per fraction), in Gy |\n| α/β ratio | Property of irradiated tissue |",
+  "how_to_use": {
+    "why": "Compares different fractionation regimens with hypofractionation or stereotactic body radiation therapy (SBRT) using a common numerical score.",
+    "when": "Patients traités par irradiation (pour comparer différents schémas de fractionnement).",
+    "pearls": "- Noter que BED désigne la dose biologiquement *efficace*, et non la dose biologiquement équivalente.\n- EQD~2~ est la dose équivalente en fractions de 2 Gy.\n- Un rapport α/β de 10 est habituellement utilisé pour les tissus à réponse précoce et les tumeurs.\n- Un rapport α/β de 3 est habituellement utilisé pour les tissus à réponse tardive, tels que les tissus normaux.\n- Le cancer de la prostate présente un rapport α/β faible, d'environ 1,5."
+  },
+  "next_steps": {
+    "advice": "Can also be used to determine total dose received over multiple radiation courses.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "BED et EQD~2~ pour la radiothérapie.",
+  "medium_description": "Calculates biologically effective dose (BED) et equivalent dose (EQD2) pour cancer radiotherapy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "d",
+      "label": "Dose par fraction",
+      "optional": false,
+      "unit": "Gy_per_frac",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "D",
+      "label": "Dose totale",
+      "tips": "Nombre de fractions × dose par fraction",
+      "optional": false,
+      "unit": "gray",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ab",
+      "label": "Rapport α/β",
+      "tips": "Typiquement 10 pour les tissus à réponse précoce et les tumeurs, 3 pour les tissus à réponse tardive (tissu normal)",
+      "optional": false,
+      "default": 10,
+      "unit": "ab_ratio",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Fowler JF. The linear-quadratic formula and progress in fractionated radiotherapy. Br J Radiol. 1989;62(740):679-94.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2670032",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fowler JF. 21 years of biologically effective dose. Br J Radiol. 2010;83(991):554-68.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3473681/#!po=8.3333",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.morphine-milligram-equivalents-mme-calculator",
+    "calc.ball-score-relapsed-refractory-cll",
+    "calc.spinal-instability-neoplastic-scale-sins-score"
+  ],
+  "source_logic_hash": "bbd036b2a0afdbc0107a1afdc52bb699",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10111,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar d = parseFloat(d);\nvar D = parseFloat(D);\nvar ab = parseFloat(ab);\n\nvar bed = D*(1 + (d/ab));\nvar eqd = D*((d + ab) / (2 + ab));\n    \n//results\ncalc_output.push({\n    name: 'mini',\n    value: bed,\n    value_text: 'Gy',\n    message: 'BED'\n});\ncalc_output.push({\n    name: '10111_Radiation BED Calculator_result (BED)',\n    value: bed.toFixed(2),\n    value_text: 'Gy',\n    message: 'BED'   \n    });\ncalc_output.push({\n    name: '10111_Radiation BED Calculator_result (EQD2)',\n    value: eqd.toFixed(2), \n    value_text: 'Gy',\n    message: 'EQD<sub>2</sub>'\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "neil-panjwani-md"
+  ],
+  "creator_names": [
+    "Dr. John F. Fowler"
+  ],
+  "measurement_ids": [
+    "Gray",
+    "ab_ratio"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "2246c62c0e956e1719f29285455be075fb9351bba77af58e5b57795e9b18aeea"
+}

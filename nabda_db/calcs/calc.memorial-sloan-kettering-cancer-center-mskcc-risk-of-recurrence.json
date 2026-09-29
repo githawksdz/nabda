@@ -1,0 +1,185 @@
+{
+  "id": "calc.memorial-sloan-kettering-cancer-center-mskcc-risk-of-recurrence",
+  "slug": "memorial-sloan-kettering-cancer-center-mskcc-risk-of-recurrence",
+  "language": "en",
+  "title": "Memorial Sloan-Kettering cancer Center (MSKCC) risque de récidive",
+  "short_title": "MSKCC risque de récidive",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Perte/Gain de poids",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Memorial Sloan-Kettering Cancer Center Risk of Recurrence",
+    " MSKCC Risk of Recurrence",
+    "RCC",
+    "renal cell carcinoma",
+    "nephrectomy",
+    "kidney cancer",
+    "post-resection renal cell carcinoma",
+    "renal cancer prognosis",
+    "kidney cancer prognosis",
+    "post-resection RCC",
+    "recurrence in renal cell carcinoma",
+    "recurrence in RCC",
+    "radical nephrectomy",
+    "partial nephrectomy",
+    "1997 pathological stage"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients to calculate the 5-year risk of recurrence are as follows:\n\n| Variable | Coefficient | |\n| --- | --- | --- |\n| Intercept | -1.8397306 | |\n| Symptoms | None | 0 |\n| Incidental | 0 | |\n| Local | 0.010522791 | |\n| Systemic | 0.85698406 | |\n| Histology | None | 0 |\n| Chromophobe | 0 | |\n| Conventional | 1.0831942 | |\n| Papillary | 0.2448591 | |\n| Tumor size | 0.13834412 | |\n| Pathologic stage | pT1 | 0 |\n| pT2 | 0.52675363 | |\n| pT3a | 0.19334187 | |\n| pT3b/c | 0.86140642 | |\n\nRisk, % = (1 - 0.9047495^exp(x)^) * 100,\n\nwhere x = Σ[β*(variable)]",
+  "how_to_use": {
+    "why": "- Estime la probabilité de récidive à 5 ans d'un patient après néphrectomie.\n- Intègre l'histologie pour trois sous-types courants de carcinome à cellules rénales (RCC).\n- Favorise la décision partagée concernant le traitement adjuvant et l'intensité de la surveillance après chirurgie.",
+    "when": "Utiliser lors de la consultation postopératoire chez les patients atteints d’un carcinome à cellules rénales (RCC) nouvellement diagnostiqué, après néphrectomie partielle ou radicale, dès que l’anatomopathologie définitive est disponible.",
+    "pearls": "- Developed in 2001 from a Cox proportional hazards model; predicts 5-year recurrence-free probability (derivation AUC 0.74).\n- Intended for localized disease; avoid use in metastatic settings (model/validations were for non-metastatic T1–T3 tumors).\n- Does not account for some modern high-risk features (e.g., necrosis, sarcomatoid or rhabdoid differentiation) or less common tumor variants (e.g., collecting duct, renal medullary)."
+  },
+  "next_steps": {
+    "advice": "Utiliser les résultats en parallèle d’une évaluation clinique approfondie, du jugement du clinicien, des recommandations locales et de l’avis d’un spécialiste pour guider :\n\n- L’information pronostique.\n- L’intensité du suivi, y compris la fréquence des visites, les examens de laboratoire et l’imagerie.\n- Les décisions de traitement adjuvant, notamment l’opportunité de recourir au pembrolizumab.\n- L’inclusion dans des essais cliniques.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Probabilité de RCC traitement défaillance.",
+  "medium_description": "Predicts 5-year probabilité de traitement défaillance among patients avec newly diagnosed renal cell carcinoma (RCC).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "histology",
+      "label": "Histology",
+      "tips": "Si l’histologie est inconnue, sélectionnez « Aucun ».",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Chromophobe",
+          "value": 0
+        },
+        {
+          "label": "Conventional",
+          "value": 1
+        },
+        {
+          "label": "Papillary",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "symptoms",
+      "label": "Symptoms",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Incidental",
+          "value": 0
+        },
+        {
+          "label": "Local",
+          "value": 1
+        },
+        {
+          "label": "Systemic",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "tumorsize",
+      "label": "Taille de la tumeur",
+      "optional": false,
+      "unit": "tumorsize_mskcc",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "path_stage",
+      "label": "Stade pathologique",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "pT1",
+          "value": 0
+        },
+        {
+          "label": "pT2",
+          "value": 1
+        },
+        {
+          "label": "pT3",
+          "value": 2
+        },
+        {
+          "label": "pT3b/c",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kattan MW, Reuter V, Motzer RJ, Katz J, Russo P. A postoperative prognostic nomogram for renal cell carcinoma. J Urol. 2001;166(1):63-67.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11435824/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cindolo L, Patard JJ, Chiodini P, et al. Comparison of predictive accuracy of four prognostic models for nonmetastatic renal cell carcinoma after nephrectomy: a multicenter European study. Cancer. 2005;104(7):1362-1371. doi:10.1002/cncr.21331",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16116599/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hupertan V, Roupret M, Poisson JF, et al. Low predictive accuracy of the Kattan postoperative nomogram for renal cell carcinoma recurrence in a population of French patients. Cancer. 2006;107(11):2604-2608. doi:10.1002/cncr.22313",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17075871/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "0161fa64103be2874b4425e266e383eb",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "not_applicable_dz",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10622,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

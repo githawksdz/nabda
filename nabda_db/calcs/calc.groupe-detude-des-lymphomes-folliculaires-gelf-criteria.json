@@ -1,0 +1,244 @@
+{
+  "id": "calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria",
+  "slug": "groupe-detude-des-lymphomes-folliculaires-gelf-criteria",
+  "language": "fr",
+  "title": "Groupe d'Etude des Lymphomes Folliculaires (GELF) critères",
+  "short_title": "GELF critères pour Follicular Lymphoma",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Lymphadenopathy",
+    "Mass"
+  ],
+  "abbreviations": [
+    "LF",
+    "therapy",
+    "lymphoma",
+    "follicular",
+    "gelf"
+  ],
+  "dosing": false,
+  "formula": "Les patients doivent remplir ≥1 critère pour être considérés comme ayant une masse tumorale « élevée » ; critères ci-dessous :\n\n- Toute masse tumorale ganglionnaire ou extraganglionnaire >7 cm de diamètre\n- Atteinte d'au moins 3 sites ganglionnaires, chacun d'un diamètre >3 cm\n- Présence de tout symptôme systémique ou B\n- Splénomégalie avec bord inférieur sous la ligne ombilicale\n- Syndrome de compression (urétéral, orbitaire, gastro-intestinal)\n- Épanchement séreux pleural ou péritonéal (indépendamment du contenu cellulaire)\n- Phase leucémique (>5.0 x10^9^/L cellules malignes circulantes)\n- Cytopénie (numération des granulocytes <1.0 x10^9^/L et/ou plaquettes <100x10^9^/L)",
+  "how_to_use": {
+    "why": "Les critères GELF sont faciles à utiliser avec les informations dont la plupart des soignants disposent déjà. L'évaluation clinique, les examens biologiques et l'imagerie sont tout ce qui est nécessaire pour déterminer qui présente une masse tumorale élevée selon les critères GELF.",
+    "when": "Les critères peuvent aider à identifier les patients atteints de lymphome folliculaire présentant un risque plus élevé de progression rapide de la maladie et chez qui un traitement immédiat peut être nécessaire.",
+    "pearls": "- Cet outil s'utilise surtout comme évaluation instantanée de la charge tumorale du patient. En définitive, le jugement clinique et une revue complète du bilan antérieur du patient sont essentiels pour réaliser cette évaluation.\n- Pour le pronostic global, le [FLIPI](nabda:calc.follicular-lymphoma-international-prognostic-index-flipi) peut permettre une stratification du risque plus fine que les critères GELF."
+  },
+  "next_steps": {
+    "advice": "Se référer aux systèmes de stadification [FLIPI](nabda:calc.follicular-lymphoma-international-prognostic-index-flipi) et à la classification de Lugano pour aider à stratifier le risque des patients. Les critères GELF constituent un test rapide pour déterminer quels patients doivent être surveillés plutôt que traités immédiatement.",
+    "critical_actions": "Il persiste une controverse sur le moment et la manière de traiter le lymphome folliculaire, y compris chez les patients atteints d’une maladie en rechute/réfractaire. Questions à prendre en compte lors des décisions thérapeutiques :\n\n- Quand initier un traitement versus une surveillance active\n- Choisir parmi différentes options thérapeutiques\n- Équilibrer l’efficacité et les toxicités des options thérapeutiques\n- Déterminer ce qui constitue une réponse complète/un critère d’évaluation du traitement\n- Enfin, dans le lymphome folliculaire",
+    "management": "Le traitement varie selon le stade et la masse tumorale.\n\n**Stades I-II**\n\n- Les options thérapeutiques comprennent :\n\n - Radiothérapie des sites atteints (IFRT)\n - Essais cliniques\n - Surveillance active\n\n**Stades III-IV ou stade II volumineux – asymptomatique**\n\n- Les options thérapeutiques comprennent :\n\n - Essais cliniques\n - Surveillance active\n\n**Stades III-IV ou stade II volumineux – avec facteurs de risque GELF/BNLI ou score [FLIPI](nabda:calc.follicular-lymphoma-international-prognostic-index-flipi) à haut risque**\n\n- Les options thérapeutiques comprennent :\n\n - RiTUXimab + cyclophosphamide, vinCRIStine, DOXOrubicin, predniSONE\n - RiTUXimab seul\n - Bendamustine + riTUXimab\n - RiTUXimab + cyclophosphamide, vinCRIStine, predniSONE\n - Essais cliniques"
+  },
+  "evidence": "L'[étude originale](https://www.ncbi.nlm.nih.gov/pubmed/9060552) a comparé trois bras d'intervention différents : surveillance active jusqu'à progression clinique, traitement immédiat par un agent alkylant oral (prednimustine), ou traitement par un modificateur de la réponse biologique (interféron-alpha). 193 patients au total ont été inclus. Le taux de réponse globale du traitement différé était de 70 %, avec la prednimustine de 78 %, et avec l'interféron-alpha de 70 %. De même, la survie globale à 5 ans était de 78 %, 70 % et 84 %, respectivement. Cela a montré que le traitement différé était une option viable pour un tel lymphome indolent. Cependant, les patients présentant une progression précoce justifient un traitement plus rapide.",
+  "more_info": "**Sites ganglionnaires**\n\n![sites ganglionnaires flipi](https://cdn-web-img.mdcalc.com/content/flipi-nodal-site.png)",
+  "short_description": "Évalue le besoin de traitement immédiat.",
+  "medium_description": "Determines if immediate therapy pour follicular lymphoma is requis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "tumor",
+      "label": "Toute masse tumorale ganglionnaire ou extraganglionnaire >7 cm de diamètre",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nodal",
+      "label": "Involvement de at least 3 nodal sites, each avec diameter >3 cm",
+      "tips": "Voir plus d'informations sur les sites ganglionnaires dans la section Plus d'informations.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "systemic",
+      "label": "Présence de tout symptôme systémique ou B",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spleen",
+      "label": "Splenic enlargement avec inferior margin below umbilical line",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "compress",
+      "label": "Syndrome de compression (urétéral, orbitaire, gastro-intestinal)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pleural",
+      "label": "Épanchement séreux pleural ou péritonéal (indépendamment du contenu cellulaire)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leuk",
+      "label": "Phase leucémique (>5.0 x10⁹/L cellules malignes circulantes)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cytopenia",
+      "label": "Cytopénie (numération des granulocytes <1.0x10⁹/L et/ou plaquettes <100x10⁹/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brice P, Bastion Y, Lepage E, et al. Comparison in low-tumor-burden follicular lymphomas between an initial no-treatment policy, prednimustine, or interferon alfa: a randomized study from the Groupe d'Etude des Lymphomes Folliculaires. J Clin Oncol. 1997. 15:1110-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9060552",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Solal-Céligny P, Lepage E, Brousse N, Tendler CL, Brice P, Haïoun C, Gabarre J, Pignon B, Tertian G,Bouabdallah R, Rossi JF, Doyen C, Coiffier B. DOXOrubicin-containing regimen with or without interferon alfa-2b for advanced follicular lymphomas: final analysis of survival and toxicity in the Groupe d'Etude des Lymphomes Folliculaires 86 Trial. J Clin Oncol. 1998 Jul;16(7):2332-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9667247",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.follicular-lymphoma-international-prognostic-index-flipi",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi"
+  ],
+  "source_logic_hash": "d15632c470bc58e93199344d7e2637ed",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.follicular-lymphoma-international-prognostic-index-flipi",
+      "text": "FLIPI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2321,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,164 @@
+{
+  "id": "calc.basal-energy-expenditure",
+  "slug": "basal-energy-expenditure",
+  "language": "fr",
+  "title": "Basal Energy Expenditure",
+  "short_title": "Dépense énergétique basale",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "soins-intensifs",
+    "endocrinologie",
+    "hematologie",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "pediatrie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Malnutrition",
+    "Obesity"
+  ],
+  "chief_complaints": [
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "calories",
+    "metabolism",
+    "harris",
+    "Benedict",
+    "harris-benedict"
+  ],
+  "dosing": false,
+  "formula": "Remarque : la dépense énergétique basale doit être multipliée par les facteurs d'activité et de stress pour calculer le besoin calorique total.\n\nBEE, kcal/jour (homme) = 66.5 + (13.75 × poids, kg) + (5.003 × taille, cm) - (6.775 × âge)\n\nBEE, kcal/jour (femme) = 655.1 + (9.563 × poids, kg) + (1.850 × taille, cm) - (4.676 × âge)\n\n**Ajustement de Harris-Benedict :**\n\n- Sédentaire (peu ou pas d'exercice) = BEE × 1.2\n- Exercice léger (1 à 3 jours par semaine) = BEE × 1.375\n- Exercice modéré (3 à 5 jours par semaine) = BEE × 1.55\n- Exercice intense (6 à 7 jours par semaine) = BEE × 1.725\n- Exercice très intense (deux fois par jour, entraînements très lourds) = BEE × 1.9",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Rappelons qu’il s’agit simplement des besoins basaux, c’est-à-dire des besoins quotidiens minimaux. L’activité les augmentera considérablement."
+  },
+  "next_steps": {
+    "advice": "Remarque : le stress, l’activité, la maladie, les traumatismes, les brûlures et les cancers peuvent augmenter les besoins caloriques quotidiens.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Estime les besoins caloriques minimaux.",
+  "medium_description": "Calcule la dépense énergétique quotidienne.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "activity",
+      "label": "Niveau d’activité",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Sedentary (little pour no exercise)",
+          "value": 1
+        },
+        {
+          "label": "Exercice léger (1-3 jours par semaine)",
+          "value": 2
+        },
+        {
+          "label": "modéré exercise (3–5 days per week)",
+          "value": 3
+        },
+        {
+          "label": "Exercice intense (6–7 jours par semaine)",
+          "value": 4
+        },
+        {
+          "label": "Exercice très intense (deux fois par jour, entraînements extrêmement intenses)",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Harris J, Benedict F. A biometric study of basal metabolism in man. Washington D.C. Carnegie Institute of Washington. 1919.",
+      "href": "https://www.google.com/books/edition/A_Biometric_Study_of_Basal_Metabolism_in/5A7ug_oiBHYC?hl=en&gbpv=0",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.glucose-infusion-rate-gir",
+    "calc.c-peptide-glucose-ratio"
+  ],
+  "source_logic_hash": "3c853ef905996e968820409bf584fdd4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 25,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

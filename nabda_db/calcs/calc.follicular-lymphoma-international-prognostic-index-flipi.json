@@ -1,0 +1,203 @@
+{
+  "id": "calc.follicular-lymphoma-international-prognostic-index-flipi",
+  "slug": "follicular-lymphoma-international-prognostic-index-flipi",
+  "language": "en",
+  "title": "Index pronostique international du lymphome folliculaire (FLIPI)",
+  "short_title": "FLIPI pour le lymphome folliculaire",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chimiothérapie",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Adénopathie",
+    "Masse"
+  ],
+  "abbreviations": [
+    "FL",
+    "lymphoma",
+    "IPI",
+    "overall survival",
+    "OS"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "Le score FLIPI est simple d’utilisation, car il repose sur des informations dont la plupart des professionnels de santé disposent déjà. L’évaluation clinique, les analyses de laboratoire et l’imagerie suffisent pour stratifier le risque des patients et estimer le pronostic.",
+    "when": "FLIPI est destiné à être utilisé chez les patients atteints de lymphome folliculaire et à stratifier le risque des patients en fonction du pronostic. Cela peut aider à guider quand et comment traiter ces patients.",
+    "pearls": "- Le FLIPI, bien qu'il s'agisse d'un outil pronostique général utile, ne permet pas de prédire de manière fiable, dès le diagnostic, les patients qui connaîtront une détérioration extrêmement rapide. Il contribue plutôt à fournir une information pronostique. En définitive, le jugement clinique et une revue exhaustive du bilan antérieur du patient sont essentiels pour réaliser cette évaluation.\n- Les [Critères GELF](nabda:calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria) peuvent aider à identifier les patients atteints de lymphome folliculaire présentant un risque plus élevé de progression rapide de la maladie et chez qui un traitement immédiat peut être nécessaire."
+  },
+  "next_steps": {
+    "advice": "Un score FLIPI de 0 à 1 est considéré comme « faible risque » avec une survie globale à 10 ans de 70 %. Un score de 2 est considéré comme « risque intermédiaire » avec une survie globale à 10 ans de 50 %. Enfin, un score ≥ 3 est considéré comme « risque élevé » avec une survie globale à 10 ans de 35 %. Les patients dont la durée de rémission initiale est inférieure à la survie sans progression médiane pour un schéma thérapeutique donné et/ou qui ont un score FLIPI élevé sont plus susceptibles d’avoir une durée de rémission plus courte.",
+    "critical_actions": "Il persiste une controverse sur le moment et la manière de traiter le lymphome folliculaire, y compris chez les patients atteints d’une maladie en rechute/réfractaire. Questions à prendre en compte lors des décisions thérapeutiques :\n\n- Quand initier un traitement versus une surveillance active\n- Choisir parmi différentes options thérapeutiques\n- Équilibrer l’efficacité et les toxicités des options thérapeutiques\n- Déterminer ce qui constitue une réponse complète/un critère d’évaluation du traitement\n- Enfin, dans le lymphome folliculaire",
+    "management": "Le traitement varie en fonction du stade et de la charge tumorale.\n\n**Stades I-II**\n\n- Les options thérapeutiques comprennent :\n\n  - Radiothérapie de champ impliqué (IFRT)\n  - Essais cliniques"
+  },
+  "evidence": "The FLIPI score was developed based on 4,167 patients with follicular lymphoma providing characteristics at diagnosis. Univariate and multivariate analyses were then used to develop a prognostic index. This was then validated in a cohort of 919 patients. Age, Ann Arbor stage, hemoglobin level, number of nodal areas, and serum LDH level were identified as adverse prognostic factors. The FLIPI was validated in a subsequent study and the performance improved by further stratifying age and including the presence of cerebrovascular disease.",
+  "more_info": "**Score Interpretation**\n\n| Score | Risk Group | 10-year Overall Survival |\n| --- | --- | --- |\n| ≤1 | Low | 70% |\n| 2 | Intermediate | 50% |\n| ≥3 | High | 35% |\n\nFor more recent 2-year overall survival and progression-free survival estimates, see[Nooka et al. (2013)](https://pubmed.ncbi.nlm.nih.gov/23041589/).\n\n**Useful Mnemonic - NoLash**\n\n- Nodal areas\n- LDH\n- Age\n- Stage\n- Hemoglobin level\n\n**Nodal Sites**\n\n![nodal sites flipi](https://cdn-web-img.mdcalc.com/content/flipi-nodal-site.png)\n\n**Staging Diagram**\n\n![Follicular Lymphoma Stages](https://cdn-web-img.mdcalc.com/content/flipi-staging-diagram.png)",
+  "short_description": "Survie globale de FL.",
+  "medium_description": "Estime la survie globale à partir des données cliniques.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge > 60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nodal",
+      "label": ">4 sites ganglionnaires",
+      "tips": "Voir [Données probantes](#evidence) pour le diagramme nodal.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ldh",
+      "label": "LDH élevée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hgb",
+      "label": "Hémoglobine <120 g/L ou 12 g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stage",
+      "label": "Stade III-IV",
+      "tips": "- Stage I: disease is located in a single region, usually one lymph node and the surrounding area.\n- Stage II: disease is located in two separate regions, an affected lymph node or organ and a second affected area. Both affected areas are confined to one side of the diaphragm.\n- Stage III: disease involves both sides of the diaphragm, including one organ or area near the lymph nodes or the spleen.\n- Stage IV: diffuse or disseminated involvement of one or more extranodal organs, with or without associated lymph node involvement.\n\nSee[Evidence](#evidence)for stage diagram.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Solal-Celigny et al. Follicular Lymphoma International Prognostic Index. Blood 104:1258-1265. (2004)",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15126323",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van de Schans SAM, et. al. Validation, revision and extension of the Follicular Lymphoma International Prognostic Index (FLIPI) in a population-based settingAnn Oncol (2009) 20 (10): 1697-1702 first published online June 23, 2009 doi:10.1093/annonc/mdp053",
+      "href": "https://annonc.oxfordjournals.org/content/20/10/1697.long",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nooka AK, Nabhan C, Zhou X, et al. Examination of the follicular lymphoma international prognostic index (FLIPI) in the National LymphoCare study (NLCS): a prospective US patient cohort treated predominantly in community practices. Ann Oncol. 2013;24(2):441-448. doi:10.1093/annonc/mds429",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23041589/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi",
+    "calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi"
+  ],
+  "source_logic_hash": "83564c6583a2513d48f3b13ec993141b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria",
+      "text": "GELF Criteria"
+    },
+    {
+      "type": "calc",
+      "id": "calc.groupe-detude-des-lymphomes-folliculaires-gelf-criteria",
+      "text": "GELF Criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2320,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar msg = '';\nvar os = '';\nvar u = parseFloat(age) + parseFloat(nodal) + parseFloat(ldh) + parseFloat(hgb) + parseFloat(stage);\nvar msg = '';\nvar mini_msg = '';\nif (u <= 1) {\n     msg = 'Low Risk';\n     os = '10-year overall survival is approximately 70%';\n}\nif (u == 2) {\n   msg = 'Intermediate Risk';\n   os = '10-year overall survival is approximately 50%';\n}\nif (u >= 3) {\n    msg = 'High Risk';\n    os = '10-year overall survival is approximately 35%';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u, \n    value_text: 'points', \n    message: msg });\ncalc_output.push({ \n    name: '2320_FLIPI for Follicular Lymphoma_result', \n    value: u, \n    value_text: 'points', \n    message: msg+'<br/><br/>'+os \n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "sagar-patel"
+  ],
+  "creator_names": [
+    "Dr. Philippe Solal-Céligny"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "ac95b0ce99979197d448a7ff8c12495b27065a4fd0171515af97bace9b957ded"
+}

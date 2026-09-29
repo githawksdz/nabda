@@ -1,0 +1,194 @@
+{
+  "id": "calc.intracerebral-hemorrhage-ich-score",
+  "slug": "intracerebral-hemorrhage-ich-score",
+  "language": "en",
+  "title": "Intracerebral hémorragie (ICH) score",
+  "short_title": "Intracerebral hémorragie (ICH) score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Hémorragie intracrânienne",
+    "Hémorragie sous-arachnoïdienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Headache"
+  ],
+  "abbreviations": [
+    "ich",
+    "cva",
+    "stroke",
+    "tia",
+    "ich score",
+    "tpa"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "Cet outil aide les cliniciens à pronostiquer rapidement et précisément les patients admis pour une ICH, et peut être utilisé comme outil pour aider à décider du niveau de soins approprié et/ou du transfert.",
+    "when": "- Le score ICH permet une échelle de gradation clinique standardisée et cohérente pour l’ICH, améliorant ainsi la communication entre les cliniciens.\n- Le score ICH gradue la gravité de l’ICH et la mortalité à 30 jours qui en découle, aidant ainsi à orienter les discussions sur les objectifs de soins avec les familles des patients.\n- Ce score est souvent utilisé conjointement avec le score FUNC, qui indique la probabilité d’indépendance fonctionnelle d’un patient 90 jours après l’ICH.\n- Bien que ce score puisse être un marqueur de gravité de l’ICH, il n’est généralement pas utilisé pour guider la modalité thérapeutique.",
+    "pearls": "- The ICH Score allows clinicians with varying level of training and clinical backgrounds to grade ICH severity in a succinct, universal manner.\n- The ICH Score is intended to be used after the diagnosis of ICH is made and is generally not used as a continual marker of the patient’s neurologic status (such as the GCS).\n- The score is sometimes criticized as physicians and families had previously used gestalt to make the decision to withdraw life support and that this bias may have affected the validation.\n- **Please note** that the ICH score is primarily used as a clinical grading scale and communication tool. It is not meant to provide prognostic information and should not be used as a primary means to predict the outcomes of patients with ICH."
+  },
+  "next_steps": {
+    "advice": "- While the ICH score grades severity of the disease, it does not directly affect treatment modalities.\n- Patients with intracerebral hemorrhage should have emergent consultation with neurosurgery and stabilized prior to transfer, if transfer is required. Most patients require ICU-level care and monitoring for airway sequelae of neurologic decompensation.\n- ICH often causes hydrocephalus, thus patients with low GCS and/or signs of hydrocephalus on Head CT may also need urgent ventricular decompression with an extra-ventricular drain (EVD).\n- Coagulation studies should be ordered immediately to determine if there is any coagulopathy that is contributing to ongoing bleeding. Platelet administration is NOT recommended in the setting of antiplatelet-related ICH, based on data from the[PATCH trial](https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)30392-0/abstract).\n- AHA guidelines recommend lowering systolic BP to <160 mmHg, usually achieved with IV antihypertensives.",
+    "critical_actions": "- Une attention particulière doit être portée aux patients sous antiagrégants plaquettaires ou sous traitement anticoagulant, car ces patients nécessitent fréquemment des agents de réversion.\n- Les patients présentant une ICH doivent être transférés en urgence vers un établissement disposant de capacités neurochirurgicales si l'établissement d'admission n'en dispose pas.",
+    "management": "Les décisions cliniques concernant les objectifs de soins ne doivent pas être prises uniquement sur la base du score ICH. D’autres facteurs, tels que les souhaits des patients et de leurs familles, l’état neurologique de base et les autres comorbidités, doivent être pris en considération."
+  },
+  "evidence": "Le score ICH a été développé pour fournir une échelle de gradation clinique de l’ICH, contribuant à standardiser les protocoles de traitement clinique et les études de recherche clinique sur l’ICH. Le score a été développé à l’UCSF, l’étude originale ayant analysé 161 patients présentant une ICH à l’UCSF entre 1997 et 1998. Globalement, l’analyse aide à fournir des informations sur le degré de gravité de l’ICH ainsi que sur les taux de mortalité à 30 jours, ce qui a contribué à guider la prise de décision.",
+  "more_info": "**Interprétation du score :**\n\n| Score ICH | Taux de mortalité |\n| --- | --- |\n| 0 | 0 % |\n| 1 | 13 % |\n| 2 | 26 % |\n| 3 | 72 % |\n| 4 | 97 % |\n| 5 | 100 % |\n| 6* | 100 % |\n\n*Aucun patient dans l'étude avec un score de 6, mais estimation à 100 %.",
+  "short_description": "Mortalité dans ICH.",
+  "medium_description": "Estimates mortalité dans ICH basé sur âge et CT findings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "glasgow_coma_score",
+      "label": "[Score de coma de Glasgow (Glasgow Coma Score)](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "3-4",
+          "value": 2
+        },
+        {
+          "label": "5-12",
+          "value": 1
+        },
+        {
+          "label": "13-15",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_80",
+      "label": "Âge ≥80",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ich_volume_30",
+      "label": "[Volume de l'hémorragie intracérébrale](nabda:calc.abc2-formula-intracerebral-hemorrhage-volume) ≥30mL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "intraventricular_hemorrhage",
+      "label": "Intraventricular hémorragie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "infratentorial_hemorrhage",
+      "label": "Infratentorial origin de hémorragie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hemphill JC 3rd, Bonovich DC, Besmertis L, Manley GT, Johnston SC. The ICH score: a simple, reliable grading scale for intracerebral hemorrhage. Stroke. 2001 Apr;32(4):891-7. PubMed PMID: 11283388.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11283388",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Baharoglu MI, Cordonnier C, Al-shahi salman R, et al. Platelet transfusion versus standard care after acute stroke due to spontaneous cerebral haemorrhage associated with antiplatelet therapy (PATCH): a randomised, open-label, phase 3 trial. Lancet. 2016;387(10038):2605-13.",
+      "href": "https://www.thelancet.com/journals/lancet/article/PIIS0140-6736(16)30392-0/abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Clarke JL, Johnston SC, Farrant M, Bernstein R, Tong D, Hemphill JC 3rd. External validation of the ICH score. Neurocrit Care. 2004;1(1):53-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16174898",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abc2-formula-intracerebral-hemorrhage-volume",
+    "calc.secondary-intracerebral-hemorrhage-sich-score",
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke"
+  ],
+  "source_logic_hash": "b53b958ca7d1b14428cd73cdf22209fa",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 402,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

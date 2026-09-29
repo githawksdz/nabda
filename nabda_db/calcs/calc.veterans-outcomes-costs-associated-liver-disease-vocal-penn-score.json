@@ -1,0 +1,280 @@
+{
+  "id": "calc.veterans-outcomes-costs-associated-liver-disease-vocal-penn-score",
+  "slug": "veterans-outcomes-costs-associated-liver-disease-vocal-penn-score",
+  "language": "en",
+  "title": "Veterans Outcomes et Costs associé avec Liver maladie (VOCAL)-Penn score",
+  "short_title": "Score VOCAL-Penn",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Carcinome hépatocellulaire",
+    "Cirrhose"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Douleur abdominale",
+    "Anomalies du bilan hépatique",
+    "Altération de l’état mental",
+    "Ictère",
+    "Perte d'appétit",
+    "Nausée",
+    "Œdème périphérique",
+    "Soins préventifs / Dépistage",
+    "Vomissements",
+    "Perte/Gain de poids",
+    "Dysfonction organique"
+  ],
+  "abbreviations": [
+    "VOCAL-Penn",
+    "VOCAL",
+    "cirrhosis postop",
+    "cirrhosis surgery risk",
+    "cirrhosis postoperative mortality",
+    "hepatic decompensation",
+    "ASA",
+    "MELD",
+    "Veterans Outcomes and Costs Associated With Liver Disease",
+    "cirrhosis mortality",
+    "VOCAL Penn",
+    "Mayo risk score"
+  ],
+  "dosing": false,
+  "formula": "Please refer to[Mahmud et al. (2021)](https://pubmed.ncbi.nlm.nih.gov/32939786/)for mortality prediction and[Mahmud et al. (2022)](https://pubmed.ncbi.nlm.nih.gov/34246794/)for decompensation risk prediction.",
+  "how_to_use": {
+    "why": "- Quantifies risk of postoperative hepatic decompensation and mortality, which may inform consent, care venue, and perioperative planning and monitoring.\n- Includes multiple liver-specific parameters, unlike other surgical risk tools such as NSQIP.\n- Demonstrates better performance than the Mayo Risk Score, [MELD](nabda:calc.model-end-stage-liver-disease-meld) , and [MELD-Na](nabda:calc.model-end-stage-liver-disease-meld) , which do not include surgery-specific risk parameters.",
+    "when": "Use during preoperative evaluation of adults (≥18 years) with cirrhosis.",
+    "pearls": "- Derived from a VA cohort of patients with cirrhosis (predominantly Child-Pugh A; median MELD 8) undergoing a range of procedures, excluding hepatic surgery.\n- Cohort was predominantly male and White (median age 64 years); performance remained strong in internal validations that included women.\n- Patients with preoperative [ASA](nabda:calc.asa-physical-status-asa-classification) class 1 or 5 were excluded.\n- Not validated for liver resection, endovascular valve procedures, CNS surgeries, or minor/low-risk procedures.\n- Incorporates surgery type in addition to clinical factors."
+  },
+  "next_steps": {
+    "advice": "N’utilisez pas cet outil comme seul déterminant de la candidature chirurgicale ; intégrez la nécessité médicale, l’avis d’un spécialiste (par ex., gastro-entérologie/hépatologie) et le jugement clinique.",
+    "critical_actions": "",
+    "management": "- Optimiser les risques modifiables chez **tous les patients :**\n\n - Veiller à une nutrition adéquate et supplémenter les carences.\n - Prendre en charge l’hypertension portale et l’ascite.\n - Mettre en place une prophylaxie appropriée des varices.\n - Corriger les anomalies électrolytiques.\n - Utiliser une thromboprophylaxie veineuse lorsqu’elle est indiquée.\n- Pour les patients à **risque plus faible** : Procéder à l’optimisation standard.\n- Pour les patients à **risque plus élevé** :\n\n - Choisir des structures de soins disposant de ressources renforcées et d’un soutien spécialisé.\n - Prévoir une surveillance postopératoire renforcée.\n - Envisager des approches mini-invasives ou des alternatives non chirurgicales lorsqu’elles sont réalisables."
+  },
+  "evidence": "",
+  "more_info": "Examples of procedures in each surgery category:\n\n| Surgery Category | Examples |\n| --- | --- |\n| Abdominal wall | Inguinal hernia repair, umbilical hernia repair, incisional/ventral hernia repair |\n| Vascular | Thromboendarterectomy (carotid, vertebral, femoral, subclavian), bypass graft (femoral-popliteal, femoral-femoral) |\n| Major orthopedic | Total knee arthroplasty, total hip arthroplasty, amputation through femur, amputation through tibia/fibula, open treatment of femoral neck fracture with internal fixation |\n| Chest/cardiac | Pulmonary lobectomy, thoracoscopy with lobectomy, pleurodesis, wedge resection, aortic valve replacement (with cardiopulmonary bypass), coronary artery bypass graft, mitral valve replacement (with cardiopulmonary bypass) |\n| Abdominal* | Cholecystectomy, exploratory laparotomy, colectomy, laparoscopy for diagnosis or washout, appendectomy, pancreatectomy (Whipple) |\n\n* Abdominal surgeries were further characterized as laparoscopic or open for modeling.\n\n**Not included:** Liver-specific surgeries (e.g., partial hepatectomy) and endovascular valve procedures (e.g., TAVR).",
+  "short_description": "Predicts postoperative mortalité et decompensation chez les patients avec cirrhosis.",
+  "medium_description": "Predicts 30-, 90-, et 180-day postoperative mortalité et decompensation chez les patients avec cirrhosis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "a",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "b",
+      "label": "Albumine",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "c",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "mg/dL",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "d",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt_vocal_penn",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m^2^",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 30",
+          "value": 0
+        },
+        {
+          "label": "≥30",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "MASLD",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "g",
+      "label": "[ASA classification](nabda:calc.asa-physical-status-asa-classification)",
+      "tips": "L’étude originale n’a pas validé les patients des classes ASA 1, 5 ou 6.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "Indication de chirurgie d'urgence",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "dropdown",
+      "name": "i",
+      "label": "Type de chirurgie",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Abdominal - laparoscopique",
+          "value": 0
+        },
+        {
+          "label": "Abdominal – ouvert",
+          "value": 1
+        },
+        {
+          "label": "Paroi abdominale",
+          "value": 2
+        },
+        {
+          "label": "Vasculaire",
+          "value": 3
+        },
+        {
+          "label": "Orthopédie majeure",
+          "value": 4
+        },
+        {
+          "label": "Thorax/cardiaque",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mahmud N, Fricker Z, Hubbard RA, et al. Risk prediction models for post-operative mortality in patients with cirrhosis. Hepatology. 2021;73(1):204-218. doi:10.1002/hep.31558",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32939786/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahmud N, Fricker Z, Lewis JD, Taddei TH, Goldberg DS, Kaplan DE. Risk prediction models for postoperative decompensation and infection in patients with cirrhosis: A veterans affairs cohort study. Clin Gastroenterol Hepatol. 2022;20(5):e1121-e1134. doi:10.1016/j.cgh.2021.06.050",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34246794/",
+      "kind": "other"
+    },
+    {
+      "text": "Mahmud N, Fricker Z, Panchal S, Lewis JD, Goldberg DS, Kaplan DE. External validation of the VOCAL-Penn cirrhosis surgical risk score in 2 large, independent health systems. Liver Transpl. 2021;27(7):961-970. doi:10.1002/lt.26060",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33788365/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.asa-physical-status-asa-classification",
+    "calc.model-end-stage-liver-disease-meld"
+  ],
+  "source_logic_hash": "d354372fcca6d50cc9b14cae42376e9f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.model-end-stage-liver-disease-meld",
+      "text": "MELD"
+    },
+    {
+      "type": "calc",
+      "id": "calc.asa-physical-status-asa-classification",
+      "text": "ASA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.model-end-stage-liver-disease-meld",
+      "text": "MELD"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10652,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\nvar g = parseFloat(g);\nvar h = parseFloat(h);\nvar i = parseFloat(i);\n\nif (UOMSYSTEM == false) { \n    // albumin: g/L -> g/dL\n    var b = b/10; \n    // bilirubin: µmol/L -> mg/dL\n    var c = c/17.1;\n}\n\n// Knots\nvar d_k1 = 74, d_k2 = 153, d_k3 = 269;\nvar b_k1 = 2.7, b_k2 = 3.7, b_k3 = 4.4;\n\n// Albumin splines \nvar albumin_sp1 = b;\nvar albumin_sp2 = 0;\n\nvar gt1 = 0; if (b > b_k1) gt1 = 1;\nvar gt2 = 0; if (b > b_k2) gt2 = 1;\nvar gt3 = 0; if (b > b_k3) gt3 = 1;\n\nvar term1 = Math.pow(b - b_k1, 3) * gt1;\n\nvar inner =\n  (Math.pow(b - b_k2, 3) * gt2 * (b_k3 - b_k1)) -\n  (Math.pow(b - b_k3, 3) * gt3 * (b_k2 - b_k1));\n\nvar term2 = (1 / (b_k3 - b_k2)) * inner;\n\nvar numerator = term1 - term2;\nvar denom = Math.pow(b_k3 - b_k1, 2);\n\nalbumin_sp2 = numerator / denom;\n\n// Platelets splines \nvar platelets_sp1 = d;\nvar platelets_sp2 = 0;\n\nvar gt1p = 0; if (d > d_k1) gt1p = 1;\nvar gt2p = 0; if (d > d_k2) gt2p = 1;\nvar gt3p = 0; if (d > d_k3) gt3p = 1;\n\nvar term1p = Math.pow(d - d_k1, 3) * gt1p;\n\nvar innerp =\n  (Math.pow(d - d_k2, 3) * gt2p * (d_k3 - d_k1)) -\n  (Math.pow(d - d_k3, 3) * gt3p * (d_k2 - d_k1));\n\nvar term2p = (1 / (d_k3 - d_k2)) * innerp;\n\nvar numeratorp = term1p - term2p;\nvar denomp = Math.pow(d_k3 - d_k1, 2);\n\nplatelets_sp2 = numeratorp / denomp;\n\n// Bilirubin splines (for 90-day decompensation)\nvar c_k1 = 0.39, c_k2 = 0.75, c_k3 = 1.8;\n\nvar bili_sp1 = c;\nvar bili_sp2 = 0;\n\nvar gt1c = 0; if (c > c_k1) gt1c = 1;\nvar gt2c = 0; if (c > c_k2) gt2c = 1;\nvar gt3c = 0; if (c > c_k3) gt3c = 1;\n\nvar term1c = Math.pow(c - c_k1, 3) * gt1c;\nvar innerc =\n  (Math.pow(c - c_k2, 3) * gt2c * (c_k3 - c_k1)) -\n  (Math.pow(c - c_k3, 3) * gt3c * (c_k2 - c_k1));\nvar term2c = (1 / (c_k3 - c_k2)) * innerc;\n\nbili_sp2 = (term1c - term2c) / Math.pow(c_k3 - c_k1, 2);\n\n// Surgery type indicators (0/1)\nvar surgery_laparo = 0;\nvar surgery_open_abdominal = 0;\nvar surgery_abdominal_wall = 0;\nvar surgery_vascular = 0;\nvar surgery_major_orthopedic = 0;\nvar surgery_chest_cardiac = 0;\n\nif (i == 0) {\n  surgery_laparo = 1;\n} else if (i == 1) {\n  surgery_open_abdominal = 1;\n} else if (i == 2) {\n  surgery_abdominal_wall = 1;\n} else if (i == 3) {\n  surgery_vascular = 1;\n} else if (i == 4) {\n  surgery_major_orthopedic = 1;\n} else if (i == 5) {\n  surgery_chest_cardiac = 1;\n}\n\n// Log-odds\nvar logodds_30 =\n  -5.472096\n  + 1.061725  * g\n  + 0.927904  * h\n  + 1.56071   * surgery_open_abdominal\n  + 0.7418021 * surgery_abdominal_wall\n  + 0.9165415 * surgery_vascular\n  + 1.464183  * surgery_major_orthopedic\n  + 1.893621  * surgery_chest_cardiac\n  - 0.0075185 * platelets_sp1\n  + 0.0036657 * platelets_sp2\n  - 0.5181509 * albumin_sp1\n  - 1.000672  * albumin_sp2\n  + 0.1448936 * c\n  - 0.7541669 * e\n  + 0.8268748 * f;\n\nvar logodds_90 =\n  -7.381628\n  + 0.6891587 * g\n  + 0.6246303 * h\n  + 0.0365738 * a\n  + 1.349889  * surgery_open_abdominal\n  + 0.2480613 * surgery_abdominal_wall\n  + 1.054497  * surgery_vascular\n  + 1.067452  * surgery_major_orthopedic\n  + 1.26527   * surgery_chest_cardiac\n  - 0.4851036 * albumin_sp1\n  - 0.9821122 * albumin_sp2\n  + 0.82691   * f;\n\nvar logodds_180 =\n  -6.169259\n  + 0.850114  * g\n  + 0.0293034 * a\n  + 0.8838124 * surgery_open_abdominal\n  + 0.197697  * surgery_abdominal_wall\n  + 0.4630691 * surgery_vascular\n  + 0.1229086 * surgery_major_orthopedic\n  + 0.4320639 * surgery_chest_cardiac\n  - 0.003719  * platelets_sp1\n  - 0.0004196 * platelets_sp2\n  - 0.4560354 * albumin_sp1\n  - 0.4166421 * albumin_sp2\n  - 0.5176601 * e;\n\n// Logistic transform\nvar ex30 = Math.exp(logodds_30);\nvar ex90 = Math.exp(logodds_90);\nvar ex180 = Math.exp(logodds_180);\n\nvar p30_unadj  = ex30  / (1 + ex30);\nvar p90_unadj  = ex90  / (1 + ex90);\nvar p180_unadj = ex180 / (1 + ex180);\n\n// Final probabilities\nvar p30_adj  = p30_unadj;\nvar p90_adj  = 1 - (1 - p30_adj) * (1 - p90_unadj);\nvar p180_adj = 1 - (1 - p30_adj) * (1 - p90_unadj) * (1 - p180_unadj);\n\nvar pct30 = p30_adj * 100;\nvar pct90 = p90_adj * 100;\nvar pct180 = p180_adj * 100;\n\n// 90-day decompensation log-odds (match site)\nvar logodds_decomp90 =\n  -2.287235\n  + 0.2988972 * g\n  + 0.5076108 * h\n  + 0.6117639 * surgery_open_abdominal\n  - 0.1508734 * surgery_abdominal_wall\n  - 0.4641384 * surgery_vascular\n  - 0.3442967 * surgery_major_orthopedic\n  - 0.1648213 * surgery_chest_cardiac\n  - 0.0054196 * platelets_sp1\n  + 0.0021578 * platelets_sp2\n  - 0.4460345 * albumin_sp1\n  - 0.4612017 * albumin_sp2\n  + 1.361681  * bili_sp1\n  - 1.746094  * bili_sp2\n  - 0.1820302 * e\n  + 0.2481661 * f\n  + 0.0069088 * a;\n\nvar exd = Math.exp(logodds_decomp90);\nvar p_decomp90 = exd / (1 + exd);\nvar pct_decomp90 = p_decomp90 * 100;\n\n// Site-like rounding to 1 decimal (no function)\nvar t30 = Math.round(pct30 * 10) / 10;\nvar pct30_1dp = (t30 % 1 === 0) ? t30.toFixed(1) : String(t30);\n\nvar t90 = Math.round(pct90 * 10) / 10;\nvar pct90_1dp = (t90 % 1 === 0) ? t90.toFixed(1) : String(t90);\n\nvar t180 = Math.round(pct180 * 10) / 10;\nvar pct180_1dp = (t180 % 1 === 0) ? t180.toFixed(1) : String(t180);\n\nvar td = Math.round(pct_decomp90 * 10) / 10;\nvar pct_decomp90_1dp = (td % 1 === 0) ? td.toFixed(1) : String(td);\n\n// Out of range warning\nvar warn = \"\";\n\nvar warn_flag = 0;\n\nif (a < 40 || a > 85) warn_flag = 1;\nif (b < 1.5 || b > 5.0) warn_flag = 1;\nif (c < 0.2 || c > 5.0) warn_flag = 1;\nif (d < 30 || d > 450) warn_flag = 1;\n\nif (warn_flag == 1) {\n  warn = \"<br/><br/>Prediction may be less accurate due to values outside derivation ranges.\";\n}\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: pct30_1dp,\n    value_text: '%',\n    message: '30-day mortality by VOCAL-Penn Score' + warn\n});\ncalc_output.push({\n    name: '10652_VOCAL-Penn Score_result',\n    value:  pct30_1dp,\n    value_text: '%',\n    message: '30-day mortality' + '<br/><br/>90-day mortality: ' + pct90_1dp + '%' + '<br/>180-day mortality: ' + pct180_1dp + '%' + warn\n});\ncalc_output.push({\n    name: '10652_VOCAL-Penn Score_result',\n    value:  pct_decomp90_1dp,\n    value_text: '%',\n    message: '90-day decompensation risk' \n});\n\n\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Nadim Mahmud"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Albumin",
+    "Total Bilirubin",
+    "Platelet Count"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "71e9d7d0d335effe598bc29977921f1fe18e0b5dc5a9e29997210e242202ea9c"
+}

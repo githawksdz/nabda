@@ -1,0 +1,102 @@
+{
+  "id": "calc.immune-related-adverse-events-lung-toxicity-pneumonitis",
+  "slug": "immune-related-adverse-events-lung-toxicity-pneumonitis",
+  "language": "en",
+  "title": "Immune-lié Adverse Events pour Lung Toxicity - Pneumonitis",
+  "short_title": "IRAE pour Lung Toxicity - Pneumonitis",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Pneumonitis"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Fatigue",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Immune Related Adverse Events, irae, pneumonitis, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+  ],
+  "dosing": false,
+  "formula": "| Criteria | Pneumonitis grade |\n| --- | --- |\n| Asymptomatic, confined to one lobe of the lung or <25% of lung parenchyma, clinical, or diagnostic observations only | G1 |\n| Symptomatic, involves more than one lobe of the lung or 25-50% of lung parenchyma, medical intervention indicated, limiting instrumental ADL | G2 |\n| Severe symptoms, hospitalization required, involves all lung lobes or >50% of lung parenchyma, limiting self-care ADL, oxygen indicated | G3 |\n| Life-threatening respiratory compromise, urgent intervention indicated (intubation) | G4 |\n\nSee Next Steps for details on management.",
+  "how_to_use": {
+    "why": "ICPi pneumonitis is a rare but potentially life threatening toxicity of immune checkpoint inhibitors. This tool aids in the decision to discontinue ICPI, further diagnostic work-up and immunosuppressant treatment initiation.",
+    "when": "Adult patients with symptoms of pneumonitis (cough, wheezing, fatigue, chest pain) or focal or diffuse inflammation of the lung parenchyma while on treatment with immune checkpoint inhibitors including agents against PD-1 (i.e., pembrolizumab, nivolumab), PD-L1 (i.e., atezolizumab, avelumab, durvalumab), or CTLA-4 (i.e., ipilimumab).",
+    "pearls": "- Immune checkpoint inhibitor (ICPi) pneumonitis should be suspected in patients with symptoms of pneumonitis (cough, wheezing, fatigue, chest pain) or those with focal or diffuse inflammation of the lung parenchyma, typically identified on CT imaging while on treatment with immune checkpoint inhibitors.\n- Immune checkpoint inhibitor (ICPi) pneumonitis is an uncommon but potentially serious toxicity.\n- May occur any time during immune checkpoint inhibitor treatment with a range of 2-24 months. Median time to onset is approximately 3 months.\n- More frequently seen with anti-PD1 agents, but is also an important adverse event caused by anti-CTLA-4 agents.\n- Management of immune checkpoint inhibitor pneumonitis is based on the grade of pneumonitis."
+  },
+  "next_steps": {
+    "advice": "Monitor patients for symptoms of pneumonitis and carefully review imaging studies of lung for detection of pneumonitis in asymptomatic patients.\n\nFor grade 2 or higher ICPi pneumonitis may include the following infectious work-up: nasal swab, sputum culture and sensitivity, blood culture and sensitivity, urine culture and sensitivity.",
+    "critical_actions": "When the clinical picture is consistent with pneumonitis, biopsy is generally unnecessary. However, biopsy may assist to rule out other etiologies such as lymphangitic spread of tumor or infection.\n\nThe role of prophylactic fluconazole with prolonged corticosteroid use (>12 weeks) remains unclear, and physicians should follow institutional guidelines.",
+    "management": "For all patients where an IRAE diagnosis is being considered, it is always recommended to involve the specialist or team prescribing the immune checkpoint therapy.\n\n**Grade 1:**\n\n1. Hold ICPi with radiologic evidence of pneumonitis progression.\n2. May offer repeat CT in 3-4 weeks.\n3. May offer a repeat spirometry/diffusing capacity of lung for carbon monoxide if the patients had undergone the test on ICPi initiation.\n4. May resume ICPi if improved or resolved radiographically.\n5. If no improvement, treat as grade 2.\n6. Monitor weekly with history and physical examination, pulse oximetry and optional CXR.\n\n**Grade 2:**\n\n1. Should hold ICPi until resolution to ≤ Grade 1.\n2. Consider prednisone 1-2 mg/kg/d and taper by 5-10 mg/wk over 4-6 weeks per institutional guidelines.\n3. Consider bronchoscopy with bronchoalveolar lavage.\n4. Consider empirical antibiotics.\n5. Monitor every 3 days with history and physical examination, pulse oximetry, consider CXR.\n6. If no improvement in 48-72 hours of prednisone, treat as grade 3.\n\n**Grade 3-4:**\n\n1. Permanently discontinue ICPi.\n2. Consider empirical antibiotics.\n3. Consider (methyl)prednisolone IV 1-2 mg/kg/d.\n4. If no improvement after 48 hours, add infliximab 5 mg/kg or mycophenolate mofetil IV 1 g twice a day or IVIG for 5 days or cyclophosphamide. Taper corticosteroids over 4-6 weeks.\n5. Consult pulmonary and infectious disease if necessary.\n6. Offer bronchoscopy with bronchoalveolar lavage with or without transbronchial biopsy.\n7. Consider admission for further management.\n\nSee[Brahmer 2018](https://www.ncbi.nlm.nih.gov/pubmed/29442540)for full ASCO guidelines."
+  },
+  "evidence": "Guidelines for IRAE for lung toxicity (pneumonitis) were developed by a multidisciplinary, multi-organizational panel of experts in medical oncology based on a systematic review of the medical literature.",
+  "more_info": "",
+  "short_description": "Pneumonitis gravité (ICPi therapy).",
+  "medium_description": "Grades gravité de pneumonitis secondaire pour immune checkpoint inhibitor therapy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "grading",
+      "label": "Critères",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Asymptomatic, confined pour one lobe de lung ou <25% de lung parenchyma, clinique, ou diagnostic observations only",
+          "value": 1
+        },
+        {
+          "label": "Symptomatic, involves more than one lobe de lung ou 25-50% de lung parenchyma, medical intervention indicated, limiting instrumental ADL",
+          "value": 2
+        },
+        {
+          "label": "Severe symptoms, hospitalization requis, involves all lung lobes ou >50% de lung parenchyma, limiting self-care ADL, oxygen indicated",
+          "value": 3
+        },
+        {
+          "label": "Life-threatening respiratory compromise, urgent intervention indicated (intubation)",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29442540 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.immune-related-adverse-events-endocrine-toxicities-diabetes-mellitus",
+    "calc.immune-related-adverse-events-endocrine-toxicities-hypothyroidism",
+    "calc.immune-related-adverse-events-gi-toxicity-hepatitis"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10383,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,246 @@
+{
+  "id": "calc.dire-score-opioid-treatment",
+  "slug": "dire-score-opioid-treatment",
+  "language": "en",
+  "title": "DIRE score pour Opioid traitement",
+  "short_title": "Score DIRE",
+  "calc_type": null,
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "douleur",
+    "psychiatrie",
+    "toxicologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Douleur chronique"
+  ],
+  "chief_complaints": [
+    "Pain"
+  ],
+  "abbreviations": [
+    "Opioid treatment",
+    "compliance",
+    "risk",
+    "analgesia",
+    "DIRE score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Diagnosis | Benign chronic condition, minimal objective findings, or no definite diagnosis (examples: fibromyalgia, migraine headaches, non-specific back pain) | 1 |\n| Slowly progressive condition concordant with moderate pain or fixed condition with moderate objective findings (examples: failed back surgery syndrome, back pain with moderate degenerative changes, neuropathic pain) | 2 | |\n| Advanced condition concordant with severe pain with objective findings (examples: severe ischemic vascular disease, advanced neuropathy, severe spinal stenosis) | 3 | |\n| Intractability | Few therapies tried; patient takes a passive role in pain management process | 1 |\n| Most customary treatments have been tried but patient not fully engaged in pain management process or barriers prevent (examples: insurance, transportation, medical illness) | 2 | |\n| Patient fully engaged in spectrum of appropriate treatments but with inadequate response | 3 | |\n| Psychological risk | Serious personality dysfunction or mental illness interfering with care (examples: personality disorder, severe affective disorder, significant personality issues) | 1 |\n| Personality or mental health interferes moderately (examples: depression or anxiety disorder) | 2 | |\n| Good communication with clinic, no significant personality dysfunction or mental illness | 3 | |\n| Chemical health risk | Active or very recent use of illicit drugs, excessive alcohol, or prescription drug abuse | 1 |\n| Chemical coper (uses medications to cope with stress) or history of chemical dependence (CD) in remission | 2 | |\n| No CD history, not drug-focused or chemically reliant | 3 | |\n| Reliability risk | History of numerous problems (medication misuse, missed appointments, rarely follows through) | 1 |\n| Occasional difficulties with compliance but generally reliable | 2 | |\n| Highly reliable patient with meds, appointments, and treatment | 3 | |\n| Social support risk | Life in chaos, little family support, few close relationships, loss of most normal life roles | 1 |\n| Reduction in some relationships and life roles | 2 | |\n| Supportive family/close relationships, involved in work or school and no social isolation | 3 | |\n| Efficacy | Poor function or minimal pain relief despite moderate to high doses | 1 |\n| Moderate benefit with improved function in a number of ways (or insufficient information, hasn’t tried opioid yet, or very low doses/trial too short) | 2 | |\n| Good improvement in pain/function and quality of life with stable doses over time | 3 | |",
+  "how_to_use": {
+    "why": "À notre connaissance, il n’existe aucune validation externe prospective, mais l’American Academy of Pain Medicine recommande le DIRE Score comme outil potentiel pour évaluer le risque d’abus (recommandation forte, preuves de faible qualité) ([Chou 2009](https://www.sciencedirect.com/science/article/pii/S1526590008008316)).",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les données probantes sur le traitement de la douleur chronique non cancéreuse sont limitées. Utilisez les meilleures données probantes disponibles, conjointement avec le jugement clinique, pour décider si l’on doit instaurer des opioïdes.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score DIRE | Éligibilité à une analgésie opioïde au long cours |\n| --- | --- |\n| 7-13 | Candidat non approprié |\n| 14-21 | Bon candidat |",
+  "short_description": "Observance du traitement opioïde.",
+  "medium_description": "Predicts compliance avec opioid traitement pour chronique noncancer douleur.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "diagnosis",
+      "label": "Diagnostic",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Affection chronique bénigne, signes objectifs minimes, ou absence de diagnostic définitif.",
+          "value": 1
+        },
+        {
+          "label": "Slowly progressive condition concordant avec modéré douleur ou fixed condition avec modéré objective findings",
+          "value": 2
+        },
+        {
+          "label": "Advanced condition concordant avec severe douleur avec objective findings",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "intractability",
+      "label": "Intractability",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Few therapies tried; patient takes passive role dans douleur prise en charge process",
+          "value": 1
+        },
+        {
+          "label": "Most customary treatments have been tried but patient not fully engaged dans douleur prise en charge process ou barriers prevent (examples: insurance, transportation, medical maladie)",
+          "value": 2
+        },
+        {
+          "label": "patient fully engaged dans spectrum de appropriate treatments but avec inadequate response",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "psychological",
+      "label": "Risque psychologique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Serious personality dysfunction ou mental maladie interfering avec care",
+          "value": 1
+        },
+        {
+          "label": "La personnalité ou la santé mentale interfère modérément",
+          "value": 2
+        },
+        {
+          "label": "Good communication avec clinic, no significant personality dysfunction ou mental maladie",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chemical",
+      "label": "Risque chimique pour la santé",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Usage actif ou très récent de drogues illicites, consommation excessive d’alcool ou abus de médicaments sur ordonnance.",
+          "value": 1
+        },
+        {
+          "label": "Chemical coper (uses medications pour cope avec stress) ou history de chemical dependence (CD) dans remission",
+          "value": 2
+        },
+        {
+          "label": "Absence d'antécédent de CD, non centré sur les médicaments ou à dépendance chimique",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "reliability",
+      "label": "Fiabilité risque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Antécédents de nombreux problèmes (mésusage",
+          "value": 1
+        },
+        {
+          "label": "Occasional difficulties avec compliance but generally reliable",
+          "value": 2
+        },
+        {
+          "label": "Highly reliable patient avec meds, appointments, et traitement",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "social",
+      "label": "Social support risque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Life dans chaos, little family support, few close relationships, loss de most normal life roles",
+          "value": 1
+        },
+        {
+          "label": "Reduction dans some relationships et life roles",
+          "value": 2
+        },
+        {
+          "label": "Supportive family/close relationships, involved dans work ou school et no social isolation",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "efficacy",
+      "label": "Efficacy",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Poor function ou minimal douleur relief despite modéré pour élevé doses",
+          "value": 1
+        },
+        {
+          "label": "modéré benefit avec improved function dans number de ways (ou insufficient information, hasn’t tried opioid yet, ou very faible doses/trial too short)",
+          "value": 2
+        },
+        {
+          "label": "Good improvement dans douleur/function et quality de life avec stable doses over time",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chou R, Fanciullo GJ, Fine PG, et al. Clinical guidelines for the use of chronic opioid therapy in chronic noncancer pain. J Pain. 2009;10(2):113-30.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S1526590008008316",
+      "kind": "international"
+    },
+    {
+      "text": "Belgrade MJ, Schamber CD, Lindgren BR. The DIRE score: predicting outcomes of opioid prescribing for chronic pain. J Pain. 2006;7(9):671-81.",
+      "href": "https://www.jpain.org/article/S1526-5900(06)00626-2/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.opioid-risk-tool-ort-narcotic-abuse",
+    "calc.cows-score-opiate-withdrawal",
+    "calc.audit-c-alcohol-use"
+  ],
+  "source_logic_hash": "b858524dcc7fdb3840d530950ee3cea6",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10035,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

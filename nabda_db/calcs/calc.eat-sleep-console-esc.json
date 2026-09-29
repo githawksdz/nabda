@@ -1,0 +1,150 @@
+{
+  "id": "calc.eat-sleep-console-esc",
+  "slug": "eat-sleep-console-esc",
+  "language": "fr",
+  "title": "Eat, Sleep, Console (ESC)",
+  "short_title": "Manger, Dormir, Consoler (ESC)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "pediatrie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Syndrome de sevrage néonatal"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Diarrhea",
+    "Pleurs excessifs",
+    "Fever",
+    "Jaundice",
+    "Seizure",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Eat, Sleep, Console (ESC)",
+    "esc",
+    "eat sleep console",
+    "neonatal abstinence syndrome",
+    "nas",
+    "nas management"
+  ],
+  "dosing": false,
+  "formula": "Eat, Sleep, Console consists of the following yes/no questions:\n\n| Question | | Points |\n| --- | --- | --- |\n| Eat: Can infant eat ≥1 ounce per feed or breastfeed well? | No | 0 |\n| Yes | 1 | |\n| Sleep: Can infant sleep ≥1 hour? | No | 0 |\n| Yes | 1 | |\n| Console: Can infant be consoled within 10 minutes? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser pour guider la prise en charge des nouveau-nés surveillés pour un syndrome d’abstinence néonatal (NAS) ou un syndrome de sevrage néonatal aux opioïdes (NOWS).",
+    "pearls": "La mise en œuvre du protocole Eat, Sleep, Console et les seuils d’intervention peuvent varier selon l’établissement. Tenez compte des normes de soins en vigueur dans votre lieu d’exercice."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Si les trois questions reçoivent la réponse « oui », le nouveau-né est considéré comme bien pris en charge et aucune autre intervention n'est nécessaire.\n- Si l'une des trois questions reçoit la réponse « non », intensifier les interventions non pharmacologiques suivantes si possible :\n- En l'absence d'amélioration, envisager une consultation en USIN (si disponible) et envisager de débuter la morphine à 0.05 mg/kg par dose toutes les 3 heures ou d'augmenter la dose de 0.01 mg/kg par dose."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Interprétation |\n| --- | --- |\n| <3 | Interventions supplémentaires nécessaires |\n| 3 | Aucune intervention supplémentaire nécessaire |",
+  "short_description": "Prise en charge du NAS.",
+  "medium_description": "Assists avec prise en charge de infants avec néonatal abstinence syndrome (NAS).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "eat",
+      "label": "**Manger :** Le nourrisson peut-il manger ≥1 ounce par tétée ou bien téter au sein ?",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sleep",
+      "label": "**Sommeil :** Le nourrisson peut-il dormir ≥ 1 heure ?",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "console",
+      "label": "**Console:** Can nourrisson be consoled within 10 minutes?",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Grossman MR, Lipshaw MJ, Osborn RR, Berkwitt AK. A novel approach to assessing infants with neonatal abstinence syndrome. Hosp Pediatr. 2018;8(1):1-6.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29263121/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dodds D, Koch K, Buitrago-Mogollon T, Horstmann S. Successful implementation of the eat sleep console model of care for infants with nas in a community hospital. Hosp Pediatr. 2019;9(8):632-638.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31340986/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Young LW, Ounpraseuth ST, Merhar SL, et al. Eat, sleep, console approach or usual care for neonatal opioid withdrawal. N Engl J Med. 2023;388(25):2326-2337.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37125831/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-finnegan-neonatal-abstinence-score-nas",
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.brief-alcohol-withdrawal-scale-baws"
+  ],
+  "source_logic_hash": "c4380a35748d20789a522bdd11625cc7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10500,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

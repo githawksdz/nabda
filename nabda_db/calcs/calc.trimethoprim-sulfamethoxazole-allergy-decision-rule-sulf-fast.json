@@ -1,0 +1,166 @@
+{
+  "id": "calc.trimethoprim-sulfamethoxazole-allergy-decision-rule-sulf-fast",
+  "slug": "trimethoprim-sulfamethoxazole-allergy-decision-rule-sulf-fast",
+  "language": "en",
+  "title": "Trimethoprim-Sulfamethoxazole Allergy Decision règle (SULF-FAST)",
+  "short_title": "SULF-FAST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "infectiologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Allergy"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Headache",
+    "Perte d'appétit",
+    "Nausea",
+    "Rash",
+    "Dyspnée",
+    "Swelling",
+    "Vomiting",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Trimethoprim-sulfamethoxazole allergy decision rule (SULF-FAST)",
+    "sulf-fast",
+    "sulfa",
+    "sulfamethoxazole",
+    "trimethoprim",
+    "trimethoprim-sulfamethoxazole",
+    "sulfa allergy",
+    "allergy",
+    "allergy rule",
+    "allergy to sulfa",
+    "allergy decision rule",
+    "sulffast"
+  ],
+  "dosing": false,
+  "formula": "Le score SULF-FAST est calculé en additionnant les points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| **F** réaction survenue il y a cinq ans ou moins | Non | 0 |\n| Oui/inconnu | 2 | |\n| **A** naphylaxie ou angio-œdème OU **S** réaction cutanée sévère* | Non | 0 |\n| Oui | 2 | |\n| **T** traitement nécessaire pour la réaction | Non | 0 |\n| Oui/inconnu | 1 | |\n\n*Les réactions cutanées sévères peuvent inclure le syndrome de Stevens-Johnson, la nécrolyse épidermique toxique, la réaction médicamenteuse avec éosinophilie et symptômes systémiques (DRESS) et la pustulose exanthématique aiguë généralisée. Les patients présentant une éruption retardée sévère avec atteinte muqueuse doivent être considérés comme ayant une réaction cutanée sévère.",
+  "how_to_use": {
+    "why": "- Identifie les allergies aux antibiotiques sulfamidés à faible risque qui peuvent ne pas nécessiter de tests cutanés formels et pour lesquelles un test de provocation orale supervisé peut être envisagé.\n- Peut contribuer à réduire l'évitement inutile des antibiotiques sulfamidés, limitant ainsi potentiellement le recours aux antibiotiques à spectre plus large.\n- Particulièrement utile chez les patients immunodéprimés chez qui le TMP-SMX est souvent en première ligne (p. ex. prophylaxie de *Pneumocystis jirovecii*).",
+    "when": "À utiliser chez l'adulte (≥18 ans) avec une allergie rapportée au triméthoprime–sulfaméthoxazole (TMP-SMX) pour estimer le risque lors de l'envisagement d'une antibiothérapie par sulfamides.",
+    "pearls": "- Une application de la [règle de décision pour l'allergie à la pénicilline (PEN-FAST)](nabda:calc.penicillin-allergy-decision-rule-pen-fast) qui montre des performances similaires pour identifier les patients ayant une faible probabilité prétest de véritable allergie aux antibiotiques sulfamidés.\n- Spécificité élevée démontrée, avec une valeur prédictive négative de 98% dans l'étude de développement.\n- Selon [Stehlin et al. (2025)](https://pmc.ncbi.nlm.nih.gov/articles/PMC12235491/) :\n\n - Parmi les patients avec un score à faible risque (<3), 96,1% ont toléré le test de provocation orale direct (~3,9% ont réagi) ; pour ceux avec un score de 2, 2/6 (33,3%) ont présenté des réactions légères.\n - Parmi les patients avec un score de 3, 9/21 (42,9%) ont eu des tests positifs.\n - Les données pour les scores de 4–5 étaient limitées.\n- Non validé chez l'enfant.\n- Ne s'applique pas aux médicaments sulfamidés non antibiotiques ; la réactivité croisée immunologique entre sulfamides antimicrobiens et non antimicrobiens (p. ex. furosémide) est généralement limitée.\n- La néphrite interstitielle aiguë, l'atteinte hépatique médicamenteuse, la maladie sérique et la fièvre isolée médicamenteuse ont été exclues des cohortes de dérivation et de validation."
+  },
+  "next_steps": {
+    "advice": "Documenter le score SULF-FAST et les résultats des éventuels tests d'allergie ou tests de provocation ultérieurs dans le dossier médical afin d'étayer les décisions cliniques futures.",
+    "critical_actions": "Les patients ayant des antécédents d'anaphylaxie ou de réaction cutanée sévère ne doivent pas subir de test de provocation orale direct.",
+    "management": "- **Score <3 (risque faible) :** Envisager un test de provocation orale direct au TMP-SMX avec une surveillance appropriée ; suivre les protocoles locaux/institutionnels.\n- **Score ≥3 (risque élevé) :** Adresser en allergologie/immunologie pour une évaluation plus approfondie, pouvant inclure des tests cutanés."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score SULF-FAST | Risque de véritable allergie aux sulfamides antimicrobiens |\n| --- | --- |\n| <3 | <5% (risque faible) |\n| ≥3 | >20% (risque élevé) |",
+  "short_description": "Risque d'allergie aux sulfamides.",
+  "medium_description": "Identifie les allergies aux sulfamides antimicrobiens à faible risque.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "Timing",
+      "label": "**F** inq ans ou moins depuis la réaction",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Yes/unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "Severe",
+      "label": "**** naphylaxie ou angio-œdème\nOU **S** réaction cutanée sévère",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "Treatment",
+      "label": "**T** reatment requis pour reaction",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Yes/unknown",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Waldron JL, Rose M, Vogrin S, et al. Development and validation of a sulfa antibiotic allergy clinical decision rule. JAMA Netw Open. 2023;6(6):e2316776.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37273210/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Trubiano JA, Vogrin S, Chua KYL, et al. Development and validation of a penicillin allergy clinical decision rule. JAMA Intern Med. 2020;180(5):745-752.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32176248/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stehlin F, Vogrin S, Mitri E, et al. International validation of the SULF-FAST risk-stratification tool for sulfonamide antibiotic allergy. JAMA Netw Open. 2025;8(7):e2519113.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC12235491/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.penicillin-allergy-decision-rule-pen-fast"
+  ],
+  "source_logic_hash": "fba11f2d774d0ee3a117139cc6484198",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.penicillin-allergy-decision-rule-pen-fast",
+      "text": "Penicillin Allergy Decision Rule (PEN-FAST)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10624,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.furosemide",
+    "s.amiloride-furosemide",
+    "s.sulfamethoxazole-trimethoprime"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

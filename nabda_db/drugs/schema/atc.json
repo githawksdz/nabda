@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/atc.json",
+  "title": "ATC class",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "code", "name"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^atc\\." },
+    "code": { "type": "string" },
+    "name": { "type": "string" },
+    "parent_id": { "type": ["string", "null"] },
+    "children": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "object" }
+  }
+}

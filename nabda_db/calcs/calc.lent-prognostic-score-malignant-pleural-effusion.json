@@ -1,0 +1,186 @@
+{
+  "id": "calc.lent-prognostic-score-malignant-pleural-effusion",
+  "slug": "lent-prognostic-score-malignant-pleural-effusion",
+  "language": "fr",
+  "title": "LENT Prognostic score pour Malignant Pleural Effusion",
+  "short_title": "Score LENT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "pneumologie",
+    "radiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Épanchement pleural"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "MPE",
+    "lent score",
+    "pleural effusion"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | Points | | | |\n| --- | --- | --- | --- | --- |\n| | 0 | 1 | 2 | 3 |\n| Pleural fluid LDH, U/L | <1,500 | ≥1,500 | -- | -- |\n| [ECOG Score](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) | 0 (asymptomatic) | 1 (symptomatic but ambulatory) | 2 (symptomatic, in bed <50% of day) | 3–4 (symptomatic, in bed >50% of day or bedbound) |\n| Serum neutrophil-to-lymphocyte ratio | <9 | ≥9 | -- | -- |\n| Tumor type | Mesothelioma or hematologic malignancy | Breast or gynecologic cancer or RCC | Lung or any other cancer | -- |",
+  "how_to_use": {
+    "why": "La survie des patients atteints d’un épanchement pleural malin (MPE) est variable, et le traitement est invasif, inconfortable et affecte la qualité de vie. Une meilleure compréhension de la survie peut aider à éclairer les décisions thérapeutiques.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Chez les patients pour lesquels une malignité est suspectée, les [critères de Light](nabda:calc.lights-criteria-exudative-effusions) peuvent apporter une confirmation initiale avant le diagnostic définitif.\n- Envisager une consultation de soins palliatifs chez les patients atteints d'une maladie métastatique.",
+    "critical_actions": "",
+    "management": "Tenir compte du pronostic lors de la discussion des options thérapeutiques. Les patients à haut risque et dont la survie prédite est faible peuvent opter pour"
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score LENT | Risque | Survie médiane |\n| --- | --- | --- |\n| 0–1 | Faible | 319 jours |\n| 2–4 | Modéré | 130 jours |\n| 5–7 | Élevé | 44 jours |",
+  "short_description": "Survie en cas d’épanchement pleural malin",
+  "medium_description": "Predicts survie chez les patients avec malignant pleural effusion.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ldh",
+      "label": "LDH du liquide pleural, U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1,500",
+          "value": 0
+        },
+        {
+          "label": "≥1,500",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "[Score ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 (asymptomatique)",
+          "value": 0
+        },
+        {
+          "label": "1 (symptomatique mais ambulatoire)",
+          "value": 1
+        },
+        {
+          "label": "2 (symptomatic, dans bed <50% de day)",
+          "value": 2
+        },
+        {
+          "label": "3–4 (symptomatic, dans bed >50% de day ou bedbound)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "serum",
+      "label": "Serum neutrophil-pour-lymphocyte ratio",
+      "tips": "FromCBC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 9",
+          "value": 0
+        },
+        {
+          "label": "≥9",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tumor",
+      "label": "Type de tumeur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Mésothéliome ou hémopathie maligne",
+          "value": 0
+        },
+        {
+          "label": "Breast ou gynecologic cancer ou renal cell carcinoma",
+          "value": 1
+        },
+        {
+          "label": "Poumon ou tout autre cancer",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Clive AO, Kahan BC, Hooper CE, et al. Predicting survival in malignant pleural effusion: development and validation of the LENT prognostic score. Thorax. 2014;69(12):1098-104.",
+      "href": "https://thorax.bmj.com/content/early/2014/08/06/thoraxjnl-2014-205285",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Psallidas I, Kannelakis N, Yousuf A, et al. Lent score validation on patients with malignant pleural effusion. European Respiratory Journal 2016 48: PA3385; DOI: 10.1183/13993003.congress-2016.PA3385",
+      "href": "https://erj.ersjournals.com/content/48/suppl_60/PA3385",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lights-criteria-exudative-effusions",
+    "calc.rapid-score-pleural-infection",
+    "calc.promise-score-malignant-pleural-effusion",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status"
+  ],
+  "source_logic_hash": "6d637950ad70b5cae06df00064ac7092",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.lights-criteria-exudative-effusions",
+      "text": "Light’s Criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4010,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

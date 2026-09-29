@@ -1,0 +1,203 @@
+{
+  "id": "calc.pediatric-respiratory-assessment-measure-pram-asthma-exacerbation-severity",
+  "slug": "pediatric-respiratory-assessment-measure-pram-asthma-exacerbation-severity",
+  "language": "fr",
+  "title": "Pédiatrique Respiratory évaluation Measure (PRAM) pour asthme Exacerbation gravité",
+  "short_title": "Pédiatrique Respiratory évaluation Measure",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Asthma",
+    "pre-school",
+    "respiratory",
+    "oscillation",
+    "pram"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Ce score peut aider à décider quels patients nécessitent une hospitalisation, en particulier lorsque les cliniciens sont en désaccord ou lorsque le patient est « limite » quant au besoin d'hospitalisation.",
+    "when": "Patients pédiatriques (3 à 17 ans) présentant une exacerbation d'asthme.",
+    "pearls": "- Le Pediatric Respiratory Assessment Measure (PRAM) fournit une évaluation objective de la sévérité de l'exacerbation d'asthme et peut prédire la probabilité d'hospitalisation ou de séjour prolongé aux urgences.\n- Le PRAM utilise des signes cliniques comme les tirages (qui peuvent jouer un rôle direct dans la décision d'hospitaliser), et peut surestimer la valeur indépendante du score.\n- Le PRAM n'est généralement pas utilisé dans les exacerbations sévères d'asthme, car celles-ci nécessitent manifestement un traitement intensif et agressif (y compris l'hospitalisation)."
+  },
+  "next_steps": {
+    "advice": "Le PRAM est plus utile lorsqu'il est réalisé initialement puis après traitement afin de montrer une évolution, mais cela peut revenir au même qu'une réévaluation clinicienne.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Score | Sévérité de l'asthme |\n| --- | --- |\n| 0-3 | Léger |\n| 4-7 | Modéré |\n| 8-12 | Sévère |",
+  "short_description": "Asthme gravité.",
+  "medium_description": "Measures gravité de airway obstruction dans pédiatrique patients using clinique observations.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "o2",
+      "label": "Saturation en O₂",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥ 95%",
+          "value": 0
+        },
+        {
+          "label": "92-94%",
+          "value": 1
+        },
+        {
+          "label": "< 92%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sup",
+      "label": "Tirage sus-sternal présent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "scal",
+      "label": "Contraction des muscles scalènes présente",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "air",
+      "label": "Entrée d'air",
+      "tips": "En cas d'asymétrie, utiliser le champ pulmonaire le plus atteint.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Diminuée à la base",
+          "value": 1
+        },
+        {
+          "label": "Diminuée à l'apex et à la base",
+          "value": 2
+        },
+        {
+          "label": "Minimale ou absente",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wheezing",
+      "label": "Wheezing",
+      "tips": "En cas d'asymétrie, utiliser les deux zones d'auscultation les plus atteintes.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Expiration seule",
+          "value": 1
+        },
+        {
+          "label": "Inspiration (± expiration)",
+          "value": 2
+        },
+        {
+          "label": "Audible sans stéthoscope ou thorax silencieux (entrée d'air minimale ou absente)",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chalut DS, Ducharme FM, Davis GM. The Preschool Respiratory Assessment Measure (PRAM): a responsive index of acute asthma severity. J Pediatr. 2000;137:762–768.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11113831",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ducharme FM et al. The Pediatric Respiratory Assessment Measure: a valid clinical score for assessing acute asthma severity from toddlers to teenagers. J Pediatr 2008;152(4):476-80, 480.e1",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18346499",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.copd-assessment-test-cat",
+    "calc.respiratory-score-asthma-liu-et-al",
+    "calc.global-initiative-obstructive-lung-disease-gold-criteria-copd"
+  ],
+  "source_logic_hash": "937056c667582edea0568d1c9d3a3af6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3384,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

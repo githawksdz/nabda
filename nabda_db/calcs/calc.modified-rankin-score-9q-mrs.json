@@ -1,0 +1,269 @@
+{
+  "id": "calc.modified-rankin-score-9q-mrs",
+  "slug": "modified-rankin-score-9q-mrs",
+  "language": "en",
+  "title": "Modifié Rankin score-9Q (mRS-9Q)",
+  "short_title": "MRS-9Q",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Maladie d'Alzheimer",
+    "Sclérose latérale amyotrophique",
+    "Dementia",
+    "Meningitis",
+    "Maladie du motoneurone",
+    "Sclérose en plaques",
+    "Maladie de Parkinson",
+    "Trouble convulsif",
+    "Trauma",
+    "Traumatisme crânien",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Douleur chronique",
+    "Depressed",
+    "Douleur des extrémités",
+    "Fatigue",
+    "Headache",
+    "Traumatisme crânien",
+    "Raideur musculaire",
+    "Numbness",
+    "Pain",
+    "Seizure",
+    "Perte de vision",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Modified Rankin Score-9Q (mRS-9Q)",
+    "mrs-9q",
+    "mrs",
+    "modified rankin score",
+    "mrs9q",
+    "mrs 9q",
+    "neurological disease"
+  ],
+  "dosing": false,
+  "formula": "The mRS-9Q is conducted by asking the following yes/no questions:\n\n- Do you have any symptoms that are bothering you?\n- Are you able to do the same work as before?\n- Are you able to keep up with your hobbies?\n- Have you maintained your ties to friends and family?\n- Do you need help making a simple meal, doing household chores, or balancing a checkbook?\n- Do you need help with shopping or traveling close to home?\n- Do you need another person to help you walk?\n- Do you need help with eating, going to the toilet, or bathing?\n- Do you stay in bed most of the day and need constant nursing care?",
+  "how_to_use": {
+    "why": "- Il s’agit d’un outil questionnaire standardisé conçu pour aider les évaluateurs à obtenir systématiquement le même score mRS (0–5/6).\n- Permet d’utiliser le mRS sans nécessiter d’experts formés.",
+    "when": "- Utilisé pour déterminer le score mRS, qui évalue le degré d’invalidité ou de dépendance dans les activités quotidiennes chez les patients ayant subi un AVC ou présentant d’autres affections neurologiques.\n- Peut être réévalué au fil du temps pour évaluer la récupération ou le degré de handicap persistant.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats, en association avec le jugement clinique, les recommandations des consultants et la décision partagée, pour :\n\n - Guider la planification de la réadaptation, notamment la kinésithérapie, l’ergothérapie et l’orthophonie.\n - Aider aux décisions d’orientation (p. ex., domicile avec services, centre de réadaptation, établissement de soins infirmiers qualifiés) et aux besoins de gestion de cas.\n - Éclairer les discussions avec les patients et leurs familles sur les besoins de soins.\n- Le degré d’incapacité d’un patient peut évoluer dans le temps ; envisager une réévaluation périodique ou en cas de changement de l’état clinique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Question | Answer | mRS-9Q |\n| --- | --- | --- |\n| Do you have any symptoms that are bothering you? | Yes | 1 |\n| Are you able to do the same work as before? OR Are you able to keep up with your hobbies? OR Have you maintained your ties to friends and family? | No | 2 |\n| Do you need help making a simple meal, doing household chores, or balancing a checkbook? OR Do you need help with shopping or traveling close to home? | Yes | 3 |\n| Do you need another person to help you walk? OR Do you need help with eating, going to the toilet, or bathing? | Yes | 4 |\n| Do you stay in bed most of the day and need constant nursing care? | Yes | 5 |\n\nAn mRS-9Q of 0 is given otherwise.\n\nA higher mRS-9Q corresponds to higher severity of neurological disease.",
+  "short_description": "Level de function évaluation.",
+  "medium_description": "Assesses level de function dans neurological maladie.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Q1 : Avez-vous des symptômes qui vous gênent ?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Q2: Are you able pour do same work as before?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Q3: Are you able pour keep up avec your hobbies?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Q4: Have you maintained your ties pour friends et family?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Q5 : Avez-vous besoin d'aide pour préparer un repas simple, accomplir les tâches ménagères ou tenir votre chéquier ?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Q6: Do you need help avec shopping ou traveling close pour home?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Q7: Do you need another person pour help you walk?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q8",
+      "label": "Q8: Do you need help avec eating, going pour toilet, ou bathing?",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "Q9: Do you stay dans bed most de day et need constant nursing care?",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Patel N, Rao VA, Heilman-Espinoza ER, Lai R, Quesada RA, Flint AC. Simple and reliable determination of the modified rankin scale score in neurosurgical and neurological patients: the mRS-9Q. Neurosurgery. 2012;71(5):971-975; discussion 975.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22843133/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Quinn TJ, Dawson J, Walters MR, Lees KR. Reliability of the modified Rankin Scale: a systematic review. Stroke. 2009;40(10):3393-3395.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19679846/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-brain-injury-guideline-mbig",
+    "calc.berg-balance-scale-bbs",
+    "calc.modified-rankin-scale-neurologic-disability"
+  ],
+  "source_logic_hash": "b8cd8c3bc45589cd5ac7d6fb5ae61143",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10430,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

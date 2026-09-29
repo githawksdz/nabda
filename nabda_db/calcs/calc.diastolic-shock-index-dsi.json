@@ -1,0 +1,188 @@
+{
+  "id": "calc.diastolic-shock-index-dsi",
+  "slug": "diastolic-shock-index-dsi",
+  "language": "en",
+  "title": "Index de choc diastolique (DSI)",
+  "short_title": "DSI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Sepsis",
+    "Choc septique",
+    "Choc"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Toux",
+    "Dyspnée",
+    "Dysurie",
+    "Fièvre",
+    "Myalgies",
+    "Éruption cutanée",
+    "Dyspnée",
+    "Dysfonction organique",
+    "Hypotension",
+    "Frissons",
+    "Frissons"
+  ],
+  "abbreviations": [
+    "Diastolic Shock Index (DSI)",
+    "DSI",
+    "shock index",
+    "sepsis",
+    "septic shock",
+    "shock",
+    "sepsis risk",
+    "septic shock risk",
+    "sepsis infection",
+    "infection shock risk",
+    "infection septic shock risk",
+    "sepsis tool"
+  ],
+  "dosing": false,
+  "formula": "Diastolic Shock Index (DSI) =HR(beats/min) / diastolic blood pressure (mm Hg)",
+  "how_to_use": {
+    "why": "- Historiquement, la sévérité du choc a été quantifiée à l'aide de la [pression artérielle moyenne (MAP)](nabda:calc.mean-arterial-pressure-map) et de l'[index de choc](nabda:calc.shock-index), qui reposent tous deux principalement sur la pression artérielle systolique ; toutefois, dans le choc septique, l'hypotension est largement induite par une défaillance de la constriction des muscles lisses vasculaires, entraînant une vasodilatation systémique et une dysfonction diastolique que les mesures basées sur la systole peuvent ne pas pleinement capturer.\n- Cet outil est un paramètre rapide et non invasif qui se concentre sur la composante diastolique de la fonction cardiovasculaire.\n- Il s'agit d'un paramètre hémodynamique de plus en plus reconnu ; un calcul précoce peut identifier les patients à risque de progression vers un choc septique avant l'apparition d'une instabilité hémodynamique manifeste, permettant potentiellement une intervention et un traitement plus précoces.",
+    "when": "- À utiliser chez les patients suspectés de sepsis.\n- Plus utile avant l’administration de vasopresseurs ou de fluides.\n- Peut être suivi dans le temps pour évaluer la réponse au traitement.",
+    "pearls": "- The original study demonstrated similar performance to lactate levels and the [SOFA Score](nabda:calc.sequential-organ-failure-assessment-sofa-score) in predicting mortality.\n\n - An elevated result does not necessarily correlate with an isolated low diastolic arterial pressure (DA) or elevated heart rate (HR); neither variable alone showed prognostic value for septic shock outcomes.\n - Pediatric patients, pregnant patients, and those with atrial fibrillation or liver cirrhosis were excluded.\n- Currently, no large, prospective studies have validated its use in ED populations.\n- The[Jeon et al.](https://pubmed.ncbi.nlm.nih.gov/38301370/)study, which identified DSI as a predictor of progression to septic shock when derived from initial ED vital signs, screened patients using [qSOFA](nabda:calc.qsofa-quick-sofa-score-sepsis) , which are no longer recommended for sepsis screening per current guidelines."
+  },
+  "next_steps": {
+    "advice": "- Il ne s'agit pas d'un test diagnostique et il peut être anormal dans diverses affections ; les résultats doivent être utilisés en complément du lactate sérique et du tableau clinique global.\n- Les paramètres diastoliques sont les plus précis lorsque la valve aortique est compétente ; les facteurs susceptibles d'influencer l'interprétation comprennent :\n\n - Insuffisance aortique sévère (peut abaisser patholog",
+    "critical_actions": "- Results should not replace clinical gestalt or other indicators of sepsis or septic shock, including:\n\n - Persistent SBP <90 mmHg or MAP <65 after fluid resuscitation.\n - Altered mental status.\n - Respiratory distress or need for airway support.\n - Delayed capillary refill.\n - Elevated lactate.\n- Maintain a high index of suspicion for mimics of sepsis, such as hemorrhagic, cardiogenic, and obstructive shock or toxicologic causes; this tool does not apply to these etiologies.\n- This tool may underperform in certain populations; use caution in:\n\n - Pregnant or postpartum patients.\n - Immunosuppressed patients.\n - Pediatric patients.",
+    "management": "- Bien qu’une valeur seuil universellement admise fasse actuellement défaut, un **résultat ≥2.0** est fréquemment cité comme **seuil cliniquement significatif ;** toute élévation doit faire craindre une progression vers un choc septique.\n- Les cliniciens doivent rapidement envisager une réanimation précoce et agressive, incluant un traitement vasopresseur et un remplissage vasculaire, en présence d’un DSI élevé.\n- Le sepsis est en constante évolution ; se référer aux recommandations [Surviving Sepsis Campaign 2026](https://journals.lww.com/ccmjournal/fulltext/2026/04000/surviving_sepsis_campaign__international.5.aspx) pour des"
+  },
+  "evidence": "The original DSI derivation study ([Ospina-Tascón et al., 2020](https://pmc.ncbi.nlm.nih.gov/articles/PMC7160223/)) was a retrospective cohort study utilizing two separate patient cohorts.\n\n- **Population:** 761 adults with septic shock.\n\n - **Preliminary cohort:** 337 ICU patients with septic shock at a single academic center in Colombia (Jan 2015–Feb 2017).\n - **ANDROMEDA-SHOCK cohort:** 424 patients with septic shock enrolled in a multicenter RCT across 28 hospitals in 5 Latin American countries (Mar 2017–Apr 2018).\n- Septic shock was the inclusion criterion; the definition differed by era (2012 Surviving Sepsis Campaign in the preliminary cohort vs. Sepsis-3 in ANDROMEDA-SHOCK).\n- **DSI was calculated:**\n\n - Just before vasopressors (“pre-VP DSI”) in the preliminary cohort.\n - At vasopressor start/randomization in ANDROMEDA-SHOCK.\n - Recalculated at 2, 4, and 8 hours into resuscitation.\n- **Outcomes:** 28-day and 90-day mortality, organ failure, vasopressor dose trajectory, fluid administration, and others.\n\nDSI demonstrated a higher AUC than MAP or systolic SI for predicting mortality. Higher DSI values immediately before or after vasopressor initiation were associated with increased mortality.\n\n[Kim et al. (2022)](https://pubmed.ncbi.nlm.nih.gov/36164800/)developed a scoring model combining DSI and lactate to predict vasopressor requirement. Early vasopressor use appeared to confer greater survival benefit in high-risk patients (DSI ≥2.0 and lactate ≥2.5 mmol/L) than in low-risk patients (DSI <2.0 and lactate <2.5 mmol/L), suggesting DSI ≥2.0 as a potentially useful clinical threshold in sepsis. DSI combined with elevated lactate also predicted vasopressor need among hypotensive patients with presumed infection (AUC 0.741).\n\n[Jeon et al. (2024)](https://pubmed.ncbi.nlm.nih.gov/38301370/)found an AUC of 0.717 for DSI as a predictor of progression to septic shock when applied to initial ED vital signs. Two separate validation studies similarly associated higher DSI with progression to septic shock. These studies are limited by their observational design and inability to control for unknown confounders.\n\n[Lee et al. (2024)](https://pubmed.ncbi.nlm.nih.gov/38470900/)found that DSI at ICU admission was significantly associated with in-hospital mortality in septic shock patients with normal LVEF, but not in those with reduced LVEF, raising questions about the influence of cardiac function on DSI interpretation.\n\nOverall, these studies support critical appraisal of DSI's clinical and physiologic plausibility in sepsis management. While elevated DSI correlates with mortality, no universally applicable threshold has been established. Further large-scale, multicenter, prospective studies are needed to validate its clinical use.",
+  "more_info": "",
+  "short_description": "Évalue le risque de choc septique.",
+  "medium_description": "Evaluates risque de septic shock dans patients presenting avec sepsis ou suspected infection.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "hr",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "dbp",
+      "label": "Pression artérielle diastolique",
+      "optional": false,
+      "unit": "dbp",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Prescott HC, Antonelli M, Alhazzani W, et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2026. Crit Care Med. 2026;54(4):725-812. doi:10.1097/CCM.0000000000007075",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41869847/",
+      "kind": "international"
+    },
+    {
+      "text": "Ospina-Tascón GA, Teboul JL, Hernandez G, et al. Diastolic shock index and clinical outcomes in patients with septic shock. Ann Intensive Care. 2020;10(1):41. doi:10.1186/s13613-020-00658-8",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7160223/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kim DS, Park JE, Hwang SY, et al. Prediction of vasopressor requirement among hypotensive patients with suspected infection: usefulness of diastolic shock index and lactate. Clin Exp Emerg Med. 2022;9(3):176-186. doi:10.15441/ceem.22.336",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36164800/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jeon Y, Kim S, Ahn S, et al. Predicting septic shock in patients with sepsis at emergency department triage using systolic and diastolic shock index. Am J Emerg Med. 2024;78:196-201. doi:10.1016/j.ajem.2024.01.029",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38301370/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee KJ, Kim YK, Jeon K, et al. Shock indices are associated with in-hospital mortality among patients with septic shock and normal left ventricular ejection fraction. PLoS One. 2024;19(3):e0298617. doi:10.1371/journal.pone.0298617",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38470900/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.qsofa-quick-sofa-score-sepsis",
+    "calc.mean-arterial-pressure-map",
+    "calc.shock-index"
+  ],
+  "source_logic_hash": "d2dbf3fed707688d287ee404f94afb1e",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.qsofa-quick-sofa-score-sepsis",
+      "text": "qSOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "Mean Arterial Pressure (MAP)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.shock-index",
+      "text": "Shock Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.qsofa-quick-sofa-score-sepsis",
+      "text": "qSOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "Mean Arterial Pressure (MAP)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.shock-index",
+      "text": "Shock Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10673,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar hr = parseFloat(hr);\nvar dbp = parseFloat(dbp);\n\n// Calculate score\nvar dsi = hr / dbp;\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: dsi.toFixed(2),\n    value_text: '',\n    message: 'DSI'\n});\ncalc_output.push({\n    name: '10673_DSI_result',\n    value: dsi.toFixed(2),\n    value_text: '',\n    message: 'DSI'\n});\n",
+  "before_use": null,
+  "instructions": "Use vital signs obtained at triage, early in the emergency department (ED) visit, or upon admission.",
+  "contributor_ids": [
+    "abbas-husain-md",
+    "stephanie-de-mel-do",
+    "william-caputo-md",
+    "brendan-freeman-do",
+    "michelle-kikel-md"
+  ],
+  "creator_names": [
+    "Dr. Gustavo A. Ospina-Tascón"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactate"
+  ],
+  "engine_sha256": "92c54646e852b8f6e16bf3768351d82fa39791cce737ee2dd7ab34fb7dcb3224"
+}

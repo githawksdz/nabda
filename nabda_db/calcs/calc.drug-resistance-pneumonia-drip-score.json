@@ -1,0 +1,319 @@
+{
+  "id": "calc.drug-resistance-pneumonia-drip-score",
+  "slug": "drug-resistance-pneumonia-drip-score",
+  "language": "en",
+  "title": "Drug Resistance dans pneumonie (DRIP) score",
+  "short_title": "Score DRIP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnea",
+    "Fatigue",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pneumonia",
+    "DRP",
+    "CAP-DRP",
+    "community-acquired pneumonia",
+    "HCAP",
+    "DRIP score",
+    "antibiotics",
+    "antibiotic resistance",
+    "covid",
+    "coronavirus",
+    "covid-19",
+    "covid 19",
+    "covid19"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Risk Factor | Points |\n| --- | --- |\n| Major | |\n| Antibiotic use within 60 days | 2 |\n| Long term care resident* | 2 |\n| Tube feeding** | 2 |\n| Prior drug-resistant pneumonia within 1 year | 2 |\n| Minor | |\n| Prior hospitalization within 60 days | 1 |\n| Chronic pulmonary disease | 1 |\n| Poor functional status*** | 1 |\n| H2 blocker or PPI within 14 days | 1 |\n| Active wound care at time of admission | 1 |\n| MRSA colonization within 1 year | 1 |\n\n*Including long term acute care, skilled nursing, and inpatient rehabilitation but not assisted living or group home facilities.\n\n**Nasogastric, nasojejunal, or percutaneous gastrostomy.\n\n*** [Karnofsky Performance Status](nabda:calc.karnofsky-performance-status-scale) <70 or non-ambulatory status.",
+  "how_to_use": {
+    "why": "- More predictive of drug resistant pathogens compared to HCAP and may have the potential to decrease antibiotic over-utilization in pneumonia.\n- Decreases use of unnecessary extended-spectrum antibiotics by 38% as compared with the HCAP definition ([Webb 2019](https://journal.chestnet.org/article/S0012-3692(19)31012-8/fulltext)).\n- At a cut-off of ≥4 points, DRIP optimally differentiates high and low risk (PPV of 73.0, NPV 92.0, AUROC 0.88, accuracy of 87%), supporting its utility as a clinical decision tool to guide empiric antibiotic selection. Accuracy was defined as “percent of cases in which antibiotic spectrum (that would have been recommended based on DRIP classification) would have been appropriate for the recovered organism.”",
+    "when": "Patients atteints de pneumonie acquise en communauté.",
+    "pearls": "- Should be utilized only for bacterial causes of pneumonia.\n- False negatives can be seen in the following situations: MRSA or P. aeruginosa infection, severe COPD (requiring O₂ and steroids), IV drug use, psychiatric conditions, and homelessness.\n- False positives can be seen with S. pneumoniae and MSSA.\n- The DRIP validation study evaluated a broader set of risk factors than the HCAP definition.\n- The DRIP study reaffirmed that antibiotic use and hospitalization 60 days prior are major contributors to drug resistance, but did not find a strong association between severity of illness and drug resistance."
+  },
+  "next_steps": {
+    "advice": "L'objectif du score DRIP est de déterminer quand les antibiotiques à large spectre doivent être utilisés, à la fois pour être efficace dans le traitement et pour éviter d'augmenter la résistance aux antibiotiques.",
+    "critical_actions": "",
+    "management": "- Un patient avec un DRIP Score <4 peut être traité efficacement sans antibiothérapie à large spectre.\n- Un patient avec un DRIP Score ≥4 est plus susceptible de nécessiter une antibiothérapie à large spectre."
+  },
+  "evidence": "- [Webb et al](https://aac.asm.org/content/early/2016/02/02/AAC.03071-15.full.pdf+html)created the DRIP Score with their study that both derived and validated a clinical prediction tool to help predict which cases of bacterial pneumonia may be antibiotic resistant. Their research goal was to create a predictive score more accurate than HCAP.\n- During the derivation portion of the study, multiple risk factors for drug resistant pathogens were evaluated using logistic regression for a cohort of 200 cases of confirmed bacterial pneumonia.\n- In the original study, the DRIP Score was found to be more sensitive (82% vs 79%), more specific (81% vs 65%), and decreased use of unnecessary extended-spectrum antibiotics by 46% compared to HCAP, which has been corroborated by a recent study by the same authors which found a 38% reduction in unnecessary antibiotics ([Webb 2019](https://journal.chestnet.org/article/S0012-3692(19)31012-8/fulltext)).\n- The DRIP Score was also more specific and more accurate than eight other predictive models, including the [Shorr Score.](nabda:calc.shorr-score-mrsa-pneumonia)",
+  "more_info": "Interprétation :\n\n| DRIP Score | Interprétation |\n| --- | --- |\n| <4 | Faible risque de pneumonie résistante aux antibiotiques. Envisager un traitement sans antibiotiques à large spectre. |\n| ≥4 | Risque élevé de pneumonie résistante aux antibiotiques. Antibiotiques à large spectre probablement nécessaires. |",
+  "short_description": "Risque de PAC à germe résistant, plus précis que le score de Shorr.",
+  "medium_description": "Predicts risque pour pneumonie communautaire due pour drug-resistant pathogens.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "antibiotic",
+      "label": "Antibiothérapie au cours des 60 derniers jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "longterm",
+      "label": "Résident en soins de longue durée",
+      "tips": "Non compris : les résidences-services ou les foyers de groupe.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "tube",
+      "label": "Alimentation par sonde",
+      "tips": "NG, nasojéjunal ou PEG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pneumonia",
+      "label": "Diagnostic antérieur de pneumonie résistante aux médicaments dans un délai de 1 an",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "hospitalization",
+      "label": "Hospitalisation dans les 60 jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulmonary",
+      "label": "Maladie pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "status",
+      "label": "Mauvais état fonctionnel",
+      "tips": "[Karnofsky Performance Status](nabda:calc.karnofsky-performance-status-scale) <70 ou statut non ambulatoire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gastric",
+      "label": "Antagoniste des récepteurs H2 ou IPP dans les 14 derniers jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wound",
+      "label": "Soins actifs de la plaie au moment de l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mrsa",
+      "label": "MRSA colonization within 1 year",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Webb BJ, Dascomb K, Stenehjem E, et al. Derivation and Multicenter Validation of the Drug Resistance in Pneumonia Clinical Prediction Score. Antimicrob Agents Chemother. 2016;60(5):2652-63.",
+      "href": "https://aac.asm.org/content/early/2016/02/02/AAC.03071-15.full.pdf+html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Webb BJ, Dascomb K, Stenehjem E, et al. Derivation and Multicenter Validation of the Drug Resistance in Pneumonia Clinical Prediction Score. Antimicrob Agents Chemother. 2016;60(5):2652-63.",
+      "href": "https://aac.asm.org/content/early/2016/02/02/AAC.03071-15.full.pdf+html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Webb BJ, Sorensen J, Mecham I, et al. Antibiotic Use and Outcomes After Implementation of the Drug Resistance in Pneumonia Score in ED Patients With Community-Onset Pneumonia. Chest. 2019.",
+      "href": "https://journal.chestnet.org/article/S0012-3692(19)31012-8/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shorr-score-mrsa-pneumonia",
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.smart-cop-score-pneumonia-severity",
+    "calc.karnofsky-performance-status-scale"
+  ],
+  "source_logic_hash": "29ae6560b9863da56e12d8d23928ac63",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Performance Status"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4050,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

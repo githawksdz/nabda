@@ -1,0 +1,220 @@
+{
+  "id": "calc.aims65-score-upper-gi-bleeding-mortality",
+  "slug": "aims65-score-upper-gi-bleeding-mortality",
+  "language": "fr",
+  "title": "AIMS65 score pour Upper GI saignement mortalité",
+  "short_title": "AIMS65",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Sang dans les selles",
+    "Hematemesis",
+    "Mass",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Aims",
+    "aims score",
+    "aims65",
+    "aims scale",
+    "aims bleeding risk",
+    "upper GI bleeding risk",
+    "aims gi bleed"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "- Simple et rapide à calculer.\n- Utilise des informations disponibles avant l'endoscopie.\n- Très prédictif de la mortalité, du coût et de la durée de séjour (LOS).\n- Validé dans une très large cohorte.",
+    "when": "Patients présentant une hémorragie digestive haute aiguë.",
+    "pearls": "- Le score AIMS65 pour la mortalité par hémorragie digestive haute a été conçu pour prédire la mortalité chez les adultes se présentant avec une hémorragie digestive haute aiguë.\n- Ne repose pas sur des données endoscopiques et peut être facilement calculé aux urgences.\n- Chaque lettre du moyen mnémotechnique (y compris « 65 ») représente un facteur de risque de poids égal, cumulatif pour prédire la gravité de l'hémorragie digestive haute.\n- La mortalité augmente avec chaque facteur de risque positif.\n- Le coût et la durée de séjour (LOS) sont également étroitement corrélés aux scores plus élevés.\n- L'altération de l'état mental est définie comme un score [Glasgow Coma Scale (GCS)](nabda:calc.glasgow-coma-scale-score-gcs) <14 ou une désignation par le médecin de « désorienté », « léthargie », « stupeur » ou « coma ».\n- Parmi les 5 composantes, l'albumine était le facteur le plus prédictif de la mortalité, peut-être en tant que marqueur substitutif d'une maladie comorbide.\n- Le [Glasgow-Blatchford Score (GBS)](nabda:calc.glasgow-blatchford-bleeding-score-gbs) a démontré une plus grande sensibilité et une meilleure valeur prédictive négative pour les hémorragies à faible risque ; par conséquent, un score AIMS65 faible ne doit pas être utilisé pour décider d'une sortie ([Yaka 2013](https://onlinelibrary.wiley.com/doi/10.1111/acem.12554/abstract;jsessionid=978D007E7B8104CCCC074693E04B4F9A.f03t03)).\n- Un vaste essai prospectif multinational a démontré que le GBS était supérieur à l'AIMS65 pour prédire le besoin d'intervention (transfusion, traitement endoscopique, RI, ou chirurgie) ou de récidive hémorragique, bien que l'AIMS65 soit resté un meilleur prédicteur de la mortalité ([Stanley 2017](https://www.bmj.com/content/356/bmj.i6432.long)).\n- En raison de son développement rétrospectif à partir d'une vaste base de données, la corrélation avec les résultats endoscopiques, les taux de récidive hémorragique et les besoins transfusionnels n'est pas connue.\n\n**Point à garder en tête**\n\n- Seule une petite fraction (1.7%) des patients du modèle était cirrhotique, bien que le score AIMS65 reste prédictif de la mortalité chez les patients atteints d'une maladie hépatique ([Gaduputi 2014](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4283417/))."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "La prise en charge initiale doit toujours être axée sur la réanimation hémodynamique avant la stratification du risque."
+  },
+  "evidence": "Le score AIMS65 a été dérivé de façon rétrospective en 2011 à partir d'une cohorte de >29,000 patients issus de 187 hôpitaux admis pour hémorragie digestive haute aiguë entre 2004 et 2005 ([Saltzman 2011](https://www.ncbi.nlm.nih.gov/pubmed/21907980)).\n\n30 facteurs distincts ont été examinés (notamment le sexe, l'hémoglobine, les signes vitaux, diverses comorbidités) et les 5 composantes ayant le meilleur pouvoir discriminant ont été incluses dans le modèle.\n\nLes scores ont été pondérés de façon égale et la validation a été réalisée sur une cohorte distincte de >32,000 patients entre 2006 et 2007.\n\nLa performance du score AIMS65 a ensuite été testée dans de nombreuses populations.\n\nL'AIMS65 est supérieur au GBS pour prédire la mortalité, mais le GBS est supérieur pour prédire le besoin de transfusion ([Hyett 2013](https://www.ncbi.nlm.nih.gov/pubmed/23357496)).\n\nLes études de validation actuelles montrent que l'AIMS65 est supérieur au GBS et au score de Rockall pré-endoscopique pour prédire la mortalité intra-hospitalière, l'admission en réanimation et la durée de séjour ([Robertson 2016](https://www.ncbi.nlm.nih.gov/pubmed/26515955)).",
+  "more_info": "| Score AIMS65 | Taux de mortalité intra-hospitalière |\n| --- | --- |\n| 0 | 0.3% |\n| 1 | 1.2% |\n| 2 | 5.3% |\n| 3 | 10.3% |\n| 4 | 16.5% |\n| 5 | 24.5% |",
+  "short_description": "Determines dans-hôpital mortalité de upper GI saignement.",
+  "medium_description": "Determines risque de dans-hôpital mortalité de upper GI saignement.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "alb",
+      "label": "Albumine <3 g/dL (30 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "inr",
+      "label": "INR >1.5",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ams",
+      "label": "Alteration dans mental status",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sbp",
+      "label": "SBP ≤90 mm Hg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥65 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Saltzman JR, Tabak YP, Hyett BH, Sun X, Travis AC, Johannes RS. A simple risk score accurately predicts in-hospital mortality, length of stay, and cost in acute upper GI bleeding. Gastrointest Endosc.2011;74:1215–1224.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21907980",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gaduputi V, Abdulsamad M, Tariq H, Rafeeq A, Abbas N, Kumbum K, Chilimuri S. Prognostic value of AIMS65 score in cirrhotic patients with upper gastrointestinal bleeding. Gastroenterology research and practice. 2014 Dec 22;2014.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4283417/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Yaka E, Yılmaz S, Özgür Doğan N, Pekdemir M. Comparison of the Glasgow‐Blatchford and AIMS65 scoring systems for risk stratification in upper gastrointestinal bleeding in the emergency department. Academic Emergency Medicine. 2015 Jan 1;22(1):22-30.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/acem.12554/abstract;jsessionid=978D007E7B8104CCCC074693E04B4F9A.f03t03 ",
+      "kind": "other"
+    },
+    {
+      "text": "Hyett BH, Abougergi MS, Charpentier JP, Kumar NL, Brozovic S, Claggett BL, Travis AC, Saltzman JR. The AIMS65 score compared with the Glasgow-Blatchford score in predicting outcomes in upper GI bleeding. Gastrointestinal endoscopy. 2013 Apr 30;77(4):551-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23357496",
+      "kind": "other"
+    },
+    {
+      "text": "Robertson M, et al. Risk stratification in acute upper GI bleeding: comparison of the AIMS65 score with the Glasgow-Blatchford and Rockall scoring systems. Gastrointestinal endoscopy 83.6 (2016): 1151-1160.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26515955 ",
+      "kind": "other"
+    },
+    {
+      "text": "Thandassery RB, Sharma M, John AK, et al. Clinical Application of AIMS65 Scores to Predict Outcomes in Patients with Upper Gastrointestinal Hemorrhage. Clinical Endoscopy. 2015;48(5):380-384. doi:10.5946/ce.2015.48.5.380.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4604275/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stanley AJ, Laine L, Dalton HR, et al. Comparison of risk scoring systems for patients presenting with upper gastrointestinal bleeding: international multicentre prospective study. BMJ. 2017;356:i6432.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28053181",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.forrest-classification-upper-gi-bleeding",
+    "calc.rockall-score-upper-gi-bleeding-complete",
+    "calc.rockall-score-upper-gi-bleeding-pre-endoscopy",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.glasgow-blatchford-bleeding-score-gbs"
+  ],
+  "source_logic_hash": "79805cc758b485166923bd6dc19c9f3b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale (GCS)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-blatchford-bleeding-score-gbs",
+      "text": "Glasgow-Blatchford Score (GBS)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3801,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

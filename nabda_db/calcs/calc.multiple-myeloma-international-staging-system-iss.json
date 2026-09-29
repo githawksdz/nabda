@@ -1,0 +1,129 @@
+{
+  "id": "calc.multiple-myeloma-international-staging-system-iss",
+  "slug": "multiple-myeloma-international-staging-system-iss",
+  "language": "en",
+  "title": "Myélome multiple — Système international de stadification (ISS)",
+  "short_title": "ISS du myélome multiple",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne",
+    "Myélome multiple"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "myeloma",
+    "microglobulin",
+    "albumin",
+    "mm",
+    "miss",
+    "mmiss"
+  ],
+  "dosing": false,
+  "formula": "Stadification basée sur les taux sériques de β2-microglobuline et d’albumine.",
+  "how_to_use": {
+    "why": "- Le myélome multiple (MM) est une maladie hétérogène, dont le pronostic est influencé par divers facteurs liés au patient et à la maladie (stade ISS, génétique, indice de performance et autres comorbidités).\n- L’ISS différencie les patients en 3 groupes pronostiques distincts. La stadification est pronostique mais ne guide pas nécessairement les décisions thérapeutiques en première ligne. Elle fournit des informations sur la survie au médecin et au patient, et aide à stratifier les patients dans les essais cliniques actuels.\n- Préféré au système de Dur",
+    "when": "Patients atteints de MM nouvellement diagnostiqué. Son utilité n’a pas été validée chez les patients atteints de myélome en rechute, de myélome indolent (smoldering) ou de MGUS.",
+    "pearls": "- L’International Staging System (ISS) pour le myélome multiple définit 3 sous-groupes avec une survie globale différente :\n\n  - Stade I – 62 mois\n  - Stade II – 44 mois\n  - Stade III – 29 mois\n\n- L’ISS a été développé comme un outil plus simple et plus objectif pour fournir une information pronostique aux patients atteints de MM nouvellement diagnostiqué et symptomatique.\n- Il ne reflète pas la masse tumorale.\n- Le système de Durie-Salmon, un système de stadification lourd utilisé par le passé, était fondé sur l’estimation de la masse tumorale, mais il n’a finalement pas démontré sa valeur pronostique et est tombé en désuétude.\n- Comparé aux systèmes de stadification plus anciens, l’ISS est un outil pronostique simple et peut être utilisé pour stratifier les patients dans les essais cliniques sur le MM."
+  },
+  "next_steps": {
+    "advice": "De nombreux patients atteints de MM sont traités dans le cadre d’essais cliniques. Les médecins peuvent envisager d’orienter les patients vers des centres de traitement universitaires s’ils sont éligibles et disposés à recevoir une transplantation, non seulement pour discuter des options de traitement standard, mais aussi pour envisager des options d’essais cliniques.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "- This system was developed from a database of clinical and laboratory data collected from 10,750 patients treated from 1981 to 2002. All patients were about to start therapy, ~70% through a clinical trial, and were from North America, Europe, and Asia. Approximately 25% received high-dose therapy/stem cell transplant. Median age was 60-63 years.\n- A randomly selected training set was created and analyzed by univariate and multivariate analysis, selecting serum beta-2 microglobulin and serum albumin as the dominant independent prognostic factors, best utilized in a survival tree model.\n- This model classified patients in 3 risk groups:\n\n - Stage I- median overall survival 62 months;\n - Stage II- 45 months;\n - Stage III- 29 months.\n- The ISS was then validated in a separate group of patients from the same database with virtually identical results. It was validated further by geography, patient age, and treatment type.\n- This model has been refined further as the Revised ISS (R-ISS). It includes validated and reliable prognostic factors for MM, including ISS score, cytogenetic abnormalities, and LDH. It identifies 3 groups with clearly different outcomes. It recharacterized ~ 25% of patients who would have been identified as good risk using only one of the validated factors into a higher risk category.",
+  "more_info": "**Multiple Myeloma ISS interpretation:**\n\n| Stage | Criteria |\n| --- | --- |\n| I | Serum β2 microglobulin <3.5 mg/L AND serum albumin ≥ 3.5 g/dL |\n| II | Either: serum β2 microglobulin <3.5 mg/L, but serum albumin <3.5 g/dL OR serum β2 microglobulin 3.5 – 5.4 mg/L irrespective of the serum albumin |\n| III | Serum β2 microglobulin ≥5.5 mg/L |",
+  "short_description": "Prognosticate newly diagnosed multiple myeloma.",
+  "medium_description": "Prognosticates gravité de multiple myeloma basé sur routinely obtained lab values.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "micro",
+      "label": "β2-microglobuline sérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3.5 mg/L",
+          "value": 1
+        },
+        {
+          "label": "3.5 - 5.4 mg/L",
+          "value": 2
+        },
+        {
+          "label": ">5.4 mg/L",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alb",
+      "label": "Albumine sérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3.5 g/dL",
+          "value": 1
+        },
+        {
+          "label": "≥3.5 g/dL",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Durie BGM, Salmon SE. A clinical staging system for multiple myeloma. Cancer 1975; 36:842-854.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1182674",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Greipp PR, et. al. International Staging System for Multiple Myeloma. JCO 2005; 23:3412-3420.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15809451",
+      "kind": "pubmed"
+    },
+    {
+      "text": "International Myeloma Foundation. International Staging System. April 2002.",
+      "href": "https://www.myeloma.org/publications",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-multiple-myeloma-international-staging-system-r-iss",
+    "calc.asymptomatic-myeloma-prognosis",
+    "calc.impede-vte"
+  ],
+  "source_logic_hash": "df6a470d74c9621e788a9571905bdb16",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3841,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

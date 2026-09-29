@@ -1,0 +1,148 @@
+{
+  "id": "calc.edinburgh-gastric-ulcer-score-egus",
+  "slug": "edinburgh-gastric-ulcer-score-egus",
+  "language": "fr",
+  "title": "Score d'ulcère gastrique d'Edinburgh (EGUS)",
+  "short_title": "EGUS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Ulcère"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Saignement",
+    "Pyrosis",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Gastric ulcer",
+    "malignancy risk",
+    "EGUS",
+    "ulcer scoring",
+    "gastric cancer",
+    "endoscopy",
+    "ulcer size",
+    "gastric ulcer score"
+  ],
+  "dosing": false,
+  "formula": "Le score total EGUS est calculé par l'addition des points sélectionnés :\n\n| Variable | Score | |\n| --- | --- | --- |\n| Âge du patient (années) | <68 | 0 |\n| 68-79 | 1 | |\n| ≥80 | 2 | |\n| Taille de l'ulcère (cm) | <1,25 | 0 |\n| 1,25-2,99 | 2 | |\n| ≥3,00 | 3 | |\n| Localisation de l'ulcère | Antral | 0 |\n| Non antral | 1 | |",
+  "how_to_use": {
+    "why": "In low-risk cases, many repeat endoscopies to document ulcer healing can be avoided, saving time, money, and unnecessary procedures.",
+    "when": "- Calculer le score après endoscopie digestive haute pour tout ulcère gastrique nouvellement diagnostiqué qui apparaît bénin lors d’une inspection attentive et d’un échantillonnage adéquat.\n- Obtenir ≥6 biopsies, car l’exactitude du score dépend d’une histologie adéquate.",
+    "pearls": "- Dérivé et validé en externe dans une population britannique avec une prévalence faible à intermédiaire du cancer gastrique ; à utiliser avec prudence dans les régions à incidence élevée.\n- A une valeur prédictive négative de 96 %–99 % pour exclure une malignité.\n- Non destiné aux lésions d’apparence manifestement maligne ou aux patients ayant déjà subi une chirurgie gastrique ou avec un cancer gastrique connu.\n- Le score n’est pas valide si les ≥6 biopsies requises ne sont pas prélevées lors de l’endoscopie initiale."
+  },
+  "next_steps": {
+    "advice": "- Les préoccupations macroscopiques ou les symptômes persistants/« drapeaux rouges » l'emportent sur les résultats de ce score ; répéter l'endoscopie digestive haute si l'ulcère paraît préoccupant ou si les symptômes persistent.\n- Toute histologie positive impose une exploration complémentaire à la recherche d'une néoplasie, quel que soit le résultat de l'EGUS.\n- Tous les patients doivent recevoir un traitement antisécrétoire approprié et, lorsqu'indiqué, une éradication de *H. pylori*.",
+    "critical_actions": "",
+    "management": "- **Risque faible (score 0–2) :**\n\n  - Confirmer ≥6 biopsies bénignes et la résolution des symptômes.\n  - Une nouvelle endoscopie digestive haute peut être évitée ; rassurer le patient mais lui conseiller de revenir en cas de symptômes d'alarme.\n- **Risque élevé (score ≥3) :** Organiser une nouvelle endoscopie digestive haute dans 6–8 semaines (ou plus tôt si les symptômes persistent) afin de confirmer la cicatrisation et d'obtenir des biopsies supplémentaires."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Niveau de risque |\n| --- | --- |\n| 0-2 | Faible |\n| ≥3 | Élevé |",
+  "short_description": "Risque de malignité des ulcères gastriques.",
+  "medium_description": "Assesses risque de malignancy dans gastric ulcers et need pour repeat EGD/OGD.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge du patient (années)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 68",
+          "value": 0
+        },
+        {
+          "label": "68-79",
+          "value": 1
+        },
+        {
+          "label": "≥ 80",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ulcersize",
+      "label": "Taille de l'ulcère (cm)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 1,25",
+          "value": 0
+        },
+        {
+          "label": "1.25-2.99",
+          "value": 2
+        },
+        {
+          "label": "≥3,00",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ulcerlocation",
+      "label": "Localisation de l’ulcère",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Antral",
+          "value": 0
+        },
+        {
+          "label": "Non antral",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brindle WM, Grant RK, Smith M, et al. Risk stratifying gastric ulcers: development and validation of a scoring system. Frontline Gastroenterol. 2021;13(2):111-118. Published 2021 Feb 26. doi:10.1136/flgastro-2020-101759",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35295750/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Grant RK, Brindle WM, Watson EF, et al. Frontline Gastroenterology 2025;16:130–136.",
+      "href": "https://fg.bmj.com/content/16/2/130",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "0cee3f104dc6fbc97054c0165146a668",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10606,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar ulcersize = parseFloat(ulcersize);\nvar ulcerlocation = parseFloat(ulcerlocation);\n\nvar score = age + ulcersize + ulcerlocation;\n\nvar risk = (score < 3) ? 'Low' : 'High';\nvar recommendation = (score < 3)\n  ? 'Follow-up not required if histology is negative'\n  : 'Repeat OGD recommended';\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of malignancy'\n});\n\ncalc_output.push({\n    name: '10606_UlcerRisk_result',\n    value: score,\n    value_text: 'points',\n    message: 'Edinburgh Gastric Ulcer Score'\n});\n\ncalc_output.push({\n    name: '10606_UlcerRisk_interpretation',\n    value: risk,\n    value_text:'risk',\n    message: 'Risk of malignancy'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Rebecca K. Grant",
+    "Dr. Will Brindle"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "06ca5dc90b30106a6da7fe87dead00c0b64e8eed8349cbcd3b7fc1ef6fdbccf6"
+}

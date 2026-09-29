@@ -1,0 +1,219 @@
+{
+  "id": "calc.simplified-autoimmune-hepatitis-aih-score",
+  "slug": "simplified-autoimmune-hepatitis-aih-score",
+  "language": "fr",
+  "title": "Simplifié Autoimmune Hepatitis (AIH) score",
+  "short_title": "Simplifié AIH score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Maladies auto-immunes",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "AIH",
+    "hepatitis",
+    "simple",
+    "diagnosis",
+    "liver injury",
+    "AIH Score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | 0 point | 1 point | 2 points |\n| --- | --- | --- | --- |\n| ANA ou SMA/F-actine | Négatif | Positif ou fortement positif* | -- |\n| LKM1 | <1:40 | -- | ≥1:40* |\n| SLA | Négatif | -- | Positif* |\n| IgG | Normale | >Limite supérieure de la normale | >1,1× la limite supérieure de la normale |\n| Histologie hépatique** | -- | Compatible avec une HAI | Typique d'une HAI |\n| Hépatite virale | Présente | -- | Absente |\n\n*Maximum de 2 points au total (p. ex. si les ANA ou les SMA/F-actine sont positifs ou fortement positifs, si LKM1 ≥1:40 et si les SLA sont positifs, seuls 2 points sont attribués, et non 5).\n\n**Si l'histologie est normale, le diagnostic d'HAI est exclu.\n\nHAI, hépatite auto-immune ; ANA, anticorps antinucléaires ; LKM1, anticorps anti-microsomes de foie et de rein de type 1 ; SLA, antigène hépatique soluble ; SMA, anticorps anti-muscle lisse ; IgG, immunoglobuline G.",
+  "how_to_use": {
+    "why": "L'HAI est multifactorielle, complexe et présente généralement de nombreux diagnostics différentiels. Ce score offre une démarche fondée sur les données et le consensus pour aider à guider la prise en charge, et est probablement supérieur au seul jugement clinique.",
+    "when": "Patients présentant une hépatite confirmée et des résultats de biopsie hépatique disponibles, mais dont le diagnostic est incertain.",
+    "pearls": "Le score simplifié d'hépatite auto-immune (HAI) a été développé pour simplifier le diagnostic de l'HAI et réduire les diagnostics par faux positifs."
+  },
+  "next_steps": {
+    "advice": "Le diagnostic d'HAI est complexe, en partie parce qu'il n'existe pas de critère anatomique (c.-à-d. de référence, « gold standard »). Le score d'HAI résout élégamment ce problème en définissant le diagnostic. Les scores « probables » semblent hautement fiables.",
+    "critical_actions": "Le chevauchement avec de multiples affections hépatiques doit toujours être envisagé malgré les résultats du score, et les scores « certains » sont plus prédictifs que les scores « probables ».",
+    "management": "Nous ne connaissons pas d'algorithmes de prise en charge validés utilisant les scores d'HAI."
+  },
+  "evidence": "Le score simplifié d'HAI a été évalué dans plusieurs études, notamment par comparaison avec son prédécesseur, le score conventionnel. Les validations ont généralement été réalisées dans des populations de recours, à partir de bases de données et de revues de dossiers. Ce score vise à améliorer la spécificité et à réduire les faux positifs par rapport au score conventionnel, en particulier dans la catégorie « HAI probable ».",
+  "more_info": "Interprétation :\n\n| Score HAI simplifié | Diagnostic |\n| --- | --- |\n| ≤5 | HAI possible (des examens complémentaires doivent toutefois être réalisés) |\n| 6 | HAI probable |\n| ≥7 | HAI certaine |",
+  "short_description": "Diagnostic d'HAI.",
+  "medium_description": "Permet de diagnostiquer l'hépatite auto-immune (HAI).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ana",
+      "label": "ANAorSMA/F-actin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif ou fortement positif",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lkm",
+      "label": "LKM1antibody",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 1:40",
+          "value": 0
+        },
+        {
+          "label": "≥1:40",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sla",
+      "label": "SLA",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "igg",
+      "label": "IgG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Limite supérieure de la normale",
+          "value": 1
+        },
+        {
+          "label": ">1,1× la limite supérieure de la normale",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "liver",
+      "label": "Histologie hépatique",
+      "tips": "Si l'histologie est normale, le diagnostic d'HAI est exclu.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Compatible avec AIH",
+          "value": 1
+        },
+        {
+          "label": "Typique d'une HAI",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hep",
+      "label": "Hépatite virale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Présent",
+          "value": 0
+        },
+        {
+          "label": "Absent",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hennes EM, Zeniya M, Czaja AJ, et al. Simplified criteria for the diagnosis of autoimmune hepatitis. Hepatology. 2008;48(1):169-76.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18537184 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Galaski J, Weiler-Normann C, Schakat M, et al. Update of the Simplified Criteria for Autoimmune Hepatitis: Evaluation of the Methodology for Immunoserological Testing. J Hepatol. 2021;74(2):312-320.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32730794/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yeoman AD, Westbrook RH, Al-chalabi T, et al. Diagnostic value and utility of the simplified International Autoimmune Hepatitis Group (IAIHG) criteria in acute and chronic liver disease. Hepatology. 2009;50(2):538-45.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19575457 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Muratori P, Granito A, Pappas G, Muratori L. Validation of simplified diagnostic criteria for autoimmune hepatitis in Italian patients. Hepatology. 2009;49(5):1782-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19402135 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mileti E, Rosenthal P, Peters MG. Validation and modification of simplified diagnostic criteria for autoimmune hepatitis in children. Clin Gastroenterol Hepatol. 2012;10(4):417-21.e1-2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3321372/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-original-score-autoimmune-hepatitis-aih",
+    "calc.galad-model-hepatocellular-carcinoma-hcc",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "ba9c554b9f9dee5545938d9615e76d05",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3112,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

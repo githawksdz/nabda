@@ -1,0 +1,287 @@
+{
+  "id": "calc.years-algorithm-for-pulmonary-embolism-pe",
+  "slug": "years-algorithm-for-pulmonary-embolism-pe",
+  "language": "en",
+  "title": "YEARS Algorithm pour embolie pulmonaire (PE)",
+  "short_title": "Algorithme YEARS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Grossesse",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Œdème des extrémités",
+    "Palpitations",
+    "Grossesse",
+    "Dyspnée",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "acute PE",
+    "ctpa",
+    "years score",
+    "years algorithm",
+    "years"
+  ],
+  "dosing": false,
+  "formula": "Refer to decision tree:\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/YEARS_Algo_PE_2025.png)\n\n- It's imperative to know if your institution reports D-dimer in FEU or DDU. This tool displays cutoffs for D-dimer reported as FEU.\n- An approximate conversion that is often referenced is FEU = DDU * 2.\n\nAdapted from[Van der Pol 2019](https://www.nejm.org/doi/full/10.1056/NEJMoa1813865).\n\nTake note of the following exclusion criteria:\n\n- Treatment with therapeutic doses of anticoagulants initiated 24 hours or more before eligibility assessment.\n- Life expectancy less than 3 months.\n- Geographic inaccessibility precluding follow-up.\n- Pregnancy (be sure to use pregnancy-adapted YEARS algorithm in the calc).\n- Allergy to intravenous contrast agent.",
+  "how_to_use": {
+    "why": "- Reduces unnecessary imaging, radiation exposure, and contrast risk through a simplified algorithm that includes key predictive criteria without losing diagnostic safety.\n- The index study demonstrated an absolute 14% decrease in the use of CT pulmonary angiogram (CTPA) when using standard thresholds and an absolute reduction of 8.7% when using an age-adjusted D-dimer threshold.\n- Has been evaluated and validated for use in the pregnant patient population.",
+    "when": "- Use in hemodynamically stable patients ≥18 years old with clinically suspected PE.\n- It has also been adapted for use in the pregnant patient population.\n- Exclusion criteria include:\n\n - Treatment with anticoagulation initiated 24 hours or more prior to assessment.\n - Life expectancy <3 months.\n - Allergy to intravenous contrast agent.\n - Geographic inaccessibility for follow-up.",
+    "pearls": "- Uses three items from the original [Wells’ Criteria for PE](nabda:calc.wells-criteria-pulmonary-embolism) that were most predictive for PE: Clinical signs of deep vein thrombosis (DVT), hemoptysis, and if PE is the most likely clinical diagnosis.\n- Applies a variable D-dimer threshold based on whether zero, one, or more clinical criteria are present\n- PE as the most likely clinical diagnosis is a criterion that is clinician-dependent and can meaningfully affect the D-dimer threshold.\n- Adapted to include the pregnant patient population.\n- Identify your institution’s D-dimer assay units; this tool uses fibrinogen equivalent units (FEU) reported as ng/mL FEU."
+  },
+  "next_steps": {
+    "advice": "- Use this clinical decision tool as an adjunct to clinical judgment and evaluation in the appropriate patient for whom you are considering PE as a diagnosis.\n- If the YEARS algorithm rules out PE, no further workup for PE is recommended.\n- If the YEARS algorithm is unable to exclude PE, proceed with CTPA (or V/Q scan in patients where CTPA is contraindicated, such as those with iodinated contrast allergy, significant renal insufficiency, or in pregnant patients where minimizing radiation exposure to the fetus is preferred).\n- If there are clinical signs of DVT in the pregnant population, obtain compression ultrasonography of the indicated leg first.",
+    "critical_actions": "- **NE PAS** utiliser cet outil chez les patients hémodynamiquement instables.\n- Tenir compte du risque hémorragique avant d'initier une anticoagulation chez les patients chez qui une thromboembolie veineuse (TEV) a été mise en évidence.\n- S'assurer que le seuil de D-dimères approprié est utilisé, en fonction à la fois du nombre de critères positifs et des unités utilisées par votre établissement.\n- Faire preuve de jugement clinique lors de l'utilisation de l'outil et de l'interprétation de ses résultats.",
+    "management": "- Si une EP est confirmée par angio-TDM thoracique, initier une anticoagulation après évaluation du risque du patient.\n- Si une EP est exclue par l'algorithme YEARS, poursuivre votre évaluation clinique et le bilan d'autres diagnostics selon les indications."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Évalue en cas de suspicion de PE",
+  "medium_description": "Helps éliminer embolie pulmonaire (PE) dans adulte pregnant et non-pregnant patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "pregnant",
+      "label": "Patiente enceinte",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dvt",
+      "label": "Signes cliniques de DVT",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "comp",
+      "label": "Échographie de compression de la jambe symptomatique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "pregnant == 1 && dvt == 1",
+      "options": [
+        {
+          "label": "Anormal",
+          "value": 0
+        },
+        {
+          "label": "Normal",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemoptysis",
+      "label": "Hémoptysie",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "(pregnant == 0) || (pregnant == 1 && dvt == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "likely",
+      "label": "PE most probablement diagnostic",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "(pregnant == 0) || (pregnant == 1 && dvt == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dimer500",
+      "label": "D-dimères ≥500 ng/mL FEU",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "(comp == 1) || (dvt + hemoptysis + likely > 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dimer1000",
+      "label": "D-dimer ≥1,000 ng/mL FEU",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "((dvt == 0 && hemoptysis == 0 && likely == 0) && comp == 1) || (dvt == 0 && hemoptysis == 0 && likely == 0)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Writing Committee Members*; Creager MA, Barnes GD, Giri J, Mukherjee D, Jones WS, Burnett AE, Carman T, Casanegra AI, Castellucci LA, Clark SM, Cushman M, de Wit K, Eaves JM, Fang MC, Goldberg JB, Henkin S, Johnston-Cox H, Kadavath S, Kadian-Dodov D, Keeling WB, Klein AJP, Li J, McDaniel MC, Moores LK, Piazza G, Prenger KS, Pugliese SC, Ranade M, Rosovsky RP, Russo F, Secemsky EA, Sista AK, Tefera L, Weinberg I, Westafer LM, Young MN. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN Guideline for the Evaluation and Management of Acute Pulmonary Embolism in Adults: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. Circulation. 2026 Feb 19. doi: 10.1161/CIR.0000000000001415. Epub ahead of print. PMID: 41712677",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+      "kind": "international"
+    },
+    {
+      "text": "van Es J, Beenen LF, Douma RA, den Exter PL, Mos IC, Kaasjager HA, Huisman MV, Kamphuisen PW, Middeldorp S, Bossuyt PM. A simple decision rule including D-dimer to reduce the need for computed tomography scanning in patients with suspected pulmonary embolism. J Thromb Haemost. 2015 Aug;13(8):1428-35. doi: 10.1111/jth.13011. Epub 2015 Jun 19. PMID: 25990714.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25990714/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van der Hulle T, Cheung WY, Kooij S, Beenen LFM, van Bemmel T, van Es J, Faber LM, Hazelaar GM, Heringhaus C, Hofstee H, Hovens MMC, Kaasjager KAH, van Klink RCJ, Kruip MJHA, Loeffen RF, Mairuhu ATA, Middeldorp S, Nijkeuter M, van der Pol LM, Schol-Gelok S, Ten Wolde M, Klok FA, Huisman MV; YEARS study group. Simplified diagnostic management of suspected pulmonary embolism (the YEARS study): a prospective, multicentre, cohort study. Lancet. 2017 Jul 15;390(10091):289-297. doi: 10.1016/S0140-6736(17)30885-1. Epub 2017 May 23. Erratum in: Lancet. 2017 Jul 15;390(10091):230. doi: 10.1016/S0140-6736(17)31749-X. PMID: 28549662.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28549662/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van der Pol LM, Tromeur C, Bistervels IM, et al.; Artemis Study Investigators. Pregnancy-Adapted YEARS Algorithm for Diagnosis of Suspected Pulmonary Embolism. N Engl J Med. 2019;380(12):1139-1149. PMID 30893534",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30893534/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mai V, Takada T, Kraaijpoel N, van Es N, Büller HR, Courtney DM, Freund Y, Galipienzo J, Le Gal G, Ghanima W, Huisman MV, Kline JA, Moons KGM, Parpia S, Perrier A, Righini M, Robert-Ebadi H, Roy PM, van Smeden M, Wells PS, de Wit K, Geersing GJ, Klok FA. Safety and Efficiency of Diagnostic Strategies for Ruling Out Pulmonary Embolism in Clinically Relevant Patient Subgroups : A Systematic Review and Individual-Patient Data Meta-analysis. Ann Intern Med. 2022 Feb;175(2):244-255. doi: 10.7326/M21-2625. Epub 2021 Dec 14. PMID: 34904857.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41161416/",
+      "kind": "other"
+    },
+    {
+      "text": "Geersing GJ, Takada T, Klok FA, Büller HR, Courtney DM, Freund Y, Galipienzo J, Le Gal G, Ghanima W, Kline JA, Huisman MV, Moons KGM, Perrier A, Parpia S, Robert-Ebadi H, Righini M, Roy PM, van Smeden M, Stals MAM, Wells PS, de Wit K, Kraaijpoel N, van Es N. Ruling out pulmonary embolism across different healthcare settings: A systematic review and individual patient data meta-analysis. PLoS Med. 2022 Jan 25;19(1):e1003905. doi: 10.1371/journal.pmed.1003905. PMID: 35077453; PMCID: PMC8824365.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8824365/",
+      "kind": "other"
+    },
+    {
+      "text": "Stals MAM, Takada T, Kraaijpoel N, et al. Safety and efficiency of diagnostic strategies for ruling out pulmonary embolism in clinically relevant patient subgroups : a systematic review and individual-patient data meta-analysis. Ann Intern Med. 2022;175(2):244-255. doi:10.7326/M21-2625",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34904857/",
+      "kind": "other"
+    },
+    {
+      "text": "Kabrhel C, Van Hylckama Vlieg A, Muzikanski A, Singer A, Fermann GJ, Francis S, Limkakeng A, Chang AM, Giordano N, Parry B. Multicenter Evaluation of the YEARS Criteria in Emergency Department Patients Evaluated for Pulmonary Embolism. Acad Emerg Med. 2018 Sep;25(9):987-994. doi: 10.1111/acem.13417. PMID: 29603819.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29603819/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Eddy M, Robert-Ebadi H, Richardson L, Bellesini M, Verschuren F, Moumneh T, Meyer G, Righini M, Le Gal G. External validation of the YEARS diagnostic algorithm for suspected pulmonary embolism. J Thromb Haemost. 2020 Dec;18(12):3289-3295. doi: 10.1111/jth.15083. Epub 2020 Oct 23. PMID: 32869501.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32869501/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.wells-criteria-pulmonary-embolism",
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.pack-years-calculator"
+  ],
+  "source_logic_hash": "d6e241f03fcf229e85fd04d2f34fe36c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’ Criteria for PE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’ Criteria for PE"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4067,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar dvt = parseFloat(dvt);\nvar hemoptysis = parseFloat(hemoptysis);\nvar likely = parseFloat(likely);\nvar dimer500 = parseFloat(dimer500);\nvar dimer1000 = parseFloat(dimer1000);\nvar pregnant = parseFloat(pregnant);\nvar comp = parseFloat(comp);\nvar pregnant = parseFloat(pregnant);\n\nvar msg, result;\n\nif ((dvt + hemoptysis + likely == 0) || (pregnant == 1 && dvt == 0)) {\n\tif (dimer1000 == 0 || (pregnant == 1 && dvt == 0)) {\n\t\tresult = 'PE excluded'\n\t\tmsg = 'YEARS algorithm rules out PE (0.43% with symptomatic VTE during 3-month follow-up)'\n    } else {\n\t\tresult = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n\t}\n}\nelse {\n  if (dvt == 1 && pregnant == 1 && comp == 0) {\n    result = 'Initiate anticoagulant'\n    msg = 'Pregnancy-adapted YEARS algorithm recommends initiation of anticoagulant treatment'\n  } else if (dimer500 == 0) {\n\t\tresult = 'PE excluded'\n\t\tmsg = 'YEARS algorithm rules out PE (0.43% with symptomatic VTE during 3-month follow-up)'\n  } else {\n\t\tresult = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n\t}\n}\n\nif (pregnant == 1 && dvt == 0) {\n  if (hemoptysis + likely == 0 && dimer1000 == 1) {\n    result = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n  }\n  else if (hemoptysis + likely > 0 && dimer500 == 1) {\n    result = 'PE not excluded'\n\t\tmsg = 'YEARS algorithm recommends CTPA'\n  }\n}\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: result,\n    value_text: '',\n    message: ''\n});\ncalc_output.push({\n    name: '4067_YEARS Algorithm_result',\n    value: result,\n    value_text: '',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "abbas-husain-md"
+  ],
+  "creator_names": [
+    "Dr. Tom van der Hulle",
+    "Dr. Menno Huisman"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "e39150ceef7a76ce1dd7ab46b808c55378a0fb2454c6cd678139e5c84fd48f9d"
+}

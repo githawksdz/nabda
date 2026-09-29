@@ -1,0 +1,210 @@
+{
+  "id": "calc.gcs-pupils-score",
+  "slug": "gcs-pupils-score",
+  "language": "en",
+  "title": "Score GCS-Pupils",
+  "short_title": "Score GCS-Pupils",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "traumatologie",
+    "neurologie",
+    "neurochirurgie",
+    "soins-intensifs",
+    "urgences"
+  ],
+  "diseases": [
+    "Trauma",
+    "Traumatisme crânien"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma",
+    "Traumatisme crânien"
+  ],
+  "abbreviations": [
+    "tbi",
+    "GCS",
+    "Glasgow Coma Scale",
+    "pediatric Glasgow Coma Scale",
+    "pGCS",
+    "GCS pupil",
+    "GCS pupils",
+    "pupil reactivity"
+  ],
+  "dosing": false,
+  "formula": "GCS-Pupils Score = [GCS Score](nabda:calc.glasgow-coma-scale-score-gcs) - Pupil response,\n\nwhere GCS Score = Eye response + Verbal response + Motor response\n\nand other variables are as follows:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Eye response | Eyes open spontaneously | 4 |\n| Eye opening to verbal command | 3 | |\n| Eye opening to pain | 2 | |\n| No eye opening | 1 | |\n| Not assessable (trauma, edema, etc.) | 1 | |\n| Verbal response | Oriented | 5 |\n| Confused | 4 | |\n| Inappropriate words | 3 | |\n| Incomprehensible sounds | 2 | |\n| No verbal response | 1 | |\n| Intubated | 1 | |\n| Motor response | Obeys commands | 6 |\n| Localizes pain | 5 | |\n| Withdrawal from pain | 4 | |\n| Flexion to pain | 3 | |\n| Extension to pain | 2 | |\n| No motor response | 1 | |\n| Pupil response | Both pupils unreactive to light | 2 |\n| One pupil unreactive to light | 1 | |\n| Both pupils reactive to light (normal) | 0 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Patients atteints de traumatisme crânien.",
+    "pearls": "- Score dérivé rétrospectivement, à partir de données poolées issues de deux grandes bases de données, IMPACT et CRASH.\n- L'ajout des données pupillaires s'est révélé particulièrement utile aux scores GCS très bas (3-4), probablement en raison d'une fréquence plus élevée de réponse pupillaire anormale chez les patients présentant un traumatisme crânien grave (TBI) et un GCS bas ([Brennan 2018](https://www.ncbi.nlm.nih.gov/pubmed/29631516))."
+  },
+  "next_steps": {
+    "advice": "Le score GCS-Pupils n’est pas destiné à remplacer le GCS en tant qu’instantané de l’état d’un patient individuel et de son évolution dans le temps ; les auteurs précisent qu’il vise à servir de complément afin d’ajouter des informations sur la gravité et le pronostic ([Brennan 2018](https://www.ncbi.nlm.nih.gov/pubmed/29631516)).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| GCS-Pupils Score | Mortality at 6 months post-injury | Unfavorable outcome (vegetative state or severe disability) at 6 months post-injury |\n| --- | --- | --- |\n| 1 | 74.45% | 89.59% |\n| 2 | 64.62% | 85.22% |\n| 3 | 40.92% | 65.53% |\n| 4 | 39.47% | 68.90% |\n| 5 | 32.57% | 57.75% |\n| 6 | 24.97% | 46.26% |\n| 7 | 19.17% | 37.20% |\n| 8 | 20.04% | 33.55% |\n| 9 | 18.75% | 30.32% |\n| 10 | 17.35% | 28.88% |\n| 11 | 11.60% | 21.81% |\n| 12 | 9.43% | 19.92% |\n| 13 | 7.07% | 15.85% |\n| 14 | 5.64% | 14.39% |\n| 15 | 2.54% | 11.75% |",
+  "short_description": "GCS intégrant la réactivité pupillaire.",
+  "medium_description": "Combines GCS et pupil reactivity pour greater accuracy at faible GCS.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "eye",
+      "label": "Réponse oculaire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ouverture des yeux spontanée",
+          "value": 4
+        },
+        {
+          "label": "Eye opening pour verbal command",
+          "value": 3
+        },
+        {
+          "label": "Eye opening pour douleur",
+          "value": 2
+        },
+        {
+          "label": "Absence d'ouverture des yeux",
+          "value": 1
+        },
+        {
+          "label": "Not assessable (traumatisme, œdème, etc)",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "verbal",
+      "label": "Réponse verbale",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Oriented",
+          "value": 5
+        },
+        {
+          "label": "Confused",
+          "value": 4
+        },
+        {
+          "label": "Mots inappropriés",
+          "value": 3
+        },
+        {
+          "label": "Sons incompréhensibles",
+          "value": 2
+        },
+        {
+          "label": "Absence de réponse verbale",
+          "value": 1
+        },
+        {
+          "label": "Intubated",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "motor",
+      "label": "Réponse motrice",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Obéit aux ordres",
+          "value": 6
+        },
+        {
+          "label": "Localise la douleur",
+          "value": 5
+        },
+        {
+          "label": "Withdrawal de douleur",
+          "value": 4
+        },
+        {
+          "label": "Flexion pour douleur",
+          "value": 3
+        },
+        {
+          "label": "Extension pour douleur",
+          "value": 2
+        },
+        {
+          "label": "Absence de réponse motrice",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pupil",
+      "label": "Réponse pupillaire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Both pupils unreactive pour light",
+          "value": -2
+        },
+        {
+          "label": "One pupil unreactive pour light",
+          "value": -1
+        },
+        {
+          "label": "Both pupils reactive pour light (normal)",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brennan PM, Murray GD, Teasdale GM. Simplifying the use of prognostic information in traumatic brain injury. Part 1: The GCS-Pupils score: an extended index of clinical severity. J Neurosurg. 2018;128(6):1612-1620.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29631516",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.pediatric-glasgow-coma-scale-pgcs",
+    "calc.pediatric-trauma-big-score"
+  ],
+  "source_logic_hash": "957756acc4404e4ad6b16fbb8dcc0167",
+  "logic_language": null,
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10140,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

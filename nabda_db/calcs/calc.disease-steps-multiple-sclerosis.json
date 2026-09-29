@@ -1,0 +1,122 @@
+{
+  "id": "calc.disease-steps-multiple-sclerosis",
+  "slug": "disease-steps-multiple-sclerosis",
+  "language": "en",
+  "title": "Maladie Steps pour multiple Sclerosis",
+  "short_title": "Maladie Steps pour multiple Sclerosis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "neurologie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Numbness",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "ambulation",
+    "walking",
+    "steps",
+    "MS"
+  ],
+  "dosing": false,
+  "formula": "Sélection des critères appropriés selon les capacités du patient.",
+  "how_to_use": {
+    "why": "",
+    "when": "Après le diagnostic de SEP, cette échelle peut être utilisée pour mesurer la progression de la maladie en évaluant la maladie du patient.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les Disease Steps for MS peuvent servir de guide dans la prise de décision thérapeutique, le suivi de la réponse au traitement et l’évaluation de la progression de la maladie au fil du temps.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "- **Normal:** functionally normal with no limitations on activity or lifestyle. Patients may have minor abnormality on examination, such as nystagmus or an extensor plantar. The course is relapsing-remitting with a return to baseline with or without treatment. These patients are not treated with any ongoing symptomatic therapy for MS.\n- **Mild disability:** mild symptoms or signs. These patients have mild but definite findings such as sensory abnormalities, mild bladder impairment, minor incoordination, weakness, or fatigue. There is no visible abnormality of gait. The pattern of disease is relapsingremitting, but patients may not have a full return to baseline following attacks. These patients may use ongoing symptomatic therapy such as amantadine, baclofen, or oxybutynin.\n- **Moderate disability:** the main feature is a visibly abnormal gait, but patients do not require ambulation aids. The pattern of disease is relapsing-remitting or progressive.\n- **Early cane:** intermittent use of cane (or other forms of unilateral support including splint, brace, or crutch). These patients use unilateral support primarily for longer distances, but are able to walk at least 25 feet without it. The pattern of disease is relapsing-remitting or progressive.\n- **Late cane:** these patients are dependent on a cane or other forms of unilateral support and cannot walk 25 feet without such support (eg, these patients may hang on to furniture inside their homes or touch the wall when walking in clinic). Patients may use a scooter for greater distances (eg, malls). The pattern of disease is relapsing remitting or progressive.\n- **Bilateral support:** patients require bilateral support to walk 25 feet (eg, two canes or two crutches or a walker). They may use a scooter for greater distances. The pattern of disease is relapsing-remitting or progressive.\n- **Confined to wheelchair:** patients are essentially confined to a wheelchair or scooter. They may be able to take a few steps but are unable to ambulate 25 feet, even with bilateral support. They may show further progression including worsening hand function or inability to transfer independently.\n- **Unclassifiable:** this category is used for patients who do not fit the above classification (eg, significant cognitive or visual impairment, overwhelming fatigue, or significant bowel or bladder impairment in an otherwise minimally impaired patient).",
+  "short_description": "MS progression, basé sur ambulation.",
+  "medium_description": "Evaluates MS maladie progression basé sur patient’s ambulatory ability.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "diseasesteps",
+      "label": "Capacité de déambulation du patient",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Handicap léger",
+          "value": 1
+        },
+        {
+          "label": "modéré disability",
+          "value": 2
+        },
+        {
+          "label": "Canne précoce",
+          "value": 3
+        },
+        {
+          "label": "Late cane",
+          "value": 4
+        },
+        {
+          "label": "Support bilatéral",
+          "value": 5
+        },
+        {
+          "label": "Confined pour wheelchair",
+          "value": 6
+        },
+        {
+          "label": "Unclassifiable",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hohol MJ, Orav EJ, Weiner HL. Disease steps in multiple sclerosis: a longitudinal study comparing disease steps and EDSS to evaluate disease progression. Mult Scler. 1999 Oct;5(5):349-54.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10516779",
+      "kind": "pubmed"
+    },
+    {
+      "text": "National MS Society. Disease Steps for MS Form.",
+      "href": "https://www.nationalmssociety.org/NationalMSSociety/media/MSNationalFiles/Brochures/10-2-3-28-Disease_Steps_Form.pdf",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.berg-balance-scale-bbs",
+    "calc.shortened-modified-fatigue-impact-scale-mfis",
+    "calc.modified-fatigue-impact-scale-mfis"
+  ],
+  "source_logic_hash": "56a22cecbdd96df4a9a84a4af828547a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2199,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,243 @@
+{
+  "id": "calc.ucla-integrated-staging-system-uiss-renal-cell-carcinoma-rcc",
+  "slug": "ucla-integrated-staging-system-uiss-renal-cell-carcinoma-rcc",
+  "language": "en",
+  "title": "UCLA Integrated Staging System (UISS) pour Renal Cell Carcinoma (RCC)",
+  "short_title": "Le contenu source à traduire n'a pas été fourni (seul le titre « UISS pour RCC » apparaît). Merci de transmettre le texte, le tableau ou le fichier du score à traduire pour que je puisse en produire la version française.",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Carcinome à cellules rénales"
+  ],
+  "chief_complaints": [
+    "Douleur du flanc",
+    "Hématurie"
+  ],
+  "abbreviations": [
+    "UCLA",
+    "RCC",
+    "localized",
+    "mets",
+    "metastatic",
+    "UISS"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n**Localized disease (Any T, N0M0)**\n\n| T stage | [Nuclear grade](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma\\) | [ECOG PS](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) | Risk |\n| --- | --- | --- | --- |\n| T1 | Fuhrman 1-2 | 0 | Low |\n| ≥1 | Intermediate | | |\n| Fuhrman 3-4 | Any | | |\n| T2 | Any | Any | |\n| T3 | Fuhrman 1 | 0 | |\n| ≥1 | | | |\n| Fuhrman >1 | 0 | | |\n| ≥1 | High | | |\n\n**Metastatic disease (N1, N2, or M1)**\n\n| N/M stage | [Nuclear grade](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma\\) | [ECOG PS](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) | Risk |\n| --- | --- | --- | --- |\n| N1M0 | Any | Any | Low |\n| N2M0/M1 | Fuhrman 1 | 0 | Low |\n| ≥1 | Intermediate | | |\n| Fuhrman 2 | 0 | Low | |\n| ≥1 | Intermediate | | |\n| Fuhrman 3 | Any | | |\n| Fuhrman 4 | 0 | | |\n| ≥1 | High | | |",
+  "how_to_use": {
+    "why": "There are no validated scoring systems for predicting survival in mRCC. Using a score may help sketch categories of survival time better than clinical judgment alone.",
+    "when": "Patients atteints d'un RCC, localisé ou métastatique, en particulier ceux chez qui une inclusion dans un essai clinique est envisagée.",
+    "pearls": "- Ce score classait les patients atteints d'un carcinome à cellules rénales local ou métastatique (mRCC) en groupes de risque de mortalité : faible, intermédiaire/modéré et élevé.\n- La dérivation et de nombreuses validations externes ont été des revues de dossiers, bien que toutes constatent des progressions ordonnées de la survie à 5 ans selon le groupe.\n- Une validation prospective est vivement attendue, et nous ne connaissons aucune validation incluant un nombre substantiel de patients traités par thérapie ciblée anti-VEGF moderne."
+  },
+  "next_steps": {
+    "advice": "Le score UISS est souvent utilisé pour la sélection et la stratification des patients dans les essais de thérapies modernes, y compris les essais de thérapie anti-VEGF tels que le sunitinib. La cohérence des résultats dans les études de validation est plutôt rassurante, et l’un de ses avantages est son applicabilité aux patients avec et sans maladie métastatique.",
+    "critical_actions": "The UISS score is complex, requiring close attention to multiple variables for correct classification.",
+    "management": "We are unaware of validated management algorithms using the score."
+  },
+  "evidence": "",
+  "more_info": "| Disease Type | Risk Group | Five-year disease-specific survival |\n| --- | --- | --- |\n| Local Disease | Low | 91.1% |\n| Intermediate | 80.4% | |\n| High | 54.7% | |\n| Metastatic Disease | Low | 32% |\n| Intermediate | 19.5% | |\n| High | 0% | |",
+  "short_description": "Pronostic à 5 ans pour le RCC.",
+  "medium_description": "Provides 5-year maladie-free pronostic pour localized et metastatic RCC.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "disease",
+      "label": "Type de maladie présent",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Métastatique",
+          "value": 2
+        },
+        {
+          "label": "Localisé",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "t",
+      "label": "Maladie localisée - stade T",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "disease == 1",
+      "options": [
+        {
+          "label": "Aucun contenu à traduire n'a été fourni : le message ne contient que « T1 », sans titres, consignes, tableaux, libellés, ni sections why/when/pearls, next_steps, evidence ou more_info.\n\nMerci de transmettre le texte source du score clinique à traduire.",
+          "value": 1
+        },
+        {
+          "label": "T2",
+          "value": 2
+        },
+        {
+          "label": "T3",
+          "value": 3
+        },
+        {
+          "label": "T4",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "n",
+      "label": "Maladie métastatique - stade N",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "disease == 2",
+      "options": [
+        {
+          "label": "N1",
+          "value": 1
+        },
+        {
+          "label": "N2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m",
+      "label": "Maladie métastatique - stade M",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "disease == 2",
+      "options": [
+        {
+          "label": "M0",
+          "value": 0
+        },
+        {
+          "label": "M1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fuhrman",
+      "label": "[Fuhrman nuclear grade](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Je",
+          "value": 1
+        },
+        {
+          "label": "II",
+          "value": 2
+        },
+        {
+          "label": "III",
+          "value": 3
+        },
+        {
+          "label": "IV",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "[ECOG Performance Status](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "≥1",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Zisman A,Pantuck AJ,Wieder J, et al. Risk group assessment and clinical outcome algorithm to predict the natural history of patients with surgically resected renal cell carcinoma. J Clin Oncol. 2002; 20: 4559–4566.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12454113",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Escudier B, Eisen T, Porta C, et al. Renal cell carcinoma: ESMO clinical practice guidelines for diagnosis, treatment and follow-up. Ann Oncol, 2012; 23(suppl 7):vii65–vii71.",
+      "href": "https://annonc.oxfordjournals.org/content/23/suppl_7/vii65.full",
+      "kind": "other"
+    },
+    {
+      "text": "Patard J, et al. Use of the University of California Los Angeles Integrated Staging System to Predict Survival in Renal Cell Carcinoma: An International Multicenter Study. JCO Aug 15, 2004:3316-3322",
+      "href": "https://jco.ascopubs.org/content/22/16/3316.abstract?ijkey=a1a6e4e6960a768fd1f4bfbde97f0aae0810e1ca&keytype2=tf_ipsecsha",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+    "calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma",
+    "calc.mekhail-extension-motzer-score",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status"
+  ],
+  "source_logic_hash": "6fe07ec6fd81269593ab93b2919bbc77",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+      "text": "Nuclear grade"
+    },
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG PS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+      "text": "Nuclear grade"
+    },
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG PS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3009,
+  "runnable": true,
+  "equation_logic_text": "var t = t || 0\nvar n = n || 0\nvar m = m || 0\n\nvar calc_output = [];\nvar disease = parseInt(disease);\nt = parseInt(t);\nn = parseInt(n);\nm = parseInt(m);\nvar fuhrman = parseInt(fuhrman);\nvar ecog = parseInt(ecog);\nvar survstring = ' Five Year survival';\nvar value = '';\nvar msg = '';\nvar u;\n\nif (disease == 1) {\n    u = t + fuhrman + ecog;\n} else if (disease == 2) {\n    u = n + m + fuhrman + ecog;\n}\n\nif (disease == 1) {\n    if (t == 1 && fuhrman <= 2 && ecog == 0) {\n        value = '91.1%';\n        msg = 'Low Risk';\n    } else if (t == 1 && fuhrman <= 2 && ecog == 1) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 1 && fuhrman > 1 && fuhrman <= 4 && ecog >= 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 2) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman == 1 && ecog >= 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman > 1 && ecog == 0) {\n        value = '80.4%';\n        msg = 'Moderate Risk';\n    } else if (t == 3 && fuhrman > 1 && ecog >= 1) {\n        value = '54.7%';\n        msg = 'High Risk';\n    } else if (t == 4) {\n        value = '54.7%';\n        msg = 'High Risk';\n    } \n}\nelse if (disease == 2) {\n    if (n == 1 && m == 0 && fuhrman > 0 && ecog >= 0) {\n        value = '32%';\n        msg = 'Low Risk';\n    } else if (n == 2 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog == 0) {\n        value = '32%';\n        msg = 'Low Risk';\n    } else if (n == 2 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog == 1) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 1 && m >= 0 && fuhrman >= 1 && fuhrman <= 2 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 1 && m >= 0 && fuhrman >= 3 && fuhrman <= 4 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 3 && ecog >= 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 4 && ecog == 0) {\n        value = '19.5%';\n        msg = 'Moderate Risk';\n    } else if (n == 2 && m >= 0 && fuhrman == 4 && ecog == 1) {\n        value = '0%';\n        msg = 'High Risk';\n    }\n}\n\ncalc_output.push({ \n    name: 'mini', \n    value: msg, \n    value_text: ' ', \n    message: ' '\n});\ncalc_output.push({ \n    name: '3009_UISS for RCC_result', \n    value: msg, \n    value_text: ' ', \n    message: value + survstring \n});",
+  "before_use": null,
+  "instructions": "- Localisé : T quelconque ; N0 ; M0\n- Métastatique : T>0 ; N>1 ; M>1",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Amnon Zisman"
+  ],
+  "measurement_ids": [
+    "ECOG"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "35b8af081145e4b4152f1b987e94eb1cdd5bd707fa7e976bf9d33c5b3ba7fef3"
+}

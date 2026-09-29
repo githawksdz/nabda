@@ -1,0 +1,143 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-globus",
+  "slug": "rome-iv-diagnostic-criteria-globus",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Globus",
+  "short_title": "Rome IV pour Globus",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pathologies œsophagiennes",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Globus"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Globus, Rome IV for Globus, globus, rome iv globus, rome iv for globus, rome globus, rome for globus, rome iv criteria, rome 4, rome 4 criteria, rome 4 globus, rome 4 criteria globus, rome 4 criteria for globus, globus rome, globus criteria, globus criteria rome"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV du globus, le patient doit présenter les éléments suivants (pendant les 3 mois précédents, avec un début des symptômes ≥6 mois et une fréquence d'au moins une fois par semaine) :\n\n1. Sensation persistante ou intermittente, non douloureuse, de boule ou de corps étranger dans la gorge, sans lésion structurelle identifiée à l'examen physique, à la laryngoscopie ou à l'endoscopie.\n\na. Survenue de la sensation entre les repas.\n\nb. Absence de dysphagie ou d'odynophagie.\n\nc. Absence d'îlet gastrique (patch d'épithélium gastrique) dans l'œsophage proximal.\n2. Absence de preuve que le reflux gastro-œsophagien ou l'œsophagite à éosinophiles (EoE) soit la cause du symptôme.\n3. Absence de troubles moteurs œsophagiens majeurs (achalasie/obstacle à la jonction œsophago-gastrique (EGJ), spasme œsophagien diffus, œsophagie en marteau-piqueur, absence de péristaltisme).",
+  "how_to_use": {
+    "why": "- Aide à poserer un diagnostic de globus lorsque le bilan approprié est par ailleurs non contributif.\n- Aide à distinguer les symptômes d'autres troubles fréquents.\n- Aide à guider la prise en charge des symptômes une fois le diagnostic de globus établi.",
+    "when": "Patients présentant des symptômes de sensation persistante ou intermittente, non douloureuse, de boule ou de corps étranger dans la gorge depuis au moins 6 mois, évocateurs de globus. Le diagnostic de globus ne doit être posé qu'après exclusion des causes structurelles ou inflammatoires par une anamnèse et un examen physique soigneux et/ou un examen endoscopique ou laryngoscopique.",
+    "pearls": "- La sensation de globus ne survient pas lors de l'alimentation ou de la boisson.\n- Un examen physique du cou et une évaluation laryngoscopique du pharynx sont conseillés lors du bilan initial des symptômes de globus.\n- Un essai d'inhibiteur de la pompe à protons (IPP) doit être envisagé. Si les symptômes de globus persistent malgré le traitement par IPP, une évaluation par endoscopie haute peut être envisagée, auquel cas la présence d'une œsophagite à éosinophiles ou d'un îlet gastrique dans l'œsophage proximal doit être exclue.\n- Si une manométrie œsophagienne est réalisée, l'identification d'un trouble moteur œsophagien majeur (p. ex. achalasie, obstacle à la jonction œsophago-gastrique, spasme œsophagien diffus, œsophagie en marteau-piqueur, absence de péristaltisme) peut expliquer le globus ou coexister avec lui."
+  },
+  "next_steps": {
+    "advice": "**Si les critères diagnostiques ne sont pas remplis (négatif) :**\n\nIl est peu probable que les symptômes soient causés par un globus. Envisager une évaluation complémentaire pour d'autres maladies ou un autre trouble fonctionnel gastro-intestinal.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable de globus.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients ne présentant pas de signes ou symptômes évocateurs d'une cause structurelle/mécanique, métabolique ou systémique de leurs symptômes, sur la base de l'anamnèse clinique, de l'examen physique et du bilan initial.",
+    "management": "La prise en charge du globus peut inclure :\n\n- Éducation et rassurance du patient.\n- Neuromodulateur.\n- Thérapie comportementale (p. ex. thérapie cognitivo-comportementale, hypnose)."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts.",
+  "more_info": "",
+  "short_description": "Diagnostic du globus.",
+  "medium_description": "Official Rome IV critères pour diagnostic de globus.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Persistent ou intermittent, nonpainful, sensation de lump ou foreign body dans throat avec no structural lesion identified sur physical examination, laryngoscopy, ou endoscopy",
+      "tips": "Survenue de la sensation entre les repas, absence de dysphagie ou d'odynophagie, et absence d'îlet gastrique dans l'œsophage proximal",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Absence de preuve que le reflux gastro-œsophagien ou l'EoE soit la cause du symptôme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à l'écoulement de la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophagie en marteau-pilon, absence de péristaltisme)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Josefsson A, Palsson O, Simrén M, Sperber AD, Törnblom H, Whitehead W. Oesophageal symptoms are common and associated with other functional gastrointestinal disorders (FGIDs) in an English-speaking Western population. United European Gastroenterol J. 2018;6(10):1461-1469.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30574316",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn",
+    "calc.rome-iv-diagnostic-criteria-functional-chest-pain",
+    "calc.rome-iv-diagnostic-criteria-cannabinoid-hyperemesis-syndrome-chs"
+  ],
+  "source_logic_hash": "ab5cf862b1d57bcd20af41ed1b9567fc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10284,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

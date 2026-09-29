@@ -1,0 +1,237 @@
+{
+  "id": "calc.reynolds-risk-score-cardiovascular-risk-women",
+  "slug": "reynolds-risk-score-cardiovascular-risk-women",
+  "language": "fr",
+  "title": "Reynolds risque score pour Cardiovascular risque dans Women",
+  "short_title": "Score de risque de Reynolds",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Soins préventifs / Dépistage"
+  ],
+  "abbreviations": [
+    "reynold",
+    "reynold's",
+    "reynolds",
+    "reynolds score",
+    "reynolds risk",
+    "cardiac risk",
+    "women",
+    "female",
+    "heart attack",
+    "stroke",
+    "MI",
+    "framingham",
+    "ascvd"
+  ],
+  "dosing": false,
+  "formula": "10-year cardiovascular disease risk (%) = [1 − 0.98634(exp[B − 22.325])] × 100\n\nwhere\n\nB = 0.0799 × age + 3.137 × ln(systolic blood pressure) + 0.180 × ln(high-sensitivity C-reactive protein) + 1.382 × ln(total cholesterol) −1.172 × ln(high-density lipoprotein cholesterol) + 0.134 × hemoglobin A1c (%) (if diabetic) + 0.818 (if current smoker) + 0.438 (if family history of premature myocardial infarction)",
+  "how_to_use": {
+    "why": "- Peut aider à affiner l’évaluation du risque cardiovasculaire à 10 ans chez les femmes, en particulier lorsque le risque est incertain et que la hsCRP ou des antécédents familiaux d’infarctus du myocarde prématuré peuvent modifier de manière significative la classification du risque.\n- Le Reynolds Risk Score a été développé pour améliorer la prédiction du risque au-delà des modèles traditionnels en intégrant la hsCRP et les antécédents parentaux d’infarctus du myocarde prématuré.\n- À utiliser en complément, et non en remplacement, de l’évaluation contemporaine du risque d’ASCVD fondée sur les recommandations et de la décision partagée concernant le traitement préventif.",
+    "when": "Women age ≥45 years without known cardiovascular disease who are being evaluated for primary prevention cardiovascular risk.",
+    "pearls": "- Le Reynolds Risk Score estime le risque à 10 ans d'événements cardiovasculaires majeurs chez les femmes, incluant l'infarctus du myocarde, l'accident vasculaire cérébral ischémique, la revascularisation coronaire et le décès cardiovasculaire.\n- L'étude de dérivation incluait en majorité des femmes blanches ; la prudence est recommandée en cas de généralisation à d'autres populations."
+  },
+  "next_steps": {
+    "advice": "Use the Reynolds Risk Score as one component of primary prevention risk assessment. It may be most useful when traditional risk estimates are uncertain and information on hsCRP or parental history of premature MI is available.",
+    "critical_actions": "- Le score ne doit pas être utilisé isolément pour déterminer un traitement par statine ou un autre traitement préventif. Intégrer les recommandations actuelles de prévention, la discussion entre le clinicien et le patient, les comorbidités, l'espérance de vie, la tolérance médicamenteuse et les préférences du patient.\n- Ne pas appliquer aux patients présentant une ASCVD établie, et faire preuve de prudence lors de l'application à des populations sous-représentées dans la cohorte de dérivation.",
+    "management": "Les estimations de risque doivent être interprétées dans le contexte du jugement clinique et des méthodes contemporaines de stratification du risque (p. ex., [score de risque PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) ) et des recommandations des lignes directrices (p. ex., [recommandations 2026 ACC/AHA sur les lipides](https://www.ahajournals.org/doi/10.1161/CIR.0000000000001423)) pour la détermination de l’éligibilité à un traitement hypolipémiant."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Estime le risque cardiaque chez les femmes de plus de 45 ans.",
+  "medium_description": "Estimates 10-year cardiovascular risque dans women over âge 45 years.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_reynolds",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "dm",
+      "label": "Diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hgba1c",
+      "label": "Hemoglobin 1c (%)",
+      "optional": false,
+      "unit": "hgba1c",
+      "show_points": false,
+      "conditionality": "dm == 1"
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "chol_hdl",
+      "label": "Cholestérol HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "chol",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hscrp",
+      "label": "CRP ultrasensible (HsCRP)",
+      "optional": false,
+      "unit": "crp_dl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "famhx",
+      "label": "Parent withMIbefore âge 60 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ridker PM, Buring JE, Rifai N, Cook NR. Development and validation of improved algorithms for the assessment of global cardiovascular risk in women: the Reynolds Risk Score. JAMA. 2007 Feb 14;297(6):611-9.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/205528",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Executive Summary of the Third Report of the National cholesterol Education Program (NCEP) Expert Panel on Detection, Evaluation, and Treatment of High Blood Cholesterol in Adults (Adult Treatment Panel III).  JAMA. 2001;285:2486-2497",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11368702",
+      "kind": "other"
+    },
+    {
+      "text": "Pennells L, Kaptoge S, Wood A, et al. Equalization of four cardiovascular risk algorithms after systematic recalibration: individual-participant meta-analysis of 86 prospective studies. Eur Heart J. 2019;40(7):621-631. doi:10.1093/eurheartj/ehy653 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30476079/",
+      "kind": "other"
+    },
+    {
+      "text": "Cook NR, Paynter NP, Eaton CB, et al. Comparison of the Framingham and Reynolds Risk scores for global cardiovascular risk prediction in the multiethnic Women's Health Initiative. Circulation. 2012;125(14):1748-S11. doi:10.1161/CIRCULATIONAHA.111.075929",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22399535/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.systematic-coronary-risk-evaluation-score2"
+  ],
+  "source_logic_hash": "6c67a9dc5d681595ac48df7ae0cfc6ca",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT risk score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT risk score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3932,
+  "runnable": true,
+  "equation_logic_text": "var hgba1c = hgba1c || 0;\n\nvar calc_output = [];\n\n// Declare vars\nvar age = parseFloat(age);\nvar sbp = parseFloat(sbp);\nvar dm = parseFloat(dm);\nvar smoker = parseFloat(smoker);\nvar chol_hdl = parseFloat(chol_hdl);\nvar chol = parseFloat(chol);\nvar hscrp = parseFloat(hscrp);\nvar famhx = parseFloat(famhx);\nvar hgba1c = parseFloat(hgba1c);\n\nvar msg; \n\nmsg = '10 year risk of MI or stroke';\n\nif (UOMSYSTEM == true) {\n    chol_hdl = chol_hdl;\n\tchol = chol;\n\thscrp = hscrp;}\nif (UOMSYSTEM == false) {\n    chol_hdl = chol_hdl/0.02586;\n\tchol = chol/0.02586;\n\thscrp = hscrp*10;}\n\n\n//if (dm == 1) {\nvar b = 0.0799*age + 3.137*Math.log(sbp) + 0.180*Math.log(hscrp) + 1.382*Math.log(chol) - 1.172*Math.log(chol_hdl) + 0.134*hgba1c + 0.818*smoker + 0.438*famhx;\n\n//} else {\n//\tb = 0.0799*age + 3.137*Math.log(sbp) + 0.180*Math.log(hscrp) + 1.382*Math.log(chol) - //1.172*Math.log(chol_hdl) + 0.134*hgbalc + 0.818*smoker + 0.438*famhx;}\n\nvar score = (1 - Math.pow(0.98634, Math.exp(b - 22.325))) * 100;\n\ncalc_output.push({\n    name: 'mini',\n    value: score.toFixed(1),\n    value_text: '%',\n    message: msg\n});\ncalc_output.push({\n    name: '3932_Reynolds Risk Score_result',\n    value: score.toFixed(1),\n    value_text: '%',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "rahul-aggarwal-md"
+  ],
+  "creator_names": [
+    "Dr. Paul M. Ridker"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Systolic BP",
+    "HDL Cholesterol",
+    "Total Cholesterol",
+    "crp_dl",
+    "hsCRP"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "11886c90d1a9d62d9aaa5ee126dba3b5be04aa0f32df99cf6b2fae1b29e385f3"
+}

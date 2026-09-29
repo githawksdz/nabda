@@ -1,0 +1,235 @@
+{
+  "id": "calc.refractory-epilepsy-screening-tool-lennox-gastaut-syndrome-rest-lgs",
+  "slug": "refractory-epilepsy-screening-tool-lennox-gastaut-syndrome-rest-lgs",
+  "language": "fr",
+  "title": "Refractory Epilepsy dépistage Tool pour Lennox–Gastaut syndrome (REST-LGS)",
+  "short_title": "REST-LGS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Diagnostic"
+  ],
+  "specialties": [
+    "neurologie"
+  ],
+  "diseases": [
+    "Achalasia",
+    "Trouble convulsif"
+  ],
+  "chief_complaints": [
+    "Seizure"
+  ],
+  "abbreviations": [
+    "Refractory Epilepsy Screening Tool for Lennox–Gastaut Syndrome (REST-LGS), REST-LGS, lennox gastaut syndrome, lennox gastaut, lennox, lgs, rest"
+  ],
+  "dosing": false,
+  "formula": "**Évaluation du patient selon les critères suivants :**\n\nCritères majeurs :\n\n1.\n\n 1. ≥2 types de crises.\n 2. Début des crises avant l'âge de 12 ans.\n 3. Antécédent d'EEG avec décharges de pointes-ondes lentes (POL) généralisées (<2,5 Hz).\n 4. Trouble cognitif depuis l'enfance (peut inclure des difficultés d'apprentissage passées ou actuelles, un parcours en enseignement spécialisé, un autisme, une déficience intellectuelle ou des retards de développement).\n\nCritères mineurs :\n\n1.\n\n 1. Crises persistantes malgré l'essai de ≥2 médicaments antiépileptiques.\n 2. Antécédent de stimulateur du nerf vague (SNV), de régime cétogène ou de chirurgie de l'épilepsie.\n 3. Signes d'utilisation d'un casque de protection lié aux crises, ou de blessures de la tête ou du visage.\n 4. L'une des anomalies EEG suivantes : pointes multifocales, décharges généralisées symptomatiques, poly-pointes généralisées, périodes généralisées d'atténuation du tracé de fond/électrodécrément, ou activité rapide paroxystique.",
+  "how_to_use": {
+    "why": "- La SLG est fréquemment sous-reconnue, et un diagnostic formel peut être retardé jusqu'à 12–15 ans.\n- Cet outil simple et rapide aide à identifier les patients susceptibles de bénéficier d'une évaluation diagnostique complémentaire pour la SLG, accélérant potentiellement sa reconnaissance et l'instauration d'un traitement approprié.",
+    "when": "À utiliser chez les enfants ou les adultes présentant une épilepsie pharmacorésistante (échec de ≥2 médicaments antiépileptiques appropriés) chez qui un syndrome de Lennox-Gastaut (SLG) est une possibilité diagnostique.",
+    "pearls": "- La SLG est notoirement difficile à reconnaître ; ces critères ont été élaborés par consensus d'experts afin de fournir une orientation diagnostique pratique.\n- Comme les tracés EEG et les caractéristiques cliniques évoluent avec l'âge, le recours aux seuls critères EEG pédiatriques peut méconnaître les cas adultes ; l'ajout de critères majeurs et mineurs complémentaires peut améliorer la détection chez les patients plus âgés."
+  },
+  "next_steps": {
+    "advice": "- Cet outil ne fournit pas de diagnostic définitif de SLG ; interprétez toujours le score dans le contexte du jugement clinique, des antécédents du patient et d'un bilan neurologique complet, avec l'avis d'un spécialiste si nécessaire.\n- La SLG est un diagnostic clinique aux étiologies diverses ; les examens suivants peuvent aider à l'évaluation :\n\n - **EEG :** pour documenter les pointes-ondes lentes intercritiques caractéristiques ou une activité rapide paroxystique.\n - **IRM cérébrale :** pour identifier des anomalies structurales cérébrales.\n - **Tests génétiques, incluant panel de gènes de l'épilepsie et microréseaux chromosomiques :** pour détecter les variants pathogènes associés à la SLG.\n - **Bilan métabolique :** à envisager lorsque l'imagerie et les tests génétiques ne sont pas contributifs, afin de rechercher des troubles neurométaboliques.\n - **Orientation vers un centre spécialisé en épilepsie :** pour une évaluation spécialisée et une prise en charge multidisciplinaire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Remarque : l'étude originale indique seulement que « la majorité des patients avec un diagnostic confirmé de SLG remplissaient 3 critères majeurs et 2-3 critères mineurs ». Pour cette raison, cet outil fournit un « diagnostic probable » pour les utilisateurs qui saisissent au moins 3 critères majeurs et au moins 2 critères mineurs ([Piña-Garza 2019](https://www.epilepsybehavior.com/article/S1525-5050(18)30566-3/fulltext)).",
+  "short_description": "Diagnostic de SLG.",
+  "medium_description": "Provides diagnostic critères pour Lennox-Gastaut syndrome (LGS).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "seizure",
+      "label": "≥2 types de crises",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "onset",
+      "label": "Seizure onset before âge de 12 years",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eeg",
+      "label": "History de EEG avec generalized slow spike-et-wave (SSW) discharges (<2.5 Hz)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "impairment",
+      "label": "Trouble cognitif depuis l'enfance",
+      "tips": "Peut inclure des difficultés d'apprentissage passées ou actuelles, un parcours en enseignement spécialisé, un autisme, une déficience intellectuelle ou des retards de développement.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "medication",
+      "label": "Crises persistantes malgré l'essai de ≥2 médicaments antiépileptiques",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vns",
+      "label": "Antécédent de stimulateur du nerf vague (SNV), de régime cétogène ou de chirurgie de l'épilepsie",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "helmet",
+      "label": "Evidence de seizure-lié helmet use, ou head ou face injuries",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "abnormalities",
+      "label": "L'une des anomalies EEG suivantes : pointes multifocales, décharges généralisées symptomatiques, poly-pointes généralisées, périodes généralisées d'atténuation du tracé de fond/électrodécrément, ou activité rapide paroxystique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Piña-Garza JE, Boyce D, Tworek DM, et al. The refractory epilepsy screening tool for Lennox–Gastaut syndrome (Rest-lgs). Epilepsy Behav. 2019;90:148-153.",
+      "href": "https://www.epilepsybehavior.com/article/S1525-5050(18)30566-3/fulltext",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wolf SM, Boyce D, Peña P, et al. Real‑world use of the updated refractory epilepsy screening tool for Lennox‑Gastaut syndrome. Epilepsia Open. 2024;9(4):1277‑1286.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38726917/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-child-irritable-bowel-syndrome-ibs",
+    "calc.rome-iv-diagnostic-criteria-functional-anorectal-pain",
+    "calc.rome-iv-diagnostic-criteria-cannabinoid-hyperemesis-syndrome-chs"
+  ],
+  "source_logic_hash": "908a9291168cde6d2ba41ad5f5c0cef8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10390,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

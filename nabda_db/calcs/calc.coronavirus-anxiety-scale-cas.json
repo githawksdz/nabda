@@ -1,0 +1,246 @@
+{
+  "id": "calc.coronavirus-anxiety-scale-cas",
+  "slug": "coronavirus-anxiety-scale-cas",
+  "language": "fr",
+  "title": "Coronavirus anxiété échelle (CAS)",
+  "short_title": "Coronavirus anxiété échelle (CAS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Anxious",
+    "Dizziness",
+    "Nausea"
+  ],
+  "abbreviations": [
+    "Coronavirus Anxiety Scale (CAS), COVID-19, coronavirus, covid-19 anxiety scale, coronavirus anxiety scale, coronavirus anxiety, covid-19 anxiety, covid-19, anxiety scale, anxiety, CAS"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Demandez au patient de choisir la réponse qui décrit le mieux la façon dont il s'est senti et comporté au cours des 2 dernières semaines : | | |\n| Je me suis senti(e) étourdi(e), la tête légère ou sur le point de m'évanouir lorsque je lisais ou écoutais des nouvelles sur le coronavirus | Pas du tout | 0 |\n| Rarement, moins d'un jour ou deux | 1 | |\n| Plusieurs jours | 2 | |\n| Plus de 7 jours | 3 | |\n| Presque tous les jours au cours des 2 dernières semaines | 4 | |\n| J'ai eu du mal à m'endormir ou à rester endormi(e) parce que je pensais au coronavirus | Pas du tout | 0 |\n| Rarement, moins d'un jour ou deux | 1 | |\n| Plusieurs jours | 2 | |\n| Plus de 7 jours | 3 | |\n| Presque tous les jours au cours des 2 dernières semaines | 4 | |\n| Je me suis senti(e) paralysé(e) ou figé(e) lorsque je pensais à des informations sur le coronavirus ou que j'y étais exposé(e) | Pas du tout | 0 |\n| Rarement, moins d'un jour ou deux | 1 | |\n| Plusieurs jours | 2 | |\n| Plus de 7 jours | 3 | |\n| Presque tous les jours au cours des 2 dernières semaines | 4 | |\n| J'ai perdu l'intérêt de manger lorsque je pensais à des informations sur le coronavirus ou que j'y étais exposé(e) | Pas du tout | 0 |\n| Rarement, moins d'un jour ou deux | 1 | |\n| Plusieurs jours | 2 | |\n| Plus de 7 jours | 3 | |\n| Presque tous les jours au cours des 2 dernières semaines | 4 | |\n| J'ai eu des nausées ou des problèmes d'estomac lorsque je pensais à des informations sur le coronavirus ou que j'y étais exposé(e) | Pas du tout | 0 |\n| Rarement, moins d'un jour ou deux | 1 | |\n| Plusieurs jours | 2 | |\n| Plus de 7 jours | 3 | |\n| Presque tous les jours au cours des 2 dernières semaines | 4 | |",
+  "how_to_use": {
+    "why": "Conçu pour les cliniciens et les chercheurs afin d’identifier les personnes présentant une altération fonctionnelle liée à l’anxiété pandémique.",
+    "when": "À utiliser pour évaluer l’impact psychologique de la crise de COVID-19 chez les patients adultes, en particulier ceux présentant des symptômes de détresse.",
+    "pearls": "A démontré une sensibilité de 90 % et une spécificité de 85 % pour détecter une anxiété dysfonctionnelle liée à la pandémie de COVID-19 et a été validé dans des populations diverses."
+  },
+  "next_steps": {
+    "advice": "- Un score total élevé (≥9) ou des scores élevés sur des items spécifiques peuvent indiquer des symptômes d’anxiété significatifs liés au coronavirus justifiant une évaluation et/ou une intervention plus poussées, notamment :\n\n  - Orientation vers des services de",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nLes patients ayant un score ≥9 sont classés comme présentant une anxiété dysfonctionnelle (indice de Youden de 75) associée à la crise de la COVID-19 (sensibilité de 90 % et spécificité de 85 %).",
+  "short_description": "COVID-19 anxiété évaluation.",
+  "medium_description": "Assesses dysfunctional anxiété associé avec COVID-19 crisis.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "I felt dizzy, lightheaded, ou faint when I read ou listened pour news about coronavirus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Rare, moins d’un jour ou deux",
+          "value": 1
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 2
+        },
+        {
+          "label": "Plus de 7 jours",
+          "value": 3
+        },
+        {
+          "label": "Presque tous les jours au cours des 2 dernières semaines",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "J'ai eu des difficultés à m'endormir ou à rester endormi(e) parce que je pensais au coronavirus.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Rare, moins d’un jour ou deux",
+          "value": 1
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 2
+        },
+        {
+          "label": "Plus de 7 jours",
+          "value": 3
+        },
+        {
+          "label": "Presque tous les jours au cours des 2 dernières semaines",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "I felt paralyzed ou frozen when I thought about ou was exposed pour information about coronavirus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Rare, moins d’un jour ou deux",
+          "value": 1
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 2
+        },
+        {
+          "label": "Plus de 7 jours",
+          "value": 3
+        },
+        {
+          "label": "Presque tous les jours au cours des 2 dernières semaines",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "I lost interest dans eating when I thought about ou was exposed pour information about coronavirus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Rare, moins d’un jour ou deux",
+          "value": 1
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 2
+        },
+        {
+          "label": "Plus de 7 jours",
+          "value": 3
+        },
+        {
+          "label": "Presque tous les jours au cours des 2 dernières semaines",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "I felt nauseous ou had stomach problems when I thought about ou was exposed pour information about coronavirus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Rare, moins d’un jour ou deux",
+          "value": 1
+        },
+        {
+          "label": "Plusieurs jours",
+          "value": 2
+        },
+        {
+          "label": "Plus de 7 jours",
+          "value": 3
+        },
+        {
+          "label": "Presque tous les jours au cours des 2 dernières semaines",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lee SA. Coronavirus Anxiety Scale: A brief mental health screener for COVID-19 related anxiety. Death Stud. 2020;44(7):393-401.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32299304/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee SA. Coronavirus Anxiety Scale: A brief mental health screener for COVID-19 related anxiety. Death Stud. 2020;44(7):393-401.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32299304/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lieven T. Global validation of the Coronavirus Anxiety Scale (CAS). Curr Psychol. 2021;42:17384-17394.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34873385/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm",
+    "calc.4c-mortality-score-covid-19"
+  ],
+  "source_logic_hash": "98822253578583c19f029ea44d91ec9c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10306,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

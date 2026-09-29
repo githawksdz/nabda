@@ -1,0 +1,200 @@
+{
+  "id": "calc.duval-cibmtr-score-acute-myelogenous-leukemia-aml-survival",
+  "slug": "duval-cibmtr-score-acute-myelogenous-leukemia-aml-survival",
+  "language": "fr",
+  "title": "Duval/CIBMTR score pour aigu Myelogenous Leukemia (AML) survie",
+  "short_title": "Score de Duval/CIBMTR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Fever",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Duval Score",
+    "Hematopoietic stem cell transplant",
+    "Duval survival score",
+    " AML survival",
+    "Acute myelogenous leukemia score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | 0 Points | 1 Point | 2 Points |\n| --- | --- | --- | --- |\n| Disease group | Primary induction failure or duration of first complete remission >6 months | Duration of first complete remission <6 months | -- |\n| Cytogenetics prior to HSCT | Good or intermediate | Poor | -- |\n| HLA match group | HLA identical sibling or well matched or partially matched unrelated | Mismatched unrelated | Related other than HLA identical sibling |\n| Circulating blasts* | Absent | Present | -- |\n| Karnofsky or Lansky scale | 90-100 | <90 | -- |\n\n*At the time of transplant.",
+  "how_to_use": {
+    "why": "À utiliser pour décider entre une HSCT et un traitement complémentaire chez les patients atteints d’une maladie active en rechute ou réfractaire.",
+    "when": "- Patients atteints de leucémie aiguë myéloïde (AML) active en rechute ou réfractaire (c.-à-d. NON en rémission complète), chez qui une transplantation de cellules souches hématopoïétiques (HSCT) myéloablative est envisagée.\n- Ne pas utiliser chez les patients atteints de leucémie myéloïde chronique (CML) en crise blastique.",
+    "pearls": "- Seuls les schémas à base de busulfan et de TBI ont été étudiés dans la dérivation ; les schémas de conditionnement à intensité réduite (RIC) et à base de fludarabine ont été exclus.\n- Les greffes syngéniques et de sang de cordon n'ont pas non plus été incluses dans cette analyse."
+  },
+  "next_steps": {
+    "advice": "Les patients à haut risque dont la survie globale (OS) à 3 ans est de 6 % doivent être conseillés et, de préférence, orientés vers des essais cliniques de réduction du risque de rechute.",
+    "critical_actions": "Le risque doit être discuté avec le patient.",
+    "management": "HSCT should be considered in patients with scores ≤2 in the context of other available therapies, given their predicted OS of 15-46%."
+  },
+  "evidence": "The[original study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917308/pdf/zlj3730.pdf)was a retrospective analysis of Center for International Blood and Marrow Transplant Research (CIBMTR) data of 1,673 patients with relapsed or refractory AML from 221 centers. All patients had active disease at the time of transplant. Patient, disease, and HSCT characteristics were examined. Median follow-up was 61 months. Overall survival was examined, given the absence of post-transplant remission in some patients. The variables included in the final score were found to be predictors of overall survival in multivariate analysis. A separate prediction model for acute lymphoblastic leukemia (ALL) was also included.\n\nThis score was[validated](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3806246/pdf/leu2013208a.pdf)retrospectively using data from GITMO (Italian Group for Blood and Marrow Transplantation), in Italy including an analysis of patients undergoing RIC or cord blood transplant.",
+  "more_info": "Interprétation :\n\n| Score de Duval | Survie globale à 3 ans après transplantation |\n| --- | --- |\n| 0 | 42% |\n| 1 | 28% |\n| 2 | 15% |\n| ≥3 | 6% |\n\nD'après [Duval 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917308/pdf/zlj3730.pdf).",
+  "short_description": "Survie AML.",
+  "medium_description": "Predicts overall survie dans AML patients avec relapsed/refractory maladie undergoing myeloablative transplant.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "disease",
+      "label": "Groupe de maladies",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "primaire induction défaillance ou duration de first complete remission >6 months",
+          "value": 0
+        },
+        {
+          "label": "Durée de la première rémission complète < 6 mois",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cytogenetics",
+      "label": "Cytogenetics prior pour HSCT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Good ou intermédiaire",
+          "value": 0
+        },
+        {
+          "label": "Poor",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hla",
+      "label": "Groupe d'appariement HLA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "HLA identical sibling ou well matched ou partially matched unrelated",
+          "value": 0
+        },
+        {
+          "label": "Non apparenté non compatible",
+          "value": 1
+        },
+        {
+          "label": "lié other than HLA identical sibling",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blasts",
+      "label": "Blastes circulants",
+      "tips": "Au moment de la greffe",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "karnofsky",
+      "label": "[Karnofsky](nabda:calc.karnofsky-performance-status-scale) ou [Lanksy](nabda:calc.lansky-play-performance-scale-pediatric-functional-status) échelle",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "90-100",
+          "value": 0
+        },
+        {
+          "label": "< 90",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Duval M, Klein JP, He W, et al. Hematopoietic stem-cell transplantation for acute leukemia in relapse or primary induction failure. J Clin Oncol. 2010;28(23):3730-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2917308/pdf/zlj3730.pdf ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Armand P, Kim HT, Cutler CS, et al. A prognostic score for patients with acute leukemia or myelodysplastic syndromes undergoing allogeneic stem cell transplantation. Biol Blood Marrow Transplant. 2008;14(1):28-35.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2212610/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Sorror ML, Storer BE, Fathi AT, et al. Development and Validation of a Novel Acute Myeloid Leukemia-Composite Model to Estimate Risks of Mortality. JAMA Oncol. 2017;3(12):1675-1682. ",
+      "href": "https://jamanetwork.com/journals/jamaoncology/fullarticle/2652906",
+      "kind": "other"
+    },
+    {
+      "text": "Todisco E, Ciceri F, Oldani E, et al. The CIBMTR score predicts survival of AML patients undergoing allogeneic transplantation with active disease after a myeloablative or reduced intensity conditioning: a retrospective analysis of the Gruppo Italiano Trapianto Di Midollo Osseo. Leukemia. 2013;27(10):2086-91.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3806246/pdf/leu2013208a.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis",
+    "calc.international-prognostic-index-chronic-lymphocytic-leukemia-cll-ipi",
+    "calc.hematopoietic-cell-transplantation-specific-comorbidity-index-hct-ci"
+  ],
+  "source_logic_hash": "65ae19b46d3bc96c9cc9e74a801d9772",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10040,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.busulfan",
+    "s.fludarabine"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

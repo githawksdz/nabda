@@ -1,0 +1,237 @@
+{
+  "id": "calc.prediction-survival-ecmo-therapy-preset-score",
+  "slug": "prediction-survival-ecmo-therapy-preset-score",
+  "language": "fr",
+  "title": "Prédiction de survie sur ECMO Therapy (PRESET) score",
+  "short_title": "Score PRESET",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "PRESET Score",
+    "preset",
+    "PREdiction of Survival on ECMO Therapy (PRESET) Score",
+    "ecmo",
+    "ards",
+    "acute respiratory distress syndrome",
+    "ecmo survival",
+    "ecmo mortality",
+    "coronaivirus",
+    "corona virus",
+    "covid-19",
+    "covid 19",
+    "covid19"
+  ],
+  "dosing": false,
+  "formula": "Le score PRESET est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Pression artérielle moyenne, mmHg | >100 | 0 |\n| 91-100 | 1 | |\n| 81-90 | 2 | |\n| 71-80 | 3 | |\n| ≤70 | 4 | |\n| Concentration de lactates, mmol/L | ≤1,50 | 0 |\n| 1,51-3,00 | 1 | |\n| 3,01-6,00 | 2 | |\n| 6,01-10,00 | 3 | |\n| >10,00 | 4 | |\n| pH a | >7,300 | 0 |\n| 7,201-7,300 | 1 | |\n| 7,101-7,200 | 2 | |\n| ≤7,100 | 3 | |\n| Concentration plaquettaire, x 1000 cellules/μl | >200 | 0 |\n| 101-200 | 1 | |\n| ≤100 | 2 | |\n| Jours d'hospitalisation avant ECMO | ≤2 | 0 |\n| 3-7 | 1 | |\n| >7 | 2 | |",
+  "how_to_use": {
+    "why": "- Offre une approche structurée et fondée sur les preuves pour estimer le risque de mortalité chez les candidats à l'ECMO et aide à orienter les discussions sur le pronostic.\n- Facilite des décisions de triage plus standardisées et une allocation des ressources plus homogène.\n- Contrairement à de nombreux scores de risque similaires en ECMO, cet outil repose exclusivement sur des variables extrapulmonaires pour son évaluation du risque.",
+    "when": "Envisager son utilisation chez les patients en état critique atteints de syndrome de détresse respiratoire aiguë (SDRA) candidats à une ECMO veino-veineuse, afin d'aider à évaluer leur probabilité de survie sous ECMO.",
+    "pearls": "- Dérivé des données de 108 patients adultes atteints de SDRA sous ECMO veino-veineuse (tous avec un système d'ECMO identique) dans un centre unique ; son application à d'autres groupes de patients ou à des systèmes d'ECMO différents peut affecter la précision.\n- Dans l'étude de dérivation, cet outil a surpassé plusieurs scores similaires (p. ex. ECMOnet, [score RESP](nabda:calc.resp-respiratory-ecmo-survival-prediction-score), score PRESERVE, score de Roch) dans la prédiction de la mortalité.\n- Fait intéressant, les variables respiratoires n'ont pas été retrouvées comme prédictives de la survie lors du développement de ce score.\n- Cet outil fournit une estimation de la survie hospitalière et ne traite ni de la survie à long terme, ni de la qualité de vie, ni du handicap."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats de cet outil en conjonction avec d'autres paramètres cliniques et l'expertise de spécialistes — aucun score pris isolément ne doit être le seul déterminant de la candidature à l'ECMO.\n- Intégrer les résultats dans la planification du traitement par ECMO si le patient est par ailleurs un candidat approprié, et engager des discussions sur les objectifs de soins incluant les limitations thérapeutiques, les interventions de sauvetage alternatives et les options de soins palliatifs.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PRESET | Classe de risque | Mortalité en réanimation |\n| --- | --- | --- |\n| 0-5 | Classe I | 26 % |\n| 6-9 | Classe II | 68 % |\n| 10-15 | Classe III | 93 % |\n\nD'après [Hilder 2017](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728043/).",
+  "short_description": "Survie after ECMO pour ARDS.",
+  "medium_description": "Predicts survie after ECMO pour aigu respiratory distress syndrome.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Pression artérielle moyenne, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">100",
+          "value": 0
+        },
+        {
+          "label": "91-100",
+          "value": 1
+        },
+        {
+          "label": "81-90",
+          "value": 2
+        },
+        {
+          "label": "71-80",
+          "value": 3
+        },
+        {
+          "label": "≤70",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Concentration de lactates, mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤1.50",
+          "value": 0
+        },
+        {
+          "label": "1.51-3.00",
+          "value": 1
+        },
+        {
+          "label": "3.01-6.00",
+          "value": 2
+        },
+        {
+          "label": "6.01-10.00",
+          "value": 3
+        },
+        {
+          "label": ">10.00",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "PH~~",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">7.300",
+          "value": 0
+        },
+        {
+          "label": "7.201-7.300",
+          "value": 1
+        },
+        {
+          "label": "7.101-7.200",
+          "value": 2
+        },
+        {
+          "label": "≤7.100",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Concentration plaquettaire, x 1000 cellules/μl",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">200",
+          "value": 0
+        },
+        {
+          "label": "101-200",
+          "value": 1
+        },
+        {
+          "label": "≤100",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "Hôpital days pre-ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤2",
+          "value": 0
+        },
+        {
+          "label": "3-7",
+          "value": 1
+        },
+        {
+          "label": ">7",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hilder M, Herbstreit F, Adamzik M, et al. Comparison of mortality prediction models in acute respiratory distress syndrome undergoing extracorporeal membrane oxygenation and development of a novel prediction score: the PREdiction of Survival on ECMO Therapy-Score (PRESET-Score). Crit Care. 2017;21(1):301.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5728043/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Huespe IA, Lockhart C, Kashyap R, et al. Evaluation of the discrimination and calibration of predictive scores of mortality in ECMO for patients with COVID-19. Artif Organs. Published online December 29, 2022.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36582133/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.resp-respiratory-ecmo-survival-prediction-score",
+    "calc.murray-score-acute-lung-injury",
+    "calc.lung-injury-prediction-score-lips"
+  ],
+  "source_logic_hash": "b1fe3979106b79f121529d2eda02977d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.resp-respiratory-ecmo-survival-prediction-score",
+      "text": "RESP Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10282,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactate"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

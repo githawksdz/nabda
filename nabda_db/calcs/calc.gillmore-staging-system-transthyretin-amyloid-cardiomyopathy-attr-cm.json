@@ -1,0 +1,161 @@
+{
+  "id": "calc.gillmore-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+  "slug": "gillmore-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+  "language": "en",
+  "title": "Gillmore Staging System pour Transthyretin Amyloid Cardiomyopathy (ATTR-CM)",
+  "short_title": "Gillmore Staging System pour ATTR-CM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque",
+    "Cardiomyopathy",
+    "Amyloidosis"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Dyspnea",
+    "Œdème des extrémités",
+    "Fatigue",
+    "Palpitations",
+    "Dyspnée",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Gillmore Staging System for Transthyretin Amyloid Cardiomyopathy (ATTR-CM)",
+    "Gillmore Staging System for ATTR-CM",
+    "Transthyretin Amyloid Cardiomyopathy",
+    "ATTR-CM",
+    "cardiac amyloidosis",
+    "transthyretin",
+    "amyloidosis",
+    "ATTRc",
+    "ATTRwt",
+    "TTR",
+    "amyloid",
+    "cardiomyopathy",
+    "ATTR amyloidosis"
+  ],
+  "dosing": false,
+  "formula": "The Gillmore Staging System for ATTR-CM is determined by the following definition:\n\n| Stage | Definition |\n| --- | --- |\n| I | NT-proBNP ≤3000 pg/mL and eGFR ≥45 mL/min/1.73 m 2 |\n| II | NT-proBNP ≤3000 pg/mL and eGFR <45 mL/min/1.73 m 2 ; NT-proBNP >3000 pg/mL and eGFR ≥45 mL/min/1.73 m 2 |\n| III | NT-proBNP >3000 pg/mL and eGFR <45 ml/min/1.73 m 2 |",
+  "how_to_use": {
+    "why": "- Fournit des informations pronostiques concernant les résultats de survie sur la base de paramètres biologiques.\n- Peut éclairer les discussions sur les objectifs de soins et les décisions thérapeutiques, y compris l’orientation vers des thérapies avancées.\n- Peut être utilisé pour stratifier les patients dans les essais cliniques selon la gravité de leur maladie.\n- Comparé à des outils similaires, il peut avoir une meilleure discrimination du pronostic des patients.",
+    "when": "Utiliser ce système de stadification lors de l’évaluation des patients ayant un diagnostic confirmé de cardiomyopathie amyloïde à transthyrétine (ATTR-CM) de type sauvage ou de variante héréditaire.",
+    "pearls": "- Initialement développé alors que les traitements spécifiques de la maladie étaient encore en essais cliniques. L’avènement et l’évolution de ces traitements pour l’ATTR-CM peuvent affecter la précision pronostique de l’outil.\n- Applicable exclusivement aux patients atteints d’ATTR-CM ; ne convient pas aux autres formes d’amylose cardiaque ou de cardiomyopathies."
+  },
+  "next_steps": {
+    "advice": "La stadification et le pronostic estimé doivent être utilisés dans le cadre d’une évaluation globale pour faciliter les discussions sur la survie globale, les décisions thérapeutiques et la probabilité de réponse au traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Stade | Survie médiane |\n| --- | --- |\n| I | 69,2 mois |\n| II | 46,7 mois |\n| III | 24,1 mois |",
+  "short_description": "Classification pronostique de l’ATTR-CM.",
+  "medium_description": "Classifies pronostic de patients avec transthyretin amyloid cardiomyopathy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "nt_probnp",
+      "label": "NT-proBNP",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤3000 pg/mL",
+          "value": 0
+        },
+        {
+          "label": ">3000 pg/mL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "egfr",
+      "label": "EGFR",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥45 mL/min/1.73 m²",
+          "value": 0
+        },
+        {
+          "label": "< 45 mL/min/1.73 m²",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kittleson MM, Maurer MS, Ambardekar AV, et al. Cardiac amyloidosis: evolving diagnosis and management: a scientific statement from the american heart association. Circulation. 2020;142(1).",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32476490/",
+      "kind": "international"
+    },
+    {
+      "text": "Garcia-Pavia P, Rapezzi C, Adler Y, et al. Diagnosis and treatment of cardiac amyloidosis: a position statement of the esc working group on myocardial and pericardial diseases. European Heart Journal. 2021;42(16):1554-1568.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33825853/",
+      "kind": "international"
+    },
+    {
+      "text": "Kittleson MM, Ruberg FL, Ambardekar AV, et al. 2023 acc expert consensus decision pathway on comprehensive multidisciplinary care for the patient with cardiac amyloidosis. Journal of the American College of Cardiology. 2023;81(11):1076-1126.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36697326/",
+      "kind": "international"
+    },
+    {
+      "text": "Arbelo E, Protonotarios A, Gimeno JR, et al. 2023 ESC Guidelines for the management of cardiomyopathies. European Heart Journal. 2023;44(37):3503-3626.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37622657/",
+      "kind": "international"
+    },
+    {
+      "text": "Brito D, Albrecht FC, de Arenaza DP, et al. World heart federation consensus on transthyretin amyloidosis cardiomyopathy(Attr-cm). Global Heart. 2023;18(1):59.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37901600/",
+      "kind": "international"
+    },
+    {
+      "text": "Gillmore JD, Damy T, Fontana M, et al. A new staging system for cardiac transthyretin amyloidosis. European Heart Journal. 2018;39(30):2799-2806.d",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29048471/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cappelli F, Martone R, Gabriele M, et al. Biomarkers and prediction of prognosis in transthyretin-related cardiac amyloidosis: direct comparison of two staging systems. Canadian Journal of Cardiology. 2020;36(3):424-431.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32145869/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.grogan-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+    "calc.precision-medicine-cardiomyopathy-primacy-score",
+    "calc.hcm-risk-scd"
+  ],
+  "source_logic_hash": "2418f656be1e38300c324cc7b73c4859",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10558,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,169 @@
+{
+  "id": "calc.serum-osmolality-osmolarity",
+  "slug": "serum-osmolality-osmolarity",
+  "language": "en",
+  "title": "Osmolalité/Osmolarité sériques",
+  "short_title": "Osmolalité sérique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "medecine-interne",
+    "nephrologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Ingestion/Surdosage"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Intoxication / Surdosage",
+    "Vomissements",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "toxicology",
+    "gap",
+    "anion gap",
+    "ag",
+    "osmolar gap"
+  ],
+  "dosing": false,
+  "formula": "**Équation traditionnelle :**\n\nOsmolarité sérique, unités US = 2×Na + (BUN / 2,8) + (glucose / 18) + (éthanol / 4,6)\n\n**[Équation de Purssell et al](https://www.sciencedirect.com/science/article/pii/S0196064401166667) :**\n\nOsmolarité sérique, unités US = 2×Na + (BUN / 2,8) + (glucose / 18) + (éthanol / 3,7)\n\n*Remarque :* la plage affichée dans le calculateur utilise les équations ci-dessus.\n\n**Équation du trou osmolaire :**\n\nTrou osmolaire = osm sérique mesurée - osm sérique calculée\n\n*Remarque :* le trou osmolaire affiché dans le calculateur utilise l'équation de Pursell et al.",
+  "how_to_use": {
+    "why": "",
+    "when": "Un trou osmolaire/osmolal (différence entre la valeur mesurée et la valeur attendue) >10 peut être causé par des alcools toxiques (p. ex., éthanol, méthanol, éthylène glycol, alcool isopropylique*), le mannitol et les perfusions de lorazépam (qui contiennent du propylène glycol).\n\n*L’alcool isopropylique provoque un trou osmolaire important mais ne provoque pas d’acidose métabolique à trou anionique.",
+    "pearls": "At extremes of serum glucose, such as in hyperosmolar hyperglycemic state (HHS), osmolar gap is skewed, and clinical judgment should be used to make decisions regarding correction.\n\n**Notes on osmolality versus osmolarity:**\n\n- Osmolality and osmolarity are often used interchangeably in medical practice.\n- Both relate to solution concentration, but:\n\n - **Osmolality** is defined as the number of solute particles per *kilogram* of solvent (in this case, body fluid).\n - **Osmolarity** is defined as the number of solute particles per *liter* of solution.\n - Osmolarity is affected by temperature and pressure (due to volume changes), while osmolality is not (mass remains constant).\n - **Serum osmolality is what is measured by an osmometer.**\n- In dilute solutions like blood plasma, 1 kg of water is approximately equal to 1 L.\n- Therefore, the numerical values of osmolality and osmolarity are nearly identical, making the terms functionally interchangeable in clinical contexts.\n\n**Notes on osmolar versus osmolal gap:**\n\n- **Osmolar gap** is the difference between the measured osmolality and the *calculated osmolarity* .\n- **Osmolal gap** is the difference between measured and *calculated osmolality* .\n- Since solute concentrations (e.g., sodium, glucose, BUN) are typically measured in mEq or mg (or mmol) per dL or L (i.e., volume), we typically **calculate the expected osmolarity** .\n- Thus, in clinical practice, **osmolar gap is the standard term used** ."
+  },
+  "next_steps": {
+    "advice": "Methanol and ethylene glycol ingestions are treated by blocking alcohol dehydrogenase with fomepizol or ethanol, and often sodium bicarbonate if severely acidotic.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Dépistages des alcools toxiques et plus encore.",
+  "medium_description": "Calculates expected serum osmolarity, pour comparison pour measured osmolality pour detect unmeasured compounds dans serum.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "Azote uréique sanguin (BUN)",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "glucose",
+      "label": "Glycémie",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ethanol",
+      "label": "Alcoolémie sérique",
+      "tips": "Facultatif ; à renseigner si mesuré pour une estimation plus précise",
+      "optional": true,
+      "unit": "etoh",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "measured_serum",
+      "label": "Osmolalité sérique mesurée",
+      "tips": "La valeur normale est de 285 mmol/kg",
+      "optional": true,
+      "unit": "osm",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Purssell RA, Pudek M, Brubacher J, Abu-Laban RB.Derivation and validation of a formula to calculate the contribution of ethanol to the osmolal gap.Ann Emerg Med 2001;38 (6): 653–9.doi:10.1067/mem.2001.119455. PMID 11719745.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0196064401166667",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Glasser L, et. al. Serum Osmolality and its applicability to drug overdose. Am. J. Clin. Path. 1973; 60:695.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4751712",
+      "kind": "other"
+    },
+    {
+      "text": "Siervo M, Bunn D, Prado CM, Hooper L. Accuracy of prediction equations for serum osmolarity in frail older people with and without diabetes. The American Journal of Clinical Nutrition 2014;100(3):867-876. doi:10.3945/ajcn.114.086769.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4135495/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.urine-anion-gap",
+    "calc.winters-formula-metabolic-acidosis-compensation",
+    "calc.gap-index-idiopathic-pulmonary-fibrosis-ipf-mortality"
+  ],
+  "source_logic_hash": "e3fa68286d97c70e77c3effdbde4bcf2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 91,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar sodium = parseFloat(sodium);\nvar bun = parseFloat(bun);\nvar glucose = parseFloat(glucose);\nvar ethanol = parseFloat(ethanol);\nif (UOMSYSTEM == false) {\n  //sodium is 1:1 conversion, does not need UOM conversion\n  bun = bun / 0.357;\n  glucose = glucose / 0.0555;\n  ethanol = ethanol / 0.217;\n}\n\nif (ethanol) {\n\n  var va = 2 * (sodium) + (bun / 2.8) + (glucose / 18) + (ethanol / 4.6);\n  var vb = 2 * (sodium) + (bun / 2.8) + (glucose / 18) + (ethanol / 3.7);\n\n  if (UOMSYSTEM == false) {\n    var v = '~' + va.toFixed();\n  } else {\n\n    var v = va.toFixed(0).toString() + '-' + vb.toFixed(0).toString();\n  }\n\n} else {\n  var v = 2 * (sodium) + (bun / 2.8) + (glucose / 18);\n  v = v.toFixed(0);\n  va = v;\n}\n\ncalc_output.push({\n  name: 'mini',\n  value: v,\n  value_text: 'mOsm/kg' + ' Calculated Serum Osm',\n  message: 'Normal serum osmolality = 285-295 mOsm/kg'\n});\ncalc_output.push({\n  name: '91_Serum Osmolality_result (osm)',\n  value: v,\n  value_text: 'mOsm/kg' + ' Calculated Serum Osm',\n  message: 'Normal serum osmolality = 285-295 mOsm/kg'\n});\nif (measured_serum) {\n  var diff = parseFloat(measured_serum) - va;\n  if (ethanol) {\n   diff = parseFloat(measured_serum) - vb; \n  }\n  var msg = 'Normal Serum Osm Gap (Measured-Calculated) is -14 to +10.';\n  if (diff > 25) {\n    msg =\n      'This is a significant Osm Gap; if there is also an anion gap acidosis, you should strongly consider methanol or ethylene glycol intoxication.<br/><br/>Other causes of Osmolal Gap include other alcohols (acetone, isopropyl alcohol, polyethylene or propylene glycol), sugars (mannitol, sorbitol), lipids (hypertriglyceridemia) or proteins (hypergammaglobulinemia).';\n  }\n  calc_output.push({\n    name: '91_Serum Osmolality_result (gap)',\n    value: diff.toFixed(1),\n    value_text: 'mOsm/kg' + ' Osm Gap',\n    message: msg\n  });\n}",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Roy Purssell"
+  ],
+  "measurement_ids": [
+    "Sodium",
+    "BUN",
+    "Glucose"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.ethanol",
+    "s.glucose",
+    "s.glucose-2",
+    "s.chlorhexidine-ethanol",
+    "s.ethanol-povidone-iodee",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-electrolytes-solution-alcaline-a",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "engine_sha256": "0b543524d6b1977f5193c6512dbf965f7a1b19bfb3d658894f3672fdfdb8d3ab"
+}

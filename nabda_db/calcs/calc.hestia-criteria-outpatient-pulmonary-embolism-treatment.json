@@ -1,0 +1,359 @@
+{
+  "id": "calc.hestia-criteria-outpatient-pulmonary-embolism-treatment",
+  "slug": "hestia-criteria-outpatient-pulmonary-embolism-treatment",
+  "language": "en",
+  "title": "Hestia critères pour ambulatoire embolie pulmonaire traitement",
+  "short_title": "Critères Hestia",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "VTE",
+    "DVT",
+    "PE",
+    "hestia",
+    "outpt",
+    "outpatient",
+    "tx",
+    "treatment",
+    "clot",
+    "venous thromboembolism",
+    "pulmonary embolism",
+    "pulmonary embolus"
+  ],
+  "dosing": false,
+  "formula": "If ≥1 present, patient is not eligible for outpatient management by Hestia Criteria.\n\n| Hestia Criteria |\n| --- |\n| Hemodynamically unstable* |\n| Thrombolysis or embolectomy needed |\n| Active bleeding or high risk for bleeding** |\n| >24 hrs on supplemental oxygen required to maintain SaO 2 >90% |\n| PE diagnosed while on anticoagulation |\n| Severe pain needing IV pain medication required >24 hr |\n| Medical or social reason for admission >24 hr (infection, malignancy, no support system) |\n| Creatinine clearance <30 mL/min by Cockcroft-Gault formula |\n| Severe liver impairment*** |\n| Pregnant |\n| Documented history of heparin-induced thrombocytopenia (HIT) |\n\n*sBP <100 mmHg and HR >100, needing ICU care, or by clinician judgment.\n\n**GI bleeding or surgery within 2 weeks, stroke within 1 month, bleeding disorder or thrombocytopenia (platelet count <75 × 10^9^/L), uncontrolled HTN (sBP >180 or dBP >110), or by clinician judgment.\n\n***By clinician judgment.",
+  "how_to_use": {
+    "why": "- Trie en toute sécurité les patients pour une prise en charge ambulatoire.\n- Facilement applicable en milieu clinique, au chevet du patient.\n- Associé à :\n\n - Une réduction de la durée de séjour et des coûts plus faibles.\n - Moins de complications intra-hospitalières.",
+    "when": "Use in hemodynamically stable patients with acute pulmonary embolism (PE).",
+    "pearls": "- Acute PE is associated with potentially life-threatening complications in the short term; therefore, careful risk stratification must be used when attempting to identify candidates for outpatient management.\n\n- Not all patients deemed low-risk will have acute life threatening complications, and not all necessitate inpatient management; this tool only helps identify those who are low risk, and does not necessarily predict those who are high risk."
+  },
+  "next_steps": {
+    "advice": "Patients identified as candidates for outpatient management:\n\n- Must be counseled about risks of outpatient treatment and should be given close return precautions.\n- Should remain in the hospital if there is any evidence of hemodynamic instability.\n- Should be counseled on risks of bleeding once started on direct oral anticoagulant (DOAC) therapy.",
+    "critical_actions": "- Ne s'applique ***pas*** aux patients présentant une instabilité hémodynamique ou chez qui une prise en charge ambulatoire n'est pas envisagée.\n- Si une prise en charge ambulatoire est envisagée pour le patient, cet outil peut être utilisé pour aider à justifier d'éviter une hospitalisation.\n- Aucune règle de décision ne doit primer sur le jugement clinique.",
+    "management": "Inpatient:\n\n- Follow hospital guidelines for anticoagulation management.\n- Heparin drip or enoxaparin with bridging to warfarin.\n- Serial PT/PTT.\n- Telemetry and monitoring.\n\nOutpatient:Treatment with a DOAC."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Hestia Criteria | Risk |\n| --- | --- |\n| 0 points | Low (0% mortality, 2% VTE recurrence) |\n| >0 points | Not low |",
+  "short_description": "Identifies faible-risque PE patients.",
+  "medium_description": "Identifies faible-risque PE patients safe pour ambulatoire traitement.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "unstable",
+      "label": "Instabilité hémodynamique",
+      "tips": "sBP <100 mmHg and HR >100, needing ICU care, or by clinician judgment",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thrombolysis",
+      "label": "Thrombolyse ou embolectomie nécessaire",
+      "tips": "Pour des raisons autres que l'instabilité hémodynamique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "activebleeding",
+      "label": "Saignement actif ou risque élevé de saignement",
+      "tips": "GI bleeding or surgery ≤2 weeks ago, stroke ≤1 month ago, bleeding disorder or platelet count <75 × 10⁹/L, uncontrolled HTN (sBP >180 or dBP >110), or by clinician judgment",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "oxygen",
+      "label": ">24 hrs sur supplemental oxygen requis pour maintain SaO₂ >90%",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anticoagulant",
+      "label": "EP diagnostiquée sous anticoagulation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "painmeds",
+      "label": "Severe douleur needing IV douleur medication requis >24 hr",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "medicalsocial",
+      "label": "Medical ou social reason pour admission >24 hr (infection, malignancy, no support system)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "crcl",
+      "label": "Creatinine clearance <30 mL/min par [Cockcroft-Gault](nabda:calc.creatinine-clearance-cockcroft-gault-equation)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "liver",
+      "label": "Insuffisance hépatique sévère",
+      "tips": "Selon le jugement du clinicien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "preg",
+      "label": "Pregnant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hit",
+      "label": "Antécédents documentés de thrombopénie induite par l'héparine (HIT)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (Ers). Eur Heart J. 2020;41(4):543-603. doi:10.1093/eurheartj/ehz405",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31504429/&sa=D&source=docs&ust=1778114791843676&usg=AOvVaw3b6SpY5SiKEXfpE8fp-Bgy",
+      "kind": "international"
+    },
+    {
+      "text": "Writing Committee Members, Creager MA, Barnes GD, et al. 2026 aha/acc/accp/acep/chest/scai/shm/sir/svm/svn guideline for the evaluation and management of acute pulmonary embolism in adults: a report of the american college of cardiology/american heart association joint committee on clinical practice guidelines. Circulation. 2026;153(12):e977-e1051. doi:10.1161/CIR.0000000000001415",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/&sa=D&source=docs&ust=1778114791843752&usg=AOvVaw0ZwyNlUNmQhEyKJeCgKDQZ",
+      "kind": "international"
+    },
+    {
+      "text": "Zondag W, Mos IC, Creemers-schild D, et al. Outpatient treatment in patients with acute pulmonary embolism: the Hestia Study. J Thromb Haemost. 2011;9(8):1500-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21645235",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zondag W, den Exter PL, Crobach MJ, et al. Comparison of two methods for selection of out of hospital treatment in patients with acute pulmonary embolism. Thromb Haemost. 2013;109(1):47-52.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23138355/",
+      "kind": "other"
+    },
+    {
+      "text": "Agterof MJ, Schutgens RE, Snijder RJ, et al. Out of hospital treatment of acute pulmonary embolism in patients with a low NT-proBNP level. J Thromb Haemost. 2010;8(6):1235-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20230418",
+      "kind": "other"
+    },
+    {
+      "text": "Wang Y, Feng Y, Du R, Yang X, Huang J, Mao H. Prognostic Performance of Hestia Criteria in Acute Pulmonary Embolism: A Systematic Review and Meta-Analysis. Clinical and Applied Thrombosis/Hemostasis. 2022 Sep;28:10760296221126173.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36128845/",
+      "kind": "other"
+    },
+    {
+      "text": "Palas M, Silva BV, Jorge C, Almeida AG, Pinto FJ, Caldeira D. The accuracy of Hestia and simplified PESI to predict the prognosis in pulmonary embolism: systematic review with meta-analysis. TH Open. 2022 Oct;6(04):e347-53.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36452203/",
+      "kind": "other"
+    },
+    {
+      "text": "Zondag W, Vingerhoets LM, Durian MF, et al. Hestia criteria can safely select patients with pulmonary embolism for outpatient treatment irrespective of right ventricular function. J Thromb Haemost. 2013;11(4):686-92.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1111/jth.12146/full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Beam DM, Kahler ZP, Kline JA. Immediate discharge and home treatment with rivaroxaban of low risk venous thromboembolism diagnosed in two U.S. emergency departments: a one-year preplanned analysis. Acad Emerg Med 2015;22:789–95.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26113241",
+      "kind": "pubmed"
+    },
+    {
+      "text": "den Exter PL, Zondag W, Klok FA, et al. Efficacy and Safety of Outpatient Treatment Based on the Hestia Clinical Decision Rule with or without N-Terminal Pro-Brain Natriuretic Peptide Testing in Patients with Acute Pulmonary Embolism. A Randomized Clinical Trial. Am J Respir Crit Care Med. 2016;194(8):998-1006.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27030891",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Weeda ER, Kohn CG, Peacock WF, et al. External Validation of the Hestia Criteria for Identifying Acute Pulmonary Embolism Patients at Low Risk of Early Mortality. Clin Appl Thromb Hemost. 2016;:1076029616651147.",
+      "href": "https://journals.sagepub.com/doi/abs/10.1177/1076029616651147 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-pesi-pulmonary-embolism-severity-index",
+    "calc.improve-bleeding-risk-score",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "c7d6d71257e37cf465b3b481388ce3e1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3918,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar u = parseFloat(unstable) + parseFloat(thrombolysis) + parseFloat(activebleeding) + parseFloat(oxygen) + parseFloat(anticoagulant) + parseFloat(painmeds) + parseFloat(medicalsocial) + parseFloat(crcl) + parseFloat(liver) + parseFloat(preg) + parseFloat(hit);\nvar msg, mini_msg, risk;\nif (u < 1) { mini_msg = \"Outpatient treatment\";\n    msg = \"Patient eligible for outpatient treatment (0% mortality, 2% VTE recurrence).\";\n    risk = 'Low'\n} else { mini_msg = \"Inpatient treatment\";\n    msg = \"Patient <u>not</u> eligible for outpatient treatment per the Hestia Criteria, which recommends admission and inpatient treatment.\";\n    risk = 'Not low'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3918_Hestia Criteria_result',\n    value: u,\n    value_text: 'points',\n    message: 'Hestia Criteria'\n});\ncalc_output.push({\n    name: '3918_Hestia Criteria_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "abbas-husain-md",
+    "daniel-mcfarland-md"
+  ],
+  "creator_names": [
+    "Dr. Menno Huisman"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "354acc7afba45888e7e3464eee4e0b8626d1dd7b8eb3fa8104fb91e2c96a8a17"
+}

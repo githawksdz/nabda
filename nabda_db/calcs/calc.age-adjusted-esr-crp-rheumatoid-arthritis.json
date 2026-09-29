@@ -1,0 +1,119 @@
+{
+  "id": "calc.age-adjusted-esr-crp-rheumatoid-arthritis",
+  "slug": "age-adjusted-esr-crp-rheumatoid-arthritis",
+  "language": "fr",
+  "title": "Âge-Adjusted ESR/CRP pour Rheumatoid Arthritis",
+  "short_title": "Âge-Adjusted ESR/CRP pour RA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Erythrocyte sedimentation rate",
+    "c-reactive protein values",
+    "ESR",
+    "CRP",
+    "age adjustment",
+    "age-adjustment",
+    "rheumatoid arthritis"
+  ],
+  "dosing": false,
+  "formula": "**Homme :**\n\nLimite supérieure de la normale de la VS, mm/h = âge / 2\n\nLimite supérieure de la normale de la CRP, mg/dL = âge / 50\n\n**Femme :**\n\nLimite supérieure de la normale de la VS, mm/h = (âge + 10) / 2\n\nLimite supérieure de la normale de la CRP, mg/dL = (âge / 50) + 0,6",
+  "how_to_use": {
+    "why": "Les valeurs ajustées selon l’âge tiennent compte de l’augmentation physiologique des protéines de la phase aiguë avec l’âge, ce qui réduit les faux positifs ainsi que les diagnostics et traitements inutiles chez les patients âgés.",
+    "when": "- À utiliser lors de la mesure de la vitesse de sédimentation érythrocytaire (ESR) et des taux de protéine C-réactive (CRP) en milieu clinique, en particulier pour évaluer l’activité de la maladie dans la polyarthrite rhumatoïde (RA).\n- Peut être utilisé dans l’évaluation diagnostique et la surveillance d’autres affections inflammatoires.",
+    "pearls": "Outre l'âge et le sexe, les protéines de la phase aiguë peuvent être influencées par divers autres facteurs, notamment l'anémie, la grossesse, la maladie rénale et certains médicaments. Ces facteurs doivent être pris en compte lors de l'interprétation des résultats."
+  },
+  "next_steps": {
+    "advice": "- Always consider the clinical presentation and other diagnostic findings alongside ESR and CRP levels.\n- Use in conjunction with other tests to differentiate between types of inflammatory and non-inflammatory conditions.\n- Elevated ESR and CRP are not diagnostic on their own and can be elevated in a variety of conditions, including infections, malignancies, and autoimmune diseases.\n- If elevated, initiate or escalate investigations to identify the underlying cause, such as imaging studies or specific autoimmune panels.\n- In chronic inflammatory conditions, results may be used to monitor disease activity and guide management, which can include modifying or initiating anti-inflammatory or immunosuppressive therapies.\n- Schedule regular follow-ups to monitor ESR and CRP trends, adjusting treatment plans as necessary.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Calcul ajusté de l'ESR/CRP.",
+  "medium_description": "Calculates âge-adjusted ESR et CRP dans adulte patients avec rheumatoid arthritis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Wener MH, Daum PR, McQuillan GM. The influence of age, sex, and race on the upper reference limit of serum C-reactive protein concentration. J Rheumatol. 2000;27(10):2351-2359.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11036829/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Miller A, Green M, Robinson D. Simple rule for calculating normal erythrocyte sedimentation rate. Br Med J (Clin Res Ed). 1983;286(6361):266.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1546487/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ranganath VK, Elashoff DA, Khanna D, et al. Age adjustment corrects for apparent differences in erythrocyte sedimentation rate and C-reactive protein values at the onset of seropositive rheumatoid arthritis in younger and older patients. J Rheumatol. 2005;32(6):1040-2.",
+      "href": "https://www.jrheum.org/content/32/6/1040.tab-article-info",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+    "calc.disease-activity-score-28-rheumatoid-arthritis-esr-das28-esr",
+    "calc.simple-disease-activity-index-sdai-rheumatoid-arthritis"
+  ],
+  "source_logic_hash": "9565c9ba0bb1cc3ecf5fd2245c265ea3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10049,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

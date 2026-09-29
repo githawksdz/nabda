@@ -1,0 +1,124 @@
+{
+  "id": "calc.asymptomatic-myeloma-prognosis",
+  "slug": "asymptomatic-myeloma-prognosis",
+  "language": "en",
+  "title": "Pronostic du myélome asymptomatique",
+  "short_title": "Pronostic du myélome asymptomatique",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne",
+    "Myélome multiple"
+  ],
+  "chief_complaints": [
+    "Douleur des extrémités",
+    "Cervicalgie",
+    "Pain",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "mm",
+    "multiple myeloma",
+    "myeloma",
+    "smoldering myeloma",
+    "asymptomatic myeloma",
+    "prognosis"
+  ],
+  "dosing": false,
+  "formula": "**Risque élevé**\n\n- Plasmocytose médullaire (BM) ≥10% ET\n- Protéine monoclonale sérique ≥3 g/dL\n\n**Risque intermédiaire**\n\n- Plasmocytose médullaire (BM) ≥10% ET\n- Protéine monoclonale sérique <3 g/dL\n\n**Risque faible**\n\n- Plasmocytose médullaire (BM) <10% ET\n- Protéine monoclonale sérique ≥3 g/dL",
+  "how_to_use": {
+    "why": "- Fournit des informations pronostiques pour les patients.\n- Permet d’identifier les patients susceptibles de nécessiter un suivi plus rapproché.\n- Permet la stratification des patients dans les essais cliniques évaluant potentiellement des thérapies ciblées plus récentes contre le myélome.\n- Ne nécessite pas d’études FISH, d’analyses cytogénétiques ni d’études osseuses par IRM, qui peuvent apporter une discrimination supplémentaire mais ne sont pas largement disponibles ; par conséquent, la généralisabilité est préservée dans les contextes où la disponibilité de ces études est limitée.",
+    "when": "Newly diagnosed multiple myeloma (MM) patients meeting International Myeloma Working Group criteria for smoldering or asymptomatic MM (see[Pearls/Pitfalls](#pearls-pitfalls)for criteria).",
+    "pearls": "The Asymptomatic Myeloma Prognosis calculator classifies smoldering multiple myeloma (MM) patients into 3 prognostic groups, with differing risks of progression to active MM or amyloidosis.\n\nThe criteria developed by the International Myeloma Working Group for diagnosis of smoldering multiple myeloma (SMM, or asymptomatic MM) are:\n\n1. Serum monoclonal protein ≥3 g/dL OR\n2. Plasma cells in bone marrow (BM) ≥ 10% AND\n3. No evidence of end-organ damage (no anemia, bone lesions, renal dysfunction, hypercalcemia, or recurrent bacterial infections)\n\nPrognosis and risk for progression to MM are quite variable.\n\nOverall progression risk was 10%/year for the first five years, 3%/yr for the next five years, then 1%/year for the next ten years. Cumulative risk for progression was 73% at 15 years."
+  },
+  "next_steps": {
+    "advice": "Patients with smoldering or asymptomatic MM are currently observed. However, clinical trials should be sought for appropriate patients given the rapid progress in development of novel active agents.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "The Mayo Clinic analyzed 3,549 patients with myeloma referred between 1970 and 1995. 276 (8%) fulfilled criteria for smoldering multiple myeloma (SMM).\n\nPatients’ bone marrows, labs and longitudinal records were reviewed. The end point was progression to active myeloma or amyloidosis requiring therapy.\n\n**Pertinent outcomes:**\n\n1. 85% of SMM patients died, median follow up 11.6 years.\n2. 57% developed active MM, with median survival after of 3.4 years.\n3. Cumulative probability of progression 51% at 5 years, 66% at 10 years, and 73% at 15 years.\n4. Risk of progression was 10% per year for the first 5 years, 3% per year for next 5 years, then 1% per year for the next 10 years.",
+  "more_info": "| | Risk of progression | Median time to progression | | |\n| --- | --- | --- | --- | --- |\n| At 5 years | At 10 years | At 15 years | | |\n| High risk | 69% | 77% | 87% | 27 months (~2 years) |\n| Intermediate risk | 43% | 64% | 70% | 93 months (~8 years) |\n| Low risk | 15% | 33% | 39% | 228 months (~19 years) |",
+  "short_description": "Predicts risque de progression pour active myeloma ou amyloidosis.",
+  "medium_description": "Predicts risque de progression de asymptomatic (smoldering) multiple myeloma pour active myeloma ou amyloidosis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bmp",
+      "label": "Plasmocytose médullaire",
+      "tips": "Pourcentage moyen à partir de l’aspiration médullaire et de la biopsie ostéomédullaire",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥10%",
+          "value": 0
+        },
+        {
+          "label": "< 10%",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smp",
+      "label": "Protéine monoclonale sérique, g/dL",
+      "tips": "À l’électrophorèse des protéines sériques",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥3",
+          "value": 0
+        },
+        {
+          "label": "< 3",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kyle RA, Remstein ED, Therneau TM, Dispenzieri A, Kurtin PJ, Hodnefield JM, Larson DR, Plevak MF, Jelinek DF, Fonseca R, Melton LJ 3rd, Rajkumar SV. Clinical course and prognosis of smoldering (asymptomatic) multiple myeloma. N Engl J Med. 2007 Jun 21;356(25):2582-90. PMID:17582068.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17582068",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kastritis E, Terpos E, et al. Validation of the Novel Criteria for the Definition of Symptomatic Myeloma: A Single Center Experience in 216 Patients with the Previous Diagnosis of Asymptomatic Disease. Blood 2015 126:4251",
+      "href": "https://www.bloodjournal.org/content/126/23/4251",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-multiple-myeloma-international-staging-system-r-iss",
+    "calc.impede-vte",
+    "calc.multiple-myeloma-response-criteria"
+  ],
+  "source_logic_hash": "186068ec002b5bcbb6823d34db9e33f5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3929,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

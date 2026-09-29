@@ -1,0 +1,225 @@
+{
+  "id": "calc.lace-index-readmission",
+  "slug": "lace-index-readmission",
+  "language": "en",
+  "title": "LACE index pour Readmission",
+  "short_title": "Index LACE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Admission",
+    "discharge",
+    "readmission",
+    "hf",
+    "death"
+  ],
+  "dosing": false,
+  "formula": "| Attribut | Valeur | Points |\n| --- | --- | --- |\n| L : Durée du séjour (jours) | <1 1 2 3 4-6 7-13 ≥14 | 0 1 2 3 4 5 7 |\n| A : Admission aiguë (urgente) | Oui Non | 3 0 |\n| C : [Indice de comorbidité de Charlson](nabda:calc.charlson-comorbidity-index-cci\\) | 0 1 2 3 ≥4 | 0 1 2 3 5 |\n| E : Visites au service des urgences au cours des 6 mois précédents (non comprise la visite aux urgences de l'admission actuelle) | 1 2 3 ≥4 | 1 2 3 4 |\n\nDans cette étude, l'indice de comorbidité de Charlson a été calculé en additionnant les points comme suit :\n\n1 point\n\n- Antécédents d'infarctus du myocarde.\n- Artériopathie périphérique.\n- Maladie cérébrovasculaire.\n- Diabète sans complications.\n\n2 points\n\n- Insuffisance cardiaque congestive.\n- Bronchopneumopathie chronique obstructive.\n- Hépatopathie légère ou cancer.\n\n3 points\n\n- Démence.\n- Connectivite (maladie du tissu conjonctif).\n\n4 points\n\n- Hépatopathie modérée à sévère.\n- Infection par le VIH.\n\n6 points\n\n- Cancer métastatique.\n\nD'après[Walraven et al 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/pdf/1820551.pdf).",
+  "how_to_use": {
+    "why": "- Peut identifier les patients susceptibles de bénéficier de soins infirmiers après la sortie.\n- Prédit les taux de réadmission, certaines études identifiant le nombre de visites au service des urgences (ED) à 6 mois, qui est une composante du LACE, comme principal prédicteur de réadmission.\n- Présente une capacité discriminante similaire à celle d'autres scores tels que le score HOSPITAL et 8Ps.",
+    "when": "Patients adultes admis dans des services de médecine ou de chirurgie.",
+    "pearls": "- Length of stay cannot be factored in until day of discharge, thus limiting real-time use.\n- Note that mean age of study participants was 61 years in the derivation LACE study.\n- Validated for use in congestive heart failure patients.\n- The LACE was externally validated in 1,000,000 Ontarians in the[original publication](https://www.cmaj.ca/content/182/6/551/T3), and has since been tested in several external populations ([Spiva 2016](https://www.ncbi.nlm.nih.gov/pubmed/26042747),[Low 2016](https://www.ncbi.nlm.nih.gov/pubmed/27936053),[Low 2017](https://www.ncbi.nlm.nih.gov/pubmed/28390405),[Shaffer 2019](https://www.ncbi.nlm.nih.gov/pubmed/31055196)).\n- A more detailed version of LACE ([LACE+](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3659212/)) has been created with increased discrimination.\n- A modified version of the Charlson Comorbidity Index, excluding age, was used based on[Schneeweiss 2003](https://www.ncbi.nlm.nih.gov/pubmed/12968819)."
+  },
+  "next_steps": {
+    "advice": "- Envisager des visites après la sortie pour la réconciliation médicamenteuse et la vérification de l'observance chez les patients atteints d'insuffisance cardiaque ayant des scores LACE élevés.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "In the seminal research by[Walraven, Stiell and colleagues](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/%22%20target=%22_blank%22%3EVan%20Walraven%20C,%20Dhalla%20IA,%20Bell%20C,%20et%20al.%20Derivation%20and%20validation%20of%20an%20index%20to%20predict%20early%20death%20or%20unplanned%20readmission%20after%20discharge%20from%20hospital%20to%20the%20community.%20CMAJ%E2%80%AF:%20Canadian%20Medical%20Association%20Journal.%202010;182(6):551-557.%20doi:10.1503/cmaj.091117.%3C/a%3E)on 4812 patients in Ontario, a split-sample design was used to derive and validate the LACE Index to predict the risk of death or nonelective readmission within 30 days after discharge.\n\nThis was externally validated using administrative data in a separate random selection of 1,000,000 Ontarians discharged from hospital. They found that 8% of the patients died or were readmitted within 30 days and that the LACE Index was very accurate at predicting this outcome.\n\nIn a retrospective study by[Wang et al](https://www.ncbi.nlm.nih.gov/pubmed/25099997), of 253 patients presenting with CHF exacerbation, 24.5% were readmitted within 30 days of discharge. The LACE Index was only slightly higher in those admitted versus not admitted (12.17 ± 2.22 vs. 11.80 ± 1.92, p = 0.199). Patients with high LACE Indices (≥10) did have significantly higher rates of readmission (15% vs. 0%) compared with those with low LACE Indices.",
+  "more_info": "**Interprétation du score :**\n\n| Score de l’indice LACE | Risque |\n| --- | --- |\n| 0-4 points | Faible |\n| 5-9 points | Modéré |\n| >9 points | Élevé |",
+  "short_description": "Prédit la réadmission ou le décès à 30 jours.",
+  "medium_description": "Predicts 30-day readmission ou death dans patients sur medicine et surgery wards.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "L",
+      "label": "Durée de séjour (jours)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4-6",
+          "value": 4
+        },
+        {
+          "label": "7-13",
+          "value": 5
+        },
+        {
+          "label": "≥14",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "A",
+      "label": "Admission aiguë (urgente)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "C",
+      "label": "[Indice de comorbidité de Charlson](nabda:calc.charlson-comorbidity-index-cci)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 points",
+          "value": 0
+        },
+        {
+          "label": "1 point",
+          "value": 1
+        },
+        {
+          "label": "2 points",
+          "value": 2
+        },
+        {
+          "label": "3 points",
+          "value": 3
+        },
+        {
+          "label": "≥ 4 points",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "E",
+      "label": "Nombre de passages aux urgences au cours des 6 derniers mois",
+      "tips": "Sans compter le passage aux urgences de l'admission actuelle",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "≥4",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Van Walraven C, Dhalla IA, Bell C, et al. Derivation and validation of an index to predict early death or unplanned readmission after discharge from hospital to the community. CMAJ : Canadian Medical Association Journal. 2010;182(6):551-557. doi:10.1503/cmaj.091117.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2845681/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ben-Chetrit E, Chen-Shuali C, Zimran E, Munter G, Nesher G. A simplified scoring tool for prediction of readmission in elderly patients hospitalized in internal medicine departments. Isr Med Assoc J. 2012 Dec;14(12):752-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23393714",
+      "kind": "other"
+    },
+    {
+      "text": "Basoor, A., Doshi, N. C., Cotant, J. F., Saleh, T., Todorov, M., Choksi, N., Patel, K. C., DeGregorio, M., Mehta, R. H. and Halabi, A. R. (2013), Decreased Readmissions and Improved Quality of Care With the Use of an Inexpensive Checklist in Heart Failure. Congest Heart Fail, 19: 200–206.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23910702",
+      "kind": "other"
+    },
+    {
+      "text": "Maeda JL. Evidence-Based Heart Failure Performance Measures and Clinical Outcomes: A Systematic Review. Journal of Cardiac Failure , Volume 16 , Issue 5 , 411 - 418",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20447578",
+      "kind": "other"
+    },
+    {
+      "text": "Wang H, Robinson RD, Johnson C, Zenarosa NR, Jayswal RD, Keithley J, Delaney KA. Using the LACE index to predict hospital readmissions in congestive heart failure patients. BMC Cardiovasc Disord. 2014 Aug 7;14:97.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25099997",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gruneir A, Dhalla IA, van Walraven C, Fischer HD, Camacho X, Rochon PA, Anderson GM. Unplanned readmissions after hospital discharge among patients identified as being at high risk for readmission using a validated predictive algorithm. Open Med. 2011;5(2):e104-11.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3148002/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure",
+    "calc.acute-decompensated-heart-failure-national-registry-adhere-algorithm",
+    "calc.seattle-heart-failure-model",
+    "calc.charlson-comorbidity-index-cci"
+  ],
+  "source_logic_hash": "b9355afa7170da3bc8a014779154656b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.charlson-comorbidity-index-cci",
+      "text": "Charlson Comorbidity Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3805,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

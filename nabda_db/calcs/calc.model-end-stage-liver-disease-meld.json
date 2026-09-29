@@ -1,0 +1,295 @@
+{
+  "id": "calc.model-end-stage-liver-disease-meld",
+  "slug": "model-end-stage-liver-disease-meld",
+  "language": "en",
+  "title": "Modèle pour End-Stage Liver maladie (Combined MELD)",
+  "short_title": "MELD combiné",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "gastroenterologie",
+    "hepatologie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hépatite"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Ictère",
+    "Perte d'appétit",
+    "Nausée",
+    "Gonflement",
+    "Vomissements"
+  ],
+  "abbreviations": [
+    "Model for End-Stage Liver Disease (MELD)",
+    "Model for End-Stage Liver Disease (Combined MELD)",
+    "combined meld",
+    "meld",
+    "meld 3",
+    "meld 3.0",
+    "end stage liver disease",
+    "liver disease",
+    "end-stage liver disease",
+    "liver disease survival",
+    "transplant",
+    "liver transplant",
+    "MELD Score (Pre-2016)",
+    "MELD original",
+    "MELD Na (UNOS/OPTN)",
+    "MELD Na",
+    "MELD UNOS/OPTN",
+    "unos",
+    "optn",
+    "MELD 30"
+  ],
+  "dosing": false,
+  "formula": "**MELD (Original, Pre-2016)** = (0.957*ln(Serum creatinine) + 0.378*ln(Serum bilirubin) + 1.120*ln(INR) + 0.643)*10\n\n(if hemodialysis, value for Creatinine is automatically set to 4.0)\n\nNote: If any score is <1, the MELD assumes the score is equal to 1.\n\n**MELD Na (UNOS/OPTN):**\n\nPer OPTN policy, January 2016 (pages 4–5):\n\nCandidates who are at least 12 years old receive an initial MELD(i) score equal to:\n\nMELD(i) = 0.957*ln(Creatinine) + 0.378*ln(Bilirubin) + 1.120*ln(INR) + 0.643\n\nThen, round to the tenth decimal place and multiply by 10.\n\nIf MELD(i) > 11, perform additional MELD calculation as follows:\n\nMELD = MELD(i) + 1.32*(137 – Na) – [0.033*MELD(i)*(137 – Na)]\n\n**MELD 3.0:**\n\nCandidates who are at least 18 years old at the time of registration receive an initial MELD score equal to\n\nMELD 3.0= 1.33*(Female) + 4.56*ln(Serum bilirubin) + 0.82*(137 - Sodium) – 0.24*(137 - Sodium)*ln(Serum bilirubin) + 9.09*ln(INR) + 11.14*ln(Serum creatinine) + 1.85*(3.5 – Serum albumin) – 1.83*(3.5 – Serum albumin)*ln(Serum creatinine) + 6\n\nCandidates who are currently at least 12 years old and were less than 18 years old at the time of registration receive a MELD score equal to:\n\nMELD 3.0= 4.56*ln(Serum bilirubin) + 0.82*(137 - Sodium) – 0.24*(137 - Sodium)*ln(Serum bilirubin) + 9.09*ln(INR) + 11.14*ln(Serum creatinine) + 1.85*(3.5 – Serum albumin) – 1.83*(3.5 – Serum albumin)*ln(Serum creatinine) + 7.33\n\n- Serum bilirubin, INR, and serum creatinine values below 1.0 are set to 1.0.\n- Sodium is limited to a range of 125-137 mEq/L, and if outside of these bounds, is set to the nearest limit.\n- Serum albumin is limited to a range of 1.5-3.5 g/dL, and if outside of these bounds, is set to the nearest limit.\n- The following candidates receive a creatinine value of 3.0 mg/dL:\n- The MELD 3.0 score is rounded to the nearest integer.",
+  "how_to_use": {
+    "why": "- Le MELD est le score standard utilisé par l'Organ Procurement and Transplantation Network (OPTN) et détermine quels patients sont prioritaires pour recevoir une greffe de foie aux États-Unis.\n- Il a été largement étudié et validé.\n- L'OPTN a mis à jour son modèle MELD recommandé vers le MELD 3.0 en juin 2022.",
+    "when": "- Détermine le pronostic et établit la priorité pour l’accès à la transplantation hépatique.\n- Si vous utilisez MELD 3.0, utilisez les éléments suivants pour guider la sélection des critères :\n\n - Pour les patients âgés de 12 à 18 ans, sélectionnez les critères « <18 ».\n - Pour les patients âgés de plus de 18 ans, sélectionnez les critères « ≥18 ».\n- Pour les patients de moins de 12 ans, utilisez le score [PELD Cr](nabda:calc.peld-cr).",
+    "pearls": "- Values should be no more than 48 hours old.\n- MELD can be used on any patient with end stage liver disease irrespective of cirrhosis etiology.\n- Higher scores correlate with increased severity of liver dysfunction and higher three-month mortality.\n- While it is mathematically possible to have a calculated MELD score >40, OPTN accepts a maximum submitted score of 40 for liver transplantation."
+  },
+  "next_steps": {
+    "advice": "- The MELD Score helps to estimate prognosis for patients with end-stage liver disease, and is used to prioritize transplant recipients.\n- Consider referral to hepatologist or liver transplant center for patients with elevated MELD score.\n- MELD Score should be periodically reassessed, as it changes with changing lab values.\n- OPTN considers a maximum score of 40 when assessing transplant appropriateness.\n- If in the United States, refer to the Organ Procurement and Transplantation Network for the latest[policies](https://optn.transplant.hrsa.gov/policies-bylaws/policies/)on liver transplant.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n**MELD (Original, Pre-2016) and MELD Na (UNOS/OPTN)**\n\n| MELD Score | Mortality |\n| --- | --- |\n| ≤9 | 1.9% |\n| 10–19 | 6.0% |\n| 20–29 | 19.6% |\n| 30–39 | 52.6% |\n| ≥40 | 71.3% |\n\nMore Info:[OPTN/UNOS Documentation on MELD and PELD](https://optn.transplant.hrsa.gov/media/1575/policynotice_20151101.pdf)\n\n**MELD 3.0**\n\nEstimated 90-day survival = 0.946^exp(0.17698*MELD 3.0 – 3.56)^* 100",
+  "short_description": "Modèles MELD pour la planification de la transplantation hépatique.",
+  "medium_description": "Offers multiple versions de MELD pour liver transplant planning.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "equation",
+      "label": "Équation",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Score MELD (version originale, pré-2016)",
+          "value": 0
+        },
+        {
+          "label": "MELD Na (version antérieure UNOS/OPTN)",
+          "value": 1
+        },
+        {
+          "label": "MELD 3.0 (actuellement recommandé par l'OPTN)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dialysis",
+      "label": "Dialyse au moins deux fois au cours de la semaine écoulée",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "equation == 0 || equation == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_lt",
+      "label": "Âge ajouté pour la liste d'attente de transplantation hépatique, années",
+      "tips": "Pour les candidats qui ne figurent pas encore sur la liste d'attente, sélectionner en fonction de l'âge des candidats à la date du jour.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "equation == 2",
+      "options": [
+        {
+          "label": "< 18",
+          "value": 0
+        },
+        {
+          "label": "≥18",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "equation == 2 && age_lt == 1",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Créatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": "equation == 0 || equation == 1 || equation == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": "equation == 0 || equation == 1 || equation == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": "equation == 0 || equation == 1 || equation == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": "equation == 1 || equation == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumine",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": "equation == 2"
+    },
+    {
+      "type": "toggle",
+      "name": "dialysis2",
+      "label": "Had dialysis twice, ou 24 hours ofCVVHD, within week prior pour créatinine sérique test",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "equation == 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kamath PS, Wiesner RH, Malinchoc M, Kremers W, Therneau TM, Kosberg CL, D'Amico G, Dickson ER, Kim WR. A model to predict survival in patients with end-stage liver disease. Hepatology. 2001 Feb;33(2):464-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11172350",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kim WR, Mannalithara A, Heimbach JK, et al. Meld 3. 0: the model for end-stage liver disease updated for the modern era. Gastroenterology. 2021;161(6):1887-1895.e4.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34481845/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kremers WK, van IJperen M, Kim WR, Freeman RB, Harper AM, Kamath PS, Wiesner RH. MELD score as a predictor of pretransplant and posttransplant survival in OPTN/UNOS status 1 patients.Hepatology. 2004 Mar;39(3):764-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14999695",
+      "kind": "other"
+    },
+    {
+      "text": "Kamath PS, Kim WR; Advanced Liver Disease Study Group. The model for end-stage liver disease (MELD). Hepatology. 2007 Mar;45(3):797-805.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17326206",
+      "kind": "other"
+    },
+    {
+      "text": "OPTN 2016 MELD Policy Changes",
+      "href": "https://optn.transplant.hrsa.gov/news/meld-serum-sodium-policy-changes/",
+      "kind": "other"
+    },
+    {
+      "text": "Freeman RB Jr, Gish RG, Harper A, Davis GL, Vierling J, Lieblein L, Klintmalm G, Blazek J, Hunter R, Punch J. Model for end-stage liver disease (MELD) exception guidelines: results and recommendations from the MELD Exception Study Group and Conference (MESSAGE) for the approval of patients who need liver transplantation with diseases not considered by the standard MELD formula.Liver Transpl. 2006;12(12 Suppl 3):S128.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17123284",
+      "kind": "other"
+    },
+    {
+      "text": "Trivedi HD. The evolution of the meld score and its implications in liver transplant allocation: a beginner’s guide for trainees. ACG Case Rep J. 2022;9(5):e00763.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35919673/",
+      "kind": "other"
+    },
+    {
+      "text": "Wiesner R, United Network for Organ Sharing Liver Disease Severity Score Committee, et al. Model for end-stage liver disease (MELD) and allocation of donor livers.Gastroenterology. 2003 Jan;124(1):91-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12512033",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.peld-cr"
+  ],
+  "source_logic_hash": "780d4e9230a47b4a4d53aebe087823b9",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.peld-cr",
+      "text": "PELD Cr"
+    },
+    {
+      "type": "calc",
+      "id": "calc.peld-cr",
+      "text": "PELD Cr"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10437,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar equation = parseFloat(equation);\n\nif (equation == 0) {\n    var inr = (parseFloat(inr) < 1) ? 1 : parseFloat(inr);\n    var bili = parseFloat(bilirubin);\n    var cr = parseFloat(creatinine);\n\n    if (UOMSYSTEM == true) {\n        bili = bili;\n        cr = cr;\n        if (bili < 1) { bili = 1; }\n        if (cr < 1) { cr = 1; }\n    }\n    if (UOMSYSTEM == false) {\n        bili = bili / 17.104;\n        cr = cr / 88.4; // these are now converted to US units, so now do a check to make sure they're not <1, otherwise set to 1 \n        if (bili < 1) { bili = 1; }\n        if (cr < 1) { cr = 1; }\n    }\n\n    cr = (dialysis == 1 || cr > 4) ? 4 : cr;\n\n    var value = 10 * ((.378 * Math.log(bili)) + (1.12 * Math.log(inr)) + (.957 * Math.log(cr)) + .643);\n    value = value.toFixed(0);\n\n    var mort;\n    \n    if (value < 6) { \n        value = 6; \n    }\n\n    if (value <= 9) { \n        mort = 1.9; \n    } else if (value <= 19) { \n        mort = 6.0; \n    } else if (value <= 29) { \n        mort = 19.6; \n    } else if (value <= 39) { \n        mort = 52.6; \n    } else if (value >= 40) { \n        mort = 71.3; \n    }\n    \n    calc_output.push({ \n        name: 'mini', \n        value: value, \n        value_text: 'points', \n        message: mort + '% estimated 3-month mortality' \n    });\n    calc_output.push({ \n        name: 'Original MELD Score', \n        value: value, \n        value_text: 'points', \n        message: 'MELD Score (Original, Pre-2016)' \n    });\n    calc_output.push({ \n        name: 'Original MELD Mortality', \n        value: mort, \n        value_text: '%', \n        message: 'Estimated 3-month mortality' \n    });\n} else if (equation == 1) {\n    var inr = (parseFloat(inr) < 1) ? 1 : parseFloat(inr);\n    var na = parseFloat(sodium);\n\n    if (UOMSYSTEM == true) {\n        var bili = parseFloat(bilirubin);\n        var cr = parseFloat(creatinine);\n\n        if (bili < 1) {\n            bili = 1;\n        }\n        if (cr < 1) {\n            cr = 1;\n        }\n    }\n\n    if (UOMSYSTEM == false) {\n        var bili = parseFloat(bilirubin) / 17.104;\n        var cr = parseFloat(creatinine) / 88.4;\n\n  // these are now converted to US units, so now do a check to make sure they're not <1, otherwise set to 1\n\n        if (bili < 1) {\n            bili = 1;\n        }\n        if (cr < 1) {\n            cr = 1;\n        } \n    }\n\n// correct for extremes of na\n    if (na < 125) {\n        na = 125\n    }   \n    else if (na > 137) {\n        na = 137\n    }\n    else {\n        na = na\n    }\n\n// correct for dialysis or high cr\n    if (dialysis == 1 || cr > 4) {\n        cr = 4\n    }\n    else {\n        cr = cr\n    }   \n// var meld_i = 10 * ((.378 * Math.log(bili)) + (1.12 * Math.log(inr)) + (.957 *\n//   Math.log(cr)) + .643);\n    var meld_i = (.957 * Math.log(cr)) + (.378 * Math.log(bili)) + (1.12 * Math.log(inr)) + .643;\n    meld_i = 10 * meld_i.toFixed(1)\n\n\n    var meldnew;\n\n    if (meld_i <= 11) {\n        if (meld_i < 6) {\n            meldnew = 6;\n        }\n        else {\n            meldnew = meld_i\n        }\n    }\n    if (meld_i > 11) {\n        if (meld_i >= 40) {\n            var meldnew = 40\n        } else {\n            var nadiff = 137 - na;\n            meldnew = meld_i + (1.32 * nadiff) - (0.033 * meld_i * nadiff);\n        }\n    } \n\n    if (meldnew >= 40) {\n        meldnew = 40\n    }\n\n    var mort;\n    if (meldnew.toFixed(0) <= 9) {\n        mort = 1.9;\n    } else if (meldnew.toFixed(0) >= 10 && meldnew.toFixed(0) < 20) {\n        mort = 6.0;\n    } else if (meldnew.toFixed(0) >= 20 && meldnew.toFixed(0) < 30) {\n        mort = 19.6;\n    } else if (meldnew.toFixed(0) >= 30 && meldnew.toFixed(0) < 40) {\n        mort = 52.6;\n    } else if (meldnew.toFixed(0) >= 40) {\n        mort = 71.3;\n    }\n\n    calc_output.push({\n        name: 'mini',\n        value: meldnew.toFixed(0),\n        value_text: 'points',\n        message: mort + '% estimated 3-month mortality'\n    });\n    calc_output.push({\n        name: 'MELD Score',\n        value: meldnew.toFixed(0),\n        value_text: 'points',\n        message: 'MELD Na (UNOS/OPTN)'\n    });\n    calc_output.push({\n        name: 'MELD Mortality',\n        value: mort,\n        value_text: '%',\n        message: 'Estimated 3-month mortality'\n    });\n} else if (equation == 2) {\n    var inr = parseFloat(inr);\n    var sex = parseFloat(sex);\n    var sodium = parseFloat(sodium);\n    var dialysis2 = parseFloat(dialysis2);\n    var age_lt = parseFloat(age_lt);\n\n    if (UOMSYSTEM == true) {\n        var creatinine = parseFloat(creatinine);\n        var bilirubin = parseFloat(bilirubin);\n        var albumin = parseFloat(albumin);\n    }\n\n    if (UOMSYSTEM == false) { // convert to US units\n        var creatinine = parseFloat(creatinine)/88.4;\n        var bilirubin = parseFloat(bilirubin)/17.104;\n        var albumin = parseFloat(albumin)/10;\n    }\n\n    if (bilirubin < 1) {\n        bilirubin = 1;\n    }\n    if (inr < 1) {\n        inr = 1;\n    }\n    if (creatinine < 1) {\n        creatinine = 1;\n    }\n    if (creatinine > 3 || dialysis2 == 1) {\n        creatinine = 3;\n    }\n    if (sodium < 125) {\n        sodium = 125;\n    }\n    if (sodium > 137) {\n        sodium = 137;\n    }\n    if (albumin < 1.5) {\n        albumin = 1.5;\n    }\n    if (albumin > 3.5) {\n        albumin = 3.5;\n    }\n\n    var score;\n    if (age_lt == 0) {\n        score = 4.56*Math.log(bilirubin) + 0.82*(137-sodium) - 0.24*(137-sodium)*Math.log(bilirubin) + 9.09*Math.log(inr) + 11.14*Math.log(creatinine) + 1.85*(3.5-albumin) - 1.83*(3.5-albumin)*Math.log(creatinine) + 7.33;\n        score = score.toFixed(0);\n    } else {\n        score = 1.33*sex + 4.56*Math.log(bilirubin) + 0.82*(137-sodium) - 0.24*(137-sodium)*Math.log(bilirubin) + 9.09*Math.log(inr) + 11.14*Math.log(creatinine) + 1.85*(3.5-albumin) - 1.83*(3.5-albumin)*Math.log(creatinine) + 6;\n        score = score.toFixed(0);\n    }\n    var survival = Math.pow(0.946, Math.exp(0.17698*score - 3.56)) * 100\n\n    calc_output.push({\n        name: 'mini',\n        value: score,\n        value_text: 'points',\n        message: survival.toFixed(1) + '% estimated 90-day survival'\n    });\n    calc_output.push({\n        name: 'MELD 3.0',\n        value: score,\n        value_text: 'points',\n        message: 'MELD 3.0'\n    });\n    calc_output.push({\n        name: 'Survival',\n        value: survival.toFixed(1),\n        value_text: '%',\n        message: 'Estimated 90-day survival'\n    });\n}",
+  "before_use": "Sur cette page, vous trouverez le score MELD original (avant 2016), le MELD Na (anciennement standard UNOS/OPTN) et le MELD 3.0. Le MELD 3.0 est le calcul standard actuel pour l’évaluation en vue d’une transplantation d’organe aux États-Unis et tient mieux compte des disparités dans l’attribution des organes selon le sexe.",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Patrick S. Kamath",
+    "Dr. W. Ray Kim"
+  ],
+  "measurement_ids": [
+    "Creatinine",
+    "Bilirubin",
+    "Total Bilirubin",
+    "INR",
+    "Sodium",
+    "Albumin"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "28df3bb0be0030b6bcc68ca9cec06a25c29d22df6392781c87d3464abcc73068"
+}

@@ -1,0 +1,298 @@
+{
+  "id": "calc.wells-criteria-pulmonary-embolism",
+  "slug": "wells-criteria-pulmonary-embolism",
+  "language": "en",
+  "title": "Critères de Wells pour l'embolie pulmonaire",
+  "short_title": "Score de Wells pour l'EP (embolie pulmonaire)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "well's",
+    "wells",
+    "pe",
+    "pulmonary embolism",
+    "pre-test",
+    "PE pre-test",
+    "pre-test probability"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "- The Wells’ Criteria has been validated multiple times in multiple clinical settings.\n- Physicians have a low threshold to test for pulmonary embolism.\n- The score is simple to use and provides clear cutoffs for the predicted probability of pulmonary embolism.\n- The score aids in potentially reducing further testing including radiologic imaging in low-risk PE patients.",
+    "when": "- Stratifie le risque d'embolie pulmonaire (EP) chez les patients et fournit une probabilité pré-test estimée chez les patients chez qui une EP est suspectée.\n- Le médecin peut ensuite choisir les examens complémentaires nécessaires au diagnostic d'embolie pulmonaire (c.-à-d. D-dimères, scintigraphie V/Q ou angio-TDM).",
+    "pearls": "- Risk stratifies patients for pulmonary embolism (PE), and has been validated in both inpatient and emergency department settings; the score is often used in conjunction with D-dimer testing to evaluate for PE.\n- There must first be a clinical suspicion for PE in the patient (this should not be applied to all patients with chest pain or shortness of breath, for example).\n- Can be used with either 3 tiers (low, moderate, high) or 2 tiers (unlikely, likely). We recommend the two tier model as this is supported by[ACEP’s 2018 Acute Venous Thromboembolic Disease / VTE policy](https://www.annemergmed.com/article/S0196-0644(18)30224-5/fulltext)(See[Next Steps](#next-steps)).\n- Often criticized for having a “subjective” criterion in it (“PE #1 diagnosis or equally likely”).\n- Not intended to diagnose PE but to guide workup by predicting pre-test probability of PE and appropriate testing to rule out the diagnosis."
+  },
+  "next_steps": {
+    "advice": "- Some advocate using the Wells’ Criteria over clinician gestalt to predict who is low-risk and then applying the [PERC rule](nabda:calc.perc-rule-pulmonary-embolism) to stop workup for PE.\n- As with all clinical decision aids, the physician must first have a suspicion of the diagnosis before attempting to apply these criteria.\n- The original intent of this tool was to determine who was low risk enough to rule out testing with a D-dimer.\n- Age adjusted D-dimer cutoffs have been validated for use in patients over 50 years in low risk patients ( [rGeneva](nabda:calc.geneva-score-revised-pulmonary-embolism) “not high” or Wells’ \"low\" risk); if using the appropriate D-dimer assay, consider calculating the [age adjusted D-dimer](nabda:calc.age-adjusted-d-dimer-venous-thromboembolism-vte) .\n- While both two and three tier models are accepted, guidelines appear to favor the two tier model which utilizes only the high sensitivity D-dimer and more conservative risk stratification; “intermediate” risk patients are thought to be still too high risk to be evaluated without further risk stratification.",
+    "critical_actions": "- Given the next generation D-dimer high sensitivity but low specificity (approx 50%), patients who are considered high risk should be ruled out with CTPA.\n- Never delay resuscitative efforts for diagnostic testing, especially in the unstable patient.\n- History and physical exam should always be performed prior to diagnostic testing.",
+    "management": "**Three Tier Model**\n\n- Patient is determined to be **low risk** (<2 points: 1.3% incidence PE): Consider D-dimer testing to rule out pulmonary embolism. Alternatively, consider a rule-out criteria such as [PERC](nabda:calc.perc-rule-pulmonary-embolism) .\n\n - If the dimer is below the threshold, PE is ruled out.\n - If the dimer is above the threshold, consider CTPA or V/Q scan.\n- Patient is determined to be **moderate risk** (score 2-6 points, 16.2% incidence of PE): Consider high sensitivity D-dimer testing or CTPA.\n\n - If the dimer is below the threshold, PE is ruled out.\n - If the dimer is above the threshold, consider CTPA or V/Q scan.\n- Patient is determined to be **high risk** (score >6 points: 37.5% incidence of PE): Consider CTPA. D-dimer testing is not recommended.\n\n**Two Tier Model**\n\n- Patient risk is determined to be “ **PE Unlikely** ” (0-4 points, 12.1% incidence of PE): Consider high sensitivity D-dimer testing.\n\n - If the dimer is below the threshold, PE is ruled out.\n - If the dimer is above the threshold, consider CTPA or V/Q scan.\n- Patient risk is determined to be “ **PE Likely** ” (>4 points, 37.1% incidence of PE): Move directly to confirmatory imaging (CTPA or V/Q scan)."
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n| Score | Risk Category |\n| --- | --- |\n| Three-Tier Model | |\n| 0 - 1 | Low Risk |\n| 2 - 6 | Moderate Risk |\n| >6 | High Risk |\n| Two Tier Model | |\n| ≤4 | PE Unlikely (with D-dimer) |\n| ≥5 | PE Likely (with CTPA) |",
+  "short_description": "Risque de PE.",
+  "medium_description": "Calculates pre-test probabilité de PE pour determine conduites à tenir dans évaluation.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "dvt",
+      "label": "Clinique signs et symptoms de DVT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pe",
+      "label": "PE is #1 diagnostic OR equally probablement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_rate_100",
+      "label": "Fréquence cardiaque >100",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "immobilization_or_surgery",
+      "label": "Immobilisation d'au moins 3 jours OU chirurgie au cours des 4 semaines précédentes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "previous_pe_dvt",
+      "label": "Antécédent d'EP ou de TVP diagnostiqué objectivement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemoptysis",
+      "label": "Hémoptysie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "malignancy",
+      "label": "Malignancy w/ traitement within 6 months ou palliative",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wells PS, Ginsberg JS, Anderson DR, Kearon C, Gent M, Turpie AG, Bormanis J, Weitz J, Chamberlain M, Bowie D, Barnes D, Hirsh J. Use of a clinical model for safe management of patients with suspected pulmonary embolism. Ann Intern Med. 1998 Dec 15;129(12):997-1005",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/9867786/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wells PS, Anderson DR, Rodger M, Stiell I, Dreyer JF, Barnes D, Forgie M, Kovacs G, Ward J, Kovacs MJ. Excluding pulmonary embolism at the bedside without diagnostic imaging: management of patients with suspected pulmonary embolism presenting to the emergency department by using a simple clinical model and d-dimer. Ann Intern Med. 2001 Jul 17;135(2):98-107. PubMed PMID: 11453709.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11453709",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ceriani E, Combescure C, Le Gal G, Nendaz M, Perneger T, Bounameaux H, Perrier A, Righini M. Clinical prediction rules for pulmonary embolism: a systematic review and meta-analysis. J Thromb Haemost. 2010 May;8(5):957-70. doi: 10.1111/j.1538-7836.2010.03801.x. Epub 2010 Feb 2. PMID: 20149072.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20149072/",
+      "kind": "other"
+    },
+    {
+      "text": "Lucassen W, Geersing GJ, Erkens PM, Reitsma JB, Moons KG, Büller H, van Weert HC. Clinical decision rules for excluding pulmonary embolism: a meta-analysis. Ann Intern Med. 2011 Oct 4;155(7):448-60.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21969343/",
+      "kind": "other"
+    },
+    {
+      "text": "Shen JH, Chen HL, Chen JR, Xing JL, Gu P, Zhu BF. Comparison of the Wells score with the revised Geneva score for assessing suspected pulmonary embolism: a systematic review and meta-analysis. J Thromb Thrombolysis. 2016 Apr;41(3):482-92",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26178041/",
+      "kind": "other"
+    },
+    {
+      "text": "Coelho J, Divernet-Queriaud M, Roy PM, Penaloza A, Le Gal G, Trinh-Duc A. Comparison of the Wells score and the revised Geneva score as a tool to predict pulmonary embolism in outpatients over age 65. Thromb Res. 2020 Dec;196:120-126. doi: 10.1016/j.thromres.2020.07.026. Epub 2020 Aug 14. PMID: 32862033.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32862033/",
+      "kind": "other"
+    },
+    {
+      "text": "Mai V, Takada T, Kraaijpoel N, van Es N, Büller HR, Courtney DM, Freund Y, Galipienzo J, Le Gal G, Ghanima W, Huisman MV, Kline JA, Moons KGM, Parpia S, Perrier A, Righini M, Robert-Ebadi H, Roy PM, van Smeden M, Wells PS, de Wit K, Geersing GJ, Klok FA. Safety and Efficiency of Diagnostic Strategies for Ruling Out Pulmonary Embolism in Clinically Relevant Patient Subgroups : A Systematic Review and Individual-Patient Data Meta-analysis. Ann Intern Med. 2022 Feb;175(2):244-255. doi: 10.7326/M21-2625. Epub 2021 Dec 14. PMID: 34904857.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41161416/",
+      "kind": "other"
+    },
+    {
+      "text": "Stals MAM, Takada T, Kraaijpoel N, et al. Safety and efficiency of diagnostic strategies for ruling out pulmonary embolism in clinically relevant patient subgroups : a systematic review and individual-patient data meta-analysis. Ann Intern Med. 2022;175(2):244-255. doi:10.7326/M21-2625",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34904857/",
+      "kind": "other"
+    },
+    {
+      "text": "Etemadi A, Hosseini M, Rafiee H, Mahboubi A, Mahmoodi T, Kuno T, Jenab Y, Raphael CE, Aronow WS, Hosseini K, Giri J. Comparative diagnostic accuracy of pre-test clinical probability scores for the risk stratification of patients with suspected pulmonary embolism: a systematic review and Bayesian network meta-analysis. BMC Pulm Med. 2025 Apr 8;25(1):162.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40200307/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.altitude-adjusted-perc-rule",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "4f92f7c407550a69f5ef9084db5bb339",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.geneva-score-revised-pulmonary-embolism",
+      "text": "rGeneva"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age adjusted D-dimer"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.geneva-score-revised-pulmonary-embolism",
+      "text": "rGeneva"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age adjusted D-dimer"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 115,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseFloat(dvt) + parseFloat(pe) + parseFloat(heart_rate_100) + parseFloat(immobilization_or_surgery) + parseFloat(previous_pe_dvt) + parseFloat(hemoptysis) + parseFloat(malignancy);\n\nvar webLanguage = webLanguage || \"english\"\n\nvar msg = '';\nvar mini_msg = '';\n\nif (u < 2) {\n\n    if (webLanguage == \"webProduction-spanish\") {\n        msg = 'Grupo de bajo riesgo con probabilidad de 1.3% de EP en poblaciÃ³n de DE.';\n        mini_msg = 'Low Risk'\n    } else {\n        msg = 'Low risk group: 1.3% chance of PE in an ED population. ';\n        mini_msg = 'Low Risk'\n    }\n\n}\nif (u >= 2 && u <= 6) {\n\n    if (webLanguage == \"webProduction-spanish\") {\n        msg = 'Grupo de riesgo moderado con probabilidad de 16.25% de EP en poblaciÃ³n en DE.';\n        mini_msg = 'Moderate Risk'\n    } else {\n        msg = 'Moderate risk group: 16.2% chance of PE in an ED population. ';\n        mini_msg = 'Moderate Risk'\n    }\n\n}\n\nif (u > 6) {\n\n    if (webLanguage == \"webProduction-spanish\") {\n        msg = 'Grupo de alto riesgo con probabilidad de 40.6% de EP en poblacion en DE.';\n        mini_msg = 'High Risk'\n    } else {\n        msg = 'High risk group: 40.6% chance of PE in an ED population. ';\n        mini_msg = 'High Risk'\n    }\n\n}\n\n\nif (u < 5) {\n\n    if (webLanguage == \"webProduction-spanish\") {\n        msg += '<br/><br/>Otros estudios asignaron puntuaciones ≤4 cÃ³mo âEP improbableâ y tuvo 3% incidencia de EP.'\n    } else {\n        msg += '<br/><br/>Another study assigned scores ≤4 as \\u201cPE Unlikely\\u201d and had a 3% incidence of PE.'\n    }\n\n}\n\nif (u > 4) {\n\n    if (webLanguage == \"webProduction-spanish\") {\n        msg += '<br/><br/>Otro estudio asignaron puntuaciones >4 cÃ³mo âEP probableâ y tuve 28% incidencia de EP.'\n    } else {\n        msg += '<br/><br/>Another study assigned scores >4 as \\u201cPE Likely\\u201d and had a 28% incidence of PE.'\n    }\n\n}\n\nvar value_text = 'points'\n\nif (webLanguage == \"webProduction-spanish\") {\n    if (u.toFixed(1) == 1) {\n        value_text = 'punto' \n    } else {\n        value_text = 'puntos'\n    }\n}\n\ncalc_output.push({ \n    name: 'mini', \n    value: u.toFixed(1), \n    value_text: value_text, \n    message: mini_msg\n});\ncalc_output.push({ \n    name: \"115_Wells' Score for PE_result\", \n    value: u.toFixed(1), \n    value_text: \n    value_text, \n    message: msg\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "abbas-husain-md",
+    "benjamin-slovis"
+  ],
+  "creator_names": [
+    "Dr. Phil Wells"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [
+    "g.embolie-pulmonaire"
+  ],
+  "substance_ids": [],
+  "engine_sha256": "7cd1d64e3a0a40bae489c0699e32ecd003b5d770095137af8a6e883192c3bcb1"
+}

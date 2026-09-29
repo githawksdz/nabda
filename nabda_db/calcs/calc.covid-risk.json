@@ -1,0 +1,400 @@
+{
+  "id": "calc.covid-risk",
+  "slug": "covid-risk",
+  "language": "en",
+  "title": "Pour patients: VACO index COVID-19 risque de mortalité",
+  "short_title": "Pour patients: VACO index COVID-19 risque de mortalité",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Fever",
+    "Myalgias",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Veterans Health Administration COVID-19 (VACO) Index for COVID-19 Mortality, VACO index, vaco index, covid-19, covid, covid-19 mortality, covid mortality, covid risk, vaco risk, vaco, coronavirus mortality, covid death risk, covid death risk"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "**Frequently Asked Questions**\n\n**1. What is the VACO Index?**\n\nThe VACO Index uses your pre-COVID health status to estimate your risk of dying from COVID-19. Knowing your risk can better help you understand what's at stake if you don't take the necessary precautions to stay safe.\n\nThis tool was developed by Dr. Amy Justice, Dr. Joseph King, and others from Yale University and the VA Connecticut Healthcare System in collaboration with the US Department of Health and Human Services (HHS), including the CDC, NIH, VA, and the Assistant Secretary of Preparedness and Response.\n\n**2. Who does this apply to?**\n\nYou can use it on yourself, your family, your friends (anyone, really) to help understand the risk - and potentially provide guidance for preventative measures (e.g. social distancing, exposure, more). It’s best used on infected or newly infected patients, as the way the VACO Index is designed, it does not get worse or better based on clinical symptoms and lab values.\n\n**3. If my rate of death is low, is there anything else to worry about?**\n\nYes, keep in mind COVID-19 can do permanent damage even if it doesn’t kill the patient. This tool does NOT measure that type of damage.\n\n**4. Is the death rate from COVID-19 similar to that of the flu?**\n\nTypically, the risk of dying from COVID-19 is **8-12 times HIGHER** than the risk of dying from the flu. After you calculate a result, click on the yellow “Visualize Results” button to see a breakdown of your risk.\n\n**5. Who created this tool?**\n\nThe VACO Index was developed by Drs. King and Justice from Yale/VA in collaboration with the US Department of Health and Human Services (HHS), including the CDC, NIH, VA, and the Assistant Secretary of Preparedness and Response. See[Creator Insights](#creator-insights)for more info.\n\n**6. What is MDCalc?**\n\nMDCalc is a physician-run medical reference for clinical decision tools and content, used by doctors around the world including ⅔ of U.S. doctors weekly. We are proud to work with the HHS, the ASPR, and the VACO Index creators to help get this important tool in use. See our[About Us](https://www.mdcalc.com/about-us)page for more info.\n\nIf you believe you have been exposed to or have COVID-19, talk with your doctor."
+  },
+  "next_steps": {
+    "advice": "Estimating risk of death from COVID-19 may help someone understand their risk during everyday activities that involve potential exposure.\n\n**If you believe you have COVID-19:**\n\n- **Talk with your doctor:** Individuals at moderate or high risk, including those aged 65 years and older or with certain comorbidities (e.g., respiratory disease, cancer, kidney disease, liver disease, cardiovascular disease, diabetes, disabilities, immunocompromised states, mental health disorders, neurologic conditions, obesity, physical inactivity, pregnancy, smoking status, sickle cell disease) may qualify for COVID-19–specific treatments, which should start as soon as possible.\n- **Stay home when sick;** use extra precautions as you recover.\n- **Call 911 or go to the emergency department** for trouble breathing, chest pain/pressure, new confusion, inability to wake/stay awake, or pale/gray/blue lips/skin/nail beds.\n- After you’re better, **stay up to date on COVID-19 vaccination.**",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "![](https://cdn-web-img.mdcalc.com/content/Vaco_graph.png)\n\nD’après [King 2020](https://pubmed.ncbi.nlm.nih.gov/33175863/).\n\nCe calculateur inclut bien la race dans son analyse et dans la dérivation de son modèle de risque, les patients blancs non hispaniques présentant une mortalité plus élevée. Cela peut s’expliquer par plusieurs raisons : (1) il est initialement basé sur la population de patients de la VA, qui peut être quelque peu singulière, (2) la prise en compte de ces facteurs de risque peut déjà capturer les différences de santé entre les races, (3) rappelez-vous que cela ne prédit pas votre probabilité de contracter la COVID-19, qui s’est révélée plus élevée dans certaines populations. Il estime votre probabilité de décès si vous contractez la COVID-19.",
+  "more_info": "",
+  "short_description": "Risque de décès par COVID-19.",
+  "medium_description": "Pour use par non-clinicians. Calculate your ou loved one's risque de dying within 30 days de contracting COVID-19. See risque visualization dans results pour more info.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_vaco",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 0.32
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "diabetes",
+      "label": "History de diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "diabète sans complications",
+          "value": 1
+        },
+        {
+          "label": "diabète, avec complications (e.g., eyes, kidneys, ketoacidosis)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cpd",
+      "label": "Maladie pulmonaire chronique",
+      "tips": "(lung diseases from smoking such as COPD and emphysema)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "kidney",
+      "label": "Maladie rénale",
+      "tips": "(peut inclure la dialyse, mais pas nécessairement)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pvd",
+      "label": "Artériopathie périphérique (maladie vasculaire périphérique)",
+      "tips": "(également appelé PVD, PAD – artériel ou veineux)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "tips": "(aussi appelé CHF, « cœur faible »)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dementia",
+      "label": "Dementia",
+      "tips": "(y compris la maladie d'Alzheimer et autres)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Antécédent de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "cancer (à l'exception du cancer cutané)",
+          "value": 2
+        },
+        {
+          "label": "cancer, metastatic (cancer spreading pour another part de body)",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC",
+      "tips": "(i.e. CVA)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "liver",
+      "label": "Antécédents d’hépatopathie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Maladie hépatique légère (p. ex., hépatite virale B ou C, hépatite alcoolique)",
+          "value": 1
+        },
+        {
+          "label": "Liver maladie, modéré ou severe (e.g., esophageal varices, fatty liver, liver défaillance)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_attack",
+      "label": "Infarctus du myocarde",
+      "tips": "(c.-à-d. infarctus du myocarde)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ulcer",
+      "label": "Maladie ulcéreuse peptique (ulcère gastroduodénal)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "paralysis",
+      "label": "Paralysis de arm(s) ou leg(s)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aids",
+      "label": "AIDS",
+      "tips": "Pas simplement le VIH : si bien contrôlé, choisir « Non »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rheum",
+      "label": "Maladie rhumatologique",
+      "tips": "(including rheumatoid arthritis, lupus, Crohn's disease, ulcerative colitis, psoriasis, osteoarthritis, gout, scleroderma, and more)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "King JT Jr, Yoon JS, Rentsch CT, Tate JP, Park LS, Kidwai-Khan F, Skanderson M, Hauser RG, Jacobson DA, Erdos J, Cho K, Ramoni R, Gagnon DR, Justice AC. Development and validation of a 30-day mortality index based on pre-existing medical administrative data from 13,323 COVID-19 patients: The Veterans Health Administration COVID-19 (VACO) Index. PLoS One. 2020 Nov 11;15(11):e0241825.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33175863/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "King JT, Yoon JS, Bredl ZM, et al. Accuracy of the Veterans Health Administration COVID-19 (Vaco) Index for predicting short-term mortality among 1,307 Yale New Haven Hospital inpatients and 427,224 Medicare patients. medRxiv. Published online January 4, 2021:2021.01.01.20249069.",
+      "href": "https://www.medrxiv.org/content/10.1101/2021.01.01.20249069v1",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.veterans-health-administration-covid-19-vaco-index-covid-19-mortality",
+    "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+    "calc.covid-19-inpatient-risk-calculator-circ"
+  ],
+  "source_logic_hash": "5a4d896ed4d28815d6f674ef866b3621",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10348,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

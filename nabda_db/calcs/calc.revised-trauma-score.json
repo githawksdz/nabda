@@ -1,0 +1,114 @@
+{
+  "id": "calc.revised-trauma-score",
+  "slug": "revised-trauma-score",
+  "language": "fr",
+  "title": "Révisé traumatisme score",
+  "short_title": "Révisé traumatisme score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "trauma",
+    "RTS",
+    "trauma center",
+    "gcs",
+    "glasgow"
+  ],
+  "dosing": false,
+  "formula": "RTS = (0.9368*Valeur du GCS) + (0.7326*Valeur de la PAS) + (0.2908*Valeur de la FR)",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Stratifie le risque des traumatisés sur la base du [GCS](nabda:calc.glasgow-coma-scale-score-gcs), de la pression artérielle systolique et de la fréquence respiratoire."
+  },
+  "next_steps": {
+    "advice": "Un score plus élevé est associé à une meilleure survie. Envisager un transfert en centre de traumatologie si le Trauma Score <4.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Voir le tableau des formules ci-dessous :\n\n| Valeur numérique attribuée | Échelle de Glasgow (GCS) | Pression artérielle systolique | Fréquence respiratoire |\n| --- | --- | --- | --- |\n| 4 | 13-15 | >89 | 10-29 |\n| 3 | 9-12 | 76-89 | >29 |\n| 2 | 6-8 | 50-75 | 6-9 |\n| 1 | 4-5 | 1-49 | 1-5 |\n| 0 | 3 | 0 | 0 |",
+  "short_description": "Gravité de traumatisme injuries.",
+  "medium_description": "Quantifies gravité de traumatisme injuries basé sur GCS, pression artérielle, et fréquence respiratoire.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "glasgow_coma_scale",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "unit": "gcs",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "systolic_bp",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "respiratory_rate",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "unit": "rr",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Champion HR, et. al. Trauma Score. Crit Care Med 1981. 9:672-676.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7273818",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Champion HR, et. al. A Revision of the Trauma Score. J Trauma 1989. 29:623-629.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2657085",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.simplified-motor-score-sms",
+    "calc.pediatric-trauma-big-score"
+  ],
+  "source_logic_hash": "bf4083c6a2d675f1b9f941c995ce2983",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 683,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

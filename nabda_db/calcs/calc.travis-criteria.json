@@ -1,0 +1,147 @@
+{
+  "id": "calc.travis-criteria",
+  "slug": "travis-criteria",
+  "language": "fr",
+  "title": "Travis critères",
+  "short_title": "Travis critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Rectocolite hémorragique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Bloating",
+    "Sang dans les selles",
+    "Constipation",
+    "Diarrhea",
+    "Fatigue",
+    "Incontinence fécale",
+    "Fever",
+    "Douleur articulaire",
+    "Perte d'appétit",
+    "Incontinence urinaire",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Travis Criteria",
+    "travis score",
+    "ulcerative colitis",
+    "UC",
+    "severe ulcerative colitis",
+    "severe UC",
+    "ulcerative colitis operation"
+  ],
+  "dosing": false,
+  "formula": "Si le patient remplit l'un des critères suivants au 3e jour de traitement, il présente un risque élevé de nécessiter une colectomie :\n\n- >8 selles par jour.\n- 3-8 selles par jour et protéine C-réactive (CRP) >45 mg/L (>428 nmol/L).",
+  "how_to_use": {
+    "why": "",
+    "when": "- À utiliser chez les patients admis à l'hôpital pour des symptômes évocateurs d'une rectocolite hémorragique aiguë sévère.\n- Cet outil doit être utilisé au 3e jour d'hospitalisation pour prédire l'échec du traitement médical et donc la nécessité d'une escalade thérapeutique.",
+    "pearls": "- Basé sur une revue rétrospective relativement restreinte de séries de cas.\n- Les études initiales ont montré une sensibilité de 85 % lorsqu'un des critères était rempli."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Chez les patients à haut risque, envisager d'autres traitements tels que la chirurgie. Assurez-vous que votre patient bénéficie d'un suivi approprié et d'un traitement d'entretien à la sortie."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de colectomie.",
+  "medium_description": "Predicts risque de needing colectomy avec severe ulcerative colitis.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "stools",
+      "label": "Nombre de selles",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 3",
+          "value": 0
+        },
+        {
+          "label": "3-8",
+          "value": 1
+        },
+        {
+          "label": ">8",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "CRP >45 mg/L (>428 nmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Travis SP, Farrant JM, Ricketts C, et al. Predicting outcome in severe ulcerative colitis. Gut. 1996;38(6):905-910.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/8984031/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pabla BS, Schwartz DA. Assessing severity of disease in patients with ulcerative colitis. Gastroenterol Clin North Am. 2020;49(4):671-688.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33121688/",
+      "kind": "other"
+    },
+    {
+      "text": "Lynch RW, Churchhouse AMD, Protheroe A, Arnott IDR, UK IBD Audit Steering Group. Predicting outcome in acute severe ulcerative colitis: comparison of the Travis and Ho scores using UK IBD audit data. Aliment Pharmacol Ther. 2016;43(11):1132-1141.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27060985/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ho-index",
+    "calc.ulcerative-colitis-endoscopic-index-of-severity-uceis",
+    "calc.mayo-score-disease-activity-index-dai-ulcerative-colitis"
+  ],
+  "source_logic_hash": "2bd159fa4e44103767c431a780e45826",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10512,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

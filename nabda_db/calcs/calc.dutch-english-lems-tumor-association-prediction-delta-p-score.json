@@ -1,0 +1,226 @@
+{
+  "id": "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+  "slug": "dutch-english-lems-tumor-association-prediction-delta-p-score",
+  "language": "en",
+  "title": "Dutch-English LEMS Tumor Association prédiction (DELTA-P) score",
+  "short_title": "Score DELTA-P",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "neurologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Cancer du poumon",
+    "Maladie du motoneurone",
+    "Neuropathy",
+    "Syndrome myasthénique de Lambert-Eaton"
+  ],
+  "chief_complaints": [
+    "Constipation",
+    "Dyspnea",
+    "Fatigue",
+    "Myalgias",
+    "Déficit neurologique",
+    "Numbness",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Dysarthria",
+    "Dysphagia",
+    "Ptosis",
+    "Diplopia"
+  ],
+  "abbreviations": [
+    "Dutch-English LEMS Tumor Association Prediction (DELTA-P) Score",
+    "DELTA-P Score",
+    "small-cell lung cancer",
+    "Lambert-Eaton myasthenic syndrome",
+    "SCLC",
+    "LEMS",
+    "nontumor LEMS",
+    "NT-LEMS",
+    "SCLC-LEMS",
+    "NT LEMS",
+    "SCLC LEMS",
+    "SCLC risk",
+    "SCLC prediction",
+    "LEMS prognosis"
+  ],
+  "dosing": false,
+  "formula": "The DELTA-P score is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| D ysarthria, dysphagia, chewing, neck weakness: bulbar weakness | Absent | 0 |\n| Present | 1 | |\n| E rectile dysfunction | Female | 0 |\n| Male - absent | 0 | |\n| Male - present | 1 | |\n| L oss of weight | Absent or <5% | 0 |\n| ≥5% | 1 | |\n| T obacco use at onset | Absent | 0 |\n| Present | 1 | |\n| A ge of onset, years | <50 | 0 |\n| ≥50 | 1 | |\n| [Karnofsky performance score](nabda:calc.karnofsky-performance-status-scale\\) | 70-100 | 0 |\n| 0-60 | 1 | |",
+  "how_to_use": {
+    "why": "- Helps differentiate SCLC-related LEMS from non-tumor-related LEMS and can guide the screening and follow-up process.\n- Identifying SCLC-related LEMS alters patient management, which requires treatment of the underlying malignancy, and is associated with a poorer prognosis.\n- Early identification of underlying SCLC can potentially improve patient outcomes through earlier intervention.",
+    "when": "À utiliser lors de l’évaluation d’un patient présentant un syndrome myasthénique de Lambert-Eaton (LEMS), en particulier après un dépistage initial négatif de malignité, pour prédire la probabilité de cancer bronchique à petites cellules (SCLC).",
+    "pearls": "- Principalement conçu pour le dépistage du SCLC ; non destiné à détecter d'autres tumeurs malignes associées au LEMS.\n- Dérivé et validé à partir d'études menées dans des populations néerlandaises et britanniques, ce qui peut limiter la généralisabilité à d'autres groupes démographiques."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Suggested SCLC screening approach by the study authors:\n\n - Score ≥3: After an initial negative screen, a second malignancy screen is recommended at 3 months, followed by screenings every 6 months for a minimum of 2 years.\n - Score 2: Following an initial negative screen, repeat screenings should be conducted every 6 months for at least 2 years.\n - Score 0–1: Conduct a second screening 6 months after the initial negative result. If this screening is also negative, further screening may be discontinued.\n- This tool should be used in conjunction with clinical judgment. Persistent or new symptoms should prompt re-evaluation, even beyond the standard screening period."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score DELTA-P | Risque de SCLC | Recommandation |\n| --- | --- | --- |\n| 0-1 | Faible risque | Envisager d’arrêter le dépistage après 2 dépistages adéquats et négatifs |\n| 2 | NA | Envisager de poursuivre le dépistage tous les 6 mois pendant 2 ans |\n| 3-6 | Risque élevé | Envisager un dépistage répété dans 3 mois, puis tous les 6 mois par la suite pendant 2 ans |",
+  "short_description": "Small cell lung cancer risque dans Lambert-Eaton myasthenic syndrome.",
+  "medium_description": "Predicts small cell lung cancer chez les patients avec Lambert-Eaton myasthenic syndrome.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "**D**ysarthrie, dysphagie, mastication, faiblesse de la nuque : faiblesse bulbaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "**E** dysfonction érectile",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme – absent",
+          "value": 0
+        },
+        {
+          "label": "Homme - présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "**L** oss de poids",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent ou <5 %",
+          "value": 0
+        },
+        {
+          "label": "≥5%",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "**T** obacco use at onset",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "**** Âge d'apparition, ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 50",
+          "value": 0
+        },
+        {
+          "label": "≥50",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "[Indice de performance de Karnofsky](nabda:calc.karnofsky-performance-status-scale)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "70-100",
+          "value": 0
+        },
+        {
+          "label": "0-60",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Titulaer MJ, Maddison P, Sont JK, et al. Clinical dutch-english lambert-eaton myasthenic syndrome (Lems) tumor association prediction score accurately predicts small-cell lung cancer in the lems. JCO. 2011;29(7):902-908.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21245427/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Maddison P, Lipka AF, Gozzard P, et al. Lung cancer prediction in Lambert-Eaton myasthenic syndrome in a prospective cohort. Sci Rep. 2020;10(1):10546.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32601396/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+    "calc.lung-injury-prediction-score-lips",
+    "calc.karnofsky-performance-status-scale"
+  ],
+  "source_logic_hash": "22c46cf7605b5015c2e3e0c7c0f8e052",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky performance score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10553,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

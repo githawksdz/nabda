@@ -1,0 +1,188 @@
+{
+  "id": "calc.chronic-kidney-disease-children-ckid-u25-egfr-calculator",
+  "slug": "chronic-kidney-disease-children-ckid-u25-egfr-calculator",
+  "language": "en",
+  "title": "Maladie rénale chronique dans enfants (CKiD) U25 eGFR calculateur",
+  "short_title": "Calculateur d’eGFR CKiD U25",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "nephrologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Maladie rénale chronique"
+  ],
+  "chief_complaints": [
+    "Anuria",
+    "Dysuria",
+    "Hematuria",
+    "Perte d'appétit",
+    "Nausea",
+    "Oliguria",
+    "Œdème périphérique",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Proteinuria"
+  ],
+  "abbreviations": [
+    "Chronic Kidney Disease in Children (CKiD) U25 eGFR Calculator",
+    "CKiD U25 eGFR Calculator",
+    "CKiD U25",
+    "CKiD eGFR",
+    "Children eGFR",
+    "eGFR",
+    "chronic kidney disease",
+    "chronic kidney disease children",
+    "glomerular filtration rate",
+    "pediatric eGFR",
+    "eGFR age",
+    "eGFR young adult",
+    "cysC",
+    "cystatin C",
+    "serum creatinine"
+  ],
+  "dosing": false,
+  "formula": "**CKiD U25 Creatinine:**\neGFR = k × (height, m / sCr, mg/dL)\n\nFor males, k is calculated as:\n\nAge 1 to <12 years old: 39.0 × 1.008^(age-12)^\n\nAge 12 to <18 years old: 39.0 × 1.045^(age-12)^\n\nAge 18 to 25 years old: 50.8\n\nFor females, k is calculated as:\n\nAge 1 to <12 years old: 36.1 × 1.008^(age-12)^\n\nAge 12 to <18 years old: 36.1 × 1.023^(age-12)^\n\nAge 18 to 25 years old: 41.4\n\n**CKiD U25 Cystatin C:**\n\neGFR = k × (1 / cysC, mg/L)\n\nFor males, k is calculated as:\n\nAge 1 to <15 years old: 87.2 × 1.011^(age-15)^\n\nAge 15 to <18 years old: 87.2 × 0.96^(age-15)^\n\nAge 18 to 25 years old: 77.1\n\nFor females, k is calculated as:\n\nAge 1 to <12 years old: 79.9 × 1.004^(age-12)^\n\nAge 12 to <18 years old: 79.9 × 0.974^(age-12)^\n\nAge 18 to 25 years old: 68.3\n\n**CKiD U25 Creatinine-Cystatin C:**\n\neGFR = (sCr-based eGFR + cycC-based eGFR) / 2",
+  "how_to_use": {
+    "why": "- Spécifiquement adapté aux caractéristiques physiologiques et développementales des enfants et des adolescents, ce qui permet des évaluations plus précises que les formules destinées aux adultes.\n- Cet outil n’intègre pas de modificateurs fondés sur la race, conformément aux recommandations actuelles déconseillant d’utiliser la race comme déterminant biologique.",
+    "when": "- Can be used to estimate glomerular filtration rate (GFR) in children and young adults, aged 1-25 years, with chronic kidney disease (CKD).\n- Useful for tracking renal function over time to assess the progression of CKD.",
+    "pearls": "- Développées et validées à partir des données d’une large cohorte pédiatrique de MRC. À noter que les équations, en particulier pour la cystatine C, peuvent sous-estimer le DFG chez les patients ayant une fonction rénale normale.\n- Les cliniciens ont la possibilité de calculer le DFG estimé avec la créatinine, la cystatine C, ou les deux. Au moins une de ces valeurs est requise pour cet outil.\n- L’utilisation à la fois de la créatinine et de la cystatine C peut fournir une estimation plus précise du DFG, car elle fait la moyenne des résultats des deux équations.\n- Les concentrations sériques de créatinine peuvent être influencées par la malnutrition, une diminution de la masse musculaire et certains médicaments. La cystatine C peut être préférable dans de tels cas."
+  },
+  "next_steps": {
+    "advice": "- Patients with reduced eGFR should undergo further evaluation, including:\n\n - Assessment of chronicity.\n - Detailed evaluation of personal and family history, medications, and social and environmental factors.\n - Comprehensive physical examination.\n - Diagnostic testing, such as urine studies, imaging, and/or renal biopsy.\n - Referral to nephrology.\n- For patients with CKD, regular follow-up is crucial to monitor kidney function and adjust management. It is recommended to check albuminuria and eGFR at least annually.\n- Medications should be dose-adjusted based on the most recent eGFR to avoid toxicity and ensure efficacy.\n- For more detailed guidance on managing CKD, please refer to the[KDIGO 2024 clinical practice guideline for the evaluation and management of chronic kidney disease (CKD)](https://kdigo.org/guidelines/ckd-evaluation-and-management/).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Estimation du débit de filtration glomérulaire.",
+  "medium_description": "Estimates glomerular filtration rate basé sur creatinine et patient characteristics dans patients aged 1 pour 25.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "eq",
+      "label": "Équation",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "CKiD U25 Créatinine",
+          "value": 0
+        },
+        {
+          "label": "CKiD U25 Cystatine C",
+          "value": 1
+        },
+        {
+          "label": "CKiD U25 Créatinine-Cystatine C",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_ckid",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ht",
+      "label": "Taille",
+      "optional": false,
+      "unit": "height_ckid",
+      "show_points": false,
+      "conditionality": "eq == 0 || eq == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "cr",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": "eq == 0 || eq == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "cys",
+      "label": "Cystatine C",
+      "optional": false,
+      "unit": "serum_cystatinc",
+      "show_points": false,
+      "conditionality": "eq == 1 || eq == 2"
+    }
+  ],
+  "references": [
+    {
+      "text": "Pierce CB, Muñoz A, Ng DK, Warady BA, Furth SL, Schwartz GJ. Age- and sex-dependent clinical equations to estimate glomerular filtration rates in children and young adults with chronic kidney disease. Kidney International. 2021;99(4):948-956.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33301749/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Atkinson MA, Ng DK, Warady BA, Furth SL, Flynn JT. The CKiD study: overview and summary of findings related to kidney disease progression. Pediatr Nephrol. 2021;36(3):527-538.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32016626/",
+      "kind": "other"
+    },
+    {
+      "text": "Ng DK, Furth SL, Warady BA, et al. Self-reported race, serum creatinine, cystatin c, and gfr in children and young adults with pediatric kidney diseases: a report from the chronic kidney disease in children (Ckid) study. American Journal of Kidney Diseases. 2022;80(2):174-185.e1.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34974031/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ibrahim RB, Srivaths P, Tam E, Devaraj S. Utility of cystatin c-based equation for the estimation of glomerular filtration rate in a pediatric population. The Journal of Applied Laboratory Medicine. 2024;9(4):803-808.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38656545/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.international-iga-nephropathy-prediction-tool",
+    "calc.bun-creatinine-ratio"
+  ],
+  "source_logic_hash": "84d4b3cb805fd59ef4a5f4e2699f5874",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10574,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

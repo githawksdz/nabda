@@ -1,0 +1,235 @@
+{
+  "id": "calc.berlin-criteria-acute-respiratory-distress-syndrome",
+  "slug": "berlin-criteria-acute-respiratory-distress-syndrome",
+  "language": "en",
+  "title": "Berlin critères pour aigu Respiratory Distress syndrome",
+  "short_title": "Berlin critères pour ARDS",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Berlin definition, berlin criteria, Berlin Criteria for Acute Respiratory Distress Syndrome, Berlin Criteria for ARDS, ards, ards diagnosis, covid-19, coronavirus, covid, covid19, covid 19"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate criteria:\n\n| Berlin Criteria for ARDS |\n| --- |\n| Required criteria (must have all three of the following): |\n| Timing within 1 week of clinical insult or new/worsening respiratory symptoms |\n| Chest XR shows bilateral opacities not fully explained by effusions, lobar/lung collapse, or nodules |\n| Respiratory failure not fully explained by cardiac failure/fluid overload |\n| Risk factor (one of the following): |\n| Risk factor for ARDS present (e.g. pneumonia, trauma, sepsis, pancreatitis) |\n| Objective assessment (Echo) excludes hydrostatic edema |\n| Severity (based on oxygenation, select one of the following): |\n| Mild: [PaO₂/FiO₂](nabda:calc.horowitz-index-lung-function-p-f-ratio\\) >200 to ≤300 mmHg with PEEP OR CPAP ≥5 cm H₂O |\n| Moderate: PaO₂/FiO₂ >100 to ≤200 mmHg with PEEP ≥5 cm H₂O |\n| Severe: PaO₂/FiO₂ ≤100 mmHg with PEEP ≥5 cm H₂O |",
+  "how_to_use": {
+    "why": "- Fournit un cadre diagnostique standardisé pour le SDRA.\n- La classification de la sévérité est corrélée aux critères de jugement cliniques (p. ex., mortalité, jours sans ventilation) et éclaire la stratification du risque.",
+    "when": "- À utiliser chez l’adulte présentant une insuffisance respiratoire aiguë hypoxémique pour diagnostiquer et évaluer la sévérité d’un syndrome de détresse respiratoire aiguë (SDRA) suspecté.\n- À appliquer lorsque le patient est sous ventilation mécanique invasive ou non invasive avec une PEEP ou une CPAP ≥5 cm H₂O.",
+    "pearls": "- Developed by the ARDS Definition Task Force in 2012 to replace the 1994 American–European Consensus Conference (AECC) definition; the Berlin definition demonstrated better predictive validity for mortality than AECC.\n- Exclude other causes of lung opacities such as primary cardiogenic pulmonary edema, isolated lobar pneumonia or atelectasis, and chronic interstitial lung disease flares.\n- Requires arterial blood gas (ABG) to measure PaO₂, which may be unavailable in some settings.\n- Does not include patients on high-flow nasal cannula (HFNC), which limits applicability in modern practice, especially in resource-limited settings.\n- The[Kigali modification](https://pubmed.ncbi.nlm.nih.gov/26352116/)(2016) is an adaptation centered on resource-limited environments: it does not require mechanical ventilation/PEEP or an ABG, allows use of the [SpO₂/FiO₂ ratio](nabda:calc.spo2-fio2-ratio) , and permits lung ultrasound when chest radiography is unavailable.\n- The 2023 “[global definition](https://www.atsjournals.org/doi/10.1164/rccm.202303-0558WS)” of ARDS, endorsed by the American Thoracic Society, expands on the Berlin criteria to address many of its limitations."
+  },
+  "next_steps": {
+    "advice": "- Always interpret results in the context of clinical evaluation and expert input.\n- Reassess ARDS severity throughout the patient’s clinical course as oxygenation and ventilatory needs evolve.",
+    "critical_actions": "",
+    "management": "- For patients who **do not meet criteria** for ARDS:\n\n - Evaluate alternative diagnoses and contributing conditions.\n - Reassess if new data become available or if the patient’s clinical status changes.\n- For patients who **meet criteria** for ARDS:\n\n - Initiate lung-protective ventilation: tidal volume 4–8 mL/kg predicted body weight (PBW), plateau pressure <30 cm H₂O, minimize driving pressure.\n - Consider a high-PEEP strategy, especially in moderate-to-severe cases.\n - Use prone positioning in moderate-to-severe ARDS.\n - If hemodynamically stable, adopt a conservative fluid management approach.\n - For refractory hypoxemia, consider ECMO in experienced centers; tools that may support further assessment include:\n\n - [Murray Score](nabda:calc.murray-score-acute-lung-injury)\n - [PRESET Score](nabda:calc.prediction-survival-ecmo-therapy-preset-score)\n - [RESP Score](nabda:calc.resp-respiratory-ecmo-survival-prediction-score)"
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "ARDS diagnostic critères.",
+  "medium_description": "Provides diagnostic critères pour aigu respiratory distress syndrome (ARDS).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "req1",
+      "label": "Délai : dans 1 semaine suivant une agression clinique ou des symptômes respiratoires nouveaux ou s’aggravant.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "req2",
+      "label": "La radiographie thoracique montre des opacités bilatérales non entièrement expliquées par des épanchements, un collapsus lobaire/pulmonaire ou des nodules.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "req3",
+      "label": "Respiratory défaillance not fully explained par cardiac défaillance/fluid overload",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "risk1",
+      "label": "Facteur de risque",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "risque factor pour ARDS present (e.g. pneumonie, traumatisme, sepsis, pancreatitis)",
+          "value": 1
+        },
+        {
+          "label": "Objective évaluation (Echo) excludes hydrostatic œdème if no risque factor present",
+          "value": 1
+        },
+        {
+          "label": "Aucune des propositions ci-dessus",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "severity",
+      "label": "Oxygenation",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Mild: PaO₂/FiO₂ >200 pour ≤300 mmHg avec PEEP OR CPAP ≥5 cm H₂O",
+          "value": 1
+        },
+        {
+          "label": "modéré: PaO₂/FiO₂ >100 pour ≤200 mmHg avec PEEP ≥5 cm H₂O",
+          "value": 2
+        },
+        {
+          "label": "Severe: PaO₂/FiO₂ ≤100 mmHg avec PEEP ≥5 cm H₂O",
+          "value": 3
+        },
+        {
+          "label": "Aucune des propositions ci-dessus",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ranieri VM, Rubenfeld GD, Thompson BT, et al. Acute respiratory distress syndrome: the Berlin Definition. JAMA. 2012;307(23):2526-33.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/1160659",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fan E, Brodie D, Slutsky AS. Acute Respiratory Distress Syndrome: Advances in Diagnosis and Treatment. JAMA. 2018;319(7):698-710.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29466596",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.rox-index-intubation-hfnc",
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm",
+    "calc.spo2-fio2-ratio",
+    "calc.murray-score-acute-lung-injury",
+    "calc.prediction-survival-ecmo-therapy-preset-score",
+    "calc.resp-respiratory-ecmo-survival-prediction-score"
+  ],
+  "source_logic_hash": "0a435efa3feeb63b550cc9c1623b98c2",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.horowitz-index-lung-function-p-f-ratio",
+      "text": "PaO₂/FiO₂"
+    },
+    {
+      "type": "calc",
+      "id": "calc.spo2-fio2-ratio",
+      "text": "SpO₂/FiO₂ ratio"
+    },
+    {
+      "type": "calc",
+      "id": "calc.murray-score-acute-lung-injury",
+      "text": "Murray Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.prediction-survival-ecmo-therapy-preset-score",
+      "text": "PRESET Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.resp-respiratory-ecmo-survival-prediction-score",
+      "text": "RESP Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10294,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

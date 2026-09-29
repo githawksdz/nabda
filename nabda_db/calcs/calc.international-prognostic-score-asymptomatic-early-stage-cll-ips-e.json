@@ -1,0 +1,178 @@
+{
+  "id": "calc.international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+  "slug": "international-prognostic-score-asymptomatic-early-stage-cll-ips-e",
+  "language": "en",
+  "title": "International Prognostic score pour Asymptomatic Early-stage CLL (IPS-E)",
+  "short_title": "IPS-E",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anemia",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Cancer",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Lymphadenopathy",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "International Prognostic Score for asymptomatic early-stage CLL (IPS-E)",
+    "IPS-E",
+    "IPS-E CLL",
+    "CLL",
+    "Chronic Lymphocytic Leukemia",
+    "early stage CLL",
+    "early stage leukemia",
+    "leukemia, asymptomatic leukemia",
+    "asymptomatic CLL",
+    "time to first treatment",
+    "TTFT",
+    "CLL prognosis",
+    "leukemia prognosis",
+    "early stage CLL prognosis",
+    "CLL risk",
+    "early-stage CLL risk",
+    "asymptomatic CLL prognosis",
+    "ips e"
+  ],
+  "dosing": false,
+  "formula": "The IPS-E is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Unmutated IGHV genes | No | 0 |\n| Yes | 1 | |\n| Absolute lymphocyte count >15×10 9 /L | No | 0 |\n| Yes | 1 | |\n| Palpable lymph nodes | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Fournit une mesure quantitative permettant de stratifier les patients atteints de CLL de stade précoce en fonction du risque de progression de la maladie et du besoin potentiel de traitement.\n- Peut aider à adapter les plans de surveillance et de traitement selon le risque individuel, ce qui peut améliorer les résultats cliniques des patients.\n- Utile pour discuter du pronostic avec les patients et fixer les attentes concernant l’évolution de leur maladie.",
+    "when": "À utiliser chez les patients ayant un diagnostic de leucémie lymphoïde chronique (CLL) de stade précoce (stades 0-II de [Rai](nabda:calc.rai-staging-system-chronic-lymphocytic-leukemia-cll) ou stade A de [Binet](nabda:calc.binet",
+    "pearls": "- Specifically designed for early-stage CLL; not applicable for advanced disease stages.\n- Utility may be limited if immunoglobulin heavy chain variable region (IGHV) gene mutation status is not available at the time of diagnosis."
+  },
+  "next_steps": {
+    "advice": "- Patients with low scores may be suitable for regular monitoring without immediate treatment, reinforcing the \"watch and wait\" approach.\n- Higher scores indicate a greater risk of disease progression and may suggest a need for more frequent monitoring or consideration of early therapeutic interventions, including novel agents and potential enrollment in clinical trials.\n- As CLL can evolve, it is important to periodically re-evaluate the patient’s status and adjust management plans accordingly.\n- Consider the score as part of a holistic assessment that includes other prognostic markers and patient factors to guide therapy selection.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| IPS-E | Risque de nécessité de traitement |\n| --- | --- |\n| 0 | Faible |\n| 1 | Intermédiaire |\n| 2-3 | Élevé |",
+  "short_description": "Pronostic de la CLL au stade précoce.",
+  "medium_description": "Évalue le pronostic de la leucémie lymphoïde chronique (CLL) asymptomatique de stade précoce.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "UnmutatedIGHVgenes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Numération lymphocytaire absolue >15×10^9^/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Adénopathies palpables",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Condoluci A, Terzi di Bergamo L, Langerbeins P, et al. International prognostic score for asymptomatic early-stage chronic lymphocytic leukemia. Blood. 2020;135(21):1859-1869.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32267500/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smolej L, Turcsányi P, Kubová Z, et al. External validation of International Prognostic Score for asymptomatic early stage chronic lymphocytic leukaemia and proposal of an alternative score. Br J Haematol. 2021;193(1):133-137.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33280081/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Morabito F, Tripepi G, Vigna E, et al. Validation of the alternative international prognostic score‐e (Aips‐e): analysis of binet stage a chronic lymphocytic leukemia patients enrolled into the o‐cll1‐gisl protocol. European J of Haematology. 2021;106(6):831-835.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33662164/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alshemmari SH, Alsarraf A, Kunhikrishnan A, Pandita R. Evaluation of the cll-ipi and ips-e prognostic indices in a young middle eastern population with chronic lymphocytic leukemia: a retrospective analysis at the kuwait cancer control center. Med Princ Pract. 2023;32(3):192-199.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37517397/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ball-score-relapsed-refractory-cll",
+    "calc.rai-staging-system-chronic-lymphocytic-leukemia-cll",
+    "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll"
+  ],
+  "source_logic_hash": "556637d8b69376f5f48ebb2b09379d3e",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rai-staging-system-chronic-lymphocytic-leukemia-cll",
+      "text": "Rai"
+    },
+    {
+      "type": "calc",
+      "id": "calc.binet-staging-system-chronic-lymphocytic-leukemia-cll",
+      "text": "Binet"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10565,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

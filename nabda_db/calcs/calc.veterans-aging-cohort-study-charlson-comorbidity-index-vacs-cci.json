@@ -1,0 +1,508 @@
+{
+  "id": "calc.veterans-aging-cohort-study-charlson-comorbidity-index-vacs-cci",
+  "slug": "veterans-aging-cohort-study-charlson-comorbidity-index-vacs-cci",
+  "language": "fr",
+  "title": "Indice de comorbidités de Charlson de la Veterans Aging Cohort Study (VACS-CCI)",
+  "short_title": "VACS-CCI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Cough",
+    "Diarrhea",
+    "Fever",
+    "Headache",
+    "Perte d'appétit",
+    "Mal de gorge",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Veterans Aging Cohort Study-Charlson Comorbidity Index (VACS-CCI)",
+    "vacs",
+    "vacs cci",
+    "charlson comorbidity index",
+    "cci",
+    "hiv",
+    "all cause mortality",
+    "all-cause mortality",
+    "vacs index",
+    "vacs cci index",
+    "prostate cancer mortality",
+    "non-prostate cancer mortality",
+    "pcm",
+    "npcm"
+  ],
+  "dosing": false,
+  "formula": "Les coefficients du modèle pour calculer le VACS-CCI sont les suivants :\n\n| Facteur de risque | Transformation | Coefficient |\n| --- | --- | --- |\n| Sexe | homme = 0, femme = 1 | -0.51336 |\n| Âge, années | cage = (âge – 50)/5 | 0.27823 |\n| cage 2 | 0.00607 | |\n| cage 3 | -0.0005611 | |\n| Hémoglobine, g/dL | chgb = hgb – 14 | -0.11488 |\n| chgb 2 | 0.02444 | |\n| chgb 3 | 0.0042 | |\n| [FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis\\) | fib4 | 0.20496 |\n| fib4 2 | -0.00601 | |\n| [eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr\\) | cegfr = (egfr – 90)/10 | 0.07083 |\n| cegfr 2 | 0.03588 | |\n| cegfr 3 | 0.00185 | |\n| Albumine, g/dL | calbumin = albumine – 4 | -0.40522 |\n| calbumin 2 | 0.32603 | |\n| calbumin 3 | 0.1555 | |\n| Leucocytes (WBC) | cwbc = wbc – 4 | -0.01138 |\n| cwbc 2 | 0.05293 | |\n| cwbc 3 | -0.00779 | |\n| cwbc 4 | 0.0003402 | |\n| [IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) | cbmi = bmi – 25 | -0.06054 |\n| cbmi 2 | 0.0048 | |\n| cbmi 3 | -0.0000979 | |\n| Infection par le virus de l'hépatite C | oui = 1, non = 0 | 0.27322 |\n| Indice de comorbidités de Charlson | | |\n| Infarctus du myocarde | oui = 1, non = 0 | 0.00827 |\n| Insuffisance cardiaque congestive | oui = 1, non = 0 | 0.42020 |\n| Maladie vasculaire périphérique | oui = 1, non = 0 | 0.14061 |\n| Maladie cérébrovasculaire | oui = 1, non = 0 | 0.11353 |\n| Démence | oui = 1, non = 0 | 0.48924 |\n| Maladie pulmonaire chronique | oui = 1, non = 0 | 0.27853 |\n| Maladie rhumatismale | oui = 1, non = 0 | -0.03368 |\n| Maladie ulcéreuse peptique | oui = 1, non = 0 | -0.07366 |\n| Diabète sans complications chroniques | oui = 1, non = 0 | 0.05267 |\n| Diabète avec complications chroniques | oui = 1, non = 0 | 0.07546 |\n| Hémiplégie ou paraplégie | oui = 1, non = 0 | -0.04908 |\n| Maladie rénale, légère à modérée | oui = 1, non = 0 | -0.19937 |\n| Maladie rénale, sévère | oui = 1, non = 0 | -0.09766 |\n| Toute néoplasie maligne | oui = 1, non = 0 | 0.09041 |\n| Tumeur solide métastatique | oui = 1, non = 0 | 1.18425 |\n| Maladie hépatique, légère | oui = 1, non = 0 | -0.04474 |\n| Maladie hépatique, modérée à sévère | oui = 1, non = 0 | 0.22568 |\n| Interaction entre l'indice de comorbidités de Charlson et l'âge | | |\n| CCI | Âge | |\n| 0 | <50 | -0.69765 |\n| 50-64 | -0.38614 | |\n| 65-79 | -0.40719 | |\n| ≥80 | -0.1254 | |\n| 1 | <50 | -0.15826 |\n| 50-64 | 0 | |\n| 65-79 | -0.10231 | |\n| ≥80 | -0.04685 | |\n| 2 | <50 | 0.38775 |\n| 50-64 | 0.27051 | |\n| 65-79 | 0.03608 | |\n| ≥80 | -0.03656 | |\n| ≥ 3 | <50 | 0.87792 |\n| 50-64 | 0.56943 | |\n| 65-79 | 0.19166 | |\n| ≥80 | -0.08839 | |\n\nVACS-CCI = [(x + 2.5390222)/10.6663937]*100,\n\noù x = Σ[β*(variables transformées)]\n\nLes variables suivantes sont limitées à un intervalle ; si elles se situent en dehors de ces bornes, elles sont ramenées à la limite la plus proche.\n\n- Âge : 30-90 ans.\n- Hémoglobine : 6-18 g/dL.\n- FIB-4 : 0,5-10 points.\n- eGFR : max 150 mL/min/1,73 m^2^.\n- Albumine : 2-5 g/dL.\n- Leucocytes (WBC) : 2,5-15 × 10^3^cellules/µL.\n- IMC : 15-50 kg/m^2^.",
+  "how_to_use": {
+    "why": "Le score VACS-CCI améliore les travaux antérieurs de l'équipe de recherche et améliore la calibration des estimations de mortalité.",
+    "when": "- Cet outil peut être utilisé pour calculer la mortalité des patients sur la base d'indicateurs de maladies chroniques et de leur indice de comorbidités de Charlson.\n- Le score fournit des estimations de mortalité pour la population générale et chez les patients ayant des antécédents de cancer de la prostate non métastatique.\n- Si votre patient a des antécédents de cancer de la prostate métastatique, d'autres outils peuvent être plus appropriés pour le calcul de la mortalité.",
+    "pearls": "- L'indice de comorbidités de Charlson (CCI) est inclus dans ce score. Le VIH n'a pas été inclus comme variable d'entrée dans l'étude VACS-CCI.\n- La littérature primaire a utilisé les codes CIM-9 et CIM-10 pour déterminer la présence ou l'absence de maladies chroniques lors du calcul du CCI. La dépendance aux codes CIM-10 peut conduire à une sous-estimation apparente des diagnostics.\n- La maladie rénale au sein du CCI est divisée en catégories légère/modérée et sévère, ce qui diffère légèrement des autres versions du CCI."
+  },
+  "next_steps": {
+    "advice": "Le VACS-CCI peut être utilisé au lit du patient pour faciliter les discussions sur la mortalité et les maladies chroniques.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Un [rapport](https://pubmed.ncbi.nlm.nih.gov/33605000/) collaboratif de 2021 a proposé des modifications à la classification et à la terminologie utilisées dans l'insuffisance cardiaque. Le terme « insuffisance cardiaque » est désormais préféré à celui d'« insuffisance cardiaque congestive ». Notre outil reflète l'étude telle qu'elle a été publiée, mais les utilisateurs doivent être informés des évolutions de la littérature médicale.\n\nLe VACS-CCI a montré une calibration appropriée pour le calcul de la mortalité par cancer non prostatique chez les hommes atteints d'un cancer de la prostate non métastatique, en plus de la population générale.\n\nChez les hommes atteints d'un cancer de la prostate métastatique, d'autres outils peuvent être plus appropriés. Les auteurs de l'étude recommandent l'utilisation de ressources d'estimation de la mortalité telles que la [base de données SEER](https://seer.cancer.gov/) du National Cancer Institute. Voici un [exemple](https://www.cancer.org/cancer/types/prostate-cancer/detection-diagnosis-staging/survival-rates.html) de taux de survie chez les patients atteints d'un cancer de la prostate, basé sur la classification SEER.",
+  "short_description": "Mortalité pour patients avec comorbidities.",
+  "medium_description": "Estimates risque de all-cause mortalité chez les patients avec comorbidities, y compris non-metastatic prostate cancer.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_impact",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "nonmeta",
+      "label": "Antécédents de cancer de la prostate ?",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui, non métastatique",
+          "value": 1
+        },
+        {
+          "label": "Oui, métastatique",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hgb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "textbox",
+      "name": "fib4",
+      "label": "[FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis)",
+      "optional": false,
+      "unit": "fib4",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "[eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "unit": "gfr_vacs_cci",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "WBC",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "bmi_vacs_cci",
+      "show_points": false,
+      "conditionality": "nonmeta != 2"
+    },
+    {
+      "type": "radio",
+      "name": "hepc",
+      "label": "Infection actuelle ou antécédent d'infection par le virus de l'hépatite C ?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "mi",
+      "label": "Infarctus du myocarde",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pvd",
+      "label": "Artériopathie périphérique (maladie vasculaire périphérique)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cevd",
+      "label": "Maladie cérébrovasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dementia",
+      "label": "Dementia",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "copd",
+      "label": "Maladie pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rd",
+      "label": "Maladie rhumatismale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pud",
+      "label": "Maladie ulcéreuse peptique (ulcère gastroduodénal)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "sans complications chroniques",
+          "value": 1
+        },
+        {
+          "label": "avec chronique complications",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pleg",
+      "label": "Hémiplégie ou paraplégie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "kd",
+      "label": "Maladie rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Mild pour modéré",
+          "value": 1
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Cancer",
+      "tips": "Tout cancer, y compris le cancer de la prostate",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Toute néoplasie maligne",
+          "value": 2
+        },
+        {
+          "label": "Tumeur solide métastatique",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ld",
+      "label": "Maladie hépatique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "nonmeta != 2",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "modéré pour severe",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McGinnis KA, Justice AC, Marconi VC, et al. Combining Charlson comorbidity and VACS indices improves prognostic accuracy for all-cause mortality for patients with and without HIV in the Veterans Health Administration. Front Med. 2024;10:1342466.",
+      "href": "https://www.frontiersin.org/articles/10.3389/fmed.2023.1342466/full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Justice AC, Tate JP, Howland F, et al. Adaption and national validation of a tool for predicting mortality from other causes among men with nonmetastatic prostate cancer. Eur Urol Oncol. Published online January 2, 2024:S2588-9311(23)00289-4.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38171965/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.charlson-comorbidity-index-cci",
+    "calc.veterans-aging-cohort-study-vacs-2.0-index",
+    "calc.veterans-aging-cohort-study-vacs-1.0-index",
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "529d373c0baa5af686ccd62065fcca68",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+      "text": "FIB-4"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "eGFR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10505,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,138 @@
+{
+  "id": "calc.urine-output-fluid-balance",
+  "slug": "urine-output-fluid-balance",
+  "language": "fr",
+  "title": "Diurèse et Bilan Hydrique",
+  "short_title": "Diurèse",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "medecine-interne",
+    "pediatrie",
+    "chirurgie",
+    "urologie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "urine",
+    "pee",
+    "oliguria"
+  ],
+  "dosing": false,
+  "formula": "Diurèse [cc/kg/h] = Valeur réelle [cc/jour] / (poids [kg]*24)",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Calcule le débit urinaire et le bilan hydrique, et les compare aux valeurs normales, à partir de la diurèse totale et des apports hydriques."
+  },
+  "next_steps": {
+    "advice": "0,5\n\n- Peut être utilisé pour évaluer le bilan hydrique ainsi qu'une éventuelle atteinte rénale.\n- Les [critères RIFLE](nabda:calc.rifle-criteria-acute-kidney-injury-aki) fournissent une méthode de stratification de l'atteinte rénale aiguë.\n- Lors de l'évaluation du statut hydrique, pensez à prendre en compte les pertes insensibles (~400 mL/jour chez l'adulte) et l'eau endogène.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Les valeurs normales du volume urinaire sur 24 heures sont de 800 à 2000 millilitres par jour (pour une prise hydrique normale d'environ 2 litres par jour).\n\n- L'oligurie correspond à une diurèse < 500 mL en 24 h (0,5 mL/kg/h) chez l'adulte.\n- L'oligurie correspond à une diurèse < 1 L en 24 h (1 mL/kg/h) chez l'enfant.",
+  "short_description": "Diurèse sur 24 heures.",
+  "medium_description": "Calcule la diurèse sur une période de 24 heures.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "uop",
+      "label": "Diurèse totale",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hrs",
+      "label": "Hours",
+      "optional": false,
+      "default": 24,
+      "unit": "time",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ins",
+      "label": "Apports hydriques",
+      "optional": true,
+      "unit": "volume",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Israni AK, Kasiske BL. Laboratory assessment of kidney disease: glomerular filtration rate, urinalysis, and proteinuria. In: Teal MW, Chertow GM, Marsden PA, Skorecki K, Yu ASL, Brenner BM, eds. Brenner &amp; Rector's The Kidney",
+      "href": null,
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hydration Assessment. The Hospital for Sick Children (SickKids). 2014",
+      "href": "https://www.sickkids.ca/Nursing/Education-and-learning/Nursing-Student-Orientation/module-two-clinical-care/hydrationassessment/index.html",
+      "kind": "other"
+    },
+    {
+      "text": "Landry DW, Bazari H. Approach to the patient with renal disease. In: Goldman L, Schafer AI, eds. Cecil Medicine.",
+      "href": null,
+      "kind": "pubmed"
+    },
+    {
+      "text": "Klahr S, Miller SB. Acute Oliguria. N Engl J Med 1998; 338:671-675March 5, 1998DOI: 10.1056/NEJM199803053381007.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJM199803053381007",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.urinary-protein-excretion-estimation",
+    "calc.revised-urinary-incontinence-scale-ruis",
+    "calc.rifle-criteria-acute-kidney-injury-aki"
+  ],
+  "source_logic_hash": "027cb10ffc44bb58c39327016eaeefaf",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rifle-criteria-acute-kidney-injury-aki",
+      "text": "RIFLE Criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2074,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

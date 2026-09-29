@@ -1,0 +1,218 @@
+{
+  "id": "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+  "slug": "memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+  "language": "en",
+  "title": "Memorial Sloan-Kettering cancer Center (MSKCC/Motzer) score pour Metastatic Renal Cell Carcinoma (RCC)",
+  "short_title": "MSKCC/Motzer critères pour RCC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "nephrologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Chemotherapy",
+    "Carcinome à cellules rénales"
+  ],
+  "chief_complaints": [
+    "Hematuria"
+  ],
+  "abbreviations": [
+    "RCC",
+    "MSKCC",
+    "Sloan-Kettering",
+    "Sloan Kettering",
+    "Motzer",
+    "renal cancer",
+    "kidney cancer",
+    "karnofsky",
+    "nephrectomy",
+    "survival"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Aide les cliniciens dans les discussions sur le pronostic des patients atteints d’un RCC métastatique et peut être utilisé comme facteur de stratification dans les essais cliniques.",
+    "when": "Patients atteints d'un RCC métastatique recevant un traitement systémique et dont l'inclusion dans un essai clinique est envisagée, et en pratique clinique pour l'estimation du pronostic.",
+    "pearls": "- Initially created in the pre-targeted therapy era of RCC, but has since been validated in patients receiving targeted therapy ([Heng 2013](https://www.ncbi.nlm.nih.gov/pubmed/23312463)).\n- Multiple other models have since been established based on the MSKCC/Motzer score, including:\n\n- May assist in estimating prognosis of patients with metastatic RCC, but is not currently used for making decisions about treatment (use IMDC Risk Model instead).\n- Easy to use and uses readily available clinical and laboratory variables."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Ne peut être appliqué qu'aux patients atteints d'un RCC métastatique recevant un traitement systémique.",
+    "management": "The score is currently not used for treatment decision-making. The [IMDC Risk Model](nabda:calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma) , which was originally based on the MSKCC/Motzer score, is currently used in treatment decision-making for metastatic RCC ([NCCN Guidelines 2019)](https://www.nccn.org/professionals/physician_gls/)."
+  },
+  "evidence": "The MSKCC/Motzer score in its current form was initially derived from a 2002 retrospective study reviewing data from 463 patients, who had been enrolled in six clinical trials, with metastatic RCC treated with first-line interferon-alpha. The five variables that make up the model were found to be significantly related to overall survival on multivariable analysis ([Motzer 2002](https://www.ncbi.nlm.nih.gov/pubmed/11773181)).\n\nMultiple external validation studies were subsequently conducted on modified versions of the model either in the first-line setting ([Mekhail 2005](https://www.ncbi.nlm.nih.gov/pubmed/15681528)) or in the second-line setting in the pre-targeted therapy era ([Motzer 2004](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3646307/)). Furthermore,[Heng et al (2013)](https://www.ncbi.nlm.nih.gov/pubmed/23312463)validated the original MSKCC Model and compared it to other similar models in the targeted therapy era. However, this study suggested that the [IMDC Risk Model](nabda:calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma) has superior prognostic power over the MSKCC model. Although the two models were found to be highly concordant, the IMDC model showed better fit and reclassification accuracy.\n\nThe MSKCC risk group is still among the most frequently used risk models for metastatic RCC, and is often reported along with the IMDC model in clinical trials.",
+  "more_info": "Interprétation :\n\n| Score | Risque | Survie médiane |\n| --- | --- | --- |\n| 0 | Bon | 20 mois |\n| 1-2 | Intermédiaire | 10 mois |\n| ≥3 | Élevé | 4 mois |",
+  "short_description": "Predicts survie dans RCC patients.",
+  "medium_description": "Predicts survie basé sur clinique et laboratoire data dans metastatic RCC patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "neph",
+      "label": "Time de diagnostic pour systemic traitement <1 year",
+      "tips": "Mesuré ~1 mois après l’arrêt de l’anticoagulation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hb",
+      "label": "Hémoglobine < limite inférieure de la normale",
+      "tips": "- Hommes (Normal) : 13.5-17.5 g/dL\n- Femmes (Normal) : 12.0-15.5 g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Calcium >10 mg/dL (>2.5 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ldh",
+      "label": "LDH > 1.5x Limite Supérieure de la Normale",
+      "tips": "Normal : 140 U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "karnofsky",
+      "label": "Indice de performance < 80 % (Karnofsky)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "NCCN Clinical Practice Guidelines in Oncology: Kidney Cancer. V 2.2019.",
+      "href": "https://www.nccn.org/professionals/physician_gls/",
+      "kind": "international"
+    },
+    {
+      "text": "Motzer RJ, Mazumdar M, Bacik J, Berg W, Amsterdam A, Ferrara J. Survival and prognostic stratification of 670 patients with advanced renal cell carcinoma. J Clin Oncol. 1999;17(8):2530-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10561319",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Motzer RJ, Bacik J, Murphy BA, Russo P, Mazumdar M. Interferon-alfa as a comparative treatment for clinical trials of new therapies against advanced renal cell carcinoma. J Clin Oncol 2002 Jan 1;20(1):289-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11773181",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Motzer RJ, Bacik J, Schwartz LH, et al. Prognostic factors for survival in previously treated patients with metastatic renal cell carcinoma. J Clin Oncol. 2004;22(3):454-63.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14752067",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mekhail TM, Abou-Jawde RM, Boumerhi G, Malhi S, Wood L, Elson P, Bukowski R. Validation and extension of the Memorial Sloan-Kettering prognostic factors model for survival in patients with previously untreated metastatic renal cell carcinoma. J Clin Oncol 2005 Feb 1;23(4):832-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15681528",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Motzer RJ, Hutson TE, Tomczak P, et al. Overall survival and updated results for sunitinib compared with interferon alfa in patients with metastatic renal cell carcinoma. J Clin Oncol. 2009;27(22):3584-90.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3646307/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heng DY, Xie W, Regan MM, et al. External validation and comparison with other models of the International Metastatic Renal-Cell Carcinoma Database Consortium prognostic model: a population-based study. Lancet Oncol. 2013;14(2):141-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23312463",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+    "calc.renal-nephrometry-score",
+    "calc.mekhail-extension-motzer-score",
+    "calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma"
+  ],
+  "source_logic_hash": "f4b4b4b2986e0867273eb183cac935aa",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma",
+      "text": "IMDC Risk Model"
+    }
+  ],
+  "locale_status": "not_applicable_dz",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2153,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,258 @@
+{
+  "id": "calc.nexus-head-ct-instrument",
+  "slug": "nexus-head-ct-instrument",
+  "language": "en",
+  "title": "Instrument NEXUS de TDM cérébrale",
+  "short_title": "Instrument NEXUS de TDM cérébrale",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma",
+    "Traumatisme crânien"
+  ],
+  "chief_complaints": [
+    "Headache",
+    "Traumatisme crânien",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "NEXUS II Head CT Instrument",
+    "nexus",
+    "nexus 2",
+    "nexus ii",
+    "head ct",
+    "nexus ii head ct",
+    "nexus head ct",
+    "head injury",
+    "brain imaging",
+    "nexus ii head rule",
+    "nexus head rule",
+    "head ct decision",
+    "nexus ii ct decision",
+    "nexus ct decision",
+    "blunt trauma",
+    "NEXUS Head CT Instrument"
+  ],
+  "dosing": false,
+  "formula": "The NEXUS Head CT Instrument decision is determined by the selection of the appropriate criteria:\n\n| Criteria | Detail |\n| --- | --- |\n| Age ≥65 years | |\n| Evidence of significant skull fracture | Basilar: e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose. Depressed/diastatic: palpable step-off, stellate laceration from a point source, or any injury produced by an object striking a localized region of the skull (e.g. baseball bat, club, pool cue, golf ball, baseball, pipe) |\n| Scalp hematoma | Injuries not involving calvarium (e.g. hematomas limited to the face/neck), are not considered scalp hematomas |\n| Neurologic deficit | Any abnormal neurologic finding revealed by detailed exam, e.g. motor or sensory deficits (abnormal weakness/sensation in ≥1 extremity, cranial nerve abnormality (particularly II through XII), cerebellar abnormality as manifested by ataxia, dysmetria, dysdiadokinesis, or other impairment of cerebellar function (as determined by systematic testing of cerebellar function, including tests of ataxia and finger-nose-finger, heel-to-shin, and rapid alternating movements), gait abnormality or inability to walk normally (due to inadequate strength, loss of balance, or ataxia; perform systematic testing of gait, including tandem and heel-to-toe walking and Romberg testing), or any other impairment of neurologic function |\n| Altered level of alertness | e.g. [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) ≤14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech |\n| Abnormal behavior | Any inappropriate action, e.g. excessive agitation, inconsolability, refusal to cooperate, lack of affective response to questions or events, violent activity |\n| Coagulopathy | Any clotting impairment, e.g. hemophilia, secondary to medications (Coumadin, heparin, aspirin, etc), hepatic insufficiency |\n| Persistent vomiting | Recurrent (>1 episode) projectile or forceful emesis, either observed or by history, after trauma |",
+  "how_to_use": {
+    "why": "Aide à éviter des coûts inutiles et réduit l’exposition aux rayonnements en identifiant les patients à très faible risque de lésions cliniquement significatives qui ne nécessitent pas d’imagerie.",
+    "when": "Pour les patients âgés de ≥18 ans ayant subi un traumatisme crânien fermé au cours des 24 dernières heures et pour lesquels une TDM cérébrale est envisagée.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- **Résultat négatif (score 0) :** Discuter avec le patient de la faible probabilité d’une lésion significative. Envisager une surveillance et fournir des instructions concernant les signes d’alerte devant conduire à revenir pour une évaluation, tels qu’une altération de l’état mental ou des vomissements.\n- **Résultat positif (score ≥1) :** Réaliser une imagerie par TDM pour rechercher une lésion intracrânienne cliniquement significative (p. ex., hématome/hémorragie, fracture du crâne)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Critères présents | Risque de lésions intracrâniennes significatives | Recommandation |\n| --- | --- | --- |\n| 0 | Faible | TDM non nécessaire |\n| ≥1 | Élevé | TDM nécessaire |",
+  "short_description": "Prédit la nécessité d'une TDM cérébrale.",
+  "medium_description": "Predicts need pour head CT after blunt head lésion.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥65 years",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "skull",
+      "label": "Signes de fracture crânienne significative",
+      "tips": "e.g. periorbital or periauricular ecchymoses, hemotympanum, drainage of clear fluid from ears or nose, palpable step-off, stellate laceration (see[Evidence](#evidence)for more detail)",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "scalp",
+      "label": "Hématome du scalp",
+      "tips": "Injuries not involving calvarium (e.g. hematomas limited to the face/neck), are not considered scalp hematomas",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neuro",
+      "label": "Déficit neurologique",
+      "tips": "Toute anomalie neurologique révélée par un examen détaillé (voir [Preuves](#evidence) pour plus de détails)",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alert",
+      "label": "Altération du niveau de vigilance",
+      "tips": "e.g. Glasgow Coma Scale (GCS) ≤14; delayed or inappropriate response to external stimuli; excessive somnolence; disorientation to person, place, time, or events; inability to remember three objects at 5 mins; perseverating speech",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "behavior",
+      "label": "Comportement anormal",
+      "tips": "Tout comportement inapproprié, p. ex. agitation excessive, incapacité à se consoler, refus de coopérer, absence de réponse affective aux questions ou aux événements, activité violente",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "coag",
+      "label": "Coagulopathy",
+      "tips": "Tout trouble de la coagulation, p. ex. hémophilie, secondaire à des médicaments (Coumadin, héparine, aspirine, etc.), insuffisance hépatique",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "Vomissements persistants",
+      "tips": "Vomissements en jet ou violents, récurrents (>1 épisode), soit observés, soit rapportés par l'anamnèse, après un traumatisme.",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mower WR, Hoffman JR, Herbert M, et al. Developing a decision instrument to guide computed tomographic imaging of blunt head injury patients. J Trauma. 2005;59(4):954-959.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16374287/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mower WR, Gupta M, Rodriguez R, Hendey GW. Validation of the sensitivity of the National Emergency X-Radiography Utilization Study (Nexus) Head computed tomographic (Ct) decision instrument for selective imaging of blunt head injury patients: An observational study. PLoS Med. 2017;14(7):e1002313.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28700585/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pediatric-nexus-ii-head-ct-decision-instrument-blunt-trauma",
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "e03c897eb69ae8bf279639438436f9b8",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10423,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

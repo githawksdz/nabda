@@ -1,0 +1,170 @@
+{
+  "id": "calc.chads-65-canadian-society-of-cardiology",
+  "slug": "chads-65-canadian-society-of-cardiology",
+  "language": "fr",
+  "title": "CHADS-65 (Canadian Society de Cardiology Guideline)",
+  "short_title": "CHADS-65",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Fibrillation atriale"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Douleur thoracique",
+    "Dizziness",
+    "Fatigue",
+    "Palpitations",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "CHADS-65 (Canadian Society of Cardiology Guideline)",
+    "CHADS-65",
+    "chads",
+    "chads 65",
+    "chads65",
+    "chads score",
+    "Canadian Society of Cardiology Guideline"
+  ],
+  "dosing": false,
+  "formula": "![](https://cdn-web-img.mdcalc.com/content/CHADS-65%20Flowchart.png)\n\n^1^Direct oral anticoagulants are preferred over warfarin.\n\n^2^Therapeutic options include ASA 81 mg daily alone, clopidogrel 75 mg daily alone, or ASA 81 mg daily in combination with either clopidogrel 75 mg daily, ticagrelor 60 mg bid, or rivaroxaban 2.5 mg bid (depending on clinical circumstance).",
+  "how_to_use": {
+    "why": "Élaboré par la Société canadienne de cardiologie (CCS) pour simplifier l’évaluation du risque d’AVC, il fournit un algorithme permettant de déterminer quels patients peuvent bénéficier d’une anticoagulation orale ou d’un traitement antiplaquettaire.",
+    "when": "À utiliser pour guider le traitement anticoagulant oral dans la prévention de l'AVC et de l'embolie systémique chez les patients atteints de fibrillation atriale.",
+    "pearls": "Par rapport à [CHADS₂](nabda:calc.chads2-score-atrial-fibrillation-stroke-risk), cet outil met davantage l'accent sur l'âge, ce qui peut conduire à prescrire une anticoagulation chez des patients qui seraient autrement considérés comme à faible risque."
+  },
+  "next_steps": {
+    "advice": "- Ce score doit être utilisé conjointement avec le jugement clinique, une évaluation clinique approfondie et une consultation spécialisée (si nécessaire).\n- Envisager d’évaluer le risque hémorragique du patient à l’aide d’un outil distinct avant de prescrire une anticoagulation (p. ex., [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk), [DOAC Score](nabda:calc.direct-acting-oral-anticoagulants-doac-score)), et modifier les risques hémorragiques, si possible.\n- Discuter avec le patient des risques et des bénéfices du traitement antiplaqu",
+    "critical_actions": "",
+    "management": "- Oral anticoagulation therapy (a DOAC is preferred over warfarin for non-valvular atrial fibrillation) is recommended for stroke and systemic embolism prevention for patients with atrial fibrillation who are:\n\n - 65 years or older.\n - <65 years of age with a risk factor (i.e., [CHADS₂](nabda:calc.chads2-score-atrial-fibrillation-stroke-risk) ≥1):\n\n - Heart failure.\n - Hypertension.\n - Diabetes mellitus.\n - Prior stroke or TIA.\n- Antiplatelet therapy (e.g., ASA 81 mg daily) is recommended for patients <65 years of age and coronary artery disease or peripheral artery disease.\n- For additional recommendations, see the[CCS Atrial Fibrillation Guidelines](https://ccs.ca/app/uploads/2020/11/AF_Gui_2018_PG_EN_web.pdf)."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Guide de traitement antithrombotique.",
+  "medium_description": "Guides antithrombotic therapy pour patients avec nonvalvular fibrillation atriale ou atrial flutter.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge ≥65 years",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "prior",
+      "label": "Prior AVC ou TIA, hypertension, insuffisance cardiaque, ou diabète mellitus",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "age == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "disease",
+      "label": "Maladie coronarienne ou artérielle périphérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "prior == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Andrade JG, Aguilar M, Atzema C, et al. The 2020 canadian cardiovascular society/canadian heart rhythm society comprehensive guidelines for the management of atrial fibrillation. Can J Cardiol. 2020;36(12):1847-1948.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33191198/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leblanc K, MacGillivray J, Carroccia A, Macle L, Andrade JG. The 2020 CCS atrial fibrillation guidelines for pharmacists: Top 10 takeaways. Can Pharm J (Ott). 2022;155(2):107-118.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35300017/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chads2-score-atrial-fibrillation-stroke-risk",
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.direct-acting-oral-anticoagulants-doac-score"
+  ],
+  "source_logic_hash": "dcefbc46495dc5b12355d66c312513e5",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.chads2-score-atrial-fibrillation-stroke-risk",
+      "text": "CHADS₂"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10479,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.clopidogrel",
+    "s.rivaroxaban",
+    "s.ticagrelor",
+    "s.acetylsalicylique-clopidogrel"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

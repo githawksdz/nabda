@@ -1,0 +1,504 @@
+{
+  "id": "calc.psi-port-score-pneumonia-severity-index-cap",
+  "slug": "psi-port-score-pneumonia-severity-index-cap",
+  "language": "en",
+  "title": "PSI/PORT score: pneumonie gravité index pour CAP",
+  "short_title": "Score PSI/PORT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonie",
+    "Insuffisance respiratoire",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Toux",
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "pna",
+    "cap",
+    "psi",
+    "port",
+    "cap",
+    "fine",
+    "fine scale",
+    "covid19",
+    "covid 19",
+    "coronavirus",
+    "covid-19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Le score PSI/PORT est un outil utile qui fournit une excellente stratification du risque de pneumonie acquise en communauté. Cependant, pour la plupart des patients, le [CURB-65](nabda:calc.curb-65-score-pneumonia-severity) est plus facile à utiliser et nécessite moins de variables.",
+    "when": "The PSI/PORT Score can be used in the clinic or emergency department setting to risk stratify a patient’s community acquired pneumonia.",
+    "pearls": "- Since points are assigned by absolute age in the PSI, it may underestimate severe pneumonia in an otherwise young healthy patient.\n- Consider sepsis in patients with pneumonia; the PSI was developed prior to aggressive sepsis screening with lactate testing.\n- Though a patient may be categorized as appropriate for outpatient treatment, assess potential barriers to treatment such as vomiting, alcohol/drug use, psychosocial conditions, or cognitive impairments.\n- Any patient over 50 years of age is automatically classified as risk class 2, even if they otherwise are completely healthy and have no other risk criteria."
+  },
+  "next_steps": {
+    "advice": "While many pneumonias are actually viral in nature, typical practice is to provide a course of antibiotics given the pneumonia may be bacterial.\n\nDisposition (inpatient vs. outpatient) often dictates further care and management -- including lab testing, blood cultures, etc.",
+    "critical_actions": "Pour les patients ayant un score PSI élevé, il serait prudent de s'assurer que le triage initial n'a pas manqué la présence d'un sepsis. Une évaluation des [critères SIRS](nabda:calc.sirs-sepsis-septic-shock-criteria) serait bénéfique.",
+    "management": "**Étape 1 :**\n\n- Si le patient a >50 ans, attribuer à la classe de risque II - V et passer à l’étape 2.\n- Si le patient a <50 ans, mais qu’il a des antécédents de maladie néoplasique, d’insuffisance cardiaque congestive, de maladie cérébrovasculaire, de maladie rénale ou de maladie hépatique, attribuer à la classe de risque II - V et passer à l’étape 2.\n- Si le patient présente un état mental altéré, un pouls ≥ 125/minute, une fréquence respiratoire ≥ 30/minute, une pression artérielle systolique ≤ 90 mm Hg, ou une température < 35° C ou ≥ 40° C, attribuer à la classe de risque II - V et passer à l’étape 2\n- Si aucune des conditions ci-dessus ne s’applique, attribuer à la classe de risque I = faible risque.\n\n**Étape 2 :**\n\n- Attribuer des points en fonction de l’âge, du sexe, de la résidence en maison de retraite, des comorbidités, des résultats de l’examen physique et des résultats de laboratoire et radiographiques comme indiqué ci-dessus.\n- Répartition des points :\n\n| Score | Risque | Orientation |\n| --- | --- | --- |\n| ≤70 | Faible risque | Soins ambulatoires |\n| 71-90 | Faible risque | Ambulatoire vs. admission en observation |\n| 91-130 | Risque modéré | Admission hospitalière |\n| >130 | Risque élevé | Admission hospitalière |"
+  },
+  "evidence": "The original study created a five-tier risk stratification based on 14199 inpatients with community acquired pneumonia. This was then validated on 38039 inpatients and additionally another 2287 inpatients and outpatients. Points are assigned based on age, co-morbid disease, abnormal physical findings, and abnormal laboratory results.\n\nIn comparison to the PSI score, [CURB-65](nabda:calc.curb-65-score-pneumonia-severity) offers equal sensitivity of mortality prediction due to community acquired pneumonia. Notably, CURB-65 (74.6%) has a higher specificity than PSI (52.2%). However, CURB-65 had a lower sensitivity than PSI in predicting ICU admission.",
+  "more_info": "**Score interpretation:**\n\n| Risk Class | Risk | Point Value |\n| --- | --- | --- |\n| I | Low | None from Comorbidities, PE findings, or Lab findings |\n| II | Low | ≤70 points |\n| III | Low | 71-90 |\n| IV | Moderate | 91-130 |\n| V | High | >130 total points |",
+  "short_description": "Mortalité dans la PAC (CAP) : plus complexe que le CURB-65.",
+  "medium_description": "Estimates mortalité pour adulte patients avec pneumonie communautaire.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": -10
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nursing_home",
+      "label": "Résident en EHPAD",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neoplastic",
+      "label": "Maladie néoplasique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "liver",
+      "label": "Antécédents de maladie hépatique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "Antécédent d'insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cerebrovascular",
+      "label": "Antécédents de maladie cérébrovasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "Antécédents de maladie rénale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "altered_mental",
+      "label": "Altération de l'état de conscience",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "respiratory_rate_29",
+      "label": "Fréquence respiratoire ≥30 respirations/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "systolic_bp_90",
+      "label": "Pression artérielle systolique <90 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "temperature_35",
+      "label": "Température <35 °C (95 °F) ou >39,9 °C (103,8 °F)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulse_124",
+      "label": "Pouls ≥125 battements/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ph_7",
+      "label": "pH < 7.35",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bun_29",
+      "label": "BUN ≥ 30 mg/dL ou ≥ 11 mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sodium_130",
+      "label": "Sodium <130 mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "glucose_249",
+      "label": "Glucose ≥250 mg/dL ou ≥14 mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hematocrit_30",
+      "label": "Hématocrite < 30 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "oxygen_pressure_60",
+      "label": "Pression partielle en oxygène <60 mmHg ou <8 kPa",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pleural_effusion",
+      "label": "Épanchement pleural sur radiographie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fine MJ. et. al. A prediction rule to identify low-risk patients with community-acquired pneumonia. N Engl J Med. 1997 Jan 23;336(4):243-50.",
+      "href": "https://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=retrieve&db=pubmed&list_uids=8995086&dopt=Abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pneumonia: New Prediction Model Proves Promising. AHCPR Publication No. 97-R031",
+      "href": "https://archive.ahrq.gov/clinic/pneuclin.htm",
+      "kind": "other"
+    },
+    {
+      "text": "Shah BA, Ahmed W, Dhobi GN, Shah NN, Khursheed SQ, Haq I. Validity of pneumonia severity index and CURB-65 severity scoring systems in community acquired pneumonia in an Indian setting. Indian J Chest Dis Allied Sci. 2010;52(1):9-17.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20364609/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Anurag A, Preetam M. Validation of PSI/PORT, CURB-65 and SCAP scoring system in COVID-19 pneumonia for prediction of disease severity and 14-day mortality. Clin Respir J. 2021;15(5):467-471.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33417280/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.smart-cop-score-pneumonia-severity",
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.shorr-score-mrsa-pneumonia",
+    "calc.sirs-sepsis-septic-shock-criteria"
+  ],
+  "source_logic_hash": "e54ea14c1c2eeb129106459c1083d0b8",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sirs-sepsis-septic-shock-criteria",
+      "text": "SIRS criteria"
+    },
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sirs-sepsis-septic-shock-criteria",
+      "text": "SIRS criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 33,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar age=parseFloat(age);\nvar sex=parseFloat(sex);\nvar rf=parseFloat(nursing_home)+parseFloat(neoplastic)+parseFloat(liver)+parseFloat(chf)+parseFloat(cerebrovascular)+parseFloat(renal)+parseFloat(altered_mental)+parseFloat(respiratory_rate_29)+parseFloat(systolic_bp_90)+parseFloat(temperature_35)+parseFloat(pulse_124)+parseFloat(ph_7)+parseFloat(bun_29)+parseFloat(sodium_130)+parseFloat(glucose_249)+parseFloat(hematocrit_30)+parseFloat(oxygen_pressure_60)+parseFloat(pleural_effusion);\nvar u=rf+sex+age;\nvar msg='';\nvar mini_msg='';\nif(rf==0&&age<51){\n    msg='Risk Class I, 0.1% mortality. Outpatient treatment reasonable, barring other factors affecting care.';\n    mini_msg='Risk Class I, 0.1% mortality.'}\nelse{if(u<71){\n    msg='Risk Class II, 0.6-0.9% mortality. Outpatient treatment reasonable, barring other factors affecting care.';\n    mini_msg='Risk Class II, 0.6-0.9% mortality.'}\n    if(u>70&&u<91){\n        msg='Risk Class III, 0.9-2.8% mortality. Outpatient or inpatient treatment, depending on clinical judgment.';\n        mini_msg='Risk Class III, 0.9-2.8% mortality.'\n    }if(u>90&&u<131){\n        msg='Risk Class IV, 8.2-9.3% mortality. Hospitalization recommended based on risk.';\n        mini_msg='Risk Class IV, 8.2-9.3% mortality.'\n    }if(u>130){\n        msg='Risk Class V, 27.0-29.2% mortality. Hospitalization recommended based on risk.';\n        mini_msg='Risk Class V, 27.0-29.2% mortality.'\n    }} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'33_PSI/PORT Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+  "before_use": "**Conseils pour la COVID-19 :** À utiliser après le diagnostic pour déterminer l’orientation. Les paramètres saisis concordent mieux avec les facteurs de risque connus de COVID-19 ; ajuster chez les personnes âgées.",
+  "instructions": null,
+  "contributor_ids": [
+    "sagar-patel"
+  ],
+  "creator_names": [
+    "Dr. Michael J. Fine"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactate"
+  ],
+  "engine_sha256": "c6ff9709359cdbb01dff05af0216fd1a8d37ba94b83709577988bbd07b884275"
+}

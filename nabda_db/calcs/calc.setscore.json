@@ -1,0 +1,404 @@
+{
+  "id": "calc.setscore",
+  "slug": "setscore",
+  "language": "fr",
+  "title": "SETscore",
+  "short_title": "SETscore",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Hémorragie intracrânienne",
+    "Trouble convulsif",
+    "Hémorragie sous-arachnoïdienne",
+    "Traumatisme crânien",
+    "Anévrisme intracrânien",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Bleeding",
+    "Dizziness",
+    "Fatigue",
+    "Headache",
+    "Injury/Trauma",
+    "Nausea",
+    "Numbness",
+    "Seizure",
+    "Perte de vision",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "SETscore",
+    "set score",
+    "tracheostomy",
+    "neurocritical care",
+    "stroke-related early tracheostomy",
+    "stroke related early tracheostomy",
+    "early tracheostomy",
+    "stroke"
+  ],
+  "dosing": false,
+  "formula": "Le SETscore est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Fonction neurologique | | |\n| Dysphagie | Non | 0 |\n| Oui | 4 | |\n| Fausses routes observées | Non | 0 |\n| Oui | 3 | |\n| [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) à l'admission | ≥10 | 0 |\n| <10 | 3 | |\n| Lésion neurologique | | |\n| Tronc cérébral | Non | 0 |\n| Oui | 4 | |\n| Lésion cérébelleuse avec effet de masse | Non | 0 |\n| Oui | 3 | |\n| Infarctus ischémique >2/3 du territoire de l'ACM | Non | 0 |\n| Oui | 4 | |\n| Volume d'hémorragie intracérébrale (HIC) >25 mL | Non | 0 |\n| Oui | 4 | |\n| Lésion diffuse | Non | 0 |\n| Oui | 3 | |\n| Hydrocéphalie | Non | 0 |\n| Oui | 4 | |\n| Fonction organique générale/procédure | | |\n| Intervention (neuro)chirurgicale | Non | 0 |\n| Oui | 2 | |\n| Pathologie respiratoire associée | Non | 0 |\n| Oui | 3 | |\n| PaO 2 /FiO 2 <150 | Non | 0 |\n| Oui | 2 | |\n| Score de physiologie aiguë ( [APACHE II](nabda:calc.apache-ii-score\\) ) | ≤20 | 0 |\n| >20 | 4 | |\n| Score de lésion pulmonaire | ≤1 | 0 |\n| >1 | 2 | |\n| Sepsis | Non | 0 |\n| Oui | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous le SETscore et souhaitez-vous apporter votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Un score ≥8 indique une durée prolongée de séjour en réanimation neurochirurgicale (NICU) et de ventilation, ainsi qu'un besoin de trachéotomie."
+  },
+  "evidence": "",
+  "more_info": "Un score ≥8 indique une durée prolongée de séjour en réanimation neurochirurgicale (NICU) et de ventilation, ainsi qu'un besoin de trachéotomie.",
+  "short_description": "Besoin de trachéotomie.",
+  "medium_description": "Predicts tracheostomy need dans neurocritical care patients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "dysphagia",
+      "label": "Dysphagia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "aspiration",
+      "label": "Fausses routes observées",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) à l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥10",
+          "value": 0
+        },
+        {
+          "label": "< 10",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "brainstem",
+      "label": "Brainstem",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "space",
+      "label": "Lésion cérébelleuse avec effet de masse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mca",
+      "label": "Infarctus ischémique >2/3 du territoire de l'ACM",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ich",
+      "label": "Volume d'hémorragie intracérébrale (HIC) >25 mL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lesion",
+      "label": "Lésion diffuse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hydro",
+      "label": "Hydrocephalus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "neurosurgery",
+      "label": "Intervention (neuro)chirurgicale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Pathologie respiratoire associée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pao2",
+      "label": "PaO~2~/FiO~2~<150",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "apache",
+      "label": "Score de physiologie aiguë ( [APACHE II](nabda:calc.apache-ii-score) )",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤20",
+          "value": 0
+        },
+        {
+          "label": ">20",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lung",
+      "label": "Lung lésion score",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤1",
+          "value": 0
+        },
+        {
+          "label": ">1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sepsis",
+      "label": "Sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schönenberger S, Al-Suwaidan F, Kieser M, Uhlmann L, Bösel J. The setscore to predict tracheostomy need in cerebrovascular neurocritical care patients. Neurocrit Care. 2016;25(1):94-104.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26842719/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alsherbini K, Goyal N, Metter EJ, et al. Predictors for tracheostomy with external validation of the stroke-related early tracheostomy score(Setscore). Neurocrit Care. 2019;30(1):185-192.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30167898/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.berg-balance-scale-bbs",
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.garfield-af",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "edb6fda05b800de5b23ba576d9eaca42",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10487,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

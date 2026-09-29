@@ -1,0 +1,370 @@
+{
+  "id": "calc.sex-shock-risk-score-development-cardiogenic-shock",
+  "slug": "sex-shock-risk-score-development-cardiogenic-shock",
+  "language": "en",
+  "title": "SEX-SHOCK risque score pour Development de Cardiogenic Shock",
+  "short_title": "Score SEX-SHOCK",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Choc cardiogénique"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur dorsale",
+    "Douleur thoracique",
+    "Vertiges",
+    "Dyspnée",
+    "Cervicalgie",
+    "Palpitations",
+    "Œdème périphérique",
+    "Soins préventifs / Dépistage",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "SEX-SHOCK Risk Score for the Development of Cardiogenic Shock",
+    "SEX-SHOCK score",
+    "cardiogenic shock",
+    "acute coronary syndrome",
+    "ACS",
+    "in-hospital cardiogenic shock",
+    "STEMI",
+    "NSTE-ACS",
+    "NSTEMI",
+    "percutaneous coronary intervention",
+    "PCI"
+  ],
+  "dosing": false,
+  "formula": "Equations are as follows (sex-stratified β coefficients are listed in the table below):\n\n**SEX-SHOCK Score:**\n\nY = (Intercept) + β × log~2~(CRP mg/L + 1) + β × log~2~(Creatinine µmol/L) + β × ST-segment elevation + β × LVEF 35%-50% + β × LVEF >50% + β × Age >70 years + β × Presentation as cardiac arrest + β × Killip class III + β × Heart rate >90/min + β × SBP <125 and PP <45 mmHg + β × Glycemia >10 mmol/L + β × Culprit lesion of the left main + β × Post-PCI TIMI flow <3\n\nRisk, % = [1 / (1 + e^-Y^)] × 100\n\n**SEX-SHOCK~light~Score:**\n\nY = (Intercept) + β × log~2~(CRP mg/L + 1) + β × log~2~(Creatinine µmol/L) + β × ST-segment elevation + β × LVEF 35%-50% + β × LVEF >50% + β × Age >70 years + β × Presentation as cardiac arrest + β × Killip class III + β × Heart rate >90/min + β × SBP <125 and PP <45 mmHg + β × Glycaemia >10 mmol/L\n\nRisk, % = [1 / (1 + e^-Y^)] × 100\n\n| Models | SEX-SHOCK | SEX-SHOCK light | | |\n| --- | --- | --- | --- | --- |\n| Coefficients | Females | Males | Females | Males |\n| (Intercept) | -7.08042535 | -7.966659951 | -7.10191049 | -8.000854527 |\n| CRP (mg/l) ∆ | 0.091519247 | 0.069589203 | 0.094658425 | 0.077418932 |\n| Creatinine (µmol/l) ∆ | 0.609175556 | 0.604010175 | 0.623783594 | 0.622161976 |\n| ST-segment elevation § | 0.032769134 | 0.767955919 | 0.071325651 | 0.744654373 |\n| LVEF 35%-50% § | -1.095259107 | -1.272230998 | -1.166326971 | -1.299423615 |\n| LVEF >50% § | -1.947426861 | -2.015325176 | -2.00779825 | -2.067699816 |\n| Age >70 years § | 0.182533294 | 0.263511391 | 0.225822406 | 0.283914474 |\n| Presentation as cardiac arrest § | 1.256698585 | 1.14593438 | 1.231881859 | 1.139468733 |\n| Killip class III § | 1.050255447 | 0.684880861 | 1.127706685 | 0.718468447 |\n| Heart rate >90/min § | 0.240740964 | 0.538557699 | 0.263606915 | 0.534582773 |\n| SBP <125 and PP <45 mmHg § | 0.819218972 | 0.706186026 | 0.842855227 | 0.720645408 |\n| Glycemia >10 mmol/L § | 0.401892719 | 0.837549978 | 0.422291381 | 0.857565834 |\n| Culprit lesion of the left main § * | 0.639735341 | 0.903552475 | NA | NA |\n| Post-PCI TIMI flow <3 § * | 0.719770781 | 0.496589182 | NA | NA |\n\n^§^Yes=1, No=0.\n\n*Only required for SEX-SHOCK (full model). SEX-SHOCK (light) relies on non-PCI related variables only.\n\n^∆^Note that CRP and creatinine are log~2~-transformed [CRP = log~2~(original value + 1); creatinine = log~2~(original value)] in the SEX-SHOCK models.",
+  "how_to_use": {
+    "why": "- Facilite l'identification précoce des patients atteints de SCA à haut risque de développer un choc cardiogénique au cours de leur hospitalisation, ce qui facilite la prise de décision clinique concernant une prise en charge invasive dans les délais appropriés et une surveillance rapprochée.\n- Peut améliorer l'évaluation précoce du risque chez les patients atteints de SCA, aussi bien chez les femmes que chez les hommes.\n- Tient compte de l'évolution des stratégies de prise en charge du SCA et du choc cardiogénique, avec la possibilité de personnaliser et d'améliorer la prise en charge contemporaine du SCA.\n- Le score SEX-SHOCK est approuvé par le [SCAI/EAPCI/ACVC et la HFSA](https://eurointervention.pcronline.com/article/scaieapciacvc-expert-consensus-statement-on-cardiogenic-shock-in-women).",
+    "when": "- The first AI-assisted sex-specific risk score to estimate the risk of in-hospital cardiogenic shock in patients presenting with acute coronary syndrome (ACS).\n- Can be used in any patient with a working diagnosis of ACS, including both ST-segment elevation myocardial infarction (STEMI) and non-ST-segment elevation ACS (NSTE-ACS), who are planned for or have already undergone percutaneous coronary intervention (PCI).",
+    "pearls": "- Estimates the risk for the development of cardiogenic shock during the hospital stay in both female and male patients with ACS who have not yet progressed to classic cardiogenic shock (i.e.,[SCAI-C](https://scai.org/publications/clinical-documents/scai-expert-consensus-statement-classification-cardiogenic-shock)or higher).\n- The original study derived and validated this tool in a European patient population, comprising a total of 53,537 patients with ACS, recruited between 2005 and 2022.\n- Does not consider factors such as ethnicity and other socioeconomic factors; caution should be used when generalizing the results to non-White populations.\n- Derived in ACS patients undergoing PCI. While external validation in all patients with ACS is pending, caution should be exercised if used in ACS patients not yet scheduled for PCI.\n- The predictive performance over the hospitalization period was not assessed due to the lack of the exact time-point for in-hospital cardiogenic shock; calculated risk estimates should always be interpreted within the specific clinical context."
+  },
+  "next_steps": {
+    "advice": "À utiliser conjointement avec une anamnèse détaillée et un examen clinique pour aider à identifier les patientes et patients ACS à haut risque de choc cardiogénique, susceptibles de bénéficier d’une approche invasive précoce et/ou d’une surveillance plus étroite.",
+    "critical_actions": "- Intégrer le jugement clinique pour déterminer le risque de choc cardiogénique d’un patient et le bénéfice potentiel de stratégies de prise en charge émergentes.\n- Faire preuve de prudence lors de l’application aux patients n’ayant pas bénéficié d’une PCI.",
+    "management": "Aucun essai interventionnel randomisé comparant la prise en charge des patients atteints d'un ACS selon les meilleures pratiques cliniques versus les meilleures pratiques cliniques associées au score SEX-SHOCK n'a encore été réalisé ; le bénéfice de l'utilisation du score de risque SEX-SHOCK pour guider la prise en charge interventionnelle reste incertain."
+  },
+  "evidence": "Ce score présente une validité externe élevée, étant donné son développement dans une population de patients suisses (AMIS-Plus et SPUM-ACS) et sa validation externe en France (RICO).\n\nIl a également montré une performance prédictive supérieure (sur un éventail de mesures de performance) par rapport à d’autres scores de risque, y compris le score de risque ORBI.",
+  "more_info": "",
+  "short_description": "Choc cardiogénique intra-hospitalier.",
+  "medium_description": "Calculates risque de dans-hôpital cardiogenic shock chez les patients avec aigu coronary syndrome (ACS).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q8",
+      "label": "Âge > 70 ans",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pci",
+      "label": "A bénéficié d'une ICP (PCI)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Flux TIMI post-PCI < 3",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "pci == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "Lésion coupable du tronc commun gauche",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "pci == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Glycémie >10 mmol/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "PAS <125 et PP <45 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Fréquence cardiaque >90/min",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q6",
+      "label": "[Killip Classification](nabda:calc.killip-classification-heart-failure) class III",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q7",
+      "label": "Présentation en arrêt cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "Fraction d'éjection du ventricule gauche (%)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 35",
+          "value": 0
+        },
+        {
+          "label": "35-50",
+          "value": 1
+        },
+        {
+          "label": ">50",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q10",
+      "label": "Sus-décalage du segment ST",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "q11_m",
+      "label": "Créatinine",
+      "optional": false,
+      "unit": "cr_sexshock_male",
+      "show_points": false,
+      "conditionality": "sex == 0"
+    },
+    {
+      "type": "textbox",
+      "name": "q11_f",
+      "label": "Créatinine",
+      "optional": false,
+      "unit": "cr_sexshock_female",
+      "show_points": false,
+      "conditionality": "sex == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "q12",
+      "label": "Protéine C-réactive",
+      "optional": false,
+      "unit": "crp_sexshock",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Baron SJ, Chou JC, Shah T, et al. Scai/eapci/acvc expert consensus statement on cardiogenic shock in women: this statement was endorsed by the heart failure society of america(Hfsa). J Soc Cardiovasc Angiogr Interv. 2025;4(6):102150.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40630254/",
+      "kind": "international"
+    },
+    {
+      "text": "Sex-specific Prediction of Cardiogenic Shock After Acute Coronary Syndromes: The SEX-SHOCK Score. Y Wang, M Zeller, V Auffret, G Georgiopoulos, L Räber, M Roffi, C Templin, O Muller, L Liberale, S Ministrini, K Stamatelopoulos, K Stellos, GG Camici, F Montecucco, H Rickli, M Maza, D Radovanovic, Y Cottin, F Chague, D Niederseer, TF Lüscher, S Kraler. Eur Heart J. 2024 Sept 01. DOI: 10.1093/eurheartj/ehae593.",
+      "href": "https://academic.oup.com/eurheartj/article-lookup/doi/10.1093/eurheartj/ehae593",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wenzl FA, Kraler S, Ambler G, et al. Sex-specific evaluation and redevelopment of the GRACE score in non-ST-segment elevation acute coronary syndromes in populations from the UK and Switzerland: a multinational analysis with external cohort validation. The Lancet. 2022;400(10354):744-756.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36049493/",
+      "kind": "other"
+    },
+    {
+      "text": "Georgiopoulos G, Kraler S, Mueller-Hennessen M, et al. Modification of the grace risk score for risk prediction in patients with acute coronary syndromes. JAMA Cardiol. 2023;8(10):946.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37647046/",
+      "kind": "other"
+    },
+    {
+      "text": "Kraler S, Mueller C, Libby P, Bhatt DL. Acute coronary syndromes: mechanisms, challenges, and new opportunities. Eur Heart J. 2025;46(29):2866-2889.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40358623/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.save-survival-veno-arterial-ecmo-score",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.framingham-risk-score-hard-coronary-heart-disease"
+  ],
+  "source_logic_hash": "868088f5824a46c038d9f5bf20b6e415",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10563,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar pci = parseFloat(pci);\nvar q1 = parseFloat(q1);\nvar q2 = parseFloat(q2);\nvar q3 = parseFloat(q3);\nvar q4 = parseFloat(q4);\nvar q5 = parseFloat(q5);\nvar q6 = parseFloat(q6);\nvar q7 = parseFloat(q7);\nvar q8 = parseFloat(q8);\nvar q9 = parseFloat(q9);\nvar q10 = parseFloat(q10);\nvar q11_m = parseFloat(q11_m);\nvar q11_f = parseFloat(q11_f);\nvar q12 = parseFloat(q12);\n\nif (UOMSYSTEM == true) { // US units\n    var q11_m = parseFloat(q11_m)*88.4;\n}\nif (UOMSYSTEM == false) {\n    var q11_m = parseFloat(q11_m);\n}\n\nif (UOMSYSTEM == true) { // US units\n    var q11_f = parseFloat(q11_f)*88.4;\n}\nif (UOMSYSTEM == false) {\n    var q11_f = parseFloat(q11_f);\n}\n\nif (UOMSYSTEM == true) { // US units\n    var q12 = parseFloat(q12); \n}\nif (UOMSYSTEM == false) {\n    var q12 = parseFloat(q12)/9.524;\n}\n\nvar q11;\nif (sex == 0) {\n    q11 = q11_m;\n} else {\n    q11 = q11_f\n}\n\nvar q9_1 = q9 === 1 ? 1 : 0;\nvar q9_2 = q9 === 2 ? 1 : 0;\n\n// Log2 transformation functions\nvar log2CRP = Math.log2(q12 + 1);\nvar log2Cr = Math.log2(q11);\n\nvar ss;\nvar prob;\nif (sex == 0 && pci == 0) {\n    ss = -8.000854527 + 0.077418932 * log2CRP + 0.622161976 * log2Cr + 0.744654373 * q10 - 1.299423615 * q9_1 - 2.067699816 * q9_2 + 0.283914474 * q8 + 1.139468733 * q7 + 0.718468447 * q6 + 0.534582773 * q5 + 0.720645408 * q4 + 0.857565834 * q3,\n    prob = 1 / (1 + Math.exp(-ss)),\n    prob = (prob * 100).toFixed(1),\n    calc_output.push({\n        name: 'mini',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock'\n    }),\n    calc_output.push({\n        name: '10563_SEX-SHOCK_score_result',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock by SEX-SHOCK<sub>light</sub> score'\n    });\n} else if (sex == 1 && pci == 0) {\n    ss = -7.10191049 + 0.094658425 * log2CRP + 0.623783594 * log2Cr + 0.071325651 * q10 - 1.166326971 * q9_1 - 2.00779825 * q9_2 + 0.225822406 * q8 + 1.231881859 * q7 + 1.127706685 * q6 + 0.263606915 * q5 + 0.842855227 * q4 + 0.422291381 * q3,\n    prob = 1 / (1 + Math.exp(-ss)),\n    prob = (prob * 100).toFixed(1),\n    calc_output.push({\n        name: 'mini',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock'\n    }),\n    calc_output.push({\n        name: '10563_SEX-SHOCK_score_result',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock by SEX-SHOCK<sub>light</sub> score'\n    });\n} else if (sex == 0 && pci == 1) {\n    ss = -7.966659951 + 0.069589203 * log2CRP + 0.604010175 * log2Cr + 0.767955919 * q10 - 1.272230998 * q9_1 - 2.015325176 * q9_2 + 0.263511391 * q8 + 1.14593438 * q7 + 0.684880861 * q6 + 0.538557699 * q5 + 0.706186026 * q4 + 0.837549978 * q3 + 0.903552475 * q2 + 0.496589182 * q1,\n    prob = 1 / (1 + Math.exp(-ss)),\n    prob = (prob * 100).toFixed(1),\n    calc_output.push({\n        name: 'mini',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock'\n    }),\n    calc_output.push({\n        name: '10563_SEX-SHOCK_score_result',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock by SEX-SHOCK score'\n    });\n} else {\n    ss = -7.08042535 + 0.091519247 * log2CRP + 0.609175556 * log2Cr + 0.032769134 * q10 - 1.095259107 * q9_1 - 1.947426861 * q9_2 + 0.182533294 * q8 + 1.256698585 * q7 + 1.050255447 * q6 + 0.240740964 * q5 + 0.819218972 * q4 + 0.401892719 * q3 + 0.639735341 * q2 + 0.719770781 * q1,\n    prob = 1 / (1 + Math.exp(-ss)),\n    prob = (prob * 100).toFixed(1),\n    calc_output.push({\n        name: 'mini',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock'\n    }),\n    calc_output.push({\n        name: '10563_SEX-SHOCK_score_result',\n        value: prob,\n        value_text: '%',\n        message: 'Risk of in-hospital cardiogenic shock by SEX-SHOCK score'\n    });\n}",
+  "before_use": "Une validation externe a été effectuée, mais elle n'est pas complète pour toutes les populations de patients. Faire preuve de prudence lors de l'application de ce score aux patients n'ayant pas bénéficié d'une PCI.",
+  "instructions": null,
+  "contributor_ids": [
+    "simon-kraler-md-phd"
+  ],
+  "creator_names": [
+    "Dr. Yifan Wang",
+    "Dr. Simon Kraler"
+  ],
+  "measurement_ids": [
+    "Cr_sexshock_male",
+    "Creatinine",
+    "Cr_sexshock_female",
+    "CRP_sexshock"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "9f20bdd5663e2f0185bdccee8c410a2921b8288cfbb66eedefdb4bd53fbe91f5"
+}

@@ -1,0 +1,329 @@
+{
+  "id": "calc.sequential-organ-failure-assessment-sofa-score",
+  "slug": "sequential-organ-failure-assessment-sofa-score",
+  "language": "en",
+  "title": "Score d’évaluation séquentielle des défaillances d’organes (SOFA)",
+  "short_title": "Score SOFA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Insuffisance rénale",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Fièvre",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "icu",
+    "critical care",
+    "sequential organ failure",
+    "organ failure",
+    "sofa score",
+    "covid",
+    "covid19",
+    "covid-19",
+    "covid 19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| PaO 2 /FiO 2 *, mmHg | |\n| ≥400 | 0 |\n| 300-399 | +1 |\n| 200-299 | +2 |\n| ≤199 and NOT mechanically ventilated | +2 |\n| 100-199 and mechanically ventilated | +3 |\n| <100 and mechanically ventilated | +4 |\n| Platelets, ×10 3 /µL | |\n| ≥150 | 0 |\n| 100-149 | +1 |\n| 50-99 | +2 |\n| 20-49 | +3 |\n| <20 | +4 |\n| [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs\\) | |\n| 15 | 0 |\n| 13–14 | +1 |\n| 10–12 | +2 |\n| 6–9 | +3 |\n| <6 | +4 |\n| Bilirubin, mg/dL (μmol/L) | |\n| <1.2 (<20) | 0 |\n| 1.2–1.9 (20-32) | +1 |\n| 2.0–5.9 (33-101) | +2 |\n| 6.0–11.9 (102-204) | +3 |\n| ≥12.0 (>204) | +4 |\n| Mean arterial pressure OR administration of vasoactive agents required (listed doses are in units of mcg/kg/min) | |\n| No hypotension | 0 |\n| MAP <70 mmHg | +1 |\n| DOPamine ≤5 or DOBUTamine (any dose) | +2 |\n| DOPamine >5, EPINEPHrine ≤0.1, or norEPINEPHrine ≤0.1 | +3 |\n| DOPamine >15, EPINEPHrine >0.1, or norEPINEPHrine >0.1 | +4 |\n| Creatinine, mg/dL (μmol/L) (or urine output) | |\n| <1.2 (<110) | 0 |\n| 1.2–1.9 (110-170) | +1 |\n| 2.0–3.4 (171-299) | +2 |\n| 3.5–4.9 (300-440) or UOP <500 mL/day) | +3 |\n| ≥5.0 (>440) or UOP <200 mL/day | +4 |\n\n*Estimating FiO₂ from oxygen flow/delivery rates:\n\n| Type of O₂ delivery | Flow rates, L/min | FiO₂ |\n| --- | --- | --- |\n| Nasal cannula | 1-6 | ~4% FiO₂ added above room air* per 1 L/min Room air = 21% 1 L/min = 25% 2 L/min = 29% 3 L/min = 33% 4 L/min = 37% 5 L/min = 41% 6 L/min = 45% |\n| Simple face mask | ~6-12 | 35-60%* |\n| Non-rebreather mask | 10-15 | ~70-90% |\n| High-flow nasal cannula | Up to 60 | 30-100% |\n\n*Varies based on respiratory rate and minute ventilation.",
+  "how_to_use": {
+    "why": "- Outil validé pour quantifier le niveau de dysfonction organique chez les patients gravement malades, avec ou sans sepsis, et estimer le risque de mortalité.\n- Également utilisé comme critère pour diagnostiquer un sepsis en présence d'une infection suspectée selon les critères Sepsis-3.",
+    "when": "- Peut être utilisé chez tous les patients admis en unité de soins intensifs (ICU).\n- Calculer à l’admission puis de façon sérielle, en utilisant les valeurs les plus anormales pour chaque composante sur une période de 24 heures.\n- Également applicable en milieu non-ICU pour évaluer le besoin potentiel d’admission en ICU.",
+    "pearls": "- Conçu à l’échelle d’une population et non initialement destiné à guider la prise en charge individuelle d’un patient ni à évaluer la réponse à un traitement ; il peut également nécessiter une mise à jour pour refléter les pratiques modernes de réanimation.\n- Des variantes pédiatrique (pSOFA) et néonatale (nSOFA) sont disponibles.\n- Considérer un score SOFA de base de 0, sauf si le patient présente une dysfonction organique préexistante connue.\n- Des calculs répétés (toutes les 24 heures) fournissent une information pronostique supérieure à celle d’un score unique à l’admission."
+  },
+  "next_steps": {
+    "advice": "En cas d’utilisation chez les patients en ICU, il est important d’établir une valeur de référence dès l’arrivée du patient dans l’unité afin de permettre l’évaluation des variations du score au cours de la maladie.",
+    "critical_actions": "Use clinical judgement to guide patient management, as this score does not validate the success or failure of a therapy.",
+    "management": "Les informations recueillies à partir de cet outil peuvent servir à :\n\n- Suivre l’évolution de la maladie.\n- Évaluer le risque de mortalité.\n- Guider les discussions pronostiques avec les patients et leurs proches.\n- Soutenir l’évaluation de la qualité.\n- Fournir des données pour les essais cliniques."
+  },
+  "evidence": "Originally developed by the Working Group on Sepsis-Related Problems of the European Society of Intensive Care Medicine (ESICM) in 1996, the SOFA score was created to describe the severity of organ dysfunction over time.\n\nThe score’s clinical utility was first validated by[Vincent et al. (1998)](http://www.ncbi.nlm.nih.gov/pubmed/9824069). Using data from 40 international ICUs, they showed that SOFA’s greatest value lies in its serial, daily application, which enables monitoring of patient condition and disease trajectory; higher SOFA scores were associated with increased mortality. These findings were reinforced by[Ferreira et al. (2001)](http://www.ncbi.nlm.nih.gov/pubmed/11594901). In a prospective study of 352 patients, an increase in SOFA score within the first 48 hours of admission was a poor prognostic indicator and was associated with mortality rates exceeding 50%.\n\nA pivotal shift occurred in 2016 when the Sepsis-3 Task Force ([Singer et al.](https://pubmed.ncbi.nlm.nih.gov/26903338/)) moved away from the traditional SIRS criteria, which were criticized for being too sensitive and nonspecific. By incorporating SOFA into the formal definition of sepsis, they established that an acute change of greater than 2 points from baseline was the most accurate way to define a dysregulated host response. Their data indicated that this threshold identifies patients with an in-hospital mortality risk of approximately 10%.\n\nMore recent large-scale studies have supported these findings in broader populations.[Soo et al. (2019)](https://pubmed.ncbi.nlm.nih.gov/31122276/)analyzed a cohort of over 20,000 Canadian patients to validate the score’s performance in real-world, high-volume critical care settings, confirming that SOFA remains a robust and superior tool for discriminating mortality risk compared to earlier screening methods.",
+  "more_info": "Interpretation:\n\n| SOFA Score | Mortality if initial score | Mortality if highest score |\n| --- | --- | --- |\n| 0-1 | 0.0% | 0.0% |\n| 2-3 | 6.4% | 1.5% |\n| 4-5 | 20.2% | 6.7% |\n| 6-7 | 21.5% | 18.2% |\n| 8-9 | 33.3% | 26.3% |\n| 10-11 | 50.0% | 45.8% |\n| 12-14 | 95.2% | 80.0% |\n| >14 | 95.2% | 89.7% |\n\n| Mean SOFA Score | Mortality |\n| --- | --- |\n| 0-1.0 | 1.2% |\n| 1.1-2.0 | 5.4% |\n| 2.1-3.0 | 20.0% |\n| 3.1-4.0 | 36.1% |\n| 4.1-5.0 | 73.1% |\n| >5.1 | 84.4% |\n\nFrom[Ferreira 2001](https://www.ncbi.nlm.nih.gov/pubmed/11594901).",
+  "short_description": "Mortalité en réanimation des données de laboratoire.",
+  "medium_description": "Predicts ICU mortalité basé sur lab results et clinique data.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "po2",
+      "label": "PaO₂",
+      "optional": false,
+      "unit": "pao2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fio2",
+      "label": "FiO₂",
+      "tips": "See[Evidence](#evidence)for estimating FiO₂ from oxygen flow/delivery rates",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "mv",
+      "label": "Sous ventilation mécanique",
+      "tips": "IncludingCPAP",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "plt",
+      "label": "Plaquettes, ×10³/µL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥150",
+          "value": 0
+        },
+        {
+          "label": "100-149",
+          "value": 1
+        },
+        {
+          "label": "50-99",
+          "value": 2
+        },
+        {
+          "label": "20-49",
+          "value": 3
+        },
+        {
+          "label": "< 20",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "tips": "Si sous sédatifs, estimer le GCS présumé sans sédatifs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "15",
+          "value": 0
+        },
+        {
+          "label": "13-14",
+          "value": 1
+        },
+        {
+          "label": "10-12",
+          "value": 2
+        },
+        {
+          "label": "6-9",
+          "value": 3
+        },
+        {
+          "label": "< 6",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bili",
+      "label": "Bilirubine, mg/dL (μmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1,2 (<20)",
+          "value": 0
+        },
+        {
+          "label": "1.2–1.9 (20-32)",
+          "value": 1
+        },
+        {
+          "label": "2,0–5,9 (33-101)",
+          "value": 2
+        },
+        {
+          "label": "6.0–11.9 (102-204)",
+          "value": 3
+        },
+        {
+          "label": "≥12,0 (>204)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "map",
+      "label": "Pression artérielle moyenne OU administration d'agents vasoactifs nécessaire",
+      "tips": "Les doses indiquées sont exprimées en unités de mcg/kg/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pas d’hypotension",
+          "value": 0
+        },
+        {
+          "label": "PAM <70 mmHg",
+          "value": 1
+        },
+        {
+          "label": "DOPamine ≤5 ou DOBUTamine (toute dose)",
+          "value": 2
+        },
+        {
+          "label": "DOPamine >5, EPINEPHrine ≤0,1, ou norEPINEPHrine ≤0,1",
+          "value": 3
+        },
+        {
+          "label": "DOPamine >15, EPINEPHrine >0.1, ou norEPINEPHrine >0.1",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine, mg/dL (μmol/L) (ou diurèse)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1,2 (<110)",
+          "value": 0
+        },
+        {
+          "label": "1.2–1.9 (110-170)",
+          "value": 1
+        },
+        {
+          "label": "2,0–3,4 (171-299)",
+          "value": 2
+        },
+        {
+          "label": "3.5–4.9 (300-440) ou UOP <500 mL/day",
+          "value": 3
+        },
+        {
+          "label": "≥5.0 (>440) ou UOP <200 mL/day",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Singer M, Deutschman CS, Seymour CW, Shankar-Hari M, Annane D,    Bauer M, et al. The Third International Consensus Definitions for Sepsis    and Septic Shock (Sepsis-3). JAMA. 2016 Feb 23;315(8):801-10. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26903338/",
+      "kind": "international"
+    },
+    {
+      "text": "Vincent JL, Moreno R, Takala J, et al. The SOFA (Sepsis-related Organ Failure Assessment) score to describe organ dysfunction/failure. On behalf of the Working Group on Sepsis-Related Problems of the European Society of Intensive Care Medicine. In: Vol 22. 1996:707–710.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8844239",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vincent JL, de Mendonça A, Cantraine F, et al. Use of the SOFA score to assess the incidence of organ dysfunction/failure in intensive care units: results of a multicenter, prospective study. Working group on 'sepsis-related problems' of the European Society of Intensive Care Medicine. Crit Care Med. 1998;26(11):1793–1800.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9824069",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ferreira FL, Bota DP, Bross A, Mélot C, Vincent JL. Serial evaluation of the SOFA score to predict outcome in critically ill patients. JAMA. 2001 Oct 10;286(14):1754-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11594901",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cárdenas-Turanzas M, Ensor J, Wakefield C, Zhang K, Wallace SK, Price KJ, Nates JL. Cross-validation of a Sequential Organ Failure Assessment score-based model to predict mortality in patients with cancer admitted to the intensive care unit. J Crit Care. 2012 Dec;27(6):673-80. doi: 10.1016/j.jcrc.2012.04.018. Epub 2012 Jul 2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22762932",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Soo A, Zuege DJ, Fick GH, Niven DJ, Berthiaume LR, Stelfox HT, et al.    Describing organ dysfunction in the intensive care unit: a cohort study    of 20,000 patients. Crit Care. 2019 May 23;23(1):186. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31122276/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.qsofa-quick-sofa-score-sepsis",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.horowitz-index-lung-function-p-f-ratio"
+  ],
+  "source_logic_hash": "0fd35e3b655306106ba51c33a97e1049",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 691,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar plt = parseFloat(plt);\nvar gcs = parseFloat(gcs);\nvar bili = parseFloat(bili);\nvar po2 = parseFloat(po2);\nvar fio2 = parseFloat(fio2)/100;\nvar map = parseFloat(map);\nvar cr = parseFloat(cr);\nvar mv = parseFloat(mv);\n\nif (UOMSYSTEM == false) {\n    po2 = po2/0.133;\n}\nelse {\n\tpo2 = po2;\n}\n\nvar pf_ratio = po2 / fio2;\n\nif (pf_ratio >= 400) {\n  pf_ratio = 0;\n} else if(pf_ratio >= 300 && pf_ratio < 400) {\n  pf_ratio = 1;\n} else if (pf_ratio >= 200 && pf_ratio < 300){\n  pf_ratio = 2;\n} else if (pf_ratio >= 100 && pf_ratio < 200 && mv == 1){\n  pf_ratio = 3;\n} else if (pf_ratio >= 100 && pf_ratio < 200 && mv == 0){\n  pf_ratio = 2;\n} else if (pf_ratio < 100 && mv == 1){\n  pf_ratio = 4;\n} else if (pf_ratio < 100 && mv == 0){\n  pf_ratio = 2;\n}\n\nu = pf_ratio + plt + gcs + bili + map + cr;\n\nvar msg, mini_msg\n\nif (u <= 9) {\n    msg = 'Initial SOFA Scores ≤9 predict ≤33.3% mortality (see Evidence for details)';\n    mini_msg = 'Mortality <33%'\n}\nif (u > 9 && u < 12) {\n    msg = 'Initial SOFA Scores of 10-11 predict 50.0% mortality (see Evidence for details)';\n    mini_msg = 'Mortality 50%'\n}\nif (u >= 12 ) {\n    msg = 'Initial SOFA Scores ≥12 predict ≥95.2% mortality (see Evidence for details)';\n    mini_msg = 'Mortality >95%'\n}\ncalc_output.push({ \n  name: 'mini', \n  value: u.toFixed(0), \n  value_text: 'points', \n  message: mini_msg \n});\ncalc_output.push({ \n  name: '691_SOFA Score_result', \n  value: u.toFixed(0), \n  value_text: 'points', \n  message: msg \n});",
+  "before_use": null,
+  "instructions": "Use the most abnormal value for each parameter over a 24-hour period.",
+  "contributor_ids": [
+    "meghan-prin-md",
+    "madiha-yazdani-md"
+  ],
+  "creator_names": [
+    "Dr. Jean-Louis Vincent"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.dobutamine",
+    "s.dopamine",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine"
+  ],
+  "engine_sha256": "c718c5113646f52d00c421566ea21e2beda2ec0a6f6bf7754d9a2ce0062a65f6"
+}

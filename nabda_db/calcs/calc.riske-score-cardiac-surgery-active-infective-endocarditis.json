@@ -1,0 +1,258 @@
+{
+  "id": "calc.riske-score-cardiac-surgery-active-infective-endocarditis",
+  "slug": "riske-score-cardiac-surgery-active-infective-endocarditis",
+  "language": "fr",
+  "title": "RiskE score pour Cardiac Surgery dans Active Infective Endocarditis",
+  "short_title": "RiskE score pour Cardiac Surgery dans Endocarditis",
+  "calc_type": null,
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "infectiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Endocarditis"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Fever"
+  ],
+  "abbreviations": [
+    "infective endocarditis",
+    "active infective endocarditis",
+    "riske",
+    "risk e",
+    "riske score",
+    "mortality"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | ≤51 | 0 |\n| 52-63 | 9 | |\n| 64-72 | 13 | |\n| ≥73 | 14 | |\n| Prosthetic endocarditis | No | 0 |\n| Yes | 6 | |\n| Virulent microorganism* | No | 0 |\n| Yes | 9 | |\n| Septic shock | No | 0 |\n| Yes | 7 | |\n| Thrombocytopenia** | No | 0 |\n| Yes | 7 | |\n| Acute renal insufficiency | No | 0 |\n| Yes | 5 | |\n| Cardiogenic shock | No | 0 |\n| Yes | 15 | |\n| Periannular complications*** | No | 0 |\n| Yes | 5 | |\n\n*Staphylococcus aureus or fungi.\n\n**<150,000 platelets/mm^3^.\n\n***Abscess, pseudoaneurysm, fistula, or prosthetic dehiscence.\n\nFrom[Olmos 2017](https://heart.bmj.com/content/103/18/1435).",
+  "how_to_use": {
+    "why": "La mortalité de l'endocardite infectieuse est élevée (15-30 %) et environ la moitié des patients présentant une endocardite évolutive nécessiteront une chirurgie en phase aiguë ([Habib 2015](https://www.ncbi.nlm.nih.gov/pubmed/26320109)). Un score de stratification du risque validé tel que RiskE peut aider à éclairer la décision opératoire, qui est multifactorielle.",
+    "when": "Ne doit pas être utilisé en cas d'endocardite isolée du cœur droit, ni après guérison de l'infection active traitée.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Une approche multidisciplinaire incluant les avis de la cardiologie, de l'imagerie, de la chirurgie cardiothoracique et des maladies infectieuses, et tenant compte des objectifs de soins du patient, est justifiée pour décider de l'opportunité de la chirurgie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nSe référer au Tableau S3 d'[Olmos 2017](https://heart.bmj.com/content/103/18/1435) pour la mortalité postopératoire hospitalière prédite à chaque score RiskE.",
+  "short_description": "Cardiac surgery mortalité dans endocarditis.",
+  "medium_description": "Predicts perioperative mortalité chez les patients avec active left-sided endocarditis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤51",
+          "value": 0
+        },
+        {
+          "label": "52-63",
+          "value": 9
+        },
+        {
+          "label": "64-72",
+          "value": 13
+        },
+        {
+          "label": "≥73",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pros",
+      "label": "Endocardite sur prothèse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vir",
+      "label": "Micro-organisme virulent",
+      "tips": "Staphylococcus aureus ou champignons",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sep",
+      "label": "Choc septique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "throm",
+      "label": "Thrombocytopenia",
+      "tips": "150,000 platelets/mm^3^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "Insuffisance rénale aiguë",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardio",
+      "label": "Choc cardiogénique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "peri",
+      "label": "Complications périannulaires",
+      "tips": "Abcès, pseudo-anévrisme, fistule ou désunion prothétique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Olmos C, Vilacosta I, Habib G, et al. Risk score for cardiac surgery in active left-sided infective endocarditis. Heart. 2017;103(18):1435-1442.",
+      "href": "https://heart.bmj.com/content/103/18/1435",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Habib G, Lancellotti P, Antunes MJ, et al. 2015 ESC Guidelines for the management of infective endocarditis: The Task Force for the Management of Infective Endocarditis of the European Society of Cardiology (ESC). Endorsed by: European Association for Cardio-Thoracic Surgery (EACTS), the European Association of Nuclear Medicine (EANM). Eur Heart J. 2015;36(44):3075-3128.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26320109?dopt=Abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Donal E, Flecher E, Tattevin P. Machine learning to support decision-making for cardiac surgery during the acute phase of infective endocarditis. Heart. 2017;103(18):1396-1397.",
+      "href": "https://heart.bmj.com/content/103/18/1396?ijkey=30c59a34d1199dcd59e1c74d7fb7cce71e4ffe34&keytype2=tf_ipsecsha",
+      "kind": "other"
+    },
+    {
+      "text": "Olmos C, Vilacosta I, Habib G, et al. Risk score for cardiac surgery in active left-sided infective endocarditis. Heart. 2017;103(18):1435-1442.",
+      "href": "https://heart.bmj.com/content/103/18/1435",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.virsta-score",
+    "calc.infective-endocarditis-ie-mortality-risk-score",
+    "calc.2023-duke-international-society-cardiovascular-infectious-diseases-iscvid-criteria"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10209,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

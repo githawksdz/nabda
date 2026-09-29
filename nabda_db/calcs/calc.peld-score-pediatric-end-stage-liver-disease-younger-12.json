@@ -1,0 +1,183 @@
+{
+  "id": "calc.peld-score-pediatric-end-stage-liver-disease-younger-12",
+  "slug": "peld-score-pediatric-end-stage-liver-disease-younger-12",
+  "language": "fr",
+  "title": "PELD score (pédiatrique End-Stage Liver maladie) (younger than 12)",
+  "short_title": "Score PELD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hematologie",
+    "hepatologie",
+    "pediatrie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Jaundice",
+    "Perte d'appétit",
+    "Nausea",
+    "Swelling",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "cirrhosis",
+    "peld",
+    "meld",
+    "hepatitis",
+    "PELD score",
+    "pediatric End-Stage Liver Disease",
+    "pediatric For End-Stage Liver",
+    "pediatric For End-Stage",
+    "pediatric For End-Stage Liver Disease",
+    "pediatric Model For End-Stage Liver Disease",
+    "Model For End-Stage Liver Disease 12 and down",
+    "meld score pediatric",
+    "meld score kids",
+    "peld model",
+    "peld calc",
+    "peld score 12",
+    "peld liver disease",
+    "peld prognosis",
+    "peld mortality",
+    "ESLD calc peds",
+    "ESLD score peds",
+    "ESLD model peds",
+    "ESLD prognosis peds",
+    "ESLD mortaltiy peds",
+    "ESLD criteria peds",
+    "pediatric liver disease",
+    "pediatric liver disease calc",
+    "pediatric liver disease score",
+    "end stage liver disease",
+    "MELD"
+  ],
+  "dosing": false,
+  "formula": "**Score PELD** = 10*[0,436*(si patient <2 ans) – 0,687*ln(albumine, g/dL) + 0,48*ln(bilirubine, mg/dL) + 1,857*ln(INR) + 0,667 (si le patient présente un retard de croissance (<-2 déviations standard))]",
+  "how_to_use": {
+    "why": "",
+    "when": "- Semblable au score MELD, mais pour la pédiatrie : détermine le pronostic et priorise l'inscription pour la greffe hépatique.\n- Doit être utilisé chez les patients pédiatriques de moins de 12 ans pour la stratification du risque et la priorisation de la greffe.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Le score PELD aide à estimer le pronostic des patients **pédiatriques** atteints d'insuffisance hépatique terminale et est utilisé pour prioriser les candidats à la greffe.\n- Si vous êtes aux États-Unis, référez-vous à la politique officielle de l'OPTN pour les directives de priorisation de la greffe hépatique. Sinon, suivez les directives locales/nationales.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Version pédiatrique du score MELD.",
+  "medium_description": "Calculates pédiatrique version de MELD score pour liver cirrhosis gravité et transplant planning.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_peds",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "growth_failure",
+      "label": "History de growth défaillance",
+      "tips": "[Courbe de retard de croissance UNOS](https://cdn-web-img.mdcalc.com/MELD_PELD.pdf)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McDiarmid SV, Anand R, Lindblad AS; Principal Investigators and Institutions of the Studies of Pediatric Liver Transplantation (SPLIT) Research Group. Development of a pediatric end-stage liver disease score to predict poor outcome in children awaiting liver transplantation.Transplantation. 2002 Jul 27;74(2):173-81.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12151728",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shneider BL, Neimark E, Frankenberg T, Arnott L, Suchy FJ, Emre S. Critical analysis of the pediatric end-stage liver disease scoring system: a single center experience.Liver Transpl. 2005 Jul;11(7):788-95.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15973720",
+      "kind": "other"
+    },
+    {
+      "text": "Bourdeaux C,  et al. PELD score and posttransplant outcome in pediatric liver transplantation: a retrospective study of 100 recipients. Transplantation. 2005 May 15;79(9):1273-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15880084",
+      "kind": "other"
+    },
+    {
+      "text": "Barshes NR, et. al.The pediatric end-stage liver disease (PELD) model as a predictor of survival benefit and posttransplant survival in pediatric liver transplant recipients.Liver Transpl. 2006 Mar;12(3):475-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16498644",
+      "kind": "other"
+    },
+    {
+      "text": "Shinkai M, Ohhama Y, Take H, Fukuzato Y, Fujita S, Nishi T. Evaluation of the PELD risk score as a severity index of biliary atresia. J Pediatr Surg. 2003 Jul;38(7):1001-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12861526",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease",
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis"
+  ],
+  "source_logic_hash": "cb0d7a569f82c8d2c3733f6b6ec62fc5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 87,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

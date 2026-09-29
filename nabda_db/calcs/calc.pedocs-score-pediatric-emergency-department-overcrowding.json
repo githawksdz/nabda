@@ -1,0 +1,98 @@
+{
+  "id": "calc.pedocs-score-pediatric-emergency-department-overcrowding",
+  "slug": "pedocs-score-pediatric-emergency-department-overcrowding",
+  "language": "fr",
+  "title": "PEDOCS score pour pédiatrique service d'accueil des urgences Overcrowding",
+  "short_title": "PEDOCS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme"
+  ],
+  "specialties": [
+    "urgences",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "DOCS",
+    "emergency",
+    "overcrowding",
+    "crowded"
+  ],
+  "dosing": false,
+  "formula": "Pediatric ED Overcrowding Scale (PEDOCS) = 33,3 * [0,11 + 0,07 * (patients dans la salle d'attente) + 0,04 * (nombre total de patients enregistrés)]",
+  "how_to_use": {
+    "why": "Fournir un score objectif et quantitatif peut aider les services d'urgence (SU) et leurs hôpitaux à allouer des ressources appropriées au SU et au reste de l'établissement afin de réduire les délais de prise en charge et l'hospitalisation en salle d'urgence (« boarding »), qui ont démontré un impact significatif sur la morbidité et la mortalité des patients.",
+    "when": "De nombreux services d'urgence utilisent ces scores à chaque poste, ou parfois en cours de poste en cas de variations importantes de l'encombrement (afflux massif de patients, par exemple).",
+    "pearls": "- Le PEDOCS a été créé comme une analyse améliorée du système de score [NEDOCS](nabda:calc.nedocs-score-emergency-department-overcrowding) ; les deux évaluent et quantifient la surcharge des services d'urgence.\n- Le PEDOCS a été développé spécifiquement pour les urgences pédiatriques.\n- Fait intéressant, son score a été calibré en comparant le niveau d'activité (« busy-ness ») aux évaluations faites par les médecins urgentistes et les infirmiers-chefs des urgences.\n\n**Points à retenir :**\n\n- Le score PEDOCS devrait faire l'objet de validations supplémentaires afin de vérifier sa généralisabilité à d'autres hôpitaux."
+  },
+  "next_steps": {
+    "advice": "Réaliser une évaluation du score de crowding à chaque relève, ainsi qu'en cas d'afflux important de patients aux urgences.",
+    "critical_actions": "",
+    "management": "De nombreux hôpitaux ont élaboré des « plans de montée en charge » (« surge plans »), similaires aux plans catastrophe, qui fournissent des ressources supplémentaires à l'hôpital et au SU lorsque le SU dépasse un certain seuil de score."
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Niveau | Score | Interprétation |\n| --- | --- | --- |\n| Niveau 1 | 1-20 | Pas occupé |\n| Niveau 2 | 21-60 | Occupé |\n| Niveau 3 | 61-100 | Extrêmement occupé mais pas surchargé |\n| Niveau 4 | 101-140 | Surchargé |\n| Niveau 5 | 141-180 | Gravement surchargé |\n| Niveau 6 | 181-200 | Dangereusement surchargé |",
+  "short_description": "Estimates gravité de overcrowding dans peds EDs.",
+  "medium_description": "Estimates gravité de overcrowding dans pediatrics service d'accueil des urgencess.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "totalpts",
+      "label": "Nombre total de patients enregistrés",
+      "tips": "Dans le SU et dans la salle d'attente",
+      "optional": false,
+      "unit": "patients",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "waitingpts",
+      "label": "Number de patients dans waiting room",
+      "optional": false,
+      "unit": "patients",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Weiss SJ, Ernst AA, Sills MR, Quinn BJ, Johnson A, Nick TG. Development of a novel measure of overcrowding in a pediatric emergency department. Pediatr Emerg Care. 2007 Sep;23(9):641-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17876254",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nedocs-score-emergency-department-overcrowding",
+    "calc.cedocs-score-emergency-department-overcrowding",
+    "calc.2023-emergency-medicine-coding-guide"
+  ],
+  "source_logic_hash": "cb674bca205c0f34e58ab48b5ffb5087",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nedocs-score-emergency-department-overcrowding",
+      "text": "NEDOCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3144,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

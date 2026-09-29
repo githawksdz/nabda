@@ -1,0 +1,229 @@
+{
+  "id": "calc.sedan-score-post-tpa-hemorrhage",
+  "slug": "sedan-score-post-tpa-hemorrhage",
+  "language": "en",
+  "title": "Score SEDAN pour l'hémorragie post-tPA",
+  "short_title": "Score SEDAN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "SEDAN",
+    "Stroke",
+    "CT scan",
+    "blood sugar",
+    "glucose",
+    "hyperdense",
+    "age",
+    "NIHSS",
+    "tpa"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Les taux de sICH variant considérablement, le SEDAN Score peut aider à prédire quels patients présenteront un risque faible ou élevé de développer une sICH, ce qui augmente considérablement la mortalité.",
+    "when": "- Fournir des estimations concrètes du risque lié au tPA aux patients et à leurs proches.\n- Peser le risque de bénéfice et le risque de préjudice dans les AVC mineurs ou graves.",
+    "pearls": "- The SEDAN Score predicts risk of post-tPA hemorrhage.\n- tPA hemorrhage risk varies greatly, so its developers wanted to predict low- and high-risk patients.\n- The endpoint, “Symptomatic Intracerebral Hemorrhage” varies greatly from trial to trial depending on definition, making it difficult to compare outcomes.\n- The [HAT Score](nabda:calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage) also predicts risk ofsICHwith fewer variables.\n- The [THRIVE Score](nabda:calc.thrive-score-stroke-outcome) predicts chance of good outcome after stroke (even without tPA) and does not require imaging variables.\n\n**Points to Consider**\n\n- Patients in this score did not receive endovascular therapy.\n- sICH increases mortality dramatically.\n- tPA risks and benefits should be very clearly discussed and documented with patients and family members."
+  },
+  "next_steps": {
+    "advice": "- Examiner attentivement les [contre-indications au tPA](nabda:calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke), car les établissements peuvent avoir des définitions légèrement différentes des contre-indications (absolues et relatives).\n- Le tPA pour l’AVC ne doit être administré qu’en association avec une consultation de neurologie et après une discussion approfondie avec le patient et sa famille sur les risques et les bénéfices.\n- Les patients recevant du tPA doivent être surveillés en unité de soins intensifs (ICU).\n- Même chez les patients à faible risque, les patients dont les examens neurologiques ou l’état mental changent doivent bénéficier d’une nouvelle imagerie en urgence pour rechercher une sICH.\n- Envisager d’autres sites de saignement (GI, GU, par exemple) chez les patients après tPA et faire preuve de prudence même avec des procédures minimalement invasives telles qu’une ponction veineuse ou la mise en place d’une sonde de Foley.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "**Original Study**\n\n- Developed in Europe\n- Derived from 974 patients treated with tPA within 4.5 hours\n- Basilar artery occlusion patients were not included in the study (but were separately evaluated later)\n- Patients undergoing endovascular procedures for their stroke were also excluded from the study\n- The ECASS-II definition of sICH was used:\n\n - An intracranial hemorrhage was defined as symptomatic if the patient had clinical deterioration causing an increase in the NIHSS score of more than or equal to 4 points and if the hemorrhage was likely to be the cause of the clinical deterioration. However, in case of doubt regarding whether edema or hemorrhage was the leading pathology, an association of the hemorrhage with the deterioration was assumed.\n- The score was then internally validated in 828 patients.\n- Overall 7% of patients in the study developed sICH\n\n**External Validation**\n\n- The SEDAN Score was validated in 34,251 patients\n- In the validation study they used both the ECASS-II definition of sICH as well as the SITS-MOST definition of sICH:\n\n - Presence of parenchymal hemorrhage type 2 on CT with an NIHSS score increased by ≥4 points from baseline or the lowest NIHSS value after baseline to 24 hours\n- The SITS-MOST definition of sICH is more narrow than the ECASS-II definition, so many fewer patients will be defined as having sICH.",
+  "more_info": "**Interprétation du score :**\n\n| Score SEDAN | Risque d'hémorragie intracrânienne symptomatique (ICH) |\n| --- | --- |\n| 0 | 1.6% |\n| 1 | 3.3% |\n| 2 | 5.4% |\n| 3 | 8.8% |\n| 4 | 12.3% |\n| 5 | 16.9% |",
+  "short_description": "Prédit le risque de sICH après tPA.",
+  "medium_description": "Predicts risque de Symptomatic Intracerebral hémorragie (sICH) after tPA.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gluc",
+      "label": "Glycémie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 145 mg/dL (8.1 mmol/L)",
+          "value": 0
+        },
+        {
+          "label": "145-216 mg/dL (8,1–12,0 mmol/L)",
+          "value": 1
+        },
+        {
+          "label": ">216 mg/dL (12.0 mmol/L)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "infarct",
+      "label": "Early infarct signs sur initial CT",
+      "tips": "Hypoattenuation comprising <1/3 of the middle cerebral artery territory; obscuration of the lentiform nucleus or Sylvian fissure; loss of basal ganglion outline or insular ribbon; cortical sulcal effacement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ct",
+      "label": "Signe de l’artère cérébrale hyperdense sur TDM initiale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge > 75 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nihss",
+      "label": "[NIH Stroke Scale (NIHSS)](nabda:calc.nih-stroke-scale-score-nihss) ≥ 10",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Strbian D, Engelter S, Michel P, Meretoja A, Sekoranja L, Ahlhelm FJ, Mustanoja S, Kuzmanovic I, Sairanen T, Forss N, Cordier M, Lyrer P, Kaste M, Tatlisumak T.Symptomatic intracranial hemorrhage after stroke thrombolysis: the SEDAN score. Ann Neurol. 2012 May;71(5):634-41. doi: 10.1002/ana.23546.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22522478",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Van Hooff RJ, et al. Validation assessment of risk tools to predict outcome after thrombolytic therapy for acute ischemic stroke.Clin Neurol Neurosurg. 2014 Oct;125:189-93. doi: 10.1016/j.clineuro.2014.08.011. Epub 2014 Aug 15.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25171393",
+      "kind": "other"
+    },
+    {
+      "text": "Mazya MV, Bovi P, Castillo J, Jatuzis D, Kobayashi A, Wahlgren N, Ahmed N. External validation of the SEDAN score for prediction of intracerebral hemorrhage in stroke thrombolysis. Stroke. 2013 Jun;44(6):1595-600. doi: 10.1161/STROKEAHA.113.000794. Epub 2013 Apr 30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23632975",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+    "calc.thrive-score-stroke-outcome",
+    "calc.nih-stroke-scale-score-nihss",
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke"
+  ],
+  "source_logic_hash": "5ef9e4c8b915628a394b8d9a1adb4699",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+      "text": "HAT Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.thrive-score-stroke-outcome",
+      "text": "THRIVE Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "tPA contraindications"
+    },
+    {
+      "type": "calc",
+      "id": "calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+      "text": "HAT Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.thrive-score-stroke-outcome",
+      "text": "THRIVE Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "tPA contraindications"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2039,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseFloat(gluc) + parseFloat(infarct) + parseFloat(ct) + parseFloat(age) + parseFloat(nihss);\nvar msg = '';\nvar mini_msg = '';\n\nif (u == 0) {\n    msg = '1.6% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '1.6% risk of symptomatic ICH.'\n} else if (u == 1) {\n    msg = '3.3% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '3.3% risk of symptomatic ICH.'\n} else if (u == 2) {\n    msg = '5.4% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '5.4% risk of symptomatic ICH.'\n} else if (u == 3) {\n    msg = '8.8% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '8.8% risk of symptomatic ICH.'\n} else if (u == 4) {\n    msg = '12.3% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '12.3% risk of symptomatic ICH.'\n} else if (u >= 5) {\n    msg = '16.9% risk of symptomatic ICH. (ECASS-II definition.)';\n    mini_msg = '16.9% risk of symptomatic ICH.'\n}\ncalc_output.push({\n    name: 'mini',\n    value: u,\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '2039_Sedan Score_result',\n    value: u,\n    value_text: 'points',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": "Applies to patients receiving tPA within 4.5 hours; does **not** apply to patients receiving endovascular treatment.",
+  "contributor_ids": [
+    "graham-walker"
+  ],
+  "creator_names": [
+    "Dr. Daniel Strbian"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "65054675a951b4787c16925408aadd429ad786918504a57fabb6386e168cf1d3"
+}

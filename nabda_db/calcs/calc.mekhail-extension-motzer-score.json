@@ -1,0 +1,224 @@
+{
+  "id": "calc.mekhail-extension-motzer-score",
+  "slug": "mekhail-extension-motzer-score",
+  "language": "en",
+  "title": "Mekhail Extension de Motzer score",
+  "short_title": "Extension de Mekhail",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Carcinome à cellules rénales",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Douleur du flanc",
+    "Hematuria",
+    "Mass"
+  ],
+  "abbreviations": [
+    "mekhail",
+    "ccf",
+    "cleveland clinic foundation criteria",
+    "RCC",
+    "cleveland",
+    "motzer",
+    "face",
+    "mikhail",
+    "cleveland clinic",
+    "CCF"
+  ],
+  "dosing": false,
+  "formula": "Addition of selected points:\n\n| | 0 points | 1 point |\n| --- | --- | --- |\n| LDH >1.5× upper limit of normal Normal: 140 U/L | No | Yes |\n| Hgb <lower limit of normal Normal: <12 g/dL (120 g/L) | No | Yes |\n| Corrected serum calcium >10 mg/dL (3 mmol/L) | No | Yes |\n| Time from initial diagnosis to systemic treatment <1 year | No | Yes |\n| Prior treatment with radiation | No | Yes |\n| ≥2 sites of metastasis | No | Yes |",
+  "how_to_use": {
+    "why": "Il n'existe aucun système de score validé pour prédire la survie dans le mRCC. L'utilisation d'un score peut aider à suggérer des catégories de durée de survie mieux que le jugement clinique seul.",
+    "when": "Patients atteints d’un carcinome à cellules rénales métastatique (mRCC) chez qui une inclusion dans un essai clinique est envisagée.",
+    "pearls": "This score placed clinical trial subjects from the 1970s-1990s with metastatic renal cell carcinoma (mRCC) into three groups with “poor,” “intermediate,” and “favorable” survival. There are no successful validations (later studies found different predictors), and the score may not apply to patients in common practice or those receiving modern targeted therapies such as sunitinib."
+  },
+  "next_steps": {
+    "advice": "The [Motzer score](nabda:calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc) (which performs similarly with or without the Mekhail extension) is among the most commonly used for mRCC, and is probably best used for selecting patients to enroll in clinical trials. The score retrospectively identified variables associated with survival, which may ultimately help predict outcomes.",
+    "critical_actions": "Le [score de Motzer](nabda:calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc) (avec ou sans l’extension de Mekhail) n’est pas reconnu comme précis pour la prédiction de la survie individuelle et doit être considéré comme un guide général plutôt qu’un prédicteur concret.",
+    "management": "Nous n’avons connaissance d’aucun algorithme de prise en charge validé utilisant ce score."
+  },
+  "evidence": "",
+  "more_info": "Criteria are the same as the [Motzer Score](nabda:calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc) , with Karnofsky performance status excluded and with two additions:\n\n1. Prior treatment with radiation.\n2. ≥2 sites of metastasis.\n\nRisk groups and correlated median survival also differ from the Motzer Score:\n\n| Score | Risk | Median Survival |\n| --- | --- | --- |\n| 0-1 | Favorable | 28 months |\n| 2 | Intermediate | 14 months |\n| ≥3 | Poor | 5 months |",
+  "short_description": "Survie du carcinome rénal métastatique (RCC).",
+  "medium_description": "Prédit la survie du carcinome à cellules rénales métastatique, plus précisément que le score de Motzer.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ldh",
+      "label": "LDH > 1.5 × limite supérieure de la normale",
+      "tips": "Normal : 140 U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hgb",
+      "label": "Hémoglobine < limite inférieure de la normale",
+      "tips": "Normal : <12 g/dL (120 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Calcium sérique corrigé > 10 mg/dL (2,5 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "time",
+      "label": "Time de initial diagnostic pour systemic traitement <1 year",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "radiation",
+      "label": "Prior traitement avec radiation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mets",
+      "label": "≥2 sites de métastases",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mekhail TM, Abou-jawde RM, Boumerhi G, et al. Validation and extension of the Memorial Sloan-Kettering prognostic factors model for survival in patients with previously untreated metastatic renal cell carcinoma. J Clin Oncol. 2005;23(4):832-41.",
+      "href": "https://ascopubs.org/doi/full/10.1200/jco.2005.05.179",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Motzer RJ, Mazumdar M, Bacik J, Berg W, Amsterdam A, Ferrara J. Survival and prognostic stratification of 670 patients with advanced renal cell carcinoma. J Clin Oncol. 1999;17(8):2530-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10561319 ",
+      "kind": "other"
+    },
+    {
+      "text": "Motzer RJ, Bacik J, Murphy BA, Russo P, Mazumdar M. Interferon-alfa as a comparative treatment for clinical trials of new therapies against advanced renal cell carcinoma. J Clin Oncol 2002 Jan 1;20(1):289-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11773181",
+      "kind": "other"
+    },
+    {
+      "text": "Yildiz I, Sen F, Kilic L, et al. Prognostic factors associated with the response to sunitinib in patients with metastatic renal cell carcinoma. Curr Oncol. 2013;20(6):e546-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3851351/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma"
+  ],
+  "source_logic_hash": "9fda99bf99ca1bee691956654e0e6e7d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+      "text": "Motzer score"
+    }
+  ],
+  "locale_status": "not_applicable_dz",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3007,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.sunitinib",
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

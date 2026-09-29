@@ -1,0 +1,253 @@
+{
+  "id": "calc.imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma",
+  "slug": "imdc-international-metastatic-rcc-database-consortium-risk-model-metastatic-renal-cell-carcinoma",
+  "language": "fr",
+  "title": "IMDC (International Metastatic RCC Database Consortium) risque modèle pour Metastatic Renal Cell Carcinoma",
+  "short_title": "IMDC modèle pour mRCC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "nephrologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Chemotherapy",
+    "Carcinome à cellules rénales"
+  ],
+  "chief_complaints": [
+    "Douleur du flanc",
+    "Hematuria"
+  ],
+  "abbreviations": [
+    "heng",
+    "vegf",
+    "OS",
+    "survival",
+    "mets",
+    "metastasis",
+    "RCC",
+    "heng score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points |\n| --- | --- |\n| <1 year from time of diagnosis to systemic therapy | 1 |\n| [Karnofsky performance status](nabda:calc.karnofsky-performance-status-scale\\) <80% | 1 |\n| Hemoglobin < lower limit of normal (usually ~120 g/L or 12 g/dL) | 1 |\n| [Corrected calcium](nabda:calc.calcium-correction-hypoalbuminemia\\) > upper limit of normal (usually ~8.5-10.2 mg/dL) | 1 |\n| Neutrophils > upper limit of normal (usually ~2.0-7.0×10⁹/L) | 1 |\n| Platelets > upper limit of normal (usually ~150,000-400,000 cells/µL) | 1 |",
+  "how_to_use": {
+    "why": "Aide les cliniciens dans les discussions sur le pronostic et dans le choix du traitement systémique approprié chez les patients atteints d’un carcinome rénal métastatique.",
+    "when": "Patients atteints d’un carcinome à cellules rénales métastatique.",
+    "pearls": "- Validé dans les contextes suivants :\n- Peut aider au choix d’un traitement systémique.\n- Facile à utiliser, repose sur des variables cliniques et biologiques facilement disponibles, et se compare favorablement à d’autres modèles similaires de prédiction du pronostic."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Ne peut être appliqué qu'aux patients atteints d'un carcinome à cellules rénales métastatique recevant un traitement systémique.",
+    "management": "According to[NCCN guidelines (v3.2019)](https://www.nccn.org/professionals/physician_gls/default.aspx), choice of first-line systemic therapy for metastatic renal cell carcinoma based on risk group is:\n\n- **Intermediate or poor risk** : ipilimumab plus nivolumab (Phase III trial evidence) or cabozantinib (Phase II trial evidence).\n- **Favorable risk** : PAZOPanib or SUNItinib.\n\nRefer toAUA guidelinesfor further details on management of renal cancer."
+  },
+  "evidence": "The International Metastatic RCC Database Consortium (IMDC) risk model was initially derived from a 2009 study of 645 patients with metastatic renal cell carcinoma treated with first-line targeted therapy in 3 US and 4 Canadian centers ([Heng 2009](https://www.ncbi.nlm.nih.gov/pubmed/19826129)). The model showed a concordance index (C-index) of 0.73 and patients classified into the different risk groups had significantly different overall survival.\n\nThe model was subsequently externally validated ([Heng 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144042/)) in 849 consecutive patients with metastatic renal cell carcinoma from 13 international cancer centres and was shown to compare favorably to 4 other risk models used in this setting: Memorial Sloan Kettering Cancer Center (MSKCC) model, Cleveland Clinic Foundation (CCF) model, French model, and International Kidney Cancer Working Group (IKCWG) model.\n\nThe model has also been validated in patients with non-clear cell renal cell carcinoma ([Kroeger 2013](https://www.ncbi.nlm.nih.gov/pubmed/23696129)), subsequent lines of therapy ([Ko 2015](https://www.ncbi.nlm.nih.gov/pubmed/25681967),[Wells 2017](https://www.europeanurology.com/article/S0302-2838(16)30258-5/fulltext)), and patients treated by immune checkpoint inhibitors ([Yip 2017](https://ascopubs.org/doi/abs/10.1200/JCO.2017.35.6_suppl.492)).\n\nSpecific IMDC risk groups have also been shown to have better outcomes with certain systemic therapies. In particular, the IMDC intermediate and poor risk groups should be preferentially treated with first line nivolumab + ipilimumab or cabozantinib therapy ([Motzer 2018](https://www.ncbi.nlm.nih.gov/pubmed/29562145),[Choueiri 2017](https://ascopubs.org/doi/full/10.1200/JCO.2016.70.7398),[NCCN guidelines v3.2019](https://www.nccn.org/professionals/physician_gls/default.aspx)). Thus, IMDC risk groups have also become a tool for the selection of systemic therapy for first line clear cell metastatic renal cell carcinoma patients.",
+  "more_info": "Interprétation :\n\n| Score de risque IMDC | Groupe de risque | Survie médiane |\n| --- | --- | --- |\n| 0 | Favorable | 43,2 mois |\n| 1-2 | Intermédiaire | 22,5 mois |\n| ≥3 | Défavorable | 7,8 mois |\n\nD'après [Heng 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144042/).",
+  "short_description": "Survie du carcinome rénal métastatique (RCC).",
+  "medium_description": "Predicts survie chez les patients avec metastatic renal cell carcinoma treated avec systemic therapy (also known as Heng critères).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "dx",
+      "label": "1 year de time de diagnostic pour systemic therapy",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "perf",
+      "label": "[Karnofsky Performance Status](nabda:calc.karnofsky-performance-status-scale) <80 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hgb",
+      "label": "Hémoglobine < limite inférieure de la normale",
+      "tips": "Habituellement ~120 g/L ou 12 g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "[Calcium corrigé](nabda:calc.calcium-correction-hypoalbuminemia) > limite supérieure de la normale",
+      "tips": "Habituellement ~8,5-10,2 mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neut",
+      "label": "Neutrophiles > limite supérieure de la normale",
+      "tips": "Habituellement ~2.0-7.0×10⁹/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "plt",
+      "label": "Plaquettes > limite supérieure de la normale",
+      "tips": "Usually ~150,000-400,000 cells/µL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Heng DY, Xie W, Regan MM, Warren MA, Golshayan AR, Sahi C, Eigl BJ, Ruether JD, Cheng T, North S, Venner P, Knox JJ, Chi KN, Kollmannsberger C, McDermott DF, Oh WK, Atkins MB, Bukowski RM, Rini BI, Choueiri TK. Prognostic Factors for Overall Survival in Patients With Metastatic Renal Cell Carcinoma Treated With Vascular Endothelial Growth Factor–Targeted Agents: Results From a Large, Multicenter Study. JCO Dec 1, 2009:5794-5799; published online on October 13, 2009.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19826129",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yip S, Wells C, Moreira RB, et al. Real world experience of immuno-oncology agents in metastatic renal cell carcinoma: Results from the IMDC. JCO (Abstract).",
+      "href": "https://ascopubs.org/doi/abs/10.1200/JCO.2017.35.6_suppl.492",
+      "kind": "other"
+    },
+    {
+      "text": "Choueiri TK, Halabi S, Sanford BL, et al. Cabozantinib Versus SUNItinib As Initial Targeted Therapy for Patients With Metastatic Renal Cell Carcinoma of Poor or Intermediate Risk: The Alliance A031203 CABOSUN Trial. J Clin Oncol. 2017;35(6):591-597.",
+      "href": "https://ascopubs.org/doi/full/10.1200/JCO.2016.70.7398",
+      "kind": "other"
+    },
+    {
+      "text": "Wells JC, Stukalin I, Norton C, et al. Third-line Targeted Therapy in Metastatic Renal Cell Carcinoma: Results from the International Metastatic Renal Cell Carcinoma Database Consortium. Eur Urol. 2017;71(2):204-209.",
+      "href": "https://www.europeanurology.com/article/S0302-2838(16)30258-5/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Motzer RJ, Tannir NM, Mcdermott DF, et al. Nivolumab plus Ipilimumab versus SUNItinib in Advanced Renal-Cell Carcinoma. N Engl J Med. 2018;378(14):1277-1290.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29562145",
+      "kind": "other"
+    },
+    {
+      "text": "Heng DY, Xie W, Regan MM et al. External validation and comparison with other models of the International Metastatic Renal-Cell Carcinoma Database Consortium prognostic model: a population-based study. Lancet Oncol. 2013;14(2),141-148.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4144042/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kroeger N, Xie W, Lee JL, et al. Metastatic non-clear cell renal cell carcinoma treated with targeted therapy agents: characterization of survival outcome and application of the International mRCC Database Consortium criteria. Cancer. 2013;119(16):2999-3006.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23696129",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ko JJ, Xie W, Kroeger N, et al. The International Metastatic Renal Cell Carcinoma Database Consortium model as a prognostic tool in patients with metastatic renal cell carcinoma previously treated with first-line targeted therapy: a population-based study. Lancet Oncol. 2015;16(3):293-300.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25681967",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ucla-integrated-staging-system-uiss-renal-cell-carcinoma-rcc",
+    "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+    "calc.renal-nephrometry-score",
+    "calc.karnofsky-performance-status-scale",
+    "calc.calcium-correction-hypoalbuminemia"
+  ],
+  "source_logic_hash": "3604d5b27fdb2a265d1bfadb71c1fcc2",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky performance status"
+    },
+    {
+      "type": "calc",
+      "id": "calc.calcium-correction-hypoalbuminemia",
+      "text": "Corrected calcium"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3008,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

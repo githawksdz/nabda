@@ -1,0 +1,173 @@
+{
+  "id": "calc.nafld-non-alcoholic-fatty-liver-disease-activity-score",
+  "slug": "nafld-non-alcoholic-fatty-liver-disease-activity-score",
+  "language": "fr",
+  "title": "Score d'activité NAFLD (maladie hépatique stéatosique non alcoolique)",
+  "short_title": "Score d’activité NAFLD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "biologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Hépatopathie chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "NAFLD",
+    "liver disease score",
+    "fatty liver disease score",
+    "non-alcoholic fatty liver disease score",
+    "nafld balloon score",
+    "balloon score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Steatosis (grade): low- to medium-power evaluation of parenchymal involvement by steatosis | <5% | 0 |\n| 5-33% | 1 | |\n| 34-66% | 2 | |\n| >66% | 3 | |\n| Inflammation (lobular): overall assessment of all inflammatory foci | No foci | 0 |\n| 1 focus per 200× field | 1 | |\n| 2‐4 foci per 200× field | 2 | |\n| >4 foci per 200× field | 3 | |\n| Liver cell injury (ballooning) | None | 0 |\n| Few balloon cells | 1 | |\n| Many cells/prominent ballooning | 2 | |",
+  "how_to_use": {
+    "why": "- Évalue le grade de l’activité de la MASH, qui a été utilisée dans les essais cliniques pour surveiller la réponse au traitement.\n- Fournit un système de score standardisé pour quantifier les principales caractéristiques histologiques de la MASH, facilitant la communication et l’homogénéité dans la recherche et la pratique clinique.",
+    "when": "Utiliser pour évaluer la sévérité histologique de la MASLD sur des échantillons de biopsie.",
+    "pearls": "- Créé pour mesurer les changements de la MASLD lors des essais cliniques.\n- N’inclut pas la stadification de la fibrose.\n- Ne doit pas être utilisé comme seul outil diagnostique, car les valeurs seuils ne corrèlent pas toujours avec un diagnostic définitif de MASH.\n- La variabilité interobservateur peut influencer le calcul du score."
+  },
+  "next_steps": {
+    "advice": "- Results are not typically used to make a diagnosis, but rather grade the activity of MASH. Changes in score may reflect progression or regression of the disease.\n- Based on the derivation study:\n\n - **Scores of 0–2:** Occurred in cases largely considered not diagnostic of MASH.\n - **Scores of 3–4:** Were evenly divided among cases considered not diagnostic, borderline, or diagnostic for MASH.\n - **Scores ≥5:** Occurred in cases largely considered diagnostic of MASH.\n- Patients with biopsy-proven MASH should undergo an assessment for fibrosis, such as elastography or serum fibrosis markers.",
+    "critical_actions": "",
+    "management": "All patients with MASLD or MASH should be:\n\n- Counseled on weight loss (e.g., diet, exercise).\n- Provided appropriate weight loss treatments, if applicable (e.g., medication, bariatric surgery).\n- Assessed and treated for comorbidities and cardiovascular risk factors, including hyperlipidemia, hypertension, and diabetes.\n- Advised to avoid heavy alcohol consumption and smoking.\n- Vaccinated according to[CDC guidance](https://www.cdc.gov/vaccines/hcp/imz-schedules/adult-age.html)(e.g., hepatitis A and B, influenza, pneumonia).\n- Monitored through liver function tests, CBC, and coagulation studies.\n\nFor patients with MASH:\n\n- Vitamin E may be appropriate in nondiabetic patients (avoid in individuals with a personal or strong family history of prostate cancer).\n- Pioglitazone and GLP-1 receptor agonists may be beneficial for patients with diabetes who cannot tolerate metformin or require additional glucose-lowering therapy.\n- Regular monitoring for fibrosis is recommended.\n- If advanced fibrosis is present, consider screening for hepatocellular carcinoma (HCC).\n\nFor more detailed management recommendations for MASLD and MASH, see your local medical society clinical guidelines, such as those from the[AASLD](https://journals.lww.com/hep/Fulltext/2023/05000/AASLD_Practice_Guidance_on_the_clinical_assessment.31.aspx),[AACE/AASLD](https://www.sciencedirect.com/science/article/pii/S1530891X22000908?via%3Dihub), and[AGA](https://gastro.org/clinical-guidance/diagnosis-and-management-of-nonalcoholic-fatty-liver-disease-nafld-in-lean-individuals/)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| NAFLD Activity Score | Activité* |\n| --- | --- |\n| 0 | Aucune activité |\n| 1–2 | Activité légère |\n| 3–5 | Activité modérée |\n| 6–8 | Activité marquée |\n\n*Remarque : le score est corrélé au diagnostic de stéatohépatite, mais ne doit pas être utilisé pour poser un diagnostic définitif de MASH.",
+  "short_description": "Histologic diagnostic de steatohepatitis dans NAFLD.",
+  "medium_description": "Diagnoses steatohepatitis, basé sur histology, dans NAFLD patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "stenosis",
+      "label": "Grade de stéatose",
+      "tips": "Évaluation à faible à moyen grossissement de l’atteinte parenchymateuse par stéatose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 5%",
+          "value": 0
+        },
+        {
+          "label": "5-33%",
+          "value": 1
+        },
+        {
+          "label": "34-66%",
+          "value": 2
+        },
+        {
+          "label": ">66%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inflam",
+      "label": "Inflammation lobulaire",
+      "tips": "Évaluation globale de tous les foyers inflammatoires",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun foyer",
+          "value": 0
+        },
+        {
+          "label": "1 foyer par champ à 200×",
+          "value": 1
+        },
+        {
+          "label": "2-4 foyers par champ 200×",
+          "value": 2
+        },
+        {
+          "label": ">4 foyers par champ à 200×",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "injury",
+      "label": "Liver cell lésion",
+      "tips": "Ballooning",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Rares cellules ballonnisées",
+          "value": 1
+        },
+        {
+          "label": "Nombreuses cellules/ballonnisation marquée",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kleiner DE, Brunt EM, Van natta M, et al. Design and validation of a histological scoring system for nonalcoholic fatty liver disease. Hepatology. 2005;41(6):1313-21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15915461 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brunt EM, Kleiner DE, Wilson LA, Belt P, Neuschwander-tetri BA. Nonalcoholic fatty liver disease (NAFLD) activity score and the histopathologic diagnosis in NAFLD: distinct clinicopathologic meanings. Hepatology. 2011;53(3):810-20. ",
+      "href": "https://aasldpubs.onlinelibrary.wiley.com/doi/full/10.1002/hep.24127 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kleiner DE, Brunt EM, Wilson LA, et al. Association of Histologic Disease Activity With Progression of Nonalcoholic Fatty Liver Disease. JAMA Netw Open. 2019;2(10):e1912565.",
+      "href": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2752351",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.peld-cr",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.galad-model-hepatocellular-carcinoma-hcc"
+  ],
+  "source_logic_hash": "90f133592ec20cf68c33c4921d76992c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10068,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

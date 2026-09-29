@@ -1,0 +1,120 @@
+{
+  "id": "calc.estimated-average-glucose-eag-hba1c",
+  "slug": "estimated-average-glucose-eag-hba1c",
+  "language": "fr",
+  "title": "Glycémie moyenne estimée (eAG) à partir de l'HbA1C",
+  "short_title": "Est. Avg. Glucose de HbA1C",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Polyuria",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "dm",
+    "diabetes mellitus",
+    "hyperglycemia",
+    "hypoglycemia",
+    "average glucose",
+    "a1c"
+  ],
+  "dosing": false,
+  "formula": "eAG = (28.7 ×notionvc: 4148c624-82c6-4207-b42c-2b7286f4a4c4A1C~US units~) - 46.7",
+  "how_to_use": {
+    "why": "Enhances patient-clinician communication by framing the HbA1c in terms that are familiar for patients and comparable to available methods of self-monitoring by glucometer or continuous glucose monitor (CGM).",
+    "when": "Pour convertir les résultats d'HbA1c en équivalents de glycémie moyenne sur 3 mois.",
+    "pearls": "- L’HbA1c est imprécise en cas d’hémoglobinopathies ou de renouvellement des globules rouges altéré.\n- L’HbA1c sera **faussement élevée** dans l’anémie non traitée, les variants de l’hémoglobine, l’urémie, la grossesse (3e trimestre).\n- L’HbA1c sera **faussement basse** dans la perte sanguine aiguë, l’hémolyse, la maladie hépatique chronique, la dialyse, les transfusions, la mucoviscidose, la grossesse (2e trimestre).\n- L’HbA1c reflète une moyenne glycémique sur 3 mois ; elle ne fournit donc pas de mesure de la variabilité glycémique (p. ex., épisodes d’hypoglycémie ou d’hyperglycémie) ni des changements glycémiques récents, comme une maladie aiguë.\n- Toutefois, la moyenne sur 3 mois tient compte des valeurs postprandiales et nocturnes, qui peuvent ne pas être détectées par l’autosurveillance intermittente au glucomètre."
+  },
+  "next_steps": {
+    "advice": "- Connaître la glycémie moyenne estimée peut permettre aux cliniciens de communiquer un objectif de glycémie auto-surveillée dans des termes familiers aux patients.\n- Toujours comparer l'HbA1c et les données de glycémie auto-surveillée disponibles. Bien qu'il existe une certaine marge de variation individuelle dans la durée de vie des globules rouges et la captation du glucose, des discordances importantes peuvent nécessiter une exploration des anomalies du renouvellement des globules rouges.\n- Si l'HbA1c est considérée comme non fiable en raison d'une affection médicale sous-jacente, les outils alternatifs de surveillance glycémique longitudinale comprennent l'indicateur de gestion du glucose (GMI) sur un capteur de glucose en continu (CGM), la fructosamine, l'albumine glyquée et les tests de 1,5-anhydroglucitol. Consulter un endocrinologue pour plus d'informations.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "This tool derives from a 2009 paper by[Nathan et al](https://www.ncbi.nlm.nih.gov/pubmed/18540046)., whosepurpose was to correlate A1c with 3-month continuous glucose monitor (CGM)/self-monitored glucose readings.In this multicenter, international observational study, 507 patients were analyzed (268 with DM type 1 and 159 with DM type 2). All patients included in the study were non-pregnant adults (ages 18-70) with the following characteristics:\n\n- Non-diabetes patients with no history of diabetes, plasma glucose <97 mg/dL after overnight fast and A1c <6.5%.\n- Diabetes patients with stable glycemic control (two A1c values within 1% of each other in the 6 months before recruitment).\n\nPatients excluded from the study were the following:\n\n- Children <18 years.\n- Conditions that could result in major glycemic change (diseases that could require steroids, or plans for pregnancy).\n- Conditions or treatments that interfere with A1c measurement or A1c-AG relationship: hemoglobinopathies, anemia, altered erythrocyte turnover.\n- Inadequate continuous glucose monitoring data.\n- Technical issues with A1c samples including sample degradation due to storage or shipment problems.\n\nThe linear regression line for comparison to CGM or to seven-point fingerstick separately was not statistically significant for slope and intercept. No significant difference for slope or intercept was seen in any subgroup comparison (sex, diabetes type, age, ethnicity, smoking status), but there was a suggestion (p=0.07) that the regression line was different for Black individuals such that a given value of A1c might have a slightly lower mean glucose level in this population. R2 = 0.84, p<0.0001. Correlation between A1c and reported blood glucose was found with 90% of the estimates within the +/- 15% range of the regression line.\n\nRobust data collection throughout the day and night was achieved by utilizing frequent seven-point glucose measurements,establishing a mathematical relationship that could be easily applied in clinical settings to improve patient understanding of glycemic control.\n\nAreas for future research include additional study in populations of Asian and African descent (as these were underrepresented), along with controlling for individual variation in red blood cell lifespan and glucose uptake.\n\nA recently published retrospective observational[study](https://pubmed.ncbi.nlm.nih.gov/38394636/)compared CGM-derived estimated average glucose with the Nathan et al. equation and found that the combination of data improved the accuracy of average glucose estimation, by reducing the mean absolute error to 1-15 mg/dL.",
+  "more_info": "",
+  "short_description": "Estime la glycémie moyenne à partir de l'HbA1C.",
+  "medium_description": "Estime la glycémie moyenne à partir de la valeur de l'hémoglobine 1C.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "hemoglobin_a1c",
+      "label": "Hémoglobine 1C",
+      "optional": false,
+      "unit": "hgba1c",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "American Diabetes Association Professional Practice Committee. 6. Glycemic goals and hypoglycemia: standards of care in diabetes-2024. Diabetes Care. 2024;47(Suppl 1):S111-S125.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38078586/",
+      "kind": "international"
+    },
+    {
+      "text": "Nathan DM, Kuenen J, Borg R, Zheng H, Schoenfeld D, Heine RJ; A1c-Derived Average Glucose Study Group. Translating the A1C assay into estimated average glucose values. Diabetes Care. 2008 Aug;31(8):1473-8. Epub 2008 Jun 7. Erratum in: Diabetes Care. 2009 Jan;32(1):207. PubMed PMID: 18540046; PubMed Central PMCID: PMC2742903.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18540046",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Veronica Tozzo, Matthew Genco, Shammah O. Omololu, Christopher Mow, Hasmukh R. Patel, Chhaya H. Patel, Samantha N. Ho, Evie Lam, Batoul Abdulsater, Nikita Patel, Robert M. Cohen, David M. Nathan, Camille E. Powe, Deborah J. Wexler, John M. Higgins; Estimating Glycemia From HbA1c and CGM: Analysis of Accuracy and Sources of Discrepancy. Diabetes Care 23 February 2024; 47 (3): 460–466",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38394636/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.c-peptide-glucose-ratio",
+    "calc.sodium-correction-hyperglycemia",
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment"
+  ],
+  "source_logic_hash": "1e3ac819b3cf0459f08e4a2fb44810d6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1299,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

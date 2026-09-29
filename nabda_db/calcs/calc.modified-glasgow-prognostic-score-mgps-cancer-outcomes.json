@@ -1,0 +1,151 @@
+{
+  "id": "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+  "slug": "modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+  "language": "en",
+  "title": "Modifié Glasgow Prognostic score (mGPS) pour cancer Outcomes",
+  "short_title": "MGPS pour cancer Outcomes",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Cancer du pancréas"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Crp",
+    "alb",
+    "mgps",
+    "glasgow",
+    "cancer",
+    "CA"
+  ],
+  "dosing": false,
+  "formula": "Sélection des critères appropriés.",
+  "how_to_use": {
+    "why": "Multiple studies suggest significantly worse outcome in multiple types of cancer, including “increased weight loss, poor performance status, increased comorbidity, increased pro-inflammatory and angiogenic cytokines and complications on treatment.” ([McMillan DC 2013](https://www.ncbi.nlm.nih.gov/pubmed/17245566))",
+    "when": "Patients atteints d'un cancer connu.",
+    "pearls": "- The Modified Glasgow Prognostic Score (mGPS) has been evaluated across numerous different cancer cohorts and suggests incrementally worsening prognosis with increasing score.\n- Depending upon patient selection, stage, cancer and other factors the resulting survival numbers vary widely.\n- The modified GPS uses the same parameters as the [original GPS](nabda:calc.glasgow-prognostic-score-gps-cancer-outcomes) (CRP and albumin), but weighs the inflammatory component more heavily; i.e., patients with low albumin are still assigned a score of 0 as long as CRP is not elevated. This modification was shown to have better correlation with survival (in colon and rectal cancer from the original paper, and in other cancers from the validation papers)."
+  },
+  "next_steps": {
+    "advice": "Le Modified Glasgow Prognosis Score aide à stratifier les groupes pronostiques et pourrait constituer un ajout utile aux évaluations multifactorielles. En usage isolé dans des cas individuels, sa précision probable reste incertaine à ce stade.",
+    "critical_actions": "Le GPS modifié n’attribue pas de point pour une albuminémie basse comme constatation isolée, ce qui diffère du [GPS original](nabda:calc.glasgow-prognostic-score-gps-cancer-outcomes). La valeur de la protéine C-réactive doit être élevée pour que des points soient attribués.",
+    "management": "Nous n’avons pas connaissance d’algorithmes de prise en charge validés utilisant le mGPS."
+  },
+  "evidence": "![diagramme pi mgps](https://cdn-web-img.mdcalc.com/mgps.png)",
+  "more_info": "The modified GPS uses the same parameters as the [original GPS](nabda:calc.glasgow-prognostic-score-gps-cancer-outcomes) (CRP and albumin), but weighs the inflammatory component more heavily; i.e., patients with low albumin are still assigned a score of 0 even if CRP is elevated. This modification was shown to have better correlation with survival (in colon and rectal cancer from the original paper, and in other cancers from the validation papers).\n\nThe mGPS has been shown to be accurate in different types of cancer, including renal, lung, gastric cancers, as well as in primary care. The predictive values are listed below for each type of cancer.\n\n| Type of cancer | mGPS | Median Survival |\n| --- | --- | --- |\n| Gastric | 0 | 5 year Overall Survival: 74.6% |\n| | 1 | 5 year Overall Survival: 61.4% |\n| | 2 | 5 year Overall Survival: 34.6% |\n| Renal | 0 | 1 year RFS: 90.9% |\n| | 1 | 1 year RFS: 61.1% |\n| | 2 | 1 year RFS: 10.1% |\n| Lung (Small Cell) | 0 | 3 Month Survival: 99% |\n| | 2 | 3 Month Survival: 71% |",
+  "short_description": "Cancer pronostic basé sur biomarkers.",
+  "medium_description": "Provides improved cancer pronostic over [original score](nabda:calc.glasgow-prognostic-score-gps-cancer-outcomes), basé sur serum biomarkers.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "CRP",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "CRP ≤10 mg/L",
+          "value": 1
+        },
+        {
+          "label": "CRP >10 mg/L",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Albumine < 3,5 g/dL (35 g/L)",
+          "value": 1
+        },
+        {
+          "label": "Albumine ≥3.5 g/dL (35 g/L)",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Proctor MJ, Morrison DS, Talwar D, Balmer SM, O'Reilly DS, Foulis AK et al. An inflammation-based prognostic score (mGPS) predicts cancer survival independent of tumour site: a Glasgow Inflammation Outcome Study. Br J Cancer 2011; 104(4):726–734",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3049591/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "de Paula Pantano N, Paiva BS, Hui D, Paiva CE. Validation of the Modified Glasgow Prognostic Score in Advanced Cancer Patients Receiving Palliative Care. J Pain Symptom Manage. 2016 Feb;51(2):270-7. doi: 10.1016/j.jpainsymman.2015.09.010. Epub 2015 Oct 24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26598040",
+      "kind": "other"
+    },
+    {
+      "text": " Proctor MJ, et al. A comparison of inflammation-based prognostic scores in patients with cancer. A Glasgow Inflammation Outcome Study. Eur J Cancer. 2011 Nov;47(17):2633-41. doi: 10.1016/j.ejca.2011.03.028. Epub 2011 Jul 1.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21724383",
+      "kind": "other"
+    },
+    {
+      "text": "Nozoe T, Iguchi T, Egashira A, Adachi E, Matsukuma A, Ezaki T. Significance of modified Glasgow prognostic score as a useful indicator for prognosis of patients with gastric carcinoma. Am J Surg 2011;201(2):186–191",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20832047",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tai CG, Johnson TV, Abbasi A, et al. External validation of the modified Glasgow prognostic score for renal cancer. Indian Journal of Urology : IJU : Journal of the Urological Society of India. 2014;30(1):33-37. doi:10.4103/0970-1591.124203.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3897050/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Simmons CP, et al. Prognosis in advanced lung cancer--A prospective study examining key clinicopathological factors.Lung Cancer. 2015 Jun;88(3):304-9. doi: 10.1016/j.lungcan.2015.03.020. Epub 2015 Mar 28.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25870155",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-prognostic-score-gps-cancer-outcomes",
+    "calc.prognostic-index-cancer-outcomes",
+    "calc.khorana-risk-score-venous-thromboembolism-cancer-patients"
+  ],
+  "source_logic_hash": "286c286b4a292a90137e08c35d1deb60",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-prognostic-score-gps-cancer-outcomes",
+      "text": "original GPS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3312,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

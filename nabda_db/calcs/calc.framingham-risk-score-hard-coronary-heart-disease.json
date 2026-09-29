@@ -1,0 +1,246 @@
+{
+  "id": "calc.framingham-risk-score-hard-coronary-heart-disease",
+  "slug": "framingham-risk-score-hard-coronary-heart-disease",
+  "language": "en",
+  "title": "Framingham risque score pour Hard Coronary Heart maladie",
+  "short_title": "Score de risque de Framingham (cardiopathie coronarienne « dure »)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Maladie coronarienne",
+    "Dyslipidémie",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "framingham risk score",
+    "ACS",
+    "cardiac risk",
+    "CHD",
+    "CAD",
+    "framingham",
+    "coronary heart disease",
+    "MI",
+    "myocardial infarction risk"
+  ],
+  "dosing": false,
+  "formula": "Equations as follows (β coefficients listed in table below):\n\n**Men:**\n\nL~Men~= β × ln(Age) + β × ln(Total cholesterol) + β × ln(HDL cholesterol) + β × ln(Systolic BP) + β × Treated for blood pressure + β × Smoker + β × ln(Age) × ln(Total cholesterol) + β × ln(Age) × Smoker + β × ln(Age) × ln(Age) - 172.300168\n\nP~Men~= 1 - 0.9402^exp(LMen)^\n\n**Women:**\n\nL~Women~= β × ln(Age) + β × ln(Total cholesterol) + β × ln(HDL cholesterol) + β × ln(Systolic BP) + β × Treated for blood pressure + β ×notionvc: 14525731-385a-42f9-8ca3-295c8e4c39a9Smoker + β ×notionvc: 14525731-385a-42f9-8ca3-295c8e4c39a9ln(Age) × ln(Total cholesterol) + β × ln(Age) × Smoker - 146.5933061\n\nP~Women~= 1 - 0.98767^exp(LWomen)^\n\n| Variable | Coefficient (β) | |\n| --- | --- | --- |\n| Men | Women | |\n| ln(Age) | 52.00961 | 31.764001 |\n| ln(Total cholesterol) | 20.014077 | 22.465206 |\n| ln(HDL cholesterol) | -0.905964 | -1.187731 |\n| ln(Systolic BP) | 1.305784 | 2.552905 |\n| Treated for blood pressure* | 0.241549 | 0.420251 |\n| Smoker* | 12.096316 | 13.07543 |\n| ln(Age) × ln(Total cholesterol) | -4.605038 | -5.060998 |\n| ln(Age) × Smoker** | -2.84367 | -2.996945 |\n| ln(Age) × ln(Age) | -2.93323 | - |\n\n*Yes = 1, No = 0.\n\n**Men: if age >70, use ln(70) × Smoker. Women: if age >78, use ln(78) × Smoker.",
+  "how_to_use": {
+    "why": "- Fournit une approche systématique et fondée sur les données probantes pour intégrer de multiples facteurs de risque de CHD en une seule estimation du risque absolu ; cette approche multivariée est supérieure à l’évaluation isolée des facteurs de risque individuels, car les événements cardiovasculaires résultent généralement de la convergence de multiples facteurs de risque coexistants.\n- Peut aider à identifier les patients les plus susceptibles de bénéficier d’interventions préventives telles que le traitement par statines, le traitement antihypertenseur et la modification du mode de vie.",
+    "when": "- Utiliser chez les adultes asymptomatiques âgés de 30 à 79 ans sans maladie cardiovasculaire connue pour estimer le risque à 10 ans d’un premier événement coronarien dur et guider les stratégies de prévention primaire, en particulier chez les individus à risque intermédiaire pour lesquels le bénéfice du traitement peut être incertain.\n- Ne pas utiliser chez les patients présentant une coronaropathie établie, un AVC, une artériopathie périphérique, une claudication intermittente, un diabète ou une autre maladie cardiovasculaire athéroscléreuse clinique, car ces individus sont déjà considérés comme à haut risque et nécessitent une modification intensive des facteurs de risque.",
+    "pearls": "**Pearls:**\n\n- The FRS was the first widely used multivariable cardiovascular risk score in North America.\n- Easy to apply and requires only readily available clinical and laboratory data.\n- Uses sex-specific regression coefficients applied to the natural logarithm of continuous variables (age, cholesterol values, blood pressure) and binary variables (smoking, diabetes, treatment status).\n- Validated in multiple populations, including White and Black American populations.\n- Provides a quantitative estimate that can facilitate patient-clinician discussions about cardiovascular risk and treatment options.\n- C-statistics typically range from 0.74–0.80 (0.77 in women, 0.74 in men), indicating good discriminative ability.\n\n**Pitfalls:**\n\n- Predicts hard CHD events only (myocardial infarction and CHD death); does not predict stroke, peripheral arterial disease, or heart failure.\n- May overestimate risk in contemporary populations, with predicted risk often being exceedingly higher (100%–130%) than observed risk in recent validation studies.\n- Limited accuracy in some European and Asian populations; underprediction may occur in high-risk populations and overprediction in low-risk populations.\n- Does not include family history, inflammatory markers, or other emerging risk factors.\n- Less useful for younger patients and most women because it focuses on 10-year rather than lifetime risk."
+  },
+  "next_steps": {
+    "advice": "- Considérez ce score comme une composante d’une évaluation globale du risque, plutôt que comme le seul déterminant des décisions thérapeutiques.\n- Utilisez le score pour faciliter la décision partagée concernant les bénéfices et les risques des traitements préventifs.\n- Réévaluez le risque à intervalles réguliers et après des modifications significatives du profil de facteurs de risque du patient.\n- Reconnaissez que cet outil a été développé principalement dans des populations blanches non hispaniques ; ses performances peuvent varier dans d’autres groupes ethniques.\n- N’utilisez pas ce score chez les patients ayant une maladie cardiovasculaire établie, car ces personnes nécessitent une modification intensive des facteurs de risque indépendamment du risque calculé.",
+    "critical_actions": "",
+    "management": "Tenir compte de recommandations de traitement fondées sur le risque selon le contexte clinique et les catégories du FRS :\n\n- **Faible risque (<10 %) :**\n\n - Mettre l'accent sur la modification du mode de vie, notamment l'alimentation, l'activité physique, la gestion du poids et le sevrage tabagique.\n - Le traitement par statine n'est généralement pas indiqué, sauf en présence d'autres caractéristiques à haut risque.\n- **Risque intermédiaire (10 %–20 %) :**\n\n - Un traitement par statine d'intensité modérée est raisonnable, en particulier lorsque des facteurs augmentant le risque sont présents.\n - Envisager un score calcique coronaire ou d'autres biomarqueurs (p. ex., hs-CRP, Lp[a]) pour affiner davantage le risque et guider les décisions thérapeutiques.\n - Modifications intensives du mode de vie.\n- **Risque élevé (>20 %) :**\n\n - Envisager un traitement par statine d'intensité élevée avec un objectif de réduction du cholestérol LDL ≥50 %.\n - Prendre en charge de manière agressive tous les facteurs de risque modifiables, y compris la pression artérielle et la consommation de tabac.\n - Envisager un traitement hypolipémiant supplémentaire si les objectifs de LDL ne sont pas atteints avec les statines seules.\n\nToujours se référer aux recommandations les plus récentes pour guider les décisions thérapeutiques."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Age, years | Average 10 year hard* CHD risk in this patient | Low** 10 year CHD risk in the average patient | | |\n| --- | --- | --- | --- | --- |\n| Women | Men | Women | Men | |\n| 30-34 | <1% | 1% | <1% | 2% |\n| 35-39 | <1% | 4% | 1% | 3% |\n| 40-44 | 1% | 4% | 2% | 4% |\n| 45-49 | 2% | 8% | 3% | 4% |\n| 50-54 | 3% | 10% | 5% | 6% |\n| 55-59 | 7% | 13% | 7% | 7% |\n| 60-64 | 8% | 20% | 8% | 9% |\n| 65-69 | 8% | 22% | 8% | 11% |\n| 70-74 | 11% | 25% | 8% | 14% |\n| 74-79 | Data not available | Data not available | Data not available | Data not available |\n\n*Excluding angina pectoris.\n\n**Low risk was calculated for a person the same age, optimal blood pressure, LDL-C 100-129 mg/dL or cholesterol 160-199 mg/dL, HDL-C 45 mg/dL for men or 55 mg/dL for women, non-smoker, no diabetes.",
+  "short_description": "Risque d'infarctus du myocarde.",
+  "medium_description": "Estimates 10-year risque de heart attack dans patients 30-79 years avec no history de CHD ou diabète.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "cholesterol",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hdl_cholesterol",
+      "label": "Cholestérol HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "systolic_bp",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "blood_pressure",
+      "label": "Pression artérielle sous traitement médicamenteux",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Greenland P, Alpert JS, Beller GA, et al. 2010 ACCF/AHA guideline for assessment of cardiovascular risk in asymptomatic adults: a report of the American College of Cardiology Foundation/American Heart Association Task Force on Practice Guidelines. J Am Coll Cardiol. 2010;56(25):e50-e103.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21144964/",
+      "kind": "international"
+    },
+    {
+      "text": "Goff DC Jr, Lloyd-Jones DM, Bennett G, et al. 2013 ACC/AHA guideline on the assessment of cardiovascular risk: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines. J Am Coll Cardiol. 2014;63(25 Pt B):2935-2959.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24239921/",
+      "kind": "international"
+    },
+    {
+      "text": "Arnett DK, Blumenthal RS, Albert MA, et al. 2019 ACC/AHA guideline on the primary prevention of cardiovascular disease: executive summary: a report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines. J Am Coll Cardiol. 2019;74(10):1376-1414.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30879355/",
+      "kind": "international"
+    },
+    {
+      "text": "Wilson PWF, D'Agostino RB, Levy D, Belanger AM, Silbershatz H, Kannel WB. Prediction of coronary heart disease using risk factor categories. Circulation. 1998;97(18):1837-1847. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/9603539/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sytkowski PA, Kannel WB, D'agostino RB. Changes in risk factors and the decline in mortality from cardiovascular disease. The Framingham Heart Study. N Engl J Med. 1990;322(23):1635-41.  ",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJM199006073222304",
+      "kind": "other"
+    },
+    {
+      "text": "Cooney MT, Dudina AL, Graham IM. Value and limitations of existing scores for the assessment of cardiovascular risk: a review for clinicians. J Am Coll Cardiol. 2009;54(14):1209-1227.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19778661/",
+      "kind": "other"
+    },
+    {
+      "text": "Chrispin J, Martin SS, Hasan RK, Joshi PH, Minder CM, McEvoy JW, Blaha MJ, Blumenthal RS. Landmark lipid-lowering trials in the primary prevention of cardiovascular disease. Clin Cardiol. 2013;36(9):516-523.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23722477/",
+      "kind": "other"
+    },
+    {
+      "text": "Karmali KN, Goff DC Jr, Ning H, Lloyd-Jones DM. A systematic examination of the 2013 ACC/AHA pooled cohort risk assessment tool for atherosclerotic cardiovascular disease. J Am Coll Cardiol. 2014;64(10):959-968.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25190228/",
+      "kind": "other"
+    },
+    {
+      "text": "Karmali KN, Persell SD, Perel P, Lloyd-Jones DM, Berendsen MA, Huffman MD. Risk scoring for the primary prevention of cardiovascular disease. Cochrane Database Syst Rev. 2017;(3):CD006887.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28290160/",
+      "kind": "other"
+    },
+    {
+      "text": "Damen JAAG, Hooft L, Schuit E, et al. Performance of the Framingham risk models and pooled cohort equations for predicting 10-year risk of cardiovascular disease: a systematic review and meta-analysis. BMC Med. 2019;17:109. doi:10.1186/s12916-019-1340-7.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31189462/",
+      "kind": "other"
+    },
+    {
+      "text": "Sud M, Sivaswamy A, Humphries KH, et al. Population-based recalibration of the Framingham Risk Score and pooled cohort equations. J Am Coll Cardiol. 2022;80(14):1330-1342.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36175052/",
+      "kind": "other"
+    },
+    {
+      "text": "Hernandez AV, Diaz-Arocutipa C, Valenzuela G, Feigin V, Banda S, Barboza JJ, Mayta-Tovalino F, Virú Loza MA, Persell S, Wafford E, Lloyd-Jones DM, Mead GE. Risk scoring for the primary prevention of cardiovascular disease. Cochrane Database Syst Rev. 2026;2:CD016333.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41700601/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.score2-diabetes",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.score2-older-persons-score2-op"
+  ],
+  "source_logic_hash": "c7b5706c949c3799722beb8081b1174d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 38,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar v, tc, hdl, bp, diabetic, bptreated, sum;\nvar mini_msgA = 'Risk of heart attack';\nvar msgA = '10-year risk of MI or death for this patient';\nvar msgB = 'This data only works for ages 30-79';\nvar e = 2.718281828;\nvar lnagecholesterol;\nvar lnagesmoker;\nvar lnageage;\nvar esum;\nvar power;\nvar baselinerisk;\nvar lnage;\nvar lncholesterol;\nvar lnhdl;\nvar lnsbp;\nvar lnagetotal;\nvar lnageage;\nvar averagerisk;\nvar age = parseFloat(age);\nvar sbp = parseFloat(systolic_bp);\nvar smoker = parseFloat(smoker);\nvar bptreated = parseFloat(blood_pressure);\nvar sex = parseFloat(sex);\n\nif (UOMSYSTEM == true) { // cholesterols in US units\n  var cholesterol = parseFloat(cholesterol);\n  var hdl = parseFloat(hdl_cholesterol);\n}\n\nif (UOMSYSTEM == false) { // Cholesterols in SI units --> US units\n  var cholesterol = parseFloat(cholesterol) / 0.0259;\n  var hdl = parseFloat(hdl_cholesterol) / 0.0259;\n}\n\n//outside age range people\nif (age < 30 || age > 79) {\n  calc_output.push({\n    name: 'mini',\n    value: 'N/A',\n    value_text: ' ',\n    message: msgB\n  });\n  calc_output.push({\n    name: '38_Framingham Risk Score_result (risk)',\n    value: ' N/A',\n    value_text: ' ',\n    message: msgB\n  });\ncalc_output.push({\n    name: '38_Framingham Risk Score_result (avg)',\n    value: 'N/A',\n    value_text: ' ',\n    message: 'Data not available'\n  });\n}\n\nif (age >= 30 && age <= 79) {\n  lnage = Math.log(age);\n  lncholesterol = Math.log(cholesterol);\n  lnhdl = Math.log(hdl);\n  lnsbp = Math.log(sbp);\n  lnagetotal = lnage * lncholesterol;\n  lnageage = lnage * lnage;\n\n//males\n  if (sex == 0) {\n    if (smoker == 1) {\n      smoker = 12.0963;\n      lnagesmoker = lnage;\n      if (age > 70) {\n        lnagesmoker = Math.log(70);\n      }\n    } else {\n      smoker = 0;\n      lnagesmoker = 0;\n    }\n    lnage *= 52.00953;\n    lncholesterol *= 20.01406;\n    lnhdl *= -0.90596;\n    lnsbp *= 1.30578;\n    if (bptreated == 1) {\n      bptreated = 0.24155;\n    } else {\n      bptreated = 0;\n    }\n    lnagetotal *= -4.60504;\n    lnagesmoker *= -2.84367;\n    lnageage *= -2.93322;\n    sum = lnage + lncholesterol + lnhdl + lnsbp + smoker + bptreated +\n      lnagetotal + lnagesmoker + lnageage;\n    sum = sum - 172.299867;\n    esum = Math.pow(e, sum);\n    power = Math.pow(0.940200, esum);\n    baselinerisk = 1 - power;\n    baselineriskpercent = baselinerisk * 100;\n\n    if (age >= 30 && age <= 74){\n      //males\n      if (age >= 30 && age <= 34 && sex == 0) { \n        averagerisk = '1'\n      }\n      else if (age >= 35 && age <= 39  && sex == 0) { \n        averagerisk = '4'\n      }\n      else if (age >= 40 && age <= 44 && sex == 0) { \n        averagerisk = '4'\n      }\n      else if (age >= 45 && age <= 49 && sex == 0) { \n        averagerisk = '8'\n      }\n      else if (age >= 50 && age <= 54 && sex == 0) { \n        averagerisk = '10'\n      }\n      else if (age >= 55 && age <= 59 && sex == 0) { \n        averagerisk = '13'\n      }\n      else if (age >= 60 && age <= 64 && sex == 0) { \n        averagerisk = '20'\n      }\n      else if (age >= 65 && age <= 69 && sex == 0) { \n        averagerisk = '22'\n      }\n      else if (age >= 70 && age <= 74 && sex == 0) { \n        averagerisk = '25'\n      }\n      \n    calc_output.push({\n        name: 'mini',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: mini_msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (risk)',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (avg)',\n        value: averagerisk,\n        value_text: '%',\n        message: 'Average 10-year risk of MI or death'\n      });\n  }    \n    else if (age >= 75 && age <= 79 && sex ==0){\n      calc_output.push({\n        name: 'mini',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: mini_msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (risk)',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (avg)',\n        value: '',\n        value_text: '',\n        message: 'Data for average risk in ages 75-79 is unavailable'\n      });\n    } \n  } \n\n  else if (sex == 1) {\n    if (smoker == 1) {\n      smoker = 13.07543;\n      lnagesmoker = lnage;\n      if (age > 78) {\n        lnagesmoker = Math.log(78);\n      }\n    } else {\n      smoker = 0;\n      lnagesmoker = 0;\n    }\n    lnage *= 31.76399;\n    lncholesterol *= 22.4652;\n    lnhdl *= -1.18773;\n    lnsbp *= 2.55291;\n    if (bptreated == 1) {\n      bptreated = 0.42025;\n    } else {\n      bptreated = 0;\n    }\n    lnagetotal *= -5.060998;\n    lnagesmoker *= -2.996945;\n    lnageage = 0;\n    sum = lnage + lncholesterol + lnhdl + lnsbp + smoker + bptreated +\n      lnagetotal + lnagesmoker + lnageage;\n    sum = sum - 146.5932588;\n    esum = Math.pow(e, sum);\n    power = Math.pow(0.98767, esum);\n    baselinerisk = 1 - power;\n    baselineriskpercent = baselinerisk * 100;\n\n\n    if (age >= 30 && age <= 74){\n      //females \n      if (age >= 30 && age <= 34 && sex == 1) {\n        averagerisk = '<1'\n        }\n      else if (age >= 35 && age <= 39 && sex == 1) { \n        averagerisk = '<1'\n      }\n      else if (age >= 40 && age <= 44 && sex == 1) { \n        averagerisk = '1'\n      }\n      else if (age >= 45 && age <= 49 && sex == 1) { \n        averagerisk = '2'\n      }\n      else if (age >= 50 && age <= 54 && sex == 1) { \n        averagerisk = '3'\n      }\n      else if (age >= 55 && age <= 59 && sex == 1) { \n        averagerisk = '7'\n      }\n      else if (age >= 60 && age <= 64 && sex == 1) { \n        averagerisk = '8'\n      }\n      else if (age >= 65 && age <= 69 && sex == 1) { \n        averagerisk = '8'\n      }\n      else if (age >= 70 && age <= 74 && sex == 1) { \n        averagerisk = '11'\n      }\n\n      calc_output.push({\n        name: 'mini',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: mini_msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (risk)',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (avg)',\n        value: averagerisk,\n        value_text: '%',\n        message: 'Average 10-year risk of MI or death'\n      });\n    }\n\n    // Males and Females 75-79 who get calculated score but not average//\n\n    else if (age >= 75 && age <= 79 && (sex ==0 || sex ==1)){\n      calc_output.push({\n        name: 'mini',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: mini_msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (risk)',\n        value: baselineriskpercent.toFixed(1),\n        value_text: '%',\n        message: msgA\n      });\n      calc_output.push({\n        name: '38_Framingham Risk Score_result (avg)',\n        value: '',\n        value_text: '',\n        message: 'Data for average risk in ages 75-79 is unavailable'\n      });\n    } //206 which accounts for males and females   \n  } // 96\n} // 56\n\n",
+  "before_use": "There are several distinct Framingham risk models. MDCalc uses the 'Hard' coronary Framingham outcomes 10-year risk model, which is intended for use in adults aged 30–79 years without diabetes, prior coronary heart disease (CHD), or intermittent claudication. This version was selected because it is the most widely applicable to patients without previous cardiac events. See the[official Framingham website](https://www.framinghamheartstudy.org/fhs-risk-functions/hard-coronary-heart-disease-10-year-risk/)for additional risk models.\n\nWhile historically the standard for cardiovascular risk assessment in North America, the FRS has largely been superseded by newer risk calculators, such as the [ACC/AHA Pooled Cohort Equations (2013)](nabda:calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc) and [PREVENT equations (2024)](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) , in contemporary guidelines.",
+  "instructions": null,
+  "contributor_ids": [
+    "simon-kraler-md-phd"
+  ],
+  "creator_names": [
+    "Dr. Peter W.F. Wilson"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Total Cholesterol",
+    "HDL Cholesterol",
+    "Systolic BP"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "6df13f62ff6c96c49581bb91a1754f7faa581a3360ade42753abe8f4ce2bf74b"
+}

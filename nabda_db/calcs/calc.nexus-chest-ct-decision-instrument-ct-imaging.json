@@ -1,0 +1,184 @@
+{
+  "id": "calc.nexus-chest-ct-decision-instrument-ct-imaging",
+  "slug": "nexus-chest-ct-decision-instrument-ct-imaging",
+  "language": "en",
+  "title": "NEXUS Chest CT Decision Instrument pour CT Imaging",
+  "short_title": "Instrument décisionnel NEXUS Chest CT",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "ct",
+    "chest",
+    "chest trauma",
+    "trauma"
+  ],
+  "dosing": false,
+  "formula": "Série de questions Oui/Non telles qu’énumérées.",
+  "how_to_use": {
+    "why": "Identifie les patients pour lesquels on peut exclure en toute sécurité des lésions thoraciques et intrathoraciques cliniquement significatives, permettant potentiellement de réduire en toute sécurité le recours à la TDM de 25-37 % chez les patients ayant subi un traumatisme fermé.",
+    "when": "Patients ayant subi un traumatisme fermé chez qui une TDM thoracique est envisagée dans le cadre du bilan diagnostique.",
+    "pearls": "- The NEXUS CT Chest Decision Instrument is comprised of two parts, one that maximizes sensitivity for major injury and the other for major or minor injury.\n- Uses findings from routine trauma exam.\n- 100% sensitive for aortic and great vessel injury (a key component of the rule, as these are devastating injuries that must not be missed).\n- Can be used sequentially with [NEXUS Chest Decision Instrument for Blunt Chest Trauma](nabda:calc.nexus-chest-decision-instrument-blunt-chest-trauma) ."
+  },
+  "next_steps": {
+    "advice": "If any criteria are positive, major or minor thoracic injury can NOT be excluded, and further workup, including but not limited to CT chest, is warranted.",
+    "critical_actions": "Clinical decision tools are meant to assist practitioners with making appropriate and evidence based decisions in the management of patients. The NEXUS CT Chest Decision Instrument suggests that a CT chest can be safely avoided in situations where the provider suspects thoracic injury, is considering CT imaging and answers negatively to the NEXUS CT Chest Decision Instrument. In these situations, the provider can feel confident that significant thoracic and intra-thoracic injuries are not missed.",
+    "management": "Doit être utilisé conjointement avec l’évaluation et la réanimation standard en traumatologie."
+  },
+  "evidence": "The NEXUS CT Chest Decision Instrument was prospectively derived and validated by[Rodriguez et al](https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001883)in a cohort of 11,477 blunt trauma patients (6,002 patients for derivation phase and 5,475 for validation). Seven parameters from a list of 14 were selected by recursive partitioning.\n\nFor major injury only, the tool was 99.2% sensitive (95% CI 95.4%–100%), and 31.7% specific (95% CI 29.9%–33.5%). Negative predictive value (NPV) was 99.9% (95% CI 99.3%–100%). The tool was 100% sensitive for aortic and great vessel injuries.\n\nFor either major or minor injury, sensitivity was 90.7% (95% CI 88.3%–92.8%), specificity 37.9% (95% CI 35.8%–40.1%), and NPV 91.8% (95% CI 89.7%–93.6%).\n\n**Major injuries** included in the analysis:\n\n- Pneumothorax requiring chest tube drainage or other procedure.\n- Hemothorax requiring chest tube drainage or other procedure.\n- Fracture of ≥2 ribs requiring surgical intervention or epidural nerve block.\n- Sternal fracture requiring surgical intervention.\n- Scapular fracture requiring surgical intervention.\n- Thoracic spine fracture requiring surgical intervention.\n- Great vessel injury.\n- Mediastinal or pericardial hematoma requiring drainage.\n- Ruptured diaphragm.\n- Pulmonary contusion requiring mechanical or noninvasive ventilation for respiratory failure within 24 hours.\n- Esophageal injury requiring surgical intervention\n- Tracheal or bronchial injury requiring surgical intervention.\n\n**Minor injuries of clinical significance** included in the analysis:\n\n- Pneumothorax not requiring chest tube drainage but observed for ≥24 hours.\n- Hemothorax not requiring chest tube drainage but observed for ≥24 hours.\n- Fracture of ≥2 ribs not requiring surgical intervention or epidural nerve block.\n- Sternal fracture not requiring surgical intervention.\n- Pulmonary contusion or laceration observed for ≥24 hours.\n- Thoracic spine fracture not requiring surgical intervention.\n- Scapular fracture not requiring surgical intervention.\n- Mediastinal or pericardial hematoma not requiring drainage.\n- Esophageal injury not requiring surgical intervention.\n- Tracheal injury not requiring surgical intervention.",
+  "more_info": "Si l'un quelconque des critères est positif, une lésion thoracique majeure ou mineure ne peut PAS être exclue.",
+  "short_description": "Identifies clinically significant thoracic injuries dans blunt traumatisme patients.",
+  "medium_description": "Identifies blunt traumatisme patients avec clinically significant thoracic injuries.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cxr",
+      "label": "Radiographie thoracique anormale",
+      "tips": "CXR objectivant toute lésion thoracique (y compris une fracture de la clavicule) ou un élargissement du médiastin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "distracting",
+      "label": "Distracting lésion",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ttp",
+      "label": "Douleur à la palpation de la paroi thoracique, du sternum, du rachis thoracique ou de la région scapulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "deceleration",
+      "label": "Mécanisme de décélération rapide",
+      "tips": "Chute de plus de 20 pieds/6.1 m ou accident de la circulation (MVA) à plus de 40 mph/64.4 km/h avec décélération brutale.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rodriguez RM, Langdorf MI, Nishijima D, Baumann BM, Hendey GW, Medak AJ, Raja AS, Allen IE, Mower WR. Derivation and validation of two decision instruments for selective chest CT in blunt trauma: a multicenter prospective observational study (NEXUS Chest CT). PLoS Med. 2015 Oct 6;12(10):e1001883. doi: 10.1371/journal.pmed.1001883. eCollection 2015.",
+      "href": "https://journals.plos.org/plosmedicine/article?id=10.1371/journal.pmed.1001883 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rodriguez RM, Hendey GW, Marek G, Dery RA, Bjoring A. A pilot study to derive clinical variables for selective chest radiography in blunt trauma patients. Ann Emerg Med. 2006 May;47(5):415-8. Epub 2005 Dec 27.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23925583",
+      "kind": "other"
+    },
+    {
+      "text": "Rodriguez RM, Anglin D, Langdorf MI, Baumann BM, Hendey GW, Bradley RN, Medak AJ, Raja AS, Juhn P, Fortman J, Mulkerin W, Mower WR. NEXUS chest: validation of a decision instrument for selective chest imaging in blunt trauma. JAMA Surg. 2013 Oct;148(10):940-6. doi: 10.1001/jamasurg.2013.2757.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23925583",
+      "kind": "other"
+    },
+    {
+      "text": "Rodriguez RM, Hendey GW, Mower W, Kea B, Fortman J, Merchant G, Hoffman JR. Derivation of a decision instrument for selective chest radiography in blunt trauma. J Trauma. 2011 Sep;7(3):549-53. PMID: 21045745.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21045745",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nexus-chest-decision-instrument-blunt-chest-trauma",
+    "calc.stumbl-battle-score",
+    "calc.canadian-ct-head-injury-trauma-rule"
+  ],
+  "source_logic_hash": "0476dbe1ca56ac85e24638dfd672c072",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nexus-chest-decision-instrument-blunt-chest-trauma",
+      "text": "NEXUS Chest Decision Instrument for Blunt Chest Trauma"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3815,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

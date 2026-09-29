@@ -1,0 +1,323 @@
+{
+  "id": "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+  "slug": "cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+  "language": "fr",
+  "title": "Score CHA₂DS₂-VA pour le risque d'AVC en fibrillation atriale",
+  "short_title": "Score CHA₂DS₂-VA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Fibrillation atriale",
+    "Saignement / Hémorragie",
+    "Hémorragie intracrânienne",
+    "Thrombose",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Arythmie",
+    "Vertiges",
+    "Céphalée",
+    "Déficit neurologique",
+    "Palpitations",
+    "Soins préventifs / Dépistage",
+    "Syncope",
+    "Faiblesse",
+    "Dysarthrie",
+    "Dysphagie"
+  ],
+  "abbreviations": [
+    "CHA₂DS₂-VA Score for Atrial Fibrillation Stroke Risk",
+    "CHA₂DS₂-VA Score",
+    "CHADS",
+    "CHA2DS2",
+    "CHADS2",
+    "CHADS VA",
+    "CHA2DS2 VA",
+    "CHADS VASc",
+    "CHA2DS2 VASc",
+    "stroke AF",
+    "stroke risk",
+    "atrial fibrillation stroke",
+    "stroke prediction AF",
+    "AF stroke risk",
+    "stroke",
+    "AF",
+    "CHADS AF",
+    "CHADS stroke",
+    "CHA2DS2 AF",
+    "CHA2DS2 stroke"
+  ],
+  "dosing": false,
+  "formula": "Le score CHA₂DS₂-VA est déterminé en additionnant les points sélectionnés pour chaque variable :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge | <65 | 0 |\n| 65-74 | 1 | |\n| ≥75 | 2 | |\n| Insuffisance cardiaque chronique | Non | 0 |\n| Oui | 1 | |\n| Hypertension artérielle | Non | 0 |\n| Oui | 1 | |\n| AVC, AIT ou thromboembolie artérielle antérieurs | Non | 0 |\n| Oui | 2 | |\n| Maladie vasculaire | Non | 0 |\n| Oui | 1 | |\n| Diabète sucré | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Évalue le risque d'AVC ischémique d'un patient et peut aider à identifier les patients susceptibles de bénéficier d'un traitement anticoagulant pour prévenir les événements thromboemboliques.\n- A une valeur prédictive similaire au [score CHA₂DS₂-VASc](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk), mais pourrait être supérieur chez les patients ≥75 ans.\n- Recommandé comme modèle d'évaluation du risque dans les recommandations de la European Society of Cardiology (ESC) pour la prise en charge de la FA.",
+    "when": "Use in patients with atrial fibrillation (AF) who do not have a prior history of stroke or transient ischemic attack (TIA) and are under consideration for anticoagulation therapy.",
+    "pearls": "L'inclusion du sexe comme facteur de risque indépendant d'AVC ischémique chez les patients avec AF a été controversée ; ce score ne prend pas en compte le sexe dans son évaluation du risque."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats de cet outil pour guider la prise en charge du risque thromboembolique dans la FA, parallèlement à une évaluation complète, au jugement clinique, aux recommandations spécialisées et aux préférences du patient.\n- Réévaluer le risque d’AVC à intervalles réguliers.",
+    "critical_actions": "",
+    "management": "- **Score ≥ 2 :**\n\n  - Une anticoagulation orale est recommandée pour réduire le risque d’AVC.\n  - Envisager d’utiliser un score de risque hémorragique (p. ex., [ATRIA](nabda:calc.atria-bleeding-risk-score), [DOAC](nabda:calc.direct-acting-oral-anticoagulants-doac-score), [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk), [HEMORR₂HAGES](nabda:calc.hemorr2hages-score-major-bleeding-risk), [ORBIT](nabda:calc.orbit-bleeding-risk-score-atrial-fibrillation)) pour évaluer le risque hémorragique.\n- **Score de 1 :** Utiliser le jugement clinique pour peser les risques et les bénéfices de l’anticoagulation.\n- **Score de 0 :** L’anticoagulation n’est pas recommandée.\n- Veuillez consulter les [recommandations ESC pour la prise en charge de la FA](https://www.acc.org/Latest-in-Cardiology/ten-points-to-remember/2024/09/17/04/05/2024-ESC-guidelines-for-AF-esc-2024) pour des recommandations supplémentaires."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score CHA₂DS₂-VA | Taux d'incidence d'AVC ischémique (pour 100 patients-années) | Recommandation |\n| --- | --- | --- |\n| 0 | 0,5 | L'anticoagulation n'est pas recommandée |\n| 1 | 1,5 | L'anticoagulation doit être envisagée |\n| 2 | 2,9 | L'anticoagulation doit être recommandée |\n| 3 | 5,1 | |\n| 4 | 7,3 | |\n| 5 | 11,2 | |\n| 6 | 15,5 | |\n| 7 | 14,7 | |\n| 8 | 19,5 | |",
+  "short_description": "Risque d’AVC chez les patients en fibrillation atriale.",
+  "medium_description": "Calculates AVC risque pour patients avec fibrillation atriale; similar pour [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) but sans considering sex.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 65",
+          "value": 0
+        },
+        {
+          "label": "65-74",
+          "value": 1
+        },
+        {
+          "label": "≥ 75",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_failure",
+      "label": "Insuffisance cardiaque chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC, TIA ou thromboembolie artérielle antérieurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vascular_disease",
+      "label": "Maladie vasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Van Gelder IC, Rienstra M, Bunting KV, et al. 2024 esc guidelines for the management of atrial fibrillation developed in collaboration with the european association for cardio-thoracic surgery(Eacts). European Heart Journal. 2024;45(36):3314-3414.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39210723/",
+      "kind": "international"
+    },
+    {
+      "text": "Brieger D, Amerena J, Attia JR, et al. National Heart Foundation of Australia and Cardiac Society of Australia and New Zealand: Australian clinical guidelines for the diagnosis and management of atrial fibrillation 2018. Medical Journal of Australia2018;209(8):356-362. doi:10.5694/mja18.00646",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30067936/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nielsen PB, Skjøth F, Overvad TF, Larsen TB, Lip GYH. Female Sex Is a Risk Modifier Rather Than a Risk Factor for Stroke in Atrial Fibrillation. Circulation2018;137(8):832-840. doi:10.1161/circulationaha.117.029081.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29459469/",
+      "kind": "other"
+    },
+    {
+      "text": "Hindricks G, Potpara T, Dagres N, et al. 2020 ESC Guidelines for the Diagnosis and Management of Atrial Fibrillation Developed in Collaboration with the European Association of Cardio-Thoracic Surgery (EACTS). European Heart Journal2020;42(5):373-498. doi:10.1093/eurheartj/ehaa612",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32860505/",
+      "kind": "other"
+    },
+    {
+      "text": "Teppo K, Airaksinen KEJ, Jaakkola J, et al. Trends in treatment and outcomes of atrial fibrillation during 2007-17 in Finland. European heart journal Quality of care & clinical outcomes2023;9(7):673-679. doi:10.1093/ehjqcco/qcac086",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36542420/",
+      "kind": "other"
+    },
+    {
+      "text": "Teppo K, K E Juhani Airaksinen, Jussi Jaakkola, et al. Ischaemic stroke in women with atrial fibrillation: temporal trends and clinical implications. European heart journalPublished online April 12, 2024. doi:10.1093/eurheartj/ehae198",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38606837/",
+      "kind": "other"
+    },
+    {
+      "text": "Teppo K, Lip GYH, Airaksinen KEJ, et al. Comparing CHA2DS2-VA and CHA2DS2-VASc scores for stroke risk stratification in patients with atrial fibrillation: a temporal trends analysis from the retrospective Finnish AntiCoagulation in Atrial Fibrillation (Finacaf) cohort. The Lancet Regional Health - Europe. 2024;43:100967.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39171253/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Champsi A, Mobley AR, Subramanian A, et al. Gender and contemporary risk of adverse events in atrial fibrillation. European Heart Journal. 2024;45(36):3707-3717.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39217497/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+    "calc.garfield-af",
+    "calc.chads2-score-atrial-fibrillation-stroke-risk",
+    "calc.atria-bleeding-risk-score",
+    "calc.direct-acting-oral-anticoagulants-doac-score",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.hemorr2hages-score-major-bleeding-risk",
+    "calc.orbit-bleeding-risk-score-atrial-fibrillation"
+  ],
+  "source_logic_hash": "d7998d0582d154318bf1acf2ae1e2ff2",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.hemorr2hages-score-major-bleeding-risk",
+      "text": "HEMORR₂HAGES"
+    },
+    {
+      "type": "calc",
+      "id": "calc.orbit-bleeding-risk-score-atrial-fibrillation",
+      "text": "ORBIT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.direct-acting-oral-anticoagulants-doac-score",
+      "text": "DOAC"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.hemorr2hages-score-major-bleeding-risk",
+      "text": "HEMORR₂HAGES"
+    },
+    {
+      "type": "calc",
+      "id": "calc.orbit-bleeding-risk-score-atrial-fibrillation",
+      "text": "ORBIT"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10583,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar score = parseFloat(age) + parseFloat(heart_failure) + parseFloat(hypertension) + parseFloat(stroke) + parseFloat(vascular_disease) + parseFloat(diabetes);\n\nvar risk;\nif (score == 0) {\n    risk = 0.5;\n} else if (score == 1) {\n    risk = 1.5;\n} else if (score == 2) {\n    risk = 2.9;\n} else if (score == 3) {\n    risk = 5.1;\n} else if (score == 4) {\n    risk = 7.3;\n} else if (score == 5) {\n    risk = 11.2;\n} else if (score == 6) {\n    risk = 15.5;\n} else if (score == 7) {\n    risk = 14.7;\n} else if (score == 8) {\n    risk = 19.5;\n}\n\nvar rec;\nif (score == 0) {\n    rec = \"Anticoagulation is not recommended\"\n} else if (score == 1){\n    rec = \"Anticoagulation should be considered\"\n} else {\n    rec = \"Anticoagulation should be recommended\"\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: '10583_CHA2DS-VA_result',\n    value: score,\n    value_text: 'points',\n    message: 'CHA₂DS₂-VA Score'\n});\ncalc_output.push({\n    name: '10583_CHA2DS-VA_interpretation',\n    value: rec,\n    value_text: '',\n    message: 'Ischemic stroke incidence rate: ' + risk + ' per 100 patient years'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "551051e9a409821620c5c77ab7d33999af484c9dfd8c503cfc19108f1372fede"
+}

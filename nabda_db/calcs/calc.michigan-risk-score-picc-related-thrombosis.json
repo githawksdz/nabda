@@ -1,0 +1,225 @@
+{
+  "id": "calc.michigan-risk-score-picc-related-thrombosis",
+  "slug": "michigan-risk-score-picc-related-thrombosis",
+  "language": "en",
+  "title": "Score de risque du Michigan pour la thrombose liée au PICC",
+  "short_title": "Michigan risque score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Masse",
+    "Dyspnée",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "vte",
+    "dvt",
+    "picc",
+    "Michigan Risk Score for PICC-Related Thrombosis",
+    "Michigan Risk Score",
+    "PICC-Related Thrombosis",
+    "picc dvt"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Another central venous catheter present* | No | 0 |\n| Yes | +1 | |\n| WBC >12.0 × 10⁹/µL* | No | 0 |\n| Yes | +1 | |\n| Number of PICC lumens | 1 | 0 |\n| 2 | +1 | |\n| 3–4 | +2 | |\n| History of VTE | Never | 0 |\n| Yes, >30 days prior | +2 | |\n| Yes, within 30 days | +3 | |\n| Active cancer (on chemotherapy or admitted for cancer-related reasons) | No | 0 |\n| Yes | +3 | |\n\n*At the time of index PICC placement.",
+  "how_to_use": {
+    "why": "- Use prior to inserting a PICC to estimate the risk of upper extremity/catheter-related thrombosis.\n- Can help support testing for thrombosis (e.g. ultrasound) in patients with vague symptoms but high risk for DVT.\n- Can support decision for longer duration of anticoagulation in patients with confirmed DVT related to PICC (higher risk, longer duration).",
+    "when": "- Use in adults ≥18 years of age admitted to a medical service (i.e., not surgical) with a peripherally inserted central catheter (PICC).\n- Do not use in pregnant patients.",
+    "pearls": "- Helps estimate the risk of developing upper extremity thrombosis in patients that receive peripherally inserted central catheters (PICCs).\n- Derived and internally validated in a cohort of 22,000 patients that received PICCs on medical wards or critical care settings; extrapolation to dissimilar populations might not yield similar results.\n- Not validated in surgical patients or patients undergoing surgery with a PICC.\n- Not validated in pediatric patients (<18 years of age)."
+  },
+  "next_steps": {
+    "advice": "- Risk of upper extremity DVT increases with Michigan Risk Score Class.\n- Compared with Class I:\n\n - Class II has a twofold higher risk of thrombosis.\n - Class III has a threefold higher risk.\n - Class IV has an eightfold higher risk.\n- A Class I score is not necessarily “safe” (incidence of DVT ~1%).\n- Carefully consider the risks and benefits of using a PICC, especially if the risk of thrombosis is high.\n- Strongest predictors for DVT risk were:\n\n - Triple-lumen PICCs.\n - PICCs placed in patients with a history of VTE in the past 30 days.\n - PICCs placed in the setting of active cancer.\n- Consider alternative devices (e.g. central venous catheters, ports, tunneled catheters) that can be placed in larger veins, if appropriate.",
+    "critical_actions": "- Cet outil est destiné à stratifier le risque chez les patients présentant un risque potentiel de TVP du membre supérieur liée à un PICC, et non à diagnostiquer une TVP.\n- Si cela est jugé approprié, l’anticoagulation ne doit pas être refusée aux patients qui en ont besoin dans le cadre du traitement de leur diagnostic.\n- Avant d’initier tout traitement anticoagulant, le risque hémorragique du patient doit être évalué.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Michigan Risk Score | Risk Class | Probability of VTE |\n| --- | --- | --- |\n| 0 | I | 0.9% |\n| 1–2 | II | 1.6% |\n| 3–4 | III | 2.7% |\n| ≥5 | IV | 4.7% |",
+  "short_description": "TVP liée au PICC.",
+  "medium_description": "Predicts risque de DVT chez les patients avec peripherally inserted central catheter (PICC).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "cvc",
+      "label": "Présence d'un autre cathéter veineux central",
+      "tips": "Au moment de la pose du PICC index",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wbc",
+      "label": "GB >12,0 × 10⁹/µL",
+      "tips": "Au moment de la pose du PICC index",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "num_pic",
+      "label": "Nombre de lumières du cathéter PICC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1",
+          "value": 0
+        },
+        {
+          "label": "2",
+          "value": 1
+        },
+        {
+          "label": "3–4",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vte_hx",
+      "label": "Antécédents de MTEV",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Oui, >30 jours auparavant",
+          "value": 2
+        },
+        {
+          "label": "Oui, dans les 30 jours",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Cancer actif",
+      "tips": "Sous chimiothérapie ou hospitalisé pour des raisons liées au cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chopra V, Kaatz S, Conlon A, et al. The Michigan Risk Score to predict peripherally inserted central catheter-associated thrombosis. J Thromb Haemost. 2017;15(10):1951-1962.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28796444 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chopra V, Smith S, Swaminathan L, et al. Variations in Peripherally Inserted Central Catheter Use and Outcomes in Michigan Hospitals. JAMA Intern Med. 2016;176(4):548-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26881938 ",
+      "kind": "other"
+    },
+    {
+      "text": "Yue J, Zhang Y, Xu F, Mi A, Zhou Q, Chen B, Shi L. A clinical study of peripherally inserted central catheter-related venous thromboembolism in patients with hematological malignancies. Sci Rep. 2022 Jun 14;12(1):9871.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35701467/",
+      "kind": "other"
+    },
+    {
+      "text": "Paje D, O'Malley M, McLaughlin E, Horowitz JK, Bernstein SJ, Flanders S, Kaatz S, Chopra V. CAN THE MICHIGAN PICC-DVT RISK SCORE PREDICT MIDLINE-DVT?. J Gen Intern Med 2023; 38:S331.",
+      "href": "https://shmabstracts.org/abstract/can-the-michigan-picc-dvt-risk-score-predict-midline-dvt/",
+      "kind": "other"
+    },
+    {
+      "text": "Hu Z, He R, Zhao Y, Luo M, Fan Y, Li J. Risk assessment models for PICC-related venous thrombosis in adult patients with cancer: A network meta-analysis. Thromb Res. 2024 Jul;239:109030. doi: 10.1016/j.thromres.2024.05.003.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38735166/",
+      "kind": "other"
+    },
+    {
+      "text": "Kang J, Sun W, Li H, Ma EL, Chen W. Validation of Michigan risk score and D-dimer to predict peripherally inserted central catheter-related thrombosis: A study of 206,132 catheter days. J Vasc Access. 2022 Sep;23(5):764-769. doi: 10.1177/11297298211008772.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33860712/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rabelo-Silva ER, Saffi MAL, Hirakata VN, et al. External validation of the michigan risk score for predicting peripherally inserted central catheter-related deep vein thrombosis: a multicenter study in brazil. J Infus Nurs. 2026;49(1):43-51. doi:10.1097/NAN.0000000000000623",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41494176/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.villalta-score-post-thrombotic-syndrome-pts",
+    "calc.caprini-score-venous-thromboembolism-2005",
+    "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score"
+  ],
+  "source_logic_hash": "04d4f548cea71fbeaf829a54d7308b45",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3838,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseInt(cvc) + parseInt(wbc) + parseInt(num_pic) + parseInt(vte_hx) + parseInt(ca);\nvar msg = 'Probability of VTE if PICC inserted';\nvar cl, prob, risk;\nif (u == 0) {\n    cl = \"Class I\";\n    prob = \"0.9\";\n    risk = \"Low risk\";\n}\nif (u == 1 || u == 2) {\n    cl = \"Class II\";\n    prob = \"1.6\";\n    risk = \"Intermediate risk\";\n}\nif (u >= 3 && u <= 4) {\n    cl = \"Class III\";\n    prob = \"2.7\";\n    risk = \"High risk\";\n}\nif (u > 4) {\n    cl = \"Class IV\";\n    prob = \"4.7\";\n    risk = \"High risk\";\n}\ncalc_output.push({ \n  name: 'mini', \n  value: cl, \n  value_text: '', \n  message: risk \n});\ncalc_output.push({ \n  name: '3838_Michigan Risk Score_result (score)', \n  value: u, \n  value_text: 'points', \n  message: 'Michigan Risk Score' \n});\ncalc_output.push({ \n  name: '3838_Michigan Risk Score_interpretation', \n  value: cl, \n  value_text: '', \n  message: risk\n});\ncalc_output.push({ \n  name: '3838_Michigan Risk Score_result (risk)', \n  value: prob, \n  value_text: '%', \n  message: msg \n});\n",
+  "before_use": "Validation externe limitée effectuée ; à utiliser avec prudence.",
+  "instructions": null,
+  "contributor_ids": [
+    "kabir-yadav-mdcm-ms-mshs"
+  ],
+  "creator_names": [
+    "Dr. Vineet Chopra"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "c2a2412f21fa0e73732e015d054f2fc7613706de3df0cff4fcf998d4c8f32669"
+}

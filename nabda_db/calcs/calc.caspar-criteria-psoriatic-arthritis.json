@@ -1,0 +1,226 @@
+{
+  "id": "calc.caspar-criteria-psoriatic-arthritis",
+  "slug": "caspar-criteria-psoriatic-arthritis",
+  "language": "en",
+  "title": "CASPAR critères pour Psoriatic Arthritis",
+  "short_title": "CASPAR critères pour PsA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Maladies auto-immunes"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Douleur des extrémités",
+    "Douleur articulaire",
+    "Pain"
+  ],
+  "abbreviations": [
+    "CASPAR",
+    "psoriatic arthritis",
+    "arthritis",
+    "psa",
+    "caspar criteria"
+  ],
+  "dosing": false,
+  "formula": "A patient must have inflammatory articular disease (joint, spine, or entheseal) with ≥3 points from the following 5 categories:\n\n| Criteria | Points | |\n| --- | --- | --- |\n| History of psoriasis | Personal history or family history of psoriasis in a first- or second-degree relative | 1 |\n| Current psoriasis: psoriatic skin or scalp disease present today, diagnosed by a rheumatologist or dermatologist | 2 | |\n| Typical psoriatic nail dystrophy (onycholysis, pitting, and hyperkeratosis on exam) | 1 | |\n| Rheumatoid factor negative (any method except latex; ELISA or nephelometry preferred) | 1 | |\n| Current dactylitis (swelling of an entire digit) or history of dactylitis recorded by a rheumatologist | 1 | |\n| Juxtaarticular new bone formation on hand or foot x-ray (ill-defined ossification near joint margins excluding osteophyte formation) | 1 | |",
+  "how_to_use": {
+    "why": "- Fournit un outil standardisé et validé pour aider à identifier le PsA, avec une sensibilité élevée (91 % dans l’étude originale) et une spécificité élevée (98 %).\n- Aide à garantir un diagnostic cohérent en contexte de recherche.\n- Peut faciliter l’évaluation des patients chez qui un PsA est suspecté en contexte clinique.",
+    "when": "À utiliser chez les patients présentant une arthrite inflammatoire, une enthésite ou une spondylite lorsque l’arthrite psoriasique (PsA) figure parmi les diagnostics à envisager.",
+    "pearls": "- Dérivé de l’étude internationale Classification of Psoriatic Arthritis (CASPAR), qui incluait 588 patients atteints de PsA issus de 30 cliniques dans 13 pays, ainsi qu’un groupe témoin présentant d’autres formes d’arthrite inflammatoire.\n- Ne doit pas être utilisé dans les cas qui ne présentent pas de preuve de maladie musculosquelettique inflammatoire (p. ex., arthrite périphérique, enthésite, spondylite).\n- Permet la classification du PsA même en l’absence de psoriasis, à condition que d’autres caractéristiques associées soient présentes."
+  },
+  "next_steps": {
+    "advice": "- These criteria are not a standalone diagnostic tool but can assist clinicians in evaluating and identifying potential PsA cases; their application should always be guided by clinical context and judgment.\n- A potential PsA diagnosis should prompt:\n\n - Referral to a rheumatologist, if not already involved.\n - Initiation or adjustment of treatment to target inflammation and prevent disease progression (e.g., NSAIDs, DMARDs, biologics).\n - Comprehensive assessment for comorbidities like uveitis, inflammatory bowel disease, and cardiovascular risk factors, which are common in PsA.\n - Regular monitoring of disease activity and adjustment to management plans, as necessary.\n- For patients who do not meet the criteria, consider alternative diagnoses such as rheumatoid arthritis, reactive arthritis, other spondyloarthropathies, osteoarthritis, or crystal arthropathies, and pursue additional workup based on the clinical presentation.\n- Please refer to relevant PsA clinical guidelines, such as those from the[American College of Rheumatology](https://rheumatology.org/psoriatic-arthritis-guideline), for more detailed recommendations.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Classification du rhumatisme psoriasique.",
+  "medium_description": "Provides classification critères pour psoriatic arthritis.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "articulardisease",
+      "label": "Maladie articulaire inflammatoire",
+      "tips": "Articulaire, rachidien ou enthésitique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Antécédents de psoriasis",
+      "tips": "Sélectionnez l’option qui attribue le plus de points (par ex., en présence à la fois d’un psoriasis actuel et d’antécédents familiaux, sélectionnez le psoriasis actuel)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "articulardisease == 1",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Personal history de psoriasis ou family history de psoriasis dans first- ou second-degree relative",
+          "value": 1
+        },
+        {
+          "label": "Psoriasis actuel : maladie psoriasique de la peau ou du cuir chevelu présente aujourd'hui, diagnostiquée par un rhumatologue ou un dermatologue.",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Dystrophie unguéale psoriasique typique",
+      "tips": "Onycholyse, pitting et hyperkératose à l'examen",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "articulardisease == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Facteur rhumatoïde négatif",
+      "tips": "Toute méthode sauf latex ; ELISA ou néphélémétrie préférés",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "articulardisease == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Dactylite actuelle (gonflement de l'ensemble du doigt) ou antécédent de dactylite consigné par un rhumatologue",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "articulardisease == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Formation osseuse nouvelle juxta-articulaire sur radiographie de la main ou du pied",
+      "tips": "Ossification mal définie près des marges articulaires, à l’exclusion de la formation d’ostéophyte",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "articulardisease == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Taylor W, Gladman D, Helliwell P, et al. Classification criteria for psoriatic arthritis: development of new criteria from a large international study. Arthritis Rheum. 2006;54(8):2665-73.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16871531 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Helliwell PS, Taylor WJ. Classification and diagnostic criteria for psoriatic arthritis. Ann Rheum Dis. 2005;64 Suppl 2:ii3-8.",
+      "href": "https://ard.bmj.com/content/64/suppl_2/ii3#block-system-main",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leung YY, Tam LS, Ho KW, et al. Evaluation of the CASPAR criteria for psoriatic arthritis in the Chinese population. Rheumatology (Oxford). 2010;49(1):112-5.",
+      "href": "https://academic.oup.com/rheumatology/article/49/1/112/1790342 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.2012-acr-eular-classification-criteria-polymyalgia-rheumatica-pmr",
+    "calc.2010-acr-eular-classification-criteria-rheumatoid-arthritis-ra",
+    "calc.leiden-clinical-prediction-rule-undifferentiated-arthritis"
+  ],
+  "source_logic_hash": "a83e409b2433c1027a1f77e51f90a235",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10039,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

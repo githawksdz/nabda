@@ -1,0 +1,180 @@
+{
+  "id": "calc.arterial-blood-gas-abg-analyzer",
+  "slug": "arterial-blood-gas-abg-analyzer",
+  "language": "en",
+  "title": "Analyseur de gaz du sang artériel (ABG)",
+  "short_title": "Analyseur ABG",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "gastroenterologie",
+    "medecine-interne",
+    "nephrologie",
+    "pneumologie",
+    "chirurgie",
+    "traumatologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Anxiety",
+    "Asthma",
+    "Burns",
+    "Consommation de drogues/alcool",
+    "Ingestion/Overdose",
+    "Embolie pulmonaire",
+    "Insuffisance rénale",
+    "Trauma",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Intoxication/Overdose",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "gas",
+    "vbg",
+    "ph",
+    "acid",
+    "base",
+    "sodium",
+    "chloride",
+    "acidosis",
+    "alkalosis"
+  ],
+  "dosing": false,
+  "formula": "This tool, developed by[Jonathan Chen, MD](https://profiles.stanford.edu/jonc101)first determines the primary process by looking at the pH and the PCO~2~. It then calculates compensations to determine chronicity, compensatory, and co-existing acid-base disturbances.\n\nThese calculations use the following normal values:\n\n- Arterial pH: 7.40\n- P~a~CO~2~: 40 mmHg\n- HCO~3~^-^: 24 mEq/L\n- Albumin: 4.0 g/dL\n- Anion gap: 12 mEq/L",
+  "how_to_use": {
+    "why": "- L’analyse des gaz du sang artériel (ABG) est une approche systématique qui, lorsqu’elle est utilisée conjointement avec les antécédents du patient et le contexte clinique, aide à déterminer le processus pathologique principal, puis à calculer tout élément en faveur d’un processus compensatoire.\n- Elle peut également aider à déterminer le caractère chronique du trouble acido-basique ainsi que tout trouble acido-basique secondaire ou concomitant.",
+    "when": "- L’analyse des gaz du sang artériels (ABG) est utile pour diagnostiquer ou surveiller divers troubles respiratoires, métaboliques et circulatoires.\n- En présence d’un processus respiratoire, l’analyse des gaz du sang artériels (ABG) peut aider à indiquer si ce processus est aigu ou chronique.",
+    "pearls": "Bien que l’analyseur puisse souvent aider à l’analyse, l’anamnèse du patient est essentielle pour une interprétation précise."
+  },
+  "next_steps": {
+    "advice": "- Technique matters when it comes to collecting the blood specimen.\n- Inaccurate results may be due to obtaining a venous sample instead of an arterial sample, the presence of air bubbles in the specimen (lowering PaCO~2~), or a delay in analyzing the sample (lowering PaO~2~).",
+    "critical_actions": "1. Ensure proper sampling of blood specimen.\n\n2. Consider repeating ABG if results do not fit the patient history and clinical scenario.\n\n3. A venous blood gas (VBG) can also be checked to see if it correlates with ABG results (only PaO~2~should be different).",
+    "management": "La prise en charge varie considérablement selon les résultats de l’ABG, ainsi que selon le contexte clinique."
+  },
+  "evidence": "",
+  "more_info": "### Metabolic Acidosis (Anion Gap)\n\nMUDPILES\n\n- Methanol\n- Uremia\n- Diabetic Ketoacidosis (check serum ketones)\n- Propylene Glycol or Paraldehydes\n- Isoniazid\n- Lactic Acidosis (check serum lactate)\n- Ethylene Glycol (anti-freeze)\n- Salycylates\n\nGOLDMARK\n\n- Glycols (ethylene or propylene)\n- Oxoporin (reflects fatty liver damage from glutathione consumption, e.g. acetaminophen toxicity)\n- L-Lactate\n- D-Lactate (bacterial form)\n- Methanol\n- Aspirin (salicylate)\n- Renal Failure (BUN uremia)\n- Ketoacidosis\n\n### Metabolic Acidosis (Non-Anion Gap)\n\nGI Loss\n\n- Diarrhea / Laxatives\n- Fistula, (pancreatic, biliary)\n- Uretero-intestinal diversion (ileal conduit)\n\nRenal Loss\n\n- Renal Tubular Acidosis (Type 1 Distal or Type 2 Proximal)\n- Renal Failure\n- Hyper-kalemia\n\nExogenous Acid\n\n- HCl\n- Amino Acids\n\nFUSED CARS\n\n- Fistula (pancreatic, biliary)\n- Uretero-gastric conduit\n- Saline admin (dilutional acidosis)\n- Endocrine (hyper-PTH)\n- Diarrhea\n- Carbonic anhydrase inhibitor (acetazolamide)\n- Ammonium chloride\n- Renal tubular acidosis\n- Spironolactone\n\n### Metabolic Alkalosis\n\nAlkaline Input\n\n- Bicarbonate Infusion\n- Hemodialysis\n- Calcium Carbonate\n- Parenteral Nutrition\n\nProton Loss\n\n- GI Loss (vomiting, NG suction)\n- Renal loss\n- Diuretics\n- Mineralocorticoids\n\n### Respiratory Acidosis\n\nAirway Obstruction\n\n- Foreign body, aspiration\n- OSA (obstructive sleep apnea)\n- Laryngo- or broncho-spasm\n\nNeuromuscular\n\n- Myasthenia gravis\n- Hypokalemic periodic paralysis\n- Guillain-Barre\n- Botulism, Tetanus\n- Hypo-kalemia, hypo-phosphatemia\n- Cervical spine injury\n- Morbid obesity\n- Polio, MS, ALS\n\nCentral\n\n- Drugs (opiates, sedatives)\n- Oxygen treatment in acute hypercapnia\n- Brain trauma or stroke\n\nPulmonary\n\n- Pulmonary edema\n- Asthma\n- Pneumonia\n- ARDS\n- COPD\n- Pulmonary Fibrosis\n- Mechanical Ventilation\n\n### Respiratory Alkalosis\n\nHypoxia\n\n- High altitude\n- CHF\n- Pulmonary Embolism\n\nLung Disease\n\n- Pulmonary fibrosis\n- Pulmonary edema\n- Pneumonia\n\nDrugs\n\n- Progesterone\n- Nicotine\n\nStimulation of Respiratory Drive\n\n- Psychogenic\n- Neurologic (pontine tumor)\n- Sepsis\n- Pregnancy\n- Mechanical ventilation",
+  "short_description": "Interprète les ABG.",
+  "medium_description": "Interprète les ABG.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "ph",
+      "label": "PH",
+      "optional": false,
+      "unit": "ph",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "paco2",
+      "label": "PₐCO₂",
+      "optional": false,
+      "unit": "paco2",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hco3",
+      "label": "HCO₃",
+      "optional": false,
+      "unit": "bicarb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "chloride",
+      "label": "Chloride",
+      "optional": false,
+      "unit": "cl",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "tips": "REMARQUE : les taux normaux d'albumine sont typiquement de 4 g/dL en unités US et de 40 g/L en unités SI.",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "chronicity",
+      "label": "En présence d’un processus respiratoire, chronicité",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "aigu",
+          "value": 1
+        },
+        {
+          "label": "chronique",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Baillie JK. Simple, easily memorised 'rules of thumb' for the rapid assessment of physiological compensation for respiratory acid-base disorders. Thorax 2008;63:289-290 doi:10.1136/thx.2007.091223",
+      "href": "https://thorax.bmj.com/content/63/3/289.extract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "WHO Guidelines Arterial Blood Sampling: This 2014 source explains best practices for adequate ABG sampling.  WHO Guidelines on Drawing Blood: Best Practices in Phlebotomy. Geneva: World Health Organization; 2010. 5, Arterial blood sampling.",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK138661/",
+      "kind": "other"
+    },
+    {
+      "text": "Fundamentals of Arterial Blood Gas Interpretation: This 2022 source provides an up-to-date systematic approach to analyzing ABG.  Yee, J., Frinak, S., Mohiuddin, N., & Uduman, J. (2022). Fundamentals of Arterial Blood Gas Interpretation. Kidney360, 3(8), 1458–1466.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36176645/",
+      "kind": "other"
+    },
+    {
+      "text": "Kaufman DA. Interpretation of Arterial Blood Gases (ABGs). Written for Thoracic.org. Retrieved 12/9/2014.",
+      "href": "https://www.thoracic.org/clinical/critical-care/clinical-education/abgs.php",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.anion-gap",
+    "calc.bicarbonate-deficit",
+    "calc.winters-formula-metabolic-acidosis-compensation"
+  ],
+  "source_logic_hash": "409298954d4c09dfb27140082efaccd5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1741,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

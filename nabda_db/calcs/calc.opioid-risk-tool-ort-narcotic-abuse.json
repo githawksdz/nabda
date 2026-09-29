@@ -1,0 +1,290 @@
+{
+  "id": "calc.opioid-risk-tool-ort-narcotic-abuse",
+  "slug": "opioid-risk-tool-ort-narcotic-abuse",
+  "language": "en",
+  "title": "Opioid risque Tool (ORT) pour Narcotic Abuse",
+  "short_title": "Opioid risque Tool (ORT)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "douleur",
+    "psychiatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Douleur chronique"
+  ],
+  "chief_complaints": [
+    "Pain"
+  ],
+  "abbreviations": [
+    "narcotic",
+    "opiate",
+    "opioid",
+    "drug-seeking",
+    "seeking",
+    "abuse",
+    "addiction"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points. Complete scoring information can be found in the[derivation study](https://painmedicine.oxfordjournals.org/content/6/6/432#T2).",
+  "how_to_use": {
+    "why": "Substance use, particularly of prescribed drugs, has been an increasing problem in the United States. It is reasonable to consider risk of future abuse/diversion/misuse, especially if considering prescribing narcotics to high risk patients.",
+    "when": "The ORT may help identify patients at high risk for misuse, and who who might benefit more from other modalities of pain control besides narcotics (primarily applicable to patients with chronic pain).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Pain medications should not be withheld for painful conditions simply because a patient is deemed “high risk” by the ORT, but these patients should be considered for other modalities of pain control if appropriate.\n- These high risk patients may be appropriate candidates for referral to pain management.\n- Providers should exercise caution when starting any patient on chronic opiates.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Score interpretation:\n\n- Low risk: 0–3.\n- Moderate risk: 4–7.\n- High risk: ≥ 8.\n\nOther Notes:\n\n- 185 patients were followed in chronic pain clinic.\n- Tracked to determine who developed \"aberrant behaviors\".\n- Developed a score based on this to calculate this risk.\n- Of note, still 5% of \"low-risk\" patients still had aberrant behaviors..\n\nAberrant behaviors included a long list of behaviors indicating possible abuse, including but not limited to:\n\n- Used additional opioids than those prescribed.\n- Requested refills instead of clinic visit.\n- Canceled clinic visit.\n- Solicited opioids from other providers.\n- Unauthorized ER visits.",
+  "short_description": "Risque de narcotic abuse/misuse.",
+  "medium_description": "Estimates risque de opioid-lié aberrant behaviors.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_16_45",
+      "label": "Âge 16-45",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sexual_abuse",
+      "label": "History de preadolescent sexual abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "depression",
+      "label": "History de dépression",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "psychological_disorder",
+      "label": "History de ADD, OCD, bipolar disorder, ou schizophrenia",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alcohol_abuse",
+      "label": "Personal history de alcohol abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "illegal_drug_abuse",
+      "label": "Personal history de illegal drug abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "prescription_drug_abuse",
+      "label": "Personal history de prescription drug abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "family_alcohol",
+      "label": "Family history de alcohol abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "family_illegal_drug",
+      "label": "Family history de illegal drug abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "family_prescription_drug",
+      "label": "Family history de prescription drug abuse",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Webster LR, Webster RM. Predicting aberrant behaviors in opioid-treated patients: preliminary validation of the Opioid Risk Tool. Pain Med. 2005 Nov-Dec;6(6):432-42. PubMed PMID: 16336480.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16336480",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-opioid-risk-tool-ort-oud",
+    "calc.cows-score-opiate-withdrawal",
+    "calc.brief-addiction-monitor-bam"
+  ],
+  "source_logic_hash": "3c4fe28adb22c9cf27847153cf34891c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1757,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

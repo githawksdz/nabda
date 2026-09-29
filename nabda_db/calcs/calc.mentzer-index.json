@@ -1,0 +1,139 @@
+{
+  "id": "calc.mentzer-index",
+  "slug": "mentzer-index",
+  "language": "en",
+  "title": "Indice de Mentzer",
+  "short_title": "Indice de Mentzer",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "nutrition",
+    "soins-intensifs",
+    "general",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anemia",
+    "Arrhythmia",
+    "Insuffisance cardiaque",
+    "Hemochromatosis",
+    "Hypothyroidism",
+    "Thrombosis",
+    "Hypogonadism",
+    "Osteoporosis",
+    "Cholelithiasis",
+    "Hypertension pulmonaire"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Fatigue",
+    "Jaundice",
+    "Perte d'appétit",
+    "Palpitations",
+    "Dyspnée",
+    "Weakness",
+    "Douleur osseuse",
+    "Altération de la croissance",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "Mentzer Index",
+    "beta thalassemia trait",
+    "BTT",
+    "iron deficiency anemia",
+    "IDA",
+    "anemia",
+    "thalassemia",
+    "microcytic anemia",
+    "red blood cell",
+    "RBC",
+    "hemoglobin",
+    "microcytosis",
+    "hypochromia",
+    "hemoglobinopathy",
+    "red blood cell distribution width",
+    "RDW",
+    "iron",
+    "ferritin",
+    "HbA2",
+    "mean corpuscular volume",
+    "MCV"
+  ],
+  "dosing": false,
+  "formula": "Indice de Mentzer = VGM (fL) / numération des globules rouges (10^6^/μL)",
+  "how_to_use": {
+    "why": "Ne nécessite que deux résultats de laboratoire, ce qui en fait un test potentiellement moins invasif et moins coûteux qu'un bilan complet pour une anémie ferriprive ou un trait bêta-thalassémique.",
+    "when": "- Peut être utilisé chez les patients adultes ou pédiatriques.\n- À utiliser chez les patients faisant l’objet d’un bilan d’anémie, en particulier lorsque la carence en fer et le trait bêta-thalassémique figurent tous deux dans le diagnostic différentiel.\n- Une évaluation complémentaire est nécessaire pour confirmer le diagnostic ; le Mentzer Index ne sert qu’au dépistage initial.",
+    "pearls": "- Can be impacted by concurrent iron deficiency and beta thalassemia trait or the presence of other clinical conditions that may impact the MCV and/or RBC count.\n- Is non-diagnostic."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Ce score est non diagnostique, et les résultats doivent être confirmés par des examens complémentaires.\n- Si une carence en fer est suspectée, envisager des analyses de laboratoire complémentaires telles que le fer, la ferritine et la TIBC, en plus d'une CBC.\n- Si un trait bêta-thalassémique est suspecté, envisager des analyses de laboratoire complémentaires telles qu'une électrophorèse de l'hémoglobine."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Indice de Mentzer | Diagnostic probable |\n| --- | --- |\n| <13 | BTT |\n| 13 | BTT et IDA |\n| >13 | IDA |",
+  "short_description": "Bêta-thalassémie vs anémie ferriprive.",
+  "medium_description": "Différencie la bêta-thalassémie de l’anémie ferriprive.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "mcv",
+      "label": "MCV",
+      "optional": false,
+      "unit": "mcv",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "rbc",
+      "label": "Numération des globules rouges",
+      "optional": false,
+      "unit": "rbc",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Mentzer, W. C., Jr. (1973). Differentiation of iron deficiency from thalassaemia trait. The Lancet, 1(7808), 882.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/4123424/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vehapoglu, A., Ozgurhan, G., Demir, A. D., Uzuner, S., Nursoy, M. A., Turkmen, S., & Kacan, A. (2014). Hematological indices for differential diagnosis of Beta thalassemia trait and iron deficiency anemia. Anemia, 2014, 576738.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24818016/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zafar M, Tabassum A, Cheema QA, Mazhar SB. Role of red cell distribution width and mentzer index in differentiating iron deficiency anemia from anemia due to &beta; thalassemia trait. Journal of South Asian Federation of Obstetrics and Gynaecology. 2019;11(5):297-300.",
+      "href": "https://www.semanticscholar.org/paper/Role-of-Red-Cell-Distribution-Width-and-Mentzer-in-Zafar-Tabassum/20e90b5d19e1abdafe6aa3401af6cd6d69d3a144",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.rbc-units-screen-compatibility",
+    "calc.sickle-cell-rbc-exchange-volume"
+  ],
+  "source_logic_hash": "5e13f62bca6835f9dbbca058dc2b197b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10534,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

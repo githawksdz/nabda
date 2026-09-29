@@ -1,0 +1,152 @@
+{
+  "id": "calc.waist-to-hip-ratio",
+  "slug": "waist-to-hip-ratio",
+  "language": "fr",
+  "title": "Rapport taille-hanches",
+  "short_title": "WHR — rapport taille-hanches",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hypercholestérolémie familiale",
+    "Hyperglycémie",
+    "Hypothyroïdie",
+    "Obésité",
+    "Hypertriglycéridémie"
+  ],
+  "chief_complaints": [
+    "Soins préventifs / Dépistage",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Waist-to-hip ratio",
+    "waist to hip ratio",
+    "waist-hip ratio",
+    "waist hip ratio",
+    "BMI",
+    "FMI",
+    "body mass index",
+    "fat mass index",
+    "WTH",
+    "WHR",
+    "adiposity"
+  ],
+  "dosing": false,
+  "formula": "Waist-to-hip ratio (WHR) = waist circumference / hip circumference",
+  "how_to_use": {
+    "why": "- Mesure anthropométrique qui reflète la distribution des graisses viscérales/centrales, laquelle peut ne pas être appréhendée par le [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) seul.\n- Rapide, peu coûteuse et reproductible.\n- Prédicteur indépendant fort des événements cardiovasculaires et de la mortalité toutes causes confondues.",
+    "when": "- Use in patients with suspected central adiposity.\n- Can be used for baseline and follow-up cardiometabolic risk assessments, as well as ongoing monitoring for obesity interventions.\n- May be combined with [body mass index (BMI)](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) , waist circumference, and waist-to-height ratio.",
+    "pearls": "- Pregnancy, ascites, significant scoliosis/kyphosis, edema, or body-contouring surgery can distort measurements.\n- May be particularly helpful in patient groups underrepresented in the [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) classification development (e.g., older adults, some Native American or Asian populations).\n- Has a potentially stronger association with mortality than BMI."
+  },
+  "next_steps": {
+    "advice": "- Combine results with [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) , waist circumference, and waist-to-height ratio for a more robust obesity evaluation.\n- Increased metabolic risk (including heart disease, diabetes, hypertension, dyslipidemia, and mortality) is associated with a ratio:\n\n - ≥0.90 in men.\n - ≥0.85 in women.",
+    "critical_actions": "",
+    "management": "For individuals with an elevated waist-to-hip ratio who meet criteria for obesity:\n\n- Investigate potential underlying causes (e.g., medications, endocrine etiologies).\n- Provide lifestyle counseling (e.g., nutrition, exercise, sleep).\n- Screen and optimize metabolic parameters (e.g, lipids, HbA1c/fasting glucose).\n- Assess cardiovascular risk, if appropriate (e.g., [AHA/ACC 2013 ASCVD Risk Calculator](nabda:calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc) , [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) ).\n- Address weight-related disease complications (e.g., obstructive sleep apnea, arthritis, metabolic dysfunction-associated steatotic liver disease).\n- Evaluate candidacy for weight-loss interventions (e.g., GLP-1 medications, bariatric surgery)."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Évalue l'adiposité abdominale.",
+  "medium_description": "Évalue l'adiposité abdominale.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "waist",
+      "label": "Tour de taille",
+      "optional": false,
+      "unit": "waist_circumference",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hip",
+      "label": "Circonférence de la hanche",
+      "optional": false,
+      "unit": "hip_circumference",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "World Health Organization. Waist Circumference and Waist-Hip Ratio: Report of a WHO Expert Consultation, Geneva, 8-11 December 2008. World Health Organization; 2011. Accessed February 5, 2026.",
+      "href": "https://www.who.int/publications/i/item/9789241501491?utm_source=chatgpt.com",
+      "kind": "other"
+    },
+    {
+      "text": "Emdin CA, Khera AV, Natarajan P, et al. Genetic association of waist-to-hip ratio with cardiometabolic traits, type 2 diabetes, and coronary heart disease. JAMA. 2017;317(6):626. doi:10.1001/jama.2016.21042",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2601502",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Khan I, Chong M, Le A, et al. Surrogate adiposity markers and mortality. JAMA Netw Open. 2023;6(9):e2334836. doi:10.1001/jamanetworkopen.2023.34836",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37728925/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent"
+  ],
+  "source_logic_hash": "5bdfc24e837cd056750dd8b61945413e",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+      "text": "AHA/ACC 2013 ASCVD Risk Calculator"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+      "text": "AHA/ACC 2013 ASCVD Risk Calculator"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10658,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nwaist = parseFloat(waist);\nhip = parseFloat(hip);\n\nif (UOMSYSTEM) { // US units\n    waist = waist * 2.54; \n    hip = hip * 2.54; \n}\n\n// Calculate WHR\nvar WHR = waist / hip;\n\ncalc_output.push({\n    name: 'mini',\n    value: WHR.toFixed(2),\n    value_text: '',\n    message: 'WHR'\n});    \ncalc_output.push({\n    name: '10658_WHR_result',\n    value: WHR.toFixed(2),\n    value_text: '',\n    message: 'WHR'\n});\n\n",
+  "before_use": null,
+  "instructions": "- Le patient doit être debout, les pieds écartés à la largeur des épaules.\n- Utiliser un mètre ruban non extensible.\n- Maintenir le ruban bien ajusté (sans serrer), le garder horizontal et parallèle au sol, et relever les mesures à la fin d'une expiration normale.\n- Mesurer le **tour de taille** au point médian entre le bord inférieur de la dernière côte palpable et le sommet de la crête iliaque (WHO) ou au sommet de la crête iliaque (NHANES III).\n- Mesurer le **tour de hanches** au niveau de la partie la plus large des fesses.",
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [
+    "Waist Circumference",
+    "Hip circumference"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "b7d1dfe2944ce22d8ae161ee386972cfb4443a11d4de8998fa2262a999b09d25"
+}

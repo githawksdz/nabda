@@ -1,0 +1,285 @@
+{
+  "id": "calc.promise-score-malignant-pleural-effusion",
+  "slug": "promise-score-malignant-pleural-effusion",
+  "language": "fr",
+  "title": "PROMISE score pour Malignant Pleural Effusion",
+  "short_title": "Score PROMISE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Épanchement pleural"
+  ],
+  "chief_complaints": [
+    "Cancer",
+    "Douleur thoracique",
+    "Cough",
+    "Fatigue",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "MPE",
+    "mpe survival",
+    "mpe mortality",
+    "pleurodesis"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés. La TIMP1 est requise pour calculer le score PROMISE biologique.\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Score PROMISE clinique | Score PROMISE biologique (avec TIMP1) | | |\n| Chimiothérapie antérieure* | Non | 0 | 0 |\n| Oui | 4 | 3 | |\n| Radiothérapie antérieure* | Non | 0 | 0 |\n| Oui | 2 | 2 | |\n| Hémoglobine, g/dL | ≥16 | 0 | 0 |\n| 14 à <16 | 1 | 1 | |\n| 12 à <14 | 2 | 2 | |\n| 10 à <12 | 3 | 3 | |\n| <10 | 4 | 4 | |\n| Numération leucocytaire sérique, 10⁹ cellules/L | <4 | 0 | 0 |\n| 4 à <6,3 | 2 | 2 | |\n| 6,3 à <10 | 4 | 4 | |\n| 10 à <15,8 | 7 | 7 | |\n| ≥15,8 | 10 | 9 | |\n| Protéine C-réactive, UI/L | <3 | 0 | 0 |\n| 3 à <10 | 3 | 3 | |\n| 10 à <32 | 5 | 5 | |\n| 32 à <100 | 8 | 8 | |\n| ≥100 | 11 | 10 | |\n| Statut fonctionnel ECOG | 0-1 | 0 | 0 |\n| 2-4 | 7 | 7 | |\n| Type de cancer | Mésothéliome | 0 | 0 |\n| Tous les autres types de cancer | 4 | 5 | |\n| Poumon | 5 | 6 | |\n| TIMP1**, ng/mg de protéines | <40 | - | 0 |\n| 40 à <160 | - | 1 | |\n| ≥160 | - | 2 | |\n\n*À tout moment.\n\n**Optionnel, pour le calcul du score PROMISE biologique.",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser chez les patients atteints d'un cancer à un stade avancé et présentant un épanchement pleural malin, qu'il soit dû à un cancer pulmonaire primitif ou à des métastases pulmonaires.",
+    "pearls": "La TIMP1 n'est pas disponible dans toutes les institutions, mais si elle l'est, elle peut renforcer la puissance pronostique du score."
+  },
+  "next_steps": {
+    "advice": "- Envisager l'optimisation des soins de support et l'évitement des interventions invasives chez les patients présentant une mortalité plus élevée, afin d'améliorer la qualité de vie.\n- Une CRP élevée est non spécifique. Utiliser le jugement clinique et veiller à ce que le liquide pleural soit soigneusement évalué à la recherche d'étiologies infectieuses/inflammatoires coexistantes potentielles.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PROMISE clinique | Score PROMISE biologique | Mortalité à 3 mois |\n| --- | --- | --- |\n| 0-20 | 0-20 | <25 % |\n| 21-27 | 21-28 | 25 à <50 % |\n| 28-35 | 29-37 | 50 à <75 % |\n| >35 | >37 | ≥75 % |",
+  "short_description": "Malignant pleural effusion mortalité.",
+  "medium_description": "Predicts 3-month mortalité chez les patients avec malignant pleural effusion.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "chemo",
+      "label": "Chimiothérapie antérieure",
+      "tips": "À tout moment",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "radio",
+      "label": "Radiothérapie antérieure",
+      "tips": "À tout moment",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hb",
+      "label": "Hémoglobine, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥16",
+          "value": 0
+        },
+        {
+          "label": "14 pour <16",
+          "value": 1
+        },
+        {
+          "label": "12 pour <14",
+          "value": 2
+        },
+        {
+          "label": "10 pour <12",
+          "value": 3
+        },
+        {
+          "label": "< 10",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wbc",
+      "label": "Numération leucocytaire sérique, 10⁹ cellules/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 4",
+          "value": 0
+        },
+        {
+          "label": "4 pour <6.3",
+          "value": 2
+        },
+        {
+          "label": "6.3 pour <10",
+          "value": 4
+        },
+        {
+          "label": "10 pour <15.8",
+          "value": 7
+        },
+        {
+          "label": "≥15.8",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "crp",
+      "label": "Protéine C-réactive, UI/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3",
+          "value": 0
+        },
+        {
+          "label": "3 pour <10",
+          "value": 3
+        },
+        {
+          "label": "10 pour <32",
+          "value": 5
+        },
+        {
+          "label": "32 pour <100",
+          "value": 8
+        },
+        {
+          "label": "≥100",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "Statut fonctionnel [ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-1",
+          "value": 0
+        },
+        {
+          "label": "2-4",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Type de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Mesothelioma",
+          "value": 0
+        },
+        {
+          "label": "Tous les autres types de cancer",
+          "value": 5
+        },
+        {
+          "label": "Lung",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "timp",
+      "label": "TIMP1, ng/mg de protéines",
+      "tips": "Optionnel, pour le calcul du score PROMISE biologique",
+      "optional": true,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inconnu",
+          "value": -1
+        },
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40 pour <160",
+          "value": 1
+        },
+        {
+          "label": "≥160",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Psallidas I, Kanellakis NI, Gerry S, et al. Development and validation of response markers to predict survival and pleurodesis success in patients with malignant pleural effusion (PROMISE): a multicohort analysis. Lancet Oncol. 2018;19(7):930-939.",
+      "href": "https://www.thelancet.com/journals/lanonc/article/PIIS1470-2045(18)30294-8/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.lent-prognostic-score-malignant-pleural-effusion",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.prediction-survival-ecmo-therapy-preset-score"
+  ],
+  "source_logic_hash": "98b7ea97d17a898a13c4a5800149f080",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10096,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

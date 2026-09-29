@@ -1,0 +1,246 @@
+{
+  "id": "calc.brief-alcohol-withdrawal-scale-baws",
+  "slug": "brief-alcohol-withdrawal-scale-baws",
+  "language": "en",
+  "title": "Brief Alcohol Withdrawal échelle (BAWS)",
+  "short_title": "BAWS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hepatologie",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Anxious",
+    "Depressed",
+    "Fever",
+    "Headache",
+    "Intoxication/Overdose",
+    "Perte d'appétit",
+    "Nausea",
+    "Seizure",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Brief Alcohol Withdrawal Scale (BAWS)",
+    "baws",
+    "alcohol",
+    "alcohol withdrawal",
+    "withdrawal",
+    "drinking"
+  ],
+  "dosing": false,
+  "formula": "The BAWS Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Tremor | No tremor | 0 |\n| Not visible, but can be felt | 1 | |\n| Moderate, with arms extended | 2 | |\n| At rest, without arms extended | 3 | |\n| Diaphoresis/sweats | No sweats | 0 |\n| Mild, barely visible | 1 | |\n| Beads of sweat | 2 | |\n| Drenching sweats | 3 | |\n| Agitation | Alert and calm ( [RASS](nabda:calc.richmond-agitation-sedation-scale-rass\\) = 0) | 0 |\n| Restless, anxious, apprehensive, movements not aggressive (RASS = 1) | 1 | |\n| Agitated, frequent non-purposeful movement (RASS = 2) | 2 | |\n| Very agitated or combative, violent (RASS = 3 or 4) | 3 | |\n| Confusion e.g. time: by more than 2 days, wrong month, or wrong year place: name of building, city, state | Oriented to person, place, time | 0 |\n| Disoriented to time or place, but not both | 1 | |\n| Disoriented to time and place | 2 | |\n| Disoriented to person | 3 | |\n| Hallucinations (visual, auditory, tactile) | None | 0 |\n| Mild (vague report, reality testing intact) | 1 | |\n| Moderate (more defined hallucinations) | 2 | |\n| Severe (obviously responding to internal stimuli, poor reality testing) | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous le Brief Alcohol Withdrawal Scale (BAWS) et souhaitez-vous apporter votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "**BAWS <3:**\n\nGive diazepam 5 mg orally as needed for mild withdrawal or anxiety.\n\n- Every 4 hrs up to 6 doses (day 1).\n- Every 6 hrs up to 4 doses (day 2).\n- Every 8 hrs up to 3 doses (day 3).\n\nReassess BAWS every 4 hrs for 24 hrs, then every 6 hrs.\n\n**BAWS 3-5:**\n\nGive diazepam 10 mg orally every 4 hrs until BAWS <3 (up to 10 doses).\n\nReassess BAWS every 4 hrs.\n\n**BAWS 6-8:**\n\nGive diazepam 20 mg orally every 2 hrs until BAWS <6 (up to 3 doses).\n\nIf the patient has not received any benzodiazepines, give an initial dose of 10 mg.\n\nReassess BAWS every 2 hrs; notify physician if BAWS >5 after 6hrs.\n\n**BAWS >8:**\n\nGive diazepam 20 mg orally and notify physician.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**BAWS <3:**\n\nGive diazepam 5 mg orally as needed for mild withdrawal or anxiety.\n\n- Every 4 hrs up to 6 doses (day 1).\n- Every 6 hrs up to 4 doses (day 2).\n- Every 8 hrs up to 3 doses (day 3).\n\nReassess BAWS every 4 hrs for 24 hrs, then every 6 hrs.\n\n**BAWS 3-5:**\n\nGive diazepam 10 mg orally every 4 hrs until BAWS <3 (up to 10 doses).\n\nReassess BAWS every 4 hrs.\n\n**BAWS 6-8:**\n\nGive diazepam 20 mg orally every 2 hrs until BAWS <6 (up to 3 doses).\n\nIf the patient has not received any benzodiazepines, give an initial dose of 10 mg.\n\nReassess BAWS every 2 hrs; notify physician if BAWS >5 after 6hrs.\n\n**BAWS >8:**\n\nGive diazepam 20 mg orally and notify physician.",
+  "short_description": "Évalue le sevrage alcoolique.",
+  "medium_description": "Évalue les symptômes de sevrage alcoolique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "tremor",
+      "label": "Tremor",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absence de tremblement",
+          "value": 0
+        },
+        {
+          "label": "Non visible, mais palpable",
+          "value": 1
+        },
+        {
+          "label": "modéré, avec arms extended",
+          "value": 2
+        },
+        {
+          "label": "Au repos, sans les bras étendus",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sweats",
+      "label": "Diaphoresis/sweats",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absence de sueurs",
+          "value": 0
+        },
+        {
+          "label": "Léger, à peine visible",
+          "value": 1
+        },
+        {
+          "label": "Beads de sweat",
+          "value": 2
+        },
+        {
+          "label": "Sueurs profuses",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "agitation",
+      "label": "Agitation",
+      "tips": "[RASS](nabda:calc.richmond-agitation-sedation-scale-rass)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Alerte et calme (RASS = 0)",
+          "value": 0
+        },
+        {
+          "label": "Agité, anxieux, appréhensif, mouvements non agressifs (RASS = 1)",
+          "value": 1
+        },
+        {
+          "label": "Agitated, frequent non-purposeful movement (RASS = 2)",
+          "value": 2
+        },
+        {
+          "label": "Très agité ou combatif, violent (RASS = 3 ou 4)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "confusion",
+      "label": "Confusion/orientation",
+      "tips": "e.g. time: by more than 2 days, wrong month, or wrong year\nplace: name of building, city, state",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oriented pour person, place, time",
+          "value": 0
+        },
+        {
+          "label": "Disoriented pour time ou place, but not both",
+          "value": 1
+        },
+        {
+          "label": "Disoriented pour time et place",
+          "value": 2
+        },
+        {
+          "label": "Disoriented pour person",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hallucinations",
+      "label": "Hallucinations",
+      "tips": "Visuel, auditif, tactile",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Léger (rapport vague, épreuve de réalité intacte)",
+          "value": 1
+        },
+        {
+          "label": "modéré (more defined hallucinations)",
+          "value": 2
+        },
+        {
+          "label": "Severe (obviously responding pour internal stimuli, poor reality testing)",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rastegar DA, Applewhite D, Alvanzo AAH, Welsh C, Niessen T, Chen ES. Development and implementation of an alcohol withdrawal protocol using a 5-item scale, the Brief Alcohol Withdrawal Scale (Baws). Subst Abus. 2017;38(4):394-400.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28699845/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rastegar DA, Jarrell AS, Chen ES. Implementation of a protocol using the 5-item brief alcohol withdrawal scale for treatment of severe alcohol withdrawal in intensive care units. J Intensive Care Med. 2021;36(11):1361-1365.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32851920/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lindner BK, Gilmore VT, Kruer RM, et al. Evaluation of the brief alcohol withdrawal scale protocol at an academic medical center. J Addict Med. 2019;13(5):379-384.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30741834/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rj E, M B, A N, et al. Psychometric properties of the revised clinical institute withdrawal alcohol assessment and the brief alcohol withdrawal scale in a psychiatric population. Journal of addiction medicine. 2020;14(6).",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32209957/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.brief-addiction-monitor-bam",
+    "calc.car-relax-alone-forget-friends-trouble-crafft-questionnaire",
+    "calc.prediction-alcohol-withdrawal-severity-scale",
+    "calc.richmond-agitation-sedation-scale-rass"
+  ],
+  "source_logic_hash": "d51fabde5fd6fbc39b8ab1f0647ace65",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.richmond-agitation-sedation-scale-rass",
+      "text": "RASS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10446,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

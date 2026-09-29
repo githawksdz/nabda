@@ -1,0 +1,305 @@
+{
+  "id": "calc.nincds-adrda-criteria-alzheimers-disease",
+  "slug": "nincds-adrda-criteria-alzheimers-disease",
+  "language": "en",
+  "title": "NINCDS-ADRDA critères pour Alzheimer’s maladie",
+  "short_title": "NINCDS-ADRDA critères pour Alzheimer’s",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "soins-palliatifs",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Maladie d'Alzheimer",
+    "Dementia"
+  ],
+  "chief_complaints": [
+    "Déficit neurologique"
+  ],
+  "abbreviations": [
+    "Alzheimer's disease",
+    "alzheimers disease",
+    "Alzheimer's",
+    "alzheimers",
+    "alzhimers",
+    "nincds-adrda",
+    "criteria",
+    "ad",
+    "dementia",
+    "iwg",
+    "iwg2",
+    "iwg 2"
+  ],
+  "dosing": false,
+  "formula": "**Definite Alzheimer Disease:**\n\nHistopathologic evidence obtained from a biopsy or autopsy plus all criteria for Probable Alzheimer’s Disease (1-6 below).\n\n**Probable Alzheimer Disease** * (must have all 6):\n\n1. Dementia established by clinical examination and documented by the Mini-Mental Test, Blessed Dementia Scale, or some similar examination, and confirmed by neuropsychological tests.\n2. Deficits in ≥2 areas of cognition.\n3. Progressive worsening of memory and other cognitive functions.\n4. No disturbance of consciousness.\n5. Onset at age >40 to <90 years.\n6. Absence of systemic disorders or other brain diseases that in and of themselves could account for the progressive deficits in memory and cognition.\n\n*Additionally, the diagnosis of Probable AD is supported by the following:\n\n- Progressive deterioration of specific cognitive functions such as language (aphasia), motor skills (apraxia), and perception (agnosia).\n- Impaired activities of daily living and altered patterns of behavior.\n- Family history of similar disorders, particularly if confirmed neuropathologically.\n- Lab results:\n\nFeatures that make Probable AD diagnosis uncertain or unlikely:\n\n- Sudden, apoplectic onset.\n- Focal neurologic findings (e.g. hemiparesis, sensory loss, visual field deficits, and incoordination early in the course of the illness).\n- Seizures or gait disturbances at onset or very early in the course of the illness.\n\nIf neither of the above is fulfilled,\n\n**Possible Alzheimer Disease** (must have all 3):\n\n1. Dementia syndrome, in the absence of other neurologic, psychiatric, or systemic disorders sufficient to cause dementia, and presence of variations in onset, in presentation, or in clinical course.\n2. Presence of a second systemic or brain disorder sufficient to produce dementia but is not considered to be the cause of dementia.\n3. A single, gradually progressive severe cognitive deficit is identified in the absence of other identifiable cause.",
+  "how_to_use": {
+    "why": "Fournit un cadre standardisé pour le diagnostic de la maladie d'Alzheimer possible ou probable, en contexte clinique comme en recherche.",
+    "when": "À utiliser lors de l’évaluation des patients présentant un trouble cognitif suspecté d’être dû à la maladie d’Alzheimer (AD).",
+    "pearls": "- Developed in 1984, these criteria were a key tool for diagnosing AD but were revised in 2011 to form the[National Institute on Aging and Alzheimer Association (NIA-AA) criteria](https://pmc.ncbi.nlm.nih.gov/articles/PMC3096735/).\n- They predate advances in AD research and do not incorporate modern diagnostic tools, such as CSF biomarkers or amyloid PET imaging.\n- Diagnosis requires ruling out other potential causes, including vascular dementia, medications, and psychiatric conditions."
+  },
+  "next_steps": {
+    "advice": "- Always exclude reversible causes of cognitive decline (e.g., vitamin B12 deficiency, hypothyroidism, structural brain pathology).\n- Consider supplementing these criteria with modern diagnostic tools.\n- If the criteria support an AD diagnosis, consider:\n\n - Tailoring treatment based on disease stage and symptom severity, considering cholinesterase inhibitors, memantine, or newly available therapies as appropriate.\n - Reinforcing non-pharmacologic interventions (e.g., exercise, cognitive training, social engagement).\n - Offering caregiver support resources and discussing advanced care planning.\n - Monitoring disease progression and reassessing treatment plans periodically.\n- For complex cases or those requiring advanced imaging or biomarkers, consider referral to neurology or geriatric psychiatry.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Clinical diagnosis for AD | Rate of AD by pathological diagnosis |\n| --- | --- |\n| Probable AD | 91% |\n| Possible AD | 92% |\n\nThe sensitivity and specificity of a clinical diagnosis of Probable AD or Possible AD for a pathological diagnosis of AD are 83% and 84%, respectively ([Blacker 1994](https://www.ncbi.nlm.nih.gov/pubmed/7986174)).",
+  "short_description": "Diagnostic de la maladie d’Alzheimer.",
+  "medium_description": "Diagnoses Alzheimer maladie (AD), alternative pour [IWG-2 Criteria](nabda:calc.international-working-group-iwg-2-criteria-alzheimers-disease-diagnosis).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "histo",
+      "label": "Preuve histopathologique obtenue par biopsie ou autopsie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "tests",
+      "label": "Dementia established par clinique examination et documented par Mini-Mental Test, Blessed Dementia échelle, ou some similar examination, et confirmed par neuropsychological tests",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "deficits",
+      "label": "Deficits dans ≥2 areas de cognition",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "memory",
+      "label": "Aggravation progressive de la mémoire et d’autres fonctions cognitives.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "disturbance",
+      "label": "Pas de trouble de la conscience",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "onset",
+      "label": "Onset at âge >40 pour <90 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "absence",
+      "label": "Absence de systemic disorders ou other brain diseases that dans et de themselves could account pour progressive deficits dans memory et cognition",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "syndrome",
+      "label": "Dementia syndrome, dans absence de other neurologic, psychiatric, ou systemic disorders sufficient pour cause dementia, et presence de variations dans onset, dans presentation, ou dans clinique course",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "presence",
+      "label": "Presence de second systemic ou brain disorder sufficient pour produce dementia but is not considered pour be cause de dementia",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "other",
+      "label": "Single, gradually progressive severe cognitive deficit is identified dans absence de other identifiable cause",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "tests + deficits + memory + disturbance + onset + absence < 6",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mckhann G, Drachman D, Folstein M, Katzman R, Price D, Stadlan EM. Clinical diagnosis of Alzheimer's disease: report of the NINCDS-ADRDA Work Group under the auspices of Department of Health and Human Services Task Force on Alzheimer's Disease. Neurology. 1984;34(7):939-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6610841",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Blacker D, Albert MS, Bassett SS, Go RC, Harrell LE, Folstein MF. Reliability and validity of NINCDS-ADRDA criteria for Alzheimer's disease. The National Institute of Mental Health Genetics Initiative. Arch Neurol. 1994;51(12):1198-204.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7986174",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Varma AR, Snowden JS, Lloyd JJ. Evaluation of the NINCDS-ADRDA criteria in the differentiation of Alzheimer’s disease and frontotemporal dementia. Journal of Neurology, Neurosurgery & Psychiatry. 1999;66:184-188.",
+      "href": "https://jnnp.bmj.com/content/66/2/184",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-working-group-iwg-2-criteria-alzheimers-disease-diagnosis",
+    "calc.clinical-dementia-rating-cdr-scale",
+    "calc.montreal-cognitive-assessment-moca"
+  ],
+  "source_logic_hash": "89f9ca761389c48b1c5bb23351aa88cf",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10151,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,421 @@
+{
+  "id": "calc.indications-paxlovid-prescribing",
+  "slug": "indications-paxlovid-prescribing",
+  "language": "en",
+  "title": "Indications pour Paxlovid",
+  "short_title": "Indications pour Paxlovid",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "infectiologie",
+    "medecine-interne",
+    "pediatrie",
+    "pharmacotherapie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Toux",
+    "Diarrhée",
+    "Dyspnée",
+    "Fatigue",
+    "Fièvre",
+    "Céphalée",
+    "Nausée",
+    "Dyspnée",
+    "Mal de gorge",
+    "Vomissements"
+  ],
+  "abbreviations": [
+    "Paxlovid",
+    "covid",
+    "covid 19",
+    "covid-19",
+    "coronavirus",
+    "antiviral therapy",
+    "antiviral prescribing"
+  ],
+  "dosing": true,
+  "formula": "Inclusion criteria (must fulfill all 4 to evaluate for Paxlovid):\n\n- >12 years old and >40 kg.\n- Mild to moderate COVID-19 disease.\n- Symptoms began ≤5 days prior.\n- Patient does not have severe hepatic impairment (does not have [Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) Class C).\n\nHigh risk conditions (having any 1 of the following results is indication for Paxlovid):\n\n- ADHD\n- Age >50 years\n- Alcoholic liver disease\n- Asthma\n- Autoimmune hepatitis\n- Bronchiectasis\n- Cancer\n- Cardiomyopathy\n- Cerebral palsy\n- Cerebrovascular disease\n- Chronic kidney disease\n- Cirrhosis\n- Congenital malformations\n- COPD\n- Coronary artery disease\n- Cystic fibrosis\n- Dementia\n- Diabetes type 1 or 2\n- Heart failure\n- HIV\n- Intellectual and developmental disabilities\n- Interstitial lung disease\n- Learning disabilities\n- Limitations with self care/ADLs\n- Mood disorders\n- Nonalcoholic fatty liver disease\n- Obesity (BMI >30 or >95th %ile in children)\n- Physical inactivity\n- Pregnancy\n- Primary immunodeficiencies\n- Pulmonary embolism\n- Pulmonary hypertension\n- Schizophrenia spectrum disorders\n- Sickle cell or thalassemia\n- Smoking history or current smoker\n- Solid organ or hematopoietic cell transplantation\n- Spinal cord injuries\n- Stroke or cerebrovascular disease\n- Substance use disorder\n- Tuberculosis\n- Unvaccinated or not up to date with vaccines\n- Use of corticosteroids or other immunosuppressive medications",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez cet outil chez les patients ayant un résultat positif à la COVID-19 et pour lesquels un traitement par Paxlovid est envisagé.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Prescribing Information for Paxlovid (ritonavir-boosted nirmatrelvir)\n\n- eGFR >60 mL/min: Nirmatrelvir 300mg with ritonavir 100mg PO twice daily for 5 days.\n- eGFR ≥30 mL/min to <60 mL/min: Nirmatrelvir 150mg with ritonavir 100mg PO twice daily for 5 days.\n- eGFR <30 mL/min, including those requiring dialysis:\n\n - Day 1: Nirmatrelvir 300mg and ritonavir 100mg once daily.\n - Days 2-5: Nirmatrelvir 150mg and ritonavir 100mg once daily.\n - If patient receives hemodialysis, administer Paxlovid after hemodialysis session.\n- Severe hepatic impairment ( [Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) Class C): This medication is not recommended.",
+    "critical_actions": "- Paxlovid may interact with many patient medications. It is important to take a complete medication history and review potential interactions. The CDC recommends using the Liverpool Covid-19 Drug Interactions[checker](https://www.covid19-druginteractions.org/checker).\n- Additional treatment guidance exists for patients who may be pregnant or lactating available from the American College of Obstetricians and Gynecologists and the Society for Maternal-Fetal Medicine.\n- Paxlovid is not appropriate for all patients, for the latest on other available oral and IV treatment regimens, please visit the Infectious Diseases Society of America's COVID-19[guidelines](https://www.idsociety.org/practice-guideline/covid-19-guideline-treatment-and-management/)page.",
+    "management": "- Paxlovid is recommended for COVID-19 positive patients in the nonhospitalized setting who are at high risk of progression to severe COVID-19 disease.\n- Paxlovid is also recommended for hospitalized patients who were hospitalized for another reason, but who are found to have mild-moderate COVID-19 disease and are at high risk of progression to severe illness.\n- Manufacturer information may change, be sure to follow the most recent prescribing information and package instructions."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Indication du Paxlovid.",
+  "medium_description": "Assists dans determining if Paxlovid (ritonovir-boosted nirmatrelvir) is appropriate therapy dans COVID positive adulte patient.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": ">12 ans et >40 kg",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "disease",
+      "label": "Maladie COVID-19 légère à modérée",
+      "tips": "See[NIH](https://www.ncbi.nlm.nih.gov/books/NBK554776/)definitions of mild and moderate disease.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "symptoms",
+      "label": "Début des symptômes ≤5 jours auparavant",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "impairment",
+      "label": "Le patient ne présente pas d’insuffisance hépatique sévère.",
+      "tips": "Does not have [Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) Class C",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "dropdown",
+      "name": "criteria",
+      "label": "Conditions à haut risque",
+      "tips": "Voir [Preuves](#evidence) pour la liste complète.",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "age == 1 && disease == 1 && symptoms == 1 && impairment == 1",
+      "options": [
+        {
+          "label": "TDAH",
+          "value": 1
+        },
+        {
+          "label": "âge > 50 ans",
+          "value": 2
+        },
+        {
+          "label": "Maladie alcoolique du foie",
+          "value": 3
+        },
+        {
+          "label": "asthme",
+          "value": 4
+        },
+        {
+          "label": "Hépatite auto-immune",
+          "value": 5
+        },
+        {
+          "label": "Bronchectasie",
+          "value": 6
+        },
+        {
+          "label": "cancer",
+          "value": 7
+        },
+        {
+          "label": "Cardiomyopathie",
+          "value": 8
+        },
+        {
+          "label": "Paralysie cérébrale",
+          "value": 9
+        },
+        {
+          "label": "Maladie cérébrovasculaire",
+          "value": 10
+        },
+        {
+          "label": "maladie rénale chronique",
+          "value": 11
+        },
+        {
+          "label": "Cirrhose",
+          "value": 12
+        },
+        {
+          "label": "Malformations congénitales",
+          "value": 13
+        },
+        {
+          "label": "BPCO (COPD)",
+          "value": 14
+        },
+        {
+          "label": "Maladie coronarienne",
+          "value": 15
+        },
+        {
+          "label": "Mucoviscidose",
+          "value": 16
+        },
+        {
+          "label": "Démence",
+          "value": 17
+        },
+        {
+          "label": "diabète de type 1 ou de type 2",
+          "value": 18
+        },
+        {
+          "label": "Insuffisance cardiaque",
+          "value": 19
+        },
+        {
+          "label": "VIH",
+          "value": 20
+        },
+        {
+          "label": "Déficience intellectuelle et troubles du développement",
+          "value": 21
+        },
+        {
+          "label": "Pneumopathie interstitielle diffuse (PID)",
+          "value": 22
+        },
+        {
+          "label": "Troubles des apprentissages",
+          "value": 23
+        },
+        {
+          "label": "Limitations avec self care/ADLs",
+          "value": 24
+        },
+        {
+          "label": "Troubles de l'humeur",
+          "value": 25
+        },
+        {
+          "label": "Stéatose hépatique non alcoolique",
+          "value": 26
+        },
+        {
+          "label": "Obésité (IMC ≥30 ou ≥95e percentile chez l'enfant)",
+          "value": 27
+        },
+        {
+          "label": "Inactivité physique",
+          "value": 28
+        },
+        {
+          "label": "grossesse",
+          "value": 29
+        },
+        {
+          "label": "Déficits immunitaires primitifs",
+          "value": 30
+        },
+        {
+          "label": "Embolie pulmonaire",
+          "value": 31
+        },
+        {
+          "label": "Hypertension pulmonaire",
+          "value": 32
+        },
+        {
+          "label": "Troubles du spectre de la schizophrénie",
+          "value": 33
+        },
+        {
+          "label": "Drépanocytose ou thalassémie",
+          "value": 34
+        },
+        {
+          "label": "Antécédents de tabagisme ou fumeur actuel",
+          "value": 35
+        },
+        {
+          "label": "Transplantation d'organe solide ou de cellules hématopoïétiques",
+          "value": 36
+        },
+        {
+          "label": "Traumatismes médullaires",
+          "value": 37
+        },
+        {
+          "label": "AVC ou maladie cérébrovasculaire",
+          "value": 38
+        },
+        {
+          "label": "Substance use disorder",
+          "value": 39
+        },
+        {
+          "label": "Tuberculose",
+          "value": 40
+        },
+        {
+          "label": "Non vacciné ou vaccinations non à jour",
+          "value": 41
+        },
+        {
+          "label": "Utilisation de corticostéroïdes ou d'autres médicaments immunosuppresseurs",
+          "value": 42
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "egfr2",
+      "label": "EGFR",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "age == 1 && disease == 1 && symptoms == 1 && impairment == 1 && criteria in [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,36,37,38,39,40,41,42,43]",
+      "options": [
+        {
+          "label": "> 60 mL/min",
+          "value": 1
+        },
+        {
+          "label": "≥30 mL/min à <60 mL/min",
+          "value": 2
+        },
+        {
+          "label": "< 30 mL/min",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nonhospitalized Adults: Therapeutic Management of COVID-19",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK570371/pdf/Bookshelf_NBK570371.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "IDSA Guidelines on the Treatment and Management of Patients with COVID-19",
+      "href": "https://www.idsociety.org/practice-guideline/covid-19-guideline-treatment-and-management/",
+      "kind": "international"
+    },
+    {
+      "text": "Scientific Evidence for Conditions Associated with Higher Risk for Severe COVID-19",
+      "href": "https://archive.cdc.gov/www_cdc_gov/coronavirus/2019-ncov/hcp/clinical-care/underlyingconditions.html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Underlying Medical Conditions Associated with Higher Risk for Severe COVID-19: Information for Healthcare Professionals",
+      "href": "https://www.cdc.gov/covid/hcp/clinical-care/underlying-conditions.html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "FDA Factsheet for Healthcare Providers: Emergency Use Authorization for Paxlovid",
+      "href": "https://www.fda.gov/media/155050/download",
+      "kind": "other"
+    },
+    {
+      "text": "Paxlovid Labeling Information",
+      "href": "https://labeling.pfizer.com/ShowLabeling.aspx?id=19599",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.utah-covid19-risk-score",
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.smart-cop-score-pneumonia-severity",
+    "calc.child-pugh-score-cirrhosis-mortality"
+  ],
+  "source_logic_hash": "027b9128da3730feeb13e434ef26d4cc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.child-pugh-score-cirrhosis-mortality",
+      "text": "Child-Pugh"
+    },
+    {
+      "type": "calc",
+      "id": "calc.child-pugh-score-cirrhosis-mortality",
+      "text": "Child-Pugh"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10444,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar disease = parseFloat(disease);\nvar symptoms = parseFloat(symptoms);\nvar impairment = parseFloat(impairment);\n\nvar criteria = parseFloat(criteria) || -1;\nvar egfr2 = parseFloat(egfr2) || 0;\n\nvar msg;\n\nif (age == 0 || disease == 0 || symptoms == 0 || impairment == 0 || (criteria == -1 && egfr2 == 0)) {\n    msg = 'Paxlovid may not be indicated in this patient.';\n} \n\nif (criteria != -1 && egfr2 != 0) {\n    if (egfr2 == 1) {\n        msg = 'Paxlovid may be a management option for this patient if they are in the outpatient setting or if they are hospitalized for a reason other than COVID-19 infection.<br/><br/>Prescribe nirmatrelvir 300mg w/ ritonavir 100mg PO BID for 5 days.';\n    }\n    if (egfr2 == 2) {\n        msg = 'Paxlovid may be a management option for this patient if they are in the outpatient setting or if they are hospitalized for a reason other than COVID-19 infection.<br/><br/>Prescribe nirmatrelvir 150mg w/ ritonavir 100mg PO BID for 5 days.'\n    }\n    else if (egfr2 == 3) {\n        msg = 'Paxlovid may be a management option for this patient if they are in the outpatient setting or if they are hospitalized for a reason other than COVID-19 infection.<br/><br/>Prescribe nirmatrelvir 300mg w/ ritonavir 100mg PO BID for 1 day, then nirmatrelvir 150mg w/ ritonavir 100mg PO for 4 days.'\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: 'result',\n    value: '',\n    value_text: '',\n    message: msg\n});",
+  "before_use": null,
+  "instructions": "In the United States, Paxlovid (ritonovir-boosted nirmatrelvir), is now approved by the Food and Drug Administration (FDA) for the treatment of mild-to-moderate COVID-19 in adults who are at high risk of progression to severe disease.\n\nAn Emergency Use Authorization ([EUA](https://www.fda.gov/media/185428/download)) is in place for the use of Paxlovid in pediatric patients >12 years of age and weighing at least 40kg who have mild-to-moderate COVID-19 and who are at high risk of progression to severe disease.\n\nDrug approval status may vary by country and is subject to change.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Centers for Disease Control and Prevention "
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "1094a39fa5e9e74bae108a8dd273ca21dc6133adfd34d340e800a61c406ce732"
+}

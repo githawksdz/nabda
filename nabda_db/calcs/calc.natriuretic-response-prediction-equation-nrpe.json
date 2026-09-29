@@ -1,0 +1,135 @@
+{
+  "id": "calc.natriuretic-response-prediction-equation-nrpe",
+  "slug": "natriuretic-response-prediction-equation-nrpe",
+  "language": "en",
+  "title": "Natriuretic Response prédiction équation (NRPE)",
+  "short_title": "NRPE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Œdème périphérique",
+    "Dyspnée",
+    "Swelling"
+  ],
+  "abbreviations": [
+    "Natriuretic Response Prediction Equation",
+    "NRPE",
+    "loop diuretic response",
+    "spot urine sodium",
+    "heart failure",
+    "Acute decompensated heart"
+  ],
+  "dosing": false,
+  "formula": "The predicted total sodium output was calculated using the following equation:\n\n**Na output, mmol** = eGFR * (BSA/1.73) * (Serum Cr/Urine Cr) * 60 min * 3.25 hr * (Urine Na/1000 mL)\n\nThe predicted urine output was calculated using the following equation:\n\n**Urine output, mL** = eGFR * (BSA/1.73) * (Serum Cr/Urine Cr) * 60 min * 3.25 hr\n\nNote: The above formulas use creatine in µmol/L.\n\nBody surface area was calculated using the DuBois formula:\n\n**BSA** = 0.007184 * (Height, cm)^0.725^* (Weight, kg)^0.425^",
+  "how_to_use": {
+    "why": "- Les études montrent que cet outil prédit avec précision la natriurèse à 6 heures et surpasse le bilan hydrique, les mesures de poids et la concentration de sodium urinaire sur échantillon ponctuel, paramètres qui peuvent chacun être imprécis ou obtenus de manière incohérente au cours de l'hospitalisation.\n- Offre une bonne discrimination pour identifier une réponse natriurétique insuffisante, permettant un ajustement plus précoce du traitement et potentiellement une réduction de la durée d'hospitalisation.",
+    "when": "À utiliser chez les patients adultes (≥18 ans) hospitalisés atteints d’insuffisance cardiaque aiguë décompensée (ADHF) recevant des diurétiques de l’anse par voie intraveineuse afin de déterminer rapidement la réponse natriurétique précoce.",
+    "pearls": "- Derivation and validation studies used 2009 CKD-EPI formula to estimate GFR. Newer equations may be utilized to calculate eGFR.\n- Body surface area was calculated using the DuBois formula.\n- Demonstrated AUC ≥0.90 for distinguishing poor, suboptimal, and excellent natriuretic responses.\n- Timing errors in urine sample collection may reduce accuracy.\n- Validated primarily for IV loop diuretics and inpatient ADHF management; applicability in other clinical contexts is uncertain."
+  },
+  "next_steps": {
+    "advice": "Interpréter les résultats dans le contexte clinique et les utiliser conjointement avec un jugement clinique éclairé et l'expertise d'un spécialiste.",
+    "critical_actions": "",
+    "management": "**Poor response (≤50 mmol):**\n\n- Escalate therapy by:\n\n - Increasing loop diuretic dose.\n - Adding sequential nephron blockade (e.g., thiazide-type diuretic).\n- Consider adjuncts (e.g., acetazolamide) or ultrafiltration if refractory.\n\n**Suboptimal response (50.1–100 mmol):**\n\n- Optimize medical therapy by:\n\n - Adjusting diuretic dose and/or frequency.\n - Adding a synergistic diuretic.\n- Reassess volume/sodium intake.\n\n**Excellent response (>100 mmol):**\n\n- Continue current regimen.\n- Monitor for over-diuresis and renal function."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Excrétion sodique sur 6 heures | Catégorie de réponse |\n| --- | --- |\n| ≤50 mmol Na | Faible |\n| >50 à ≤100 mmol Na | Sous-optimale |\n| >100 mmol Na | Excellente |",
+  "short_description": "Predicts natriuretic response pour loop diuretics.",
+  "medium_description": "Predicts natriuretic response pour intravenous loop diuretics.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "[eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "unit": "gfr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "cr_serum",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "cr_urine",
+      "label": "Créatinine urinaire",
+      "optional": false,
+      "unit": "cr_urine",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "na_urine",
+      "label": "Concentration urinaire de sodium",
+      "optional": false,
+      "unit": "na_urine",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Testani JM, Hanberg JS, Cheng S, et al. Rapid and Highly Accurate Prediction of Poor Loop Diuretic Natriuretic Response in Patients With Heart Failure. Circ Heart Fail. 2016;9(1):e002370. doi:10.1161/CIRCHEARTFAILURE.115.002370",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26721915/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rao VS, Ivey-Miranda JB, Cox ZL, et al. Natriuretic Equation to Predict Loop Diuretic Response in Patients With Heart Failure. J Am Coll Cardiol. 2021;77(6):695-708. doi:10.1016/j.jacc.2020.12.022",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33573739/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ramírez-Sánchez P, Falcón-Aguirre A, Tepayotl-Aponte A, et al. External validation of the natriuretic response prediction equation to discriminate diuretic response in heart failure. ESC Heart Fail. 2025;12(1):668-671. doi:10.1002/ehf2.14801",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39135310/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "2d0646988189bc7707c362d9056bcc6f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10618,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

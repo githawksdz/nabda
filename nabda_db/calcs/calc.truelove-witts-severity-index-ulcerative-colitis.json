@@ -1,0 +1,203 @@
+{
+  "id": "calc.truelove-witts-severity-index-ulcerative-colitis",
+  "slug": "truelove-witts-severity-index-ulcerative-colitis",
+  "language": "fr",
+  "title": "Truelove et Witts gravité index pour Ulcerative Colitis",
+  "short_title": "Truelove/Witts gravité index pour UC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Colitis",
+    "Maladies inflammatoires chroniques de l'intestin (MICI)",
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Sang dans les selles",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "UC",
+    "ulcerative colitis",
+    "ulcerative colitis severity",
+    "Truelove and Witts",
+    "ulcerative colitis severity index",
+    "truelove witts"
+  ],
+  "dosing": false,
+  "formula": "- Le diagnostic est léger lorsque les six critères sont réunis.\n- Le diagnostic est sévère lorsque les critères relatifs à la fréquence des selles et ≥1 signe d'atteinte systémique (en gras) sont remplis.\n- Le diagnostic est modéré lorsque les variables se situent entre ces critères.\n\n| Variable | Sévérité de la rectocolite hémorragique | | |\n| --- | --- | --- | --- |\n| Légère | Modérée | Sévère | |\n| Selles par jour | <4 | 4-5 | ≥6 |\n| Sang dans les selles | Absent ou pas plus de petites quantités de sang | Entre léger et sévère | Sang visible |\n| Pyrexie * | Non | Non | Oui |\n| Pouls >90 bpm | Non | Non | Oui |\n| Anémie ** | Non | Non | Oui |\n| Vitesse de sédimentation des hématies , mm/h | ≤30 | >30 | |\n\n*Définie comme une température ≥100 °F (≥37,8 °C).\n\n**Définie comme un taux d'hémoglobine ≤10,5 g/dL (≤6,5 mmol/L).",
+  "how_to_use": {
+    "why": "- Aide à déterminer les stratégies de prise en charge appropriées pour la rectocolite hémorragique et à suivre la réponse au traitement.\n- Fournit une méthode standardisée pour évaluer la sévérité de la maladie, ce qui peut améliorer la communication entre cliniciens et garantir la cohérence des soins aux patients.",
+    "when": "- Utiliser au diagnostic initial pour établir la sévérité de la rectocolite hémorragique chez l'adulte\n- Appliquer lors des visites de suivi pour surveiller les changements de l'activité de la maladie.\n- Peut être utilisé pour évaluer la sévérité de la maladie lors des exacerbations aiguës.",
+    "pearls": "Certains critères, comme la présence de sang dans les selles, peuvent être subjectifs et varier selon les observateurs."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Traitements d'induction potentiels selon l'activité de la maladie :\n\n- Maladie légère : généralement prise en charge par les aminosalicylés ; un suivi ambulatoire est approprié.\n- Maladie modérée : peut nécessiter des corticostéroïdes oraux ou intraveineux et des immunomodulateurs, avec une surveillance plus rapprochée.\n- Maladie sévère : peut nécessiter une hospitalisation, une corticothérapie, des traitements biologiques et une discussion d'un traitement chirurgical en cas d'absence de réponse au traitement médical.\n\nLa prise en charge doit également tenir compte de l'étendue de la maladie, du contexte clinique et des facteurs de risque propres au patient. Une consultation avec un gastro-entérologue est recommandée."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Ulcerative colitis gravité.",
+  "medium_description": "Stratifies gravité de ulcerative colitis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bowel",
+      "label": "Selles par jour",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 4",
+          "value": 0
+        },
+        {
+          "label": "4-5",
+          "value": 1
+        },
+        {
+          "label": "≥6",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "blood",
+      "label": "Blood dans stool",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent ou pas plus de petites quantités de sang",
+          "value": 0
+        },
+        {
+          "label": "Entre léger et sévère",
+          "value": 1
+        },
+        {
+          "label": "Sang visible",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pyr",
+      "label": "Pyrexia",
+      "tips": "Définie comme une température ≥100 °F (≥37,8 °C)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "Pouls >90 bpm",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "an",
+      "label": "Anemia",
+      "tips": "Défini comme un taux d'hémoglobine ≤10,5 g/dL (≤6,5 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "esr",
+      "label": "Vitesse de sédimentation des hématies, mm/h",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≤30",
+          "value": 0
+        },
+        {
+          "label": ">30",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Truelove SC, Witts LJ. Cortisone in ulcerative colitis; final report on a therapeutic trial. Br Med J. 1955;2(4947):1041-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/13260656",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ulcerative-colitis-endoscopic-index-of-severity-uceis",
+    "calc.montreal-classification-inflammatory-bowel-disease-ibd",
+    "calc.mayo-score-disease-activity-index-dai-ulcerative-colitis"
+  ],
+  "source_logic_hash": "5e789036a5724be7ef29bf52dba2bfed",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10235,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

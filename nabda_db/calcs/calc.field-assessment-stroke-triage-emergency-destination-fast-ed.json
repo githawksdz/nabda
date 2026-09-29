@@ -1,0 +1,239 @@
+{
+  "id": "calc.field-assessment-stroke-triage-emergency-destination-fast-ed",
+  "slug": "field-assessment-stroke-triage-emergency-destination-fast-ed",
+  "language": "en",
+  "title": "Field évaluation AVC Triage pour Emergency Destination (FAST-ED)",
+  "short_title": "FAST-ED",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Accident vasculaire cérébral ischémique aigu",
+    "Occlusion de gros vaisseau",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Headache",
+    "Déficit neurologique",
+    "Numbness",
+    "Seizure",
+    "Vertigo",
+    "Perte de vision",
+    "Weakness",
+    "Gait",
+    "Dysarthria",
+    "Dysphagia",
+    "Aphasia"
+  ],
+  "abbreviations": [
+    "FAST-ED",
+    "fast",
+    "LVO",
+    "large vessel occlusion",
+    "field stroke triage",
+    "prehospital LVO scale",
+    "LVO stroke detection",
+    "thrombectomy triage",
+    "mobile stroke unit",
+    "stroke severity scale",
+    "NIHSS",
+    "RACE CPSSS",
+    "JoinTriage app",
+    "prehospital stroke",
+    "stroke triage",
+    "stroke evaluation",
+    "stroke destination",
+    "stroke hospital",
+    "stroke ER",
+    "fast ed",
+    "fast stroke",
+    "LVO stroke",
+    "LVOS"
+  ],
+  "dosing": false,
+  "formula": "The FAST-ED score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Facial palsy | Normal or minor paralysis | 0 |\n| Partial or complete paralysis | 1 | |\n| Arm weakness | No drift | 0 |\n| Drift or some effort against gravity | 1 | |\n| No effort against gravity or no movement | 2 | |\n| Speech changes | Absent | 0 |\n| Mild to moderate | 1 | |\n| Severe, global aphasia or mute | 2 | |\n| Eye deviation | Absent | 0 |\n| Partial | 1 | |\n| Forced deviation | 2 | |\n| Denial/neglect | Absent | 0 |\n| Extinction to bilateral simultaneous stimulation in only one sensory modality | 1 | |\n| Does not recognize own hand or orients only to one side of the body | 2 | |",
+  "how_to_use": {
+    "why": "- Permet une évaluation rapide et structurée du risque de LVO sur le terrain, en favorisant un transport dans les délais vers des centres disposant de capacités endovasculaires et en réduisant les retards de traitement.\n- Offre une précision comparable au NIHSS tout en étant plus facile et plus rapide à réaliser en contexte préhospitalier.",
+    "when": "Use in prehospital or ED settings for adult patients with suspected acute ischemic stroke (within 24 hours of symptom onset/last known well), especially when rapid identification of large-vessel occlusion (LVO) could influence transport destination or emergent intervention.",
+    "pearls": "- Derived from NIHSS items with strong predictive value for LVO using the STOPStroke cohort in which patients underwent CT angiography within 24 hours of onset.\n- Demonstrates moderate-to-high sensitivity (60%–80%) and specificity (61%–89%) for LVO, with high negative predictive value (reported up to 94%) across diverse EMS settings.\n- Shows moderate-to-high inter-rater reliability between EMS and ED/neurologist scoring.\n- Less sensitive for posterior circulation strokes and may miss LVOs with subtle cortical signs."
+  },
+  "next_steps": {
+    "advice": "- À utiliser dans le cadre d’une filière protocolisée, parallèlement à un bref dépistage des pathologies mimant un AVC (p. ex., crise épileptique avec paralysie de Todd, hypoglycémie, migraine, intoxication).\n- Les résultats peuvent servir à accélérer l’activation intra-hospitalière de l’équipe AVC et la réalisation de l’imagerie, en particulier chez les candidats potentiels à un traitement endovasculaire.\n- Continuer à surveiller et à réévaluer l’état neurologique pendant le transport et après l’arrivée, car",
+    "critical_actions": "Les AVC de la circulation postérieure (p. ex., vertiges, ataxie, dysmétrie) peuvent obtenir un score faible ; ne pas utiliser cet outil pour « exclure » un AVC lorsque l’anamnèse et l’examen clinique sont préoccupants.",
+    "management": "**Score ≥4 :**\n\n- Indique une probabilité élevée de LVOS.\n- Prioriser le transport direct vers un centre capable de réaliser une thrombectomie ou un centre complet de traitement de l’AVC si le délai de transport est raisonnable et selon le protocole local.\n\n**Score <4 :**\n\n- Indique une probabilité plus faible de LVOS.\n- Le transport vers le centre de traitement de l’AVC approprié le plus proche pour une évaluation et une prise en charge complémentaires peut être approprié."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score FAST-ED | Probabilité de LVOS |\n| --- | --- |\n| 0-1 | < 15 % |\n| 2-3 | ~30 % |\n| ≥4 | ~60 % ou plus |",
+  "short_description": "Identifie une LVOS.",
+  "medium_description": "Identifies large vessel occlusion AVC (LVOS) dans pre-hôpital setting.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Paralysie faciale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal ou paralysie légère",
+          "value": 0
+        },
+        {
+          "label": "Paralysie partielle ou complète",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b",
+      "label": "Faiblesse du bras",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Pas de déviation",
+          "value": 0
+        },
+        {
+          "label": "Dérive ou un certain effort contre la gravité",
+          "value": 1
+        },
+        {
+          "label": "Aucun effort contre la gravité ou aucun mouvement",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "c",
+      "label": "Troubles de la parole",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Mild pour modéré",
+          "value": 1
+        },
+        {
+          "label": "Aphasie globale sévère ou mutisme",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d",
+      "label": "Déviation oculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Partial",
+          "value": 1
+        },
+        {
+          "label": "Déviation forcée",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "e",
+      "label": "Denial/neglect",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Extinction pour bilateral simultaneous stimulation dans only one sensory modality",
+          "value": 1
+        },
+        {
+          "label": "ne... pas recognize own hand ou orients only pour one side de body",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lima FO, Silva GS, Furie KL, et al. Field Assessment Stroke Triage for Emergency Destination: A simple and accurate prehospital scale to detect large vessel occlusion strokes: A simple and accurate prehospital scale to detect large vessel occlusion strokes. Stroke. 2016;47(8):1997-2002. doi:10.1161/STROKEAHA.116.013301",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27364531/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nogueira RG, Silva GS, Lima FO, et al. The FAST-ED app: A smartphone platform for the field triage of patients with stroke. Stroke. 2017;48(5):1278-1284. doi:10.1161/STROKEAHA.116.016026   ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28411260/",
+      "kind": "other"
+    },
+    {
+      "text": "Antipova D, Eadie L, Macaden A, Wilson P. Diagnostic accuracy of clinical tools for assessment of acute stroke: a systematic review. BMC Emerg Med. 2019;19(1):49. doi:10.1186/s12873-019-0262-1  ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31484499/",
+      "kind": "other"
+    },
+    {
+      "text": "Bhatt NR, Frankel MR, Nogueira RG, et al. Reliability of field Assessment Stroke Triage for Emergency Destination scale use by paramedics: Mobile stroke unit first-year experience. Stroke. 2021;52(8):2530-2536. doi:10.1161/STROKEAHA.120.033775",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34011170/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Daly M, Cummings C, Kittell M, et al. Validation of field assessment stroke triage for emergency destination for prehospital use in a rural EMS system. Am J Emerg Med. 2021;50(C):178-182. doi:10.1016/j.ajem.2021.07.035",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34371326/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Carbonera LA, Souza AC de, Rodrigues M da S, Mottin MD, Nogueira RG, Martins SCO. FAST-ED scale for prehospital triage of large vessel occlusion: results in the field. Arq Neuropsiquiatr. 2022;80(9):885-892. doi:10.1055/s-0042-1755536",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36261126/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "81bb8b4350553286efa8fe500d202aa3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10633,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

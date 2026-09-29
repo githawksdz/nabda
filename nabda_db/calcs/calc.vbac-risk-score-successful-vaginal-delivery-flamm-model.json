@@ -1,0 +1,191 @@
+{
+  "id": "calc.vbac-risk-score-successful-vaginal-delivery-flamm-model",
+  "slug": "vbac-risk-score-successful-vaginal-delivery-flamm-model",
+  "language": "fr",
+  "title": "VBAC risque score pour Successful Vaginal Delivery (Flamm modèle)",
+  "short_title": "Score de risque de VBAC (Flamm)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "framm",
+    "VBAC",
+    "vaginal birth",
+    "cesarean section",
+    "C-section"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "Déterminer quelles patientes en travail sont susceptibles d'avoir un accouchement vaginal réussi ou non serait utile pour la planification du travail et la décision médicale partagée.",
+    "when": "Femmes en travail avec antécédent d'accouchement par césarienne.",
+    "pearls": "- Le score de risque de VBAC pour l'accouchement vaginal réussi (modèle de Flamm) est un système de score simple à utiliser lors de l'admission en travail pour prédire quelles patientes auront un accouchement vaginal réussi après césarienne antérieure (VBAC).\n- Il inclut une évaluation cervicale qui ne peut être utilisée qu'après l'admission pour le travail.\n- Un score de risque VBAC élevé prédit le succès, mais un score bas ne prédit pas nécessairement l'échec ; le jugement clinique doit toujours être pris en compte."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Un score de risque VBAC bas ne prédit pas l'échec.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| Score VBAC | % de femmes avec VBAC réussi |\n| --- | --- |\n| 0 - 2 | 49 |\n| 3 | 60 |\n| 4 | 67 |\n| 5 | 77 |\n| 6 | 89 |\n| 7 | 93 |\n| 8 - 10 | 95 |",
+  "short_description": "Quantifie la probabilité d'un accouchement vaginal après césarienne antérieure.",
+  "medium_description": "Prédit la probabilité d'un accouchement vaginal réussi après césarienne antérieure (VBAC).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Maternal âge < 40 years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vaghx",
+      "label": "Antécédent d'accouchement vaginal",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Accouchement vaginal avant et après la première césarienne",
+          "value": 4
+        },
+        {
+          "label": "Accouchement vaginal après la première césarienne",
+          "value": 2
+        },
+        {
+          "label": "Accouchement vaginal avant la césarienne",
+          "value": 1
+        },
+        {
+          "label": "Pas d'accouchement vaginal antérieur",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "reason",
+      "label": "Reason other than défaillance pour progress pour first cesarean delivery",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eff",
+      "label": "Effacement cervical à l'admission",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "> 75%",
+          "value": 2
+        },
+        {
+          "label": "25-75%",
+          "value": 1
+        },
+        {
+          "label": "< 25%",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dil",
+      "label": "Dilatation cervicale ≥ 4 cm à l'admission",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Flamm BL, Geiger AM. Vaginal birth after cesarean delivery: an admission scoring system. Obstet Gynecol. 1997;90(6):907-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9397100",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Eden KB, Mcdonagh M, Denman MA, et al. New insights on vaginal birth after cesarean: can it be predicted?. Obstet Gynecol. 2010;116(4):967-81.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20859163",
+      "kind": "other"
+    },
+    {
+      "text": "Dinsmoor MJ, Brock EL. Predicting failed trial of labor after primary cesarean delivery. Obstet Gynecol. 2004;103(2):282-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14754696",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vaginal-birth-after-cesarean-vbac",
+    "calc.bishop-score-vaginal-delivery-induction-labor",
+    "calc.bwh-egg-freezing-counseling-tool-efct"
+  ],
+  "source_logic_hash": "b6f258f9357f83cb8090b5202f634903",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3317,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

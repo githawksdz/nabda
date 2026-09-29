@@ -1,0 +1,179 @@
+{
+  "id": "calc.horowitz-index-lung-function-p-f-ratio",
+  "slug": "horowitz-index-lung-function-p-f-ratio",
+  "language": "fr",
+  "title": "Horowitz index pour Lung Function (P/F Ratio)",
+  "short_title": "Indice de Horowitz (rapport P/F)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Pain",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Acute Respiratory Distress Syndrome",
+    "ARDS",
+    "hypoxemia",
+    "P/F ratio",
+    "Horowitz index",
+    "oxygenation after Horowitz",
+    "Horowitz quotient",
+    "PaO2/FIO2 ratio",
+    "PF ratio",
+    "Carrico index",
+    "acute lung injury",
+    "ali",
+    "acute respiratory failure",
+    "coronavirus",
+    "covid-19",
+    "covid19",
+    "covid 19",
+    "covid"
+  ],
+  "dosing": false,
+  "formula": "Horowitz Index (P/F Ratio), mmHg = PaO~2~/ FiO~2~(see table below)\n\n**Estimating FiO₂ from oxygen flow/delivery rates:**\n\n| Type of O₂ delivery | Flow rates, L/min | FiO₂ |\n| --- | --- | --- |\n| Nasal cannula | 1-6 | ~4% FiO₂ added above room air* per 1 L/min Room air = 21% 1 L/min = 25% 2 L/min = 29% 3 L/min = 33% 4 L/min = 37% 5 L/min = 41% 6 L/min = 45% |\n| Simple face mask | ~6-12 | 35-60%* |\n| Non-rebreather mask | 10-15 | ~70-90% |\n| High-flow nasal cannula | Up to 60 | 30-100% |\n\n*Varies based on respiratory rate and minute ventilation.",
+  "how_to_use": {
+    "why": "- A simple calculation that measures the efficiency of gas exchange in the lungs and provides a crude assessment of the A-a gradient.\n- Used in several diagnostic and severity scoring systems, including [CPIS](nabda:calc.clinical-pulmonary-infection-score-cpis-ventilator-associated-pneumonia-vap) , [SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) , [SAPS II](nabda:calc.simplified-acute-physiology-score-saps-ii) and [SAPS III](nabda:calc.simplified-acute-physiology-score-saps-3) , [SMART-COP](nabda:calc.smart-cop-score-pneumonia-severity) , and the [Murray Score](nabda:calc.murray-score-acute-lung-injury) .\n- Included in the [Berlin criteria for ARDS](nabda:calc.berlin-criteria-acute-respiratory-distress-syndrome) .",
+    "when": "Le plus souvent utilisé pour évaluer la fonction pulmonaire et stratifier le risque chez les patients atteints du syndrome de détresse respiratoire aiguë (ARDS).",
+    "pearls": "- Nécessite une analyse des gaz du sang artériel (GSA).\n- Ne permet pas de distinguer entre hypoventilation et inadéquation V/Q, contrairement au gradient A-a.\n- Ne peut être utilisé que pour estimer le gradient A-a, en supposant que la PaCO~2~ est normale et qu'il n'existe pas de shunt."
+  },
+  "next_steps": {
+    "advice": "- Des rapports P/F plus faibles indiquent une gravité plus élevée du SDRA et un risque de mortalité plus élevé.\n- Ce rapport peut guider la prise en charge ventilatoire et aider à déterminer la nécessité de traitements supplémentaires selon la gravité de la maladie, tels que l’utilisation de glucocorticoïdes, d’un blocage neuromusculaire, du positionnement en décubitus ventral, de manœuvres de recrutement pulmonaire et de l’ECMO.\n- Ce rapport peut être surveillé tout au",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation :**\n\n| Index de Horowitz (rapport P/F), mmHg | Sévérité du SDRA | Mortalité |\n| --- | --- | --- |\n| >300 | Pas de SDRA | - |\n| >200-300 | Léger | 27% |\n| >100-200 | Modéré | 32% |\n| ≤100 | Sévère | 45% |\n\nD'après [Ranieri 2012](https://jamanetwork.com/journals/jama/article-abstract/1160659).",
+  "short_description": "Lung function évaluation.",
+  "medium_description": "Assesses lung function, particularly dans intubated patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "pa",
+      "label": "PaO~2~",
+      "optional": false,
+      "unit": "pao2",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fi",
+      "label": "FiO~2~",
+      "tips": "Voir [Données probantes](#evidence) pour estimer la FiO₂ à partir des débits d'oxygène et des modes d'administration",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Horovitz JH, Carrico CJ, Shires GT. Pulmonary response to major injury. Arch Surg. 1974;108(3):349-55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4813333",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rice TW, Wheeler AP, Bernard GR, et al. Comparison of the SpO2/FIO2 ratio and the PaO2/FIO2 ratio in patients with acute lung injury or ARDS. Chest. 2007;132(2):410-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17573487",
+      "kind": "other"
+    },
+    {
+      "text": "Rice TW, Wheeler AP, Bernard GR, et al. Comparison of the SpO2/FIO2 ratio and the PaO2/FIO2 ratio in patients with acute lung injury or ARDS. Chest. 2007;132(2):410-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17573487",
+      "kind": "other"
+    },
+    {
+      "text": "Bernard GR, Artigas A, Brigham KL, et al. The American-European Consensus Conference on ARDS. Definitions, mechanisms, relevant outcomes, and clinical trial coordination. Am J Respir Crit Care Med. 1994;149(3 Pt 1):818-24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7509706",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ranieri VM, Rubenfeld GD, Thompson BT, et al. Acute respiratory distress syndrome: the Berlin Definition. JAMA. 2012;307(23):2526-33.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/1160659",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.spo2-fio2-ratio",
+    "calc.prediction-survival-ecmo-therapy-preset-score",
+    "calc.rads-radiologists-score-smoke-inhalation-injury",
+    "calc.clinical-pulmonary-infection-score-cpis-ventilator-associated-pneumonia-vap",
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.simplified-acute-physiology-score-saps-3",
+    "calc.smart-cop-score-pneumonia-severity",
+    "calc.murray-score-acute-lung-injury",
+    "calc.berlin-criteria-acute-respiratory-distress-syndrome"
+  ],
+  "source_logic_hash": "90761b858c327228a92e32613c96dbab",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.clinical-pulmonary-infection-score-cpis-ventilator-associated-pneumonia-vap",
+      "text": "CPIS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.simplified-acute-physiology-score-saps-ii",
+      "text": "SAPS II"
+    },
+    {
+      "type": "calc",
+      "id": "calc.simplified-acute-physiology-score-saps-3",
+      "text": "SAPS III"
+    },
+    {
+      "type": "calc",
+      "id": "calc.smart-cop-score-pneumonia-severity",
+      "text": "SMART-COP"
+    },
+    {
+      "type": "calc",
+      "id": "calc.murray-score-acute-lung-injury",
+      "text": "Murray Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.berlin-criteria-acute-respiratory-distress-syndrome",
+      "text": "Berlin criteria for ARDS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4062,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,250 @@
+{
+  "id": "calc.timi-risk-score-stemi",
+  "slug": "timi-risk-score-stemi",
+  "language": "en",
+  "title": "TIMI risque score pour STEMI",
+  "short_title": "TIMI score pour STEMI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "STEMI",
+    "mortality",
+    "STE",
+    "LBBB"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Les études sur l'estimation du risque de mortalité et de complications par le jugement clinique des médecins sous-estiment souvent ce risque, et les recommandations préconisent des interventions médicales plus agressives chez les patients à risque plus élevé.",
+    "when": "Un patient présentant un infarctus du myocarde avec sus-décalage du segment ST (STEMI) après coronarographie peut présenter des risques hémorragiques, et l'équipe traitante souhaite objectiver le rapport bénéfice-risque des médicaments post-ICP.",
+    "pearls": "- Évidemment, les patients présentant un STEMI sont déjà à haut risque de complications et d'événements indésirables, y compris le décès.\n- Le score de risque TIMI pour le STEMI peut aider une équipe de cardiologie, de médecine et/ou de soins intensifs à peser le rapport bénéfice-risque des médicaments (comme l'anticoagulation) et des procédures invasives, en connaissant le risque de base du patient.\n- Ce score a été développé sur la base des résultats de la thrombolyse, qui présente probablement de moins bons résultats que l'ICP.\n- Doit être utilisé chez les patients avec un STEMI diagnostiqué, et NON pour évaluer des patients présentant des douleurs thoraciques."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les patients présentant un STEMI doivent évidemment bénéficier d'une ICP ou d'une thrombolyse, selon la disponibilité et les standards de soins de l'établissement ; la stratification du risque peut être réalisée après cette première étape critique."
+  },
+  "evidence": "- The TIMI Score for STEMI was developed from the InTIME II trial of 15,000 STEMI patients and was studying these patients for thrombolytics\n- It did not include patients with cardiogenic shock nor severe hypertension (>180/>110)\n- Its primary endpoint was 30-day all-cause mortality and did not include a placebo arm\n- Because it was a thrombolytics trial, it obviously did not include patients undergoing percutaenous coronary intervention (PCI), which provides better outcomes when readily available.\n- This score also included patients with left bundle branch block, which was thought to be a STEMI equivalent; a new left bundle is no longer considered to be a “STEMI equivalent” especially considering [Sgarbossa Criteria](nabda:calc.sgarbossas-criteria-mi-left-bundle-branch-block) .",
+  "more_info": "| Critères | Valeur |\n| --- | --- |\n| Âge < 65 ans | 0 |\n| Âge 65-74 | +2 |\n| Âge ≥ 75 | +3 |\n| Diabète ou hypertension ou angine de poitrine | +1 |\n| Pression artérielle systolique < 100 mmHg | +3 |\n| Fréquence cardiaque > 100 | +2 |\n| Classe de Killip II-IV | +2 |\n| Poids < 67 kg (147.7 lbs) | +1 |\n| Sus-décalage ST antérieur ou BBDG | +1 |\n| Délai avant traitement > 4 heures | +1 |",
+  "short_description": "Mortalité après un STEMI.",
+  "medium_description": "Estimates mortalité chez les patients avec STEMI.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 65 ans",
+          "value": 0
+        },
+        {
+          "label": "65-74",
+          "value": 2
+        },
+        {
+          "label": "≥ 75",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dm_hypertension_angina",
+      "label": "Diabète, hypertension ou Angina",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "systolic_blood_pressure_100",
+      "label": "Pression artérielle systolique < 100 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_rate_100",
+      "label": "Fréquence cardiaque > 100",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "killip_class",
+      "label": "Classe de Killip II-IV",
+      "tips": "Turgescence jugulaire ou tout signe d'examen pulmonaire d'insuffisance cardiaque (ICC)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weight_67kg",
+      "label": "Poids < 67 kg (147.7 lbs)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anterior_st_elevation_lbbb",
+      "label": "Sus-décalage ST antérieur ou BBDG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "treatment_time_4hrs",
+      "label": "Time pour traitement > 4 hours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": " David A. Morrow, et. al. TIMI Risk Score for ST-Elevation Myocardial Infarction: A Convenient, Bedside, Clinical Score for Risk Assessment at Presentation: An Intravenous nPA for Treatment of Infarcting Myocardium Early II Trial Substudy Circulation. 2000; 102: 2031-2037 doi: 10.1161/01.CIR.102.17.2031",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11044416",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Morrow DA, Antman EM, Parsons L, et al. Application of the TIMI risk score for ST-elevation MI in the National Registry of Myocardial Infarction 3. JAMA. 2001;286(11):1356-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11560541",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bradshaw PJ, Ko DT, Newman AM, Donovan LR, Tu JV. Validation of the Thrombolysis In Myocardial Infarction (TIMI) risk index for predicting early mortality in a population-based cohort of STEMI and non-STEMI patients. Can J Cardiol. 2007;23(1):51-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17245483",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Silveira DS, Jaeger CP et al. Validation of TIMI risk score for STEMI. International Journal of Cardiovascular Sciences. 2016;29(3):189-197.",
+      "href": "https://www.onlineijcs.org/sumario/29/pdf/en_v29n3a06.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sgarbossas-criteria-mi-left-bundle-branch-block",
+    "calc.action-icu-score-intensive-care-nstemi",
+    "calc.modified-sgarbossas-criteria-mi-left-bundle-branch-block"
+  ],
+  "source_logic_hash": "fd8139ed7c2953ae08ba5b5703c4eb3f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 99,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

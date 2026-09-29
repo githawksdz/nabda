@@ -1,0 +1,104 @@
+{
+  "id": "calc.national-cancer-institute-common-toxicity-criteria-nci-ctc-mucositis",
+  "slug": "national-cancer-institute-common-toxicity-criteria-nci-ctc-mucositis",
+  "language": "en",
+  "title": "National cancer Institute Common Toxicity critères (NCI-CTC) pour Mucositis",
+  "short_title": "Mucite NCI-CTC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Achalasie",
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Fièvre",
+    "Douleur"
+  ],
+  "abbreviations": [
+    "nci criteria",
+    "nci ctc",
+    "muscositis",
+    "stomatitis",
+    "radiation"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate criterion:\n\n| Appearance | Grade |\n| --- | --- |\n| Normal | 0 |\n| Mucosal erythema | 1 |\n| Patchy pseudomembranous reaction, patches generally ≤1.5 cm in diameter and noncontiguous | 2 |\n| Confluent pseudomembranous reaction, contiguous patches generally >1.5 cm in diameter) | 3 |\n| Necrosis or deep ulceration; may include spontaneous bleeding | 4 |",
+  "how_to_use": {
+    "why": "Allows for a common standard language of severity of adverse events due to radiation.",
+    "when": "",
+    "pearls": "- Radiation-related hemoptysis from larynx or pharynx is graded as Grade 4 Mucositis due to radiation in the category Gastrointestinal.\n- Radiation-related hemoptysis from thoracic cavity is graded as Grade 4 Hemoptysis in the category Hemorrhage."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nUn grade plus élevé est corrélé à une sévérité plus importante.",
+  "short_description": "Gravité de la mucite.",
+  "medium_description": "Grades de gravité de la mucite radio-induite.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "select",
+      "label": "Sélectionner le critère approprié",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Érythème muqueux",
+          "value": 1
+        },
+        {
+          "label": "Patchy pseudomembranous reaction, patches generally ≤1.5 cm dans diameter et noncontiguous",
+          "value": 2
+        },
+        {
+          "label": "Confluent pseudomembranous reaction, contiguous patches generally >1.5 cm dans diameter",
+          "value": 3
+        },
+        {
+          "label": "Nécrose ou ulcération profonde ; peut inclure un saignement spontané",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Trotti A, Byhardt R, Stetz J, et al. Common toxicity criteria: version 2.0. an improved reference for grading the acute effects of cancer treatment: impact on radiotherapy. Int J Radiat Oncol Biol Phys. 2000;47(1):13-47.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10758303 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "164592809c199a0d03e60f27d12cbe3a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4015,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n//user inputs\nvar grade = parseFloat(select);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: 'Grade '+ grade,\n    value_text: '',\n    message: 'NCI Mucositis'\n});\ncalc_output.push({\n    name: 'Grade',\n    value: 'Grade '+ grade,\n    value_text: '',\n    message: 'Higher grade correlates with higher severity.'\n});\n",
+  "before_use": null,
+  "instructions": "À utiliser chez les patients atteints de mucite radio-induite.",
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "40264e14284388716073b9ddaeadc3aac9db0e95019e2cda8260c98c06981b89"
+}

@@ -1,0 +1,272 @@
+{
+  "id": "calc.salivary-gland-cancer-model-survival-postoperative-radiotherapy-port",
+  "slug": "salivary-gland-cancer-model-survival-postoperative-radiotherapy-port",
+  "language": "en",
+  "title": "Salivary Gland cancer modèle pour survie +/- Postoperative Radiotherapy (PORT)",
+  "short_title": "Survie après radiothérapie postopératoire (PORT) pour cancer des glandes salivaires",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "cancerologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer des glandes salivaires"
+  ],
+  "chief_complaints": [
+    "Mass",
+    "Swelling"
+  ],
+  "abbreviations": [
+    "Salivary Gland Cancer Postoperative Radiotherapy (PORT) Survival Score, Salivary Gland Cancer PORT Survival, salivary gland cancer, SG cancer, salivary gland cancer survival, sg port survival, salivary gland port survival, salivary gland cancer, salivary gland cancer radiotherapy, cancer radiotherapy"
+  ],
+  "dosing": false,
+  "formula": "Score de risque = (0,04213 x Âge) + (0,96094 x PORT) + (0,25494 x Sexe) + (0,20225 x Score de Charlson-Deyo) + (0,37064 x Stade T) + (0,25776 x Ratio) + (0,28983 x Grade) + (0,23291 x Marges) - (0,32897 x Sous-linguale) + (0,27892 x Sous-mandibulaire) - (0,21132 x Interaction stade T/PORT) - (0,01101 x Interaction âge/PORT),\n\noù les variables sont les suivantes :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge au diagnostic, années | | Continu |\n| Sexe | Homme | 1 |\n| Femme | 0 | |\n| Score de Charlson-Deyo* | 0 | 0 |\n| 1 | 1 | |\n| 2 | 2 | |\n| ≥3 | 3 | |\n| Stade T pathologique AJCC | 1 | 1 |\n| 2 | 2 | |\n| 3 | 3 | |\n| 4 | 4 | |\n| Ratio d'atteinte ganglionnaire | 0% | 0 |\n| 0,1-10% | 1 | |\n| 10,1-49,9% | 2 | |\n| ≥50% | 3 | |\n| Grade | Bas | 0 |\n| Intermédiaire | 1 | |\n| Haut | 2 | |\n| Marges chirurgicales | Négatives | 0 |\n| Positives | 1 | |\n| Site primitif | Sous-linguale | 1 |\n| Sous-mandibulaire | 1 | |\n| Parotide | 0 | |\n| Radiothérapie postopératoire (PORT) | Oui | 1 |\n| Non | 0 | |\n\n***Score de Charlson-Deyo :**\n\n| Variable | Points | |\n| --- | --- | --- |\n| Infarctus du myocarde | Oui | 1 |\n| Non | 0 | |\n| Insuffisance cardiaque congestive | Oui | 1 |\n| Non | 0 | |\n| Maladie vasculaire périphérique | Oui | 1 |\n| Non | 0 | |\n| Maladie cérébrovasculaire | Oui | 1 |\n| Non | 0 | |\n| Démence | Oui | 1 |\n| Non | 0 | |\n| Maladie pulmonaire chronique | Oui | 1 |\n| Non | 0 | |\n| Maladie rhumatologique | Oui | 1 |\n| Non | 0 | |\n| Maladie ulcéreuse peptique | Oui | 1 |\n| Non | 0 | |\n| Maladie hépatique légère | Oui | 1 |\n| Non | 0 | |\n| Diabète | Oui | 1 |\n| Non | 0 | |\n| Diabète avec complications chroniques | Oui | 2 |\n| Non | 0 | |\n| Hémiplégie ou paraplégie | Oui | 2 |\n| Non | 0 | |\n| Maladie rénale | Oui | 2 |\n| Non | 0 | |\n| Maladie hépatique modérée ou sévère | Oui | 3 |\n| Non | 0 | |\n| SIDA | Oui | 6 |\n| Non | 0 | |\n\nD'après [Deyo 1992.](https://pubmed.ncbi.nlm.nih.gov/1607900/)",
+  "how_to_use": {
+    "why": "- En raison de la rareté et de l'hétérogénéité des tumeurs malignes des glandes salivaires, il n'existe actuellement aucune recommandation explicite concernant la sélection des patients pour la PORT après résection chirurgicale complète.\n- Cet outil aide à estimer l'impact de la PORT sur la survie globale et facilite la décision médicale partagée ainsi que l'information sur les risques, les bénéfices et les résultats probables.",
+    "when": "À utiliser immédiatement après la résection chirurgicale d'une tumeur maligne des glandes salivaires lors de la planification du traitement adjuvant, en particulier chez les patients présentant des facteurs de risque élevé de récidive locorégionale.",
+    "pearls": "- Developed from retrospective National Cancer Database (NCDB) data on 9,721 patients who underwent surgery and PORT, with salivary gland involvement of 86% parotid, 13% submandibular, and 1% sublingual, and a median age at diagnosis of 65 years.\n- A wide range of histologic subtypes was included, such as adenocarcinoma, acinic cell carcinoma, adenoid cystic carcinoma, mucoepidermoid carcinoma, squamous cell carcinoma, and mixed variants.\n- External validation studies have not yet been published.\n- Results may not be fully generalizable to all populations or rare salivary gland subtypes."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les estimations de survie en conjonction avec les recommandations cliniques et l'expertise spécialisée pour étayer les décisions personnalisées de traitement adjuvant.\n- Malgré l'absence d'essais cliniques randomisés, envisager la PORT chez les patients présentant les facteurs de risque élevé suivants :\n\n - Stade T primitif avancé (T3–4).\n - Grade tumoral intermédiaire ou élevé.\n - Histologie de type adénoïde kystique.\n - Marges chirurgicales proches ou positives.\n - Envahissement périnerveux.\n - Envahissement lymphatique ou vasculaire.\n - Métastases ganglionnaires.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Survie globale en fonction du score de risque et du temps écoulé depuis le diagnostic.\n\n![](https://cdn-web-img.mdcalc.com/content/salivary_gland.png)\n\nD'après [Jacobs 2019.](https://www.redjournal.org/article/S0360-3016(19)31062-4/fulltext)",
+  "short_description": "Survie après PORT pour cancer des glandes salivaires.",
+  "medium_description": "Predicts overall survie avec et sans postoperative radiotherapy (PORT) pour resected major salivary gland cancers.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "one",
+      "label": "Âge at diagnostic",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Score de Charlson-Deyo",
+      "tips": "Voir [Preuves](#evidence) pour le score complet",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "≥3",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "Stade T pathologique AJCC",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "six",
+      "label": "Ratio d'atteinte ganglionnaire",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0%",
+          "value": 0
+        },
+        {
+          "label": "0.1-10%",
+          "value": 1
+        },
+        {
+          "label": "10.1-49.9%",
+          "value": 2
+        },
+        {
+          "label": "≥50%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "seven",
+      "label": "Grade",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Bas",
+          "value": 0
+        },
+        {
+          "label": "Intermédiaire",
+          "value": 1
+        },
+        {
+          "label": "Élevé",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eight",
+      "label": "Marges chirurgicales",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nine",
+      "label": "Site primitif",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Sublingual",
+          "value": 1
+        },
+        {
+          "label": "Submandibular",
+          "value": 2
+        },
+        {
+          "label": "Parotid",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Radiothérapie postopératoire (PORT)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Jacobs C.D., Barak I., et al. Prediction model to estimate overall survival benefit of postoperative radiotherapy for resected major salivary gland cancers. Oral Oncology. 2022;132:105955",
+      "href": "https://www.sciencedirect.com/science/article/pii/S1368837522002445",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Deyo RA, Cherkin DC, Ciol MA. Adapting a clinical comorbidity index for use with ICD-9-CM administrative databases. J Clin Epidemiol. 1992;45(6):613-619.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/1607900/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence",
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.manchester-score-prognosis-small-cell-lung-cancer"
+  ],
+  "source_logic_hash": "e441a9a70aa31fc06bff40294eb49e44",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10345,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

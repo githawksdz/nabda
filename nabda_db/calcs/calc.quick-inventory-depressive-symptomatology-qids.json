@@ -1,0 +1,588 @@
+{
+  "id": "calc.quick-inventory-depressive-symptomatology-qids",
+  "slug": "quick-inventory-depressive-symptomatology-qids",
+  "language": "en",
+  "title": "Quick Inventory of Depressive Symptomatology (QIDS)",
+  "short_title": "QIDS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Depression/Suicidality"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Dizziness",
+    "Pleurs excessifs",
+    "Fatigue",
+    "Perte d'appétit",
+    "Numbness",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "self-assessment",
+    "depression",
+    "QIDS",
+    "suicidality",
+    "IDS",
+    "psych",
+    "diagnosis",
+    "qids sr16",
+    "qids sr 16",
+    "qids-sr-16",
+    "qidssr16",
+    "sr-16",
+    "sr16",
+    "qids-sr16"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; points attribués dans [ce tableau](https://www.ids-qids.org/about.html).",
+  "how_to_use": {
+    "why": "Le QIDS peut aider à objectiver et à évaluer la sévérité de la dépression d'un patient.",
+    "when": "- Patients qui s'identifient comme déprimés ou qui pourraient souffrir de dépression.\n- Le QIDS peut également être suivi dans le temps pour aider les soignants comme les patients à visualiser des tendances, telles que l'amélioration des symptômes dépressifs au fil du temps.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les patients présentant une dépression doivent recevoir davantage de ressources et éventuellement être adressés en psychiatrie, ainsi qu'être évalués pour des situations psychiatriques d'urgence comme les idées suicidaires ou la psychose.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**QIDS Scoring Information:**\n\n- Collect responses to all questions.\n- Use the highest score on any 1 of the 4 sleep symptoms (items 1 to 4).\n- Use the highest score on any 1 of the 4 weight symptoms (items 6 to 9).\n- Use the highest score on either of the 2 psychomotor symptoms (items 15 and 16).\n- There will be one score for each of the nine depression symptoms.\n- Add the scores of the of the 14 items as instructed above pertaining to the 9 depression symptoms (sleep, mood, weight, concentration, guilt, suicidal ideation, interest, fatigue and psychomotor changes) to obtain the total score. Total scores range from 0-27.\n\n**Score interpretation:**\n\n- The higher the score, the more severe the depression.\n- Scores ≤5 indicate no depression.\n- Scores of 6-10 indicate mild depression.\n- Scores of 11-15 indicate moderate depression.\n- Scores of 16-20 indicate severe depression.\n- Scores ≥21 indicate very severe depression.",
+  "short_description": "Trends depressions via self-évaluation.",
+  "medium_description": "Rates dépression symptoms via self-évaluation, also known as QIDS-SR-16.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "onset_insomnia",
+      "label": "1. Insomnie d'endormissement :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Never takes longer than 30 minutes pour fall asleep.",
+          "value": 0
+        },
+        {
+          "label": "Takes at least 30 minutes pour fall asleep, less than half time.",
+          "value": 1
+        },
+        {
+          "label": "Takes at least 30 minutes pour fall asleep, more than half time.",
+          "value": 2
+        },
+        {
+          "label": "Takes more than 60 minutes pour fall asleep, more than half time.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mid_insomnia",
+      "label": "2. Insomnie nocturne :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ne... pas se réveiller la nuit.",
+          "value": 0
+        },
+        {
+          "label": "Restless, light sleep avec few awakenings.",
+          "value": 1
+        },
+        {
+          "label": "Wakes up at least once night, but goes back pour sleep easily.",
+          "value": 2
+        },
+        {
+          "label": "Awakens more than once night et stays awake pour 20 minutes ou more, more than half time.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "early_insomnia",
+      "label": "3. Insomnie matinale :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Moins de la moitié du temps, se réveille au plus 30 minutes avant l'heure nécessaire.",
+          "value": 0
+        },
+        {
+          "label": "Plus de la moitié du temps, se réveille plus de 30 minutes avant l'heure nécessaire.",
+          "value": 1
+        },
+        {
+          "label": "Se réveille au moins une heure avant l'heure nécessaire, plus de la moitié du temps.",
+          "value": 2
+        },
+        {
+          "label": "Se réveille au moins deux heures avant l'heure nécessaire, plus de la moitié du temps.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hypersomnia",
+      "label": "4. Hypersomnie :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Dort pas plus de 7-8 heures/nuit, sans sieste.",
+          "value": 0
+        },
+        {
+          "label": "Sleeps no longer than 10 hours dans 24 hour period (y compris naps).",
+          "value": 1
+        },
+        {
+          "label": "Sleeps no longer than 12 hours dans 24 hour period (y compris naps).",
+          "value": 2
+        },
+        {
+          "label": "Sleeps longer than 12 hours dans 24 hour period (y compris naps).",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "mood",
+      "label": "5. Humeur (tristesse) :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ne... pas se sentir triste.",
+          "value": 0
+        },
+        {
+          "label": "Se sent triste moins de la moitié du temps.",
+          "value": 1
+        },
+        {
+          "label": "Se sent triste plus de la moitié du temps.",
+          "value": 2
+        },
+        {
+          "label": "Se sent intensément triste pratiquement tout le temps.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "appetite_decrease",
+      "label": "6. Appétit (diminué) :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun changement de l'appétit habituel.",
+          "value": 0
+        },
+        {
+          "label": "Mange un peu moins souvent et/ou en quantités moindres que d'habitude.",
+          "value": 1
+        },
+        {
+          "label": "Eats much less than usual et only avec personal effort.",
+          "value": 2
+        },
+        {
+          "label": "Eats rarely within 24-hour period, et only avec extreme personal effort ou avec persuasion par others.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "appetite_increase",
+      "label": "7. Appétit (augmenté) :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun changement de l'appétit habituel.",
+          "value": 0
+        },
+        {
+          "label": "More frequently feels need pour eat than usual.",
+          "value": 1
+        },
+        {
+          "label": "Mange régulièrement plus souvent et/ou en plus grandes quantités que d'habitude.",
+          "value": 2
+        },
+        {
+          "label": "Feels driven pour overeat at et between meals.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weight_decrease",
+      "label": "8. Poids (diminution) au cours des deux dernières semaines :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "N'a connu aucun changement de poids.",
+          "value": 0
+        },
+        {
+          "label": "A l'impression qu'une légère perte de poids est survenue.",
+          "value": 1
+        },
+        {
+          "label": "A perdu 2 livres (environ 1 kg) ou plus.",
+          "value": 2
+        },
+        {
+          "label": "A perdu 5 livres (environ 2,3 kg) ou plus.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weight_increase",
+      "label": "9. Poids (augmentation) au cours des deux dernières semaines :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "N'a connu aucun changement de poids.",
+          "value": 0
+        },
+        {
+          "label": "A l'impression qu'une légère prise de poids est survenue.",
+          "value": 1
+        },
+        {
+          "label": "A pris 2 livres (environ 1 kg) ou plus.",
+          "value": 2
+        },
+        {
+          "label": "A pris 5 livres (environ 2,3 kg) ou plus.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "concentration",
+      "label": "10. Concentration/prise de décision:",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No change dans usual capacity pour concentrate et decide.",
+          "value": 0
+        },
+        {
+          "label": "Se sent parfois indécis ou note que son attention se disperse souvent.",
+          "value": 1
+        },
+        {
+          "label": "Most de time struggles pour focus attention ou make decisions.",
+          "value": 2
+        },
+        {
+          "label": "Cannot concentrate well enough pour read ou cannot make even minor decisions.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "outlook",
+      "label": "11. Perception (de soi) :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Se considère aussi valable et aussi digne que les autres.",
+          "value": 0
+        },
+        {
+          "label": "Se blâme davantage que d'habitude.",
+          "value": 1
+        },
+        {
+          "label": "Largely believes that he/she causes problems pour others.",
+          "value": 2
+        },
+        {
+          "label": "Ruminates over major et minor defects dans self.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "suicidal_ideation",
+      "label": "12. Idéation suicidaire :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ne... pas penser au suicide ou à la mort.",
+          "value": 0
+        },
+        {
+          "label": "Sent que la vie est vide ou ne vaut pas la peine d'être vécue.",
+          "value": 1
+        },
+        {
+          "label": "Thinks de suicide/death several times week pour several minutes.",
+          "value": 2
+        },
+        {
+          "label": "Thinks de suicide/death several times day dans depth, ou has made specific plans pour commit ou attempted suicide.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "involvement",
+      "label": "13. Intérêt :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No change de usual level de interest dans other people et activities.",
+          "value": 0
+        },
+        {
+          "label": "Notices reduction dans former interests/activities.",
+          "value": 1
+        },
+        {
+          "label": "Ne trouve qu'un ou deux de ses anciens centres d'intérêt qui subsistent.",
+          "value": 2
+        },
+        {
+          "label": "Has virtually no interest dans formerly pursued activities.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "energy_fatiguability",
+      "label": "14. Énergie/fatigabilité :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No change dans usual level de energy.",
+          "value": 0
+        },
+        {
+          "label": "Se fatigue plus facilement que d'habitude.",
+          "value": 1
+        },
+        {
+          "label": "Makes significant personal effort pour initiate ou maintain usual daily activities.",
+          "value": 2
+        },
+        {
+          "label": "Unable pour carry out most de usual daily activities due pour lack de energy.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "psychomotor_slowing",
+      "label": "15. Ralentissement psychomoteur :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Vitesse normale de la pensée, des gestes et de la parole.",
+          "value": 0
+        },
+        {
+          "label": "Note un ralentissement de la pensée, et la modulation de la voix est réduite.",
+          "value": 1
+        },
+        {
+          "label": "Takes several seconds pour respond pour most questions; reports slowed thinking.",
+          "value": 2
+        },
+        {
+          "label": "Is largely unresponsive pour most questions sans strong encouragement.",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "psychomotor_agitation",
+      "label": "16. Agitation psychomotrice :",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No increased speed ou disorganization dans thinking ou gesturing.",
+          "value": 0
+        },
+        {
+          "label": "Se trémousse, se tord les mains et change souvent de position.",
+          "value": 1
+        },
+        {
+          "label": "Describes impulse pour move about et displays motor restlessness.",
+          "value": 2
+        },
+        {
+          "label": "Unable pour stay seated; paces about avec ou sans permission.",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rush AJ, Giles DE, Schlesser MA, Fulton CL, Weissenburger JE, Burns CT. The Inventory of Depressive Symptomatology (IDS): Preliminary findings. Psychiatry Research. 1986; 18:65-87. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3737788",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rush AJ, Trivedi MH, Ibrahim HM, Carmody TJ, Arnow B, Klein DN, Markowitz JC, Ninan PT, Kornstein S, Manber R, Thase ME, Kocsis JH, Keller MB. The 16-item Quick Inventory of Depressive Symptomatology (QIDS) Clinician Rating (QIDS-C) and Self-Report (QIDS-SR): A psychometric evaluation in patients with chronic major depression. Biological Psychiatry. 2003; 54:573-583.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12946886",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.major-depression-index-mdi",
+    "calc.edinburgh-postnatal-depression-scale-epds",
+    "calc.geriatric-depression-scale-gds-15"
+  ],
+  "source_logic_hash": "1719c0f1e20d241fe9f24842a6dd49e1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1845,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

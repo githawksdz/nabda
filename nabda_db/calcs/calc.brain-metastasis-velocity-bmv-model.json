@@ -1,0 +1,110 @@
+{
+  "id": "calc.brain-metastasis-velocity-bmv-model",
+  "slug": "brain-metastasis-velocity-bmv-model",
+  "language": "fr",
+  "title": "Brain Metastasis Velocity (BMV) modèle",
+  "short_title": "Brain Metastasis Velocity (BMV) modèle",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "neurologie",
+    "neurochirurgie",
+    "cancerologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Cancer"
+  ],
+  "abbreviations": [
+    "Distant brain failure",
+    "survival",
+    "brain metastasis velocity model",
+    "bmv",
+    "bmv model",
+    "SRS",
+    "radiosurgery",
+    "WBRT",
+    "radiation therapy",
+    "stereotactic radiosurgery",
+    "metastases"
+  ],
+  "dosing": false,
+  "formula": "BMV, par an = x / y,\n\noù les variables sont les suivantes :\n\nx = nombre de nouvelles métastases cérébrales depuis la SRS initiale\n\ny = intervalle de temps total entre la SRS initiale et l'apparition de nouvelles métastases cérébrales, en années",
+  "how_to_use": {
+    "why": "La stratification des patients en catégories BMV élevée et faible peut permettre aux professionnels de santé de mieux conseiller les patients sur leurs risques de nécessiter des traitements supplémentaires à l’avenir, tels qu’une SRS supplémentaire ou une radiothérapie de l’ensemble du cerveau.",
+    "when": "- À utiliser chez les patients atteints de tout cancer primitif ayant développé un échec cérébral à distance (nouvelle métastase cérébrale) après une radiochirurgie stéréotaxique (SRS) de première intention.\n- Ne convient pas aux patients ayant déjà reçu une radiothérapie panencéphalique.",
+    "pearls": "- Développé pour prédire les résultats au moment du traitement de rattrapage après SRS d’emblée.\n- Corrèle avec la survie globale, la mort neurologique et le délai avant des traitements de rattrapage supplémentaires en classant les patients en groupes à risque faible, intermédiaire et élevé.\n- Les cancers primitifs les plus représentés dans l’étude étaient le cancer du sein, le cancer du poumon, le RCC et le mélanome."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Pour les patients ayant un BMV faible (scores <4), une thérapie localisée (p. ex. SRS) pourrait être la plus appropriée.\n- Expliquer aux patients ayant un BMV élevé (scores >13) qu'il existe un risque accru de nécessiter des thérapies supplémentaires à l'avenir si une approche localisée est envisagée constitue un élément important de la prise en charge."
+  },
+  "evidence": "[Farris et al (2017)](https://www.redjournal.org/article/S0360-3016(17)30238-9/fulltext)developed the BMV Model to predict clinical outcomes at the time of salvage treatment after upfront stereotactic radiosurgery (SRS). Derived in a cohort of 737 patients with upfront SRS without whole brain radiation therapy (WBRT), median overall survival for the low (scores <4), intermediate (scores 4-13), and high (scores >13) BMV groups was 12.4 months (95% confidence interval [CI], 10.4-16.9 months), 8.2 months (95% CI, 5.0-9.7 months), and 4.3 months (95% CI, 2.6-6.7 months), respectively. A lower BMV was associated with decreased rates of salvage WBRT (p = 0.02) and neurologic death (p = 0.008). Factors predictive for a higher BMV included ≥2 initial brain metastases (p = 0.004) and melanoma histology (p = 0.008).\n\n[Yamamoto et al (2019)](https://www.ncbi.nlm.nih.gov/pubmed/30395905)conducted a retrospective cohort study of 833 patients who underwent a second SRS for newly detected brain metastasis after initial SRS at Tokyo Women’s Medical University between 1998-2017. This series found that the median survival times after second SRS were similar to those in the initial study using the same BMV cutoffs, with 12.9 months (95% CI, 10.2-17.1) for low BMV, 7.5 months (95% CI, 6.5-9.0) for intermediate BMV, and 5.1 months (95% CI, 4.0-5.6) for high BMV (p = 0.0001). As BMV increased, the median survival decreased. The study also found the same trend after third and fourth SRS.",
+  "more_info": "Interprétation :\n\n| BMV | Groupe de risque | Survie globale médiane |\n| --- | --- | --- |\n| <4 | Faible | 12.4 mois |\n| 4-13 | Intermédiaire | 8.2 mois |\n| >13 | Élevé | 4.3 mois |\n\nD'après[Farris et al (2017)](https://www.redjournal.org/article/S0360-3016(17)30238-9/fulltext).",
+  "short_description": "Distant brain défaillance after SRS pour brain metastasis.",
+  "medium_description": "Calculates rate de distant brain défaillance after stereotactic radiosurgery pour brain metastasis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "number",
+      "label": "Nombre de nouvelles métastases cérébrales",
+      "tips": "Depuis initialSRS ; saisir un nombre entier",
+      "optional": false,
+      "unit": "metastases",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "time",
+      "label": "Intervalle de temps entre la SRS initiale et l’apparition de nouvelles métastases cérébrales",
+      "tips": "Si 18 mois, saisir 1,5, etc.",
+      "optional": false,
+      "unit": "time_years_limit10",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Farris M, Mctyre ER, Cramer CK, et al. Brain Metastasis Velocity: A Novel Prognostic Metric Predictive of Overall Survival and Freedom From Whole-Brain Radiation Therapy After Distant Brain Failure Following Upfront Radiosurgery Alone. Int J Radiat Oncol Biol Phys. 2017;98(1):131-141.",
+      "href": "https://www.redjournal.org/article/S0360-3016(17)30238-9/fulltext",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yamamoto M, Aiyama H, Koiso T, et al. Validity of a Recently Proposed Prognostic Grading Index, Brain Metastasis Velocity, for Patients With Brain Metastasis Undergoing Multiple Radiosurgical Procedures. Int J Radiat Oncol Biol Phys. 2019;103(3):631-637.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30395905",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.graded-prognostic-assessment-for-gastrointestinal-cancer-gigpa",
+    "calc.nomogram-breast-cancer-brain-metastasis",
+    "calc.seattle-heart-failure-model"
+  ],
+  "source_logic_hash": "afdcacd450fd429df6836669e410fe2a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10164,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,235 @@
+{
+  "id": "calc.adapt-protocol-cardiac-event-risk",
+  "slug": "adapt-protocol-cardiac-event-risk",
+  "language": "en",
+  "title": "ADAPT Protocol pour Cardiac Event risque",
+  "short_title": "Protocole ADAPT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Pronostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "acs",
+    "troponin",
+    "cp",
+    "chest pain"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point |\n| --- | --- | --- |\n| Abnormal troponin* | No | Yes |\n| Abnormal EKG** | No | Yes |\n| TIMI Risk Score for UA/NSTEMI | 0 | >0 |\n\n*cTnI level at 0 and 2 hours above institutional cutoff for elevated troponin.\n**ST-segment depression of at least 0.05 mV in ≥2 contiguous leads (including reciprocal changes), T-wave inversion of at least 0.1 mV, or Q waves ≥30 ms in width and ≥0.1 mV in depth in at least 2 contiguous leads.",
+  "how_to_use": {
+    "why": "Up to 20% of chest pain patients may be able to be safely ruled out for MI and ACS within 2 hours of arrival in the ED, reducing length of stay dramatically without adverse outcome.",
+    "when": "Le score ADAPT et le protocole diagnostique accéléré peuvent être utilisés pour évaluer les patients présentant une douleur thoracique et potentiellement identifier 20 % des patients qui sont à faible risque et peuvent être évalués avec un dosage de troponine à 0 heure et à 2 heures, ainsi qu’un EKG et les scores de risque TIMI (pour [STEMI](nabda:calc.timi-risk-score-stemi) et [UA/NSTEMI](nabda:calc.timi-risk-score-ua-nstemi)).",
+    "pearls": "- Included patients ≥18 years of age with at least 5 minutes of symptoms that could be possible ACS.\n- Patients perceived to be “high risk” were not excluded unless EKG showed ST-Elevation Myocardial Infarction (STEMI).\n- If patient was unsure about a diagnosis (like “history of hypertension,”) this was assumed to be “No.”\n- EKG changes were defined as ST-segment depression of at least 0.05 mV in ≥2 contiguous leads (including reciprocal changes), T-wave inversion of at least 0.1 mV, or Q waves ≥30 ms in width and ≥0.1 mV in depth in at least 2 contiguous leads.\n- 3/4 of patients in the low-risk group still received follow-up testing within 30 days (most with an outpatient stress test)."
+  },
+  "next_steps": {
+    "advice": "Barring other concerning features for acute coronary syndrome or other life-threatening causes of chest pain (pneumothorax, pulmonary embolism, cardiac tamponade, aortic dissection, esophageal rupture, etc.), patients that meet the low-risk criteria can be considered for discharge with close follow-up with their primary care physician after negative 0h and 2h troponin testing.\n\n**Patients who do not meet the low-risk criteria should be ruled-out for myocardial infarction with serial EKGs and biomarkers and risk stratified as per normal chest pain guidelines and protocols.**",
+    "critical_actions": "",
+    "management": "- For low-risk patients: consider other causes of chest pain due to aortic, esophageal, pulmonary, cardiac, and abdominal, and musculoskeletal sources prior to discharge.\n- For non-low-risk patients: Treat as per usual chest pain protocols, including but not limited to consideration of aspirin, nitroglycerin, and serial EKGs and biomarkers at minimum."
+  },
+  "evidence": "- The ADAPT accelerated diagnostic protocol (ADP) was 99.7% sensitive for identifying a low-risk population of chest pain patients.\n- 15.3% of patients overall in the study had the primary outcome event of “major adverse cardiac event” (MACE) which includes MI, emergency revascularization, death, ventricular arrhythmia, cardiac arrest, cardiogenic shock, or high-degree AV block.\n- The ADAPT accelerated diagnostic protocol was able to identify 20% of the entire cohort of 1,975 patients as “low risk.”\n- One patient was classified as low risk who then had an elevated troponin at 12 hours, had stenting of the right coronary and circumflex arteries, and had “no further cardiac problems during 1 year of follow-up.”\n- If a [TIMI Score](nabda:calc.timi-risk-score-ua-nstemi) of 1 was used instead of 0, the false-negative rate was 3%.",
+  "more_info": "| | Risk group | Risk of major adverse cardiac event (MACE) in 30 days |\n| --- | --- | --- |\n| Normal troponin, normal EKG and TIMI 0 | Low | 0-0.3%* |\n| Normal troponin, normal EKG and TIMI 1 | Intermediate | 0.8%** |\n| Abnormal troponin or abnormal EKG and any TIMI | High | 15.3%*** |\n\n*Per[Than 2012](https://www.ncbi.nlm.nih.gov/pubmed/22578923).\n\n**Per[Cullen 2013](https://www.ncbi.nlm.nih.gov/pubmed/23583250). The study examined patients with TIMI 0 or 1, with no reported data for patients with TIMI >1 (presuming according to TIMI data, risk of MACE increases with increasing TIMI Score).\n\n***Per[Than 2012](https://www.ncbi.nlm.nih.gov/pubmed/22578923). In the original paper, 15.3% of patients studied (302 of 1,975 total) had a MACE, and only 1 patient was identified as low risk.",
+  "short_description": "2-hour éliminer pour faible risque douleur thoracique.",
+  "medium_description": "Assesses douleur thoracique patients at 2 hours pour risque de cardiac event.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "abnormal_troponin",
+      "label": "Troponine anormale à 0 ou 2 heures",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "abnormal_ekg",
+      "label": "Modifications ischémiques à l’EKG",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "age_65",
+      "label": "Âge ≥65 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cad_risk_factors",
+      "label": "≥3 facteurs de risque de coronaropathie (CAD)",
+      "tips": "Hypertension, hypercholestérolémie, diabète, antécédents familiaux de coronaropathie ou tabagisme actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "known_cad",
+      "label": "Coronaropathie connue (CAD) (sténose ≥50%)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aspirin_use",
+      "label": "Aspirin use dans past 7 days",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "angina",
+      "label": "Severe angina (≥2 episodes dans 24 hrs ou persisting discomfort)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Than M, et. al. 2-Hour Accelerated Diagnostic Protocol to Assess Patients With Chest Pain Symptoms Using Contemporary Troponins as the Only Biomarker : The ADAPT Trial. J Am Coll Cardiol. 2012 Jun 5;59(23):2091-8. doi: 10.1016/j.jacc.2012.02.035. Epub 2012 May 9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22578923",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cullen L, Mueller C, Parsonage WA, Wildi K, Greenslade JH, Twerenbold R,Aldous S, Meller B, Tate JR, Reichlin T, Hammett CJ, Zellweger C, Ungerer JP, Rubini Gimenez M, Troughton R, Murray K, Brown AF, Mueller M, George P, Mosimann T, Flaws DF, Reiter M, Lamanna A, Haaf P, Pemberton CJ, Richards AM, Chu K, Reid CM, Peacock WF, Jaffe AS, Florkowski C, Deely JM, Than M. Validation of high-sensitivity troponin I in a 2-hour diagnostic strategy to assess 30-day outcomes in emergency department patients with possible acute coronary syndrome. J Am Coll Cardiol. 2013 Oct 1;62(14):1242-9. doi: 10.1016/j.jacc.2013.02.078. Epub 2013 Apr 10. PubMed PMID: 23583250.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23583250",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.emergency-department-assessment-chest-pain-score-edacs",
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.vancouver-chest-pain-rule",
+    "calc.timi-risk-score-stemi"
+  ],
+  "source_logic_hash": "3b6829a0db478d1710e510b968860bed",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-stemi",
+      "text": "STEMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.timi-risk-score-ua-nstemi",
+      "text": "UA/NSTEMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1857,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

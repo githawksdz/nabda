@@ -1,0 +1,194 @@
+{
+  "id": "calc.brugada-criteria-ventricular-tachycardia",
+  "slug": "brugada-criteria-ventricular-tachycardia",
+  "language": "en",
+  "title": "Brugada critères pour Ventricular Tachycardia",
+  "short_title": "Brugada critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Arrhythmia"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Brugada criteria",
+    "wide complex tachycardia",
+    "wide QRS-complex tachycardia",
+    "electrocardiography",
+    "EKG criteria",
+    "ventricular tachycardia",
+    "wct",
+    "supraventricular tachycardia with aberrant conduction",
+    "brugada algorithm"
+  ],
+  "dosing": false,
+  "formula": "![Brugada algorithm](https://cdn-web-img.mdcalc.com/content/Brugada_diagram.png)\n\n**Morphology criteria (based on[Brugada et al., 1991](https://pubmed.ncbi.nlm.nih.gov/2022022/)):**\n\n**If the QRS is upward in lead V1 (RBBB pattern),** then VT is suggested in the following situations:\n\n- V1: monophasic R, QR, or RS.\n- V6: R:S <1, or monophasic R, QR, or QS.\n\n**If the QRS is downward in lead V1 (LBBB pattern),** then VT is suggested in the following situations:\n\n- V1 or 2: R wave duration >30 ms or RS >60 ms wide.\n- V6: QR or QS.",
+  "how_to_use": {
+    "why": "- Because current EKG algorithms misdiagnose WCTs 10% of the time ([Grimm 1996](https://www.ncbi.nlm.nih.gov/pubmed/9082671)), knowledge of diagnostic algorithms like the Brugada Criteria is important.\n- The algorithm uses a stepwise approach to provide a sensitive, specific, and accurate way of differentiating SVT with aberrant conduction from VT.\n- Using a stepwise approach prevents errors from being made in the differential diagnosis of tachycardias with a wide QRS complex.\n- Compared to other criteria, this criteria is less prone to mistakes causing potentially fatal outcomes.",
+    "when": "Patients atteints de tachycardies à complexes QRS larges (WCT).",
+    "pearls": "- En l'absence de tout critère de TV, une TV est néanmoins présente dans 15 % des cas ([Jastrzebski 2016](https://www.ncbi.nlm.nih.gov/pubmed/25995387)). En cas de doute, le patient doit être traité pour une TV.\n- L'utilisation des deux premières étapes seulement a montré une valeur prédictive positive de 81-96 % pour la TV ([Garner 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711501/)).\n- Bien que Brugada ait initialement rapporté une exactitude de 98 %, quatre études ultérieures ont trouvé des exactitudes allant de 77-85 %.\n- Concordance possiblement limitée entre les médecins (dans [une étude](https://www.ncbi.nlm.nih.gov/pubmed/8572445), jusqu'à 22 % des médecins urgentistes étaient en désaccord sur l'interprétation de l'ECG selon ces critères)."
+  },
+  "next_steps": {
+    "advice": "La seule exception à la règle est une tachycardie par réentrée atrioventriculaire antidromique (AVRT), observée dans le syndrome de Wolff-Parkinson-White (WPW).",
+    "critical_actions": "Utiliser la cardioversion chimique recommandée par l’ACLS chez les patients stables. Chez les patients instables (altération de l’état mental, douleur thoracique persistante ou hypotension), réaliser une cardioversion électrique.",
+    "management": "Une fois le rythme identifié, traiter selon les [algorithmes Advanced Cardiac Life Support (ACLS)](https://www.ahajournals.org/doi/10.1161/CIR.0000000000000916)."
+  },
+  "evidence": "This technique was first described by[Pedro and Josep Brugada in 1991](https://circ.ahajournals.org/content/circulationaha/83/5/1649.full.pdf). They proposed the 4 step process for differentiating VT from SVT seen on EKGs with a wide QRS complex tachycardia. They validated their new approach by applying it to 554 wide QRS tachycardias and showed a sensitivity of 98.7% and specificity of 96.5%.\n\nA 1996 study by[Herbert et al](https://www.ncbi.nlm.nih.gov/pubmed/8572445), published in *Annals of Emergency Medicine,* demonstrated that emergency physicians disagreed 22% of the time when applying the Brugada Criteria.\n\nIn 2000,[Isenhour et al](https://www.ncbi.nlm.nih.gov/pubmed/10917326)published a study in *Academic Emergency Medicine* to validate the Brugada algorithm. Sensitivity/specificity were 85%/60% and 91%/55% for two cardiologists, respectively, and 83%/43% and 79%/70% for two emergency physicians. The four were not able to reproduce the high sensitivity and specificity seen in the original study.\n\nIn 2008,[Vereckei et al](https://www.ncbi.nlm.nih.gov/pubmed/18180024)proposed a new diagnostic algorithm, restricting analysis to lead aVR and reported a superior accuracy to the Brugada Criteria (p = 0.002 vs p = 0.07).[Baxi et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3348347/)attempted to validate this new criteria and reported that four emergency medicine residents had a diagnostic accuracy of 74%, 75%, 61% and 68%.\n\nIn 2013,[Garner and Miller](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711501/)published an article in Arrhythmia and Electrophysiology Review compared diagnostic algorithms for WCTs and noted that the Brugada algorithm was one of the most accurate.\n\nIn 2014,[Vereckei](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4040878/)wrote an article in Current Cardiology Review comparing several algorithms used for the diagnosis of WCTs and the Brugada algorithm was compared to the First Vereckei Algorithm, the aVR Vereckei Algorithm, and the Lead II R-wave Peak Time (RWPT) Criterion.",
+  "more_info": "",
+  "short_description": "VT versus SVT.",
+  "medium_description": "Distingue la tachycardie ventriculaire de la tachycardie supraventriculaire.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "absentcomplex",
+      "label": "Absence de RS complex dans all precordial leads",
+      "tips": "Tous les complexes QRS sont entièrement positifs ou entièrement négatifs dans les dérivations précordiales.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rsinterval",
+      "label": "R pour S interval >100 ms dans one precordial lead",
+      "tips": "La distance entre le début de l’onde R et le nadir de l’onde S dans un complexe RS (ou rS)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "absentcomplex == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dissociation",
+      "label": "Dissociation atrioventriculaire",
+      "tips": "Ondes P observées à une fréquence différente de celle du complexe QRS",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "absentcomplex == 0 && rsinterval == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "morphology",
+      "label": "Morphology critères pour VT present dans both precordial leads V1-2 et V6",
+      "tips": "VT is frequently either in a right bundle branch block pattern (upright in V1) or a left bundle branch block pattern (downward in V1)\nSee[Evidence](#evidence)for more details.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "absentcomplex == 0 && rsinterval == 0 && dissociation == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brugada P, Brugada J, Mont L, Smeets J, Andries EW. A new approach to the differential diagnosis of a regular tachycardia with a wide QRS complex. Circulation. 1991;83(5):1649-59.",
+      "href": "https://circ.ahajournals.org/content/circulationaha/83/5/1649.full.pdf ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Herbert ME, Votey SR, Morgan MT, Cameron P, Dziukas L. Failure to agree on the electrocardiographic diagnosis of ventricular tachycardia. Ann Emerg Med. 1996;27(1):35-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8572445 ",
+      "kind": "other"
+    },
+    {
+      "text": "Vereckei A, Duray G, Szénási G, Altemose GT, Miller JM. New algorithm using only lead aVR for differential diagnosis of wide QRS complex tachycardia. Heart Rhythm. 2008;5(1):89-98.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18180024 ",
+      "kind": "other"
+    },
+    {
+      "text": "Baxi RP, Hart KW, Vereckei A, et al. Vereckei criteria used as a diagnostic tool by emergency medicine residents to distinguish between ventricular tachycardia and supra-ventricular tachycardia with aberrancy. J Cardiol. 2012;59(3):307-12.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3348347/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Garner JB, Miller JM. Wide Complex Tachycardia - Ventricular Tachycardia or Not Ventricular Tachycardia, That Remains the Question. Arrhythm Electrophysiol Rev. 2013;2(1):23-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4711501/ ",
+      "kind": "other"
+    },
+    {
+      "text": "Grimm W, Menz V, Hoffmann J, Maisch B. [Value of old and new electrocardiography criteria for differential diagnosis between ventricular tachycardia and supraventricular tachycardia with bundle branch block]. Z Kardiol. 1996;85(12):932-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9082671 ",
+      "kind": "other"
+    },
+    {
+      "text": "Jastrzebski M, Sasaki K, Kukla P, Fijorek K, Stec S, Czarnecka D. The ventricular tachycardia score: a novel approach to electrocardiographic diagnosis of ventricular tachycardia. Europace. 2016;18(4):578-84.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25995387 ",
+      "kind": "other"
+    },
+    {
+      "text": "Isenhour JL, Craig S, Gibbs M, Littmann L, Rose G, Risch R. Wide-complex tachycardia: continued evaluation of diagnostic criteria. Acad Emerg Med. 2000;7(7):769-73.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10917326 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.shanghai-score",
+    "calc.modified-sgarbossas-criteria-mi-left-bundle-branch-block",
+    "calc.2023-duke-international-society-cardiovascular-infectious-diseases-iscvid-criteria"
+  ],
+  "source_logic_hash": "c29319a5181e45a6f00d881ed5357157",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4045,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

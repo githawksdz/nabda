@@ -1,0 +1,216 @@
+{
+  "id": "calc.hcm-risk-scd",
+  "slug": "hcm-risk-scd",
+  "language": "en",
+  "title": "Risque de SCD dans la HCM",
+  "short_title": "Risque de SCD dans la HCM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cardiomyopathie hypertrophique"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Dizziness",
+    "Fatigue",
+    "Headache",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "HCM Risk-SCD",
+    "HCM",
+    "SCD",
+    "sudden",
+    "sudden cardiac death",
+    "sudden cardiac",
+    "cardiac death",
+    "cardiomyopathy",
+    "hypertrophic cardiomyopathy",
+    "hcm risk",
+    "hcm risk scd",
+    "scd risk",
+    "hcm scd",
+    "scd hcm"
+  ],
+  "dosing": false,
+  "formula": "The Prognostic Index is calculated based on the following inputs:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Age at evaluation, years | – | Continuous | |\n| Family history of SCD | Hx of sudden cardiac death in ≥ 1 first degree relatives <40 years of age or SCD in any relative with confirmed HCM at any age | No | 0 |\n| Yes | 1 | | |\n| Maximum wall thickness, mm | Greatest thickness in anterior septum, posterior septum, lateral wall, and posterior wall of the LV, measured at the level of the mitral valve, papillary muscles, and apex, performed with parasternal short-axis plane using 2-D echocardiography at time of evaluation | – | Continuous |\n| Left atrial diameter, mm | Determined by M-Mode or 2-D echocardiography in the parasternal long axis place at time of evaluation | – | Continuous |\n| Maximal left ventricular outflow tract gradients, mmHg | Peak outflow tract gradients were determined using the modified Bernoulli equation: Gradient = 4 V 2 , where V is the peak aortic outflow velocity. Determined at rest and with Valsalva provocation using pulsed and continuous wave Doppler from apical 3 and 5-chamber views. | – | Continuous |\n| Non-sustained ventricular tachycardia | ≥3 consecutive ventricular beats at a rate of ≥120 bpm and <30 s in duration on Holter monitoring (minimum duration 24 hours) at or prior to evaluation | No | 0 |\n| Yes | 1 | | |\n| Unexplained syncope | Hx of unexplained syncope at or prior to evaluation | No | 0 |\n| Yes | 1 | | |\n\nPrognostic Index = 0.15939858*(Maximal wall thickness, mm) – 0.00294271*(Maximal wall thickness, mm)^2^+ 0.0259082*(Left atrial diameter, mm) + 0.00446131*(Maximal left ventricular outflow tract gradient, mmHg) + 0.4583082*(Family history of SCD) + 0.82639195*(NSVT) + 0.71650361*(Unexplained syncope) – 0.01799934*(Age at clinical evaluation, years)\n\nThe risk of SCD in 5 years for a patient with HCM is calculated by the following:\n\np̂~SCD~at 5 years = 1 – 0.998^exp(Prognostic Index)^",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Ne doit pas être utilisé chez les patients pédiatriques (ceux âgés de moins de 16 ans). Voir [PRIMaCY](nabda:calc.precision-medicine-cardiomyopathy-primacy-score).\n- Ne doit pas être utilisé chez les athlètes d’élite/de compétition.\n- Ne doit pas être utilisé chez les patients atteints de maladies ou syndromes métaboliques associés à un diagnostic d’HCM."
+  },
+  "next_steps": {
+    "advice": "Utilisez-vous HCM Risk-SCD et souhaitez-vous partager votre expertise ? [Rejoignez](https://www.mdcalc.com/join-us) notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "SCD risque dans HCM patients.",
+  "medium_description": "Estimates risque de sudden cardiac death chez les patients avec hypertrophic cardiomyopathy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge at évaluation, years",
+      "optional": false,
+      "unit": "age_hcm_risk",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "scd",
+      "label": "Antécédents familiaux de SCD",
+      "tips": "Hx of sudden cardiac death in >1 first degree relatives <40 years of age or SCD in any relative with confirmedHCMat any age.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "max_wall",
+      "label": "Épaisseur pariétale maximale, mm",
+      "tips": "Greatest thickness in anterior septum, posterior septum, lateral wall, and posterior wall of the LV, measured at the level of the mitral valve, papillary muscles, and apex.",
+      "optional": false,
+      "unit": "max_wall_thickness",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "lad",
+      "label": "Diamètre de l'oreillette gauche, mm",
+      "tips": "Déterminé par échocardiographie M-Mode ou 2-D dans la vue parasternale grand axe au moment de l’évaluation.",
+      "optional": false,
+      "unit": "lad_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "lv_outflow",
+      "label": "Gradients maximaux de la chambre de chasse du ventricule gauche, mmHg",
+      "tips": "Déterminé au repos et avec manœuvre de Valsalva, par Doppler pulsé et continu, à partir des incidences apicales 3 et 5 cavités.",
+      "optional": false,
+      "unit": "plvo_primacy",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "nsvt",
+      "label": "Tachycardie ventriculaire non soutenue",
+      "tips": "≥3 battements ventriculaires consécutifs à une fréquence ≥120 bpm et d’une durée <30 s au monitorage Holter (durée minimale 24 heures) au moment de l’évaluation ou avant celle-ci.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "syncope",
+      "label": "Syncope inexpliquée",
+      "tips": "ATCD de syncope inexpliquée lors de l'évaluation ou avant celle-ci.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "O’Mahony C, Jichi F, Pavlou M, et al. A novel clinical risk prediction model for sudden cardiac death in hypertrophic cardiomyopathy (Hcm risk-scd). European Heart Journal. 2014;35(30):2010-2020.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24126876/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zeppenfeld K, Tfelt-Hansen J, de Riva M, et al. 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. Eur Heart J. 2022;43(40):3997-4126.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36017572/",
+      "kind": "other"
+    },
+    {
+      "text": "Authors/Task Force members, Elliott PM, Anastasakis A, et al. 2014 esc guidelines on diagnosis and management of hypertrophic cardiomyopathy: the task force for the diagnosis and management of hypertrophic cardiomyopathy of the european society of cardiology(Esc). Eur Heart J. 2014;35(39):2733-2779.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25173338/",
+      "kind": "other"
+    },
+    {
+      "text": "Monda E, Limongelli G. Integrated sudden cardiac death risk prediction model for patients with hypertrophic cardiomyopathy. Circulation. 2023;147(4):281-283.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36689567/",
+      "kind": "other"
+    },
+    {
+      "text": "Vriesendorp PA, Schinkel AFL, Liebregts M, et al. Validation of the 2014 European Society of Cardiology guidelines risk prediction model for the primary prevention of sudden cardiac death in hypertrophic cardiomyopathy. Circ Arrhythm Electrophysiol. 2015;8(4):829-835.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25922410/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "O’Mahony C, Jichi F, Ommen SR, et al. International external validation study of the 2014 european society of cardiology guidelines on sudden cardiac death prevention in hypertrophic cardiomyopathy(Evidence-hcm). Circulation. 2018;137(10):1015-1023.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29191938/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.precision-medicine-cardiomyopathy-primacy-score",
+    "calc.shanghai-score",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score"
+  ],
+  "source_logic_hash": "1a6380df6961b40617677b3e0c3bbe56",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.precision-medicine-cardiomyopathy-primacy-score",
+      "text": "PRIMaCY"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10481,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

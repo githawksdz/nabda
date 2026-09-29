@@ -1,0 +1,161 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-reflux-hypersensitivity",
+  "slug": "rome-iv-diagnostic-criteria-reflux-hypersensitivity",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Reflux Hypersensitivity",
+  "short_title": "Rome IV pour Reflux Hypersensitivity",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pathologies œsophagiennes",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Reflux Hypersensitivity, Rome IV for Reflux Hypersensitivity, rome iv reflux, rome iv reflux hypersensitivity, reflux hypersensitivity, rome iv for reflux, rome iv criteria, reflux hypersensitivity diagnosis, rome 4 reflux hypersensitivity, rome 4 reflux, rome 4 criteria, reflux hypersensitivity diagnosis, rome reflux"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV de l'hypersensibilité au reflux, le patient doit présenter les éléments suivants (durant les 3 mois précédents, avec début des symptômes ≥ 6 mois et une fréquence d'au moins deux fois par semaine) :\n\n1. Symptômes rétrosternaux incluant le pyrosis et les douleurs thoraciques.\n2. Endoscopie normale et absence de preuve que l'œsophagite à éosinophiles (EoE) est la cause des symptômes.\n3. Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à l'écoulement de la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophage en marteau-pilon, absence de péristaltisme).\n4. Preuve du déclenchement des symptômes par des épisodes de reflux malgré une exposition acide normale au pH-mètre ou à la pH-impédancemétrie (la réponse au traitement antisécrétoire n'exclut pas le diagnostic).",
+  "how_to_use": {
+    "why": "- Aide à poser un diagnostic d'hypersensibilité au reflux, en association avec la pH-métrie ambulatoire.\n- Aide à distinguer les symptômes d'autres troubles fréquents, tels que le RGO, la maladie de reflux œsophagien non érosif (NERD) et le pyrosis fonctionnel.\n- Aide à guider la prise en charge des symptômes une fois le diagnostic d'hypersensibilité au reflux établi.",
+    "when": "Patients présentant des symptômes rétrosternaux récurrents, tels que pyrosis et douleurs thoraciques, depuis au moins les 6 derniers mois, évocateurs d'une hypersensibilité au reflux. Le diagnostic d'hypersensibilité au reflux ne doit être posé qu'après avoir exclu l'œsophagite à éosinophiles, les troubles moteurs œsophagiens majeurs et une exposition acide anormale (en monitoring ambulatoire).",
+    "pearls": "- La réponse au traitement antisécrétoire n'élimine pas l'hypersensibilité au reflux, mais les symptômes de l'hypersensibilité au reflux peuvent être réfractaires au traitement antisécrétoire.\n- Le diagnostic d'hypersensibilité au reflux repose sur les résultats de la pH-métrie ambulatoire, dans laquelle l'exposition acide est normale, mais avec une association significative entre symptômes et reflux.\n- Si une manométrie œsophagienne est réalisée, l'identification d'un trouble moteur œsophagien majeur (p. ex. achalasie, obstruction à l'écoulement de l'EGJ, spasme œsophagien diffus, œsophage en marteau-pilon, absence de péristaltisme) peut expliquer les symptômes ou coexister avec l'hypersensibilité au reflux."
+  },
+  "next_steps": {
+    "advice": "**Si les critères diagnostiques ne sont pas remplis (négatif) :**\n\nIl est peu probable que les symptômes soient causés par une hypersensibilité au reflux. Envisager une évaluation complémentaire pour d'autres maladies ou un autre trouble fonctionnel gastro-intestinal.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable d'hypersensibilité au reflux.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients ne présentant pas de signes ou symptômes évocateurs d'une cause structurelle/mécanique, métabolique ou systémique de leurs symptômes, sur la base de l'anamnèse, de l'examen clinique et du bilan initial, incluant la pH-métrie ambulatoire.",
+    "management": "La prise en charge de l'hypersensibilité au reflux peut inclure :\n\n- Inhibiteurs de la pompe à protons (IPP) ou antagonistes des récepteurs H2 à forte dose.\n- Antidépresseurs tricycliques (ATC).\n- Inhibiteurs sélectifs de la recapture de la sérotonine (ISRS).\n- Inhibiteurs de la recapture de la sérotonine et de la noradrénaline (IRSN)."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts.",
+  "more_info": "",
+  "short_description": "Diagnostic d'hypersensibilité au reflux.",
+  "medium_description": "Official Rome IV critères pour diagnostic de reflux hypersensitivity.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Symptômes rétrosternaux y compris pyrosis et douleur thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Normal endoscopy et absence de evidence thatEoEis cause pour symptoms",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à l'écoulement de la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophagie en marteau-pilon, absence de péristaltisme)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Evidence de triggering de symptoms par reflux events despite normal acid exposure sur pH ou pH-impedance monitoring (response pour antisecretory therapy ne... pas exclude diagnostic)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahoney LB, Nurko S, Rosen R. The Prevalence of Rome IV Nonerosive Esophageal Phenotypes in Children. J Pediatr. 2017;189:86-91.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28711175",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-functional-chest-pain",
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn",
+    "calc.rome-iv-diagnostic-criteria-belching-disorders"
+  ],
+  "source_logic_hash": "af6a249335c1a151c00efca81e0673a5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10277,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

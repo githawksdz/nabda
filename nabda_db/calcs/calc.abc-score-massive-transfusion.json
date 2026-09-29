@@ -1,0 +1,177 @@
+{
+  "id": "calc.abc-score-massive-transfusion",
+  "slug": "abc-score-massive-transfusion",
+  "language": "en",
+  "title": "ABC score pour Massive Transfusion",
+  "short_title": "ABC score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "trauma",
+    "transfusion"
+  ],
+  "dosing": false,
+  "formula": "Addition of selected points:\n\n| | No | Yes |\n| --- | --- | --- |\n| Penetrating mechanism | 0 points | 1 point |\n| Systolic BP ≤90 in ED | 0 points | 1 point |\n| HR ≥120 in ED | 0 points | 1 point |\n| Positive [FAST](nabda:calc.focused-assessment-sonography-trauma-fast\\) | 0 points | 1 point |",
+  "how_to_use": {
+    "why": "Early initiation of massive transfusion has been shown to improve survival in critical trauma patients. The ABC Score reduces delay in determining need for massive transfusion in a trauma patient, while also providing consistency in appropriateness of transfusion by reducing practice variations among providers.",
+    "when": "Trauma patients for whom massive transfusion is being considered.",
+    "pearls": "- Does not require laboratory results or complex calculations.\n- The [FAST exam](nabda:calc.focused-assessment-sonography-trauma-fast) used to determine the score relies on the skill level of the person performing and interpreting the study.\n- The score tends to overtriage in favor of receiving massive transfusion, ensuring a low chance of withholding massive transfusion from a patient that needs it.\n- While the score can help aid the decision to initiate massive transfusion, the lead physician(s) managing the trauma should place the order, as a massive transfusion can quickly stretch the limits of the hospital blood supply."
+  },
+  "next_steps": {
+    "advice": "- Massive transfusion protocols are institution-specific, but often are 1:1:1 or 1:1:2 for fresh frozen plasma, platelets, and packed red blood cells ([Holcomb 2015](https://jamanetwork.com/journals/jama/fullarticle/2107789)).\n- Remember, the ABC Score does not indicate if trauma patients should receive blood, only if they should receive blood through a massive transfusion protocol.\n- The score can be repeated as the patient’s clinical exam changes. Repeating vitals and FAST can change a patient’s ABC Score.\n- Familiarity with your institution’s massive transfusion protocol will reduce delays in activation and administration of blood products.",
+    "critical_actions": "Chances of survival increase with early initiation of massive transfusion in severely injured patients. Identification and activation should not be delayed in critical trauma patients.",
+    "management": "- The most widely accepted definition of massive transfusion is the administration of ≥10 units of pRBCs in the first 24 hours.\n- Institutions may have different ratios of blood products as a part of their massive transfusion protocol (MTP).\n- Activation of MTP triggers the release of pRBCs, platelets, and fresh frozen plasma at frequent intervals until it is called off."
+  },
+  "evidence": "The original study ([Nunez 2009](https://www.ncbi.nlm.nih.gov/pubmed/19204506)) was a retrospective review performed at Vanderbilt University Medical Center using the institution’s trauma registry. The study population was derived from all trauma patients (n = 596) admitted to the hospital over the course of a year. Patients included were level I trauma activations transported directly from the scene who received any blood transfusion while admitted. The ABC Score was created by the trauma faculty based on clinical experience, and logistic regression modeling was used to determine the odds ratio of requiring MTP for each parameter of the score.\n\nOf the total cohort, 76 patients (12%) required massive transfusion in the first 24 hours. Based on the number of patients who received massive transfusion that were identified using the ABC Score, researchers found the best cutoff to be a score ≥2, giving a sensitivity of 75% and specificity of 86%. Compared with the [Trauma Associated Severe Hemorrhage (TASH)](nabda:calc.tash-score-trauma-associated-severe-hemorrhage) scoring system and the McLaughlin Score using the same dataset, the ABC Score was shown to be the most accurate in predicting need for MTP.\n\nThe validation study ([Cotton 2010](https://www.ncbi.nlm.nih.gov/pubmed/20622617)) was a retrospective review using trauma databases from three institutions: Vanderbilt University Medical Center, Johns Hopkins Hospital, and Parkland Memorial Hospital. The inclusion and exclusion criteria were the same as the original study. The study population was once again derived from trauma patients admitted to one of the three hospitals over the course of a year. The sample size of the study was 1,604 and included 586 patients from the original study. There was significant variation in demographics between the centers involved, but the massive transfusion rate in the first 24 hours of admission was similar (~15%) for each hospital. There was little variability between each institution’s cohort in the percentage of patients correctly classified as meeting the ABC cutoff for MTP who received massive transfusions. Sensitivity ranged from 76-90% and specificity 67-87% for each institution. NPV was 97% and the PPV was 55%.\n\nThe validation study also measured the accuracy of the ABC Score to predict need for massive transfusion in the first 6 hours of admission. Sensitivity was 87% and specificity was 82% with slightly higher NPV (98%) and lower PPV (55%) compared to prediction of massive transfusion need in the first 24 hours.\n\nThe major limitation to both studies was their retrospective nature. A prospective trial is ongoing. The study shows a novel means of quickly predicting the need for massive transfusion based on objective measures. While there is good data showing early activation of MTP improves survival rates in severely injured trauma patients, a prospective study will be necessary to determine if utilization of the ABC Score improves patient outcomes.",
+  "more_info": "**Interpretation:**\n\n| ABC Score | Interpretation |\n| --- | --- |\n| 0-1 | Not likely to require massive transfusion (≥10 units pRBCs) |\n| 2-4 | Likely to require massive transfusion |",
+  "short_description": "Need pour massive transfusion; calculated before labs.",
+  "medium_description": "Predicts need pour massive transfusion dans traumatisme patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "penetrating_mechanism",
+      "label": "Penetrating mechanism",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ed_systolic_bp_90",
+      "label": "Systolic BP ≤90 dans ED",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ed_hr_120",
+      "label": "HR ≥120 dans ED",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "positive_fast_exam",
+      "label": "Positive [FAST](nabda:calc.focused-assessment-sonography-trauma-fast)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nunez TC, Voskresensky IV, Dossett LA, Shinall R, Dutton WD, Cotton BA. Early prediction of massive transfusion in trauma: simple as ABC (assessment of blood consumption)? J Trauma. 2009 Feb;66(2):346-52. PubMed PMID: 19204506.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19204506",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Holcomb JB, Tilley BC, Baraniuk S, et al. Transfusion of plasma, platelets, and red blood cells in a 1:1:1 vs a 1:1:2 ratio and mortality in patients with severe trauma: the PROPPR randomized clinical trial. JAMA. 2015;313(5):471-82.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2107789",
+      "kind": "other"
+    },
+    {
+      "text": "Cotton BA, Dossett LA, Haut ER, Shafi S, Nunez TC, Au BK, Zaydfudim V,Johnston M, Arbogast P, Young PP. Multicenter validation of a simplified score to predict massive transfusion in trauma. J Trauma. 2010 Jul;69 Suppl 1:S33-9. PubMed PMID: 20622617.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20622617",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.tash-score-trauma-associated-severe-hemorrhage",
+    "calc.focused-assessment-sonography-trauma-fast",
+    "calc.shock-index-pediatric-age-adjusted-sipa"
+  ],
+  "source_logic_hash": "05bbf4bc45093d06cc7c14567c2688a1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.focused-assessment-sonography-trauma-fast",
+      "text": "FAST"
+    },
+    {
+      "type": "calc",
+      "id": "calc.focused-assessment-sonography-trauma-fast",
+      "text": "FAST exam"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1228,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

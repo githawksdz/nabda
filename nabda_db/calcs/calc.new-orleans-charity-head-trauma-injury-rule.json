@@ -1,0 +1,241 @@
+{
+  "id": "calc.new-orleans-charity-head-trauma-injury-rule",
+  "slug": "new-orleans-charity-head-trauma-injury-rule",
+  "language": "en",
+  "title": "New Orleans/Charity Head traumatisme/lésion règle",
+  "short_title": "New Orleans Head CT règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "urgences",
+    "neurologie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Traumatisme crânien",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "noc",
+    "head trauma",
+    "new orleans",
+    "Charity Head Trauma",
+    "NOC head rule",
+    "new orleans criteria"
+  ],
+  "dosing": false,
+  "formula": "Série de questions à réponse Oui/Non, comme ci-dessus.",
+  "how_to_use": {
+    "why": "- Plus de 8 millions de patients se présentent chaque année dans les services d'urgence américains pour une évaluation d'un traumatisme crânien. La grande majorité de ces patients présente un traumatisme crânien léger qui ne nécessitera ni traitement spécialisé ni traitement neurochirurgical. Parallèlement, les taux d'imagerie par tomodensitométrie (TDM) cérébrale ont augmenté de façon spectaculaire aux États-Unis, faisant plus que doubler entre le début des années 1990 et les années 2000.\n- L'utilisation du NOC comme aide à la décision clinique permettrait aux médecins d'omettre en toute sécurité la TDM cérébrale chez 12-25 % des patients se présentant aux urgences avec un traumatisme crânien léger.",
+    "when": "Patients présentant un traumatisme crânien avec perte de connaissance (LOC), neurologiquement normaux (c.-à-d. GCS 15 et examen neurologique bref normal).",
+    "pearls": "The New Orleans Criteria (NOC) were developed to help physicians determine which patients need CT head imaging.\n\n- The NOC has been demonstrated in several prospective trials to have a sensitivity of 100% for intracranial injuries that require neurosurgical intervention.\n\n**Points to keep in mind:**\n\n- The NOC authors' goal was to find a rule that was 100% sensitive for all intracranial injuries, not just those that would require neurosurgical intervention. In the original validation study and two other trials, the NOC was found to be 99.4-100% sensitive for these injuries.\n- One recent trial among trauma patients in Tunisia found that the NOC was only 82-86% sensitive for injuries requiring neurosurgery and for all clinically important brain injuries, suggesting that the NOC might not be translatable to all clinical settings.\n- While the NOC is less complex than the CCHR, and both rules have excellent sensitivity, the NOC is much less specific than the CCHR in all settings given the NOC’s very broad questions, especially “Any trauma above the clavicles.”"
+  },
+  "next_steps": {
+    "advice": "- Envisager une TDM cérébrale en attendant le résultat de la règle.\n- Envisager un avis neurochirurgical conformément aux recommandations de la règle.",
+    "critical_actions": "- Providers in more conservative settings could consider applying both rules and choosing to image if either rule suggests that a patient is not completely low risk according to their respective criteria.\n- If a trauma patient, with a head injury and loss of consciousness, presenting with a [GCS](nabda:calc.glasgow-coma-scale-score-gcs) 15 is positive for any of the NOC (age >60, headache, vomiting, alcohol or drug intoxication, persistent anterograde amnesia, visible trauma above the clavicle or seizures) then they require a CT scan of the head to evaluate for intracranial injury.\n- If the patient does not have any of the NOC then they can be discharged without undergoing a CT of the head and without the need for any further clinical observation.",
+    "management": "Chez les patients présentant des signes d’hémorragie intracrânienne, de contusion, de fracture du crâne ou d’autres anomalies diagnostiquées à l’imagerie cérébrale :\n\n- Évaluer toujours les ABC en premier.\n- Consultation en neurochirurgie.\n- Envisager une solution saline hypertonique ou du mannitol après consultation en neurochirurgie.\n- Admettre en soins intensifs neurochirurgicaux pour surveillance et prise en charge ultérieure."
+  },
+  "evidence": "- The NOC were derived from analysis of 520 patients, >3 years of age, who presented with minor head trauma within in 24 hours of their injury.\n- The NOC were then validated among 909 patients presenting to a single US level 1 trauma center. The rule was found to be **100%** sensitive for all intracranial injuries and had a specificity of 25%.\n- 6.5% of patients had intracranial injuries on CT (93/1429) and of those, 0.4% (6/1429) required neurosurgical intervention.\n- Subsequent studies have found the NOC to have a sensitivity of 86-100% for intracranial injuries.There is conflicting evidence as to whether the NOC performs better than the CCHR for detecting all clinically significant intracranial injuries, with two validation trials finding that both had 100% sensitivity for these injuries, another trial2 finding that the NOC was more sensitive (99.4 vs. 87.2%) and one additional trial finding that the CCHR was more sensitive for detecting clinically significant intracranial injuries (95 vs. 86%).\n- Regardless, in all settings the NOC has been shown to be less specific than the CCHR (50.6% vs 12.7%1, 39.7% vs. 5.6%2, 36.3% vs. 10.2%3 and 65% vs. 28%4).\n- Another issue is the interrater reliability of applying the NOC vs. the CCHR. The kappa values for physician interpretation of the rules, CCHR vs NOC, were 0.85 vs 0.47. Physicians misinterpreted the rules as not requiring imaging for 4.0% of patients according to CCHR and 5.5% according to NOC (P = .04)1.\n- The New Orleans Criteria have been validated in several settings and to 100% sensitivity for detecting injuries that will require neurosurgery.\n\n - There is an outlier study based on patients evaluated in a center in Tunisia that found the NOC to only be 82% sensitive (25/1017 patients with GCS 15 who were NOC negative, or 2.5%) for injuries that required neurosurgical intervention.\n - There has been at least one trial that found the NOC was more sensitive than the CCHR (99.4% vs 87.3%). Though this comes at the price of markedly decreased specificity (5.6% vs. 39.7%).\n - In United States, Canada and the Netherlands, both the NOC and the CCHR have demonstrated 100% sensitivity for ruling out intracranial injuries that would require neurosurgical intervention.",
+  "more_info": "",
+  "short_description": "Very sensitive, rules out imaging dans some.",
+  "medium_description": "Critères pour which patients are unlikely pour require imaging after head traumatisme.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "headache",
+      "label": "Headache",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomiting",
+      "label": "Vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_60",
+      "label": "Âge > 60",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alcohol_drug_intoxication",
+      "label": "Intoxication alcoolique ou toxique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "amnesia",
+      "label": "Amnésie antérograde persistante (déficits de la mémoire à court terme)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "visible_trauma",
+      "label": "Traumatisme visible au-dessus de la clavicule",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seizure",
+      "label": "Seizure",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Haydel MJ, Preston CA, Mills TJ, Luber S, Blaudeau E, DeBlieux PM. Indications for computed tomography in patients with minor head injury. N Engl J Med. 2000 Jul 13;343(2):100-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10891517",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smits M, Dippel DW, de Haan GG, Dekker HM, Vos PE, Kool DR, Nederkoorn PJ, Hofman PA, Twijnstra A, Tanghe HL, Hunink MG. External validation of the Canadian CT Head Rule and the New Orleans Criteria for CT scanning in patients with minor head injury. JAMA. 2005 Sep 28;294(12):1519-25.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189365",
+      "kind": "other"
+    },
+    {
+      "text": "Papa L, Stiell IG, Clement CM, Pawlowicz A, Wolfram A, Braga C, Draviam S, Wells GA. Performance of the Canadian CT Head Rule and the New Orleans Criteria for predicting any traumatic intracranial injury on computed tomography in a United States Level I trauma center. Acad Emerg Med. 2012 Jan;19(1):2-10. doi: 10.1111/j.1553-2712.2011.01247.x.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22251188",
+      "kind": "other"
+    },
+    {
+      "text": "Bouida W, Marghli S, Souissi S, Ksibi H, Methammem M, Haguiga H, Khedher S, Boubaker H, Beltaief K, Grissa MH, Trimech MN, Kerkeni W, Chebili N, Halila I, Rejeb I, Boukef R, Rekik N, Bouhaja B, Letaief M, Nouira S. Prediction value of the Canadian CT head rule and the New Orleans criteria for positive head CT scan and acute neurosurgical procedures in minor head trauma: a multicenter external validation study. Ann Emerg Med. 2013 May;61(5):521-7. doi: 10.1016/j.annemergmed.2012.07.016. Epub 2012 Aug 22.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22921164",
+      "kind": "other"
+    },
+    {
+      "text": "Stiell IG, Clement CM, Rowe BH, Schull MJ, Brison R, Cass D, Eisenhauer MA, McKnight RD, Bandiera G, Holroyd B, Lee JS, Dreyer J, Worthington JR, Reardon M, Greenberg G, Lesiuk H, MacPhail I, Wells GA. Comparison of the Canadian CT Head Rule and the New Orleans Criteria in patients with minor head injury. JAMA. 2005 Sep 28;294(12):1511-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16189364",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.canadian-ct-head-injury-trauma-rule",
+    "calc.nexus-head-ct-instrument",
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "8c9f4dd407e8c77d48e97b81ca29073f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 604,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

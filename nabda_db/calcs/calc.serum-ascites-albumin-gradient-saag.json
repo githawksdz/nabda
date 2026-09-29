@@ -1,0 +1,99 @@
+{
+  "id": "calc.serum-ascites-albumin-gradient-saag",
+  "slug": "serum-ascites-albumin-gradient-saag",
+  "language": "fr",
+  "title": "Gradient Albumine Sérum-Ascite (SAAG)",
+  "short_title": "Gradient albumine sérum-ascite",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Ascites",
+    "Hépatopathie chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "SAAG",
+    "albumin",
+    "ascites",
+    "portal hypertension"
+  ],
+  "dosing": false,
+  "formula": "SAAG = (concentration d'albumine sérique) – (concentration d'albumine du liquide d'ascite)",
+  "how_to_use": {
+    "why": "Le prélèvement de liquide d'ascite est relativement simple et sûr entre les mains d'opérateurs expérimentés. La composition du liquide d'ascite offre une méthode moins invasive pour évaluer le risque et le statut d'hypertension portale.",
+    "when": "Patients atteints d'une maladie hépatique connue et présentant une ascite, chez qui le statut d'hypertension portale est inconnu.",
+    "pearls": "- Le gradient albumine sérum-ascite (SAAG) permet de déterminer quels patients atteints d'une maladie hépatique présentent une hypertension portale.\n- Un seuil de 1,1 a été validé pour déterminer qui présente une hypertension portale."
+  },
+  "next_steps": {
+    "advice": "Le SAAG semble fiable et utile pour déterminer l'hypertension portale. Il est moins fiable pour poser des diagnostics étiologiques, et sa valeur dans des contextes autres que des populations de référence en insuffisance hépatique est inconnue. De plus, les données prospectives sont dominées par une seule étude de validation du SAAG, ce qui suggère que des recherches futures pourraient apporter un éclairage supplémentaire.",
+    "critical_actions": "Le SAAG nécessite des prélèvements sanguins et de liquide d'ascite réalisés à des moments proches.",
+    "management": "Nous n'avons pas connaissance d'algorithmes de prise en charge validés utilisant le SAAG."
+  },
+  "evidence": "",
+  "more_info": "**Interprétation**\n\n- Un SAAG > 1,1 g/dL indique que l'hypertension portale est la cause de l'ascite avec une précision de 97 %.\n- Le score SAAG n'indique pas la cause de l'hypertension portale.",
+  "short_description": "Defines presence de portal hypertension chez les patients avec ascites.",
+  "medium_description": "Defines presence de portal hypertension chez les patients avec ascites.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "serum",
+      "label": "Concentration d'albumine sérique",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ascitic",
+      "label": "Concentration d'albumine du liquide d'ascite",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Hoefs JC. The mechanism of ascitic fluid protein concentration increase during diuresis in patients with chronic liver disease. Am J Gastroenterol. 1981 Nov;76(5):423-31. PMID:7337129.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7337129",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Paré P, Talbot J, Hoefs JC. Serum-ascites albumin concentration gradient: a physiologic approach to the differential diagnosis of ascites. Gastroenterology. 1983 Aug;85(2):240-4. PMID: 6862152.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6862152",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.calcium-correction-hypoalbuminemia",
+    "calc.clif-c-aclf-acute-chronic-liver-failure",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld"
+  ],
+  "source_logic_hash": "6ea6e1208db034847eab0ec39eeec2b5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3096,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,241 @@
+{
+  "id": "calc.riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+  "slug": "riete-score-risk-hemorrhage-pulmonary-embolism-treatment",
+  "language": "en",
+  "title": "RIETE score pour risque de hémorragie dans embolie pulmonaire traitement",
+  "short_title": "Score RIETE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pulm",
+    "reite",
+    "pe",
+    "lovenox",
+    "coumadin",
+    "warfarin"
+  ],
+  "dosing": false,
+  "formula": "Le score RIETE est calculé en additionnant les points retenus pour chaque variable :\n\n| Facteur de risque | Valeur en points |\n| --- | --- |\n| Saignement majeur récent | 2 |\n| Cr >1.2 mg/dL | 1.5 |\n| Anémie | 1.5 |\n| Cancer | 1 |\n| EP cliniquement manifeste | 1 |\n| Âge >75 | 1 |",
+  "how_to_use": {
+    "why": "- Predicts major bleeding risk during the first 3 months of anticoagulation for DVT or PE, with strongest performance for fatal bleeding; results may help guide therapy and monitoring decisions.\n- Named by the[2019 European Society of Cardiology/European Respiratory Society PE guidelines](https://academic.oup.com/eurheartj/article/41/4/543/5556136)as one of several validated bleeding-risk scores.",
+    "when": "À utiliser chez les patients nouvellement diagnostiqués avec une thrombose veineuse profonde aiguë (DVT) ou une embolie pulmonaire (PE) au moment de l’initiation de l’anticoagulation.",
+    "pearls": "- Developed from the RIETE registry to estimate the risk of major bleeding during anticoagulation for acute DVT or PE.\n- The derivation cohort included patients with symptomatic, objectively confirmed acute venous thromboembolism (VTE):\n\n - DVT diagnosed by compression ultrasonography or venography.\n - PE diagnosed by pulmonary angiography, lung scintigraphy, or helical CT.\n- Major bleeding in the derivation study was defined as overt bleeding plus ≥1 of the following:\n\n - Requirement for transfusion of ≥2 units of blood.\n - Retroperitoneal, spinal, or intracranial bleeding.\n - Fatal bleeding.\n- Anemia was included as a predictor in the derivation study, though a specific hemoglobin threshold was not clearly defined in the original publication; subsequent analyses commonly defined anemia as hemoglobin <13 g/dL in men and <12 g/dL in women.\n- The derivation and validation cohorts were both drawn from the same registry population, limiting true external validation of the original model.\n- External validation studies have demonstrated modest overall discrimination, with reported c-statistics generally ranging from approximately 0.55-0.70.\n- Predictive performance appears strongest for:\n\n - Fatal bleeding.\n - Early extracranial bleeding events during the initial treatment period.\n- Performance is less reliable for:\n\n - Intracranial hemorrhage.\n - Late bleeding events (>90 days after anticoagulation initiation).\n- Predictive discrimination appears reduced in patients with active malignancy, with reported c-statistics falling to approximately 0.50-0.61 in some cohorts.\n- The derivation population was treated predominantly with low molecular weight heparin (LMWH) and vitamin K antagonists (<5% of patients received DOAC therapy); use caution when extrapolating performance to modern DOAC monotherapy populations.\n- Not intended for:\n\n - Pediatric patients.\n - Pregnancy or postpartum-associated VTE.\n - Unusual-site thrombosis (e.g., cerebral venous sinus thrombosis, splanchnic vein thrombosis).\n - Critically ill ICU populations.\n- Risk assessment is static and reflects the patient only at anticoagulation initiation; it does not dynamically account for interval clinical changes such as:\n\n - New renal or hepatic dysfunction.\n - Initiation of antiplatelet therapy."
+  },
+  "next_steps": {
+    "advice": "- Utiliser comme complément au jugement clinique plutôt que comme outil décisionnel autonome.\n- Réévaluer régulièrement le risque hémorragique pendant le traitement, car le modèle ne prend en compte que le risque initial et ne tient pas compte des modifications cliniques intercurrentes.\n- La performance prédictive diminue lorsqu'il est appliqué au-delà des 3 premiers mois d'anticoagulation.\n- Quelle que soit la stratégie de prise en charge choisie, le consentement éclairé reste essentiel.",
+    "critical_actions": "Les risques et les bénéfices de l’anticoagulation doivent être soigneusement pesés chez TOUS les patients avant l’instauration du traitement.",
+    "management": "- **Risque faible :** L'initiation d'une anticoagulation avec une surveillance standard est généralement raisonnable.\n- **Risque intermédiaire :** Évaluer attentivement les risques et les bénéfices de l'anticoagulation avant d'initier le traitement.\n- **Risque élevé :** Envisager des stratégies de prise en charge alternatives et une surveillance plus rapprochée chez les patients à haut risque hémorragique."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| RIETE Score | Risk of Major Bleeding |\n| --- | --- |\n| 0 | Low |\n| 1 – 4 | Intermediate |\n| >4 | High |",
+  "short_description": "Saignement risque de PE anticoagulation.",
+  "medium_description": "Déterminer le risque d’hémorragie majeure pendant un traitement anticoagulant.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "major_bleeding",
+      "label": "Saignement majeur récent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "creatinine",
+      "label": "Créatinine >1,2 mg/dL (106 µmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anémie",
+      "tips": "Hgb <13 g/dL chez les hommes, Hgb <12 g/dL chez les femmes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "malignancy",
+      "label": "Antécédents de malignité",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulmonary_embolism",
+      "label": "Embolie pulmonaire cliniquement manifeste",
+      "tips": "Patients who were evaluated for PE and PE diagnosed, NOT incidental PE found during other studies",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_75",
+      "label": "Âge > 75",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS). Eur Heart J. 2020;41(4):543-603. doi:10.1093/eurheartj/ehz405",
+      "href": "https://academic.oup.com/eurheartj/article/41/4/543/5556136",
+      "kind": "international"
+    },
+    {
+      "text": "Ruíz-Giménez N, Suárez C, González R, Nieto JA, Todolí JA, Samperiz AL, Monreal M; RIETE Investigators. Predictive variables for major bleeding events in patients presenting with documented acute venous thromboembolism. Findings from the RIETE Registry.Thromb Haemost. 2008 Jul;100(1):26-31. doi: 10.1160/TH08-03-0193.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18612534",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Guijarro, Ricardo et al. Venous thromboembolism in Spain. Comparison between an administrative database and the RIETE registry. European Journal of Internal Medicine , Volume 19 , Issue 6 , 443 - 446.",
+      "href": "https://www.ejinme.com/article/S0953-6205(08)00032-0/abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Scherz N, Méan M, Limacher A, et al. Prospective, multicenter validation of prediction scores for major bleeding in elderly patients with venous thromboembolism. J Thromb Haemost. 2012;11(3):435-443. doi:10.1111/jth.12139.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/jth.12111",
+      "kind": "pubmed"
+    },
+    {
+      "text": "de Winter MA, van Es N, Büller HR, Visseren FLJ, Nijkeuter M. Prediction models for recurrence and bleeding in patients with venous thromboembolism: a systematic review and critical appraisal. Thromb Res. 2021;199:85-96. doi:10.1016/j.thromres.2020.12.011.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33485094/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lecumberri R, Jiménez L, Ruiz-Artacho P, et al; RIETE Investigators. Prediction of major bleeding in anticoagulated patients for venous thromboembolism: comparison of the RIETE and the VTE-BLEED scores. TH Open. 2021;5(3):e319-e328. doi:10.1055/s-0041-1730967.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC8459175/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Guman NA, Becking AM, Weijers SS, et al. Risk assessment tools for bleeding in patients with unprovoked venous thromboembolism: an analysis of the PLATO-VTE study. J Thromb Haemost. 2024;22(9):2470-2481. doi:10.1016/j.jtha.2024.05.023.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38866248/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tao Y, Chen H, Dong C, et al. Performance of bleeding risk scores for major bleeding in anticoagulated patients with pulmonary embolism: insights from the CURES Registry-2. Thromb Haemost. Published online July 17, 2025. doi:10.1055/a-2633-7944.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40555360/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.atria-bleeding-risk-score",
+    "calc.simplified-pesi-pulmonary-embolism-severity-index",
+    "calc.pulmonary-embolism-severity-index-pesi"
+  ],
+  "source_logic_hash": "d80474d5b1d8e5572ca190fa0997a155",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1786,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar msg, recs, mini_msg;\nvar u = parseInt(major_bleeding) + parseInt(creatinine) + parseInt(anemia) + parseInt(malignancy) + parseInt(pulmonary_embolism) + parseInt(age_75);\nif (creatinine == 1.5) {\n    u += .5\n};\nif (anemia == 1.5) {\n    u += .5\n};\nif (u == 0) {\n    msg = 'Low Risk.<br/>0.1% Risk of Major Bleeding';\n    recs = 'Initiation of anticoagulation reasonable.';\n    mini_msg = 'Low Risk of Major Bleeding.'\n};\nif (u > 0 && u < 5) {\n    msg = 'Intermediate Risk.<br/>2.8% Risk of Major Bleeding';\n    recs = 'Carefully consider risks and benefits of anticoagulation prior to starting therapy.';\n    mini_msg = 'Intermediate Risk of Major Bleeding.'\n};\nif (u > 4) {\n    msg = 'High Risk.<br/>6.2% Risk of Major Bleeding';\n    recs = 'Alternative options should be considered unless there is a strong demonstrable clinical need for anticoagulation.';\n    mini_msg = 'High Risk of Major Bleeding.'\n};\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: 'points',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '1786_RIETE Score_result',\n    value: u.toFixed(1),\n    value_text: 'points',\n    message: msg + '<br/><br/>' + recs\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "eric-steinberg",
+    "calvin-hwang"
+  ],
+  "creator_names": [
+    "Dr. Nuria Ruíz-Giménez Arrieta"
+  ],
+  "measurement_ids": [
+    "Creatinine"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "2728c1c66d06654157ccd71994d588be42f9e58bcb1691b982340c4998fb3be5"
+}

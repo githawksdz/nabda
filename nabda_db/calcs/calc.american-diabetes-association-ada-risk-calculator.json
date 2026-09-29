@@ -1,0 +1,246 @@
+{
+  "id": "calc.american-diabetes-association-ada-risk-calculator",
+  "slug": "american-diabetes-association-ada-risk-calculator",
+  "language": "en",
+  "title": "American diabète Association (ADA) risque calculateur",
+  "short_title": "ADA diabète risque calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "Polyuria",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "ADA",
+    "t2dm",
+    "dm",
+    "ada diabetes"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | Value | Points |\n| --- | --- | --- |\n| Age, years | <40 | 0 |\n| 40-49 | +1 | |\n| 50-59 | +2 | |\n| ≥60 | +3 | |\n| Gender | Female | 0 |\n| Male | +1 | |\n| Previous gestational diabetes (if female) | No | 0 |\n| Yes | +1 | |\n| 1st degree relative with diabetes | No | 0 |\n| Yes | +1 | |\n| Hypertension (self-reported history of hypertension, prescribed antihypertensive medication, and/or BP ≥140/90) | No | 0 |\n| Yes | +1 | |\n| Physically active (self-reported) | Yes | 0 |\n| No | +1 | |\n| BMI, kg/m² | <25 | 0 |\n| 25 to <30 | 1 | |\n| 30 to <40 | 2 | |\n| ≥40 | 3 | |",
+  "how_to_use": {
+    "why": "- Fournit une méthode non invasive, fondée sur les données probantes, pour estimer le risque de diabète.\n- Aide à prioriser les patients pour une évaluation diagnostique complémentaire (p. ex., dosage de l'HbA1c ou de la glycémie plasmatique à jeun).\n- Soutient les stratégies proactives de prévention du diabète dans les populations à risque.",
+    "when": "- Utiliser lors des consultations de routine chez les adultes sans diagnostic antérieur de diabète pour identifier ceux présentant un risque accru de développer un diabète sucré de type 2 ou un prédiabète.\n- Peut être administré par le clinicien ou en auto-administration.",
+    "pearls": "- Ne remplace pas les examens diagnostiques du diabète ; un risque élevé nécessite des examens de suivi.\n- Ne tient pas compte de l'origine ethnique ; certaines populations (p. ex., afro-américaine, amérindienne, américaine d'origine asiatique, hispanique/latino, insulaire du Pacifique) présentent un risque accru de développer un diabète de type 2.\n- Sensibilité de 79 % et spécificité de 67 % dans l'étude originale."
+  },
+  "next_steps": {
+    "advice": "Cet outil est destiné à l’évaluation du risque et au dépistage. Les patients présentant un score élevé ou des symptômes de diabète doivent bénéficier d’examens diagnostiques formels.",
+    "critical_actions": "",
+    "management": "**Score ≥5 :**\n\n- Le patient présente un risque élevé de diabète de type 2.\n- Recommander des examens de confirmation (p. ex., glycémie à jeun, HbA1c).\n- Conseiller des modifications du mode de vie, telles que l’alimentation et l’exercice, afin de réduire le risque de diabète.\n- Envisager une orientation vers des programmes de prévention du diabète ou des spécialistes en nutrition, si disponibles.\n\n**Score <5 :**\n\n- Fournir des conseils généraux sur le maintien d’un mode de vie sain.\n- Réévaluer le risque périodiquement.\n- Garder à l’esprit que le patient peut encore présenter un risque de diabète de type 2."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\nScores ≥5 should be formally screened for diabetes, per[ADA guidelines](https://www.ncbi.nlm.nih.gov/pubmed/26696675).",
+  "short_description": "Risque de DT2",
+  "medium_description": "Predicts risque de undiagnosed diabète pour determine who doit être screened.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40-49",
+          "value": 1
+        },
+        {
+          "label": "50-59",
+          "value": 2
+        },
+        {
+          "label": "≥60",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gest",
+      "label": "Previous gestational diabète",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "gender == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "famhx",
+      "label": "1st degree relative avec diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "htn",
+      "label": "Hypertension",
+      "tips": "Antécédents d’hypertension auto-déclarés, traitement antihypertenseur prescrit et/ou PA ≥140/90",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "phys",
+      "label": "Physiquement actif",
+      "tips": "Auto-déclaré par le patient",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa), kg/m²",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 25",
+          "value": 0
+        },
+        {
+          "label": "25 pour <30",
+          "value": 1
+        },
+        {
+          "label": "30 pour <40",
+          "value": 2
+        },
+        {
+          "label": "≥40",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "American Diabetes Association Professional Practice Committee. 2. Diagnosis and classification of diabetes: standards of care in diabetes-2024. Diabetes Care. 2024;47(Suppl 1):S20-S42.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38078589/",
+      "kind": "international"
+    },
+    {
+      "text": "Bang H, Edwards AM, Bomback AS, et al. Development and validation of a patient self-assessment score for diabetes risk. Ann Intern Med. 2009;151(11):775-83.",
+      "href": "https://annals.org/aim/article/745301/development-validation-patient-self-assessment-score-diabetes-risk ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee YH, Bang H, Kim DJ. How to Establish Clinical Prediction Models. Endocrinol Metab (Seoul). 2016;31(1):38-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26996421 ",
+      "kind": "other"
+    },
+    {
+      "text": "Buijsse B, Simmons RK, Griffin SJ, Schulze MB. Risk assessment tools for identifying individuals at risk of developing type 2 diabetes. Epidemiol Rev. 2011;33:46-62.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21622851 ",
+      "kind": "other"
+    },
+    {
+      "text": "Poltavskiy E, Kim DJ, Bang H. Comparison of screening scores for diabetes and prediabetes. Diabetes Res Clin Pract. 2016;118:146-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27371780 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Woo YC, Lee CH, Fong CHY, Tso AWK, Cheung BMY, Lam KSL. Validation of the diabetes screening tools proposed by the American Diabetes Association in an aging Chinese population. PLoS ONE. 2017;12(9):e0184840.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28910380 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.metabolic-score-insulin-resistance-mets-ir",
+    "calc.australian-type-2-diabetes-risk-ausdrisk-assessment-tool",
+    "calc.canadian-diabetes-risk-assessment-questionnaire-canrisk"
+  ],
+  "source_logic_hash": "5346b8945e9639ad55667f289a377a77",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4020,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

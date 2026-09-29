@@ -1,0 +1,364 @@
+{
+  "id": "calc.revised-mcdonald-criteria-multiple-sclerosis-diagnosis",
+  "slug": "revised-mcdonald-criteria-multiple-sclerosis-diagnosis",
+  "language": "fr",
+  "title": "Révisé McDonald critères pour multiple Sclerosis diagnostic",
+  "short_title": "Révisé McDonald critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "neurologie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "MS",
+    "Mcdonald",
+    "MRI",
+    "dissemination",
+    "time",
+    "space"
+  ],
+  "dosing": false,
+  "formula": "Les critères de McDonald révisés incluent également le diagnostic de **sclérose en plaques à forme progressive primaire (PPMS). Positif si :**\n\n- Progression de la maladie pendant ≥1 an (celle-ci peut être déterminée de manière prospective ou rétrospective)\n- Plus deux des trois critères suivants\n\n - Dissémination spatiale au niveau cérébral (≥1 lésion en hypersignal T2 dans ≥1 des régions juxtacorticale, périventriculaire, infratentorielle)\n - Dissémination spatiale au niveau médullaire (≥2 lésions en hypersignal T2)\n - LCR positif (bandes oligoclonales et/ou index IgG élevé)",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Les critères de McDonald révisés de 2010 sont considérés comme la référence (gold standard) pour le diagnostic de la SEP et utilisent les données d'IRM pour aider au diagnostic."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "**Critères de McDonald 2010 pour le diagnostic de la SEP**\n\n| Présentation clinique | Données supplémentaires nécessaires au diagnostic de SEP |\n| --- | --- |\n| ∙Deux poussées ou plus ∙Preuve clinique objective de 2 lésions ou plus, avec des éléments historiques raisonnables en faveur d'une poussée antérieure | Aucune ; les preuves cliniques suffisent. Des preuves supplémentaires (ex. : IRM cérébrale) sont souhaitables, mais doivent être compatibles avec une SEP |\n| ∙Deux poussées ou plus ∙Preuve clinique objective d'1 lésion | Dissémination spatiale démontrée par l'IRM OU Attente d'une nouvelle poussée clinique impliquant un site différent |\n| ∙Une poussée ∙Preuve clinique objective de 2 lésions ou plus | Dissémination temporelle démontrée par l'IRM OU deuxième poussée clinique |\n| ∙Une poussée ∙Preuve clinique objective d'1 lésion (syndrome clinique isolé) | Dissémination spatiale démontrée par l'IRM OU Attente d'une deuxième poussée clinique impliquant un autre site du SNC ET Dissémination temporelle, démontrée par l'IRM ou une deuxième poussée clinique |\n| ∙Progression neurologique insidieuse évocatrice d'une SEP | Un an de progression de la maladie et dissémination spatiale ET Une ou plusieurs lésions T2 cérébrales, dans des régions caractéristiques de la SEP ET Deux lésions focales T2 ou plus dans la moelle épinière LCR positif |\n| Remarques : Une poussée est définie comme un trouble neurologique du type observé dans la SEP. Elle peut être documentée par un rapport subjectif ou par une observation objective, mais elle doit durer au moins 24 heures. Les pseudopoussées et les épisodes paroxystiques isolés doivent être exclus. Pour être considérées comme des poussées distinctes, au moins 30 jours doivent s'écouler entre le début d'un épisode et le début d'un autre épisode. | |"
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Diagnostic de SEP basé sur les résultats de l'IRM.",
+  "medium_description": "Détermine la présence d'une SEP (sclérose en plaques) à l'aide des résultats de l'IRM.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "attacks",
+      "label": "≥2 poussées",
+      "tips": "Selon Polman et al., 2010 : « Une poussée est définie comme un trouble neurologique du type observé dans la SEP. Elle peut être documentée par un rapport subjectif ou par une observation objective, mais elle doit durer au moins 24 heures. Les pseudopoussées et les épisodes paroxystiques isolés doivent être exclus. Pour être considérées comme des poussées distinctes, au moins 30 jours doivent s'écouler entre le début d'un épisode et le début d'un autre épisode. »",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lesions",
+      "label": "Preuve clinique objective de ≥2 lésions à l'IRM",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "both",
+      "label": "Objective clinique evidence de 1 lesion avec reasonable historical evidence de prior attack",
+      "tips": "Selon Polman et al., 2010 : « Le diagnostic clinique basé sur des constatations cliniques objectives pour 2 poussées est le plus fiable. Des éléments historiques raisonnables pour 1 poussée passée, en l'absence de constatations neurologiques objectives documentées, peuvent inclure des événements historiques avec des symptômes et une évolution caractéristiques d'un événement démyélinisant inflammatoire antérieur ; au moins 1 poussée doit toutefois être étayée par des constatations objectives. »",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "none",
+      "label": "**If none de these apply, click here pour continue pour additional critères**",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "lesions==0 && attacks==0 && both==0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "perivent",
+      "label": "Periventricular",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "juxta",
+      "label": "Juxtacordial",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "infra",
+      "label": "Infratentorial",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spine",
+      "label": "Moelle épinière",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "t2",
+      "label": "New T2 et/ou gadolinium-enhancing lesion(s) sur follow-up MRI, avec reference pour initial scan, irrespective de timing de initial scan.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "simultaneous",
+      "label": "Présence simultanée de lésions asymptomatiques se rehaussant après gadolinium et non se rehaussant, à tout moment.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "prog",
+      "label": "Un an de progression de la maladie (rétrospective ou prospective)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "disspine",
+      "label": "Evidence de dissemination dans space dans spinal cord",
+      "tips": "Basé sur ≥2 lésions T2 dans la moelle épinière",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "csf",
+      "label": "LCR positif",
+      "tips": "Mise en évidence par focalisation isoélectrique de bandes oligoclonales et/ou d'un index IgG élevé",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "none == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McDonald WI, Compston A, Edan G, et al. Recommended diagnostic criteria for multiple sclerosis: guidelines from the International Panel on the diagnosis of multiple sclerosis. Ann Neurol. 2001;50:121–127",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11456302",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Runia TF, Jafari N and Hintzen RQ. Application of the 2010 revised criteria for the diagnosis of multiple sclerosis to patients with clinically isolated syndromes. European Journal of Neurology, 2013; 20:1510–1516. doi: 10.1111/ene.12243",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23906114",
+      "kind": "other"
+    },
+    {
+      "text": "Polman CH, Reingold SC, Edan G, et al. Diagnostic criteria for multiple sclerosis: 2005 revisions to the “McDonald Criteria.” Ann Neurol. 2005;58:840–846.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16283615",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Polman CH, Reingold SC, Banwell B, et al. Diagnostic criteria for multiple sclerosis: 2010 Revisions to the McDonald criteria. Annals of Neurology. 2011;69(2):292-302. doi:10.1002/ana.22366.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3084507/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mcdonald-criteria-multiple-sclerosis-2017-revision",
+    "calc.expanded-disability-status-scale-edss-functional-systems-score-fss",
+    "calc.disease-steps-multiple-sclerosis"
+  ],
+  "source_logic_hash": "9624fad4797ef65dd0b6daada26c92c5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2198,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

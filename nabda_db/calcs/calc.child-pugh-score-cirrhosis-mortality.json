@@ -1,0 +1,201 @@
+{
+  "id": "calc.child-pugh-score-cirrhosis-mortality",
+  "slug": "child-pugh-score-cirrhosis-mortality",
+  "language": "fr",
+  "title": "Child-Pugh score pour Cirrhosis mortalité",
+  "short_title": "Score de Child-Pugh",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "liver",
+    "child's score",
+    "childs score",
+    "CTP",
+    "child turcotte pugh",
+    "turcotte",
+    "pugh",
+    "child pugh"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Le score de Child-Pugh peut être utile dans le pronostic des patients atteints de cirrhose, mais des scores plus récents comme le score MELD et le MELD-Na sont devenus davantage utilisés en raison de leur meilleure valeur pronostique."
+  },
+  "next_steps": {
+    "advice": "Pour les patients dont les scores sont unexpectedly élevés ou bas, envisager de comparer le score de Child-Pugh à un autre score comme le score MELD.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "[Grades d'encéphalopathie](nabda:calc.west-haven-criteria) (d'après la [FDA](https://www.fda.gov/downloads/Drugs/GuidanceComplianceRegulatoryInformation/Guidances/UCM072123.pdf))\n\n- Grade 0 : conscience, personnalité, examen neurologique et électroencéphalogramme normaux\n- Grade 1 : agitation, sommeil perturbé, irritable/agité, tremblement, écriture altérée, ondes à 5 cps\n- Grade 2 : léthargie, désorientation temporelle, comportement inapproprié, astérixis, ataxie, ondes triphasiques lentes\n- Grade 3 : somnolence, stupeur, désorientation spatiale, réflexes hyperactifs, rigidité, ondes plus lentes\n- Grade 4 : coma non réveillable, absence de personnalité/comportement, décérébration, activité delta lente à 2-3 cps",
+  "short_description": "Pronostic dans cirrhosis; guides traitement.",
+  "medium_description": "Estimates cirrhosis gravité.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "bilirubin",
+      "label": "Bilirubine (totale)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 2 mg/dL (<34.2 µmol/L)",
+          "value": 1
+        },
+        {
+          "label": "2-3 mg/dL (34.2-51.3 µmol/L)",
+          "value": 2
+        },
+        {
+          "label": ">3 mg/dL (>51.3 µmol/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">3.5 g/dL (>35 g/L)",
+          "value": 1
+        },
+        {
+          "label": "2.8-3.5 g/dL (28-35 g/L)",
+          "value": 2
+        },
+        {
+          "label": "< 2.8 g/dL (<28 g/L)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 1.7",
+          "value": 1
+        },
+        {
+          "label": "1.7-2.3",
+          "value": 2
+        },
+        {
+          "label": ">2.3",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ascites",
+      "label": "Ascites",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 1
+        },
+        {
+          "label": "Slight",
+          "value": 2
+        },
+        {
+          "label": "Modéré",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "encephalopathy",
+      "label": "Encephalopathy",
+      "tips": "See encephalopathy grades in[Evidence](#evidence)> Facts & Figures",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Pas d'encéphalopathie",
+          "value": 1
+        },
+        {
+          "label": "Grade 1-2",
+          "value": 2
+        },
+        {
+          "label": "Grade 3-4",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Child CG, Turcotte JG. Surgery and portal hypertension. In: The liver and portal hypertension. Edited by CG Child. Philadelphia: Saunders 1964:50-64.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/4950264/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pugh RN, Murray-Lyon IM, Dawson JL, Pietroni MC, Williams R (1973). Transection of the oesophagus for bleeding oesophageal varices. The British journal of surgery 60 (8).",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4541913",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.peld-cr",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "03a8752c67f431a7af61287aa666e3c8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 340,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [
+    "g.cirrhose",
+    "g.hepatite-b",
+    "g.hepatite-c"
+  ],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

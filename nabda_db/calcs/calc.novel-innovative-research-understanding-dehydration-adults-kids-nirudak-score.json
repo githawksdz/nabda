@@ -1,0 +1,210 @@
+{
+  "id": "calc.novel-innovative-research-understanding-dehydration-adults-kids-nirudak-score",
+  "slug": "novel-innovative-research-understanding-dehydration-adults-kids-nirudak-score",
+  "language": "en",
+  "title": "Novel, Innovative Research pour Understanding Dehydration dans adultes et Kids (NIRUDAK) score",
+  "short_title": "NIRUDAK score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Troubles gastro-intestinaux fonctionnels de l’enfant et de l’adolescent",
+    "Infection à Clostridium difficile",
+    "Colitis",
+    "Dehydration",
+    "Gastroenteritis",
+    "Hyponatremia",
+    "Malnutrition",
+    "Santé publique",
+    "Hypokalemia"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhea",
+    "Nausea",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Novel, Innovative Research for Understanding Dehydration in Adults and Kids (NIRUDAK) Score",
+    "NIRUDAK Score",
+    "dehydration score",
+    "diarrhea",
+    "acute diarrhea",
+    "dehydration classification",
+    "child dehydration",
+    "adult dehydration",
+    "dehydration"
+  ],
+  "dosing": false,
+  "formula": "The NIRUDAK Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Skin pinch | Rapid | 0 |\n| Slow | 2 | |\n| Very slow | 4 | |\n| Eye level | Normal | 0 |\n| Sunken | 2 | |\n| Respiration depth | Normal | 0 |\n| Deep | 2 | |\n| Urine output | Normal | 0 |\n| Decreased or dark | 1 | |\n| Minimal or none | 2 | |\n| Radial pulse | Strong | 0 |\n| Decreased | 1 | |\n| Absent | 4 | |",
+  "how_to_use": {
+    "why": "- More accurate in assessing dehydration severity than the WHO Integrated Management of Adolescent and Adult Illness (IMAI) algorithm and standard clinical judgment alone.\n- Enhances consistency among healthcare providers, reducing variability in dehydration assessment.\n- Helps optimize fluid management decisions, minimizing unnecessary IV fluids while ensuring appropriate treatment for severe cases.",
+    "when": "Use for patients aged 5 years and older presenting with acute diarrhea in resource-limited settings to assess dehydration severity.",
+    "pearls": "- Originally derived from data on 2,172 patients aged 5 and older with acute diarrhea (≥3 loose stools per day for ≤7 days) in Bangladesh.\n- Patients were classified by percent weight change with rehydration into the following categories: severe dehydration (>9% weight change), some dehydration (3%–9% weight change), or no dehydration (<3% weight change).\n- Not validated for diarrhea caused by conditions other than gastroenteritis or for dehydration from non-diarrheal causes.\n- Several versions of this tool exist. This simplified, points-based version was introduced in a[2023 study by Levine et al](https://pubmed.ncbi.nlm.nih.gov/37776870/). It incorporates urine output and radial pulse but does not include age, sex, vomiting episodes, or systolic blood pressure from the full model."
+  },
+  "next_steps": {
+    "advice": "This tool should not replace clinical judgment—signs of shock or altered mental status warrant urgent intervention regardless of the score.",
+    "critical_actions": "",
+    "management": "**No dehydration (score 0–3):**\n\n- Encourage fluid intake and continue a normal diet.\n- Provide education on warning signs for deterioration.\n\n**Some dehydration (score 4–6):**\n\n- Initiate oral rehydration solution (ORS).\n- Consider short-term observation in a healthcare setting.\n\n**Severe dehydration (score ≥7):**\n\n- Initiate IV rehydration immediately.\n- Hospitalize if resources allow.\n- Monitor for complications (e.g., electrolyte abnormalities, worsening dehydration)."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| NIRUDAK Score | Dehydration Category |\n| --- | --- |\n| 0-3 | No dehydration |\n| 4-6 | Some dehydration |\n| ≥7 | Severe dehydration |",
+  "short_description": "Dehydration classification dans patients ≥5 years.",
+  "medium_description": "Classifies dehydration dans patients ≥5 years avec aigu diarrhea.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "skin",
+      "label": "Pli cutané",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Rapid",
+          "value": 0
+        },
+        {
+          "label": "Slow",
+          "value": 2
+        },
+        {
+          "label": "Very slow",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eye",
+      "label": "Eye level",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Sunken",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp",
+      "label": "Respiration depth",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Deep",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "urine",
+      "label": "Diurèse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Decreased ou dark",
+          "value": 1
+        },
+        {
+          "label": "Minimal ou none",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Radial pulse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Strong",
+          "value": 0
+        },
+        {
+          "label": "Diminué",
+          "value": 1
+        },
+        {
+          "label": "Absent",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Levine AC, Barry MA, Gainey M, et al. Derivation of the first clinical diagnostic models for dehydration severity in patients over five years with acute diarrhea. PLoS Negl Trop Dis. 2021;15(3):e0009266.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33690646/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Barry MA, Qu K, Gainey M, et al. Derivation and internal validation of a score to predict dehydration severity in patients over 5 years with acute diarrhea. Am J Trop Med Hyg. 2021;105(5):1368-1375.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34398821/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Prasad N, Yadav B. Severity assessment tools for dehydration associated with diarrhoea in a low-resource setting. Lancet Glob Health. 2023;11(11):e1668-e1669.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37776868/",
+      "kind": "other"
+    },
+    {
+      "text": "Levine, A. et al. External Validation and Comparison of NIRUDAK Models and WHO Algorithm for Assessing Dehydration in Patients With Acute Diarrhea. Annals of Emergency Medicine, Volume 82, Issue 4, S99 - S100.",
+      "href": "https://www.annemergmed.com/article/S0196-0644(23)00900-9/fulltext",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Levine AC, Gainey M, Qu K, et al. A comparison of the NIRUDAK models and WHO algorithm for dehydration assessment in older children and adults with acute diarrhoea: a prospective, observational study. Lancet Glob Health. 2023;11(11):e1725-e1733.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37776870/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "4caf10488d2a1cdadf4eafe0ad5944cf",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10593,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

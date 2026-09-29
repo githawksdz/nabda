@@ -1,0 +1,343 @@
+{
+  "id": "calc.local-anesthetic-dosing-calculator",
+  "slug": "local-anesthetic-dosing-calculator",
+  "language": "en",
+  "title": "Calculateur de posologie des anesthésiques locaux",
+  "short_title": "Posologie des anesthésiques locaux",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "douleur",
+    "pharmacotherapie",
+    "chirurgie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Douleur aiguë"
+  ],
+  "chief_complaints": [
+    "Douleur"
+  ],
+  "abbreviations": [
+    "Local anesthesia",
+    "marcaine",
+    "lido",
+    "lidocaine",
+    "mepivacaine",
+    "prilocaine",
+    "bupivacaine",
+    "etidocaine",
+    "ropivacaine",
+    "levobupivacaine",
+    "cocaine",
+    "procaine",
+    "tetracaine",
+    "chloroprocaine",
+    "benzocaine",
+    "LAST",
+    "local anesthetic systemic toxicity",
+    "nerve block",
+    "nerve block anesthesia dose",
+    "regional anesthesia",
+    "regional anesthesia dose"
+  ],
+  "dosing": true,
+  "formula": "Max allowable subQ dose based on weight, mg = max allowable subQ dose for a drug, mg/kg × weight, kg\nMax allowable subQ dose based on weight, mL = max allowable subQ dose for a drug, mg/kg × (weight, kg / 10) × (1 / concentration, %)\n\n| Local Anesthetic | Plain Maximum Dose, mg/kg | With Epinephrine Maximum Dose, mg/kg |\n| --- | --- | --- |\n| Bupivacaine/Levobupivacaine | 2 | — |\n| Lidocaine | 5 | 7 |\n| Mepivacaine | 5 | 7 |\n| Prilocaine | 6 | — |\n| Ropivacaine | 3 | — |\n\n*Use ideal or lean [body weight](nabda:calc.ideal-body-weight-adjusted-body-weight) for dosing calculation.\n\nFrom[Long 2022](https://pubmed.ncbi.nlm.nih.gov/35777259/).",
+  "how_to_use": {
+    "why": "LAST can occur with any local anesthetic through any route of administration. Calculating the maximum dose in advance may help reduce risk.",
+    "when": "Use the dosing calculator during procedures involving higher doses of local anesthetics (i.e. large laceration repairs, intradermal injections, nerve blocks, regional anesthesia) to reduce risk of toxicity and adverse effects including local anesthetic systemic toxicity (LAST).",
+    "pearls": "- Toxicity is based on [ideal body weight](nabda:calc.ideal-body-weight-adjusted-body-weight) .\n- Local anesthetic systemic toxicity (LAST) is rare but potentially life-threatening. Symptoms can be divided into two main categories:\n- Patient risk factors for LAST include:\n- Procedural risk factors for LAST include:\n- Ways to reduce risk of LAST ([Bailey 2025](https://pubmed.ncbi.nlm.nih.gov/40954415/),[On'Gele 2024](https://pubmed.ncbi.nlm.nih.gov/38705678/)):"
+  },
+  "next_steps": {
+    "advice": "- If the anesthetic dose is above the threshold for toxicity, consider lowering the dosage to the weight-determined range.\n- Prepare for adverse events by storing a checklist for management as well as intralipid in a nerve block checklist and having intralipid readily available and easy to access.",
+    "critical_actions": "De multiples variables peuvent influencer le risque qu'un patient développe une LAST. Ce calculateur basé sur le poids doit être utilisé pour générer une estimation approximative des doses toxiques.",
+    "management": "- LAST is an uncommon but potentially life-threatening complication of local anesthetic use that may be encountered in the ED, hospital, or surgical center.\n- Patients at extremes of age or with organ dysfunction are at higher risk. Inadvertent intra-arterial or intravenous injection, as well as repeated doses and higher doses of local anesthetics are associated with greater risk of developing LAST.\n- Using ultrasound guidance, aspirating prior to injection, and utilizing the minimal local anesthetic dose needed are techniques that can reduce the risk of LAST.\n\nDiagnosing LAST:\n\n- Local anesthetic toxicity results from sodium channel blockade, which affects the central nervous system and cardiac system. The CNS is more sensitive to the effects of local anesthetics than the cardiac system and will generally manifest signs/symptoms of toxicity first.\n- The presenting symptoms of LAST include perioral numbness, metallic taste, mental status changes or anxiety, visual changes, muscle twitching, and ultimately, seizures, coma, and respiratory depression. Cardiovascular effects include tachycardia, hypertension, ventricular arrhythmias and/or asystole.\n\nManagement of LAST (see guidelines: **[American Society of Regional Anesthesia and Pain Medicine Local Anesthetic Systemic Toxicity checklist: 2020 version](https://pubmed.ncbi.nlm.nih.gov/33148630/)** ):\n\n- Management of LAST requires immediate recognition and a coordinated response, starting with stopping the local anesthetic administration and calling for expert help while initiating a dedicated LAST protocol.\n- Prioritize airway management, airway support with 100% oxygen or noninvasive ventilation, and support circulation according to advanced cardiac life support (ACLS) guidelines.\n- Avoid calcium channel blockers, beta-blockers, and lidocaine, as they can worsen cardiovascular depression and toxicity.\n- Use epinephrine in smaller doses (<1 mcg/kg) for LAST-induced shock.\n- Seizures should be promptly controlled with benzodiazepines (e.g., midazolam, lorazepam), avoiding propofol which can exacerbate cardiovascular depression.\n- For cardiovascular compromise, including hypotension and life-threatening arrhythmias, 20% lipid emulsion therapy is critical.\n\n - Administer an initial bolus (e.g., 1.5 mL/kg over 1 minute) followed by a continuous infusion (e.g., 0.25 mL/kg/min).\n - Repeat boluses can be given after 5 minutes for 2 or more times for persistent hemodynamic instability.\n- Vigorous resuscitation should continue until stability is achieved, followed by close monitoring in an intensive care setting."
+  },
+  "evidence": "There are no randomized clinical trials involving LAST. Much of the existing evidence is based on case reports, expert opinion, and retrospective anesthesia databases.",
+  "more_info": "",
+  "short_description": "Détermine la dose maximale sûre d’anesthésiques locaux.",
+  "medium_description": "Determines maximum safe dose de local anesthetics basé sur drug concentration et patient body poids.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "drug_1",
+      "label": "Médicament",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Bupivacaïne/Lévobupivacaïne",
+          "value": 1
+        },
+        {
+          "label": "Lidocaïne",
+          "value": 2
+        },
+        {
+          "label": "Mépivacaïne",
+          "value": 3
+        },
+        {
+          "label": "Prilocaïne",
+          "value": 3.5
+        },
+        {
+          "label": "Ropivacaïne",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "[Body weight](nabda:calc.ideal-body-weight-adjusted-body-weight)",
+      "tips": "Use ideal or lean body weight for dosing calculation.",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "concentration",
+      "label": "Concentration",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "drug_1 != 4",
+      "options": [
+        {
+          "label": "0,25 %",
+          "value": 2.5
+        },
+        {
+          "label": "0,5 %",
+          "value": 5
+        },
+        {
+          "label": "0,75 %",
+          "value": 7.5
+        },
+        {
+          "label": "1 %",
+          "value": 10
+        },
+        {
+          "label": "1.5%",
+          "value": 15
+        },
+        {
+          "label": "2 %",
+          "value": 20
+        },
+        {
+          "label": "3 %",
+          "value": 30
+        },
+        {
+          "label": "4 %",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "con_ropi",
+      "label": "Concentration",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "drug_1 == 4",
+      "options": [
+        {
+          "label": "0,2 %",
+          "value": 2
+        },
+        {
+          "label": "0,25 %",
+          "value": 2.5
+        },
+        {
+          "label": "0,5 %",
+          "value": 5
+        },
+        {
+          "label": "0,75 %",
+          "value": 7.5
+        },
+        {
+          "label": "1 %",
+          "value": 10
+        },
+        {
+          "label": "1.5%",
+          "value": 15
+        },
+        {
+          "label": "2 %",
+          "value": 20
+        },
+        {
+          "label": "3 %",
+          "value": 30
+        },
+        {
+          "label": "4 %",
+          "value": 40
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "epi",
+      "label": "Avec epinephrine",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "drug_1 == 2 || drug_1 == 3",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "AAGBI Quick Reference Handbook. Guidelines for unexpected or uncommon anaesthesia-related emergencies.",
+      "href": "https://anaesthetists.org/Home/Resources-publications/Safety-alerts/Anaesthesia-emergencies/Quick-Reference-Handbook",
+      "kind": "international"
+    },
+    {
+      "text": "Neal JM, Barrington MJ, Fettiplace MR, et al. The Third American Society of Regional Anesthesia and Pain Medicine Practice Advisory on Local Anesthetic Systemic Toxicity: Executive Summary 2017. Reg Anesth Pain Med. 2018;43(2):113-123.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29356773",
+      "kind": "international"
+    },
+    {
+      "text": "Lavonas EJ, Akpunonu PD, Arens AM, Babu KM, Cao D, Hoffman RS, Hoyte CO, Mazer-Amirshahi ME, Stolbach A, St-Onge M, Thompson TM, Wang GS, Hoover AV, Drennan IR; American Heart Association. 2023 American Heart Association Focused Update on the Management of Patients With Cardiac Arrest or Life-Threatening Toxicity Due to Poisoning: An Update to the American Heart Association Guidelines for Cardiopulmonary Resuscitation and Emergency Cardiovascular Care. Circulation. 2023 Oct 17;148(16):e149-e184.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37721023/",
+      "kind": "international"
+    },
+    {
+      "text": "Sztajnkrycer MD. Local Anesthetics. In: Hoffman RS, Howland M, Lewin NA, Nelson LS, Goldfrank LR. eds. Goldfrank’s Toxicologic Emergencies, 11e New York, NY: McGraw-Hill; 2019.",
+      "href": "https://accesspharmacy.mhmedical.com/content.aspx?sectionid=210274249&bookid=2569&Resultclick=2",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rosenberg PH, Veering BT, Urmey WF. Maximum recommended doses of local anesthetics: a multifactorial concept. Reg Anesth Pain Med. 2004 Nov-Dec;29(6):564-75; discussion 524. doi: 10.1016/j.rapm.2004.08.003.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15635516/",
+      "kind": "other"
+    },
+    {
+      "text": "Schwartz DR, Kaufman B. Local Anesthetics. In: Hoffman RS, Howland M, Lewin NA, Nelson LS, Goldfrank LR. eds. Goldfrank's Toxicologic Emergencies, 10e. McGraw-Hill Education; 2015.",
+      "href": "https://accesspharmacy.mhmedical.com/content.aspx?bookid=1163&sectionid=65097021&__cf_chl_f_tk=PWb1VpFdOYmvdrP0kAAwyMfakmyf80BzeMh7fmY9iRQ-1782960512-1.0.1.1-93pxtsKkalDLJ.s4q9AbWKHMPXMf3Jb9ElvJuBD17qU",
+      "kind": "other"
+    },
+    {
+      "text": "Neal JM, Neal EJ, Weinberg GL. American Society of Regional Anesthesia and Pain Medicine Local Anesthetic Systemic Toxicity checklist: 2020 version. Reg Anesth Pain Med. 2021 Jan;46(1):81-82.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33148630/",
+      "kind": "other"
+    },
+    {
+      "text": "Long B, Chavez S, Gottlieb M, Montrief T, Brady WJ. Local anesthetic systemic toxicity: A narrative review for emergency clinicians. Am J Emerg Med. 2022 Sep;59:42-48. doi: 10.1016/j.ajem.2022.06.017",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35777259/",
+      "kind": "other"
+    },
+    {
+      "text": "On'Gele MO, Weintraub S, Qi V, Kim J. Local Anesthetics, Local Anesthetic Systemic Toxicity (LAST), and Liposomal Bupivacaine. Anesthesiol Clin. 2024 Jun;42(2):303-315. doi: 10.1016/j.anclin.2023.11.011",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38705678/",
+      "kind": "other"
+    },
+    {
+      "text": "Miller's Anesthesia: Local Anesthesia: 10th Edition, chapter 25: Gropper, M. A., Cohen, N. H., Eriksson, L. I., Fleisher, L. A., Leslie, K., & Johnson-Akeju, O. (Eds.). (2025). Local anesthetics (Chap. 25, p742-767) in Miller’s anesthesia (10th ed.). Elsevier.",
+      "href": "https://www.bjanaesthesia.org/article/S0007-0912(25)00379-4/abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Bailey JG, Barry G, Volk T. Local anesthetic dosing for fascial plane blocks to avoid systemic toxicity: a narrative review. Can J Anaesth. 2025;72(9):1423-1447. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40954415/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.face-legs-activity-cry-consolability-flacc-scale",
+    "calc.ariscat-score-postoperative-pulmonary-complications",
+    "calc.apfel-score-postoperative-nausea-vomiting",
+    "calc.ideal-body-weight-adjusted-body-weight"
+  ],
+  "source_logic_hash": "11f9db2c11545897b7a59309d642956f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ideal-body-weight-adjusted-body-weight",
+      "text": "body weight"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ideal-body-weight-adjusted-body-weight",
+      "text": "body weight"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10205,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar weight = parseFloat(weight);\nvar drug_1 = parseFloat(drug_1);\nvar epi = parseFloat(epi);\nvar concentration = parseFloat(concentration);\nvar con_ropi = parseFloat(con_ropi);\n\nvar conc_name, drug_name;\n\nif (con_ropi == 2) {\n  concentration = 2;\n} else if (con_ropi == 2.5) {\n  concentration = 2.5;\n} else if (con_ropi == 5) {\n  concentration = 5;\n} else if (con_ropi == 7.5) {\n  concentration = 7.5;\n} else if (con_ropi == 10) {\n  concentration = 10;\n} else if (con_ropi == 15) {\n  concentration = 15;\n} else if (con_ropi == 20) {\n  concentration = 20;\n} else if (con_ropi == 30) {\n  concentration = 30;\n} else if (con_ropi == 40) {\n  concentration = 40;\n} \n\nif (concentration == 2.5) {\n  conc_name = '0.25%';\n} else if (concentration == 5) {\n  conc_name = '0.5%';\n} else if (concentration == 7.5) {\n  conc_name = '0.75%';\n} else if (concentration == 10) {\n  conc_name = '1%';\n} else if (concentration == 15) {\n  conc_name = '1.5%';\n} else if (concentration == 20) {\n  conc_name = '2%';\n} else if (concentration == 30) {\n  conc_name = '3%';\n} else if (concentration == 40) {\n  conc_name = '4%';\n} else if (concentration == 2) {\n  conc_name = '0.2%';\n}\n\n\nif (drug_1 == 1) {\n  drug_1 = 2;\n  drug_name = 'bupivacaine/levobupivacaine';\n} else if (drug_1 == 2 && epi == 0) {\n  drug_1 = 5;\n  drug_name = 'lidocaine';\n} else if (drug_1 == 2 && epi == 1) {\n  drug_1 = 7;\n  drug_name = 'lidocaine';\n} else if (drug_1 == 3 && epi == 0) {\n  drug_1 = 5;\n  drug_name = 'mepivacaine';\n} else if (drug_1 == 3 && epi == 1) {\n  drug_1 = 7;\n  drug_name = 'mepivacaine';\n} else if (drug_1 == 3.5) {\n  drug_1 = 6;\n  drug_name = 'prilocaine';\n} else if (drug_1 == 4) {\n  drug_1 = 3;\n  drug_name = 'ropivacaine';\n}\n\n// max dose mg\nvar score = weight * drug_1;\n\n// max dose mL\nvar score2 = score / concentration;\n \nscore2 = score2.toFixed(1);\n\nvar wt, unit; \n\nif (UOMSYSTEM == true) {\n  wt = weight * 2.2046;\n  unit = 'lb';\n} else {\n  wt = weight;\n  unit = 'kg';\n}\n\nwt = wt.toFixed(0);\n\nvar msg1;\nif (epi == 1) {\n  msg1 = 'Max allowable subQ dose of ' + conc_name + ' ' + drug_name + ' (with epinephrine) in a ' + wt + '-' + unit + ' patient (' + score.toFixed(1) + ' mg ' + drug_name + ')';\n} else {\n  msg1 = 'Max allowable subQ dose of ' + conc_name + ' ' + drug_name + ' (without epinephrine) in a ' + wt + '-' + unit + ' patient (' + score.toFixed(1) + ' mg ' + drug_name + ')';\n}\n\nvar msg2;\nif (epi == 1) {\n  msg2 = 'Max allowable subQ dose (with epinephrine)'\n} else {\n  msg2 = 'Max allowable subQ dose (without epinephrine)'\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score2,\n    value_text: 'mL',\n    message: msg2\n});\n\ncalc_output.push({\n    name: '10205_Local Anesthetic Dosing_result',\n    value: score2,\n    value_text: 'mL',\n    message: msg1  \n});",
+  "before_use": "- Ce calculateur fournit des indications pour la posologie maximale des anesthésiques locaux et ne doit pas être utilisé comme principal moyen de détermination de la posologie. Toujours vérifier et privilégier la prudence.\n- Ce calculateur n’est pas utilisé pour la bupivacaïne liposomale, qui est une bupivacaïne conçue dans un système injectable à libération prolongée.",
+  "instructions": "Le débat se poursuit quant à la mesure du poids corporel qui guide le mieux une posologie sûre des anesthésiques locaux.\n\n- Certaines références utilisent le poids corporel réel du patient, ce qui est généralement approprié pour les patients dont le poids se situe dans une plage habituelle.\n- Les personnes aux deux extrémités du spectre pondéral sont plus vulnérables aux erreurs posologiques.\n- Les organismes professionnels, tels que l’American Society of Regional Anesthesia and Pain Medicine (ASRA) et la Society for Obesity and Bariatric Anaesthesia (SOBA), recommandent une posologie fondée sur le poids corporel maigre (LBW), en particulier chez les patients atteints d’obésité.\n- D’autres ressources, telles que le British National Formulary (BNF) et le nomogramme de l’Association of Anaesthetists, utilisent le [poids corporel idéal (IBW)](nabda:calc.ideal-body-weight-adjusted-body-weight).\n\nQuelle que soit la méthode de calcul, les cliniciens doivent confirmer que la quantité finale reste inférieure à la dose maximale publiée de l’agent et rester vigilants vis-à-vis de la toxicité systémique des anesthésiques locaux.\n\n**Note :** Les versions précédentes de Goldfrank’s rapportaient une dose maximale admissible augmentée en raison des effets vasoconstricteurs de l’épinéphrine lorsqu’elle est ajoutée aux anesthésiques locaux. La version la plus récente n’inclut plus cet ajustement. Bien qu’il existe probablement une dose sûre plus élevée lorsque l’épinéphrine est ajoutée, nous n’incluons plus cette estimation dans ce calculateur, et comme toujours, les posologies doivent être revérifiées et examinées avec votre pharmacie locale et vos politiques locales.",
+  "contributor_ids": [
+    "william-caputo-md"
+  ],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [
+    "Weight"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bupivacaine",
+    "s.levobupivacaine",
+    "s.lidocaine",
+    "s.mepivacaine",
+    "s.prilocaine",
+    "s.ropivacaine",
+    "s.adrenaline-lidocaine",
+    "s.adrenaline-mepivacaine",
+    "s.benzalkonium-lidocaine",
+    "s.cetrimide-lidocaine",
+    "s.chlorhexidine-lidocaine",
+    "s.hexamidine-lidocaine",
+    "s.lidocaine-prilocaine",
+    "s.lidocaine-zinc",
+    "s.lidocaine-magnesium",
+    "s.lidocaine-mefenidramium-methylsulfate",
+    "s.lidocaine-phenazone",
+    "s.lidocaine-nifedipine",
+    "s.lidocaine-naphazoline",
+    "s.alcool-dichlorobenzylique-amylmetacresol-lidocaine",
+    "s.enoxolone-erysimum-lidocaine",
+    "s.hydrocortisone-lidocaine-mefenidramium-methylsulfate",
+    "s.lidocaine-phenylephrine-tropicamide",
+    "s.carraghenates-lidocaine-titane-dioxyde-zinc-oxyde",
+    "s.fludrocortisone-lidocaine-neomycine-polymyxine-b",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine",
+    "s.metronidazole-miconazole-lidocaine",
+    "s.polymyxine-neomycine-fludrocortisone-lidocaine",
+    "s.tribenoside-lidocaine",
+    "s.carraghenates-dioxyde-titane-oxyde-zinc-lidocaine"
+  ],
+  "engine_sha256": "240aa0cb4ffe524f3b0d64d451992d470786c5b3f1cd21f83dc4b188638ca09c"
+}

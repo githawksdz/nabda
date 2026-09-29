@@ -1,0 +1,283 @@
+{
+  "id": "calc.oakland-score-safe-discharge-lower-gi-bleed",
+  "slug": "oakland-score-safe-discharge-lower-gi-bleed",
+  "language": "en",
+  "title": "Oakland score pour Safe Discharge After Lower GI Bleed",
+  "short_title": "Oakland score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "gastroenterologie",
+    "medecine-interne",
+    "radiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Bleeding/Hemorrhage",
+    "Gastroenteritis",
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Sang dans les selles",
+    "Melena"
+  ],
+  "abbreviations": [
+    "Oakland score",
+    "oakland GI bleed",
+    "safe discharge after GI bleed",
+    "GI bleed"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <40 | 0 |\n| 40-69 | 1 | |\n| ≥70 | 2 | |\n| Sex | Female | 0 |\n| Male | 1 | |\n| Previous lower GI bleeding admission | No | 0 |\n| Yes | 1 | |\n| DRE findings | No blood | 0 |\n| Blood | 1 | |\n| Heart rate, bpm | <70 | 0 |\n| 70-89 | 1 | |\n| 90-109 | 2 | |\n| ≥110 | 3 | |\n| Systolic blood pressure, mmHg | 50-89 | 5 |\n| 90-119 | 4 | |\n| 120-129 | 3 | |\n| 130-159 | 2 | |\n| ≥160 | 0 | |\n| Hemoglobin, g/L (g/dL) | 36-69 (3.6-6.9) | 22 |\n| 70-89 (7-8.9) | 17 | |\n| 90-109 (9-10.9) | 13 | |\n| 110-129 (11-12.9) | 8 | |\n| 130-159 (13-15.9) | 4 | |\n| ≥160 (16) | 0 | |",
+  "how_to_use": {
+    "why": "- Uses readily available demographic and clinical variables to predict both the safety of discharge and the risk of major adverse events, including major bleeding, the need for blood transfusion, or interventions to achieve hemostasis.\n- Helps assess the risk of adverse outcomes and determine whether a patient is a suitable candidate for outpatient management.",
+    "when": "In emergency department patients who present with lower gastrointestinal bleeding (LGIB).",
+    "pearls": "- A score of ≤8 does not have sufficient diagnostic accuracy to independently justify discharge for outpatient work up.\n- A score >8 is specific for predicting adverse events including readmission, major hemorrhage, and blood transfusion requirement; and that the patient may not be safe for discharge."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- The original score was created and validated using a cutoff of ≤8.\n- Scores >8 identify high-risk patients who may need hospital admission.\n- Clinical judgment should always be utilized when determining disposition planning for patients with suspected lower GI bleed."
+  },
+  "evidence": "A network meta-analysis that included 4 trials assessed the predictive value of the Oakland score for determining safe discharge for patients with LGIB. For predicting safe discharge, an Oakland score below 8 had low sensitivity (10%, 95% CI: 5–20%) but high specificity (97%, 95% CI: 95–98%). However, the negative likelihood ratio (LR–) was 0.9, indicating poor ability to rule out unsafe discharge.\n\nAn Oakland score greater than 8 is associated with a higher risk of adverse events. For major bleeding, sensitivity was 97% (95% CI: 95–99%), specificity was 9% (95% CI: 7–12%), and a positive likelihood ratio (LR+) of 1.07. For predicting the need for blood transfusion, sensitivity reached 99% (95% CI: 99.1–99.3%), specificity 13% (95% CI: 8–18%), and LR+ was 1.14. For the need for hemostasis, the score showed a sensitivity of 91% (95% CI: 81–96%), specificity 7% (95% CI: 4–12%), and an LR+ of 1.0.\n\nThe Oakland score addresses the patient-centered outcome of admission versus discharge for workup of a serious medical condition and has been validated (internally and externally). A score above 8 indicates that the patient is not suitable for discharge. Its clinical utility has been assessed in systematic reviews and meta-analyses. It has also been recommended in clinical practice guidelines to be used in clinical decision making in conjunction with patient-specific clinical characteristics.",
+  "more_info": "Interpretation:\n\n| Score | Probability of safe discharge* | Recommendation** |\n| --- | --- | --- |\n| 0-2 | 99% | Consider discharge, with appropriate precautions |\n| 3-4 | 98% | |\n| 5 | 97% | |\n| 6-7 | 96% | |\n| 8 | 95% | |\n| 9 | 93% | Admission with further workup and resuscitation as necessary |\n| 10 | 91% | |\n| 11 | 89% | |\n| 12-13 | 87-89% | |\n| 14-15 | 77-81% | |\n| 16-17 | 67-72% | |\n| 18-20 | 50-62% | |\n| 21-23 | 33-45% | |\n| 24-26 | 20-28% | |\n| 27-29 | 11-16% | |\n| ≥30 | 0-1% | |\n\n*Defined as absence of rebleeding, blood transfusion, therapeutic intervention, 28 day readmission, or death.\n\n**From[Cañamares 2017](https://amj.amegroups.com/article/view/4082/4832).",
+  "short_description": "Lower GI bleed readmission risque.",
+  "medium_description": "Readmission et adverse event risque chez les patients avec aigu lower GI saignement.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40-69",
+          "value": 1
+        },
+        {
+          "label": "≥70",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "previosgiadmit",
+      "label": "Previous lower GI saignement admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dre",
+      "label": "DREfindings",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No blood",
+          "value": 0
+        },
+        {
+          "label": "Blood",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "Fréquence cardiaque, bpm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 70",
+          "value": 0
+        },
+        {
+          "label": "70-89",
+          "value": 1
+        },
+        {
+          "label": "90-109",
+          "value": 2
+        },
+        {
+          "label": "≥110",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sbp",
+      "label": "Systolic pression artérielle, mmHg",
+      "optional": false,
+      "default": 4,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "50-89",
+          "value": 5
+        },
+        {
+          "label": "90-119",
+          "value": 4
+        },
+        {
+          "label": "120-129",
+          "value": 3
+        },
+        {
+          "label": "130-159",
+          "value": 2
+        },
+        {
+          "label": "≥160",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hb",
+      "label": "Hemoglobin, g/L (g/dL)",
+      "optional": false,
+      "default": 5,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "36-69 (3.6-6.9)",
+          "value": 22
+        },
+        {
+          "label": "70-89 (7-8.9)",
+          "value": 17
+        },
+        {
+          "label": "90-109 (9-10.9)",
+          "value": 13
+        },
+        {
+          "label": "110-129 (11-12.9)",
+          "value": 8
+        },
+        {
+          "label": "130-159 (13-15.9)",
+          "value": 4
+        },
+        {
+          "label": "≥160 (16)",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Oakland K, Jairath V, Uberoi R, et al. Derivation and validation of a novel risk score for safe discharge after acute lower gastrointestinal bleeding: a modelling study. Lancet Gastroenterol Hepatol. 2017;2(9):635-643.",
+      "href": "https://www.thelancet.com/journals/langas/article/PIIS2468-1253(17)30150-4/fulltext ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cañamares P, Alfaro E, Lanas A. Safe hospital discharge based on lower GI bleeding scores: a long way to go. AME Medical Journal. 2017;2:147-147.",
+      "href": "https://amj.amegroups.com/article/view/4082/4832 ",
+      "kind": "other"
+    },
+    {
+      "text": "Oakland K, Chadwick G, East JE, et al. Diagnosis and management of acute lower gastrointestinal bleeding: guidelines from the British Society of Gastroenterology. Gut. 2019;68(5):776-789.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30792244/",
+      "kind": "other"
+    },
+    {
+      "text": "Almaghrabi M, Gandhi M, Guizzetti L, Iansavichene A, Yan B, Wilson A, Oakland K, Jairath V, Sey M. Comparison of Risk Scores for Lower Gastrointestinal Bleeding: A Systematic Review and Meta-analysis. JAMA Netw Open. 2022 May 2;5(5):e2214253",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35622365/",
+      "kind": "other"
+    },
+    {
+      "text": "Oakland K, Jairath V, Uberoi R, et al. Derivation and validation of a novel risk score for safe discharge after acute lower gastrointestinal bleeding: a modelling study. Lancet Gastroenterol Hepatol. 2017;2(9):635-643.",
+      "href": "https://www.thelancet.com/journals/langas/article/PIIS2468-1253(17)30150-4/fulltext ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Oakland K, Kothiwale S, Forehand T, et al. External Validation of the Oakland Score to Assess Safe Hospital Discharge Among Adult Patients With Acute Lower Gastrointestinal Bleeding in the US. JAMA Netw Open. 2020;3(7):e209630.",
+      "href": "https://jamanetwork.com/journals/jamanetworkopen/fullarticle/2767946",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.aims65-score-upper-gi-bleeding-mortality",
+    "calc.rockall-score-upper-gi-bleeding-pre-endoscopy",
+    "calc.rockall-score-upper-gi-bleeding-complete"
+  ],
+  "source_logic_hash": "6aeba017dc54b0bd3b07bad10ce3f620",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10042,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

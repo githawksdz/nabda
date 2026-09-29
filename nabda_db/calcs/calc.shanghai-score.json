@@ -1,0 +1,222 @@
+{
+  "id": "calc.shanghai-score",
+  "slug": "shanghai-score",
+  "language": "fr",
+  "title": "Score de Shanghai",
+  "short_title": "Score de Shanghai",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Fibrillation atriale",
+    "Syndrome de Brugada",
+    "Tachycardie ventriculaire",
+    "Fibrillation ventriculaire"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Fever",
+    "Palpitations",
+    "Seizure",
+    "Dyspnée",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "Shanghai Score",
+    "sudden cardiac death",
+    "SCD",
+    "J wave",
+    "Brugada syndrome",
+    "BrS",
+    "early repolarization syndrome",
+    "ERS",
+    "arrhythmia",
+    "ventricular fibrillation",
+    "VF",
+    "inherited cardiac arrhythmias syndromes",
+    "ventricular tachycardia",
+    "VT",
+    "electrocardiogram",
+    "ECG",
+    "EKG",
+    "polymorphic VT",
+    "atrial flutter",
+    "atrial fibrillation",
+    "AF"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "- Développé par un groupe de travail clinique sur la base des recommandations de la Conférence de consensus 2015 sur les syndromes de l'onde J.\n- Aide à identifier les patients à risque le plus élevé de syndrome de Brugada afin qu'un traitement approprié et un bilan étiologique complet puissent être entrepris.",
+    "when": "- À utiliser en cas de suspicion clinique de syndrome de Brugada fondée sur les constatations ECG.\n- Intègre les antécédents cliniques et familiaux, ainsi que les constatations ECG et les tests génétiques.",
+    "pearls": "- Les cliniciens doivent connaître les tracés ECG de type 1, 2 et 3 du syndrome de Brugada pour utiliser pleinement cet outil.\n- Les patients ne présentant pas de constatations ECG compatibles avec un syndrome de Brugada ne doivent pas faire l'objet d'une évaluation du risque avec ce score."
+  },
+  "next_steps": {
+    "advice": "- Le syndrome de Brugada peut être héréditaire ou acquis et peut entraîner des arythmies potentiellement mortelles.\n- La fièvre est un déclencheur fréquent et doit toujours être traitée chez les patients avec un syndrome de Brugada possible ou confirmé.\n- Le traitement peut inclure des médicaments, l'ablation et l'implantation d'un défibrillateur (DAI). L'évitement des déclencheurs d'arythmie est également important. L'équipe de prise en charge clinique devrait inclure au moins un cardiologue, un électrophysiologiste et un conseiller en génétique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Interprétation :\n\n| Score de Shanghai | Diagnostic probable |\n| --- | --- |\n| 2-3 | Syndrome de Brugada possible |\n| >3,5 | Syndrome de Brugada probable/certain |",
+  "more_info": "Le score de Shanghai est calculé en additionnant les points sélectionnés pour chaque variable :\n\n| Variable | Points | |\n| --- | --- | --- |\n| ECG (12 dérivations/ambulatoire) (Sélectionner la catégorie avec le score le plus élevé. Un élément de cette catégorie doit s'appliquer.) | Tracé ECG de type 2 ou 3 de Brugada se convertissant lors du test pharmacologique provocateur | 2 |\n| Tracé ECG de type 1 de Brugada induit par la fièvre, en dérivations normales ou hautes | 3 | |\n| Tracé ECG de type 1 de Brugada spontané, en dérivations normales ou hautes | 3,5 | |\n| Antécédents cliniques (Sélectionner la catégorie avec le score le plus élevé.) | Absence d'antécédents cliniques | 0 |\n| Flutter/fibrillation auriculaire chez des patients <30 ans sans étiologie alternative | 0,5 | |\n| Syncope de mécanisme/étiologie indéterminé | 1 | |\n| Syncope rythmique suspectée | 2 | |\n| Respiration agonique nocturne | 2 | |\n| Arrêt cardiaque inexpliqué ou FV/TV polymorphe documentée | 3 | |\n| Antécédents familiaux (Sélectionner la catégorie avec le score le plus élevé.) | Absence d'antécédents familiaux | 0 |\n| Mort subite inexpliquée <45 ans chez un apparenté du 1er ou 2e degré avec autopsie négative | 0,5 | |\n| Mort subite suspecte (fièvre, nocturne, médicaments aggravant le syndrome de Brugada) chez un apparenté du 1er ou 2e degré | 1 | |\n| Apparenté du 1er ou 2e degré atteint d'un syndrome de Brugada certain | 2 | |\n| Résultat du test génétique (Sélectionner la catégorie avec le score le plus élevé.) | Absence de mutation pathogène dans un gène de prédisposition au syndrome de Brugada | 0 |\n| Mutation probablement pathogène dans un gène de prédisposition au syndrome de Brugada | 0,5 | |",
+  "short_description": "Risque de syndrome de Brugada.",
+  "medium_description": "Stratifies risque dans suspected Brugada syndrome.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "ECG (12 dérivations/ambulatoire)",
+      "tips": "Sélectionner la catégorie avec le score le plus élevé. Un élément de cette catégorie doit s'appliquer.",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Type 2 ou 3 Brugada ECG pattern that converts avec provocative drug challenge",
+          "value": 2
+        },
+        {
+          "label": "fièvre-induced type 1 Brugada ECG pattern at nominal ou élevé leads",
+          "value": 3
+        },
+        {
+          "label": "Spontaneous type 1 Brugada ECG pattern at nominal ou élevé leads",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Antécédents cliniques",
+      "tips": "Sélectionner la catégorie avec le score le plus élevé.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absence d'antécédents cliniques",
+          "value": 0
+        },
+        {
+          "label": "Atrial flutter/fibrillation dans patients <30 yrs sans alternative etiology",
+          "value": 0.5
+        },
+        {
+          "label": "Syncope de mécanisme/étiologie indéterminé",
+          "value": 1
+        },
+        {
+          "label": "Syncope rythmique suspectée",
+          "value": 2
+        },
+        {
+          "label": "Respiration agonique nocturne",
+          "value": 2
+        },
+        {
+          "label": "Arrêt cardiaque inexpliqué ou FV/TV polymorphe documentée",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Antécédents familiaux",
+      "tips": "Sélectionner la catégorie avec le score le plus élevé.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absence d'antécédents familiaux",
+          "value": 0
+        },
+        {
+          "label": "Unexplained SCD <45 yrs dans 1st ou 2nd degree relative avec negative autopsy",
+          "value": 0.5
+        },
+        {
+          "label": "Suspicious SCD (fièvre, nocturnal, Brugada aggravating drugs) dans 1st ou 2nd degree relative",
+          "value": 1
+        },
+        {
+          "label": "1st ou 2nd degree relative avec definite Brugada syndrome",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Résultat du test génétique",
+      "tips": "Sélectionner la catégorie avec le score le plus élevé.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "No pathogenic mutation dans BrS susceptibility gene",
+          "value": 0
+        },
+        {
+          "label": "Probable pathogenic mutation dans BrS susceptibility gene",
+          "value": 0.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Zeppenfeld, K., Tfelt-Hansen, J., de Riva, M., Winkel, B. G., Behr, E. R., Blom, N. A., Charron, P., Corrado, D., Dagres, N., de Chillou, C., Eckardt, L., Friede, T., Haugaa, K. H., Hocini, M., Lambiase, P. D., Marijon, E., Merino, J. L., Peichl, P., Priori, S. G., … ESC Scientific Document Group. (2022). 2022 ESC Guidelines for the management of patients with ventricular arrhythmias and the prevention of sudden cardiac death. European Heart Journal, 43(40), 3997–4126.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36017572/",
+      "kind": "international"
+    },
+    {
+      "text": "Antzelevitch, C., Yan, G.-X., Ackerman, M. J., Borggrefe, M., Corrado, D., Guo, J., Gussak, I., Hasdemir, C., Horie, M., Huikuri, H., Ma, C., Morita, H., Nam, G.-B., Sacher, F., Shimizu, W., Viskin, S., & Wilde, A. A. M. (2016). J-Wave syndromes expert consensus conference report: Emerging concepts and gaps in knowledge. Heart Rhythm: The Official Journal of the Heart Rhythm Society, 13(10), e295–e324.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27423412/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Krahn, A. D., Behr, E. R., Hamilton, R., Probst, V., Laksman, Z., & Han, H.-C. (2022). Brugada Syndrome. JACC. Clinical Electrophysiology, 8(3), 386–405.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35331438/",
+      "kind": "other"
+    },
+    {
+      "text": "Kawada, S., Morita, H., Antzelevitch, C., Morimoto, Y., Nakagawa, K., Watanabe, A., Nishii, N., Nakamura, K., & Ito, H. (2018). Shanghai Score System for Diagnosis of Brugada Syndrome: Validation of the Score System and System and Reclassification of the Patients. JACC: Clinical Electrophysiology, 4(6), 724–730.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S2405500X18301695?via%3Dihub",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.garfield-af",
+    "calc.precision-medicine-cardiomyopathy-primacy-score"
+  ],
+  "source_logic_hash": "618db3629177a9b3fb9ffe765c87b6ac",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10535,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

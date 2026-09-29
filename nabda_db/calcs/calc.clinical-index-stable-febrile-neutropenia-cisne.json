@@ -1,0 +1,240 @@
+{
+  "id": "calc.clinical-index-stable-febrile-neutropenia-cisne",
+  "slug": "clinical-index-stable-febrile-neutropenia-cisne",
+  "language": "en",
+  "title": "Index clinique de neutropénie fébrile stable (CISNE)",
+  "short_title": "CISNE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "hematologie",
+    "infectiologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "VIH/SIDA",
+    "Leucémie myéloïde chronique"
+  ],
+  "chief_complaints": [
+    "Fièvre"
+  ],
+  "abbreviations": [
+    "cisne",
+    "clinical index",
+    "clinical index of stable febrile neutropenia",
+    "stable febrile neutropenia",
+    "febrile neutropenia"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- |\n| [ECOG Performance Status](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status\\) | <2 | -- | ≥2 |\n| Stress-induced hyperglycemia | No | -- | Yes |\n| COPD | No | Yes | -- |\n| Cardiovascular disease history | No | Yes | -- |\n| NCI mucositis grade ≥2 | No | Yes | -- |\n| Monocytes | ≥200/µL | <200/µL | -- |",
+  "how_to_use": {
+    "why": "Plus spécifique que le [MASCC Risk Index](nabda:calc.mascc-risk-index-febrile-neutropenia) .",
+    "when": "- Adult outpatients ≥18 years old with solid tumor, fever ≥38°C (100.4°F) over 1 hour, and neutropenia (500 cells/mm³or fewer, or 1,000 cells/mm³ with expected decrease to 500).\n- Should not be used in patients who are obviously unwell, defined by the original study authors as any of the following:",
+    "pearls": "- While only solid tumors were included in the original study, an external validation study including both solid and hematologic malignancies showed no significant difference in outcomes for low-risk patients with either type.\n- Complications included hypotension, acute organ failure, arrhythmia, major bleeding, delirium, acute abdomen,DIC, and “other events considered severe” (see Facts & Figures for full definitions).\n- Uses mostly objective variables."
+  },
+  "next_steps": {
+    "advice": "Des scores plus élevés indiquent un risque plus élevé de complications.",
+    "critical_actions": "",
+    "management": "Comme pour tout outil de prédiction, faites appel à votre jugement clinique et privilégiez la prudence lorsque les scores sont équivoques."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CISNE | Risk category | Risk of complications* | Recommendation |\n| --- | --- | --- | --- |\n| 0 | I (Low) | 1.1% | Consider discharge with oral antibiotics after discussion with oncology. |\n| 1-2 | II (Intermediate) | 6.2% | Use clinical judgment regarding admission. Consider oncology consultation. |\n| ≥3 | III (High) | 36% | Admit for further investigation, including blood cultures. |\n\n*Any of the following complications within 7 days minumum, from ED arrival until complete resolution of the episode, defined as \"disappearance of all signs of infection with recovery from neutropenia (≥1,500 neutrophils/μL) and absence of fever for 48 hours, including home surveillance if patient was discharged early\":",
+  "short_description": "Neutropénie fébrile à faible risque.",
+  "medium_description": "Identifie les patients atteints de neutropénie fébrile à faible risque de complications graves.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ecog",
+      "label": "[Indice de performance ECOG (ECOG Performance Status)](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "tips": "ECOG PS 2 = Capable d'assurer seul tous ses soins personnels, mais sans activité professionnelle ; hors du lit plus de 50 % de la journée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 2",
+          "value": 0
+        },
+        {
+          "label": "≥2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stress",
+      "label": "Hyperglycémie induite par le stress",
+      "tips": "Glycémie initiale ≥121 mg/dL (6,7 mmol/L), ou ≥250 mg/dL (13,9 mmol/L) chez les diabétiques ou en cas de corticothérapie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "copd",
+      "label": "BPCO (COPD)",
+      "tips": "Diagnostic de BPCO sous traitement avec ≥1 des éléments suivants : corticoïdes, O₂ d'appoint, bronchodilatateurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cvd",
+      "label": "Antécédents de maladie cardiovasculaire",
+      "tips": "Chronic heart conditions (e.g., cor pulmonale, heart failure, cardiomyopathy, hypertensive heart disease, arrhythmias, valvular disease, other structural malformations), EXCLUDING history of single uncomplicated episode of AFib",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nci",
+      "label": "Mucite de grade ≥ 2 selon la NCI",
+      "tips": "Érythème, œdème ou ulcères douloureux, mais alimentation/déglutition possibles",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mono",
+      "label": "Monocytes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 200/µL",
+          "value": 0
+        },
+        {
+          "label": "< 200/µL",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Flowers CR, Seidenfeld J, Bow EJ, et al. Antimicrobial prophylaxis and outpatient management of fever and neutropenia in adults treated for malignancy: American Society of Clinical Oncology clinical practice guideline. J Clin Oncol. 2013;31(6):794-810.",
+      "href": "https://ascopubs.org/doi/full/10.1200/jco.2012.45.8661",
+      "kind": "international"
+    },
+    {
+      "text": "Carmona-bayonas A, Gómez J, González-billalabeitia E, et al. Prognostic evaluation of febrile neutropenia in apparently stable adult cancer patients. Br J Cancer. 2011;105(5):612-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21811253 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fonseca PJ, Carmona-bayonas A, García IM, et al. A nomogram for predicting complications in patients with solid tumours and seemingly stable febrile neutropenia. Br J Cancer. 2016;114(11):1191-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4891503/",
+      "kind": "other"
+    },
+    {
+      "text": "Carmona-bayonas A, Jiménez-fonseca P, Virizuela echaburu J, et al. Prediction of serious complications in patients with seemingly stable febrile neutropenia: validation of the Clinical Index of Stable Febrile Neutropenia in a prospective cohort of patients from the FINITE study. J Clin Oncol. 2015;33(5):465-71.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25559804 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Coyne CJ, Le V, Brennan JJ, et al. Application of the MASCC and CISNE Risk-Stratification Scores to Identify Low-Risk Febrile Neutropenic Patients in the Emergency Department. Ann Emerg Med. 2017;69(6):755-764.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28041827",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mascc-risk-index-febrile-neutropenia",
+    "calc.vesicoureteral-reflux-index-vurx",
+    "calc.common-terminology-criteria-adverse-events-ctcae",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status"
+  ],
+  "source_logic_hash": "e415d81d643f7441abebf449e5e4d4ae",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG Performance Status"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mascc-risk-index-febrile-neutropenia",
+      "text": "MASCC Risk Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG Performance Status"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mascc-risk-index-febrile-neutropenia",
+      "text": "MASCC Risk Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3997,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n//user inputs\nvar score = parseFloat(ecog) + parseFloat(stress) + parseFloat(copd) + parseFloat(cvd) + parseFloat(nci) + parseFloat(mono);\n\nvar risk, risk2, comp, rec;\nif(score === 0){\n\trisk = 'I';\n\trisk2 = 'Low';\n\tcomp = '1.1%';\n\trec = 'Consider discharge with oral antibiotics after discussion with oncology.';\n}else if(score === 1 || score ===2 ){\n\trisk = 'II';\n\trisk2 = 'Intermediate';\n\tcomp = '6.2%';\n\trec = 'Use clinical judgment regarding admission. Consider oncology consultation.';\n}else if(score >= 3){\n\trisk = 'III';\n\trisk2 = 'High';\n\tcomp = '36%';\n\trec = 'Admit for further investigation, including blood cultures.';\n}\n\n\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk2\n});\ncalc_output.push({\n    name: '3997_CISNE_result',\n    value: score,\n    value_text: 'points',\n    message: rec\n});\ncalc_output.push({\n    name: '3997_CISNE_interpretation',\n    value: risk2,\n    value_text: 'risk',\n    message: 'Risk category ' + risk +'<br/><br/>'+ comp + ' risk of complications within a minimum of 7 days (hypotension, organ failure, etc.—see Facts & Figures for details)'\n});",
+  "before_use": null,
+  "instructions": "Use in adult outpatients at least 18 years old with solid tumor, fever at least 38°C (100.4°F) over 1 hr, and [neutropenia](nabda:calc.absolute-neutrophil-count-anc) (500 cells/mm³or fewer, or 1,000 cells/mm³ with expected decrease to 500). Do not use in patients with acute organ failure, severe infection, hypotension, or other reason for admission.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Alberto Carmona-Bayonas",
+    "Dr. Paula Jiménez Fonseca"
+  ],
+  "measurement_ids": [
+    "ECOG"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "8541cd5fc458c68fdf68d8c01740a8974d07ba23ffc643cd180eae2d405f184c"
+}

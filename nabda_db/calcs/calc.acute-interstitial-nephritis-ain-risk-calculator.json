@@ -1,0 +1,158 @@
+{
+  "id": "calc.acute-interstitial-nephritis-ain-risk-calculator",
+  "slug": "acute-interstitial-nephritis-ain-risk-calculator",
+  "language": "en",
+  "title": "Calculateur de risque de néphrite interstitielle aiguë (AIN)",
+  "short_title": "Calculateur de risque d’AIN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Insuffisance rénale",
+    "Néphrite interstitielle aiguë"
+  ],
+  "chief_complaints": [
+    "Arthralgia",
+    "Douleur dorsale",
+    "Fever",
+    "Douleur du flanc",
+    "Hematuria",
+    "Nausea",
+    "Oliguria",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Acute Interstitial Nephritis (AIN) Risk Calculator",
+    "AIN Risk Calculator",
+    "AIN",
+    "acute interstitial nephritis",
+    "acute kidney injury",
+    "AKI",
+    "kidney biopsy",
+    "AIN diagnosis",
+    "kidney damage",
+    "urine protein",
+    "BUN",
+    "creatinine",
+    "AIN risk",
+    "acute interstitial nephritis risk"
+  ],
+  "dosing": false,
+  "formula": "",
+  "how_to_use": {
+    "why": "- Quantifies the probability of AIN, aiding in the identification of potentially unrecognized cases.\n- Helps avoid unnecessary risks and complications associated with kidney biopsies in low-risk patients.\n- Early identification of AIN can enable timely intervention to prevent permanent kidney damage.",
+    "when": "- Évalue le risque de néphrite interstitielle aiguë (AIN) chez un patient, en guidant la décision quant aux patients qui doivent subir une biopsie rénale.\n- Peut être particulièrement utile en cas de présentations atypiques ou subcliniques d’AIN.",
+    "pearls": "- While this tool can provide support for the decision to biopsy, it still requires a high index of suspicion.\n- Due to the tool’s high negative predictive value, low probability scores can effectively rule out the diagnosis.\n- This calculator is not intended to diagnose AIN, but rather to identify the likelihood that a patient may have the disease.\n- Note: The initial study suggested that adding urine cytokines (e.g., IL-9, TNF-alpha) could improve probability predictions. However, these are not yet available for clinical use and need further research."
+  },
+  "next_steps": {
+    "advice": "- L’étude originale n’a pas défini de seuils de probabilité spécifiques, mais suggérait :\n\n - Probabilité faible : AIN est peu probable ; évaluer d’autres diagnostics.\n - Probabilité intermédiaire ou élevée : AIN est possible ; une évaluation complémentaire par biopsie rénale est justifiée.\n- Cet outil ne doit pas être le seul déterminant pour la réalisation d’une biopsie. Le jugement clinique reste crucial.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Sum = (0.8367518 × log(creatinine)) + (-0.9181938 × log( [BUN creatinine ratio](nabda:calc.bun-creatinine-ratio) )) + (-0.0501203 × 1000 × (urine specific gravity - 1)) + urine dipstick protein*+ 0.770398 + log(local prevalence of AIN among all biopsies**/0.23)\n\n% Probability of AIN = 100 × e^sum^/ (1+ e^sum^)\n\n* 0.9360127 if urine dipstick protein is 1+ or lower, otherwise 0\n\n** If unknown, enter 0.23",
+  "short_description": "Risque de néphrite interstitielle aiguë.",
+  "medium_description": "Identifies likelihood de aigu interstitial nephritis dans at-risque patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "cr",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "urgrav",
+      "label": "Densité urinaire",
+      "optional": false,
+      "unit": "urgrav",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "urprot",
+      "label": "Protéines à la bandelette urinaire",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "1+ ou moins",
+          "value": 0
+        },
+        {
+          "label": "2+ ou plus",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "prev",
+      "label": "Prévalence locale de l’AIN parmi toutes les biopsies",
+      "tips": "Si inconnu, saisir 0.23",
+      "optional": false,
+      "unit": "ain_prev",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Moledina DG, Eadon MT, Calderon F, et al. Development and external validation of a diagnostic model for biopsy-proven acute interstitial nephritis using electronic health record data. Nephrol Dial Transplant. 2022;37(11):2214-2222.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34865148/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moledina DG, Eadon MT, Calderon F, et al. Development and external validation of a diagnostic model for biopsy-proven acute interstitial nephritis using electronic health record data. Nephrol Dial Transplant. 2022;37(11):2214-2222.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34865148/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moledina DG, Shelton K, Menez S, et al. External Validation of an Electronic Health Record–Based Diagnostic Model for Histological Acute Tubulointerstitial Nephritis. J Am Soc Nephrol. 2024.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39500309/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cisplatin-associated-acute-kidney-iInjury-cp-aki-risk-calculator",
+    "calc.licurse-score-renal-ultrasound",
+    "calc.bun-creatinine-ratio"
+  ],
+  "source_logic_hash": "7ce67f3ae7f870a489833736e5380dd5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10550,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

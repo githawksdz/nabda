@@ -1,0 +1,157 @@
+{
+  "id": "calc.glucose-infusion-rate-gir",
+  "slug": "glucose-infusion-rate-gir",
+  "language": "fr",
+  "title": "Débit de perfusion de glucose (GIR)",
+  "short_title": "GIR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hyperglycemia",
+    "Obesity",
+    "Hypoglycemia"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Fatigue",
+    "Perte d'appétit",
+    "Nausea",
+    "Déficit neurologique",
+    "Numbness",
+    "Polyuria",
+    "Soins préventifs / Dépistage",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Glucose Infusion Rate (GIR)",
+    "glucose infusion rate",
+    "GIR",
+    "type 2 diabetes",
+    "T2D",
+    "diabetes mellitus",
+    "type 1 diabetes",
+    "T1D",
+    "glucose infusion",
+    "glucose",
+    "hyperglycemia",
+    "hypoglycemia",
+    "total parenteral nutrition",
+    "TPN",
+    "overfeeding",
+    "underfeeding",
+    "diabetic",
+    "intravenous"
+  ],
+  "dosing": true,
+  "formula": "GIR = (Concentration de dextrose, g/dL) x (Débit de perfusion, mL/hr) x (1000) / (Poids, kg) x (60 min/hr)x (100 mL/hr)",
+  "how_to_use": {
+    "why": "L'hypoglycémie néonatale peut survenir chez les nouveau-nés sains et d'apparence malade, et la stabilisation de la glycémie est un élément important de la prise en charge.",
+    "when": "- La formule est généralement utilisée chez les patients pédiatriques pour déterminer l'administration parentérale appropriée de dextrose.\n- Particulièrement importante chez les patients qui ne s'alimentent pas ou qui ont une affection métabolique entravant l'obtention de taux sériques stables de glucose.\n- Le résultat est donné en mg/kg/min.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Il convient de veiller à éviter une hyperglycémie prolongée et involontaire.\n- Les nourrissons à terme ont généralement un GIR cible de 4-6 mg/kg/min, tandis que les prématurés ont une cible de 6-8 mg/kg/min en raison de leurs besoins caloriques plus élevés.\n- Si l'hypoglycémie persiste, un bilan complémentaire pour en déterminer la cause doit être réalisé.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Débit d'administration intraveineuse de glucose.",
+  "medium_description": "Quantifie le débit auquel le glucose est administré par voie intraveineuse.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "dex_concentration",
+      "label": "Concentration de dextrose",
+      "optional": false,
+      "unit": "dex_conc",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "infusion_rate",
+      "label": "Débit de perfusion",
+      "optional": false,
+      "unit": "inf_rate",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_all",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Guenst JM, Nelson LD. Predictors of total parenteral nutrition-induced lipogenesis. Chest. 1994;105(2):553-559.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/8306762/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Solimano A. Drop that calculator! You can easily calculate the glucose infusion rate in your head, and should! Paediatrics & Child Health. 2020;25(4):199-200.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32549731/",
+      "kind": "other"
+    },
+    {
+      "text": "Sweet CB, Grayson S, Polak M. Management strategies for neonatal hypoglycemia. J Pediatr Pharmacol Ther. 2013;18(3):199-208.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3775554/#:~:text=Conventionally%2C%20a%202%20mL/kg,followed%20by%20a%20continuous%20infusion.&text=Initial%20glucose%20infusion%20rates%20generally,8%20mg/kg/min.",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.c-peptide-glucose-ratio",
+    "calc.metabolic-score-insulin-resistance-mets-ir"
+  ],
+  "source_logic_hash": "684e5c35b90a777adbbdcfae4699da4d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10538,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

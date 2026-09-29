@@ -1,0 +1,112 @@
+{
+  "id": "calc.maddreys-discriminant-function-alcoholic-hepatitis",
+  "slug": "maddreys-discriminant-function-alcoholic-hepatitis",
+  "language": "fr",
+  "title": "Maddrey's Discriminant Function pour Alcoholic Hepatitis",
+  "short_title": "Maddrey's Discriminant Function",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "liver",
+    "etoh",
+    "maddreys",
+    "madrey"
+  ],
+  "dosing": false,
+  "formula": "Discriminant Function = 4.6 * (Pt's PT - Control PT) + TBili",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Maddrey's Discriminant Function is useful in predicting short-term prognosis but is less useful for long-term prognosis."
+  },
+  "next_steps": {
+    "advice": "Scores above 32 typically suggest poor prognosis and that these patients may be helped by steroid administration.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Alcoholic Hepatitis pronostic & steroid traitement.",
+  "medium_description": "Predicts pronostic et steroid benefit dans alcoholic hepatitis.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "pt",
+      "label": "PT",
+      "optional": false,
+      "unit": "pt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "pt_control",
+      "label": "PT control/reference level",
+      "optional": false,
+      "unit": "pt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Maddrey WC, Boitnott JK, Bedine MS, Weber FL, Mezey E, White RI (1978). Corticosteroid therapy of alcoholic hepatitis. Gastroenterology 75 (2): 193–9. PMID 352788",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/352788",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Soultati AS, et. al. Predicting utility of a model for end stage liver disease in alcoholic liver disease. World J Gastroenterol 2006 July 07;12(25):4020-4025",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4087713/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-alcoholic-hepatitis-score",
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.r-factor-liver-injury"
+  ],
+  "source_logic_hash": "809486ef676f8cd7576b166c27dab9ed",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 56,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

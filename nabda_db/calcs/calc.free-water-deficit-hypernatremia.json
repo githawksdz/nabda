@@ -1,0 +1,165 @@
+{
+  "id": "calc.free-water-deficit-hypernatremia",
+  "slug": "free-water-deficit-hypernatremia",
+  "language": "en",
+  "title": "Free Water Deficit dans Hypernatremia",
+  "short_title": "Free Water Deficit dans Hypernatremia",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Hypernatremia"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dizziness",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "na",
+    "sodium",
+    "h20",
+    "free water",
+    "hypernatremia",
+    "free water deficit",
+    "dehydration"
+  ],
+  "dosing": false,
+  "formula": "Free water deficit, L = (% total body water, fraction)*(Weight, kg)*([Current sodium/Ideal sodium] – 1)\n\nwhere % total body water (TBW) is:\n\n- Adult male: 60% (i.e., use 0.6 in the equation)\n- Adult female: 50% (0.5)\n- Elderly male: 50% (0.5)\n- Elderly female: 45% (0.45)\n- Child: 60% (0.6)\n\nThis formula calculates the total solute in the patient’s total body water and then determines how much water needs to be added to dilute it to the desired serum sodium.\n\nSufficient free water should be provided either orally or intravenously (e.g., 5% dextrose) to correct the serum sodium by up to 10 mEq/L in the first 24 hours.",
+  "how_to_use": {
+    "why": "Cette formule doit être utilisée pour estimer la quantité d’eau libre à apporter (en plus des besoins continus en eau libre) afin de corriger une hypernatrémie.",
+    "when": "Cet outil doit être utilisé lorsque le patient est hypernatrémique mais sans déplétion volémique.",
+    "pearls": "Cet outil fournit une estimation du déficit en eau libre d’après le poids corporel du patient ; toutefois, il peut être imprécis chez les patients présentant une prise ou une perte de poids importante (notamment d’origine hydrique)."
+  },
+  "next_steps": {
+    "advice": "- L'hypernatrémie est une élévation de la natrémie, indiquant un déficit en eau libre ou une déshydratation.\n- En plus du calcul du déficit en eau libre, la cause doit être déterminée (par exemple, perte d'eau libre dans les urines ou les selles, ou absence d'accès à une quantité suffisante d'eau libre).\n- Les patients peuvent présenter simultanément une déplétion volémique et une déshydratation.\n- Si cette situation est suspectée, corriger d'abord le déficit volémique avec des solutés isotoniques avant de corriger le déficit en eau calculé ici.",
+    "critical_actions": "",
+    "management": "Il convient d’apporter suffisamment d’eau libre, par voie orale ou intraveineuse (à l’aide d’une solution telle que le dextrose à 5 %), pour corriger le sodium sérique d’au plus 10 mEq/L au cours des 24 premières heures."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Free water deficit dans hypernatremia ou dehydration.",
+  "medium_description": "Calculates free water deficit par estimated total body water dans patient avec hypernatremia ou dehydration.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge range",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Child",
+          "value": 0
+        },
+        {
+          "label": "adulte",
+          "value": 1
+        },
+        {
+          "label": "Elderly",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "tips": "À utiliser uniquement si sodium >140",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sodium_desired",
+      "label": "Natrémie souhaitée",
+      "optional": false,
+      "default": 140,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Adrogue HJ and Madias NE. Primary Care: Hypernatremia. New England Journal of Medicine 2000; 342(20):1493-1499.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10816188",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Adrogue HJ and Madias NE. Primary Care: Hyponatremia. New England Journal of Medicine 2000; 342(21):1581-1589.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10824078",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Barsoum NR and Levine BS. Current prescriptions for the correction of hyponatraemia and hypernatraemia: are they too simple?Nephrol. Dial. Transplant. (2002) 17 (7): 1176-1180 doi:10.1093/ndt/17.7.1176",
+      "href": "https://ndt.oxfordjournals.org/content/17/7/1176.long",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-fluid-balance-calculator-inputs-outputs",
+    "calc.sodium-correction-hyperglycemia",
+    "calc.sodium-correction-rate-hyponatremia-hypernatremia"
+  ],
+  "source_logic_hash": "7a365450cb86f6957a77ecda9ec3bd55",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 113,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

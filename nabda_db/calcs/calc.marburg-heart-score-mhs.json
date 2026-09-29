@@ -1,0 +1,194 @@
+{
+  "id": "calc.marburg-heart-score-mhs",
+  "slug": "marburg-heart-score-mhs",
+  "language": "fr",
+  "title": "Score de Marburg Heart (MHS)",
+  "short_title": "Score de Marburg Heart (MHS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "Marburg score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| | Non | Oui |\n| --- | --- | --- |\n| Femme ≥65 ans ou homme ≥55 ans | 0 | +1 |\n| Coronaropathie connue, maladie cérébrovasculaire ou artériopathie périphérique | 0 | +1 |\n| Douleur aggravée par l'effort | 0 | +1 |\n| Douleur reproductible à la palpation | +1 | 0 |\n| Patient pense que la douleur est d'origine cardiaque | 0 | +1 |",
+  "how_to_use": {
+    "why": "- Seulement ~1,5 % des patients vus en soins primaires pour une douleur thoracique ont une maladie coronarienne instable (CAD) ; les causes les plus fréquentes de douleur thoracique en soins primaires sont la douleur pariétale thoracique, une maladie gastro-intestinale et une maladie cardiaque stable.\n- Aide à déterminer quels patients ambulatoires présentant une douleur thoracique ont un risque suffisamment faible de CAD instable pour permettre la poursuite du suivi, des examens et de la prise en charge en ambulatoire non urgent (scores ≤2) ; et ceux qui peuvent avoir un risque suffisamment élevé de CAD pour justifier des examens complémentaires en urgence ou en hospitalisation (scores ≥3).",
+    "when": "- Patients ≥35 years old presenting with chest pain in a primary care setting.\n- Should not be used in patients with a readily apparent cause of chest pain (e.g. trauma, infection), clear anginal equivalent symptoms (e.g. jaw pain, dyspnea on exertion, arm pain), or if other testing (e.g. electrocardiography, lab testing) has suggested a clearly cardiac etiology.",
+    "pearls": "- Ne doit pas être utilisé pour un diagnostic *positif* d’angor ou de coronaropathie (CAD), mais comme un outil *négatif* pour aider à déterminer qui présente un risque suffisamment faible pour ne pas nécessiter d’évaluation complémentaire.\n- Alors que des scores ≤2 rendent une coronaropathie instable hautement improbable (valeur prédictive négative ~98 %), des scores ≥3 ne sont que modérément prédictifs de coronaropathie (valeur prédictive positive ~23 %).\n- Validé chez les patients de 35 ans et plus."
+  },
+  "next_steps": {
+    "advice": "- Lors de l’évaluation de patients présentant une douleur thoracique en soins primaires, un MHS ≤2 signifie que la douleur thoracique est très peu susceptible d’être due à une coronaropathie instable (CAD) (valeur prédictive négative ~98 %) et la poursuite de l’évaluation en ambulatoire est généralement sûre et appropriée.\n- Un patient en soins primaires avec un MHS ≤2 n’a généralement pas besoin d’une évaluation urgente de la douleur thoracique (sauf preuve claire d’instabilité clinique) et l’évaluation ultérieure, y compris la radiographie thoracique et le test d’effort, peut être réalisée dans le cadre d’un suivi ambulatoire non urgent.\n- Un patient en soins primaires avec un MHS ≥3 n’a pas nécessairement de coronaropathie instable, mais comme celle-ci ne peut être exclue, ces patients justifient généralement une évaluation plus urgente ou une hospitalisation.",
+    "critical_actions": "Aucune règle de décision ne doit primer sur l’impression clinique globale, et tout patient présentant une douleur thoracique et cliniquement instable (détresse respiratoire ou signes vitaux anormaux) justifie une admission hospitalière urgente ou en ur",
+    "management": "- Pour tout patient en soins primaires présentant une douleur thoracique, la stabilité clinique peut être rapidement déterminée par l’évaluation des ABCs (voies aériennes, respiration, circulation).\n- Un patient qui ne présente aucun signe de détresse respiratoire et dont les signes vitaux sont appropriés est peu susceptible d’être instable"
+  },
+  "evidence": "- The MHS was originally derived by[Bösner et al](https://www.ncbi.nlm.nih.gov/pubmed/20603345)from a cross-sectional analysis of data from 1,249 consecutive patients seen in primary care practices for chest pain, and validated against data on similar patients from a separate, prospective primary care study; a score of 3 or more had a sensitivity of 87.1% and a specificity of 80.8% for CAD.\n- A subsequent[validation study](https://www.ncbi.nlm.nih.gov/pubmed/22687234)among 844 men and women age 35 or older seen in primary care for chest pain found a score of 3 or greater was 89% sensitive and 63% specific for CAD, with a negative predictive value of 97% and a positive predictive value of 23%.\n- A[comparative study](https://www.ncbi.nlm.nih.gov/pubmed/26500322)with 56 general practitioners (GPs) evaluating 832 primary care patients with chest pain found that using the MHS as a triage improved GPs clinical accuracy.",
+  "more_info": "Interpretation:\n\n| Marburg Heart Score | CAD risk | Recommendation |\n| --- | --- | --- |\n| 0–2 | 3% | Outpatient evaluation as needed |\n| ≥3 | 23% | Consider urgent evaluation or inpatient admission |",
+  "short_description": "Écarte une CAD (soins primaires).",
+  "medium_description": "Rules out coronary artery maladie dans soins primaires patients avec douleur thoracique.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Femme ≥65 ans ou homme ≥55 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "knowndisease",
+      "label": "CAD connu, maladie cérébrovasculaire ou maladie vasculaire périphérique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "exercisepain",
+      "label": "Douleur worse avec exercise",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "reproduciblepain",
+      "label": "Douleur reproducible avec palpation",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiacpain",
+      "label": "Le patient suppose que la douleur est d’origine cardiaque.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bösner S, Haasenritter J, Becker A, et al. Ruling out coronary artery disease in primary care: development and validation of a simple prediction rule. CMAJ. 2010;182(12):1295-300.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20603345 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gencer B, Vaucher P, Herzig L, et al. Ruling out coronary heart disease in primary care patients with chest pain: a clinical prediction score. BMC Med. 2010;8:9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20092615 ",
+      "kind": "other"
+    },
+    {
+      "text": "Ebell MH. Evaluation of chest pain in primary care patients. Am Fam Physician. 2011;83(5):603-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21391528 ",
+      "kind": "other"
+    },
+    {
+      "text": "Cayley WE Jr. Chest pain--tools to improve your in-office evaluation. J Fam Pract. 2014 May;63(5):246-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24795903",
+      "kind": "other"
+    },
+    {
+      "text": "Aerts M, Minalu G, Bösner S, et al. Pooled individual patient data from five countries were used to derive a clinical prediction rule for coronary artery disease in primary care. J Clin Epidemiol. 2017;81:120-128.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27773828 ",
+      "kind": "other"
+    },
+    {
+      "text": "Haasenritter J, Bösner S, Vaucher P, et al. Ruling out coronary heart disease in primary care: external validation of a clinical prediction rule. Br J Gen Pract. 2012;62(599):e415-21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22687234",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Haasenritter J, Donner-banzhoff N, Bösner S. Chest pain for coronary heart disease in general practice: clinical judgement and a clinical decision rule. Br J Gen Pract. 2015;65(640):e748-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26500322",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.heart-score-major-cardiac-events",
+    "calc.canadian-cardiovascular-society-ccs-angina-grade",
+    "calc.4-level-pulmonary-embolism-clinical-probability-score-4peps"
+  ],
+  "source_logic_hash": "0cc0f744d30857ff0d89c7cb3f3c4909",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4022,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,132 @@
+{
+  "id": "calc.beam-value",
+  "slug": "beam-value",
+  "language": "fr",
+  "title": "Valeur BeAM",
+  "short_title": "Valeur BeAM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré",
+    "Hyperglycemia"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Headache",
+    "Polyuria",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "BeAM",
+    "BeAM value",
+    "glucose",
+    "bedtime glucose",
+    "fasting glucose",
+    "AM fasting glucose",
+    "AM glucose",
+    "diabetes",
+    "diabetes mellitus",
+    "type 2 diabetes",
+    "t2dm",
+    "type II diabetes"
+  ],
+  "dosing": false,
+  "formula": "Valeur BeAM = glycémie au coucher – glycémie avant le petit-déjeuner (AM)",
+  "how_to_use": {
+    "why": "- Malgré les titrations de l’insuline basale et l’amélioration des taux d’A1c, les patients peuvent encore présenter des glycémies postprandiales élevées.\n- Cet outil peut être utilisé pour déterminer si un schéma d’insuline prandiale est nécessaire pour atteindre un contrôle glycémique optimal.",
+    "when": "- À utiliser chez les patients atteints de diabète sucré de type II et ne prenant actuellement pas d’insuline prandiale dans le cadre de leur plan de traitement.\n- Ce calcul peut être utile pour déterminer si l’administration d’insuline prandiale est nécessaire pour contrôler la glycémie.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Une valeur élevée de BeAM résulte de glycémies au coucher élevées et d’une glycémie matinale relativement basse. Ce ratio suggère que l’optimisation de la titration de l’insuline basale a été atteinte et qu’un contrôle supplémentaire aux repas peut être nécessaire.",
+    "critical_actions": "",
+    "management": "Un résultat BeAM élevé (>50mg/dL) peut être un indicateur d'une glycémie postprandiale non contrôlée. L'ajout d'une insuline prandiale doit être envisagé chez ces patients."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| BeAM Value | Level |\n| --- | --- |\n| <0 mg/dL (<0 mmol/L) | Low |\n| 0-50 mg/dL (0-2.775 mmol/L) | Medium |\n| >50 mg/dL (>2.775 mmol/L) | High |",
+  "short_description": "Glycémie au coucher vs. glycémie matinale.",
+  "medium_description": "Calcule la différence entre les glycémies au coucher et à jeun du matin.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bedtime",
+      "label": "Glycémie au coucher",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "am",
+      "label": "Glycémie avant le petit-déjeuner (matin)",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Zisman A, Morales F, Stewart J, Stuhr A, Vlajnic A, Zhou R. BeAM value: an indicator of the need to initiate and intensify prandial therapy in patients with type 2 diabetes mellitus receiving basal insulin. BMJ Open Diabetes Res Care. 2016;4(1):e000171.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27110368/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kress S, Borck A, Zisman A, Bramlage P, Siegmund T. A difference between bedtime and pre-breakfast plasma glucose levels indicates the need for prandial insulin in basal insulin-treated type 2 diabetic patients with normal fasting glucose. Diabetes Metab Syndr Obes. 2021;14:1215-1222.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33776458/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Siegmund T, Borck A, Zisman A, Bramlage P, Kress S. A higher blood glucose level pre-breakfast in comparison to bedtime is a contraindication for intensification of prandial insulin therapy in patients with type 2 diabetes - The impact of a negative BeAM value. J Clin Transl Endocrinol. 2018;14:34-38.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30416973/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.metabolic-score-insulin-resistance-mets-ir",
+    "calc.c-peptide-glucose-ratio",
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment"
+  ],
+  "source_logic_hash": "0de59be3b197ff63a13839abc4f26c44",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10506,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

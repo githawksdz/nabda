@@ -1,0 +1,146 @@
+{
+  "id": "calc.sgarbossas-criteria-mi-left-bundle-branch-block",
+  "slug": "sgarbossas-criteria-mi-left-bundle-branch-block",
+  "language": "en",
+  "title": "Sgarbossa's critères pour MI dans Left Bundle Branch Block",
+  "short_title": "Sgarbossa's critères pour MI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "lbbb",
+    "ekg",
+    "stemi"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Il est souvent difficile d'identifier un infarctus du myocarde chez les patients présentant un bloc de branche gauche (BBG) préexistant. Environ 1 patient sur 200 présentant un IM a un BBG. Les critères de Sgarbossa constituent une approche bien acceptée pour déterminer quels BBG sont en train de faire un IM."
+  },
+  "next_steps": {
+    "advice": "Un score de 3 ou plus est spécifique de l'IM à 90 %, mais n'est pas sensible (36 %). Par conséquent, un score positif doit conduire à une action, mais un score plus bas ne permet pas à lui seul d'éliminer un IM — maintenir un indice de suspicion élevé si la présentation est compatible avec un IM.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Comme mentionné, les critères de Sgarbossa n'éliminent pas un infarctus du myocarde chez les patients présentant un bloc de branche gauche (BBG) préexistant (ils ne sont pas suffisamment sensibles), mais chez les patients avec un score ≥3 points, ils sont spécifiques de l'infarctus du myocarde (IM).\n\nRécemment, [Stephen Smith](https://hqmeded-ecg.blogspot.com/) a modifié les critères de Sgarbossa en s'intéressant au sus-décalage du segment ST excessivement discordant et en les modifiant légèrement. Cette modification a été citée par le Dr Sgarbossa elle-même (voir référence) et devrait désormais être incluse dans les critères de Sgarbossa.",
+  "short_description": "Diagnoses aigu MI dans LBBB.",
+  "medium_description": "Critères pour diagnose aigu MI chez les patients avec prior LBBB.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "concordant_st_elevation",
+      "label": "Concordant ST elevation > 1mm dans leads avec positive QRS complex",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "concordant_st_depression",
+      "label": "Concordant ST dépression > 1 mm dans V1-V3",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "discordant_st_elevation",
+      "label": "Excessively discordant ST elevation (ou dépression) dans leads avec negative QRS",
+      "tips": "En proportion de l'onde S (ou R) précédente, déterminée par 1) un sus-décalage (ou sous-décalage) du ST d'au moins 1 mm ET 2) un rapport ST/S ≤ -0,25",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sgarbossa EB, Pinski SL, Barbagelata A, Underwood DA, Gates KB, Topol EJ, Califf RM, Wagner GS. Electrocardiographic diagnosis of evolving acute myocardial infarction in the presence of left bundle-branch block. GUSTO-1 (Global Utilization of Streptokinase and Tissue Plasminogen Activator for Occluded Coronary Arteries) Investigators. N Engl J Med. 1996 Feb 22;334(8):481-7. Erratum in: N Engl J Med 1996 Apr 4;334(14):931. PubMed PMID: 8559200.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8559200?dopt=Abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cai Q, Mehta N, Sgarbossa EB, Pinski SL, Wagner GS, Califf RM, Barbagelata A. The left bundle-branch block puzzle in the 2013 ST-elevation myocardial infarction guideline: from falsely declaring emergency to denying reperfusion in a high-risk population. Are the Sgarbossa Criteria ready for prime time? Am Heart J. 2013 Sep;166(3):409-13. doi: 10.1016/j.ahj.2013.03.032. Epub 2013 Aug 6. PubMed PMID: 24016487.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24016487",
+      "kind": "other"
+    },
+    {
+      "text": "Smith SW, Dodd KW, Henry TD, Dvorak DM, Pearce LA. Diagnosis of ST-elevation myocardial infarction in the presence of left bundle branch block with the ST-elevation to S-wave ratio in a modified Sgarbossa rule. Ann Emerg Med. 2012 Dec;60(6):766-76. doi: 10.1016/j.annemergmed.2012.07.119. Epub 2012 Aug 31. Erratum in: Ann Emerg Med. 2013 Oct;62(4):302. PubMed PMID: 22939607.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22939607",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-sgarbossas-criteria-mi-left-bundle-branch-block",
+    "calc.timi-risk-score-stemi",
+    "calc.subtle-anterior-stemi-calculator-4-variable"
+  ],
+  "source_logic_hash": "bd7afdb3efa89847528d90b4b5f027e4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1732,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

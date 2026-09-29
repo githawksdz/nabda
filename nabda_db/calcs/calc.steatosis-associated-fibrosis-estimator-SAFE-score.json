@@ -1,0 +1,241 @@
+{
+  "id": "calc.steatosis-associated-fibrosis-estimator-SAFE-score",
+  "slug": "steatosis-associated-fibrosis-estimator-SAFE-score",
+  "language": "en",
+  "title": "Steatosis-associé Fibrosis Estimator (SAFE) score",
+  "short_title": "Score SAFE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hépatopathie chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Jaundice",
+    "Vomiting",
+    "Weakness",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Chronic liver disease",
+    "Cirrhosis",
+    "hepatocellular carcinoma",
+    "liver fibrosis",
+    "non-alcoholic steatohepatitis",
+    "masld"
+  ],
+  "dosing": false,
+  "formula": "Les coefficients du modèle pour calculer le score SAFE sont les suivants :\n\n| Variable | Coefficient | Remarques |\n| --- | --- | --- |\n| Âge, années | 2,97 | Continue |\n| [IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) (kg/m²) | 5,99 | Plafonné à un maximum de 40 |\n| Diabète | 62,85 | 0 = Pas de diabète, 1 = Diabète |\n| ln( ASAT ) | 154,85 | ASAT en U/L ; logarithme népérien de la valeur |\n| ln( ALAT ) | −58,23 | ALAT en U/L ; logarithme népérien de la valeur |\n| ln(Globulines*) | 195,48 | Globulines en g/dL ; logarithme népérien de la valeur |\n| ln(Plaquettes) | −141,61 | Plaquettes en 10⁹/L ; logarithme népérien de la valeur |\n| Constante | −75 | Constante soustraite du total |\n\n*Calculées en soustrayant l'albumine des protéines totales.\n\nScore SAFE = Σ[β*(variables transformées)]",
+  "how_to_use": {
+    "why": "Classe les patients atteints de MASLD selon leur risque de fibrose hépatique significative, afin de déterminer quand une évaluation complémentaire et une orientation vers un spécialiste sont justifiées.",
+    "when": "À utiliser en soins primaires chez les adultes présentant une MASLD connue ou suspectée, ou des facteurs de risque de stéatopathie hépatique associée à un dysfonctionnement métabolique (MASLD), afin de décider qui nécessite un bilan complémentaire de la fibrose.",
+    "pearls": "- La cohorte de dérivation était composée principalement de patients avec un IMC >25 kg/m², de sorte que la performance dans les MASLD des patients maigres reste incertaine.\n- Les globulines ne figurant pas forcément sur les bilans biologiques de routine, cet outil les calcule en soustrayant l'albumine des protéines totales.\n- Un score ≤0 donne une VPN ≈ 0,96 pour une fibrose ≥F2, ce qui peut permettre de réduire les examens inutiles et les orientations vers un spécialiste.\n- L'AUROC dépassait celle du [FIB-4](nabda:calc.fibrosis-4-fib-4-index-liver-fibrosis) , de l'[APRI](nabda:calc.ast-platelet-ratio-index-apri) , du [NAFLD Fibrosis Score](nabda:calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score) et du [FNI](nabda:calc.fibrotic-nash-index-fni) .\n- Non validé chez les patients ayant une consommation d'alcool importante, une hépatite virale, une maladie hépatique auto-immune ou cholestatique.\n- Des élévations transitoires de l'ALAT/ASAT (par exemple lors d'une maladie aiguë) peuvent faussement augmenter le score.\n- Fournit des catégories de risque, et non un stade exact de fibrose ; à utiliser uniquement comme outil de triage."
+  },
+  "next_steps": {
+    "advice": "Cet outil doit être utilisé conjointement avec une évaluation approfondie et le jugement clinique.",
+    "critical_actions": "",
+    "management": "- **Risque faible (score <0) :**\n\n - Renforcer les mesures d'hygiène de vie et de réduction des risques métaboliques.\n - Répéter le score ou un autre test non invasif de manière systématique (généralement tous les 1 à 3 ans) ou en cas d'aggravation clinique.\n- **Risque indéterminé (score 0–99) :**\n\n - Envisager des tests non invasifs complémentaires (par exemple VCTE, ELF).\n - Adresser en hépatologie si l'imagerie suggère une fibrose ou en présence d'autres critères à haut risque (par exemple thrombopénie, âge avancé).\n - Sinon, répéter le score ou un autre test non invasif de manière systématique ou en cas d'aggravation clinique.\n- **Risque élevé (score ≥100) :**\n\n - Adresser en hépatologie.\n - Une biopsie peut être nécessaire."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score SAFE | Risque de fibrose modérée (F2+) |\n| --- | --- |\n| <0 | Faible |\n| 0-99 | Intermédiaire |\n| ≥100 | Élevé |",
+  "short_description": "Identifie les patients atteints de MASLD (stéatopathie métabolique du foie).",
+  "medium_description": "Estimates risque de modéré pour advanced liver fibrosis (stages 2 ou higher) among patients avec metabolic dysfunction-associé steatotic liver maladie (MASLD).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_safe",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "BMI_safe",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST_safe",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "optional": false,
+      "unit": "ALT_safe",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "Albumin_safe",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "total_protein",
+      "label": "Protéines totales",
+      "optional": false,
+      "unit": "Total_Protein_safe",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "platelets",
+      "label": "Platelets",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Sripongpun P, Kim WR, Mannalithara A, et al. The steatosis-associated fibrosis estimator (SAFE) score: A tool to detect low-risk NAFLD in primary care. Hepatology. 2023;77(1):256-267. doi:10.1002/hep.32545",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35477908/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Su TH, Yang SS, Lee MH, et al. High SAFE scores predict hepatocellular carcinoma in viral and non-viral hepatitis and metabolic dysfunction associated steatotic liver disease. Clin Mol Hepatol 2025. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39761961/",
+      "kind": "other"
+    },
+    {
+      "text": "Charu V, Liang JW, Mannalithara A, Kwong A, Tian L, Kim WR. Benchmarking clinical risk prediction algorithms with ensemble machine learning for the noninvasive diagnosis of liver fibrosis in NAFLD. Hepatology. 2024;80(5):1184-1195. doi:10.1097/HEP.0000000000000908",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38687634/",
+      "kind": "other"
+    },
+    {
+      "text": "Sripongpun P, Kaewdech A, Udompap P, Kim WR. Characteristics and long-term mortality of individuals with MASLD, MetALD, and ALD, and the utility of SAFE score. JHEP Rep. 2024;6(10):101127. Published 2024 Jun 3. doi:10.1016/j.jhepr.2024.101127",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39290401/",
+      "kind": "other"
+    },
+    {
+      "text": "Chen R, Petrazzini BO, Nadkarni G, Rocheleau G, Bansal MB, Do R. Comparison of blood-based liver fibrosis scores in the Mount Sinai Health System, MASLD Registry, and NHANES 2017-2020 study. Hepatol Commun 2024;8(9)",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39185915/",
+      "kind": "other"
+    },
+    {
+      "text": "Chularojanamontri L, Panjapakkul W, Paringkarn T, et al. The Steatosis-Associated Fibrosis Estimator (SAFE) score for assessing significant liver fibrosis in patients with psoriasis. Clin Exp Dermatol 2024;49(4):337-343.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37956400/",
+      "kind": "other"
+    },
+    {
+      "text": "Kaewdech A, Sripongpun P, Treeprasertsuk S, Charatcharoenwitthaya P, Chan WK, Kim WR. Sequential SAFE Score and Transient Elastography for Detecting Significant Fibrosis in Asian Patients with MASLD. Clin Gastroenterol Hepatol 2024;22(12):2535- 2537.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38880124/",
+      "kind": "other"
+    },
+    {
+      "text": "Li M, Lin Y, Yu H, et al. The steatosis-associated fibrosis estimator (SAFE) outperformed the FIB-4 score in screening the population for liver disease. Ann Hepatol 2024;29(5):101516.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38851395/",
+      "kind": "other"
+    },
+    {
+      "text": "Park H, Yoon EL, Kim M, et al. Comparative evaluation of non-invasive tests for risk stratification for cause specific mortality in at-risk population of hepatic fibrosis. Sci Rep 2024;14(1):7189.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38531925/",
+      "kind": "other"
+    },
+    {
+      "text": "van Kleef LA, de Knegt RJ, Ayada I, Pan Q, Brouwer WP. The Steatosis-associated fibrosis estimator (SAFE) score: validation in the general US population. Hepatol Commun 2023;7(4) (In eng). DOI: 10.1097/hc9.0000000000000075",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37026734/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Li G, Lin H, Sripongpun P, et al. Diagnostic and prognostic performance of the SAFE score in non-alcoholic fatty liver disease. Liver Int. 2024;44(1):15-26. doi:10.1111/liv.15718",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37650363/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yang J, Choi WM, Lee D, et al. Revisiting the steatosis-associated fibrosis estimator score in young Asian subjects with steatotic liver disease and consideration for population variability. J Gastroenterol Hepatol 2024;39(10):2112-2119.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38872368/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa",
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+    "calc.ast-platelet-ratio-index-apri",
+    "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+    "calc.fibrotic-nash-index-fni"
+  ],
+  "source_logic_hash": "cb4355b42ffe95e2d51990950f5a5874",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+      "text": "FIB-4"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ast-platelet-ratio-index-apri",
+      "text": "APRI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+      "text": "NAFLD Fibrosis Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.fibrotic-nash-index-fni",
+      "text": "FNI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10613,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

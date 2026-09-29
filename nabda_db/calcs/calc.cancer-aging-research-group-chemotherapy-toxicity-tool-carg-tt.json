@@ -1,0 +1,389 @@
+{
+  "id": "calc.cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt",
+  "slug": "cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt",
+  "language": "fr",
+  "title": "Cancer et Aging Research Group Chemotherapy Toxicity Tool (CARG-TT)",
+  "short_title": "CARG-TT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "geriatrie",
+    "hematologie",
+    "cancerologie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Chimiothérapie"
+  ],
+  "chief_complaints": [
+    "Saignement",
+    "Cancer",
+    "Constipation",
+    "Diarrhée",
+    "Fatigue",
+    "Céphalée",
+    "Infertilité",
+    "Perte d'appétit",
+    "Nausée",
+    "Engourdissement",
+    "Douleur",
+    "Crise convulsive",
+    "Vomissements",
+    "Faiblesse",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Cancer and Aging Research Group Chemotherapy Toxicity Tool (CARG-TT)",
+    "carg",
+    "carg tt",
+    "carg-tt",
+    "chemo",
+    "chemotherapy",
+    "toxicity tool",
+    "chemotherapy toxicity tool",
+    "toxicity",
+    "geriatrics",
+    "chemo tox",
+    "chemo tox tool",
+    "chemotherapy tox",
+    "chemotherapy toxicity",
+    "chemo toxicity tool",
+    "chemotherapy tox tool",
+    "chemo toxicity"
+  ],
+  "dosing": false,
+  "formula": "Le score CARG-TT est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | <72 | 0 |\n| ≥72 | 2 | |\n| Type de cancer | Autre | 0 |\n| Gastro-intestinal ou génito-urinaire | 2 | |\n| Posologie (pour la première dose de chimiothérapie) | Dose réduite | 0 |\n| Dose standard | 2 | |\n| Nombre de médicaments de chimiothérapie | 1 | 0 |\n| >1 | 2 | |\n| Hémoglobine, g/dL | ≥11 g/dL (homme) ≥10 g/dL (femme) | 0 |\n| <11 g/dL (homme) <10 g/dL (femme) | 3 | |\n| [Clairance de la créatinine](nabda:calc.creatinine-clearance-cockcroft-gault-equation\\) , mL/min | ≥34 mL/min | 0 |\n| <34 mL/min | 3 | |\n| Audition | Excellente/bonne | 0 |\n| Moyenne/mauvaise/surdité complète | 2 | |\n| Nombre de chutes (au cours des six derniers mois) | Aucune | 0 |\n| ≥1 | 3 | |\n| Besoin d'aide pour la prise des médicaments | Non | 0 |\n| Oui | 1 | |\n| Capacité de marche (sur un pâté de maisons) | Non limitée | 0 |\n| Limitée | 2 | |\n| Activité sociale | Non diminuée en raison de l'état de santé | 0 |\n| Diminuée en raison de l'état de santé | 1 | |",
+  "how_to_use": {
+    "why": "- Fournit des estimations individualisées du risque de toxicité et de mortalité induites par la chimiothérapie, fondées sur des facteurs liés au patient et au traitement.\n- Démontré comme supérieur à l'[échelle de performance de Karnofsky](nabda:calc.karnofsky-performance-status-scale) pour prédire la toxicité de la chimiothérapie chez les adultes âgés.\n- Aide à adapter le traitement afin de concilier efficacité et qualité de vie.",
+    "when": "Use before initiating chemotherapy in older adults (≥65 years) or in patients where there is concern about chemotherapy-related toxicity due to comorbidities or functional status.",
+    "pearls": "- Dérivé d’un échantillon hétérogène de patients âgés de 65 ans et plus (âge moyen 73 ans), comprenant diverses tumeurs malignes, grades et schémas thérapeutiques, pour prédire le risque de développer au moins une toxicité de grade 3–5.\n- Ne tient pas compte des caractéristiques spécifiques de la tumeur et de la chimiothérapie, qui peuvent également influencer le risque de toxicité d’un patient.\n- Peut être appliqué à divers cancers ; une version spécifique du cancer du sein (CARG-BC) est disponible pour améliorer la prédiction de la toxicité chez les patientes atteintes d’un cancer du sein précoce."
+  },
+  "next_steps": {
+    "advice": "- Cet outil doit compléter, et non remplacer, une évaluation globale du patient et l’expertise clinique.\n- Utiliser les estimations de risque pour faciliter des discussions éclairées sur les objectifs de soins et les préférences thérapeutiques.\n- Ajuster le traitement selon les besoins — cela peut inclure une réduction de la dose de chimiothérapie, la mise en place de mesures de soutien ou le choix de schémas moins intensifs en cas de risque de toxicité élevé.\n- Prévoir une surveillance plus étroite et une réévaluation tout au long du traitement, en particulier si le risque de toxicité est modéré à élevé.\n- Réévaluer le risque à mesure que l’état du patient évolue dans le temps (p. ex., après un premier cycle de chimiothérapie, nouvelle comorbidité).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CARG-TT Score | % Risk of Grade 3 or greater toxicity |\n| --- | --- |\n| 0-5 | 30% (low) |\n| 6-9 | 52% (intermediate) |\n| 10-23 | 83% (high) |",
+  "short_description": "Estime le risque de toxicité sévère de la chimiothérapie.",
+  "medium_description": "Estimates risque de severe chemotherapy-lié side effects (Grade 3 ou greater toxicity) dans older cancer patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 72",
+          "value": 0
+        },
+        {
+          "label": "≥72",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Type de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Autre",
+          "value": 0
+        },
+        {
+          "label": "Gastro-intestinal ou génito-urinaire",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dose",
+      "label": "Dosage",
+      "tips": "Pour la première dose de chimiothérapie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "dose réduite",
+          "value": 0
+        },
+        {
+          "label": "dose standard",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "drugs",
+      "label": "Nombre de médicaments de chimiothérapie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1",
+          "value": 0
+        },
+        {
+          "label": ">1",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hg",
+      "label": "Hémoglobine, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "sex == 0",
+      "options": [
+        {
+          "label": "≥10 g/dL",
+          "value": 0
+        },
+        {
+          "label": "< 10 g/dL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hg2",
+      "label": "Hémoglobine, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "sex == 1",
+      "options": [
+        {
+          "label": "≥ 11 g/dL",
+          "value": 0
+        },
+        {
+          "label": "< 11 g/dL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "creatinine",
+      "label": "[Creatinine clearance](nabda:calc.creatinine-clearance-cockcroft-gault-equation), mL/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥ 34 mL/min",
+          "value": 0
+        },
+        {
+          "label": "< 34 mL/min",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hearing",
+      "label": "Audition",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Excellent/bon",
+          "value": 0
+        },
+        {
+          "label": "Moyen / Mauvais / Totalement sourd",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "falls",
+      "label": "Nombre de chutes",
+      "tips": "Au cours des six derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "≥1",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "meds",
+      "label": "Besoin d’aide pour prendre ses médicaments",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "walking",
+      "label": "Capacité de marche",
+      "tips": "À moins d'un pâté de maisons",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non limité",
+          "value": 0
+        },
+        {
+          "label": "Limité",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "social",
+      "label": "Activité sociale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non diminué en raison de l'état de santé",
+          "value": 0
+        },
+        {
+          "label": "Diminué en raison d'un mauvais état de santé",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Magnuson A, Sedrak MS, Gross CP, et al. Development and validation of a risk tool for predicting severe toxicity in older adults receiving chemotherapy for early-stage breast cancer. J Clin Oncol. 2021;39(6):608-618.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33444080/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hurria A, Togawa K, Mohile SG, et al. Predicting chemotherapy toxicity in older adults with cancer: a prospective multicenter study. J Clin Oncol. 2011;29(25):3457-3465.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21810685/",
+      "kind": "other"
+    },
+    {
+      "text": "Moth EB. Understanding and Optimising Decision-Making about Chemotherapy for Older Adults with Cancer. Thesis. 2019.",
+      "href": "https://ses.library.usyd.edu.au/handle/2123/21876",
+      "kind": "other"
+    },
+    {
+      "text": "Mariano C, Jamal R, Bains P, et al. Utility of a chemotherapy toxicity prediction tool for older patients in a community setting. Curr Oncol. 2019;26(4):234-239.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31548802/",
+      "kind": "other"
+    },
+    {
+      "text": "Zhang J, Liao X, Feng J, Yin T, Liang Y. Prospective comparison of the value of CRASH and CARG toxicity scores in predicting chemotherapy toxicity in geriatric oncology. Oncol Lett. 2019;18(5):4947-4955.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31612006/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+    "calc.common-terminology-criteria-adverse-events-ctcae",
+    "calc.karnofsky-performance-status-scale",
+    "calc.creatinine-clearance-cockcroft-gault-equation"
+  ],
+  "source_logic_hash": "7894cc4e4e5ff663872b178f8261436b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "Creatinine clearance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Performance Status Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "Creatinine clearance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.karnofsky-performance-status-scale",
+      "text": "Karnofsky Performance Status Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10424,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar age = parseFloat(age);\nvar cancer = parseFloat(cancer);\nvar dose = parseFloat(dose);\nvar drugs = parseFloat(drugs);\nvar hg = parseFloat(hg);\nvar hg2 = parseFloat(hg2);\nvar creatinine = parseFloat(creatinine);\nvar hearing = parseFloat(hearing);\nvar falls = parseFloat(falls);\nvar meds = parseFloat(meds);\nvar walking = parseFloat(walking);\nvar social = parseFloat(social);\n\nvar score = age + cancer + dose + drugs + creatinine + hearing + falls + meds + walking + social;\n\nif (sex == 0) {\n    score = score + hg;\n} else {\n    score = score + hg2;\n}\n\nvar risk;\nvar risk2;\n\nif (score <= 5) {\n    risk = 30;\n    risk2 = 'Low';\n} else if (score <=9) {\n    risk = 52;\n    risk2 = 'Intermediate';\n} else {\n    risk = 83;\n    risk2 = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk2 + ' risk of Grade 3 or greater toxicity'\n});\ncalc_output.push({\n    name: 'score',\n    value: score,\n    value_text: 'points',\n    message: 'CARG-TT Score'\n});\ncalc_output.push({\n    name: 'risk',\n    value: risk,\n    value_text: '%',\n    message: risk2 + ' risk of Grade 3 or greater toxicity'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Allison Magnuson"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Dosage",
+    "Creatinine"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "bc60e64e54264f4220d8a3fcd0c9beae6b000d2831e88fe00c9cece8566e25d0"
+}

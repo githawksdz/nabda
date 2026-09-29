@@ -1,0 +1,154 @@
+{
+  "id": "calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+  "slug": "hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+  "language": "en",
+  "title": "HAT (hémorragie After Thrombolysis) score pour Predicting Post-tPA hémorragie",
+  "short_title": "Score HAT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Hémorragie intracrânienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "ich",
+    "stroke",
+    "nihss"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés, comme ci-dessus.",
+  "how_to_use": {
+    "why": "Le score HAT peut objectiver le risque lié au tPA, souvent difficile à évaluer par la seule impression clinique globale, et fournir aux patients et à leurs proches des informations sur les risques et bénéfices potentiels.",
+    "when": "- Le score HAT peut aider à déterminer le rapport risque/bénéfice du tPA dans les cas limites pour les urgentistes et les neurologues.\n- Il peut également aider à déterminer quels patients nécessitent la surveillance la plus étroite si le tPA est administré.",
+    "pearls": "While symptomatic ICH definitions vary greatly, it is clear from several studies that increasing HAT Score correlates with increasing risk of symptomatic ICH and fatal ICH, from <5% at low scores to >10% at highest scores."
+  },
+  "next_steps": {
+    "advice": "- Arrêter immédiatement le tPA s'il est encore en cours d'administration.\n- Tous les patients présentant une ICH doivent bénéficier d'une consultation neurochirurgicale.\n- Envisager une consultation en hématologie pour antagoniser le tPA.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n| HAT Score | Risk of Any Hemorrhage | Risk of Symptomatic ICH | Risk of Fatal Hemorrhage |\n| --- | --- | --- | --- |\n| 0 | 6% | 2% | 0% |\n| 1 | 16% | 5% | 3% |\n| 2 | 23% | 10% | 7% |\n| 3 | 36% | 15% | 6% |\n| >3 | 78% | 44% | 33% |",
+  "short_description": "Risque hémorragique après tPA.",
+  "medium_description": "Évalue le risque d'hémorragie après tPA.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "hist",
+      "label": "Antécédents de diabète ou glycémie initiale >200 mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nihss_score",
+      "label": "Échelle NIH d’AVC pré-tPA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Inférieur à 15",
+          "value": 0
+        },
+        {
+          "label": "15-20",
+          "value": 1
+        },
+        {
+          "label": "≥20",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hypodensity",
+      "label": "Hypodensité facilement visible sur la TDM cérébrale initiale.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui, <1/3 du territoire MCA",
+          "value": 1
+        },
+        {
+          "label": "Oui, ≥1/3 du territoire de l'ACM",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lou M, Safdar A, Selim M, et. al. The HAT Score: A simple grading scale for predicting hemorrhage after thrombolysis. Neurology. 2008; 71(18): 1417–1423. doi: 10.1212/01.wnl.0000330297.58334.dd",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2676961/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tsivgoulis G, Saqqur M, Barreto A, Demchuk AM, Ribo M, Rubiera M, Sharma VK, Stamboulis E, Schellinger PD, Molina CA, Alexandrov AV. Validity of HAT score for predicting symptomatic intracranial hemorrhage in acute stroke patients with proximal occlusions: data from randomized trials of sonothrombolysis. Cerebrovasc Dis. 2011;31(5):471-6. doi: 10.1159/000324387. Epub 2011 Mar 3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21372569",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cucchiara B, Kasner S, Tanne D, Levine S, Demchuk A, Messe S, Sansing L, Lees K, Lyden P, and for the SAINT Investigators (2011). Validation assessment of risk scores to predict postthrombolysis intracerebral haemorrhage. International Journal of Stroke, 6: 109–111. doi: 10.1111/j.1747-4949.2010.00556.x",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21371270",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.functional-outcome-patients-primary-intracerebral-hemorrhage-func-score",
+    "calc.intracerebral-hemorrhage-ich-score",
+    "calc.sedan-score-post-tpa-hemorrhage"
+  ],
+  "source_logic_hash": "94072128832e2fbe641a9a1c24ca8004",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2030,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \nvar score=parseFloat(hist)+parseFloat(nihss_score)+parseFloat(hypodensity); \nvar anyHemRisk,fatalHemRisk; \n\nif(score==0){anyHemRisk='2';fatalHemRisk='0'} \nelse if(score==1){anyHemRisk='5';fatalHemRisk='3'} \nelse if(score==2){anyHemRisk='10';fatalHemRisk='7'} \nelse if(score==3){anyHemRisk='15';fatalHemRisk='6'} \nelse if(score>3){anyHemRisk='44';fatalHemRisk='33'} \n\ncalc_output.push({\n    name:'mini',\n    value:score.toFixed(0),\n    value_text:'points',\n    message:'HAT Score'\n}); \ncalc_output.push({\n    name:'2030_HAT Score_result (score)',\n    value:score.toFixed(0),\n    value_text:'points',\n    message:'HAT Score'\n}); \ncalc_output.push({\n    name:'2030_HAT Score_result (symptomatic)',\n    value:anyHemRisk,\n    value_text:'%',\n    message:'Risk of Symptomatic ICH.'\n});\ncalc_output.push({\n    name:'2030_HAT Score_result (fatal)',\n    value:fatalHemRisk,\n    value_text:'%',\n    message:'Risk of Fatal ICH.'\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Magdy Selim"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "591df5fdbf9cd216c77584fb58cbaf8510bf0ad139d2dfffc57118007426b354"
+}

@@ -1,0 +1,461 @@
+{
+  "id": "calc.seattle-heart-failure-model",
+  "slug": "seattle-heart-failure-model",
+  "language": "fr",
+  "title": "Seattle insuffisance cardiaque modèle",
+  "short_title": "Seattle insuffisance cardiaque modèle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Arrhythmia",
+    "Maladie coronarienne",
+    "Insuffisance cardiaque",
+    "Hypertension",
+    "Myocarditis",
+    "Cardiomyopathie hypertrophique"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Cough",
+    "Dizziness",
+    "Œdème des extrémités",
+    "Fatigue",
+    "Nausea",
+    "Œdème périphérique",
+    "Polyuria",
+    "Dyspnée",
+    "Swelling",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Seattle Heart Failure Model",
+    "hf",
+    "heart failure",
+    "congestive heart failure",
+    "chf",
+    "systolic heart failure",
+    "shf",
+    "hf survival",
+    "heart failure survival"
+  ],
+  "dosing": false,
+  "formula": "Le Seattle Heart Failure Score se calcule comme suit :\n\n**Score Seattle HF** = (âge/10)*ln(1,09) + sexe masculin*ln(1,089) + (classe NYHA)*ln(1,6) + (100/(fraction d'éjection))*ln(1,03) + (si étiologie ischémique)*ln(1,354) + (PAS/10)*ln(0,877) + (dose de diurétique)*ln(1,178) + (si sous allopurinol)*ln(1,571) + (si sous statines)*ln(0,63) + (si sous inhibiteurs de l'enzyme de conversion [IEC]) + (si sous bêta-bloquants)*ln(0,66) + (si sous antagonistes des récepteurs de l'angiotensine)*ln(0,85) + (si sous diurétiques épargneurs de potassium)*ln(0,74) + (si sous stimulateur biventriculaire) + (si sous défibrillateur automatique implantable)*ln(0,73) + (si sous défibrillateur automatique implantable biventriculaire)*ln(0,79) + (138 – sodium)*ln(1,05) + (100/(cholestérol total, mg/dL))*ln(2,206) + (score hgb) + ((% lymphocytes)/5)*ln(0,897) + (acide urique, mg/dL)*ln(1,064),\n\noù **dose de diurétique, mg/kg** = (furosémide + 2*torasémide + 26,7*bumétanide + 40*métolazone + 3,2*hydrochlorothiazide)/(poids, kg)\n\nCela correspond aux doses équivalentes suivantes utilisées dans ce calculateur (sur la base de 80 mg de furosémide) :\n\n- Torasémide : 40 mg.\n- Bumétanide : 3 mg.\n- Métolazone : 2 mg.\n- Hydrochlorothiazide : 25 mg.\n\nSi hémoglobine, g/dL <16 g/dL,\n\n**score hgb** = (16 – hémoglobine)*ln(1,124)\n\nSi hémoglobine, g/dL ≥16 g/dL,\n\n**score hgb** = (hémoglobine – 16)*ln(1,336)\n\nRemarque :\n\n- Les valeurs de lymphocytes >47 % sont fixées à 47 %.\n- Les valeurs d'acide urique <3,4 mg/dL sont fixées à 3,4 mg/dL.\n- Les valeurs de PAS >160 mm Hg sont fixées à 160 mm Hg.\n- Les valeurs de sodium >138 mEq/L sont fixées à 138 mEq/L.",
+  "how_to_use": {
+    "why": "- Fournit une estimation validée de la survie à 1, 2 et 5 ans dans l'insuffisance cardiaque systolique, aidant au pronostic (remarque : cet outil ne prend actuellement en charge que les estimations à 1 et 5 ans).\n- Contrairement à des modèles similaires, il a été élaboré dans une large population d'insuffisance cardiaque et intègre un large éventail de variables cliniques et thérapeutiques.",
+    "when": "À utiliser chez les patients atteints d'insuffisance cardiaque chronique (principalement avec dysfonction systolique) pour estimer la survie.",
+    "pearls": "- La validité externe varie selon les populations ; voir la section [Données probantes](#evidence) pour des liens vers des études de recherche supplémentaires.\n- Ne guide pas la prise en charge thérapeutique et ne fournit pas de recommandations médicamenteuses spécifiques ; il prédit seulement les bénéfices potentiels de certaines interventions.\n- Les prédictions peuvent être peu fiables chez les patients atteints d'insuffisance cardiaque diastolique."
+  },
+  "next_steps": {
+    "advice": "- Utiliser les résultats pour orienter les discussions avec les patients sur le pronostic, ce qui peut éclairer les décisions concernant les médicaments, les dispositifs, la transplantation et les soins de fin de vie.\n- Les paramètres d'entrée peuvent être ajustés pour estimer l'impact potentiel d'interventions supplémentaires (p. ex., médicaments, dispositifs) sur le risque de mortalité.",
+    "critical_actions": "",
+    "management": "Cet outil ne fournit pas explicitement de recommandations thérapeutiques. La prise en charge doit reposer sur une combinaison de recommandations, de meilleures pratiques, de l'expertise de spécialistes et des préférences du patient."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Predicts survie dans insuffisance cardiaque.",
+  "medium_description": "Predicts survie dans insuffisance cardiaque.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Gender",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nyha",
+      "label": "[Classe NYHA](nabda:calc.new-york-heart-association-nyha-functional-classification-heart-failure)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Classe I",
+          "value": 1
+        },
+        {
+          "label": "Classe II",
+          "value": 2
+        },
+        {
+          "label": "Classe III",
+          "value": 3
+        },
+        {
+          "label": "Classe IV",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ef",
+      "label": "Fraction d'éjection",
+      "optional": false,
+      "unit": "ejection_fraction",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "isch",
+      "label": "Étiologie ischémique",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "SBP",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "fur",
+      "label": "Furosemide",
+      "optional": false,
+      "unit": "furosemide",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tor",
+      "label": "Torsemide",
+      "optional": false,
+      "unit": "torsemide",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "but",
+      "label": "Bumetanide",
+      "optional": false,
+      "unit": "bumetanide",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "met",
+      "label": "Metolazone",
+      "optional": false,
+      "unit": "metolazone",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hctz",
+      "label": "Hydrochlorothiazide",
+      "optional": false,
+      "unit": "hydrochlorothiazide",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "allo",
+      "label": "Sous allopurinol",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stat",
+      "label": "Utilisation des statines",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "acei",
+      "label": "Sous inhibiteurs de l'enzyme de conversion (IEC)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bb",
+      "label": "Sous bêta-bloquants",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arb",
+      "label": "Sous antagonistes des récepteurs de l'angiotensine",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diur",
+      "label": "Sous diurétiques épargneurs de potassium",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dev",
+      "label": "Devices",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Stimulateur biventriculaire",
+          "value": 0
+        },
+        {
+          "label": "Défibrillateur automatique implantable",
+          "value": -0.31
+        },
+        {
+          "label": "Défibrillateur automatique implantable biventriculaire",
+          "value": -0.24
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tchol",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hb",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "lymph",
+      "label": "Lymphocytes",
+      "optional": false,
+      "unit": "lymph",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "uric",
+      "label": "Acide urique",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022 aha/acc/hfsa guideline for the management of heart failure: a report of the american college of cardiology/american heart association joint committee on clinical practice guidelines. Circulation. 2022;145(18):e895-e1032.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35363499/",
+      "kind": "international"
+    },
+    {
+      "text": "Levy WC, Mozaffarian D, Linker DT, et al. The Seattle Heart Failure Model: prediction of survival in heart failure. Circulation. 2006;113(11):1424-1433.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16534009/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gorodeski EZ, Chu EC, Chow CH, Levy WC, Hsich E, Starling RC. Application of the Seattle Heart Failure Model in ambulatory patients presented to an advanced heart failure therapeutics committee. Circ Heart Fail. 2010;3(6):706-714.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20798278/",
+      "kind": "other"
+    },
+    {
+      "text": "Kalogeropoulos AP, Georgiopoulou VV, Giamouzis G, et al. Utility of the Seattle Heart Failure Model in patients with advanced heart failure. J Am Coll Cardiol. 2009;53(4):334-342.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19161882/",
+      "kind": "other"
+    },
+    {
+      "text": "Mozaffarian D, Anker SD, Anand I, et al. Prediction of mode of death in heart failure: the Seattle Heart Failure Model. Circulation. 2007;116(4):392-398.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17620506/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Li S, Marcus P, Núñez J, Núñez E, Sanchis J, Levy WC. Validity of the Seattle Heart Failure Model after heart failure hospitalization. ESC Heart Fail. 2019;6(3):509-515.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30825268/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "May HT, Horne BD, Levy WC, et al. Validation of the Seattle Heart Failure Model in a community-based heart failure population and enhancement by adding B-type natriuretic peptide. Am J Cardiol. 2007;100(4):697-700.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17697831/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maggic-risk-calculator-heart-failure",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.systematic-coronary-risk-evaluation-score2"
+  ],
+  "source_logic_hash": "d929c466f2c68f473aba6cedc8e6018a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3808,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.allopurinol",
+    "s.bumetanide",
+    "s.furosemide",
+    "s.hydrochlorothiazide",
+    "s.amiloride-furosemide",
+    "s.amiloride-hydrochlorothiazide",
+    "s.benazepril-hydrochlorothiazide",
+    "s.bisoprolol-hydrochlorothiazide",
+    "s.candesartan-hydrochlorothiazide",
+    "s.captopril-hydrochlorothiazide",
+    "s.cholesterol-zinc-oxyde",
+    "s.enalapril-hydrochlorothiazide",
+    "s.fosinopril-hydrochlorothiazide",
+    "s.hydrochlorothiazide-triamterene",
+    "s.hydrochlorothiazide-irbesartan",
+    "s.hydrochlorothiazide-lisinopril",
+    "s.hydrochlorothiazide-losartan",
+    "s.hydrochlorothiazide-nebivolol",
+    "s.hydrochlorothiazide-olmesartan-medoxomil",
+    "s.hydrochlorothiazide-quinapril",
+    "s.hydrochlorothiazide-ramipril",
+    "s.hydrochlorothiazide-telmisartan",
+    "s.hydrochlorothiazide-valsartan",
+    "s.hydrochlorothiazide-zofenopril",
+    "s.amiloride-hydrochlorothiazide-timolol",
+    "s.amlodipine-hydrochlorothiazide-valsartan",
+    "s.candessartan-hydrochlorothiazide"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

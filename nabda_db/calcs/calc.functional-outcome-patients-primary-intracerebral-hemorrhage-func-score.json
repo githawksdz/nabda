@@ -1,0 +1,197 @@
+{
+  "id": "calc.functional-outcome-patients-primary-intracerebral-hemorrhage-func-score",
+  "slug": "functional-outcome-patients-primary-intracerebral-hemorrhage-func-score",
+  "language": "en",
+  "title": "Functional devenir chez les patients avec primaire Intracerebral hémorragie (FUNC) score",
+  "short_title": "Score FUNC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hémorragie intracrânienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Headache",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "ICH",
+    "SAH",
+    "stroke",
+    "neuro",
+    "mortality",
+    "death"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "- Aide les cliniciens à établir rapidement et précisément le pronostic des patients admis pour une ICH.\n- Peut être utilisé comme outil pour guider les décisions relatives aux objectifs de soins.",
+    "when": "- Patients diagnosed with ICH.\n- Grades ICH severity and subsequent likelihood of functional independence at 90 days, thus helping to guide goals of care conversations with patients’ families.\n- Often used in conjunction with the [ICH score](nabda:calc.intracerebral-hemorrhage-ich-score) , which predicts 30 day mortality after ICH.",
+    "pearls": "- The Functional Outcome in Patients With Primary Intracerebral Hemorrhage (ICH) Score estimates likelihood of functional independence after a diagnosis of ICH.\n- It is intended to be used when the diagnosis of ICH is made, NOT as a continual marker of the patient’s prognosis throughout their stay.\n- While the score can be a marker for ICH severity, it is typically NOT used to guide treatment modality.\n- It should be used in patients with primary ICH only. Do not use in patients with secondary causes of ICH such as vascular malformation, CNS tumor, antecedent trauma or ischemic stroke, vasculitis, supratherapeutic INR (>3.0), or bleeding disorder."
+  },
+  "next_steps": {
+    "advice": "- While the ICH score grades severity of the disease, it does not directly dictate treatment modalities.\n- Patients with ICH should have emergent consultation with neurosurgery and be stabilized prior to transfer, if transfer is required. Most patients require ICU-level care and monitoring for airway sequelae of neurologic decompensation.\n- ICH often causes hydrocephalus; therefore, patients with low [GCS](nabda:calc.glasgow-coma-scale-score-gcs) and/or signs of hydrocephalus on head CT may also need urgent ventricular decompression with an extra-ventricular drain (EVD).\n- Coagulation studies should be ordered immediately to determine if any coagulopathy is contributing to ongoing bleeding. Clinicians should also determine if aspirin or other antiplatelet medications were taken by the patient.",
+    "critical_actions": "- Les patients traités par antiagrégants plaquettaires ou anticoagulants peuvent nécessiter des agents de réversion.\n- Les patients présentant une ICH susceptible de nécessiter une intervention doivent être transférés en urgence vers un établissement disposant de capacités neurochirurgicales, si ces capacités ne sont pas disponibles dans l’établissement d’admission.",
+    "management": "Les décisions cliniques concernant les objectifs de soins ne doivent pas être prises uniquement sur la base du score FUNC. D’autres facteurs, tels que les souhaits des patients et de leurs familles, l’état neurologique initial et d’autres comorbidités, doivent être pris en compte."
+  },
+  "evidence": "- The FUNC score was developed to provide more detailed prognostic information for patients with ICH. Unlike the [ICH score](nabda:calc.intracerebral-hemorrhage-ich-score) , which focuses on predicting 30-day mortality, this score focused on predicting functional independence at 90 days, defined as a Glasgow Outcome Scale > 4.\n- The score was developed by[Rost et al in 2008](https://stroke.ahajournals.org/content/39/8/2304.full)using retrospective data that was in prospectively validated in 629 consecutive patients presenting with ICH. At 90 days, 26% of patients had functional independence.\n- In the original data set, only patients with primary ICH were included. Patients with any of the following were excluded:\n\n - Vascular malformation\n - CNS tumor\n - Antecedent trauma\n - Ischemic stroke\n - Vasculitis\n - Excessive anticoagulation (INR >3.0)\n - Any blood dyscrasia\n- [Garrett et al in 2013](https://www.ncbi.nlm.nih.gov/pubmed/24132566)validated the FUNC score in a retrospective cohort of 501 patients, and found that it performed similarly or or better than alternative scores: the AUC for FUNC was 0.873, similar to 0.888 for ICH-GS and better than 0.743 for oICH.\n- Study authors performed a subgroup analysis on patients who survived to 90 days post-ICH to account for any bias introduced by early withdrawal of care. Their work demonstrated that the FUNC score reliably predicted functional independence in this group as well, suggesting that it is not substantially affected by the decision to withdrawal care. This subgroup comparison is included in our calculator to more closely reflect the analysis groups in the original literature and to provide additional guidance to clinicians.",
+  "more_info": "**Score interpretation:**\n\n| FUNC Score | Functional Independence at 90 Days | |\n| --- | --- | --- |\n| Entire Cohort | Survivors Only | |\n| 0-4 | 0% | 0% |\n| 5-7 | 13% | 29% |\n| 8 | 42% | 48% |\n| 9-10 | 66% | 75% |\n| 11 | 82% | 95% |",
+  "short_description": "Probabilité d'indépendance fonctionnelle après une ICH.",
+  "medium_description": "Identifies patients avec ICH who will attain functional independence et assists dans clinique decision-making.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ichvol",
+      "label": "ICH volume (cm³)",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 30",
+          "value": 4
+        },
+        {
+          "label": "30-60",
+          "value": 2
+        },
+        {
+          "label": ">60",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 70",
+          "value": 2
+        },
+        {
+          "label": "70-79",
+          "value": 1
+        },
+        {
+          "label": "≥80",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "location",
+      "label": "Localisation de l'ICH",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Lobar",
+          "value": 2
+        },
+        {
+          "label": "Deep",
+          "value": 1
+        },
+        {
+          "label": "Infratentorial",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "Score GCS",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥9",
+          "value": 2
+        },
+        {
+          "label": "≤8",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cog",
+      "label": "Trouble cognitif pré-ICH",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Rost NS, et. al. Prediction of Functional Outcome in Patients With Primary Intracerebral Hemorrhage: The FUNC Score. Stroke. 2008; 39:2304-2309, doi:10.1161/STROKEAHA.107.512202",
+      "href": "https://stroke.ahajournals.org/content/39/8/2304.full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Garrett JS, Zarghouni M, Layton KF, Graybeal D, Daoud YA. Neurocrit Care. Validation of clinical prediction scores in patients with primary intracerebral hemorrhage. 2013 Dec;19(3):329-35. doi: 10.1007/s12028-013-9926-y.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24132566",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.intracerebral-hemorrhage-ich-score",
+    "calc.hunt-hess-classification-subarachnoid-hemorrhage",
+    "calc.hat-hemorrhage-thrombolysis-score-predicting-post-tpa-hemorrhage",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "e3f9ade8a9653ee5e139c071f16e5d90",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.intracerebral-hemorrhage-ich-score",
+      "text": "ICH score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3883,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

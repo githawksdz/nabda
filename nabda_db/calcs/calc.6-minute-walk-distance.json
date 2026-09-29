@@ -1,0 +1,157 @@
+{
+  "id": "calc.6-minute-walk-distance",
+  "slug": "6-minute-walk-distance",
+  "language": "en",
+  "title": "Distance de marche de 6 minutes",
+  "short_title": "Distance de marche de 6 minutes",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "pneumologie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Douleur chronique",
+    "Insuffisance cardiaque",
+    "Fibrose pulmonaire idiopathique",
+    "Sclérose en plaques",
+    "Neuropathy",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Pain",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "6MWD",
+    "walking",
+    "six minute",
+    "functional status"
+  ],
+  "dosing": false,
+  "formula": "**Male patients:**\n\n6MWD in meters = (7.57 × height in cm) – (5.02 × age) – (1.76 × weight in kg) – 309\n\nLower limit of normal = 6MWD - 153\n\n**Female patients:**\n\n6MWD in meters = (2.11 × height in cm) – (2.29 × weight in kg) – (5.78 × age) + 667\n\nLower limit of normal = 6MWD - 139",
+  "how_to_use": {
+    "why": "- Principalement utilisé pour évaluer la réponse aux interventions chez les patients atteints d’une maladie cardiaque ou pulmonaire modérée à sévère ([American Thoracic Society guidelines](https://www.thoracic.org/statements",
+    "when": "",
+    "pearls": "- Original cohort did not include patients <40 or >80 years old and non-Caucasian patients.\n- Widely used across specialities dealing with geriatrics and/or chronic disease.\n- Intended to be carried out along a flat straight walking course 30 m (100 ft) long, with brightly colored tape marking the starting line (as well as every 60 m lap). Use of a treadmill is not recommended. More detailed instructions are available in the[American Thoracic Society guidelines](https://www.thoracic.org/statements/resources/pfet/sixminute.pdf).\n- Known to be less accurate in shorter patients, who have shorter strides."
+  },
+  "next_steps": {
+    "advice": "Traiter l’affection sous-jacente. La 6MWD peut être mesurée de manière répétée pour évaluer la progression de la maladie et la réponse au traitement.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Statut fonctionnel.",
+  "medium_description": "Calculates reference values pour distance walked, as measure de functional status.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ht",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_6mwd",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "distance_walked",
+      "label": "Distance parcourue",
+      "tips": "Facultatif, pour calculer le pourcentage de la valeur théorique",
+      "optional": true,
+      "unit": "m_6mwd",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "ATS statement: guidelines for the six-minute walk test. Am J Respir Crit Care Med. 2002;166(1):111-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12091180",
+      "kind": "international"
+    },
+    {
+      "text": "Enright PL, Sherrill DL. Reference equations for the six-minute walk in healthy adults. Am J Respir Crit Care Med. 1998;158(5 Pt 1):1384-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9817683 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Enright PL. The six-minute walk test. Respir Care. 2003;48(8):783-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12890299",
+      "kind": "other"
+    },
+    {
+      "text": "Enright PL, Mcburnie MA, Bittner V, et al. The 6-min walk test: a quick measure of functional status in elderly adults. Chest. 2003;123(2):387-98.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12576356 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.edmonton-obesity-staging-system-eoss",
+    "calc.copd-assessment-test-cat",
+    "calc.berg-balance-scale-bbs"
+  ],
+  "source_logic_hash": "53ba05e4bae8aa5bc51cea37a8a866ad",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3983,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

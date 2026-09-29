@@ -1,0 +1,223 @@
+{
+  "id": "calc.american-university-beirut-aub-has2-cardiovascular-risk-index",
+  "slug": "american-university-beirut-aub-has2-cardiovascular-risk-index",
+  "language": "fr",
+  "title": "American University de Beirut (AUB)-HAS2 Cardiovascular risque index",
+  "short_title": "AUB-HAS2",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "neurochirurgie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Fatigue",
+    "Numbness",
+    "Vertigo",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "American University of Beirut (AUB)-HAS2 Cardiovascular Risk Index",
+    "AUB-HAS2",
+    "aub",
+    "aub has2",
+    "cardiovascular risk index",
+    "aub cardiovascular risk index",
+    "cardio risk index",
+    "preop",
+    "preop clearance",
+    "preop risk",
+    "preoperative clearance",
+    "preoperative",
+    "preoperative risk"
+  ],
+  "dosing": false,
+  "formula": "L'AUB-HAS2 est calculé par l'addition des points sélectionnés :\n\n| Variable | | Points |\n| --- | --- | --- |\n| Âge, années | <75 | 0 |\n| | ≥75 | 1 |\n| Hémoglobine, g/dL | ≥12 g/dL | 0 |\n| | <12 g/dL | 1 |\n| Antécédents de cardiopathie | p. ex. antécédent d'infarctus du myocarde, angioplastie coronaire, chirurgie cardiaque, insuffisance cardiaque, fibrillation atriale, ou valvulopathie modérée/sévère confirmée par échocardiographie — Non | 0 |\n| | Oui | 1 |\n| Angor ou dyspnée | Non | 0 |\n| | Oui | 1 |\n| Chirurgie vasculaire | Non | 0 |\n| | Oui | 1 |\n| Urgence chirurgicale | Programmée | 0 |\n| | Urgente | 1 |",
+  "how_to_use": {
+    "why": "- Estime le risque d’événement à 30 jours chez un patient (y compris décès, infarctus du myocarde ou accident vasculaire cérébral).\n- Aide les cliniciens à identifier les patients à haut risque susceptibles de bénéficier d’une surveillance plus intensive, d’une intervention, voire d’un report de la chirurgie si une atténuation du risque est nécessaire.\n- Cité comme outil d’évaluation préopératoire suggéré dans les [recommandations ESC 2022 sur l’évaluation et la prise en charge cardiovasculaires des patients subissant une chirurgie non cardiaque](https://www.portailvasculaire.fr/sites/default/files/docs/2022_esc_evaluation_cardiovasculaire_avant_chirurgie_non_cardiaque_0.pdf) et dans la [recommandation ACC/AHA 2024 pour la prise en charge cardiovasculaire périopératoire de la chirurgie non cardiaque](https://www.ahajournals.org/doi/epdf/10.1161/CIR.0000000000001285).",
+    "when": "À appliquer en contexte préopératoire pour stratifier le risque cardiovasculaire des patients devant subir une chirurgie non cardiaque.",
+    "pearls": "- Validé sur un large éventail de populations chirurgicales, y compris les chirurgies programmées et urgentes.\n- Des études ont montré qu'il offre un pouvoir discriminant supérieur à celui du [Revised Cardiac Risk Index (RCRI)](nabda:calc.revised-cardiac-risk-index-pre-operative-risk).\n- Ne prend pas en compte tous les facteurs de risque préopératoires ; cet outil doit être utilisé dans le cadre d'une évaluation complète."
+  },
+  "next_steps": {
+    "advice": "- Utilisez les résultats conjointement avec d’autres facteurs propres au patient et à l’intervention pour guider les discussions sur le risque périopératoire et adapter les plans de soins.\n- Pour renforcer l’évaluation et la prise en charge du risque, envisagez d’associer les résultats de cet outil à une évaluation des symptômes et de la capacité fonctionnelle (p. ex., [Duke Activity Status Index](nabda:calc.duke-activity-status-index-dasi)).",
+    "critical_actions": "Un score de risque élevé ne devrait pas nécessairement empêcher ou retarder la réalisation d’une chirurgie urgente ou en urgence chez un patient, car les bénéfices peuvent l’emporter sur les risques. Le jugement clinique, ainsi que l’avis chirurgical et cardiologique et les préférences du patient, doivent être pris en compte.",
+    "management": "- **Low risk (score 0-1):**\n\n - No further cardiovascular testing is required.\n - Ensure optimal therapy for any underlying cardiovascular disease.\n- **Intermediate (score 2-3) and high risk (score >3):**\n\n - Consider a baseline ECG and ensure cardiovascular disease treatment is optimized.\n - Additional cardiovascular evaluation, including laboratory studies (e.g., BNP, troponin), stress testing, echocardiography, and/or cardiology consultation, may be appropriate if the patient has symptoms and/or if the results could alter management.\n- Address additional risk factors not covered by this tool (e.g., glucose and blood pressure management).\n- For more detailed recommendations, please refer to the 2024 perioperative cardiovascular management guidelines from the[ACC/AHA Joint Committee on Clinical Practice Guidelines](https://www.ahajournals.org/doi/abs/10.1161/CIR.0000000000001285?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%20%200pubmed)."
+  },
+  "evidence": "",
+  "more_info": "| AUB-HAS2 | Risque d'événement indésirable* |\n| --- | --- |\n| 0 | 0,3 % |\n| 1 | 1,6 % |\n| 2 | 5,6 % |\n| 3 | 11 % |\n| ≥4 | 17,5 % |\n\n***** Défini comme décès, infarctus du myocarde ou accident vasculaire cérébral.",
+  "short_description": "Stratification du risque cardiovasculaire.",
+  "medium_description": "Stratifie le risque cardiovasculaire des patients subissant une chirurgie non cardiaque.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 75",
+          "value": 0
+        },
+        {
+          "label": "≥75",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hem",
+      "label": "Hémoglobine, g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥12 g/dL",
+          "value": 0
+        },
+        {
+          "label": "< 12 g/dL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heart",
+      "label": "Antécédents de maladie cardiaque",
+      "tips": "p. ex. antécédents d’infarctus du myocarde, d’angioplastie coronaire, de chirurgie cardiaque, d’insuffisance cardiaque, de fibrillation atriale ou de valvulopathie modérée/sévère confirmée par échocardiographie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "angina",
+      "label": "Angor ou dyspnée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vascular",
+      "label": "Chirurgie vasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "urgency",
+      "label": "Urgence chirurgicale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Elective",
+          "value": 0
+        },
+        {
+          "label": "Emergency",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Dakik HA, Chehab O, Eldirani M, et al. A new index for pre-operative cardiovascular evaluation. J Am Coll Cardiol. 2019;73(24):3067-3078.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31221255/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dakik HA, Sbaity E, Msheik A, et al. Aub-has2 cardiovascular risk index: performance in surgical subpopulations and comparison to the revised cardiac risk index. J Am Heart Assoc. 2020;9(10):e016228.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32390481/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Dakik HA, Eldirani M, Kaspar C, et al. Prospective validation of the AUB-HAS2 cardiovascular risk index. European heart journal Quality of care & clinical outcomes. 2022;8(1).",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33017006/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-cardiac-risk-index-pre-operative-risk",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.duke-activity-status-index-dasi"
+  ],
+  "source_logic_hash": "f173bf9c9b16b2a2dc7d4ca9b88cd4a7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.revised-cardiac-risk-index-pre-operative-risk",
+      "text": "Revised Cardiac Risk Index (RCRI)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.duke-activity-status-index-dasi",
+      "text": "Duke Activity Status Index"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10439,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

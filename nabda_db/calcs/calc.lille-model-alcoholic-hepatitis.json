@@ -1,0 +1,140 @@
+{
+  "id": "calc.lille-model-alcoholic-hepatitis",
+  "slug": "lille-model-alcoholic-hepatitis",
+  "language": "fr",
+  "title": "Lille modèle pour Alcoholic Hepatitis",
+  "short_title": "Lille modèle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Hépatopathie chronique",
+    "Hepatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Lille",
+    "Alcoholic",
+    "Hepatitis"
+  ],
+  "dosing": false,
+  "formula": "Lille Model Score = (exp(-R))/(1 + exp(-R))\n\nwhere the variables are as follows:\n\nR = 3.19 – 0.101*(age, years) + 0.147*(albumin day 0, g/L) + 0.0165* (evolution in bilirubin level, µmol/L) - 0.206*(renal insufficiency) - 0.0065*(bilirubin day 0, µmol/L) - 0.0096*(PT, sec)\n\nRenal insufficiency = 1 (if Cr >1.3 mg/dL (115 µmol/L)) or 0 (if ≤1.3 mg/dL (115 µmol/L))",
+  "how_to_use": {
+    "why": "",
+    "when": "Identification des patients atteints d’hépatite alcoolique ne répondant pas aux corticoïdes, chez qui il convient d’envisager des traitements alternatifs ou une orientation précoce vers une transplantation.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Il est connu que tous les patients atteints d’hépatite alcoolique ne répondent pas aux corticoïdes, mais on ne savait pas auparavant lesquels des non-répondeurs auraient un mauvais pronostic ; le Lille Model aide à le déterminer.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Le modèle de Lille prédit les taux de mortalité à 6 mois.\n\n- Les scores >0,45 prédisent une survie à 6 mois de 25 %.\n- Les scores <0,45 prédisent une survie à 6 mois de 85 %.",
+  "short_description": "Mortalité dans alcoholic hepatitis that is unresponsive pour steroids.",
+  "medium_description": "Predicts mortalité chez les patients avec alcoholic hepatitis not responding pour steroid therapy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bili_init",
+      "label": "Bilirubine (initiale)",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bili7",
+      "label": "Bilirubine (jour 7)",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cr",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pt",
+      "label": "PT",
+      "optional": false,
+      "unit": "pt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Louvet A, Naveau S, Abdelnour M, Ramond MJ, Diaz E, Fartoux L, Dharancy S, Texier F, Hollebecque A, Serfaty L, Boleslawski E, Deltenre P, Canva V, Pruvot FR, Mathurin P. The Lille model: a new tool for therapeutic strategy in patients with severe alcoholic hepatitis treated with steroids. Hepatology. 2007; 45(6):1348-54.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17518367",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sandahl TD, Jepsen P, Ott P, Vilstrup H.Validation of prognostic scores for clinical use in patients with alcoholic hepatitis. Scand J Gastroenterol. 2011; 46(9):1127-32. doi: 10.3109/00365521.2011.587200. Epub 2011 May 18.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21591871",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abic-score-alcoholic-hepatitis",
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "ff48e2e36a991ff185316984a79446c1",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2024,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,219 @@
+{
+  "id": "calc.denver-hiv-risk-score",
+  "slug": "denver-hiv-risk-score",
+  "language": "en",
+  "title": "Denver HIV risque score",
+  "short_title": "Denver HIV score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Fever",
+    "Rash",
+    "Mal de gorge"
+  ],
+  "abbreviations": [
+    "HIV",
+    "Denver",
+    "risk score",
+    "human immunodeficiency virus",
+    "denver score",
+    "aids"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <22 | 0 |\n| 22–25 | 4 | |\n| 26–32 | 10 | |\n| 33–46 | 12 | |\n| 47–54 | 10 | |\n| 55–60 | 4 | |\n| >60 | 0 | |\n| Gender | Female | 0 |\n| Male | 21 | |\n| Sexual practices* | Sex with a male | 22 |\n| Receptive anal intercourse | 8 | |\n| Vaginal intercourse | -10 | |\n| None of the above | 0 | |\n| Other risk factors | Injection drug use | 9 |\n| Past HIV testing | -4 | |\n| Neither | 0 | |\n| Race/ethnicity** | Black | 9 |\n| Hispanic | 3 | |\n| American Indian, Alaska Native, Native Hawaiian, non-Hawaiian Pacific Islander, or other | 0 | |\n| White | 0 | |\n\n*Choose practice that yields the highest score, e.g. if patient engages in both vaginal and receptive anal intercourse, choose the latter to assign 8 points.\n\n**Race may/may not provide better estimates of HIV prevalence; optional.[See here](https://www.mdcalc.com/race)for more on our approach to addressing race and bias on MDCalc.",
+  "how_to_use": {
+    "why": "- Utile dans les contextes où un dépistage non ciblé n’est pas réalisable.\n- Accélère les tests de confirmation et l’instauration du traitement en identifiant rapidement les patients à risque plus élevé qui bénéficieraient d’un dépistage.",
+    "when": "- Use to identify patients (aged 13 years or older) with an increased probability of undiagnosed HIV infection.\n- Useful for targeting HIV screening in primary care, urgent care, or emergency department settings.",
+    "pearls": "- Un score faible n'élimine pas la possibilité d'une infection par le VIH.\n- Dérivé et validé dans des contextes cliniques américains ; son applicabilité à d'autres populations de patients peut varier.\n- L'efficacité du dépistage ciblé du VIH par rapport au dépistage non ciblé est mitigée dans la littérature."
+  },
+  "next_steps": {
+    "advice": "- Le CDC recommande que tous les patients âgés de 13 à 64 ans soient dépistés pour le VIH au moins une fois dans le cadre des soins de santé de routine.\n- Cet outil est destiné à compléter, et non à remplacer, les recommandations existantes de dépistage du VIH.",
+    "critical_actions": "- Tenez compte des lois de votre État en matière de dépistage et de déclaration du VIH.\n- Pour des recommandations détaillées sur le dépistage, consultez le [CDC](https://www.cdc.gov/hivnexus/hcp/diagnosis-testing/index.html).",
+    "management": "A score ≥30 indicates an increased risk for undiagnosed HIV infection.\n\n- Offer HIV testing, which may include nucleic acid, antibody, or antigen/antibody combination tests.\n- For positive results, order confirmatory testing, provide education and counseling, and refer the patient for specialty HIV care and antiviral therapy.\n- For negative results, provide prevention counseling and consider frequent rescreening if risk factors remain (e.g., injection drug use, men who have sex with men, or a sex partner with HIV)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score | Risque | Prévalence du VIH (IC 95 %) |\n| --- | --- | --- |\n| <20 | Très faible | 0,31 % (0,20-0,45) |\n| 20-29 | Faible | 0,41 % (0,29-0,57) |\n| 30-39 | Modéré | 0,99 % (0,63-1,47) |\n| 40-49 | Élevé | 1,59 % (1,02-2,36) |\n| ≥50 | Très élevé | 3,59 % (2,73-4,63) |",
+  "short_description": "HIV risque dépistage.",
+  "medium_description": "Predicts probabilité de undiagnosed HIV infection.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 22",
+          "value": 0
+        },
+        {
+          "label": "22–25",
+          "value": 4
+        },
+        {
+          "label": "26–32",
+          "value": 10
+        },
+        {
+          "label": "33–46",
+          "value": 12
+        },
+        {
+          "label": "47–54",
+          "value": 10
+        },
+        {
+          "label": "55–60",
+          "value": 4
+        },
+        {
+          "label": ">60",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 21
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "practices",
+      "label": "Pratiques sexuelles",
+      "tips": "Choisissez la pratique qui donne le score le plus élevé, p. ex. si le patient a à la fois des rapports vaginaux et des rapports anaux réceptifs, choisissez ces derniers pour attribuer 8 points",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Sex avec male",
+          "value": 22
+        },
+        {
+          "label": "Rapport anal réceptif",
+          "value": 8
+        },
+        {
+          "label": "Rapport vaginal",
+          "value": -10
+        },
+        {
+          "label": "Aucune des propositions ci-dessus",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "other",
+      "label": "Autres facteurs de risque",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Usage de drogues par injection",
+          "value": 9
+        },
+        {
+          "label": "Dépistage antérieur du VIH",
+          "value": -4
+        },
+        {
+          "label": "Neither",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race/ethnicity",
+      "tips": "Race may/may not provide better estimates of HIV prevalence; optional",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Black",
+          "value": 10
+        },
+        {
+          "label": "Hispanic",
+          "value": 4
+        },
+        {
+          "label": "Amérindien, Autochtone de l'Alaska, Hawaïen autochtone, Insulaire du Pacifique non hawaïen, ou autre",
+          "value": 1
+        },
+        {
+          "label": "White",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Haukoos JS, Lyons MS, Lindsell CJ, et al. Derivation and validation of the Denver Human Immunodeficiency Virus (HIV) risk score for targeted HIV screening. Am J Epidemiol. 2012;175(8):838-46.",
+      "href": "https://academic.oup.com/aje/article/175/8/838/202955",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Haukoos JS, Hopkins E, Bender B, et al. Comparison of enhanced targeted rapid HIV screening using the Denver HIV risk score to nontargeted rapid HIV screening in the emergency department. Ann Emerg Med. 2013;61(3):353-61.",
+      "href": "https://www.annemergmed.com/article/S0196-0644(12)01704-0/abstract",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.menza-score",
+    "calc.hiv-incidence-risk-index-hiri-msm",
+    "calc.virsta-score"
+  ],
+  "source_logic_hash": "e2cf3a678a59350702cef7169bafab8c",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10046,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,281 @@
+{
+  "id": "calc.burch-wartofsky-point-scale-bwps-thyrotoxicosis",
+  "slug": "burch-wartofsky-point-scale-bwps-thyrotoxicosis",
+  "language": "en",
+  "title": "Burch-Wartofsky point échelle (BWPS) pour Thyrotoxicosis",
+  "short_title": "Burch-Wartofsky point échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Fibrillation atriale",
+    "Hyperthyroidism"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Fever",
+    "Palpitations",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "thyroid",
+    "tsh",
+    "thyroid storm",
+    "Burch Wartofsky",
+    "thyrotoxicosis",
+    "thyroid dysfunction",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Peut aider à distinguer une thyrotoxicose non compliquée d’un orage thyroïdien « imminent » ou d’un orage thyroïdien avéré.",
+    "when": "Patients atteints de thyrotoxicose dans un contexte de décompensation systémique.",
+    "pearls": "- The Burch-Wartofsky Point Scale (BWPS) is a quantitative diagnostic tool based on 3 major observations in patients with thyroid storm:\n\n - Continuum of end organ dysfunction.\n - High variability of symptoms and signs between patients.\n - High mortality associated with missed diagnosis.\n- Assigns points for dysfunction of thermoregulatory, GI, cardiovascular, and central nervous systems.\n- Given the high mortality/morbidity associated with thyroid storm, the BWPS intentionally utilizes liberal criteria, which may also lead to false-positives.\n- Elderly patients may present with apathetic thyrotoxicosis with atypical symptoms (weakness, memory loss, obtundation, cardiac failure).\n- Serum levels of T4 and T3 do NOT correlate with severity of thyrotoxicosis.\n- Presence of jaundice suggests especially poor prognosis.\n- Ultimately, thyroid storm is a clinical diagnosis and requires prompt recognition and treatment."
+  },
+  "next_steps": {
+    "advice": "- BWPS ≥45 is highly suggestive of thyroid storm; consider rapid and aggressive multimodal management in ICU.\n- BWPS 25-44 suggests impending thyroid storm; consider thionamides, symptom management. Consider ICU monitoring.\n- BWPS <25 is unlikely to represent thyroid storm; investigate diagnosis of thyrotoxicosis (Graves disease, toxic adenoma, toxic multinodular goiter, subacute thyroiditis, exogenous levothyroxine, struma ovarii) and obtain additional imaging (thyroid ultrasound, radioactive iodine uptake and scan).",
+    "critical_actions": "- Iodine therapy should be administered at least 1 hour AFTER thionamides to prevent stimulation of new thyroid hormone synthesis.\n- Avoid aspirin because it displaces T4 from thyroid binding globulin, resulting in increase of free T4.\n- TItrate beta blockers carefully as excessive doses in thyrotoxic patients can cause cardiovascular collapse.\n- Besides reducing T4 to T3 conversion, steroids provide adrenal support, which can be impaired in thyroid storm.",
+    "management": "Search for potential precipitant(s) of thyroid storm: infection, thyroidal/nonthyroidal surgery, medications (anesthetics, pseudoePHEDrine, amiodarone), iodinated contrast exposure, DKA, exogenous thyroid hormone, CVA, MI, PE.\n\n- Target treatment towards thyroid hormone formation, release, and adrenergic action:\n\n - Anti-thyroid drug therapy (propylthiouracil, methIMAzole).\n - Potassium iodine.\n - Beta-blockade (propranolol, esmolol).\n - Corticosteroid (hydrocortisone).\n - Supportive care (fluids, acetaminophen).\n - ICU level care."
+  },
+  "evidence": "The BWPS is based on a retrospective analysis of patients diagnosed with thyroid storm and was validated retrospectively against their medical records. American Thyroid Association (ATA) guidelines (2011) include the BWPS as diagnostic criteria for thyroid storm.\n\nThe Japanese Thyroid Association (Akamizu et al) published an alternative system derived from literature review of thyroid storm cases and Japanese patients with thyroid storm in 2012. The Japanese Thyroid Association (JTA) criteria categorize patients based on aggregate presence of certain clinical features (CNS, fever, tachycardia, congestive heart failure, GI). In the JTA guidelines, a “definite” diagnosis of thyroid storm requires:\n\n- At least 1 CNS symptom plus ≥ 1 other symptoms OR\n- ≥ 3 symptoms other than CNS manifestations\n\nOverall, comparison of JTA criteria to BWPS demonstrated that of the 406 patients diagnosed of thyroid storm or impending/possible thyroid storm, 354 were identified as such by both scoring systems. Although these 2 scoring systems are mostly concordant, 41 additional patients were found to qualify for treatment by the BWPS, suggesting that the application of BWPS may lead to more aggressive treatment approach.",
+  "more_info": "**Interprétation du score :**\n\n| Score | Tempête thyroïdienne |\n| --- | --- |\n| <25 | Peu probable qu'il s'agisse d'une tempête thyroïdienne |\n| 25-44 | Évoque une tempête thyroïdienne imminente |\n| ≥45 | Très évocateur d'une tempête thyroïdienne |",
+  "short_description": "Détermine la probabilité de thyrotoxicose.",
+  "medium_description": "Prédit la probabilité que la thyrotoxicose biologique soit une tempête thyroïdienne.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Temperature °F (°C)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 99",
+          "value": 0
+        },
+        {
+          "label": "99–99.9 (37.2-37.7)",
+          "value": 5
+        },
+        {
+          "label": "100–100.9 (37.8-38.2)",
+          "value": 10
+        },
+        {
+          "label": "101–101.9 (38.3-38.8)",
+          "value": 15
+        },
+        {
+          "label": "102–102.9 (38.9-39.2)",
+          "value": 20
+        },
+        {
+          "label": "103–103.9 (39.3-39.9)",
+          "value": 25
+        },
+        {
+          "label": "≥104.0 (≥ 40.0)",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cns",
+      "label": "Central nervous system effects",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Mild (agitation)",
+          "value": 10
+        },
+        {
+          "label": "modéré (delirium, psychosis, extreme lethargy)",
+          "value": 20
+        },
+        {
+          "label": "Severe (seizures, coma)",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gihep",
+      "label": "Gastrointestinal-hepatic dysfunction",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "modéré (diarrhea, nausées/vomissements, abdominal douleur)",
+          "value": 10
+        },
+        {
+          "label": "Severe (unexplained jaundice)",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tachy",
+      "label": "Fréquence cardiaque (beats/minute)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 90",
+          "value": 0
+        },
+        {
+          "label": "90-109",
+          "value": 5
+        },
+        {
+          "label": "110-119",
+          "value": 10
+        },
+        {
+          "label": "120-129",
+          "value": 15
+        },
+        {
+          "label": "130-139",
+          "value": 20
+        },
+        {
+          "label": "≥140",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Mild (pedal œdème)",
+          "value": 5
+        },
+        {
+          "label": "modéré (bibasilar rales)",
+          "value": 10
+        },
+        {
+          "label": "Severe (pulmonary œdème)",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "afib",
+      "label": "Fibrillation atriale present",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "precip",
+      "label": "Precipitating event",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bahn Chair RS, Burch HB, Cooper DS, et al. Hyperthyroidism and other causes of thyrotoxicosis: management guidelines of the american thyroid association and american association of clinical endocrinologists. Thyroid. 2011;21(6):593-646.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21510801/",
+      "kind": "international"
+    },
+    {
+      "text": "Burch HB, Wartofsky L. Life-Threatening Thyrotoxicosis. Thyrotoxic storm. Endocrinology and Metabolism Clinics of North America . 1993; 22(2): 263-77.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8325286",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Akamizu T, Satoh T, Isozaki O, Suzuki A, Wakino S, Iburi T, Tsuboi K, Monden T, Kouki T, Otani H, Teramukai S, Uehara R, Nakamura Y, Nagai M, Mori M Diagnostic criteria, clinical features, and incidence of thyroid storm based on nationwide surveys. Thyroid. 2012 Jul;22(7):661-79.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22690898",
+      "kind": "other"
+    },
+    {
+      "text": "Nayak B, Burman K. Thyrotoxicosis and thyroid storm. Endocrinol Metab Clin North Am. 2006 Dec;35(4):663-86, vii.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17127140",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.atria-stroke-risk-score",
+    "calc.jones-criteria-acute-rheumatic-fever-diagnosis",
+    "calc.garfield-af"
+  ],
+  "source_logic_hash": "9bcca17159dbae578edb943985b7fbb7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3816,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,157 @@
+{
+  "id": "calc.h2fpef-score-for-heart-failure-with-preserved-ejection-fraction",
+  "slug": "h2fpef-score-for-heart-failure-with-preserved-ejection-fraction",
+  "language": "en",
+  "title": "H2FPEF score pour insuffisance cardiaque avec Preserved fraction d'éjection",
+  "short_title": "Score H2FPEF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Fatigue",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Reduced ejection fraction",
+    "pef",
+    "ref",
+    "Hfref",
+    "Hfpef",
+    "h2",
+    "h2fpef",
+    "h2pfef"
+  ],
+  "dosing": false,
+  "formula": "Probability of heart failure with preserved EF = (Z / (1 + Z)) x 100 where Z = e^y^and\n\ny = -9.1917 + 0.0451 x age + 0.1307 x [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) + 0.0859 xE/e'ratio + 0.0520 x pulmonary artery systolic pressure + 1.6997 x atrial fibrillation (1 for Yes and 0 for No)\n\nNote: The authors describe two prediction models in the[study](https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.118.034646), one involving simple addition of points and dichotomous variables, and one with continuous variables. The latter was found to be more accurate and so is presented here. Hypertension was included in the simple model but not found to be significant in the complex model and therefore is excluded.\n\nThis tool was derived and validated using obesity defined as BMI >30 kg/m², with mean BMIs around 33 kg/m² (±7.4) in the derivation cohort and similar values (~28–32 kg/m²) in validation studies, without reporting min–max values. Because the tool has not been tested in populations with severe obesity, we cap BMI inputs at 50 kg/m² to avoid extrapolation beyond studied ranges.",
+  "how_to_use": {
+    "why": "L’HFpEF est difficile à diagnostiquer, et les critères diagnostiques historiques ont été fondés sur un consensus. Ce score offre une méthode fondée sur les preuves pour identifier les patients susceptibles de présenter une HFpEF.",
+    "when": "À utiliser chez les patients euvolémiques présentant une dyspnée d’effort inexpliquée et ayant eu une échocardiographie, pour évaluer une insuffisance cardiaque à fraction d’éjection préservée (HFpEF).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Envisager d’autres causes de dyspnée en cas de probabilité faible, et envisager un traitement empirique de l’HFpEF en cas de probabilité élevée. Pour les patients à probabilité intermédiaire, examens complémentaires.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Diagnostic d'insuffisance cardiaque",
+  "medium_description": "Estimates probabilité de underlying insuffisance cardiaque chez les patients avec preserved fraction d'éjection sur echo.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "eratio",
+      "label": "Early mitral inflow velocity/mitral annular early diastolic velocity (E/e') ratio",
+      "optional": false,
+      "unit": "eeratio",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sp",
+      "label": "Pression artérielle pulmonaire systolique (PAPs)",
+      "tips": "Tel qu'estimé par échocardiographie",
+      "optional": false,
+      "unit": "pa_systolic",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "af",
+      "label": "Fibrillation atriale",
+      "tips": "D’après les antécédents cliniques et l’EKG",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Reddy YNV, Carter RE, Obokata M, Redfield MM, Borlaug BA. A Simple, Evidence-Based Approach to Help Guide Diagnosis of Heart Failure with Preserved Ejection Fraction. Circulation. 2018;138(9).",
+      "href": "https://www.ahajournals.org/doi/10.1161/CIRCULATIONAHA.118.034646",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maggic-risk-calculator-heart-failure",
+    "calc.emergency-heart-failure-mortality-risk-grade-ehmrg",
+    "calc.indian-takayasu-clinical-activity-score-itas2010",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "d2b08b54f2550ffcccd041ce724a95dc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10105,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar af = parseFloat(af);\nvar sp = parseFloat(sp);\nvar eratio = parseFloat(eratio);\nvar bmi = parseFloat(bmi);\nvar age = parseFloat(age);\n\nvar y = -9.19174463966566 + 0.0451129471272832*age + 0.130730156015681*bmi + 0.0858634402456586*eratio + 0.051963758732548*sp + 1.69968057294513*af;\n\nvar z = Math.pow(Math.E,y);\n\nvar prob = (z/(1 + z))*100; \n\nprob = prob.toFixed(1);\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: prob,\n    value_text: '%',\n    message: 'Probability of heart failure with preserved EF'\n});\ncalc_output.push({\n    name: '10105_H2FPEF Score_result',\n    value: prob,\n    value_text: '%',\n    message: 'Probability of heart failure with preserved EF'   \n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Yogesh N.V. Reddy"
+  ],
+  "measurement_ids": [
+    "Age",
+    "eeratio",
+    "Pulmonary artery systolic pressure"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "fe73e4443393ec0b362d3262b7b0ca25e858c8a7d195c6b427d680ef54f49e4d"
+}

@@ -1,0 +1,169 @@
+{
+  "id": "calc.gwtg-heart-failure-risk-score",
+  "slug": "gwtg-heart-failure-risk-score",
+  "language": "en",
+  "title": "Score de risque d'insuffisance cardiaque GWTG",
+  "short_title": "Score de risque GWTG-HF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "geriatrie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Hf",
+    "heart failure",
+    "in-hospital",
+    "hospital",
+    "mortality",
+    "guidelines"
+  ],
+  "dosing": false,
+  "formula": "Ajout de valeurs de laboratoire et démographiques auxquelles sont attribués des points.",
+  "how_to_use": {
+    "why": "Améliore la qualité des soins prodigués aux patients hospitalisés pour une IC en optimisant les options thérapeutiques sur la base du score de risque.",
+    "when": "Patients hospitalisés présentant une dysfonction ventriculaire gauche (systolique ou diastolique).",
+    "pearls": "- The GWTG-HF Risk Score estimates all-cause in-hospital mortality in admitted patients with heart failure.\n- The risk score can be used to guide medical therapy in high-risk patients.\n- Makes use of routinely collected clinical data to predict in-hospital mortality for patients hospitalized with HF.\n- Scores range from 0 to 100, with scores 0-33 having <1% probability of death to scores over 79 having >50% probability of death.\n- Can be used in patients with preserved or impaired LV systolic function."
+  },
+  "next_steps": {
+    "advice": "- If the score identifies the patient to be high risk, early consultation to cardiology is crucial to appropriately treat these patients and reduce risk of readmission.\n- Appropriate planning and care coordination between multidisciplinary teams, and early and frequent follow-up in the cardiologist’s office is essential.\n- Evidence-based guideline directed medical therapy is meant to be used for both high and low risk patients with CHF. However, in the era of resource constraints, these limited resources may not be allocated to low risk patients.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "- A cohort of 39,783 patients admitted January 1, 2005, to June 26, 2007, to 198 hospitals participating in GWTG-HF was divided into derivation (27,850) and validation (11,933) samples using American Heart Association Get With the Guidelines–Heart Failure (GWTG-HF) program data.\n- Multivariable logistic regression identified predictors of in-hospital mortality in the derivation sample.\n- Analysis showed that age, systolic blood pressure, and BUN at the admission were most predictive variables of in-hospital mortality. Admission heart rate, serum sodium, presence of COPD, and non-black race also contributed modestly.\n- The score was validated in a separate cohort of 13,163 patients which was based on electronic health record data.\n- GWTG-HF was supported in part by GlaxoSmithKline.",
+  "more_info": "**Interprétation du score :**\n\n| Score total | Mortalité prédite |\n| --- | --- |\n| 0-33 | <1 % |\n| 34-50 | 1-5 % |\n| 51-57 | 5-10 % |\n| 58-61 | 10-15 % |\n| 62-65 | 15-20 % |\n| 66-70 | 20-30 % |\n| 71-74 | 30-40 % |\n| 75-78 | 40-50 % |\n| ≥79 | >50 % |",
+  "short_description": "Predicts dans-hôpital insuffisance cardiaque mortalité.",
+  "medium_description": "Predicts dans-hôpital all-cause insuffisance cardiaque mortalité.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hr",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "unit": "hr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "copd",
+      "label": "Antécédents de BPCO (COPD)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "black",
+      "label": "Race noire",
+      "tips": "La race peut ou non fournir de meilleures estimations de la mortalité hospitalière ; facultatif",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 4
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Peterson PN, et al. Circ Cardiovasc Qual Outcomes. A validated risk score for in-hospital mortality in patients with heart failure from the American Heart Association get with the guidelines program. 2010 Jan;3(1):25-32. doi: 10.1161/CIRCOUTCOMES.109.854877. Epub 2009 Dec 8.",
+      "href": "https://circoutcomes.ahajournals.org/content/3/1/25.full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lagu T, Pekow PS et al. Validation and Comparison of Seven Mortality Prediction Models for Hospitalized Patients With Acute Decompensated Heart Failure. Circ Heart Fail. 2016 Aug;9(8).",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27514749",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maggic-risk-calculator-heart-failure",
+    "calc.seattle-heart-failure-model",
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure"
+  ],
+  "source_logic_hash": "643467aae9bbf7d0d072fddc2f01b792",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3829,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

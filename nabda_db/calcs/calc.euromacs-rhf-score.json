@@ -1,0 +1,205 @@
+{
+  "id": "calc.euromacs-rhf-score",
+  "slug": "euromacs-rhf-score",
+  "language": "en",
+  "title": "Score EUROMACS-RHF",
+  "short_title": "Score EUROMACS-RHF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "AMS",
+    "Douleur thoracique",
+    "Douleur chronique",
+    "Cough",
+    "Dizziness",
+    "Fatigue",
+    "Numbness",
+    "Dyspnée",
+    "Swelling",
+    "Vertigo",
+    "Weakness",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "EUROMACS-RHF Score",
+    "euromacs rhf score",
+    "heart failure",
+    "right ventricular heart failure",
+    "rhf",
+    "rvhf",
+    "lvad",
+    "lvad implant",
+    "lvad implantation",
+    "rhf risk",
+    "left ventricular assist device"
+  ],
+  "dosing": false,
+  "formula": "The EUROMACS-RHF Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| RA/PCWP >0.54 | No | 0 |\n| Yes | 2 | |\n| Hemoglobin ≤10 g/dL | No | 0 |\n| Yes | 1 | |\n| Multiple intravenous inotropes | No | 0 |\n| Yes | 2.5 | |\n| INTERMACS* class 1–3 | No | 0 |\n| Yes | 2 | |\n| Severe RV dysfunction ** | No | 0 |\n| Yes | 2 | |\n\n*INTERMACS classification:\n\n- Class 1: Critical cardiogenic shock.\n- Class 2: Declining function despite IV inotropic support.\n- Class 3: Stable function but unable to wean from IV inotropic support.\n- Class 4: Stable but with resting symptoms of heart failure.\n- Class 5: Comfortable at rest but exertion intolerant.\n- Class 6: Comfortable at rest and with most ADLs but additional exertion causes symptoms.\n- Class 7: Advanced NYHA III.\n\n**Semiquantitative assessment of RV systolic function on echocardiography.",
+  "how_to_use": {
+    "why": "- RHF is a frequent complication in the postoperative period after LVAD implantation and carries a significant risk of mortality.\n- With this tool, teams can intervene earlier and potentially reduce morbidity and mortality by:\n\n - Identifying patients who may require additional support or different management strategies.\n - Guiding discussions with patients and families about prognosis and the expected post-LVAD course.",
+    "when": "À utiliser lors de l’évaluation préopératoire des patients bénéficiant d’une implantation de dispositif d’assistance ventriculaire gauche (LVAD) pour prédire leur risque d’insuffisance cardiaque droite (RHF).",
+    "pearls": "- Derived from data on 2,988 adults (age ≥18 years; mean age of 53 years) from the European Registry for Patients with Mechanical Circulatory Support (EUROMACS).\n- Most participants were White (68%) and male (82%), so score performance may vary in populations not well represented in the EUROMACS registry.\n- The primary outcome studied was early (<30 days) severe postoperative RHF, which was defined as requiring either:\n\n - Short- or long-term right-sided circulatory support.\n - Continuous inotropic support for ≥14 days.\n - Nitric oxide ventilation for ≥48 hours.\n- Secondary outcomes included all-cause mortality and ICU length of stay."
+  },
+  "next_steps": {
+    "advice": "- Combine score results with a thorough clinical evaluation; always interpret in conjunction with expert clinical judgment.\n- Results may be incorporated into:\n\n - The informed consent process.\n - Multidisciplinary team discussions regarding the decision process and preoperative preparations.\n- A high-risk score may prompt:\n\n - Closer postoperative hemodynamic monitoring.\n - Optimization of right ventricular (RV) support (e.g., aggressive diuresis, pulmonary vasodilators, RV mechanical support).\n - The use of a biventricular assist device.\n - Total heart support.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score EUROMACS-RHF | Risque de RHF |\n| --- | --- |\n| 0-2 | Faible |\n| 2,5-4 | Intermédiaire |\n| 4,5-9,5 | Élevé |",
+  "short_description": "Risque RHF.",
+  "medium_description": "Determines risque de right ventricular HF dans patients after LVAD implantation.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "ra",
+      "label": "RA/PCWP>0.54",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hem",
+      "label": "Hémoglobine ≤10 g/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "iv",
+      "label": "Inotropes intraveineux multiples",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "iclass",
+      "label": "Classe INTERMACS 1–3",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rv",
+      "label": "SevereRVdysfunction",
+      "tips": "Évaluation semi-quantitative de la fonction systolique du ventricule droit (VD) à l'échocardiographie.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Soliman OII, Akin S, Muslem R, et al. Derivation and validation of a novel right-sided heart failure model after implantation of continuous flow left ventricular assist devices: the euromacs (European registry for patients with mechanical circulatory support) right-sided heart failure risk score. Circulation. 2018;137(9):891-906.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28847897/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sert DE, Karahan M, Aygun E, Kocabeyoglu SS, Akdi M, Kervan U. Prediction of right ventricular failure after continuous flow left ventricular assist device implantation. J Card Surg. 2020;35(11):2965-2973.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32803812/",
+      "kind": "other"
+    },
+    {
+      "text": "Stevenson LW, Pagani FD, Young JB, et al. INTERMACS profiles of advanced heart failure: the current picture. J Heart Lung Transplant. 2009;28(6):535-541.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19481012/",
+      "kind": "other"
+    },
+    {
+      "text": "Shah H, Murray T, Schultz J, et al. External assessment of the EUROMACS right-sided heart failure risk score. Sci Rep. 2021;11(1):16064.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34373475/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.score2-older-persons-score2-op",
+    "calc.score2-diabetes"
+  ],
+  "source_logic_hash": "527cce673ea4a114c12ec7697e1b73bc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10477,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

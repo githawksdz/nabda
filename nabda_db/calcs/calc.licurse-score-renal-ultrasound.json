@@ -1,0 +1,221 @@
+{
+  "id": "calc.licurse-score-renal-ultrasound",
+  "slug": "licurse-score-renal-ultrasound",
+  "language": "en",
+  "title": "Licurse score pour Renal Ultrasound",
+  "short_title": "Score de Licurse",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "nephrologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fever",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "HN risk",
+    "hydronephrosis",
+    "renal ultrasonography",
+    "renal ultrasound",
+    "Licurse score",
+    "licurse model",
+    "acute kidney injury",
+    "AKI"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| History of hydronephrosis* | Yes | High-risk group |\n| No | - | |\n| Race | Non-black | 1 |\n| Black | 0 | |\n| History of recurrent urinary tract infections | Yes | 1 |\n| No | 0 | |\n| Diagnosis consistent with possible obstruction** | Yes | 1 |\n| No | 0 | |\n| History of congestive heart failure | No | 1 |\n| Yes | 0 | |\n| History of sepsis or prerenal acute kidney injury, use of pressors, or hypotension | No | 1 |\n| Yes | 0 | |\n| Exposure to nephrotoxic medications*** prior to acute kidney injury | No | 1 |\n| Yes | 0 | |\n\n*Documented history of HN in the medical record or any imaging history of HN in the 2 years prior to the current RUS.\n\n**e.g. benign prostatic hyperplasia, abdominal or pelvic cancer, neurogenic bladder, single functional kidney, or previous pelvic surgery.\n\n***Aspirin (>81 mg/day), diuretic, ACE inhibitor, or IV vancomycin.",
+  "how_to_use": {
+    "why": "- Estime la probabilité d'une hydronéphrose cliniquement significative.\n- Aide à identifier les patients qui ne bénéficieraient probablement pas d'une échographie rénale, permettant ainsi de réduire les examens d'imagerie inutiles.",
+    "when": "À utiliser chez l'adulte hospitalisé présentant une insuffisance rénale aiguë (IRA) nouvelle ou s'aggravant, pour déterminer si une échographie rénale de dépistage est nécessaire afin d'éliminer une uropathie obstructive.",
+    "pearls": "- Derived and validated only in inpatient adults evaluated for AKI; not validated in chronic kidney disease without AKI, pediatric, or ambulatory populations.\n- Shows a high negative predictive value (~97–99 %) for hydronephrosis requiring intervention, so it is most useful for ruling obstruction out rather than in.\n- High-risk groups (e.g., pregnant individuals, known or recent hydronephrosis, renal transplant) were excluded from the derivation and validation studies.\n- Inclusion of “non-Black race” improved model performance in the derivation cohort but may not generalize; use this variable cautiously and never as a substitute for equitable clinical judgment."
+  },
+  "next_steps": {
+    "advice": "- Interpréter le score en parallèle des données cliniques ; si une obstruction est fortement suspectée ou si le patient est par ailleurs à haut risque, réaliser une imagerie quel que soit le score.\n- Les patients présentant des anomalies rénales connues (rein en fer à cheval, rein unique, transplantation rénale) sont à haut risque et doivent bénéficier d’une échographie rénale quel que soit le score, car le retard de reconnaissance d’une obstruction peut avoir des conséquences graves.",
+    "critical_actions": "",
+    "management": "- **Low risk (score ≤2 pts):**\n\n - Consider deferring renal ultrasound.\n - Focus evaluation and management on prerenal and intrinsic causes.\n - Reassess if the clinical picture changes or AKI persists despite appropriate treatment for prerenal/intrinsic etiologies.\n- **Medium risk (score 3):**\n\n - Weigh the need for imaging against other clinical clues.\n - Consider nephrology consultation.\n- **High risk (score ≥4):**\n\n - Obtain a renal ultrasound.\n - Consult urology if obstruction is suspected or confirmed.\n - If confirmed, proceed to decompression (e.g., catheter, nephrostomy, stent) and address reversible contributors (e.g., BPH treatment)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Licurse Score | Groupe de risque | Risque d'hydronéphrose à l'imagerie | Risque d'hydronéphrose nécessitant la pose d'un stent ou d'une sonde de néphrostomie |\n| --- | --- | --- | --- |\n| ≤2 | Faible | 4,0 % | 1,1 % |\n| 3 | Modéré | 6,8 % | 0,5 %* |\n| >3 | Élevé | 20,9 % | 4,9 % |\n\nD'après [Ip 2016](https://onlinelibrary.wiley.com/doi/pdf/10.1002/jhm.2598).\n\n*Les données proviennent de l'étude de",
+  "short_description": "Hydronephrosis probabilité.",
+  "medium_description": "Predicts probabilité de hydronephrosis sur renal ultrasonography (RUS) requiring urologic intervention dans adulte patients avec insuffisance rénale aiguë.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "hn",
+      "label": "Antécédents d’hydronéphrose",
+      "tips": "Antécédent documenté de HN dans le dossier médical ou tout antécédent d'imagerie de HN dans les 2 ans précédant la RUS actuelle",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non-black",
+          "value": 1
+        },
+        {
+          "label": "Black",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "uti",
+      "label": "Antécédents d’infections urinaires récurrentes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "obs",
+      "label": "Diagnostic consistent avec possible obstruction",
+      "tips": "p. ex. hyperplasie bénigne de la prostate, cancer abdominal ou pelvien, vessie neurogène, rein unique fonctionnel, ou antécédent de chirurgie pelvienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "Antécédents d’insuffisance cardiaque congestive",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aki",
+      "label": "History de sepsis ou prerenal insuffisance rénale aiguë, use de pressors, ou hypotension",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "exposure",
+      "label": "Exposure pour nephrotoxic medications prior pour insuffisance rénale aiguë",
+      "tips": "Aspirin (>81 mg/day), diuretic, ACE inhibitor, or IV vancomycin",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "hn == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Licurse A, Kim MC, Dziura J, et al. Renal ultrasonography in the evaluation of acute kidney injury: developing a risk stratification framework. Arch Intern Med. 2010;170(21):1900-7.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/226252",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ip IK, Silveira PC, Alper EC, Benson CB, Khorasani R. External validation of risk stratification strategy in the use of renal ultrasonography in the evaluation of acute kidney injury. J Hosp Med. 2016;11(11):763-767.",
+      "href": "https://onlinelibrary.wiley.com/doi/pdf/10.1002/jhm.2598",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fractional-excretion-sodium-fena",
+    "calc.cisplatin-associated-acute-kidney-iInjury-cp-aki-risk-calculator",
+    "calc.acute-interstitial-nephritis-ain-risk-calculator"
+  ],
+  "source_logic_hash": "01f617f8f4c307ab0037bd11ec3387dd",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10063,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

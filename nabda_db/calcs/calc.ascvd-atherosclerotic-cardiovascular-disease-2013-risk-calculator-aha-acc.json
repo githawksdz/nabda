@@ -1,0 +1,377 @@
+{
+  "id": "calc.ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+  "slug": "ascvd-atherosclerotic-cardiovascular-disease-2013-risk-calculator-aha-acc",
+  "language": "en",
+  "title": "Calculateur de risque ASCVD 2013 (maladie cardiovasculaire athéroscléreuse) de l’AHA/ACC",
+  "short_title": "Calculateur de risque ASCVD 2013",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Diabète sucré",
+    "Dyslipidémie",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Acs",
+    "mi",
+    "stroke",
+    "cva",
+    "tia",
+    "ten",
+    "ldl",
+    "diabetes",
+    "pooled cohort equation"
+  ],
+  "dosing": false,
+  "formula": "Les informations relatives au calcul du score sont disponibles dans l'[annexe 7 de l'étude de Goff, et al. 2014](https://circ.ahajournals.org/content/circulationaha/129/25_suppl_2/S49.full.pdf).",
+  "how_to_use": {
+    "why": "- Identifie les patients appartenant à des groupes à risque plus élevé, susceptibles d’avoir un bénéfice net plus important et un nombre de sujets à traiter plus faible pour un traitement par statine et un traitement antihypertenseur.\n- Permet une décision médicale partagée entre cliniciens et patients.\n- Adapte l’intensité des traitements prévent",
+    "when": "- Appliquer chez les adultes asymptomatiques âgés de 40–75 ans avec un LDL-C de 70–189 mg/dL sans ASCVD connue, lorsqu'on envisage des interventions de prévention primaire, en particulier un traitement par statine.\n- Ne pas utiliser chez :\n\n - Adultes <40 ou >75 ans (données limitées sur la performance).\n - Patients avec ASCVD connue.\n - Adultes avec un LDL-C ≥190 mg/dL, y compris l'hypercholestérolémie familiale (un traitement hypolipémiant est indiqué indépendamment du risque calculé).",
+    "pearls": "**Pearls:**\n\n- Well calibrated near clinical decision thresholds (7.5%-10% risk) in broad U.S. populations.\n- First risk calculator to provide sex- and race-specific estimates and include stroke as an outcome.\n- Extensively validated in multiple external cohorts.\n- Best validated in non-Hispanic White and non-Hispanic Black adults in the United States.\n\n**Pitfalls:**\n\n- Derived from cohorts recruited between the 1940s and 1980s, potentially overestimating risk in contemporary populations receiving modern preventive therapies.\n- Performance is highly variable in non-U.S. populations.\n- Less accurate in patients already receiving intensive preventive interventions.\n- May overestimate risk in:\n\n - Patients with higher socioeconomic status or receiving consistent preventive care.\n - Patients with predicted 10-year risk >10%.\n- May underestimate risk in:\n\n - Asian and Hispanic adults, who were underrepresented in derivation cohorts.\n - Patients with lower socioeconomic status.\n - Chronic inflammatory conditions (e.g., HIV, rheumatoid arthritis, sarcoidosis, psoriasis).\n - Familial hypercholesterolemia."
+  },
+  "next_steps": {
+    "advice": "Interpret results of this tool within the clinical context, and consider the following during the clinician-patient discussion:\n\n- Absolute risk estimate.\n- Net benefit of therapy.\n- Socioeconomic status.\n- Patient preferences and values.\n- Risk-enhancing factors, including:\n\n - Family history of premature ASCVD.\n - Persistently elevated LDL-C ≥160 mg/dL.\n - Metabolic syndrome.\n - Chronic kidney disease.\n - History of preeclampsia or premature menopause (age <40 years).\n - Chronic inflammatory disorders (e.g., rheumatoid arthritis, psoriasis, HIV).\n - High-risk ethnicity (e.g., South Asian ancestry).\n - Persistent triglyceride elevation ≥175 mg/dL.\n- Supporting studies, when available:\n\n - Apolipoprotein B ≥130 mg/dL.\n - hs-CRP ≥2.0 mg/L.\n - Ankle-brachial index (ABI) <0.9.\n - Lipoprotein(a) ≥50 mg/dL.",
+    "critical_actions": "",
+    "management": "Treatment thresholds based on this tool are historical, as ACC/AHA dyslipidemia guidelines now recommend [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) for primary prevention risk assessment; if this tool is used, the following management thresholds might be considered:\n\n- **10-year ASCVD risk ≥7.5%:** Consider initiating moderate- or high-intensity statin therapy after clinician-patient discussion.\n\n - If 10-year risk ≥20%: Consider high-intensity statin to reduce LDL-C ≥50%.\n - If 10-year risk 7.5%–19.9%: Consider moderate-intensity statin to reduce LDL-C ≥30%.\n- **10-year ASCVD risk 5% to <7.5%:**\n\n - Evaluate risk-enhancing factors.\n - Consider statin therapy if risk enhancers present.\n - May use coronary artery calcium (CAC) scoring to refine the treatment decision.\n- **10-year ASCVD risk <5%:**\n\n - Emphasize lifestyle modification.\n - Reassess risk factors every 4–6 years.\n- **For stage 1 hypertension** (130–139/80–89 mm Hg): Categorize as <10% or ≥10% 10-year ASCVD risk for therapeutic decisions, and refer to most recent AHA/ACC guidelines.\n- **Follow-up:**\n\n - Reassess lipids 4–12 weeks after statin initiation or dose adjustment.\n - Repeat every 3–12 months as needed.\n - Assess adherence and percentage LDL-C reduction from baseline."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de maladie cardiaque ou d’AVC à 10 ans.",
+  "medium_description": "Determine 10-year risque de hard ASCVD, i.e. infarctus du myocarde, AVC, ou death due pour coronary heart maladie ou AVC.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "tips": "Ce calculateur ne s'applique qu'aux personnes âgées de 40 à 75 ans.",
+      "optional": false,
+      "unit": "age_ascvd",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "chol_total",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "chol_hdl",
+      "label": "Cholestérol HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Pression artérielle systolique",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "bptreated",
+      "label": "Traitement de l'hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun contenu source n'a été fourni: le texte à traduire est vide. Merci de transmettre le contenu du score clinique (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) pour que je puisse en produire la traduction française.",
+          "value": 1
+        },
+        {
+          "label": "Afro-Américain",
+          "value": 2
+        },
+        {
+          "label": "Autre",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Goff DC Jr, Lloyd-Jones DM, Bennett G, et al. 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk: A Report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines. J Am Coll Cardiol. 2014;63(25 Pt B):2935-2959. DOI: 10.1016/j.jacc.2013.11.005",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24239921/",
+      "kind": "international"
+    },
+    {
+      "text": "Arnett DK, Blumenthal RS, Albert MA, et al. 2019 ACC/AHA Guideline on the Primary Prevention of Cardiovascular Disease: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines [published correction appears in Circulation. 2019 Sep 10;140(11):e649-e650. doi: 10.1161/CIR.0000000000000725] [published correction appears in Circulation. 2020 Jan 28;141(4):e60. doi: 10.1161/CIR.0000000000000755] [published correction appears in Circulation. 2020 Apr 21;141(16):e774. doi: 10.1161/CIR.0000000000000771]. Circulation. 2019;140(11):e596-e646. doi:10.1161/CIR.0000000000000678",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30879355/",
+      "kind": "international"
+    },
+    {
+      "text": "Grundy SM, Stone NJ, Bailey AL, et al. 2018 AHA/ACC/AACVPR/AAPA/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Blood Cholesterol: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines [published correction appears in Circulation. 2019 Jun 18;139(25):e1182-e1186. doi: 10.1161/CIR.0000000000000698] [published correction appears in Circulation. 2023 Aug 15;148(7):e5. doi: 10.1161/CIR.0000000000001172]. Circulation. 2019;139(25):e1082-e1143. doi:10.1161/CIR.0000000000000625",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30586774/",
+      "kind": "international"
+    },
+    {
+      "text": "Lloyd-Jones DM, Braun LT, Ndumele CE, et al. Use of Risk Assessment Tools to Guide Decision-Making in the Primary Prevention of Atherosclerotic Cardiovascular Disease: A Special Report From the American Heart Association and American College of Cardiology. Circulation. 2019;139(25):e1162-e1177. DOI: 10.1161/CIR.0000000000000638",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30586766/",
+      "kind": "international"
+    },
+    {
+      "text": "US Preventive Services Task Force. Statin Use for the Primary Prevention of Cardiovascular Disease in Adults: US Preventive Services Task Force Recommendation Statement. JAMA. 2022;328(8):746–753. doi:10.1001/jama.2022.13044",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2795521",
+      "kind": "international"
+    },
+    {
+      "text": "Blumenthal RS, Morris PB, Gaudino M, et al. 2026 ACC/AHA/AACVPR/ABC/ACPM/ADA/AGS/APhA/ASPC/NLA/PCNA Guideline on the Management of Dyslipidemia: A Report of the American College of Cardiology/American Heart Association Joint Committee on Clinical Practice Guidelines. J Am Coll Cardiol. 2026;83(16):1534-1688. DOI: 10.1016/j.jacc.2025.02.019",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41824590/",
+      "kind": "international"
+    },
+    {
+      "text": "Goff DC Jr, et. al. 2013 ACC/AHA Guideline on the Assessment of Cardiovascular Risk A Report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines. Circulation. 2014 Jun 24;129(25 Suppl 2):S49-73. doi: 10.1161/01.cir.0000437741.48606.98. Epub 2013 Nov 12.",
+      "href": "https://circ.ahajournals.org/content/circulationaha/129/25_suppl_2/S49.full.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Stone NJ, et al.Circulation. 2013 ACC/AHA guideline on the treatment of blood cholesterol to reduce atherosclerotic cardiovascular risk in adults: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines. 2014 Jun 24;129(25 Suppl 2):S1-45. doi: 10.1161/01.cir.0000437738.63853.7a. Epub 2013 Nov 12",
+      "href": "https://circ.ahajournals.org/content/circulationaha/129/25_suppl_2/S1.full.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lloyd-Jones DM, Huffman MD, Karmali KN, et al. Estimating Longitudinal Risks and Benefits From Cardiovascular Preventive Therapies Among Medicare Patients: The Million Hearts Longitudinal ASCVD Risk Assessment Tool: A Special Report From the American Heart Association and American College of Cardiology. J Am Coll Cardiol. 2017;69(12):1617-1636. DOI: 10.1016/j.jacc.2016.10.018",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27815375/",
+      "kind": "other"
+    },
+    {
+      "text": "Yadlowsky S, Hayward RA, Sussman JB, McClelland RL, Min YI, Basu S. Clinical Implications of Revised Pooled Cohort Equations for Estimating Atherosclerotic Cardiovascular Disease Risk. Ann Intern Med. 2018;169(1):20-29. doi:10.7326/M17-3011 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29868850/",
+      "kind": "other"
+    },
+    {
+      "text": "Anderson TS, Wilson LM, Sussman JB. Atherosclerotic Cardiovascular Disease Risk Estimates Using the Predicting Risk of Cardiovascular Disease Events Equations. JAMA Intern Med. 2024;184(5):554-556. DOI: 10.1001/jamainternmed.2024.0214",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38856978/",
+      "kind": "other"
+    },
+    {
+      "text": "Khan SS, Matsushita K, Sang Y, et al. Development and Validation of the American Heart Association's PREVENT Equations. Circulation. 2024;149(6):430-449. doi:10.1161/CIRCULATIONAHA.123.067626 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37947085/",
+      "kind": "other"
+    },
+    {
+      "text": "Zhou H, Zhang Y, Zhou MM, et al. Evaluation and Comparison of the PREVENT and Pooled Cohort Equations for 10-Year Atherosclerotic Cardiovascular Risk Prediction. J Am Heart Assoc. 2025;14(4):e039454. doi:10.1161/JAHA.124.039454",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39921505/",
+      "kind": "other"
+    },
+    {
+      "text": "Murphy BS, Hershey MS, Huang S, et al. PREVENT Risk Score vs the Pooled Cohort Equations in MESA. JACC Adv. 2025;4(6 Pt 1):101825. doi:10.1016/j.jacadv.2025.101825 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40424675/",
+      "kind": "other"
+    },
+    {
+      "text": "Cho SMJ, Levin M, Chen R, et al. AHA PREVENT Equations and Cardiovascular Disease Risk in Diverse Health Care Populations. J Am Coll Cardiol. 2025;86(3):181-192. doi:10.1016/j.jacc.2025.04.066 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40669956/",
+      "kind": "other"
+    },
+    {
+      "text": "Yan X, Bacong AM, Huang Q, et al. Performance of the American Heart Association's PREVENT Equations Among Disaggregated Racial and Ethnic Subgroups. JAMA Cardiol. 2025;10(9):876-885. doi:10.1001/jamacardio.2025.1865",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40560603/",
+      "kind": "other"
+    },
+    {
+      "text": "Chia YC, Lim HM, Ching SM. Validation of the pooled cohort risk score in an Asian population – a retrospective cohort study. BMC Cardiovascular Disorders. 2014;14:163. doi:10.1186/1471-2261-14-163.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4246627/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Henderson K, Kaufman BG, Stearns S, et al. Validation of the Atherosclerotic Cardiovascular Disease (ASCVD) Pooled Cohort Risk Equations by Education Level: The Atheroschlerosis Risk in Communities (ARIC) Study. J Am Coll Cardiol. 2016;67(13_S):1842. doi:10.1016/S0735-1097(16)31843-5.",
+      "href": "https://content.onlinejacc.org/article.aspx?articleid=2510228",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rana JS, et al. Accuracy of the Atherosclerotic Cardiovascular Risk Equation in a Large Contemporary, Multiethnic Population. J Am Coll Cardiol. 2016 May 10;67(18):2118-30. doi: 10.1016/j.jacc.2016.02.055.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27151343",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Qureshi WT, Michos ED, Flueckiger P, et al. Impact of Replacing the Pooled Cohort Equation With Other Cardiovascular Disease Risk Scores on Atherosclerotic Cardiovascular Disease Risk Assessment (from the Multi-Ethnic Study of Atherosclerosis [MESA]). Am J Cardiol. 2016;118(5):691-696. doi:10.1016/j.amjcard.2016.06.015",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27445216/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wallisch C, Heinze G, Rinner C, Mundigler G, Winkelmayer WC, Dunkler D. External validation of two Framingham cardiovascular risk equations and the Pooled Cohort equations: A nationwide registry analysis. Int J Cardiol. 2019;283:165-170. doi:10.1016/j.ijcard.2018.11.001",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30429082/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Damen JA, Pajouheshnia R, Heus P, et al. Performance of the Framingham risk models and pooled cohort equations for predicting 10-year risk of cardiovascular disease: a systematic review and meta-analysis. BMC Med. 2019;17(1):109. Published 2019 Jun 13. doi:10.1186/s12916-019-1340-7",
+      "href": "https://bmcmedicine.biomedcentral.com/articles/10.1186/s12916-019-1340-7",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Khera R, Pandey A, Ayers CR, et al. Performance of the Pooled Cohort Equations to Estimate Atherosclerotic Cardiovascular Disease Risk by Body Mass Index [published correction appears in JAMA Netw Open. 2020 Dec 1;3(12):e2030880. doi: 10.1001/jamanetworkopen.2020.30880]. JAMA Netw Open. 2020;3(10):e2023242. Published 2020 Oct 1. doi:10.1001/jamanetworkopen.2020.23242",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33119108/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Al-Shamsi S, Govender RD, King J. External validation and clinical usefulness of three commonly used cardiovascular risk prediction scores in an Emirati population: a retrospective longitudinal cohort study. BMJ Open. 2020;10(10):e040680. Published 2020 Oct 28. doi:10.1136/bmjopen-2020-040680",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33115904/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mantri NM, Merchant M, Rana JS, Go AS, Pursnani SK. Performance of the pooled cohort equation in South Asians: insights from a large integrated healthcare delivery system. BMC Cardiovasc Disord. 2022;22(1):566. Published 2022 Dec 23. doi:10.1186/s12872-022-02993-z",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36564709/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nanna MG, Peterson ED, Wojdyla D, Navar AM. The Accuracy of Cardiovascular Pooled Cohort Risk Estimates in U.S. Older Adults. J Gen Intern Med. 2020;35(6):1701-1708. doi:10.1007/s11606-019-05361-4 ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31667745/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Medina-Inojosa JR, Somers VK, Garcia M, et al. Performance of the ACC/AHA Pooled Cohort Cardiovascular Risk Equations in Clinical Practice. J Am Coll Cardiol. 2023;82(23):2199-2209. DOI: 10.1016/j.jacc.2023.09.819",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37793746/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ganjali S, Lotfaliany M, Tonkin A, et al. Predictive performance of cardiovascular disease risk prediction models in older adults: a validation and updating study. Heart. 2025;111(21):1004-1012.  doi:10.1136/heartjnl-2025-325665",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40368453/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ascvd-atherosclerotic-cardiovascular-disease-risk-algorithm-including-known-ascvd-aha-acc",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent"
+  ],
+  "source_logic_hash": "d8e6b4f02cb652e9c40972a23681bd76",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.predicting-risk-cardiovascular-disease-events-prevent",
+      "text": "PREVENT"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3398,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n// baseline variables, no natural logs\nvar age = parseFloat(age);\nvar race = parseFloat(race);\nvar sbp = parseFloat(sbp);\nvar smoker = parseFloat(smoker);\nvar bptreated = parseFloat(bptreated);\nvar diabetes = parseFloat(diabetes);\nvar sex = parseFloat(sex);\n\nif (UOMSYSTEM == true) { // US units, so let'em through\nvar cholesterol = parseFloat(chol_total);\nvar hdl = parseFloat(chol_hdl);\n}\nif (UOMSYSTEM == false) { // convert these guys to US units\nvar cholesterol = parseFloat(chol_total) / 0.0259;\nvar hdl = parseFloat(chol_hdl) / 0.0259;\n}\n\n\n//calculator variables\nvar e = 2.718281828;\nvar index;\nvar s;\nvar sum;\nvar mean;\nvar stringc;\nvar msg;\nvar mini_msg;\nvar rec = '';\nvar statin_add_high = '<br/><br/>To view statin dosages by intensity, see Evidence section.';\nvar statin_add_high_moderate = '<br/><br/>To view statin dosages by intensity, see Evidence section.';\n\nvar statin_add_moderate = '<br/><br/>To view statin dosages by intensity, see Evidence section.';\nvar statin_add_low = '<br/><br/>To view statin dosages by intensity, see Evidence section.';\n\n//alerts\n//if (age < 20) {\n//  alert('This calculator only works for ages 20-79.');\n//return false;\n//}\n//if (age > 79) {\n//  alert('This calculator only works for ages 20-79.');\n//  return false;\n//}\nif (age < 40) {\n    msg = 'This calculator only provides 10-year risk estimates for individuals 40-75 years of age.';\n    mini_msg = 'This calculator only provides 10-year risk estimates for individuals 40-75 years of age.';\n    stringc = 'N/A';\n    if (diabetes == 0) {\n        rec = 'No statin recommended because age <40; always encourage healthy cardiovascular lifestyle choices. Some patients with other high risk features may still be appropriate for treatment.';\n    } else {\n        rec = 'In diabetic patients ages <40 or >75, consider additional factors like lifestyle and risk-benefits before starting statins.';\n    }\n} else if (age > 75) {\n    msg = 'This calculator only provides 10-year risk estimates for individuals 40-75 years of age.';\n    mini_msg = 'This calculator only provides 10-year risk estimates for individuals 40-75 years of age.';\n    stringc = 'N/A';\n    if (diabetes == 0) {\n        rec = 'No statin recommended because age >75; always encourage healthy cardiovascular lifestyle choices. Some patients with other high risk features may still be appropriate for treatment.';\n    } else {\n        rec = 'In diabetic patients ages <40 or >75, consider additional factors like lifestyle and risk-benefits before starting statins.';\n    }\n}\n else {\n    msg = 'Risk of cardiovascular event (coronary or stroke death or non-fatal MI or stroke) in next 10 years.';\n    mini_msg = '10-year risk of cardiovascular event';\n\n\n    // set natural log elements\n    var lnage = Math.log(age);\n    var lncholesterol = Math.log(cholesterol);\n    var lnhdl = Math.log(hdl);\n    var lnsbp = Math.log(sbp);\n    var lnageage = lnage * lnage;\n    var lnagetotal = lnage * lncholesterol;\n    var lnagehdl = lnage * lnhdl;\n    var lnagesbp = lnage * lnsbp;\n    var lnagesmoker = lnage * smoker;\n\n    // if male\n\n if (sex == 1) {\n        if (race == 1 || race == 3) {\n            lnage = lnage * 12.344;\n            //console.log(\"age:\" + lnage);\n            lncholesterol = lncholesterol * 11.853;\n            //console.log(\"chol:\" + lncholesterol);\n            lnagetotal = lnagetotal * -2.664;\n            //console.log(\"agetotal:\" + lnagetotal);\n            lnhdl = lnhdl * -7.990;\n            //console.log(\"hdl:\" + lnhdl);\n            lnagehdl = 1.769 * lnagehdl;\n            //console.log(\"agehdl:\" + lnagehdl);\n            if (bptreated == 1) {\n                lnsbp = lnsbp * 1.797;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            if (bptreated == 0) {\n                lnsbp = lnsbp * 1.764;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            smoker = smoker * 7.837;\n            //console.log(\"smoker:\" + smoker);\n            lnagesmoker = lnagesmoker * -1.795;\n            //console.log(\"agesmoker:\" + lnagesmoker);\n            diabetes = diabetes * 0.658;\n            //console.log(\"diabetes:\" + diabetes);\n            sum = (lnage) + (lncholesterol) + (lnagetotal) + (lnhdl) + (lnagehdl) + (lnsbp) + (lnagesmoker) + (smoker) + (diabetes);\n            mean = 61.1816;\n            index = sum - mean;\n            s = 100 * (1 - Math.pow(0.91436, Math.exp(index)));\n            stringc = s.toFixed(1) + '%';\n        }\n        if (race == 2) {\n            lnage = lnage * 2.469;\n            //console.log(\"age:\" + lnage);\n            lncholesterol = lncholesterol * 0.302;\n            //console.log(\"chol:\" + lncholesterol);\n            lnhdl = lnhdl * -0.307;\n            //console.log(\"hdl:\" + lnhdl)\n            if (bptreated == 1) {\n                lnsbp = lnsbp * 1.916;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            if (bptreated == 0) {\n                lnsbp = lnsbp * 1.809;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            smoker = smoker * 0.549;\n            //console.log(\"smoker:\" + smoker);\n            diabetes = diabetes * 0.645;\n            //console.log(\"diabetes:\" + diabetes);\n            sum = (lnage) + (lncholesterol) + (lnhdl) + (lnsbp) + (smoker) + (diabetes);\n            mean = 19.5425;\n            index = sum - mean;\n            s = 100 * (1 - Math.pow(0.89536, Math.exp(index)));\n            stringc = s.toFixed(1) + '%';\n        }\n    }\n\n    //if female\n\n    if (sex == 0) {\n        if (race == 1 || race == 3) {\n            lnage = lnage * -29.799;\n            //console.log(\"age:\" + lnage);\n            lnageage = lnageage * 4.884;\n            //console.log(\"ageage:\" + lnageage);\n            lncholesterol = lncholesterol * 13.540;\n            //console.log(\"chol:\" + lncholesterol);\n            lnagetotal = lnagetotal * -3.114;\n            //console.log(\"agetotal:\" + lnagetotal);\n            lnhdl = lnhdl * -13.578;\n            //console.log(\"hdl:\" + lnhdl);\n            lnagehdl = lnagehdl * 3.149;\n            //console.log(\"agehdl:\" + lnagehdl);\n            if (bptreated == 1) {\n                lnsbp = lnsbp * 2.019;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            if (bptreated == 0) {\n                lnsbp = lnsbp * 1.957;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            smoker = smoker * 7.574;\n            //console.log(\"smoker:\" + smoker);\n            lnagesmoker = lnagesmoker * -1.665;\n            //console.log(\"agesmoker:\" + lnagesmoker);\n            diabetes = diabetes * 0.661;\n            //console.log(\"diabetes:\" + diabetes);\n            sum = (lnage) + (lnageage) + (lncholesterol) + (lnagetotal) + (lnhdl) + (lnagehdl) + (lnsbp) + (lnagesmoker) + (smoker) + (diabetes);\n            mean = -29.1817;\n            index = sum - mean;\n            s = 100 * (1 - Math.pow(0.96652, Math.exp(index)));\n            stringc = s.toFixed(1) + '%';\n        }\n        if (race == 2) {\n            lnage = lnage * 17.114;\n            //console.log(\"age:\" + lnage);\n            lncholesterol = lncholesterol * 0.940;\n            //console.log(\"chol:\" + lncholesterol);\n            lnhdl = lnhdl * -18.920;\n            //console.log(\"hdl:\" + lnhdl);\n            lnagehdl = lnagehdl * 4.475;\n            //console.log(\"agehdl:\" + lnagehdl);\n            if (bptreated == 1) {\n                lnsbp = lnsbp * 29.291;\n                //console.log(\"sbp:\" + lnsbp);\n                lnagesbp = lnagesbp * -6.432;\n                //console.log(\"agesbp:\" + lnagesbp);\n            }\n            if (bptreated == 0) {\n                lnsbp = lnsbp * 27.820;\n                //console.log(\"sbp:\" + lnsbp);\n                lnagesbp = lnagesbp * -6.087;\n                //console.log(\"agesbp:\" + lnagesbp);\n            }\n            smoker = smoker * 0.691;\n            //console.log(\"smoker:\" + smoker);\n            diabetes = diabetes * 0.874;\n            //console.log(\"diabetes:\" + diabetes);\n            sum = (lnage) + (lncholesterol) + (lnhdl) + (lnagehdl) + (lnsbp) + (lnagesbp) + (smoker) + (diabetes);\n            mean = 86.6081;\n            index = sum - mean;\n            s = 100 * (1 - Math.pow(0.95334, Math.exp(index)));\n            stringc = s.toFixed(1) + '%';\n        }\n    }\n\n    //console.log(\"sum: \" + sum);\n    //console.log(\"index: \" + index);\n    //console.log(\"s: \" + s);\n    if (race == 1 || race == 2 || race == 3){\n        if (diabetes == 0) {\n        ////console.log('dm=0');\n        if (age < 40) {\n            rec = 'No statin recommended because age <40; always encourage healthy cardiovascular lifestyle choices. Some patients with other high risk features may still be appropriate for treatment.';\n        }\n        if (age > 75) {\n            rec = 'No statin recommended because age >75; always encourage healthy cardiovascular lifestyle choices. Some patients with other high risk features may still be appropriate for treatment.';\n        }\n        else {\n            if (s < 5) {\n                rec = 'No statin recommended because 10-year risk <5%; always encourage healthy cardiovascular lifestyle choices. Some patients with other high risk features may still be appropriate for treatment.';\n            } \n            if (s >= 5 && s < 7.5) {\n                rec = 'Moderate-intensity statin recommended because of 10-year risk between 5-7.5%.' + statin_add_moderate;\n            }\n            if (s >= 7.5) {\n                rec = 'Moderate- to high-intensity statin recommended because 10-year risk >7.5%' + statin_add_high_moderate;\n            }\n        }\n    }\n    else {\n        ////console.log('dm=1');\n        if (age < 40 || age > 75) { rec = 'In diabetic patients ages <40 or >75, consider additional factors like lifestyle and risk-benefits before starting statins.'; } \n            else {\n            if (s < 7.5) { rec = 'Moderate-intensity statin recommended because of known diabetes but 10-year risk <7.5%. If LDL <70mg/dl (1.81 mmol/L), additional factors like lifestyle and risk-benefits can be considered before starting statins.' + statin_add_moderate; }\n            if (s >= 7.5) { rec = 'High-intensity statin recommended because of known diabetes and 10-year risk ≥7.5%. If LDL <70mg/dl (1.81 mmol/L), additional factors like lifestyle and risk-benefits can be considered before starting statins.' + statin_add_high; }\n        }\n    }\n    }\n}\n\n//optimal risk score\nvar msgo;\nif (age < 40 || age > 75) {\n    msgo = 'This calculator only provides 10-year risk estimates for individuals 40-75 years of age.';\n    stringo = 'N/A';\n} else {\n    msgo = '10-year cardiovascular risk if risk factors were optimal.';\n\n    var lnage = Math.log(age);\n    var lncholesterolo = Math.log(170);\n    var lnhdlo = Math.log(50);\n    var lnsbpo = Math.log(110);\n    var lnageage = lnage * lnage;\n    var lnagetotalo = lnage * lncholesterolo;\n    var lnagehdlo = lnage * lnhdlo;\n    var lnagesbpo = lnage * lnsbpo;\n    var lnagesmokero = 0;\n\n    var indexo;\n    var so;\n    var sumo;\n    var meano;\n    var stringo;\n\n    if (sex == 1) {\n        if (race == 1 || race == 3) {\n            lnage = lnage * 12.344;\n            //console.log(\"age:\" + lnage);\n            lncholesterolo = lncholesterolo * 11.853;\n            //console.log(\"chol:\" + lncholesterolo);\n            lnagetotalo = lnagetotalo * -2.664;\n            //console.log(\"agetotal:\" + lnagetotalo);\n            lnhdlo = lnhdlo * -7.990;\n            //console.log(\"hdl:\" + lnhdlo);\n            lnagehdlo = 1.769 * lnagehdlo;\n            //console.log(\"agehdl:\" + lnagehdlo);\n            if (bptreated == 1) {\n                lnsbpo = lnsbpo * 1.764;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            if (bptreated == 0) {\n                lnsbpo = lnsbpo * 1.764;\n                //console.log(\"sbp:\" + lnsbp);\n            }\n            smoker = 0 * 7.837;\n            //console.log(\"smoker:\" + smoker);\n            lnagesmokero = lnagesmokero * -1.795;\n            //console.log(\"agesmoker:\" + lnagesmoker);\n            diabetes = 0 * 0.658;\n            //console.log(\"diabetes:\" + diabetes);\n            sumo = (lnage) + (lncholesterolo) + (lnagetotalo) + (lnhdlo) + (lnagehdlo) + (lnsbpo) + (lnagesmokero) + (smoker) + (diabetes);\n            meano = 61.1816;\n            indexo = sumo - meano;\n            so = 100 * (1 - Math.pow(0.91436, Math.exp(indexo)));\n            stringo = so.toFixed(1) + '%';\n        }\n        if (race == 2) {\n            lnage = lnage * 2.469;\n            //console.log(\"age:\" + lnage);\n            lncholesterolo = lncholesterolo * 0.302;\n            //console.log(\"chol:\" + lncholesterolo);\n            lnhdlo = lnhdlo * -0.307;\n            //console.log(\"hdl:\" + lnhdlo)\n            if (bptreated == 1) {\n                lnsbpo = lnsbpo * 1.809;\n                //console.log(\"sbp:\" + lnsbpo);\n            }\n            if (bptreated == 0) {\n                lnsbpo = lnsbpo * 1.809;\n                //console.log(\"sbp:\" + lnsbpo);\n            }\n            smoker = 0 * 0.549;\n            //console.log(\"smoker:\" + smoker);\n            diabetes = 0 * 0.645;\n            //console.log(\"diabetes:\" + diabetes);\n            sumo = (lnage) + (lncholesterolo) + (lnhdlo) + (lnsbpo) + (smoker) + (diabetes);\n            meano = 19.5425;\n            indexo = sumo - meano;\n            so = 100 * (1 - Math.pow(0.89536, Math.exp(indexo)));\n            stringo = so.toFixed(1) + '%';\n        }\n    }\n\n    //if female\n\n    if (sex == 0) {\n        if (race == 1 || race == 3) {\n            lnage = lnage * -29.799;\n            //console.log(\"age:\" + lnage);\n            lnageage = lnageage * 4.884;\n            //console.log(\"ageage:\" + lnageage);\n            lncholesterolo = lncholesterolo * 13.540;\n            //console.log(\"chol:\" + lncholesterolo);\n            lnagetotalo = lnagetotalo * -3.114;\n            //console.log(\"agetotal:\" + lnagetotalo);\n            lnhdlo = lnhdlo * -13.578;\n            //console.log(\"hdl:\" + lnhdlo);\n            lnagehdlo = lnagehdlo * 3.149;\n            //console.log(\"agehdl:\" + lnagehdlo);\n            if (bptreated == 1) {\n                lnsbpo = lnsbpo * 1.957;\n                //console.log(\"sbp:\" + lnsbpo);\n            }\n            if (bptreated == 0) {\n                lnsbpo = lnsbpo * 1.957;\n                //console.log(\"sbp:\" + lnsbpo);\n            }\n            smoker = 0 * 7.574;\n            //console.log(\"smoker:\" + smoker);\n            lnagesmokero = lnagesmokero * -1.665;\n            //console.log(\"agesmoker:\" + lnagesmoker);\n            diabetes = 0 * 0.661;\n            //console.log(\"diabetes:\" + diabetes);\n            sumo = (lnage) + (lnageage) + (lncholesterolo) + (lnagetotalo) + (lnhdlo) + (lnagehdlo) + (lnsbpo) + (lnagesmokero) + (smoker) + (diabetes);\n            meano = -29.1817;\n            indexo = sumo - meano;\n            so = 100 * (1 - Math.pow(0.96652, Math.exp(indexo)));\n            stringo = so.toFixed(1) + '%';\n        }\n        if (race == 2) {\n            lnage = lnage * 17.114;\n            //console.log(\"age:\" + lnage);\n            lncholesterolo = lncholesterolo * 0.940;\n            //console.log(\"chol:\" + lncholesterolo);\n            lnhdlo = lnhdlo * -18.920;\n            //console.log(\"hdl:\" + lnhdl);\n            lnagehdlo = lnagehdlo * 4.475;\n            //console.log(\"agehdl:\" + lnagehdlo);\n            if (bptreated == 1) {\n                lnsbpo = lnsbpo * 27.820;\n                //console.log(\"sbp:\" + lnsbpo);\n                lnagesbpo = lnagesbpo * -6.087;\n                //console.log(\"agesbp:\" + lnagesbpo);\n            }\n            if (bptreated == 0) {\n                lnsbpo = lnsbpo * 27.820;\n                //console.log(\"sbp:\" + lnsbpo);\n                lnagesbpo = lnagesbpo * -6.087;\n                //console.log(\"agesbp:\" + lnagesbpo);\n            }\n            smoker = 0 * 0.691;\n            //console.log(\"smoker:\" + smoker);\n            diabetes = 0 * 0.874;\n            //console.log(\"diabetes:\" + diabetes);\n            sumo = (lnage) + (lncholesterolo) + (lnhdlo) + (lnagehdlo) + (lnsbpo) + (lnagesbpo) + (smoker) + (diabetes);\n            meano = 86.6081;\n            indexo = sumo - meano;\n            so = 100 * (1 - Math.pow(0.95334, Math.exp(indexo)));\n            stringo = so.toFixed(1) + '%';\n        }\n    }\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: stringc,\n    value_text: ' ',\n    message: mini_msg\n});\ncalc_output.push({\n    name: '3398_2013 ASCVD Risk Calculator_result (rec)',\n    value: '',\n    value_text: '',\n    message: rec\n});\ncalc_output.push({\n    name: '3398_2013 ASCVD Risk Calculator_result (risk)',\n    value: stringc,\n    value_text: ' ',\n    message: msg\n});\ncalc_output.push({\n    name: '3398_2013 ASCVD Risk Calculator_result (optimal)',\n    value: stringo,\n    value_text: ' ',\n    message: msgo\n});",
+  "before_use": "This calculator includes inputs based on race. See the[Quality Rating rationale](#evidence)for more information.\n\n- Learn more about[our approach](https://www.mdcalc.com/race)to addressing race and bias on MDCalc.\n- Looking for a race-free equation to calculate CVD risk? Check out the [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) score.\n\nAs of 2026, the ACC/AHA dyslipidemia guidelines recommends using [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) over this tool for primary prevention risk assessment because of improved accuracy, more contemporary derivation cohorts, and elimination of race-based estimation. [PREVENT](nabda:calc.predicting-risk-cardiovascular-disease-events-prevent) provides risk estimates approximately 40%–50% lower than the 2013 ASCVD Risk Score for the same risk factor profile, with correspondingly adjusted treatment thresholds (≥3% for PREVENT vs ≥5% for the 2013 ASCVD Risk Score).",
+  "instructions": "- Notre [algorithme de risque d’ASCVD](nabda:calc.ascvd-atherosclerotic-cardiovascular-disease-risk-algorithm-including-known-ascvd-aha-acc) est une approche par étapes pour tous les patients adultes – y compris ceux ayant une ASCVD connue.\n- Ce calculateur ne doit être utilisé que chez les patients adultes sans ASCVD connue et avec un LDL 70-189 mg/dL (1.81-4.90 mmol/L).",
+  "contributor_ids": [
+    "simon-kraler-md-phd"
+  ],
+  "creator_names": [
+    "Dr. David Goff"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Total Cholesterol",
+    "HDL Cholesterol"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "c5722e9792032de9d358e484b29165c8088ff3253b9a9d229ef5a5dda4e6f5fe"
+}

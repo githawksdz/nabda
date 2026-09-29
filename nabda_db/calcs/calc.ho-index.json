@@ -1,0 +1,169 @@
+{
+  "id": "calc.ho-index",
+  "slug": "ho-index",
+  "language": "en",
+  "title": "Ho index",
+  "short_title": "Ho index",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Rectocolite hémorragique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Bloating",
+    "Sang dans les selles",
+    "Constipation",
+    "Diarrhea",
+    "Fatigue",
+    "Incontinence fécale",
+    "Fever",
+    "Douleur articulaire",
+    "Perte d'appétit",
+    "Incontinence urinaire",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Ho Index",
+    "Ho Score",
+    "ulcerative colitis",
+    "UC",
+    "ulcerative colitis outcome",
+    "UC outcome",
+    "severe ulcerative colitis",
+    "severe UC",
+    "ulcerative colitis therapy outcome",
+    "UC therapy outcome",
+    "severe ulcerative colitis outcome",
+    "severe UC outcome"
+  ],
+  "dosing": false,
+  "formula": "The Ho Index is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Mean stool frequency, stools/24 hrs | ≤4 | 0 |\n| >4 to ≤6 | 1 | |\n| >6 to ≤9 | 2 | |\n| >9 | 4 | |\n| Colonic dilatation | Absent | 0 |\n| Present | 4 | |\n| Hypoalbuminemia, albumin ≤3 g/dL (30 g/L) | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Use in patients presenting with symptoms consistent with acute severe ulcerative colitis who are admitted to the hospital.\n- This tool should be used on day 3 of admission to predict failure of medical therapy and thus, need for escalation of therapy.\n- Based on retrospective case study review, this score contains more clinical inputs than the Travis Criteria.\n- Initial studies showed an 85% sensitivity when a cutoff of ≥4 was used.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "À mesure que les scores index augmentent, le risque prédit d’échec du traitement médical (corticoïdes IV) augmente également.\n\nChez les patients à haut risque (score index ≥4), envisager d’autres traitements tels que les immunomodulateurs et la chirurgie. Veiller à ce que votre patient bénéficie d’un suivi approprié et d’un traitement d’entretien à la sortie."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Ho Index | Niveau de risque | Risque d’échec du traitement médical |\n| --- | --- | --- |\n| 0-1 | Faible | 11% |\n| 2-3 | Intermédiaire | 45% |\n| 4-9 | Élevé | 85% |",
+  "short_description": "Devenir thérapeutique de la rectocolite hémorragique",
+  "medium_description": "Predicts devenir de medical therapy dans severe ulcerative colitis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "msf",
+      "label": "Fréquence moyenne des selles, selles/24 h",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤4",
+          "value": 0
+        },
+        {
+          "label": ">4 pour ≤6",
+          "value": 1
+        },
+        {
+          "label": ">6 pour ≤9",
+          "value": 2
+        },
+        {
+          "label": ">9",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cd",
+      "label": "Dilatation colique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ha",
+      "label": "Hypoalbuminemia",
+      "tips": "Albumine ≤3 g/dL (30 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ho GT, Mowat C, Goddard CJR, et al. Predicting the outcome of severe ulcerative colitis: development of a novel risk score to aid early selection of patients for second-line medical therapy or surgery. Aliment Pharmacol Ther. 2004;19(10):1079-1087.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15142197/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Holvoet T, Lobaton T, Hindryckx P. Optimal management of acute severe ulcerative colitis (Asuc): challenges and solutions. Clin Exp Gastroenterol. 2021;14:71-81.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33727846/",
+      "kind": "other"
+    },
+    {
+      "text": "Lynch RW, Churchhouse AMD, Protheroe A, Arnott IDR, UK IBD Audit Steering Group. Predicting outcome in acute severe ulcerative colitis: comparison of the Travis and Ho scores using UK IBD audit data. Aliment Pharmacol Ther. 2016;43(11):1132-1141.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27060985/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.travis-criteria",
+    "calc.truelove-witts-severity-index-ulcerative-colitis",
+    "calc.mayo-score-disease-activity-index-dai-ulcerative-colitis"
+  ],
+  "source_logic_hash": "75e1ec7f43747d4f46d4d0b1fa4ada36",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10511,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

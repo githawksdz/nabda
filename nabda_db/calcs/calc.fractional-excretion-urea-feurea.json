@@ -1,0 +1,160 @@
+{
+  "id": "calc.fractional-excretion-urea-feurea",
+  "slug": "fractional-excretion-urea-feurea",
+  "language": "en",
+  "title": "Excrétion fractionnelle de l'urée (FEUrea)",
+  "short_title": "FEUrea",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Insuffisance rénale aiguë",
+    "Insuffisance cardiaque",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Vertiges",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "renal",
+    "aki",
+    "arf",
+    "fena",
+    "feurea",
+    "urea",
+    "excretion",
+    "fractional"
+  ],
+  "dosing": false,
+  "formula": "Fractional Excretion of Urea (FEUrea) = (Serum~Cr~* U~Urea~) / (Serum~Urea~x U~Cr~) %",
+  "how_to_use": {
+    "why": "Cet outil n'est théoriquement pas affecté par l'utilisation de diurétiques de l'anse et thiazidiques, contrairement au [FENa](nabda:calc.fractional-excretion-sodium-fena), et pourrait conserver la capacité de différencier une azotémie prérénale d'une nécrose tubulaire aiguë (ATN) ; toutefois, les données actuelles ne montrent pas de supériorité par rapport au [FENa](nabda:calc.fractional-excretion-sodium-fena).",
+    "when": "À utiliser chez les patients atteints d’insuffisance rénale aiguë (AKI) recevant un traitement diurétique, comme outil d’appoint pour différencier l’azotémie prérénale de la nécrose tubulaire aiguë (ATN).",
+    "pearls": "- Can theoretically be used in patients receiving diuretics, since urea excretion is not significantly affected by diuretics; however, in patients with or without diuretic use, the diagnostic accuracy is poor (AUC 0.57 and 0.56, respectively) and lower than [FENa](nabda:calc.fractional-excretion-sodium-fena) (0.75 and 0.83, respectively).\n- Both [FENa](nabda:calc.fractional-excretion-sodium-fena) and FEUrea are adjunct tools.\n\n - The overall clinical picture must be considered when applying these tools.\n - Other tests that may help in the differential diagnosis of AKI, such as urine microscopy and novel urine kidney injury biomarkers, are not discussed here.\n- States of low effective circulating volume, such as cardiorenal syndrome and hepatorenal syndrome, will have similar FEUrea findings as true volume depletion despite total body volume overload.\n- Rule out urinary tract obstruction with imaging studies when clinically appropriate."
+  },
+  "next_steps": {
+    "advice": "Cet outil est considéré comme un complément dans l’évaluation et la prise en charge de l’AKI ; tenir compte de l’ensemble du tableau clinique et ne pas utiliser un seul test comme base unique de la prise de décision clinique.",
+    "critical_actions": "Rule out urinary tract obstruction when clinically appropriate before applying this tool.",
+    "management": "**FEUrea <35%:**\n\n- Diagnosis is more likely to be prerenal azotemia.\n- Consider increasing effective circulating volume based on the clinical situation (e.g., IV fluid administration).\n\n**FEUrea >50%:**\n\n- Diagnosis is more likely to be intrinsic renal disease (e.g., ATN).\n- Treat the underlying cause of ATN.\n- Consider withdrawing nephrotoxic medications."
+  },
+  "evidence": "Studies evaluating accuracy of FEUrea have shown conflicting results. Larger and higher-quality studies tend to show modest accuracy for identifying a “prerenal” state, with lower accuracy than FENa overall but equivalent accuracy to FENa in patients receiving diuretics.\n\nIn a retrospective study (n=87),[Kaplan et al.](https://www.ncbi.nlm.nih.gov/pubmed/1415365)identified a group of participants with low FEUrea but high FENa who tended to have received diuretics before the sample was obtained. This discordant relationship often “normalized” over time, particularly after discontinuation of diuretic therapy.\n\nIn a prospective, single-center study largely from the ICU (n=102),[Carvounis et al.](https://www.ncbi.nlm.nih.gov/pubmed/12427149)showed that FEUrea had sensitivity and specificity of 90% and 96%, respectively, with an AUC of 0.97 for identifying a prerenal state.\n\nIn a prospective observational single-center study (n=99) enrolling consecutive patients and classifying AKI as transient or persistent,[Pepin et al.](https://pubmed.ncbi.nlm.nih.gov/17900456/)showed that FEUrea had an AUC of 0.56 (+/- 0.11) without prior diuretic use and 0.57 (+/- 0.08) with prior diuretic use. FENa performed better than FEUrea regardless of diuretic use.\n\nFinally, in a prospective, multicenter observational study (n=203),[Darmon et al.](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3387621)showed that FEUrea was not associated with AKI type, with an AUC of 0.59 (CI, 0.49–0.70), and sensitivity and specificity of 63% and 54%, respectively, at a FEUrea cutoff of 35%. Among patients receiving diuretics, AUC was 0.58 (CI, 0.41–0.75).\n\nOverall, FEUrea is considered an adjunct with modest accuracy for differentiating prerenal azotemia from ATN as the etiology of AKI in patients receiving diuretic therapy, where FENa might have lower accuracy.",
+  "more_info": "Ce test peut fournir des informations similaires à l'équation [FENa](nabda:calc.fractional-excretion-sodium-fena), mais il reste utilisable chez les patients sous traitement diurétique (les diurétiques modifient la concentration de sodium, rendant l'équation FENa inutilisable).\n\n| | Prérénal | Rénal intrinsèque | Postrénal |\n| --- | --- | --- | --- |\n| FENa | <1% | >1% | >4% |\n| FEUrea | ≤ 35% | >50% | N/A |",
+  "short_description": "Similar pour [FENa](nabda:calc.fractional-excretion-sodium-fena); pour pts sur diuretics.",
+  "medium_description": "Differentiates between prerenal azotemia et aigu tubular necrosis chez les patients avec insuffisance rénale aiguë. Similar pour [FENa](nabda:calc.fractional-excretion-sodium-fena), but can be used sur patients sur diuretics.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bun",
+      "label": "BUN ou urée sérique",
+      "tips": "Saisir le BUN en mg/dL ou l'urée sérique en mmol/L",
+      "optional": false,
+      "unit": "bun",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Créatinine sérique",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_urea",
+      "label": "Urée urinaire",
+      "optional": false,
+      "unit": "urea_urine",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "urine_creatinine",
+      "label": "Créatinine urinaire",
+      "optional": false,
+      "unit": "cr_urine",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kaplan AA, Kohn OF. Fractional excretion of urea as a guide to renal dysfunction. Am J Nephrol. 1992;12(1-2):49-54.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1415365",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Carvounis CP, Nisar S, Guro-Razuman S. Significance of the fractional excretion of urea in the differential diagnosis of acute renal failure. Kidney Int 2002;62(6):2223-2229.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12427149",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pépin MN, Bouchard J, Legault L, Ethier J. Diagnostic performance of fractional excretion of urea and fractional excretion of sodium in the evaluations of patients with acute kidney injury with or without diuretic treatment. Am J Kidney Dis. 2007 Oct;50(4):566-73.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17900456/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Darmon M, Vincent F, Dellamonica J, et al. Diagnostic performance of fractional excretion of urea in the evaluation of critically ill patients with acute kidney injury: a multicenter cohort study. Critical Care 2011;15(4):R178.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3387621",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fractional-excretion-sodium-fena",
+    "calc.creatinine-clearance-cockcroft-gault-equation",
+    "calc.mdrd-gfr-equation"
+  ],
+  "source_logic_hash": "df3e407a11d86a5710389f24b324fcf9",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.fractional-excretion-sodium-fena",
+      "text": "FENa"
+    },
+    {
+      "type": "calc",
+      "id": "calc.fractional-excretion-sodium-fena",
+      "text": "FENa"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 62,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n// these guys cancel each other out just like FENa so no converions needed.\n\nvar v = 100 * (parseFloat(urine_urea) * parseFloat(creatinine)) / (parseFloat(\n  urine_creatinine) * parseFloat(bun));\nvar msg = '';\nif (v < 35) {\n  msg = 'FEUrea <35% suggests pre-renal disease';\n}\nif (v > 35) {\n  msg = 'FEUrea >35% suggests intrinsic renal disease';\n}\ncalc_output.push({\n  name: 'mini',\n  value: v.toFixed(1),\n  value_text: '%',\n  message: 'FEUrea'\n});\ncalc_output.push({\n  name: '62_FEUrea_result',\n  value: v.toFixed(1),\n  value_text: '%',\n  message: msg\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Andre A. Kaplan",
+    "Dr. Orly F. Kohn"
+  ],
+  "measurement_ids": [
+    "BUN",
+    "Creatinine",
+    "Urine Urea",
+    "Urine Creatinine"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "ab4f6adfdafb385c73e8cebc4d5acb5ca0b0938b17cf354aeb5116d987f637e3"
+}

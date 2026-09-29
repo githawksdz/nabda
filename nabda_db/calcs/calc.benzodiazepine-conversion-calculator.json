@@ -1,0 +1,225 @@
+{
+  "id": "calc.benzodiazepine-conversion-calculator",
+  "slug": "benzodiazepine-conversion-calculator",
+  "language": "en",
+  "title": "Benzodiazepine conversion calculateur",
+  "short_title": "Benzodiazepine conversion calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pharmacotherapie",
+    "psychiatrie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Anxiety",
+    "Dementia",
+    "Depression/Suicidality",
+    "Trouble convulsif"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Seizure"
+  ],
+  "abbreviations": [
+    "Benzodiazepine",
+    "conversion calculator",
+    "benzo conversion"
+  ],
+  "dosing": true,
+  "formula": "| Benzodiazepine | Duration of action |\n| --- | --- |\n| ALPRAZolam (Xanax) | Short |\n| ChlordiazePOXIDE (Librium) | Long |\n| DiazePAM (Valium) | Long |\n| ClonazePAM (KlonoPIN) | Long |\n| LORazepam (Ativan) | Intermediate |\n| Oxazepam (Serax) | Short |\n| Temazepam (Restoril) | Intermediate |\n| Triazolam (Halcion) | Short |\n\n**Conversion factors (highlighted cell is used for example below):**\n\n**![](https://cdn-web-img.mdcalc.com/content/benzo3.png)**\n\n**Example (highlighted cell):**\n\nTo convert 1 mg Xanax to Librium, multiply 1 mg x 25. For a range of equipotent doses, multiply by 15 and 50.\n\n- 1 mg Xanax ≈ 25 mg Librium\n- 15-50 mg ≈ range of Librium dose equipotent to 1 mg Xanax",
+  "how_to_use": {
+    "why": "",
+    "when": "Intended for use when interchanging benzodiazepines and should not be used to help calculate an initial dose for a benzodiazepine naïve patient.",
+    "pearls": "- Durations of action:\n- This calculator does not account for age, organ function, and inter-patient variability that may alter the pharmacokinetics, peak effect, and duration of action.\n- Selecting doses on the lower end of the reported range may result in lower risk of unwanted oversedation.\n- Dosing conversions may not be adequate when treating such conditions as status epilepticus or alcohol withdrawal. Disease-state specific guidelines should be utilized."
+  },
+  "next_steps": {
+    "advice": "Abrupt discontinuation of benzodiazepines should be avoided as this can precipitate withdrawal symptoms, including severe agitation and seizure activity.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Benzodiazepine conversion.",
+  "medium_description": "Provides equivalents between different benzodiazepines.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "from",
+      "label": "Aucun contenu source n'a été fourni à traduire. Merci de transmettre le texte du score clinique (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) pour que je puisse en produire la traduction française.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "ALPRAZolam (Xanax)",
+          "value": 0
+        },
+        {
+          "label": "ChlordiazePOXIDE (Librium)",
+          "value": 1
+        },
+        {
+          "label": "DiazePAM (Valium)",
+          "value": 2
+        },
+        {
+          "label": "ClonazePAM (KlonoPIN)",
+          "value": 3
+        },
+        {
+          "label": "LORazepam (Ativan)",
+          "value": 4
+        },
+        {
+          "label": "Oxazepam (Serax)",
+          "value": 5
+        },
+        {
+          "label": "Temazepam (Restoril)",
+          "value": 6
+        },
+        {
+          "label": "Triazolam (Halcion)",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "dose",
+      "label": "Dose totale quotidienne du médicament (mg)",
+      "optional": false,
+      "unit": "drugmg",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "to",
+      "label": "Converting pour:",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "ALPRAZolam (Xanax)",
+          "value": 0
+        },
+        {
+          "label": "ChlordiazePOXIDE (Librium)",
+          "value": 1
+        },
+        {
+          "label": "DiazePAM (Valium)",
+          "value": 2
+        },
+        {
+          "label": "ClonazePAM (KlonoPIN)",
+          "value": 3
+        },
+        {
+          "label": "LORazepam (Ativan)",
+          "value": 4
+        },
+        {
+          "label": "Oxazepam (Serax)",
+          "value": 5
+        },
+        {
+          "label": "Temazepam (Restoril)",
+          "value": 6
+        },
+        {
+          "label": "Triazolam (Halcion)",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gelenberg AJ, Bassuk, EL. Practitioner's Guide to Psychoactive Drugs. 4th Edition. Springer, 1997. ",
+      "href": "https://books.google.com/books?id=z0AqKQAACAAJ&newbks=0&hl=en&source=newbks_fb",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ashton H. Benzodiazepines: How they work and how to withdraw. The Ashton Manual, 2002.",
+      "href": "https://www.benzo.org.uk/manual/index.htm",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gitlow S. Practical Guides in Psychiatry: Substance Use Disorders, 2nd Edition. Lippincott Williams & Wilkins, 2006.",
+      "href": "https://students.aiu.edu/submissions/profiles/resources/onlineBook/P4d5d5_Substance_Use_Disorders.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tyrer PJ, Silk KR. Cambridge Textbook of Effective Treatments in Psychiatry. Cambridge University Press, 2008.",
+      "href": "https://www.google.com/books/edition/Cambridge_Textbook_of_Effective_Treatmen/HLPXELjTgdEC?hl=en",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Latt N, Conigrave K, Saunders JB, Marshall EJ, Nutt D. Addition Medicine, 2nd Edition. Oxford Specialist Handbooks, 2009.",
+      "href": "https://academic.oup.com/book/30037",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Labatte LA, Fava M, Rosenbaum JF, Arana GW. Handbook of Psychiatric Drug Therapy, 6th Edition. Lippincott Williams & Wilkins, 2010.",
+      "href": "https://www.wolterskluwer.com/en/solutions/ovid/handbook-of-psychiatric-drug-therapy-4882?",
+      "kind": "pubmed"
+    },
+    {
+      "text": "LORazepam [package insert]. Corona (CA): Watson Laboratories, 2010.",
+      "href": "",
+      "kind": "pubmed"
+    },
+    {
+      "text": "DiazePAM [package insert]. San Francisco (CA): Genentech Laboratories, 2016.",
+      "href": "",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Procyshyn RM, Bezchlibnyk-Butler KZ, Jeffries JJ. Clinical Handbook of Psychotropic Drugs, 22nd Edition. Hogrefe, 2017.",
+      "href": "https://pubengine2.s3.eu-central-1.amazonaws.com/preview/99.110005/9781616764968_preview.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.morphine-milligram-equivalents-mme-calculator",
+    "calc.opiate-conversion-calculator",
+    "calc.drug-abuse-screening-test-10-dast-10"
+  ],
+  "source_logic_hash": "5c49b9ae5dc8b04fe3f49ff8e9aed609",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10091,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alprazolam",
+    "s.clonazepam",
+    "s.diazepam",
+    "s.lorazepam",
+    "s.oxazepam",
+    "s.chlordiazepoxide-clidinium"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

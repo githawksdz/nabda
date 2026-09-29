@@ -1,0 +1,260 @@
+{
+  "id": "calc.plan-score-stroke",
+  "slug": "plan-score-stroke",
+  "language": "fr",
+  "title": "PLAN score pour AVC",
+  "short_title": "PLAN score pour AVC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Déficit neurologique",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "plan",
+    "plan score",
+    "cva",
+    "tia",
+    "ischemic stroke",
+    "brain attack"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| | Caractéristique | Score |\n| --- | --- | --- |\n| P comorbidités médicales avant l'admission | Dépendance avant l'admission | 1,5 points |\n| Cancer | 1,5 points | |\n| Insuffisance cardiaque congestive | 1 point | |\n| Fibrillation auriculaire | 1 point | |\n| L niveau de conscience | Diminué | 5 points |\n| Normal | 0 point | |\n| Â ge | Par décennie | 1 point (maximum 10 points) |\n| D éficit neurologique | Faiblesse du bras (importante ou totale) | 2 points |\n| Faiblesse de la jambe (importante ou totale) | 2 points | |\n| Négligence ou aphasie | 1 point | |",
+  "how_to_use": {
+    "why": "- Simple, rapide et utilisable par les non-spécialistes ; peut être réalisé au lit du patient sans imagerie.\n- Prédit la mortalité à 30 jours, l'invalidité sévère à la sortie (c.-à-d. [Modified Rankin Score](nabda:calc.modified-rankin-scale-neurologic-disability) >4) et la mortalité à 1 an, ce qui peut guider les discussions avec les patients et les familles/aidants.\n- Performances comparables à d'autres outils pronostiques (p. ex. iScore, [ASTRAL](nabda:calc.astral-score-stroke) ) pour prédire les issues défavorables et la mortalité ([Matsumoto et al. 2020](https://www.google.com/url?q=https://www.ahajournals.org/doi/10.1161/STROKEAHA.119.027300&sa=D&source=docs&ust=1756297262326334&usg=AOvVaw1g3IFaGC2lDKw3JFGvAssH),[Wang et al. 2017](https://www.strokejournal.org/article/S1052-3057(17)30030-7/abstract)).",
+    "when": "À utiliser au moment de l'admission hospitalière chez les adultes présentant un accident vasculaire cérébral ischémique aigu afin de fournir un pronostic précoce au lit du patient.",
+    "pearls": "- Développé et validé dans des registres d'AVC ischémiques ; une analyse ultérieure de [Du et al. (2020)](https://pmc.ncbi.nlm.nih.gov/articles/PMC6995747/) suggère qu'il pourrait également être utile dans l'hémorragie intracérébrale.\n- La dérivation du score est antérieure à la généralisation des procédures endovasculaires et excluait les patients traités par tPA IV ; cependant, les études de validation ont montré une bonne performance prédictive même chez les patients traités par tPA.\n- Montre une discrimination constante avec une AUROC ≥0,80 pour tous les critères de jugement.\n- N'intègre pas l'imagerie, les données biologiques ni toutes les comorbidités potentiellement influentes."
+  },
+  "next_steps": {
+    "advice": "- Utiliser ce score pour compléter, mais non remplacer, le NIHSS, l'imagerie et le jugement clinique lors de l'établissement du pronostic et des discussions thérapeutiques.\n- Les résultats ne doivent pas être utilisés pour justifier l'administration ou le refus des thérapies de reperfusion.\n- Garder à l'esprit que l'évolution de l'AVC d'un patient peut se modifier dans les jours suivant le début ; une réévaluation peut fournir un pronostic plus fiable.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "| Score PLAN | Mortalité à 30 jours, % | Invalidité sévère*, % | Mortalité à 1 an, % |\n| --- | --- | --- | --- |\n| <6 | 0,7 | 0,9 | 2,1 |\n| 6 | 1,9 | 1,2 | 4,8 |\n| 7 | 1,4 | 1,3 | 4,5 |\n| 8 | 2,1 | 2,5 | 6,4 |\n| 9 | 4,4 | 4,3 | 13,1 |\n| 10 | 4,4 | 6,0 | 16,2 |\n| 11 | 7,6 | 9,8 | 21,7 |\n| 12 | 10,9 | 14,8 | 26,3 |\n| 13 | 15,3 | 20,3 | 32,0 |\n| 14 | 21,7 | 30,7 | 42,2 |\n| 15 | 29,0 | 35,8 | 46,0 |\n| 16 | 35,4 | 43,9 | 57,7 |\n| 17 | 42,5 | 54,4 | 63,3 |\n| 18 | 50,5 | 65,0 | 74,3 |\n| 19 | 61,2 | 73,2 | 73,8 |\n| >19 | 65,9 | 78,4 | 83,6 |\n\n*Définie comme un score de [Modified Rankin Scale](nabda:calc.modified-rankin-scale-neurologic-disability) de 5-6 à la sortie.",
+  "short_description": "AVC mortalité.",
+  "medium_description": "Predicts mortalité et severe disability dans aigu ischemic AVC.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "pread",
+      "label": "Dépendance avant l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "afib",
+      "label": "Fibrillation atriale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loc",
+      "label": "Niveau de conscience",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Reduced",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "armweak",
+      "label": "Faiblesse du bras",
+      "tips": "Importante ou totale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "legweak",
+      "label": "Faiblesse de la jambe",
+      "tips": "Importante ou totale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neglect",
+      "label": "Négligence ou aphasie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "O'Donnell MJ, Fang J, D'uva C, et al. The PLAN score: a bedside prediction rule for death and severe disability following acute ischemic stroke. Arch Intern Med. 2012;172(20):1548-56.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/1391071",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Du W, Zhao X, Wang Y, et al. The PLAN score can predict poor outcomes of intracerebral hemorrhage. Ann Transl Med. 2020;8(1):14.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32055605/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Matsumoto K, Nohara Y, Soejima H, et al. Stroke prognostic scores and data-driven prediction of clinical outcomes after acute ischemic stroke. Stroke. 2020;51(5):1477–1483.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32208843/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wang WY, Sang WW, Jin D, et al. The prognostic value of the iScore, the PLAN score, and the ASTRAL score in acute ischemic stroke. J Stroke Cerebrovasc Dis. 2017;26(6):1233–1238.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28236594/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.astral-score-stroke",
+    "calc.modified-soar-score-stroke",
+    "calc.los-angeles-motor-scale-lams",
+    "calc.modified-rankin-scale-neurologic-disability"
+  ],
+  "source_logic_hash": "fd5b8135188391a6211ff5558aab29cd",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-rankin-scale-neurologic-disability",
+      "text": "Modified Rankin Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.astral-score-stroke",
+      "text": "ASTRAL"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3965,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

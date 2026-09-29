@@ -1,0 +1,284 @@
+{
+  "id": "calc.improvedd-risk-score-venous-thromboembolism-vte",
+  "slug": "improvedd-risk-score-venous-thromboembolism-vte",
+  "language": "en",
+  "title": "Score de risque IMPROVEDD pour la thromboembolie veineuse (VTE)",
+  "short_title": "IMPROVEDD pour VTE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire",
+    "Thrombophilie",
+    "Thromboembolie veineuse"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "IMPROVEDD Risk Score for Venous Thromboembolism (VTE), improvedd, vte, venous thromboembolism, vte risk, improvedd score, improvedd risk score, vte risk score, venous thromboembolism risk, venous thromboembolism risk score, improvedd for vte, vte d-dimer, d-dimer vte, d-dimer, ddimer"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Previous VTE | Yes | 3 |\n| No | 0 | |\n| Known thrombophilia | Yes | 2 |\n| No | 0 | |\n| Current lower-limb paralysis | Yes | 2 |\n| No | 0 | |\n| Current cancer | Yes | 2 |\n| No | 0 | |\n| Immobilized ≥7 days* | Yes | 1 |\n| No | 0 | |\n| ICU/ CCU stay | Yes | 1 |\n| No | 0 | |\n| Age >60 years | Yes | 1 |\n| No | 0 | |\n| D-dimer ≥2x ULN | Yes | 2 |\n| No | 0 | |\n\n*Immediately prior to and during hospital admission.",
+  "how_to_use": {
+    "why": "- Aide à la mise en œuvre de mesures préventives appropriées, ce qui peut diminuer la survenue d'événements thromboemboliques veineux (VTE).\n- Permet aux personnes à faible risque d'éviter une thromboprophylaxie inutile, ce qui peut réduire les coûts et les risques de saignement.",
+    "when": "Can be used to assess the risk of VTE in hospitalized patients to guide thromboprophylaxis decisions.",
+    "pearls": "- A modified version of the [IMPROVE Risk Score for VTE](nabda:calc.improve-risk-score-venous-thromboembolism-vte) , incorporating D-dimer as a risk factor to attempt improved discrimination of VTE risk.\n- Actual performance improvements have been inconsistent in studies.\n- Predicts the risk of VTE in hospitalized patients and should not be used in outpatients.\n- External validation has only occurred in COVID-19 populations."
+  },
+  "next_steps": {
+    "advice": "- Les résultats doivent compléter, et non remplacer, le jugement clinique et l’évaluation individuelle du patient.\n- Évaluer continuellement l’efficacité et la sécurité des mesures prophylactiques, en les ajustant au besoin selon la réponse du patient et tout facteur de risque émergent.",
+    "critical_actions": "- This score is meant to risk stratify patients who have a potential risk for VTE, not to diagnose VTE.\n- If deemed appropriate, anticoagulation should not be withheld from patients who require it as part of the treatment for their diagnosis.\n- Prior to initiating any anticoagulant therapy, a patient’s bleeding risk should be evaluated.",
+    "management": "- **Score ≥2:**\n\n - The patient is at increased risk for VTE.\n - Start appropriate pharmacologic (e.g., low molecular weight heparin) or mechanical (e.g., compression stockings, intermittent pneumatic compression) prophylaxis.\n- **Score <2:**\n\n - The patient is at low risk for VTE.\n - Pharmacologic thrombophylaxis is not warranted.\n - Early ambulation with or without mechanical prophylaxis may be appropriate.\n\nIf pharmacologic prophylaxis is warranted, evaluate for and weigh the risk of bleeding. Consider combining this assessment with the [IMPROVE Bleeding Risk Score](nabda:calc.improve-bleeding-risk-score) ."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| IMPROVEDD Score | 42-day VTE risk | 77-day VTE risk |\n| --- | --- | --- |\n| 0 | 0.4% | 0.5% |\n| 1 | 0.6% | 0.7% |\n| 2 | 0.8% | 1.0% |\n| 3 | 1.2% | 1.4% |\n| 4 | 1.6% | 1.9% |\n| ≥5 | 2.2% | 2.7% |",
+  "short_description": "Risque de VTE chez le patient hospitalisé.",
+  "medium_description": "Predicts risque de VTE dans hospitalized patients, adding D-dimer pour IMPROVE risque score.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "vte",
+      "label": "Antécédent de VTE",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "thrombophilia",
+      "label": "Thrombophilie connue",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "paralysis",
+      "label": "Paralysie actuelle des membres inférieurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "immobilized",
+      "label": "Immobilisé ≥ 7 jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "icu",
+      "label": "Séjour en USI/USIC (unité de soins intensifs / unité de soins intensifs cardiologiques)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge > 60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ddimer",
+      "label": "D-dimères ≥2xLSN",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Schünemann HJ, Cushman M, Burnett AE, et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: prophylaxis for hospitalized and nonhospitalized medical patients. Blood Adv. 2018;2(22):3198-3225. doi:10.1182/bloodadvances.2018022954",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30482763/",
+      "kind": "international"
+    },
+    {
+      "text": "Gibson CM, Spyropoulos AC, Cohen AT, et al. The improvedd vte risk score: incorporation of d-dimer into the improve score to improve venous thromboembolism risk stratification. TH Open. 2017;1(1):e56-e65.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6524839/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Greco S, Zenunaj G, Bonsi B, Bella A, Lopreiato M, Luciani F, Pedrini D, Vestita G, Dalla Nora E, Passaro A. SARS-CoV-2 and finding of vein thrombosis: can IMPROVE and IMPROVEDD scores predict COVID-19 outcomes? Eur Rev Med Pharmacol Sci. 2021;25(4):2123-2130.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33660832/",
+      "kind": "other"
+    },
+    {
+      "text": "Helmy MA, Milad LM, Hasanin A, Elbasha YS, ElSabbagh HA, Elmarzouky MS, Mostafa M, Abdelhakeem AK, Morsy MAE. Ability of IMPROVE and IMPROVE-DD scores to predict outcomes in patients with severe COVID-19: a prospective observational study. Sci Rep. 2022;12(1):13323. doi:10.1038/s41598-022-17466-8",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35922436/",
+      "kind": "other"
+    },
+    {
+      "text": "Goldin M, Lin SK, Kohn N, Qiu M, Cohen SL, Barish MA, Gianos E, Diaz A, Richardson S, Giannis D, Chatterjee S, Coppa K, Hirsch JS, Ngu S, Firoozan S, McGinn T, Spyropoulos AC. External validation of the IMPROVE-DD risk assessment model for venous thromboembolism among inpatients with COVID-19. J Thromb Thrombolysis. 2021;52(4):1032-1035. doi:10.1007/s11239-021-02504-5",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34146235/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.improve-risk-score-venous-thromboembolism-vte",
+    "calc.caprini-score-venous-thromboembolism-2005",
+    "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+    "calc.improve-bleeding-risk-score"
+  ],
+  "source_logic_hash": "893a049c8d8466dbf2a2c4cbd54203ca",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.improve-risk-score-venous-thromboembolism-vte",
+      "text": "IMPROVE Risk Score for VTE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.improve-bleeding-risk-score",
+      "text": "IMPROVE Bleeding Risk Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.improve-risk-score-venous-thromboembolism-vte",
+      "text": "IMPROVE Risk Score for VTE"
+    },
+    {
+      "type": "calc",
+      "id": "calc.improve-bleeding-risk-score",
+      "text": "IMPROVE Bleeding Risk Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10350,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[];\n\nvar criteria=parseFloat(vte)+parseFloat(thrombophilia)+parseFloat(paralysis)+parseFloat(cancer)+parseFloat(immobilized)+parseFloat(icu)+parseFloat(age)+parseFloat(ddimer);\n\nvar risk;\nvar risk1;\nvar risk2;\n\nif (criteria==0) {\n  risk1 = '0.4';\n  risk2 = '0.5';\n}\nif (criteria==1) {\n  risk1 = '0.6';\n  risk2 = '0.7';\n}\nif (criteria==2) {\n  risk1 = '0.8';\n  risk2 = '1.0';\n}\nif (criteria==3) {\n  risk1 = '1.2';\n  risk2 = '1.4';\n}\nif (criteria==4) {\n  risk1 = '1.6';\n  risk2 = '1.9';\n}\nif (criteria>=5) {\n  risk1 = '2.2';\n  risk2 = '2.7';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: criteria,\n    value_text:'points',\n    message:'IMPROVEDD Score'\n});\ncalc_output.push({\n    name: 'IMPROVEDD Score',\n    value: criteria,\n    value_text:'points',\n    message:'IMPROVEDD Score '\n});\ncalc_output.push({\n    name: '42 risk',\n    value: risk1,\n    value_text:'%',\n    message: '42-day VTE risk ' \n});\ncalc_output.push({\n    name: '77 risk',\n    value: risk2,\n    value_text:'%',\n    message: '77-day VTE risk ' \n});",
+  "before_use": "- No large-scale, multicenter, prospective external validation in a general (non-COVID) medical inpatient cohort has been published.\n- Published external validation studies are in hospitalized COVID-19 populations, which may not be generalizable to the broader medical inpatient population for which the score was designed.\n- Improved performance over the [IMPROVE Risk Score](nabda:calc.improve-risk-score-venous-thromboembolism-vte) has been inconsistent.",
+  "instructions": null,
+  "contributor_ids": [
+    "kabir-yadav-mdcm-ms-mshs"
+  ],
+  "creator_names": [
+    "Dr. C. Michael Gibson"
+  ],
+  "measurement_ids": [
+    "Age",
+    "ddimer"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7dce7e54e1fe644dad0bd00a49fa7c23ac4f7fbfc10fa883356f40e4c81fd2a4"
+}

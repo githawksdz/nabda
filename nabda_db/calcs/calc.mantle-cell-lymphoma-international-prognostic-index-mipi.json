@@ -1,0 +1,177 @@
+{
+  "id": "calc.mantle-cell-lymphoma-international-prognostic-index-mipi",
+  "slug": "mantle-cell-lymphoma-international-prognostic-index-mipi",
+  "language": "fr",
+  "title": "Index pronostique international du lymphome à cellules du manteau (MIPI)",
+  "short_title": "MIPI",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne",
+    "Leukemia/Lymphoma"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Fever",
+    "Lymphadenopathy",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "MCL",
+    "mantle cell lymphoma",
+    "lymphoma",
+    "mantle cell lymphoma international prognostic index",
+    "international prognostic index",
+    "MIPI",
+    "IPI",
+    "mantel cell"
+  ],
+  "dosing": false,
+  "formula": "MIPI = ( 0,03535 × âge ) + 0,6978 (si ECOG >1) + [ 1,367 × log10 ( LDH / ULN ) + 0,9393 × log10 ( WBC ) ]\n\n**Si le Ki-67 est disponible :**\nMIPIb = ( 0,03535 × âge ) + 0,6978 (si ECOG >1) + [ 1,367 × log10 ( LDH / ULN ) + 0,9393 × log10 ( WBC ) ] + ( 0,02142 × Ki-67 )",
+  "how_to_use": {
+    "why": "Le MIPI est plus spécifique du lymphome à cellules du manteau que l'[International Prognostic Index (IPI)](nabda:calc.international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi).",
+    "when": "À utiliser chez les patients présentant un lymphome à cellules du manteau de stade avancé, pour aider à établir un pronostic et potentiellement déterminer le traitement.",
+    "pearls": "- Bien que la plupart des patients atteints d’un lymphome du manteau avancé doivent être traités peu de temps après le diagnostic, il est de plus en plus reconnu qu’un faible pourcentage de patients à très faible risque pourrait ne pas nécessiter de traitement pendant une période beaucoup plus longue.\n- Si le Ki-67 est disponible, il peut être ajouté pour calculer le MIPIb ou le score « biologique »."
+  },
+  "next_steps": {
+    "advice": "- Le MIPI classe les patients en 3 groupes de risque : faible, intermédiaire ou élevé.\n- Une surveillance rapprochée peut être envisagée chez les patients à faible risque en l'absence d'autres indications de traitement.\n- Toutefois, les patients à risque intermédiaire et élevé sont traités par immunochimiothérapie, seule ou suivie d'une autogreffe de cellules souches hématopoïétiques, en fonction de nombreux autres facteurs liés au patient tels que l'âge, les comorbidités, les profils d'effets indésirables et les préférences du patient.",
+    "critical_actions": "",
+    "management": "Il existe une diversité des pratiques cliniques pour le traitement du lymphome à cellules du manteau, avec très peu d’études comparatives directes des différentes approches. Bien que nous sachions qu’un petit nombre de patients atteints d’une maladie de faible charge tumorale et de faible risque peuvent avoir une évolution indolente, il est difficile d’identifier ces patients au diagnostic. La plupart des patients nécessiteront un traitement au diagnostic, même si les paradigmes thérapeutiques actuels ne sont pas considérés comme curatifs. Les traitements standards sont une chimio-immunothérapie d’induction suivie d’une transplantation autologue de cellules souches hématopoïétiques, avec ou"
+  },
+  "evidence": "The MIPI was described in[2008](https://www.ncbi.nlm.nih.gov/pubmed/17962512)using data on 455 patients from 3 clinical trials ranging from 1996-2004. A Cox regression analysis was used to backwards calculate the variables included in the MIPI, and validation was performed on the same training set by bootstrap method of validation.\n\nIt was later independently validated in[2014](https://www.ncbi.nlm.nih.gov/pubmed/24687837)using data on 958 patients from 2 separate clinical trials from 2004-2010. This study confirmed the prognostic value of the 3 groups but with different estimated 5-year survival rates, likely reflecting the differences in the patient population and treatment. As such, the score needs to be interpreted with these factors in mind when applied to the individual patient.",
+  "more_info": "Interprétation :\n\n| MIPI | Risque | Survie globale médiane |\n| --- | --- | --- |\n| <5.7 | Faible | Non atteinte (survie à 5 ans 60 %) |\n| 5.7 à <6.2 | Intermédiaire | 51 mois |\n| ≥6.2 | Élevé | 29 mois |\n\n| MIPIb | Risque | Survie globale médiane |\n| --- | --- | --- |\n| <5.7 | Faible | Non atteinte |\n| 5.7 à <6.5 | Intermédiaire | 58 mois |\n| ≥6.5 | Élevé | 37 mois |\n\nD'après [Hoster 2008](https://www.ncbi.nlm.nih.gov/pubmed/17962512).",
+  "short_description": "Survie du lymphome à cellules du manteau.",
+  "medium_description": "Predicts survie chez les patients avec mantle cell lymphoma.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "ecog",
+      "label": "[ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-1",
+          "value": 0
+        },
+        {
+          "label": "2-4",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ldh",
+      "label": "LDH sérique",
+      "optional": false,
+      "unit": "ldh",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ulnldh",
+      "label": "Upper limit de normal pour serum LDH",
+      "tips": "Selon les valeurs normales de votre laboratoire",
+      "optional": false,
+      "default": 160,
+      "unit": "ldh",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "WBC",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "index",
+      "label": "Ki-67",
+      "tips": "Optionnel, pour MIPIb",
+      "optional": true,
+      "unit": "ki67",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Hoster E, Dreyling M, Klapper W, et al. A new prognostic index (MIPI) for patients with advanced-stage mantle cell lymphoma. Blood. 2008;111(2):558-65.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17962512 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hoster E, Rosenwald A, Berger F, et al. Prognostic Value of Ki-67 Index, Cytology, and Growth Pattern in Mantle-Cell Lymphoma: Results From Randomized Trials of the European Mantle Cell Lymphoma Network. J Clin Oncol. 2016;34(12):1386-94.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26926679 ",
+      "kind": "other"
+    },
+    {
+      "text": "Lim SY, Horsman JM, Hancock BW. The Mantle Cell Lymphoma International Prognostic Index: Does it work in routine practice?. Oncol Lett. 2010;1(1):187-188.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3436357/",
+      "kind": "other"
+    },
+    {
+      "text": "Hoster E, Klapper W, Hermine O, et al. Confirmation of the mantle-cell lymphoma International Prognostic Index in randomized trials of the European Mantle-Cell Lymphoma Network. J Clin Oncol. 2014;32(13):1338-46.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24687837",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Geisler CH, Kolstad A, Laurell A, et al. The Mantle Cell Lymphoma International Prognostic Index (MIPI) is superior to the International Prognostic Index (IPI) in predicting survival following intensive first-line immunochemotherapy and autologous stem cell transplantation (ASCT). Blood. 2010;115(8):1530-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20032504",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-comprehensive-cancer-network-international-prognostic-index-nccn-ipi",
+    "calc.central-nervous-system-international-prognostic-index-cns-ipi",
+    "calc.malt-lymphoma-prognostic-idex-malt-ipi",
+    "calc.international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi"
+  ],
+  "source_logic_hash": "f81bcab371a93d889fb8696cbb5051f0",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.international-prognostic-index-diffuse-large-b-cell-lymphoma-ipi-r-ipi",
+      "text": "International Prognostic Index (IPI)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4053,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

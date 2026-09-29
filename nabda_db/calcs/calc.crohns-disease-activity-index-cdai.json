@@ -1,0 +1,328 @@
+{
+  "id": "calc.crohns-disease-activity-index-cdai",
+  "slug": "crohns-disease-activity-index-cdai",
+  "language": "fr",
+  "title": "Indice d'activité de la maladie de Crohn (CDAI)",
+  "short_title": "Indice d'activité de la maladie de Crohn (CDAI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "endocrinologie",
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladie de Crohn",
+    "Maladies inflammatoires chroniques de l'intestin (MICI)",
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "crohn’s disease",
+    "hematocrit",
+    "CDAI",
+    "diarrhea",
+    "diagnosis",
+    "crohns disease",
+    "crohns",
+    "Crohn's Disease Activity Index (CDAI)"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "La maladie de Crohn est une entité complexe et multifactorielle. L'évaluation de l'activité de la maladie et de la qualité de vie est difficile à quantifier — un outil standardisé et précis aide à comparer la sévérité entre les patients, ainsi qu'à suivre individuellement les patients dans le temps.",
+    "when": "Adultes atteints de maladie de Crohn active.",
+    "pearls": "- L'indice d'activité de la maladie de Crohn (CDAI) permet de quantifier et de suivre l'activité de la maladie chez les adultes atteints de maladie de Crohn.\n- Le CDAI peut présenter une grande variabilité dans les définitions et la notation en pratique réelle.\n- Les variations de laboratoire de l'hématocrite « normal » chez les hommes et les femmes peuvent souvent conduire à des scores CDAI nettement différents ; de même, les variations de poids peuvent également entraîner des différences de score."
+  },
+  "next_steps": {
+    "advice": "Le CDAI est le gold standard de facto et est utilisé dans les études à travers le monde.",
+    "critical_actions": "Nécessite des valeurs de laboratoire, une anamnèse détaillée et un journal des symptômes du patient sur 7 jours.",
+    "management": "- De multiples algorithmes utilisent le score, bien que nous n'ayons connaissance d'aucun algorithme validé sur la base des résultats cliniques.\n- Se référer aux [recommandations ACG](https://www.mdcalc.com/guidelines/acg/diagnosis-treatment-prevention-acute-diarrheal-infections-adults) pour la prise en charge des infections diarrhéiques aiguës chez l'adulte."
+  },
+  "evidence": "",
+  "more_info": "| Critères | Quantité | Réponse | Multiplicateur |\n| --- | --- | --- | --- |\n| Nombre de selles liquides | Somme, au cours des 7 derniers jours | | ×2 |\n| Douleur abdominale | Évaluation quotidienne moyenne × 7 | 0 = Aucune 1 = Légère 2 = Modérée 3 = Sévère | ×5 |\n| Bien-être général | Évaluation quotidienne moyenne × 7 | 0 = Globalement bien 1 = Légèrement en dessous de la normale 2 = Médiocre 3 = Très médiocre 4 = Terrible | ×7 |\n| Manifestations extra-intestinales / plaintes physiques* | Nombre de complications listées | 0 = Non, 1 = Oui* | ×20 |\n| Antidiarrhéiques | Utilisation au cours des 7 derniers jours | 0 = Non 1 = Oui | ×30 |\n| Masse abdominale | | 0 = Non 2 = Douteuse, 5 = Certaine | ×10 |\n| Hématocrite | Hématocrite attendu – observé | Hommes : 47% observé, Femmes : 42% observé | ×6 |\n| Poids corporel | % en dessous du poids idéal | (Idéal - observé) / idéal × 100 | ×1 |\n\n*Arthrite/arthralgie, lésions muco-cutanées (p. ex. érythème noueux, ulcérations aphteuses), iritis/uvéite, maladie anale (fissure, fistule, etc.), fistule externe (entéro-cutanée, vésicale, vaginale, etc.), fièvre supérieure à 37.8°C\n\n**Interprétation du score :**\n\n- CDAI <150 est un marqueur de rémission de la maladie de Crohn.\n- CDAI >450 est un marqueur de maladie de Crohn sévère.",
+  "short_description": "Determines current gravité de Crohn's maladie.",
+  "medium_description": "Determines current gravité de Crohn's maladie.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ibw",
+      "label": "Poids idéal",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "stool",
+      "label": "Total number de soft/liquid stools dans last 7 days",
+      "optional": false,
+      "unit": "stools",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "abdp",
+      "label": "Douleur abdominale",
+      "tips": "Évaluation quotidienne moyenne au cours des 7 derniers jours : 0 = aucune, 1 = légère, 2 = modérée, 3 = sévère",
+      "optional": false,
+      "unit": "sum_abd",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "well",
+      "label": "Bien-être général",
+      "tips": "Évaluation quotidienne moyenne au cours des 7 derniers jours : 0 = globalement bien, 1 = légèrement en dessous de la normale, 2 = médiocre, 3 = très médiocre, 4 = terrible",
+      "optional": false,
+      "unit": "sum_wellbeing",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "antid",
+      "label": "Utilisation d'antidiarrhéiques",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "abdm",
+      "label": "Masse abdominale",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Questionable",
+          "value": 2
+        },
+        {
+          "label": "Definite",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hem",
+      "label": "Hematocrit",
+      "optional": false,
+      "unit": "hct",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "arth",
+      "label": "Arthritis/arthralgias",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "irit",
+      "label": "Iritis/uveitis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eryth",
+      "label": "Érythème noueux, pyoderma gangrenosum, ou stomatite aphteuse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anal",
+      "label": "Fissure anale, fistule, ou abcès",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fist",
+      "label": "Autre fistule",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fev",
+      "label": "Fièvre/temperature > 100°F/37.8°C",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Best WR, Becktel JM, Singleton JW, Kern F Jr. Development of a Crohn's disease activity index. National Cooperative Crohn's Disease Study. Gastroenterology. 1976 Mar;70(3):439-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1248701",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jørgensen L, Fredholm L, Hyltoft Petersen P, Hey H, Munkholm P, Brandslund I. How accurate are clinical activity indices for scoring of disease activity in inflammatory bowel disease (IBD)? Clin Chem Lab Med. 2005; 43(4):403–11. doi:10.1515/CCLM.2005.073. PMID 15899657.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15899657",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yoshida E. The Crohn's Disease Activity Index, its derivatives and the Inflammatory Bowel Disease Questionnaire: a review of instruments to assess Crohn's disease. Can J Gastroenterol. 1999; 13(1):65–73. PMID 10099817.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10099817",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pediatric-crohns-disease-activity-index-pcdai",
+    "calc.harvey-bradshaw-index-hbi-crohns-disease",
+    "calc.montreal-classification-inflammatory-bowel-disease-ibd"
+  ],
+  "source_logic_hash": "8de43a77b9f04c630a5cdc957020ca5b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3318,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

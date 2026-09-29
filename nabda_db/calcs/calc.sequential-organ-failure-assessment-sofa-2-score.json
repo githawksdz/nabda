@@ -1,0 +1,336 @@
+{
+  "id": "calc.sequential-organ-failure-assessment-sofa-2-score",
+  "slug": "sequential-organ-failure-assessment-sofa-2-score",
+  "language": "en",
+  "title": "Séquentiel organe défaillance évaluation (SOFA)-2 score",
+  "short_title": "Score SOFA-2",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Insuffisance respiratoire",
+    "Sepsis",
+    "Choc cardiogénique"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "Tout/Tous",
+    "Dyspnée",
+    "Fièvre",
+    "Dyspnée",
+    "Faiblesse",
+    "Hypoxémie",
+    "Dysfonction organique"
+  ],
+  "abbreviations": [
+    "Sequential Organ Failure Assessment",
+    "SOFA-2",
+    "SOFA2",
+    "SOFA",
+    "SOFA score",
+    "new SOFA",
+    "organ dysfunction score",
+    "ICU SOFA",
+    "ICU mortality risk score",
+    "ICU sepsis",
+    "sepsis SOFA",
+    "sepsis organ failure",
+    "updated SOFA",
+    "ICU prognosis",
+    "qSOFA",
+    "mSOFA",
+    "SOFA 2025",
+    "SOFA-1"
+  ],
+  "dosing": false,
+  "formula": "To calculate the SOFA-2 Score, add the points for each variables:\n\n| Variable | Point | |\n| --- | --- | --- |\n| Brain¹ , ² ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) ) | 15 (or thumbs-up, fist, or peace sign) | 0 |\n| 13-14 (or localizing to pain) ² or need for drugs to treat delirium ³ | 1 | |\n| 9-12 (or withdrawal to pain) | 2 | |\n| 6-8 (or flexion to pain) | 3 | |\n| 3-5 (or extension to pain, no response to pain, generalized myoclonus) | 4 | |\n| Respiratory ⁴ ( PaO₂ : FiO₂ ratio) | >300 mm Hg (>40 kPa) | 0 |\n| ≤300 mm Hg (≤40 kPa) | 1 | |\n| ≤225 mm Hg (≤30 kPa) | 2 | |\n| ≤150 mm Hg (≤20 kPa) and advanced ventilatory support⁵ , ⁶ | 3 | |\n| ≤75 mm Hg (≤10 kPa) and advanced ventilatory support⁵ , ⁶ or ECMO ⁷ | 4 | |\n| Cardiovascular⁸ , ⁹ , ¹⁰ , ¹¹ | MAP ≥70 mm Hg, no vasopressor or inotrope use | 0 |\n| MAP <70 mm Hg, no vasopressor or inotrope | 1 | |\n| Low-dose vasopressor: (sum of norepinephrine and epinephrine ≤0.2 μg/kg/min) or any dose of other vasopressor or inotrope | 2 | |\n| Medium-dose vasopressor (sum of norepinephrine and epinephrine >0.2 to ≤0.4 μg/kg/min) or low-dose vasopressor (sum norepinephrine and epinephrine ≤0.2 μg/kg/min) with any other vasopressor or inotrope | 3 | |\n| High-dose vasopressor (sum of norepinephrine and epinephrine >0.4 μg/kg/min) or medium-dose vasopressor (sum of norepinephrine and epinephrine >0.2 to ≤0.4 μg/kg/min) with any other vasopressor or inotrope or mechanical support⁷ , ¹² | 4 | |\n| Liver (total bilirubin) | ≤1.20 mg/dL (≤20.6 μmol/L) | 0 |\n| ≤3.0 mg/dL (≤51.3 μmol/L) | 1 | |\n| ≤6.0 mg/dL (≤102.6 μmol/L) | 2 | |\n| ≤12.0 mg/dL (≤205 μmol/L) | 3 | |\n| >12 mg/dL (>205 μmol/L) | 4 | |\n| Kidney (creatinine) | ≤1.20 mg/dL (≤110 μmol/L) | 0 |\n| ≤2.0 mg/dL (≤170 μmol/L) or urine output <0.5 mL/kg/h for 6-12 h | 1 | |\n| ≤3.50 mg/dL (≤300 μmol/L) or urine output <0.5 mL/kg/h for ≥12 h | 2 | |\n| >3.50 mg/dL (>300 μmol/L) or urine output <0.3 mL/kg/h for ≥24 h or anuria (0 mL) for ≥12 h | 3 | |\n| Receiving or fulfills criteria for RRT (includes chronic use) ¹³ , ¹⁴ , ¹⁵ | 4 | |\n| Hemostasis (platelets) | >150 × 10 ³ /μL | 0 |\n| ≤150 × 10 ³ /μL | 1 | |\n| ≤100 × 10 ³ /μL | 2 | |\n| ≤80 × 10 ³ /μL | 3 | |\n| ≤50 × 10 ³ /μL | 4 | |\n\n^1^For sedated patients, use the last GCS before sedation; if unknown, score 0.\n^2^If full GCS cannot be assessed, use the best motor response score only.\n^3^If the patient is receiving drug therapy for delirium, score 1 point even if GCS is 15. For relevant drugs, see the International Management of Pain, Agitation, and Delirium in Adult Patients in the ICU Guidelines.\n^4^Use theSpO₂:FiO₂ratio only when PaO₂:FiO₂ratio is unavailable and SpO₂<98%. Cutoffs: 0 points, >300 mm Hg; 1 point, ≤300 mm Hg; 2 points, ≤250 mm Hg; 3 points, ≤200 mm Hg with ventilatory support; 4 points, ≤120 mm Hg with ventilatory support or ECMO.\n^5^Advanced ventilatory support includesHFNC,CPAP,BiPAP, noninvasive or invasive mechanical ventilation, or long-term home ventilation. Scores of 3-4 require both an appropriate PaO₂:FiO₂or SpO₂:FiO₂ratio and advanced ventilatory support; ignore transient changes within 1 hour (e.g., after suctioning).\n^6^Patients without advanced respiratory support can score at most 2 points unless ventilatory support is (1) unavailable or (2) limited by ceiling of treatment; if so, scored by PaO₂:FiO₂or SpO₂:FiO₂alone.\n^7^If ECMO is used for respiratory failure, assign 4 points in the respiratory system (regardless of PaO₂:FiO₂) and do not score it in the cardiovascular system. If ECMO is used for cardiovascular indications, score it in both cardiovascular and respiratory systems.\n^8^Count vasopressors only if given as a continuous IV infusion for ≥1 hour.\n^9^Norepinephrine dosing should be expressed as the base: 1 mg norepinephrine base ≈ 2 mg norepinephrine bitartrate monohydrate ≈ 1.89 mg anhydrous bitartrate (hydrogen/acid/tartrate) ≈ 1.22 mg hydrochloride.\n^10^If dopamine is used as a single vasopressor, use these cutoffs: 2 points, 20 μg/kg/min; 3 points, >20 to 40 μg/kg/min; 4 points, >40 μg/kg/min.\n^11^When vasoactive drugs are unavailable or limited by ceiling oftreatment, use MAP cutoffs for scoring: 0 point, ≥70 mm Hg; 1 point, 60-69 mm Hg; 2 points, 50-59 mm Hg; 3 points, 40-49 mm Hg; 4 points, <40 mm Hg.\n^12^Mechanical cardiovascular support includes venoarterial ECMO,IABP, LV assist device, microaxial flow pump.\n^13^Excludes patients receiving RRT exclusively for nonrenal causes (e.g., toxin, bacterial toxin, or cytokine removal).\n^14^For patients not receiving RRT (eg, ceiling of treatment, machine unavailability, or delayed start), score 4 points if they otherwise meet RRT criteria: creatinine >1.2 mg/dL (>110 μmol/L) or oliguria (<0.3 mL/kg/h) for >6 hours plus either serum potassium ≥6.0 mmol/L or metabolic acidosis (pH ≤7.20 and serum bicarbonate ≤12 mmol/L).\n^15^For patients on intermittent RRT, score 4 points on days not receiving RRT until RRT use is terminated.",
+  "how_to_use": {
+    "why": "Quantifies organ dysfunction severity in critically ill adults, with better alignment to current practice than [SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) .",
+    "when": "Use in critically ill adults (≥18 years) in the intensive care unit (ICU).",
+    "pearls": "- Updated from the [original SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) through a modified Delphi process and large, data-driven analyses to reflect contemporary organ support and thresholds.\n- Developed using data from 1,319 ICUs across 9 countries (2014–2023), with internal and external validation in >3 million ICU admissions.\n- On the first ICU day, SOFA-2 showed AUROC ≈0.79 for ICU mortality (vs 0.77 for SOFA).\n- Not validated for use in pediatric patients or settings outside of the ICU (e.g., emergency department).\n- Does not account for chronic causes of organ dysfunction."
+  },
+  "next_steps": {
+    "advice": "- Interpréter les résultats en parallèle d’une évaluation clinique complète.\n- Des scores plus élevés traduisent une dysfonction organique plus importante et sont associés à un risque de mortalité en réanimation plus élevé.\n- Le score aide à l’évaluation de la gravité et à la standardisation ; il ne s’agit pas d’un algorithme thérapeutique prescriptif ni d’un calculateur individualisé de mortalité.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Gravité de la dysfonction organique aiguë",
+  "medium_description": "Assesses gravité de aigu organe dysfunction dans critically ill adultes.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "a",
+      "label": "Brain ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs) )",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "15 (ou pouce levé, poing, ou signe de la paix)",
+          "value": 0
+        },
+        {
+          "label": "13-14 (ou localizing pour douleur) ou need pour drugs pour treat delirium",
+          "value": 1
+        },
+        {
+          "label": "9-12 (ou retrait en réponse à la douleur)",
+          "value": 2
+        },
+        {
+          "label": "6-8 (ou flexion en réponse à la douleur)",
+          "value": 3
+        },
+        {
+          "label": "3-5 (ou extension pour douleur, no response pour douleur, generalized myoclonus)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b",
+      "label": "Respiratoire (rapport PaO₂:FiO₂)",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">300 mm Hg (>40 kPa)",
+          "value": 0
+        },
+        {
+          "label": "≤300 mm Hg (≤40 kPa)",
+          "value": 1
+        },
+        {
+          "label": "≤225 mm Hg (≤30 kPa)",
+          "value": 2
+        },
+        {
+          "label": "≤150 mm Hg (≤20 kPa) et assistance ventilatoire avancée",
+          "value": 3
+        },
+        {
+          "label": "≤75 mm Hg (≤10 kPa) et assistance ventilatoire avancée ou ECMO",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "c",
+      "label": "Cardiovasculaire",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "PAM ≥70 mm Hg, absence de vasopresseur ou d'inotrope",
+          "value": 0
+        },
+        {
+          "label": "MAP (pression artérielle moyenne) <70 mm Hg, sans vasopresseur ni inotrope",
+          "value": 1
+        },
+        {
+          "label": "faible-dose vasopressor: (sum de norepinephrine et epinephrine ≤0.2 μg/kg/min) ou any dose de other vasopressor ou inotrope",
+          "value": 2
+        },
+        {
+          "label": "Medium-dose vasopressor (sum de norepinephrine et epinephrine >0.2 pour ≤0.4 μg/kg/min) ou faible-dose vasopressor (sum norepinephrine et epinephrine ≤0.2 μg/kg/min) avec any other vasopressor ou inotrope",
+          "value": 3
+        },
+        {
+          "label": "élevé-dose vasopressor (sum de norepinephrine et epinephrine >0.4 μg/kg/min) ou medium-dose vasopressor (sum de norepinephrine et epinephrine >0.2 pour ≤0.4 μg/kg/min) avec any other vasopressor ou inotrope ou mechanical support",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d",
+      "label": "Foie (bilirubine totale)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤1,20 mg/dL (≤20,6 μmol/L)",
+          "value": 0
+        },
+        {
+          "label": "≤3.0 mg/dL (≤51.3 μmol/L)",
+          "value": 1
+        },
+        {
+          "label": "≤6,0 mg/dL (≤102,6 μmol/L)",
+          "value": 2
+        },
+        {
+          "label": "≤12.0 mg/dL (≤205 μmol/L)",
+          "value": 3
+        },
+        {
+          "label": ">12 mg/dL (>205 μmol/L)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "e",
+      "label": "Rein (créatinine)",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤1,20 mg/dL (≤110 μmol/L)",
+          "value": 0
+        },
+        {
+          "label": "≤2,0 mg/dL (≤170 μmol/L) ou diurèse <0,5 mL/kg/h pendant 6-12 h",
+          "value": 1
+        },
+        {
+          "label": "≤3,50 mg/dL (≤300 μmol/L) ou diurèse <0,5 mL/kg/h pendant ≥12 h",
+          "value": 2
+        },
+        {
+          "label": ">3.50 mg/dL (>300 μmol/L) ou urine output <0.3 mL/kg/h pour ≥24 h ou anuria (0 mL) pour ≥12 h",
+          "value": 3
+        },
+        {
+          "label": "Receiving ou fulfills critères pour RRT (includes chronique use)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "f",
+      "label": "Hémostase (plaquettes)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "> 150 × 10³/μL",
+          "value": 0
+        },
+        {
+          "label": "≤ 150 × 10³/μL",
+          "value": 1
+        },
+        {
+          "label": "≤100 × 10³/μL",
+          "value": 2
+        },
+        {
+          "label": "≤ 80 × 10³/μL",
+          "value": 3
+        },
+        {
+          "label": "≤50 × 10³/μL",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ranzani OT, Singer M, Salluh JIF, et al. Development and validation of the Sequential Organ Failure Assessment (SOFA)-2 score. JAMA. Published online October 29, 2025. doi:10.1001/jama.2025.20516",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41159833/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Seymour CW. A revision to organ failure assessment in critically ill patients. JAMA. Published online October 29, 2025. doi:10.1001/jama.2025.20255",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41159826/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "a44ca79876b94e13d9a1ea239be7be17",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "original SOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "original SOFA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10648,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar a = parseFloat(a);\nvar b = parseFloat(b);\nvar c = parseFloat(c);\nvar d = parseFloat(d);\nvar e = parseFloat(e);\nvar f = parseFloat(f);\n\n// Calculate score\nvar score = a + b + c + d + e + f;\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: 'SOFA-2 Score'\n});\ncalc_output.push({\n    name: '10648_SOFA-2 Score_result',\n    value: score,\n    value_text: 'points',\n    message: 'SOFA-2 Score'\n});\n\n",
+  "before_use": "SOFA-2 est récemment dérivé et nécessite une validation externe supplémentaire ; il n'a pas encore été intégré dans les principales recommandations de soins intensifs et ne doit pas remplacer les outils établis, tels que le [SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) original.",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Otavio T. Ranzani"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate",
+    "s.dopamine",
+    "s.alginate-bicarbonate",
+    "s.bicarbonate-2",
+    "s.bicarbonate-3",
+    "s.alginate-bicarbonate-2",
+    "s.alginate-bicarbonate-3",
+    "s.bicarbonate-electrolytes-lactique",
+    "s.bicarbonate-macrogol",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.bicarbonate-magnesium",
+    "s.bicarbonate-macrogol-2",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.articaline-epinephrine",
+    "s.lidocaine-epinephrine",
+    "s.polyethylene-glycol-bicarbonate",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.alginate-bicarbonate-calcium"
+  ],
+  "engine_sha256": "ee1e2e5844ddca5347c1a115a53676e5a5b3d0d75d201733f4b859eaafd2369b"
+}

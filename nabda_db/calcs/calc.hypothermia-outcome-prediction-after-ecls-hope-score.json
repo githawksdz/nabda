@@ -1,0 +1,166 @@
+{
+  "id": "calc.hypothermia-outcome-prediction-after-ecls-hope-score",
+  "slug": "hypothermia-outcome-prediction-after-ecls-hope-score",
+  "language": "en",
+  "title": "Hypothermia devenir prédiction after ECLS (HOPE) score",
+  "short_title": "Score HOPE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Insuffisance cardiaque",
+    "Arrêt cardiaque"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Dizziness",
+    "Fatigue",
+    "Nausea",
+    "Palpitations",
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "HOPE Score",
+    "Hypothermia Outcome Prediction after ECLS",
+    "ECLS",
+    "Extracorporeal Life Support",
+    "life support",
+    "hypothermia",
+    "hypothermic arrest",
+    "hypothermia score"
+  ],
+  "dosing": false,
+  "formula": "The HOPE Score is calculated based on the following inputs:\n\n- Sex (male = 1, female = 0).\n- Hypothermia with asphyxia (yes = 1, no = 0).\n- Age, years.\n- Potassium, mmol/L.\n- CPR duration, min.\n- Temperature, °C.\n\nHOPE Score = 2.44 – 1.55*(Sex) – 1.95*(Asphyxia) – 0.0191*(Age, years) - 2.07*log~2~(Potassium, mmol/L) - 0.573*log~2~(CPR duration, min) + 0.937*(temperature, °C) - 0.0247*(temperature, °C)^2^",
+  "how_to_use": {
+    "why": "- ECLS rewarming may improve survival and neurological outcomes in hypothermic cardiac arrest; however it is clinically invasive, resource-intensive, and logistically complex.\n- This tool provides an expected probability of survival to hospital discharge, guiding patient selection for ECLS.\n- It outperforms single-variable potassium cut-offs for determining ECLS eligibility.\n- Recommended in several guidelines, including:\n\n - 2021 European Resuscitation Council Guidelines for[cardiac arrest in special circumstances](https://www.resuscitationjournal.com/article/S0300-9572%2821%2900064-2/fulltext?utm_source=chatgpt.com).\n - 2023 recommendations of the International Commission for Mountain Emergency Medicine for the[on-site treatment of avalanche victims](https://www.sciencedirect.com/science/article/pii/S0300957223000217).\n - 2024 Wilderness Medical Society guidelines for[prevention and management of avalanche and nonavalanche snow burial accidents](https://journals.sagepub.com/doi/full/10.1016/j.wem.2023.05.014).",
+    "when": "- Apply to patients with accidental hypothermic cardiac arrest who are undergoing CPR and being considered for ECMO or cardiopulmonary-bypass rewarming.\n- Ideally used before committing major resources or arranging transfer to an extracorporeal cardiac life support (ECLS)-capable center.",
+    "pearls": "- Derived from retrospective observational cohorts.\n- Data are predominantly from adults; be cautious interpreting results in very young patients.\n- Not intended for mild hypothermia without arrest, therapeutic hypothermia after normothermic arrest, or primary traumatic/medical cardiac arrest (including sepsis, endocrine crises, or major trauma).\n- Witnessed arrest and cardiac activity (e.g., PEA, VF) were found to correlate with improved survival but were not included in the final score.\n- Use a measured core temperature (e.g., esophageal, bladder, or epitympanic); peripheral measurements underestimate severity.\n- A 10% survival-probability threshold yielded a 97% negative predictive value for futility."
+  },
+  "next_steps": {
+    "advice": "- Aucun outil de prédiction ne doit dicter la prise en charge de manière isolée ; intégrez toujours le jugement clinique et le contexte clinique.\n- Consultez les recommandations locales et de spécialité pertinentes pour une prise en charge plus détaillée de l’hypothermie et de l’arrêt cardiaque hypothermique, telles que :\n\n - Wilderness Medicine Society.\n - International Commission for Mountain Emergency Medicine.\n - European Resuscitation Council.\n - American Heart Association.",
+    "critical_actions": "- Alerter un centre capable d'ECLS dès qu'il devient évident qu'un transfert peut être nécessaire.\n- Documenter clairement la justification clinique et toutes les variables ayant guidé les décisions.",
+    "management": "**Survival probability <10%:**\n\n- ECLS is unlikely to confer benefit; consider withholding ECLS if no other favorable factors are present.\n- Discuss goals of care with family and/or caregivers.\n- Transition to conventional rewarming and prognostically-guided resuscitation measures.\n\n**Survival probability ≥10%:**\n\n- Notify an ECLS-capable center.\n- Activate or continue ECLS rewarming protocol (may be institution-specific).\n- Maintain high-quality mechanical or manual CPR, warmed IV fluids, and insulating measures while cannulation and/or transport is arranged."
+  },
+  "evidence": "",
+  "more_info": "Probabilité de survie, % = e^x^/(1 + e^x^) * 100",
+  "short_description": "Survie après un arrêt cardiaque hypothermique.",
+  "medium_description": "Prédit la survie après réchauffement chez les patients en arrêt cardiaque hypothermique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "asp",
+      "label": "Hypothermia avec asphyxia",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_stumbl",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "k",
+      "label": "Potassium",
+      "optional": false,
+      "unit": "k",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "cpr",
+      "label": "Durée de la RCP, min",
+      "optional": false,
+      "unit": "min",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "temp",
+      "label": "Temperature",
+      "optional": false,
+      "unit": "temp",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Pasquier M, Hugli O, Paal P, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients: The HOPE score. Resuscitation. 2018;126:58-64.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29481910/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pasquier M, Rousson V, Darocha T, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients: An external validation of the HOPE score. Resuscitation. 2019;139:321-328.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30940473/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Grin N, Rousson V, Darocha T, et al. Hypothermia outcome prediction after extracorporeal life support for hypothermic cardiac arrest patients: assessing the performance of the hope score in case reports from the literature. Int J Environ Res Public Health. 2021;18(22):11896.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34831650/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.systematic-coronary-risk-evaluation-score2"
+  ],
+  "source_logic_hash": "814ebeaa052e59b4303647855ddd6063",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10482,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

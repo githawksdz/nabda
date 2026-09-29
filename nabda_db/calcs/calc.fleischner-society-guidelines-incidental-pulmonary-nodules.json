@@ -1,0 +1,197 @@
+{
+  "id": "calc.fleischner-society-guidelines-incidental-pulmonary-nodules",
+  "slug": "fleischner-society-guidelines-incidental-pulmonary-nodules",
+  "language": "en",
+  "title": "Fleischner Society Guidelines pour Incidental Pulmonary Nodules",
+  "short_title": "Fleischner Guidelines pour Pulmonary Nodules",
+  "calc_type": null,
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "pneumologie",
+    "hematologie",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Cancer du poumon"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "pulmonary nodules",
+    "pulmonary nodule management",
+    "pulmonary nodule treatment",
+    "recommendation",
+    "lung nodules",
+    "incidental lung nodules",
+    "fleischner criteria",
+    "fleischner"
+  ],
+  "dosing": false,
+  "formula": "Choose the appropriate features. For nodule size, use the average of long and short axes and round to the nearest millimeter.\n\n**Solid nodules:**\n\n| Size | Single | Multiple | | |\n| --- | --- | --- | --- | --- |\n| Low risk* | High risk* | Low risk* | High risk* | |\n| <6 mm (<100 mm3) | No routine follow-up | Optional CT at 12 months | No routine follow-up | Optional CT at 12 months |\n| 6-8 mm (100-250 mm3) | CT at 6-12 months, then consider CT at 18-24 months | CT at 6-12 months, then CT at 18-24 months | CT at 3-6 months, then consider CT at 18-24 months | CT at 3-6 months, then at 18-24 months |\n| >8 mm (>250 mm3) | Consider CT at 3 months, PET/CT, or tissue sampling | Consider CT at 3 months, PET/CT, or tissue sampling | CT at 3-6 months, then consider CT at 18-24 months | CT at 3-6 months, then at 18-24 months |\n\n**Subsolid nodules:**\n\n| Size | Single | Multiple | |\n| --- | --- | --- | --- |\n| Ground glass | Part solid | | |\n| <6 mm (<100 mm3) | No routine follow-up | No routine follow-up | CT at 3-6 months. If stable, consider CT at 2 and 4 years |\n| ≥6 mm (≥100 mm3) | CT at 6-12 months to confirm persistence, then CT every 2 years until 5 years | CT at 3-6 months to confirm persistence. If unchanged and solid component remains <6 mm, annual CT should be performed for 5 years | CT at 3-6 months. Subsequent management based on the most suspicious nodule(s) |\n\n*Risk level is determined by clinical judgment, and all relevant risk factors should be considered, including:\n\n- Nodule size, morphology, location, multiplicity, growth rate, presence of emphysema, and evidence of fibrosis.\n- Age, race, sex, and family history of lung cancer.\n- Smoking status and exposure to other inhaled carcinogens.",
+  "how_to_use": {
+    "why": "Les nodules pulmonaires de découverte fortuite à l’imagerie peuvent être difficiles à évaluer. Ces recommandations fournissent un cadre reconnu pour leur prise en charge.",
+    "when": "- Patients ≥35 ans présentant des nodules pulmonaires de découverte fortuite au scanner.\n- Ne pas utiliser pour le dépistage du cancer du poumon ni chez les patients ayant un cancer primitif connu ou une immunosuppression.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "The Fleischner Society recommends that incidental nodules in patients <35 years old be managed on a case-by-case basis, as infectious causes are more likely than cancer (and therefore serial CT to monitor should be limited).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Prise en charge du nodule pulmonaire.",
+  "medium_description": "Provides guidelines pour prise en charge de solid et subsolid pulmonary nodules.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "nodule",
+      "label": "Type de nodule",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Solid",
+          "value": 0
+        },
+        {
+          "label": "Subsolid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Nombre de nodules",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Single",
+          "value": 0
+        },
+        {
+          "label": "multiple",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "level",
+      "label": "Niveau de risque",
+      "tips": "Faites preuve de jugement clinique et tenez compte de tous les facteurs pertinents, notamment la taille, la morphologie, l’âge du patient, l’origine ethnique, le statut tabagique, etc. (voir [Preuves](#evidence) pour plus de détails)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "nodule == 0",
+      "options": [
+        {
+          "label": "Bas",
+          "value": 0
+        },
+        {
+          "label": "Élevé",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "features",
+      "label": "Caractéristiques supplémentaires",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "nodule == 1 && type == 0 ",
+      "options": [
+        {
+          "label": "Verre dépoli",
+          "value": 0
+        },
+        {
+          "label": "Partie solide",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "size1",
+      "label": "Size",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "nodule == 0",
+      "options": [
+        {
+          "label": "< 6 mm (<100 mm³)",
+          "value": 0
+        },
+        {
+          "label": "6-8 mm (100-250 mm³)",
+          "value": 1
+        },
+        {
+          "label": ">8 mm (>250 mm³)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "size2",
+      "label": "Size",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "nodule == 1",
+      "options": [
+        {
+          "label": "< 6 mm (<100 mm³)",
+          "value": 0
+        },
+        {
+          "label": "≥6 mm (≥100 mm³)",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Macmahon H, Naidich DP, Goo JM, et al. Guidelines for Management of Incidental Pulmonary Nodules Detected on CT Images: From the Fleischner Society 2017. Radiology. 2017;:161659.",
+      "href": "https://pubs.rsna.org/doi/pdf/10.1148/radiol.2017161659",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.solitary-pulmonary-nodule-spn-malignancy-risk-score-mayo-clinic-model",
+    "calc.rads-radiologists-score-smoke-inhalation-injury",
+    "calc.hestia-criteria-outpatient-pulmonary-embolism-treatment"
+  ],
+  "source_logic_hash": "c0c87c04882f59b069d38276ca94eba7",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10062,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

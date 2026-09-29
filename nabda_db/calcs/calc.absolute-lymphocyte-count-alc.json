@@ -1,0 +1,123 @@
+{
+  "id": "calc.absolute-lymphocyte-count-alc",
+  "slug": "absolute-lymphocyte-count-alc",
+  "language": "en",
+  "title": "Numération lymphocytaire absolue (ALC)",
+  "short_title": "Numération lymphocytaire absolue",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "infectiologie",
+    "medecine-interne",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Fever"
+  ],
+  "abbreviations": [
+    "alc",
+    "lymph",
+    "cd4",
+    "cd8",
+    "natural killer cells",
+    "immune",
+    "coronavirus",
+    "covid",
+    "covid19",
+    "covid-19",
+    "covid 19"
+  ],
+  "dosing": false,
+  "formula": "ALC = numération des leucocytes (WBC) x 1000 x % lymphocytes",
+  "how_to_use": {
+    "why": "Sert de substitut au taux de CD4 chez les patients infectés par le VIH naïfs de traitement antirétroviral dans les zones à ressources limitées.",
+    "when": "- Fréquemment utilisé dans les services d'urgence (ED), car les tests CD4 mettent plus de temps à revenir et nécessitent le consentement du patient.\n- Utilisé dans les contextes à ressources limitées où les tests CD4 sont coûteux ou indisponibles.",
+    "pearls": "- If the ALC is low, the CD4 will usually be low ([Shapiro 1998](https://www.ncbi.nlm.nih.gov/pubmed/9737494)).\n- Currently evidence is mostly around HIV-1 treatment-naive patients.\n- Other viral infections such as influenza or EBV can cause lymphopenia.\n- Does not aid in the diagnosis of HIV."
+  },
+  "next_steps": {
+    "advice": "- In the right clinical context, consider undiagnosed HIV as a cause of low lymphocyte count.\n- If available, obtain aCBCwith differential and CD4 count for confirmation.",
+    "critical_actions": "Ne modifie pas la prise en charge, mais aide à étayer la suspicion d’infection par le VIH avec un taux de CD4 bas.",
+    "management": ""
+  },
+  "evidence": "Absolute lymphocyte count is a hematologic principle that has been[validated](https://www.ncbi.nlm.nih.gov/pubmed/9737494)in an emergency setting; an ALC <1,000 cells/mm^3^predicted CD4 counts less than 200 cells/mm^3^with 67% sensitivity (95% confidence interval 62-72%), specificity of 96% (94-98%), positive predictive value 91% (87-85%), and a negative predictive value of 81% (78-84%). An ALC <2,000 cells/mm^3^predicted CD4 counts less than 200 cells/mm^3^with sensitivity 97% (95-99%), specificity 41% (37-45%), positive predictive value 52% (48-56%), and negative predictive value 95% (92-98%).\n\nA more[recent](https://www.ncbi.nlm.nih.gov/pubmed/22676809)study that looked into the PPV and NPV of the total lymphocyte in 184 HIV positive patients. Sensitivity, specificity, positive and negative predictive values of lymphocyte count <1,200 cells/mm^3^to predict CD4 count <200 cells/mm^3^were 72.2%, 100%, 100%, and 95.7% respectively.",
+  "more_info": "**Predicted CD4 from ALC** ([van der Ryst E 1998](https://www.ncbi.nlm.nih.gov/pubmed/9803965))\n\n| ALC | Predicted CD4 Count |\n| --- | --- |\n| <1000 cells/mm 3 | <200 cells/mm 3 |\n| 1000-2000 cells/mm 3 | Unable to predict |\n| >2000 cells/mm 3 | >200 cells/mm 3 |",
+  "short_description": "Numération lymphocytaire absolue (ALC) et numération de CD4 prédite.",
+  "medium_description": "Évalue le nombre de lymphocytes et prédit la numération des CD4.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "lymph",
+      "label": "Lymphocytes",
+      "optional": false,
+      "unit": "neut",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "tips": "Pour 1000. Saisir 8.4, et non 8400",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Shapiro NI, Karras DJ, Leech SH, Heilpern KL. Absolute lymphocyte count as a predictor of CD4 count. Ann Emerg Med. 1998 Sep;32(3 Pt 1):323-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9737494",
+      "kind": "pubmed"
+    },
+    {
+      "text": "van der Ryst E, Kotze M, Joubert G, Steyn M, Pieters H, van der Westhuizen M, van Staden M, Venter C. Correlation among total lymphocyte count, absolute CD4+ count, and CD4+ percentage in a group of HIV-1-infected South African patients. J Acquir Immune Defic Syndr Hum Retrovirol. 1998 Nov 1;19(3):238-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9803965",
+      "kind": "other"
+    },
+    {
+      "text": "Obirikorang C, Quaye L, Acheampong I. Total lymphocyte count as a surrogate marker for CD4 count in resource-limited settings. BMC Infect Dis. 2012;12:128.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22676809-total-lymphocyte-count-as-a-surrogate-marker-for-cd4-count-in-resource-limited-settings/",
+      "kind": "other"
+    },
+    {
+      "text": "Ayalew Tefferi ed. Primary Hematology. Totowa, NJ: Humana Press, 2001.",
+      "href": "",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.qsofa-quick-sofa-score-sepsis",
+    "calc.psi-port-score-pneumonia-severity-index-cap"
+  ],
+  "source_logic_hash": "95d6cf1810f966a1d9608b383ac8147a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2203,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

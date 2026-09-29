@@ -1,0 +1,193 @@
+{
+  "id": "calc.qsofa-quick-sofa-score-sepsis",
+  "slug": "qsofa-quick-sofa-score-sepsis",
+  "language": "fr",
+  "title": "QSOFA (Quick SOFA) score pour sepsis",
+  "short_title": "QSOFA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "AMS",
+    "Cough",
+    "Dyspnea",
+    "Fever",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "sirs",
+    "severe",
+    "critical",
+    "icu",
+    "ITU",
+    "septic",
+    "sepsis",
+    "mortality",
+    "critical care",
+    "quick sofa",
+    "covid",
+    "covid19",
+    "covid-19",
+    "covid 19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Paramètre | 0 point | 1 point |\n| --- | --- | --- |\n| Altération de l'état mental [GCS](nabda:calc.glasgow-coma-scale-score-gcs\\) <15 | Non | Oui |\n| Fréquence respiratoire ≥22 | Non | Oui |\n| Pression artérielle systolique ≤100 | Non | Oui |",
+  "how_to_use": {
+    "why": "- Identifie les patients hors réanimation présentant une infection suspectée et à risque élevé de mortalité hospitalière.\n- Peut aider à renforcer la suspicion ou la vigilance vis-à-vis d'un processus infectieux sévère et à inciter à des examens complémentaires et/ou à une surveillance rapprochée.",
+    "when": "Patients ≥18 ans en dehors de la réanimation (c'est-à-dire en préhospitalier, en service de soins, aux urgences ou en unité de soins intensifs de relais) avec une infection confirmée ou suspectée.",
+    "pearls": "- Le score qSOFA a été introduit par le groupe Sepsis-3 comme une version simplifiée du [score SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score), un score validé de prédiction de la mortalité en réanimation, afin d'aider à identifier les patients avec une infection suspectée à risque élevé de pronostic défavorable (défini comme mortalité hospitalière ou durée de séjour en réanimation ≥3 jours) en dehors de la réanimation.\n- Simplifie considérablement le score SOFA en n'incluant que 3 critères cliniques facilement évaluables au lit du patient.\n- Peut être répété de manière sérielle en cas d'évolution de l'état clinique.\n- Prédit la mortalité, par opposition au diagnostic de sepsis, et son rôle exact dans la séquence des événements, du dépistage au diagnostic jusqu'au déclenchement des interventions liées au sepsis, reste incertain.\n- À ce jour, aucune étude prospective ne démontre que les décisions cliniques fondées sur le qSOFA conduisent à de meilleurs résultats pour les patients.\n- La dernière version des [recommandations de la Surviving Sepsis Campaign](https://journals.lww.com/ccmjournal/pages/articleviewer.aspx?year=2021&issue=11000&article=00021&type=Fulltext) (novembre 2021) n'intègre pas le score qSOFA dans les recommandations de dépistage ou de diagnostic du sepsis."
+  },
+  "next_steps": {
+    "advice": "- Un score qSOFA « positif » (≥2) suggère un risque élevé de pronostic défavorable chez les patients avec une infection suspectée. Ces patients doivent faire l'objet d'une évaluation plus approfondie à la recherche de signes de dysfonction d'organe.\n- Un score qSOFA positif en lui-même ne doit pas déclencher d'interventions dirigées contre le sepsis, comme l'instauration d'antibiotiques à large spectre ; il doit plutôt inciter les cliniciens à rechercher davantage une dysfonction d'organe ou à augmenter la fréquence de la surveillance.\n- Le groupe de travail Sepsis-3 recommande qu'un score qSOFA positif conduise au calcul d'un score SOFA pour confirmer le diagnostic de sepsis. Cela reste controversé, car le qSOFA s'est montré plus prédictif que le SOFA en dehors du contexte de la réanimation.\n- Même si le score qSOFA est initialement « négatif » (<2), il peut être répété en cas d'évolution de l'état clinique du patient.",
+    "critical_actions": "",
+    "management": "- Le qSOFA est un prédicteur de mortalité, et NON un test diagnostique de sepsis. Il n'est pas encore clair comment il sera utilisé dans la séquence des événements allant du dépistage, au diagnostic du sepsis, jusqu'au déclenchement des interventions liées au sepsis.\n- La prise en charge du sepsis évolue continuellement et est détaillée dans la [Surviving Sepsis Campaign : International Guidelines for Management of Sepsis and Septic Shock 2021.](https://journals.lww.com/ccmjournal/pages/articleviewer.aspx?year=2021&issue=11000&article=00021&type=Fulltext)"
+  },
+  "evidence": "The qSOFA (quick SOFA) Score was introduced in February 2016 by the[Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3)](https://jamanetwork.com/journals/jama/fullarticle/2492875)task force as a rapid bedside clinical score to identify patients with a suspected infection that are at greater risk for a poor outcome. The primary outcome was in-hospital mortality, and the secondary outcome was ICU length of stay ≥3 days. It was meant to replace the Systemic Inflammatory Response Syndrome (SIRS) criteria that were believed to be less sensitive and specific (although this remains controversial).\n\nThe qSOFA Score was retrospectively derived and internally validated in a 2016 study by[Seymour et al](https://jamanetwork.com/journals/jama/fullarticle/2492875). 148,907 patients with suspected infection in and outside of the ICU setting were included. In patients outside of the ICU with a qSOFA Score of 2 or higher, there was a 3- to 14-fold increase in the rate of in-hospital mortality. Among ICU patients, however, the predictive validity of SOFA for in-hospital mortality was statistically greater than qSOFA.\n\nThe qSOFA Score was prospectively validated in an emergency department population in a study by[Freund et al](https://jamanetwork.com/journals/jama/article-abstract/2598268)(2017) including 879 patients across 30 emergency departments in 4 countries. The qSOFA Score resulted in greater prognostic accuracy for in-hospital mortality than SIRS or severe sepsis.\n\n[Raith et al](https://jamanetwork.com/journals/jama/article-abstract/2598267)(2017) externally validated the SOFA and qSOFA Scores in a population of 184,875 patients with an infection-related admission diagnosis who were retrospectively identified and analyzed. An increase in SOFA score of 2 or more points had greater prognostic accuracy for in-hospital mortality than the SIRS criteria or the qSOFA Score in an ICU population.",
+  "more_info": "Interprétation :\n\n| Score qSOFA | Groupe de risque |\n| --- | --- |\n| 0-1 | Risque non élevé de mortalité hospitalière |\n| 2-3 | Risque élevé de mortalité hospitalière (augmentation de 3 à 14 fois) |",
+  "short_description": "Dans-hôpital mortalité dans non-ICU patients avec infection.",
+  "medium_description": "Identifies élevé-risque patients pour dans-hôpital mortalité avec suspected infection outside ICU.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ams",
+      "label": "Altération de l'état de conscience",
+      "tips": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) <15",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rr",
+      "label": "Fréquence respiratoire ≥22",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sbp",
+      "label": "Pression artérielle systolique ≤100",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Evans L, Rhodes A, Alhazzani W, et al. Surviving sepsis campaign: international guidelines for management of sepsis and septic shock 2021. Critical Care Medicine. 2021;49(11):e1063-e1143.",
+      "href": "https://journals.lww.com/ccmjournal/pages/articleviewer.aspx?year=2021&issue=11000&article=00021&type=Fulltext",
+      "kind": "international"
+    },
+    {
+      "text": "Seymour CW, Liu VX, Iwashyna TJ, et al. Assessment of Clinical Criteria for Sepsis: For the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):762-774.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2492875 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Singer M, Deutschman CS, Seymour C, et al. The Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):801-810. doi:10.1001/jama.2016.0287.",
+      "href": "https://jama.jamanetwork.com/article.aspx?articleid=2492881",
+      "kind": "other"
+    },
+    {
+      "text": "Shankar-Hari M, Phillips GS, Levy ML, et al. Developing a New Definition and Assessing New Clinical Criteria for Septic Shock: For the Third International Consensus Definitions for Sepsis and Septic Shock (Sepsis-3). JAMA. 2016;315(8):775-787. doi:10.1001/jama.2016.0289.",
+      "href": "https://jama.jamanetwork.com/article.aspx?articleid=2492876",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freund Y, Lemachatti N, Krastinova E, et al. Prognostic Accuracy of Sepsis-3 Criteria for In-Hospital Mortality Among Patients With Suspected Infection Presenting to the Emergency Department. JAMA. 2017;317(3):301-308.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/2598268",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Raith EP, Udy AA, Bailey M, et al. Prognostic Accuracy of the SOFA Score, SIRS Criteria, and qSOFA Score for In-Hospital Mortality Among Adults With Suspected Infection Admitted to the Intensive Care Unit. JAMA. 2017;317(3):290-300.",
+      "href": "https://jamanetwork.com/journals/jama/article-abstract/2598267",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.sirs-sepsis-septic-shock-criteria",
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "128a75067faddccc903251fc13d75f4f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2654,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

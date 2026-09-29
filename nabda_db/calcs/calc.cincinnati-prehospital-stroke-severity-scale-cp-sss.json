@@ -1,0 +1,198 @@
+{
+  "id": "calc.cincinnati-prehospital-stroke-severity-scale-cp-sss",
+  "slug": "cincinnati-prehospital-stroke-severity-scale-cp-sss",
+  "language": "en",
+  "title": "Cincinnati Prehospital AVC gravité échelle (CP-SSS)",
+  "short_title": "CP-SSS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Déficit neurologique",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "ischemia stroke",
+    "cva",
+    "gcs",
+    "stroke scale",
+    "cp-ss",
+    "ems",
+    "field",
+    "prehospital",
+    "paramedic",
+    "emt"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Conjugate gaze deviation | 2 points |\n| --- | --- |\n| Incorrectly answers ≥1 of two “level of consciousness” questions on [NIHSS](nabda:calc.nih-stroke-scale-score-nihss\\) (age or current month) AND does not follow ≥1 of the two commands (close eyes, open/close hand)* | 1 point |\n| Cannot hold arm (either or both) up for 10 seconds before arm(s) falls to bed** | 1 point |\n\n*i.e., ≥1 on the NIHSS item for Level of Consciousness 1b and 1c.\n\n**i.e., ≥2 on the NIHSS item for Motor Arm.",
+  "how_to_use": {
+    "why": "- Acute stroke caused by LVO may be amenable to additional treatment beyond intravenous tissue plasminogen activator (tPA), including mechanical thrombectomy.\n- Benefit from mechanical thrombectomy in acute stroke from LVO is time-dependent, so early recognition may help timely mobilization of neurosurgical or endovascular care teams.\n- Based on three items from the [NIH Stroke Scale](nabda:calc.nih-stroke-scale-score-nihss) (NIHSS), which is familiar to and easily administered by many emergency physicians and neurologists, as opposed to the [LAMS](nabda:calc.los-angeles-motor-scale-lams) , which is made up of three clinical items, one of which (grip strength) is not included in the NIHSS, and the [RACE Scale](nabda:calc.rapid-arterial-occlusion-evaluation-race-scale-stroke) , which includes more (six) clinical items.",
+    "when": "Patients en milieu hospitalier présentant des signes et symptômes d’AVC ischémique aigu.",
+    "pearls": "- May be used to determine both severity of stroke, as quantified by [NIHSS](nabda:calc.nih-stroke-scale-score-nihss) ≥15, and presence of LVO.\n- Accuracy at detecting LVO or severe stroke has not been evaluated when administered by EMS providers."
+  },
+  "next_steps": {
+    "advice": "- Une consultation neurologique doit être obtenue immédiatement en cas de suspicion d'AVC ischémique aigu.\n- L'AVC ischémique aigu est une urgence neurologique susceptible de bénéficier de traitements dépendants du temps (p. ex. tPA, thrombectomie mécanique) si certaines conditions cliniques sont remplies.\n- Ne doit pas être utilisé comme substitut au jugement clinique et est destiné à être utilisé comme complément à la prise de décision médicale.",
+    "critical_actions": "- L’activateur tissulaire du plasminogène par voie intraveineuse (IV tPA) est le traitement de référence chez les patients adultes présentant un accident vasculaire cérébral ischémique aigu dans les 4,5 heures suivant l’apparition des symptômes, si aucun [critère d’exclusion](nabda:calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke) n’est rempli, indépendamment du fait que la LVO en soit la cause ou non.\n- La thrombectomie endovasculaire (mécanique) est le traitement de référence chez certains patients adultes présentant un accident vasculaire cérébral ischémique aigu dû à une LVO.\n- L’adéquation d’un patient à une intervention endovasculaire dépend de multiples facteurs, tels que le temps écoulé depuis l’apparition des symptômes, la neuro-imagerie, l’état fonctionnel initial, et d’autres.\n- L’adéquation à la thrombolyse intraveineuse ou à la thrombectomie mécanique doit être déterminée par un consultant en neurologie/neurochirurgie chaque fois que possible.",
+    "management": "- En cas de suspicion d'AVC ischémique aigu secondaire à une LVO, les éléments suivants sont recommandés :"
+  },
+  "evidence": "[Katz et al](https://www.ncbi.nlm.nih.gov/pubmed/25899242)derived the CP-SSS in 2015 by incorporating NIHSS components into a classification and regression tree (CART) model to predict severe stroke (defined by NIHSS ≥15; primary outcome) and identify LVO (secondary outcome). The derivation population consisted of patients randomized to treatment with tPA or placebo for acute stroke within 3 hours of onset *(n =* 624). This study also contained an internal validation of the CP-SSS using a population from the[Interventional Management of Stroke (IMS) trial](https://www.ncbi.nlm.nih.gov/pubmed/15017018)( *n =* 650, of which 303 had LVO).\n\nThe AUC was 0.89 for detecting severe stroke and a CP-SSS cut-point of ≥2 had a sensitivity of 89% and specificity of 78% for identifying patients with severe stroke. In the internal validation study, the AUC, sensitivity, and specificity were similar to that of the derivation population for detecting severe stroke. The AUC was 0.67 for detecting patients with LVO, and CP-SSS ≥2 had a sensitivity of 83% and specificity of 40% for identifying patients with LVO.\n\nThe CP-SSS was[externally validated](https://www.ncbi.nlm.nih.gov/pubmed/26971037)in a population of stroke patients from a single academic stroke center, using LVO as a primary outcome and severe stroke as a secondary outcome ( *n =* 664). The AUC was 0.85 (95%CI 0.81-0.90) for predicting LVO, and a CP-SSS of ≥2 was 70.0% sensitive and 86.8% specific for predicting LVO. The AUC was 0.95 (95%CI 0.92-0.97) for detecting severe stroke, and a CP-SSS of ≥2 was 87.2% sensitive and 94.3% specific for identifying severe stroke.\n\n| Outcome | CP-SSS cut-point | Sensitivity | Specificity | LR+ | LR- |\n| --- | --- | --- | --- | --- | --- |\n| LVO | ≥1 | 82.5% | 82.5% | 4.7 | 0.2 |\n| ≥2 | 58.8% | 90.2% | 6.0 | 0.5 | |\n| ≥3 | 50.0% | 93.7% | 7.9 | 0.5 | |\n| 4 | 25.0% | 96.2% | 6.6 | 0.8 | |\n| NIHSS ≥15 | ≥1 | 90.6% | 88.7% | 8.0 | 0.1 |\n| ≥2 | 64.1% | 94.7% | 12.1 | 0.4 | |\n| ≥3 | 59.8% | 98.7% | 46.8 | 0.4 | |\n| 4 | 35.0% | 99.8% | 191.7 | 0.6 | |",
+  "more_info": "Interprétation :\n\n| CP-SSS | LVO et NIHSS |\n| --- | --- |\n| 0–1 | LVO et NIHSS ≥15 moins probables |\n| 2–4 | LVO et NIHSS ≥15 probables |",
+  "short_description": "LVO et gravité dans AVC.",
+  "medium_description": "Predicts large vessel occlusion (LVO) et severe AVC chez les patients avec AVC symptoms.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gaze",
+      "label": "Déviation conjuguée du regard",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ask",
+      "label": "Ask patient âge et current month",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Les deux sont corrects.",
+          "value": 0
+        },
+        {
+          "label": "Une seule réponse correcte",
+          "value": 1
+        },
+        {
+          "label": "Aucun des deux n'est correct",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "close",
+      "label": "Ask patient pour close eyes et open/close hand",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Suit les deux ordres.",
+          "value": 0
+        },
+        {
+          "label": "Follows one command",
+          "value": 1
+        },
+        {
+          "label": "N’exécute aucun des deux ordres",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "instruct",
+      "label": "Instruct patient pour hold arm (either ou both) up pour 10 seconds",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Can do",
+          "value": 0
+        },
+        {
+          "label": "Ne peut pas le faire",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Katz BS, Mcmullan JT, Sucharew H, Adeoye O, Broderick JP. Design and validation of a prehospital scale to predict stroke severity: Cincinnati Prehospital Stroke Severity Scale. Stroke. 2015;46(6):1508-12.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25899242 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Combined intravenous and intra-arterial recanalization for acute ischemic stroke: the Interventional Management of Stroke Study. Stroke. 2004;35(4):904-11.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15017018",
+      "kind": "other"
+    },
+    {
+      "text": "Kummer BR, Gialdini G, Sevush JL, Kamel H, Patsalides A, Navi BB. External Validation of the Cincinnati Prehospital Stroke Severity Scale. J Stroke Cerebrovasc Dis. 2016;25(5):1270-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26971037 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rapid-arterial-occlusion-evaluation-race-scale-stroke",
+    "calc.los-angeles-motor-scale-lams",
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+    "calc.nih-stroke-scale-score-nihss"
+  ],
+  "source_logic_hash": "6a0314bb46a3072b2df6829aae08a3a5",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIHSS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.nih-stroke-scale-score-nihss",
+      "text": "NIHSS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.los-angeles-motor-scale-lams",
+      "text": "LAMS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.rapid-arterial-occlusion-evaluation-race-scale-stroke",
+      "text": "RACE Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "exclusion criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4009,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

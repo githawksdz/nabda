@@ -1,0 +1,169 @@
+{
+  "id": "calc.west-haven-criteria",
+  "slug": "west-haven-criteria",
+  "language": "fr",
+  "title": "Critères de West Haven",
+  "short_title": "Critères de West Haven",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "geriatrie",
+    "hepatologie",
+    "medecine-interne",
+    "neurologie",
+    "soins-palliatifs",
+    "general"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hépatite"
+  ],
+  "chief_complaints": [
+    "Distension abdominale",
+    "Anomalies du bilan hépatique",
+    "Agitation",
+    "Altération de l’état mental",
+    "AMS (altération de l'état mental)",
+    "Fatigue",
+    "Ictère",
+    "Déficit neurologique",
+    "Crise convulsive",
+    "Faiblesse",
+    "Mouvements involontaires",
+    "Dysfonction organique",
+    "Hépatosplénomégalie"
+  ],
+  "abbreviations": [
+    "Hepatic Encephalopathy",
+    "Hepatic Encephalopathy grades",
+    "Hepatic Encephalopathy stages",
+    "Hepatic Encephalopathy score",
+    "Hepatic Encephalopathy calc",
+    "Hepatic Encephalopathy criteria",
+    "west haven criteria",
+    "west haven encephalopathy",
+    "west haven encephalopathy hepatic",
+    "west haven encephalopathy grade",
+    "west haven encephalopathy stages",
+    "west haven encephalopathy criteria",
+    "west haven hepatic criteria",
+    "encephalopathic hepatic",
+    "hep enceph",
+    "neuro issues hepatic",
+    "cirrhosis"
+  ],
+  "dosing": false,
+  "formula": "The West Haven Criteria are based on the following clinical findings:\n\n| Variable | Grade |\n| --- | --- |\n| Abnormal psychometric/neuropsychological tests without clinical manifestations | 0 |\n| Impaired attention/computation/sleep; euphoria/anxiety; oriented to time/space | 1 |\n| Disoriented to time/space; inappropriate behavior; personality changes; dyspraxia; asterixis; apathy | 2 |\n| Somnolence/semistupor; gross disorientation; confusion; bizarre behavior; responsive to stimuli | 3 |\n| Coma | 4 |",
+  "how_to_use": {
+    "why": "The West Haven Criteria allow clinicians to classify severity of encephalopathy, communicate clearly about a patient's level of consciousness, and trend changes in their mental status.",
+    "when": "- Patients avec cirrhose connue et antécédent d’encéphalopathie hépatique.\n- Patients avec ou sans cirrhose connue, mais chez qui l’on suspecte une maladie hépatique et qui présentent une altération de l’état mental.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Use this tool to support, not replace, clinical judgment, and interpret hepatic encephalopathy grade in the context of baseline cognition and the overall clinical scenario.\n- Grades 2–4 are generally considered overt hepatic encephalopathy.\n- Lactulose, with or without rifaximin, may be used to treat acute hepatic encephalopathy or prevent recurrence.\n- Always consider other causes of altered mental status in these patients, as they are at high risk for comorbidities and complications, including bleeding, infection, drug interactions, and electrolyte disturbances.\n- For patients with significantly decreased level of consciousness, consider also calculating the [Glasgow Coma Score](nabda:calc.glasgow-coma-scale-score-gcs) .\n- Reassess grade periodically when mental status changes or after treatment.\n- Routine ammonia testing is not necessary to guide treatment.\n- For more detailed guidance, refer to local clinical protocols and current guidelines, such as the[2026 American College of Gastroenterology hepatic encephalopathy guideline](https://pubmed.ncbi.nlm.nih.gov/41773757/).",
+    "critical_actions": "Intensifier les soins en urgence en cas de coma, d’incapacité à protéger les voies aériennes, de convulsions, d’agitation sévère, de choc, de suspicion d’hémorragie digestive ou de suspicion de pathologie intracrânienne.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Encéphalopathie hépatique : gravité.",
+  "medium_description": "Définit les stades de l'encéphalopathie hépatique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "signs_symptoms",
+      "label": "Signes/Symptômes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Tests psychométriques/neuropsychologiques anormaux sans manifestations cliniques",
+          "value": 0
+        },
+        {
+          "label": "Impaired attention/computation/sleep; euphoria/anxiété; oriented pour time/space",
+          "value": 1
+        },
+        {
+          "label": "Disoriented pour time/space; inappropriate behavior; personality changes; dyspraxia; asterixis; apathy",
+          "value": 2
+        },
+        {
+          "label": "Somnolence/semistupor; gross disorientation; confusion; bizarre behavior; responsive pour stimuli",
+          "value": 3
+        },
+        {
+          "label": "Coma",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "American Association for the Study of Liver Diseases, European Association for the Study of the Liver. Hepatic encephalopathy in chronic liver disease: 2014 practice guideline by the european association for the study of the liver and the american association for the study of liver diseases. J Hepatol. 2014;61(3):642-659.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25015420/",
+      "kind": "international"
+    },
+    {
+      "text": "European Association for the Study of the Liver. EASL Clinical Practice Guidelines on the management of hepatic encephalopathy. J Hepatol. 2022;77(3):807-824.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35724930/",
+      "kind": "international"
+    },
+    {
+      "text": "Bajaj JS, Jakab SS, Jesudian AB, et al. ACG clinical guideline: Hepatic encephalopathy. Am J Gastroenterol. 2026;121(3):588-618. doi:10.14309/ajg.0000000000003899",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41773757/",
+      "kind": "international"
+    },
+    {
+      "text": "Hepatic Failure: An Evidence Based Approach in the Emergency Department. Emergency Medicine Practice, 2010.",
+      "href": "https://pdfs.semanticscholar.org/dc1b/6482929753520e0557cddacf93d3ab9fd1a4.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease",
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "717cf4eb3f6e7ac7800e47152fb9e2b6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 674,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar msg=''; \nvar mini_msg='';\n\nvar v=parseInt(signs_symptoms); \nif(v==0) {\n    msg='Grade 0 Hepatic Encephalopathy';\n    mini_msg='Grade 0'\n} else if (v==1){\n    msg='Grade I Hepatic Encephalopathy';\n    mini_msg='Grade I'\n} else if(v==2){\n    msg='Grade II Hepatic Encephalopathy';\n    mini_msg='Grade II'\n} else if(v==3){\n    msg='Grade III Hepatic Encephalopathy';\n    mini_msg='Grade III'\n} else if(v==4){\n    msg='Grade IV Hepatic Encephalopathy';\n    mini_msg='Grade IV'\n}\n\ncalc_output.push({\n    name:'mini',\n    value:v.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'674_West Haven Criteria_result',\n    value:v.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Peter Ferenci"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "779a7aa89a16696b4cfc811b3fd932552a30b549f2c68f7a094aa5ed5d23190b"
+}

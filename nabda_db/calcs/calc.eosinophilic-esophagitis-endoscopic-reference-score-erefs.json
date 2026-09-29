@@ -1,0 +1,215 @@
+{
+  "id": "calc.eosinophilic-esophagitis-endoscopic-reference-score-erefs",
+  "slug": "eosinophilic-esophagitis-endoscopic-reference-score-erefs",
+  "language": "en",
+  "title": "Score de référence endoscopique de l'œsophagite à éosinophiles (EREFS)",
+  "short_title": "EREFS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Œsophagite à éosinophiles"
+  ],
+  "chief_complaints": [
+    "Heartburn",
+    "Pain",
+    "Dysphagia"
+  ],
+  "abbreviations": [
+    "Eosinophilic Esophagitis Endoscopic Reference Score",
+    "EREFS",
+    "eosinophilic esophagitis",
+    "EoE",
+    "endoscopic score",
+    "esophageal rings",
+    "furrows",
+    "exudate",
+    "stricture",
+    "edema"
+  ],
+  "dosing": false,
+  "formula": "The EREFS is calculated by the addition of the following:\n\n| Feature | Scoring | Description |\n| --- | --- | --- |\n| E dema | 0 = Absent 1 = Present | Loss of normal vascular markings; pallor or decreased transparency |\n| R ings | 0 = None 1 = Mild (subtle) 2 = Moderate 3 = Severe (fixed rings) | Trachealization/feline esophagus; concentric esophageal rings |\n| E xudates | 0 = None 1 = Mild (≤10% mucosal surface) 2 = Severe (>10%) | White plaques on mucosa |\n| F urrows | 0 = Absent 1 = Present | Vertical lines or creases along the esophageal wall |\n| S trictures | 0 = None 1 = Present | Fixed narrowings requiring small-caliber scope or causing resistance |",
+  "how_to_use": {
+    "why": "- Fournit une nomenclature standardisée pour caractériser la gravité de l'EoE.\n- Éclaire les décisions de prise en charge telles que l'escalade thérapeutique, les intervalles de maintenance et la nécessité d'une dilatation.\n- Permet de suivre objectivement la réponse thérapeutique au traitement de l'EoE.\n- Endossé pour le compte rendu en routine dans les recommandations actuelles de l'American Society for Gastrointestinal Endoscopy (ASGE) et de l'American College of Gastroenterology (ACG) sur l'EoE.",
+    "when": "Appliquer lors de l'endoscopie digestive haute initiale chez l'adulte et l'enfant en cas de suspicion d'œsophagite à éosinophiles (EoE) et à chaque endoscopie de suivi pour définir et surveiller l'activité de la maladie.",
+    "pearls": "- Built around the five hallmark endoscopic features of EoE.\n- Pooled sensitivity and specificity approach 90% in identifying EoE in adult and pediatric cohorts when a composite score of ≥2 is used, with AUROC 0.79–0.94 across validation studies.\n- Does not capture histology or symptoms; combine with biopsy and patient-reported outcomes for a full assessment.\n- An inflammatory subscore (edema, exudates, furrows) correlates strongly with peak eosinophil density on biopsy.\n- Fibrostenotic findings (rings/strictures) may persist despite inflammatory improvement."
+  },
+  "next_steps": {
+    "advice": "- Always interpret the results of this tool together with symptom severity and biopsy results to capture the full spectrum of EoE activity and therapeutic response.\n- Successful treatment should drive down the inflammatory subscores (edema, exudates, furrows); therapy options include:\n\n - Proton pump inhibitors (PPIs).\n - Topical corticosteroids (e.g., budesonide, fluticasone).\n - Biologic therapy (e.g., dupilumab).\n - Dietary modifications.\n- Fibrostenotic features (rings, strictures) seldom regress with medication alone; plan endoscopic dilation when dysphagia or food-impaction risk persists despite adequate anti-inflammatory therapy.\n- Repeat upper endoscopy with EREFS calculation about 6–12 weeks after starting or escalating treatment, after any de-escalation, and at clinically driven intervals (typically every 12–24 months) to verify and maintain remission.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation : Un score plus élevé indique une maladie plus grave.",
+  "short_description": "Evaluates gravité dans EoE.",
+  "medium_description": "Evaluates gravité de endoscopic findings chez les patients avec eosinophilic esophagitis (EoE).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "edema",
+      "label": "**E** dema",
+      "tips": "Abolition des marques vasculaires normales ; pâleur ou diminution de la transparence",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rings",
+      "label": "**R**ings",
+      "tips": "Trachéalisation/œsophage félin ; anneaux œsophagiens concentriques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Léger (discret)",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère (anneaux fixes)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "exudates",
+      "label": "**E** xudates",
+      "tips": "Plaques blanches sur la muqueuse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Léger (≤ 10 % de la surface muqueuse)",
+          "value": 1
+        },
+        {
+          "label": "Sévère (>10 %)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "furrows",
+      "label": "**F** urrows",
+      "tips": "Lignes ou plis verticaux le long de la paroi œsophagienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "strictures",
+      "label": "**S** trictures",
+      "tips": "Sténoses fixes nécessitant un endoscope de petit calibre ou entraînant une résistance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aceves SS, Alexander JA, Baron TH, et al. Endoscopic approach to eosinophilic esophagitis: American Society for Gastrointestinal Endoscopy Consensus Conference. Gastrointest Endosc. 2022;96(4):576-592.e1. doi:10.1016/j.gie.2022.05.013",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35965102/",
+      "kind": "international"
+    },
+    {
+      "text": "Hirano I, Moy N, Heckman MG, Thomas CS, Gonsalves N, Achem SR. Endoscopic assessment of the oesophageal features of eosinophilic oesophagitis: validation of a novel classification and grading system. Gut. 2013;62(4):489-495. doi:10.1136/gutjnl-2011-301817",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22619364/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wechsler JB, Bolton SM, Amsden K, Wershil BK, Hirano I, Kagalwalla AF. Eosinophilic Esophagitis Reference Score Accurately Identifies Disease Activity and Treatment Effects in Children. Clin Gastroenterol Hepatol. 2018;16(7):1056-1063. doi:10.1016/j.cgh.2017.12.019",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29248734/",
+      "kind": "other"
+    },
+    {
+      "text": "Dellon ES, Cotton CC, Gebhart JH, et al. Accuracy of the Eosinophilic Esophagitis Endoscopic Reference Score in Diagnosis and Determining Response to Treatment [published correction appears in Clin Gastroenterol Hepatol. 2016 Jun;14(6):919. doi: 10.1016/j.cgh.2016.04.023.]. Clin Gastroenterol Hepatol. 2016;14(1):31-39. doi:10.1016/j.cgh.2015.08.040",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26404868/",
+      "kind": "other"
+    },
+    {
+      "text": "van Rhijn BD, Verheij J, Smout AJ, Bredenoord AJ. The Endoscopic Reference Score shows modest accuracy to predict histologic remission in adult patients with eosinophilic esophagitis. Neurogastroenterol Motil. 2016;28(11):1714-1722. doi:10.1111/nmo.12872",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27254480/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ma C, Bredenoord AJ, Dellon ES, et al. Reliability and responsiveness of endoscopic disease activity assessment in eosinophilic esophagitis. Gastrointest Endosc. 2022;95(6):1126-1137.e2. doi:10.1016/j.gie.2022.01.014",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35120883/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ribeiro LM, Vieira MC, Truppel SK, Rosário Filho NA. ACCURACY OF THE EOSINOPHILIC ESOPHAGITIS ENDOSCOPIC REFERENCE SCORE IN CHILDREN. Arq Gastroenterol. 2024;61:e23103. Published 2024 Mar 4. doi:10.1590/S0004-2803.24612023-103",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38451662/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "1316d80c393297e62b27658caa31d2da",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10612,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

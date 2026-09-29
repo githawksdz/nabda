@@ -1,0 +1,210 @@
+{
+  "id": "calc.revised-urinary-incontinence-scale-ruis",
+  "slug": "revised-urinary-incontinence-scale-ruis",
+  "language": "fr",
+  "title": "Révisé Urinary Incontinence échelle (RUIS)",
+  "short_title": "Score RUIS (Urinary Incontinence)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "urologie"
+  ],
+  "diseases": [
+    "Incontinence urinaire"
+  ],
+  "chief_complaints": [
+    "Incontinence urinaire"
+  ],
+  "abbreviations": [
+    "incontinence",
+    "urine",
+    "pee"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "À l'aide de ces questions standardisées, les cliniciens peuvent recueillir des informations sur la sévérité de l'incontinence d'un patient et son impact sur la qualité de vie.",
+    "when": "Tout patient présentant une incontinence urinaire.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Ces questions peuvent être utilisées à la fois comme dépistage de la sévérité de l'incontinence et comme base de comparaison si/quand un traitement de l'incontinence est débuté."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Assesses pour incontinence.",
+  "medium_description": "Assesses urinary incontinence symptoms et monitors outcomes avec traitement.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "urgency",
+      "label": "Urine leakage relate pour feeling de urgency",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Slightly",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "Greatly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "activity",
+      "label": "Urine leakage lié pour physical activity, coughing ou sneezing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Slightly",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "Greatly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "drops",
+      "label": "Fuites urinaires de faible abondance (quelques gouttes)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not at all",
+          "value": 0
+        },
+        {
+          "label": "Slightly",
+          "value": 1
+        },
+        {
+          "label": "Moderately",
+          "value": 2
+        },
+        {
+          "label": "Greatly",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "leakfreq",
+      "label": "À quelle fréquence présentez-vous des fuites urinaires ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Quelques fois par mois",
+          "value": 2
+        },
+        {
+          "label": "Quelques fois par semaine",
+          "value": 3
+        },
+        {
+          "label": "Chaque jour et/ou nuit",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lose",
+      "label": "Quelle quantité d'urine perdez-vous à chaque fois ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Drops",
+          "value": 1
+        },
+        {
+          "label": "De petites éclaboussures",
+          "value": 2
+        },
+        {
+          "label": "More",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sansoni J, Hawthorne G, Marosszeky N, Moore K, Fleming G and Owen E. (2011), The Technical Manual for the Revised Incontinence and Patient Satisfaction Tools. Centre for Health Service Development, University of Wollongong.",
+      "href": "https://www.bladderbowel.gov.au/assets/doc/ncms/Phase3InformationAndEvidence/ContinenceToolsValidationReport.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.urinary-protein-excretion-estimation",
+    "calc.urine-output-fluid-balance",
+    "calc.rome-iv-diagnostic-criteria-fecal-incontinence"
+  ],
+  "source_logic_hash": "f8755316e44eb1aa78c3155d5b1f9c5e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2047,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

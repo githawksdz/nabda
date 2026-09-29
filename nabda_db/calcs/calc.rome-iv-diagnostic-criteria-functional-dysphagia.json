@@ -1,0 +1,161 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-dysphagia",
+  "slug": "rome-iv-diagnostic-criteria-functional-dysphagia",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional Dysphagia",
+  "short_title": "Rome IV pour Functional Dysphagia",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pathologies œsophagiennes",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Odynophagia"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Functional Dysphagia, Rome IV for Functional Dysphagia, rome iv functional dysphagia, rome iv dysphagia, rome functional dysphagia, functional dysphagia, dysphagia, rome 4 functional dysphagia, rome 4 dysphagia, rome iv criteria functional dysphagia, functional dysphagia rome, functional dysphagia rome iv, dysphagia rome, dysphagia rome iv"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV de la dysphagie fonctionnelle, le patient doit présenter les éléments suivants (au cours des 3 mois précédents, avec un début des symptômes ≥ 6 mois, à une fréquence d'au moins une fois par semaine) :\n\n1. Sensation que les aliments solides et/ou liquides se bloquent, se logent ou traversent l'œsophage de manière anormale.\n2. Absence de preuve qu'une anomalie de la muqueuse œsophagienne ou structurelle soit la cause du symptôme.\n3. Absence de preuve que le reflux gastro-œsophagien ou l'œsophagite à éosinophiles (EoE) soit la cause du symptôme.\n4. Absence de troubles moteurs majeurs de l'œsophage (achalasie/obstruction à la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophage en marteau-piqueur, absence de péristaltisme).",
+  "how_to_use": {
+    "why": "- Aide à poserer un diagnostic de dysphagie fonctionnelle lorsque le bilan approprié est par ailleurs non contributif.\n- Aide à distinguer les symptômes d'autres troubles fréquents, tels que les complications du RGO (par ex. sténose) et les troubles moteurs majeurs.\n- Aide à guider la prise en charge des symptômes une fois le diagnostic de dysphagie fonctionnelle établi.",
+    "when": "Patients présentant des symptômes de sensation récurrente que les aliments solides et/ou liquides traversent l'œsophage de manière anormale depuis au moins 6 mois, évocateurs d'une dysphagie fonctionnelle. Le diagnostic de dysphagie fonctionnelle ne doit être posé qu'après avoir exclu les mécanismes oropharyngés de la dysphagie, les lésions structurelles de l'œsophage, la maladie de reflux gastro-œsophagien, l'œsophagite à éosinophiles et les troubles moteurs majeurs de l'œsophage.",
+    "pearls": "- La dysphagie oropharyngée doit être exclue.\n- La maladie de reflux gastro-œsophagien et l'œsophagite à éosinophiles (EoE) doivent être exclues par une endoscopie haute (avec biopsies pour éliminer une EoE) et un essai d'inhibiteur de la pompe à protons.\n- Des explorations avec produit de contraste au baryum peuvent être envisagées pour éliminer des anomalies structurelles (par ex. sténose œsophagienne, membrane ou hernie para-œsophagienne).\n- En l'absence de lésions structurelles au transit œsophagien baryté ou à l'endoscopie haute, une manométrie œsophagienne est réalisée pour exclure les troubles moteurs majeurs (par ex. achalasie, spasme œsophagien diffus). Les troubles moteurs limites ou mineurs restent compatibles avec un diagnostic de dysphagie fonctionnelle.\n- Dans certains cas, la dysphagie peut être due à des anomalies œsophagiennes subtiles, comme un anneau ou une membrane non visibles à l'imagerie. Dans cette situation, une dilatation œsophagienne empirique peut améliorer la dysphagie."
+  },
+  "next_steps": {
+    "advice": "**Si les critères diagnostiques ne sont pas remplis (négatif) :**\n\nIl est peu probable que les symptômes soient causés par une dysphagie fonctionnelle. Envisager une évaluation complémentaire pour d'autres maladies, ou un autre trouble fonctionnel gastro-intestinal.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable de dysphagie fonctionnelle.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients après exclusion des causes organiques, systémiques et métaboliques appropriées à la suite d'une investigation rigoureuse.",
+    "management": "La prise en charge de la dysphagie fonctionnelle peut inclure :\n\n- Inhibiteurs de la pompe à protons pour traiter les complications du RGO lorsqu'elles sont présentes.\n- Dilatation œsophagienne endoscopique empirique pour un anneau ou une sténose œsophagien(e) subtil(e) susceptible d'expliquer les symptômes de dysphagie.\n- Neuromodulateurs (c.-à-d. antidépresseurs tricycliques)."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms.\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts.",
+  "more_info": "",
+  "short_description": "Diagnostic de la dysphagie.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional dysphagia.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Sensation que les aliments solides et/ou liquides se bloquent, se logent ou traversent l'œsophage de manière anormale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Absence de preuve qu'une anomalie de la muqueuse œsophagienne ou structurelle soit la cause du symptôme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Absence de preuve que le reflux gastro-œsophagien ou l'EoE soit la cause du symptôme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Absence de troubles moteurs œsophagiens majeurs (achalasie/obstruction à l'écoulement de la jonction gastro-œsophagienne (EGJ), spasme œsophagien diffus, œsophagie en marteau-pilon, absence de péristaltisme)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Aziz Q, Fass R, Gyawali CP, Miwa H, Pandolfino JE, Zerbib F. Functional Esophageal Disorders. Gastroenterology. 2016;150:1368-1379.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144625",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Josefsson A, Palsson O, Simrén M, Sperber AD, Törnblom H, Whitehead W. Oesophageal symptoms are common and associated with other functional gastrointestinal disorders (FGIDs) in an English-speaking Western population. United European Gastroenterol J. 2018;6(10):1461-1469.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30574316",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-functional-anorectal-pain",
+    "calc.rome-iv-diagnostic-criteria-child-functional-nausea-vomiting",
+    "calc.rome-iv-diagnostic-criteria-child-functional-dyspepsia"
+  ],
+  "source_logic_hash": "697c90cf9d13aa2bdb34da03ce9a0663",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10283,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

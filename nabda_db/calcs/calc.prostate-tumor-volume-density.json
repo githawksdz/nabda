@@ -1,0 +1,119 @@
+{
+  "id": "calc.prostate-tumor-volume-density",
+  "slug": "prostate-tumor-volume-density",
+  "language": "fr",
+  "title": "Volume et densité tumorale de la prostate",
+  "short_title": "Volume tumoral de la prostate",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "hematologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Hematuria",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "density",
+    "cancer",
+    "ca",
+    "male",
+    "psa"
+  ],
+  "dosing": false,
+  "formula": "**Volume prostatique en cc = L x l x H x π/6 [forme d'un ellipsoïde]**\n\n- L en cm\n- l en cm\n- H en cm\n\n**Densité prostatique = PSA / Volume**",
+  "how_to_use": {
+    "why": "Utilisez les mesures physiques et le PSA pour calculer le volume et la densité tumorale.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Le volume tumoral est utilisé, conjointement avec le [score de Gleason](nabda:calc.gleason-score-prostate-cancer), pour établir le pronostic de récidive du cancer de la prostate. La densité tumorale aide à distinguer l'HBP du cancer de la prostate et sert à déterminer la nécessité d'une biopsie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Volume tumoral prostatique et densité du PSA.",
+  "medium_description": "Mesure le volume tumoral prostatique et la densité du PSA.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "pro_length",
+      "label": "Longueur de la prostate",
+      "optional": false,
+      "unit": "length_si_cm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pro_width",
+      "label": "Largeur de la prostate",
+      "optional": false,
+      "unit": "length_si_cm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "pro_height",
+      "label": "Hauteur de la prostate",
+      "optional": false,
+      "unit": "length_si_cm",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "psa",
+      "label": "Valeur du PSA",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Vollmer RT, et. al. Tumor Volume in Prostate Cancer and Serum Prostate-Specific Antigen. Analysis From a Kinetic Viewpoint. Am J Clin Pathol 2003;119:80-89.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12520701",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gleason-score-prostate-cancer",
+    "calc.damico-risk-classification-prostate-cancer",
+    "calc.renal-nephrometry-score"
+  ],
+  "source_logic_hash": "1e727ce06313868614e4e45abbd4b3ee",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2076,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

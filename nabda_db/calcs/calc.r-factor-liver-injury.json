@@ -1,0 +1,135 @@
+{
+  "id": "calc.r-factor-liver-injury",
+  "slug": "r-factor-liver-injury",
+  "language": "fr",
+  "title": "R Factor pour Liver lésion",
+  "short_title": "Facteur R",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Jaundice",
+    "Pain",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "dili",
+    "hepatic failure",
+    "liver failure",
+    "cirrhotic",
+    "obstructive jaundice",
+    "drug induced liver injury",
+    "r value",
+    "r-value",
+    "r ratio",
+    "r-factor"
+  ],
+  "dosing": false,
+  "formula": "Facteur R = ( ALT du patient / limite supérieure de la normale de l'ALT ) / ( PAL du patient / limite supérieure de la normale de la PAL )\n\nRemarque : le calculateur utilise 40 U/L comme limite supérieure de la normale de l'ALT et 120 U/L comme limite supérieure de la normale de la PAL. Les valeurs normales peuvent varier selon le laboratoire.",
+  "how_to_use": {
+    "why": "- Permet aux cliniciens d'identifier et de décrire collectivement le profil d'atteinte hépatique de manière objective.\n- Permet aux cliniciens suspectant un diagnostic d'atteinte hépatique médicamenteuse (DILI) d'élaborer une stratégie diagnostique structurée afin d'écarter d'autres causes d'atteinte hépatique aiguë et de restreindre la liste des médicaments potentiellement en cause en fonction du profil d'atteinte hépatique.\n- Recommandé par les [recommandations de l'ACG](https://www.mdcalc.com/guidelines/acg/diagnosis-management-idiosyncratic-drug-induced-liver-injury).",
+    "when": "Patients chez lesquels on suspecte une atteinte hépatique médicamenteuse (DILI) avec anomalies des tests hépatiques.",
+    "pearls": "- Le profil d'atteinte hépatique aiguë (et donc le facteur R) peut varier au cours de l'évolution clinique de la maladie.\n- L'identification du profil d'atteinte hépatique peut orienter la démarche diagnostique en cas de DILI, y compris les examens complémentaires appropriés nécessaires pour écarter d'autres causes d'atteinte hépatique.\n- Le calcul du facteur R est la première étape du calcul de la [méthode d'évaluation de l'imputabilité de Roussel Uclaf (RUCAM)](https://livertox.nih.gov/rucam.html) lorsqu'il s'agit de déterminer si l'atteinte hépatique est liée à un médicament spécifique.\n- Étant donné que le profil d'atteinte hépatique peut évoluer au fil du temps, le moment auquel les tests hépatiques sont utilisés pour calculer le facteur R peut modifier le résultat final. Il est recommandé d'utiliser les premiers tests hépatiques évoquant une atteinte hépatique, mais le choix de l'ensemble des tests hépatiques à utiliser pour l'évaluation revient en dernier lieu au clinicien.\n- L'utilisation de la limite supérieure de la normale (LSN) dans l'équation laisse place à une certaine variabilité. La LSN varie selon les laboratoires. Ce calculateur utilise 40 comme LSN de l'ALT et 120 comme LSN de la PAL.\n- Bien qu'il ne soit pas validé, le facteur R est largement utilisé et a été intégré dans des [recommandations de bonnes pratiques](https://www.ncbi.nlm.nih.gov/pubmed/24935270) pour l'évaluation des atteintes hépatiques."
+  },
+  "next_steps": {
+    "advice": "Un facteur R >5 suggère un profil d'atteinte hépatique hépatocellulaire.\n\n- Les hépatites virales aiguës, l'atteinte hépatique ischémique, le syndrome de Budd-Chiari, l'hépatite auto-immune et la maladie de Wilson (chez les patients plus jeunes) doivent être écartés comme causes.\n- Les médicaments couramment utilisés pouvant provoquer ce profil d'atteinte hépatique comprennent : l'isoniazide, les macrolides, la nitrofurantoïne, la minocycline, les antiépileptiques, les AINS, l'extrait de thé vert et les anesthésiques inhalés.\n\nUn facteur R <2 suggère un profil d'atteinte hépatique cholestatique.\n\n- Les tumeurs malignes pancréatiques, le cholangiocarcinome, les tumeurs malignes primitives de la vésicule biliaire, la lithiase de la voie biliaire principale, la sepsis, la nutrition parentérale (TPN), l'insuffisance cardiaque, la cholangite sclérosante primitive (CSP) et la cholangite biliaire primitive (CBP) doivent être écartés comme causes.\n- Les médicaments couramment utilisés pouvant provoquer ce profil d'atteinte hépatique comprennent : l'amoxicilline/acide clavulanique, le triméthoprime/sulfaméthoxazole, l'azathioprine et les stéroïdes anabolisants.\n\nUn facteur R entre 2 et 5 suggère un profil d'atteinte hépatique mixte.",
+    "critical_actions": "Bien que le facteur R n'intègre pas la coagulopathie (INR) ni l'état mental, ces deux facteurs doivent toujours être évalués immédiatement dans tous les cas d'atteinte hépatique aiguë afin d'écarter une *insuffisance* hépatique aiguë.",
+    "management": "![](https://cdn-web-img.mdcalc.com/content/r-factor.png)\n\nRecommandations pour le bilan en fonction du facteur R, adaptées de [Chalasani 2014](https://www.ncbi.nlm.nih.gov/pubmed/24935270)."
+  },
+  "evidence": "Le facteur R (également appelé rapport R ou valeur R) a été introduit à la suite d'une réunion de consensus international tenue en 1989 visant à établir des définitions et des critères relatifs aux atteintes hépatiques d'origine médicamenteuse. À la demande du Conseil des Organisations Internationales des Sciences Médicales (CIOMS), un programme pilote mené par la société pharmaceutique Roussel Uclaf a été lancé afin d'aider à classifier les différents profils d'atteinte hépatique aiguë, introduisant ainsi le facteur R.\n\nLe facteur R lui-même n'a pas été validé, mais il demeure couramment utilisé en pratique clinique pour définir objectivement les différents profils d'atteinte hépatique. L'American College of Gastroenterology (ACG) a intégré le facteur R dans ses [recommandations](https://www.ncbi.nlm.nih.gov/pubmed/24935270) pour le diagnostic et la prise en charge des atteintes hépatiques médicamenteuses idiosyncrasiques.",
+  "more_info": "Interprétation :\n\n| Facteur R | Type d'atteinte | Examens de 1re intention recommandés* |\n| --- | --- | --- |\n| >5 | Hépatocellulaire | Sérologies des hépatites virales aiguës, ARN du VHC et sérologies d'hépatite auto-immune, examens d'imagerie (p. ex. échographie abdominale) |\n| 2–5 | Mixte | Sérologies des hépatites virales aiguës, ARN du VHC et sérologies d'hépatite auto-immune, examens d'imagerie (p. ex. échographie abdominale) |\n| <2 | Cholestatique | Examens d'imagerie (p. ex. échographie abdominale) |\n\n*D'après [Chalasani 2014](https://www.ncbi.nlm.nih.gov/pubmed/24935270).",
+  "short_description": "Cholestatic vs. hepatocellular liver lésion.",
+  "medium_description": "Differentiates cholestatic de hepatocellular liver lésion, recommended par[ACG guidelines](https://www.mdcalc.com/guidelines/acg/diagnosis-management-idiosyncratic-drug-induced-liver-injury).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "Patient'sALT",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt_uln",
+      "label": "Limite supérieure de la normale de l'ALT",
+      "tips": "Selon votre laboratoire",
+      "optional": false,
+      "default": 40,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alp",
+      "label": "Patient'sALP",
+      "optional": false,
+      "unit": "ALP",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alp_uln",
+      "label": "Limite supérieure de la normale de la PAL",
+      "tips": "Selon votre laboratoire",
+      "optional": false,
+      "default": 120,
+      "unit": "ALP",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Bénichou C. Criteria of drug-induced liver disorders. Report of an international consensus meeting. J Hepatol. 1990;11(2):272-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2254635 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chalasani NP, Hayashi PH, Bonkovsky HL, et al. ACG Clinical Guideline: the diagnosis and management of idiosyncratic drug-induced liver injury. Am J Gastroenterol. 2014;109(7):950-66.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24935270 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.clif-c-aclf-acute-chronic-liver-failure",
+    "calc.horowitz-index-lung-function-p-f-ratio"
+  ],
+  "source_logic_hash": "ab2d4612b757e7440142eb1b9632c5cf",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4064,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

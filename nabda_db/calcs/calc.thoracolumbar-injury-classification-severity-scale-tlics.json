@@ -1,0 +1,182 @@
+{
+  "id": "calc.thoracolumbar-injury-classification-severity-scale-tlics",
+  "slug": "thoracolumbar-injury-classification-severity-scale-tlics",
+  "language": "fr",
+  "title": "Thoracolumbar lésion classification et gravité échelle (TLICS)",
+  "short_title": "TLICS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie",
+    "orthopedie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Fracture",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Injury/Trauma",
+    "Déficit neurologique"
+  ],
+  "abbreviations": [
+    "thoracolumbar burst fracture",
+    "TLICS score",
+    "Thoracolumbar injury classification and severity",
+    "Thoracolumbar injury score",
+    "Thoracolumbar trauma",
+    "tlcis"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Morphologie | Fracture par compression | 1 |\n| Fracture burst (par éclatement) | 2 | |\n| Translation/rotation | 3 | |\n| Distraction | 4 | |\n| Aucune des ci-dessus | 0 | |\n| Atteinte neurologique | Intacte | 0 |\n| Racine nerveuse | 2 | |\n| Lésion médullaire complète | 2 | |\n| Lésion médullaire incomplète | 3 | |\n| Cauda equina (queue de cheval) | 3 | |\n| Complexe ligamentaire postérieur | Intact | 0 |\n| Lésion suspectée ou indéterminée | 2 | |\n| Lésé | 3 | |",
+  "how_to_use": {
+    "why": "Méthode intuitive et fondée sur les preuves pour déterminer l'instabilité rachidienne.",
+    "when": "Patients présentant une fracture thoraco-lombaire touchant le corps vertébral, les articulaires ou les pédicules, et toute lésion ligamentaire significative.",
+    "pearls": "- Veiller à disposer d'une imagerie appropriée pour évaluer la colonne postérieure. Au scanner (CT), rechercher un élargissement des articulations zygapophysaires et des espaces inter-épineux. Si les colonnes postérieures ne sont pas visualisées au scanner, une IRM est nécessaire.\n- Si un patient présente un déficit neurologique, il est fortement conseillé de revoir attentivement les imageries afin de déterminer si une décompression serait bénéfique pour le patient.\n- Prendre en compte les comorbidités et autres pathologies sous-jacentes du patient ayant pu le prédisposer à la lésion, p. ex. ostéopénie/ostéoporose, infection, malignité."
+  },
+  "next_steps": {
+    "advice": "- La décision chirurgicale est multifactorielle et aucun score isolé ne doit être utilisé pour décider d'opérer ou non. À utiliser conjointement avec le jugement clinique.\n- Ce système est conçu pour aider à la décision de stabilisation.\n- Une décompression peut également être nécessaire, avec ou sans déficit neurologique. Faire preuve du meilleur jugement clinique pour la décompression.",
+    "critical_actions": "Si un patient présente un déficit neurologique, il est fortement conseillé de revoir attentivement les imageries afin de déterminer si une décompression serait bénéfique pour le patient.",
+    "management": "Recommandations :\n\n- 0-3 points : traitement non opératoire (corset).\n- 4 points : traitement non opératoire ou opératoire (au choix du chirurgien).\n- ≥5 points : traitement opératoire (stabilisation).\n\nLa contention orthopédique est généralement réalisée à l'aide de divers dispositifs orthopédiques, tels que :\n\n- Corset TLSO : T6-L5.\n- Minerva : C1-T6.\n- Corset d'hyperextension de Jewett : T5-T9.\n\nLa stabilisation peut être réalisée par :\n- Montages par vis pédiculaires postérieurs.\n- Corpectomie antérieure ou latérale avec mise en place d'une cage et plaque du corps vertébral.\n- Abords postéro-latéraux permettant une corpectomie et la mise en place d'une cage expansive."
+  },
+  "evidence": "Le score TLICS a été initialement élaboré à partir d'une enquête auprès des experts du Spine Trauma Study Group ([Lee 2005](https://link.springer.com/article/10.1007/s00776-005-0956-y)), et a depuis été validé de manière externe dans d'autres études, dont[Bono 2006](https://www.ncbi.nlm.nih.gov/pubmed/16990729)et[Koh 2010](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2996622/).",
+  "more_info": "Interprétation :\n\n| TLICS | Prise en charge |\n| --- | --- |\n| 0-3 points | Non opératoire (contention orthopédique recommandée) |\n| 4 points | Non opératoire ou opératoire |\n| ≥5 points | Opératoire (stabilisation avec ou sans réduction de la fracture selon les besoins) |",
+  "short_description": "Traumatisme thoraco-lombaire.",
+  "medium_description": "Classifies thoracolumbar spine lésion et provides traitement recommendations.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "morph",
+      "label": "Morphology",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Fracture par compression",
+          "value": 1
+        },
+        {
+          "label": "Fracture burst (par éclatement)",
+          "value": 2
+        },
+        {
+          "label": "Translation/rotation",
+          "value": 3
+        },
+        {
+          "label": "Distraction",
+          "value": 4
+        },
+        {
+          "label": "Aucune des propositions ci-dessus",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "neuro",
+      "label": "Atteinte neurologique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Intact",
+          "value": 0
+        },
+        {
+          "label": "Racine nerveuse",
+          "value": 2
+        },
+        {
+          "label": "Lésion médullaire complète",
+          "value": 2
+        },
+        {
+          "label": "Lésion médullaire incomplète",
+          "value": 3
+        },
+        {
+          "label": "Cauda equina (queue de cheval)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pos",
+      "label": "Complexe ligamentaire postérieur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Intact",
+          "value": 0
+        },
+        {
+          "label": "lésion suspected ou indeterminate",
+          "value": 2
+        },
+        {
+          "label": "Injured",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lee JY, Vaccaro AR, Lim MR, et al. Thoracolumbar injury classification and severity score: a new paradigm for the treatment of thoracolumbar spine trauma. J Orthop Sci. 2005;10(6):671-5.",
+      "href": "https://link.springer.com/article/10.1007/s00776-005-0956-y",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bono CM, Vaccaro AR, Hurlbert RJ, et al. Validating a newly proposed classification system for thoracolumbar spine trauma: looking to the future of the thoracolumbar injury classification and severity score. J Orthop Trauma. 2006;20(8):567-72.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16990729",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Koh YD, Kim DJ, Koh YW. Reliability and Validity of Thoracolumbar Injury Classification and Severity Score (TLICS). Asian Spine J. 2010;4(2):109-17.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2996622/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.subaxial-injury-classification-severity-scale-slics",
+    "calc.infant-scalp-score",
+    "calc.trauma-score-injury-severity-score-triss"
+  ],
+  "source_logic_hash": "24b833eee790d380426a9d68941a08aa",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10126,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

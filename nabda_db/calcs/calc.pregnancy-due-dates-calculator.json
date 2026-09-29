@@ -1,0 +1,158 @@
+{
+  "id": "calc.pregnancy-due-dates-calculator",
+  "slug": "pregnancy-due-dates-calculator",
+  "language": "en",
+  "title": "Calculateur de dates prévues d'accouchement (grossesse)",
+  "short_title": "Dates prévues d'accouchement (grossesse)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "gynecologie-obstetrique",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "preggers",
+    "edd",
+    "preg wheel",
+    "pregnancy wheel",
+    "edc",
+    "pregnant"
+  ],
+  "dosing": false,
+  "formula": "![](https://cdn-web-img.mdcalc.com/content/PDD2.png)\n\nÂge gestationnel estimé (EGA) = temps écoulé depuis le 1^er^ jour des dernières règles (DDR)\n\nDate estimée de conception (EDC) = deux semaines* depuis le 1^er^ jour des DDR\n\nDate prévue d'accouchement (DPA) = 1^er^ jour des DDR + 40 semaines* (règle de Naegele)\n\n*Hypothèse d'un cycle de 28 jours. Si le cycle est plus long que 28 jours, ce calculateur ajoute le nombre de jours excédant 28 pour obtenir la DPA. Exemple : si la durée du cycle est de 35 jours, ajouter 7 jours (= 35 – 28) aux 40 semaines.",
+  "how_to_use": {
+    "why": "Des estimations précises de l'âge gestationnel peuvent influer positivement sur l'issue de la grossesse, notamment en réduisant le risque de déclenchement du travail pour terme dépassé et en permettant une détection plus précoce des grossesses multiples ([Whitworth 2015](https://www.ncbi.nlm.nih.gov/pubmed/26171896)).",
+    "when": "Patientes enceintes ou susceptibles de l'être.",
+    "pearls": "Selon l'[ACOG](https://www.acog.org/Clinical-Guidance-and-Publications/Committee-Opinions/Committee-on-Obstetric-Practice/Methods-for-Estimating-the-Due-Date?IsMobileSet=false), la mesure échographique au premier trimestre (jusqu'à 13 6/7 semaines de gestation incluses) est la méthode la plus précise pour établir ou confirmer l'âge gestationnel."
+  },
+  "next_steps": {
+    "advice": "À utiliser pour le suivi et l'estimation de la grossesse.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "À partir des DDR, de l'âge gestationnel ou de la date de conception.",
+  "medium_description": "Calculates grossesse dates de last period, gestational âge, ou date de conception.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "cyclelength",
+      "label": "Durée du cycle",
+      "optional": false,
+      "default": 28,
+      "unit": "cyclelength",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "date_type",
+      "label": "Dates pour enter",
+      "tips": "« Dernières règles » : indiquer le 1^er^ jour des DDR ; l'âge gestationnel à une autre date peut être repris d'une échographie antérieure",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Dernières règles",
+          "value": 0
+        },
+        {
+          "label": "Estimated gestational âge (EGA) as de today",
+          "value": 1
+        },
+        {
+          "label": "Âge gestationnel (EGA) à une autre date",
+          "value": 3
+        },
+        {
+          "label": "Date estimée de conception",
+          "value": 4
+        },
+        {
+          "label": "Date prévue d'accouchement",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "date",
+      "label": "Date",
+      "optional": false,
+      "unit": "date",
+      "show_points": false,
+      "conditionality": "date_type == 0 || date_type == 2 || date_type == 4"
+    },
+    {
+      "type": "textbox",
+      "name": "date2",
+      "label": "Date de l'EGA (p. ex. date de l'échographie)",
+      "optional": false,
+      "unit": "date",
+      "show_points": false,
+      "conditionality": "date_type == 3"
+    },
+    {
+      "type": "textbox",
+      "name": "gestational_age",
+      "label": "EGA",
+      "tips": "Format : p. ex. 7s3j",
+      "optional": false,
+      "unit": "gestational_age",
+      "show_points": false,
+      "conditionality": "date_type == 1 || date_type == 3"
+    }
+  ],
+  "references": [
+    {
+      "text": "Methods for estimating the due date. Committee Opinion No. 700. American College of Obstetricians and Gynecologists. Obstet Gynecol 2017;129:e150–4.",
+      "href": "https://www.acog.org/Clinical-Guidance-and-Publications/Committee-Opinions/Committee-on-Obstetric-Practice/Methods-for-Estimating-the-Due-Date?IsMobileSet=false#6",
+      "kind": "international"
+    },
+    {
+      "text": "Whitworth M, Bricker L, Mullan C. Ultrasound for fetal assessment in early pregnancy. Cochrane Database Syst Rev. 2015;(7):CD007058.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26171896",
+      "kind": "other"
+    },
+    {
+      "text": "Chervenak FA, Skupski DW, Romero R, et al: How accurate is fetal biometry in the assessment of fetal age? Am J Obstet Gynecol 1998; 178:678.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9579429",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.vaginal-birth-after-cesarean-vbac",
+    "calc.bishop-score-vaginal-delivery-induction-labor",
+    "calc.bwh-egg-freezing-counseling-tool-efct"
+  ],
+  "source_logic_hash": "5eb8f159ecd500f0dee976af100f5eaa",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 423,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

@@ -1,0 +1,288 @@
+{
+  "id": "calc.dual-antiplatelet-therapy-dapt-score",
+  "slug": "dual-antiplatelet-therapy-dapt-score",
+  "language": "en",
+  "title": "Score de bithérapie antiplaquettaire (DAPT)",
+  "short_title": "Score DAPT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Hémorragie intracrânienne",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "DAPT Score",
+    "bleeding risk",
+    " ischemic risk"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | -2 points | -1 points | 0 points | 1 point | 2 points |\n| --- | --- | --- | --- | --- | --- |\n| Age, years | ≥75 | 65-74 | <65 | -- | -- |\n| Cigarette smoking* | -- | -- | No | Yes | -- |\n| Diabetes mellitus | -- | -- | No | Yes | -- |\n| MI at presentation | -- | -- | No | Yes | -- |\n| Prior PCI or prior MI | -- | -- | No | Yes | -- |\n| Paclitaxel-eluting stent | -- | -- | No | Yes | -- |\n| Stent diameter <3 mm | -- | -- | No | Yes | -- |\n| CHF or LVEF <30% | -- | -- | No | -- | Yes |\n| Vein graft stent | -- | -- | No | -- | Yes |\n\n*Smoking within 1 year prior to index procedure.",
+  "how_to_use": {
+    "why": "- Identifie les patients qui bénéficieront probablement d'une DAPT prolongée (c.-à-d. de 12–30 mois).\n- Aide à évaluer l'arbitrage entre la réduction des événements thrombotiques et l'augmentation des risques hémorragiques (prédit un bénéfice clinique net).",
+    "when": "À utiliser chez les patients bénéficiant d'une intervention coronarienne percutanée (PCI) avec pose de stent afin de déterminer la durée optimale de la double antiagrégation plaquettaire (DAPT).",
+    "pearls": "L’étude de dérivation n’incluait pas les patients prenant du ticagrélor ni ceux sous traitement anticoagulant."
+  },
+  "next_steps": {
+    "advice": "- Interpretation based on scores:\n\n - **Lower scores (<2):**\n\n - Associated with a greater risk in bleeding complications and smaller reduction in ischemic events.\n - Prolonged DAPT may cause greater harm than benefit.\n - **Higher scores (≥2):**\n\n - Associated with a lower risk in bleeding complications and higher reduction in ischemic events.\n - Prolonged DAPT may provide greater benefit than harm.\n- This tool is not intended to replace clinical judgment; use it as an adjunct to clinical expertise and current cardiology guidelines.\n- Inform patients about the importance of DAPT and involve them in shared decision-making based on their score.\n- Schedule follow-ups to reassess DAPT needs and adjust therapy as necessary.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| DAPT Score | Ischemia/bleeding risk* | Recommendation** |\n| --- | --- | --- |\n| -2 to 1 | Low | Prolonged DAPT not recommended |\n| ≥2 | High | Prolonged DAPT recommended |\n\n*Ischemia was defined as MI, stroke, repeat coronary revascularization, or stent thrombosis. Bleeding was defined as intracerebral bleeding, bleeding causing hemodynamic compromise requiring treatment, or bleeding requiring transfusion.\n\n**From ACC guidelines,[Levine 2016](https://www.onlinejacc.org/content/68/10/1082).",
+  "short_description": "Bithérapie antiplaquettaire prolongée (>1 an) après PCI.",
+  "medium_description": "Prédit quels patients bénéficieront d'une DAPT prolongée après pose d'un stent coronaire.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥75",
+          "value": -2
+        },
+        {
+          "label": "65-74",
+          "value": -1
+        },
+        {
+          "label": "< 65",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "smoking",
+      "label": "Tabagisme",
+      "tips": "Smoking within 1 year prior to index procedure.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dm",
+      "label": "Diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mi",
+      "label": "IDM à la présentation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "priorpci",
+      "label": "PCI antérieur ou IDM antérieur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stent",
+      "label": "Stent à élution de paclitaxel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stentdiameter",
+      "label": "Diamètre du stent < 3 mm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chf",
+      "label": "CHF ou LVEF <30%",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "veinstent",
+      "label": "Vein graft stent",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Levine GN, Bates ER, Bittl JA, et al. 2016 ACC/AHA Guideline Focused Update on Duration of Dual Antiplatelet Therapy in Patients With Coronary Artery Disease: A Report of the American College of Cardiology/American Heart Association Task Force on Clinical Practice Guidelines. J Am Coll Cardiol. 2016.",
+      "href": "https://www.onlinejacc.org/content/68/10/1082 ",
+      "kind": "international"
+    },
+    {
+      "text": "Yeh RW, Secemsky EA, Kereiakes DJ, et al. Development and Validation of a Prediction Rule for Benefit and Harm of Dual Antiplatelet Therapy Beyond 1 Year After Percutaneous Coronary Intervention. JAMA. 2016;315(16):1735-49.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2508253 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "GUSTO investigators. An International Randomized Trial Comparing Four Thrombolytic Strategies for Acute Myocardial Infarction. N Engl J Med. 1993;329(10):673-82.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJM199309023291001 ",
+      "kind": "other"
+    },
+    {
+      "text": "Piccolo R, Gargiulo G, Franzone A, et al. Use of the Dual-Antiplatelet Therapy Score to Guide Treatment Duration After Percutaneous Coronary Intervention. Ann Intern Med. 2017;167(1):17-25.",
+      "href": "https://annals.org/aim/article-abstract/2631185/use-dual-antiplatelet-therapy-score-guide-treatment-duration-after-percutaneous",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kereiakes DJ, Yeh RW, Massaro JM, et al. DAPT Score Utility for Risk Prediction in Patients With or Without Previous Myocardial Infarction. J Am Coll Cardiol. 2016;67(21):2492-502.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27046159",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yoshikawa Y, Shiomi H, Watanabe H, et al. Validating Utility of Dual Antiplatelet Therapy Score in a Large Pooled Cohort From 3 Japanese Percutaneous Coronary Intervention Studies. Circulation. 2018;137(6):551-562.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28982692",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Banerjee S, Angiolillo DJ, Boden WE, et al. Use of Antiplatelet Therapy/DAPT for Post-PCI Patients Undergoing Noncardiac Surgery. J Am Coll Cardiol. 2017;69(14):1861-1870.",
+      "href": "https://www.onlinejacc.org/content/69/14/1861?_ga=2.168254563.399869864.1527882860-1363800592.1527882860",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.garfield-af",
+    "calc.direct-acting-oral-anticoagulants-doac-score",
+    "calc.orbit-bleeding-risk-score-atrial-fibrillation"
+  ],
+  "source_logic_hash": "d62941f68f3921b144d38996f6c3c1de",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10016,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.paclitaxel",
+    "s.ticagrelor"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

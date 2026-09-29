@@ -1,0 +1,206 @@
+{
+  "id": "calc.cart-cardiac-arrest-risk-triage-score",
+  "slug": "cart-cardiac-arrest-risk-triage-score",
+  "language": "en",
+  "title": "Score CART (Cardiac Arrest Risk Triage) — triage du risque d'arrêt cardiaque",
+  "short_title": "CART",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Cardiac arrest",
+    "CART",
+    "CA",
+    "cart score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Respiratory rate, breaths/min | <21 | 0 |\n| 21-23 | 8 | |\n| 24-25 | 12 | |\n| 26-29 | 15 | |\n| >29 | 22 | |\n| Heart rate, beats/min | <110 | 0 |\n| 110-139 | 4 | |\n| >139 | 13 | |\n| Diastolic BP, mmHg | >49 | 0 |\n| 40-49 | 4 | |\n| 35-39 | 6 | |\n| <35 | 13 | |\n| Age, years | <55 | 0 |\n| 55-69 | 4 | |\n| >69 | 9 | |",
+  "how_to_use": {
+    "why": "- Predicting deterioration in ward patients may be difficult. Validated risk scores such as CART may help.\n- Outperformed [MEWS](nabda:calc.modified-early-warning-score-mews-clinical-deterioration) at predicting cardiac arrest in one study (AUROC 0.84 vs 0.78) ([Churpek 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673668/)).",
+    "when": "",
+    "pearls": "- A systematic review of early warning system (EWS) scores, including CART, concluded that such scores perform well to predict cardiac arrest but that impact on outcomes and resource utilization is still uncertain, and current evidence is insufficient ([Smith 2014](https://www.ncbi.nlm.nih.gov/pubmed/25296111)).\n- Requires accurate respiratory rate."
+  },
+  "next_steps": {
+    "advice": "Les patients avec un score CART élevé peuvent bénéficier d’une intensification des soins. Utiliser le jugement clinique en plus des scores de stratification du risque pour prendre des décisions relatives à l’orientation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CART Score | Risk of cardiac arrest within 48 hours |\n| --- | --- |\n| ≤20 | Low |\n| >20 | High* |\n\n*In the original study ([Churpek 2012](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378796/)), scores >20 were 91.9% specific for predicting cardiac arrest within 48 hours, and 90% specific in a validation cohort ([Churpek 2013](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673668/)).",
+  "short_description": "Dans-hôpital cardiac arrest.",
+  "medium_description": "Predicts risque de dans-hôpital cardiac arrest.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "rr",
+      "label": "Fréquence respiratoire, breaths/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 21",
+          "value": 0
+        },
+        {
+          "label": "21-23",
+          "value": 8
+        },
+        {
+          "label": "24-25",
+          "value": 12
+        },
+        {
+          "label": "26-29",
+          "value": 15
+        },
+        {
+          "label": ">29",
+          "value": 22
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "Fréquence cardiaque, beats/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 110",
+          "value": 0
+        },
+        {
+          "label": "110-139",
+          "value": 4
+        },
+        {
+          "label": ">139",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bp",
+      "label": "PA diastolique, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">49",
+          "value": 0
+        },
+        {
+          "label": "40-49",
+          "value": 4
+        },
+        {
+          "label": "35-39",
+          "value": 6
+        },
+        {
+          "label": "< 35",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 55",
+          "value": 0
+        },
+        {
+          "label": "55-69",
+          "value": 4
+        },
+        {
+          "label": ">69",
+          "value": 9
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Churpek MM, Yuen TC, Park SY, Meltzer DO, Hall JB, Edelson DP. Derivation of a cardiac arrest prediction model using ward vital signs*. Crit Care Med. 2012;40(7):2102-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3378796/ ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wang AY, Fang CC, Chen SC, Tsai SH, Kao WF. Periarrest Modified Early Warning Score (MEWS) predicts the outcome of in-hospital cardiac arrest. J Formos Med Assoc. 2016;115(2):76-82.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0929664615003599 ",
+      "kind": "other"
+    },
+    {
+      "text": "Smith ME, Chiovaro JC, O'neil M, et al. Early warning system scores for clinical deterioration in hospitalized patients: a systematic review. Ann Am Thorac Soc. 2014;11(9):1454-65.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25296111 ",
+      "kind": "other"
+    },
+    {
+      "text": "Churpek MM, Yuen TC, Edelson DP. Risk stratification of hospitalized patients on the wards. Chest. 2013;143(6):1758-1765. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3673668/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-early-warning-score-mews-clinical-deterioration",
+    "calc.cahp-cardiac-arrest-hospital-prognosis-score",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score"
+  ],
+  "source_logic_hash": "042e74321421951b55202e2a3258db8c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-early-warning-score-mews-clinical-deterioration",
+      "text": "MEWS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10029,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

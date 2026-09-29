@@ -1,0 +1,283 @@
+{
+  "id": "calc.virsta-score",
+  "slug": "virsta-score",
+  "language": "en",
+  "title": "Score VIRSTA",
+  "short_title": "Score VIRSTA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Infections bactériennes"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur thoracique",
+    "Cough",
+    "Diarrhea",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Nausea",
+    "Rash",
+    "Dyspnée",
+    "Swelling",
+    "Vomiting",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "VIRSTA Score",
+    "infective endocarditis",
+    "IE",
+    "echocardiography",
+    "staphylococcus aureus bacteremia",
+    "sab",
+    "bacteremia",
+    "IE risk"
+  ],
+  "dosing": false,
+  "formula": "Le score VIRSTA est calculé en additionnant les points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Embolies cérébrales ou périphériques | Non | 0 |\n| Oui | 5 | |\n| Méningite | Non | 0 |\n| Oui | 5 | |\n| Dispositif intracardiaque permanent ou EI antérieure | Non | 0 |\n| Oui | 4 | |\n| Valvulopathie native préexistante | Non | 0 |\n| Oui | 3 | |\n| Usage de drogues intraveineuses | Non | 0 |\n| Oui | 4 | |\n| Bactériémie persistante | Non | 0 |\n| Oui | 3 | |\n| Ostéomyélite vertébrale | Non | 0 |\n| Oui | 2 | |\n| Acquisition communautaire ou liée aux soins non nosocomiale | Non | 0 |\n| Oui | 2 | |\n| Sepsis sévère ou choc | Non | 0 |\n| Oui | 1 | |\n| Protéine C-réactive >190 mg/L | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Quantifie le risque d'endocardite chez les patients présentant une bactériémie à *S. aureus*, pouvant guider la décision de réaliser une ETO et réduire les examens d'imagerie inutiles chez les patients à faible risque.\n- Comparé à des outils similaires, le score VIRSTA présente la meilleure valeur prédictive négative.",
+    "when": "À utiliser dans les 48 heures suivant le diagnostic d'une bactériémie à *Staphylococcus aureus* pour guider le recours à l'échocardiographie transœsophagienne (ETO) dans la détection de l'endocardite infectieuse.",
+    "pearls": "- Derived from a prospective cohort of 2,008 adult patients with *S. aureus* bacteremia in 8 French university hospitals.\n- Studies have demonstrated a high negative predictive value of 98.8%–99.5%.\n- Not intended for use in non- *Staphylococcus* bacteremia.\n- Though higher scores are associated with an increased likelihood of infective endocarditis, this score is not diagnostic. An appropriate workup, including TEE, should still be pursued in high-risk patients."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne remplace pas le jugement clinique ; corrélé toujours les résultats avec la présentation clinique et l'évolution du patient.",
+    "critical_actions": "",
+    "management": "- **Risque élevé (score ≥3) :** Une ETO en urgence est indiquée pour rechercher une endocardite infectieuse.\n- **Risque faible (score <3) :**\n\n - Il peut être approprié de ne pas réaliser d'ETO.\n - Poursuivre la prise en charge appropriée de la bactériémie (p. ex., antibiotiques, contrôle de la source) et surveiller étroitement l'évolution clinique.\n - Recalculer le score en cas de complications et/ou d'hémocultures répétées positives."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score VIRSTA | Risque d'EI |\n| --- | --- |\n| <3 | Risque faible |\n| ≥3 | Risque élevé* |\n\n*Les médecins sont vivement encouragés à réaliser une échocardiographie en urgence.",
+  "short_description": "Risque d'EI.",
+  "medium_description": "Estimates risque de infective endocarditis (IE) et determines priority pour echocardiography.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "emboli",
+      "label": "Embolies cérébrales ou périphériques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "meningitis",
+      "label": "Meningitis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "device",
+      "label": "Dispositif intracardiaque permanent ou EI antérieure",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pre",
+      "label": "Valvulopathie native préexistante",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "iv",
+      "label": "Usage de drogues intraveineuses",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bact",
+      "label": "Bactériémie persistante",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vert",
+      "label": "Ostéomyélite vertébrale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hc",
+      "label": "Community ou non-nosocomial health care associé acquisition",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "shock",
+      "label": "Sepsis sévère ou choc",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "c",
+      "label": "Protéine C-réactive >190 mg/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tubiana S, Duval X, Alla F, et al. The VIRSTA score, a prediction score to estimate risk of infective endocarditis and determine priority for echocardiography in patients with Staphylococcus aureus bacteremia. J Infect. 2016;72(5):544-553.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26916042/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heriot GS, Cronin K, Tong SYC, Cheng AC, Liew D. Criteria for identifying patients with staphylococcus aureus bacteremia who are at low risk of endocarditis: a systematic review. Open Forum Infect Dis. 2017;4(4):ofx261.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29308408/",
+      "kind": "other"
+    },
+    {
+      "text": "Peinado-Acevedo JS, Hurtado-Guerra JJ, Hincapié C, et al. Validation of virsta and predicting risk of endocarditis using a clinical tool (Predict) scores to determine the priority of echocardiography in patients with staphylococcus aureus bacteremia. Clin Infect Dis. 2021;73(5):e1151-e1157.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34492692/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.2023-duke-international-society-cardiovascular-infectious-diseases-iscvid-criteria",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.menza-score"
+  ],
+  "source_logic_hash": "fe40812f499ccd34f8f30b00771c519b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10470,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

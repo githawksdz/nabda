@@ -1,0 +1,114 @@
+{
+  "id": "calc.plasma-dosage",
+  "slug": "plasma-dosage",
+  "language": "fr",
+  "title": "Posologie du plasma",
+  "short_title": "Posologie du plasma",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage",
+    "Hémopathie maligne",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "ffp",
+    "fresh frozen plasma",
+    "plasma",
+    "transfusion"
+  ],
+  "dosing": true,
+  "formula": "Posologie totale du plasma, mL = posologie de plasma souhaitée, mL/kg × poids, kg\n\nÀ noter :\n\n- La posologie de plasma souhaitée se situe entre 10 et 20 mL/kg.\n- Cette dose est censée augmenter le taux de facteurs de coagulation de 20 % immédiatement après la perfusion.\n- Une posologie standard recommandée de PFC est de 10 mL/kg, mais des doses allant jusqu'à 15 ou 20 mL/kg peuvent être justifiées selon la situation clinique.",
+  "how_to_use": {
+    "why": "",
+    "when": "- Utiliser pour corriger les déficits en facteurs de coagulation, pour lesquels aucun concentré spécifique n'est disponible, chez les patients présentant un saignement actif.\n- Les indications inappropriées incluent la transfusion chez les patients sans saignement actif ni geste invasif, la correction d'élévations minimes de l'INR (c.-à-d. INR <1,7), l'expansion de la volémie, l'hypoprotéinémie, la correction des déficits immunitaires, la transfusion à des fins nutritionnelles, la correction des déficits congénitaux ou acquis en facteurs de coagulation en l'absence d'hémorragie, ou la correction des troubles de l'hémostase chez les patients atteints de maladie hépatique chronique qui ne saignent pas.",
+    "pearls": "- La transfusion d'une dose de plasma inférieure à la dose thérapeutique doit être déconseillée.\n- Le plasma doit être perfusé dès que possible après décongélation et ne doit jamais être recongelé.\n- La prédiction précise de la quantité de plasma nécessaire pour corriger une coagulopathie donnée n'est actuellement pas possible. Par conséquent, la répétition du test de coagulation ayant motivé la transfusion après la transfusion est justifiée."
+  },
+  "next_steps": {
+    "advice": "- Les effets indésirables de la transfusion de PFC comprennent :",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Posologie de la transfusion de plasma.",
+  "medium_description": "Doses plasma pour transfusion chez les patients avec active saignement.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids du patient",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "dose",
+      "label": "Posologie de plasma souhaitée",
+      "optional": false,
+      "default": 10,
+      "unit": "plasma_dose",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "unit",
+      "label": "Volume par unité",
+      "optional": false,
+      "default": 200,
+      "unit": "plasma_unit",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Liumbruno G, Bennardello F, Lattanzio A, Piccoli P, Rossetti G. Recommendations for the transfusion of plasma and platelets. Blood Transfus. 2009;7(2):132-50.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2689068/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Roback JD. Technical Manual. American Association of Blood Banks (AABB); 2014.",
+      "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.therapeutic-plasmapheresis-calculator",
+    "calc.blood-volume-calculation",
+    "calc.corrected-count-increment-cci-platelet-transfusion"
+  ],
+  "source_logic_hash": "828d8017d92d4451d5bcc43944c59d0f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4033,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

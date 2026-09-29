@@ -1,0 +1,278 @@
+{
+  "id": "calc.pooled-cohort-equations-prevent-heart-failure-pcp-hf-risk-score",
+  "slug": "pooled-cohort-equations-prevent-heart-failure-pcp-hf-risk-score",
+  "language": "en",
+  "title": "Pooled Cohort Equations pour Prevent insuffisance cardiaque (PCP-HF) risque score",
+  "short_title": "Score de risque PCP-HF",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque congestive",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Tout/Tous",
+    "Douleur thoracique",
+    "Toux",
+    "Dyspnée",
+    "Œdème des extrémités",
+    "Fatigue",
+    "Œdème périphérique",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Faiblesse",
+    "Perte/Gain de poids",
+    "Asymptomatique"
+  ],
+  "abbreviations": [
+    "PCP-HF",
+    "Prevent HF risk score",
+    "heart failure risk prediction",
+    "10-year HF risk",
+    " incident HF risk",
+    "primary prevention heart failure",
+    "Khan risk model",
+    "HF risk equation",
+    "heart failure",
+    "heart failure 10",
+    "HF 10",
+    "HF risk",
+    "prevent heart failure",
+    "PCP HF"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients to calculate 10-year HF risk are as follows:\n\n| Variable | Transformation | White Male | White Female | Black Male | Black Female |\n| --- | --- | --- | --- | --- | --- |\n| Age, years | ln(age) | 41.94 | 20.55 | 2.88 | 51.75 |\n| ln(age) 2 | -0.88 | N/A | N/A | N/A | |\n| Current smoker | yes = 1, no = 0 | 0.74 | 11.02 | 1.66 | 0.76 |\n| BMI, kg/m 2 | ln(BMI) | 37.2 | 1.33 | 1.16 | 21.24 |\n| Treated SBP, mmHg | ln(SBP) | 1.03 | 12.95 | 2.31 | 29.0 |\n| Untreated SBP, mmHg | ln(SBP) | 0.91 | 11.86 | 2.17 | 28.18 |\n| Treated fasting glucose, mg/dL | ln(glucose) | 0.90 | 1.04 | 0.64 | 0.97 |\n| Untreated fasting glucose, mg/dL | ln(glucose) | 0.78 | 0.91 | 0.58 | 0.80 |\n| Total cholesterol, mg/dL | ln(TC) | 0.49 | N/A | N/A | 0.32 |\n| HDL-C, mg/dL | ln(HDL) | -0.44 | -0.07 | -0.81 | N/A |\n| QRS duration, msec | ln(QRS) | 0.63 | 1.06 | 0.73 | 1.27 |\n| Age×BMI interaction | ln(age)×ln(BMI) | -8.83 | N/A | N/A | -5.0 |\n| Age×treated SBP interaction | ln(age)×ln(SBP) | N/A | -2.96 | N/A | -6.59 |\n| Age×untreated SBP interaction | ln(age)×ln(SBP) | N/A | -2.73 | N/A | -6.42 |\n| Age×current smoker interaction | ln(age)×smoker (yes = 1, no = 0) | N/A | -2.50 | -0.25 | NA |\n| Mean coefficient×value ( MeanCV ) | N/A | 171.5 | 99.73 | 28.73 | 233.9 |\n| Baseline survival ( S 0 ) | N/A | 0.98752 | 0.99348 | 0.98295 | 0.99260 |\n\n10-year HF risk, % = (1- *S~0~* ^exp( *IndX* - *MeanCV* )^)×100",
+  "how_to_use": {
+    "why": "- L’insuffisance cardiaque toucherait plus de 6 millions d’adultes aux États-Unis et contribue à un lourd fardeau sanitaire mondial.\n- Ce modèle contient des facteurs facilement disponibles en milieu ambulatoire et ne nécessite ni imagerie ni examens avancés.\n- Une identification plus précoce des patients présentant un risque accru d’insuffisance cardiaque peut faciliter la mise en œuvre de stratégies de prévention plus intensives.",
+    "when": "Use in patients without a diagnosis of heart failure to facilitate discussions surrounding future risk.",
+    "pearls": "- Ce modèle a été développé dans une population américaine et validé dans des cohortes aux États-Unis et en Europe.\n- Ce modèle contient la race, que les auteurs ont incluse pour tenir compte de l’incidence plus élevée et plus précoce de l’insuffisance cardiaque observée dans certaines populations."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les patients chez qui on identifie un risque accru d’insuffisance cardiaque doivent bénéficier d’une optimisation médicale des pathologies connues pour augmenter ce risque.\n\nLes pathologies connues pour augmenter le risque d’insuffisance cardiaque comprennent l’hypertension, les maladies cardiovasculaires, l’obésité, le diabète, les antécédents familiaux, les marqueurs génétiques de cardiomyopathie et l’exposition à certains médicaments.\n\nL’[American College of Cardiology](https://pubmed.ncbi.nlm.nih.gov/35363499/), l’[American Heart Association](https://pubmed.ncbi.nlm.nih.gov/35363499/) et la [European Society of Cardiology](https://pubmed.ncbi.nlm.nih.gov/34447992/) maintiennent à jour des recommandations sur la prévention, le diagnostic et la prise en charge de l’insuffisance cardiaque."
+  },
+  "evidence": "",
+  "more_info": "Model Notes\n\nLn denotes natural logarithm. For the selected sex-race group, compute the linear predictor *IndX* = Σ~i~β~i~×𝑥~i~, where β are the coefficients listed above and each 𝑥~i~is individual’s corresponding (transformed) predictor value. For SBP and glucose, use **either** the treated term **or** the untreated term and set the other to 0. Terms marked N/A are not included (equivalently, β=0).",
+  "short_description": "Estimateur de risque d'insuffisance cardiaque à 10 ans.",
+  "medium_description": "Estimates 10-year risque de incident insuffisance cardiaque dans asymptomatic adultes.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "race",
+      "label": "Race",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Blanc",
+          "value": 0
+        },
+        {
+          "label": "Black",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "unit": "age_fib4",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "smoker",
+      "label": "Fumeur actuel",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "IMC, kg/m^2^",
+      "optional": false,
+      "unit": "bmi_prevent",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "htn",
+      "label": "Utilisation de médicaments antihypertenseurs",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "PAS, mmHg",
+      "optional": false,
+      "unit": "sbp_prevent",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dm",
+      "label": "Utilisation des médicaments antidiabétiques",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "glu",
+      "label": "Glycémie à jeun, mg/dL",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tc",
+      "label": "Cholestérol total, mg/dL",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdl",
+      "label": "HDL-C, mg/dL",
+      "optional": false,
+      "unit": "hdl_prevent",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "qrs",
+      "label": "Durée du QRS, ms",
+      "optional": false,
+      "unit": "qrs_duration",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Heidenreich PA, Bozkurt B, Aguilar D, et al. 2022 aha/acc/hfsa guideline for the management of heart failure: a report of the american college of cardiology/american heart association joint committee on clinical practice guidelines. Circulation. 2022;145(18):e895-e1032. doi:10.1161/CIR.0000000000001063",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35363499/",
+      "kind": "international"
+    },
+    {
+      "text": "McDonagh TA, Metra M, Adamo M, et al. 2021 ESC Guidelines for the diagnosis and treatment of acute and chronic heart failure. Eur Heart J. 2021;42(36):3599-3726. doi:10.1093/eurheartj/ehab368",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34447992/",
+      "kind": "international"
+    },
+    {
+      "text": "Khan SS, Ning H, Shah SJ, et al. 10-year risk equations for incident heart failure in the general population. J Am Coll Cardiol. 2019;73(19):2388-2397. doi:10.1016/j.jacc.2019.02.057",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31097157/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Razavi AC, Potts KS, Kelly TN, et al. Pooled cohort equations heart failure risk score predicts cardiovascular disease and all-cause mortality in a nationally representative sample of US adults. BMC Cardiovasc Disord. 2020;20(1):202. doi:10.1186/s12872-020-01485-2",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32334524/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bavishi A, Bruce M, Ning H, et al. Predictive accuracy of heart failure-specific risk equations in an electronic health record-based cohort. Circ Heart Fail. 2020;13(11):e007462. doi:10.1161/CIRCHEARTFAILURE.120.007462",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33092406/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "f7b806afc3af4ec9d88576222e73295e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10638,
+  "runnable": true,
+  "equation_logic_text": "// Logic template\nvar calc_output = [];\n\nvar race = parseFloat(race);\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar smoker = parseFloat(smoker);\nvar bmi = parseFloat(bmi);\nvar htn = parseFloat(htn);\nvar sbp = parseFloat(sbp);\nvar dm = parseFloat(dm);\nvar glu = parseFloat(glu);\nvar tc = parseFloat(tc);\nvar hdl = parseFloat(hdl);\nvar qrs = parseFloat(qrs);\n\nif (UOMSYSTEM == false) { \n    var tc = parseFloat(tc) * 38.67; \n    var hdl = parseFloat(hdl) * 38.67;\n    var glu = parseFloat(glu) * 18;\n}\n\n// Trasformation\nvar lnage = Math.log(age);\nvar lnage2 = (Math.log(age)) ** 2;\nvar lnbmi = Math.log(bmi);\nvar lnsbp = Math.log(sbp);\nvar lnglu = Math.log(glu);\nvar lntc = Math.log(tc);\nvar lnhdl = Math.log(hdl);\nvar lnqrs = Math.log(qrs);\n\n// Coefficients by subgroup \nvar group;\nif (sex === 0 && race === 0) group = \"WM\";       // White Male\nelse if (sex === 1 && race === 0) group = \"WF\";  // White Female\nelse if (sex === 0 && race === 1) group = \"BM\";  // Black Male\nelse group = \"BF\"; \n\nvar C = {\n  WM: { // White Men\n    lnage: 41.94101,\n    lnage2: -0.88115,\n    smoker: 0.73839,\n    lnbmi: 37.21577,\n    lnsbp_t: 1.030508,\n    lnsbp_u: 0.91252,\n    lnglu_t: 0.90072,\n    lnglu_u: 0.77805,\n    lntc: 0.49323,\n    lnhdl: -0.43683,\n    lnqrs: 0.63224,\n    lnage_lnbmi: -8.83278,\n    lnage_lnsbp_t: 0,\n    lnage_lnsbp_u: 0,\n    lnage_smoker: 0,\n    meancv: 171.59,\n    s0: 0.98752\n  },\n  WF: { // White Women\n    lnage: 20.54973,\n    lnage2: 0,\n    smoker: 11.01752,\n    lnbmi: 1.32948,\n    lnsbp_t: 12.94937,\n    lnsbp_u: 11.86273,\n    lnglu_t: 1.04503,\n    lnglu_u: 0.91807,\n    lntc: 0,\n    lnhdl: -0.07455,\n    lnqrs: 1.06089,\n    lnage_lnbmi: 0,\n    lnage_lnsbp_t: -2.96923,\n    lnage_lnsbp_u: -2.72538,\n    lnage_smoker: -2.50777,\n    meancv: 99.7321,\n    s0: 0.99348\n  },\n  BM: { // Black Men\n    lnage: 2.88334,\n    lnage2: 0,\n    smoker: 1.65337,\n    lnbmi: 1.16289,\n    lnsbp_t: 2.31106,\n    lnsbp_u: 2.17229,\n    lnglu_t: 0.64704,\n    lnglu_u: 0.57891,\n    lntc: 0,\n    lnhdl: -0.80691,\n    lnqrs: 0.72646,\n    lnage_lnbmi: 0,\n    lnage_lnsbp_t: 0,\n    lnage_lnsbp_u: 0,\n    lnage_smoker: -0.24665,\n    meancv: 28.7369,\n    s0: 0.98295\n  },\n  BF: { // Black Women\n    lnage: 51.75667,\n    lnage2: 0,\n    smoker: 0.76532,\n    lnbmi: 21.24763,\n    lnsbp_t: 28.97791,\n    lnsbp_u: 28.1853,\n    lnglu_t: 0.96695,\n    lnglu_u: 0.79561,\n    lntc: 0.32646,\n    lnhdl: 0,\n    lnqrs: 1.27475,\n    lnage_lnbmi: -5.00068,\n    lnage_lnsbp_t: -6.59777,\n    lnage_lnsbp_u: -6.42425,\n    lnage_smoker: 0,\n    meancv: 233.978,\n    s0: 0.9926\n  }\n}[group];\n\n// Build linear predictor (IndX)\nvar beta_sbp = (htn === 1 ? C.lnsbp_t : C.lnsbp_u);\nvar beta_glu = (dm  === 1 ? C.lnglu_t : C.lnglu_u);\nvar beta_age_sbp = (htn === 1 ? C.lnage_lnsbp_t : C.lnage_lnsbp_u);\n\nvar IndX =\n    C.lnage * lnage +\n    C.lnage2 * lnage2 +\n    C.smoker * smoker +\n    C.lnbmi * lnbmi +\n    beta_sbp * lnsbp +\n    beta_glu * lnglu +\n    C.lntc * lntc +\n    C.lnhdl * lnhdl +\n    C.lnqrs * lnqrs +\n    C.lnage_lnbmi * (lnage * lnbmi) +\n    beta_age_sbp * (lnage * lnsbp) +\n    C.lnage_smoker * (lnage * smoker);\n\n// Risk formula: 1 - S0^(exp(IndX - MeanCV))\nvar exponent = Math.exp(IndX - C.meancv);\nvar risk = (1 - Math.pow(C.s0, exponent)) * 100;\n\n// Output\ncalc_output.push({\n    name: 'mini',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: '10-year HF Risk'\n});\ncalc_output.push({\n    name: '10638_PCP-HF Risk Score_result',\n    value: risk.toFixed(1),\n    value_text: '%',\n    message: '10-year HF Risk'\n});",
+  "before_use": "Ce calculateur inclut des données d'entrée fondées sur la race, qui peuvent ou non fournir de meilleures estimations. [Voir ici](https://www.mdcalc.com/race) pour en savoir plus sur notre approche de la prise en compte de la race et des biais sur MDCalc.",
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Sadiya S. Khan"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.cholesterol-zinc-oxyde",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "engine_sha256": "23dbfb202a2c74e4ea30299254a43198014b150eab5dd1bc39a414bbcf78ad32"
+}

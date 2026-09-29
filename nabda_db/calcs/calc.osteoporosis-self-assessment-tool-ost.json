@@ -1,0 +1,163 @@
+{
+  "id": "calc.osteoporosis-self-assessment-tool-ost",
+  "slug": "osteoporosis-self-assessment-tool-ost",
+  "language": "en",
+  "title": "Osteoporosis Self évaluation Tool (OST)",
+  "short_title": "OST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "orthopedie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Osteoporosis"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Douleur chronique",
+    "Injury/Trauma",
+    "Pain",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Osteoporosis Self Assessment Tool (OST)",
+    "OST",
+    "Osteoporosis Self Assessment Tool",
+    "osteoporosis",
+    "DXA",
+    "dual-energy x-ray absorptiometry",
+    "neck",
+    "lumbar",
+    "spine",
+    "t score",
+    "bone mineral density",
+    "BMD",
+    "bone mass"
+  ],
+  "dosing": false,
+  "formula": "OST = (weight, kg - age, years) * 0.2, truncated to an integer",
+  "how_to_use": {
+    "why": "- Its simplicity makes it an effective bedside tool.\n- Helps avoid unnecessary BMD testing in patients at low risk of osteoporosis.",
+    "when": "- Can be used during routine health visits in the outpatient setting to assess the risk of low bone mineral density (BMD) and determine which patients may benefit from bone densitometry.\n- Particularly beneficial in resource-limited settings, assessing men, and evaluating women under 65 years of age, where decisions to pursue BMD testing are based on specific clinical factors.",
+    "pearls": "- Validated for use in men and women aged 40 years and older.\n- Comparable in performance to other osteoporosis risk assessment tools.\n- Does not account for all osteoporosis risk factors and should not replace clinical judgment.\n- Not intended as a diagnostic tool. Results should prompt further evaluation, where appropriate.\n- Several studies have used different cutoffs when determining risk levels. This particular tool uses cutoffs provided by the original derivation study for women ([Koh, 2001](https://pubmed.ncbi.nlm.nih.gov/11580084/)) and a validation study for men ([Adler, 2003](https://pubmed.ncbi.nlm.nih.gov/12934782/))."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Low risk: Bone densitometry testing may be postponed or avoided; focus on lifestyle modifications and routine monitoring.\n- Intermediate and high risk: Bone densitometry should be considered to confirm risk and guide the initiation of appropriate management strategies, including pharmacologic interventions if indicated."
+  },
+  "evidence": "",
+  "more_info": "Interpretation for women:\n\n| OST Index | Osteoporosis Risk |\n| --- | --- |\n| >1 | Low |\n| -3 to 1 | Intermediate |\n| < -3 | High |\n\nInterpretation for men:\n\n| OST Index | Osteoporosis Risk |\n| --- | --- |\n| >3 | Low |\n| -1 to 3 | Intermediate |\n| <-1 | High |\n\nSeveral studies have used different cutoffs when determining risk levels. This particular tool uses cutoffs provided by the original derivation study for women ([Koh, 2001](https://pubmed.ncbi.nlm.nih.gov/11580084/)) and a validation study for men ([Adler, 2003](https://pubmed.ncbi.nlm.nih.gov/12934782/)).",
+  "short_description": "Osteoporosis risque.",
+  "medium_description": "Classifies risque de osteoporosis dans women et men.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Koh LKH, Ben Sedrine W, Torralba TP, et al. A simple tool to identify asian women at increased risk of osteoporosis. Osteoporosis International. 2001;12(8):699-705.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11580084/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Screening for osteoporosis to prevent fractures: recommendation statement. afp. 2018;98(10):online-online.",
+      "href": "https://www.aafp.org/pubs/afp/issues/2018/1115/od1.html",
+      "kind": "other"
+    },
+    {
+      "text": "Rubin KH, Abrahamsen B, Friis-Holmberg T, et al. Comparison of different screening tools (Frax®, ost, orai, osiris, score and age alone) to identify women with increased risk of fracture. A population-based prospective study. Bone. 2013;56(1):16-22.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23669650/",
+      "kind": "other"
+    },
+    {
+      "text": "Pecina JL, Romanovsky L, Merry SP, Kennel KA, Thacher TD. Comparison of clinical risk tools for predicting osteoporosis in women ages 50-64. The Journal of the American Board of Family Medicine. 2016;29(2):233-239.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26957380/",
+      "kind": "other"
+    },
+    {
+      "text": "Zheng HW, Bui AAT, Ensrud KE, et al. Identifying younger postmenopausal women with osteoporosis using uspstf-recommended osteoporosis risk assessment tools. JAMA Netw Open. 2025;8(3):e250626.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40100219/",
+      "kind": "other"
+    },
+    {
+      "text": "Adler RA, Tran MT, Petkov VI. Performance of the osteoporosis self-assessment screening tool for osteoporosis in american men. Mayo Clinic Proceedings. 2003;78(6):723-727.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/12934782/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Richy F, Gourlay M, Ross PD, et al. Validation and comparative evaluation of the osteoporosis self-assessment tool (Ost) in a Caucasian population from Belgium. QJM: An International Journal of Medicine. 2004;97(1):39-46.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/14702510/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Richards JS, Lazzari AA, Teves Qualler DA, Desale S, Howard R, Kerr GS. Validation of the osteoporosis self-assessment tool in us male veterans. Journal of Clinical Densitometry. 2014;17(1):32-37.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23489972/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.osteoporosis-risk-assessment-instrument-orai",
+    "calc.osteoporosis-index-risk-osiris",
+    "calc.canadian-association-radiologists-osteoporosis-canada-caroc-system"
+  ],
+  "source_logic_hash": "5a7f351d0d47694c8f94b7bf11082459",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10543,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,316 @@
+{
+  "id": "calc.ankylosing-spondylitis-disease-activity-score-crp-asdas-crp",
+  "slug": "ankylosing-spondylitis-disease-activity-score-crp-asdas-crp",
+  "language": "en",
+  "title": "Ankylosing Spondylitis maladie Activity score avec CRP (ASDAS-CRP)",
+  "short_title": "ASDAS-CRP pour Ankylosing Spondylitis",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "rhumatologie",
+    "orthopedie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Ankylosing spondylitis",
+    "disease activity score",
+    "AS",
+    "ASDAS",
+    "CRP",
+    "disease activity index"
+  ],
+  "dosing": false,
+  "formula": "ASDAS-CRP = (0.12 x back pain) + (0.06 x morning stiffness) + (0.11 x patient global assessment of disease activity) + (0.07 x peripheral pain/swelling) + (0.58 x ln(CRP + 1))\n\nWhere variables are:\n\n| Back pain | Ask the patient: \"How would you describe the overall level of AS neck, back, or hip pain you have had?\" |\n| --- | --- |\n| Morning stiffness | Ask the patient: \"How would you describe the overall level of morning stiffness you have had from the time you wake up?\" |\n| Patient global assessment of disease activity | Ask the patient: \"How active was your spondylitis, on average, during the last week?\" |\n| Peripheral pain/swelling | Ask the patient: \"How would you describe the overall level of pain/swelling in joints other than neck, back, or hips you have had?\" |\n| CRP | C-reactive protein, mg/L |\n\nAll variables, except CRP, should be graded on a scale of 0 (least severe) to 10 (most severe).",
+  "how_to_use": {
+    "why": "- L’ASDAS-CRP est l’indice d’activité de la maladie privilégié selon l’Assessment of SpondyloArthritis international Society (ASAS).\n- Peut être utile pour suivre l’évolution de l’activité de la maladie au fil du temps.",
+    "when": "",
+    "pearls": "Hormis la CRP, toutes les valeurs sont auto-déclarées par le patient et donc subjectives."
+  },
+  "next_steps": {
+    "advice": "Peut être utile pour aider à guider les décisions thérapeutiques ; par ex. détecter une amélioration avec les inhibiteurs du TNF.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| ASDAS-CRP | Activité de la maladie |\n| --- | --- |\n| <1.3 | Inactive |\n| 1.3-2.0 | Faible |\n| 2.1-3.5 | Élevée |\n| >3.5 | Très élevée |",
+  "short_description": "AS gravité basé sur CRP.",
+  "medium_description": "Stratifies gravité de ankylosing spondylitis (AS) using clinique et laboratoire data, specifically CRP.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "back",
+      "label": "Back douleur",
+      "tips": "Ask the patient: \"How would you describe the overall level of AS neck, back, or hip pain you have had?\"",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 : le moins sévère",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        },
+        {
+          "label": "7",
+          "value": 7
+        },
+        {
+          "label": "8",
+          "value": 8
+        },
+        {
+          "label": "9",
+          "value": 9
+        },
+        {
+          "label": "10 : le plus sévère",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "duration",
+      "label": "Durée de la raideur matinale",
+      "tips": "Demandez au patient : « Comment décririez-vous le niveau global de raideur matinale que vous avez ressenti depuis votre réveil ? »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 : le moins sévère",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        },
+        {
+          "label": "7",
+          "value": 7
+        },
+        {
+          "label": "8",
+          "value": 8
+        },
+        {
+          "label": "9",
+          "value": 9
+        },
+        {
+          "label": "10 : le plus sévère",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "global",
+      "label": "Patient global évaluation de maladie activity",
+      "tips": "Demandez au patient : « À quel point votre spondylarthrite a-t-elle été active, en moyenne, au cours de la dernière semaine ? »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 : le moins sévère",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        },
+        {
+          "label": "7",
+          "value": 7
+        },
+        {
+          "label": "8",
+          "value": 8
+        },
+        {
+          "label": "9",
+          "value": 9
+        },
+        {
+          "label": "10 : le plus sévère",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "peripheral",
+      "label": "Douleur/gonflement périphériques",
+      "tips": "Demandez au patient : « Comment décririez-vous le niveau global de douleur/gonflement que vous avez présenté dans des articulations autres que celles du cou, du dos ou des hanches ? »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0 : le moins sévère",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        },
+        {
+          "label": "7",
+          "value": 7
+        },
+        {
+          "label": "8",
+          "value": 8
+        },
+        {
+          "label": "9",
+          "value": 9
+        },
+        {
+          "label": "10 : le plus sévère",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "crp",
+      "label": "CRP",
+      "optional": false,
+      "unit": "crp_dl",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Lukas C, Landewé R, Sieper J, et al. Development of an ASAS-endorsed disease activity score (ASDAS) in patients with ankylosing spondylitis. Ann Rheum Dis. 2009;68(1):18-24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18625618",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zochling J. Measures of symptoms and disease status in ankylosing spondylitis: Ankylosing Spondylitis Disease Activity Score (ASDAS), Ankylosing Spondylitis Quality of Life Scale (ASQoL), Bath Ankylosing Spondylitis Disease Activity Index (BASDAI), Bath Ankylosing Spondylitis Functional Index (BASFI), Bath Ankylosing Spondylitis Global Score (BAS-G), Bath Ankylosing Spondylitis Metrology Index (BASMI), Dougados Functional Index (DFI), and Health Assessment Questionnaire for the Spondylarthropathies (HAQ-S). Arthritis Care Res (Hoboken). 2011;63 Suppl 11:S47-58.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1002/acr.20575",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ankylosing-spondylitis-disease-activity-score-esr-asdas-esr",
+    "calc.patient-activity-scale-pas-ra",
+    "calc.patient-activity-scale-ii-pas-ii-ra"
+  ],
+  "source_logic_hash": "4159d9d65b7975183bcd93e26c307b9c",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10047,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

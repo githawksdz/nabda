@@ -1,0 +1,292 @@
+{
+  "id": "calc.regiscar-score-drug-reaction-eosinophilia-systemic-symptoms-dress",
+  "slug": "regiscar-score-drug-reaction-eosinophilia-systemic-symptoms-dress",
+  "language": "fr",
+  "title": "RegiSCAR score pour Drug Reaction avec Eosinophilia et Systemic Symptoms (DRESS)",
+  "short_title": "RegiSCAR pour DRESS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "soins-intensifs",
+    "medecine-interne",
+    "biologie"
+  ],
+  "diseases": [
+    "Maladies auto-immunes"
+  ],
+  "chief_complaints": [
+    "Fever",
+    "Lymphadenopathy",
+    "Rash"
+  ],
+  "abbreviations": [
+    "Dress score",
+    "AGEP",
+    "acute generalized exanthematous pustulosis",
+    "DIHS",
+    "drug induced hypersensitivity syndrome",
+    "regiscar score"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Fever (≥38.5 °C) | No/Unknown | -1 |\n| Yes | 0 | |\n| Enlarged lymph nodes (≥2 sites, >1 cm) | No/Unknown | 0 |\n| Yes | 1 | |\n| Atypical lymphocytes | No/Unknown | 0 |\n| Yes | 1 | |\n| Eosinophilia | 0-699 cells or <10% (no eosinophilia) | 0 |\n| 700-1,499 cells or 10-19.9% | 1 | |\n| ≥1,500 cells or ≥20% | 2 | |\n| Skin rash extent >50% | No/Unknown | 0 |\n| Yes | 1 | |\n| At least two of: edema, infiltration, purpura, scaling | No | -1 |\n| Yes | 1 | |\n| Unknown | 0 | |\n| Biopsy suggesting DRESS | No | -1 |\n| Yes/Unknown | 0 | |\n| Internal organ involved | 0 | 0 |\n| 1 | 1 | |\n| ≥2 | 2 | |\n| Resolution in ≥15 days | No/Unknown | -1 |\n| Yes | 0 | |\n| Alternative diagnoses excluded (by ≥3 biological investigations) | No/Unknown | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Le DRESS est souvent difficile à diagnostiquer en raison d'une variabilité importante des présentations cliniques, et les signes/symptômes ne surviennent fréquemment pas de manière concomitante.\n- Cet outil peut contribuer à faciliter le diagnostic et la prise en charge appropriée.\n- Utile pour la recherche ou les essais cliniques nécessitant des critères diagnostiques uniformes du DRESS.",
+    "when": "Peut être utilisé pour confirmer ou exclure un DRESS chez les patients présentant des symptômes d'une réaction cutanée médicamenteuse.",
+    "pearls": "Certaines variables peuvent ne pas être disponibles lors de la présentation initiale, ce qui peut altérer l'utilité de l'outil comme critère diagnostique."
+  },
+  "next_steps": {
+    "advice": "De nombreuses pathologies peuvent simuler un DRESS. Un interrogatoire approfondi, un examen physique et une évaluation clinique sont nécessaires afin d'écarter les diagnostics différentiels.",
+    "critical_actions": "Si le médicament imputable est connu, le consigner dans le dossier médical du patient afin d'éviter toute exposition future.",
+    "management": "**Si un DRESS est suspecté ou confirmé :**\n\n- Arrêter immédiatement tous les médicaments potentiellement imputables.\n- Éviter d'introduire de nouveaux médicaments.\n- Débuter des soins de support (ex. : hydratation, émollients), selon les besoins.\n- Surveiller les examens biologiques.\n- Utiliser l'étendue de l'atteinte viscérale pour guider la gradation de la sévérité (ex. : [une méthode Delphi a été proposée](https://pubmed.ncbi.nlm.nih.gov/37966824/)), qui détermine l'intensité de la prise en charge, incluant :\n\n - Traitement ambulatoire versus hospitalisation (y compris service de médecine versus réanimation).\n - Corticoïdes topiques ou systémiques.\n - Support d'organe avancé et surveillance rapprochée.\n - Avis spécialisés.\n\n**Si le DRESS est exclu :**\n\n- Rechercher des diagnostics différentiels.\n- Surveiller l'apparition de signes et symptômes nouveaux ou évolutifs.\n- Répéter le score si de nouvelles données sont disponibles et que le DRESS reste un diagnostic différentiel envisageable."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score RegiSCAR-Group | Probabilité de diagnostic de DRESS |\n| --- | --- |\n| <2 | Cas exclu |\n| 2-3 | Cas possible |\n| 4-5 | Cas probable |\n| >5 | Cas certain |",
+  "short_description": "Diagnostic de DRESS.",
+  "medium_description": "Diagnoses drug reaction avec eosinophilia et systemic symptoms (DRESS).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "fever",
+      "label": "Fièvre (≥38.5 °C)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": -1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lymph",
+      "label": "Adénopathies",
+      "tips": "≥2 sites, >1 cm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lymphocytes",
+      "label": "Lymphocytes atypiques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eos",
+      "label": "Eosinophilia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0-699 cellules ou <10 % (pas d'hyperéosinophilie)",
+          "value": 0
+        },
+        {
+          "label": "700-1,499 cells ou 10-19.9%",
+          "value": 1
+        },
+        {
+          "label": "≥1,500 cells ou ≥20%",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "rash",
+      "label": "Étendue de l'éruption cutanée >50 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "needtwo",
+      "label": "At least two de: œdème, infiltration, purpura, scaling",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": -1
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        },
+        {
+          "label": "Inconnu",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dress",
+      "label": "Biopsie évocatrice de DRESS",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": -1
+        },
+        {
+          "label": "Yes/Unknown",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "internal",
+      "label": "Atteinte d'un organe interne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "≥2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resolution",
+      "label": "Resolution dans ≥15 days",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": -1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "altdx",
+      "label": "Diagnostics différentiels exclus (par ≥3 investigations biologiques)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No/Unknown",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Roujeau JC, Stern RS. Severe adverse cutaneous reactions to drugs. N Engl J Med. 1994;331(19):1272-1285.",
+      "href": "https://www.nejm.org/doi/abs/10.1056/NEJM199411103311906",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kardaun SH, Sekula P, Valeyrie-Allanore L, et al. Drug reaction with eosinophilia and systemic symptoms (DRESS): an original multisystem adverse drug reaction. Results from the prospective RegiSCAR study. Br J Dermatol. 2013;169(5):1071-80.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/bjd.12501 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mayo-alliance-prognostic-system-maps-score",
+    "calc.spanish-network-mastocytosis-rema-score",
+    "calc.sex-shock-risk-score-development-cardiogenic-shock"
+  ],
+  "source_logic_hash": "6d4b784ef893caa7299eac582341025f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10084,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,292 @@
+{
+  "id": "calc.opiate-conversion-calculator",
+  "slug": "opiate-conversion-calculator",
+  "language": "en",
+  "title": "Calculateur de conversion des opiacés",
+  "short_title": "Conversion des opiacés",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "anesthesie",
+    "medecine-interne",
+    "douleur",
+    "pharmacotherapie",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Douleur chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur chronique",
+    "Douleur des extrémités",
+    "Douleur articulaire",
+    "Cervicalgie",
+    "Douleur"
+  ],
+  "abbreviations": [
+    "opiate conversion calculator",
+    "opiate conversion",
+    "opiate",
+    "opiate calculator",
+    "opiate dosing",
+    "opiate dose"
+  ],
+  "dosing": true,
+  "formula": "Converted dose, mg = (Total daily dose, mg * x)/y,\n\nwhere x = morphine equivalents, mg for the drug being converted from,\n\nand y = morphine equivalents, mg for the drug being converted to\n\n| Analgesic | Morphine Equivalents (mg) |\n| --- | --- |\n| Morphine (Oral) | 25 |\n| Morphine (Parenteral) | 10 |\n| Buprenorphine (SL) | 0.4 |\n| Buprenorphine (Parenteral) | 0.3 |\n| Codeine (Oral) | 200 |\n| Codeine (Parenteral) | 100 |\n| FentaNYL (Parenteral) | 0.15 |\n| HYDROcodone (Oral) | 25 |\n| HYDROmorphone (Parenteral) | 2 |\n| HYDROmorphone (Oral) | 5 |\n| Meperidine (Oral) | 300 |\n| Meperidine (Parenteral) | 100 |\n| OxyCODONE (Oral) | 20 |\n| OxyCODONE (Parenteral) | 10 |\n| OxyMORphone (Parenteral) | 1 |\n| OxyMORphone (Oral) | 10 |\n| Tapentadol (Oral) | 100 |\n| TraMADol (Oral) | 120 |\n| TraMADol (Parenteral) | 100 |",
+  "how_to_use": {
+    "why": "Helps avoid uncontrolled pain or respiratory depression and hypotension when converting between opiates.",
+    "when": "Patients sous opiacés, pour lesquels une conversion entre le type et/ou la voie d’administration est indiquée.",
+    "pearls": "- Be aware that there are no universally accepted standard methods for opioid conversion, and conversion factors may differ across various references.\n- Opiate conversion calculations should always be taken as a guide and are not absolute guaranteed equivalents between different medications and dosage forms.\n- Patients on a particular opiate for an extended amount of time will often develop tolerance, and a lower conversion dose of 33-50% is recommended unless the patient is under close monitoring."
+  },
+  "next_steps": {
+    "advice": "- Les opiacés varient considérablement en termes de puissance. Vérifiez toujours deux fois les doses et les unités.\n- Les facteurs de conversion peuvent différer selon les sources. Cet outil utilise les facteurs de conversion publiés dans [McPherson (2010)](https://www.ncbi.nlm.nih.gov/nlmcatalog/101509913).\n- En conséquence, ces résultats sont approximatifs et doivent être considérés comme des points de référence généraux qui doivent être appliqués conjointement avec le jugement clinique et l’expertise.\n- Il est fortement recommandé de réduire la dose du nouvel opiacé de 33-50 %, sauf si le patient présente une douleur sévère non contrôlée sous le traitement actuel.\n- Une consultation avec un médecin spécialiste de la prise en charge de la douleur ou un pharmacien est recommandée en cas de conversion vers et depuis plusieurs opiacés ou depuis le fentaNYL.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Convertit les dosages d’opiacés.",
+  "medium_description": "Convertit entre différents types et voies d’administration des opiacés.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "fro",
+      "label": "Aucun contenu source n'a été fourni à traduire. Merci de transmettre le texte du score clinique (titres, consignes, tableaux, libellés, options, why/when/pearls, next_steps, evidence, more_info) pour que je puisse en produire la traduction française.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Morphine (orale)",
+          "value": 0
+        },
+        {
+          "label": "Morphine (voie parentérale)",
+          "value": 1
+        },
+        {
+          "label": "Buprénorphine (sublinguale)",
+          "value": 2
+        },
+        {
+          "label": "Buprénorphine (parentérale)",
+          "value": 3
+        },
+        {
+          "label": "Codéine (voie orale)",
+          "value": 4
+        },
+        {
+          "label": "Codeine (parenteral)",
+          "value": 5
+        },
+        {
+          "label": "FentaNYL (parentéral)",
+          "value": 6
+        },
+        {
+          "label": "HYDROcodone (voie orale)",
+          "value": 7
+        },
+        {
+          "label": "HYDROmorphone (parentéral)",
+          "value": 8
+        },
+        {
+          "label": "HYDROmorphone (voie orale)",
+          "value": 9
+        },
+        {
+          "label": "Meperidine (oral)",
+          "value": 10
+        },
+        {
+          "label": "Péthidine (voie parentérale)",
+          "value": 11
+        },
+        {
+          "label": "OXYCODONE (oral)",
+          "value": 12
+        },
+        {
+          "label": "OxyCODONE (parentéral)",
+          "value": 13
+        },
+        {
+          "label": "OxyMORphone (parentéral)",
+          "value": 14
+        },
+        {
+          "label": "Oxymorphone (voie orale)",
+          "value": 15
+        },
+        {
+          "label": "Tapentadol (oral)",
+          "value": 16
+        },
+        {
+          "label": "TraMADol (voie orale)",
+          "value": 17
+        },
+        {
+          "label": "Tramadol (parentéral)",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "dose",
+      "label": "Dose totale quotidienne du médicament (mg)",
+      "optional": false,
+      "unit": "drugmg",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "to",
+      "label": "Conversion pour :",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Morphine (orale)",
+          "value": 0
+        },
+        {
+          "label": "Morphine (voie parentérale)",
+          "value": 1
+        },
+        {
+          "label": "Buprénorphine (sublinguale)",
+          "value": 2
+        },
+        {
+          "label": "Buprénorphine (parentérale)",
+          "value": 3
+        },
+        {
+          "label": "Codéine (voie orale)",
+          "value": 4
+        },
+        {
+          "label": "Codéine (parentérale)",
+          "value": 5
+        },
+        {
+          "label": "FentaNYL (parentéral)",
+          "value": 6
+        },
+        {
+          "label": "HYDROcodone (voie orale)",
+          "value": 7
+        },
+        {
+          "label": "HYDROmorphone (parentéral)",
+          "value": 8
+        },
+        {
+          "label": "HYDROmorphone (voie orale)",
+          "value": 9
+        },
+        {
+          "label": "Péthidine (orale)",
+          "value": 10
+        },
+        {
+          "label": "Péthidine (voie parentérale)",
+          "value": 11
+        },
+        {
+          "label": "OXYCODONE (oral)",
+          "value": 12
+        },
+        {
+          "label": "OxyCODONE (parentéral)",
+          "value": 13
+        },
+        {
+          "label": "OxyMORphone (parentéral)",
+          "value": 14
+        },
+        {
+          "label": "Oxymorphone (voie orale)",
+          "value": 15
+        },
+        {
+          "label": "Tapentadol (oral)",
+          "value": 16
+        },
+        {
+          "label": "TraMADol (voie orale)",
+          "value": 17
+        },
+        {
+          "label": "Tramadol (parentéral)",
+          "value": 18
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McPherson ML. Demystifying Opioid Conversion Calculations, A Guide for Effective Dosing. Amer Soc of Health System; 2018.",
+      "href": "https://www.ncbi.nlm.nih.gov/nlmcatalog/101727260",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.morphine-milligram-equivalents-mme-calculator",
+    "calc.opioid-risk-tool-ort-narcotic-abuse",
+    "calc.cows-score-opiate-withdrawal"
+  ],
+  "source_logic_hash": "d5997186cd82d1c1bb95fd0cce9b77a7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3947,
+  "runnable": true,
+  "equation_logic_text": "//outputs\nvar calc_output = [];\n\n//user inputs\nvar fro = parseFloat(fro);\nvar to = parseFloat(to);\nvar dose = parseFloat(dose);\n\n//fro should correspond to a value in this dict\nvar assign = {\"Morphine (oral)\": 0, \"Morphine (parenteral)\": 1, \"Buprenorphine (SL)\": 2, \"Buprenorphine (parenteral)\": 3, \"Codeine (oral)\": 4, \"Codeine (parenteral)\": 5, \"Fentanyl (parenteral)\": 6, \"Hydrocodone (oral)\": 7, \"Hydromorphone (parenteral)\": 8, \"Hydromorphone (oral)\": 9, \"Meperidine (oral)\": 10, \"Meperidine (parenteral)\": 11, \"Oxycodone (oral)\": 12, \"Oxycodone (parenteral)\": 13, \"Oxymorphone (parenteral)\": 14, \"Oxymorphone (oral)\": 15, \"Tapentadol (oral)\": 16, \"Tramadol (oral)\": 17, \"Tramadol (parenteral)\": 18};\n\n//find the from and to drugs\nvar from_drug, to_drug;\nfor(var key in assign){\n\tvar value = assign[key]; //will be from 0-17\n\tif (fro == value){\n\t\tfrom_drug = key;\n\t}\n\tif(to == value){\n\t\tto_drug = key;\n\t}\n}\n\n//dict = {key1: \"value1\", key2: \"value2\"}, because Yi is mean and won't send JSON labels to me :(\nvar dict = {\"Morphine (oral)\": 25, \"Morphine (parenteral)\": 10, \"Buprenorphine (SL)\": 0.4, \"Buprenorphine (parenteral)\": 0.3, \"Codeine (oral)\": 200, \"Codeine (parenteral)\": 100, \"Fentanyl (parenteral)\": 0.15, \"Hydrocodone (oral)\": 25, \"Hydromorphone (parenteral)\": 2, \"Hydromorphone (oral)\": 5, \"Meperidine (oral)\": 300, \"Meperidine (parenteral)\": 100, \"Oxycodone (oral)\": 20, \"Oxycodone (parenteral)\": 10, \"Oxymorphone (parenteral)\": 1, \"Oxymorphone (oral)\": 10, \"Tapentadol (oral)\": 100, \"Tramadol (oral)\": 120, \"Tramadol (parenteral)\": 100};\n\nvar from_multi, to_multi;\nfor(var key in dict){\n\tif (key == from_drug){\n\t\tfrom_multi = dict[key];\n\t}\n\tif (key == to_drug){\n\t\tto_multi = dict[key];\n\t}\n}\n\n//calculation\nvar u = (dose / from_multi)*to_multi; \n\n// drugs that require three decimal points in the output\nvar three_decimal_drugs = [\"Buprenorphine (SL)\", \"Buprenorphine (parenteral)\", \"Fentanyl (parenteral)\"];\n\n//formatting output based on drug type\nvar formatted_u;\nif (three_decimal_drugs.includes(to_drug)) {\n    formatted_u = u.toFixed(3); // show 3 decimal points\n} else {\n    formatted_u = u.toFixed(0); // show 0 decimal points\n}\n\nvar msg = \"Approximate \" + to_drug + \" equivalence to: \" + dose + \"mg of \" + from_drug;\n\n//result user sees\ncalc_output.push({\n    name: 'mini',\n    value: formatted_u,\n    value_text: 'mg',\n    message: msg\n});\ncalc_output.push({\n    name: '3947_Opiate Conversion_result',\n    value: formatted_u,\n    value_text: 'mg',\n    message: msg\n});\n\n\n",
+  "before_use": "Ce calculateur est destiné à la double vérification de la conversion des opiacés et ne doit PAS être utilisé comme moyen principal pour la prescription.",
+  "instructions": "1. Select the opiate and route that you wish to convert *from* .\n2. Input the *total daily dose* in milligrams of the opiate you are converting *from* .\n3. Select the opiate you wish to convert *to* . The total daily dose will be displayed in the results bar.",
+  "contributor_ids": [],
+  "creator_names": [
+    "OTHER"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.morphine",
+    "s.buprenorphine",
+    "s.codeine",
+    "s.fentanyl",
+    "s.hydromorphone",
+    "s.oxycodone",
+    "s.tramadol",
+    "s.buprenorphine-naloxone",
+    "s.codeine-ibuprofene",
+    "s.codeine-ethylmorphine",
+    "s.codeine-gaiacol",
+    "s.codeine-erysimum",
+    "s.dexketoprofene-tramadol",
+    "s.naloxone-oxycodone",
+    "s.codeine-paracetamol",
+    "s.paracetamol-tramadol",
+    "s.cafeine-codeine-paracetamol",
+    "s.codeine-grindelia-sulfogaiacol",
+    "s.codeine-extrait-fluide-erysium"
+  ],
+  "engine_sha256": "25aa802109cd8067c62dd574ec749157348757c6625d1cf61ce9efe799ccdfde"
+}

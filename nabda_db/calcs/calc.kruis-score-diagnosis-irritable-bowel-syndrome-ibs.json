@@ -1,0 +1,262 @@
+{
+  "id": "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs",
+  "slug": "kruis-score-diagnosis-irritable-bowel-syndrome-ibs",
+  "language": "en",
+  "title": "Kruis score pour diagnostic de Irritable Bowel syndrome (IBS)",
+  "short_title": "Kruis score pour IBS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Syndrome de l'intestin irritable"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Anxious",
+    "Constipation",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "dx",
+    "ibs",
+    "bowel",
+    "diarrhea"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Le score de Kruis peut aider à objectiver et à valider la suspicion clinique d'un patient atteint du SCI.",
+    "when": "- Patients chez qui un IBS est fortement suspecté, comme test de confirmation éventuel.\n- Patients présentant des symptômes équivoques mais un bilan initial négatif, afin de déterminer si des explorations complémentaires doivent être poursuivies avant de diagnostiquer un IBS.",
+    "pearls": "- The Kruis Score helps to differentIBSfrom organic bowel disease.\n- It uses symptoms and lab testing to suggest which patients likely have IBS (high specificity).\n- It is intentionally not a highly “sensitive” test, since IBS is often a diagnosis of exclusion.\n\n**Points to keep in mind:**\n\nAs IBS is often a diagnosis of exclusion, often it is appropriate to begin with route lab and/or imaging testing in patients where clinicians have some possible suspicion of organic ideas."
+  },
+  "next_steps": {
+    "advice": "- If IBS is confirmed, a trial of IBS-related medications (antispasmodics, fiber) may be appropriate.\n- If IBS is not confirmed, further evaluation may be indicated, like CT or ultrasound imaging, HIDA scan, endoscopy, or further blood testing.",
+    "critical_actions": "",
+    "management": "Refer to[ACG guidelines](https://www.mdcalc.com/guidelines/acg/diagnosis-treatment-prevention-acute-diarrheal-infections-adults)for management of acute diarrheal infections in adults."
+  },
+  "evidence": "",
+  "more_info": "- Si le score est <44, négatif pour le SCI (syndrome de l'intestin irritable).\n- Si le score est >44, positif pour le SCI.\n- En présence de tout « signe d'alarme » (red flag), envisager une évaluation complémentaire à la recherche d'une autre pathologie.",
+  "short_description": "Diagnoses IBS.",
+  "medium_description": "Determines presence de IBS using clinically significant weighted critères.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "pfi",
+      "label": "Symptômes de douleur abdominale, flatulence, ou irrégularité intestinale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 34
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "duration",
+      "label": "Durée des symptômes > 2 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "abdpain",
+      "label": "Douleur described as burning, cutting, very strong, terrible, feeling de pressure, dull, boring, ou 'not so bad'",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 23
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dc",
+      "label": "Alternance de constipation et de diarrhée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "abnl",
+      "label": "Anomalies à l'examen physique ou antécédents pathognomoniques d'une autre maladie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -47
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "esr",
+      "label": "ESR > 10 mm/hr",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -13
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wbc",
+      "label": "WBC > 10,000/µL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -50
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Hémoglobine (femme < 12 g/dL ; homme < 14 g/dL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -98
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blood",
+      "label": "History de blood dans stool",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -98
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kruis W, Thiem C, Weinzierl M, et al. A diagnostic score for the irritable bowel syndrome: its value in the exclusion of organic disease. Gastroenterology 1984;87:1–7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/0006724251",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Doğan UB, Unal S. Kruis scoring system and Manning's criteria in diagnosis of irritable bowel syndrome: is it better to use combined? Acta Gastroenterol Belg. 1996 Oct-Dec;59(4):225-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9085621",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.manning-criteria-diagnosis-irritable-bowel-syndrome-ibs",
+    "calc.rome-ii-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.rome-iii-diagnostic-criteria-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "4451447decec3d2c5ec60e19a7424865",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2141,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

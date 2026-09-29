@@ -1,0 +1,199 @@
+{
+  "id": "calc.2helps2b-score",
+  "slug": "2helps2b-score",
+  "language": "en",
+  "title": "Score 2HELPS2B",
+  "short_title": "Score 2HELPS2B",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Trouble convulsif"
+  ],
+  "chief_complaints": [
+    "Incontinence fécale",
+    "Nausea",
+    "Dyspnée",
+    "Incontinence urinaire",
+    "Weakness",
+    "Mouvements involontaires"
+  ],
+  "abbreviations": [
+    "2HELPS2B Score",
+    "seizure risk",
+    "EEG",
+    "cEEG",
+    "continuous EEG",
+    "electroencephalogram",
+    "seizure probability"
+  ],
+  "dosing": false,
+  "formula": "The 2HELPS2B Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| B[I]RDs | No | 0 |\n| Yes | 2 | |\n| Presence of LPDs , LRDA , or BIPDs | No | 0 |\n| Yes | 1 | |\n| Prior seizure | No | 0 |\n| Yes | 1 | |\n| Sporadic epileptiform discharges | No | 0 |\n| Yes | 1 | |\n| Frequency >2.0 Hz for any periodic or rhythmic pattern | No | 0 |\n| Yes | 1 | |\n| Presence of “plus” features i.e., superimposed, rhythmic, sharp, or fast activity | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Le cEEG est un outil efficace pour détecter les crises non convulsives chez les patients gravement malades, car ces crises sont associées à des pronostics neurologiques plus défavorables et à une mortalité plus élevée.\n- Cependant, le cEEG est gourmand en ressources, nécessitant une charge de travail et des coûts importants, ce qui limite son utilisation généralisée.\n- Cet outil peut aider à déterminer si une surveillance cEEG prolongée est justifiée, ce qui permet potentiellement d’économiser les ressources chez les patients à faible risque.",
+    "when": "Utilisation chez les patients adultes hospitalisés atteints d’une maladie critique bénéficiant d’une surveillance par électroencéphalogramme continu (cEEG) et présentant un risque de crises non convulsives ou subcliniques.",
+    "pearls": "- Evaluates for EEG findings of cortical hyperexcitability/irritability, which are associated with seizure risk.\n- Accurate scoring requires an EEG interpreter familiar with the[American Clinical Neurophysiology Society](https://www.acns.org/research/critical-care-eeg-monitoring-research-consortium-ccemrc/education)critical care terminology.\n- This tool is not applicable for uses of cEEG unrelated to seizure detection (e.g., ischemia monitoring, post-cardiac arrest prognosis).\n- IV sedation may affect results and should be minimized as much as clinically feasible."
+  },
+  "next_steps": {
+    "advice": "- Cet outil ne remplace pas le jugement clinique ni d’autres outils diagnostiques et doit être utilisé uniquement dans le cadre d’une évaluation globale.\n- Les patients doivent faire l’objet d’une surveillance clinique pour toute modification susceptible d’augmenter le risque de crise épileptique.\n- Rechercher les causes sous-jacentes des crises épileptiques ou de l’encéphalopathie (p. ex., infection, lésions structurelles, troubles métaboliques).\n- Envisager de recalculer le score si de nouvelles données apparaissent pendant la cEEG.\n- Documenter la justification de la poursuite ou de l’arrêt de la cEEG.",
+    "critical_actions": "",
+    "management": "The following suggestions are based on the validation study by[Struck et al. (2020)](https://pubmed.ncbi.nlm.nih.gov/31930362/).\n\n- **Low risk (0 points):** Consider discontinuing cEEG monitoring if no seizures are detected and clinical suspicion is low. Some experts recommend ensuring cEEG has been negative for several hours before discontinuing.\n- **Medium risk (1 point):** Consider discontinuing cEEG monitoring after 12 hours if no seizures are detected and clinical suspicion is low.\n- **High risk (≥2 points):** Continue cEEG monitoring for at least 24 hours."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score 2HELPS2B | Risque de crise épileptique |\n| --- | --- |\n| 0 | 5 % |\n| 1 | 12 % |\n| 2 | 27 % |\n| 3 | 50 % |\n| 4 | 73 % |\n| 5 | 88 % |\n| ≥6 | >95 % |\n\nSurveillance cEEG complémentaire :\n\n| Score 2HELPS2B | Durée de surveillance recommandée |\n| --- | --- |\n| 0 | 0 heure |\n| 1 | 12 heures |\n| ≥2 | 24 heures |",
+  "short_description": "Risque de crise convulsive.",
+  "medium_description": "Estimates seizure risque dans acutely ill patients undergoing continuous EEG (cEEG).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "birds",
+      "label": "B[I]RDs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lpds",
+      "label": "Présence de LPDs, LRDA ou BIPDs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "prior",
+      "label": "Antécédent de crise convulsive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "spor",
+      "label": "Décharges épileptiformes sporadiques",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "freq",
+      "label": "Frequency >2.0 Hz pour any periodic ou rhythmic pattern",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "plus",
+      "label": "Présence de critères « plus »",
+      "tips": "c.-à-d. une activité surajoutée, rythmique, pointue ou rapide",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Struck AF, Ustun B, Ruiz AR, et al. Association of an electroencephalography-based risk score with seizure probability in hospitalized patients. JAMA Neurol. 2017;74(12):1419-1424.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29052706/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Struck AF, Tabaeizadeh M, Schmitt SE, et al. Assessment of the validity of the 2helps2b score for inpatient seizure risk prediction. JAMA Neurol. 2020;77(4):500-507.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31930362/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.trauma-score-injury-severity-score-triss",
+    "calc.score2-older-persons-score2-op",
+    "calc.systematic-coronary-risk-evaluation-score2"
+  ],
+  "source_logic_hash": "07ab08290d387cdc1e73387d48abe2d5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10474,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

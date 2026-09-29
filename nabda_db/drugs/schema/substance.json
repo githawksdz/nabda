@@ -1,0 +1,18 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/substance.json",
+  "title": "Substance (INN or association)",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "inns", "label", "kind", "availability_dz"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^s\\." },
+    "inns": { "type": "array", "items": { "type": "string" }, "minItems": 1 },
+    "label": { "type": "string" },
+    "kind": { "type": "string", "enum": ["mono", "association"] },
+    "atc_id": { "type": ["string", "null"] },
+    "availability_dz": { "type": "string", "enum": ["registered", "unavailable_dz"] },
+    "cat_ids": { "type": "array", "items": { "type": "string" } },
+    "sources": { "type": "object" }
+  }
+}

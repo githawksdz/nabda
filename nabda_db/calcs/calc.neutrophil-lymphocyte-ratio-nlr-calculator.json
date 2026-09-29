@@ -1,0 +1,97 @@
+{
+  "id": "calc.neutrophil-lymphocyte-ratio-nlr-calculator",
+  "slug": "neutrophil-lymphocyte-ratio-nlr-calculator",
+  "language": "en",
+  "title": "Calculateur du ratio neutrophiles-lymphocytes (NLR)",
+  "short_title": "Ratio Neutrophiles-Lymphocytes (NLR)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Any/All"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "Neutrophil-Lymphocyte Ratio (NLR) Calculator, NLR Calculator, NLR, neutrophil, lymphocyte, neutrophil lymphocyte, neutrophil lymphocyte ratio, NLR ratio"
+  ],
+  "dosing": false,
+  "formula": "Rapport neutrophiles-lymphocytes (NLR) = (Numération absolue des neutrophiles, cells/μL) / (Numération absolue des lymphocytes, cells/μL)\n\nRemarque : les neutrophiles et les lymphocytes peuvent également être saisis en pourcentages.",
+  "how_to_use": {
+    "why": "Le NLR semble être un marqueur raisonnablement bon du « stress physiologique » dans l’organisme et, dans de nombreuses études, il est plus performant que des tests plus couramment utilisés comme la numération leucocytaire standard (WBC).",
+    "when": "Le NLR peut aider à détecter un stress physiologique occulte chez des patients présentant des symptômes similaires. Un exemple qu’utilise [PulmCrit](https://emcrit.org/pulmcrit/nlr/) est la différenciation entre un simple syndrome viral et une bactériémie ou un sepsis (un syndrome viral pourrait créer des signes très légers de détresse physiologique, tandis qu’un sepsis créerait une détresse physiologique sévère).",
+    "pearls": "The NLR appears to increase with any physiologic stress; it would not help differentiate hemorrhagic shock from septic shock, for example.\n\nWhile there is not formally agreed upon cutoffs for NLR, PulmCrit provides some basic ranges to help provide some guidance:\n\n- A normal NLR is roughly 1-3.\n- An NLR of 6-9 suggests mild stress (e.g. a patient with uncomplicated appendicitis).\n- Critically ill patients will often have an NLR of 9 or higher (occasionally reaching values close to 100).\n\nThe NLR does appear to have good discriminant function evaluating patients for possible appendicitis, as well as prognostication for several conditions including pulmonary embolism.\n\nThe NLR may be skewed for several reasons, including steroid use, an active hematologic disorder, and possibly HIV (with this predominantly concerning chronic lymphopenia)."
+  },
+  "next_steps": {
+    "advice": "Le NLR doit toujours être interprété dans le contexte clinique du patient et ne doit pas être utilisé isolément pour diagnostiquer ou exclure une maladie ; toutefois, il peut s’avérer un test plus utile que ceux utilisés en routine en médecine, comme la numération des globules blancs (WBC).",
+    "critical_actions": "",
+    "management": "Le NLR peut être suivi dans le temps, ce qui s’est révélé utile pour le pronostic de plusieurs maladies, notamment l’hémorragie intracrânienne et le sepsis."
+  },
+  "evidence": "",
+  "more_info": "| Rapport neutrophiles-lymphocytes | Niveau de stress physiologique |\n| --- | --- |\n| 1-3 | Normal |\n| 4-5 | - |\n| 6-8 | Léger |\n| 9-18 | Modéré |\n| >18 | Sévère |\n\n![](https://cdn-web-img.mdcalc.com/content/nlr.png)D'après [PulmCrit: Neutrophil-Lymphocyte Ratio (2019)](https://emcrit.org/pulmcrit/nlr/).",
+  "short_description": "Calcul du ratio neutrophiles/lymphocytes.",
+  "medium_description": "Calcule le rapport neutrophiles-lymphocytes.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "neut",
+      "label": "[Numération absolue ou en % des polynucléaires neutrophiles](nabda:calc.absolute-neutrophil-count-anc)",
+      "optional": false,
+      "unit": "NLR",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "lymph",
+      "label": "[Numération absolue ou en % des lymphocytes](nabda:calc.absolute-lymphocyte-count-alc)",
+      "optional": false,
+      "unit": "NLR",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Zahorec R. Ratio of Neutrophil to Lymphocyte Counts--Rapid and Simple Parameter of Systemic Inflammation and Stress in Critically Ill.Bratisl Lek Listy. 2001;102(1):5-14. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11723675/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yang AP, Liu JP, Tao WQ, Li HM. The diagnostic and predictive role of NLR, d-NLR and PLR in COVID-19 patients. Int Immunopharmacol. 2020;84:106504.",
+      "href": " https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7152924/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.basic-statistics-calc",
+    "calc.iv-drip-rate-calculator",
+    "calc.absolute-neutrophil-count-anc"
+  ],
+  "source_logic_hash": "234a5af934410bf659a791e078eb30a3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10305,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

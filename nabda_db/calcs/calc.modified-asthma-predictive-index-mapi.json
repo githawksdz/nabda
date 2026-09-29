@@ -1,0 +1,237 @@
+{
+  "id": "calc.modified-asthma-predictive-index-mapi",
+  "slug": "modified-asthma-predictive-index-mapi",
+  "language": "en",
+  "title": "Modifié asthme Predictive index (mAPI)",
+  "short_title": "Modifié asthme Predictive index",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Mapi",
+    "api",
+    "asthma",
+    "pediatric asthma",
+    "childhood asthma",
+    "school"
+  ],
+  "dosing": false,
+  "formula": "**mAPI positif défini par :**\n\n- ≥4 épisodes de sifflements respiratoires par an, ET\n- ≥1 critère majeur OU ≥2 critères mineurs",
+  "how_to_use": {
+    "why": "A standardized score for determining which children are at higher risk for development of asthma may improve care or disease detection, possibly better than the [Asthma Predictive Index (API)](nabda:calc.asthma-predictive-index-api) .",
+    "when": "Enfants ≤3 ans présentant un wheezing connu.",
+    "pearls": "- The Modified Asthma Predictive Index (mAPI) provides a method for predicting likelihood of a later asthma diagnosis.\n- It is only applicable in young children with 4 or more episodes of wheezing per year.\n- The mAPI's predictive ability depends heavily on prevalence of asthma in the general population."
+  },
+  "next_steps": {
+    "advice": "Malheureusement, bien que le mAPI ait été utilisé avec succès pour identifier les enfants à haut risque d’asthme dans un essai randomisé, aucun bénéfice à long terme des corticostéroïdes inhalés n’a été constaté sur le développement de l’asthme ou la fonction pulmonaire.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Sensibilité et spécificité des prédictions positives d'asthme par année de vie\n\n| Année | Sensibilité (IC 95 %) | Spécificité (IC 95 %) |\n| --- | --- | --- |\n| Diagnostic d'asthme à 6 ans | | |\n| 1 | 11 % (4,2–19) | 98 % (96–100) |\n| 2 | 12 % (4,2–19) | 99 % (98–100) |\n| 3 | 17 % (8,4–25) | 99 % (98–100) |\n| Diagnostic d'asthme à 8 ans | | |\n| 1 | 8,2 % (2,2–14) | 98 % (97–100) |\n| 2 | 11 % (3,9–18) | 99 % (98–100) |\n| 3 | 19 % (8,8–25) | 100 % (99–100) |\n| Diagnostic d'asthme à 11 ans | | |\n| 1 | 11 % (3,6–18) | 98 % (95–100) |\n| 2 | 11 % (3,6–19) | 98 % (96–100) |\n| 3 | 19 % (9,3–28) | 99 % (97–100) |",
+  "short_description": "Prédit un diagnostic futur d’asthme.",
+  "medium_description": "Predicts future asthme dans pédiatrique patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "wheezing",
+      "label": "≥4 épisodes de sifflements respiratoires par an",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "asthma",
+      "label": "Parent avec asthme",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eczema",
+      "label": "Le patient présente une dermatite atopique.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "airallerg",
+      "label": "Patient avec aeroallergen sensitivity (ex: hay fièvre)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cold",
+      "label": "Wheezing unrelated pour colds",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eos",
+      "label": "Éosinophiles ≥4 % (sur NFS)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "foodaller",
+      "label": "Patient avec allergy pour milk, egg, ou peanuts",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Guilbert TW, et al. Long-term inhaled corticosteroids in preschool children at high risk for asthma. N Engl J Med. 2006 May 11;354(19):1985-97",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16687711/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chang TS, Lemanske RF, Guilbert TW, et al. Evaluation of the Modified Asthma Predictive Index in High-Risk Preschool Children. The journal of allergy and clinical immunology in practice. 2013; 1(2):10.1016/j.jaip.2012.10.008. doi:10.1016/j.jaip.2012.10.008.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3811153/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.asthma-predictive-index-api",
+    "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score",
+    "calc.pediatric-asthma-severity-score-pass-asthma-exacerbation-severity"
+  ],
+  "source_logic_hash": "76df88f2ea1957a7d68af0b0d8bc273f",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.asthma-predictive-index-api",
+      "text": "Asthma Predictive Index (API)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3382,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

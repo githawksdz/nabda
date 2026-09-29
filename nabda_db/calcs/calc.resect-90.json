@@ -1,0 +1,253 @@
+{
+  "id": "calc.resect-90",
+  "slug": "resect-90",
+  "language": "fr",
+  "title": "RESECT-90",
+  "short_title": "RESECT-90",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cancer du poumon"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Fatigue",
+    "Swelling"
+  ],
+  "abbreviations": [
+    "RESECT-90",
+    "resect",
+    "resect 90",
+    "lung resection",
+    "resection",
+    "lung resection mortality",
+    "lung resection risk"
+  ],
+  "dosing": false,
+  "formula": "Probabilité de mortalité à 90 jours, % = [1/(1 + e^-x^)]*100,\n\noù x = -6.036 + 0.041*âge + 0.493*sexe masculin + 0.183*( [Statut de performance ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status) ) – 0.029*(% DLCO prédit) – 0.056* [IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) + 0.005*(créatinine, μmol/L) + 0.242*anémie + 0.608*arythmie + 0.379*(résection du côté droit) + 0.179*(nombre de segments bronchopulmonaires réséqués) + 0.634*thoracotomie + 0.769*caractère malin",
+  "how_to_use": {
+    "why": "",
+    "when": "- Utilisez cet outil pour estimer la mortalité à 90 jours des patients ayant subi une résection pulmonaire.\n- Les patients ayant subi une résection sous-lobaire (résection en coin ou segmentectomie), une lobectomie, une bilobectomie ou une pneumonectomie étaient inclus dans l'étude de dérivation.\n- Les patients ayant subi une résection antérieure ou une thérapie néoadjuvante n'étaient pas exclus de l'étude de développement.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Vous utilisez RESECT-90 et souhaitez contribuer avec votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Lung resection mortalité.",
+  "medium_description": "Estimates 90-day mortalité dans lung resection patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_impact",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ecog",
+      "label": "[Statut de performance ECOG](nabda:calc.eastern-cooperative-oncology-group-ecog-performance-status)",
+      "optional": false,
+      "unit": "ecog",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "dlco",
+      "label": "% DLCO prédit",
+      "optional": false,
+      "unit": "dlco",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anemia",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arr",
+      "label": "Arrhythmia",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "right",
+      "label": "Résection du côté droit",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "bronch",
+      "label": "Nombre de segments bronchopulmonaires réséqués",
+      "optional": false,
+      "unit": "bronchopulmonary_segments",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "thor",
+      "label": "Chirurgie par thoracotomie",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mal",
+      "label": "Malignant",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Taylor M, Martin GP, Abah U, et al. Development and internal validation of a clinical prediction model for 90-day mortality after lung resection: the RESECT-90 score. Interact Cardiovasc Thorac Surg. 2021;33(6):921-927.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34324664/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Taylor M, Grant SW, Martin GP. Risk stratification in high-risk patients undergoing lung resection. Shanghai Chest. 2022;6:21-21.",
+      "href": "https://shc.amegroups.org/article/view/7566/html",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+    "calc.lung-injury-prediction-score-lips",
+    "calc.pack-years-calculator",
+    "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "350a3912a4699b566c56afe53917ed26",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.eastern-cooperative-oncology-group-ecog-performance-status",
+      "text": "ECOG Performance Status"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10502,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

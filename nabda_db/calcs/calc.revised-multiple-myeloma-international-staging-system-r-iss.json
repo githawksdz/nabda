@@ -1,0 +1,169 @@
+{
+  "id": "calc.revised-multiple-myeloma-international-staging-system-r-iss",
+  "slug": "revised-multiple-myeloma-international-staging-system-r-iss",
+  "language": "en",
+  "title": "Révisé multiple Myeloma International Staging System (R-ISS)",
+  "short_title": "Révisé Myeloma ISS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne",
+    "Myélome multiple"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "myeloma",
+    "microglobulin",
+    "albumin",
+    "multiple myeloma",
+    "mm",
+    "riss",
+    "revised myeloma"
+  ],
+  "dosing": false,
+  "formula": "D'abord, attribuer le stade ISS :\n\n| | Albumine sérique, g/dL | | |\n| --- | --- | --- | --- |\n| ≥3.5 | <3.5 | | |\n| β2 microglobuline sérique, mg/L | <3.5 | ISS I | ISS II |\n| 3.5-5.4 | ISS II | ISS II | |\n| ≥5.5 | ISS III | ISS III | |\n\nPuis, classer selon le R-ISS selon l'iFISH et la LDH :\n\n| | Anomalies cytogénétiques à haut risque par iFISH* | | | |\n| --- | --- | --- | --- | --- |\n| Non | Oui | | | |\n| ISS I | R-ISS I | R-ISS II | Normale | LDH |\n| R-ISS II | R-ISS II | Élevée | | |\n| ISS II | R-ISS II | R-ISS II | Normale | |\n| R-ISS II | R-ISS II | Élevée | | |\n| ISS III | R-ISS II | R-ISS III | Normale | |\n| R-ISS III | R-ISS III | Élevée | | |\n\n*Haut risque = présence de del(17p) et/ou translocation t(4;14) et/ou translocation t(14;16).",
+  "how_to_use": {
+    "why": "- Permet une meilleure discrimination pronostique du MM en utilisant des variables simples et facilement disponibles.\n- Outil fiable et validé qui pourrait jouer un rôle dans la stratification du risque initial dans de futurs essais cliniques, et pourrait également aider les patients à mieux comprendre leur pronostic.",
+    "when": "Patients atteints de MM nouvellement diagnostiqué. Son utilité n'a PAS été validée dans le myélome en rechute, le myélome indolent (smoldering) ou le MGUS.",
+    "pearls": "- Le Revised International Staging System (R-ISS) pour le myélome multiple a été développé pour mieux pronostiquer l'évolution à long terme des patients atteints de myélome en utilisant des variables pronostiques aisément obtenues et couramment utilisées.\n- Il inclut les paramètres de l'International Staging System (ISS), ainsi que les anomalies cytogénétiques (CA) et la lactate déshydrogénase (LDH) sérique.\n- Le R-ISS définit 3 sous-groupes avec des survies globales significativement différentes :\n\n - Stade I : 82 %\n - Stade II : 62 %\n - Stade III : 40 %\n- Il stratifie mieux le risque des patients atteints de myélome multiple que l'ISS original.\n- 40 % des patients du jeu de données n'étaient pas éligibles à une greffe, ce qui reflète une population plus proche de la réalité que les études antérieures."
+  },
+  "next_steps": {
+    "advice": "De nombreux patients atteints de MM sont traités dans le cadre d’essais cliniques. Les médecins peuvent envisager d’orienter les patients vers des centres de traitement universitaires s’ils sont éligibles et disposés à recevoir une transplantation, non seulement pour discuter des options de traitement standard, mais aussi pour envisager des options d’essais cliniques.",
+    "critical_actions": "",
+    "management": "- Les systèmes de stadification actuels fournissent des informations pronostiques et sont utiles pour la stratification et les évaluations/comparaisons de données.\n- Le R-ISS, bien que constituant un outil pronostique plus robuste et puissant que l'ISS, n'est PAS directement utilisé à l'heure actuelle pour modifier les recommandations thérapeutiques en dehors d'un essai clinique."
+  },
+  "evidence": "- L'ISS révisé repose sur l'ISS original du MM et a été affiné pour inclure des facteurs pronostiques validés et fiables du MM, notamment le score ISS, les anomalies cytogénétiques et la LDH.\n- Il identifie 3 groupes avec des pronostics clairement différents et a reclas­sé ~25 % des patients qui auraient été considérés comme à bon pronostic (mal classés comme « bon pronostic ») en n'utilisant qu'un seul des facteurs validés, vers une catégorie de risque plus élevée.\n- Contrairement à plusieurs autres études, le jeu de données inclut de nombreux patients (40 %) non éligibles à une greffe, reflétant ainsi une population « réelle ».",
+  "more_info": "**Interprétation du R-ISS :**\n\n| Stade R-ISS | Survie sans progression médiane |\n| --- | --- |\n| I | 66 mois |\n| II | 42 mois |\n| III | 29 mois |",
+  "short_description": "Pronostic du myélome.",
+  "medium_description": "Prognostication tool pour myeloma patients basé sur genetics et other routinely used lab values dans conjunction avec original ISS Staging System.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "micro",
+      "label": "β2-microglobuline sérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3.5 mg/L",
+          "value": 0
+        },
+        {
+          "label": "3.5-5.4 mg/L",
+          "value": 1
+        },
+        {
+          "label": ">5.4 mg/L",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alb",
+      "label": "Albumine sérique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3.5 g/dL",
+          "value": 0
+        },
+        {
+          "label": "≥3.5 g/dL",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ca",
+      "label": "AC par iFISH",
+      "tips": "Haut risque défini par : présence de del(17p) et/ou translocation t(4;14) et/ou translocation t(14;16)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Risque standard",
+          "value": 0
+        },
+        {
+          "label": "élevé risque",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ldh",
+      "label": "LDH",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normale (< limite supérieure de la normale)",
+          "value": 0
+        },
+        {
+          "label": "élevé (> upper limit de normal)",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Palumbo A, et. al. Revised International Staging System for Multiple Myeloma: a Report From International Myeloma Working Group. JCO 2015; 33: 2863-2869.",
+      "href": "https://jco.ascopubs.org/content/33/26/2863",
+      "kind": "pubmed"
+    },
+    {
+      "text": "International Myeloma Foundation. International Staging System. April 2002.",
+      "href": "https://www.myeloma.org/publications",
+      "kind": "other"
+    },
+    {
+      "text": "Greipp PR, et. al. International Staging System for Multiple Myeloma. JCO 2005; 23:3412-3420.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15809451",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.multiple-myeloma-international-staging-system-iss",
+    "calc.asymptomatic-myeloma-prognosis",
+    "calc.impede-vte"
+  ],
+  "source_logic_hash": "5ffa3e42486b1f7d37a8d92aabdb1590",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3842,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactate"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

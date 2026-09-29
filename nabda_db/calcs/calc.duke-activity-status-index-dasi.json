@@ -1,0 +1,341 @@
+{
+  "id": "calc.duke-activity-status-index-dasi",
+  "slug": "duke-activity-status-index-dasi",
+  "language": "en",
+  "title": "Index d'activité de Duke (DASI)",
+  "short_title": "Index d'activité de Duke (DASI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "cardiologie",
+    "soins-intensifs",
+    "general",
+    "geriatrie",
+    "hematologie",
+    "medecine-interne",
+    "soins-palliatifs",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Appendicite",
+    "Cholécystite",
+    "Hernie",
+    "Hémorragie gastro-intestinale",
+    "Traumatisme"
+  ],
+  "chief_complaints": [
+    "Douleur"
+  ],
+  "abbreviations": [
+    "Duke",
+    "activity",
+    "prognosis",
+    "functionality",
+    "capacity",
+    "independence",
+    "DASI"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points (self-reported by patient):\n\n| Is the patient able to: | Yes | No |\n| --- | --- | --- |\n| Take care of self (e.g. eating, dressing, bathing, using the toilet) | +2.75 | 0 |\n| Walk indoors | +1.75 | 0 |\n| Walk 1–2 blocks on level ground | +2.75 | 0 |\n| Climb a flight of stairs or walk up a hill | +5.5 | 0 |\n| Run a short distance | +8.0 | 0 |\n| Do light work around the house (e.g. dusting, washing dishes) | +2.7 | 0 |\n| Do moderate work around the house (e.g. vacuuming, sweeping floors, carrying in groceries) | +3.5 | 0 |\n| Do heavy work around the house (e.g. scrubbing floors, lifting or moving heavy furniture) | +8.0 | 0 |\n| Do yardwork (e.g. raking leaves, weeding, pushing a power mower) | +4.5 | 0 |\n| Have sexual relations | +5.25 | 0 |\n| Participate in moderate recreational activities (e.g. golf, bowling, dancing, doubles tennis, throwing a baseball or football) | +6.0 | 0 |\n| Participate in strenuous sports (e.g. swimming, singles tennis, football, basketball, skiing) | +7.5 | 0 |",
+  "how_to_use": {
+    "why": "Focuses on common activities of daily living, providing a functional score that directly relates to everyday capabilities.",
+    "when": "- Utile pour estimer la capacité fonctionnelle d’un patient lors des évaluations préopératoires en vue d’une chirurgie.\n- Évalue la capacité fonctionnelle avant et pendant les programmes d’exercice, tels que la réadaptation cardiaque, afin d’adapter et de suivre les progrès.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Les scores sont corrélés au VO~2~max et aux équivalents métaboliques (METs), qui sont généralement mesurés par épreuve d'effort cardio-respiratoire (CPET).\n- Des scores plus élevés indiquent une meilleure capacité fonctionnelle.\n- Dans le cadre des évaluations préopératoires :\n\n - Un score ≥34 suggère un risque périopératoire plus faible.\n - Un score <34 est associé à un risque périopératoire accru.\n - La capacité fonctionnelle est un élément important de l'évaluation préopératoire du risque cardiaque, mais d'autres facteurs propres au patient, tels que les comorbidités, le type de chirurgie et les symptômes, doivent également être évalués.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interpretation:**\n\nVO~2~peak (mL/kg) = 0.43 × DASI + 9.6\n\nMETs (metabolic equivalents) = VO~2~peak / 3.5\n\nVO~2~peak is maximal oxygen consumption (gold standard measurement is by exercise stress testing).",
+  "short_description": "Capacité fonctionnelle.",
+  "medium_description": "Estime la capacité fonctionnelle.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "care",
+      "label": "Take care de self",
+      "tips": "p. ex. manger, s'habiller, se laver, aller aux toilettes",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.75
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "indoor",
+      "label": "Marcher à l'intérieur",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.75
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "level",
+      "label": "Marcher 1–2 pâtés de maisons sur terrain plat",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.75
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "climb",
+      "label": "Monter une volée d'escaliers ou marcher en côte",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "run",
+      "label": "Courir sur une courte distance",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lightwork",
+      "label": "Faire des travaux légers à la maison",
+      "tips": "p. ex. : faire les poussières, laver la vaisselle",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "modwork",
+      "label": "Faire des travaux ménagers modérés",
+      "tips": "p. ex. : passer l’aspirateur, balayer les sols, porter les courses",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heavywork",
+      "label": "Effectuer de gros travaux à la maison",
+      "tips": "p. ex. récurer les sols, soulever ou déplacer des meubles lourds",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "yard",
+      "label": "Faire du jardinage",
+      "tips": "p. ex. ratisser les feuilles, désherber, pousser une tondeuse à moteur",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Avoir des relations sexuelles",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5.25
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "modac",
+      "label": "Participer à des activités récréatives modérées",
+      "tips": "e.g. golf, bowling, dancing, doubles tennis, throwing a baseball or football",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "strenac",
+      "label": "Pratiquer des sports intensifs",
+      "tips": "p. ex. natation, tennis en simple, football, basket-ball, ski",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7.5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Eagle KA, Berger PB, Calkins H, et al. ACC/AHA guideline update for perioperative cardiovascular evaluation for noncardiac surgery--executive summary: a report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines (Committee to Update the 1996 Guidelines on Perioperative Cardiovascular Evaluation for Noncardiac Surgery). J Am Coll Cardiol. 2002;39(3):542-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11823097",
+      "kind": "international"
+    },
+    {
+      "text": "Hlatky MA, Boineau RE, Higginbotham MB, Lee KL, Mark DB, Califf RM, et al. A brief self-administered questionnaire to determine functional capacity (the Duke Activity Status Index) Am J Cardiol. 1989;64(10):651–654.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2782256",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Coutinho-Myrrha MA, Dias RC, Fernandes AA, et al. Duke Activity Status Index for Cardiovascular Diseases: Validation of the Portuguese Translation. Arquivos Brasileiros de Cardiologia 2014;102(4):383-390. doi:10.5935/abc.20140031.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4028943/#!po=78.1250",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wu JR, Lennie TA, Frazier SK, Moser DK. Health-Related Quality of Life, Functional Status, and Cardiac Event-Free Survival in Patients With Heart Failure. J Cardiovasc Nurs. 2016;31(3):236-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25774841",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Carter R, Holiday DB, Grothues C, Nwasuruba C, Stocks J, Tiep B. Criterion validity of the Duke Activity Status Index for assessing functional capacity in patients with chronic obstructive pulmonary disease. J Cardiopulm Rehabil. 2002;22(4):298-308.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12202852",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.charlson-comorbidity-index-cci",
+    "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+    "calc.possum-operative-morbidity-mortality-risk"
+  ],
+  "source_logic_hash": "12f7f3f51e1758878efd4963c2869363",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3910,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar care = parseFloat(care);\nvar indoor = parseFloat(indoor);\nvar level = parseFloat(level);\nvar climb = parseFloat(climb);\nvar run = parseFloat(run);\nvar lightwork = parseFloat(lightwork);\nvar modwork = parseFloat(modwork);\nvar heavywork = parseFloat(heavywork);\nvar yard = parseFloat(yard);\nvar sex = parseFloat(sex);\nvar modac = parseFloat(modac);\nvar strenac = parseFloat(strenac);\n\nvar u = care + indoor + level + climb + run + lightwork + modwork + heavywork + yard + sex + modac + strenac;\nvar msg = 'The higher the score (maximum 58.2), the higher the functional status.';\nvar mini_msg = 'Maximum score is 58.2';\nvar mets = (0.43 * u + 9.6) / 3.5\n\ncalc_output.push({ \n\tname: 'mini', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: mini_msg \n});\ncalc_output.push({ \n\tname: '3910_DASI_result (score)', \n\tvalue: u, \n\tvalue_text: 'points', \n\tmessage: msg \n});\ncalc_output.push({ \n\tname: '3910_DASI_result (METs)',\n\tvalue: mets.toFixed(2), \n\tvalue_text: 'METs', \n\tmessage: '' \n});",
+  "before_use": null,
+  "instructions": "Answers are self-reported. Provides an estimate of functional capacity, and may not be as accurate as objective measurements, such as exercise stress testing.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Mark Hlatky"
+  ],
+  "measurement_ids": [],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7f1b21d94d8bd99197972d2ed7851fd1d8909c1f0282359815e7fe9ff96e4874"
+}

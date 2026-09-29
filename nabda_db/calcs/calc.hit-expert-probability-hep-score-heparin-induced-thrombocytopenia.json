@@ -1,0 +1,429 @@
+{
+  "id": "calc.hit-expert-probability-hep-score-heparin-induced-thrombocytopenia",
+  "slug": "hit-expert-probability-hep-score-heparin-induced-thrombocytopenia",
+  "language": "en",
+  "title": "HIT Expert probabilité (HEP) score pour Heparin-Induced Thrombocytopenia",
+  "short_title": "HIT Expert probabilité (HEP) score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Thrombocytopenia"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "hit",
+    "plt",
+    "platelets"
+  ],
+  "dosing": false,
+  "formula": "The HEP Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Thrombocytopenia Features | | |\n| Magnitude of fall in platelet count (peak platelet count to nadir since heparin) | <30% | -1 |\n| 30-50% | 1 | |\n| >50% | 3 | |\n| Timing of platelet count fall for patients in whom typical HIT onset is suspected | Fall begins <4 days after heparin exposure | -2 |\n| Fall begins 4 days after heparin exposure | 2 | |\n| Fall begins 5-10 days after heparin exposure | 3 | |\n| Fall begins 11-14 days after heparin exposure | 2 | |\n| Fall begins >14 days after heparin exposure | -1 | |\n| Timing of platelet count fall for patients with prior heparin exposure (last 100 days) in whom rapid HIT onset is suspected | Fall begins <48 hours after heparin re-exposure | 2 |\n| Fall begins >48 hours after heparin re-exposure | -1 | |\n| Nadir platelet count | ≤20 × 10⁹/L | -2 |\n| >20 × 10⁹/L | 2 | |\n| Thrombosis for patients in whom typical HIT onset is suspected | New VTE or ATE ≥4 days after heparin exposure | 3 |\n| Progression of pre-existing VTE or ATE while receiving heparin | 2 | |\n| None | 0 | |\n| Thrombosis for patients with prior heparin exposure (last 100 days) in whom rapid HIT onset is suspected | New VTE or ATE after heparin exposure | 3 |\n| Progression of pre-existing VTE or ATE while receiving heparin | 2 | |\n| None | 0 | |\n| Skin necrosis at subcutaneous heparin injection sites | No | 0 |\n| Yes | 3 | |\n| Acute systemic reaction after IV heparin bolus | No | 0 |\n| Yes | 2 | |\n| Presence of bleeding, petechiae or extensive bruising | No | 0 |\n| Yes | -1 | |\n| Other Causes of Thrombocytopenia | | |\n| Presence of chronic thrombocytopenic disorder | No | 0 |\n| Yes | -1 | |\n| Newly initiated non-heparin medication known to cause thrombocytopenia | No | 0 |\n| Yes | -1 | |\n| Severe infection | No | 0 |\n| Yes | -2 | |\n| Severe DIC (fibrinogen <100 mg/dL and D-dimer >5 µg/mL) | No | 0 |\n| Yes | -2 | |\n| Indwelling intra-arterial device (e.g. IABP, VAD, ECMO) | No | 0 |\n| Yes | -2 | |\n| Cardiopulmonary bypass within previous 96 hours | No | 0 |\n| Yes | -1 | |\n| No other apparent cause | No | 0 |\n| Yes | 3 | |",
+  "how_to_use": {
+    "why": "Le bilan de la TIH est chronophage et coûteux. Le score HEP pourrait être utilisé comme outil pour éviter d'initier un bilan de TIH et/ou une substitution empirique de l'héparine par un autre anticoagulant.",
+    "when": "- Le score de probabilité expert de thrombopénie induite par l'héparine (HEP) est un outil qui peut potentiellement aider à diagnostiquer les patients chez qui une HIT est suspectée, et à éviter des bilans HIT coûteux chez certains patients.\n- HIT d'apparition typique : la numération plaquettaire commence à diminuer dans les 5-10 jours suivant l'initiation de l'héparine.\n- HIT d'apparition rapide : la numération plaquettaire commence à diminuer dans les 24 heures suivant l'initiation de l'héparine, fortement associée à une exposition récente à l'héparine (au cours des 100 derniers jours).",
+    "pearls": "Le score HIT Expert Probability (HEP) est un outil développé à partir d’une large opinion d’experts pour aider les cliniciens à exclure une HIT.\n\n- Huit caractéristiques cliniques potentiellement importantes pour le diagnostic de HIT, identifiées par revue de la littérature, ont été intégrées dans un questionnaire et distribuées à des experts indépendants en HIT qui diagnostiquent et traitent régulièrement la HIT.\n- Les cliniciens ont ensuite pondéré chaque caractéristique sur une échelle de -3 à 3, les nombres plus positifs plaidant en faveur d’une HIT.\n- Les poids médians ont ensuite été intégrés dans un modèle de probabilité pré-test, le score HEP.\n- Le score a ensuite été appliqué prospectivement à cinquante patients consécutifs adressés à un seul laboratoire de référence pour un test de HIT.\n- La HIT a été diagnostiquée par consensus de trois adjudicateurs indépendants experts en HIT examinant les informations cliniques et les résultats de laboratoire, y compris l’ELISA polyspécifique des anticorps anti-HIT et le SRA interne.\n- L’étude a montré qu’un seuil de score HEP de 2 conduirait à une sensibilité de 100 % et une spécificité de 60 %, tandis qu’un seuil de 5 maximiserait la sensibilité/spécificité à 86 % et 88 %, respectivement, dans la cohorte de patients analysée. Cela était supérieur au [score 4Ts pour la HIT](nabda:calc.4ts-score-heparin-induced-thrombocytopenia).\n\n**Points à garder à l’esprit :**\n\n- L’étude de validation était très petite, avec 50 patients, très hétérogène, et entièrement réalisée dans un seul grand système de soins de santé universitaire.\n- Toutes les déterminations de HIT ont été faites sur la base d’une revue des dossiers.\n- Le score a été dérivé purement à partir de l’opinion d’experts, et le diagnostic confirmatoire de HIT était également fondé sur le consensus d’un panel d’experts.\n- Une étude rétrospective ultérieure de petite taille (47 patients) comparant la performance du [système de score 4T’s](nabda:calc.4ts-score-heparin-induced-thrombocytopenia) vs HEP chez des patients suspects de HIT, en utilisant une HPA positive comme référence diagnostique de la HIT, n’a pas trouvé de différence statistiquement significative dans la performance diagnostique des scores. Elle a également démontré une sensibilité de seulement 70 % pour le diagnostic de HIT au seuil de score HEP de 2 précédemment proposé.\n- Il n’existe pas d’études à grande échelle ou prospectives validant le score HEP."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Envisager d’utiliser le [système de score 4Ts](nabda:calc.4ts-score-heparin-induced-thrombocytopenia) en association avec le score HEP comme outil d’évaluation alternatif avant la recherche d’anticorps, chronophage, pour la HIT, ou le remplacement empirique de l’héparine par un autre anticoagulant.\n- Envisager une évaluation biologique complémentaire pour la HIT ou le passage à un anticoagulant non dérivé de l’héparine chez les patients qui se situent au-dessus du seuil de dépistage de la HIT d’après leur score HEP.\n- Des études de plus grande ampleur sur le score HEP sont probablement nécessaires avant une mise en œuvre indépendante plus large.",
+    "management": ""
+  },
+  "evidence": "In 50 suspected HIT patients, a literature review and expert-derived criteria of eight clinical features potentially important in the diagnosis of HIT were retrospectively applied in order to derive a HIT Expert Probability score for each patient. This score was then compared to a diagnosis of HIT by an expert panel of HIT experts. Using a cut-off of 2, the HEP score was 100% sensitive and 60% specific for the diagnosis of HIT. A cut-off of 5 yielded a sensitivity/specificity of 86%/88%, though its utility as a clinical decision tool is lessened with this cut-off. Both the HEP score and the [4Ts for HIT score](nabda:calc.4ts-score-heparin-induced-thrombocytopenia) had 100% sensitivity, but the HEP score had a higher specificity (60% vs 44%). A subsequent small validation study involving 47 patients with suspect HIT using a HEP score cut-off of 2 had a sensitivity of just 70% with a specificity of 51.4% and accuracy of 55.3%. A HEP score cut-off of -3 would be needed to yield a sensitivity of 100% as in the derivation study, but would also cause a fall in specificity to 2.7%.",
+  "more_info": "",
+  "short_description": "Probabilité de HIT.",
+  "medium_description": "Pre-test clinique scoring modèle pour HIT basé sur broad expert opinion.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "type",
+      "label": "Type de heparin-induced thrombocytopenia (HIT) onset suspected",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Typical",
+          "value": 0
+        },
+        {
+          "label": "Rapid",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mag",
+      "label": "Ampleur de la chute de la numération plaquettaire",
+      "tips": "Diminution du pic au nadir depuis l'héparine",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 30%",
+          "value": -1
+        },
+        {
+          "label": "30-50%",
+          "value": 1
+        },
+        {
+          "label": ">50%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "timingty",
+      "label": "Chronologie de la chute de la numération plaquettaire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "type==0",
+      "options": [
+        {
+          "label": "Fall begins <4 days after heparin exposure",
+          "value": -2
+        },
+        {
+          "label": "La chute débute 4 jours après l'exposition à l'héparine.",
+          "value": 2
+        },
+        {
+          "label": "La chute débute 5-10 jours après l'exposition à l'héparine",
+          "value": 3
+        },
+        {
+          "label": "La chute débute 11-14 jours après l'exposition à l'héparine",
+          "value": 2
+        },
+        {
+          "label": "La chute débute >14 jours après l’exposition à l’héparine",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "timingrap",
+      "label": "Chronologie de la chute de la numération plaquettaire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "type==1",
+      "options": [
+        {
+          "label": "La chute débute <48 heures après une réexposition à l'héparine",
+          "value": 2
+        },
+        {
+          "label": "La chute débute >48 heures après la réexposition à l'héparine",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nadir",
+      "label": "Numération plaquettaire au nadir",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤20 × 10⁹/L",
+          "value": -2
+        },
+        {
+          "label": ">20 × 10⁹/L",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "thromty",
+      "label": "Thrombosis",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "type==0",
+      "options": [
+        {
+          "label": "Nouvelle thromboembolie veineuse (VTE) ou thromboembolie artérielle (ATE) ≥4 jours après exposition à l'héparine",
+          "value": 3
+        },
+        {
+          "label": "Progression d'une VTE ou d'un ATE préexistant sous héparine",
+          "value": 2
+        },
+        {
+          "label": "Aucun",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "thromrap",
+      "label": "Thrombosis",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "type==1",
+      "options": [
+        {
+          "label": "Nouvelle thromboembolie veineuse (VTE) ou thromboembolie artérielle (ATE) après exposition à l'héparine",
+          "value": 3
+        },
+        {
+          "label": "Progression d'une VTE ou d'un ATE préexistant sous héparine",
+          "value": 2
+        },
+        {
+          "label": "Aucun",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "skin",
+      "label": "Nécrose cutanée aux sites d'injection sous-cutanée d'héparine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "acute",
+      "label": "Réaction systémique aiguë après bolus IV d'héparine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bleed",
+      "label": "Présence de saignement, pétéchies ou ecchymoses étendues",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "pres",
+      "label": "Présence d’un trouble thrombocytopénique chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neW",
+      "label": "Newly initiated non-heparin medication known pour cause thrombocytopenia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "severe",
+      "label": "Infection grave",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dic",
+      "label": "Coagulation intravasculaire disséminée sévère (DIC)",
+      "tips": "Fibrinogène <100 mg/dL et D-dimères >5 µg/mL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "indwell",
+      "label": "Dispositif intra-artériel à demeure",
+      "tips": "IABP,VAD,ECMO",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardio",
+      "label": "Circulation extracorporelle dans les 96 heures précédentes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "other",
+      "label": "Aucune autre cause apparente",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cuker A, Arepally G, Crowther MA, Rice L, Datko F, Hook K, Propert KJ, Kuter DJ, Ortel TL, Konkle BA, Cines DB. The HIT Expert Probability (HEP) Score: a novel pre-test probability model for heparin-induced thrombocytopenia based on broad expert opinion. J Thromb Haemost 2010; 8: 2642–50.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20854372",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee Joseph, Gomes MPV, Al Solaiman F, St John J, Ozaki A, Raju M, Dhariwal M, Kim ESH. External Validation Of The HIT Expert Probability (HEP) Score, a Novel Pre-Test Probability Model For Heparin-Induced Thrombocytopenia Based On Broad Expert Opinion. Blood (Impact Factor: 9.06). 12/2013; 122(21):1699.",
+      "href": "https://www.researchgate.net/publication/260794720_External_Validation_Of_The_HIT_Expert_Probability_(HEP)_Score_a_Novel_Pre-Test_Probability_Model_For_Heparin-Induced_Thrombocytopenia_Based_On_Broad_Expert_Opinion",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.4ts-score-heparin-induced-thrombocytopenia",
+    "calc.sokal-index-chronic-myelogenous-leukemia-cml",
+    "calc.isth-criteria-disseminated-intravascular-coagulation-dic"
+  ],
+  "source_logic_hash": "e87ca2090cbc9436cafafccdc8cf7948",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.4ts-score-heparin-induced-thrombocytopenia",
+      "text": "4Ts for HIT Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1789,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

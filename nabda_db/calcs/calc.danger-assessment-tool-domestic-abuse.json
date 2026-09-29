@@ -1,0 +1,181 @@
+{
+  "id": "calc.danger-assessment-tool-domestic-abuse",
+  "slug": "danger-assessment-tool-domestic-abuse",
+  "language": "en",
+  "title": "Danger évaluation Tool pour Domestic Abuse",
+  "short_title": "Danger évaluation Tool",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma",
+    "Soins préventifs / Dépistage"
+  ],
+  "abbreviations": [
+    "Risk of death",
+    "violent partner",
+    "violent relationship",
+    "abusive partner",
+    "abusive relationship",
+    "IPV",
+    "partner",
+    "relationship"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points. Ask the patient:\n\n| Questions | Points | |\n| --- | --- | --- |\n| Has the physical violence increased in frequency or severity over the past 6 months? | No | 0 |\n| Yes | 1 | |\n| Have they ever used a weapon or threatened you with a weapon? | No | 0 |\n| Yes | 1 | |\n| Do you believe they are capable of killing you? | No | 0 |\n| Yes | 1 | |\n| Have you ever been beaten by them while you were pregnant? | No | 0 |\n| Yes | 1 | |\n| Are they violently and constantly jealous of you? | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser chez les patientes se présentant au service des urgences après une agression par un partenaire intime ou un ancien partenaire.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les patients ne répondant pas aux critères de haut risque doivent néanmoins être pleinement informés du risque de récidive de violence et se voir remettre des ressources telles que de la documentation d’information et des numéros de ligne d’assistance.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Danger Assessment Score | Risk of potentially lethal assault by IP |\n| --- | --- |\n| <3 | Low |\n| ≥3 | High* |\n\n*83% sensitive for lethal or potentially lethal assaults (defined as actions by the abuser that had the potential to kill but did not, such as use of a knife or gun, choking (strangulation), attempted murder, and burning) ([Snider 2009](https://www.ncbi.nlm.nih.gov/pubmed/20053241)).",
+  "short_description": "Décès par violence entre partenaires intimes.",
+  "medium_description": "Predicts risque de death par intimate partner (IP) dans violent intimate relationship.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "increase",
+      "label": "Has physical violence increased dans frequency ou gravité over past 6 months?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weapon",
+      "label": "Have they ever used weapon ou threatened you avec weapon?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "capability",
+      "label": "Croyez-vous qu’ils soient capables de vous tuer ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pregnancy",
+      "label": "Avez-vous déjà été battue par eux pendant votre grossesse ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "jealousy",
+      "label": "Are they violently et constantly jealous de you?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Snider C, Webster D, O'Sullivan CS, Campbell J. Intimate partner violence: development of a brief risk assessment for the emergency department. Acad Emerg Med. 2009;16(11):1208-16.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20053241",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ongoing-violence-assessment-tool-ovat",
+    "calc.woman-abuse-screening-tool-wast",
+    "calc.humiliation-afraid-rape-kick-hark"
+  ],
+  "source_logic_hash": "f05b92286f86eff230dbccc1f9a0c43b",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10098,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

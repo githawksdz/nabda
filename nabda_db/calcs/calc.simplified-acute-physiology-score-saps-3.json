@@ -1,0 +1,862 @@
+{
+  "id": "calc.simplified-acute-physiology-score-saps-3",
+  "slug": "simplified-acute-physiology-score-saps-3",
+  "language": "en",
+  "title": "Score de physiologie aiguë simplifié (SAPS) 3",
+  "short_title": "SAPS 3",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "VIH/SIDA"
+  ],
+  "chief_complaints": [
+    "Fièvre",
+    "Lésion/Traumatisme"
+  ],
+  "abbreviations": [
+    "Simplified Acute Physiology Score (SAPS) III",
+    "SAPS",
+    "SAPS III",
+    "Simplified Acute Physiology Score III",
+    "SAPS 3",
+    "mortality risk",
+    "saps ii",
+    "icu mortality",
+    "icu",
+    "acute physiology"
+  ],
+  "dosing": false,
+  "formula": "The SAPS 3 Score is calculated by adding the selected points for each variable:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| ICU admission | Every patient gets an offset of 16 points for being admitted (to avoid negative SAPS 3 scores) | | 16 |\n| Age, years | | <40 | 0 |\n| 40-59 | 5 | | |\n| 60-69 | 9 | | |\n| 70-74 | 13 | | |\n| 75-79 | 15 | | |\n| ≥80 | 18 | | |\n| Comorbidities | Chemotherapy, immunosuppression, radiotherapy, steroids | Cancer therapy | 3 |\n| | Chronic HF (NYHA IV) | 6 | |\n| | Hematological cancer | 6 | |\n| | Cirrhosis | 8 | |\n| | AIDS | 8 | |\n| | Metastatic cancer | 11 | |\n| Length of stay before ICU admission, days | | <14 | 0 |\n| 14-27 | 6 | | |\n| ≥28 | 7 | | |\n| Intrahospital location before ICU admission | | Emergency room | 5 |\n| Other ICU | 7 | | |\n| Other ward | 8 | | |\n| Use of major therapeutic options before ICU admission | | Other/none | 0 |\n| Vasoactive drugs | 3 | | |\n| Planned or unplanned ICU admission | | Planned | 0 |\n| Unplanned | 3 | | |\n| Reason(s) for ICU admission | If both reasons are present, only the worse value (-4) is scored | Cardiovascular: rhythm disturbances | -5 |\n| Neurologic: seizures | -4 | | |\n| | Cardiovascular: hypovolemic hemorrhagic shock, hypovolemic non-hemorrhagic shock | 3 | |\n| | Digestive: acute abdomen, other | 3 | |\n| | Neurologic: coma, stupor, obtunded patient, vigilance disturbances, confusion, agitation, delirium | 4 | |\n| | Cardiovascular: septic shock | 5 | |\n| | Cardiovascular: anaphylactic shock, mixed and undefined shock | 5 | |\n| | Hepatic: liver failure | 6 | |\n| | Neurologic: focal neurologic deficit | 7 | |\n| | Digestive: severe pancreatitis | 9 | |\n| | Neurologic: intracranial mass effect | 10 | |\n| | Other | 0 | |\n| Anatomical site of surgery | | Transplant surgery | -11 |\n| Trauma surgery | -8 | | |\n| Cardiac surgery: CABG without valvular repair | -6 | | |\n| Neurosurgery: cerebrovascular accident | 5 | | |\n| Other surgery | 0 | | |\n| Surgical status at ICU admission | | Scheduled surgery | 0 |\n| No surgery | 5 | | |\n| Emergency surgery | 6 | | |\n| Acute infection at ICU admission | | Other/none | 0 |\n| Nosocomial | 4 | | |\n| Respiratory | 5 | | |\n| Glasgow Coma Scale | Lowest within 1 hr of ICU admission | ≥13 | 0 |\n| 7-12 | 2 | | |\n| 6 | 7 | | |\n| 5 | 10 | | |\n| 3-4 | 15 | | |\n| Total bilirubin, mg/dL (µmol/L) | Highest within 1 hr of ICU admission | <2 mg/dL (<34.2 µmol/L) | 0 |\n| 2-5.9 mg/dL (34.2-102.5 µmol/L) | 4 | | |\n| ≥6 mg/dL (≥102.6 µmol/L) | 5 | | |\n| Body temperature, °C (°F) | Highest within 1 hr of ICU admission | ≥35 °C (≥95 °F) | 0 |\n| <35 °C (<95 °F) | 7 | | |\n| Creatinine, mg/dL (µmol/L) | Highest within 1 hr of ICU admission | <1.2 mg/dL (<106.1 µmol/L) | 0 |\n| 1.2-1.9 mg/dL (106.1-176.7 µmol/L) | 2 | | |\n| 2-3.4 mg/dL (176.8-309.3 µmol/L) | 7 | | |\n| ≥3.5 mg/dL (≥309.4 µmol/L) | 8 | | |\n| Heart rate, beats/min | Highest within 1 hr of ICU admission | <120 | 0 |\n| 120-159 | 5 | | |\n| ≥160 | 7 | | |\n| Leukocytes, G/L | Highest within 1 hr of ICU admission | <15 | 0 |\n| ≥15 | 2 | | |\n| pH | Lowest within 1 hr of ICU admission | >7.25 | 0 |\n| ≤7.25 | 3 | | |\n| Platelets, G/L | Lowest within 1 hr of ICU admission | ≥100 | 0 |\n| 50-99 | 5 | | |\n| 20-49 | 8 | | |\n| <20 | 13 | | |\n| Systolic blood pressure, mm Hg | Lowest within 1 hr of ICU admission | ≥120 | 0 |\n| 70-119 | 3 | | |\n| 40-69 | 8 | | |\n| <40 | 11 | | |\n| Oxygenation | | PaO 2 ≥60 and no MV | 0 |\n| PaO 2 <60 and no MV | 5 | | |\n| PaO 2 /FiO 2 ≥100 and MV | 7 | | |\n| PaO 2 /FiO 2 <100 and MV | 11 | | |\n\nIn-hospital mortality, % = [e^x^/(1 + e^x^)]*100,\n\nwhere x = −32.6659 + ln(SAPS 3 score + 20.5958) × 7.3068",
+  "how_to_use": {
+    "why": "Les auteurs émettent l’hypothèse que les facteurs liés au patient et les circonstances entourant l’admission en réanimation — **combinés** aux perturbations physiologiques du patient à l’admission en réanimation — donnent une meilleure vision du pronostic d’un patient en réanimation.",
+    "when": "À l’admission en réanimation pour prédire la mortalité hospitalière.",
+    "pearls": "Physiologic variables are meant to be assessed within 1 hour of ICU admission."
+  },
+  "next_steps": {
+    "advice": "- Tous les patients bénéficient d'un décalage de 16 points afin d'éviter des scores négatifs.\n- À mesure que le score total augmente, la probabilité de mortalité intra-hospitalière augmente également.\n- Le SAPS 3 peut être utilisé pour guider les discussions concernant le pronostic et les objectifs de soins des patients admis en unité de soins intensifs.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Mortalité en réanimation (ICU).",
+  "medium_description": "Estimates probabilité de mortalité pour ICU patients sur admission.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, années",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40",
+          "value": 0
+        },
+        {
+          "label": "40-59",
+          "value": 5
+        },
+        {
+          "label": "60-69",
+          "value": 9
+        },
+        {
+          "label": "70-74",
+          "value": 13
+        },
+        {
+          "label": "75-79",
+          "value": 15
+        },
+        {
+          "label": "≥ 80",
+          "value": 18
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stay",
+      "label": "Durée de séjour avant l’admission en réanimation, jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 14",
+          "value": 0
+        },
+        {
+          "label": "14-27",
+          "value": 6
+        },
+        {
+          "label": "≥28",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "location",
+      "label": "Localisation intra-hospitalière avant l’admission en ICU",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Service des urgences",
+          "value": 5
+        },
+        {
+          "label": "Other ICU",
+          "value": 7
+        },
+        {
+          "label": "Autre service",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "therapy",
+      "label": "Utilisation des principales options thérapeutiques avant l'admission en réanimation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Autre/aucun",
+          "value": 0
+        },
+        {
+          "label": "Médicaments vasoactifs",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "unplanned",
+      "label": "Admission en réanimation planifiée ou non planifiée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Prévu",
+          "value": 0
+        },
+        {
+          "label": "Non planifié",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "surgerystatus",
+      "label": "Statut chirurgical à l'admission en réanimation",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Chirurgie programmée",
+          "value": 0
+        },
+        {
+          "label": "Pas de chirurgie",
+          "value": 5
+        },
+        {
+          "label": "Chirurgie d’urgence",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "surgerysite",
+      "label": "Site anatomique de la chirurgie",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "surgerystatus == 0 || surgerystatus == 6",
+      "options": [
+        {
+          "label": "Chirurgie de transplantation",
+          "value": -11
+        },
+        {
+          "label": "Chirurgie traumatologique",
+          "value": -8
+        },
+        {
+          "label": "Chirurgie cardiaque : CABG sans réparation valvulaire",
+          "value": -6
+        },
+        {
+          "label": "Autre chirurgie",
+          "value": 0
+        },
+        {
+          "label": "Neurochirurgie : accident vasculaire cérébral",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "acuteinf",
+      "label": "Infection aiguë à l'admission en réanimation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Autre/aucun",
+          "value": 0
+        },
+        {
+          "label": "Nosocomial",
+          "value": 4
+        },
+        {
+          "label": "Respiratoire",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[Glasgow Coma Scale/Score](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "tips": "Lowest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥13",
+          "value": 0
+        },
+        {
+          "label": "7-12",
+          "value": 2
+        },
+        {
+          "label": "6",
+          "value": 7
+        },
+        {
+          "label": "5",
+          "value": 10
+        },
+        {
+          "label": "3-4",
+          "value": 15
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bilirubin",
+      "label": "Bilirubine totale, mg/dL (µmol/L)",
+      "tips": "Highest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 2 mg/dL (< 34,2 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": "2-5,9 mg/dL (34,2-102,5 µmol/L)",
+          "value": 4
+        },
+        {
+          "label": "≥6 mg/dL (≥102,6 µmol/L)",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Température corporelle, °C (°F)",
+      "tips": "Highest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥35 °C (≥95 °F)",
+          "value": 0
+        },
+        {
+          "label": "< 35 °C (< 95 °F)",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "creatinine",
+      "label": "Créatinine, mg/dL (µmol/L)",
+      "tips": "Highest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.2 mg/dL (<106.1 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": "1,2-1,9 mg/dL (106,1-176,7 µmol/L)",
+          "value": 2
+        },
+        {
+          "label": "2 à 3,4 mg/dL (176,8 à 309,3 µmol/L)",
+          "value": 7
+        },
+        {
+          "label": "≥3,5 mg/dL (≥309,4 µmol/L)",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "Fréquence cardiaque, battements/min",
+      "tips": "Highest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 120",
+          "value": 0
+        },
+        {
+          "label": "120-159",
+          "value": 5
+        },
+        {
+          "label": "≥160",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "leukocytes",
+      "label": "Leucocytes, G/L",
+      "tips": "Highest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Inférieur à 15",
+          "value": 0
+        },
+        {
+          "label": "≥15",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hydrogen",
+      "label": "PH",
+      "tips": "Lowest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">7.25",
+          "value": 0
+        },
+        {
+          "label": "≤ 7,25",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "platelets",
+      "label": "Plaquettes, G/L",
+      "tips": "Lowest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥100",
+          "value": 0
+        },
+        {
+          "label": "50-99",
+          "value": 5
+        },
+        {
+          "label": "20-49",
+          "value": 8
+        },
+        {
+          "label": "< 20",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sbp",
+      "label": "Pression artérielle systolique, mm Hg",
+      "tips": "Lowest within 1 hr of ICU admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥120",
+          "value": 0
+        },
+        {
+          "label": "70-119",
+          "value": 3
+        },
+        {
+          "label": "40-69",
+          "value": 8
+        },
+        {
+          "label": "< 40",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oxygen",
+      "label": "Oxygénation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "PaO₂ ≥60 et pas de VM",
+          "value": 0
+        },
+        {
+          "label": "PaO₂ < 60 et pas de VM",
+          "value": 5
+        },
+        {
+          "label": "PaO₂/FiO₂ ≥100 et ventilation mécanique (MV)",
+          "value": 7
+        },
+        {
+          "label": "PaO₂/FiO₂ <100 et MV",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "cancertherapy",
+      "label": "Cancer therapy",
+      "tips": "Chimiothérapie, immunosuppression, radiothérapie, corticothérapie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "chronichf",
+      "label": "Insuffisance cardiaque chronique (NYHA IV)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemcancer",
+      "label": "Cancer hématologique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cirrhosis",
+      "label": "Cirrhose",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aids",
+      "label": "SIDA",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "metacancer",
+      "label": "Cancer métastatique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "cardioneuro",
+      "label": "Cardiovasculaire/neurologique",
+      "tips": "If both reasons are present, only the worse value (-4) is scored; select \"Neurologic: seizures.\"",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Ni l'un ni l'autre",
+          "value": 0
+        },
+        {
+          "label": "Cardiovasculaire : troubles du rythme",
+          "value": -5
+        },
+        {
+          "label": "Neurologique : convulsions",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardiohem",
+      "label": "Cardiovascular: hypovolemic hemorrhagic shock, hypovolemic non-hemorrhagic shock",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardioseptic",
+      "label": "Cardiovasculaire : choc septique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cardioshock",
+      "label": "Cardiovasculaire : choc anaphylactique, choc mixte et indéfini",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neurocoma",
+      "label": "Neurologic: coma, stupor, obtunded patient, vigilance disturbances, confusion, agitation, delirium",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neurofocal",
+      "label": "Neurologique : déficit neurologique focal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neuromass",
+      "label": "Neurologique : effet de masse intracrânien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "digestiveacute",
+      "label": "Digestif : abdomen aigu, autre",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "digestivepan",
+      "label": "Digestive: severe pancreatitis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hepatic",
+      "label": "Hepatic: liver défaillance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Moreno RP, Metnitz PGH, Almeida E, et al. SAPS 3--From evaluation of the patient to evaluation of the intensive care unit. Part 2: Development of a prognostic model for hospital mortality at ICU admission. Intensive Care Med. 2005;31(10):1345-1355.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16132892/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Caruso P, Testa RS, Freitas ICL, et al. Cancer-related characteristics associated with invasive mechanical ventilation or in-hospital mortality in patients with covid-19 admitted to icu: a cohort multicenter study. Front Oncol. 2021;11:746431.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34917502/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+    "calc.rapid-emergency-medicine-score-rems"
+  ],
+  "source_logic_hash": "6b2a8ed91479dcd1ad39e81543300cf5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10403,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\n// Declare vars\n\nvar age = parseFloat(age);\nvar stay = parseFloat(stay);\nvar location = parseFloat(location);\nvar therapy = parseFloat(therapy);\nvar unplanned = parseFloat(unplanned);\nvar surgerysite = parseFloat(surgerysite); \nvar surgerystatus = parseFloat(surgerystatus);\nvar acuteinf = parseFloat(acuteinf);\nvar gcs = parseFloat(gcs);\nvar bilirubin = parseFloat(bilirubin);\nvar temp = parseFloat(temp);\nvar creatinine = parseFloat(creatinine);\nvar hr = parseFloat(hr);\nvar leukocytes = parseFloat(leukocytes);\nvar hydrogen = parseFloat(hydrogen); \nvar platelets = parseFloat(platelets);\nvar sbp = parseFloat(sbp);\nvar oxygen = parseFloat(oxygen);\nvar cancertherapy = parseFloat(cancertherapy);\nvar chronichf = parseFloat(chronichf);\nvar hemcancer = parseFloat(hemcancer);\nvar cirrhosis = parseFloat(cirrhosis);\nvar aids = parseFloat(aids);\nvar metacancer = parseFloat(metacancer);\nvar cardioneuro = parseFloat(cardioneuro);\nvar cardiohem = parseFloat(cardiohem);\nvar digestiveacute = parseFloat(digestiveacute);\nvar neurocoma = parseFloat(neurocoma);\nvar cardioseptic = parseFloat(cardioseptic);\nvar cardioshock = parseFloat(cardioshock);\nvar hepatic = parseFloat(hepatic); \nvar neurofocal = parseFloat(neurofocal);\nvar digestivepan = parseFloat(digestivepan); \nvar neuromass = parseFloat(neuromass);\n\nvar score = 16 + age + stay + location + therapy + unplanned + surgerystatus + acuteinf + gcs + bilirubin + temp + creatinine + hr + leukocytes + hydrogen + platelets + sbp + oxygen + cancertherapy + chronichf + hemcancer + cirrhosis + aids + metacancer + cardioneuro + cardiohem + digestiveacute + neurocoma + cardioseptic + cardioshock + hepatic + neurofocal + digestivepan + neuromass;\n\nif (surgerystatus == 0 || surgerystatus == 6) {\n  score = score + surgerysite;\n}\n\nvar x = -32.6659 + Math.log(score + 20.5958) * 7.3068;\nvar mortality = Math.exp(x)/(1 + Math.exp(x)) * 100;\n\nif (mortality.toFixed(1) == 0) {\n   mortality = '<0.1';\n} else {\n   mortality = mortality.toFixed(1);\n}\n\ncalc_output.push({\n   name: 'mini',\n   value: score,\n   value_text: 'points',\n   message: mortality + '% in-hospital mortality'\n});\ncalc_output.push({\n   name: 'score',\n   value: score,\n   value_text: 'points',\n   message: 'SAPS 3 Score'\n});\ncalc_output.push({\n   name: 'SAPS risk',\n   value: mortality,\n   value_text: '%',\n   message: 'In-hospital mortality'\n});",
+  "before_use": null,
+  "instructions": "Le score SAPS 3 prédit la mortalité hospitalière à l'admission en réanimation, en se fondant sur les caractéristiques des patients, l'indication d'admission en réanimation et les perturbations physiologiques à l'admission en réanimation.",
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Rui P. Moreno"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Bilirubin",
+    "Creatinine",
+    "pH"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "23426a02d47281807349f9574843312db297a6964e215311f6f02bbd719b0fa5"
+}

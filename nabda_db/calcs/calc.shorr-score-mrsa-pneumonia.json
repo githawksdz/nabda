@@ -1,0 +1,276 @@
+{
+  "id": "calc.shorr-score-mrsa-pneumonia",
+  "slug": "shorr-score-mrsa-pneumonia",
+  "language": "fr",
+  "title": "Shorr score pour MRSA pneumonie",
+  "short_title": "Score de Shorr",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "geriatrie",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Shorr score",
+    "shor score",
+    "shorr",
+    "penumonia",
+    "chest infection",
+    "CAP",
+    "HCAP",
+    "pna",
+    "icu",
+    "severity",
+    "covid-19",
+    "coronavirus",
+    "covid 19",
+    "covid19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| | 0 point | 1 point | 2 points |\n| --- | --- | --- | --- |\n| Âge <30 ans ou >79 ans | Non | Oui | -- |\n| Séjour en maison de retraite, établissement de soins de suite ou unité de soins de longue durée Dans les 90 jours | Non | Oui | -- |\n| Antibiothérapie intraveineuse antérieure Dans les 30 jours | Non | Oui | -- |\n| Hospitalisation ≥2 jours Dans les 90 jours | Non | -- | Oui |\n| Admission en réanimation À la date du prélèvement index ou avant | Non | -- | Oui |\n| Toute maladie cérébrovasculaire Avant l'admission | Non | Oui | -- |\n| Démence | Non | Oui | -- |\n| Femme avec diabète sucré | Non | Oui | -- |",
+  "how_to_use": {
+    "why": "- L'étiologie des pneumonies varie selon les patients hospitalisés pour ce diagnostic. L'ancienne définition des pneumonies associées aux soins de santé (HCAP) ne permet pas de différencier les pathogènes résistants aux antibiotiques tels que le MRSA des autres bactéries à Gram négatif, qui présentent des facteurs de risque et des traitements différents.\n\n- Peut aider à réduire le surtraitement des pneumonies à MRSA.",
+    "when": "Patients >18 ans hospitalisés pour pneumonie.",
+    "pearls": "- Le score de Shorr pour la pneumonie à MRSA a été développé pour évaluer le risque de pneumonie à MRSA chez les patients hospitalisés dont le motif d'admission était une pneumonie, afin de déterminer qui pourrait bénéficier de l'ajout d'une couverture contre le MRSA.\n\n- Développé spécifiquement pour stratifier le risque des patients atteints de pneumonie à MRSA, par rapport à la définition originale des pneumonies associées aux soins de santé (HCAP).\n- Différencie également les pneumonies à MRSA des pneumonies à bactéries à Gram négatif résistantes, ce que la définition HCAP ne fait pas."
+  },
+  "next_steps": {
+    "advice": "- Les facteurs de risque de MRSA (infection à MRSA au cours de l'année écoulée, colonisation connue, pneumonie nécrosante ou cavitaire, scores de gravité élevés p. ex. [PSI/PORT](nabda:calc.psi-port-score-pneumonia-severity-index-cap) ou [APACHE II](nabda:calc.apache-ii-score), grippe antérieure ou concomitante) doivent également être pris en compte lors de la décision d'instaurer un traitement contre le MRSA.\n\n- Destiné à guider la décision d'initiation du traitement contre le MRSA. Des études de confirmation et le jugement clinique doivent être utilisés pour décider si la poursuite du traitement contre le MRSA est nécessaire.",
+    "critical_actions": "",
+    "management": "Les options de traitement du MRSA comprennent la vancomycine, le linézolide et la clindamycine."
+  },
+  "evidence": "The original study by[Shorr et al](https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-268)was a retrospective study of 5,975 patients admitted for pneumonia at 62 hospitals in the US. Only patients with documented diagnosis of pneumonia and laboratory evidence of bacterial infection were included.\n\nTwo thirds of the cohort were randomly assigned to determine the eight variables (including demographics, prior healthcare exposures, disease acuity and select comorbid conditions) used for the 10 point risk stratification score for MRSA pneumonia with three separate tiers. The remaining third of patients were used to internally validate the risk score.\n\nThe derivation and validation cohorts both showed increasing relative risk with increased Shorr Score at each of the three tiers. The pretest probability of MRSA was 14% in the study, and when used as a screening test with score ≤1 vs >1, the sensitivity and specificity were 59.1% and 60%, respectively, with PPV of 19.2%, but high NPV of 90.1%. Both cohorts demonstrated a predictive risk score, with AUROCs of 0.66 and 0.64, respectively.\n\n[Minejima et al (2014)](https://www.ncbi.nlm.nih.gov/pubmed/24885158)retrospectively evaluated 134 MRSA patients compared to 134 non MRSA patients at a single hospital admitted for pneumonia. When the Shorr Score was applied, they found 93% sensitivity (for risk score >1), although the specificity was only 55%. NPV and PPV were 89% and 68%, respectively. The discriminative ability of low (<1) and high (>6) Shorr Scores to predict absence and presence of MRSA pneumonia, respectively, was better than in the original study.\n\n[Teshome et al (2015)](https://www.ncbi.nlm.nih.gov/pubmed/26385225)also did a retrospective study using >80,000 patients admitted to >150 Veterans Health Administration Hospitals into MRSA therapy and non-MRSA therapy groups after being risk stratified with a modified version of the Shorr Score specific to their cohort (e.g. all patients were ≥65 years old, so the age <30 criteron was removed). The primary outcome was all-cause 30 day mortality. They showed that MRSA therapy was associated with lower 30 day mortality in the high risk group using the modified Shorr Score.",
+  "more_info": "Interprétation :\n\n| Score de Shorr | Risque de MRSA |\n| --- | --- |\n| 0-1 | Risque faible de MRSA. Envisager une couverture antibiotique standard. |\n| 2-5 | Risque intermédiaire de MRSA. Utiliser le jugement clinique concernant la couverture antibiotique. |\n| 6-10 | Risque élevé de MRSA. Envisager une couverture antibiotique élargie. |",
+  "short_description": "Exclut une pneumonie à MRSA.",
+  "medium_description": "Identifies pneumonie patients at faible risque pour MRSA.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge 19-29 ou >79 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nursing",
+      "label": "Séjour en maison de retraite, établissement de soins de suite ou unité de soins de longue durée",
+      "tips": "Dans les 90 jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "prioriv",
+      "label": "Antibiothérapie intraveineuse antérieure",
+      "tips": "Au cours des 30 derniers jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hospital",
+      "label": "Hospitalization pour ≥2 days",
+      "tips": "Dans les 90 jours",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "icu",
+      "label": "Admission en réanimation",
+      "tips": "À la date du prélèvement index ou avant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cereb",
+      "label": "Toute maladie cérébrovasculaire",
+      "tips": "Avant l'admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dementia",
+      "label": "Dementia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fdiabetes",
+      "label": "Female avec diabète mellitus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Shorr AF, Myers DE, Huang DB, Nathanson BH, Emons MF, Kollef MH. A risk score for identifying methicillin-resistant Staphylococcus aureus in patients presenting to the hospital with pneumonia. BMC Infect Dis. 2013;13:268.",
+      "href": "https://bmcinfectdis.biomedcentral.com/articles/10.1186/1471-2334-13-268 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shorr AF, Zilberberg MD, Reichley R, et al. Validation of a clinical score for assessing the risk of resistant pathogens in patients with pneumonia presenting to the emergency department. Clin Infect Dis. 2012;54(2):193-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22109951 ",
+      "kind": "other"
+    },
+    {
+      "text": "Minejima E, Lou M, Nieberg P, Wong-beringer A. Patients presenting to the hospital with MRSA pneumonia: differentiating characteristics and outcomes with empiric treatment. BMC Infect Dis. 2014;14:252.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24885158 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Teshome BF, Lee GC, Reveles KR, et al. Application of a methicillin-resistant Staphylococcus aureus risk score for community-onset pneumonia patients and outcomes with initial treatment. BMC Infect Dis. 2015;15:380.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26385225 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.psi-port-score-pneumonia-severity-index-cap",
+    "calc.drug-resistance-pneumonia-drip-score",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "d936b0c35ec6a42db57cca0bae0c2402",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.psi-port-score-pneumonia-severity-index-cap",
+      "text": "PSI/PORT"
+    },
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3962,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

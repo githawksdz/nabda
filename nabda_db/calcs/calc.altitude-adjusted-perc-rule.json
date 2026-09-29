@@ -1,0 +1,305 @@
+{
+  "id": "calc.altitude-adjusted-perc-rule",
+  "slug": "altitude-adjusted-perc-rule",
+  "language": "en",
+  "title": "Altitude-Adjusted PERC règle",
+  "short_title": "Altitude-Adjusted PERC règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pe",
+    "pulmonary embolism",
+    "dvt",
+    "PERC-Altitude Rule for Pulmonary Embolism",
+    "perc rule",
+    "perc",
+    "perc altitude",
+    "altitude-adjusted perc",
+    "altitude adjusted perc"
+  ],
+  "dosing": false,
+  "formula": "If any of the following is/are present, PE cannot be ruled out:\n\n- Age ≥50.\n- HR ≥100.\n- O₂ sat on room air **<95%** (or O₂ sat on room air **<90%** for high altitudes*).\n- Unilateral leg swelling.\n- Hemoptysis.\n- Recent trauma or surgery.\n- Prior PE or DVT.\n- Hormone use (oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients).\n\n*Altitudes >4000 ft.",
+  "how_to_use": {
+    "why": "- A patient with low pre-test probability for PE (<15%) and a negative PERC-Altitude test does not need D-dimer or CTPA.\n- Can help reduce overtesting.",
+    "when": "- Chez les patients qui se présentent aux urgences avec une douleur thoracique ou une dyspnée et dont la probabilité pré-test d'EP est faible.\n- Un PERC-Altitude négatif signifie que l'EP peut être exclue et ne nécessite pas d'exploration complémentaire (D-dimères ou CTPA).\n- Ce test s'adresse aux patients vivant à haute altitude (>4000 ft). Utiliser la [PERC Rule](nabda:calc.perc-rule-pulmonary-embolism) originale pour les patients vivant à basse altitude.",
+    "pearls": "- Most importantly this differs from the original PERC rule in that it is intended for use at high altitude (>4000 ft) and includes an O~2~cutoff of 90% as opposed to 95%.\n- This tool is only meant for patients who are low risk of a PE (<15%, based on [Wells' Score](nabda:calc.wells-criteria-pulmonary-embolism) or clinician gestalt).\n- An inexperienced clinician may underestimate the pre-test probability of a PE and use this tool inappropriately.\n- This version of the PERC Rule should not be used for patients who live at low altitudes."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Si votre patient présente un faible risque de PE et un PERC-Altitude négatif, vous pouvez exclure une PE sans autre examen.\n- Si votre patient est PERC-"
+  },
+  "evidence": "The original PERC Rule was derived by[Kline et al in 2004](https://www.ncbi.nlm.nih.gov/pubmed/15304025), but they used a hypoxemia cut off of less than 95%. The PERC Rule was validated by[Wolf et al in a 2008 study](https://pubmed.ncbi.nlm.nih.gov/18272098/)performed in Denver, CO (at 5280 feet elevation). They used an oxygen saturation cut off of 90% to account for the higher elevation. Their study was relatively small and included 134 patients, 12% of whom were diagnosed with PE. Of the patients with a low pretest probability, 22% were PERC-Altitude negative, and none of them were diagnosed with a PE. The sensitivity of the PERC-Altitude Rule for the total cohort was 100%, but due to the small sample size, it has wide confidence intervals (79-100).\n\nIn 2019,[Madsen et al](https://www.ajemjournal.com/article/S0735-6757(18)30429-7/fulltext)published a much larger, prospective, observational study of patients from Salt Lake City, UT (elevation of 4980 feet) using the same 90% oxygen saturation cutoff. They enrolled 3,024 patients who presented with chest pain and/or dyspnea. There were 58 patients diagnosed with acute PE. Using the 95% oxygen saturation cutoff from the original PERC rule ([Kline 2004](https://www.ncbi.nlm.nih.gov/pubmed/15304025)), the sensitivity was 96.6%. There were two patients who were PERC negative who were diagnosed with acute PE. When they used the altitude-adjusted PERC rule, 4.3% of PERC-positive patients were reclassified as PERC negative. One of the patients who was reclassified as PERC negative had an acute PE, so the sensitivity for the altitude-adjusted PERC rule was slightly less at 94.8%. They estimated that using the altitude-adjusted PERC reduced the number of CTPA scans by 2.7% compared to using the original PERC.",
+  "more_info": "",
+  "short_description": "Écarte une EP (ajusté à l’altitude).",
+  "medium_description": "Rules out PE if no critères are present; includes SaO~2~adjustment pour altitude.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "altitude",
+      "label": "Élevé altitude (>4000 ft)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lowo2",
+      "label": "Saturation en O₂ à l'air ambiant **<95%**",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "altitude==0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "higho2",
+      "label": "Saturation en O₂ à l'air ambiant **<90%**",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "altitude==1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥50",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "HR ≥100",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leg_swelling",
+      "label": "Gonflement unilatéral de la jambe",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemoptysis",
+      "label": "Hemoptysis",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "trauma",
+      "label": "Chirurgie ou traumatisme récent",
+      "tips": "Chirurgie ou traumatisme ≤ 4 semaines auparavant ayant nécessité une prise en charge sous anesthésie générale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dvt_pe_history",
+      "label": "Antécédent d'EP ou de TVP",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "estrogen",
+      "label": "Utilisation d'hormones",
+      "tips": "Utilisation de contraceptifs oraux, d'un traitement hormonal substitutif ou d'hormones estrogéniques chez les patients de sexe masculin ou féminin",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wolf SJ, Mccubbin TR, Nordenholz KE, Naviaux NW, Haukoos JS. Assessment of the pulmonary embolism rule-out criteria rule for evaluation of suspected pulmonary embolism in the emergency department. Am J Emerg Med. 2008;26(2):181-5.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18272098/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost 2004; 2: 1247–55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15304025",
+      "kind": "other"
+    },
+    {
+      "text": "Kline JA, et al. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost 2008; 6: 772–80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18318689",
+      "kind": "other"
+    },
+    {
+      "text": "Madsen T, Jedick R, Teeples T, Carlson M, Steenblik J. Impact of altitude-adjusted hypoxia on the Pulmonary Embolism Rule-out Criteria. Am J Emerg Med. 2019;37(2):281-285.",
+      "href": "https://www.ajemjournal.com/article/S0735-6757(18)30429-7/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.wells-criteria-pulmonary-embolism",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "bd7ee7a28e67a3c644109558e95aa6ad",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells' Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC Rule"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10343,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,158 @@
+{
+  "id": "calc.duke-treadmill-score",
+  "slug": "duke-treadmill-score",
+  "language": "en",
+  "title": "Score de Duke sur tapis roulant (Duke Treadmill score)",
+  "short_title": "Score de Duke sur tapis roulant (Duke Treadmill score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "dts",
+    "duke score",
+    "treadmill score"
+  ],
+  "dosing": false,
+  "formula": "Duke Treadmill Score = duration of exercise, minutes – (5 × maximal net ST-segment deviation during or after exercise*, millimeters) – (4 × treadmill angina index)\n\n* *except in lead aVR*\n\nWhere angina index is as follows:\n\n| Feature | Angina Index |\n| --- | --- |\n| No angina during exercise | 0 |\n| Non-limiting angina | 1 |\n| Patient stops exercising because of angina | 2 |",
+  "how_to_use": {
+    "why": "Peut fournir des informations diagnostiques et pronostiques chez les patients chez qui une maladie coronarienne est suspectée, sur la base de l’épreuve d’effort sur tapis roulant.",
+    "when": "Patients without known coronary artery disease undergoing treadmill EKG testing.",
+    "pearls": "- À utiliser avec prudence chez les patients évalués selon d'autres protocoles.\n-\n- Si un autre protocole est utilisé, envisager l'équivalent en multiples de la consommation d'oxygène de repos (METs) plutôt qu'en minutes d'effort.\n- Fournit une information pronostique indépendante, en complément de l'anatomie coronaire, de la fraction d'éjection ventriculaire gauche et des données cliniques.\n- Utilité incertaine en présence de l'un des éléments suivants : valvulopathie ou cardiopathie congénitale significative, antécédent de chirurgie cardiaque, ECG non interprétable en raison d'un bloc de branche gauche, sus-décalage du segment ST dans des dérivations comportant des ondes Q pathologiques.\n- Ne prend pas en compte les variables cliniques telles que l'âge, la fréquence cardiaque ou la pression artérielle, qui sont des facteurs de risque connus de coronaropathie."
+  },
+  "next_steps": {
+    "advice": "- Based on score results, clinicians may decide to proceed with cardiac catheterization for suspected coronary artery disease.\n- The[1997 ACC/AHA Guidelines for Exercise Testing](https://www.ncbi.nlm.nih.gov/pubmed/9207652)and[2012 ACCF/AHA/ACP/AATS/PCNA/SCAI/STS Guideline for the Diagnosis and Management of Patients With Stable Ischemic Heart Disease](https://circ.ahajournals.org/content/126/25/e354)state that the Duke Treadmill Score is a validated tool for risk assessment for coronary artery disease.\n- The[1997 ACC/AHA Guidelines for Exercise Testing](https://www.ncbi.nlm.nih.gov/pubmed/9207652)state if a patient has an exercise stress test with a high risk Duke Treadmill Score (<-10), coronary angiography should be considered.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "Derivation study,[Mark 1987](https://www.ncbi.nlm.nih.gov/pubmed/3579066):\n\n- 2,842 patients referred to Duke University Medical Center between 1969 and 1980 with chest pain who had an exercise treadmill test (Bruce protocol) within 6 weeks of cardiac catheterization.\n- Population randomly divided into two groups of equal size; Cox regression model was used in one to create the treadmill score that was validated in the other group.\n- Exclusion: significant valvular or congenital heart disease, previous cardiac surgery, uninterpretable EKG due to LBBB, ST-segment elevation in leads with pathologic Q waves.\n- The DTS adds independent prognostic information in addition to coronary anatomy, left ventricular ejection fraction, and clinical data.\n- The treadmill score was useful to stratify prognosis in suspected coronary artery disease.\n\nValidation study,[Mark 1991](https://www.nejm.org/doi/full/10.1056/NEJM199109193251204):\n\n- 613 outpatients.\n- Prospective study.\n- Predicted outcomes based on the Duke Treadmill Score agreed closely with observed outcomes at four years of follow-up.",
+  "more_info": "Interpretation:\n\n| Duke Treadmill Score | Risk Group | Survival at 5 Years* |\n| --- | --- | --- |\n| ≥+5 | Low | 99% |\n| -10 to +4 | Medium | 95% |\n| <-10 | High | 79% |\n\n*For outpatients. From[Mark 1991](https://www.nejm.org/doi/full/10.1056/NEJM199109193251204).\n\n![](https://cdn-web-img.mdcalc.com/content/dts.jpg)\n\nThe data from the treadmill exercise test can be plotted on a nomogram to derive an estimate of five-year survival or average annual mortality.\n\nPrognosis is determined in five steps:\n\n1. The observed amount of exercise-induced ST-segment deviation (the largest elevation or depression after resting changes have been subtracted) is marked on the line for ST-segment deviation during exercise.\n2. The observed degree of angina during exercise is marked on the line for angina.\n3. The marks for ST-segment deviation and degree of angina are connected with a straight edge. The point where this line intersects the ischemia-reading line is noted.\n4. The total number of minutes of exercise in treadmill testing according to the Bruce protocol (or the equivalent in multiples of resting oxygen consumption [METs] from an alternative protocol) is marked on the exercise-duration line.\n5. The mark for ischemia is connected with that for exercise duration. The point at which this line intersects the line for prognosis indicates the five-year survival rate and average annual mortality for patients with these characteristics.",
+  "short_description": "Survie CAD.",
+  "medium_description": "Diagnoses et prognoses suspected CAD basé sur treadmill exercise test.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "duration",
+      "label": "Durée de l'exercice",
+      "optional": false,
+      "unit": "dur_exer",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "stseg",
+      "label": "Déviation maximale nette du segment ST",
+      "tips": "Pendant ou après l’exercice et NON en dérivation aVR",
+      "optional": false,
+      "unit": "st_dev",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "index",
+      "label": "Index d'angor",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absence d'angor à l'effort",
+          "value": 0
+        },
+        {
+          "label": "Angor non limitant",
+          "value": 1
+        },
+        {
+          "label": "patient stops exercising because de angina",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gibbons RJ, Balady GJ, Beasley JW, Bricker JT, Duvernoy WF, Froelicher VF, Mark DB, Marwick TH, McCallister BD, Thompson PD Jr, Winters WL, Yanowitz FG, Ritchie JL, Gibbons RJ, Cheitlin MD, Eagle KA, Gardner TJ, Garson A Jr, Lewis RP, O'Rourke RA, Ryan TJ. ACC/AHA Guidelines for Exercise Testing. A report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines (Committee on Exercise Testing). J Am Coll Cardiol. 1997 Jul;30(1):260-311.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9207652 ",
+      "kind": "international"
+    },
+    {
+      "text": "Gibbons RJ, Balady GJ, Bricker JT, Chaitman BR, Fletcher GF, Froelicher VF, Mark DB, McCallister BD, Mooss AN, O'Reilly MG, Winters WL, Gibbons RJ, Antman EM, Alpert JS, Faxon DP, Fuster V, Gregoratos G, Hiratzka LF, Jacobs AK, Russell RO, Smith SC; American College of Cardiology/American Heart Association Task Force on Practice Guidelines. Committee to Update the 1997 Exercise Testing Guidelines. ACC/AHA 2002 guideline update for exercise testing: summary article. A report of the American College of Cardiology/American Heart Association Task Force on Practice Guidelines (Committee to Update the 1997 Exercise Testing Guidelines). J Am Coll Cardiol. 2002 Oct 16;40(8):1531-40.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12392846 ",
+      "kind": "international"
+    },
+    {
+      "text": "Fihn SD, Gardin JM, Abrams J, et al. 2012 ACCF/AHA/ACP/AATS/PCNA/SCAI/STS guideline for the diagnosis and management of patients with stable ischemic heart disease: a report of the American College of Cardiology Foundation/American Heart Association task force on practice guidelines, and the American College of Physicians, American Association for Thoracic Surgery, Preventive Cardiovascular Nurses Association, Society for Cardiovascular Angiography and Interventions, and Society of Thoracic Surgeons. Circulation. 2012;126(25):e354-471.",
+      "href": "https://circ.ahajournals.org/content/126/25/e354",
+      "kind": "international"
+    },
+    {
+      "text": "Mark DB, Hlatky MA, Harrell FE, Lee KL, Califf RM, Pryor DB. Exercise treadmill score for predicting prognosis in coronary artery disease. Ann Intern Med. 1987;106(6):793-800.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3579066 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shaw LJ, Peterson ED, Shaw LK, et al. Use of a prognostic treadmill score in identifying diagnostic coronary disease subgroups. Circulation. 1998;98(16):1622-30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9778327 ",
+      "kind": "other"
+    },
+    {
+      "text": "Alexander KP, Shaw LJ, Shaw LK, Delong ER, Mark DB, Peterson ED. Value of exercise treadmill testing in women. J Am Coll Cardiol. 1998;32(6):1657. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9822093 ",
+      "kind": "other"
+    },
+    {
+      "text": "Kwok JM, Miller TD, Christian TF, Hodge DO, Gibbons RJ. Prognostic value of a treadmill exercise score in symptomatic patients with nonspecific ST-T abnormalities on resting ECG. JAMA. 1999;282(11):1047.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10493203 ",
+      "kind": "other"
+    },
+    {
+      "text": "Koh AS, Gao F, Chin CT, Keng FY, Tan RS, Chua TS. Differential risk reclassification improvement by exercise testing and myocardial perfusion imaging in patients with suspected and known coronary artery disease. J Nucl Cardiol. 2016 Jun;23(3):366-78. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26358085 ",
+      "kind": "other"
+    },
+    {
+      "text": "Mark DB, Shaw L, Harrell FE, et al. Prognostic value of a treadmill exercise score in outpatients with suspected coronary artery disease. N Engl J Med. 1991;325(12):849-53.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJM199109193251204",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.action-icu-score-intensive-care-nstemi",
+    "calc.cart-cardiac-arrest-risk-triage-score"
+  ],
+  "source_logic_hash": "ee12ceeb0ca7fb609987d017ce548b8e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3991,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

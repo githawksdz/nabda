@@ -1,0 +1,255 @@
+{
+  "id": "calc.modified-early-warning-score-mews-clinical-deterioration",
+  "slug": "modified-early-warning-score-mews-clinical-deterioration",
+  "language": "en",
+  "title": "Modifié Early Warning score (MEWS) pour clinique Deterioration",
+  "short_title": "Score MEWS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Coronavirus",
+    "Endocarditis",
+    "Insuffisance cardiaque",
+    "Hyperglycemia",
+    "Hypernatremia",
+    "Hypertension",
+    "Insuffisance respiratoire",
+    "Trauma",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Bleeding",
+    "Douleur thoracique",
+    "Fever",
+    "Seizure"
+  ],
+  "abbreviations": [
+    "MEWS",
+    "modified",
+    "warning score",
+    "warning",
+    "covid19",
+    "covid",
+    "covid-19",
+    "covid 19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; points attribués ci-dessous :",
+  "how_to_use": {
+    "why": "- Les patients ayant un MEWS bas peuvent continuer à recevoir leurs soins et leur surveillance habituels.\n- Les patients ayant un MEWS élevé doivent être surveillés plus attentivement et leur transfert vers une unité de soins de niveau supérieur, telle qu’une ICU, doit être envisagé.",
+    "when": "Le MEWS peut être utilisé chez tous les patients hospitalisés pour permettre la détection précoce d’une détérioration clinique et d’un besoin potentiel d’un niveau de soins plus élevé.",
+    "pearls": "- Le Modified Early Warning System (MEWS) est un outil conçu pour identifier les patients dont l’état se dégrade.\n- Il s’est avéré supérieur à l’évaluation clinique à cette fin.\n- Il a été initialement conçu pour les infirmiers, mais peut être utilisé par tout professionnel de santé disposant d’une formation adéquate.\n- Le MEWS repose sur le principe selon lequel une détérioration clinique peut être décelée par des modifications subtiles de plusieurs paramètres ainsi que par des modifications importantes d’une seule variable.\n- L’échelle est calibrée pour différentes populations et parfois élargie pour inclure des paramètres supplémentaires.\n- Bien qu’un score de 5 ou plus ait été associé à une probabilité plus élevée d’admission en unité de soins intensifs ou de décès, ce seuil peut être modifié pour s’adapter à différentes populations de patients ou contextes cliniques.\n- Le [National Early Warning Score (NEWS) 2](nabda:calc.national-early-warning-score-news-2) a été développé et mis à jour par le Royal College of Physicians au Royaume-Uni afin de standardiser l’identification et la réponse aux patients dont l’état se dégrade."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Ce score peut être utilisé par tout professionnel de santé ayant reçu une formation adéquate sur la façon de l’utiliser et d’interpréter les résultats.\n- Il est destiné à être utilisé de manière régulière plutôt qu’une seule fois à l’admission.",
+    "management": "Une fois que le MEWS identifie un patient à risque de détérioration, l’équipe médicale devra en identifier la cause et la traiter en conséquence."
+  },
+  "evidence": "- The early warning score (EWS) was initially described in the Morgan study (listed below).\n- The Modified Early Warning Score (MEWS) was[prospectively validated](https://www.ncbi.nlm.nih.gov/pubmed/11588210)in 709 patients. Complete data was available for 673 patients. A score of 5 or more on the MEWS scale was shown to be associated with an increased risk of clinical deterioration and death.\n- In order to validate MEWS in a population of surgical patients,[Gardner-Thorpe et al](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1963767/)prospectively studied 334 consecutive ward patients. In this study, a MEWS of 4 or more was found to be 75% sensitive and 83% specific for the need to transfer a patient to a critical care unit. A MEWS of 5 or more was less sensitive (38%) but more specific (89%).",
+  "more_info": "See formula table; below:\n\n| Criteria | Point Value |\n| --- | --- |\n| Systolic BP (mmHg) | |\n| ≤70 | +3 |\n| 71-80 | +2 |\n| 81-100 | +1 |\n| 101-199 | 0 |\n| ≥200 | +2 |\n| Heart rate (beats per minute) | |\n| <40 | +2 |\n| 41-50 | +1 |\n| 51-100 | 0 |\n| 101-110 | +1 |\n| 11-129 | +2 |\n| >130 | +3 |\n| Respiratory rate (breaths per minute) | |\n| <9 | +2 |\n| 9-14 | 0 |\n| 15-20 | +1 |\n| 21-29 | +2 |\n| >30 | +3 |\n| Temperature in °C (°F) | |\n| <35 (<95) | +2 |\n| 35.0–38.4 (95–101.12) | 0 |\n| >38.5 (101.3) | +2 |\n| AVPU | |\n| Alert? | 0 |\n| Voice? | +1 |\n| Pain? | +2 |\n| Unresponsive? | +3 |\n\n**Interpretation**\n\n- A score ≥5 is statistically linked to increased likelihood of death or admission to an intensive care unit.\n- For any single physiological parameter scored +3, consider higher level of care for patient.",
+  "short_description": "Gravité dépistage de declining conditions.",
+  "medium_description": "Détermine le degré de la maladie du patient.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "systolic_bp",
+      "label": "Pression artérielle systolique (PAS)",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤70 mmHg",
+          "value": 3
+        },
+        {
+          "label": "71-80 mmHg",
+          "value": 2
+        },
+        {
+          "label": "81-100 mmHg",
+          "value": 1
+        },
+        {
+          "label": "101-199 mmHg",
+          "value": 0
+        },
+        {
+          "label": "≥ 200 mmHg",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40 bpm",
+          "value": 2
+        },
+        {
+          "label": "41-50 bpm",
+          "value": 1
+        },
+        {
+          "label": "51-100 bpm",
+          "value": 0
+        },
+        {
+          "label": "101-110 bpm",
+          "value": 1
+        },
+        {
+          "label": "111-129 bpm",
+          "value": 2
+        },
+        {
+          "label": "≥130 bpm",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "respiratory_rate",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 9 bpm",
+          "value": 2
+        },
+        {
+          "label": "9-14 bpm",
+          "value": 0
+        },
+        {
+          "label": "15-20 bpm",
+          "value": 1
+        },
+        {
+          "label": "21-29 bpm",
+          "value": 2
+        },
+        {
+          "label": "≥30 bpm",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temperature",
+      "label": "Temperature",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 35°C / 95°F",
+          "value": 2
+        },
+        {
+          "label": "35–38.4°C / 95–101.1°F",
+          "value": 0
+        },
+        {
+          "label": "≥38.5°C / 101.3°F",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "avpu_score",
+      "label": "AVPUScore",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Alert",
+          "value": 0
+        },
+        {
+          "label": "Reacts pour voice",
+          "value": 1
+        },
+        {
+          "label": "Reacts pour douleur",
+          "value": 2
+        },
+        {
+          "label": "Unresponsive",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Subbe CP, Kruger M, Rutherford P, Gemmel L. Validation of a modified Early Warning Score in medical admissions. QJM. 2001 Oct;94(10):521-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11588210",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gardner-Thorpe J, Love N, Wrightson J, Walsh S, Keeling N. The Value of Modified Early Warning Score (MEWS) in surgical in-patients: a prospective observational study. Ann R Coll Surg Engl. 2006;88(6):571–575.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1963767/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-early-warning-score-news",
+    "calc.national-early-warning-score-news-2",
+    "calc.lung-injury-prediction-score-lips"
+  ],
+  "source_logic_hash": "aa9dc27be7972d2f22902e3478efcf9a",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.national-early-warning-score-news-2",
+      "text": "National Early Warning Score (NEWS) 2"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1875,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

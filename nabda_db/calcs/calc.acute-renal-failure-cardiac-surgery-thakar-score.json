@@ -1,0 +1,318 @@
+{
+  "id": "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+  "slug": "acute-renal-failure-cardiac-surgery-thakar-score",
+  "language": "en",
+  "title": "Aigu Renal défaillance after Cardiac Surgery (Thakar score)",
+  "short_title": "Score de Thakar",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Anévrisme artériel",
+    "Maladie coronarienne",
+    "Endocarditis",
+    "Insuffisance cardiaque",
+    "Myocarditis",
+    "Cardiomyopathie hypertrophique"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur dorsale",
+    "Bloating",
+    "Douleur thoracique",
+    "Cough",
+    "Diarrhea",
+    "Œdème des extrémités",
+    "Douleur des extrémités",
+    "Fatigue",
+    "Fever",
+    "Perte d'appétit",
+    "Nausea",
+    "Cervicalgie",
+    "Œdème périphérique",
+    "Dyspnée",
+    "Mal de gorge",
+    "Swelling",
+    "Vomiting",
+    "Weakness",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Thakar Score",
+    "ARF score",
+    "ARF",
+    "ARF-D",
+    "ARF-D Score",
+    "ARF D Score",
+    "ARF D",
+    "ARFD",
+    "Dialysis Risk After Cardiac Surgery",
+    "dialysis risk",
+    "cardiac surgery",
+    "afr risk",
+    "acute renal failure",
+    "Cleveland Clinic Scoring Tool (CCST)",
+    "ccst",
+    "CCS",
+    "Cleveland Clinic Score",
+    "open heart surgery",
+    "Acute Renal Failure after Cardiac Surgery"
+  ],
+  "dosing": false,
+  "formula": "The Thakar Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Gender | Male | 0 |\n| Female | 1 | |\n| Congestive heart failure | No | 0 |\n| Yes | 1 | |\n| Left ventricular ejection fraction <35% | No | 0 |\n| Yes | 1 | |\n| Preoperative use of IABP | No | 0 |\n| Yes | 2 | |\n| COPD | No | 0 |\n| Yes | 1 | |\n| Insulin-requiring diabetes | No | 0 |\n| Yes | 1 | |\n| Previous cardiac surgery | No | 0 |\n| Yes | 1 | |\n| Emergency surgery | No | 0 |\n| Yes | 2 | |\n| Surgery type | None | 0 |\n| Valve only | 1 | |\n| CABG and valve | 2 | |\n| Other | 2 | |\n| Preoperative creatinine | <1.2 mg/dL | 0 |\n| 1.2-2.0 mg/dL | 2 | |\n| >2.0 mg/dL | 5 | |",
+  "how_to_use": {
+    "why": "- L’insuffisance rénale aiguë est une complication fréquente de la chirurgie cardiaque, 1%–5% des patients nécessitant une dialyse, ce qui augmente significativement le risque de mortalité.\n- Cet outil fournit une estimation quantitative du risque d’AKI postopératoire, aidant à la stratification du risque et à la planification périopératoire, notamment la gestion des fluides, l’évitement des médicaments néphrotoxiques et le recours à des stratégies de protection rénale.",
+    "when": "À utiliser en préopératoire chez les patients devant subir une chirurgie cardiaque (p. ex., CABG, chirurgie valvulaire, interventions combinées) pour évaluer le risque d’insuffisance rénale aiguë (AKI) postopératoire nécessitant une dialyse.",
+    "pearls": "- Primarily validated for adult patients undergoing open cardiac surgery; extrapolation beyond this group should be done cautiously.\n- Predicts only the risk of dialysis-requiring AKI and does not assess milder forms or duration of renal dysfunction."
+  },
+  "next_steps": {
+    "advice": "- Les personnes **à faible risque** peuvent être prises en charge avec des soins périopératoires standards, en assurant l’hydratation et en évitant les néphrotoxiques.\n- Pour les patients **à risque élevé**, envisager :\n\n - Éviter les agents néphrotoxiques (p. ex., produits de contraste, inhibiteurs de l’ECA) lorsque possible et assurer une posologie médicamenteuse appropriée.\n - Optimiser le statut volémique et maintenir une pression de perfusion adéquate.\n - Ajuster les objectifs hémodynamiques peropératoires selon les besoins.\n - Mettre en place une surveillance rapprochée de la fonction rénale en postopératoire (p. ex., créatinine sérique, diurèse).\n - Consulter la néphrologie en préopératoire pour réduire le risque ou en postopératoire en cas de signes de détérioration rénale.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Thakar Score | Risk of ARF |\n| --- | --- |\n| 0-2 | 0.4% |\n| 3-5 | 1.8% |\n| 6-8 | 7.8-9.5% |\n| ≥9 | 21.3-21.5% |",
+  "short_description": "ARF : risque de dialyse.",
+  "medium_description": "Predicts risque de aigu renal défaillance (ARF) requiring dialysis after cardiac surgery.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chf",
+      "label": "Insuffisance cardiaque congestive",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "left",
+      "label": "Left ventricular fraction d'éjection <35%",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "iabp",
+      "label": "Utilisation préopératoire de l'IABP",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "copd",
+      "label": "COPD",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "insulin",
+      "label": "Insulin-requiring diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cardiac",
+      "label": "Chirurgie cardiaque antérieure",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "surgery",
+      "label": "Chirurgie d’urgence",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Type de chirurgie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Valve seule",
+          "value": 1
+        },
+        {
+          "label": "CABG et valve",
+          "value": 2
+        },
+        {
+          "label": "Autre",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine préopératoire, mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 1.2",
+          "value": 0
+        },
+        {
+          "label": "1.2-2.0",
+          "value": 2
+        },
+        {
+          "label": ">2.0",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Thakar CV, Arrigain S, Worley S, Yared JP, Paganini EP. A clinical score to predict acute renal failure after cardiac surgery. J Am Soc Nephrol. 2005;16(1):162-168.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15563569/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wong B, St. Onge J, Korkola S, Prasad B. Validating a scoring tool to predict acute kidney injury (Aki) following cardiac surgery. Can J Kidney Health Dis. 2015;2:3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4349478/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Heise D, Sundermann D, Braeuer A, Quintel M. Validation of a clinical score to determine the risk of acute renal failure after cardiac surgery. Eur J Cardiothorac Surg. 2010;37(3):710-716.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19716313/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acef-ii-risk-score-cardiac-surgery",
+    "calc.score2-diabetes",
+    "calc.score2-older-persons-score2-op"
+  ],
+  "source_logic_hash": "832ee2a4b920b886a410e40b7df45969",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10471,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

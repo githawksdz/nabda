@@ -1,0 +1,127 @@
+{
+  "id": "calc.fibrotic-nash-index-fni",
+  "slug": "fibrotic-nash-index-fni",
+  "language": "fr",
+  "title": "Index de NASH fibrosante (FNI)",
+  "short_title": "Index de NASH fibrosante (FNI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Diabète sucré",
+    "Hepatitis",
+    "Obesity"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Cough",
+    "Fatigue",
+    "Jaundice",
+    "Perte d'appétit",
+    "Dyspnée",
+    "Swelling",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Fibrotic NASH Index (FNI)",
+    "fni",
+    "NAFLD",
+    "nonalcoholic steatohepatitis",
+    "fibrosis",
+    "liver fibrosis",
+    "nonalcoholic fatty liver disease",
+    "hepatitis",
+    "liver disease"
+  ],
+  "dosing": false,
+  "formula": "FNI = e^x^/(1 + e^x^), où x = -10.33 + 2.54*ln(AST) + 3.86*ln(HbA1c) – 1.66*ln(HDL, mg/dL)",
+  "how_to_use": {
+    "why": "- Les valeurs de laboratoire sont facilement disponibles dans la plupart des cliniques de soins primaires et d’endocrinologie.\n- Aucun examen invasif n’est requis.",
+    "when": "- À utiliser chez les patients à haut risque de développer une NASH (notamment ceux présentant un diabète de type 2, une obésité et/ou d'autres marqueurs du syndrome métabolique).\n- Ne pas utiliser chez les patients ayant des antécédents de trouble de l'usage d'alcool ou d'hépatopathie chronique.",
+    "pearls": "- Cette étude a été réalisée principalement dans des populations européennes, y compris les 3 cohortes externes utilisées pour la validation.\n- La performance de ce score n’a pas encore été comparée à celle d’autres scores de tests sanguins non invasifs."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- Les patients atteints de diabète, d’obésité et d’autres marqueurs du syndrome métabolique devraient recevoir des conseils sur les modifications du mode de vie.\n- En cas de suspicion de fibrose, une orientation vers un hépatologue peut être justifiée."
+  },
+  "evidence": "",
+  "more_info": "La NASH fibreuse peut être exclue lorsque la valeur du FNI est ≤0.10.",
+  "short_description": "Fibrotic NASH dépistage.",
+  "medium_description": "Screens pour fibrotic NASH dans individuals at élevé risque pour NAFLD.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "a1c",
+      "label": "HbA1c",
+      "optional": false,
+      "unit": "hgba1c",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdl",
+      "label": "HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Tavaglione F, Jamialahmadi O, De Vincentis A, et al. Development and validation of a score for fibrotic nonalcoholic steatohepatitis. Clin Gastroenterol Hepatol. 2023;21(6):1523-1532.e1.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35421583/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jeong S, Kim HJ, Han HW. Sex-separated nafld/nash scores may improve predictive performance. Clin Gastroenterol Hepatol. 2023;21(3):855-856.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35623590/",
+      "kind": "other"
+    },
+    {
+      "text": "Tavaglione F, Jamialahmadi O, De Vincentis A, et al. Development and validation of a score for fibrotic nonalcoholic steatohepatitis. Clin Gastroenterol Hepatol. 2023;21(6):1523-1532.e1.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35421583/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nafld-non-alcoholic-fatty-liver-disease-activity-score",
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.peld-cr"
+  ],
+  "source_logic_hash": "48e5a7a50431449d5631bb4c3ae60c5d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10508,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

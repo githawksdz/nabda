@@ -1,0 +1,298 @@
+{
+  "id": "calc.myasthenia-gravis-activities-of-daily-living-mg-adl",
+  "slug": "myasthenia-gravis-activities-of-daily-living-mg-adl",
+  "language": "en",
+  "title": "Activités de la vie quotidienne dans la myasthénie grave (MG-ADL)",
+  "short_title": "MG-ADL",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "neurologie"
+  ],
+  "diseases": [
+    "Myasthénie grave"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Dysphagia"
+  ],
+  "abbreviations": [
+    "Myasthenia Gravis Activities of Daily Living",
+    "MG-ADL",
+    "disease severity in myasthenia gravis",
+    " myasthenia gravis",
+    "neuromuscular disorder",
+    "functional assessment",
+    "daily living scale",
+    "patient-reported outcome"
+  ],
+  "dosing": false,
+  "formula": "The total MG-ADL score is calculated by summing the scores from all 8 items on the questionnaire.\n\n| Items | Grade 0 | Grade 1 | Grade 2 | Grade 3 |\n| --- | --- | --- | --- | --- |\n| Talking | Normal | Intermittent slurring or nasal speech | Constant slurring or nasal, but can be understood | Difficult to understand speech |\n| Chewing | Normal | Fatigue with solid food | Fatigue with soft food | Gastric tube |\n| Swallowing | Normal | Rare episode of c hoking | Frequent choking Necessitating changes in diet | Gastric tube |\n| Breathing | Normal | Shortness of breath with exertion | Shortness of breath at rest | Ventilator dependence |\n| Impairment of ability to brush teeth or comb hair | None | Extra effort, but no rest periods needed | Rest periods needed | Cannot do one of these functions |\n| Impairment of ability to arise from a chair | None | Mild, sometimes uses arms | Moderate, always uses arms | Severe, requires assistance |\n| Double vision | None | Occurs, but not daily | Daily, but not constant | Constant |\n| Eyelid droop | None | Occurs, but not daily | Daily, but not constant | Constant |",
+  "how_to_use": {
+    "why": "- Quantifie rapidement la gravité fonctionnelle de la maladie sans équipement spécialisé ni formation particulière.\n- Prend en compte l’impact sur le fonctionnement quotidien et la qualité de vie que l’évaluation de la force au lit du patient peut manquer.\n- Corrèle avec le QMG, le MG Composite et la classe MGFA, et est largement accepté dans les essais cliniques.\n- Des scores plus élevés prédisent un risque accru d’exacerbations, de recours à l’hospitalisation et de perte de qualité de vie liée à la santé.",
+    "when": "- Administrer au diagnostic de myasthénie grave (MG), à chaque suivi de routine, et avant et après tout changement thérapeutique afin de quantifier la charge initiale, de suivre la réponse et de détecter une détérioration précoce.\n- Convient à l’auto-évaluation, au recueil infirmier d’admission ou à l’entretien avec le clinicien.",
+    "pearls": "- Eight items were distilled from the original 13-item Quantitative Myasthenia Gravis (QMG) scale.\n- Limited discrimination once the total score exceeds ~20 (“ceiling effect”).\n- May underrate purely ocular MG (ptosis/diplopia counted once).\n- Does not capture every source of MG-related disability; for instance, axial weakness is not assessed.\n- Linear scoring (0–3 per item) can understate the real-world impact of high-stakes disabilities (e.g., ventilator dependence).\n- Comorbidities that impair daily living (arthritis, depression, stroke, etc.) can falsely elevate the total.\n- Not intended for use in triaging an impending myasthenic crisis."
+  },
+  "next_steps": {
+    "advice": "- Interpréter en parallèle de l’examen neurologique, de la fonction pulmonaire (FVC/NIF) et des objectifs du patient.\n- Des scores plus élevés indiquent une incapacité plus importante.\n- Viser un score ≤1 (« expression minimale des symptômes ») lors de la recherche d’une rémission.\n- Une variation de ≥2 points est considérée comme la différence minimale cliniquement importante (MCID).",
+    "critical_actions": "Mesurer la capacité vitale forcée (FVC) et la force inspiratoire négative (NIF), et adresser le patient aux urgences si une crise myasthénique est suspectée.",
+    "management": "- Si le score cible est atteint :\n\n - Renforcer l'observance médicamenteuse.\n - Envisager une désescalade des soins.\n - Espacer les intervalles entre les visites tout en poursuivant la surveillance à distance des résultats rapportés par le patient.\n- Si le score reste élevé ou continue d'augmenter malgré le traitement :\n\n - Confirmer l'observance du traitement.\n - Rechercher un déclencheur thyroïdien ou infectieux.\n - Intensifier le traitement, selon besoin."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score MG-ADL | Sévérité de la maladie MG-ADL |\n| --- | --- |\n| 0-4 | Maladie légère |\n| 5-9 | Impact modéré sur le fonctionnement quotidien |\n| ≥10 | Altération fonctionnelle significative |",
+  "short_description": "MG maladie gravité.",
+  "medium_description": "Assesses maladie gravité chez les patients avec myasthenia gravis (MG).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "talk",
+      "label": "Talking",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Dysarthrie intermittente ou voix nasonnée",
+          "value": 1
+        },
+        {
+          "label": "Bredouillement ou voix nasonnée constant, mais compréhensible",
+          "value": 2
+        },
+        {
+          "label": "Difficult pour understand speech",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chew",
+      "label": "Chewing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "fatigue avec solid food",
+          "value": 1
+        },
+        {
+          "label": "fatigue avec soft food",
+          "value": 2
+        },
+        {
+          "label": "Sonde gastrique",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "swallow",
+      "label": "Swallowing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Épisode rare d'étouffement",
+          "value": 1
+        },
+        {
+          "label": "Frequent choking, necessitating changes dans diet",
+          "value": 2
+        },
+        {
+          "label": "Sonde gastrique",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "breath",
+      "label": "Breathing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "dyspnée avec exertion",
+          "value": 1
+        },
+        {
+          "label": "dyspnée at rest",
+          "value": 2
+        },
+        {
+          "label": "Dépendance à la ventilation mécanique",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "comb",
+      "label": "Altération de la capacité à se brosser les dents ou à se coiffer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Effort supplémentaire, mais aucune période de repos nécessaire",
+          "value": 1
+        },
+        {
+          "label": "Périodes de repos nécessaires",
+          "value": 2
+        },
+        {
+          "label": "Cannot do one de these functions",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "chair",
+      "label": "Altération de la capacité à se lever d’une chaise",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Mild, sometimes uses arms",
+          "value": 1
+        },
+        {
+          "label": "modéré, always uses arms",
+          "value": 2
+        },
+        {
+          "label": "Severe, nécessite assistance",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vision",
+      "label": "Vision double (diplopie)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Survient, mais pas tous les jours",
+          "value": 1
+        },
+        {
+          "label": "Quotidien, mais non constant",
+          "value": 2
+        },
+        {
+          "label": "Constant",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eyelid",
+      "label": "Ptosis palpébral",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Survient, mais pas tous les jours",
+          "value": 1
+        },
+        {
+          "label": "Quotidien, mais non constant",
+          "value": 2
+        },
+        {
+          "label": "Constant",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wolfe GI, Herbelin L, Nations SP, Foster B, Bryan WW, Barohn RJ. Myasthenia gravis activities of daily living profile. Neurology. 1999;52(7):1487-1489. doi:10.1212/wnl.52.7.1487",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/10227640/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Muppidi S, Wolfe GI, Conaway M, Burns TM; MG COMPOSITE AND MG-QOL15 STUDY GROUP. MG-ADL: still a relevant outcome measure. Muscle Nerve. 2011;44(5):727-731. doi:10.1002/mus.22140",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22006686/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Muppidi S. The myasthenia gravis--specific activities of daily living profile. Ann N Y Acad Sci. 2012;1274:114-119. doi:10.1111/j.1749-6632.2012.06817.x",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23252905/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Muppidi S, Silvestri NJ, Tan R, Riggs K, Leighton T, Phillips GA. Utilization of MG-ADL in myasthenia gravis clinical research and care. Muscle Nerve. 2022;65(6):630-639. doi:10.1002/mus.27476",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34989427/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "2b6474eaae9ecc2e66e69c1035df7cd5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10611,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

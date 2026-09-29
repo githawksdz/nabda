@@ -1,0 +1,255 @@
+{
+  "id": "calc.shortened-modified-fatigue-impact-scale-mfis",
+  "slug": "shortened-modified-fatigue-impact-scale-mfis",
+  "language": "fr",
+  "title": "Shortened modifié fatigue Impact échelle (MFIS)",
+  "short_title": "Shortened modifié fatigue Impact échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "mfis",
+    "ms",
+    "multiple sclerosis",
+    "daily life",
+    "function",
+    "short mfis"
+  ],
+  "dosing": false,
+  "formula": "MFIS abrégé = somme des items 1, 9, 10, 17, 19 (issus du [MFIS](nabda:calc.modified-fatigue-impact-scale-mfis))",
+  "how_to_use": {
+    "why": "",
+    "when": "Méthode plus courte et tout aussi précise pour quantifier l'impact de la fatigue sur le fonctionnement quotidien des patients atteints de sclérose en plaques, comparée à son prédécesseur, le [MFIS](nabda:calc.modified-fatigue-impact-scale-mfis).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Cet outil est utile pour le suivi longitudinal de la fatigue associée à la SEP d'un patient, mais peut également être utilisé pour mesurer rapidement la sévérité de la fatigue.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Impact quotidien de la fatigue.",
+  "medium_description": "Version abrégée du MFIS qui mesure l'impact de la fatigue sur la vie quotidienne du patient.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "1. J'ai été moins alerte.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q9",
+      "label": "9. I have been limited dans my ability pour do things away de home.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q10",
+      "label": "10. I have had trouble maintaining physical effort pour long periods.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q17",
+      "label": "17. I have been less able pour complete tasks that require physical effort.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q19",
+      "label": "19. J'ai eu des difficultés à me concentrer.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 0
+        },
+        {
+          "label": "Rarely",
+          "value": 1
+        },
+        {
+          "label": "Sometimes",
+          "value": 2
+        },
+        {
+          "label": "Often",
+          "value": 3
+        },
+        {
+          "label": "Presque toujours",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fisk JD, Pontefract A, Ritvo PG, Archibald CJ, Murray TJ. The impact of fatigue on patients with multiple sclerosis. Can J Neurol Sci. 1994 Feb;21(1):9-14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Larson RD. Psychometric Properties of the Modified Fatigue Impact Scale.International Journal of MS Care. 2013;15(1):15-20. doi:10.7224/1537-2073.2012-019.",
+      "href": "https://walkcoc.nationalmssociety.org/docs/HOM/MSQLI_Manual_and_Forms.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Freal JE, Kraft GH, Coryell JK.Symptomatic fatigue in multiple sclerosis.Arch Phys Med Rehabil. 1984 Mar;65(3):135-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6703889",
+      "kind": "other"
+    },
+    {
+      "text": "Kos D, Nagels G, D'Hooghe MB, Duportail M, Kerckhofs E. A rapid screening tool for fatigue impact in multiple sclerosis. BMC Neurology. 2006;6:27. doi:10.1186/1471-2377-6-27.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1579227/",
+      "kind": "other"
+    },
+    {
+      "text": "Tellez N et al. Does the Modified Fatigue Impact Scale offer a more comprehensive assessment of fatigue in MS? Mult Scler 2005;11(2):198– 202",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15794395",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-fatigue-impact-scale-mfis",
+    "calc.berg-balance-scale-bbs",
+    "calc.expanded-disability-status-scale-edss-functional-systems-score-fss"
+  ],
+  "source_logic_hash": "c773ae407789304fd85f885081b15121",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-fatigue-impact-scale-mfis",
+      "text": "MFIS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2197,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

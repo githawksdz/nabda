@@ -1,0 +1,116 @@
+{
+  "id": "calc.canadian-cardiovascular-society-ccs-angina-grade",
+  "slug": "canadian-cardiovascular-society-ccs-angina-grade",
+  "language": "en",
+  "title": "Classification de l'angor de la Société canadienne de cardiologie (CCS)",
+  "short_title": "CCS Angina Grade",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Douleur aiguë",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Douleur chronique"
+  ],
+  "abbreviations": [
+    "Angina",
+    "angina score",
+    "Canadian cardiovascular society",
+    "CCS",
+    "myocardial infarction",
+    " MI",
+    "heart attack",
+    "ccs angina"
+  ],
+  "dosing": false,
+  "formula": "Higher grade indicates higher severity of angina:\n\n| Grade | Description |\n| --- | --- |\n| I | Angina with strenuous/rapid/prolonged exertion at work or recreation only; no angina with ordinary physical activity, e.g. walking, climbing stairs |\n| II | Ordinary activity slightly limited: angina with walking/climbing stairs rapidly, walking uphill, walking or stair climbing after meals, in cold/wind, under emotional stress, during few hours after awakening, walking >2 blocks on level ground, or climbing >1 flight of stairs at normal pace and normal conditions |\n| III | Marked limitation of ordinary physical activity: angina with walking 1-2 blocks on level ground or climbing 1 flight of stairs at normal pace and normal conditions |\n| IV | Inability to carry on any physical activity without discomfort; anginal syndrome may be present at rest |",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "Initialement développée pour standardiser la définition des termes utilisés dans les études sur la CAD et le CABG, à l’instar de la classification NYHA pour l’insuffisance cardiaque ; elle n’était pas destinée à pronostiquer les résultats."
+  },
+  "next_steps": {
+    "advice": "Ne doit pas être utilisé pour prédire les résultats.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Angina gravité.",
+  "medium_description": "Classifies gravité de angina.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "des",
+      "label": "Description",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Angina avec strenuous/rapid/prolonged exertion at work ou recreation only; no angina avec ordinary physical activity, e.g. walking, climbing stairs",
+          "value": 0
+        },
+        {
+          "label": "Ordinary activity slightly limited: angina avec walking/climbing stairs rapidly, walking uphill, walking ou stair climbing after meals, dans cold/wind, under emotional stress, during few hours after awakening, walking >2 blocks sur level ground, ou climbing",
+          "value": 1
+        },
+        {
+          "label": "Marked limitation de ordinary physical activity: angina avec walking 1-2 blocks sur level ground ou climbing 1 flight de stairs at normal pace et normal conditions",
+          "value": 2
+        },
+        {
+          "label": "Inability pour carry sur any physical activity sans discomfort; anginal syndrome peut être present at rest",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Campeau L. Letter: Grading of angina pectoris. Circulation. 1976;54(3):522-3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/947585 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Campeau L. The Canadian Cardiovascular Society grading of angina pectoris revisited 30 years later. Can J Cardiol. 2002;18(4):371-9. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11992130 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.troponin-manchester-acute-coronary-syndromes-t-macs-decision-aid",
+    "calc.timi-risk-score-ua-nstemi",
+    "calc.framingham-risk-score-hard-coronary-heart-disease"
+  ],
+  "source_logic_hash": "4af4a18de222e50d913703f932c88a1d",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10067,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

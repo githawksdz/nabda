@@ -1,0 +1,254 @@
+{
+  "id": "calc.north-american-familial-chylomicronemia-score-nafcs",
+  "slug": "north-american-familial-chylomicronemia-score-nafcs",
+  "language": "en",
+  "title": "Score nord-américain de chylomicronémie familiale (NAFCS)",
+  "short_title": "NAFCS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "endocrinologie"
+  ],
+  "diseases": [
+    "Chylomicronemia",
+    "Hypertriglyceridemia"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur dorsale",
+    "Bloating",
+    "Diarrhea",
+    "Fatigue",
+    "Nausea",
+    "Numbness",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "North American Familial Chylomicronemia Score (NAFCS)",
+    "NAFCS",
+    "familial chylomicronemia syndrome",
+    "FCS",
+    "chylomicronemia",
+    "HTG",
+    "hypertriglyceridemia"
+  ],
+  "dosing": false,
+  "formula": "The NAFCS is calculated by the addition of the following points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Current age, years | <1* | - |\n| ≥1-9 | 12 | |\n| ≥10 | - | |\n| HTG onset, years (only asked of patients ≥10) | ≥10 | 0 |\n| <10 | 12 | |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) | ≥25 kg/m² or ≥85 th percentile | 0 |\n| <25 kg/m² or <85th percentile | 9 | |\n| History of pancreatitis | Neither abdominal pain nor pancreatitis | 0 |\n| Abdominal pain but no pancreatitis | 9 | |\n| Pancreatitis | 16 | |\n| Presence of secondary factors** that may contribute to HTG | ≥1 | 0 |\n| None | 11 | |\n| Laboratory Values | | |\n| All TG >880 mg/dL | No | 0 |\n| Yes | 13 | |\n| Ratio TG/ TC >8 (when measured in mg/dL) | No | 0 |\n| Yes | 8 | |\n| Apo B <1.0 g/L | No | 0 |\n| Yes | 12 | |\n\n*Calculator cannot be used for patients <1 year old. If infant presents with no secondary factors that may contribute to HTG, consider a diagnosis of FCS. If infant presents with ≥1 secondary factor that may contribute to HTG, but with 2 TG readings >880 mg/dL and unexplained failure to thrive, consider a diagnosis of FCS.\n\n**See list of secondary factors[here](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nafcs_secondary_factors.pdf).\n\nAdditional points added:\n\n1. If patient is ≥1-9 years old AND has no secondary factors, +7.\n2. If ratio TG/TC >8 AND apo B <1.0 g/dL, +7.\n3. If ratio TG/TC >8 AND has no secondary factors, +5.",
+  "how_to_use": {
+    "why": "- FCS is rare and difficult to diagnose, with overlapping features with MCS.\n- High scores are highly specific for FCS, potentially allowing a fast-track for genetic testing, specialist referral, and appropriate therapy while avoiding unnecessary work-up with low scores.\n- Unlike the Moulin score, this tool incorporates TG/TC ratio, apo B, and BMI.\n- Easier to implement than some proposed diagnostic algorithms and requires no specialized laboratory assays.",
+    "when": "- Apply in non-pregnant patients ≥1 year old with fasting triglycerides (TG) ≥440 mg/dL to distinguish familial chylomicronemia syndrome (FCS) from multifactorial chylomicronemia (MCS).\n- In patients >10 years old, use only in those whose triglycerides are non-responsive to fibrate +/- high-dose omega-3 therapy (i.e. TG decrease <20% from treatment).",
+    "pearls": "- Validation is limited to one lipid-clinic cohort of 75 patients with severe hypertriglyceridemia (Western University, Ontario).\n- Study excluded:\n\n - Pregnant individuals.\n - Infants <1 year of age.\n - Patients whose TGs fell ≥20% on fibrate and omega-3 therapy.\n - Those with genetically-confirmed partial lipodystrophy.\n - Anyone with TG level <440 mg/dL.\n- A threshold ≥60 is 100% specific but only 67% sensitive for classical FCS; a cutoff of ≥45 still missed about 11% of genetically-proven FCS; thus, it is great for ruling in but poor for excluding the diagnosis.\n- Less effective at distinguishing functional FCS from MCS.\n- Those with adolescent- or adult-onset hypertriglyceridemia may end up with lower scores and a lower probability of being properly identified; genetic testing may still be warranted in those with scores of 30–44.\n- Diagnosis definitions used:\n\n - Classical FCS: proven biallelic pathogenic variants in one of the canonical genes ( *LPL* , *GPIHBP1* , *APOA5* , *APOC2* , *LMF1* ).\n - MCS: no biallelic variants; may carry a single heterozygous pathogenic variant, have a polygenic TG score > 90th percentile, or have neither.\n - Functional FCS: MCS subset with persistent TG >880 mg/dL."
+  },
+  "next_steps": {
+    "advice": "- Use the results of this tool alongside clinical judgment and, where possible, lipid or genetics-specialist expertise; it should not be the sole determinant of diagnosis or management.\n- A high score is highly specific but not diagnostic.\n- Results may direct when to perform genetic testing (i.e., scores ≥30-44) and when to initiate FCS-specific therapy while awaiting genetic testing results (i.e., scores ≥60).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| NAFCS | Diagnostic de FCS |\n| --- | --- |\n| <30 | Improbable |\n| 30-44 | Possible |\n| 45-59 | Probable |\n| ≥60 | Certain |",
+  "short_description": "Diagnostic FCS.",
+  "medium_description": "Facilite le diagnostic du syndrome de chylomicronémie familiale (FCS).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Current âge, years",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "< 1",
+          "value": 0
+        },
+        {
+          "label": "≥1-9",
+          "value": 1
+        },
+        {
+          "label": "≥10",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "onset",
+      "label": "HTGonset, years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "age == 2",
+      "options": [
+        {
+          "label": "≥10",
+          "value": 0
+        },
+        {
+          "label": "< 10",
+          "value": 12
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥25 kg/m² ou ≥85th percentile",
+          "value": 0
+        },
+        {
+          "label": "< 25 kg/m² ou <85th percentile",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hx",
+      "label": "History de pancreatitis",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Neither abdominal douleur nor pancreatitis",
+          "value": 0
+        },
+        {
+          "label": "Abdominal douleur but no pancreatitis",
+          "value": 9
+        },
+        {
+          "label": "Pancreatitis",
+          "value": 16
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "factors",
+      "label": "Presence de secondaire factors that may contribute pour HTG",
+      "tips": "See list of secondary factors[here](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/nafcs_secondary_factors.pdf).",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥1",
+          "value": 0
+        },
+        {
+          "label": "Aucun",
+          "value": 11
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "tg",
+      "label": "AllTG>880 mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ratio",
+      "label": "Ratio TG/TC>8",
+      "tips": "When measured in mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "apo",
+      "label": "Apo B<1.0 g/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 12
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hegele RA, Ahmad Z, Ashraf A, et al. Development and validation of clinical criteria to identify familial chylomicronemia syndrome (Fcs) in North America. J Clin Lipidol. 2025;19(1):83-94.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39537503/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hegele RA, Ahmad Z, Ashraf A, et al. Development and validation of clinical criteria to identify familial chylomicronemia syndrome (Fcs) in North America. J Clin Lipidol. 2025;19(1):83-94.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39537503/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "8d99ab27f96582d96bee3c9524a31b70",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10600,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,152 @@
+{
+  "id": "calc.high-dose-insulin-euglycemia-therapy-hiet",
+  "slug": "high-dose-insulin-euglycemia-therapy-hiet",
+  "language": "en",
+  "title": "Élevé-dose Insulin Euglycemia Therapy (HIET)",
+  "short_title": "Élevé-dose Insulin Euglycemia Therapy (HIET)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "urgences",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Calcium channel blocker",
+    "ccb",
+    "beta blocker",
+    "antidote",
+    "toxicity",
+    "tox"
+  ],
+  "dosing": true,
+  "formula": "Insulin bolus:\n\n- Intravenous bolus of regular insulin at a dose of **1 unit/kg** .\n- If serum glucose <250 mg/dL, concurrently administer a bolus of dextrose 25-50 g (or 0.5-1 g/kg) IV.\n\n - *Note:* the calculator assumes D50 (50% dextrose in water) will be given for the initial bolus, and uses the weight-based dosing (0.5-1 g dextrose per kg patient weight; i.e., 1-2 cc D50 per kg patient weight).\n\nHIET continuous infusion:\n\n- Regular insulin: start 0.5–1 unit/kg/hr.\n- Dextrose: 0.5 g/kg/hr (titrate to maintain glucose 110–250 mg/dL).\n- If fluid overload is a concern, the insulin can be concentrated to 10 units/mL.\n- If hypoglycemia does occur, bolus with dextrose and/or increase dextrose infusion first before considering a decrease or cessation of insulin infusion.\n\nContinuous monitoring:\n\n- Serum glucose every 30 minutes for 1-2 hours until stable.\n- Potassium every 1 hour.",
+  "how_to_use": {
+    "why": "Il convient d’envisager HIET simultanément à l’initiation des vasopresseurs, voire avant celle-ci. HIET seul peut améliorer l’état hémodynamique du patient, rendant ainsi les vasopresseurs inutiles et permettant d’éviter les complications potentielles liées à leur utilisation.",
+    "when": "- Cardiac induced myocardial depression from CCB toxicity (strongest evidence).\n- May also be used in cardiac induced myocardial depression from beta blocker toxicity.",
+    "pearls": "- L’objectif ultime de l’HIET est l’amélioration de la perfusion des organes.\n- La glycémie, la kaliémie et la fraction d’éjection doivent être surveillées.\n- Les effets ind"
+  },
+  "next_steps": {
+    "advice": "Administrer un bolus initial d'insuline afin de saturer rapidement les récepteurs de l'insuline et d'accélérer la réponse physiologique.\n\n- Bolus de 1 unité/kg d'insuline humaine régulière avec un bolus de 0,5 g/kg de dextrose.\n- Une perfusion d'insuline régulière doit immédiatement suivre le bolus, en commençant à 1 unité/kg/h.\n\nSi la glycémie est supérieure à 250 mg/dL (16,7 mmol/L), le bolus de dextrose n'est pas nécessaire.",
+    "critical_actions": "- A continuous dextrose infusion, beginning at 0.5 g/kg/hr, should be concurrently initiated.\n- Dextrose can be started as D10, especially if central venous access not available, but it is ultimately best delivered as D25 or D50 via central venous access to lessen fluid overload.\n- Reduce the insulin infusion rate by 1 unit/kg/hr once the patient has stabilized, and reassess hourly for additional infusion reduction.\n- Reduction of insulin and dextrose may cause potassium shifting which should also be monitored.",
+    "management": "- Assess cardiac function every 10 to 15 minutes after starting HIET.\n- If cardiac function remains depressed, then the insulin dose should be increased by 0.5-1 unit/kg increments.\n- Dosing recommendations typically range up to 10 units/kg/hr; however, doses up to 22 units/kg/hr have been used, and the maximum dose is not established.\n- Typical duration of therapy has been 1 to 2 days, although HIET has been used for up to 4 days."
+  },
+  "evidence": "Most of the data comes from case series and animal/canine studies.\n\nRecent human case series include:\n\n[Holger 2011](https://www.ncbi.nlm.nih.gov/pubmed/21819291)\n\n- **Aim:** describe patient outcomes and adverse events of high dose insulin therapy in toxin induced cardiogenic shock.\n- **Design:** retrospective observational case series.\n- **Results:**\n\n - n = 12 (5 beta blockers, 2 calcium channel blockers, 2 with combined beta blockers and calcium channel blockers, 1 tricyclic antidepressant, 2 polydrug).\n - Mean age 36.5 ± SD 11.7 years.\n - Mean maximum infusion rate: 8.35 units/kg/hr ±6.34.\n - Mean duration of infusion: 23.5 hr ±19.7.\n - Mean duration of glucose infusion post insulin: 25.2 hr ±17.7.\n - Survival: 11/12 patients. Patient who died expired after insulin was stopped (i.e., deviation from protocol).\n - Adverse events:\n\n - Hypoglycemia <60 mg/dL: 19 episodes of hypoglycemia in a total of 6 patients.\n - Hypokalemia <3 mEq/L: 8 patients.\n\n[Greene 2007](https://www.ncbi.nlm.nih.gov/pubmed/17622512)\n\n- **Aim:** examine clinical safety of HIET in CCB poisoning.\n- **Design:** prospective observational study, patients with cardiogenic shock secondary to CCB.\n- **Results:**\n\n - n = 7.\n - Mean age 54 years, range 37-75.\n - Maximum infusion rate **2 units/kg.**\n - Survival: 6/7 patients.\n - Adverse events:\n\n - 3 patients who received 1 unit/kg insulin bolus had significant sustained rise in sBP >10 mmHg.\n - Hypoglycemia <65 mg/dL: 1 patient.\n - Hypokalemia <3.5 mEq/L: 1 patient.",
+  "more_info": "",
+  "short_description": "Calcium-channel blocker, beta blocker reversal.",
+  "medium_description": "Doses insulin pour calcium-channel blocker ou beta blocker overdose.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids corporel du patient",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "glucose",
+      "label": "Glycémie sérique",
+      "tips": "Déterminer si un bolus de D50 doit être administré en même temps que le bolus initial d'insuline.",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "dextrose",
+      "label": "Dextrose replacement pour infusion",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "D50",
+          "value": 0
+        },
+        {
+          "label": "D25",
+          "value": 1
+        },
+        {
+          "label": "D10",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Howland M. Antidotes in Depth. In: Hoffman RS, Howland M, Lewin NA, Nelson LS, Goldfrank LR. eds. Goldfrank's Toxicologic Emergencies, 10e. McGraw Hill; 2015.",
+      "href": "https://accesspharmacy.mhmedical.com/content.aspx?bookid=1163&sectionid=65087723",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Holger JS, Stellpflug SJ, Cole JB, Harris CR, Engebretsen KM. High-dose insulin: a consecutive case series in toxin-induced cardiogenic shock. Clin Toxicol (Phila). 2011;49(7):653-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21819291 ",
+      "kind": "other"
+    },
+    {
+      "text": "Greene SL, Gawarammana I, Wood DM, Jones AL, Dargan PI. Relative safety of hyperinsulinaemia/euglycaemia therapy in the management of calcium channel blocker overdose: a prospective observational study. Intensive Care Med. 2007;33(11):2019-24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17622512 ",
+      "kind": "other"
+    },
+    {
+      "text": "Lugassy DM et al. The Critically Ill Poisoned Patient. Emergency Department Resuscitation of the Critically Ill 2015. M. E. Winters, American College of Emergency Physicians.",
+      "href": "https://www.google.com/books/edition/_/lRjgswEACAAJ?hl=en&sa=X&ved=2ahUKEwjy7az-2c76AhUGFlkFHU23ApgQre8FegQIEhAC",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cancer-aging-research-group-chemotherapy-toxicity-tool-carg-tt",
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+    "calc.naloxone-drip-dosing"
+  ],
+  "source_logic_hash": "0a4cd2fd4f1612dc4b6185f2dc53da7e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4026,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.alginate-bicarbonate-calcium",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

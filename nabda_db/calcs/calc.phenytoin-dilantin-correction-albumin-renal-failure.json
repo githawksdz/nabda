@@ -1,0 +1,195 @@
+{
+  "id": "calc.phenytoin-dilantin-correction-albumin-renal-failure",
+  "slug": "phenytoin-dilantin-correction-albumin-renal-failure",
+  "language": "fr",
+  "title": "Phenytoin (Dilantin) Correction pour Albumin/Renal défaillance",
+  "short_title": "Correction de la phénytoïne (Dilantin)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "nephrologie",
+    "neurologie",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Hypocalcemia",
+    "Insuffisance rénale",
+    "Trouble convulsif"
+  ],
+  "chief_complaints": [
+    "Seizure",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "dilantin",
+    "Phenytoin",
+    "seizure"
+  ],
+  "dosing": false,
+  "formula": "Phénytoïne corrigée = taux de phénytoïne mesuré/((coefficient × notionvc: 9aa97814-213f-461e-b8d9-e6b709fa6d75albumine, g/dL) + 0,1)\n\nCoefficient = 0,275 ; chez les patients avec une clairance de la créatinine <20 mL/min, coefficient = 0,2.\n\nRemarque : aucune correction n'est nécessaire si l'albumine est >3,2 g/dL. Ce calcul est dérivé de la formule originale de Winter-Tozer, qui utilisait un coefficient d'albumine de 0,2, et de 0,1 en cas d'insuffisance rénale.",
+  "how_to_use": {
+    "why": "Permet d'éviter un sous-dosage ou un surdosage chez les patients insuffisants rénaux ou présentant une hypoalbuminémie.",
+    "when": "Patients sous phénytoïne présentant une insuffisance rénale ou une albumine ≤3,2 g/dL (32 g/L).",
+    "pearls": "La phénytoïne a une fenêtre thérapeutique étroite et est fortement liée aux protéines plasmatiques. C'est la phénytoïne liée aux protéines qui est généralement mesurée par le laboratoire. Cependant, la phénytoïne non liée est la fraction active (elle traverse la barrière hémato-encéphalique). Ce calculateur aide à estimer la quantité active équivalente de phénytoïne à partir des valeurs biologiques habituelles."
+  },
+  "next_steps": {
+    "advice": "- Adapter la posologie de la phénytoïne en fonction des valeurs.\n- En cas de valeurs constamment hors de l'intervalle thérapeutique, envisager d'autres antiépileptiques.\n- L'utilisation concomitante d'acide valproïque et de certains autres médicaments déplace la phénytoïne de ses liaisons aux protéines plasmatiques et peut entraîner des taux erratiques.\n- Dans la mesure du possible, un taux de phénytoïne libre devrait être préféré à un taux corrigé.",
+    "critical_actions": "Un taux thérapeutique de phénytoïne est généralement considéré comme étant de 10-20 mg/L (40-80 µmol/L). Des taux supérieurs peuvent provoquer un nystagmus, une ataxie, une léthargie, une confusion et un coma.",
+    "management": ""
+  },
+  "evidence": "La phénytoïne est fortement liée aux protéines, mais c'est généralement la fraction libre, non liée, du sérum qui corrèle avec les concentrations dans le système nerveux central ([Vadja 2014](https://www.ncbi.nlm.nih.gov/pubmed/25470190)). Les laboratoires mesurent généralement uniquement la fraction liée de la phénytoïne. De nombreuses équations ont été développées pour prédire les concentrations de phénytoïne non liée. La formule de Winter-Tozer (également appelée Sheiner-Tozer) est l'une des équations les plus largement utilisées (Sheiner 1978). Cependant, cette équation a été établie à partir de données pharmacocinétiques de sujets par ailleurs en bonne santé ([Martin 1977](https://www.ncbi.nlm.nih.gov/pubmed/599408)). Des recherches ultérieures ont montré qu'elle est moins précise chez les patients de réanimation présentant une insuffisance rénale ou une hypoalbuminémie.\n\nLes formules originales utilisaient un coefficient de liaison à l'albumine (voir ci-dessous) de 0,2, et de 0,1 chez les patients insuffisants rénaux (Winter 2006). Ces équations supposaient une albuminémie normale et une fraction libre de médicament de 10 %. Cependant, ces coefficients se sont révélés inexacts, en particulier lorsque le taux sérique d'albumine est bas ([Hong 2009](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730613/)) ou lorsque la fonction rénale est altérée ([Liponi 1984](https://www.ncbi.nlm.nih.gov/pubmed/6538287)).\n\nDifférents coefficients ont montré de meilleures corrélations avec les taux de phénytoïne libre, allant de 0,25 chez les sujets âgés et en cas de traumatisme crânien ([Anderson 1997](https://www.ncbi.nlm.nih.gov/pubmed/9066931)) à 0,29 chez les patients de neuro-réanimation ([Kane 2013](https://www.ncbi.nlm.nih.gov/pubmed/23606554)). Une autre étude incluant des patients de médecine générale, de neurologie et de réanimation a montré qu'un coefficient de 0,275 était le plus prédictif ([Cheng 2016](https://www.ncbi.nlm.nih.gov/pubmed/27621486)). Pour ce calculateur, un coefficient de 0,275 a été utilisé en l'absence d'insuffisance rénale, ce qui représentait un compromis entre les études sur les traumatismés et celles en réanimation, et avait été établi à partir de l'échantillon de patients le plus diversifié.\n\nOn dispose de moins de données sur la phénytoïne en cas d'insuffisance rénale, mais au moins une étude de plus petite taille soutient l'utilisation d'un coefficient de 0,2 chez ces patients ([Soriano 2017](https://www.ncbi.nlm.nih.gov/pubmed/28470115)). Il convient toutefois de noter qu'aucune de ces équations n'a été validée par un essai prospectif et que, dans la mesure du possible, les taux de phénytoïne libre devraient être utilisés pour guider le traitement.",
+  "more_info": "L'« équation de Sheiner-Tozer » est le nom officiel de cette correction.",
+  "short_description": "Taux de phénytoïne corrigé.",
+  "medium_description": "Corrects serum phenytoin level pour renal défaillance et/ou hypoalbuminemia.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "unit",
+      "label": "Unité de la phénytoïne",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "µg/mL",
+          "value": 0
+        },
+        {
+          "label": "µmol/L",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "phenytoin_microg",
+      "label": "Taux de phénytoïne mesuré",
+      "optional": false,
+      "unit": "phenytoin_µg/mL",
+      "show_points": false,
+      "conditionality": "unit == 0"
+    },
+    {
+      "type": "textbox",
+      "name": "phenytoin_microm",
+      "label": "Taux de phénytoïne mesuré",
+      "optional": false,
+      "unit": "phenytoin_µmol/L",
+      "show_points": false,
+      "conditionality": "unit == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "tips": "Si l'albumine est >3,2 g/dL (32 g/L), cette correction n'est pas nécessaire",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "crcl_20",
+      "label": "Clairance de la créatinine <20 mL/min",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Martin E, Tozer TN, Sheiner LB, Riegelman S. The clinical pharmacokinetics of phenytoin. J Pharmacokinet Biopharm. 1977 Dec;5(6):579-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/599408",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sheiner LB, Tozer TN. Clinical pharmacokinetics: the use of plasma concentrations of drugs. In: Melmon KL, Morelli HF, editors. Clinical Pharmacology: Basic Principles in Therapeutics. New York: Macmillan; 1978. p.71-109.",
+      "href": "https://books.google.com/books?id=DPW0AAAAIAAJ&source=gbs_book_other_versions",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Winter MG, Tozer TN. Chapter 20. Phenytoin. In: Burton ME, Shaw LM, Schentag JJ, Evans WE. Applied pharmacokinetics: principles of therapeutic drug monitoring. 4th ed. Baltimore, MD: Lippincott Williams &amp; Wilkins, ©2006.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1805474/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vajda FJ, Eadie MJ. The clinical pharmacology of traditional antiepileptic drugs. Epileptic Disord. 2014;16:395-408.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25470190",
+      "kind": "other"
+    },
+    {
+      "text": "Hong JM, Choi YC, Kim WJ. Differences between the Measured and Calculated Free Serum Phenytoin Concentrations in Epileptic Patients. Yonsei Medical Journal. 2009;50(4):517-520.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2730613/",
+      "kind": "other"
+    },
+    {
+      "text": "Liponi DF, Winter ME, Tozer TN. Renal function and therapeutic concentrations of phenytoin. Neurology 1984;34:395-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6538287",
+      "kind": "other"
+    },
+    {
+      "text": "Kane SP, Bress AP, Tesoro EP. Characterization of unbound phenytoin concentrations in neurointensive care unit patients using a revised Winter-Tozer equation. Ann Pharmacother. 2013;47(5):628-36.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23606554",
+      "kind": "other"
+    },
+    {
+      "text": "Anderson GD, Pak C, Doane KW, et al. Revised Winter-Tozer equation for normalized phenytoin concentrations in trauma and elderly patients with hypoalbuminemia. Ann Pharmacother. 1997;31(3):279-84.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9066931",
+      "kind": "other"
+    },
+    {
+      "text": "Cheng W, Kiang TKL, Bring P, Ensom MHH. Predictive Performance of the Winter–Tozer and Derivative Equations for Estimating Free Phenytoin Concentration. The Canadian Journal of Hospital Pharmacy. 2016;69(4):269-279.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27621486",
+      "kind": "other"
+    },
+    {
+      "text": "Soriano VV, Tesoro EP, Kane SP. Characterization of Free Phenytoin Concentrations in End-Stage Renal Disease Using the Winter-Tozer Equation. Ann Pharmacother. 2017;:1060028017707541.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28470115",
+      "kind": "other"
+    },
+    {
+      "text": "Kiang TK, Ensom MH. A Comprehensive Review on the Predictive Performance of the Sheiner-Tozer and Derivative Equations for the Correction of Phenytoin Concentrations. Ann Pharmacother. 2016;50(4):311-25.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26825643",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.2helps2b-score",
+    "calc.sodium-correction-rate-hyponatremia-hypernatremia",
+    "calc.creatinine-clearance-cockcroft-gault-equation"
+  ],
+  "source_logic_hash": "6a9d47459d0042d2cd336642ad79679a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 333,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

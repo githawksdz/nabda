@@ -1,0 +1,335 @@
+{
+  "id": "calc.impede-vte",
+  "slug": "impede-vte",
+  "language": "fr",
+  "title": "IMPEDE-VTE",
+  "short_title": "IMPEDE-VTE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Myélome multiple",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur thoracique",
+    "Constipation",
+    "Toux",
+    "Vertiges",
+    "Fatigue",
+    "Fièvre",
+    "Nausée",
+    "Œdème périphérique",
+    "Polyurie",
+    "Dyspnée",
+    "Gonflement",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "IMPEDE-VTE",
+    "impede",
+    "impede vte",
+    "vte",
+    "mm",
+    "multiple myeloma",
+    "venous thromboembolism",
+    "vte risk",
+    "myeloma",
+    "venous thromboembolism risk"
+  ],
+  "dosing": false,
+  "formula": "The IMPEDE-VTE Score is calculated by adding the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| I mmunomodulatory drug use | No | 0 |\n| Yes | 4 | |\n| B M I ≥25 kg/m 2 | No | 0 |\n| Yes | 1 | |\n| P elvic, hip, or femur fracture | No | 0 |\n| Yes | 4 | |\n| E rythropoiesis-stimulating agent | No | 0 |\n| Yes | 1 | |\n| D oxorubicin use | No | 0 |\n| Yes | 3 | |\n| D examethasone use | No | 0 |\n| Low dose | 2 | |\n| High dose | 4 | |\n| E thnicity/race is Asian/Pacific Islander | No | 0 |\n| Yes | -3 | |\n| History of V TE before MM | No | 0 |\n| Yes | 5 | |\n| T unneled line/central venous catheter | No | 0 |\n| Yes | 2 | |\n| E xisting thromboprophylaxis: therapeutic LMWH or warfarin use | No | 0 |\n| Yes | -4 | |\n| E xisting thromboprophylaxis: prophylactic LMWH or aspirin use | No | 0 |\n| Yes | -3 | |",
+  "how_to_use": {
+    "why": "IMPEDE a prédit plus précisément la survenue d'une VTE chez les patients atteints de myélome multiple traités par immunomodulateurs que deux autres scores (SAVED ou les recommandations de l'IMWG) dans une étude comparative[study](https://pubmed.ncbi.nlm.nih.gov/37133703/).",
+    "when": "- Utilisez ce score pour déterminer le risque de VTE chez les patients atteints de myélome multiple qui recevront une chimiothérapie dans les 6 mois suivant le diagnostic.\n- Peut aider à guider le type de thromboprophylaxie que les patients devraient recevoir.",
+    "pearls": "- L'[article de validation original](https://pmc.ncbi.nlm.nih.gov/articles/PMC7058359/) utilisait des seuils de score de ≤3 pour le groupe à faible risque, 4-7 pour le groupe à risque intermédiaire, et ≥8 pour le groupe à haut risque.\n- Les [recommandations NCCN](https://jnccn.org/view/journals/jnccn/20/1/article-p8.xml), quant à elles, dichotomisent le risque en ≤3 et ≥4."
+  },
+  "next_steps": {
+    "advice": "- This tool should not be the sole basis for VTE thromboprophylaxis decisions in patients with multiple myeloma; clinicians should use their judgment and a full clinical evaluation.\n- Risk stratification can help guide whether patients with multiple myeloma who will receive chemotherapy within 6 months of diagnosis should receive aspirin or anticoagulant thromboprophylaxis.",
+    "critical_actions": "Les cliniciens doivent prendre en compte à la fois le risque de VTE et le risque de saignement lorsqu'ils déterminent s'il faut prescrire une anticoagulation à visée thromboprophylactique.",
+    "management": "- Per[2022 NCCN Guidelines](https://jnccn.org/view/journals/jnccn/20/1/article-p8.xml), for patients with a score:\n\n - **≤** **3:** Consider aspirin 81-325 mg once daily.\n - **≥** **4:** Consider thromboprophylaxis with enoxaparin 40 mg daily, rivaroxaban 10 mg daily, apixaban 2.5 mg twice daily, fondaparinux 2.5 mg daily, or warfarin (target INR 2.0-3.0).\n- Guidelines advise an indefinite duration of VTE prophylaxis while on myeloma therapy.\n- Clinicians could consider 3-6 months of anticoagulant thromboprophylaxis followed by aspirin, unless additional patient-, treatment-, or transient VTE risk factors suggest a longer duration of anticoagulation."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| IMPEDE-VTE Score | VTE Risk within 6 months |\n| --- | --- |\n| ≤3 | Low |\n| 4-7 | Intermediate |\n| ≥8 | High |",
+  "short_description": "Risque de VTE dans le MM.",
+  "medium_description": "Predicts risque de venous thromboembolism (VTE) dans multiple myeloma.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "immuno",
+      "label": "**I** mmunomodulateur — utilisation de médicaments",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "[B](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) **M** [I](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) ≥25 kg/m^2^",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fracture",
+      "label": "**P** elvic, hip, ou femur fracture",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Np",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "esa",
+      "label": "**E** agent stimulant de l'érythropoïèse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dox",
+      "label": "**D**oxorubicine : utilisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dex",
+      "label": "**D**examéthasone : utilisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "faible dose",
+          "value": 2
+        },
+        {
+          "label": "dose élevée",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "race",
+      "label": "**E** thnicity/race is Asian/Pacific Islander",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hx",
+      "label": "History de **V** TE before MM",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "tunnel",
+      "label": "**T** cathéter tunnélisé / cathéter veineux central",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "warfarin",
+      "label": "**E**xisting thromboprophylaxis : thromboprophylaxie préexistante — utilisation d'HBPM à dose thérapeutique ou de warfarine",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aspirin",
+      "label": "**E** xisting thromboprophylaxis: prophylactic LMWH ou aspirin use",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology: Multiple Myeloma. Version 5.2026. Accessed March 16, 2026. ",
+      "href": "https://jnccn.org/view/journals/jnccn/20/1/article-p8.xml",
+      "kind": "international"
+    },
+    {
+      "text": "Sanfilippo KM, Luo S, Wang TF, et al. Predicting venous thromboembolism in multiple myeloma: development and validation of the IMPEDE VTE score. Am J Hematol. 2019;94(11):1176-1184.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31379000/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bravo-Perez C, Fernández-Caballero M, Soler-Espejo E, Garcia-Torralba E, Sorigue M, García-Malo MD, Jerez A, Vicente V, Roldán V, de Arriba F. Heparin versus aspirin thromboprophylaxis adds independent value to IMPEDE-VTE score for venous thrombosis prediction in multiple myeloma. J Thromb Thrombolysis. 2021;52(3):848-853. doi:10.1007/s11239-021-02407-5",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33649980/",
+      "kind": "other"
+    },
+    {
+      "text": "Chalayer E, Talbot A, Frenzel L, Karlin L, Collet P, Guyotat D, Attal M, Leleu X, Tardy B. Prediction of venous thromboembolism in patients with multiple myeloma treated with lenalidomide, bortezomib, dexamethasone, and transplantation: lessons from the substudy of IFM/DFCI 2009 cohort. J Thromb Haemost. 2022;20(8):1859-1867. doi:10.1111/jth.15758",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35557490/",
+      "kind": "other"
+    },
+    {
+      "text": "da Costa IHF, de Pádua CAM, de Miranda Drummond PL, et al. Comparison of three risk assessment models for thromboembolism in multiple myeloma patients receiving immunomodulators: a Brazilian historical cohort. J Thromb Thrombolysis. 2023;56(1):147-155.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37133703/",
+      "kind": "other"
+    },
+    {
+      "text": "Bao L, Fang LJ, Xiao MY, Lu MQ, Chu B, Shi L, Gao S, Xiang QQ, Wang YT, Liu X, Ding YH, Xin Z, Chen Y, Wang MZ, Hu WK, Guo CY, Chen LY, Sun K. Validation of the IMPEDE VTE score for prediction of venous thromboembolism in Chinese patients with multiple myeloma: a single-center retrospective cohort study. Thromb Res. 2024;236:130-135. doi:10.1016/j.thromres.2024.02.011",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38430904/",
+      "kind": "other"
+    },
+    {
+      "text": "Covut F, Ahmed R, Chawla S, et al. Validation of the IMPEDE VTE score for prediction of venous thromboembolism in multiple myeloma: a retrospective cohort study. Br J Haematol. 2021;193(6):1213-1219.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33997961/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.thrombosis-risk-prediction-cast-immobilization-trip-cast-score",
+    "calc.vte-bleed-score",
+    "calc.caprini-score-venous-thromboembolism-2005"
+  ],
+  "source_logic_hash": "5dd8063eaae9297aca6b8e1d7d4555f5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10498,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar immuno = parseFloat(immuno);\nvar bmi = parseFloat(bmi);\nvar fracture = parseFloat(fracture);\nvar esa = parseFloat(esa);\nvar dox = parseFloat(dox);\nvar dex = parseFloat(dex);\nvar race = parseFloat(race);\nvar hx = parseFloat(hx);\nvar tunnel = parseFloat(tunnel);\nvar warfarin = parseFloat(warfarin);\nvar aspirin = parseFloat(aspirin);\n\nvar score = immuno + bmi + fracture + esa + dox + dex + race + hx + tunnel + warfarin + aspirin;\n\nvar risk;\nif (score <= 3) {\n    risk = 'Low';\n} else if (score <= 7) {\n    risk = 'Intermediate';\n} else {\n    risk = 'High';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message: risk + ' risk of VTE w/in 6 months'\n});\ncalc_output.push({\n    name: '10498_IMPEDE-VTE_result',\n    value: score,\n    value_text: 'points',\n    message: 'IMPEDE-VTE Score'\n});\ncalc_output.push({\n    name: '10498_IMPEDE-VTE_interpretation',\n    value: risk,\n    value_text: 'risk',\n    message: 'Risk of VTE within 6 months of treatment initiation'\n});",
+  "before_use": null,
+  "instructions": "Ensure you know your patient’s medication history, VTE history, and fracture history to utilize this score.",
+  "contributor_ids": [
+    "austin-wesevich-md-mph-ms"
+  ],
+  "creator_names": [
+    "Dr. Kristen M. Sanfilippo"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "5ee77b0b7945bdd89d0b8aa810b0f337baaf95faf346871ea8852c3bfaa1920c"
+}

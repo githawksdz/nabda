@@ -1,0 +1,187 @@
+{
+  "id": "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+  "slug": "palchak-uc-davis-rule-pediatric-head-trauma",
+  "language": "fr",
+  "title": "Palchak (UC Davis) règle pour pédiatrique Head traumatisme",
+  "short_title": "Palchak (UC Davis) règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie",
+    "pediatrie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Headache",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "head trauma",
+    "trauma",
+    "head injury",
+    "CT head",
+    "trauma imaging",
+    "intracranial hemorrhage",
+    "intracranial bleed",
+    "pediatrics",
+    "peds",
+    "peds trauma",
+    "child",
+    "children",
+    "palchak rule",
+    "uc davis"
+  ],
+  "dosing": false,
+  "formula": "Si l'un des éléments suivants est présent, le patient n'est PAS à faible risque de lésion cérébrale :\n\n1. Altération de l'état mental\n2. Signes cliniques de fracture du crâne\n3. Antécédent de vomissements\n4. Hématome du cuir chevelu (chez les enfants ≤2 ans)\n5. Céphalée\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/Palchak.png)",
+  "how_to_use": {
+    "why": "- Aide à identifier les enfants à faible risque pouvant éviter de manière sûre une TDM cérébrale, réduisant ainsi l'exposition inutile aux radiations.\n- A démontré une sensibilité supérieure à celle du jugement clinique seul pour identifier les enfants présentant un TBI.",
+    "when": "- À utiliser en contexte d'urgence chez les patients pédiatriques (<18 ans) se présentant avec un traumatisme crânien contusif.\n- Destiné à la stratification du risque de lésion cérébrale traumatique (TBI) cliniquement significative afin d'orienter les décisions concernant la nécessité d'une TDM cérébrale.",
+    "pearls": "- Ne s'applique pas aux patients présentant des indications évidentes d'imagerie en urgence (p. ex., déficits neurologiques profonds, plaies pénétrantes).\n- L'étude de dérivation excluait les enfants présentant un traumatisme crânien « trivial », défini comme des chutes de la hauteur du sol ou un traumatisme lié à une marche ou course contre des objets fixes, lorsque la seule anomalie constatée était une plaie ou une abrasion du cuir chevelu.\n- L'étude incluait divers mécanismes lésionnels, notamment les accidents de la route, les collisions automobile-piéton, les voies de fait, les accidents de vélo, la maltraitance infantile et les collisions automobile-vélo.\n- La valeur prédictive négative pour les patients ne présentant aucune variable à haut risque était proche de 100 %."
+  },
+  "next_steps": {
+    "advice": "- Cet outil doit être utilisé conjointement avec le jugement clinique.\n- Une évaluation approfondie est essentielle, et des facteurs tels qu'un traumatisme non accidentel ou des mécanismes lésionnels à haute énergie nécessitent une considération au cas par cas.",
+    "critical_actions": "",
+    "management": "- **Cas à faible risque :**\n\n - Envisager une observation plutôt qu'une imagerie immédiate.\n - Si l'imagerie est différée, assurer l'éducation des soignants et un suivi approprié.\n- **Cas à risque élevé :** si un ou plusieurs critères à haut risque sont remplis, une TDM cérébrale doit être fortement envisagée."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Clinically significant head injuries dans enfants.",
+  "medium_description": "Identifies enfants at faible risque pour brain injuries after blunt head traumatisme.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ams",
+      "label": "Altération de l'état mental",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "skull",
+      "label": "Signes cliniques de fracture du crâne",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "ams == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hx",
+      "label": "Antécédent de vomissements",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "skull == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "scalp",
+      "label": "Hématome du scalp",
+      "tips": "Chez les enfants ≤2 ans",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hx == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ache",
+      "label": "Headache",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "scalp == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Palchak MJ, Holmes JF, Vance CW, et al. A decision rule for identifying children at low risk for brain injuries after blunt head trauma. Ann Emerg Med. 2003;42(4):492-506.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14520320 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Palchak MJ, Holmes JF, Kuppermann N. Clinician judgment versus a decision rule for identifying children at risk of traumatic brain injury on computed tomography after blunt head trauma. Pediatr Emerg Care. 2009;25(2):61-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19194349",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule",
+    "calc.chalice-childrens-head-injury-algorithm-prediction-important-clinical-events-rule",
+    "calc.chip-ct-head-injury-patients-prediction-rule"
+  ],
+  "source_logic_hash": "cd89d1bf61dba813b0c8546ef64b0531",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3955,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

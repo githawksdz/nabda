@@ -1,0 +1,159 @@
+{
+  "id": "calc.spo2-fio2-ratio",
+  "slug": "spo2-fio2-ratio",
+  "language": "fr",
+  "title": "Rapport SpO₂/FiO₂",
+  "short_title": "Rapport S/F",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome de détresse respiratoire aiguë (SDRA)",
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnea",
+    "Hypoxia",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Wheezing",
+    "Hypoxemia"
+  ],
+  "abbreviations": [
+    "SpO2/FiO2 Ratio",
+    "S/F Ratio",
+    "S/F",
+    "SF",
+    "SF ratio",
+    "PaO2/FiO2 ratio",
+    "P/F ratio",
+    "P/F",
+    "PF",
+    "PF ratio",
+    "SpO2",
+    "FiO2",
+    "PaO2",
+    "acute lung injury",
+    "ARDS",
+    "ALI",
+    "Acute Respiratory Distress syndrome",
+    "Pulse Oximetry",
+    "Fraction of inspiratory oxygen",
+    "Partial pressure of oxygen",
+    "Saturation of peripheral oxygen"
+  ],
+  "dosing": false,
+  "formula": "Rapport S/F = (SpO~2~/ FiO~2~) × 100",
+  "how_to_use": {
+    "why": "- Offre une évaluation rapide et non invasive lorsque la gazométrie artérielle (GDS) est infaisable ou indisponible.\n- Utilisé dans la « [définition globale](https://pubmed.ncbi.nlm.nih.gov/37487152/) » pour identifier et classer le syndrome de détresse respiratoire aiguë (SDRA).\n- Inclut dans l'[indice ROX](nabda:calc.rox-index-intubation-hfnc) pour prédire la nécessité d'une intubation chez les patients sous oxygène à haut débit par lunettes nasales.\n- Peut être envisagé pour le calcul de scores dépendant traditionnellement du rapport P/F, tels que le [score Sequential Organ Failure Assessment (SOFA).](nabda:calc.sequential-organ-failure-assessment-sofa-score)",
+    "when": "- Utilisé pour évaluer l'oxygénation chez les patients atteints d'insuffisance respiratoire aiguë.\n- Sert de substitut au [rapport PaO₂/FiO₂ (P/F)](nabda:calc.horowitz-index-lung-function-p-f-ratio) .\n- Utile pour l'évaluation initiale et la surveillance continue de l'état respiratoire.",
+    "pearls": "- Des études ont montré une corrélation linéaire entre les rapports S/F et P/F, ce qui justifie son utilisation comme marqueur substitutif pour l'évaluation des patients en état critique.\n- La précision peut être affectée par des facteurs influençant l'oxymétrie de pouls, tels que la méthémoglobinémie, la carboxyhémoglobinémie, une mauvaise perfusion périphérique, la pigmentation cutanée, le vernis à ongles et les artefacts de mouvement."
+  },
+  "next_steps": {
+    "advice": "Interprétation des résultats chez l'adulte([Rice, 2007](https://pubmed.ncbi.nlm.nih.gov/17573487/)) :\n\n- Un rapport S/F de 315 correspond approximativement à un rapport P/F de 300.\n- Un rapport S/F de 235 correspond à un rapport P/F de 200.\n\n**Pour l'utilisation dans le SDRA :**\n\n**Seuils du rapport S/F pour des catégories spécifiques de SDRA** (selon la « définition globale » du SDRA)\n\n| Catégorie | Critères du rapport S/F* |\n| --- | --- |\n| SDRA non intubé | ≤315 sous OHD avec un débit ≥30 L/min ou VNI/CPAP avec une pression expiratoire ≥5 cm H 2 O |\n| SDRA intubé | Léger : >235 et ≤315 Modéré : >148 et ≤235 Sévère : ≤148 |\n| Définition modifiée pour les contextes à ressources limitées | ≤315** |\n\n*Si SpO~2~≤97%\n**Ni la pression expiratoire positive ni un débit minimal d'oxygène ne sont requis pour le diagnostic dans les contextes à ressources limitées.\n\nGardez à l'esprit que le rapport S/F n'est qu'un des plusieurs critères utilisés dans le diagnostic et la classification de la sévérité du SDRA.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Assesses lung function, particularly chez les patients avec aigu respiratory défaillance.",
+  "medium_description": "Assesses lung function, particularly chez les patients avec aigu respiratory défaillance.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "spo2",
+      "label": "SpO~2~",
+      "optional": false,
+      "unit": "spo2",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "fio2",
+      "label": "FiO~2~",
+      "optional": false,
+      "unit": "fio2",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Rice TW, Wheeler AP, Bernard GR, Hayden DL, Schoenfeld DA, Ware LB. Comparison of the sp o 2 /f io 2 ratio and the pa o 2 /f io 2 ratio in patients with acute lung injury or ards. Chest. 2007;132(2):410-417.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17573487/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pandharipande PP, Shintani AK, Hagerman HE, et al. Derivation and validation of spo2/fio2 ratio to impute for pao2/fio2 ratio in the respiratory component of the sequential organ failure assessment score. Crit Care Med. 2009;37(4):1317-1321.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19242333/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shimizu M, Hashimoto S. Peripheral oxygen saturation to inspiratory oxygen fraction ratio-based identification of critically ill coronavirus disease patients for early therapeutic interventions. J Anesth. 2021;35(6):827-836.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34392404/",
+      "kind": "other"
+    },
+    {
+      "text": "Bilan N, Dastranji A, Ghalehgolab Behbahani A. Comparison of the spo 2 /fio 2 ratio and the pao 2 /fio 2 ratio in patients with acute lung injury or acute respiratory distress syndrome. J Cardiovasc Thorac Res. 2015;7(1):28-31.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25859313/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bashar FR, Vahedian-Azimi A, Farzanegan B, et al. Comparison of non-invasive to invasive oxygenation ratios for diagnosing acute respiratory distress syndrome following coronary artery bypass graft surgery: a prospective derivation-validation cohort study. J Cardiothorac Surg. 2018;13(1):123.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30482210/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.horowitz-index-lung-function-p-f-ratio",
+    "calc.rads-radiologists-score-smoke-inhalation-injury",
+    "calc.prediction-survival-ecmo-therapy-preset-score",
+    "calc.rox-index-intubation-hfnc",
+    "calc.sequential-organ-failure-assessment-sofa-score"
+  ],
+  "source_logic_hash": "5bd7aafca5c551f8841080871b2af710",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rox-index-intubation-hfnc",
+      "text": "ROX Index"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "Sequential Organ Failure Assessment (SOFA) score."
+    },
+    {
+      "type": "calc",
+      "id": "calc.horowitz-index-lung-function-p-f-ratio",
+      "text": "PaO₂/FiO₂ (P/F) ratio"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10570,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

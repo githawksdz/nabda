@@ -1,0 +1,149 @@
+{
+  "id": "calc.harmless-acute-pancreatitis-score-haps",
+  "slug": "harmless-acute-pancreatitis-score-haps",
+  "language": "en",
+  "title": "Score de pancréatite aiguë bénigne (HAPS)",
+  "short_title": "Score de pancréatite aiguë bénigne (Harmless Acute Pancreatitis Score, HAPS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Pancreatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "Panc",
+    "hematocrit",
+    "hct",
+    "rebound",
+    "tenderness",
+    "guarding",
+    "haps",
+    "creatinine",
+    "pancreatitis",
+    "acute pancreatitis",
+    "necrotizing pancreatitis"
+  ],
+  "dosing": false,
+  "formula": "Sélection des critères appropriés.",
+  "how_to_use": {
+    "why": "Identifier les patients atteints de pancréatite à faible risque est notoirement difficile ; un système de score peut aider.",
+    "when": "Patients atteints de pancréatite, en particulier au début de l'évolution.",
+    "pearls": "- Le Harmless Acute Pancreatitis Score (HAPS) a été développé principalement à partir d'études rétrospectives de revue de dossiers.\n- Le HAPS peut avoir une valeur prédictive élevée chez les patients à faible risque et peut être suffisant pour suggérer qu'un patient ne nécessite pas une admission immédiate en soins intensifs.\n- Il n'utilise que trois variables, dont une soumise au jugement du clinicien.\n- Un score de 0 suggère l'**absence** de nécrose pancréatique, de besoin de dialyse, de ventilation artificielle ou d'évolution fatale, avec une spécificité de 97 % et une valeur prédictive positive de 98 % dans l'étude originale."
+  },
+  "next_steps": {
+    "advice": "Le HAPS ne doit pas être utilisé isolément pour suggérer qu’un patient aura une évolution « sans gravité » de sa pancréatite, mais peut constituer une donnée supplémentaire utile chez des patients par ailleurs à faible risque.",
+    "critical_actions": "Le HAPS n'est pas conçu pour identifier les patients à haut risque de pancréatite, mais uniquement ceux à faible risque.",
+    "management": "Nous n’avons pas connaissance d’algorithmes intégrant le HAPS."
+  },
+  "evidence": "",
+  "more_info": "The Harmless Acute Pancreatitis Score (HAPS) rules out “severe” pancreatitis and need for admission for acute pancreatitis based on three clinical values:\n\n- Peritonitis\n- Creatinine\n- Hematocrit\n\nIf the above criteria are normal (score of 0), the patient likely does not need ICU admission.",
+  "short_description": "Rules out ICU need pour first episode de aigu pancreatitis.",
+  "medium_description": "Identifies patients who ne pas require soins intensifs pour their first episode de aigu pancreatitis.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "peri",
+      "label": "Péritonite (ressaut/défense)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "creat",
+      "label": "Créatinine ≥2 mg/dL (177 µmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hct",
+      "label": "Hématocrite ≥ 43 % (homme) ou 39.6 % (femme)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lankisch PG, Weber-Dany B, Hebel K, Maisonneuve P, Lowenfels AB. The harmless acute pancreatitis score: a clinical algorithm for rapid initial stratification of nonsevere disease. Clin Gastroenterol Hepatol. 2009 Jun;7(6):702-5. PMID: 19245846.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19245846",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Talukdar R, Vege SS. Recent developments in acute pancreatitis. Clin Gastroenterol Hepatol. Nov 2009;7(11 Suppl):S3-9.",
+      "href": "https://www.cghjournal.org/article/S1542-3565(09)00817-9/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Oskarsson V, et al. Validation of the harmless acute pancreatitis score in predicting nonsevere course of acute pancreatitis. Pancreatology. 2011;11(5):464-8. doi: 10.1159/000331502. Epub 2011 Sep 29.",
+      "href": "https://www.pancreatology.net/article/S1424-3903(11)80002-5/abstract",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-imrie-criteria-severity-acute-pancreatitis",
+    "calc.ransons-criteria-pancreatitis-mortality",
+    "calc.acute-interstitial-nephritis-ain-risk-calculator"
+  ],
+  "source_logic_hash": "13b0e0947a035297c34202542f01ffe5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3286,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,252 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-opioid-induced-constipation",
+  "slug": "rome-iv-diagnostic-criteria-opioid-induced-constipation",
+  "language": "en",
+  "title": "Rome IV Diagnostic critères pour Opioid-Induced constipation",
+  "short_title": "Rome IV pour Opioid-Induced constipation",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Constipation"
+  ],
+  "abbreviations": [
+    "Opioid-induced constipation, oic, Rome IV Criteria, Rome IV for Opioid-induced Constipation, Rome IV Criteria for Opioid-induced Constipation, rome 4, opioid"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV de la constipation induite par les opioïdes, le patient doit présenter les éléments suivants :\n\n1. Symptômes de constipation nouveaux ou aggravés lors de l'initiation, de la modification ou de l'augmentation du traitement par opioïdes, incluant ≥2 des éléments suivants :\n2. Selles molles rarement présentes sans utilisation de laxatifs.",
+  "how_to_use": {
+    "why": "- Établir un diagnostic de constipation induite par les opioïdes.\n- L'établissement de ce diagnostic peut aider à orienter la prise en charge des symptômes de constipation.\n- Aider à orienter les discussions avec les patients concernant l'étiologie des symptômes de constipation.",
+    "when": "À utiliser chez les patients présentant des symptômes évocateurs de constipation dans un contexte d'initiation, de modification ou d'augmentation d'un traitement par opioïdes. Ce diagnostic doit être posé après la réalisation d'une anamnèse complète, d'un examen physique et d'examens diagnostiques limités.",
+    "pearls": "- La constipation induite par les opioïdes doit être envisagée chez les patients présentant une constipation d'apparition récente dans un contexte d'instauration d'opioïdes.\n- La constipation induite par les opioïdes peut chevaucher ou aggraver la [constipation fonctionnelle](nabda:calc.rome-iv-diagnostic-criteria-functional-constipation) (c.-à-d. constipation associée aux opioïdes).\n- Si cliniquement indiqué, il est raisonnable de réaliser des examens biologiques simples (p. ex. NFS, bilan métabolique complet, calcémie et TSH).\n- Certains patients atteints de constipation induite par les opioïdes peuvent présenter une diarrhée de contournement ou une incontinence liée à une constipation importante. Une radiographie abdominale sans préparation (ASP) peut identifier un fécalome ainsi que le niveau et le degré de la charge fécale.\n- Envisager le [syndrome de l'intestin narcotique](nabda:calc.rome-iv-diagnostic-criteria-narcotic-bowel-syndrome-) lorsque des patients sous opioïdes présentent des douleurs abdominales croissantes.\n- Des causes secondaires de constipation peuvent survenir chez les patients prenant des opioïdes ; une anamnèse est donc nécessaire pour déterminer la présence éventuelle de symptômes d'alerte.\n- Les habitudes intestinales sous opioïdes doivent être comparées aux habitudes intestinales de base avant l'instauration des opioïdes.\n- Utiliser l'[échelle de Bristol de la forme des selles](nabda:calc.bristol-stool-form-scale) pour déterminer la forme des selles. Il est important que les patients regardent à la fois les images et le texte."
+  },
+  "next_steps": {
+    "advice": "**Si le diagnostic n'est pas rempli (négatif) :**\n\nLes symptômes sont peu susceptibles d'être causés par une constipation induite par les opioïdes. Envisager une évaluation complémentaire selon les besoins cliniques.\n\n**Si le diagnostic est rempli (positif) :**\n\nDiagnostic probable de constipation induite par les opioïdes. Envisager l'instauration d'un traitement.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que chez les patients chez lesquels une cause secondaire de constipation autre que la prise d'opioïdes (p. ex. obstruction mécanique, maladie systémique, médicaments) n'est pas suspectée sur la base de l'anamnèse clinique, de l'examen physique et du bilan initial.",
+    "management": "La prise en charge de la constipation induite par les opioïdes est souvent similaire à celle de la constipation fonctionnelle.\n\nLe traitement peut inclure :\n\n- Apport alimentaire adéquat en fibres et supplémentation.\n\n- Laxatifs osmotiques (p. ex. PEG-3350, lactulose).\n- Antagonistes périphériques des récepteurs μ-opioïdes (PAMORA) (p. ex. naloxégol).\n- Lubiprostone. D'autres sécrétagogues (p. ex. linaclotide, plécanatide) peuvent être envisagés.\n- Laxatifs stimulants (p. ex. bisacodyl, séné) en traitement de secours.\n- Agoniste des récepteurs 5-HT~4~ (p. ex. prucalopride)."
+  },
+  "evidence": "Ces critères ont été établis sur la base d'un consensus d'un panel d'experts.",
+  "more_info": "",
+  "short_description": "Diagnostic de constipation induite par les opioïdes.",
+  "medium_description": "Official Rome IV critères pour diagnostic de opioid-induced constipation.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Efforts de défécation lors de plus d'un quart (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Selles grumeleuses ou dures ([échelle de Bristol de la forme des selles](nabda:calc.bristol-stool-form-scale) 1-2) lors de plus d'un quart (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "Sensation d'évacuation incomplète lors de plus d'un quart (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "four",
+      "label": "Sensation d'obstruction/blocage anorectal lors de plus d'un quart (25 %) des défécations",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "five",
+      "label": "Manual maneuvers pour facilitate more than one-fourth (25%) de defecations",
+      "tips": "p. ex. évacuation digitale ou soutien du plancher pelvien",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "Moins de 3 selles spontanées par semaine",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "stools",
+      "label": "Selles molles rarement présentes sans utilisation de laxatifs",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lacy BE, Mearin F, Chang L. et al. Bowel disorders. Gastroenterology. 2016;150:1393-1407.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27144627-bowel-disorders/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Crockett SD, Greer KB, Heidelbaugh JJ, Falck-Ytter Y, Hanson BJ, Sultan S. American gastroenterological association institute guideline on the medical management of opioid-induced constipation. Gastroenterology. 2019;156(1):218-226.",
+      "href": "https://www.gastrojournal.org/article/S0016-5085(18)34782-6/fulltext",
+      "kind": "other"
+    },
+    {
+      "text": "Robin SG, Keller C, Zwiener R, et al. Prevalence of Pediatric Functional Gastrointestinal Disorders Utilizing the Rome IV Criteria. J Pediatr. 2018;195:134-139.",
+      "href": "https://www.sciencedirect.com/science/article/abs/pii/S0022347617316347",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-infant-functional-constipation",
+    "calc.rome-iv-diagnostic-criteria-child-functional-constipation",
+    "calc.rome-iv-diagnostic-criteria-unspecified-functional-bowel-disorder",
+    "calc.rome-iv-diagnostic-criteria-functional-constipation",
+    "calc.rome-iv-diagnostic-criteria-narcotic-bowel-syndrome-",
+    "calc.bristol-stool-form-scale"
+  ],
+  "source_logic_hash": "2a00e81bd59a8c4ffdfc3f8f983011ba",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rome-iv-diagnostic-criteria-functional-constipation",
+      "text": "functional constipation"
+    },
+    {
+      "type": "calc",
+      "id": "calc.rome-iv-diagnostic-criteria-narcotic-bowel-syndrome-",
+      "text": "narcotic bowel syndrome"
+    },
+    {
+      "type": "calc",
+      "id": "calc.bristol-stool-form-scale",
+      "text": "Bristol Stool Form Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10274,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

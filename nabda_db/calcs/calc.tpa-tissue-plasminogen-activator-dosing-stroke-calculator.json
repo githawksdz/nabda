@@ -1,0 +1,110 @@
+{
+  "id": "calc.tpa-tissue-plasminogen-activator-dosing-stroke-calculator",
+  "slug": "tpa-tissue-plasminogen-activator-dosing-stroke-calculator",
+  "language": "fr",
+  "title": "TPA (Alteplase) posologie pour Ischemic AVC calculateur",
+  "short_title": "TPA posologie pour AVC calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "neurologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Seizure",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Tpa",
+    "alteplase",
+    "rt-tpa",
+    "rtpa",
+    "rttpa",
+    "stroke",
+    "cva",
+    "tia",
+    "thrombolysis",
+    "thrombectomy",
+    "tpa dosing",
+    "tpa dose",
+    "nihss"
+  ],
+  "dosing": true,
+  "formula": "La dose de tPA est calculée comme suit :\n\nDose, mg = 0,9*(Poids, kg)\n\nAdministrer 10 % de la dose totale en bolus IV initial sur 1 minute, puis le reste en perfusion sur 60 minutes.\n\nPerte, mg = 100 - (Bolus, mg + Perfusion, mg)\n\nNote : La dose totale maximale est de 90 mg.",
+  "how_to_use": {
+    "why": "En raison du caractère urgent, stressant et peu fréquent des cas d'accident vasculaire cérébral ischémique traités par tPA, il existe un risque d'erreur médicamenteuse. L'utilisation d'un calculateur pour vérifier la dose avant l'administration peut réduire ce risque d'erreur.",
+    "when": "Ce calculateur est destiné exclusivement au calcul de la dose d'altéplase (tPA) dans l'accident vasculaire cérébral ischémique. Il ne s'applique pas au dosage dans les syndromes coronariens aigus ni dans l'embolie pulmonaire.",
+    "pearls": "- Rappel : jusqu'à 20 mL (20 mg) de tPA resteront dans la tubulure de la perfusion, quelle que soit la méthode de préparation (retrait de l'excédent du flacon avant administration ou laissation du volume excédentaire dans le flacon).\n- La pratique standard consiste à perfuser jusqu'à 50 mL de chlorure de sodium à 0,9 % au même débit après que le flacon de tPA est vide."
+  },
+  "next_steps": {
+    "advice": "Administrer le tPA en cas d'[indication](nabda:calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Doses tPA pour AVC.",
+  "medium_description": "Calculates alteplase posologie pour ischemic AVC.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_adult",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Alteplase package insert.",
+      "href": "https://www.accessdata.fda.gov/drugsatfda_docs/label/2015/103172s5203lbl.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Intracerebral hemorrhage after intravenous t-PA therapy for ischemic stroke. The NINDS t-PA Stroke Study Group. Stroke. 1997;28(11):2109-18.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9368550",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+    "calc.tenecteplase-dosing",
+    "calc.thrive-score-stroke-outcome"
+  ],
+  "source_logic_hash": "cd2f9651adf49f99b1c16b519a23e254",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.contraindications-intravenous-thrombolysis-ivt-ischemic-stroke",
+      "text": "indicated"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3940,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alteplase"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

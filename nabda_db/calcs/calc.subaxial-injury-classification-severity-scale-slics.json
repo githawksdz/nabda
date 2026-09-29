@@ -1,0 +1,206 @@
+{
+  "id": "calc.subaxial-injury-classification-severity-scale-slics",
+  "slug": "subaxial-injury-classification-severity-scale-slics",
+  "language": "fr",
+  "title": "Subaxial lésion classification et gravité échelle (SLICS)",
+  "short_title": "SLICS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "orthopedie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Douleur aiguë",
+    "Fracture",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Déficit neurologique",
+    "Injury/Trauma",
+    "Cervicalgie"
+  ],
+  "abbreviations": [
+    "SLIC",
+    "subaxial injury",
+    "SLIC score",
+    "subaxial severity score",
+    "cervical spine trauma score",
+    "cervical spine injury ",
+    "SLIC score"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Caractéristique | Points | |\n| --- | --- | --- |\n| Morphologie | Aucune anomalie | 0 |\n| Compression | 1 | |\n| Éclatement (burst) | 2 | |\n| Distraction (ex. « facet perch », hyperextension) | 3 | |\n| Rotation/translation (ex. luxation articulaire, « teardrop » instable ou lésion de compression en flexion à un stade avancé) | 4 | |\n| Complexe disco-ligamentaire (DLC)* | Intact | 0 |\n| Intermédiaire (ex. écartement interépineux isolé, modifications du signal IRM uniquement) | 1 | |\n| Rompu (ex. élargissement de l'espace discal, « facet perch » ou luxation articulaire, déformation en cyphose) | 2 | |\n| Statut neurologique** | Intact | 0 |\n| Atteinte radiculaire | 1 | |\n| Atteinte médullaire complète | 2 | |\n| Atteinte médullaire incomplète | 3 | |\n| Compression médullaire continue (modification du signal intramédullaire à l'IRM) en cas de déficit neurologique | Non | 0 |\n| Oui | 1 | |\n\n*Tel que visible sur radiographie ou IRM.\n\n**À l'examen physique.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "L'IRM peut montrer des modifications du signal dans les lésions mineures et peut conduire à une surestimation des lésions (scores plus élevés)."
+  },
+  "next_steps": {
+    "advice": "La décision entre traitement opératoire et non opératoire dans les cas équivoques (c.-à-d. SLICS = 4) doit reposer sur le jugement clinique, avec une décision médicale partagée le cas échéant.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score SLICS | Conduite recommandée |\n| --- | --- |\n| <4 | Traitement non opératoire |\n| 4 | Traitement non opératoire ou opératoire |\n| ≥5 | Traitement opératoire* |\n\n*Peut consister en un réalignement, une décompression neurologique (si indiquée) et une stabilisation.",
+  "short_description": "Cervical spine lésion.",
+  "medium_description": "Classifies subaxial cervical spine lésion et provides traitement recommendations.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "morph",
+      "label": "Morphology",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucune anomalie",
+          "value": 0
+        },
+        {
+          "label": "Compression",
+          "value": 1
+        },
+        {
+          "label": "Burst",
+          "value": 2
+        },
+        {
+          "label": "Distraction (ex. « facet perch », hyperextension)",
+          "value": 3
+        },
+        {
+          "label": "Rotation/translation (e.g. facet dislocation, unstable teardrop ou advance-stage flexion compression lésion)",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dis",
+      "label": "Complexe disco-ligamentaire (DLC)",
+      "tips": "Tel que visible sur radiographie ou IRM",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Intact",
+          "value": 0
+        },
+        {
+          "label": "Indéterminé (ex. écartement interépineux isolé, modifications du signal IRM uniquement)",
+          "value": 1
+        },
+        {
+          "label": "Rompu (ex. élargissement de l'espace discal, « facet perch » ou luxation articulaire, déformation en cyphose)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "neuro",
+      "label": "Statut neurologique",
+      "tips": "À l'examen physique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Intact",
+          "value": 0
+        },
+        {
+          "label": "Root lésion",
+          "value": 1
+        },
+        {
+          "label": "Complete cord lésion",
+          "value": 2
+        },
+        {
+          "label": "Incomplete cord lésion",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cord",
+      "label": "Continuous cord compression (signal change within cord sur MRI) dans setting de neuro deficit",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "neuro > 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Patel AA, Dailey A, Brodke DS, et al. Subaxial cervical spine trauma classification: the Subaxial Injury Classification system and case examples. Neurosurg Focus. 2008;25(5):E8.",
+      "href": "http://thejns.org/doi/full/10.3171/FOC.2008.25.11.E8 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aarabi B, Walters BC, Dhall SS, et al. Subaxial cervical spine injury classification systems. Neurosurgery. 2013;72 Suppl 2:170-86.",
+      "href": "https://academic.oup.com/neurosurgery/article/72/suppl_3/170/2557384 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Joaquim AF, Patel AA, Vaccaro AR. Cervical injuries scored according to the Subaxial Injury Classification system: An analysis of the literature. J Craniovertebr Junction Spine. 2014;5(2):65-70. ",
+      "href": "http://www.jcvjs.com/article.asp?issn=0974-8237;year=2014;volume=5;issue=2;spage=65;epage=70;aulast=Joaquim ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Martínez-Pérez R, Fuentes F, Alemany VS. Subaxial cervical spine injury classification system: is it most appropriate for classifying cervical injury?. Neural Regen Res. 2015;10(9):1416-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4625505/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.thoracolumbar-injury-classification-severity-scale-tlics",
+    "calc.infant-scalp-score",
+    "calc.pecarn-cervical-spine-injury-prediction-rule"
+  ],
+  "source_logic_hash": "d1be1f5bea943e59e6975317ba64a8f7",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10085,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,236 @@
+{
+  "id": "calc.bode-index-copd-survival",
+  "slug": "bode-index-copd-survival",
+  "language": "en",
+  "title": "BODE index pour COPD survie",
+  "short_title": "Indice BODE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "COPD",
+    "asthma",
+    "mortality",
+    "survival",
+    "prognosis",
+    "emphysema"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| | 0 point | 1 point | 2 points | 3 points |\n| --- | --- | --- | --- | --- |\n| FEV 1 (% de la valeur prédite) | ≥65 | 50–64 | 36–49 | ≤35 |\n| [Distance de marche de 6 minutes](nabda:calc.6-minute-walk-distance) (m) | ≥350 | 250–349 | 150–249 | ≤149 |\n| mMRC [Échelle de dyspnée](nabda:calc.mmrc-modified-medical-research-council-dyspnea-scale) | 0–1 | 2 | 3 | 4 |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) | >21 | ≤21 | -- | -- |",
+  "how_to_use": {
+    "why": "- Widely applicable, requires no special equipment, and is simple to calculate.\n- Better than FEV~1~alone at predicting mortality from any cause or respiratory cause.\n- By using themMRC [Dyspnea Scale](nabda:calc.mmrc-modified-medical-research-council-dyspnea-scale) , it takes into consideration patient’s perception of symptoms.\n- Looks at systemic manifestations of COPD by incorporating [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) and the [6 Minute Walk Test](nabda:calc.6-minute-walk-distance) .\n- May be a better predictor of hospitalizations for COPD compared to FEV~1~([Ong 2005](https://journal.chestnet.org/article/S0012-3692(15)49622-9/pdf)).\n- May also be a better predictor of COPD exacerbations compared to FEV~1~alone ([Marin 2009](https://www.sciencedirect.com/science/article/pii/S0954611108003557)).",
+    "when": "- Patients with COPD, defined as >20 pack-year smoking history and FEV~1~/FVC ratio <0.7, measured 20 mins after albuterol given. Do not use if any of the following:\n\n - Asthma diagnosis.\n - Inability to perform bronchodilator test or [6 Minute Walk Test](nabda:calc.6-minute-walk-distance) .\n - MI within four months.\n - Unstable angina.\n - CHF (NYHA class III or IV).\n - Likely to die within 3 years from a cause other than COPD.\n- Should not be used during acute exacerbations. The [DECAF Score](nabda:calc.decaf-score-acute-exacerbation-copd) can be used to predict mortality in acute exacerbations of COPD.",
+    "pearls": "- The BODE Index is a unique scoring system that uses variables from different domains to predict all-cause mortality and mortality from respiratory causes (respiratory failure, pneumonia or pulmonary embolism) in patients with COPD.\n- Intended for use in patients with stable COPD who are already on appropriate treatment (not acute exacerbations of COPD).\n- Requires FEV~1~, [6 Minute Walk Test](nabda:calc.6-minute-walk-distance) , andmMRC [Dyspnea Scale](nabda:calc.mmrc-modified-medical-research-council-dyspnea-scale) .\n- Not intended to guide or influence treatment.\n- Better than FEV~1~to predict risk of death, hospitalizations and exacerbations of COPD."
+  },
+  "next_steps": {
+    "advice": "- Ne prédit pas la réponse clinique au traitement.\n- Ne guide pas le traitement.\n- S'utilise au mieux en complément des discussions avec les patients concernant une vision réaliste et fondée sur les preuves de leur pronostic.\n- Les patients ayant un BODE Index plus élevé présentent un risque plus élevé de décès toutes causes confondues et de décès d'origine respiratoire (insuffisance respiratoire, pneumonie ou embolie pulmonaire).\n- Les patients ayant un BODE Index plus élevé présentent un nombre plus important d'exacerbations de BPCO et d'hospitalisations.",
+    "critical_actions": "- Ne doit pas être utilisé pour guider le traitement.\n- Utiliser l’index BODE pour aider à informer les patients sur leur pronostic et pour éclairer les discussions concernant les objectifs de soins.",
+    "management": "L’indice BODE est utilisé pour prédire la mortalité et n’a pas été étudié pour guider la prise en charge."
+  },
+  "evidence": "The BODE Index was developed by[Celli et al in 2004](https://www.nejm.org/doi/full/10.1056/NEJMoa021322), by independently evaluating multiple variables associated with one year mortality in 207 stable COPD patients. Four variables with the strongest association were selected (BMI, FEV~1~, mMRC Dyspnea Scale, 6 Minute Walk Test).\n\nSelected patients were in clinically stable condition on appropriate therapy and stable oxygen requirements for 6 months. Patients with asthma, inability to perform bronchodilator or 6 Minute Walk Test, myocardial infarction within four months, unstable angina, or NYHA class III or IV CHF were excluded.\n\nThe BODE Index was prospectively validated by the same authors in 625 patients across centers in the US, Spain and Venezuela. It performed well to predict death from any cause and death from respiratory cause, with an increase in hazard ratio of 1.34 and 1.62, respectively, for each point increase in the BODE Index.\n\nA subsequent study by[Ong et al](https://journal.chestnet.org/article/S0012-3692(15)49622-9/pdf)in *Chest* assessed the BODE Index as a predictor of hospitalizations for COPD. The study was completed in 2005 at a university affiliated hospital in Singapore and followed 127 patients with COPD in the outpatient setting. The authors found that the BODE Index performed better than the 2003 GOLD guidelines to predict COPD-related hospital admissions.\n\nA[Spanish study](https://www.sciencedirect.com/science/article/pii/S0954611108003557), also by Celli, of 275 patients over 8 years demonstrated that the BODE Index predicted the number and severity of COPD exacerbations better than FEV~1~.",
+  "more_info": "Interprétation :\n\n| Index BODE | Survie à 4 ans |\n| --- | --- |\n| 0–2 | 80% |\n| 3–4 | 67% |\n| 5–6 | 57% |\n| 7–10 | 18% |\n\nEstimations de survie basées sur les courbes de Kaplan-Meier de [Celli 2004](https://www.nejm.org/doi/full/10.1056/NEJMoa021322#t=article) :\n\n![](https://cdn-web-img.mdcalc",
+  "short_description": "Survie dans la BPCO.",
+  "medium_description": "Predicts survie dans COPD patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "fev",
+      "label": "FEV₁ (% de la valeur prédite)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥65%",
+          "value": 0
+        },
+        {
+          "label": "50-64%",
+          "value": 1
+        },
+        {
+          "label": "36-49%",
+          "value": 2
+        },
+        {
+          "label": "≤35%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "walking",
+      "label": "[Distance de marche de 6 minutes](nabda:calc.6-minute-walk-distance)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥350 m (383 yds)",
+          "value": 0
+        },
+        {
+          "label": "250-349 m (273-382 yds)",
+          "value": 1
+        },
+        {
+          "label": "150-249 m (164-272 yds)",
+          "value": 2
+        },
+        {
+          "label": "≤149 m (163 yds)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dyspnea",
+      "label": "[Échelle de dyspnée mMRC](nabda:calc.mmrc-modified-medical-research-council-dyspnea-scale)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Dyspnea only avec strenuous exercise",
+          "value": 0
+        },
+        {
+          "label": "Dyspnea when hurrying ou walking up slight hill",
+          "value": 0
+        },
+        {
+          "label": "Walks slower than people de same âge because de dyspnea ou stops pour breath when walking at own pace",
+          "value": 1
+        },
+        {
+          "label": "Stops pour breath after walking 100 yards (91 m) ou after few minutes",
+          "value": 2
+        },
+        {
+          "label": "Too dyspneic pour leave house ou breathless when dressing",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) (kg/m²)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">21",
+          "value": 0
+        },
+        {
+          "label": "≤21",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Celli BR. The Body-Mass Index, Airflow Obstruction, Dyspnea, and Exercise Capacity Index in Chronic Obstructive Pulmonary Disease. New England Journal of Medicine. 2004; 350:10;1005-1012 doi:10.1056/NEJMoa021322.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJMoa021322#t=article",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahler DA, Wells CK. Evaluation of clinical methods for rating dyspnea. Chest. 1988 Mar;93(3):580-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3342669",
+      "kind": "other"
+    },
+    {
+      "text": "Marin JM, Carrizo SJ, Casanova C, et al. Prediction of risk of COPD exacerbations by the BODE index. Respir Med. 2009;103(3):373-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19013781 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.copd-assessment-test-cat",
+    "calc.decaf-score-acute-exacerbation-copd",
+    "calc.global-initiative-obstructive-lung-disease-gold-criteria-copd",
+    "calc.6-minute-walk-distance",
+    "calc.mmrc-modified-medical-research-council-dyspnea-scale",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "67f773f5204e786d5d9e077de27d850c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.6-minute-walk-distance",
+      "text": "6 Minute Walk Distance"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mmrc-modified-medical-research-council-dyspnea-scale",
+      "text": "Dyspnea Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.6-minute-walk-distance",
+      "text": "6 Minute Walk Test"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mmrc-modified-medical-research-council-dyspnea-scale",
+      "text": "Dyspnea Scale"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    },
+    {
+      "type": "calc",
+      "id": "calc.decaf-score-acute-exacerbation-copd",
+      "text": "DECAF Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3916,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

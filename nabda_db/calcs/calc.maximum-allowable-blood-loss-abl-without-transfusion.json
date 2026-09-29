@@ -1,0 +1,146 @@
+{
+  "id": "calc.maximum-allowable-blood-loss-abl-without-transfusion",
+  "slug": "maximum-allowable-blood-loss-abl-without-transfusion",
+  "language": "en",
+  "title": "Perte sanguine maximale admissible (ABL) sans transfusion",
+  "short_title": "ABL maximal",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "abl",
+    "hb",
+    "hgb",
+    "hemoglobin"
+  ],
+  "dosing": false,
+  "formula": "ABL = [EBV x (H~i~-H~f~)] / H~av~, where EBV = body weight, kg x average blood volume*, mL/kg and other variables are as follows:\n\n| Variable | Description |\n| --- | --- |\n| ABL | Allowable blood loss |\n| EBV | Estimated blood volume |\n| H i | Initial hemoglobin |\n| H f | Final hemoglobin (cutoff for transfusion) |\n| H av | Average of initial and final hemoglobin |\n\n*Average blood volume by age:\n\n| Age | Average blood volume, mL/kg |\n| --- | --- |\n| Adult man | 75 |\n| Adult woman | 65 |\n| Infant | 80 |\n| Neonate | 85 |\n| Premature neonate | 96 |",
+  "how_to_use": {
+    "why": "Aide à déterminer quand transfuser un patient si les valeurs de l’hémogramme ne sont pas immédiatement disponibles.",
+    "when": "Patients présentant une perte sanguine, généralement pendant une intervention chirurgicale, qui peuvent nécessiter une transfusion.",
+    "pearls": "- The Maximum Allowable Blood Loss Without Transfusion calculator suggests how much blood can be lost, typically during surgery, before transfusion should be considered.\n- Transfusion triggers vary by patient and clinical presentation.\n- Patients with hemoglobin concentrations below 6 g/dL almost always require transfusion. In stable patients with hemoglobin values 6-10 g/dL, the decision whether to transfuse is based on an evaluation of clinical status; patients with values above 10 g/dL rarely require transfusion unless they are unstable or have signs/symptoms consistent with continued hemorrhage.\n\n**Point to Keep in Mind**\n\n- [Gross in 1983](https://www.ncbi.nlm.nih.gov/pubmed/6829965)showed that a blood loss greater than 20% of estimated blood volume will cause the maximum allowable value to be inaccurate."
+  },
+  "next_steps": {
+    "advice": "- Lors d'une perte sanguine, une dilution de l'hémoglobine restante se produit lorsque le volume intravasculaire est maintenu par les déplacements liquidiens et l'administration de solutés.\n- Envisager une transfusion si la perte sanguine estimée dépasse la perte sanguine autorisée calculée.",
+    "critical_actions": "",
+    "management": "- Estimating blood loss intraoperatively can be done via direct measure of blood in suction canister along with measuring soiled sponges.\n- This method is only an estimate to measure blood loss. Patient vitals and clinical signs should be evaluated clinically first.\n- Capacity by sponge type:\n\n - 4x4s: ~10 mL blood\n - Gauze sponges (Ray-Tec):~10-20 mL blood\n - Laparotomy (lap) sponges: ~50-100 mL blood\n- Consider timing of blood loss. Acute blood loss may not present with a drop in hemoglobin. Always monitor clinical metrics such as hemodynamics and respiratory status along with anticipated blood loss.\n- The trigger to transfuse varies by patient."
+  },
+  "evidence": "L’équation de la perte sanguine maximale admissible a été développée par Jeffrey Gross à partir d’une équation reconnue pour la perte sanguine et en intégrant une correction pour l’hémodilution isovolémique au moyen d’une différentielle mathématique.",
+  "more_info": "",
+  "short_description": "Estime la perte sanguine maximale autorisée en peropératoire avant transfusion.",
+  "medium_description": "Estimates maximum allowable blood loss intraoperatively before transfusion doit être considered.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "homme adulte",
+          "value": 1
+        },
+        {
+          "label": "femme adulte",
+          "value": 2
+        },
+        {
+          "label": "nourrisson",
+          "value": 3
+        },
+        {
+          "label": "Neonate",
+          "value": 4
+        },
+        {
+          "label": "Nouveau-né prématuré",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "wt",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hi",
+      "label": "Hémoglobine (initiale)",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hf",
+      "label": "Hémoglobine (final)",
+      "tips": "Hémoglobine minimale acceptable, selon le jugement clinique",
+      "optional": false,
+      "unit": "hgb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Practice Guidelines for blood component therapy: A report by the American Society of Anesthesiologists Task Force on Blood Component Therapy.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8659805",
+      "kind": "international"
+    },
+    {
+      "text": "Practice guidelines for blood transfusion: a compilation from recent peer-reviewed literature. American Red Cross. ",
+      "href": "https://www.sld.cu/galerias/pdf/sitios/anestesiologia/practical_guidelines_blood_transfusion.pdf",
+      "kind": "international"
+    },
+    {
+      "text": "Gross JB. Estimating Allowable Blood Loss Corrected for Dilution. Anesthesiology 58.2 (1983): 277-280.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6829965",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.absolute-reticulocyte-count-reticulocyte-index",
+    "calc.shock-index-pediatric-age-adjusted-sipa",
+    "calc.shock-index"
+  ],
+  "source_logic_hash": "862c9f7d1869689da0d387940f2716c2",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3905,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

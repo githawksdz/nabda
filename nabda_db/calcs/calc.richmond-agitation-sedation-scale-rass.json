@@ -1,0 +1,154 @@
+{
+  "id": "calc.richmond-agitation-sedation-scale-rass",
+  "slug": "richmond-agitation-sedation-scale-rass",
+  "language": "en",
+  "title": "Richmond Agitation-Sedation échelle (RASS)",
+  "short_title": "Richmond Agitation-Sedation échelle (RASS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Trouble acido-basique",
+    "Anxiety",
+    "Delirium",
+    "Dementia",
+    "Sepsis"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "AMS"
+  ],
+  "abbreviations": [
+    "dementia",
+    "agitation",
+    "sedation",
+    "icu",
+    "delirium"
+  ],
+  "dosing": false,
+  "formula": "Sélectionner le niveau de réponse du patient.",
+  "how_to_use": {
+    "why": "- Les patients sous ventilation mécanique profondément sédatés (RASS de -3 ou moins) restent intubés et sous ventilation mécanique pour des durées plus longues. Cela conduit à des séjours en réanimation plus longs et à une mortalité plus élevée.\n- De même, les patients sous ventilation mécanique trop agités risquent l'auto-extubation et la dyssynchronie avec le ventilateur.",
+    "when": "Le RASS peut être utilisé chez tous les patients hospitalisés pour décrire leur niveau d'éveil ou d'agitation. Il est cependant principalement utilisé chez les patients sous ventilation mécanique afin d'éviter la sur- et la sous-sédation.",
+    "pearls": "- La Richmond Agitation-Sedation Scale (RASS) est une méthode validée et fiable pour évaluer le niveau de sédation des patients en réanimation.\n- Contrairement au [score de Glasgow (GCS)](nabda:calc.glasgow-coma-scale-score-gcs), le RASS n'est pas limité aux patients présentant des processus intracrâniens.\n- Le RASS est surtout utilisé chez les patients sous ventilation mécanique en réanimation pour éviter la sur- et la sous-sédation.\n- Un RASS de -2 à 0 a été préconisé dans cette population de patients afin de minimiser la sédation. Cette stratégie a montré une réduction de la mortalité, une diminution de la durée de ventilation mécanique et de la durée de séjour en réanimation.\n- Le RASS est différent des niveaux de sédation/analgésie utilisés par l'American Society of Anesthesia (minimale, modérée, profonde, générale), et les deux ne doivent pas être utilisés de manière interchangeable."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Un score RASS devrait être obtenu pour tous les patients hospitalisés et à intervalles réguliers chez tous les patients sous ventilation mécanique.\n- Sauf indication de sédation profonde, un protocole de sédation minimale (RASS -2 à 0) devrait être utilisé.",
+    "management": "- Les patients avec un RASS de -3 ou moins devraient voir leur sédation diminuée ou modifiée afin d'atteindre un RASS de -2 à 0.\n- Les patients avec un RASS de 2 à 4 ne sont pas suffisamment sédatés et devraient être évalués pour la douleur, l'anxiété ou le delirium. L'étiologie sous-jacente de l'agitation devrait être recherchée et traitée de manière appropriée pour atteindre un RASS de -2 à 0."
+  },
+  "evidence": "- La [fiabilité inter-observateurs du RASS](https://www.ncbi.nlm.nih.gov/pubmed/16088675) a été démontrée dans une population de réanimation monocentrique en 2 phases : avant et après l'implémentation du RASS. Dans la seconde phase de l'étude, l'échelle a montré une bonne fiabilité inter-observateurs (k=0,80) parmi des infirmiers formés.\n- [Cette étude monocentrique](https://www.ncbi.nlm.nih.gov/pubmed/12799407) a évalué prospectivement la fiabilité inter-observateurs du RASS dans une population de réanimation médicale. Une excellente fiabilité inter-observateurs (k=0,91) a de nouveau été démontrée parmi les infirmiers.",
+  "more_info": "**Définitions :**\n\n| Critères | Définition | Points |\n| --- | --- | --- |\n| Combattif | Franchement combattif, violent, danger immédiat pour le personnel | +4 |\n| Très agité | Tire ou retire le(s) tube(s) ou cathéter(s) ; agressif | +3 |\n| Agité | Mouvements non orientés fréquents, se bat contre le ventilateur | +2 |\n| Agité (léger) | Anxieux mais mouvements non agressifs ni vigoureux | +1 |\n| Éveillé et calme | | 0 |\n| Somnolent | Pas complètement éveillé, mais éveil soutenu (ouverture des yeux/contact visuel) à la voix (>10 secondes) | -1 |\n| Sédation légère | S'éveille brièvement avec contact visuel à la voix (<10 secondes) | -2 |\n| Sédation modérée | Mouvement ou ouverture des yeux à la voix (mais pas de contact visuel) | -3 |\n| Sédation profonde | Pas de réponse à la voix, mais mouvement ou ouverture des yeux à la stimulation physique | -4 |\n| Non réveillable | Pas de réponse à la voix ni à la stimulation physique | -5 |",
+  "short_description": "Objectiver le spectre agitation-sédation.",
+  "medium_description": "Ranks agitation et possibility pour sedation.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "patient_description",
+      "label": "Description du patient",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Combative",
+          "value": 4
+        },
+        {
+          "label": "Très agité",
+          "value": 3
+        },
+        {
+          "label": "Agitated",
+          "value": 2
+        },
+        {
+          "label": "Restless",
+          "value": 1
+        },
+        {
+          "label": "Éveillé et calme",
+          "value": 0
+        },
+        {
+          "label": "Drowsy",
+          "value": -1
+        },
+        {
+          "label": "Sédation légère",
+          "value": -2
+        },
+        {
+          "label": "modéré sedation",
+          "value": -3
+        },
+        {
+          "label": "Sédation profonde",
+          "value": -4
+        },
+        {
+          "label": "Sédation non réveillable",
+          "value": -5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sessler CN, Grap MJ, Brophy GM. Multidisciplinary management of sedation and analgesia in critical care. Semin Respir Crit Care Med. 2001;22(2):211-26. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16088675",
+      "kind": "pubmed"
+    },
+    {
+      "text": "“Richmond Agitation Sedation Scale.” ICU Delirium and Cognitive Impairment Group. Web. 09/2014.",
+      "href": "https://www.icudelirium.org/docs/RASS.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Ely EW, Truman B, Shintani A, Thomason JWW, Wheeler AP, Gordon S et al. Monitoring sedation status over time in ICU patients: the reliability and validity of the Richmond Agitation Sedation Scale (RASS). JAMA 2003; 289:2983-2991.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12799407",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sessler CN, Gosnell MS, et. al. The Richmond Agitation-Sedation Scale: validity and reliability in adult intensive care unit patients.Am J Respir Crit Care Med. 2002 Nov 15;166(10):1338-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12421743",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.confusion-assessment-method-icu-cam-icu",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.cornell-assessment-pediatric-delirium-capd"
+  ],
+  "source_logic_hash": "8781ffc9695eb8b62bfdf418a0efe934",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale (GCS)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1872,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

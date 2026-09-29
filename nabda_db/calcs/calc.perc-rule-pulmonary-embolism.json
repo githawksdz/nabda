@@ -1,0 +1,318 @@
+{
+  "id": "calc.perc-rule-pulmonary-embolism",
+  "slug": "perc-rule-pulmonary-embolism",
+  "language": "en",
+  "title": "Règle PERC pour l'embolie pulmonaire",
+  "short_title": "Règle PERC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Thrombose veineuse profonde",
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Toux",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "pe",
+    "pulmonary embolism",
+    "dvt"
+  ],
+  "dosing": false,
+  "formula": "If any of the following is/are present, PE cannot be ruled out:\n\n- Age ≥50.\n- HR ≥100.\n- O₂ sat on room air <95%.\n- Unilateral leg swelling.\n- Hemoptysis.\n- Recent trauma or surgery.\n- Prior PE or DVT.\n- Hormone use (oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients).",
+  "how_to_use": {
+    "why": "- Les patients à faible risque dont le PERC est négatif évitent les risques liés aux examens et aux traitements inutiles pour une EP.\n- Les cliniciens peuvent, sur la seule base de critères cliniques, éviter des examens et des traitements inutiles et potentiellement coûteux ou nocifs.",
+    "when": "- Peut être appliqué lorsqu'on envisage le diagnostic d'embolie pulmonaire chez un patient à faible risque pour cette affection.\n- Un patient peut être considéré comme à faible risque si sa probabilité pré-test d'EP est <15 % selon l'évaluation globale du médecin (physician gestalt).\n- Certains préconisent d'appliquer d'abord les [Critères de Wells](nabda:calc.wells-criteria-pulmonary-embolism) ou le [Score de Genève révisé](nabda:calc.geneva-score-revised-pulmonary-embolism) pour l'EP, puis de retenir un score considéré comme à faible risque.",
+    "pearls": "- À n'appliquer qu'aux patients à faible risque (<15 % selon l'évaluation clinique globale du praticien) ; certains préconisent l'utilisation du [score de Wells](nabda:calc.wells-criteria-pulmonary-embolism) ou du [score de Genève révisé](nabda:calc.geneva-score-revised-pulmonary-embolism) pour déterminer le risque d'EP, mais le score PERC original était destiné à être utilisé avec l'impression clinique du médecin.\n- Validé dans des populations où la prévalence de l'EP est <7 % (prévalence typique aux États-Unis ≈6 %).\n- Peut ne pas être performant dans les populations où la prévalence de l'EP est élevée.\n- Une hypoxémie ou une tachycardie à tout moment de l'évaluation compte comme un critère positif.\n- Le test est unidirectionnel ; le respect de tous les critères permet d'écarter tout examen complémentaire, mais l'échec d'un seul critère n'impose pas automatiquement la réalisation d'examens supplémentaires.\n- Cette règle n'est PAS destinée à stratifier le risque des patients.\n\n- À utiliser avec prudence en cas de :\n- Les bêtabloquants peuvent masquer la tachycardie et abaisser faussement le risque.\n- Certaines études européennes montrent une sensibilité réduite lorsque la prévalence de l'EP est élevée ; un résultat PERC négatif n'exclut pas l'EP en contexte de prévalence modérée ou élevée."
+  },
+  "next_steps": {
+    "advice": "- Sensitivity is lower in high-prevalence settings; a negative result does not exclude PE in moderate- or high-prevalence settings nor in moderate or high-risk patients.\n- Many hospitals employ the use of an [age-adjusted D-dimer](nabda:calc.age-adjusted-d-dimer-venous-thromboembolism-vte) , which can complement the PERC rule.\n- This tool is a valuable aid to rule out PE only in patients who are pre-determined to be low risk by physician gestalt.\n\n - When used properly, a negative result can confidently obviate further PE testing.\n - It should augment, not supersede, clinical decision-making, so always consider the patient’s full clinical picture.\n - Keep in mind its limitations (e.g. not for use in pregnancy or higher-risk cases).",
+    "critical_actions": "- Patients who are low-risk for PE should be evaluated with this tool as it can avoid further testing.\n- Patients at moderate-to-high risk for PE shouldnotbe evaluated using this tool.\n- Patients who are not suspected of having PE do not need to have this rule applied.\n- Use caution in high prevalence PE settings.\n- Maintain a broad differential in patients presenting with pleuritic complaints.",
+    "management": "- Consider D-dimer testing in low-risk patients **who do not meet all rule-out criteria.**\n\n - If the D-dimer is negative and clinical gestalt estimates a pre-test probability <15%, no further testing for PE is required.\n - If the D-dimer is positive, perform CT angiography or obtain a V/Q scan if CTA is contraindicated.\n - Consider using [age-adjusted D-dimer](nabda:calc.age-adjusted-d-dimer-venous-thromboembolism-vte) in this protocol.\n- In patients with low pretest probability (<15%) who **meet all rule-out criteria,** PE can be safely excluded."
+  },
+  "evidence": "",
+  "more_info": "If any criteria are positive, the PERC rule is not satisfied and cannot be used to rule out PE in this patient.",
+  "short_description": "Exclut cliniquement une EP (<2 %).",
+  "medium_description": "Rules out PE if no critères are present et pre-test probabilité is ≤15%.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥50",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hr",
+      "label": "FC ≥100",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "o2",
+      "label": "SatO₂ à l'air ambiant <95 %",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "leg_swelling",
+      "label": "Gonflement unilatéral de la jambe",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemoptysis",
+      "label": "Hémoptysie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "trauma",
+      "label": "Chirurgie ou traumatisme récent",
+      "tips": "Surgery or trauma ≤4 weeks ago requiring treatment with general anesthesia",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dvt_pe_history",
+      "label": "Antécédent d'EP ou de TVP",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "estrogen",
+      "label": "Utilisation d'hormones",
+      "tips": "Oral contraceptives, hormone replacement or estrogenic hormones use in males or female patients",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Raja AS, Greenberg JO, Qaseem A, et al. Evaluation of patients with suspected acute pulmonary embolism: best practice advice from the clinical guidelines committee of the american college of physicians. Ann Intern Med. 2015;163(9):701-711.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26414967/",
+      "kind": "international"
+    },
+    {
+      "text": "Writing Committee Members, Creager MA, Barnes GD, et al. 2026 AHA/ACC/ACCP/ACEP/CHEST/SCAI/SHM/SIR/SVM/SVN guideline for the evaluation and management of acute pulmonary embolism in adults: a report of the American College of Cardiology/American Heart Association joint committee on clinical practice guidelines. Circulation. 2026;153(12):e977-e1051. doi:10.1161/CIR.0000000000001415",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41712677/",
+      "kind": "international"
+    },
+    {
+      "text": "Kline JA, et al. Clinical criteria to prevent unnecessary diagnostic testing in emergency department patients with suspected pulmonary embolism. J Thromb Haemost 2004; 2: 1247–55.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15304025",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lucassen W, Geersing GJ, Erkens PM, Reitsma JB, Moons KG, Büller H, van Weert HC. Clinical decision rules for excluding pulmonary embolism: a meta-analysis. Ann Intern Med. 2011 Oct 4;155(7):448-60.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21969343/",
+      "kind": "other"
+    },
+    {
+      "text": "Singh B, Parsaik AK, Agarwal D, Surana A, Mascarenhas SS, Chandra S. Diagnostic accuracy of pulmonary embolism rule-out criteria: a systematic review and meta-analysis. Ann Emerg Med. 2012;59(6):517-520.e1-4. doi:10.1016/j.annemergmed.2011.10.022",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/22177109/",
+      "kind": "other"
+    },
+    {
+      "text": "Penaloza A, Soulié C, Moumneh T, et al. Pulmonary embolism rule-out criteria (Perc) rule in European patients with low implicit clinical probability (Percepic): a multicentre, prospective, observational study. Lancet Haematol. 2017;4(12):e615-e621. doi:10.1016/S2352-3026(17)30210-7",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29150390/",
+      "kind": "other"
+    },
+    {
+      "text": "Freund Y, Cachanado M, Aubry A, et al. Effect of the pulmonary embolism rule-out criteria on subsequent thromboembolic events among low-risk emergency department patients: the proper randomized clinical trial. JAMA. 2018;319(6):559. doi:10.1001/jama.2017.21904",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC5838786/",
+      "kind": "other"
+    },
+    {
+      "text": "Geersing GJ, Takada T, Klok FA, et al. Ruling out pulmonary embolism across different healthcare settings: A systematic review and individual patient data meta-analysis. PLoS Med. 2022;19(1):e1003905. doi:10.1371/journal.pmed.1003905",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35077453/",
+      "kind": "other"
+    },
+    {
+      "text": "Kline JA, et al. Prospective multicenter evaluation of the pulmonary embolism rule-out criteria. J Thromb Haemost 2008; 6: 772–80. (PMID: 18318689).",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18318689",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.altitude-adjusted-perc-rule",
+    "calc.geneva-score-revised-pulmonary-embolism",
+    "calc.simplified-pesi-pulmonary-embolism-severity-index",
+    "calc.wells-criteria-pulmonary-embolism",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte"
+  ],
+  "source_logic_hash": "17e7d61a0c61ddf00954eeeda22ca3b6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’"
+    },
+    {
+      "type": "calc",
+      "id": "calc.geneva-score-revised-pulmonary-embolism",
+      "text": "Revised Geneva Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age-adjusted D-dimer"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells’"
+    },
+    {
+      "type": "calc",
+      "id": "calc.geneva-score-revised-pulmonary-embolism",
+      "text": "Revised Geneva Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age-adjusted D-dimer"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 347,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar calc_msg=''; \nvar mini_msg=''; \nvar output_score=(parseInt(age)+parseInt(hr)+parseInt(o2)+parseInt(dvt_pe_history)+parseInt(trauma)+parseInt(hemoptysis)+parseInt(estrogen)+parseInt(leg_swelling)); \nif (output_score == 0) { \n    calc_msg = 'No need for further workup, as <2% chance of PE.<br/><br/>If no criteria are positive and clinician\\u2019s pre-test probability is <15%, PERC Rule criteria are satisfied.'; \n    mini_msg='PE can be ruled out.'; \n} else { \n    calc_msg = 'If any criteria are positive, the PERC rule cannot be used to rule out PE in this patient.'; \n    mini_msg='PE cannot be ruled out.'; \n} \n\ncalc_output.push({\n    name:'mini',\n    value: output_score,\n    value_text:'criteria',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'347_PERC Rule_result',\n    value: output_score,\n    value_text:'criteria',\n    message:calc_msg\n});",
+  "before_use": null,
+  "instructions": "Answer “yes” or “no” to all 8 criteria for a patient who has been determined to be low risk by clinical gestalt (<15%).",
+  "contributor_ids": [
+    "abbas-husain-md",
+    "brendan-freeman-do"
+  ],
+  "creator_names": [
+    "Dr. Jeffrey Kline"
+  ],
+  "measurement_ids": [
+    "Age"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "66202f7f43724e31a4a57593c1049500513f062430ad5a6f840fcfa523d66e28"
+}

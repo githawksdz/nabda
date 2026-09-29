@@ -1,0 +1,137 @@
+{
+  "id": "calc.estimated-ethanol-toxic-alcohol-serum-concentration-based-ingestion",
+  "slug": "estimated-ethanol-toxic-alcohol-serum-concentration-based-ingestion",
+  "language": "en",
+  "title": "Estimated Ethanol (et Toxic Alcohol) Serum Concentration basé sur Ingestion",
+  "short_title": "Concentration sérique estimée des alcools",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "ethanol",
+    "toxic alcohol",
+    "serum",
+    "concentration"
+  ],
+  "dosing": false,
+  "formula": "[C] = Dose / (Vd × Weight); where:\n\n- [C] is serum concentration (mg/L).\n- Dose is amount ingested (mg).\n- Vd is volume of distribution (L/kg).\n- Weight is patient body weight (kg).\n\nExample: a 3-year-old boy (15 kg) ingests 30 mL of windshield washer fluid (50% methanol). Maximal predicted serum methanol concentration:\n\n- [C] = Dose / (Vd × Weight)\n- Dose:\n\n - 50% methanol = 50 g/100 mL = 500 mg/mL and\n - 500 mg/mL × 30 mL ingested = 15,000 mg methanol\n- [C] = 15,000 mg / (0.6 L/kg × 15 kg) = 1,667 mg/L\n- 1,667 mg/L × 1 L/10 dL = 167 mg/dL\n(a concentration requiring treatment with fomepizole)\n\nExample: a 21-year-old man (70 kg) ingests 750 mL of 15% wine. Maximal predicted serum ethanol concentration:\n\n- [C] = Dose / (Vd × Weight)\n- Dose:\n\n - 15% ethanol = 15 g/100 mL = 150 mg/mL and\n - 150 mg/mL × 750 mL ingested = 112,500 mg ethanol\n- [C] = 112,500 mg / (0.6 L/kg × 70 kg) = 2,679 mg/L\n- 2,679 mg/L × 1 L/10 dL = 268 mg/dL",
+  "how_to_use": {
+    "why": "Estime la concentration sérique maximale prédite d’alcool en fonction du volume et de la concentration ingérés.",
+    "when": "Prédiction de la concentration sérique des alcools toxiques.",
+    "pearls": "- The formula makes several assumptions to approximate maximal predicted serum concentration:\n\n - Complete alcohol absorption.\n - Absence of alcohol metabolism or elimination.\n - Absence of volume contraction effects.\n - Alcohol specific gravity disregarded.\n - Gender and age differences in pharmacokinetics discounted.\n- The estimated serum concentration from ingestion of a given volume of alcohol will differ depending on which alcohol is ingested."
+  },
+  "next_steps": {
+    "advice": "Les quantités d'alcool ingérées rapportées à l'interrogatoire sont souvent inexactes (en particulier chez les enfants).",
+    "critical_actions": "- Des ingestions apparemment faibles d'alcools peuvent entraîner des concentrations sériques significatives (c.-à-d. des concentrations de méthanol/éthylène glycol nécessitant un traitement par fomépizole).\n- Les alcools toxiques (méthanol, éthylène glycol) ont des concentrations différentes selon le produit. La concentration du produit ingéré doit être connue afin d'estimer la concentration sérique.",
+    "management": "Recommandations pour débuter le traitement :\n\n| Surdose | Traitement |\n| --- | --- |\n| Méthanol | Concentration ≥20 mg/dL (6.2 mmol/L), OU antécédents documentés d’ingestion récente et trou osmolaire >10 mOsm/L, OU suspicion d’ingestion de méthanol et au moins deux des critères suivants : pH artériel <7.3, taux sérique de dioxyde de carbone <20 mmol/L et trou osmolaire >10 mOsm/L. |\n| Éthylène glycol | Concentration ≥20 mg/dL (3.2 mmol/L), OU antécédents documentés d’ingestion et trou osmolaire >10 mOsm/L, OU suspicion d’ingestion d’éthylène glycol et au moins trois des critères suivants : pH artériel <7.3, taux sérique de dioxyde de carbone <20 mmol/L, trou osmolaire >10 mOsm/L et cristallurie d’oxalate. |\n| Diéthylène glycol | Traitement immédiat recommandé pour tout antécédent d’ingestion de diéthylène glycol. |\n| Alcool isopropylique et propylène glycol | Aucune recommandation de traitement par fomépizole, car cela prolongerait les symptômes d’intoxication. Le traitement est symptomatique pour les deux et aucun n’est généralement toxique, sauf en cas d’ingestion massive nécessitant un support vasopresseur. |\n\nD’après [Brent 2009](https://www.ncbi.nlm.nih.gov/pubmed/19458366)."
+  },
+  "evidence": "",
+  "more_info": "**Pour convertir les mg/dL en mmol/L :**\n\n- Éthanol : diviser la concentration d'éthanol en mg/dL par 4,6\n- Méthanol : diviser la concentration de méthanol en mg/dL par 3,2\n- Éthylène glycol : diviser la concentration d'éthylène glycol en mg/dL par 6,2",
+  "short_description": "Predicts ethanol concentration basé sur ingestion de alcohol.",
+  "medium_description": "Predicts ethanol concentration basé sur ingestion de alcohol.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "percent",
+      "label": "Alcool (%)",
+      "optional": false,
+      "unit": "basic_stats",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "amount",
+      "label": "Quantité ingérée",
+      "optional": false,
+      "unit": "volume",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Type d'alcool",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Ethanol",
+          "value": 0
+        },
+        {
+          "label": "Methanol",
+          "value": 1
+        },
+        {
+          "label": "Éthylène glycol",
+          "value": 2
+        },
+        {
+          "label": "Diéthylène glycol",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Yip L. Ethanol. In: Flomenbaum NE, Goldfrank LR, Hoffman RS et al, eds: Goldfrank’s Toxicologic Emergencies. New York NY, 2006.",
+      "href": "https://accessemergencymedicine.mhmedical.com/Content.aspx?bookId=1163&sectionId=65098321",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brent J. Fomepizole for ethylene glycol and methanol poisoning. N Engl J Med. 2009 May 21;360(21):2216-23. doi: 10.1056/NEJMct0806112. Review. PubMed PMID: 19458366.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19458366",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.prediction-alcohol-withdrawal-severity-scale",
+    "calc.hacks-impairment-index-hii",
+    "calc.brief-alcohol-withdrawal-scale-baws"
+  ],
+  "source_logic_hash": "aad1c2aac026c0a9f942f374635e200a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3813,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.fomepizole",
+    "s.ethanol",
+    "s.chlorhexidine-ethanol",
+    "s.ethanol-povidone-iodee"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

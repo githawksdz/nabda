@@ -1,0 +1,218 @@
+{
+  "id": "calc.ssign-score-renal-cell-carcinoma-rcc",
+  "slug": "ssign-score-renal-cell-carcinoma-rcc",
+  "language": "fr",
+  "title": "SSIGN score pour Renal Cell Carcinoma (RCC)",
+  "short_title": "Score SSIGN",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "nephrologie",
+    "soins-palliatifs",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Chemotherapy",
+    "Carcinome à cellules rénales"
+  ],
+  "chief_complaints": [
+    "Hematuria"
+  ],
+  "abbreviations": [
+    "nephrectomy",
+    "RCC",
+    "prognosis",
+    "renal",
+    "clear cell"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Le score SSIGN (Stage, Size, Grade and Necrosis) s'applique au carcinome rénal à cellules claires (RCC) à tous les stades, mais pas aux autres types de RCC.\n- Validé dans plusieurs cohortes de patients."
+  },
+  "next_steps": {
+    "advice": "Certains experts estiment que ce score ne devrait **pas** être utilisé comme système pronostique unique dans tous les sous-groupes histologiques. Envisager d'autres systèmes pronostiques.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Résultats prédits**\n\n| | % taux de survie spécifique au cancer estimés | | | | |\n| --- | --- | --- | --- | --- | --- |\n| Score SSIGN | Année 1 | Année 3 | Année 5 | Année 7 | Année 10 |\n| 0 - 2 | 99.7 | 98.7 | 97.3 | 96 | 93.6 |\n| 3 - 4 | 98.1 | 93.4 | 89.8 | 84 | 77.9 |\n| 5 - 6 | 92.9 | 83.8 | 74.1 | 65 | 57.3 |\n| 7 - 9 | 76.5 | 46.9 | 38.6 | 29 | 25.9 |\n| ≥ 10 | 43.3 | 21.9 | 19.2 | 19.2 | 19.2 |",
+  "short_description": "Pronostic du carcinome rénal à cellules claires.",
+  "medium_description": "Prédit la progression du carcinome rénal à cellules claires après néphrectomie radicale.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "t",
+      "label": "Catégorie T pathologique",
+      "tips": "Selon les recommandations de stadification TNM 2002",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "pT1",
+          "value": 0
+        },
+        {
+          "label": "pT2",
+          "value": 1
+        },
+        {
+          "label": "pT3-c",
+          "value": 2
+        },
+        {
+          "label": "pT4",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "n",
+      "label": "Statut ganglionnaire régional",
+      "tips": "Selon les recommandations de stadification TNM 2002",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "pNx ou pN0",
+          "value": 0
+        },
+        {
+          "label": "pN1 ou pN2",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m",
+      "label": "Catégorie métastase",
+      "tips": "Selon les recommandations de stadification TNM 2002",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "M0",
+          "value": 0
+        },
+        {
+          "label": "M1",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tumor",
+      "label": "Taille de la tumeur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 5 cm",
+          "value": 0
+        },
+        {
+          "label": "≥5 cm",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nuc",
+      "label": "[Grade (nucléaire) tumoral](nabda:calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1 ou 2",
+          "value": 0
+        },
+        {
+          "label": "3",
+          "value": 1
+        },
+        {
+          "label": "4",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nec",
+      "label": "Présence de nécrose tumorale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Frank I, Blute ML, Cheville JC, Lohse CM, Weaver AL, Zincke H. An outcome prediction model for patients with clear cell renal cell carcinoma treated with radical nephrectomy based on tumour stage, size, grade and necrosis: the SSIGN score. J Urol 2002; 168:2395–400.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12441925",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leibovich BC, Blute M, Cheville JC, et al. Prediction of progression after radical nephrectomy for patients with clear cell renal cell carcinoma: a stratification tool for prospective clinical trials. Cancer 2003;97:1663-1671",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/cncr.11234/full",
+      "kind": "other"
+    },
+    {
+      "text": "Escudier B, Eisen T, Porta C, et al. Renal cell carcinoma: ESMO clinical practice guidelines for diagnosis, treatment and follow-up. Ann Oncol, 2012; 23(suppl 7):vii65–vii71.",
+      "href": "https://annonc.oxfordjournals.org/content/23/suppl_7/vii65.full",
+      "kind": "other"
+    },
+    {
+      "text": "Zigeuner R, Hutterer G, Chromecki T, Imamovic A, Kampel-Kettner K, Rehak P, Langner C, Pummer K. External validation of the Mayo Clinic stage, size, grade, and necrosis (SSIGN) score for clear-cell renal cell carcinoma in a single European centre applying routine pathology. Eur Urol. 2010 Jan;57(1):102-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19062157",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.fuhrman-nuclear-grade-clear-cell-renal-carcinoma",
+    "calc.memorial-sloan-kettering-cancer-center-mskcc-motzer-score-metastatic-renal-cell-carcinoma-rcc",
+    "calc.renal-nephrometry-score"
+  ],
+  "source_logic_hash": "7671b88bdf6f96d32e4f735ec7332fcf",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2154,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

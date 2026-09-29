@@ -1,0 +1,224 @@
+{
+  "id": "calc.rose-risk-stratification-syncope-emergency-department-rule",
+  "slug": "rose-risk-stratification-syncope-emergency-department-rule",
+  "language": "fr",
+  "title": "ROSE (stratification du risque de Syncope dans service d'accueil des urgences) règle",
+  "short_title": "ROSE règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dizziness",
+    "Seizure",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "ROSE",
+    "Risk Stratification of Syncope in the Emergency Department",
+    "syncope",
+    "syncope score",
+    "fainting",
+    "vasovagal",
+    "LOC",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Hospitaliser si l'un des éléments suivants est présent :\n\n| BNP ≥300 pg/mL |\n| --- |\n| Bradycardie *≤50 bpm aux urgences ou en préhospitalier |\n| Toucher rectal montrant du sang occulte dans les selles *En cas de suspicion d'hémorragie digestive |\n| Anémie *Hémoglobine ≤90 g/L |\n| Douleur thoracique *Associée à la syncope |\n| ECG montrant une onde Q *Hors dérivation III |\n| Saturation ≤94% en air ambiant |",
+  "how_to_use": {
+    "why": "- La syncope est une pathologie fréquente et potentiellement grave, responsable de nombreuses hospitalisations.\n- Cet outil aide à distinguer une syncope bénigne d'une syncope révélant une maladie mettant en jeu le pronostic vital, en orientant l'évaluation et la prise en charge.",
+    "when": "À utiliser chez les patients ≥16 ans se présentant aux urgences pour une véritable syncope aiguë, afin d'aider à identifier les patients à risque de pathologies graves.",
+    "pearls": "- Met en évidence les signes d'alerte de fort rendement associés aux pathologies mettant en jeu le pronostic vital.\n- Ne doit pas être utilisé chez les patients présentant :\n\n - Une lipothymie (présyncope).\n - Des déficits neurologiques persistants (p. ex. AVC).\n - Une intoxication (p. ex. alcool).\n - Une hypoglycémie.\n- Un traumatisme.\n - Une activité convulsive >15 minutes avec phase post-critique observée.\n- Dans les cohortes de dérivation/validation, tout critère positif donnait une sensibilité ~87 % et une VPN ~98,5 % pour les événements graves à 30 jours."
+  },
+  "next_steps": {
+    "advice": "- Comme pour toutes les règles de décision clinique, ne pas fonder la prise en charge uniquement sur ce score ; corréler avec le jugement clinique.\n- La présence d'un seul critère ROSE positif classe le patient comme à haut risque d'événement grave à 30 jours ou de décès toutes causes.",
+    "critical_actions": "",
+    "management": "- **Si un critère est présent :** Hospitaliser ou placer en observation sous surveillance continue et poursuivre une évaluation ciblée basée sur les signes, les symptômes et le bilan initial.\n- **Si aucun critère n'est présent :**\n\n - Si la présentation globale est rassurante (p. ex. constantes normales, absence de cardiopathie structurelle), envisager la sortie avec un suivi ambulatoire rapide, une éducation et des consignes claires de retour aux urgences.\n - Si une inquiétude clinique persiste, envisager l'hospitalisation et des examens complémentaires."
+  },
+  "evidence": "La règle ROSE est une règle de décision clinique publiée en 2010 pour prédire les événements graves à 1 mois et la mortalité toutes causes aux urgences chez les patients présentant une syncope.\n\n- Étude observationnelle prospective monocentrique portant sur des adultes se présentant aux urgences pour syncope.\n\n - Cohorte de dérivation n=550.\n - Cohorte de validation n=550.\n- Les événements graves comprenaient :\n\n - Infarctus du myocarde aigu.\n - Arythmie mettant en jeu le pronostic vital.\n - Implantation d'un pacemaker ou d'un défibrillateur automatique implantable (DAI).\n - Embolie pulmonaire.\n - Accident vasculaire cérébral.\n - Hémorragie intracérébrale ou sous-arachnoïdienne.\n - Hémorragie nécessitant des transfusions.\n - Intervention chirurgicale aiguë ou évaluation endoscopique.\n- Présentait une excellente sensibilité et valeur prédictive négative pour l'identification des patients à haut risque.\n\n - Sensibilité, spécificité : 87,2 %, 65,5 %.\n - VPP, VPN : 16,5 %, 98,5 %.\n - AUROC : 0,76 (IC à 95 % 0,70–0,83).\n - L'utilisation de la règle aurait permis environ 80 hospitalisations en moins dans la cohorte de validation.\n- Le BNP était un prédicteur individuel majeur des événements cardiovasculaires graves et du décès ; contrairement à ROSE, la [règle de syncope de San Francisco](nabda:calc.san-francisco-syncope-rule) n'inclut pas le BNP parmi ses prédicteurs.\n- L'auteur principal a reçu une bourse de déplacement de Biosite, Inc. (fournisseur des bandelettes de test BNP utilisées dans une étude pilote), mais l'étude ROSE principale n'a reçu aucun financement.",
+  "more_info": "",
+  "short_description": "Morbidity et mortalité dans syncope patients.",
+  "medium_description": "Predicts 1-month serious devenir ou death dans patients presenting avec syncope.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bnp",
+      "label": "BNP ≥300 pg/mL",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "brady",
+      "label": "Bradycardia",
+      "tips": "≤50 bpm aux urgences ou en préhospitalier",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "rectal",
+      "label": "Toucher rectal montrant du sang occulte dans les selles",
+      "tips": "En cas de suspicion d'hémorragie digestive",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ane",
+      "label": "Anemia",
+      "tips": "Hémoglobine ≤90 g/L",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cxpn",
+      "label": "Douleur thoracique",
+      "tips": "Associée à la syncope",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ecg",
+      "label": "ECG montrant une onde Q",
+      "tips": "Hors dérivation III",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sat",
+      "label": "Saturation ≤94% en air ambiant",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Reed MJ, Newby DE, Coull AJ, Prescott RJ, Jacques KG, Gray AJ. The ROSE (risk stratification of syncope in the emergency department) study. J Am Coll Cardiol. 2010;55(8):713-21.",
+      "href": "https://content.onlinejacc.org/article.aspx?articleid=1140471 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.canadian-syncope-risk-score",
+    "calc.egsys-evaluation-guidelines-syncope-study-score-syncope",
+    "calc.oesil-score-syncope"
+  ],
+  "source_logic_hash": "d842d63325df5152419ee4c7b3957fcc",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3949,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

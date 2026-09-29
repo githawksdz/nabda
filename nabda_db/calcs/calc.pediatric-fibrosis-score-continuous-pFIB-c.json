@@ -1,0 +1,205 @@
+{
+  "id": "calc.pediatric-fibrosis-score-continuous-pFIB-c",
+  "slug": "pediatric-fibrosis-score-continuous-pFIB-c",
+  "language": "en",
+  "title": "Pédiatrique Fibrosis score-Continuous (pFIB-c)",
+  "short_title": "Score PFIB-c",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "pediatrie",
+    "general"
+  ],
+  "diseases": [
+    "Hépatopathie chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Fatigue",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "pediatric fibrosis",
+    "MASLD",
+    "NAFLD",
+    "liver fibrosis score",
+    "ALT",
+    "HOMA-IR",
+    "pFIB-c",
+    "obesity",
+    "noninvasive fibrosis score",
+    "hepatic lipid accumulation",
+    "metabolic dysregulation",
+    "insulin resistance",
+    "hepatic inflammation",
+    "liver fibrosis",
+    "cirrhosis",
+    "metabolic dysfunction–associated steatohepatitis"
+  ],
+  "dosing": false,
+  "formula": "Le score pFIB-c est calculé selon l'équation suivante :\n\nx = −5,155\n\n+ (1,194 × Sexe [garçon = 1, fille = 0])\n\n+ (1,636 × Hypertension [oui = 1, non = 0])\n\n+ (0,019 × ALT [U/L])\n\n+ (0,633 × z-score du poids*)\n\n+ (0,079 × [HOMA-IR](nabda:calc.homa-ir-homeostatic-model-assessment-insulin-resistance) )\n\n− (2,453 × Ethnicité noire [oui = 1, non = 0])\n\nRisque de fibrose hépatique, % = eˣ / (1 + eˣ) × 100\n\n*Le [CDC](https://www.cdc.gov/growthcharts/cdc-data-files.htm) et l'[OMS](https://www.who.int/tools/child-growth-standards/standards/weight-for-length-height) disposent de ressources pour aider au calcul d'un z-score du poids.\n\n**Score HOMA-IR = (Insuline à jeun, uIU/mL) × (Glucose à jeun, mg/dL) / 405",
+  "how_to_use": {
+    "why": "- Conçu pour exclure une fibrose hépatique cliniquement significative (stade ≥F2), ce qui pourrait réduire le recours inutile à l'imagerie, à la biopsie invasive et à l'orientation vers un spécialiste.\n- A démontré une AUROC et une valeur prédictive négative supérieures à celles du [rapport AST/plaquettes (APRI)](nabda:calc.ast-platelet-ratio-index-apri) et du Pediatric NAFLD Fibrosis Index (PNFI) dans la cohorte de dérivation.",
+    "when": "À utiliser chez les enfants et adolescents (âgés de 8 à 18 ans) présentant une obésité sévère et une stéatopathie métabolique associée (MASLD) connue ou suspectée, en soins primaires ou en consultation d'obésité ou d'endocrinologie, pour dépister une fibrose cliniquement significative.",
+    "pearls": "- Dérivé dans une cohorte d'enfants et d'adolescents présentant une obésité sévère (définie par un IMC supérieur de 25 % au 95e percentile de poids ; z-score d'IMC ≥2,25) dans un centre de réadaptation tertiaire belge.\n- Deux modèles ont été créés : le modèle de régression continue (pFIB-c) et un modèle simplifié à points (pFIB-6) ; cet outil utilise le modèle continu, qui a montré de meilleures performances (AUROC plus élevée).\n- L'ethnicité est incluse dans ce modèle :\n\n - Les auteurs ont noté que des études multiethniques ont montré un risque de MASLD/fibrose plus élevé chez les patients hispaniques, intermédiaire chez les patients européens et plus faible chez les patients noirs.\n - Cependant, il est également noté que les données NHANES ont montré un risque de MASLD plus élevé chez les enfants noirs, ce qui pourrait affecter la précision du score.\n- A montré une valeur prédictive négative élevée (>90 %) avec une AUROC d'environ 0,84 pour exclure une fibrose cliniquement significative (≥F2).\n- Destiné comme outil de dépistage (exclusion) plutôt que diagnostique ; un score élevé suggère une fibrose possible et justifie un bilan de confirmation.\n- Non validé en dehors de la MASLD ; à éviter en cas d'hépatite virale ou auto-immune, de maladie cholestatique ou de maladie hépatique congénitale."
+  },
+  "next_steps": {
+    "advice": "Cet outil n'a pas encore fait l'objet d'une validation externe ; continuer à suivre les recommandations locales et des sociétés savantes pour l'évaluation de la fibrose dans la MASLD pédiatrique.",
+    "critical_actions": "",
+    "management": "En cas de validation externe, le score pourrait aider à dépister le risque de fibrose chez l'enfant et à guider la prise en charge :\n\n- **Risque faible :**\n\n - Renforcer la prise en charge du mode de vie et des comorbidités métaboliques (optimisation du poids, réduction du risque de diabète).\n - Répéter le score ou une évaluation non invasive alternative à intervalles définis ou en cas d'évolution clinique.\n- **Risque élevé :** Peut nécessiter un bilan complémentaire, incluant l'imagerie (p. ex. élastographie transitoire/IRM/échographique), une biopsie hépatique et une orientation en hépatologie."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score pFIB-c (Probabilité) | Niveau de risque de fibrose hépatique significative | Stade de fibrose corrélé |\n| --- | --- | --- |\n| <0,226 (22,6 %) | Faible | F0-F1 |\n| ≥0,226 | Élevé | ≥F2 |",
+  "short_description": "Predicts liver fibrosis risque dans pédiatrique MASLD.",
+  "medium_description": "Predicts liver fibrosis risque dans pédiatrique metabolic dysfunction–associé steatotic liver maladie (MASLD).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Girl",
+          "value": 0
+        },
+        {
+          "label": "Boy",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "black_ethnicity",
+      "label": "Ethnicité noire",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "weight_z",
+      "label": "Z-score du poids",
+      "tips": "Le [CDC](https://www.cdc.gov/growthcharts/cdc-data-files.htm) et l'[OMS](https://www.who.int/tools/child-growth-standards/standards/weight-for-length-height) disposent de ressources pour le calcul du z-score",
+      "optional": false,
+      "unit": "z_score",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "fasting_insulin",
+      "label": "Insuline (à jeun)",
+      "optional": false,
+      "unit": "Insulin",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "fasting_glucose",
+      "label": "Glucose (à jeun)",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Lefere S, Mosca A, Hudert C, et al. Development and validation of pFIB scores for exclusion of significant liver fibrosis in pediatric MASLD. Hepatology. 2025;81(4):1276-1287. doi:10.1097/HEP.0000000000001016",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39028885/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.homa-ir-homeostatic-model-assessment-insulin-resistance",
+    "calc.ast-platelet-ratio-index-apri"
+  ],
+  "source_logic_hash": "3e44a256736dcdf8c2368c038fcf121c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.homa-ir-homeostatic-model-assessment-insulin-resistance",
+      "text": "HOMA-IR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ast-platelet-ratio-index-apri",
+      "text": "AST-to-Platelet Ratio Index (APRI)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10615,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

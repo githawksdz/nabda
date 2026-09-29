@@ -1,0 +1,16 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/drugs/manufacturer.json",
+  "title": "Manufacturer",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["id", "name"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^m\\." },
+    "name": { "type": "string" },
+    "country": { "type": ["string", "null"] },
+    "local": { "type": "boolean" },
+    "logo": { "type": ["string", "null"] },
+    "sources": { "type": "object" }
+  }
+}

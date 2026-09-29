@@ -1,0 +1,272 @@
+{
+  "id": "calc.action-icu-score-intensive-care-nstemi",
+  "slug": "action-icu-score-intensive-care-nstemi",
+  "language": "en",
+  "title": "ACTION ICU score pour soins intensifs dans NSTEMI",
+  "short_title": "Score ACTION ICU",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "ICU risk score",
+    "stemi",
+    "nstemi complications",
+    "mortality risk score"
+  ],
+  "dosing": false,
+  "formula": "| | 0 points | 1 point | 2 points | 3 points | 5 points |\n| --- | --- | --- | --- | --- | --- |\n| Age, years | <70 | ≥70 | -- | -- | -- |\n| Serum creatinine, mg/dL | <1.1 | ≥1.1 | -- | -- | -- |\n| Heart rate, bpm | <85 | 85-100 | -- | ≥100 | -- |\n| Systolic blood pressure, mmHg | ≥145 | 125-145 | -- | <125 | -- |\n| Initial troponin, times above upper limit of normal | <12 | -- | ≥12 | -- | -- |\n| Heart failure signs or symptoms | No | -- | -- | -- | Yes |\n| ST depression on EKG | No | Yes | -- | -- | -- |\n| Prior revascularization | Yes | No | -- | -- | -- |\n| Chronic lung disease | No | -- | Yes | -- | -- |",
+  "how_to_use": {
+    "why": "Aide à identifier les patients initialement stables mais susceptibles de développer ultérieurement des complications nécessitant un niveau de soins plus élevé, et peut donc contribuer à l’orientation et à éviter l’échec de sauvetage.",
+    "when": "- Patients admis aux urgences avec un NSTEMI, pour prédire la probabilité de complications nécessitant une prise en charge en soins intensifs (ICU) chez les patients atteints de NSTEMI.\n- Ne doit pas être utilisé chez les patients avec STEMI, choc cardiogénique ou arrêt cardiaque.",
+    "pearls": "- Dérivé chez des patients ≥65 ans, et pourrait ne pas s’appliquer aux patients plus jeunes.\n- Différents établissements peuvent utiliser des seuils différents pour l’admission en soins intensifs.\n- Pas encore validé prospectivement."
+  },
+  "next_steps": {
+    "advice": "- Patients with low risk for complications requiring ICU care may be considered for admission outside of an ICU setting.\n- Patients with high risk for complications requiring ICU care may benefit from early admission to the ICU.",
+    "critical_actions": "Cet outil prédictif ne doit pas remplacer le jugement clinique. Tous les facteurs pouvant bénéficier d’une prise en charge en réanimation ne peuvent pas être pris en compte dans ce score.",
+    "management": "- Hospital systems should define their own threshold for ICU admission, based on ICU capacity, non-ICU resource availability, etc.\n- For example, an ACTION ICU threshold of 5 might triage 50% of patients to the ICU, with an expected complication rate of <10% for non-ICU patients, while an ACTION ICU threshold of 12 might triage 50% of only very high risk patients to the ICU."
+  },
+  "evidence": "The ACTION ICU Score was developed retrospectively from 29,973 patients in the ACTION registry, with an overall ICU complication rate of 14.3%. In the derivation cohort, the score performed with R^2^= 0.94, C-statistic 0.73 (95% CI 0.72-0.74). It has not yet been prospectively validated in a separate population.",
+  "more_info": "Interpretation:\n\n| ACTION ICU Score | Risk of complications requiring ICU care among initially uncomplicated patients with NSTEM I * |\n| --- | --- |\n| ≤1 | 3.4% |\n| 2 | 4.9% |\n| 3 | 5.5% |\n| 4 | 6.9% |\n| 5 | 9.3% |\n| 6 | 12% |\n| 7 | 14.6% |\n| 8 | 17.4% |\n| 9 | 20.8% |\n| 10 | 23.3% |\n| 11 | 27.7% |\n| 12 | 31% |\n| 13 | 31.5% |\n| 14 | 39.3% |\n| >14 | >39.3% |\n\n*Cardiac arrest, shock, high-grade atrioventricular block, respiratory failure, stroke, or death during index admission.",
+  "short_description": "Complications critiques du NSTEMI.",
+  "medium_description": "Prédit le risque de complications d’un NSTEMI nécessitant une prise en charge en soins intensifs.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 70",
+          "value": 0
+        },
+        {
+          "label": "≥70",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cr",
+      "label": "Créatinine sérique, mg/dL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.1",
+          "value": 0
+        },
+        {
+          "label": "≥1.1",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "Fréquence cardiaque, bpm",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 85",
+          "value": 0
+        },
+        {
+          "label": "85-100",
+          "value": 1
+        },
+        {
+          "label": "≥100",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bp",
+      "label": "Systolic pression artérielle, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥145",
+          "value": 0
+        },
+        {
+          "label": "125-145",
+          "value": 1
+        },
+        {
+          "label": "< 125",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "troponin",
+      "label": "Ratio de initial troponin pour upper limit de normal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 12",
+          "value": 0
+        },
+        {
+          "label": "≥12",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hf",
+      "label": "Signes ou symptômes d'insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stdep",
+      "label": "ST segment dépression sur EKG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pci",
+      "label": "Revascularisation antérieure",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "lung",
+      "label": "Maladie pulmonaire chronique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Fanaroff AC, Chen AY, Thomas LE, et al. Risk Score to Predict Need for Intensive Care in Initially Hemodynamically Stable Adults With Non-ST-Segment-Elevation Myocardial Infarction. J Am Heart Assoc. 2018;7(11).",
+      "href": "https://jaha.ahajournals.org/content/7/11/e008894 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chin CT, Chen AY, Wang TY, et al. Risk adjustment for in-hospital mortality of contemporary patients with acute myocardial infarction: the acute coronary treatment and intervention outcomes network (ACTION) registry-get with the guidelines (GWTG) acute myocardial infarction mortality model and risk score. Am Heart J. 2011;161(1):113-122.e2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21167342",
+      "kind": "other"
+    },
+    {
+      "text": "National Clinical Guidelines Centre (UK). Stable Angina: Methods, Evidence & Guidance [Internet]. London: Royal College of Physicians (UK); 2011 Jul. (NICE Clinical Guidelines, No. 126.) 14, Risk scores. Available from: https://www.ncbi.nlm.nih.gov/books/NBK83609/.",
+      "href": "https://www.ncbi.nlm.nih.gov/books/NBK83609/",
+      "kind": "other"
+    },
+    {
+      "text": "Fanaroff AC, Peterson ED, Chen AY, et al. Intensive Care Unit Utilization and Mortality Among Medicare Patients Hospitalized with Non-ST-Segment Elevation Myocardial Infarction. JAMA Cardiol. 2017;2(1):36-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5776676/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sex-shock-risk-score-development-cardiogenic-shock",
+    "calc.simplified-acute-physiology-score-saps-3",
+    "calc.framingham-risk-score-hard-coronary-heart-disease"
+  ],
+  "source_logic_hash": "737d34b64f8aaca413b5262d8c4c637b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10020,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

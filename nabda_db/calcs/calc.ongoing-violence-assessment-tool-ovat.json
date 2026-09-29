@@ -1,0 +1,193 @@
+{
+  "id": "calc.ongoing-violence-assessment-tool-ovat",
+  "slug": "ongoing-violence-assessment-tool-ovat",
+  "language": "en",
+  "title": "Ongoing Violence évaluation Tool (OVAT)",
+  "short_title": "OVAT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Injury/Trauma",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Ongoing Violence Assessment Tool (OVAT)",
+    "ovat",
+    "abuse",
+    "abuse screening",
+    "abuse screening tool",
+    "domestic abuse",
+    "domestic abuse screening",
+    "domestic violence",
+    "domestic violence screening",
+    "IPV",
+    "intimate partner violence"
+  ],
+  "dosing": false,
+  "formula": "The OVAT screening result is determined according to the following points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Within the past month… | | |\n| Has your partner threatened you with a weapon? | No | 0 |\n| Yes | 1 | |\n| Has your partner beaten you so badly that you had to seek medical care? | No | 0 |\n| Yes | 1 | |\n| Has your partner acted like they would like to kill you? | No | 0 |\n| Yes | 1 | |\n| Has your partner had no respect for your feelings? | Never | 1 |\n| Rarely | 2 | |\n| Occasionally | 3 | |\n| Frequently | 4 | |\n| Very frequently | 5 | |",
+  "how_to_use": {
+    "why": "- Aids in the detection of IPV, allowing for intervention for those in need of immediate assistance.\n- Ultra-brief and outperformed longer screening tools.",
+    "when": "- Use for universal or targeted screening of adults (both men and women) who present to the emergency department, urgent care, or other acute care settings.\n- Useful when there is suspected current intimate partner violence (IPV) based on clinical cues.",
+    "pearls": "- Designed for the acute care setting.\n- Validated in women and men across Black, Hispanic, and White populations.\n- Demonstrated sensitivity of 86% and specificity of 83%.\n- Emphasizes severe physical violence; may miss coercive-control or lower-grade emotional abuse; consider supplemental tools if suspicion persists.\n- Ensure privacy when administering the tool; the patient’s partner should be absent.\n- Normalize the questions by explaining that they are a standard part of routine care.\n- Be empathetic and nonjudgmental in your approach."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Be aware of state/location-specific mandatory-reporting laws.",
+    "management": "**For a positive result:**\n\n- Assess imminent danger (e.g., lethality questions, weapon access, children in the home).\n- Ensure patient safety on-site (e.g., separate from partner, provide a private phone, involve security if needed).\n- Discuss and create a personalized safety plan.\n- Refer the patient to appropriate local resources (e.g., shelters, hotlines, counseling services).\n- Consider emergency shelter referral or law enforcement assistance if lethality risk is high.\n- Document findings in the medical record; follow medicolegal requirements.\n- Address medical sequelae (e.g., wound care, STI testing, emergency contraception, mental health management).\n\n**If ongoing concern but a negative result:**\n\n- Reassure confidentiality.\n- Schedule discreet follow-up, if possible.\n- Provide information about local support resources."
+  },
+  "evidence": "",
+  "more_info": "A “yes” answer to any of the first three questions or an “occasionally”, “frequently”, or “very frequently” answer to the last question is considered a positive screening result.",
+  "short_description": "Detects domestic abuse dans ED.",
+  "medium_description": "Detects domestic abuse (intimate partner violence) dans women et men dans service d'accueil des urgences settings.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Has your partner threatened you avec weapon?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Has your partner beaten you so badly that you had pour seek medical care?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Has your partner acted like they would like pour kill you?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Has your partner had no respect pour your feelings?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Rarely",
+          "value": 2
+        },
+        {
+          "label": "Occasionally",
+          "value": 3
+        },
+        {
+          "label": "Frequently",
+          "value": 4
+        },
+        {
+          "label": "Very frequently",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Weiss SJ, Ernst AA, Cham E, Nick TG. Development of a screen for ongoing intimate partner violence. Violence Vict. 2003;18(2):131-141.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/12816400/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ernst AA, Weiss SJ, Cham E, Hall L, Nick TG. Detecting ongoing intimate partner violence in the emergency department using a simple 4-question screen: the OVAT. Violence Vict. 2004;19(3):375-384.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15631287/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Feltner C, Wallace I, Berkman N, et al. Screening for intimate partner violence, elder abuse, and abuse of vulnerable adults: evidence report and systematic review for the US preventive services task force. JAMA. 2018;320(16):1688.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2708120",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abuse-assessment-screen-aas",
+    "calc.hurt-insult-threaten-scream-hits-score",
+    "calc.woman-abuse-screening-tool-wast"
+  ],
+  "source_logic_hash": "6db99bebf7664edd799a75f0b2c61e0e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10418,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

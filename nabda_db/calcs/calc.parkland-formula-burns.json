@@ -1,0 +1,137 @@
+{
+  "id": "calc.parkland-formula-burns",
+  "slug": "parkland-formula-burns",
+  "language": "en",
+  "title": "Parkland Formula pour Burns",
+  "short_title": "Parkland Formula pour Burns",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Burns",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "fluid requirements ",
+    "parkland",
+    "fluids",
+    "burn",
+    "prognosis",
+    "24 hour",
+    "% of body"
+  ],
+  "dosing": false,
+  "formula": "Besoins hydriques = SCBM brûlée(%) ×notionvc: 7cbb7b8d-e043-405a-bf85-7508e81045baPoids (kg) ×notionvc: 7cbb7b8d-e043-405a-bf85-7508e81045ba4 mL",
+  "how_to_use": {
+    "why": "- La formule de Parkland a été approuvée par l'American Burn Association.\n- Elle a démontré sa capacité à restaurer correctement la volémie et à limiter la survenue d'un choc hypovolémique.",
+    "when": "Patients présentant des brûlures aiguës.",
+    "pearls": "- La formule de Parkland est une approche validée et efficace de la réanimation hydrique initiale chez le patient brûlé en phase aiguë.\n- Une réanimation hydrique trop agressive, appelée « fluid creep » (dérive hydrique), est bien documentée dans la littérature de soins critiques. Les facteurs pouvant conduire au fluid creep incluent l'absence de surveillance des objectifs cliniques par le médecin (c.-à-d. la diurèse), l'utilisation accrue d'opioïdes et le caractère urgent de la réanimation guidée par les objectifs.\n- Les patients présentant des brûlures par inhalation et électriques, ainsi que les enfants et les personnes âgées, peuvent nécessiter une réanimation hydrique supérieure ou inférieure à celle prédite par la formule."
+  },
+  "next_steps": {
+    "advice": "Il est important de rappeler que toutes les formules de réanimation doivent être utilisées comme guide. Les patients doivent être évalués fréquemment, avec des ajustements individuels afin de maintenir une perfusion d'organe adéquate.",
+    "critical_actions": "Les patients brûlés graves sont mieux pris en charge dans un centre spécialisé de traitement des brûlés, en particulier ceux présentant l'un des critères suivants :\n\n- Brûlures du 2e degré (partielles) > 10 % de la SCBM.\n- Brûlure du 3e degré (totale) quelle que soit sa taille.\n- Brûlures des mains ou des organes génitaux.\n- Lésion par inhalation.\n- Brûlure chimique grave.\n- Brûlures électriques graves, y compris la foudre.",
+    "management": "Objectifs et surveillance de la réanimation :\n\n- Diurèse : 0,5 mL/kg/h chez l'adulte (50-100 cc/h) et 0,5–1,0 mL/kg/h chez l'enfant < 30 kg.\n- Fréquence cardiaque : une FC < 110 chez l'adulte indique généralement une volémie adéquate. Le resserrement de la pression différentielle est un signe plus précoce de choc que la pression artérielle systolique seule.\n- La surveillance de la pression artérielle par cathéter artériel est supérieure à la mesure au brassard en raison de l'interférence de l'œdème tissulaire. L'artère radiale est le premier choix, suivie de l'artère fémorale.\n- Le lactate sérique est un marqueur pronostique puissant de mortalité, et ses tendances peuvent être utilisées pour évaluer l'état hémodynamique ; il ne doit toutefois pas être utilisé comme prédicteur indépendant d'une réanimation hydrique adéquate."
+  },
+  "evidence": "Formule de réanimation :\n\n- La formule de Parkland est une approche validée et efficace de la réanimation hydrique initiale chez le patient brûlé en phase aiguë ([Baxter 1974](https://www.ncbi.nlm.nih.gov/pubmed/4609676),[Cartotto 2002](https://www.researchgate.net/publication/11238742_How_well_does_the_Parkland_formula_estimate_actual_fluid_resuscitation_volumes),[Blumetti 2008](https://www.ncbi.nlm.nih.gov/pubmed/18182919)).\n- Elle a été développée par le Dr Charles Baxter au Parkland Memorial Hospital de Dallas, au Texas.",
+  "more_info": "**Administration of fluids:**\n\n- Give 1/2 of total requirements in 1st 8 hours (time from when the burn occurred), then give 2nd half over next 16 hours.\n\n**Wallace [Rule of Nines](nabda:calc.rule-nines) :**\n\n- A quick, easy-to-use estimation of TBSA, which is helpful for emergency situations where rapid assessment is required.\n- For adults: 9% for each arm, 18% for each leg, 9% for head, 18% for front torso, 18% for back torso.\n- For children: 9% for each arm, 14% for each leg, 18% for head, 18% for front torso, 18% for back torso.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/rule_of_nines_2.png)\n\n**Lund and Browder Chart:**\n\n- More accurate and better accounts for differences in body proportions between children and adults.\n- Not as easy to use as the rule of 9s, and may be used as a follow-up estimation of TBSA once a patient is stabilized.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/parkland_formula_lund_browder.png)",
+  "short_description": "Besoins hydriques après brûlures.",
+  "medium_description": "Calculates fluid requirements pour burn patients dans 24-hour period.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "percentage_body_burned",
+      "label": "Pourcentage estimé de surface corporelle brûlée",
+      "tips": "À l'exclusion des brûlures du 1er degré",
+      "optional": false,
+      "unit": "neut",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Baxter CR. Fluid volume and electrolyte changes in the early post-burn period. Clin Plast Surg 1974;1:693–703.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4609676",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Blumetti J, et. al. The Parkland Formula Under Fire: Is the Criticism Justified? J Burn Care Res. 2008 Jan-Feb;29(1):180-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18182919",
+      "kind": "other"
+    },
+    {
+      "text": "American Burn Association Guideline. Available at: http://www.ameriburn.org.",
+      "href": "https://www.ameriburn.org",
+      "kind": "other"
+    },
+    {
+      "text": "Ahrns KS. Trends in burn resuscitation: Shifting the focus from fluids to adequate endpoint monitoring, edema control, and adjuvant therapies. Crit Care Nurs Clin N Am 2004; 16:75–98",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15062415",
+      "kind": "other"
+    },
+    {
+      "text": "Ahrns KS, Harkins DR. Initial resuscitation after burn injury: Therapies, strategies, and controversies. AACN Clin Issue 1999; 10:46–60",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10347386",
+      "kind": "other"
+    },
+    {
+      "text": "Jeng JC, Jablonski K, Bridgeman A, et al. Serum lactate, not base deficit, rapidly predicts survival after major burns. Burns 2002; 28:161–166",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11900940",
+      "kind": "other"
+    },
+    {
+      "text": "Cartotto RC, et. al. How Well Does The Parkland Formula Estimate Actual Fluid Resuscitation Volumes? Journal of Burn Care & Rehabilitation. 2002. Volume 23, Number 4. DOI: 10.1097/01.BCR.0000020449.78548.E0.",
+      "href": "https://www.researchgate.net/publication/11238742_How_well_does_the_Parkland_formula_estimate_actual_fluid_resuscitation_volumes",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rule-nines",
+    "calc.body-fluid-balance-calculator-inputs-outputs",
+    "calc.subaxial-injury-classification-severity-scale-slics"
+  ],
+  "source_logic_hash": "8580cdf3c7fd40c5eccb60e64cdf8019",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 83,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

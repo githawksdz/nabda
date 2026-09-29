@@ -1,0 +1,132 @@
+{
+  "id": "calc.calcium-correction-hypoalbuminemia",
+  "slug": "calcium-correction-hypoalbuminemia",
+  "language": "en",
+  "title": "Correction du calcium en cas d’hypoalbuminémie et d’hyperalbuminémie",
+  "short_title": "Correction du calcium pour l’albumine",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hépatite",
+    "Hypocalcémie"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "AMS (altération de l'état mental)",
+    "Faiblesse"
+  ],
+  "abbreviations": [
+    "lytes",
+    "electrolytes",
+    "albumin",
+    "ca correction",
+    "ca corrected",
+    "hypoalbuminemia",
+    "hyperalbuminemia",
+    "ionized calcium"
+  ],
+  "dosing": false,
+  "formula": "Calcium corrigé = (0,8 * (Albumine normale - Albumine du patient)) + Ca sérique\n\n*Remarque :* la formule suppose que les unités d'albumine sont en **g/dL**.",
+  "how_to_use": {
+    "why": "La correction des taux de calcium sérique en fonction des taux d’albumine lorsqu’ils sont en dehors des valeurs normales permettra aux cliniciens de :\n\n- Identifier les patients dont les taux de calcium ionisé peuvent être en dehors des valeurs normales alors",
+    "when": "- Patients dont l'albumine est inférieure à la limite inférieure de la normale du laboratoire.\n- Patients dont l'albumine est supérieure à la limite supérieure de la normale du laboratoire.",
+    "pearls": "- The total amount of calcium in the serum is found bound to albumin and multiple organic and inorganic anions, while some circulates as ionized or free calcium.\n- Changes in albumin can result in a decrease in total calcium (pseudohypocalcemia) or increase in total calcium (pseudohypercalcemia), without changing ionized calcium.\n- Rarely, changes in gamma globulins (in multiple myeloma) can result in pseudohypercalcemia.\n- Finally, an increase in extracellular pH can result in changes in ionized calcium without changing total calcium."
+  },
+  "next_steps": {
+    "advice": "Envisager de mesurer le calcium ionisé pour confirmer les conclusions tirées après correction pour le calcium sérique.",
+    "critical_actions": "",
+    "management": "- If calcium is confirmed to be outside of normal range, consider a diagnostic evaluation to determine the etiology.\n\nCommon causes ofHypocalcemia:\n\n-\n\n - Vitamin D inadequacy or resistance.\n - Hypoparathyroidism.\n - Renal disease or end-stage liver disease causing vitamin D inadequacy.\n - Malabsorption.\n - Post-gastric bypass surgery.\n - Drugs and toxic ingestions.\n - Hypomagnesemia.\n\nCommon Causes of Hypercalcemia:\n\n-\n\n - Primary hyperparathyroidism.\n - Vitamin D toxicity.\n - Vitamin A toxicity.\n - Cancer.\n - Sarcoidosis.\n - Medications (e.g. lithium and thiazide diuretics).\n - Dehydration or volume depletion.\n - Genetic conditions (e.g. familial hypocalciuric hypercalcemia).\n - Little or no movement."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Corrige le Ca en cas d'hypoalbuminémie ou d'hyperalbuminémie.",
+  "medium_description": "Calculates corrected calcium level pour patients avec hypoalbuminemia ou hyperalbuminemia.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "calcium",
+      "label": "Calcium",
+      "optional": false,
+      "unit": "ca",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumine",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "normal_albumin",
+      "label": "Albuminémie normale: 4 g/dL ou 40 g/L",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Payne RB, Little AJ, Williams RB, Milner JR. Interpretation of Serum Calcium in Patients with Abnormal Serum Proteins. British Medical Journal. 1973;4(5893):643-646",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1587636/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Parent X, et. al. Corrected calcium: calcium status underestimation in non-hypoalbuminemic patients and in hypercalcemic patients. Ann Biol Clin (Paris). 2009 Jul-Aug;67(4):411-8. doi: 10.1684/abc.2009.0348.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19654080/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.glasgow-prognostic-score-gps-cancer-outcomes",
+    "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes",
+    "calc.khorana-risk-score-venous-thromboembolism-cancer-patients"
+  ],
+  "source_logic_hash": "7cd4b6046e888f88c0cf7be93c3f38e5",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 31,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar webLanguage = webLanguage || \"english\"\n\n\nif (UOMSYSTEM == true) { // US units\n    var normal_albumin = parseFloat(normal_albumin);\n    var albumin = parseFloat(albumin);\n    var calcium = parseFloat(calcium);\n  \t\n}\n\nif (UOMSYSTEM == false) { // SI units so convert to US units\n    var normal_albumin = parseFloat(normal_albumin) / 10;\n    var albumin = parseFloat(albumin) / 10;\n    var calcium = parseFloat(calcium) / 0.25;\n  \t\n}\n\n// units are now all in US units, so only one equation is needed\n\nvar u, units;\nu = (0.8 * (normal_albumin - albumin) + calcium);\nunits = '';\n\nif (UOMSYSTEM == true) { // US units, u already in US, no change\n    units = 'mg/dL';\n} else if (UOMSYSTEM == false) { // need US units, convert u and units unit\n    u = u * 0.25;\n    units = 'mmol/L';\n}\n\n\n\nvar message = \"\";\nif (webLanguage == \"webProduction-chinese-traditional\") {\n\n    message = 'æ ¡æ­£éé£é¢å­';\n\n} else if (webLanguage == \"webProduction-chinese-simplified\") {\n\n    message = 'æ ¡æ­£è¿éç¦»å­';\n\n} else if (webLanguage == \"webProduction-spanish\") {\n\n    message = 'Calcio corregido';\n\n} else {\n\n    message = 'Corrected Calcium';\n}\n\nif (UOMSYSTEM == true) {\n  \tvar siconversion = u * 0.25;\n\tvar conversion_text = 'Equivalent to ' + siconversion.toFixed(1) + ' mmol/L';\n}\n\nif (UOMSYSTEM == false) {\n\tvar usconversion = u * 4;\n\tvar conversion_text = 'Equivalent to ' + usconversion.toFixed(1) + ' mg/dL';\n}\n\ncalc_output.push({\n    name: 'mini',\n    value: u.toFixed(1),\n    value_text: units,\n    message: message\n});\ncalc_output.push({\n    name: '31_Ca Correction for Albumin_result',\n    value: u.toFixed(1),\n    value_text: units,\n    message: message  + '<br/><br/>' + conversion_text\n});\n",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Xavier Parent"
+  ],
+  "measurement_ids": [
+    "Calcium",
+    "Albumin"
+  ],
+  "popular": true,
+  "cat_ids": [],
+  "substance_ids": [
+    "s.alginate-bicarbonate-calcium",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "engine_sha256": "b75d48e8df6f357a49a501bd0c59aa0941937840a6d234d6499d9d57039f0e80"
+}

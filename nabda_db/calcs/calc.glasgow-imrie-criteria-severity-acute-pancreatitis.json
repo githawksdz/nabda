@@ -1,0 +1,270 @@
+{
+  "id": "calc.glasgow-imrie-criteria-severity-acute-pancreatitis",
+  "slug": "glasgow-imrie-criteria-severity-acute-pancreatitis",
+  "language": "en",
+  "title": "Glasgow-Imrie critères pour gravité de aigu Pancreatitis",
+  "short_title": "Score de pancréatite de Glasgow-Imrie",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Pancreatitis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "Glasgow",
+    "imrie",
+    "pancreatitis",
+    "48h",
+    "admission",
+    "acute",
+    "prognosis"
+  ],
+  "dosing": false,
+  "formula": "Addition of selected points.\n\n**Useful mnemonic: PANCREAS**\n\n- PaO2 <7.9 kPa\n- Age >55 years\n- Neutrophils (WBC >15 x 10⁹/L)\n- Calcium <2 mmol/L\n- Renal function: Urea >16 mmol/L\n- Enzymes LDH >600 IU/L\n- Albumin <32 g/L (serum)\n- Sugar (blood glucose) >10 mmol/L",
+  "how_to_use": {
+    "why": "La prédiction de la gravité, de la mortalité et du besoin de traitements dans la pancréatite est notoirement difficile et multifactorielle. L’utilisation d’un système de score peut aider à standardiser le traitement et permettre de cibler les patients les plus en danger.",
+    "when": "Patients atteints de pancréatite aiguë.",
+    "pearls": "- The Glasgow-Imrie Criteria predict severity of pancreatitis but at 48 hours after admission.\n- A severe pancreatitis episode involved death, need for surgery or complications from pancreatitis.\n\n**Points to keep in mind:**\n\n- The lab values are usually evaluated at 48 hours after admission, not upon admission.\n- This study was developed in the 1980s, prior to significant advances in the treatment and evaluation of pancreatitis, including advanced imaging."
+  },
+  "next_steps": {
+    "advice": "Les critères de Glasgow-Imrie sont comparables aux [critères de Ranson](nabda:calc.ransons-criteria-pancreatitis-mortality), mais tous deux ont l'inconvénient de nécessiter un délai de 48 heures avant de pouvoir être appliqués de manière appropriée. Des études ont suggéré qu'un seuil binaire à ≥3 suggère une augmentation significative de la probabilité de pancréatite sévère.",
+    "critical_actions": "Les critères de Glasgow-Imrie nécessitent l'utilisation des valeurs biologiques au pic et ne peuvent être appliqués de manière appropriée qu'à 48 heures après l'admission.",
+    "management": "Des algorithmes locaux de prise en charge utilisant ces critères ont été publiés ; aucun n’est validé."
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Score | Nombre de patients (dans l'étude originale) | Pancréatite sévère* |\n| --- | --- | --- |\n| 0 | 101 | 7 % |\n| 1 | 125 | 6 % |\n| 2 | 87 | 16 % |\n| 3 | 49 | 20 % |\n| 4 | 28 | 61 % |\n| 5 | 11 | 55 % |\n| 6 | 2 | 100 % |\n| 7 | 1 | 0 % |\n| 8 | 1 | 100 % |\n\n*VPP (PPV) de 79 % dans l'étude originale",
+  "short_description": "Pancreatitis gravité de lab values.",
+  "medium_description": "Determines gravité de pancreatitis basé sur 8 laboratoire values.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "pao2",
+      "label": "PaO₂ < 59.3 mmHg (7.9 kPa)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge >55 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "wbc",
+      "label": "WBC >15 x 10³/µL (10⁹/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca",
+      "label": "Calcium <8 mg/dL (2 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "BUN >44,8 mg/dL (urée sérique >16 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ldh",
+      "label": "LDH >600 IU/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "alb",
+      "label": "Albumine <3,2 g/dL (32 g/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gluc",
+      "label": "Glycémie >180 mg/dL (10 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Blamey SL, Imrie CW, O'Neill J, Gilmour WH, Carter DC. Prognostic factors in acute pancreatitis. Gut. 1984 Dec;25(12):1340-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1420197/pdf/gut00397-0014.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mounzer R, Langmead CJ, Wu BU, et al. Comparison of existing clinical scoring systems to predict persistent organ failure in patients with acute pancreatitis. Gastroenterology. 2012 Jun;142(7):1476-82.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22425589",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Barreto SG, Rodrigues J. Comparison of APACHE II and Imrie Scoring Systems in predicting the severity of Acute Pancreatitis. World journal of emergency surgery : WJES. 2007;2:33. doi:10.1186/1749-7922-2-33.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2169219/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ransons-criteria-pancreatitis-mortality",
+    "calc.harmless-acute-pancreatitis-score-haps",
+    "calc.modified-glasgow-prognostic-score-mgps-cancer-outcomes"
+  ],
+  "source_logic_hash": "431cc09b2fb406f83370fee481b9ffdc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ransons-criteria-pancreatitis-mortality",
+      "text": "Ranson's criteria"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3287,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.alginate-bicarbonate-calcium",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose",
+    "s.calcium-magnesium-carbonate-lourd",
+    "s.calcium-carbonate-magnesium-lourd-dimeticone-active"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

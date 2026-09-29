@@ -1,0 +1,143 @@
+{
+  "id": "calc.galad-model-hepatocellular-carcinoma-hcc",
+  "slug": "galad-model-hepatocellular-carcinoma-hcc",
+  "language": "fr",
+  "title": "GALAD modèle pour Hepatocellular Carcinoma (HCC)",
+  "short_title": "GALAD modèle pour HCC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Calcul",
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Chronic liver disease",
+    "CLD",
+    "GALAD score",
+    "HCC diagnosis"
+  ],
+  "dosing": false,
+  "formula": "GALAD Score = -10.08 + 0.09 x A + 1.67 x G + 2.34 log~10~(AF) + 0.04 x L + 1.33 x log~10~(D)\n\nWhere variables are as follows:\n\n| Variable | Value |\n| --- | --- |\n| G ender | 0 if female 1 if male |\n| A ge | Age, years |\n| AFP- L 3 | Alpha fetoprotein L3, % |\n| AF P | Alpha fetoprotein, ng/mL |\n| D CP | Des-carboxy-prothrombin, ng/mL |",
+  "how_to_use": {
+    "why": "- Estime le risque qu’un patient atteint de CLD ait un HCC en utilisant uniquement des marqueurs tumoraux et des données démographiques (c.-à-d. sans imagerie).\n- L’AUROC était de 0,92 dans une étude de validation ([Best 2016](https://www.ncbi.nlm.nih.gov/pubmed/27936479)).",
+    "when": "Utilisation chez les patients atteints d’une maladie hépatique chronique (CLD).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Utiliser le jugement clinique pour déterminer à quelle fréquence surveiller les patients pour un CHC.",
+    "critical_actions": "",
+    "management": "Il n'existe actuellement aucune recommandation concernant les seuils à partir desquels réaliser une imagerie chez les patients sur la base des résultats du GALAD. Une vaste étude prospective suggère que les patients présentant un AFP ≥10 ng/mL ou un AFP-L3 ≥5% bénéficient d'une imagerie par CT ou IRM tous les 3-6 mois ([Kumada 2011](https://www.ncbi.nlm.nih.gov/pubmed/21132575))."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nProbabilité de HCC concomitant chez ce patient atteint de CLD = exp(Z) / (1 + exp(Z))\n\nOù Z = GALAD Score",
+  "short_description": "Diagnostic du HCC.",
+  "medium_description": "Diagnoses HCC basé sur serum biomarkers chez les patients avec chronique liver maladie (CLD).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "gender",
+      "label": "Gender",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "afpl3",
+      "label": "Alpha-fœtoprotéine L3 (AFP-L3)",
+      "optional": false,
+      "unit": "afp_l3",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "afp",
+      "label": "Alpha-fœtoprotéine (AFP)",
+      "optional": false,
+      "unit": "afp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "dcp",
+      "label": "Des-carboxy-prothrombin (DCP)",
+      "optional": false,
+      "unit": "dcp",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Johnson PJ, Pirrie SJ, Cox TF, et al. The detection of hepatocellular carcinoma using a prospectively developed and validated model based on serological biomarkers. Cancer Epidemiol Biomarkers Prev. 2014;23(1):144-53.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24220911",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kumada T, Toyoda H, Kiriyama S, et al. Predictive value of tumor markers for hepatocarcinogenesis in patients with hepatitis C virus. J Gastroenterol. 2011;46(4):536-44.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21132575",
+      "kind": "other"
+    },
+    {
+      "text": "Best J, Bilgi H, Heider D, et al. The GALAD scoring algorithm based on AFP, AFP-L3, and DCP significantly improves detection of BCLC early stage hepatocellular carcinoma. Z Gastroenterol. 2016;54(12):1296-1305.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27936479",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.clif-c-aclf-acute-chronic-liver-failure",
+    "calc.simplified-autoimmune-hepatitis-aih-score"
+  ],
+  "source_logic_hash": "301fa20b21b17355aff3c6fcdb07aff7",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10094,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

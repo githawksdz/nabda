@@ -1,0 +1,98 @@
+{
+  "id": "calc.maternal-fetal-hemorrhage-rhd-immune-globulin-dosage",
+  "slug": "maternal-fetal-hemorrhage-rhd-immune-globulin-dosage",
+  "language": "en",
+  "title": "Maternal-Fetal hémorragie Rh(D) Immune Globulin Dosage",
+  "short_title": "RhIG (RhoGAM) posologie",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "gynecologie-obstetrique",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Pregnancy"
+  ],
+  "abbreviations": [
+    "rhogam",
+    "rh factor",
+    "maternal fetal hemorrhage",
+    "hdfn"
+  ],
+  "dosing": true,
+  "formula": "Number of RhIG vials = fetal cells/total cells counted × maternal blood volume, mL / 30 mL\n\nThen, round to the nearest whole number and add 1.\n\n**Example:**\n\n- Flow cytometry of fetal cells in maternal blood stream = 1.7%\n- Total maternal blood volume = 3,700 mL\n- Volume of fetal blood in maternal blood stream = 3,700 x 0.017 = 62.9 mL\n- Number of RhIG vials = 62.9 / 30 = 2.1 vials --> round down to 2 and add 1\n- RhIG vials to administer = 3 vials",
+  "how_to_use": {
+    "why": "When a mother who is Rh-negative gives birth to a baby who is Rh-positive, there is a possibility that the mother could develop an antibody to the D antigen due to mixing of fetal and maternal blood. The presence of an anti-D leads to a potential risk for HDFN in future pregnancies. Therefore, to prevent HDFN and the formation of an anti-D in the mother, RhIG is given to the mother at 28 weeks and after birth. The amount of RhIG given to the mother after birth is dependent on the amount of fetal-maternal hemorrhage. This formula calculates the amount of fetal-maternal hemorrhage as well as the number of RhIG vials be given to the mother.",
+    "when": "Ce calculateur doit être utilisé pour calculer le nombre de flacons de RhIG à administrer à une mère Rh négatif n’ayant pas encore développé d’anti-D, lorsqu’elle donne naissance à un enfant Rh positif.",
+    "pearls": "- Le calcul du volume sanguin maternel est une estimation réalisée à l'aide de l'équation de Nadler.\n- Le pourcentage de cellules fœtales peut être obtenu par cytométrie en flux ou par la méthode de Kleihauer-Betke."
+  },
+  "next_steps": {
+    "advice": "RhIG doit être administrée à la mère à 28 semaines et après la naissance.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "RhIG pour HDFN.",
+  "medium_description": "Calculates amount de RhIG pour be administered pour mother, at time de delivery, pour prevent hemolytic maladie de fetus et newborn (HDFN).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bv",
+      "label": "[Volume sanguin](nabda:calc.blood-volume-calculation) maternel",
+      "optional": false,
+      "unit": "bloodvol",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "fetal",
+      "label": "Fetal cells dans mother",
+      "optional": false,
+      "unit": "fetal_cells",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kennedy, M, Delaney M, Scrape S. Perinatal issues in transfusion practice. In: Fung M, Grossman B, Hillyer C, Westhoff C, eds. Technical Manual.18th ed. Bethesda, MD: AABB; 2014:561–569.",
+      "href": "https://ebooks.aabb.org/product/technical-manual-18th-edition",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.blood-volume-calculation",
+    "calc.intrauterine-rbc-transfusion-dosage",
+    "calc.tash-score-trauma-associated-severe-hemorrhage"
+  ],
+  "source_logic_hash": "451fb9ccc2fcb50dd500ad7d33f7e2ae",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10010,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

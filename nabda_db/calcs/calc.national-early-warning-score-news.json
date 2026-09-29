@@ -1,0 +1,299 @@
+{
+  "id": "calc.national-early-warning-score-news",
+  "slug": "national-early-warning-score-news",
+  "language": "en",
+  "title": "Score d'alerte précoce national (National Early Warning score, NEWS)",
+  "short_title": "Score NEWS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Coronavirus",
+    "Endocardite",
+    "Insuffisance cardiaque",
+    "Hyperglycémie",
+    "Hypernatrémie",
+    "Hypertension",
+    "Insuffisance respiratoire",
+    "Traumatisme",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS (altération de l'état mental)",
+    "Saignement",
+    "Douleur thoracique",
+    "Fièvre",
+    "Crise convulsive"
+  ],
+  "abbreviations": [
+    "NEWS",
+    "admission",
+    "mortality",
+    "covid",
+    "covid-19",
+    "covid19",
+    "covid 19",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés ; points attribués ci-dessous :",
+  "how_to_use": {
+    "why": "- Les patients dont le score NEWS est faible peuvent poursuivre leurs soins et leur surveillance habituels.\n- Les patients dont le score NEWS est élevé doivent être surveillés plus attentivement et il faut envisager leur transfert vers une unité de soins de niveau supérieur telle qu'une ICU.",
+    "when": "Le NEWS peut être utilisé chez tous les patients hospitalisés pour permettre la détection précoce d’une détérioration clinique et d’un éventuel besoin d’un niveau de soins plus élevé.",
+    "pearls": "- The National Early Warning Score (NEWS) was developed to standardize the approach to detection of clinical deterioration in acutely ill patients in the United Kingdom.\n- This new standard has still not been fully embraced by the medical community in the UK or elsewhere.\n- It is hoped that adopting a single early warning score system will facilitate and standardize training in their use.\n- NEWS should not be used in patients under 16 years of age and pregnant women.\n- The physiological parameters of the NEWS score were derived from existing early warning systems and agreed on by members of the NEWSDIG group.\n- The NEWS was retrospectively validated against otherEWSand found to be more sensitive than most earlier scores. This validation has not yet been published."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Ce score peut être utilisé par tout professionnel de santé ayant reçu une formation adéquate sur la façon de l’utiliser et d’interpréter les résultats.\n- Il est destiné à être utilisé de manière régulière plutôt qu’une seule fois à l’admission.",
+    "management": "Une fois que le score NEWS identifie un patient à risque de détérioration, l’équipe médicale devra en identifier la cause et la prendre en charge en conséquence."
+  },
+  "evidence": "The six physiological parameters that were proposed to form the basis standardized National Early Warning Score were derived from[this study](https://www.ncbi.nlm.nih.gov/pubmed/20637974). It retrospectively analyzed data from 35,585 medical admissions.",
+  "more_info": "See formula table, below.\n\n| Criteria | Point Value |\n| --- | --- |\n| Respiratory Rate (breaths per minute) | |\n| ≤8 | 3 |\n| 9-11 | 1 |\n| 12-20 | 0 |\n| 21-24 | 2 |\n| ≥25 | 3 |\n| Oxygen Saturation (%) | |\n| ≤91 | 3 |\n| 92-93 | 2 |\n| 94-95 | 1 |\n| ≥96 | 0 |\n| Any Supplemental Oxygen | |\n| Yes | 1 |\n| No | 0 |\n| Temperature in °C (°F) | |\n| ≤35.0 (95) | 3 |\n| 35.1-36.0 (95.1-96.8) | 1 |\n| 36.1-38.0 (96.9-100.4) | 0 |\n| 38.1-39.0 (100.5-102.2) | 1 |\n| ≥39.1 (≥102.3) | 2 |\n| Systolic BP | |\n| ≤90 | 3 |\n| 91-100 | 2 |\n| 101-110 | 1 |\n| 111-219 | 0 |\n| ≥220 | 3 |\n| Heart Rate (beats per minute) | |\n| ≤40 | 3 |\n| 41-50 | 1 |\n| 51-90 | 0 |\n| 91-110 | 1 |\n| 111-130 | 2 |\n| ≥131 | 3 |\n| AVPU | |\n| A | 0 |\n| V, P, or U | 3 |\n\n**Interpretation**\n\n- A low score (NEWS 1–4) should prompt assessment by a competent registered nurse who should decide if a change to frequency of clinical monitoring or an escalation of clinical care is required.\n- A medium score (ie NEWS of 5–6 or a RED score) should prompt an urgent review by a clinician skilled with competencies in the assessment of acute illness – usually a ward-based doctor or acute team nurse, who should consider whether escalation of care to a team with critical-care skills is required (ie critical care outreach team).\n\n - A RED score refers to an extreme variation in a single physiological parameter (i.e., a score of 3 on the NEWS chart in any one physiological parameter, colored RED to aid identification; e.g., heart rate\n- A high score (NEWS ≥7) should prompt emergency assessment by a clinical team/critical care outreach team with critical-care competencies and usually transfer of the patient to a higher dependency care area.",
+  "short_description": "Gravité dépistage de declining conditions.",
+  "medium_description": "Determines degree de maladie de patient et prompts critical care intervention.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "respiratory_rate",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤8",
+          "value": 3
+        },
+        {
+          "label": "9-11",
+          "value": 1
+        },
+        {
+          "label": "12-20",
+          "value": 0
+        },
+        {
+          "label": "21-24",
+          "value": 2
+        },
+        {
+          "label": "≥25",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oxygen",
+      "label": "Saturations en oxygène",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ 91 %",
+          "value": 3
+        },
+        {
+          "label": "92-93 %",
+          "value": 2
+        },
+        {
+          "label": "94-95 %",
+          "value": 1
+        },
+        {
+          "label": "≥ 96 %",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "oxygen_supplemental",
+      "label": "Oxygénothérapie supplémentaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temperature",
+      "label": "Température",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤35°C / 95°F",
+          "value": 3
+        },
+        {
+          "label": "35.1-36°C / 95.1-96.8°F",
+          "value": 1
+        },
+        {
+          "label": "36.1-38°C / 96.9-100.4°F",
+          "value": 0
+        },
+        {
+          "label": "38,1-39 °C / 100,5-102,2 °F",
+          "value": 1
+        },
+        {
+          "label": "≥39.1 °C / 102.3°F",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "systolic_bp",
+      "label": "Pression artérielle systolique",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤ 90",
+          "value": 3
+        },
+        {
+          "label": "91-100",
+          "value": 2
+        },
+        {
+          "label": "101-110",
+          "value": 1
+        },
+        {
+          "label": "111-219",
+          "value": 0
+        },
+        {
+          "label": "≥220",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤40",
+          "value": 3
+        },
+        {
+          "label": "41-50",
+          "value": 1
+        },
+        {
+          "label": "51-90",
+          "value": 0
+        },
+        {
+          "label": "91-110",
+          "value": 1
+        },
+        {
+          "label": "111-130",
+          "value": 2
+        },
+        {
+          "label": "≥131",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "avpu_score",
+      "label": "Score AVPU",
+      "tips": "Alert, Voice, Pain, Unresponsive",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "",
+          "value": 0
+        },
+        {
+          "label": "V, P ou U",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Royal College of Physicians. National Early Warning Score (NEWS) Standardising the assessment of acute-illness severity in the NHS. Report of a working party. London: RCP, 2012.",
+      "href": "https://www.rcplondon.ac.uk/sites/default/files/documents/national-early-warning-score-standardising-assessment-acute-illness-severity-nhs.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Prytherch D, Smith GB, Schmidt PE, Featherstone PI. ViEWS – towards a national Early Warning Score for detecting adult inpatient deterioration. Resuscitation 2010;81:932–7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20637974",
+      "kind": "other"
+    },
+    {
+      "text": "Smith GB, Prytherch DR, Meredith P, Schmidt PE, Featherstone PI.The ability of the National Early Warning Score (NEWS) to discriminate patients at risk of early cardiac arrest, unanticipated intensive care unit admission, and death.Resuscitation. 2013 Apr;84(4):465-70. doi: 10.1016/j.resuscitation.2012.12.016. Epub 2013 Jan 4. ",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23295778",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-early-warning-score-mews-clinical-deterioration",
+    "calc.national-early-warning-score-news-2",
+    "calc.piro-score-community-acquired-pneumonia"
+  ],
+  "source_logic_hash": "79d77f0d00eaf25c79eb20616cfdfa11",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1873,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar respiratory_rate=parseFloat(respiratory_rate);\nvar oxygen=parseFloat(oxygen);\nvar oxygen_supplemental=parseFloat(oxygen_supplemental);\nvar temperature=parseFloat(temperature);\nvar systolic_bp=parseFloat(systolic_bp);\nvar heart_rate=parseFloat(heart_rate);\nvar avpu_score=parseFloat(avpu_score);\n\nvar u=respiratory_rate+oxygen+oxygen_supplemental+temperature+systolic_bp+heart_rate+avpu_score;\n\nvar msg=''; \nvar mini_msg=''; \n\nif(respiratory_rate==3||oxygen==3||oxygen_supplemental==3||temperature==3||systolic_bp==3||heart_rate==3||avpu_score==3){\n    msg='RED score<br/><br/>Assigned when an extreme variation in a single physiological parameter is present (i.e., a score of 3 in any one physiological parameter.<br/><br/>';\n    mini_msg='RED Score '\n} \nif(u>=7){\n    msg+='High score: Emergency assessment by a clinical/critical care outreach team with critical-care competencies and usually transfer of the patient to a higher dependency care area.';\n    mini_msg+='High Score'\n} else if(u==5||u==6){\n    msg+='Medium score: Urgent review by a clinician skilled with competencies in the assessment of acute illness.';\n    mini_msg+='Medium Score'\n} else if(u==0||u==1||u==2||u==3||u==4){\n    msg+='Low score: Assessment by a competent registered nurse who should decide if a change to frequency of clinical monitoring or an escalation of clinical care is required.';\n    mini_msg+='Low Score'\n} \n\ncalc_output.push({\n    name:'mini',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:mini_msg\n}); \ncalc_output.push({\n    name:'1873_NEWS Score_result',\n    value:u.toFixed(0),\n    value_text:'points',\n    message:msg\n});",
+  "before_use": null,
+  "instructions": "The [NEWS2](nabda:calc.national-early-warning-score-news-2) Score is endorsed by theNHS(UK) as an updated version of the original NEWS.",
+  "contributor_ids": [
+    "kamal-medlej"
+  ],
+  "creator_names": [
+    "Dr. Gary B. Smith"
+  ],
+  "measurement_ids": [
+    "respiratory rate",
+    "Temperature"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "6bc7c5fd58a4a47d026e99730fa75dc7ac072ef430408acbfea7b26e57704cd5"
+}

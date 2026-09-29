@@ -1,0 +1,227 @@
+{
+  "id": "calc.chads2-score-atrial-fibrillation-stroke-risk",
+  "slug": "chads2-score-atrial-fibrillation-stroke-risk",
+  "language": "en",
+  "title": "CHADS₂ score pour fibrillation atriale AVC risque",
+  "short_title": "Score CHADS₂",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Palpitations",
+    "Dyspnée",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "tia",
+    "afib",
+    "chads",
+    "stroke",
+    "cva",
+    "atrial fibrillation",
+    "stroke risk",
+    "chads2"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :",
+  "how_to_use": {
+    "why": "La stratification du risque fournie par le score CHADS₂ peut aider les médecins à prendre des décisions plus éclairées et personnalisées quant à l’instauration d’un traitement antithrombotique, au regard de ses risques et de ses bénéfices.",
+    "when": "The CHADS₂ Score is one of several risk stratification schema that can help determine the 1 year risk of an ischemic stroke in a non-anticoagulated patient with non-valvular AF.",
+    "pearls": "MDCalc recommends the [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) over the original CHADS₂ Score to assess stroke risk in patients with atrial fibrillation. It risk stratifies these patients better than CHADS₂.\n\nThe CHADS₂ Score can help physicians estimate stroke risk in patients with non-valvular atrial fibrillation and determine which antithrombotic therapy is most appropriate.\n\n- Studies have found that as the CHADS₂ Score increases, the annual risk of ischemic stroke increases proportionally.\n- Patients with high CHADS₂ scores (>2) are at significant risk for stroke: 5.9% annual risk with a score of 3; up to 18.2% annual stroke risk for patients with a score of 6.\n\n - It is generally recommended that patients with a score >2 be started on warfarin, as the benefits of ischemic stroke prevention outweigh the bleeding risk.\n- According to some studies, patients with a CHADS₂ score of 0 may be at low enough stroke risk (0.8-3.2% annual risk) that they can take aspirin (325mg) rather than warfarin as antithrombotic therapy.\n\n**Points to keep in mind:**\n\n- More recent studies suggest that CHADS₂ of 0 points is not necessarily “low-risk” (still 3.2% incidence of stroke per year.)\n- The more recently developed [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) takes into account other stroke risk factors and may be able to accurately identify which patients are at low enough stroke risk to forgo oral anticoagulation.\n- Among patients aged 65-95 years old with non-valvular atrial fibrillation, very few (<7%) will be classified as low risk according to the CHADS₂ Score.\n- The CHADS₂ Score does not perform well in the risk stratification of patients with AF who are receiving outpatient elective electric cardioversion.\n\n - In one study, 10% of patients with a score of zero were found to have left atrial appendage thrombi on transesophageal echocardiography."
+  },
+  "next_steps": {
+    "advice": "- Envisager d'appliquer le [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) aux patients ayant un score CHADS₂ de 0 afin de mieux stratifier le risque chez ces patients.",
+    "critical_actions": "Une recommandation suggère qu’un score de 0 correspond à un risque faible et pourrait ne pas nécessiter d’anticoagulation ; cependant, la littérature suggère que tous les patients ayant un score CHADS₂ de 0 ne sont pas à faible risque d’AVC ischémique.\n\n- Envisager d’utiliser le [Score CHA₂DS₂-VASc](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) pour stratifier davantage le risque des patients identifiés comme à faible risque par leur score CHADS₂.\n- Chez les patients identifiés comme à risque modéré (score 1-2) ou élevé d’AVC ischémique (>3), un traitement anticoagulant doit être envisagé.\n- Chez les patients pour lesquels une anticoagulation est envisagée, des scores de risque hémorragique tels que [ATRIA](nabda:calc.atria-bleeding-risk-score), [HAS-BLED](nabda:calc.has-bled-score-major-bleeding-risk) ou [HEMORR₂HAGES](nabda:calc.hemorr2hages-score-major-bleeding-risk) peuvent être utilisés pour déterminer le risque d’hémorragie associée à la warfarine.\n- Évaluer attentivement tous les risques et bénéfices avant d’initier une anticoagulation chez les patients atteints de FA non valvulaire.",
+    "management": ""
+  },
+  "evidence": "- Although in the initial derivation and validation studies a CHADS₂ score of 0 was associated with a low annual stroke risk of 1.9 and 0.8% respectively, subsequent studies have found that patients with a CHADS~2~score of 0 may have up to a 3.2% per year risk of ischemic stroke ([Gage 2004](https://www.ncbi.nlm.nih.gov/pubmed/15477396)).\n- The derivation study, published in 2001, was a retrospective review of the National Registry of Atrial Fibrillation involving 1,733 patients and 2,121 patient years ([Gage 2004](https://www.ncbi.nlm.nih.gov/pubmed/15477396)).\n\n - It compared the performance of the CHADS₂ Score to two previously established stroke risk (AFI and SPAF III).\n - Found that CHADS₂ was the most accurate at predicting future stroke risk, with risk increasing by a factor of 1.5 for every additional point in a subject’s score.\n\n- The validation study included 2,580 subjects with non-valvular AF who were started on aspirin and found that the CHADS₂ Score could successfully risk stratify patients ([Gage 2001](https://www.ncbi.nlm.nih.gov/pubmed/11401607)).\n\n - A score of 0 translated into a 0.8% annual stroke risk in this cohort, potentially making these patients appropriate for forgoing oral anticoagulation.\n - Patients with a score of 1-2 had a 2.7% annual stroke risk.\n - Patients with a score of 3 or more had a stroke risk of 5.3% up to 18.2% for subjects with a CHADS₂ score of 6.\n- A study of the Danish National Patient Registry identified 146,251 patients with non-valvular AF and found that 47,576 had a CHADS₂ score of 0 or 1 ([Olesen 2012](https://www.ncbi.nlm.nih.gov/pubmed/22473219)).\n\n - 19,444 had a CHADS₂ score of 0 and the [CHA₂DS₂-VASc Score](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) was applied to these patients.\n - Authors found that in patients with a CHADS₂ score of 0 but a [CHA₂DS₂-VASc](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) score of 3 (if they had all three risk factors not accounted for by CHADS₂) that this cohort was at a 3.2% annual risk of stroke.\n - In contrast, patients with a [CHA₂DS₂-VASc](nabda:calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk) score of 0 was considered to be “truly low risk” with an annual ischemic stroke risk of 0.82%.\n- Among 541 patients with non-valvular AF (of>48 hours duration) who underwent electrical cardioversion, 136 had a CHADS₂ score of 0 but 14 of those patients were found to have atrial thrombus on echocardiography, suggesting that the score missed 10% of patients who would have been at a high risk for a thromboembolic stroke after cardioversion ([Yarmohammadi H 2012](https://www.ncbi.nlm.nih.gov/pubmed/22503581)).",
+  "more_info": "Voir le tableau de la formule, ci-dessous :\n\n| Variable | Points |\n| --- | --- |\n| Antécédent d'insuffisance cardiaque congestive | 1 |\n| Antécédent d'hypertension artérielle | 1 |\n| Âge ≥75 ans | 1 |\n| Antécédent de diabète sucré | 1 |\n| Antécédent d'AVC ou de symptômes d'AIT | 2 |",
+  "short_description": "AVC risque dans AFib.",
+  "medium_description": "Estimates AVC risque chez les patients avec fibrillation atriale.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "heart_failure",
+      "label": "CHFhistory",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hypertension",
+      "label": "Antécédents d'hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_75",
+      "label": "Âge ≥ 75 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète mellitus history",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "Symptômes antérieurs d",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gage BF, Waterman AD, Shannon W, Boechler M, Rich MW, Radford MJ. Validation of clinical classification schemes for predicting stroke: results from the National Registry of Atrial Fibrillation. JAMA. 2001 Jun 13;285(22):2864-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11401607",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Singer DE, Albers GW, Dalen JE, Fang MC, Go AS, Halperin JL, Lip GY, Manning WJ; American College of Chest Physicians. Antithrombotic therapy in atrial fibrillation: American College of Chest Physicians Evidence-Based Clinical Practice Guidelines (8th Edition). Chest. 2008 Jun;133(6 Suppl):546S-592S. doi: 10.1378/chest.08-0678.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18574273",
+      "kind": "other"
+    },
+    {
+      "text": "Olesen JB, Torp-Pedersen C, Hansen ML, Lip GY. The value of the CHA2DS2-VASc score for refining stroke risk stratification in patients with atrial fibrillation with a CHADS2 score 0-1: a nationwide cohort study. Thromb Haemost. 2012 Jun;107(6):1172-9. doi: 10.1160/TH12-03-0175.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22473219",
+      "kind": "other"
+    },
+    {
+      "text": "Yarmohammadi H, Varr BC, Puwanant S, Lieber E, Williams SJ, Klostermann T, Jasper SE, Whitman C, Klein AL. Role of CHADS2 score in evaluation of thromboembolic risk and mortality in patients with atrial fibrillation undergoing direct current cardioversion (from the ACUTE Trial Substudy). Am J Cardiol. 2012 Jul 15;110(2):222-6. doi: 10.1016/j.amjcard.2012.03.017.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22503581",
+      "kind": "other"
+    },
+    {
+      "text": "Gage BF, van Walraven C, Pearce L, Hart RG, Koudstaal PJ, Boode BS, Petersen P. Selecting patients with atrial fibrillation for anticoagulation: stroke risk stratification in patients taking aspirin. Circulation. 2004 Oct 19;110(16):2287-92. Epub 2004 Oct 11.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15477396",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+    "calc.has-bled-score-major-bleeding-risk",
+    "calc.cha2ds2-va-score-atrial-fibrillation-stroke-risk",
+    "calc.atria-bleeding-risk-score",
+    "calc.hemorr2hages-score-major-bleeding-risk"
+  ],
+  "source_logic_hash": "9e1d800186f3c38e517dcc75f357403c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.cha2ds2-vasc-score-atrial-fibrillation-stroke-risk",
+      "text": "CHA₂DS₂-VASc Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.atria-bleeding-risk-score",
+      "text": "ATRIA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.has-bled-score-major-bleeding-risk",
+      "text": "HAS-BLED"
+    },
+    {
+      "type": "calc",
+      "id": "calc.hemorr2hages-score-major-bleeding-risk",
+      "text": "HEMORR₂HAGES"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 40,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

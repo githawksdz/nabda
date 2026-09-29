@@ -1,0 +1,211 @@
+{
+  "id": "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score",
+  "slug": "prevention-incidence-asthma-mite-allergy-piama-risk-score",
+  "language": "en",
+  "title": "Score de risque Prevention and Incidence of Asthma and Mite Allergy (PIAMA)",
+  "short_title": "Score de risque PIAMA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "general",
+    "medecine-interne",
+    "pediatrie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Asthma",
+    "mite allergy",
+    "school",
+    "children",
+    "peds",
+    "allergy"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Un score standardisé permettant de déterminer quels enfants présentent un risque plus élevé de développer un asthme peut améliorer la prise en charge et/ou la détection de la maladie.",
+    "when": "Enfants présentant des sifflements connus.",
+    "pearls": "- Le score de risque Prevention and Incidence of Asthma and Mite Allergy (PIAMA) fournit une méthode pour prédire la probabilité d'un diagnostic ultérieur d'asthme.\n- La capacité prédictive du score PIAMA dépend fortement de la prévalence de l'asthme dans la population générale."
+  },
+  "next_steps": {
+    "advice": "Le score PIAMA présente une performance prédictive modérée, et les scores bas semblent plus précis pour prédire qu'un enfant est **peu susceptible** de développer un asthme.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Score de risque PIAMA | Risque d'asthme à l'âge scolaire |\n| --- | --- |\n| ≤7 | ≤5 % |\n| 8-15 | 6 %-22 % |\n| ≥16 | 25 %-60 % |",
+  "short_description": "Risque de asthme pour school âge enfants.",
+  "medium_description": "Determines risque de asthme pour school âge enfants.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "edu",
+      "label": "Niveau d'éducation parentale moyen/faible",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "asthma",
+      "label": "Asthme parental",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "birth",
+      "label": "Naissance prématurée (<37 sem)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "wheezing",
+      "label": "Fréquence des sifflements",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "1-3 fois/an",
+          "value": 4
+        },
+        {
+          "label": "≥4 fois/an",
+          "value": 7
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "colds",
+      "label": "Sifflements/dyspnée en dehors des rhumes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eczema",
+      "label": "Eczema",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brunekreef B, et al. The prevention and incidence of asthma and mite allergy (PIAMA) birth cohort study: design and first results. Pediatr Allergy Immunol. 2002; 13: 55–60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12688626",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hafkamp-de Groen E, et al. Predicting asthma in preschool children with asthma-like symptoms: validating and updating the PIAMA risk score. J Allergy Clin Immunol. 2013 Dec;132(6):1303-10. doi: 10.1016/j.jaci.2013.07.007. Epub 2013 Aug 26.",
+      "href": "https://www.jacionline.org/article/S0091-6749(13)01066-X/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-asthma-predictive-index-mapi",
+    "calc.pediatric-asthma-severity-score-pass-asthma-exacerbation-severity",
+    "calc.pediatric-asthma-score-pas"
+  ],
+  "source_logic_hash": "b7f4d711869270fa1512681963f49f39",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3385,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

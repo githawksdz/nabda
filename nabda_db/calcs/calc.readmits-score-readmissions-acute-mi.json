@@ -1,0 +1,213 @@
+{
+  "id": "calc.readmits-score-readmissions-acute-mi",
+  "slug": "readmits-score-readmissions-acute-mi",
+  "language": "fr",
+  "title": "READMITS score pour Readmissions dans aigu MI",
+  "short_title": "Score Acute MI READMITS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Maladie coronarienne"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Douleur thoracique",
+    "Dyspnea",
+    "Palpitations",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "ami readmits",
+    "myocardial infarction",
+    "hospitalized",
+    "hospital readmissions",
+    "readmission risk",
+    "readmission score",
+    "AMI"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Fonction rénale (créatinine sérique >2 mg/dL (176,8 µmol/L)) | Non | 0 |\n| Oui | 6 | |\n| BNP ou NT-proBNP élevés (BNP : ≥50 pg/mL (5,9 pmol/L), NT-proBNP : ≥125 pg/mL (14,8 pmol/L)) | Non | 0 |\n| Oui | 8 | |\n| Âge (par décennie >18 ans) | 1 | |\n| Antécédent de diabète | Non | 0 |\n| Oui | 4 | |\n| Sexe | Homme | 0 |\n| Femme | 2 | |\n| Intervention par ICP dans les délais (dans les premières 24 heures) | Non | 1 |\n| Oui | 0 | |\n| PAS <100 mmHg | Non | 0 |\n| Oui | 3 | |",
+  "how_to_use": {
+    "why": "- Peut être utile d'un point de vue administratif.\n- L'identification précoce des patients à risque accru de réhospitalisation à 30 jours permet aux cliniciens de mettre en œuvre des interventions ciblées de réduction des réhospitalisations (p. ex. programmes de transition des soins) pour ces patients.\n- Par rapport à d'autres modèles de prédiction du risque d'infarctus du myocarde aigu, tels que le modèle d'infarctus du myocarde aigu des Centers for Medicare and Medicaid Services (CMS), le score Acute MI READMITS a démontré une précision améliorée pour identifier les patients à haut risque et se calcule plus facilement en pratique clinique.",
+    "when": "Patients adultes (≥18 ans) présentant un infarctus du myocarde aigu.",
+    "pearls": "- Le score Acute MI READMITS a été développé pour identifier les patients à risque accru de réhospitalisation précoce.\n- Calculé à partir de sept variables cliniques et biologiques routinely disponibles pour les cliniciens durant les 24 premières heures suivant l'admission.\n- Basé sur des données du dossier médical électronique et non encore validé de manière externe.\n- Il existe une surestimation modeste du risque de réhospitalisation dans les quintiles les plus élevés et les plus bas."
+  },
+  "next_steps": {
+    "advice": "- Doit être calculé le premier jour d'hospitalisation (le modèle a été conçu pour que tous les paramètres nécessaires soient disponibles durant les 24 premières heures d'hospitalisation).\n- Les patients identifiés comme à haut risque sont ceux qui bénéficieront probablement le plus des interventions ciblées de réduction des réhospitalisations (p. ex. programmes de transition des soins, pouvant inclure des éléments tels que des documents d'information, un rendez-vous de suivi ambulatoire programmé avant la sortie, entre autres).\n- Les interventions de réduction des réhospitalisations sont plus efficaces lorsqu'elles sont mises en œuvre précocement au cours de l'hospitalisation.",
+    "critical_actions": "",
+    "management": "Le risque de réhospitalisation était fortement associé aux mesures cliniques de sévérité. Par conséquent, la mise en œuvre précoce des traitements recommandés par les recommandations de pratique pour l'infarctus du myocarde aigu (c.-à-d. intervention coronaire précoce) joue probablement un rôle important dans la prévention des réhospitalisations à 30 jours."
+  },
+  "evidence": "[Nguyen et al (2018)](https://www.ahajournals.org/doi/full/10.1161/JAHA.118.008882) ont dérivé et validé de manière interne le score Acute MI READMITS par une évaluation rétrospective des données du dossier médical électronique (EHR) de 826 patients consécutifs hospitalisés pour un infarctus du myocarde aigu dans 6 hôpitaux du nord du Texas entre 2009 et 2010. Le critère d'évaluation principal était la réhospitalisation toutes causes à 30 jours.\n\nDeux modèles distincts d'infarctus du myocarde aigu ont été dérivés et validés en interne à partir d'une liste de variables candidates choisies sur la base de modèles de réhospitalisation multi-pathologies déjà publiés, ainsi que de variables cliniques (p. ex. comorbidités, marqueurs de sévérité, résultats de laboratoire, etc.) supposées être des prédicteurs probables d'événements indésirables.\n\nBien que le modèle « séjour complet » ait présenté une discrimination légèrement meilleure, il n'améliorait pas significativement la reclassification et ne pouvait être calculé qu'au moment de la sortie ; les auteurs ont déterminé que le modèle « premier jour », ou score Acute MI READMITS, était un outil plus utile pour les cliniciens. Le score Acute MI READMITS comprend sept variables disponibles dans les 24 heures suivant l'admission, permettant une évaluation précoce du risque et la mise en place de stratégies de réduction des réhospitalisations.\n\nLe score Acute MI READMITS a démontré une bonne discrimination globale (statistique C 0,75, IC 95 %, 0,70–0,80 ; statistique C corrigée de l'optimisme 0,73, IC 95 %, 0,71–0,7) et a surpassé les modèles multi-pathologies déjà publiés ainsi que le modèle administratif CMS de l'infarctus du myocarde aigu. Cependant, le modèle Acute MI READMITS présente une surestimation modeste du risque dans les quintiles les plus élevés et les plus bas.\n\nLe score Acute MI READMITS n'a pas encore été validé de manière externe.",
+  "more_info": "Interprétation :\n\n| Score READMITS | Groupe de risque | Risque de réhospitalisation à 30 jours |\n| --- | --- | --- |\n| ≤13 | Extrêmement faible | 2 % |\n| 14-15 | Faible | 8 % |\n| 16-17 | Modéré | 9 % |\n| 18-19 | Élevé | 17 % |\n| ≥20 | Extrêmement élevé | 34 % |\n\nD'après [Nguyen 2018](https://www.ahajournals.org/doi/full/10.1161/JAHA.118.008882).",
+  "short_description": "Risque de réhospitalisation à 30 jours après un STEMI (non validé de manière externe).",
+  "medium_description": "Predicts 30-day readmission risque dans patients admitted pour ST-elevation infarctus du myocarde (not externally validated).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "renal",
+      "label": "Fonction rénale",
+      "tips": "Créatinine sérique >2 mg/dL (176,8 µmol/L) à tout moment durant les 24 premières heures d'hospitalisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "neuro",
+      "label": "ElevatedBNPorNT-proBNP",
+      "tips": "BNP : ≥50 pg/mL (5,9 pmol/L), NT-proBNP : ≥125 pg/mL (14,8 pmol/L) à tout moment durant les 24 premières heures d'hospitalisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "diab",
+      "label": "Diabète mellitus history",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pci",
+      "label": "Intervention avec timelyPCI",
+      "tips": "Dans les 24 premières heures suivant l'arrivée à l'hôpital",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bp",
+      "label": "PAS <100 mmHg",
+      "tips": "À tout moment durant les 24 premières heures d'hospitalisation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Nguyen OK, Makam AN, Clark C, Zhang S, Das SR, Halm EA. Predicting 30-Day Hospital Readmissions in Acute Myocardial Infarction: The AMI \"READMITS\" (Renal Function, Elevated Brain Natriuretic Peptide, Age, Diabetes Mellitus Nonmale Sex Intervention with Timely Percutaneous Coronary Intervention, and Low Systolic Blood Pressure) Score. J Am Heart Assoc. 2018;7(8).",
+      "href": "https://www.ahajournals.org/doi/full/10.1161/JAHA.118.008882 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.framingham-risk-score-hard-coronary-heart-disease",
+    "calc.hospital-score-readmissions",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score"
+  ],
+  "source_logic_hash": "082c616e2d2f291665a5efe09b87cd63",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10148,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

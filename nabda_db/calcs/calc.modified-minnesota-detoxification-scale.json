@@ -1,0 +1,325 @@
+{
+  "id": "calc.modified-minnesota-detoxification-scale",
+  "slug": "modified-minnesota-detoxification-scale",
+  "language": "fr",
+  "title": "Modifié Minnesota Detoxification échelle (mMINDS)",
+  "short_title": "MMINDS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "medecine-interne",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool",
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Modified Minnesota Detoxification Scale (mMINDS)",
+    "mMINDS",
+    "EtOH withdrawal",
+    "alcohol withdrawal",
+    "withdrawal"
+  ],
+  "dosing": false,
+  "formula": "| Variable | Points | | |\n| --- | --- | --- | --- |\n| Pouls, battements/min | | <90 | 0 |\n| 90-110 | 1 | | |\n| >110 | 2 | | |\n| Pression artérielle diastolique, mmHg | | <90 | 0 |\n| 90-110 | 1 | | |\n| >110 | 2 | | |\n| Tremblement* | Évaluer avec les bras du patient étendus et les doigts écartés. | Absent | 0 |\n| Légèrement visible ou perçu du bout des doigts | 2 | | |\n| Modéré - nettement visible avec les bras étendus | 4 | | |\n| Sévère - perceptible même avec les bras non étendus | 6 | | |\n| Sueurs | | Absent | 0 |\n| À peine ; paumes moites | 2 | | |\n| Gouttes visibles | 4 | | |\n| Trempé de sueur | 6 | | |\n| Hallucinations* | Sensation de fourmillement sur la peau (tactile), entendre des voix alors que personne n'a parlé (auditif), ou voir des motifs, lumières, êtres ou objets qui ne sont pas là (visuel). | Absent | 0 |\n| Légères - surtout lucide, hallucinations sporadiques/rares | 1 | | |\n| Modérées/intermittentes - hallucinations par moments (au réveil ou entre les conversations/les soins au patient) avec des moments de lucidité mais réorientable | 2 | | |\n| Sévères, continues à l'état d'éveil | 3 | | |\n| Agitation* | Évaluer à l'aide de l'échelle Richmond d'agitation-sédation (RASS). | Activité normale ou sédaté (RASS de 0 ou moins) | 0 |\n| Légèrement > normal (RASS de +1) | 3 | | |\n| Modérément agité, incapable de rester en place (RASS de +2) | 6 | | |\n| Marche d'un pas rapide, se débat (RASS de ≥+3) | 9 | | |\n| Orientation* | | Orienté x3 (personne/lieu/temps OU à l'état de base du patient OU trop sédaté pour évaluer l'orientation) | 0 |\n| Orienté x2 | 2 | | |\n| Orienté x1 | 4 | | |\n| Désorienté | 6 | | |\n| Idées délirantes* | Idées non fondées pouvant être liées à des suspicions ou à des pensées paranoïaques, c.-à-d. que les patients croient que leurs affaires ont été volées ou qu'ils sont persécutés injustement. | Absent ou impossible à évaluer | 0 |\n| Présent | 6 | | |\n| Crises convulsives | | Pas de crise convulsive active | 0 |\n| Crise convulsive active | 6 | | |\n\n*Si un paramètre ne peut être évalué en raison d'une sédation excessive ou d'une ventilation mécanique, score = 0.",
+  "how_to_use": {
+    "why": "- Contrairement à [CIWA-Ar](nabda:calc.ciwa-ar-alcohol-withdrawal), ne nécessite aucun auto-rapport du patient, ce qui minimise les erreurs de score chez les patients sédatés, délirants et gravement malades.\n- Comparé aux doses fixes ou aux perfusions continues, l'administration selon les symptômes avec mMINDS réduit l'exposition cumulée aux benzodiazépines et peut diminuer le risque d'intubation et les complications associées.\n- Peut raccourcir le temps nécessaire pour contrôler les symptômes sévères de sevrage.",
+    "when": "- Pour la surveillance initiale et répétée des symptômes de sevrage alcoolique en réanimation.\n- À utiliser pour guider un traitement benzodiazépinique selon les symptômes.",
+    "pearls": "- Validée principalement en réanimation médicale et chirurgicale, alors que l'échelle [CIWA-Ar](nabda:calc.ciwa-ar-alcohol-withdrawal) n'a pas de validation en réanimation.\n- Démontre une forte corrélation avec [CIWA-Ar](nabda:calc.ciwa-ar-alcohol-withdrawal) (r de Pearson ≈ 0.82).\n- Des études de mise en œuvre ont montré des réductions de la dose totale de benzodiazépines, de la durée du traitement, du besoin de ventilation mécanique et de l'incidence du delirium tremens."
+  },
+  "next_steps": {
+    "advice": "Les protocoles de traitement du sevrage alcoolique varient selon les établissements et peuvent désigner des benzodiazépines préférées, des agents adjuvants (p. ex., phénobarbital, dexmédétomidine) et des seuils de score distincts. Suivez les directives de votre établissement pour la posologie et la surveillance.\n\n- Si les scores restent élevés malgré un traitement approprié, réévaluer les causes alternatives d'agitation.\n- Fournir des soins de soutien appropriés, notamment des liquides intraveineux, une supplémentation nutritionnelle et une surveillance étroite des signes vitaux.\n- Après stabilisation, faire intervenir la médecine des addictions ou le service social pour la planification de la prise en charge à long terme.",
+    "critical_actions": "- Exclure les autres causes d'agitation (p. ex., traumatisme, troubles métaboliques, infection).\n- Administrer la thiamine (avant le glucose) et corriger les anomalies électrolytiques lors du traitement du syndrome de sevrage alcoolique.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Évaluation du sevrage alcoolique.",
+  "medium_description": "Scores symptoms pour patients avec alcohol withdrawal.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Pouls, beats/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 90",
+          "value": 0
+        },
+        {
+          "label": "90-110",
+          "value": 1
+        },
+        {
+          "label": ">110",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dbp",
+      "label": "Diastolic pression artérielle, mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 90",
+          "value": 0
+        },
+        {
+          "label": "90-110",
+          "value": 1
+        },
+        {
+          "label": ">110",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "tremor",
+      "label": "Tremor*",
+      "tips": "Évaluer avec les bras du patient étendus et les doigts écartés.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Slightly visible ou can be felt fingertip pour fingertip",
+          "value": 2
+        },
+        {
+          "label": "modéré - noticeably visible avec arms extended",
+          "value": 4
+        },
+        {
+          "label": "Severe - noticeable even avec arms not extended",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sweat",
+      "label": "Sweat",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "À peine ; paumes moites",
+          "value": 2
+        },
+        {
+          "label": "Gouttes visibles",
+          "value": 4
+        },
+        {
+          "label": "Drenching",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hallucinations",
+      "label": "Hallucinations*",
+      "tips": "Sensation de fourmillement sur la peau (tactile), entendre des voix alors que personne n'a parlé (auditif), ou voir des motifs, lumières, êtres ou objets qui ne sont pas là (visuel).",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Légères - surtout lucide, hallucinations sporadiques/rares",
+          "value": 1
+        },
+        {
+          "label": "modéré/intermittent - hallucinating at times (when first waking up ou dans between conversations/patient care) avec moments de lucidity but able pour be reoriented",
+          "value": 2
+        },
+        {
+          "label": "Sévères, continues à l'état d'éveil",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "agitation",
+      "label": "Agitation, [RASS](nabda:calc.richmond-agitation-sedation-scale-rass) *",
+      "tips": "Évaluer à l'aide de l'échelle Richmond d'agitation-sédation (RASS).",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Activité normale ou sédaté (RASS de 0 ou moins)",
+          "value": 0
+        },
+        {
+          "label": "Légèrement > normal (RASS de +1)",
+          "value": 3
+        },
+        {
+          "label": "Modérément agité, incapable de rester en place (RASS de +2)",
+          "value": 6
+        },
+        {
+          "label": "Marche d'un pas rapide, se débat (RASS de ≥+3)",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "orient",
+      "label": "Orientation*",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oriented x3 (person/place/time OR at patient’s initial OR too sedated pour assess orientation)",
+          "value": 0
+        },
+        {
+          "label": "Orienté x2",
+          "value": 2
+        },
+        {
+          "label": "Orienté x1",
+          "value": 4
+        },
+        {
+          "label": "Disoriented",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "delusions",
+      "label": "Delusions*",
+      "tips": "Idées non fondées pouvant être liées à des suspicions ou à des pensées paranoïaques, c.-à-d. que les patients croient que leurs affaires ont été volées ou qu'ils sont persécutés injustement.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent ou unable pour assess",
+          "value": 0
+        },
+        {
+          "label": "Présent",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "seizures",
+      "label": "Seizures",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Pas de crise convulsive active",
+          "value": 0
+        },
+        {
+          "label": "Crise convulsive active",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "DeCarolis DD, Rice KL, Ho L, Willenbring ML, Cassaro S. Symptom-driven lorazepam protocol for treatment of severe alcohol withdrawal delirium in the intensive care unit. Pharmacotherapy. 2007;27(4):510-518.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17381377/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Littlefield AJ, Heavner MS, Eng CC, et al. Correlation between mminds and ciwa-ar scoring tools in patients with alcohol withdrawal syndrome. Am J Crit Care. 2018;27(4):280-286.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29961663/",
+      "kind": "other"
+    },
+    {
+      "text": "Heavner JJ, Akgün KM, Heavner MS, et al. Implementation of an icu-specific alcohol withdrawal syndrome management protocol reduces the need for mechanical ventilation. Pharmacotherapy. 2018;38(7):701-713.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29800507/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smith RM, Benzio B, Hendrickson AL, Telford ED, Franck AJ. Implementation of the modified minnesota detoxification scale (Mminds) for alcohol withdrawal syndrome in critically ill patients. Jt Comm J Qual Patient Saf. 2020;46(11):656-658.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32917542/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Krcmarik KM, Hulley BJ, Huang J, et al. Assessment of a modified MINDS-based protocol for management of alcohol withdrawal syndrome on an inpatient medical service. Pharmacotherapy. 2023;43(12):1297-1306.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37475509/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ciwa-ar-alcohol-withdrawal"
+  ],
+  "source_logic_hash": "9564e6acb633783317f6ce31e6836495",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ciwa-ar-alcohol-withdrawal",
+      "text": "CIWA-Ar"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10599,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

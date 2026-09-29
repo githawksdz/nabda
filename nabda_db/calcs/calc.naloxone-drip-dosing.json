@@ -1,0 +1,100 @@
+{
+  "id": "calc.naloxone-drip-dosing",
+  "slug": "naloxone-drip-dosing",
+  "language": "en",
+  "title": "Posologie de la perfusion de naloxone",
+  "short_title": "Posologie de la perfusion de naloxone",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Traitement"
+  ],
+  "specialties": [
+    "urgences",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Naloxone",
+    "Narcan",
+    "Naloxone drip",
+    "Naloxone GTT"
+  ],
+  "dosing": true,
+  "formula": "Continuous IV infusion starting rate (mg/hr) = (⅔× bolus dose mg) per hour. Half of the bolus dose may be administered 15 minutes after starting drip.\n\nBolus dose = total dose required in the first 1 hour.\n\nTitrate to respiratory rate, hypoxia and/or CNS depression.\n\nDecrease rate if withdrawal symptoms occur.",
+  "how_to_use": {
+    "why": "La demi-vie de la naloxone est comprise entre 30 et 100 minutes. Comme la durée d'action de la plupart des opioïdes disponibles dépasse celle de la naloxone, une administration répétée ou une perfusion IV continue peut être nécessaire pour prévenir la réapparition d'une dépression respiratoire.",
+    "when": "- Dépression respiratoire ou du SNC due à un surdosage en analgésique opioïde.\n- Dépression respiratoire sensible à l'administration de naloxone.\n- Dépression respiratoire nécessitant plus d'une dose IV de naloxone.",
+    "pearls": "- L'objectif est de maintenir le même niveau d'antagonisation après le bolus initial de naloxone.\n- La dose de bolus nécessaire pour antagoniser les effets dépresseurs respiratoires du surdosage en opioïdes doit être déterminée cliniquement.\n- Dose de bolus = dose totale nécessaire au cours de la première heure."
+  },
+  "next_steps": {
+    "advice": "- Envisager une décontamination gastrique en cas d'ingestion orale d'opioïde. Rechercher et retirer les patchs le cas échéant.\n- La perfusion peut nécessiter des ajustements fréquents selon l'état clinique.",
+    "critical_actions": "- Ajuster la perfusion selon l'état clinique.\n- Surveiller le patient en unité de soins intensifs.",
+    "management": "Envisager une admission en unité de soins intensifs pour prévenir la récidive de séquelles neurologiques centrales et/ou respiratoires ou un sevrage."
+  },
+  "evidence": "La posologie de la naloxone a été étudiée par [Goldfrank et al 1986](https://www.ncbi.nlm.nih.gov/pubmed/3963538) dans une étude pharmacocinétique en deux phases.\n\nPhase I : Détermination de la vitesse d'élimination de la naloxone.\n\n- 7 volontaires.\n- Administration d'une dose de naloxone en bolus IV.\n- Mesure de concentrations plasmatiques sériées de naloxone.\n\nPhase II : Détermination du volume de distribution et de la constante moyenne d'élimination bêta.\n\n- 10 volontaires.\n- Administration de 2 mg ou 4 mg de naloxone en bolus IV, suivie d'une perfusion continue de 1,5 mg/h ou 3 mg/h.\n- Mesure de concentrations plasmatiques sériées de naloxone.\n\nSur la base de ces paramètres, une simulation informatique a déterminé :\n\n- ⅔ de la dose de bolus initiale permettront de maintenir des concentrations plasmatiques de naloxone égales ou supérieures aux concentrations de naloxone qui auraient existé 30 minutes après la dose de bolus.\n- Une deuxième dose de bolus égale à la moitié du bolus initial doit être administrée à 15 minutes pour atteindre efficacement les concentrations prédites à l'état d'équilibre.",
+  "more_info": "",
+  "short_description": "Antagonisation des opioïdes.",
+  "medium_description": "Doses naloxone pour aigu opioid overdose.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bolus",
+      "label": "Dose de bolus",
+      "tips": "Dose totale nécessaire au cours de la première heure",
+      "optional": false,
+      "unit": "drugmg_naloxone",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Goldfrank L, Weisman RS, Errick JK, Lo MW. A dosing nomogram for continuous infusion intravenous naloxone. Ann Emerg Med. 1986;15(5):566-70.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3963538",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Boyer EW. Management of opioid analgesic overdose. N Engl J Med. 2012;367(2):146-55.",
+      "href": "https://www.nejm.org/doi/full/10.1056/NEJMra1202561",
+      "kind": "other"
+    },
+    {
+      "text": "Clarke S, Dargan P, Jones A. Naloxone in opioid poisoning: walking the tightrope. Emergency Medicine Journal : EMJ. 2005;22(9):612-616. doi:10.1136/emj.2003.009613.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1726910/pdf/v022p00612.pdf",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.digifab-dosing-digoxin-poisoning",
+    "calc.high-dose-insulin-euglycemia-therapy-hiet",
+    "calc.atropine-dosing-cholinesterase-inhibitor-toxicity"
+  ],
+  "source_logic_hash": "a8279b90f19bd605a19273629463d2e0",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4023,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.naloxone",
+    "s.buprenorphine-naloxone",
+    "s.naloxone-oxycodone"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,225 @@
+{
+  "id": "calc.egsys-evaluation-guidelines-syncope-study-score-syncope",
+  "slug": "egsys-evaluation-guidelines-syncope-study-score-syncope",
+  "language": "en",
+  "title": "EGSYS (évaluation de Guidelines dans SYncope Study) score pour Syncope",
+  "short_title": "EGSYS score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences",
+    "neurologie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Fibrillation atriale",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dizziness",
+    "Seizure",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "EGSYS",
+    "Evaluation of of Guidelines in Syncope Study",
+    "syncope",
+    "syncope score",
+    "fainting",
+    "vasovagal",
+    "LOC",
+    "stroke risk"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Finding | Points |\n| --- | --- |\n| Abnormal EKG 1 and/or heart disease 2 | +3 |\n| Palpitations before syncope | +4 |\n| Syncope during effort | +3 |\n| Syncope in supine position | +2 |\n| Autonomic prodromes 3 | -1 |\n| Predisposing and/or precipitating factors 4 | -1 |\n\n1. Sinus bradycardia, AV block >1st degree, BBB, acute or old MI, SVT or VT,left or right ventricular hypertrophy, ventricular preexcitation, long QT, or Brugada pattern.\n2. Previous clinical or laboratory diagnosis of any form ofstructural heart disease, including ischemic heart disease, valvular dysfunction, myocardiopathies and congenital heart disease; previous diagnosis or clinical evidence of CHF; physical signs of structural heart disease.\n3. Nausea/vomiting.\n4. Warm or crowded place, prolonged orthostasis, fear/pain/other emotion.",
+  "how_to_use": {
+    "why": "Cardiac syncope carries high mortality if untreated. A score that identifies these patients can help prevent adverse outcomes from underlying cardiac pathology.",
+    "when": "Patients presenting to the emergency department with syncope.",
+    "pearls": "- May have limited generalizability—in the study, a cardiologist specializing in syncope was available to review the EKG in the emergency setting.\n- Includes specific criteria for EKG abnormalities.\n- Less sensitive (95%) than the [San Francisco Syncope Rule](nabda:calc.san-francisco-syncope-rule) (96–98%)."
+  },
+  "next_steps": {
+    "advice": "The EGSYS authors suggest the score be used as an aid for emergency physicians for screening, not as a substitute for clinical judgment in syncope management.",
+    "critical_actions": "Patients with suspected cardiogenic syncope should be referred to a cardiologist.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| EGSYS | Interpretation | Mortality at 21–24 months |\n| --- | --- | --- |\n| ≥3 | Cardiac syncope likely (95% sensitive) | 17% |\n| <3 | Cardiac syncope less likely | 3% |",
+  "short_description": "Identifies cardiac syncope.",
+  "medium_description": "Predicts likelihood that syncope is de cardiac cause.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "ecg",
+      "label": "Abnormal EKG et/ou heart maladie",
+      "tips": "Abnl EKG includes common findings like sinus bradycardia, BBB, LVH as well as others; Heart disease includes ischemic/valvular/structural disease, heart failure",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "palp",
+      "label": "Palpitations before syncope",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "eff",
+      "label": "Syncope during effort",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sup",
+      "label": "Syncope dans supine position",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "auto",
+      "label": "Autonomic prodromes",
+      "tips": "Nausea/vomiting",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "predis",
+      "label": "Predisposing et/ou precipitating factors",
+      "tips": "Warm or crowded place, prolonged orthostasis, fear/pain/other emotion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Del Rosso A, Ungar A, Maggi R, et al. Clinical predictors of cardiac syncope at initial evaluation in patients referred urgently to a general hospital: the EGSYS score. Heart. 2008;94(12):1620-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18519550 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Thiruganasambandamoorthy V, Stiell IG, Sivilotti ML, et al. Risk stratification of adult emergency department syncope patients to predict short-term serious outcomes after discharge (RiSEDS) study. BMC Emerg Med. 2014;14:8.",
+      "href": "https://bmcemergmed.biomedcentral.com/articles/10.1186/1471-227X-14-8 ",
+      "kind": "other"
+    },
+    {
+      "text": "Albassam OT, Redelmeier RJ, Shadowitz S, Husain AM, Simel D, Etchells EE. Did This Patient Have Cardiac Syncope?: The Rational Clinical Examination Systematic Review. JAMA. 2019;321(24):2448-2457.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2736568",
+      "kind": "other"
+    },
+    {
+      "text": "Kariman H, Harati S, Safari S, Baratloo A, Pishgahi M. Validation of EGSYS Score in Prediction of Cardiogenic Syncope. Emerg Med Int. 2015;2015:515370.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26649200",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rose-risk-stratification-syncope-emergency-department-rule",
+    "calc.canadian-syncope-risk-score",
+    "calc.oesil-score-syncope",
+    "calc.san-francisco-syncope-rule"
+  ],
+  "source_logic_hash": "b4e420e2c875908c316f9e2053e67b8b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.san-francisco-syncope-rule",
+      "text": "San Francisco Syncope Rule"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3948,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

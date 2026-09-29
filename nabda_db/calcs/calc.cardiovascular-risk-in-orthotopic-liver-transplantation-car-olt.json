@@ -1,0 +1,344 @@
+{
+  "id": "calc.cardiovascular-risk-in-orthotopic-liver-transplantation-car-olt",
+  "slug": "cardiovascular-risk-in-orthotopic-liver-transplantation-car-olt",
+  "language": "en",
+  "title": "Cardiovascular risque dans Orthotopic Liver Transplantation (CAR-OLT)",
+  "short_title": "CAR-OLT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Fibrillation atriale",
+    "Hépatopathie chronique",
+    "Insuffisance cardiaque",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Douleur thoracique",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "Cardiovascular Risk in Orthotopic Liver Transplantation",
+    "CAR-OLT",
+    "Prediction model for orthotopic liver transplantation",
+    "Prediction model for CAR-OLT",
+    "Cardiovascular risk predictor",
+    "heart disease",
+    "metabolic syndrome",
+    "survival",
+    "risk",
+    "pre-liver transplant",
+    "CVD risk",
+    "OLT",
+    "orthotopic liver transplant",
+    "cardiovascular disease",
+    "cardiovascular disease risk",
+    "Myocardial infraction",
+    "Cirrhosis",
+    "Chronic Liver Disease",
+    "Heart failure",
+    "Cardiac arrest",
+    "Pulmonary embolism",
+    "Stroke",
+    "Atrial fibrillation"
+  ],
+  "dosing": false,
+  "formula": "The CAR-OLT Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age | <45 | 0 |\n| 45-49 | -6 | |\n| 50-54 | -4 | |\n| 55-59 | 2 | |\n| 60-64 | 5 | |\n| ≥65 | 8 | |\n| Sex | Men | 0 |\n| Women | 1 | |\n| Race | Others | 0 |\n| White | 7 | |\n| Black | 10 | |\n| Working status | Working for income | 0 |\n| Not working for income | 10 | |\n| Education | College + | 0 |\n| ≤ High school /unknown | 5 | |\n| Atrial fibrillation | No | 0 |\n| Yes | 25 | |\n| Respiratory failure on ventilator at transplant | No | 0 |\n| Yes | 13 | |\n| Pulmonary hypertension | No | 0 |\n| Yes | 9 | |\n| HCC | Yes | 0 |\n| No | 6 | |\n| Hypertension | No | 0 |\n| Yes | 4 | |\n| Diabetes | No | 0 |\n| Yes | 4 | |\n| Heart failure | No | 0 |\n| Yes | 7 | |",
+  "how_to_use": {
+    "why": "- Stratifies cardiovascular risk after OLT: low-risk patients may avoid further testing, which may avoid delays in care and unnecessary cost.\n- Does not require laboratory or stress test data, making it quick and easy to use based on pre-transplant clinical data.\n- Captures non-ischemic cardiac disease (e.g., heart failure, atrial fibrillation) often overlooked by coronary-centric tools.",
+    "when": "À appliquer chez les adultes (≥ 18 ans) évalués pour une première transplantation hépatique orthotopique (OLT) afin d’estimer le risque à 1 an d’événements cardiovasculaires indésirables majeurs (MACE) après chirurgie.",
+    "pearls": "- Derived from 1,024 patients aged 18–75 years who underwent first OLT or combined liver–kidney transplant at Northwestern Medicine for chronic liver disease or hepatocellular carcinoma; candidates with prohibitive cardiovascular risk were excluded.\n- Predicts 1-year MACE (death or hospitalization for myocardial infarction, revascularization, heart-failure decompensation, arrhythmia, cardiac arrest, pulmonary embolism, or stroke).\n- Discrimination was good in the derivation cohort (c-statistic 0.78) but <0.70 in multiple external validations.\n- Not validated in acute liver failure, re-transplant, or pediatric recipients."
+  },
+  "next_steps": {
+    "advice": "- Les résultats peuvent être utilisés pour conseiller les patients sur le risque lors des discussions de consentement éclairé.\n- Un score élevé doit déclencher une évaluation cardiologique formelle et une optimisation, et non une exclusion automatique de la transplantation.",
+    "critical_actions": "Ne vous fiez pas uniquement à ce score ; intégrez-le à une évaluation clinique globale et à une expertise multidisciplinaire pour la planification préopératoire, peropératoire et postopératoire.",
+    "management": "- Optimiser les facteurs de risque modifiables chez tous les candidats (p. ex., contrôle glycémique, prise en charge de la pression artérielle et des lipides, sevrage tabagique).\n- Les patients à risque très faible et faible peuvent peut-être procéder sans tests cardiaques de provocation.\n- Pour des scores plus élevés, envisager :\n\n - Consultation de cardiologie.\n - Imagerie de stress non invasive +/- explorations cardiaques invasives.\n - Surveillance postopératoire plus étroite."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score CAR-OLT | Risque absolu prédit à 1 an (%) | Groupe de risque |\n| --- | --- | --- |\n| <10 | <5 | Très faible |\n| 10-12 | 6 | Faible |\n| 13-15 | 8 | |\n| 16-17 | 10 | Modéré |\n| 18-19 | 12 | |\n| 20-22 | 14 | |\n| 23-24 | 17 | |\n| 25-26 | 20 | |\n| 27-28 | 22 | |\n| 29-30 | 26 | |\n| 31-32 | 30 | Élevé |\n| 33-34 | 34 | |\n| 35-36 | 38 | |\n| 37-38 | 40 | Très élevé |\n| 39-40 | 43 | |\n| >40 | ≥45 | |",
+  "short_description": "Cardiovascular complication risque dans OLT.",
+  "medium_description": "Predicts cardiovascular risque dans orthotopic liver transplantation (OLT).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Men",
+          "value": 0
+        },
+        {
+          "label": "Women",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Current âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 45",
+          "value": 0
+        },
+        {
+          "label": "45-49",
+          "value": -6
+        },
+        {
+          "label": "50-54",
+          "value": -4
+        },
+        {
+          "label": "55-59",
+          "value": 2
+        },
+        {
+          "label": "60-64",
+          "value": 5
+        },
+        {
+          "label": "≥65",
+          "value": 8
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "race",
+      "label": "Race",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Others",
+          "value": 0
+        },
+        {
+          "label": "White",
+          "value": 7
+        },
+        {
+          "label": "Black",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "workstatus",
+      "label": "Statut professionnel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Working pour income",
+          "value": 0
+        },
+        {
+          "label": "Not working pour income",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "educ",
+      "label": "Niveau d'études",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "College +",
+          "value": 0
+        },
+        {
+          "label": "≤ élevé school/unknown",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "atrial_fib",
+      "label": "Fibrillation atriale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 25
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resp_fail",
+      "label": "Respiratory défaillance sur ventilator at transplant",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pulm_hyp",
+      "label": "Hypertension pulmonaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 9
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hcc",
+      "label": "HCC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hyp",
+      "label": "Hypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "heart_fail",
+      "label": "Insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 7
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Martinez-Perez S, McCluskey SA, Davierwala PM, et al. Perioperative Cardiovascular Risk Assessment and Management in Liver Transplant Recipients: A Review of the Literature Merging Guidelines and Interventions. J Cardiothorac Vasc Anesth. 2024;38(4):1015-1030. doi:10.1053/j.jvca.2023.11.039",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38185566/",
+      "kind": "international"
+    },
+    {
+      "text": "VanWagner LB, Ning H, Whitsett M, et al. A point-based prediction model for cardiovascular risk in orthotopic liver transplantation: The CAR-OLT score. Hepatology. 2017;66(6):1968-1979. doi:10.1002/hep.29329",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28703300/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tang H, Shi C, Chapin S, et al. Predictive performance of CAR-OLT and CAD-LT scores for post-transplant adverse cardiovascular events in a large transplant center. Liver Transpl. 2023;29(9):1008-1011. doi:10.1097/LVT.0000000000000146",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37036264/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Biolato, M. & Martini, Silvia & Petti, A. & Galati, F. & Saracco, Margherita & Tomasello, L. & Liguori, Antonio & Risso, A. & Marrone, Giuseppe & Miele, Luca & Avolio, Alfonso & Pompili, Maurizio & Agnes, A. & Gasbarrini, Alessandro & Romagnoli, R. & Grieco, A.. (2023). CAR-OLT score predicts cardiac contraindications to liver transplant and 1-year cardiovascular complications after transplant. Digestive and Liver Disease. 55. S15. 10.1016/j.dld.2023.01.027. ",
+      "href": "http://dx.doi.org/10.1016/j.dld.2023.01.027",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "dd40878f74fcbaf2309bac6c910cce2e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10601,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

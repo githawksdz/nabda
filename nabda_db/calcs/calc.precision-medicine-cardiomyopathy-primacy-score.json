@@ -1,0 +1,220 @@
+{
+  "id": "calc.precision-medicine-cardiomyopathy-primacy-score",
+  "slug": "precision-medicine-cardiomyopathy-primacy-score",
+  "language": "en",
+  "title": "Precision Medicine pour Cardiomyopathy (PRIMaCY) score",
+  "short_title": "Score PRIMaCY",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Cardiomyopathie hypertrophique"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Douleur thoracique",
+    "Dizziness",
+    "Fatigue",
+    "Dyspnée",
+    "Swelling"
+  ],
+  "abbreviations": [
+    "Precision Medicine for Cardiomyopathy (PRIMaCY) Score",
+    "primacy",
+    "precision medicine",
+    "cardiomyopathy",
+    "scd",
+    "sudden cardiac death",
+    "hypertrophic cardiomyopathy",
+    "hcm"
+  ],
+  "dosing": false,
+  "formula": "Le risque est calculé à l'aide du modèle clinique/génétique issu de [Miron 2020](https://pubmed.ncbi.nlm.nih.gov/32418493/) avec les variables suivantes :\n\n- Âge, années.\n- Taille, cm.\n- Poids, kg.\n- Diamètre maximal du septum interventriculaire, mm.\n- Diamètre maximal de la paroi postérieure du ventricule gauche (VG), mm.\n- Diamètre de l'oreillette gauche (OG) en télé-systole, mm.\n\n - Voir [ici](https://cdn-web-img.mdcalc.com/content/Determination-of-left-atrial-diameter-for-PRIMaCY-study-patients.pdf) pour les détails sur la méthode de mesure.\n- Gradient maximal de la voie d'éjection du VG, mmHg.\n- Antécédent de tachycardie ventriculaire non soutenue (TVNS) dans les 6 mois précédents (oui ou non).\n- Antécédent de syncope inexpliquée dans les 6 mois précédents (oui ou non).\n- Statut génotypique (non testé ou testé).\n\n - Si testé, mutation (négative, positive ou variant de signification incertaine).",
+  "how_to_use": {
+    "why": "- L'outil fournit une estimation du risque de MCS à 5 ans chez les patients éligibles atteints de CMH.\n- Cette information peut aider les médecins et les patients dans la décision médicale partagée concernant les interventions de prévention primaire de la MCS.",
+    "when": "- Patients de <18 ans au moment du diagnostic de CMH primitive (c.-à-d. lorsqu'ils sont constatés pour la première fois phénotype-positifs).\n- L'outil a été conçu pour être utilisé lors de la première évaluation.\n- L'outil n'est pas validé pour un usage répété en série.",
+    "pearls": "- L'outil peut calculer le score même en l'absence de données génotypiques.\n- La performance de l'outil peut être altérée chez les patients situés aux extrêmes de la plage des paramètres. Par exemple, l'outil peut être moins performant chez les patients de 16 à 18 ans en raison de la sous-représentation de ce groupe d'âge dans la cohorte initiale de l'étude PRIMaCY.\n- L'outil n'inclut pas d'autres facteurs de risque potentiels tels qu'une fibrose significative à l'IRM cardiaque, une dysfonction VG, ou des antécédents familiaux de mort subite d'origine cardiaque. S'ils sont présents, ceux-ci doivent être pris en compte dans l'évaluation du risque de MCS en plus du score PRIMaCY.\n- L'outil ne doit pas être utilisé dans les CMH secondaires (p. ex., RASopathies).\n- L'outil n'est pas applicable chez les patients porteurs d'un DAI."
+  },
+  "next_steps": {
+    "advice": "- L'outil ne fournit pas de recommandations thérapeutiques basées sur le score PRIMaCY seul.\n- Le score PRIMaCY doit être utilisé conjointement avec le jugement clinique du médecin pour guider une discussion de décision médicale partagée entre le médecin et le patient concernant le risque de MCS, les risques et bénéfices du DAI, et les préférences du patient.\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/PRIMaCY/risk-bar.png)\n\nBarre de risque de MCS graduée.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Prédicteurs catégoriels du risque de mort subite d'origine cardiaque (MCS) à 5 ans (pertinents uniquement pour les patients présentant ces facteurs de risque) :\n\n| Prédicteur | Rapports de risque [IC à 95 %] |\n| --- | --- |\n| Antécédent de TVNS | 2,87 [1,00, 6,57] |\n| Antécédent de syncope | 7,40 [1,21, 32,81] |\n\n| | |\n| --- | --- |\n| | |\n| | |\n| | |\n\nIssu de [Miron 2020](https://pubmed.ncbi.nlm.nih.gov/32418493/).",
+  "short_description": "SCD prédiction.",
+  "medium_description": "Predicts sudden cardiac death (SCD) risque dans pédiatrique patients avec hypertrophic cardiomyopathy (HCM).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age_yr",
+      "label": "Âge, years",
+      "optional": false,
+      "unit": "age_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hgt_cm",
+      "label": "Taille",
+      "optional": false,
+      "unit": "height_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "wgt_kg",
+      "label": "Poids",
+      "optional": false,
+      "unit": "weight_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "ivsd_mm",
+      "label": "Diamètre maximal du septum interventriculaire, mm",
+      "optional": false,
+      "unit": "isd_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "lvpwd_mm",
+      "label": "Diamètre maximal de la paroi postérieure du ventricule gauche, mm",
+      "optional": false,
+      "unit": "lvd_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "la_systole_mm",
+      "label": "Diamètre de l'oreillette gauche en télé-systole, mm",
+      "tips": "Mesuré en télé-systole en incidence parasternale grand axe.\nVoir [ici](https://cdn-web-img.mdcalc.com/content/Determination-of-left-atrial-diameter-for-PRIMaCY-study-patients.pdf) pour les détails sur la méthode de mesure.",
+      "optional": false,
+      "unit": "lad_primacy",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "peak_grad_mmhg",
+      "label": "Gradient maximal de la voie d'éjection du ventricule gauche, mmHg",
+      "optional": false,
+      "unit": "plvo_primacy",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "hx_nsvt",
+      "label": "History de nonsustained ventricular tachycardia dans prior 6 months",
+      "tips": "Défini comme 3 battements ventriculaires ectopiques consécutifs à une fréquence >120 bpm et d'une durée <30 s",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hx_syncope",
+      "label": "History de unexplained syncope dans prior 6 months",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "genotype_status",
+      "label": "Statut génotypique",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non testé",
+          "value": 0
+        },
+        {
+          "label": "Tested",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mutation_any",
+      "label": "Génotype positif",
+      "tips": "c.-à-d. variant pathogène/probablement pathogène dans un gène de cardiomyopathie",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "genotype_status == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ommen SR, Mital S, Burke MA, et al. 2020 aha/acc guideline for the diagnosis and treatment of patients with hypertrophic cardiomyopathy: a report of the american college of cardiology/american heart association joint committee on clinical practice guidelines. Circulation. 2020;142(25):e558-e631.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33215931/",
+      "kind": "international"
+    },
+    {
+      "text": "Miron A, Lafreniere-Roula M, Steve Fan CP, et al. A validated model for sudden cardiac death risk prediction in pediatric hypertrophic cardiomyopathy. Circulation. 2020;142(3):217-229.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32418493/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.hcm-risk-scd",
+    "calc.gillmore-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm",
+    "calc.grogan-staging-system-transthyretin-amyloid-cardiomyopathy-attr-cm"
+  ],
+  "source_logic_hash": "d41d8cd98f00b204e9800998ecf8427e",
+  "logic_language": "r",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10438,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,275 @@
+{
+  "id": "calc.score2-older-persons-score2-op",
+  "slug": "score2-older-persons-score2-op",
+  "language": "en",
+  "title": "Évaluation systématique du risque coronarien 2 – Personnes âgées (SCORE2-OP)",
+  "short_title": "SCORE2-OP",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur thoracique",
+    "Toux",
+    "Vertiges",
+    "Fatigue",
+    "Céphalée",
+    "Nausée",
+    "Engourdissement",
+    "Dyspnée",
+    "Gonflement",
+    "Vertige",
+    "Faiblesse",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "Systematic Coronary Risk Evaluation 2",
+    "Score2",
+    "score 2",
+    "score-2",
+    "heart disease",
+    "cvd",
+    "cvd risk",
+    "cardiovascular disease",
+    "cardiovascular disease risk",
+    "heart failure",
+    "heart failure risk",
+    "coronary heart disease",
+    "coronary heart disease risk",
+    "chd",
+    "chd risk",
+    "hf",
+    "hf risk",
+    "stroke",
+    "stroke risk",
+    "score2-op",
+    "score2 op",
+    "score2 - op",
+    "score2-older persons",
+    "score2 - older persons"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients, baseline survival, and mean linear predictor to calculate 10-year risk of CVD are as follows:\n\n| Risk Factor | Transformation | Male | Female |\n| --- | --- | --- | --- |\n| Age, years | cage = age – 73 | 0.0634 | 0.0789 |\n| Diabetes | yes = 1, no = 0 | 0.4245 | 0.6010 |\n| Smoking | current = 1, other = 0 | 0.3524 | 0.4921 |\n| SBP, mm Hg | csbp = sbp – 150 | 0.0094 | 0.0102 |\n| Total cholesterol, mmol/L | ctchol = tchol – 6 | 0.0850 | 0.0605 |\n| HDL cholesterol, mmol/L | chdl = hdl – 1.4 | -0.3564 | -0.3040 |\n| Diabetes*age interaction | diabetes*cage | -0.0174 | -0.0107 |\n| Smoking*age interaction | smoking*cage | -0.0247 | -0.0255 |\n| SBP*age interaction | csbp*cage | -0.0005 | -0.0004 |\n| Total cholesterol*age interaction | ctchol*cage | 0.0073 | -0.0009 |\n| HDL cholesterol*age interaction | chdl*cage | 0.0091 | 0.0154 |\n| Baseline survival | | 0.7576 | 0.8082 |\n| Mean linear predictor (MLP) | | 0.0929 | 0.2290 |\n\nThe 10-year risk of CVD is calculated by the following:\n\n**10-year risk** = 1 – (baseline survival)^exp(x – MLP)^,\n\nwhere **x** = Σ[β*(transformed variables)]\n\nThe region and sex-specific scales to calculate calibrated 10-year risk are as follows:\n\n| | Male | Female | | |\n| --- | --- | --- | --- | --- |\n| Risk Region | Scale 1 | Scale 2 | Scale 1 | Scale 2 |\n| Low | -0.34 | 1.19 | -0.52 | 1.01 |\n| Moderate | 0.01 | 1.25 | -0.10 | 1.10 |\n| High | 0.08 | 1.15 | 0.38 | 1.09 |\n| Very high | 0.05 | 0.70 | 0.38 | 0.69 |\n\nThe calibrated 10-year risk of CVD is calculated by the following:\n\n**Calibrated 10-year risk, %** = [1 – exp(-exp(scale1 + scale2*ln(-ln(1 – 10-year risk))))]*100",
+  "how_to_use": {
+    "why": "- Provides an estimate of 5-year and 10-year fatal and nonfatal CVD risk in older adults.\n- Uses sex-specific, region-calibrated models for four European risk regions.\n- Accounts for competing non-CVD mortality.\n- Facilitates shared decision-making about risk factor treatment when frailty, life expectancy, competing risks, and treatment tolerability must be weighed.\n- Incorporated into[2025 European Society of Cardiology (ESC)/European Atherosclerosis Society (EAS)](https://academic.oup.com/eurheartj/article/46/42/4359/8234482)dyslipidemia guidance.",
+    "when": "Use for primary prevention risk assessment in older adults aged ≥70 years without pre-existing atherosclerotic CVD or severe CKD.",
+    "pearls": "- Estimates combined fatal and non-fatal myocardial infarction (MI) and stroke risk in older adults, incorporating competing non-CVD mortality risk and contemporary European incidence data.\n- Includes diabetes as a predictor variable, unlike [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) , recognizing its importance in older populations.\n- Not validated outside of Europe; interpret results with caution in other regions.\n- Discrimination is lower in older adults (C-indices 0.63–0.67) than with [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) in younger populations, reflecting the greater heterogeneity and competing risks in this age group.\n- Validation is limited in very frail populations with severe multimorbidity, and data are limited on performance across frailty levels; further prospective studies are needed to evaluate treatment benefit in frail older adults stratified by SCORE2-OP risk categories.\n- Does not account for additional risk enhancers (e.g., Lp[a], family history, CKD, inflammatory diseases, environmental risk factors).\n- Should not be used in patients with established CVD, as they were not included in the derivation/validation cohorts and their risk is already high.\n- Evidence on functional outcomes, rather than CVD events alone, remains limited.\n\n**Key facts:**\n\n- Derivation cohort: 28,503 participants aged ≥65 years from the Cohort of Norway (CONOR).\n- External validation: 338,615 participants from 6 additional study populations.\n- Primary endpoint: composite of CVD mortality, non-fatal MI, and non-fatal stroke; CVD mortality included death from atherosclerotic coronary heart disease, heart failure, stroke, and sudden death.\n- Validation C-indices: 0.63 (95% CI 0.61–0.65) to 0.67 (95% CI 0.64–0.69)."
+  },
+  "next_steps": {
+    "advice": "- Interpréter les estimations de risque dans le contexte clinique plus large des adultes plus âgés afin de définir l’intensité préventive, en tenant compte de la fragilité, de l’espérance de vie, de la mortalité compétitive non cardiovasculaire, de la polymédication, de la tolérance au traitement et du bénéfice thérapeutique attendu.\n- La décision médicale partagée est particulièrement importante chez les adultes plus âgés, en équilibrant les bénéfices potentiels de la modification des facteurs de risque avec le fardeau du traitement et les préférences du patient.\n- Réévaluer le risque périodiquement, en particulier après des modifications majeures du statut tabagique, de la pression artérielle ou du bilan lipidique.",
+    "critical_actions": "",
+    "management": "SCORE2-OP is intended to support cardiovascular risk estimation and shared decision-making; this summary does not provide independent treatment recommendations.\n\n- Management strategies should be linked to estimated absolute cardiovascular risk.\n- Higher SCORE2-OP categories warrant progressively intensive LDL-cholesterol lowering, stricter blood-pressure control, and structured lifestyle intervention.\n- Shared decision-making is recommended when considering pharmacologic prevention in older adults.\n- Management decisions should be guided by the most recent ESC/EAS dyslipidemia and ESC prevention guidelines, integrating clinical judgement, comorbidities, frailty, life expectancy, expected treatment benefit, patient preferences, and risk modifiers.\n\n**RISK CATEGORIES**\n\nThe following are defined by the[2025 Focused Update of the 2019 ESC/EAS Guidelines for the management of dyslipidaemias](https://academic.oup.com/eurheartj/article/46/42/4359/8234482).\n\n- **Very high risk** includes ≥1 of the following:\n\n - Established ASCVD* (clinical or imaging), severe CKD (eGFR <30), diabetes with target-organ damage or ≥3 major risk factors, or FH with another major risk factor.\n - SCORE2-OP ≥20%.\n- **High risk** includes ≥1 of the following:\n\n - Markedly elevated single risk factors (LDL-C ≥4.9 mmol/L [190 mg/dL], total cholesterol >8 mmol/L, or BP ≥180/110 mmHg), moderate CKD (eGFR 30–59), FH without other major risk factors, or diabetes ≥10 years or with another risk factor.\n - SCORE2-OP 10%–<20%.\n- **Moderate risk** includes ≥1 of the following:\n\n - Young patients with diabetes and without additional risk factors (T1DM <35 years or T2DM <50 years, duration <10 years).\n - SCORE2-OP 2%–<10%.\n- **Low risk:** SCORE2-OP <2%.\n\n*ASCVD includes:\n\n- Prior acute coronary syndrome (ACS)/MI.\n- Coronary revascularization.\n- Stroke/transient ischemic attack (TIA).\n- Peripheral arterial disease.\n- Unequivocal atherosclerosis on imaging (e.g., >50% stenosis or CAC >300).\n\n**PHARMACOLOGIC MANAGMENT**\n\n[2025 lipid-update](https://academic.oup.com/eurheartj/article/46/42/4359/8234482)recommends pharmacologic LDL-C lowering (class I recommendation) after lifestyle optimization in:\n\n- **Very high risk:** LDL-C ≥1.8 mmol/L (≥70 mg/dL).\n- **High risk:** LDL-C ≥2.6 mmol/L (≥100 mg/dL).\n\nIt should be considered (class IIa recommendation) in:\n\n- **Very high risk:** LDL-C 1.4–<1.8 mmol/L (55–<70 mg/dL).\n- **High risk:** LDL-C 1.8–<2.6 mmol/L (70–<100 mg/dL).\n- **Moderate risk:** LDL-C 2.6–<4.9 mmol/L (100–<190 mg/dL).\n- **Low risk:** LDL-C 3.0–<4.9 mmol/L (116–<190 mg/dL).\n\n**THERAPEUTIC APPROACH**\n\n- Begin with lifestyle modification for all patients.\n- First-line pharmacotherapy is high-intensity statin therapy.\n- If LDL-C goals are not reached:\n\n - Add ezetimibe.\n - Add a PCSK9 inhibitor (e.g., alirocumab, evolocumab) for persistent elevation in high- or very high-risk patients.\n- Consider bempedoic acid, particularly in statin-intolerant patients.\n- Refine borderline decisions using risk modifiers (patients near treatment thresholds may warrant upward risk reclassification if they have any of the following):\n\n - Coronary artery calcium (CAC)/plaque imaging abnormalities.\n - Elevated lipoprotein(a) (Lp[a]).\n - Elevated high sensitivity C-reactive protein (hs-CRP).\n - Family history of premature CVD.\n - CKD.\n - Chronic inflammatory disease.\n - Obesity.\n - Inactivity.\n - Psychosocial stress.\n - Social deprivation.\n - High-risk ethnicity."
+  },
+  "evidence": "",
+  "more_info": "Risk regions are defined by the following map:\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/score2.png)\n\nFrom[SCORE2 Working Group 2021](https://pubmed.ncbi.nlm.nih.gov/34120185/).",
+  "short_description": "Risque de maladie cardiovasculaire à 10 ans chez les patients âgés.",
+  "medium_description": "Prédit le risque de CVD à 10 ans chez les patients âgés.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_score2_op",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "smoking",
+      "label": "Tabagisme",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Autre",
+          "value": 0
+        },
+        {
+          "label": "Actuel",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "PAS (SBP)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tc",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdl",
+      "label": "Cholestérol HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "region",
+      "label": "Région à risque",
+      "tips": "Voir [Preuves](#evidence) pour la définition des régions à risque.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Bas",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Élevé",
+          "value": 3
+        },
+        {
+          "label": "Très élevé",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Visseren FLJ, Mach F, Smulders YM, et al. 2021 ESC Guidelines on cardiovascular disease prevention in clinical practice. Eur Heart J. 2021;42(34):3227-3337.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34458905/",
+      "kind": "international"
+    },
+    {
+      "text": "Mach F, Koskinas KC, Roeters van Lennep JE, Tokgözoğlu L, Badimon L, Baigent C, et al; ESC/EAS Scientific Document Group. 2025 Focused Update of the 2019 ESC/EAS Guidelines for the management of dyslipidaemias. Eur Heart J. 2025;46(42):4359-4378. ",
+      "href": "https://academic.oup.com/eurheartj/article/46/42/4359/8234482",
+      "kind": "international"
+    },
+    {
+      "text": "SCORE2-OP working group and ESC Cardiovascular risk collaboration. SCORE2-OP risk prediction algorithms: estimating incident cardiovascular event risk in older persons in four geographical risk regions. Eur Heart J. 2021;42(25):2455-2467.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34120185/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "SCORE2 working group and ESC Cardiovascular risk collaboration. SCORE2 risk prediction algorithms: new models to estimate 10-year risk of cardiovascular disease in Europe. Eur Heart J. 2021;42(25):2439-2454.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34120177/",
+      "kind": "other"
+    },
+    {
+      "text": "van Trier TJ, Snaterse M, Boekholdt SM, et al. Validation of systematic coronary risk evaluation 2 (Score2) and score2-older persons in the epic norfolk prospective population cohort. Eur J Prev Cardiol. Published online October 4, 2023:zwad318.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37793098/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Belahnech Y, Ródenas-Alesina E, Muñoz MÁ, et al. Systematic Coronary Risk Evaluation 2 for Older Persons: 10 years risk validation, clinical utility, and potential improvement. Eur J Prev Cardiol. 2025;32(7):527-536.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39657030/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Petitjean C, Keene SJ, Bolton T, et al. Using population-wide electronic health records for timely contemporary assessment of cardiovascular disease risk prediction model performance: COVID-19 impact on the SCORE2 models. Eur J Prev Cardiol. Published online March 29, 2026.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41903569/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.score2-diabetes",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent"
+  ],
+  "source_logic_hash": "3fdfe76498a06fa925267d65951f912b",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    },
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10503,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar diabetes = parseFloat(diabetes);\nvar smoking = parseFloat(smoking);\nvar sbp = parseFloat(sbp);\n\nif (UOMSYSTEM == true) {\n    var tc = parseFloat(tc)*0.02586;\n    var hdl = parseFloat(hdl)*0.02586;\n} else if (UOMSYSTEM == false) {\n    var tc = parseFloat(tc);\n    var hdl = parseFloat(hdl);\n}\n\nvar region = parseFloat(region);\n\nvar cage = age - 73;\nvar csbp = sbp - 150\nvar ctc = tc - 6;\nvar chdl = hdl - 1.4;\nvar diabetes_age = diabetes*cage;\nvar smoking_age = smoking*cage;\nvar sbp_age = csbp*cage;\nvar tc_age = ctc*cage;\nvar hdl_age = chdl*cage;\n\nvar x;\nvar risk_10;\n\nif (sex == 0) {\n    x = 0.0634*cage + 0.4245*diabetes + 0.3524*smoking + 0.0094*csbp + 0.085*ctc - 0.3564*chdl - 0.0174*diabetes_age - 0.0247*smoking_age - 0.0005*sbp_age + 0.0073*tc_age + 0.0091*hdl_age;\n    risk_10 = 1 - Math.pow(0.7576, Math.exp(x - 0.0929));\n} else {\n    x = 0.0789*cage + 0.601*diabetes + 0.4921*smoking + 0.0102*csbp + 0.0605*ctc - 0.304*chdl - 0.0107*diabetes_age - 0.0255*smoking_age - 0.0004*sbp_age - 0.0009*tc_age + 0.0154*hdl_age;\n    risk_10 = 1 - Math.pow(0.8082, Math.exp(x - 0.229));\n}\n\nvar scale1;\nvar scale2;\nif (region == 1) {\n    if (sex == 0) {\n        scale1 = -0.34;\n        scale2 = 1.19;\n    } else {\n        scale1 = -0.52;\n        scale2 = 1.01;\n    }\n} else if (region == 2) {\n    if (sex == 0) {\n        scale1 = 0.01;\n        scale2 = 1.25;\n    } else {\n        scale1 = -0.10;\n        scale2 = 1.10;\n    }\n} else if (region == 3) {\n    if (sex == 0) {\n        scale1 = 0.08;\n        scale2 = 1.15;\n    } else {\n        scale1 = 0.38;\n        scale2 = 1.09;\n    }\n} else if (region == 4) {\n    if (sex == 0) {\n        scale1 = 0.05;\n        scale2 = 0.70;\n    } else {\n        scale1 = 0.38;\n        scale2 = 0.69;\n    }\n}\n\nvar c_risk = [1 - Math.exp(-Math.exp(scale1 + scale2*Math.log(-Math.log(1 - risk_10))))]*100\n\ncalc_output.push({\n    name: 'mini',\n    value: c_risk.toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});  \ncalc_output.push({\n    name: '10499_SCORE2-OP_result',\n    value: c_risk.toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});",
+  "before_use": null,
+  "instructions": "- Use in European patients ≥70 years.\n- Do not apply when alternative risk scores or disease-specific guidance should be used, such as:\n\n - Known cardiovascular disease (CVD).\n - Severe chronic kidney disease (CKD).\n- Consider using [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) in adults 40–69 years old.",
+  "contributor_ids": [
+    "simon-kraler-md-phd"
+  ],
+  "creator_names": [
+    "SCORE2 Working Group",
+    "ESC Cardiovascular Risk Collaboration"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Total Cholesterol",
+    "HDL Cholesterol"
+  ],
+  "popular": false,
+  "cat_ids": [
+    "g.risque-cardiovasculaire-evaluation-et-prevention"
+  ],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "35c4eeaf6835629f05e60161423e8ff25b1182663aa317ca948dbc599536f12f"
+}

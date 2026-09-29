@@ -1,0 +1,224 @@
+{
+  "id": "calc.primary-care-ptsd-screen-dsm-5-pc-ptsd",
+  "slug": "primary-care-ptsd-screen-dsm-5-pc-ptsd",
+  "language": "fr",
+  "title": "Soins primaires PTSD Screen pour DSM-5 (PC-PTSD-5)",
+  "short_title": "PC-PTSD-5",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Trouble de stress post-traumatique",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Primary Care PTSD Screen for DSM-5 (PC-PTSD-5)",
+    "PC-PTSD-5",
+    "ptsd",
+    "post traumatic stress disorder",
+    "pc ptsd",
+    "ptsd screening",
+    "pc ptsd 5",
+    "Primary Care PTSD Screen for DSM-V (PC-PTSD-V)",
+    "PC-PTSD-V",
+    "pc ptsd V",
+    "posttraumatic stress disorder",
+    "dsm 5",
+    "dsm  v",
+    "dsm-5",
+    "dsm-v"
+  ],
+  "dosing": false,
+  "formula": "Exemples d'événements traumatiques :\n\n- Un accident ou un incendie grave.\n- Une agression ou des violences physiques ou sexuelles.\n- Un séisme ou une inondation.\n- Une guerre.\n- Avoir vu quelqu'un être tué ou gravement blessé.\n- Avoir perdu un proche par homicide ou suicide.\n\nDemandez d'abord au patient : Avez-vous déjà vécu ce type d'événement ?\n\nSi non, le score PC-PTSD-5 = 0.\n\nSi oui, le score PC-PTSD-5 est calculé par addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Au cours du mois dernier, avez-vous… | | |\n| Fait des cauchemars concernant l'événement ou les événements, ou y avoir pensé alors que vous ne le vouliez pas ? | Non | 0 |\n| Oui | 1 | |\n| Essayé de ne pas penser à l'événement ou aux événements, ou évité des situations qui vous les rappelaient ? | Non | 0 |\n| Oui | 1 | |\n| Été constamment sur vos gardes, vigilant ou facilement effrayé ou surpris ? | Non | 0 |\n| Oui | 1 | |\n| Ressenti un sentiment d'engourdissement ou de détachement vis-à-vis des personnes, des activités ou de votre environnement ? | Non | 0 |\n| Oui | 1 | |\n| Ressenti de la culpabilité, ou été incapable de cesser de vous blâmer, vous ou d'autres, pour l'événement ou les événements, ou pour tout problème qu'ils ont pu causer ? | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous le Primary Care PTSD Screen for DSM-5 (PC-PTSD-5) et souhaitez-vous contribuer avec votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Si le dépistage est positif, le patient doit faire l'objet d'une évaluation approfondie à l'aide d'évaluations structurées supplémentaires. Pour plus d'informations sur les évaluations et la recherche concernant le trouble de stress post-traumatique (TSPT), veuillez consulter :[https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp](https://www.ptsd.va.gov/professional/assessment/screens/pc-ptsd.asp)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PC-PTSD-5 | Résultat du dépistage |\n| --- | --- |\n| <4 | Négatif |\n| ≥4 | Positif |",
+  "short_description": "PTSD dépistage.",
+  "medium_description": "Screens pour PTSD dans soins primaires populations.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Avez-vous déjà vécu un événement traumatique ?",
+      "tips": "Exemples d'événements traumatiques :\n\nUn accident ou un incendie grave.Une agression ou des violences physiques ou sexuelles.Un séisme ou une inondation.Une guerre.Avoir vu quelqu'un être tué ou gravement blessé.Avoir perdu un proche par homicide ou suicide.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "Had nightmares about event(s) ou thought about event(s) when you did not want pour?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Tried hard not pour think about event(s) ou went out de your way pour avoid situations that reminded you de event(s)?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Été constamment sur vos gardes, vigilant ou facilement effrayé ou surpris ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q5",
+      "label": "Ressenti un sentiment d'engourdissement ou de détachement vis-à-vis des personnes, des activités ou de votre environnement ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Felt guilty ou unable pour stop blaming yourself ou others pour event(s) ou any problems event(s) may have caused?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "q1 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Prins A, Bovin MJ, Smolenski DJ, et al. The primary care ptsd screen for dsm-5 (PC-PTSD-5): development and evaluation within a veteran primary care sample. J Gen Intern Med. 2016;31(10):1206-1211.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27170304/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Prins A, Ouimette P, Kimerling R, et al. The primary care PTSD screen (Pc–ptsd): development and operating characteristics. Prim Care Psych. 2004;9(1):9-14.",
+      "href": "https://www.ptsd.va.gov/professional/articles/article-pdf/id26676.pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bovin MJ, Kimerling R, Weathers FW, et al. Diagnostic accuracy and acceptability of the primary care posttraumatic stress disorder screen for the diagnostic and statistical manual of mental disorders (Fifth edition) among us veterans. JAMA Netw Open. 2021;4(2):e2036733.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33538826/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dsm-5-criteria-posttraumatic-stress-disorder",
+    "calc.dsmv-diagnostic-criteria-for-binge-eating-disorder",
+    "calc.dsm-5-criteria-bipolar-disorder"
+  ],
+  "source_logic_hash": "d1ae447235a171c712761105ac18619e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10473,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

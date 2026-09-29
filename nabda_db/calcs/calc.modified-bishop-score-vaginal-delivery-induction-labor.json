@@ -1,0 +1,287 @@
+{
+  "id": "calc.modified-bishop-score-vaginal-delivery-induction-labor",
+  "slug": "modified-bishop-score-vaginal-delivery-induction-labor",
+  "language": "fr",
+  "title": "Modifié Bishop score pour Vaginal Delivery et Induction de Labor",
+  "short_title": "Modifié Bishop score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Pregnancy"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "length",
+    "cervix",
+    "bishop"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Prédire quelles femmes accoucheront avec succès par déclenchement est difficile, et le Bishop Score est un système standardisé utilisé pour l’évaluation.",
+    "when": "Patientes en cours d’évaluation pour un travail obstétrical (y compris un éventuel déclenchement).",
+    "pearls": "- Le [Bishop Score](nabda:calc.bishop-score-vaginal-delivery-induction-labor) a été initialement développé pour prédire l'échec du déclenchement électif chez les femmes multipares.\n- Il est couramment envisagé pour prédire la nécessité d'une césarienne après déclenchement et en cas de travail prématuré.\n- Certains centres recommandent d'utiliser le Modified Bishop Score, développé en 1982 comme mise à jour du système de score original de [Bishop](nabda:calc.bishop-score-vaginal-delivery-induction-labor) de 1964.\n- Ce système de score a été développé avant les agents de maturation cervicale.\n- Typiquement, un score ≥8 est utilisé pour prédire le succès et un score ≤6 suggère un col défavorable."
+  },
+  "next_steps": {
+    "advice": "Le déclenchement est souvent envisagé à partir d'un Modified Bishop Score ≥8.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n- Les scores ≤ 5 suggèrent un col défavorable et qu'une induction peut être nécessaire pour un accouchement vaginal réussi.\n- Les scores 6-7 ne permettent pas de prédire de façon définitive si l'induction sera réussie ou non. Envisager une induction ou une augmentation du travail selon le jugement clinique.\n- Les scores ≥ 8 suggèrent qu'un accouchement vaginal spontané est plus probable et qu'une augmentation ou une induction peut être inutile.",
+  "short_description": "Probabilité d'accouchement vaginal réussi.",
+  "medium_description": "Predicts likelihood de successful vaginal delivery avec additional parameters pour original Bishop score.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "dil",
+      "label": "Dilatation cervicale",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Closed",
+          "value": 0
+        },
+        {
+          "label": "1-2 cm",
+          "value": 2
+        },
+        {
+          "label": "3-4 cm",
+          "value": 4
+        },
+        {
+          "label": ">4 cm",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "length",
+      "label": "Longueur cervicale",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "3 cm",
+          "value": 0
+        },
+        {
+          "label": "2 cm",
+          "value": 1
+        },
+        {
+          "label": "1 cm",
+          "value": 2
+        },
+        {
+          "label": "0 cm",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stat",
+      "label": "Station",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "-3",
+          "value": 0
+        },
+        {
+          "label": "-2",
+          "value": 1
+        },
+        {
+          "label": "-1, 0",
+          "value": 2
+        },
+        {
+          "label": "+1, +2",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pos",
+      "label": "Position",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Posterior",
+          "value": 0
+        },
+        {
+          "label": "Mid-position",
+          "value": 1
+        },
+        {
+          "label": "Anterior",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "con",
+      "label": "Consistency",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Firm",
+          "value": 0
+        },
+        {
+          "label": "Modérément ferme",
+          "value": 1
+        },
+        {
+          "label": "Soft",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "vagdeliv",
+      "label": "Accouchements vaginaux antérieurs",
+      "optional": false,
+      "unit": "ten",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "preec",
+      "label": "Pre-eclampsia",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "postdate",
+      "label": "Grossesse post-terme",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nulliparity",
+      "label": "Nulliparity",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pprom",
+      "label": "PPROM",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lange AP, Secher NJ, Westergaard JG, Skovgard I. Prelabor evaluation of inducibility. Obstet Gynecol. 1982;60:137–47.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7155472",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Laughon SK, Zhang J, Troendle J, Sun L, Reddy UM. Using a Simplified Bishop Score to Predict Vaginal Delivery. Obstetrics and Gynecology 2011;117(4):805-811. doi:10.1097/AOG.0b013e3182114ad2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC3297470/",
+      "kind": "other"
+    },
+    {
+      "text": "Bishop EH. Pelvic scoring for elective induction. Obstet Gynecol. 1964;24: 266–8. PMID 14199536.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14199536",
+      "kind": "other"
+    },
+    {
+      "text": "Newman RB, Goldenberg RL, Iams JD et al. Preterm Prediction Study: Comparison of the Cervical Score and Bishop Score for Prediction of Spontaneous Preterm Delivery. Obstet Gynecol. 2008;112 (3): 508–15. doi:10.1097/AOG.0b013e3181842087. PMID 18757646.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18757646",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bishop-score-vaginal-delivery-induction-labor",
+    "calc.swede-score",
+    "calc.reids-colposcopic-index-rci"
+  ],
+  "source_logic_hash": "d40b7e5838e212e1d9537f3a8efe6c3c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.bishop-score-vaginal-delivery-induction-labor",
+      "text": "Bishop Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3814,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

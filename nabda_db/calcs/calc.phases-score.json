@@ -1,0 +1,220 @@
+{
+  "id": "calc.phases-score",
+  "slug": "phases-score",
+  "language": "en",
+  "title": "Score PHASES",
+  "short_title": "Score PHASES",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie"
+  ],
+  "diseases": [
+    "Anévrisme intracrânien"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Headache",
+    "Nausea",
+    "Numbness",
+    "Pain",
+    "Seizure",
+    "Perte de vision",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "PHASES Score",
+    "PHASES",
+    "aneurysm risk",
+    "aneurysm risk score",
+    "intracranial aneurysm",
+    "aneurysm rupture"
+  ],
+  "dosing": false,
+  "formula": "Le score PHASES est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| **P**opulation | Nord-américaine, européenne (autre que finlandaise) | 0 |\n| Japonaise | 3 | |\n| Finlandaise | 5 | |\n| **H**ypertension | Non | 0 |\n| Oui | 1 | |\n| **Â**ge | <70 ans | 0 |\n| ≥70 ans | 1 | |\n| **S**ize (taille) de l'anévrisme | <7,0 mm | 0 |\n| 7,0-9,9 mm | 3 | |\n| 10,0-19,9 mm | 6 | |\n| ≥20,0 mm | 10 | |\n| **E**arlier (antécédent de) SAH issu d'un autre anévrisme | Non | 0 |\n| Oui | 1 | |\n| **S**ite de l'anévrisme | Artère carotide interne (ICA) | 0 |\n| Artère cérébrale moyenne (MCA) | 2 | |\n| Artères cérébrales antérieures (ACA), artère communicante postérieure, circulation postérieure | 4 | |",
+  "how_to_use": {
+    "why": "- Stratifie les patients en évaluant leur risque de rupture à 5 ans, ce qui aide à la planification de la prise en charge et du suivi.\n- Particulièrement utile pour la décision médicale partagée lors de l'évaluation d'interventions préventives ou d'une surveillance continue.\n- Simple d'utilisation, reposant sur des données facilement accessibles.",
+    "when": "- À utiliser chez les patients présentant des anévrismes intracrâniens asymptomatiques, non rompus, afin d'évaluer le risque de rupture de l'anévrisme.\n- Applicable en milieu hospitalier comme en ambulatoire.",
+    "pearls": "- Developed from the pooled analysis of 6 prospective cohort studies of 8,382 aneurysm cases, but it has not been prospectively validated.\n- Derived only from North American, European, Japanese, and Finnish populations; interpret with caution when applying outside of these populations.\n- Some retrospective analyses suggest underperformance, with some ruptures occurring in the “low-risk” category, particularly for small aneurysms (<7 mm) or multiple aneurysms.\n- Assesses risk at a single point in time; keep in mind that aneurysms can remodel, altering the risk of rupture over time.\n- Does not account for all individual patient factors, such as lifestyle (e.g., smoking), sex, or comorbidities that might modify risk; clinical context is essential.\n- Excludes aneurysm shape as a factor, which can impact rupture risk.\n- Not intended to guide treatment decisions for ruptured or symptomatic aneurysms."
+  },
+  "next_steps": {
+    "advice": "- Différents seuils de stratification en risque élevé et faible existent. Par exemple, [Bijlenga et al. (2017)](https://pubmed.ncbi.nlm.nih.gov/28667020/) ont utilisé un score ≤3 pour définir le faible risque, tout en notant une probabilité non négligeable de rupture dans ce groupe.\n- Bien que cet outil puisse fournir une estimation du risque, le jugement clinique individuel, l'avis des spécialistes et la décision médicale partagée restent essentiels dans la planification du traitement.",
+    "critical_actions": "",
+    "management": "- Tous les patients devraient recevoir :\n\n - Une éducation sur le risque d'hémorragie sous-arachnoïdienne, les situations nécessitant une consultation médicale immédiate et les activités à éviter.\n - Une prise en charge de l'hypertension.\n - Un traitement approprié des comorbidités.\n - Un conseil au sevrage tabagique.\n- **Pour les patients à risque plus faible :** envisager une prise en charge conservatrice avec une imagerie périodique (CTA ou ARM) et un suivi régulier.\n- **Pour les patients à risque plus élevé :**\n\n - Engager une décision médicale partagée concernant une éventuelle intervention chirurgicale ou endovasculaire.\n - Collaborer avec la neurochirurgie ou la radiologie interventionnelle neuroradiologique pour une évaluation complémentaire."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PHASES | Risque de rupture de l'anévrisme à 5 ans |\n| --- | --- |\n| ≤2 | 0,4 % |\n| 3 | 0,7 % |\n| 4 | 0,9 % |\n| 5 | 1,3 % |\n| 6 | 1,7 % |\n| 7 | 2,4 % |\n| 8 | 3,2 % |\n| 9 | 4,3 % |\n| 10 | 5,3 % |\n| 11 | 7,2 % |\n| ≥12 | 17,8 % |",
+  "short_description": "Risque d'anévrisme.",
+  "medium_description": "Prédit le risque de rupture à 5 ans des anévrismes intracrâniens.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "population",
+      "label": "**P**opulation",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Nord-américaine, européenne (autre que finlandaise)",
+          "value": 0
+        },
+        {
+          "label": "Japanese",
+          "value": 3
+        },
+        {
+          "label": "Finnish",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hypertension",
+      "label": "**H**ypertension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "**** ge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 70 ans",
+          "value": 0
+        },
+        {
+          "label": "≥ 70 ans",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "size",
+      "label": "**S**ize (taille) de l'anévrisme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 7.0 mm",
+          "value": 0
+        },
+        {
+          "label": "7.0-9.9 mm",
+          "value": 3
+        },
+        {
+          "label": "10.0-19.9 mm",
+          "value": 6
+        },
+        {
+          "label": "≥20.0 mm",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sah",
+      "label": "**E**arlier (antécédent de) SAH issu d'un autre anévrisme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "site",
+      "label": "**S**ite de l'anévrisme",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Artère carotide interne (ICA)",
+          "value": 0
+        },
+        {
+          "label": "Artère cérébrale moyenne (MCA)",
+          "value": 2
+        },
+        {
+          "label": "Artères cérébrales antérieures (ACA), artère communicante postérieure, circulation postérieure",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Greving JP, Wermer MJH, Brown RD, et al. Development of the PHASES score for prediction of risk of rupture of intracranial aneurysms: a pooled analysis of six prospective cohort studies. Lancet Neurol. 2014;13(1):59-66.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24290159/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bijlenga P, Gondar R, Schilling S, et al. Phases score for the management of intracranial aneurysm: a cross-sectional population-based retrospective study. Stroke. 2017;48(8):2105-2112.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28667020/",
+      "kind": "other"
+    },
+    {
+      "text": "Backes D, Vergouwen MDI, Tiel Groenestege AT, et al. Phases score for prediction of intracranial aneurysm growth. Stroke. 2015;46(5):1221-1226.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25757900/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+    "calc.infant-scalp-score",
+    "calc.setscore"
+  ],
+  "source_logic_hash": "036505aef3262172e2239f29439ea601",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10459,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

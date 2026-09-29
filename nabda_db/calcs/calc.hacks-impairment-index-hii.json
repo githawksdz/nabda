@@ -1,0 +1,293 @@
+{
+  "id": "calc.hacks-impairment-index-hii",
+  "slug": "hacks-impairment-index-hii",
+  "language": "en",
+  "title": "Index d’incapacité de Hack (HII)",
+  "short_title": "HII",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Dizziness",
+    "Nausea",
+    "Numbness",
+    "Vertigo",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Hack’s Impairment Index (HII)",
+    "hii",
+    "impairment",
+    "alcohol-induced impairment",
+    "alcohol-induced impairment assessment",
+    "alcohol impairment assessment",
+    "impairment index",
+    "alcohol impairment index",
+    "hacks impairment index",
+    "hacks index",
+    "hacks impairment",
+    "hack",
+    "alcohol",
+    "drunk",
+    "alcohol impaired",
+    "sober",
+    "toxicology",
+    "clearance",
+    "psych",
+    "detox",
+    "withdrawal",
+    "alcohol impairment",
+    "HII score",
+    "hack's",
+    "hack's impairment",
+    "hack's impairment score"
+  ],
+  "dosing": false,
+  "formula": "The HII Score is calculated by dividing the sum of the selected points by the maximum score for all completed tasks:\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Speech quality and mentation | Response content | Normal or baseline speech; conversive and appropriate | 0 |\n| Imperfect speech; answers most questions appropriately | 1 | | |\n| Slurred speech; answers few questions appropriately | 2 | | |\n| Slurred speech; does not make sense | 3 | | |\n| Unintelligible speech or only moans | 4 | | |\n| Gross motor skills | Stability on sitting, standing, and walking | Can stand and walk, and is steady | 0 |\n| Can stand and walk, but is unsteady | 1 | | |\n| Can sit up and is steady, but cannot stand | 2 | | |\n| Can sit up, but is unsteady | 3 | | |\n| Cannot sit up | 4 | | |\n| Eye movement | Accuracy of tracking a moving finger with eyes and nystagmus | No nystagmus; follows finger with eyes whole time | 0 |\n| Minimal nystagmus; follows finger with eyes whole time | 1 | | |\n| Moderate nystagmus; only follows finger with eyes for short distance | 2 | | |\n| Profound nystagmus; unable to follow finger with eyes | 3 | | |\n| Unable to participate | 4 | | |\n| Coordination with target pursuit | Touching their finger to examiner’s finger | Steady; accurate finger to target | 0 |\n| Steady; inaccurate but touches target | 1 | | |\n| Unsteady; inaccurate, barely touches target | 2 | | |\n| Grossly unsteady; misses finger to target | 3 | | |\n| Unable to participate | 4 | | |\n| Fine motor skills | Ability to trace a curve between two printed lines on a piece of paper | Traces curve perfectly | 0 |\n| Traces mostly inside lines | 1 | | |\n| Traces mostly outside lines | 2 | | |\n| Makes mark on paper | 3 | | |\n| Unable to participate | 4 | | |",
+  "how_to_use": {
+    "why": "- Pour surveiller et suivre objectivement la résolution de l’altération après consommation d’alcool.\n- Ne nécessite pas de formation spéciale de l’utilisateur.\n- Peut être utilisé au chevet du patient par tout membre de l’équipe clinique.",
+    "when": "À utiliser chez les patients se présentant au service des urgences et présentant une altération après consommation d'alcool.\n\nCe score ne doit pas être utilisé chez les patients qui :\n\n- Ont pu ingérer d'autres substances susceptibles de provoquer une altération.\n- Ont présenté une crise convulsive avant leur arrivée.\n- Présentent une hypoglycémie.\n- Présentent d'autres anomalies biologiques ou pathologies susceptibles de contribuer à une altération.",
+    "pearls": "- Doit être utilisé dans le cadre d'une évaluation clinique pour déterminer le moment de moindre altération après consommation d'alcool, lorsque le patient peut être en mesure de participer à la planification de son orientation.\n- Doit être utilisé pour surveiller la résolution de l'altération au fil du temps.\n- Ne doit PAS être utilisé pour déterminer si le patient est apte à conduire en toute sécurité.\n- Ne doit PAS être utilisé comme seul facteur dans la planification de la sortie."
+  },
+  "next_steps": {
+    "advice": "Le score total doit diminuer de manière prévisible à chaque évaluation. Le score ne peut pas être calculé si le patient refuse plus d’une évaluation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Le score HII final est obtenu en divisant la somme de tous les sous-scores par le score maximal pour toutes les tâches complétées (c.-à-d. 20 si tous les sous-scores ont été obtenus, 16 si une évaluation a été refusée). Les scores finaux vont de 0 (tous les items réalisés parfaitement) à 15 (tous les items réalisés avec une altération maximale). Le score ne peut pas être calculé si plus d'une évaluation est refusée.\n\nTemps estimé jusqu'à la résolution de l'altération = HII Score/0.0616",
+  "short_description": "Évaluation de alcohol-induced impairment.",
+  "medium_description": "Provides quantitative et standardized évaluation de degree de alcohol-induced impairment dans service d'accueil des urgences patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "speech",
+      "label": "Qualité de la parole et état mental",
+      "tips": "Aucun contenu source n'a été fourni : le message ne contient ni titre de score, ni consignes, ni tableaux, ni libellés à traduire (« Response content » est un espace réservé vide).\n\nMerci de coller le texte du score clinique (titres, consignes, tableaux markdown, libellés, options, why/when/pearls, next_steps, evidence, more_info) et je le traduirai intégralement en français médical, en conservant chiffres, unités, seuils, noms de scores, acronymes, liens markdown, href, identifiants nabda:, citations et name/value techniques des inputs.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Parole normale ou initiale ; discours conversationnel et approprié",
+          "value": -1
+        },
+        {
+          "label": "Parole imparfaite ; répond de manière appropriée à la plupart des questions",
+          "value": 1
+        },
+        {
+          "label": "Slurred speech; answers few questions appropriately",
+          "value": 2
+        },
+        {
+          "label": "Slurred speech; ne... pas make sense",
+          "value": 3
+        },
+        {
+          "label": "Paroles inintelligibles ou seulement des gémissements",
+          "value": 4
+        },
+        {
+          "label": "Patient a refusé la tâche",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gross_motor",
+      "label": "Motricité globale",
+      "tips": "Stabilité en position assise, debout et à la marche",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Peut se tenir debout et marcher, et est stable",
+          "value": -1
+        },
+        {
+          "label": "Peut se tenir debout et marcher, mais est instable",
+          "value": 1
+        },
+        {
+          "label": "Peut s'asseoir et est stable, mais ne peut pas se tenir debout",
+          "value": 2
+        },
+        {
+          "label": "Peut se tenir assis, mais est instable",
+          "value": 3
+        },
+        {
+          "label": "Incapacité à s’asseoir",
+          "value": 4
+        },
+        {
+          "label": "Patient a refusé la tâche",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "eye",
+      "label": "Mouvement oculaire",
+      "tips": "Précision de la poursuite oculaire d’un doigt en mouvement et nystagmus",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "No nystagmus; follows finger avec eyes whole time",
+          "value": -1
+        },
+        {
+          "label": "Minimal nystagmus; follows finger avec eyes whole time",
+          "value": 1
+        },
+        {
+          "label": "modéré nystagmus; only follows finger avec eyes pour short distance",
+          "value": 2
+        },
+        {
+          "label": "Profound nystagmus; unable pour follow finger avec eyes",
+          "value": 3
+        },
+        {
+          "label": "Unable pour participate",
+          "value": 4
+        },
+        {
+          "label": "Patient a refusé la tâche",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "target",
+      "label": "Coordination avec target pursuit",
+      "tips": "Toucher le doigt de l’examinateur avec son doigt",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Steady; accurate finger pour target",
+          "value": -1
+        },
+        {
+          "label": "Steady; inaccurate but touches target",
+          "value": 1
+        },
+        {
+          "label": "Unsteady; inaccurate, barely touches target",
+          "value": 2
+        },
+        {
+          "label": "Grossly unsteady; misses finger pour target",
+          "value": 3
+        },
+        {
+          "label": "Unable pour participate",
+          "value": 4
+        },
+        {
+          "label": "Patient a refusé la tâche",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fine_motor",
+      "label": "Motricité fine",
+      "tips": "Capacité à tracer une [courbe entre deux lignes imprimées](https://cdn-web-img.mdcalc.com/content/HII_tracing.pdf) sur une feuille de papier",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Traces curve perfectly",
+          "value": -1
+        },
+        {
+          "label": "Traces principalement à l'intérieur des lignes",
+          "value": 1
+        },
+        {
+          "label": "Traces majoritairement en dehors des lignes",
+          "value": 2
+        },
+        {
+          "label": "Fait une marque sur le papier.",
+          "value": 3
+        },
+        {
+          "label": "Unable pour participate",
+          "value": 4
+        },
+        {
+          "label": "Patient a refusé la tâche",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hack JB, Goldlust EJ, Gibbs F, Zink B. The H-Impairment Index (Hii): a standardized assessment of alcohol-induced impairment in the Emergency Department. Am J Drug Alcohol Abuse. 2014;40(2):111-117.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24555813/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Benoit JL, Hart KW, Soliman AA, et al. Developing a standardized measurement of alcohol intoxication. Am J Emerg Med. 2017;35(5):725-730.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28132795/",
+      "kind": "other"
+    },
+    {
+      "text": "Hack JB, Goldlust EJ, Ferrante D, Zink BJ. Performance of the Hack’s impairment index score: a novel tool to assess impairment from alcohol in emergency department patients. Acad Emerg Med. 2017;24(10):1193-1203.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28756645/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Introduction of an electronic mobile device version of an alcohol impairment scale (The Hack’s impairment index score) does not impair nursing assessment of patients in emergency departments. Current Therapeutic Research. 2021;94:100630.",
+      "href": "https://www.sciencedirect.com/science/article/pii/S0011393X21000084?via%3Dihub",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.montreal-cognitive-assessment-moca",
+    "calc.abbey-pain-scale-dementia-patients",
+    "calc.asthma-impairment-risk-questionnaire-airq"
+  ],
+  "source_logic_hash": "7940502c6c8c915f02322c1da9d4b60e",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10415,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

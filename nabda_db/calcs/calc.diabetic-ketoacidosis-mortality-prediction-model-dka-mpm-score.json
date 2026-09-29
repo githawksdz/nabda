@@ -1,0 +1,244 @@
+{
+  "id": "calc.diabetic-ketoacidosis-mortality-prediction-model-dka-mpm-score",
+  "slug": "diabetic-ketoacidosis-mortality-prediction-model-dka-mpm-score",
+  "language": "fr",
+  "title": "Diabetic Ketoacidosis mortalité prédiction modèle (DKA MPM) score",
+  "short_title": "Score DKA MPM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Polyuria",
+    "Vomiting",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "dka",
+    "dka mortality",
+    "prediction model",
+    "dka mortality",
+    "diabetes",
+    "diabetes mortality",
+    "diabetic ketoacidosis"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | No | Yes |\n| --- | --- | --- |\n| At presentation: | | |\n| Severe comorbidities* | 0 | +6 |\n| pH <7.0 | 0 | +4 |\n| At 12 hr after presentation: | | |\n| >50 units regular insulin required over 12 hr | 0 | +4 |\n| Serum glucose >300 mg/dL (16.7 mmol/L) after 12 hr | 0 | +4 |\n| At 24 hr after presentation: | | |\n| Depressed mental state** | 0 | +4 |\n| Fever*** | 0 | +3 |\n\n*Immunosuppression, previous MI, COPD, cirrhosis, CHF, and/or previous stroke.\n\n**As determined by examiner.\n\n***Axillary temp ≥38°C (100.4ºF).",
+  "how_to_use": {
+    "why": "Fournit des informations concernant la mortalité chez les patients présentant une DKA.",
+    "when": "Patients with DKA. Study population included patients with serum glucose >250 mg/dL (14.1 mmol/L), positive urine ketones, and [metabolic acidosis](nabda:calc.arterial-blood-gas-abg-analyzer) (arterial blood pH <7.30 and HCO₃ <15 mEq/L (15 mmol/L).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Les protocoles de prise en charge varient, mais la prise en charge de référence dans la plupart des contextes est la prise en charge en réanimation."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score DKA MPM | Risque | Mortalité hospitalière |\n| --- | --- | --- |\n| 0-14 | Faible | 0,86 % |\n| 15-18 | Élevé | 20,8 % |\n| 19-25 | Très élevé | 93,3 % |\n\nNote : les décimales sont conservées à l'identique (0.86% / 20.8% / 93.3%). Si vous préférez la notation anglo-saxonne des décimales, remplacez les virgules par des points.",
+  "short_description": "Dans-hôpital DKA mortalité.",
+  "medium_description": "Predicts dans-hôpital mortalité dans DKA.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "scd",
+      "label": "Comorbidités sévères",
+      "tips": "Immunosuppression, previous MI, COPD, cirrhosis, CHF, and/or previous stroke",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ph",
+      "label": "PH <7.0",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "regular",
+      "label": ">50 unités d'insuline régulière requises sur 12 h",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "serum",
+      "label": "Glycémie sérique >300 mg/dL (16,7 mmol/L) après 12 h",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dep",
+      "label": "Déprimé mental state",
+      "tips": "Selon l'appréciation de l'examinateur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fever",
+      "label": "Fièvre",
+      "tips": "Axillary temp ≥38°C (100.4ºF)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Efstathiou SP, Tsiakou AG, Tsioulos DI, et al. A mortality prediction model in diabetic ketoacidosis. Clin Endocrinol (Oxf). 2002;57(5):595-601.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12390332 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mahesh MG, Shivaswamy RP, Chandra BS, Syed S. The Study of Different Clinical Pattern of Diabetic Ketoacidosis and Common Precipitating Events and Independent Mortality Factors. J Clin Diagn Res. 2017;11(4):OC42-OC46.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28571190",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.american-diabetes-association-ada-risk-calculator",
+    "calc.apache-ii-score",
+    "calc.arterial-blood-gas-abg-analyzer"
+  ],
+  "source_logic_hash": "346cef9533ce521d7c557a3099de1412",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.arterial-blood-gas-abg-analyzer",
+      "text": "metabolic acidosis"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4003,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

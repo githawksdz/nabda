@@ -1,0 +1,302 @@
+{
+  "id": "calc.rapid-emergency-medicine-score-rems",
+  "slug": "rapid-emergency-medicine-score-rems",
+  "language": "fr",
+  "title": "Score REMS (Rapid Emergency Medicine score)",
+  "short_title": "REMS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "Raps",
+    "rapid",
+    "acute",
+    "physiology",
+    "score",
+    "emergency department",
+    "rems",
+    "hospital mortality"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge, années | <45 | 0 |\n| 45-54 | 2 | |\n| 55-64 | 3 | |\n| 65-74 | 5 | |\n| >74 | 6 | |\n| Pression artérielle moyenne, mmHg | >159 | 4 |\n| 130-159 | 3 | |\n| 110-129 | 2 | |\n| 70-109 | 0 | |\n| 50-69 | 2 | |\n| ≤49 | 4 | |\n| Fréquence cardiaque, battements par minute | >179 | 4 |\n| 140-179 | 3 | |\n| 110-139 | 2 | |\n| 70-109 | 0 | |\n| 55-69 | 2 | |\n| 40-54 | 3 | |\n| ≤39 | 4 | |\n| Fréquence respiratoire, respirations par minute | >49 | 4 |\n| 35-49 | 3 | |\n| 25-34 | 1 | |\n| 12-24 | 0 | |\n| 10-11 | 1 | |\n| 6-9 | 2 | |\n| ≤5 | 4 | |\n| Saturation périphérique en oxygène | <75% | 4 |\n| 75-85% | 3 | |\n| 86-89% | 1 | |\n| >89% | 0 | |\n| Score de Glasgow | <5 | 4 |\n| 5-7 | 3 | |\n| 8-10 | 2 | |\n| 11-13 | 1 | |\n| >13 | 0 | |",
+  "how_to_use": {
+    "why": "- Peut ne pas apporter plus que l'intuition clinique, mais peut être utile en situation préhospitalière pour déterminer si un patient pourrait bénéficier d'un accès rapide aux services de soins avancés (advanced life support).\n- Supérieur ([Olsson 2004](https://www.ncbi.nlm.nih.gov/pubmed/15078500)) au Rapid Acute Physiology Score (RAPS) ([Rhee 1987](https://www.ncbi.nlm.nih.gov/pubmed/3593492)) et non inférieur au [APACHE II](nabda:calc.apache-ii-score) ([Olsson 2003](https://www.ncbi.nlm.nih.gov/pubmed/14525735)).\n- Calculé avec des valeurs obtenues en dehors de l'hôpital, ou à l'hôpital sans bilan biologique.\n- Aide à orienter l'intensité du traitement avec des paramètres recueillis de façon systématique en contexte préhospitalier.",
+    "when": "- Patients critiques, chez qui la prédiction de la mortalité hospitalière peut aider à orienter les modalités thérapeutiques.\n- Non validé chez les patients pédiatriques.",
+    "pearls": "Non validé chez les patients pédiatriques."
+  },
+  "next_steps": {
+    "advice": "Risque élevé (REMS ≥3) : le patient peut nécessiter un traitement agressif.\n\nRisque faible (REMS <3) : le patient peut être orienté de façon appropriée vers une prise en charge ambulatoire/standard (dans [Olsson 2004](https://www.ncbi.nlm.nih.gov/pubmed/15078500), tous les patients avec un REMS <3 ont survécu).",
+    "critical_actions": "",
+    "management": "- La mortalité augmente rapidement au-delà d'un score de 10. Envisager un traitement plus agressif chez les patients avec des scores plus élevés (en tenant compte des souhaits du patient et du jugement clinique).\n- Le jugement clinique sur l'état du patient doit toujours être utilisé pour déterminer le besoin d'interventions avancées."
+  },
+  "evidence": "- Le REMS s'est avéré supérieur au Rapid Acute Physiology Score (RAPS) pour prédire la mortalité hospitalière, tanto chez les patients critiques admis en soins intensifs que dans l'échantillon total (AUC 0,910 ± 0,015 pour le REMS contre 0,872 ± 0,022 pour le RAPS, p <0,001, [Olsson 2004](https://www.ncbi.nlm.nih.gov/pubmed/15078500)).\n- [Imhoff et al (2014)](https://bmjopen.bmj.com/content/4/5/e004738) ont validé le REMS dans une étude rétrospective et ont constaté qu'une augmentation de 1 point sur l'échelle REMS de 26 points était associée à un odds ratio de 1,40 pour le décès hospitalier (IC à 95 % = 1,36-1,45, p <0,0001).\n- [Olsson et al (2003)](https://www.ncbi.nlm.nih.gov/pubmed/14525735) ont constaté que le [APACHE II](nabda:calc.apache-ii-score), plus élaboré, n'était pas supérieur au REMS (AUC 0,901 ± 0,015, p = 0,218).",
+  "more_info": "Interprétation :\n\n| REMS | Mortalité hospitalière |\n| --- | --- |\n| 0-2 | 0% |\n| 3-5 | 1% |\n| 6-9 | 3% |\n| 10-11 | 4% |\n| 12-13 | 10% |\n| 14-15 | 17% |\n| 16-17 | 38% |\n| 18-19 | 75% |\n| 20-21 | 56% |\n| 22-23 | 66% |\n| 24-26 | 100% |\n\nÀ noter que <0,3 % des patients avaient un score >19, ce qui pourrait expliquer la baisse apparente paradoxale des événements entre les scores de 19 et les scores >19.",
+  "short_description": "Dans-hôpital mortalité dans emergency patients.",
+  "medium_description": "Predicts dans-hôpital mortalité dans nonsurgical adulte patients presenting pour ED.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 45",
+          "value": 0
+        },
+        {
+          "label": "45-54",
+          "value": 2
+        },
+        {
+          "label": "55-64",
+          "value": 3
+        },
+        {
+          "label": "65-74",
+          "value": 5
+        },
+        {
+          "label": ">74",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "map",
+      "label": "Pression artérielle moyenne, mmHg",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">159",
+          "value": 4
+        },
+        {
+          "label": "130-159",
+          "value": 3
+        },
+        {
+          "label": "110-129",
+          "value": 2
+        },
+        {
+          "label": "70-109",
+          "value": 0
+        },
+        {
+          "label": "50-69",
+          "value": 2
+        },
+        {
+          "label": "≤49",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hr",
+      "label": "Fréquence cardiaque, beats per minute",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">179",
+          "value": 4
+        },
+        {
+          "label": "140-179",
+          "value": 3
+        },
+        {
+          "label": "110-139",
+          "value": 2
+        },
+        {
+          "label": "70-109",
+          "value": 0
+        },
+        {
+          "label": "55-69",
+          "value": 2
+        },
+        {
+          "label": "40-54",
+          "value": 3
+        },
+        {
+          "label": "≤39",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Fréquence respiratoire, breaths per minute",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">49",
+          "value": 4
+        },
+        {
+          "label": "35-49",
+          "value": 3
+        },
+        {
+          "label": "25-34",
+          "value": 1
+        },
+        {
+          "label": "12-24",
+          "value": 0
+        },
+        {
+          "label": "10-11",
+          "value": 1
+        },
+        {
+          "label": "6-9",
+          "value": 2
+        },
+        {
+          "label": "≤5",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "o2",
+      "label": "Saturation périphérique en oxygène",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 75%",
+          "value": 4
+        },
+        {
+          "label": "75-85%",
+          "value": 3
+        },
+        {
+          "label": "86-89%",
+          "value": 1
+        },
+        {
+          "label": ">89%",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gcs",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "default": 4,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 5",
+          "value": 4
+        },
+        {
+          "label": "5-7",
+          "value": 3
+        },
+        {
+          "label": "8-10",
+          "value": 2
+        },
+        {
+          "label": "11-13",
+          "value": 1
+        },
+        {
+          "label": ">13",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Olsson T, Terent A, Lind L. Rapid Emergency Medicine score: a new prognostic tool for in-hospital mortality in nonsurgical emergency department patients. J Intern Med. 2004;255(5):579-87.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15078500",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Rhee KJ, Fisher CJ, Willitis NH. The Rapid Acute Physiology Score. Am J Emerg Med. 1987;5(4):278-82.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3593492",
+      "kind": "other"
+    },
+    {
+      "text": "Olsson T, Lind L. Comparison of the rapid emergency medicine score and APACHE II in nonsurgical emergency department patients. Acad Emerg Med. 2003;10(10):1040-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14525735",
+      "kind": "other"
+    },
+    {
+      "text": "Imhoff BF, Thompson NJ, Hastings MA, et al. Rapid Emergency Medicine Score (REMS) in the trauma population: a retrospective study. BMJ Open 2014;4:e004738.",
+      "href": "https://bmjopen.bmj.com/content/4/5/e004738",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.simplified-acute-physiology-score-saps-3",
+    "calc.simplified-acute-physiology-score-saps-ii",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "2434461fb5629a107d74ff7206684bb9",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apache-ii-score",
+      "text": "APACHE II"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10145,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

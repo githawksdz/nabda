@@ -1,0 +1,289 @@
+{
+  "id": "calc.ransons-criteria-pancreatitis-mortality",
+  "slug": "ransons-criteria-pancreatitis-mortality",
+  "language": "en",
+  "title": "Critères de Ranson pour la mortalité de la pancréatite",
+  "short_title": "Critères de Ranson",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pancréatite"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Vomissements"
+  ],
+  "abbreviations": [
+    "ransons",
+    "pancreatitis"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "",
+    "when": "Calculated on admission, and at 48 hours, to estimate mortality from pancreatitis.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "Aide à déterminer l’orientation du patient, un score plus élevé correspondant à un niveau de soins plus élevé."
+  },
+  "evidence": "",
+  "more_info": "Ranson's Criteria was developed in the 1970s to address pancreatitis mortality; however, it may over-estimate mortality given its study and development 30-40 years ago. The [BISAP Score](nabda:calc.bisap-score-pancreatitis-mortality) requires fewer patient variables and is likely just as accurate -- if not more so -- than Ranson's criteria for predicting adverse outcome in patients with acute pancreatitis.",
+  "short_description": "Mortalité dans la pancréatite.",
+  "medium_description": "Estimates mortalité de patients avec pancreatitis, basé sur initial et 48-hour lab values.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "wbc_16k",
+      "label": "GB > 16 000/mm³",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age_55",
+      "label": "Âge > 55 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "glucose_200",
+      "label": "Glycémie > 200 mg/dL (> 11,1 mmol/L)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ast_250",
+      "label": "AST >250",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ldh_350",
+      "label": "LDH >350",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "hct_10",
+      "label": "Baisse du Hct > 10 % depuis l'admission",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bun_5",
+      "label": "Augmentation de l'azote uréique sanguin (BUN) > 5 mg/dL (> 1.79 mmol/L) par rapport à l'admission",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "ca_8",
+      "label": "Ca <8 mg/dL (<2 mmol/L) dans les 48 heures",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "po2_60",
+      "label": "pO2 artérielle <60 mmHg dans les 48 heures",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "base_deficit_4",
+      "label": "Déficit de base (24 - HCO3) >4 mg/dL dans les 48 heures",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fluid_needs_6",
+      "label": "Besoins hydriques >6 L en 48 heures",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Ranson JH, Rifkind KM, Roses DF, Fink SD, Eng K, Spencer FC. Prognostic signs and the role of operative management in acute pancreatitis. Surg Gynecol Obstet. 1974 Jul;139(1):69-81. PubMed PMID: 4834279.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4834279",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bisap-score-pancreatitis-mortality",
+    "calc.harmless-acute-pancreatitis-score-haps",
+    "calc.glasgow-imrie-criteria-severity-acute-pancreatitis"
+  ],
+  "source_logic_hash": "d3e2d48f7bada0103369913242b267f3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 89,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar u = parseFloat(wbc_16k) + parseFloat(age_55) + parseFloat(glucose_200) + parseFloat(ast_250) + parseFloat(ldh_350);\nvar v = u + parseFloat(hct_10) + parseFloat(bun_5) + parseFloat(ca_8) + parseFloat(po2_60) + parseFloat(base_deficit_4) + parseFloat(fluid_needs_6);\nvar msg = '';\nvar txt = '';\nif (u < 3) { txt = 'Severe pancreatitis unlikely.'; }\nif (u == 3 || u == 4) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (u == 5 || u == 6) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (u > 6) { txt = 'Severe pancreatitis likely. Consider ICU admission.'; }\nif (v < 3) { msg = '1% predicted mortality.'; }\nif (v == 3 || v == 4) { msg = '15% predicted mortality.'; }\nif (v == 5 || v == 6) { msg = '40% predicted mortality.' }\nif (v > 6) { msg = '100% predicted mortality.'; }\n\ncalc_output.push({ \n    name: 'mini', \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: msg \n});\ncalc_output.push({\n    name: \"89_Ranson's Criteria_result (admission)\", \n    value: u.toFixed(0), \n    value_text: 'points', \n    message: \"Ranson's Criteria (On Admission)<br/><br/>\" + txt \n});\ncalc_output.push({ \n    name: \"89_Ranson's Criteria_result (cumulative)\", \n    value: v.toFixed(0), \n    value_text: 'points', \n    message: \"Ranson's Criteria (Cumulative)<br/><br/>\" + msg \n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. John H.C. Ranson"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "d703e35b73abe74b78137b9e0247ea84b4ed406977cfc4fb1d3e408e020849ea"
+}

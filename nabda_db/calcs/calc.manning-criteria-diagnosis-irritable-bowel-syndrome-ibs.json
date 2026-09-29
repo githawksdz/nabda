@@ -1,0 +1,313 @@
+{
+  "id": "calc.manning-criteria-diagnosis-irritable-bowel-syndrome-ibs",
+  "slug": "manning-criteria-diagnosis-irritable-bowel-syndrome-ibs",
+  "language": "en",
+  "title": "Manning critères pour diagnostic de Irritable Bowel syndrome (IBS)",
+  "short_title": "Manning critères",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Anxiety",
+    "Syndrome de l'intestin irritable"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Anxious",
+    "Constipation",
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "dx",
+    "ibs",
+    "red",
+    "flag",
+    "ibs",
+    "diarrhea"
+  ],
+  "dosing": false,
+  "formula": "Ajout d’un critère positif.\n\n- Apparition de la douleur associée à des selles plus fréquentes\n- Selles plus molles associées à l’apparition de la douleur\n- Douleur soulagée par l’émission de selles\n- Ballonnement abdominal notable\n- Sensation d’évacuation incomplète plus de 25 % du temps\n- Diarrhée avec mucus plus de 25 % du temps",
+  "how_to_use": {
+    "why": "Les symptômes qui définissent l’IBS sont subjectifs et auto-déclarés, ce qui rend utile un système de classification diagnostique. De plus, des données probantes étayent l’idée que les patients satisfaisant aux critères peuvent être plus susceptibles de répondre à certaines thérapies.",
+    "when": "Patients en cours d’évaluation pour un possible IBS.",
+    "pearls": "- The Manning Criteria were developed through patient survey and follow-up.\n- They differentiate patients with organic and non-IBS conditions.\n\n**Points to keep in mind:**\n\n- Studies have found highly variable diagnostic performance of the criteria."
+  },
+  "next_steps": {
+    "advice": "Les critères de Manning ont été élaborés pour aider à prédire quels patients seront diagnostiqués avec un SII, c’est-à-dire chez lesquels aucune maladie organique ne sera identifiée après un bilan complet. Dans un contexte où les ressources de bilan sont limitées, ou prennent un temps excessif, ces critères peuvent être particulièrement utiles.",
+    "critical_actions": "IBS is a ‘rule-out’ diagnosis, which is to say all other possibilities must be ruled out first.",
+    "management": "Nous n'avons pas connaissance d'algorithmes de prise en charge validés utilisant le Manning Criteria."
+  },
+  "evidence": "",
+  "more_info": "En l’absence de signes d’alarme, un patient présente probablement un syndrome de l’intestin irritable (IBS) lorsque au moins 3 des 6 critères sont remplis, avec une sensibilité de 63-90 % et une spécificité de 70-93 %.",
+  "short_description": "IBS diagnostic critères.",
+  "medium_description": "Determines likelihood de irritable bowel syndrome diagnostic basé sur clinically significant critères.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "freq",
+      "label": "Onset de douleur linked pour more frequent bowel movements",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loose",
+      "label": "Looser stools associé avec onset de douleur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "painrel",
+      "label": "Douleur soulagée par l’émission de selles",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bloat",
+      "label": "Ballonnement abdominal perceptible",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "evac",
+      "label": "Sensation d'évacuation incomplète > 25 % du temps",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "diarrhea",
+      "label": "Diarrhea avec mucus > 25% de time",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge > 50 years",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "weight",
+      "label": "Perte de poids",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "blood",
+      "label": "Blood dans stools",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "anemia",
+      "label": "Anemia",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fever",
+      "label": "Fièvre",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Manning AP, Thompson WG, Heaton KW, Morris AF (1978). 'Towards positive diagnosis of the irritable bowel.'. Br Med J 2 (6138): 653–4.doi:10.1136/bmj.2.6138.653. PMC 1607467. PMID 698649.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/698649",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Validation of the Rome III criteria for the diagnosis of irritable bowel syndrome in secondary care.'. Gastroenterology. 145: 1262–70.e1. Dec 2013.doi:10.1053/j.gastro.2013.08.048. PMID 23994201",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23994201",
+      "kind": "other"
+    },
+    {
+      "text": "Fass R, Longstreth GF, Pimentel M et al. (2001). 'Evidence- and consensus-based practice guidelines for the diagnosis of irritable bowel syndrome'. Arch. Intern. Med. 161(17): 2081–8. doi:10.1001/archinte.161.17.2081. PMID 11570936.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11570936",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs",
+    "calc.rome-ii-diagnostic-criteria-irritable-bowel-syndrome-ibs",
+    "calc.rome-iii-diagnostic-criteria-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "859d1e5fc13d6ed7b78ce638cd31cb65",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3167,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

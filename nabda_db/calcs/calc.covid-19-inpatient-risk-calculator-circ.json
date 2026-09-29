@@ -1,0 +1,372 @@
+{
+  "id": "calc.covid-19-inpatient-risk-calculator-circ",
+  "slug": "covid-19-inpatient-risk-calculator-circ",
+  "language": "en",
+  "title": "COVID-19 hospitalisé risque calculateur (CIRC)",
+  "short_title": "CIRC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "COVID Inpatient Risk Calculator, COVID, coronavirus, covid mortality, covid death, covid progression, covid-19, coronavirus mortality, coronavirus progression, covid death risk, covid death, covid mortality risk, covid progression risk"
+  ],
+  "dosing": false,
+  "formula": "**FORMULA**\n\nRisk is calculated using the cumulative incidence of Cox proportional hazard regression models from[Garibaldi 2020](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7530643/).\n\n**Charlson Comorbidity Index**\n\nAddition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Myocardial infarction | Yes | 1 |\n| No | 0 | |\n| Congestive heart failure | Yes | 1 |\n| No | 0 | |\n| Peripheral vascular disease | Yes | 1 |\n| No | 0 | |\n| Cerebrovascular disease | Yes | 1 |\n| No | 0 | |\n| Dementia | Yes | 1 |\n| No | 0 | |\n| Chronic pulmonary disease | Yes | 1 |\n| No | 0 | |\n| Rheumatologic disease | Yes | 1 |\n| No | 0 | |\n| Peptic ulcer disease | Yes | 1 |\n| No | 0 | |\n| Liver disease | Moderate or severe liver disease | 3 |\n| Mild liver disease | 1 | |\n| No | 0 | |\n| Diabetes | Diabetes with chronic complications | 2 |\n| Diabetes without chronic complications | 1 | |\n| No | 0 | |\n| Hemiplegia or paraplegia | Yes | 2 |\n| No | 0 | |\n| Renal disease | Yes | 2 |\n| No | 0 | |\n| Malignancy | Metastatic solid tumor | 6 |\n| Any malignancy, including leukemia and lymphoma | 2 | |\n| No | 0 | |\n| AIDS/HIV | Yes | 6 |\n| No | 0 | |",
+  "how_to_use": {
+    "why": "- Aide à identifier les patients présentant un risque plus élevé de maladie grave ou de décès, ce qui facilite les décisions d'admission en soins intensifs, de surveillance rapprochée et d'escalade des soins.\n- Aide à la répartition des ressources (p. ex., utilisation des lits de soins intensifs), en particulier lors des pics d'affluence ou lorsque la capacité hospitalière est sous tension.",
+    "when": "Utilisation chez les patients hospitalisés atteints de COVID-19 pour évaluer leur risque de détérioration clinique, en particulier au cours des premières 24–48 heures suivant l’admission, afin de guider la prise en charge et la surveillance.",
+    "pearls": "- Predicts outcomes at 2, 4, and 7 days of hospitalization, performing best in the first 2 days for assessing progression to severe disease or death.\n- Performance may vary with new COVID-19 variants and evolving treatment protocols.\n- Developed from 832 patients admitted to 5 hospitals in a single health care system in Maryland and Washington, D.C., from March to April of 2020.\n- Patients younger than 18 years of age were excluded from analysis.\n- 1 in 5 patients had DNR/DNI orders, potentially influencing treatment practices and mortality rates."
+  },
+  "next_steps": {
+    "advice": "- This tool should not be used in isolation—clinical judgment remains essential.\n- Escalate care for high-risk patients (e.g., early ICU consult, closer monitoring) or consider de-escalation for low-risk patients when clinically appropriate.\n- Results can be used to guide goals of care discussions with patients and families.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Hospitalisé COVID mortalité ou severe maladie progression.",
+  "medium_description": "Predicts likelihood de hospitalisé mortalité ou severe maladie progression dans COVID patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 1
+        },
+        {
+          "label": "Femme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "non_white",
+      "label": "White",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nursing_home_admit",
+      "label": "Admission depuis un établissement d'hébergement pour personnes âgées dépendantes (EHPAD)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "troponin_observed",
+      "label": "Troponine observée",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hemoglobin",
+      "label": "Hemoglobin",
+      "optional": false,
+      "unit": "hemoglobin",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "respiratory_rate",
+      "label": "Fréquence respiratoire",
+      "optional": false,
+      "unit": "rr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "BMI",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "respiratory",
+      "label": "Symptômes respiratoires présents",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gi",
+      "label": "Symptômes gastro-intestinaux présents",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "constitutional",
+      "label": "Symptômes généraux présents",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "losstastesmell",
+      "label": "Perte du goût ou de l'odorat",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "gfr",
+      "label": "Débit de filtration glomérulaire",
+      "optional": false,
+      "unit": "glomerular_filtration",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "d_dimer_above_1",
+      "label": "D-dimer",
+      "optional": false,
+      "unit": "ddimer_circ",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "fever",
+      "label": "Température > 100,4 °F (38,0 °C) dans les 24 heures suivant l'admission",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "pulse",
+      "label": "Pulse",
+      "optional": false,
+      "unit": "pulse",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "wbc",
+      "label": "Numération des globules blancs",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "Alanine aminotransférase",
+      "optional": false,
+      "unit": "alanine_aminotransferase",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "crp",
+      "label": "Protéine C-réactive",
+      "optional": false,
+      "unit": "creactive",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alc",
+      "label": "Numération lymphocytaire absolue",
+      "optional": false,
+      "unit": "wbc",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ferritin",
+      "label": "Ferritin",
+      "optional": false,
+      "unit": "ferritin",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "charlson_score",
+      "label": "[Score de Charlson](nabda:calc.charlson-comorbidity-index-cci)",
+      "tips": "Voir[Preuves](#evidence)",
+      "optional": false,
+      "unit": "charlson_circ",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Garibaldi BT, Fiksel J, Muschelli J, et al. Patient trajectories among persons hospitalized for covid-19 : a cohort study. Ann Intern Med. Published online September 22, 2020.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32960645/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Charlson M, Szatrowski TP, Peterson J, Gold J. Validation of a combined comorbidity index. J Clin Epidemiol. 1994;47(11):1245-1251.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/7722560/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+    "calc.veterans-health-administration-covid-19-vaco-index-covid-19-mortality",
+    "calc.covid-risk"
+  ],
+  "source_logic_hash": "d41d8cd98f00b204e9800998ecf8427e",
+  "logic_language": "r",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10371,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

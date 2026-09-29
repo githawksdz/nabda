@@ -1,0 +1,240 @@
+{
+  "id": "calc.wexner-score-obstructed-defecation-syndrome-ods",
+  "slug": "wexner-score-obstructed-defecation-syndrome-ods",
+  "language": "en",
+  "title": "Échelle de classification de la continence de Wexner",
+  "short_title": "Échelle de Wexner",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Incontinence fécale"
+  ],
+  "chief_complaints": [
+    "Constipation",
+    "Diarrhée"
+  ],
+  "abbreviations": [
+    "Wexner score",
+    "fecal incontinence",
+    "wexner scale",
+    "cleveland clinic incontinence scale"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Type of incontinence | Frequency | Points |\n| --- | --- | --- |\n| Incontinence to solid stool | Never | 0 |\n| Less than once a month | 1 | |\n| Less than once a week but at least once a month | 2 | |\n| Less than once a day but at least once a week | 3 | |\n| At least once a day | 4 | |\n| Incontinence to liquid stool | Never | 0 |\n| Less than once a month | 1 | |\n| Less than once a week but at least once a month | 2 | |\n| Less than once a day but at least once a week | 3 | |\n| At least once a day | 4 | |\n| Incontinence to gas | Never | 0 |\n| Less than once a month | 1 | |\n| Less than once a week but at least once a month | 2 | |\n| Less than once a day but at least once a week | 3 | |\n| At least once a day | 4 | |\n| Wears pad | Never | 0 |\n| Less than once a month | 1 | |\n| Less than once a week but at least once a month | 2 | |\n| Less than once a day but at least once a week | 3 | |\n| At least once a day | 4 | |\n| Lifestyle alteration* | Never | 0 |\n| Less than once a month | 1 | |\n| Less than once a week but at least once a month | 2 | |\n| Less than once a day but at least once a week | 3 | |\n| At least once a day | 4 | |\n\n*Defined in the original study only as \"the extent to which it alters the patient's life\".",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Does not account for fecal urgency.\n- Easily understood by patients."
+  },
+  "next_steps": {
+    "advice": "Un interrogatoire ciblé doit être réalisé chez tout patient présentant une incontinence, quel qu'en soit le degré.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nLes scores vont de 0 à 20, 0 indiquant une continence parfaite et 20 une incontinence complète.",
+  "short_description": "Gravité de l'incontinence fécale.",
+  "medium_description": "Stratifie la gravité de l’incontinence fécale.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "solid",
+      "label": "Incontinence pour les selles solides",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Less than once week but at least once month",
+          "value": 2
+        },
+        {
+          "label": "Less than once day but at least once week",
+          "value": 3
+        },
+        {
+          "label": "Au moins une fois par jour",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "liquid",
+      "label": "Incontinence pour les selles liquides",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Less than once week but at least once month",
+          "value": 2
+        },
+        {
+          "label": "Less than once day but at least once week",
+          "value": 3
+        },
+        {
+          "label": "Au moins une fois par jour",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gas",
+      "label": "Incontinence aux gaz",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Less than once week but at least once month",
+          "value": 2
+        },
+        {
+          "label": "Less than once day but at least once week",
+          "value": 3
+        },
+        {
+          "label": "Au moins une fois par jour",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pad",
+      "label": "Porte une protection",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Less than once week but at least once month",
+          "value": 2
+        },
+        {
+          "label": "Less than once day but at least once week",
+          "value": 3
+        },
+        {
+          "label": "Au moins une fois par jour",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alt",
+      "label": "Modification du mode de vie",
+      "tips": "Défini dans l’étude originale uniquement comme « la mesure dans laquelle cela modifie la vie du patient »",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jamais",
+          "value": 0
+        },
+        {
+          "label": "Moins d’une fois par mois",
+          "value": 1
+        },
+        {
+          "label": "Less than once week but at least once month",
+          "value": 2
+        },
+        {
+          "label": "Less than once day but at least once week",
+          "value": 3
+        },
+        {
+          "label": "Au moins une fois par jour",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Jorge JM, Wexner SD. Etiology and management of fecal incontinence. Dis Colon Rectum. 1993;36(1):77-97.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8416784",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Vaizey CJ, Carapeti E, Cahill JA, Kamm MA. Prospective comparison of faecal incontinence grading systems. Gut. 1999;44(1):77-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9862829",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.bristol-stool-form-scale",
+    "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs",
+    "calc.rome-iv-diagnostic-criteria-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "c1515f51c663ecc8682e95cf7bbb9271",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10064,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar solid = parseFloat(solid)\nvar liquid = parseFloat(liquid)\nvar gas = parseFloat(gas)\nvar pad = parseFloat(pad)\nvar alt = parseFloat(alt)\n\nvar score = solid + liquid + gas + pad + alt\n\n//results\ncalc_output.push({\n    name: 'mini',\n    value: score,\n    value_text: 'points',\n    message:\" \"\n});\ncalc_output.push({\n    name: '10064_Wexner Score_result',\n    value: score,\n    value_text: 'points',\n    message: \"Scale Total <br><br> As total increases, incontinence symptom severity increases.\"\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Steven D. Wexner"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "7c14c289708244c83cee4f9fffa5f620ec6bd6252bbfcf89853d76be310f9e13"
+}

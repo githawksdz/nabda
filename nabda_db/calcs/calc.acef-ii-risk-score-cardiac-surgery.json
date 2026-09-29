@@ -1,0 +1,162 @@
+{
+  "id": "calc.acef-ii-risk-score-cardiac-surgery",
+  "slug": "acef-ii-risk-score-cardiac-surgery",
+  "language": "en",
+  "title": "ACEF II risque score pour Cardiac Surgery",
+  "short_title": "Score de risque ACEF II",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Endocarditis",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "ACEF II risk score",
+    "acef 2",
+    "acef score",
+    "cardiac surgery risk score",
+    "ACEF risk score",
+    "ACEF"
+  ],
+  "dosing": false,
+  "formula": "ACEF II = (A / EF) + C + Em + Hct, où les variables sont les suivantes :\n\n| Variable | Notes | |\n| --- | --- | --- |\n| A | Âge, années | -- |\n| EF | Fraction d'éjection ventriculaire gauche, % | Lors de l'évaluation la plus récente |\n| C | Créatinine sérique, 2 points si >2.0 mg/dL (177 µmol/L) ; 0 si ≤2.0 mg/dL | Dernière valeur enregistrée avant la chirurgie |\n| Em | Chirurgie en urgence, 3 points si oui ; 0 si non | Urgence = opération requise avant le début du jour ouvrable suivant après la décision d'opérer |\n| Hct | 0.2 x (36 - hématocrite) ; 0 si hématocrite ≥36 % | Dernière valeur enregistrée avant la chirurgie |",
+  "how_to_use": {
+    "why": "- Fournit une estimation rapide et validée du risque de mortalité opératoire à 30 jours.\n- Aide à faciliter la décision partagée entre les cliniciens et les patients en clarifiant les profils de risque.",
+    "when": "À utiliser lors de l'évaluation préopératoire du risque chez les patients bénéficiant d'une chirurgie cardiaque programmée, urgente ou en urgence.",
+    "pearls": "- Cet outil est basé sur la version actualisée de 2018 du score original Age, Creatinine, and Ejection Fraction (ACEF), qui inclut désormais la chirurgie en urgence, l'anémie et des coefficients remodulés.\n- Contrairement aux autres outils généraux d'évaluation préopératoire du risque, ce calculateur est dérivé spécifiquement d'une population de patients ayant bénéficié d'une chirurgie cardiaque.\n- Ne tient pas compte de tous les facteurs de risque potentiels, tels que la fragilité, une maladie pulmonaire ou les risques détaillés liés à la procédure, et peut sous-estimer le risque chez les patients présentant d'autres comorbidités significatives.\n- À utiliser de préférence en association avec le jugement clinique et d'autres outils d'évaluation du risque pour une évaluation complète."
+  },
+  "next_steps": {
+    "advice": "- Discuter du risque calculé avec le patient et l'équipe chirurgicale afin d'aligner les attentes et de prendre des décisions éclairées.\n- Prioriser l'optimisation périopératoire, comme l'amélioration de la fonction rénale ou la prise en charge des facteurs de risque cardiaque modifiables.\n- Intégrer le score dans une prise de décision multidisciplinaire plus large, en particulier pour les patients à haut risque ou ceux nécessitant des procédures complexes.\n- Cet outil ne doit pas être la seule mesure du risque périopératoire. Tenir compte de l'implication d'autres variables cliniques et comorbidités (par ex., fonction pulmonaire de base, atteinte hépatique).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation :**\n\nMortalité opératoire prédite à 30 jours = e^x^/ (1 + e^x^)\n\noù x = -4.86 + 0.75 x ACEF II",
+  "short_description": "Cardiac surgery mortalité.",
+  "medium_description": "Predicts 30-day mortalité after elective ou emergency cardiac surgery.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ef",
+      "label": "Fraction d'éjection",
+      "tips": "Lors de l'évaluation la plus récente",
+      "optional": false,
+      "unit": "neut",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "creat",
+      "label": "Creatinine",
+      "tips": "Dernière valeur enregistrée avant la chirurgie",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤2.0 mg/dL (177 µmol/L)",
+          "value": 0
+        },
+        {
+          "label": ">2.0 mg/dL (177 µmol/L)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "emsurg",
+      "label": "Chirurgie d’urgence",
+      "tips": "Urgence = opération requise avant le début du jour ouvrable suivant après la décision d'opérer",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hematocrit",
+      "label": "Hematocrit",
+      "tips": "Dernière valeur enregistrée avant la chirurgie",
+      "optional": false,
+      "unit": "hct",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Ranucci M, Pistuddi V, Scolletta S, De vincentiis C, Menicanti L. The ACEF II Risk Score for cardiac surgery: updated but still parsimonious. Eur Heart J. 2018;39(23):2183-2189.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28498904  ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Barili F, Pacini D, Rosato F, et al. In-hospital mortality risk assessment in elective and non-elective cardiac surgery: a comparison between EuroSCORE II and age, creatinine, ejection fraction score. Eur J Cardiothorac Surg. 2014;46(1):44-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24401691 ",
+      "kind": "other"
+    },
+    {
+      "text": "Borracci RA, Rubio M, Baldi J, Ingino CA, Barisani JL. Validation of age, creatinine and ejection fraction (ACEF) and Cockcroft-Gault ACEF scores in elective cardiac surgery. Medicina (B Aires). 2017;77(4):297-303.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28825573 ",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.score2-diabetes"
+  ],
+  "source_logic_hash": "f8d7e066f6afaa86e2f547207a9adc6b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10075,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,123 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-belching-disorders",
+  "slug": "rome-iv-diagnostic-criteria-belching-disorders",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Belching Disorders",
+  "short_title": "Rome IV pour Belching Disorders",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles gastroduodénaux",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Belching"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Belching Disorders, Rome IV for Belching Disorders, Rome IV belching, belching disorders, belching, belching rome, belching rome iv, rome iv for belching, rome belching, rome iv belching, rome for belching, rome 4 belching, rome 4 for belching, rome iv criteria, rome 4 criteria, belching disorder diagnosis, belching disorders diagnosis"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV des troubles de l'éructation,* le patient doit présenter les éléments suivants (durant les 3 mois précédents, avec début des symptômes ≥6 mois auparavant) :\n\n1. Éructations supragastriques excessives : éructations gênantes (c.-à-d. suffisamment sévères pour retentir sur les activités habituelles) provenant de **l'œsophage** plus de 3 jours par semaine.\n2. Éructations gastriques excessives : éructations gênantes (c.-à-d. suffisamment sévères pour retentir sur les activités habituelles) provenant de **l'estomac** plus de 3 jours par semaine.\n\n*Note :\n\n1. L'éructation supragastrique est confirmée par l'observation d'éructations fréquentes et répétitives.\n2. L'éructation gastrique ne dispose pas de corrélé clinique établi.\n3. La mesure objective de l'impédance intraluminale peut être utilisée pour distinguer les éructations supragastriques des éructations gastriques.",
+  "how_to_use": {
+    "why": "- Aide à poser un diagnostic de trouble de l'éructation.\n- Aide à distinguer les symptômes d'autres troubles fréquents, comme le RGO.\n- Aide à guider la prise en charge d'un trouble de l'éructation en fonction du sous-type (éructations supragastriques vs éructations gastriques).",
+    "when": "Patients présentant des symptômes digestifs hauts récurrents évocateurs d'un trouble de l'éructation depuis au moins les 6 derniers mois. Le diagnostic de trouble de l'éructation doit être posé par l'anamnèse et l'examen clinique.",
+    "pearls": "- L'éructation est une manifestation fréquente du reflux gastro-œsophagien (RGO).\n- Il existe deux sous-types de troubles de l'éructation : l'éructation supragastrique, caractérisée par un flux d'air antérograde et rétrograde rapide dans l'œsophage, sans atteinte de l'estomac, et l'éructation gastrique, dans laquelle l'air provient de l'estomac et remonte de façon rétrograde par le biais d'un relâchement transitoire du sphincter œsophagien inférieur (SOI).\n- L'observation d'une déglutition d'air à l'examen clinique est en faveur d'un trouble de l'éructation. Lorsqu'on demande au patient de mordre un crayon ou un stylo, l'éructation cesse.\n- La manométrie/impédancemétrie œsophagienne peut aider au diagnostic d'un trouble de l'éructation et permettre de distinguer les éructations supragastriques des éructations gastriques."
+  },
+  "next_steps": {
+    "advice": "**Si les critères diagnostiques ne sont pas remplis (négatif) :**\n\nIl est peu probable que les symptômes soient causés par un trouble de l'éructation. Envisager une évaluation complémentaire pour d'autres maladies, ou un autre trouble fonctionnel digestif.\n\n**Si le diagnostic est rempli (positif) :**\n\nLes symptômes sont vraisemblablement dus à un trouble de l'éructation. Apporter réassurance et explication des symptômes au patient.",
+    "critical_actions": "- Ce calculateur ne doit être utilisé chez les patients qu'après exclusion appropriée, par une enquête approfondie, des causes organiques, systémiques et métaboliques.\n- Note : d'autres troubles digestifs, comme le RGO, peuvent coexister avec les troubles de l'éructation.",
+    "management": "La prise en charge des troubles de l'éructation doit être basée sur la sous-catégorisation.\n\nPour l'éructation supragastrique :\n\n- Orthophonie (rééducation).\n- Respiration diaphragmatique.\n- Thérapie comportementale (p. ex. thérapie cognitivo-comportementale, hypnose).\n\nPour l'éructation gastrique :\n\n- Éviction des boissons carbonatées.\n- Orthophonie (rééducation).\n- Respiration diaphragmatique.\n- Siméticone.\n- Baclofène."
+  },
+  "evidence": "The Rome criteria were initially developed as a way to classify and diagnose the various disorders of gut brain interaction (DGBI) such as functional dyspepsia, functional constipation, and irritable bowel syndrome (IBS) based primarily on symptoms. Changes in the Rome IV criteria for belching disorders include:\n\n1. Aerophagia is considered a historical term, because not all cases with belching arise from swallowing air\n\nThe development of the Rome IV questionnaires began with a survey of 1,162 adults without gastrointestinal disorders to determine the frequency in the US general population of various gastrointestinal symptoms. The 90^th^percentile of symptom frequency was used to define what was considered an abnormal frequency of symptoms. Based on this, diagnostic questionnaires were created and reviewed by clinical experts.",
+  "more_info": "",
+  "short_description": "Éructations supragastriques ou gastriques.",
+  "medium_description": "Official Rome IV critères pour diagnostic de excessive supragastric ou gastric belching.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Bothersome (i.e., severe enough pour impact sur usual activities) belching **de esophagus** more than 3 days week",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Bothersome (i.e., severe enough pour impact sur usual activities) belching **de stomach** more than 3 days week",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Stanghellini V, Chan FK, Hasler WL, et al. Gastroduodenal Disorders. Gastroenterology. 2016;150(6):1380-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27147122",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Carbone F, Vanuytsel T, Tack J. Analysis of Postprandial Symptom Patterns in Subgroups of Patients With Rome III or Rome IV Functional Dyspepsia. Clin Gastroenterol Hepatol. 2020;18(4):838-846.e3.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/31394286",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-functional-defecation-disorders",
+    "calc.rome-iv-diagnosis-criteria-functional-heartburn",
+    "calc.rome-iv-diagnostic-criteria-cannabinoid-hyperemesis-syndrome-chs"
+  ],
+  "source_logic_hash": "ecf77260d6dae54c324bbad9429e7861",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10295,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,184 @@
+{
+  "id": "calc.kinetic-estimated-glomerular-filtration-rate-kegfr",
+  "slug": "kinetic-estimated-glomerular-filtration-rate-kegfr",
+  "language": "en",
+  "title": "Débit de filtration glomérulaire estimé cinétique (keGFR)",
+  "short_title": "Débit de filtration glomérulaire estimé cinétique (keGFR)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Insuffisance rénale aiguë",
+    "Insuffisance rénale"
+  ],
+  "chief_complaints": [
+    "Anuria",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Kgfr",
+    "gfr",
+    "Kinetic Glomerular Filtration Rate",
+    "creatinine",
+    "rrt",
+    "renal replacement therapy",
+    "aki",
+    "kegfr"
+  ],
+  "dosing": false,
+  "formula": "Take two serum creatinine measurements (Cr~1~and Cr~2~), at two different time points (time~1~and time~2~).\n\nKinetic GFR, mL/min = (Cr~baseline~× CrCl / Cr~mean~) × [1 – (24 × (Cr~2~– Cr~1~)) / ((time~2~– time~1~) × 1.5)]\n\nwhere variables are as follows:\n\n| Variable* | Definition |\n| --- | --- |\n| Cr baseline | Baseline creatinine, mg/dL |\n| CrCl | Initial creatinine clearance, mL/min (by [MDRD GFR equation](nabda:calc.mdrd-gfr-equation\\) ) |\n| Cr mean | Average of Cr 1 and Cr 2 |\n| time 2 - time 1 | Time between measured Cr 2 and Cr 1 , hrs |\n\n*The second portion of the equation, i.e., [1 – (24 × (Cr~2~– Cr~1~)) / ((time~2~– time~1~) × 1.5)], is a multiplier limited to 0-1.\n\nNote: formula assumes US units. For SI formula, see[O’Sullivan 2017](https://www.ncbi.nlm.nih.gov/pubmed/28396736).",
+  "how_to_use": {
+    "why": "Other equations estimating GFR ( [Cockcroft-Gault](nabda:calc.creatinine-clearance-cockcroft-gault-equation) , [MDRD](nabda:calc.mdrd-gfr-equation) ) have limited accuracy when creatinine is changing acutely.",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- While estimated GFR (by a validated equation) is adequate for most clinical scenarios, measured GFR is still considered the gold standard.\n- Remember, eGFR is an estimate of kidney function, but is not included in the definition of AKI.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\nUn KeGFR de 30 mL/min a une spécificité de 90 % (sensibilité de 71 %) pour l'AKI, selon une petite étude rétrospective ([O'Sullivan 2017](https://www.ncbi.nlm.nih.gov/pubmed/28396736)).",
+  "short_description": "Estimation du KeGFR.",
+  "medium_description": "Estimates GFR chez les patients avec acutely changing creatinine.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 1
+        },
+        {
+          "label": "Homme",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "Cr",
+      "label": "Créatinine initiale",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "Cr1",
+      "label": "Première créatinine enregistrée (Cr~1~)",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "Cr2",
+      "label": "Deuxième créatinine enregistrée (Cr~2~)",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "t",
+      "label": "Temps écoulé entre les deux mesures de créatinine",
+      "optional": false,
+      "unit": "time",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "race",
+      "label": "Race noire",
+      "tips": "La race peut ou non fournir de meilleures estimations du DFG ; facultatif",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 2
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Chen S. Retooling the creatinine clearance equation to estimate kinetic GFR when the plasma creatinine is changing acutely. J Am Soc Nephrol. 2013;24(6):877-88.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23704286",
+      "kind": "pubmed"
+    },
+    {
+      "text": "O'Sullivan ED, Doyle A. The clinical utility of kinetic glomerular filtration rate. Clin Kidney J. 2017;10(2):202-208.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28396736",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mdrd-gfr-equation",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.creatinine-clearance-cockcroft-gault-equation"
+  ],
+  "source_logic_hash": "7d06bc6243e8eb14dfeca87244a2963d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "MDRD GFR equation"
+    },
+    {
+      "type": "calc",
+      "id": "calc.creatinine-clearance-cockcroft-gault-equation",
+      "text": "Cockcroft-Gault"
+    },
+    {
+      "type": "calc",
+      "id": "calc.mdrd-gfr-equation",
+      "text": "MDRD"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10191,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

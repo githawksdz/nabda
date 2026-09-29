@@ -1,0 +1,199 @@
+{
+  "id": "calc.nonverbal-pain-scale-nvps-nonverbal-patients",
+  "slug": "nonverbal-pain-scale-nvps-nonverbal-patients",
+  "language": "en",
+  "title": "Nonverbal douleur échelle (NVPS) pour Nonverbal patients",
+  "short_title": "Nonverbal douleur échelle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "medecine-interne",
+    "douleur",
+    "soins-palliatifs"
+  ],
+  "diseases": [
+    "Delirium",
+    "Dementia"
+  ],
+  "chief_complaints": [
+    "AMS"
+  ],
+  "abbreviations": [
+    "intubation",
+    "nonverbal",
+    "pain",
+    "icu",
+    "critical care",
+    "synchronous",
+    "intubated",
+    "deaf"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Les patients non verbaux expriment la douleur de manière variable, ce qui rend utile un outil standardisé et précis pour l’évaluation de la douleur. La douleur peut être une cause de signes vitaux anormaux en réanimation, et l’utilisation d’un outil quantitatif peut aider à confirmer ou infirmer cette hypothèse.",
+    "when": "Patients en soins critiques chez qui l’évaluation de la douleur est en cours.",
+    "pearls": "- L'échelle de douleur non verbale (Nonverbal Pain Scale, NVPS) permet une évaluation standardisée de la douleur chez les patients intubés et les autres patients non verbaux.\n- Les paramètres incluent la synchronie avec le ventilateur, utile chez les patients intubés."
+  },
+  "next_steps": {
+    "advice": "La douleur peut et doit être traitée, en particulier chez les patients intubés ou chez ceux qui, pour une autre raison, sont incapables d’exprimer leur état sensoriel.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n- Scores ≤2 indicate no pain.\n- Scores 3-6 indicate moderate pain.*\n- Scores ≥7 indicate severe pain.*\n\n***Note:** Scores ≥3 indicate possible need for analgesia.\n\nThis assessment is normally documented every 4 hours on nursing flow sheets and completed before **and** after interventions.\n\nSepsis, hypovolemia, and hypoxia need to be resolved prior to interventions.",
+  "short_description": "Douleur échelle dans patients unable pour speak.",
+  "medium_description": "Quantifies douleur dans patients unable pour speak (due pour intubation, dementia, etc).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Face",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucune expression particulière ou sourire",
+          "value": 0
+        },
+        {
+          "label": "Grimace occasionnelle, larmoiement, froncement des sourcils, front plissé",
+          "value": 1
+        },
+        {
+          "label": "Frequent grimace, tearing, frowning, wrinkled forehead",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "activity",
+      "label": "Activité (mouvement)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Allongé calmement, position normale",
+          "value": 0
+        },
+        {
+          "label": "Recherche d’attention par le mouvement ou mouvement lent et prudent",
+          "value": 1
+        },
+        {
+          "label": "Restless, excessive activity et/ou withdrawal reflexes",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "guard",
+      "label": "Guarding",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Lying quietly, no positioning de hands over areas de body",
+          "value": 0
+        },
+        {
+          "label": "Splinting areas de body, tense",
+          "value": 1
+        },
+        {
+          "label": "Rigide, raide",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vs",
+      "label": "Physiologie (signes vitaux)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Signes vitaux initiaux inchangés",
+          "value": 0
+        },
+        {
+          "label": "Change dans SBP>20 mmHg ou HR>20 bpm",
+          "value": 1
+        },
+        {
+          "label": "Change dans SBP>30 mmHg ou HR>25 bpm",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Respiratory",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "initial RR/SpO₂ synchronous avec ventilator",
+          "value": 0
+        },
+        {
+          "label": "RR >10 bpm par rapport à la valeur initiale, diminution de 5 % de la SpO₂ ou asynchronie ventilatoire légère",
+          "value": 1
+        },
+        {
+          "label": "FR >20/min par rapport à la valeur initiale, diminution de 10 % de la SpO₂ ou asynchronie ventilatoire sévère",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Odhner M, et al. Assessing pain control in nonverbal critically ill adults. Dimens Crit Care Nurs. 2003 Nov-Dec;22(6):260-7",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14639117",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.behavioral-pain-scale-bps-pain-assessment-intubated-patients",
+    "calc.critical-care-pain-observation-tool-cpot",
+    "calc.qsofa-quick-sofa-score-sepsis"
+  ],
+  "source_logic_hash": "64509a07b58b6b1a5b00f7f683beae52",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3621,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

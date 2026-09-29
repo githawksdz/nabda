@@ -1,0 +1,440 @@
+{
+  "id": "calc.expanded-disability-status-scale-edss-functional-systems-score-fss",
+  "slug": "expanded-disability-status-scale-edss-functional-systems-score-fss",
+  "language": "en",
+  "title": "Expanded Disability Status échelle (EDSS) / Functional Systems score (FSS)",
+  "short_title": "EDSS/FSS pour multiple Sclerosis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "neurologie"
+  ],
+  "diseases": [
+    "Sclérose en plaques"
+  ],
+  "chief_complaints": [
+    "Numbness",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "MS",
+    "multiple sclerosis",
+    "FSS",
+    "functional",
+    "systems"
+  ],
+  "dosing": false,
+  "formula": "**EDSS:** Points assigned based on level of disability.\n\n**FSS:** Addition of selected points within body system.\n\n- The Expanded Disability Status Scale (EDSS) works together with the Functional Systems Scale (FSS) to measure MS disease progression.\n- The EDSS assesses the disability status of MS patients on a scale from 0 to 10.\n- Scores from 0 to 3.5 are determined by deficits in eight Functional Systems (FS) in patients who do not have any impairment of ambulation.\n- Scores from 4.0 to 10.0 are determined both by ambulatory ability and FS deficits, which typically correlate with each other.\n- Some providers use only the ambulatory score to determine the overall EDSS score between 4.0 and 10.0.\n- In situations when there is subjectivity and FS deficits do not correspond to a specific EDSS level, a range is provided.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- The Expanded Disability Status Scale (EDSS) works together with the Functional Systems Scale (FSS) to measure MS disease progression.\n- The EDSS assesses the disability status of MS patients on a scale from 0 to 10.\n- Scores from 0 to 3.5 are determined by deficits in eight Functional Systems (FS) in patients who do not have any impairment of ambulation.\n- Scores from 4.0 to 10.0 are determined both by ambulatory ability and FS deficits, which typically correlate with each other.\n- Some providers use only the ambulatory score to determine the overall EDSS score between 4.0 and 10.0.\n- In situations when there is subjectivity and FS deficits do not correspond to a specific EDSS level, a range is provided."
+  },
+  "next_steps": {
+    "advice": "- À utiliser pour mesurer la progression de la maladie chez les patients atteints de MS.\n- À utiliser pour comparer les critères de jugement dans les essais cliniques sur la MS.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "- Score de 1.0 à 4.5 -- Marche normale.\n- Score de 5.0 à 9.5 -- Marche altérée.",
+  "short_description": "Disability gravité dans MS.",
+  "medium_description": "Describes gravité de disability chez les patients avec MS.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "ambulation",
+      "label": "Ambulation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Fully ambulatory",
+          "value": 0
+        },
+        {
+          "label": "Fully ambulatory, self-sufficient, up 12 hours day despite relatively severe disability. Able pour walk ≥500 meters sans aid/rest.",
+          "value": 4
+        },
+        {
+          "label": "Fully ambulatory, able pour work full day, may require minimal assistance. Able pour walk ≥300 meters sans aid/rest.",
+          "value": 4.5
+        },
+        {
+          "label": "Ambulatory pour 200 meters sans aid/rest; disability that impairs full daily activities (eg, pour work full day sans special provisions).",
+          "value": 5
+        },
+        {
+          "label": "Ambulatory pour 100 meters sans aid/rest; disability precludes full daily activities.",
+          "value": 5.5
+        },
+        {
+          "label": "Intermittent ou unilateral constant assistance requis pour walk 100 meters, avec/sans resting.",
+          "value": 6
+        },
+        {
+          "label": "Constant bilateral assistance (canes, crutches, ou braces) requis pour walk 20 meters sans resting.",
+          "value": 6.5
+        },
+        {
+          "label": "Unable pour walk >5 meters even avec aid; (restricted pour wheelchair); wheels self dans standard wheelchair et transfers alone.",
+          "value": 7
+        },
+        {
+          "label": "Unable pour take more than steps; restricted pour wheelchair; may need aid dans transfer; wheels self but cannot use standard wheelchair full day; may require motorized wheelchair.",
+          "value": 7.5
+        },
+        {
+          "label": "Restricted pour bed/chair ou perambulated dans wheelchair, but peut être out de bed itself much de day; retains many self-care functions; generally has effective use de arms.",
+          "value": 8
+        },
+        {
+          "label": "Restricted pour bed much de day; has some effective use de arms; retains some self-care functions.",
+          "value": 8.5
+        },
+        {
+          "label": "Helpless bed patient; can communicate et eat.",
+          "value": 9
+        },
+        {
+          "label": "Totally helpless bed patient; unable pour communicate effectively ou eat/swallow.",
+          "value": 9.5
+        },
+        {
+          "label": "Death due pour MS.",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "pyramidal",
+      "label": "Pyramidal",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Signes anormaux sans incapacité",
+          "value": 1
+        },
+        {
+          "label": "Incapacité minime",
+          "value": 2
+        },
+        {
+          "label": "Mild ou modéré paraparesis ou hemiparesis; severe monoparesis",
+          "value": 3
+        },
+        {
+          "label": "Marked paraparesis ou hemiparesis; modéré quadriparesis; ou monoplegia",
+          "value": 4
+        },
+        {
+          "label": "Paraplégie, hémiplégie ou quadriparésie marquée",
+          "value": 5
+        },
+        {
+          "label": "Quadriplegia",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cerebellar",
+      "label": "Cerebellar",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Signes anormaux sans incapacité",
+          "value": 1
+        },
+        {
+          "label": "Ataxie légère",
+          "value": 2
+        },
+        {
+          "label": "modéré truncal ou limb ataxia",
+          "value": 3
+        },
+        {
+          "label": "Ataxie sévère, tous les membres",
+          "value": 4
+        },
+        {
+          "label": "Unable pour perform coordinated movements due pour ataxia",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "brainstem",
+      "label": "Brainstem",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Signes uniquement",
+          "value": 1
+        },
+        {
+          "label": "modéré nystagmus ou other mild disability",
+          "value": 2
+        },
+        {
+          "label": "Severe nystagmus, marked extraocular weakness, ou modéré disability de other cranial nerves",
+          "value": 3
+        },
+        {
+          "label": "Dysarthrie marquée ou autre incapacité marquée",
+          "value": 4
+        },
+        {
+          "label": "Inability pour swallow ou speak",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sensory",
+      "label": "Sensory",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Vibration ou figure-writing decrease only, dans 1-2 limbs",
+          "value": 1
+        },
+        {
+          "label": "Mild decrease dans touch, douleur ou position sense, et/ou modéré decrease dans vibration dans 1-2 limbs; ou vibratory decrease alone dans 3-4 limbs",
+          "value": 2
+        },
+        {
+          "label": "modéré decrease dans touch, douleur ou position sense, et/ou lost vibration dans 1-2 limbs; ou mild decrease dans touch, douleur et/ou modéré decrease dans all proprioceptive tests dans 3-4 limbs",
+          "value": 3
+        },
+        {
+          "label": "Marked decrease dans touch ou douleur ou loss de proprioception, alone ou combined, dans 1-2 limbs; ou modéré decrease dans touch, douleur et/ou severe proprioceptive decrease dans >2 limbs",
+          "value": 4
+        },
+        {
+          "label": "Loss de sensation dans 1-2 limbs; ou modéré decrease dans touch, douleur et/ou loss de proprioception pour most de body below head",
+          "value": 5
+        },
+        {
+          "label": "Sensibilité pratiquement abolie en dessous de la tête",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bowelAndBladder",
+      "label": "Intestin et vessie",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Légère hésitation urinaire, urgenturie ou rétention",
+          "value": 1
+        },
+        {
+          "label": "modéré hesitancy, urgency, retention de bowel ou bladder, ou rare urinary incontinence",
+          "value": 2
+        },
+        {
+          "label": "Incontinence urinaire fréquente",
+          "value": 3
+        },
+        {
+          "label": "dans need de almost constant catheterization",
+          "value": 4
+        },
+        {
+          "label": "Perte de la fonction vésicale",
+          "value": 5
+        },
+        {
+          "label": "Perte des fonctions intestinales et vésicales",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "visual_input",
+      "label": "Visual",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Scotoma avec visual acuity (corrected) better than 20/30",
+          "value": 1
+        },
+        {
+          "label": "Worse eye avec scotoma avec maximal visual acuity (corrected) de 20/30 pour 20/59",
+          "value": 2
+        },
+        {
+          "label": "Worse eye avec large scotoma, ou modéré decrease dans fields, but avec maximal visual acuity (corrected) de 20/60 pour 20/99",
+          "value": 3
+        },
+        {
+          "label": "Worse eye avec marked decrease de fields et maximal visual acuity (corrected) de 20/100-20/200; grade 3 plus maximal acuity de better eye de ≤20/60",
+          "value": 4
+        },
+        {
+          "label": "Worse eye avec maximal visual acuity (corrected) less than 20/200; grade 4 plus maximal acuity de better eye de 20/60 ou less",
+          "value": 5
+        },
+        {
+          "label": "Grade 5 plus acuité visuelle maximale du meilleur œil de 20/60 ou moins",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cerebral",
+      "label": "Cerebral",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Altération de l’humeur uniquement (n’affecte pas le score DSS)",
+          "value": 1
+        },
+        {
+          "label": "Mild decrease dans mentation",
+          "value": 2
+        },
+        {
+          "label": "modéré decrease dans mentation",
+          "value": 3
+        },
+        {
+          "label": "Marked decrease dans mentation (chronique brain syndrome -- modéré)",
+          "value": 4
+        },
+        {
+          "label": "Dementia ou chronique brain syndrome -- severe ou incompetent",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "other",
+      "label": "Autre",
+      "optional": true,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Any other neurologic findings attributed pour MS",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Kurtzke JF. Rating neurologic impairment in multiple sclerosis: an expanded disability status scale (EDSS). Neurology. 1983 Nov;33(11):1444-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6685237",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Slater RJ, LaRocca NG, Scheinberg LC. Development and testing of a minimal record of disability in multiple sclerosis. Ann N Y Acad Sci. 1984;436:453-468.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/6598023/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.berg-balance-scale-bbs",
+    "calc.mcdonald-criteria-multiple-sclerosis-2017-revision",
+    "calc.shortened-modified-fatigue-impact-scale-mfis"
+  ],
+  "source_logic_hash": "2bf426bcc03de4f755e382d3ddd244b6",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2146,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

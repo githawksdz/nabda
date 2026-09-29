@@ -1,0 +1,142 @@
+{
+  "id": "calc.rome-iv-diagnostic-criteria-functional-gallbladder-disorder",
+  "slug": "rome-iv-diagnostic-criteria-functional-gallbladder-disorder",
+  "language": "fr",
+  "title": "Rome IV Diagnostic critères pour Functional Gallbladder Disorder",
+  "short_title": "Rome IV pour Gallbladder Disorder",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "general",
+    "gastroenterologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Troubles de la vésicule biliaire",
+    "Troubles de l'interaction intestin-cerveau"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "Rome IV Criteria for Functional Gallbladder Disorder, Rome IV for Functional Gallbladder Disorder, rome iv functional gallbladder disorder, rome iv gallbladder, rome for functional gallbladder disorder, rome iv gallbladder disorder, rome 4 for functional gallbladder disorder, rome 4 gallbladder disorder, rome 4 gallbladder"
+  ],
+  "dosing": false,
+  "formula": "Pour remplir les critères de Rome IV du trouble fonctionnel de la vésicule biliaire,* le patient doit présenter les éléments suivants :\n\n1. [Douleur biliaire](nabda:calc.rome-iv-diagnostic-criteria-biliary-pain).\n2. Absence de calculs biliaires ou d'autre pathologie structurale.\n\n*Critères de soutien :\n\n- Fraction d'éjection basse à la scintigraphie vésiculaire.\n- Enzymes hépatiques, bilirubine conjuguée et amylase/lipase normales.",
+  "how_to_use": {
+    "why": "- L'identification d'un trouble fonctionnel de la vésicule biliaire peut conduire à une cholécystectomie dans le contexte clinique approprié.\n- Les symptômes de douleur biliaire typique ou atypique peuvent être traités par d'autres options, notamment des antispasmodiques, une neuromodulation ou l'acide ursodésoxycholique.\n- Les données sur l'utilité de la fraction d'éjection vésiculaire pour prédire les résultats après cholécystectomie sont contradictoires.",
+    "when": "À utiliser chez les patients présentant des symptômes caractéristiques d'une douleur biliaire typique tels que définis par les critères de Rome IV **avec vésicule biliaire présente, sans dilatation biliaire ni anomalie inexpliquée des enzymes hépatiques**. Si les symptômes sont atypiques pour une douleur biliaire, envisager d'autres causes de douleur gastro-intestinale.",
+    "pearls": "- Il est essentiel d'obtenir des antécédents détaillés du mode de douleur, conformes aux critères de la douleur biliaire typique.\n- Si le mode de douleur n'est pas compatible avec une douleur biliaire typique, il faut rechercher d'autres causes.\n- La douleur n'a pas besoin d'être localisée à l'hypochondre droit (fréquemment épigastrique, sans irradiation).\n- Il existe un chevauchement entre le trouble fonctionnel de la vésicule biliaire et d'autres troubles fonctionnels digestifs.\n- En cas d'épisodes répétés de douleur biliaire, envisager une microlithiase.\n- Le trouble du sphincter d'Oddi est typiquement et le plus souvent diagnostiqué lorsque la vésicule biliaire est absente. Cependant, une dilatation biliaire ou une élévation enzymatique est compatible avec un trouble du sphincter d'Oddi lorsque la vésicule biliaire est présente."
+  },
+  "next_steps": {
+    "advice": "- Les patients peuvent répondre au rassurement et aux traitements médicaux tels que les antispasmodiques, les neuromodulateurs ou l'acide ursodésoxycholique, bien que leur valeur n'ait pas été formellement évaluée.\n- Envisager une cholécystectomie en cas de tableau clinique typique de douleur biliaire et de fraction d'éjection vésiculaire basse. Cependant, des essais contrôlés randomisés sont nécessaires.\n\n- Dans de nombreux cas, une prise en charge conservatrice avec surveillance expectative peut être envisagée.",
+    "critical_actions": "Ce calculateur ne doit être utilisé que pour les patients avec une faible suspicion clinique de maladie structurale et une évaluation suffisante, comprenant les enzymes hépatiques et pancréatiques, une échographie et éventuellement une échographie endoscopique ou une imagerie en coupe comme la cholangiopancréatographie par résonance magnétique si cliniquement indiqué.\n\nREMARQUE : d'autres troubles digestifs tels que le syndrome de l'intestin irritable et la dyspepsie fonctionnelle peuvent coexister avec le trouble fonctionnel de la vésicule biliaire.",
+    "management": ""
+  },
+  "evidence": "Une [revue Cochrane de 2009](https://pubmed.ncbi.nlm.nih.gov/19160318/) a évalué le rôle de la cholécystectomie dans la dyskinésie vésiculaire suspectée et a conclu qu'une seule étude montrait une valeur prédictive de la choléscintigraphie et présentait un risque élevé de biais. Des essais contrôlés randomisés supplémentaires sont donc nécessaires pour confirmer définitivement le rôle de la scintigraphie vésiculaire dans l'utilité de la cholécystectomie chez les patients présentant une douleur biliaire typique.",
+  "more_info": "![](https://cdn-web-img.mdcalc.com/content/rome_gallbladder.png)\n\nD'après [Cotton PB 2020](https://www.ncbi.nlm.nih.gov/pubmed/27144629).",
+  "short_description": "Diagnostic de trouble fonctionnel de la vésicule biliaire.",
+  "medium_description": "Official Rome IV critères pour diagnostic de functional gallbladder disorder.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "[Douleur biliaire](nabda:calc.rome-iv-diagnostic-criteria-biliary-pain)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Absence de calculs biliaires ou d'autre pathologie structurale",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Cotton PB, Elta GH, Carter CR, Pasricha PJ, Corazziari ES. Rome IV. Gallbladder and Sphincter of Oddi Disorders. Gastroenterology. 2016;150:1420-1429.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27144629",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gurusamy KS, Junnarkar S, Farouk M, et al. Cholecystectomy for suspected gallbladder dyskinesia. Cochrane Database Syst Rev. 2009(1):CD007086. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19160318/",
+      "kind": "other"
+    },
+    {
+      "text": "Carr JA, Walls J, Bryan LJ, et al. The treatment of gallbladder dyskinesia based upon symptoms: results of a 2-year, prospective, nonrandomized, concurrent cohort study. Surg Laparosc Endosc Percutan Tech 2009; 19: 222–226.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19542850",
+      "kind": "other"
+    },
+    {
+      "text": "Aziz I, Palsson OS, Törnblom H, Sperber AD, Whitehead WE, Simrén M. The Prevalence and Impact of Overlapping Rome IV-Diagnosed Functional Gastrointestinal Disorders on Somatization, Quality of Life, and Healthcare Utilization: A Cross-Sectional General Population Study in Three Countries. Am J Gastroenterol. 2018;113(1):86-96.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29134969",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-functional-biliary-sphincter-oddi-disorder-sod",
+    "calc.rome-iv-diagnostic-criteria-functional-pancreatic-sphincter-oddi-disorder-sod",
+    "calc.rome-iv-diagnostic-criteria-unspecified-functional-bowel-disorder",
+    "calc.rome-iv-diagnostic-criteria-biliary-pain"
+  ],
+  "source_logic_hash": "fdca2e3b6c8fa32653d3cef366ee5644",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.rome-iv-diagnostic-criteria-biliary-pain",
+      "text": "Biliary pain"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10320,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.amylase"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

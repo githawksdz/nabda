@@ -1,0 +1,185 @@
+{
+  "id": "calc.risk-score-asthma-exacerbation-rse",
+  "slug": "risk-score-asthma-exacerbation-rse",
+  "language": "en",
+  "title": "Risque score pour asthme Exacerbation (RSE)",
+  "short_title": "Risque score pour asthme Exacerbation",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Asthma"
+  ],
+  "chief_complaints": [
+    "Dyspnée",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Gina",
+    "acq",
+    "corticosteroid",
+    "inhaled steroid",
+    "FEV1"
+  ],
+  "dosing": false,
+  "formula": "Addition des points attribués.",
+  "how_to_use": {
+    "why": "Un score permettant de déterminer la probabilité d'exacerbation peut aider à guider le traitement et/ou la surveillance.",
+    "when": "Patients atteints d'asthme mal contrôlé.",
+    "pearls": "- Le Risk Score for Asthma Exacerbation (RSE) identifie les patients susceptibles de présenter une exacerbation de l'asthme dans les 6 mois.\n- Le RSE devrait faire l'objet d'études supplémentaires — bien que sa validation ait porté sur un effectif important, il n'a pas été validé en dehors de sa propre cohorte de dérivation.\n- Il a été développé à partir d'essais pharmaceutiques incluant des patients atteints d'asthme mal contrôlé ; il pourrait donc ne pas être applicable aux patients présentant un asthme de sévérité plus légère."
+  },
+  "next_steps": {
+    "advice": "Le RSE a été développé à partir d'une large cohorte et doit désormais être évalué par des études de validation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "**Interprétation du score :**\n\n| Score RSE | Probabilité d'exacerbation à 6 mois |\n| --- | --- |\n| 0-10 | 5% |\n| 11-20 | 5-7% |\n| 21-30 | 7-10% |\n| 31-40 | 10-12% |\n| 41-50 | 12-15% |\n| 51-60 | 15-18% |\n| 61-70 | 18-24% |\n| 71-80 | 24-30% |\n| 81-90 | 30-37% |\n| 91-100 | 37-45% |\n\nPour plus d'informations sur les paliers de traitement de la Global Initiative for Asthma, cliquez [ici](https://ginasthma.org/wp-content/uploads/2016/01/GINA_Pocket_2015.pdf).",
+  "short_description": "Probabilité d'exacerbation de l'asthme dans les 6 mois.",
+  "medium_description": "Prédit la probabilité d'exacerbation de l'asthme dans les 6 mois.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "bmi",
+      "label": "BMI ≥30 kg/m²",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 14
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "acq",
+      "label": "Score à l'Asthma Control Questionnaire-5 (ACQ-5)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 1.5",
+          "value": 0
+        },
+        {
+          "label": "1.5-2.5",
+          "value": 7
+        },
+        {
+          "label": "≥2.5",
+          "value": 13
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fev",
+      "label": "VEMS1 post-bronchodilatateur (% de la valeur normale prédite)",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥90%",
+          "value": 0
+        },
+        {
+          "label": "80% pour 90%",
+          "value": 13
+        },
+        {
+          "label": "< 80%",
+          "value": 20
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "reliever",
+      "label": "Utilisation quotidienne du bronchodilatateur de secours",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 2",
+          "value": 0
+        },
+        {
+          "label": "2-4",
+          "value": 11
+        },
+        {
+          "label": "≥4",
+          "value": 26
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "gina",
+      "label": "Global Initiative pour asthme (GINA) traitement step 4 ou higher",
+      "tips": "Corticostéroïde inhalé à dose moyenne-élevée / bêta-2 agoniste de longue durée d'action",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 27
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Bateman ED. et al. Development and validation of a novel risk score for asthma exacerbations: The risk score for exacerbations. Journal of Allergy and Clinical Immunology, Volume 135, Issue 6, 1457-1464.e4",
+      "href": "https://www.jacionline.org/article/S0091-6749(14)01187-7/fulltext",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pediatric-respiratory-assessment-measure-pram-asthma-exacerbation-severity",
+    "calc.estimated-expected-peak-expiratory-flow-peak-flow",
+    "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score"
+  ],
+  "source_logic_hash": "9f35d39cfd56934b3e7ef3e51d3fe289",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3386,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

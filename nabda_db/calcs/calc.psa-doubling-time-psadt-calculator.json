@@ -1,0 +1,275 @@
+{
+  "id": "calc.psa-doubling-time-psadt-calculator",
+  "slug": "psa-doubling-time-psadt-calculator",
+  "language": "en",
+  "title": "Temps de doublement du PSA (PSADT) — calculateur",
+  "short_title": "Temps de doublement du PSA (PSADT) — calculateur",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer de la prostate"
+  ],
+  "chief_complaints": [
+    "Tout/Tous"
+  ],
+  "abbreviations": [
+    "Psa",
+    "psa doubling time",
+    "psa velocity",
+    "rate of rise of psa",
+    "PSADT"
+  ],
+  "dosing": false,
+  "formula": "Prostate-specific antigen doubling time (PSADT) = ln(2) / x,\n\nWhere x = slope of the relationship between ln(PSA, ng/mL) and time of PSA measurement (i.e., ln(PSA~n~) - ln(PSA~1~) / time between PSA~n~and PSA~1~, where n refers to a measurement >1)",
+  "how_to_use": {
+    "why": "- In patients with biochemical recurrence, this tool helps:\n\n - Predict the risk of metastasis and risk of dying of prostate cancer when combined with other factors, such as the [Gleason Score](nabda:calc.gleason-score-prostate-cancer) and length of time to biochemical recurrence.\n - Identify patients more likely to develop clinically significant disease.\n - Guide patient selection for salvage local therapy or ADT.\n - Guide use and timing of imaging studies.\n- For patients with M0 castration-resistant disease, this calculation helps guide patient selection for observation, second-generation antiandrogen therapy, androgen metabolism inhibitors, or other secondary hormone treatments.\n- Used in assessment of eligibility for clinical trials.\n- In patients with high-risk biochemical recurrence (PSADT ≤9 months, without evidence of metastatic disease), this tool is now used to select candidates for early intensified systemic therapy, per the EMBARK trial and current[National Comprehensive Cancer Network (NCCN) Prostate Cancer Guidelines](https://www.nccn.org/professionals/physician_gls/default.aspx#prostate), which showed improved metastasis-free survival with enzalutamide with or without leuprolide compared with leuprolide alone ([Freedland et al., 2023](https://pubmed.ncbi.nlm.nih.gov/37851874/)).",
+    "when": "- Use in patients with prostate cancer who have undergone radical prostatectomy or definitive radiation therapy and have biochemical recurrence, defined as confirmed PSA ≥0.2 ng/mL after radical prostatectomy or a confirmed PSA rise of ≥2 ng/mL above the nadir PSA level after radiation therapy.\n- Has limited value in prostate cancer screening or diagnosis.",
+    "pearls": "- Pour les patients présentant une récidive biochimique du cancer de la prostate, le calcul optimal doit inclure toutes les valeurs de PSA obtenues dans les 2 ans suivant la récidive de PSA initialement documentée.\n- La saisie d'un nombre plus élevé de valeurs améliore la précision de l'estimation.\n- Une PSADT plus courte reflète une augmentation plus rapide des taux de PSA, tandis qu'une PSADT plus longue reflète une augmentation plus lente des taux de PSA au fil du temps."
+  },
+  "next_steps": {
+    "advice": "- Further management should be individualized based on age, comorbidities, life expectancy, patient preferences, and other relevant factors.\n- Results should not be used in isolation but should be interpreted alongside [Gleason Score](nabda:calc.gleason-score-prostate-cancer) , time to biochemical recurrence, and disease extent when counseling patients or selecting therapy.",
+    "critical_actions": "",
+    "management": "- With biochemical recurrence after radical prostatectomy or radiation therapy, a **PSADT ≤9 months** (with an absolute PSA rise above the nadir/threshold and castrate-sensitive, non-metastatic disease) meets the[NCCN](https://www.nccn.org/professionals/physician_gls/default.aspx#prostate)definition of high-risk biochemical recurrence; options include observation, ADT alone, or enzalutamide with or without leuprolide, based on the[EMBARK](https://pubmed.ncbi.nlm.nih.gov/37851874/)trial.\n- With non-metastatic castration-resistant prostate cancer (nmCRPC) and confirmed castrate testosterone, a **PSADT ≤10 months** identifies patients most likely to benefit from a second-generation antiandrogen (e.g., apalutamide, enzalutamide, darolutamide), based on the[SPARTAN](https://pubmed.ncbi.nlm.nih.gov/29420164/),[PROSPER](https://pubmed.ncbi.nlm.nih.gov/29949494/), and[ARAMIS](https://pubmed.ncbi.nlm.nih.gov/30763142/)trials.\n- Patients with longer PSADT and otherwise lower-risk features may reasonably continue observation with serial PSA monitoring, per[NCCN guidance](https://www.nccn.org/professionals/physician_gls/default.aspx#prostate).\n\nMore detailed information can be found in the[NCCN Guidelines](https://www.nccn.org/professionals/physician_gls/default.aspx#prostate)."
+  },
+  "evidence": "Prostate-specific antigen (PSA) doubling time (PSADT) has been studied as a survival measure in prostate cancer. A retrospective review of 304 patients with prostate cancer and biochemical recurrence demonstrated that PSADT, [Gleason Score](nabda:calc.gleason-score-prostate-cancer) , and length of time to biochemical recurrence following surgery were predictive of the risk of developing metastatic disease ([Pound et al., 1999](https://jamanetwork.com/journals/jama/fullarticle/189741)). Metastatic-free survival was longest among those with Gleason Scores 5–7, length of time to biochemical recurrence >2 years, and PSADT >10 months.\n\nA larger, more contemporary risk model by[Freedland et al. (2005)](https://jamanetwork.com/journals/jama/fullarticle/201291)evaluated 379 men with biochemical recurrence after radical prostatectomy and found that a PSADT <3 months, combined with a Gleason Score of 8–10 and recurrence within 3 years of surgery, identified a very-high-risk group with poor prostate cancer-specific survival. In contrast, a PSADT ≥15 months, lower Gleason Score, and later recurrence identified a favorable-risk group with survival similar to that of men without recurrence.\n\nMore recently, a PSADT ≤10 months was used to select patients with nmCRPC for treatment with apalutamide, enzalutamide, or darolutamide in the[SPARTAN](https://pubmed.ncbi.nlm.nih.gov/29420164/),[PROSPER](https://pubmed.ncbi.nlm.nih.gov/29949494/), and[ARAMIS](https://pubmed.ncbi.nlm.nih.gov/30763142/)trials, respectively, each of which demonstrated substantial improvement in metastasis-free survival compared with placebo. In patients with high-risk biochemical recurrence (PSADT ≤9 months) but no metastatic disease, the[EMBARK](https://pubmed.ncbi.nlm.nih.gov/37851874/)trial demonstrated that enzalutamide with or without leuprolide significantly improved metastasis-free survival compared with leuprolide alone; this PSADT threshold has since been incorporated into current NCCN Prostate Cancer Guidelines.",
+  "more_info": "",
+  "short_description": "PSA survie.",
+  "medium_description": "Calculates rate de PSA doubling dans prostate cancer (correlates avec survie).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "psa1",
+      "label": "PSA~1~",
+      "tips": "Premier résultat de PSA disponible (le plus ancien)",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "psa2",
+      "label": "PSA~2~",
+      "tips": "Deuxième résultat de PSA disponible",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "time2",
+      "label": "Délai entre les mesures de PSA~1~ et de PSA~2~",
+      "optional": false,
+      "unit": "psadt_days",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "toggle",
+      "name": "add1",
+      "label": "Ajouter une autre mesure",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "psa3",
+      "label": "PSA~3~",
+      "tips": "Troisième résultat de PSA disponible",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": "add1>0"
+    },
+    {
+      "type": "textbox",
+      "name": "time3",
+      "label": "Délai entre les mesures de PSA~2~ et PSA~3~",
+      "optional": false,
+      "unit": "psadt_days",
+      "show_points": false,
+      "conditionality": "add1>0"
+    },
+    {
+      "type": "toggle",
+      "name": "add2",
+      "label": "Ajouter une autre mesure",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "add1>0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "psa4",
+      "label": "PSA~4~",
+      "tips": "Quatrième résultat de PSA disponible",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": "add2>0"
+    },
+    {
+      "type": "textbox",
+      "name": "time4",
+      "label": "Intervalle entre les mesures de PSA~3~ et PSA~4~",
+      "optional": false,
+      "unit": "psadt_days",
+      "show_points": false,
+      "conditionality": "add2>0"
+    },
+    {
+      "type": "toggle",
+      "name": "add3",
+      "label": "Ajouter une autre mesure",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "add2>0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "psa5",
+      "label": "PSA~5~",
+      "tips": "Cinquième résultat de PSA disponible",
+      "optional": false,
+      "unit": "psa",
+      "show_points": false,
+      "conditionality": "add3>0"
+    },
+    {
+      "type": "textbox",
+      "name": "time5",
+      "label": "Délai entre les mesures du PSA~4~ et du PSA~5~",
+      "optional": false,
+      "unit": "psadt_days",
+      "show_points": false,
+      "conditionality": "add3>0"
+    }
+  ],
+  "references": [
+    {
+      "text": "National Comprehensive Cancer Network. NCCN Clinical Practice Guidelines in Oncology: Prostate Cancer. Version 3.2024. National Comprehensive Cancer Network; 2024.",
+      "href": "https://www.nccn.org/guidelines/category_1#prostate",
+      "kind": "international"
+    },
+    {
+      "text": "Pound CR, Partin AW, Eisenberger MA, Chan DW, Pearson JD, Walsh PC. Natural history of progression after PSA elevation following radical prostatectomy. JAMA. 1999;281(17):1591-7.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/189741",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Smith MR, Saad F, Chowdhury S, et al. Apalutamide treatment and metastasis-free survival in prostate cancer. N Engl J Med. 2018;378(15):1408-18.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29420164/",
+      "kind": "other"
+    },
+    {
+      "text": "Hussain M, Fizazi K, Saad F, et al. Enzalutamide in men with nonmetastatic, castration-resistant prostate cancer. N Engl J Med. 2018;378(26):2465-74.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29949494/",
+      "kind": "other"
+    },
+    {
+      "text": "Fizazi K, Shore N, Tammela TL, et al. Darolutamide in nonmetastatic, castration-resistant prostate cancer. N Engl J Med. 2019;380(13):1235-46.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30763142/",
+      "kind": "other"
+    },
+    {
+      "text": "Freedland SJ, de Almeida Luz M, De Giorgi U, et al. Improved outcomes with enzalutamide in biochemically recurrent prostate cancer. N Engl J Med. 2023;389(16):1453-65.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37851874/",
+      "kind": "other"
+    },
+    {
+      "text": "Patel A, Dorey F, Franklin J, Dekernion JB. Recurrence patterns after radical retropubic prostatectomy: Clinical usefulness of prostate specific antigen doubling times and log slope prostate specific antigen. J Urol. 1997;158(4):1441-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9302139",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Freedland SJ, Humphreys EB, Mangold LA, et al. Risk of prostate cancer-specific mortality following biochemical recurrence after radical prostatectomy. JAMA. 2005;294(4):433-9.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/16046649/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.damico-risk-classification-prostate-cancer",
+    "calc.prostate-tumor-volume-density",
+    "calc.caspar-criteria-psoriatic-arthritis",
+    "calc.gleason-score-prostate-cancer"
+  ],
+  "source_logic_hash": "c9d819f6196a14056a0f7852db4419b5",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10198,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar time1 = 0;\nvar time2 = parseFloat(time2);\nvar time3 = parseFloat(time3) || 0;\nvar time4 = parseFloat(time4) || 0;\nvar time5 = parseFloat(time5) || 0;\nvar psa1 = parseFloat(psa1);\nvar psa2 = parseFloat(psa2);\nvar psa3 = parseFloat(psa3) || 0;\nvar psa4 = parseFloat(psa4) || 0;\nvar psa5 = parseFloat(psa5) || 0;\nvar add1 = parseFloat(add1);\nvar add2 = parseFloat(add2) || 0;\nvar add3 = parseFloat(add3) || 0;\n\nif (UOMSYSTEM == false) {\n  time2 = time2*0.03285420945;\n  time3 = time3*0.03285420945;\n  time4 = time4*0.032854209455;\n  time5 = time5*0.03285420945;\n}\n\nvar x_average, y_average, x1, x2, x3, x4, x5, y1, y2, y3, y4, y5, i1, i2, i3, i4, i5, j1, j2, j3, j4, j5, m, dt;\n\nif (psa5 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n  psa4 = Math.log(psa4);\n  psa5 = Math.log(psa5);\n\n  time3 = time2 + time3;\n  time4 = time3 + time4;\n  time5 = time4 + time5;\n\n  x_average = (time1 + time2 + time3 + time4 + time5)/5;\n  y_average = (psa1 + psa2 + psa3 + psa4 + psa5)/5;\n\n  x5 = time5 - x_average;\n  x4 = time4 - x_average;\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y5 = psa5 - y_average;\n  y4 = psa4 - y_average;\n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  i4 = x4*y4;\n  i5 = x5*y5;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n  j4 = x4*x4;\n  j5 = x5*x5;\n\n  m = (i1 + i2 + i3 + i4 + i5)/(j1 + j2 + j3 + j4 +j5);\n  dt =  Math.LN2/m;\n} \n\nelse if (psa4 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n  psa4 = Math.log(psa4);\n\n  time3 = time2 + time3;\n  time4 = time3 + time4;\n\n  x_average = (time1 + time2 + time3 + time4)/4;\n  y_average = (psa1 + psa2 + psa3 + psa4)/4;\n\n  x4 = time4 - x_average;\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y4 = psa4 - y_average;\n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  i4 = x4*y4;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n  j4 = x4*x4;\n\n  m = (i1 + i2 + i3 + i4)/(j1 + j2 + j3 + j4);\n  dt =  Math.LN2/m;\n}\n\n else if (psa3 > 0) {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n  psa3 = Math.log(psa3);\n\n  time3 = time2 + time3;\n\n  x_average = (time1 + time2 + time3)/3;\n  y_average = (psa1 + psa2 + psa3)/3;\n\n  x3 = time3 - x_average;\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y3 = psa3 - y_average;\n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  i3 = x3*y3;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n  j3 = x3*x3;\n\n  m = (i1 + i2 + i3)/(j1 + j2 + j3);\n  dt =  Math.LN2/m;\n}\n\n else {\n  psa1 = Math.log(psa1);\n  psa2 = Math.log(psa2);\n\n  x_average = (time1 + time2)/2;\n  y_average = (psa1 + psa2)/2;\n\n  x2 = time2 - x_average;\n  x1 = time1 - x_average;\n  \n  y2 = psa2 - y_average;\n  y1 = psa1 - y_average;\n\n  i1 = x1*y1;\n  i2 = x2*y2;\n  \n  j1 = x1*x1;\n  j2 = x2*x2;\n\n  m = (i1 + i2)/(j1 + j2);\n  dt =  Math.LN2/m;\n}\n\nif (m <= 0) {\n  msg = 'PSA value should be increasing over time';\n}\n\n//results\nif (m <= 0) {\ncalc_output.push({\n    name: 'mini',\n    value: '',\n    value_text: '',\n    message: msg\n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result',\n    value: '',\n    value_text: '',\n    message: msg     \n});\n} else {\n  calc_output.push({\n    name: 'mini',\n    value: dt.toFixed(1),\n    value_text: 'months',\n    message: 'Doubling time'\n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result (slope)',\n    value: m.toFixed(1),\n    value_text: '',\n    message: 'Slope'   \n});\ncalc_output.push({\n    name: '10198_PSA Doubling Time (PSADT) Calculator_result (time)',\n    value: dt.toFixed(1),\n    value_text: 'months',\n    message: 'Doubling time'   \n});\n}",
+  "before_use": null,
+  "instructions": "- Use at least 3 PSA values obtained over an interval of at least 3 months, ideally from the same laboratory/assay, to improve the reliability of the doubling-time estimate.\n- Exclude PSA values obtained shortly after a treatment change (e.g., initiation or discontinuation of androgen deprivation therapy [ADT]) that could confound the true kinetics of recurrence.\n- Confirm castrate testosterone (<50 ng/dL) before using PSADT to guide treatment decisions in the castration-resistant setting; a rapidly rising PSA in a patient not confirmed to be castrate may reflect testosterone recovery rather than true castration resistance.",
+  "contributor_ids": [
+    "karan-jatwani-md",
+    "nazli-dizman-md"
+  ],
+  "creator_names": [
+    "Dr. Charles R. Pound"
+  ],
+  "measurement_ids": [
+    "psa"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "febb2284318e1c4f22c504f8ec394054b3dc8f8fe10ea43ca93ffafa8c5cab2e"
+}

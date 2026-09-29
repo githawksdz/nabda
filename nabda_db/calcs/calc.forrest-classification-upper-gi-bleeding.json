@@ -1,0 +1,132 @@
+{
+  "id": "calc.forrest-classification-upper-gi-bleeding",
+  "slug": "forrest-classification-upper-gi-bleeding",
+  "language": "en",
+  "title": "Forrest classification de Upper GI saignement",
+  "short_title": "Classification de Forrest",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "gastroenterologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Hematemesis",
+    "Melena",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "forrest",
+    "forrest class",
+    "ugib",
+    "ugi bleed",
+    "gi bleed",
+    "bleeding",
+    "upper gi hemorrhage",
+    "forest"
+  ],
+  "dosing": false,
+  "formula": "Sélectionnez la classe appropriée :\n\n| Classe 1A | Hémorragie active en jet |\n| --- | --- |\n| Classe 1B | Suintement actif |\n| Classe 2A | Vaisseau visible non hémorragique |\n| Classe 2B | Caillot adhérent |\n| Classe 2C | Tache pigmentée plate |\n| Classe 3 | Fond ulcéreux propre |\n\nExemples :\n\n| | |\n| --- | --- |\n| Hémorragie active en jet (1A) | |\n\n| | |\n| --- | --- |\n| Suintement actif (1B) | |\n\n| | |\n| --- | --- |\n| Vaisseau visible non hémorragique (2A) | Caillot adhérent (2B) |\n\n| | |\n| --- | --- |\n| Tache pigmentée plate (2C) | Fond ulcéreux propre (3) |\n\n*Images reproduites avec l'aimable autorisation de Shawn L. Shah, MD, Weill Cornell Medicine, Division of Gastroenterology and Hepatology.*",
+  "how_to_use": {
+    "why": "- Aide à établir le pronostic et à stratifier le risque des patients en fonction des stigmates d’hémorragie récente, et à décider entre une sortie et une surveillance rapprochée en hospitalisation.\n- Fournit aux gastro-entérologues un système permettant de classer et de décrire de manière uniforme et simple les ulcères gastroduodénaux.",
+    "when": "Patients présentant des ulcères peptiques visualisés à l'endoscopie, en cours de saignement ou ayant saigné.",
+    "pearls": "- Standardized classification system for endoscopists to describe peptic ulcers.\n- Reliably risk-stratifies patients with peptic ulcers and predicts risk of rebleeding and/or mortality.\n- Endoscopic appearance of ulceration guides endoscopic therapeutic decision and post-EGD medical treatment/disposition (i.e., admit vs. discharge, level of care, and length of stay).\n- There may be some inter-observer variation in classifying ulcers depending on timing of endoscopy, adequate visualization, vigorous irrigation, and level of training.\n- Since[Forrest et al’s seminal study](https://www.ncbi.nlm.nih.gov/pubmed/4136718), the advent of proton pump inhibitors and development of endoscopic therapies for peptic ulcer bleeding has dramatically improved outcomes. Etiologies of peptic ulcer disease have also changed (e.g. ubiquity of NSAID use)."
+  },
+  "next_steps": {
+    "advice": "La classification de Forrest doit être utilisée pour caractériser tous les ulcères peptiques, car elle fournit des informations pronostiques sur la nécessité d’une intervention thérapeutique endoscopique, le risque de récidive hémorragique et de décès.",
+    "critical_actions": "",
+    "management": "![](https://cdn-web-img.mdcalc.com/content/forrest.png)\n\nD'après les [recommandations de l'American College of Gastroenterology sur la prise en charge des patients présentant une hémorragie ulcéreuse](https://www.ncbi.nlm.nih.gov/pubmed/22310222)."
+  },
+  "evidence": "The Forrest Classification was derived from 111 endoscopies performed on 106 patients at the Royal Infirmary in Edinburgh, Scotland, in a[Lancet study](https://www.ncbi.nlm.nih.gov/pubmed/4136718)published by John Forrest in 1974.\n\nA[prospective registry data study](https://www.ncbi.nlm.nih.gov/pubmed/24218308)in 2013 looked at 397 patients with peptic ulcer bleeds and categorized them by Forrest Classification, looking at the incidence of rebleeding and mortality; the authors found that the Forrest Classification still has predictive value for rebleeding, but did not accurately predict the risk of mortality.",
+  "more_info": "Interprétation :\n\n| Classe | Description | Taux de récidive hémorragique | Mortalité |\n| --- | --- | --- | --- |\n| Classe 1A | Saignement actif en jet | 55% | 11% |\n| Classe 1B | Saignement actif en suintement | 55% | 11% |\n| Classe 2A | Vaisseau visible non saignant | 43% | 11% |\n| Classe 2B | Caillot adhérent | 22% | 7% |\n| Classe 2C | Tache pigmentée plate | 10% | 3% |\n| Classe 3 | Fond ulcéreux propre | 5% | 2% |\n\nD'après [Laine 1994](https://www.ncbi.nlm.nih.gov/pubmed/8058080).",
+  "short_description": "Stratifies gravité de upper GI saignement.",
+  "medium_description": "Stratifies gravité de upper GI saignement according pour endoscopic findings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "clas",
+      "label": "Résultat endoscopique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Jaillissement actif",
+          "value": 1
+        },
+        {
+          "label": "Suintement actif",
+          "value": 11
+        },
+        {
+          "label": "Vaisseau visible non hémorragique",
+          "value": 2
+        },
+        {
+          "label": "Caillot adhérent",
+          "value": 22
+        },
+        {
+          "label": "Tache pigmentée plate",
+          "value": 222
+        },
+        {
+          "label": "Lit ulcéreux propre",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Laine L, Jensen DM. Management of patients with ulcer bleeding. Am J Gastroenterol. 2012;107(3):345-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22310222 ",
+      "kind": "international"
+    },
+    {
+      "text": "Forrest JA, Finlayson ND, Shearman DJ. Endoscopy in gastrointestinal bleeding. Lancet. 1974 Aug 17;2(7877):394-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4136718 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Laine L, Peterson WL. Bleeding peptic ulcer. N Engl J Med. 1994;331(11):717-27.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8058080 ",
+      "kind": "other"
+    },
+    {
+      "text": "de Groot NL, van Oijen MG et al. Reassessment of the predictive value of the Forrest classification for peptic ulcer rebleeding and mortality: can classification be simplified? Endoscopy. 2014 Jan;46(1):46-52. doi: 10.1055/s-0033-1344884. Epub 2013 Nov 11.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24218308",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.aims65-score-upper-gi-bleeding-mortality",
+    "calc.rockall-score-upper-gi-bleeding-complete",
+    "calc.rockall-score-upper-gi-bleeding-pre-endoscopy"
+  ],
+  "source_logic_hash": "e4654c669076dbffe506d3c47e01287f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3923,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

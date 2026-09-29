@@ -1,0 +1,303 @@
+{
+  "id": "calc.international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+  "slug": "international-ovarian-tumor-analysis-iota-simple-rules-risk-assessment",
+  "language": "en",
+  "title": "International Ovarian Tumor Analysis (IOTA) Simple Rules risque évaluation",
+  "short_title": "IOTA Simple Rules risque évaluation",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "general",
+    "hematologie",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Cancer de l'ovaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur dorsale",
+    "Bleeding",
+    "Constipation",
+    "Fatigue",
+    "Polyuria",
+    "Swelling",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "International Ovarian Tumor Analysis (IOTA) Simple Rules Risk Assessment",
+    "IOTA",
+    "IOTA Simple Rules Risk Assessment",
+    "simple rules",
+    "simple rules risk score",
+    "simple rules risk assessment",
+    "ovarian tumor risk",
+    "ovarian cancer risk",
+    "adnexal masses malignancy"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients to calculate the risk of malignancy in adnexal masses are as follows:\n\n| Variable | Coefficient |\n| --- | --- |\n| Intercept | -0.97 |\n| B1 (unilocular cyst) | -3.41 |\n| B2 (solid components present, but <7 mm) | -2.25 |\n| B3 (acoustic shadows) | -1.66 |\n| B4 (smooth multilocular tumor with largest diameter <100 mm) | -2.75 |\n| B5 (no blood flow; color score 1) | -1.86 |\n| M1 (irregular solid tumor) | 2.19 |\n| M2 (ascites) | 2.65 |\n| M3 (at least 4 papillary structures) | 1.53 |\n| M4 (irregular multilocular solid tumor with largest diameter ≥100 mm) | 0.98 |\n| M5 (very strong flow; color score 4) | 1.55 |\n| Ultrasound examination at oncology center | 0.92 |\n\nRisk of malignancy, % = [e^x^/(1 + e^x^)]*100,\n\nwhere x = Σ(β*variable)",
+  "how_to_use": {
+    "why": "- The original Simple Rules study provided a list of 5 benign characteristics and 5 malignant characteristics. An ultrasound report was classified as malignant or benign if findings met all 5 characteristics in one of the groups.\n- Ultrasound reports which showed a mix of these characteristics were classified as “indeterminate” which limited the score’s clinical use.\n- Study authors created a logistic regression model in 2016 and added another input; the location where the ultrasound imaging was performed. This enhanced model with risk calculation is what MDCalc has chosen to include.",
+    "when": "- In patients who are undergoing adnexal surgery.\n- Not for use in patients who are being treated with observation or other conservative measures.",
+    "pearls": "- L’utilisation de ce score nécessite que l’utilisateur comprenne la terminologie et les constatations échographiques.\n- Pour des définitions supplémentaires des caractéristiques d’imagerie décrites dans ce score, voir le rapport du groupe IOTA [ici](https://www.iotagroup.org/sites/default/files/Timmerman_et_al_UOG_2000.pdf)."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "",
+    "management": "- M features are more closely associated with malignancy while B features are more associated with a benign tumor.\n- The presence of M features increases the risk of a tumor being malignant while the presence of B features will decrease the risk.\n- Use as part of presurgical counseling and planning with your patient. Remember to only use this score in patients who are undergoing surgery."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Risque de cancer ovarien.",
+  "medium_description": "Predicts risque de malignancy dans adnexal masses using ultrasound features.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "b1",
+      "label": "B1 (kyste uniloculaire)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3.41
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b2",
+      "label": "B2 (composantes solides présentes, mais <7 mm)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2.25
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b3",
+      "label": "B3 (ombres acoustiques)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1.66
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b4",
+      "label": "B4 (smooth multilocular tumor avec largest diameter <100 mm)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2.75
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "b5",
+      "label": "B5 (absence de flux sanguin ; score couleur 1)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1.86
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m1",
+      "label": "M1 (tumeur solide irrégulière)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.19
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m2",
+      "label": "M2 (ascite)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2.65
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m3",
+      "label": "M3 (au moins 4 structures papillaires)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.53
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m4",
+      "label": "M4 (irregular multilocular solid tumor avec largest diameter ≥100 mm)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.98
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "m5",
+      "label": "M5 (flux très intense ; score de couleur 4)",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1.55
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "location",
+      "label": "Examen échographique en centre d’oncologie",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 0.92
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Timmerman D, Van Calster B, Testa A, et al. Predicting the risk of malignancy in adnexal masses based on the Simple Rules from the International Ovarian Tumor Analysis group. Am J Obstet Gynecol. 2016;214(4):424-437.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26800772/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Timmerman D, Testa AC, Bourne T, et al. Simple ultrasound-based rules for the diagnosis of ovarian cancer. Ultrasound Obstet Gynecol. 2008;31(6):681-690.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18504770/",
+      "kind": "other"
+    },
+    {
+      "text": "Nohuz E, De Simone L, Chêne G. Reliability of IOTA score and ADNEX model in the screening of ovarian malignancy in postmenopausal women. J Gynecol Obstet Hum Reprod. 2019;48(2):103-107.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29709594/",
+      "kind": "other"
+    },
+    {
+      "text": "Nunes N, Ambler G, Foo X, Naftalin J, Widschwendter M, Jurkovic D. Use of IOTA simple rules for diagnosis of ovarian cancer: meta-analysis. Ultrasound Obstet Gynecol. 2014;44(5):503-514.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24920435/",
+      "kind": "other"
+    },
+    {
+      "text": "Hiett AK, Sonek JD, Guy M, Reid TJ. Performance of IOTA Simple Rules, Simple Rules risk assessment, ADNEX model and O-RADS in differentiating between benign and malignant adnexal lesions in North American women. Ultrasound Obstet Gynecol. 2022;59(5):668-676.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34533862/",
+      "kind": "other"
+    },
+    {
+      "text": "Timmerman D, Van Calster B, Testa A, et al. Predicting the risk of malignancy in adnexal masses based on the Simple Rules from the International Ovarian Tumor Analysis group. Am J Obstet Gynecol. 2016;214(4):424-437.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26800772/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.dutch-english-lems-tumor-association-prediction-delta-p-score",
+    "calc.chemotherapy-risk-assessment-scale-high-age-patients-crash-score",
+    "calc.osteoporosis-risk-assessment-instrument-orai"
+  ],
+  "source_logic_hash": "ddee8695079d9a8d62e2077c61cffea4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10517,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

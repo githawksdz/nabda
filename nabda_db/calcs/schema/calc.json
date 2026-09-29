@@ -1,0 +1,53 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://nabda.dz/schema/calc/calc.json",
+  "title": "Calculateur clinique Nabda",
+  "type": "object",
+  "additionalProperties": true,
+  "required": ["id", "slug", "title", "language", "locale_status", "source_context", "runnable"],
+  "properties": {
+    "id": { "type": "string", "pattern": "^calc\\." },
+    "slug": { "type": "string" },
+    "language": { "type": "string" },
+    "title": { "type": "string" },
+    "short_title": { "type": ["string", "null"] },
+    "calc_type": { "type": ["string", "null"] },
+    "purpose": { "type": "array", "items": { "type": "string" } },
+    "specialties": { "type": "array", "items": { "type": "string" } },
+    "diseases": { "type": "array", "items": { "type": "string" } },
+    "chief_complaints": { "type": "array", "items": { "type": "string" } },
+    "abbreviations": { "type": "array", "items": { "type": "string" } },
+    "dosing": { "type": "boolean" },
+    "runnable": { "type": "boolean" },
+    "formula": { "type": "string" },
+    "how_to_use": { "type": "object" },
+    "next_steps": { "type": "object" },
+    "evidence": { "type": "string" },
+    "more_info": { "type": "string" },
+    "short_description": { "type": "string" },
+    "medium_description": { "type": "string" },
+    "before_use": { "type": ["string", "null"] },
+    "instructions": { "type": ["string", "null"] },
+    "input_schema": { "type": "array", "items": { "type": "object" } },
+    "equation_logic_text": { "type": ["string", "null"] },
+    "source_logic_hash": { "type": ["string", "null"] },
+    "logic_language": { "type": ["string", "null"] },
+    "references": { "type": "array", "items": { "type": "object" } },
+    "related_calc_ids": { "type": "array", "items": { "type": "string" } },
+    "mentions": { "type": "array", "items": { "type": "object" } },
+    "cat_ids": { "type": "array", "items": { "type": "string" } },
+    "substance_ids": { "type": "array", "items": { "type": "string" } },
+    "contributor_ids": { "type": "array", "items": { "type": "string" } },
+    "creator_names": { "type": "array", "items": { "type": "string" } },
+    "popular": { "type": "boolean" },
+    "locale_status": {
+      "type": "string",
+      "enum": ["ok", "needs_adaptation", "france_specific", "not_applicable_dz"]
+    },
+    "source_context": {
+      "type": "string",
+      "enum": ["international", "france", "algeria"]
+    },
+    "disabled": { "type": "boolean" }
+  }
+}

@@ -1,0 +1,335 @@
+{
+  "id": "calc.alberta-stroke-program-early-ct-score-aspects",
+  "slug": "alberta-stroke-program-early-ct-score-aspects",
+  "language": "en",
+  "title": "Score tomodensitométrique précoce du programme AVC de l'Alberta (ASPECTS)",
+  "short_title": "ASPECTS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Headache",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "CT",
+    "stroke",
+    "ischemic",
+    "prognosis"
+  ],
+  "dosing": false,
+  "formula": "To compute the ASPECTS, 1 point is subtracted from 10 for any evidence of early ischemic change for each of the defined regions.\n\n- A normal CT scan receives an ASPECTS of 10 points.\n- An ASPECTS of ≤7 points highly correlates with negative functional outcome, determined by [Modified Rankin Scale (mRS)](nabda:calc.modified-rankin-scale-neurologic-disability) .\n- An ASPECTS of 0 indicates diffuse involvement throughout the MCA territory.\n- Subcortical structures are allotted 3 points (C, L, and IC). MCA cortex is allotted 7 points (insular cortex, M1, M2, M3, M4, M5, and M6).\n\n**Regions:**\n\n- C - Caudate\n- IC - Internal Capsule\n- L - Lentiform nucleus\n- I - Insular ribbon\n- M1 - Anterior MCA cortex\n- M2 - MCA cortex lateral to the insular ribbon\n- M3 - Posterior MCA cortex\n- M4*\n- M5*\n- M6*\n\n*Anterior, lateral and posterior MCA territories immediately superior to M1, M2 and M3, rostral to basal ganglia.",
+  "how_to_use": {
+    "why": "Identifier les patients ayant une probabilité plus élevée d’évolution fonctionnelle défavorable (scores <8) peut être utile aux stades précoces de la prise en charge pour étayer les décisions de transfert ou de traitement.",
+    "when": "Patients se présentant dans les premières minutes et heures d'un AVC, avec une suspicion clinique d'occlusion de l'artère cérébrale moyenne.",
+    "pearls": "- Quantifies CT changes in early middle cerebral artery stroke. More early changes seen on CT suggest poorer outcome from stroke.\n- Patients with scores ≥8 have a better chance for an independent outcome.\n\nPoints to keep in mind:\n\n- The score does not consistently predict treatment response or intracranial hemorrhage or offer nuanced prognostic information.\n- ASPECTS has mainly been studied in patients treated with or eligible for stroke reperfusion therapy (tPA), which many stroke patients do not qualify for."
+  },
+  "next_steps": {
+    "advice": "Using the traditional cutoff (<8 vs ≥8) as a rough estimate for predicting independence may help inform decisions. ASPECTS suggests that early CT changes in stroke may be a harbinger of poor outcomes.\n\nMore recent studies have evaluated ASPECTS on the basis of the entire scale, as well as dichotomous (<8 vs ≥8) or trichotomous (0-4, 5-7, and 8-10) divisions, but few robust prospective trials have been conducted ([Prakkamakul 2017](https://www.ncbi.nlm.nih.gov/pubmed/28277460)).",
+    "critical_actions": "The ASPECTS relies on subtle CT findings and thus requires an experienced radiologist. Its only validated use is as a binary variable (<8 vs ≥8) for general outcome prediction in those eligible for reperfusion therapy.\n\nFor patients being considered for intra-arterial tPA administration, ASPECTS may be useful to exclude patients not likely to do well in terms of functional independence (i.e., intra-arterial treatment likely to be futile) ([Yoo 2014](https://www.ncbi.nlm.nih.gov/pubmed/24503670%20Yoo%20AJ,%20Zaidat%20OO,%20Chaudhry%20ZA,%20et%20al.%20Impact%20of%20pretreatment%20noncontrast%20CT%20Alberta%20Stroke%20Program%20Early%20CT%20Score%20on%20clinical%20outcome%20after%20intra-arterial%20stroke%20therapy.%20Stroke.%202014;45(3):746-51.)).\n8",
+    "management": "In patients presenting with symptoms concerning for ischemic stroke, the following are generally considered standard practice:\n\n- Neurology consultation.\n- Determine onset of stroke symptoms, or time patient last felt or was observed normal.\n- Stat head CT to rule out hemorrhagic stroke.\n- In appropriate circumstances and in consultation with both neurology and the patient, consider IV thrombolysis for ischemic strokes in patients with no contraindications.\n- Always consider stroke mimics in the differential diagnosis, especially in cases with atypical features (age, risk factors, history, physical exam), including:"
+  },
+  "evidence": "There appears to be a lack of consistency in studies evaluating the interrater reliability of ASPECTS.\n\nOne 2018 trial comparing the evaluation of 43 patients using ASPECTS among senior radiology residents, a neuroradiology fellow and two senior neuroradiologists found agreement varied from 0.486 to 0.678 in Cohen's κ comparing the fellow to the neuroradiology staff, and 0.198 to 0.491 when compared to the senior radiology resident ([Kobkitsuksakul 2018](https://www.ncbi.nlm.nih.gov/pubmed/29467112)).\n\nUsing the binary outcome, a 2003 study of 34 cases found only 42% agreement for ASPECTS, with a kappa of 0.34 ([Mak 2003](https://www.ncbi.nlm.nih.gov/pubmed/12690213)).\n\nIn contrast, a 2014 trial of 214 patients using the binary outcome for patients in real time and then later by an expert assessor to be substantial, with a weighted kappa of 0.69 ([Coutts 2004](https://www.ncbi.nlm.nih.gov/pubmed/15073381)).",
+  "more_info": "- The ASPECTS is determined from evaluation of two standardized regions of the MCA territory: the basal ganglia level, where the thalamus, basal ganglia, and caudate are visible, and the supraganglionic level, which includes the corona radiata and centrum semiovale.\n- All cuts with basal ganglionic or supraganglionic structures visible are required to determine if an area is involved. The abnormality should be visible on at least two consecutive cuts to ensure that it is truly abnormal rather than a volume averaging effect.\n\n![](https://cdn-web-img.mdcalc.com/content/aspects2.png)",
+  "short_description": "MCA AVC gravité using CT data.",
+  "medium_description": "Determines MCA AVC gravité using available CT data.",
+  "input_schema": [
+    {
+      "type": "visual",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "C",
+      "label": "Caudé (C)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "IC",
+      "label": "Capsule interne (CI)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "L",
+      "label": "Noyau lenticulaire (G)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "I",
+      "label": "Ruban insulaire (I)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M1",
+      "label": "Cortex antérieur de l'ACM (M1)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M2",
+      "label": "MCA cortex lateral pour insular ribbon (M2)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M3",
+      "label": "Cortex postérieur de l'artère cérébrale moyenne (ACM) (M3)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M4",
+      "label": "Anterior cortex immediately rostral pour M1 (M4)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M5",
+      "label": "Lateral cortex immediately rostral pour M3 (M5)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "M6",
+      "label": "Posterior cortex immediately rostral pour M3 (M6)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Barber PA, Demchuk AM, Zhang J et-al. Validity and reliability of a quantitative computed tomography score in predicting outcome of hyperacute stroke before thrombolytic therapy. ASPECTS Study Group. Alberta Stroke Programme Early CT Score. Lancet. 2000;355 (9216): 1670-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10905241",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aviv RI, Mandelcorn J, Chakraborty S et-al. Alberta Stroke Program Early CT Scoring of CT perfusion in early stroke visualization and assessment. AJNR Am J Neuroradiol. 2007;28 (10): 1975-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17921237",
+      "kind": "other"
+    },
+    {
+      "text": "Puetz V, Dzialowski I, Hill MD et-al. The Alberta Stroke Program Early CT Score in clinical practice: what have we learned?. Int J Stroke. 2009;4 (5): 354-64.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19765124",
+      "kind": "other"
+    },
+    {
+      "text": "Yoo AJ, Zaidat OO, Chaudhry ZA, et al. Impact of pretreatment noncontrast CT Alberta Stroke Program Early CT Score on clinical outcome after intra-arterial stroke therapy. Stroke. 2014;45(3):746-51.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24503670",
+      "kind": "other"
+    },
+    {
+      "text": "Kobkitsuksakul C, Tritanon O, Suraratdecha V. Interobserver agreement between senior radiology resident, neuroradiology fellow, and experienced neuroradiologist in the rating of Alberta Stroke Program Early Computed Tomography Score (ASPECTS). Diagn Interv Radiol. 2018;24(2):104-107.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29467112",
+      "kind": "other"
+    },
+    {
+      "text": "Mak HK, Yau KK, Khong PL, et al. Hypodensity of >1/3 middle cerebral artery territory versus Alberta Stroke Programme Early CT Score (ASPECTS): comparison of two methods of quantitative evaluation of early CT changes in hyperacute ischemic stroke in the community setting. Stroke. 2003;34(5):1194-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/12690213",
+      "kind": "other"
+    },
+    {
+      "text": "Coutts SB, Demchuk AM, Barber PA, et al. Interobserver variation of ASPECTS in real time. Stroke. 2004;35(5):e103-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15073381",
+      "kind": "other"
+    },
+    {
+      "text": "Prakkamakul S, Yoo AJ. ASPECTS CT in Acute Ischemia: Review of Current Data. Top Magn Reson Imaging. 2017;26(3):103-112.Prakkamakul S, Yoo AJ. ASPECTS CT in Acute Ischemia: Review of Current Data. Top Magn Reson Imaging. 2017;26(3):103-112.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28277460",
+      "kind": "other"
+    },
+    {
+      "text": "Pexman JH, Barber PA, Hill MD et-al. Use of the Alberta Stroke Program Early CT Score (ASPECTS) for assessing CT scans in patients with acute stroke. AJNR Am J Neuroradiol. 2001;22 (8): 1534-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11559501",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.modified-rankin-scale-neurologic-disability",
+    "calc.garfield-af",
+    "calc.tenecteplase-dosing"
+  ],
+  "source_logic_hash": "13a2030a076f8077b318c7abde6d86c9",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-rankin-scale-neurologic-disability",
+      "text": "Modified Rankin Scale (mRS)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3164,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

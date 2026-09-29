@@ -1,0 +1,204 @@
+{
+  "id": "calc.mulbsta-score-viral-pneumonia-mortality",
+  "slug": "mulbsta-score-viral-pneumonia-mortality",
+  "language": "en",
+  "title": "MuLBSTA score pour Viral pneumonie mortalité",
+  "short_title": "Score MuLBSTA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Pneumonia",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "MuLBSTA Score, MuLBSTA, pneumonia mortality, pneumonia mortality risk, pneumonia, pneumonia risk, viral pneumonia, viral pneumonia mortality, viral pneumonia mortality risk, MuLBSTA pneumonia, MuLBSTA score pneumonia, Coronavirus, Corona virus, COVID, COVID-19, COVID 19, COVID19"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Mu ltilobe infiltrate | Yes | 5 |\n| No | 0 | |\n| Absolute L ymphocyte count ≤0.8 x 10 9 /L | Yes | 4 |\n| No | 0 | |\n| B acterial coinfection (detected by sputum or blood culture) | Yes | 4 |\n| No | 0 | |\n| S moking history | Non smoker | 0 |\n| Prior smoker | 2 | |\n| Active smoker | 3 | |\n| History of hyper- T ension | Yes | 2 |\n| No | 0 | |\n| A ge ≥60 years | Yes | 2 |\n| No | 0 | |",
+  "how_to_use": {
+    "why": "- Predicts risk factors for mortality that may be unique to viral PNA.\n- The MuLBSTA score examines a patient population with similar characteristics to those with COVID-19 PNA, and has inputs similar to risk factors for mortality seen in the initial COVID-19 patient cohorts out of China.",
+    "when": "Chez les patients atteints de pneumonie virale, pour prédire les caractéristiques cliniques influant sur la mortalité.",
+    "pearls": "- Designed specifically for viral pneumonia, which may account for up to 29% of CAP ([Jennings 2008](https://thorax.bmj.com/content/63/1/42)).\n- Virus-associated pneumonia is defined as lower respiratory infection with a positive PCR for viral antigen.\n- This[single-center, retrospective, not-externally-validated design](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6901688/)may lead to bias and unknown applicability and generalizability.\n- If used on COVID-19 PNA patients, keep in mind that age has a much stronger odds ratio for increasing mortality risk in COVID-19 patients than with other viral PNA patients."
+  },
+  "next_steps": {
+    "advice": "- Threshold for disposition may change during resource-limited situations such as the current COVID-19 outbreak.\n- Take into consideration that the upper limit of the “low risk” group as indicated in the[original study](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6901688/)still carries a relatively high mortality rate (e.g. 11 points = 12.27% mortality).",
+    "critical_actions": "Si vous l’appliquez à un patient chez qui une COVID-19 est possible, utilisez ce score conjointement avec la suspicion clinique et les facteurs de risque – en particulier l’âge avancé et les comorbidités.",
+    "management": ""
+  },
+  "evidence": "D’après une [étude monocentrique](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6901688/) en Chine. 528 patients ont été inclus entre mai 2015 et mai 2019. Analyse rétrospective de tous les patients ayant des prélèvements PCR viraux positifs pour une pathologie respiratoire, avec inclusion dans l’analyse de ceux présentant des signes radiologiques de pneumonie.",
+  "more_info": "Interprétation :\n\n| Score MuLBSTA | Mortalité à 90 jours |\n| --- | --- |\n| 0 | 0,47 % |\n| 2 | 0,87 % |\n| 3 | 1,18 % |\n| 4 | 1,60 % |\n| 5 | 2,17 % |\n| 6 | 2,92 % |\n| 7 | 3,93 % |\n| 8 | 5,27 % |\n| 9 | 7,03 % |\n| 10 | 9,33 % |\n| 11 | 12,27 % |\n| 12 | 15,99 % |\n| 13 | 20,56 % |\n| 14 | 26,03 % |\n| 15 | 32,36 % |\n| 16 | 39,42 % |\n| 17 | 46,95 % |\n| 18 | 54,61 % |\n| 19 | 62,07 % |\n| 20 | 68,99 % |",
+  "short_description": "Viral pneumonie mortalité.",
+  "medium_description": "Predicts 90-day mortalité chez les patients avec viral pneumonie.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "one",
+      "label": "Infiltrat **multi**lobaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "two",
+      "label": "Numération absolue des **l**ymphocytes ≤0,8 x 10^9^/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "three",
+      "label": "**B** acterial coinfection",
+      "tips": "Détecté par culture d’expectoration ou hémoculture",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "**S** moking history",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non-fumeur",
+          "value": 0
+        },
+        {
+          "label": "Ancien fumeur",
+          "value": 2
+        },
+        {
+          "label": "Fumeur actif",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "six",
+      "label": "Antécédents d'hyper- **T** ension",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seven",
+      "label": "**** ge ≥60 ans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Guo L, Wei D, Zhang X, et al. Clinical Features Predicting Mortality Risk in Patients With Viral Pneumonia: The MuLBSTA Score. Front Microbiol. 2019;10:2752.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6901688/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Jennings LC, Anderson TP, Beynon KA, et al. Incidence and characteristics of viral community-acquired pneumonia in adults. Thorax. 2008;63(1):42-8.",
+      "href": "https://thorax.bmj.com/content/63/1/42",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.severe-community-acquired-pneumonia-scap-score",
+    "calc.piro-score-community-acquired-pneumonia",
+    "calc.covid-19-inpatient-risk-calculator-circ"
+  ],
+  "source_logic_hash": "ef293022c6989ebe6b41e784e035ca44",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10279,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

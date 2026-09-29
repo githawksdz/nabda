@@ -1,0 +1,322 @@
+{
+  "id": "calc.score2-diabetes",
+  "slug": "score2-diabetes",
+  "language": "en",
+  "title": "Systematic Coronary risque évaluation 2-diabète (SCORE2-diabète)",
+  "short_title": "SCORE2-diabète",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque",
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Arythmie",
+    "Douleur thoracique",
+    "Toux",
+    "Vertiges",
+    "Fatigue",
+    "Céphalée",
+    "Nausée",
+    "Engourdissement",
+    "Dyspnée",
+    "Gonflement",
+    "Vertige",
+    "Faiblesse",
+    "Sibilants"
+  ],
+  "abbreviations": [
+    "Systematic Coronary Risk Evaluation 2",
+    "Score2",
+    "score 2",
+    "score-2",
+    "heart disease",
+    "cvd",
+    "cvd risk",
+    "cardiovascular disease",
+    "cardiovascular disease risk",
+    "heart failure",
+    "heart failure risk",
+    "coronary heart disease",
+    "coronary heart disease risk",
+    "chd",
+    "chd risk",
+    "hf",
+    "hf risk",
+    "stroke",
+    "stroke risk",
+    "score2 diabetes",
+    "score2-diabetes",
+    "diabetes",
+    "score 2 - diabetes",
+    "type 2 diabetes"
+  ],
+  "dosing": false,
+  "formula": "The model coefficients and baseline survival to calculate 10-year risk of CVD are as follows:\n\n| Risk Factor | Transformation | Male | Female |\n| --- | --- | --- | --- |\n| Age, years | cage = (age – 60)/5 | 0.5368 | 0.6624 |\n| Smoking | current = 1, other = 0 | 0.4774 | 0.6139 |\n| SBP, mm Hg | csbp = (sbp – 120)/20 | 0.1322 | 0.1421 |\n| Diabetes | yes = 1, no = 0 | 0.6457 | 0.8096 |\n| Total cholesterol, mmol/L | ctchol = tchol – 6 | 0.1102 | 0.1127 |\n| HDL cholesterol, mmol/L | chdl = (hdl – 1.3)/0.5 | -0.1087 | -0.1568 |\n| Smoking*age interaction | smoking*cage | -0.0672 | -0.1122 |\n| SBP*age interaction | csbp*cage | -0.0268 | -0.0167 |\n| Diabetes*age interaction | diabetes*cage | -0.0983 | -0.1272 |\n| Total cholesterol*age interaction | ctchol*cage | -0.0181 | -0.0200 |\n| HDL cholesterol*age interaction | chdl*cage | 0.0095 | 0.0186 |\n| Age at diabetes diagnosis, years | cagediab = diabetes*(agediab – 50)/5 | -0.0998 | -0.1180 |\n| HbA1c, mmol/mol | ca1c = (a1c – 31)/9.34 | 0.0955 | 0.1173 |\n| [eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr\\) | cegfr = (ln(egfr) – 4.5)/0.15 | -0.0591 | -0.0640 |\n| eGFR 2 | cegfr 2 | 0.0058 | 0.0062 |\n| HbA1c*age interaction | ca1c*cage | -0.0134 | -0.0196 |\n| eGFR*age interaction | cegfr*cage | 0.0115 | 0.0169 |\n| Baseline survival | | 0.9605 | 0.9776 |\n\nThe 10-year risk of CVD is calculated by the following:\n\n10-year risk = [1 – (baseline survival)^exp(x)^],\n\nwhere x = Σ[β*(transformed variables)]\n\nThe region and sex-specific scales to calculate calibrated 10-year risk are as follows:\n\n| | Male | Female | | |\n| --- | --- | --- | --- | --- |\n| Risk Region | Scale 1 | Scale 2 | Scale 1 | Scale 2 |\n| Low | -0.5699 | 0.7476 | -0.7380 | 0.7019 |\n| Moderate | -0.1565 | 0.8009 | -0.3143 | 0.7701 |\n| High | 0.3207 | 0.9360 | 0.5710 | 0.9369 |\n| Very high | 0.5836 | 0.8294 | 0.9412 | 0.8329 |\n\nThe calibrated 10-year risk of CVD is calculated by the following:\n\nCalibrated 10-year risk, % = [1 – exp(-exp(scale1 + scale2*ln(-ln(1 – 10-year risk))))]*100",
+  "how_to_use": {
+    "why": "- Fournit une estimation du risque de CVD mortel et non mortel à 10 ans.\n- Utilise des modèles calibrés par région dans quatre régions européennes de risque et une estimation du risque spécifique au sexe.\n- Tient compte de la mortalité concurrente non-CVD.\n- Inclut des variables spécifiques au diabète qui modifient substantiellement le risque cardiovasculaire, permettant une stratification du risque plus affinée que les modèles de population générale.\n- Particulièrement utile lorsque les décisions thérapeutiques sont incertaines et lors de l’estimation du bénéfice absolu des",
+    "when": "- À utiliser chez les adultes âgés de 40 à 69 ans atteints de diabète de type 2 et sans maladie cardiovasculaire préexistante (CVD).\n- À appliquer lors de l’évaluation de prévention primaire pour guider l’intensité de l’abaissement lipidique, du contrôle de la pression artérielle, du sevrage tabagique et des interventions sur le mode de vie.",
+    "pearls": "- Estimates combined fatal and non-fatal myocardial infarction (MI) and stroke risk in people with type 2 diabetes, incorporating competing non-CVD mortality risk and contemporary European incidence data.\n- Regional calibration was satisfactory in the original validation; however, some validation studies have shown variable performance across socioeconomic and ethnic subgroups, with underestimation of risk in low socioeconomic status groups and non-European populations.\n- Risk predictions vary several-fold depending on diabetes-related factors; for example, in the moderate-risk region, a 60-year-old man with well-controlled diabetes (HbA1c 50 mmol/mol, eGFR 90 mL/min/1.73 m², recent diabetes diagnosis) has an estimated 10-year CVD risk of 11%, whereas a similar man with poorer control (HbA1c 70 mmol/mol, eGFR 60 mL/min/1.73 m², diabetes diagnosed 10 years earlier) has an estimated risk of 17%.\n- Designed and calibrated for European populations; interpret results with caution in other regions.\n- Does not account for all additional risk enhancers (e.g., Lp[a], family history, inflammatory diseases, environmental risk factors beyond those included in the model).\n- Should not be used in patients with established CVD, as they were not included in the derivation/validation cohorts and their risk is already high.\n- Prospective studies are needed to evaluate treatment benefit in people with diabetes stratified by SCORE2-Diabetes risk categories.\n\n**Key facts:**\n\n- Derivation cohort: 229,460 participants with type 2 diabetes from 4 large-scale datasets.\n- External validation: 217,036 participants from additional study populations.\n- Primary endpoint: composite of CVD mortality, non-fatal MI, and non-fatal stroke; CVD mortality included death from atherosclerotic coronary heart disease, heart failure, stroke, and sudden death.\n- External validation showed good discrimination and improvement over [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) (C-index change from 0.009 to 0.031)."
+  },
+  "next_steps": {
+    "advice": "- Interpréter les estimations du risque dans le contexte clinique plus large de la prise en charge du diabète, y compris la durée du diabète, le contrôle glycémique, la fonction rénale et les complications microvasculaires.\n- Utiliser l’estimation du risque conjointement avec le jugement clinique pour définir l’intensité préventive.\n- La décision médicale partagée est particulièrement importante chez les personnes diabétiques, en mettant en balance les bénéfices potentiels de la modification des facteurs de risque avec la charge thérapeutique et les préférences du patient.\n- Réévaluer périodiquement le risque, en particulier après des modifications majeures du contrôle du diabète, du statut tabagique, de la pression artérielle, du bilan lipidique ou de la fonction rénale.\n- Envisager des modificateurs de risque supplémentaires (p. ex., lipoprotéine",
+    "critical_actions": "",
+    "management": "- Management strategies should be linked to estimated absolute cardiovascular risk.\n- Higher SCORE2-Diabetes categories may warrant more intensive LDL-cholesterol lowering, stricter blood pressure control, and structured lifestyle interventions.\n- Shared decision-making is recommended when considering pharmacologic prevention in patients with diabetes, particularly given individual variation in diabetes control and comorbidities.\n- Management decisions should be guided by the most recent guidelines, integrating clinical judgment, comorbidities, diabetes control, renal function, expected treatment benefit, patient preferences, and risk modifiers.\n- This tool is intended to support cardiovascular risk estimation and shared decision-making; use of the SCORE2-Diabetes algorithm to estimate 10-year CVD risk and guide initiation of SGLT2 inhibitors, GLP-1 receptor agonists, and lipid-lowering therapies is recommended in[2023 ESC Guidelines](https://pubmed.ncbi.nlm.nih.gov/37622663/)for CVD management in patients with diabetes.\n\n**CV Risk Categories in Type 2 Diabetes**\n\n- **Very high risk:** Established ASCVD, severe target organ damage,or SCORE2-Diabetes ≥20%.\n- **High risk:** SCORE2-Diabetes 10%–<20%.\n- **Moderate risk:** SCORE2-Diabetes 5%–<10%.\n- **Low risk:** SCORE2-Diabetes <5%."
+  },
+  "evidence": "",
+  "more_info": "Risk regions are defined by the following map:\n\n![](https://s3.us-west-2.amazonaws.com/cdn-web-img.mdcalc.com/content/score2.png)\n\nFrom[SCORE2 Working Group 2023](https://pubmed.ncbi.nlm.nih.gov/37247330/).",
+  "short_description": "Risque de maladie cardiovasculaire (MCV) à 10 ans avec diabète de type 2.",
+  "medium_description": "Predicts 10-year CVD risque chez les patients avec type 2 diabète.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sexe",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_score2_diabetes",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "smoking",
+      "label": "Tabagisme",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Autre",
+          "value": 0
+        },
+        {
+          "label": "Actuel",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "PAS (SBP)",
+      "optional": false,
+      "unit": "sbp",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "diabetes",
+      "label": "Diabète",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "tc",
+      "label": "Cholestérol total",
+      "optional": false,
+      "unit": "chol_total",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdl",
+      "label": "Cholestérol HDL",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "age_diab",
+      "label": "Âge au diagnostic du diabète",
+      "optional": false,
+      "unit": "age_diab",
+      "show_points": false,
+      "conditionality": "diabetes == 1"
+    },
+    {
+      "type": "textbox",
+      "name": "a1c",
+      "label": "HbA1c",
+      "optional": false,
+      "unit": "hba1c_score2_diabetes",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "egfr",
+      "label": "[eGFR](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "unit": "gfr",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "region",
+      "label": "Région à risque",
+      "tips": "Voir [Preuves](#evidence) pour la définition des régions à risque.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Bas",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Élevé",
+          "value": 3
+        },
+        {
+          "label": "Très élevé",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Visseren FLJ, Mach F, Smulders YM, et al. 2021 ESC Guidelines on cardiovascular disease prevention in clinical practice. Eur Heart J. 2021;42(34):3227-3337.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34458905/",
+      "kind": "international"
+    },
+    {
+      "text": "Marx N, Federici M, Schütt K, et al. ESC Guidelines for the management of cardiovascular disease in patients with diabetes. Eur Heart J. 2023;44(39):4043–4140.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37622663/",
+      "kind": "international"
+    },
+    {
+      "text": "SCORE2-Diabetes Working Group and the ESC Cardiovascular Risk Collaboration. SCORE2-Diabetes: 10-year cardiovascular risk estimation in type 2 diabetes in Europe. Eur Heart J. 2023;44(28):2544-2556.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37247330/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "SCORE2 working group and ESC Cardiovascular risk collaboration. SCORE2 risk prediction algorithms: new models to estimate 10-year risk of cardiovascular disease in Europe. Eur Heart J. 2021;42(25):2439-2454.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34120177/",
+      "kind": "other"
+    },
+    {
+      "text": "Alfaraj SA, Kist JM, Groenwold RHH, Spruit M, Mook-Kanamori D, Vos RC. External validation of SCORE2-Diabetes in The Netherlands across various socioeconomic levels in native-Dutch and non-Dutch populations. Eur J Prev Cardiol. 2025;32(7):555-563.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39485827/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fu Z, Shen P, Liang J, et al. External validation of SCORE2-Diabetes risk prediction model in Chinese patients with diabetes. Eur J Prev Cardiol. Published online 2025.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40243017/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Enguita-Germán M, Ballesteros-Domínguez MD, et al. External validation of cardiovascular risk scores in patients with type 2 diabetes using the Spanish population-based CARDIANA cohort. Eur J Prev Cardiol. Published online 2025.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40439899/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Leite S, et al. SCORE2-Diabetes vs SCORE for evaluation of cardiovascular risk in diabetic patients. J Fam Med Prim Care. 2026;15(2):904–911.",
+      "href": "https://journals.lww.com/jfmpc/fulltext/2026/02000/score2_diabetes_vs_score_for_evaluation_of.54.aspx",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Petitjean C, Keene SJ, Bolton T, et al. Using population-wide electronic health records for timely contemporary assessment of cardiovascular disease risk prediction model performance: COVID-19 impact on the SCORE2 models. Eur J Prev Cardiol. Published online March 29, 2026. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41903569/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.score2-older-persons-score2-op",
+    "calc.systematic-coronary-risk-evaluation-score2",
+    "calc.predicting-risk-cardiovascular-disease-events-prevent",
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr"
+  ],
+  "source_logic_hash": "8ba1adfdd965904a9b213cc9fc05b168",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "eGFR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    },
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "eGFR"
+    },
+    {
+      "type": "calc",
+      "id": "calc.systematic-coronary-risk-evaluation-score2",
+      "text": "SCORE2"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10510,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar sex = parseFloat(sex);\nvar age = parseFloat(age);\nvar smoker = parseFloat(smoker);\nvar sbp = parseFloat(sbp);\nvar diabetes = parseFloat(diabetes);\n\nif (UOMSYSTEM == true) {\n    var tc = parseFloat(tc)*0.02586;\n    var hdl = parseFloat(hdl)*0.02586;\n} else if (UOMSYSTEM == false) {\n    var tc = parseFloat(tc);\n    var hdl = parseFloat(hdl);\n}\n\nvar age_diab = parseFloat(age_diab);\nvar a1c = parseFloat(a1c);\nvar egfr = parseFloat(egfr);\nvar region = parseFloat(region);\n\nvar cage = (age - 60)/5;\nvar csbp = (sbp - 120)/20;\nvar ctc = tc - 6;\nvar chdl = (hdl - 1.3)/0.5;\nvar smoke_age = smoking*cage;\nvar sbp_age = csbp*cage;\nvar diabetes_age = diabetes*cage;\nvar tc_age = ctc*cage;\nvar hdl_age = chdl*cage;\n\nif (diabetes == 1) {\n    var cagediab = (age_diab - 50)/5;\n} else {\n    var cagediab = 0;\n}\n\nvar ca1c = (a1c - 31)/9.34;\nvar cegfr = (Math.log(egfr) - 4.5)/0.15;\nvar cegfr_sq = Math.pow(cegfr, 2);\nvar a1c_age = ca1c*cage;\nvar egfr_age = cegfr*cage;\n\nvar x;\nvar risk_10;\n\nif (sex == 0) {\n    x = 0.5368*cage + 0.4774*smoking + 0.1322*csbp + 0.6457*diabetes + 0.1102*ctc + -0.1087*chdl + -0.0672*smoke_age + -0.0268*sbp_age + -0.0983*diabetes_age + -0.0181*tc_age + 0.0095*hdl_age + -0.0998*cagediab + 0.0955*ca1c + -0.0591*cegfr + 0.0058*cegfr_sq + -0.0134*a1c_age + 0.0115*egfr_age;\n    risk_10 = 1 - Math.pow(0.9605, Math.exp(x));\n} else {\n    x = 0.6624*cage + 0.6139*smoking + 0.1421*csbp + 0.8096*diabetes + 0.1127*ctc + -0.1568*chdl + -0.1122*smoke_age + -0.0167*sbp_age + -0.1272*diabetes_age + -0.02*tc_age + 0.0186*hdl_age + -0.1180*cagediab + 0.1173*ca1c + -0.0640*cegfr + 0.0062*cegfr_sq + -0.0196*a1c_age + 0.0169*egfr_age;\n    risk_10 = 1 - Math.pow(0.9776, Math.exp(x));\n}\n\nvar scale1;\nvar scale2;\nif (region == 1) {\n    if (sex == 0) {\n        scale1 = -0.5699;\n        scale2 = 0.7476;\n    } else {\n        scale1 = -0.7380;\n        scale2 = 0.7019;\n    }\n} else if (region == 2) {\n    if (sex == 0) {\n        scale1 = -0.1565;\n        scale2 = 0.8009;\n    } else {\n        scale1 = -0.3143;\n        scale2 = 0.7701;\n    }\n} else if (region == 3) {\n    if (sex == 0) {\n        scale1 = 0.3207;\n        scale2 = 0.9360;\n    } else {\n        scale1 = 0.5710;\n        scale2 = 0.9369;\n    }\n} else if (region == 4) {\n    if (sex == 0) {\n        scale1 = 0.5836;\n        scale2 = 0.8294;\n    } else {\n        scale1 = 0.9412;\n        scale2 = 0.8329;\n    }\n}\n\nvar c_risk = [1 - Math.exp(-Math.exp(scale1 + scale2*Math.log(-Math.log(1 - risk_10))))]*100\n\ncalc_output.push({\n    name: 'mini',\n    value: c_risk.toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});  \ncalc_output.push({\n    name: '10510_SCORE2-Diabetes_result',\n    value: c_risk.toFixed(1),\n    value_text: '%',\n    message: '10-year risk of CVD'\n});\n",
+  "before_use": null,
+  "instructions": "- Use in European adults aged 40–69 years with type 2 diabetes.\n- Do not apply when alternative risk scores or disease-specific guidance should be used, such as:\n\n - Known atherosclerotic cardiovascular disease (ASCVD).\n - Type 1 diabetes.\n - Age 40–69 years without diabetes (consider using [SCORE2](nabda:calc.systematic-coronary-risk-evaluation-score2) ).\n - Age ≥70 years (consider using [SCORE2-OP](nabda:calc.score2-older-persons-score2-op) ).",
+  "contributor_ids": [
+    "simon-kraler-md-phd"
+  ],
+  "creator_names": [
+    "SCORE2 Working Group",
+    "ESC Cardiovascular Risk Collaboration"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Total Cholesterol",
+    "HDL Cholesterol",
+    "gfr"
+  ],
+  "popular": false,
+  "cat_ids": [
+    "g.diabete-de-type-1"
+  ],
+  "substance_ids": [
+    "s.cholesterol-zinc-oxyde"
+  ],
+  "engine_sha256": "1d591fb8be70a2c1c0316b56ce029642b4c1bf92e2d20cd2c8b8dbab531ccb60"
+}

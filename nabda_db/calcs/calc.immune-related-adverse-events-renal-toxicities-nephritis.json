@@ -1,0 +1,103 @@
+{
+  "id": "calc.immune-related-adverse-events-renal-toxicities-nephritis",
+  "slug": "immune-related-adverse-events-renal-toxicities-nephritis",
+  "language": "en",
+  "title": "Immune-lié Adverse Events pour Renal Toxicities - Nephritis",
+  "short_title": "IRAE pour Renal Toxicities - Nephritis",
+  "calc_type": null,
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "medecine-interne",
+    "nephrologie"
+  ],
+  "diseases": [
+    "Nephritis"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Dysuria",
+    "Hematuria",
+    "Pain"
+  ],
+  "abbreviations": [
+    "Immune Related Adverse Events, irae, nephritis, immune checkpoint inhibitor therapy, ICPi therapy, ASCO guideline, ASCO"
+  ],
+  "dosing": false,
+  "formula": "| Criteria | Nephritis grade | |\n| --- | --- | --- |\n| Creatinine level increase of >0.3 mg/dL; creatinine 1.5-2.0x over baseline | G1 | |\n| Creatinine 2-3x above baseline | G2 | |\n| Creatinine >3x baseline or >4.0 mg/dL; hospitalization indicated | G3 | |\n| Life-threatening consequences; dialysis indicated | G4 | |\n\nSee Next Steps for details on management.",
+  "how_to_use": {
+    "why": "This tool aids in the decision of immune checkpoint inhibitor discontinuation, further diagnostic work-up and immunosuppressant treatment initiation.",
+    "when": "Adult patients with elevations in creatinine levels or symptoms suggesting nephritis that developed while on treatment with immune checkpoint inhibitors including agents against PD-1 (i.e. pembrolizumab, nivolumab), PD-L1 (i.e. atezolizumab, avelumab, durvalumab), or CTLA-4 (i.e. ipilimumab).",
+    "pearls": "- Immune checkpoint inhibitor (ICPi) nephritis should be suspected in patients with elevations in creatinine levels or symptoms suggesting nephritis while on treatment with immune checkpoint inhibitors.\n- Immune checkpoint inhibitor (ICPi) nephritis is an uncommon but potentially serious toxicity.\n- More frequently seen with combination treatment of more than one ICPi but is also an important adverse event caused by single agent ICPi.\n- ICPi therapy appears to be safe in patients with baseline renal impairment from nonimmune basis (i.e. prior nephrectomy, old age, hypertension).\n- Management of ICPi nephritis is based on the grade of nephritis."
+  },
+  "next_steps": {
+    "advice": "Monitor patients for elevated serum creatinine prior to every dose.\n\nFor suspected ICPi nephritis, consider holding therapy while other potential causes are evaluated (i.e. recent IV radiographic contrast administration, dehydration, other medicines, urinary tract infections) and monitor creatinine weekly.\n\nRoutine urinalysis is not necessary other than to rule out urinary tract infections, etc.\n\nPresume ICPi nephritis for patients without other obvious causes or for those who do not respond to alternative treatment measures.\n\nIf no potential alternative cause of acute kidney injury (AKI) is identified, then consider biopsy and proceed directly with immunosuppressive therapy.",
+    "critical_actions": "",
+    "management": "For all patients where an IRAE diagnosis is being considered, it is always recommended to involve the specialist or team prescribing the immune checkpoint therapy.\n\n**All patients:**\n\nMonitor creatinine weekly.\n\nKidney biopsy should be discouraged until corticosteroid treatment has been attempted.\n\n**Grade 1:**\n\n- Consider temporarily holding ICPi, pending consideration of potential alternative etiologies (recent IV contrast, medications, fluid status) and baseline renal function.\n- A change that is still <1.5 ULN could be meaningful.\n\n**Grade 2:**\n\n- Hold treatment temporarily.\n- Consider nephrology consultation.\n- Evaluate for other causes (recent IV contrast, medications, fluid status, etc). If other etiologies are ruled out, administer 0.5-1 mg/kg/d prednisone equivalents.\n- If worsening or no improvement, consider 1-2 mg/kg/d prednisone or equivalent and permanently discontinue ICPi.\n- If improved to ≤ Grade 1, taper corticosteroids over 4-6 weeks.\n- If no recurrence of chronic renal insufficiency, discuss resumption of ICPi with patient after thorough discussion of risks and benefits.\n\n**Grade 3-4:**\n\n- Permanently discontinue ICPi.\n- Consider Consult nephrology consultation.\n- Evaluate for other causes (recent IV contrast, medications, fluid status, etc).\n- Consider corticosteroids (initial dose of 1-2 mg/kg/d prednisone or equivalent)."
+  },
+  "evidence": "Guidelines for IRAE in for renal toxicity (nephritis) were developed by a multidisciplinary, multi-organizational panel of experts in medical oncology based on a systematic review of the medical literature.",
+  "more_info": "",
+  "short_description": "Nephritis gravité (ICPi therapy).",
+  "medium_description": "Grades gravité de nephritis secondaire pour immune checkpoint inhibitor therapy.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "grading",
+      "label": "Critères",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Creatinine level increase de >0.3 mg/dL; creatinine 1.5-2.0x over initial",
+          "value": 1
+        },
+        {
+          "label": "Creatinine 2-3x above initial",
+          "value": 2
+        },
+        {
+          "label": "Creatinine >3x initial ou >4.0 mg/dL; hospitalization indicated",
+          "value": 3
+        },
+        {
+          "label": "Life-threatening consequences; dialysis indicated",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Brahmer JR, Lacchetti C, Schneider BJ, et al. Management of Immune-Related Adverse Events in Patients Treated With Immune Checkpoint Inhibitor Therapy: American Society of Clinical Oncology Clinical Practice Guideline. J Clin Oncol. 2018;36(17):1714-1768.",
+      "href": "ttps://www.ncbi.nlm.nih.gov/pubmed/29442540",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.immune-related-adverse-events-gi-toxicity-hepatitis",
+    "calc.immune-related-adverse-events-endocrine-toxicities-diabetes-mellitus",
+    "calc.immune-related-adverse-events-endocrine-toxicities-hypothyroidism"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10378,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

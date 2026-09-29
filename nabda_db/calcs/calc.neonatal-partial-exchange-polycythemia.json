@@ -1,0 +1,132 @@
+{
+  "id": "calc.neonatal-partial-exchange-polycythemia",
+  "slug": "neonatal-partial-exchange-polycythemia",
+  "language": "fr",
+  "title": "Néonatal Partial Exchange pour Polycythemia",
+  "short_title": "Néonatal Partial Exchange",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "pharmacotherapie"
+  ],
+  "diseases": [
+    "Anemia"
+  ],
+  "chief_complaints": [
+    "Cancer"
+  ],
+  "abbreviations": [
+    "polycythemia",
+    "Neonatal Partial Exchange for Polycythemia",
+    "Neonatal Partial Exchange"
+  ],
+  "dosing": true,
+  "formula": "Volume of replacement fluid = [ blood volume, mL × (Hct(actual) - Hct(goal)) ] / Hct(actual)\n\nWhere [blood volume](nabda:calc.blood-volume-calculation) = 100 mL/kg if preterm and 85 mL/kg if term.\n\nExample calculation:\n\n- Patient blood volume = 200 mL, Hct(actual) = 70, Hct(goal) = 60\n- (200 mL × (0.7 – 0.6)) / 0.7\n- Replacement volume is 29 mL (remove 29 mL whole blood, replace 29 mL crystalloid)",
+  "how_to_use": {
+    "why": "Calculer le volume de sang total à remplacer par des cristalloïdes peut aider à normaliser l’hématocrite néonatal et à éviter les complications associées à la polycythémie.",
+    "when": "La polycythémie néonatale peut survenir au cours de la première semaine de vie, lorsque l’hématocrite est >65 % ou l’hémoglobine >22 g/dL. L’augmentation de la viscosité associée à la polycythémie altère l’oxygénation tissulaire et peut entraîner une insuffisance cardiaque congestive, des complications du SNC, pulmonaires et rénales ou une entérocolite nécrosante (NEC). Des échanges partiels peuvent être utilisés pour obtenir une diminution de l’hématocrite (généralement un objectif de 55-60 % afin d’éviter les complications associées aux diminutions importantes) en remplaçant le sang total par des cristalloïdes. Le remplacement plasmatique est généralement évité en",
+    "pearls": "- Le remplissage par cristalloïdes est utilisé en raison d'une association entre le remplissage par plasma et la NEC.\n- Le volume sanguin néonatal peut être estimé à 85 mL/kg chez les nouveau-nés à terme et à 100 mL/kg chez les nouveau-nés prématurés."
+  },
+  "next_steps": {
+    "advice": "La procédure d’échange partiel doit être réalisée par un membre expérimenté de l’équipe clinique, conformément aux politiques institutionnelles. Le remplacement par cristalloïdes doit être utilisé afin d’éviter un risque accru de NEC.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Prélèvement sanguin chez le nouveau-né et remplissage par cristalloïdes.",
+  "medium_description": "Estimates volume de whole blood pour remove et volume de crystalloid pour infuse dans néonatal polycythemia.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids du patient",
+      "optional": false,
+      "unit": "wt_fetus",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "term",
+      "label": "Gestational âge",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pre-term",
+          "value": 0
+        },
+        {
+          "label": "Term",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "hct_initial",
+      "label": "Hématocrite initial",
+      "optional": false,
+      "unit": "hct_initial",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "hct_goal",
+      "label": "Hématocrite, objectif",
+      "optional": false,
+      "unit": "hct_final",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Black VD, Rumack CM, Lubchenco LO, Koops BL. Gastrointestinal injury in polycythemic term infants. Pediatrics. 1985;76(2):225-31.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4022696",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Roback JD. Technical Manual. American Association of Blood Banks (AABB); 2014.",
+      "href": null,
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.world-health-organization-who-diagnostic-criteria-polycythemia-vera",
+    "calc.sickle-cell-rbc-exchange-volume",
+    "calc.blood-volume-calculation"
+  ],
+  "source_logic_hash": "02e632fd75f179e69489abb545aa1ee4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.blood-volume-calculation",
+      "text": "blood volume"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10006,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,161 @@
+{
+  "id": "calc.wpss-classification-based-prognostic-scoring-system-myelodysplastic-syndrome",
+  "slug": "wpss-classification-based-prognostic-scoring-system-myelodysplastic-syndrome",
+  "language": "fr",
+  "title": "WPSS (WHO classification-basé Prognostic système de score) pour Myelodysplastic syndrome",
+  "short_title": "WPSS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie"
+  ],
+  "diseases": [
+    "Cancer",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "MDS",
+    "WHO MDS scoring",
+    "WPSS",
+    "Myelodysplastic Syndrome"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable pronostique | 0 point | 1 point | 2 points | 3 points |\n| --- | --- | --- | --- | --- |\n| Catégorie OMS | Anémie réfractaire (RA), anémie réfractaire avec sidéroblastes en couronne (RARS) ou syndrome myélodysplasique avec del(5q) isolé | Cytopénie réfractaire avec dysplasie multilignée (RCMD) ou cytopénie réfractaire avec dysplasie multilignée et sidéroblastes en couronne (RCMD-RS) | Anémie réfractaire avec excès de blastes, 2-4 % de blastes dans le sang périphérique (RAEB-1) | Anémie réfractaire avec excès de blastes, 5-19 % de blastes dans le sang périphérique (RAEB-2) |\n| Caryotype* | Bon | Intermédiaire | Mauvais | -- |\n| Besoin transfusionnel** | Aucun | Régulier | -- | -- |\n\n*Le caryotype est défini comme suit : bon = normal, –Y, del(5q), del(20q) ; mauvais = complexe (≥3 anomalies), anomalies du chromosome 7 ; et intermédiaire = toutes les autres anomalies.\n\n**Le besoin transfusionnel est défini comme la nécessité d'au moins une transfusion de globules rouges toutes les 8 semaines sur une période de 4 mois.",
+  "how_to_use": {
+    "why": "- Stratifie les patients en catégories de risque corrélées avec la survie globale et la probabilité de progression vers une leucémie aiguë myéloïde.\n- Aide les cliniciens dans le choix des stratégies thérapeutiques (p. ex., soins de support, traitement modificateur de la maladie, envisager une greffe).\n- Contrairement à certains modèles similaires, cet outil a été validé pour une utilisation tout au long de l'évolution de la maladie.",
+    "when": "- À calculer au diagnostic du syndrome myélodysplasique (MDS) afin d'aider à la stratification initiale du risque.\n- Peut être appliqué dans le cadre du suivi pour réévaluer la catégorie de risque du patient au fil du temps ou en cas de modification de l'état clinique.",
+    "pearls": "- Cet outil repose sur les besoins transfusionnels, qui peuvent être influencés par les pratiques locales.\n- Un score précis nécessite une bonne connaissance des sous-groupes de l'OMS."
+  },
+  "next_steps": {
+    "advice": "- La prise en charge doit être guidée par l'expertise du clinicien, le contexte clinique global du patient et ses préférences individuelles.\n- Les MDS peuvent évoluer ; une réévaluation fréquente est recommandée en cas de changement de l'état clinique ou de disponibilité de nouvelles données.",
+    "critical_actions": "",
+    "management": "**Risque faible ou très faible :**\n\n- Les patients asymptomatiques peuvent relever d'une surveillance et de mesures de support (p. ex., transfusions).\n- Des traitements de faible intensité (p. ex., facteurs de croissance, agents hypométhylants, luspatercept, lénalidomide, immunosuppresseurs et agents ciblés) peuvent être envisagés en cas de symptômes.\n- Un traitement plus intensif peut être proposé aux patients jeunes et en bon état général, selon le contexte clinique et les caractéristiques pathologiques.\n\n**Risque élevé ou très élevé :**\n\n- Le choix du traitement dépend souvent de l'état médical du patient et des caractéristiques pathologiques. Les options peuvent inclure :\n\n - Les traitements de faible intensité mentionnés ci-dessus (p. ex., agents hypométhylants, thérapies ciblées).\n - Les traitements de forte intensité, tels qu'une chimiothérapie avec ou sans greffe allogénique de cellules hématopoïétiques (HCT)."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score WPSS | Groupe de risque | Survie médiane |\n| --- | --- | --- |\n| 0 | Très faible | 141 mois |\n| 1 | Faible | 66 mois |\n| 2 | Intermédiaire | 48 mois |\n| 3-4 | Élevé | 26 mois |\n| 5-6 | Très élevé | 9 mois |",
+  "short_description": "Survie MDS.",
+  "medium_description": "Evaluates pronostic de patients avec myelodysplastic syndrome (MDS).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "who",
+      "label": "Catégorie OMS",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Refractory anemia (RA), refractory anemia avec ringed sideroblasts (RARS), ou myelodysplastic syndrome avec isolated del (5q)",
+          "value": 0
+        },
+        {
+          "label": "Refractory cytopenia avec multilineage dysplasia (RCMD), ou refractory cytopenia avec multilineage dysplasia et ringed sideroblasts (RCMD-RS)",
+          "value": 1
+        },
+        {
+          "label": "Refractory anemia avec excess de blasts, 2-4% blasts dans peripheral blood (RAEB-1)",
+          "value": 2
+        },
+        {
+          "label": "Refractory anemia avec excess de blasts, 5-19% blasts dans peripheral blood (RAEB-2)",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "karyotype",
+      "label": "Karyotype",
+      "tips": "Défini comme suit : bon = normal, –Y, del(5q), del(20q) ; mauvais = complexe (≥3 anomalies), anomalies du chromosome 7 ; et intermédiaire = toutes les autres anomalies",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Good",
+          "value": 0
+        },
+        {
+          "label": "Intermédiaire",
+          "value": 1
+        },
+        {
+          "label": "Poor",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "transfusion",
+      "label": "Besoin transfusionnel",
+      "tips": "Défini comme la nécessité d'au moins une transfusion de globules rouges toutes les 8 semaines sur une période de 4 mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Regular",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Malcovati L, et al. A WHO Classification-Based Prognostic Scoring System (WPSS) for Predicting Survival in Myelodysplastic Syndromes. Blood. 2005; 106(11).",
+      "href": "https://www.bloodjournal.org/content/106/11/788?sso-checked=true ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Malcovati L, Germing U, Kuendgen A, et al. Time-dependent prognostic scoring system for predicting survival and leukemic evolution in myelodysplastic syndromes. J Clin Oncol. 2007;25(23):3503-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17687155",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Della porta MG, Tuechler H, Malcovati L, et al. Validation of WHO classification-based Prognostic Scoring System (WPSS) for myelodysplastic syndromes and comparison with the revised International Prognostic Scoring System (IPSS-R). A study of the International Working Group for Prognosis in Myelodysplasia (IWG-PM). Leukemia. 2015;29(7):1502-13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25721895 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bektaş Ö, Üner A, Eliaçık E, et al. Comparison of Myelodysplastic Syndrome Prognostic Scoring Systems. Turk J Haematol. 2016;33(2):119-26.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5100722/ ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.revised-international-prognostic-scoring-system-ipss-r-myelodysplastic-syndrome-mds",
+    "calc.dipss-dynamic-international-prognostic-scoring-system-myelofibrosis",
+    "calc.cytokine-release-syndrome-crs-grading"
+  ],
+  "source_logic_hash": "7db934015f6c0bbc57520123853c7e65",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10082,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

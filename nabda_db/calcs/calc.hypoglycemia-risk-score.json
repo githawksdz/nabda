@@ -1,0 +1,212 @@
+{
+  "id": "calc.hypoglycemia-risk-score",
+  "slug": "hypoglycemia-risk-score",
+  "language": "fr",
+  "title": "Score de risque d'hypoglycémie",
+  "short_title": "Score de risque d'hypoglycémie",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Diabète sucré"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Dizziness",
+    "Fatigue",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Hypoglycemia Risk Stratification",
+    "Hypoglycemia risk",
+    "T2D",
+    "T2DM",
+    "Type 2 Diabetes"
+  ],
+  "dosing": false,
+  "formula": "Sélectionnez une option pour chaque paramètre et consultez Faits et chiffres pour l'interprétation :\n\n| Paramètre | Options | | |\n| --- | --- | --- | --- |\n| Admissions pour hypoglycémie* | 0 | 1-2 | ≥3 |\n| Visites aux urgences, 12 derniers mois** | <2 | ≥2 | -- |\n| Utilisation d'insuline | Non | Oui | -- |\n| Utilisation de sulfamides hypoglycémiants | Non | Oui | -- |\n| Maladie rénale sévère ou terminale (DFGe ≤29 selon [Créatinine CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr\\) ) | Non | Oui | -- |\n| Âge | <77 ans | ≥77 ans | -- |\n\n*Visite aux urgences ou hospitalisation pour hypoglycémie, à tout moment.\n\n**Pour toute cause.",
+  "how_to_use": {
+    "why": "- L'hypoglycémie iatrogène est un événement indésirable fréquent chez les patients atteints de diabète de type 2, 1 hospitalisation en urgence sur 4 pour événement indésirable médicamenteux étant liée à l'hypoglycémie.\n- Aide à identifier les patients à risque le plus élevé, qui pourraient bénéficier d'interventions ciblées (par ex. schémas médicamenteux simplifiés, mesure continue du glucose, prise en compte des facteurs psychosociaux et socio-économiques).",
+    "when": "",
+    "pearls": "- Développé à partir de données de dossiers médicaux électroniques pour orienter les interventions de gestion de population et donc d'une applicabilité limitée chez les patients individuels.\n- Validé dans de multiples cohortes externes, y compris dans un jeu de données utilisant les codes ICD10, mais n'a pas encore été appliqué de manière prospective."
+  },
+  "next_steps": {
+    "advice": "Les patients à haut risque peuvent bénéficier d'interventions ciblées (par ex. schémas médicamenteux simplifiés, mesure continue du glucose, prise en compte des facteurs psychosociaux et socio-économiques).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Variables | Catégorie de risque | Risque d'admission pour hypoglycémie à 12 mois * |\n| --- | --- | --- |\n| ≥3 admissions antérieures pour hypoglycémie, OU | Élevé | >5% |\n| 1-2 admission(s) antérieure(s) pour hypoglycémie + utilisation d'insuline | | |\n| 0 admission antérieure pour hypoglycémie + pas d'utilisation d'insuline + pas d'utilisation de sulfamides hypoglycémiants, OU | Faible | <1% |\n| 0 admission antérieure pour hypoglycémie + pas d'utilisation d'insuline + utilisation de sulfamides hypoglycémiants + âge <77 ans + pas de maladie rénale sévère ou terminale, OU | | |\n| 0 admission antérieure pour hypoglycémie + utilisation d'insuline + âge <77 ans + <2 visites aux urgences | | |\n| Toutes les autres combinaisons de facteurs de risque | Intermédiaire | 1-5% |",
+  "short_description": "Hypoglycemia prédiction.",
+  "medium_description": "Predicts 12-month risque de hypoglycemic episodes dans T2DM patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "hypoglycemia",
+      "label": "History de ED ou hôpital admission due pour hypoglycemia",
+      "tips": "Diagnostic principal d'hypoglycémie aux urgences ou diagnostic principal d'hypoglycémie à l'hôpital",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1-2",
+          "value": 1
+        },
+        {
+          "label": "≥3",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "emergencydept",
+      "label": "Visites aux urgences, 12 derniers mois",
+      "tips": "Pour toute cause",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+      "options": [
+        {
+          "label": "< 2",
+          "value": 0
+        },
+        {
+          "label": "≥2",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "insulin",
+      "label": "Utilisation d'insuline",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sulfonylurea",
+      "label": "Utilisation de sulfamides hypoglycémiants",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "kidney",
+      "label": "Maladie rénale sévère ou terminale",
+      "tips": "DFGe ≤29 selon [Créatinine CKD-EPI](nabda:calc.ckd-epi-equations-glomerular-filtration-rate-gfr)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "hypoglycemia == 0 || hypoglycemia == 1",
+      "options": [
+        {
+          "label": "< 77 ans",
+          "value": 0
+        },
+        {
+          "label": "≥77 ans",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Karter AJ, Warton EM, Lipska KJ, et al. Development and Validation of a Tool to Identify Patients With Type 2 Diabetes at High Risk of Hypoglycemia-Related Emergency Department or Hospital Use. JAMA Intern Med. 2017;177(10):1461-1470.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2649265",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Karter AJ, Warton EM, Lipska KJ, et al. Development and Validation of a Tool to Identify Patients With Type 2 Diabetes at High Risk of Hypoglycemia-Related Emergency Department or Hospital Use. JAMA Intern Med. 2017;177(10):1461-1470.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/article-abstract/2649265",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Karter AJ, Warton EM, Moffet HH, et al. Revalidation of the Hypoglycemia Risk Stratification Tool Using ICD-10 Codes. Diabetes Care. 2019;42(4):e58-e59.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/30765427",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+    "calc.american-diabetes-association-ada-risk-calculator",
+    "calc.apache-ii-score"
+  ],
+  "source_logic_hash": "91044c16108d67c861edfd9ee722d397",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.ckd-epi-equations-glomerular-filtration-rate-gfr",
+      "text": "CKD-EPI Creatinine"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4031,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

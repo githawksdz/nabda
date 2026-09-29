@@ -1,0 +1,248 @@
+{
+  "id": "calc.fracture-index",
+  "slug": "fracture-index",
+  "language": "en",
+  "title": "Index FRACTURE",
+  "short_title": "Index FRACTURE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "endocrinologie",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "orthopedie"
+  ],
+  "diseases": [
+    "Fracture",
+    "Osteoporosis"
+  ],
+  "chief_complaints": [
+    "Douleur dorsale",
+    "Douleur chronique",
+    "Injury/Trauma",
+    "Pain",
+    "Soins préventifs / Dépistage",
+    "Weakness",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "FRACTURE Index",
+    "fracture",
+    "postmenopausal fracture",
+    "osteoporosis",
+    "postmenopausal women",
+    "estrogen",
+    "osteoporotic fracture",
+    "fracture risk",
+    "hip fracture",
+    "bone mineral density",
+    "BMD",
+    "DXA"
+  ],
+  "dosing": false,
+  "formula": "The FRACTURE Index is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Age, years | <65 | 0 |\n| 65-69 | 1 | |\n| 70-74 | 2 | |\n| 75-79 | 3 | |\n| 80-84 | 4 | |\n| ≥85 | 5 | |\n| History of any fracture after age 50 | No/don’t know | 0 |\n| Yes | 1 | |\n| Mother’s history of a hip fracture after age 50 | No/don’t know | 0 |\n| Yes | 1 | |\n| Weight | >125 lb (>56.7 kg) | 0 |\n| ≤125 lb (≤56.7 kg) | 1 | |\n| Current smoker | No | 0 |\n| Yes | 1 | |\n| Need to use arms to assist themself in standing up from a chair | No/don’t know | 0 |\n| Yes | 2 | |\n| BMD results: total hip T-score (if applicable) | ≥-1 | 0 |\n| Between -1 and -2 | 2 | |\n| Between -2 and -2.5 | 3 | |\n| <-2.5 | 4 | |",
+  "how_to_use": {
+    "why": "- Designed to be simple and practical for use in an outpatient clinical setting.\n- Can be used with or without bone mineral density (BMD) measurements. Using the tool without BMD may be easier for bedside evaluations, although the addition of BMD improves the tool’s predictive ability.\n- Helps in identifying patients at elevated risk for fractures, facilitating the initiation of preventive strategies.",
+    "when": "Peut être utilisé lors des visites de santé de routine pour prédire un risque à 5 ans de fracture de la hanche chez les femmes postménopausées.",
+    "pearls": "- Developed using data from the Study of Osteoporotic Fractures (SOF), which included primarily White women aged 65 and older.\n- Validated using data from the EPIDOS database.\n- Other risk factors may have strong relationships with osteoporosis which are not included in this tool. If present, these factors should also be considered in management decisions.\n- Note: While this tool can be used to calculate the risk of vertebral and nonvertebral fractures, the probabilities included here in the \"Results\" and \"Evidence\" sections are for hip fracture only."
+  },
+  "next_steps": {
+    "advice": "Per the initial derivation and validation study, the following scores should prompt further evaluation and potential management in postmenopausal women:\n\n- Without BMD: A score of 4 or higher.\n- With BMD: A score of 6 or higher.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| FRACTURE Index | 5-Year Risk of Hip Fracture | |\n| --- | --- | --- |\n| Without BMD | 0 | <0.6% |\n| 1 | 0.6% | |\n| 2 | 1.4% | |\n| 3 | 2.1% | |\n| 4 | 3.2% | |\n| ≥5 | 8.2% | |\n| With BMD | 0 | <0.4% |\n| 1-2 | 0.4% | |\n| 3-4 | 0.9% | |\n| 5 | 1.9% | |\n| 6-7 | 3.9% | |\n| ≥8 | 8.7% | |\n\nNote: While this tool can be used to calculate the risk of vertebral and nonvertebral fractures, the probabilities included here in the \"Results\" and \"Evidence\" sections are for hip fracture only.",
+  "short_description": "Risque de fracture post-ménopausique.",
+  "medium_description": "Predicts fracture risque dans postmenopausal women.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "q1",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "options": [
+        {
+          "label": "< 65",
+          "value": 0
+        },
+        {
+          "label": "65-69",
+          "value": 1
+        },
+        {
+          "label": "70-74",
+          "value": 2
+        },
+        {
+          "label": "75-79",
+          "value": 3
+        },
+        {
+          "label": "80-84",
+          "value": 4
+        },
+        {
+          "label": "≥85",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q2",
+      "label": "History de any fracture after âge 50",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non / Ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q3",
+      "label": "Mother's history de hip fracture after âge 50",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non / Ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q4",
+      "label": "Poids",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": ">125 lb (>56.7 kg)",
+          "value": 0
+        },
+        {
+          "label": "≤125 lb (≤56.7 kg)",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Fumeur actuel",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Need pour use arms pour assist themself dans standing up de chair",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non / Ne sait pas",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q7",
+      "label": "Résultats BMD : T-score de la hanche totale",
+      "tips": "Optional",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "≥-1",
+          "value": 0.5
+        },
+        {
+          "label": "Entre -1 et -2",
+          "value": 2
+        },
+        {
+          "label": "Entre -2 et -2.5",
+          "value": 3
+        },
+        {
+          "label": "< -2.5",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Black DM, Steinbuch M, Palermo L, et al. An assessment tool for predicting fracture risk in postmenopausal women. Osteoporosis International. 2001;12(7):519-528.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11527048/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Black DM, Steinbuch M, Palermo L, et al. An assessment tool for predicting fracture risk in postmenopausal women. Osteoporosis International. 2001;12(7):519-528.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/11527048/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.osteoporosis-index-risk-osiris",
+    "calc.osteoporosis-risk-assessment-instrument-orai",
+    "calc.osteoporosis-self-assessment-tool-ost"
+  ],
+  "source_logic_hash": "292e482c5cadfca260c92b67a615c905",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10540,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

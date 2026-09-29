@@ -1,0 +1,271 @@
+{
+  "id": "calc.tisdale-risk-score-qt-prolongation",
+  "slug": "tisdale-risk-score-qt-prolongation",
+  "language": "fr",
+  "title": "Tisdale risque score pour QT Prolongation",
+  "short_title": "Tisdale risque score pour QT",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Arrhythmia",
+    "Coronavirus",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Arrhythmia",
+    "Palpitations"
+  ],
+  "abbreviations": [
+    "Qt, qtc, tisdale risk score, tisdale score, qt prolongation, qtc prolongation, Tisdale Score for QTc Prolongation, qt interval prolongation, Drug induced QTc, Drug-associated QTc prolongation, covid-19, covid, covid 19, covid19, coronavirus, tisdale risk score, qt prolongation"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Âge ≥68 ans | Non | 0 |\n| Oui | 1 | |\n| Sexe | Masculin | 0 |\n| Féminin | 1 | |\n| Patient sous diurétique de l'anse | Non | 0 |\n| Oui | 1 | |\n| Potassium* ≤3,5 mEq/L | Non | 0 |\n| Oui | 2 | |\n| [QTc](nabda:calc.corrected-qt-interval-qtc\\) à l'admission ** ≥450 msec | Non | 0 |\n| Oui | 2 | |\n| Hospitalisation pour infarctus du myocarde aigu | Non | 0 |\n| Oui | 2 | |\n| Hospitalisation pour sepsis | Non | 0 |\n| Oui | 3 | |\n| Hospitalisation pour insuffisance cardiaque | Non | 0 |\n| Oui | 3 | |\n| Nombre de médicaments allongeant le QTc administrés*** | Aucun | 0 |\n| 1 médicament allongeant le QTc | 3 | |\n| ≥2 médicaments allongeant le QTc | 6 | |\n\n*Le potassium à considérer est celui dosé au plus près du moment de l'ECG.\n\n**Calculé automatiquement par l'ECG.\n\n***Si le patient reçoit ≥2 médicaments, il reçoit 3 points pour 1 médicament allongeant le QTc ainsi que 3 points supplémentaires pour ≥2.",
+  "how_to_use": {
+    "why": "L'allongement de l'intervalle QT augmente le risque de torsade de pointes (TdP), un type de [tachycardie ventriculaire](https://en.wikipedia.org/wiki/Ventricular_tachycardia) polymorphe qui engage le pronostic vital et est souvent fatal.",
+    "when": "De nombreux patients hospitalisés présentent un risque accru d'allongement du QT en raison des pathologies dont ils souffrent (infarctus du myocarde, sepsis, insuffisance cardiaque par exemple), ainsi que des médicaments qui peuvent leur être prescrits pour traiter ces pathologies (antibiotiques, antiviraux, antifongiques ou antiarythmiques, par exemple) ou de la poursuite de traitements ambulatoires (comme les psychotropes, la méthadone ou le tamoxifène, par exemple). Ce score simple permet d'estimer le risque d'allongement du QT pour un médecin ou un pharmacien prenant en charge un patient hospitalisé.",
+    "pearls": "- De nombreux facteurs connus augmentent le risque d'allongement du QT ; ceux inclus dans ce score se sont révélés être les plus prédictifs, mais les autres ne doivent pas être ignorés. Parmi les autres risques fréquents figurent :\n- CredibleMeds.org propose également une [liste complète des médicaments](https://www.crediblemeds.org/) pouvant allonger le QT.\n- Les interactions médicamenteuses doivent toujours être prises en compte lors de la prescription de plusieurs médicaments ; ce score n'inclut pas les interactions pharmacocinétiques.\n- Ce score ne prend pas non plus en compte les ajustements posologiques des médicaments à élimination rénale.\n- Les cliniciens doivent toujours s'efforcer d'éviter les médicaments allongeant le QT lorsque cela est possible.\n- Le maintien d'un bilan électrolytique normal peut également contribuer à réduire le risque d'allongement du QT.\n- Les patients avec une fraction d'éjection très altérée (<20%) présentent un risque particulièrement élevé d'allongement du QT."
+  },
+  "next_steps": {
+    "advice": "- Un ECG doit être répété 8 à 12 heures après le début d'un médicament allongeant le QT afin de rechercher des signes d'allongement du QT, avec une surveillance plus rapprochée si celui-ci est observé.\n- Corriger les anomalies électrolytiques et maintenir une kaliémie >4,0 mEq/L et une magnésémie >2,0 mg/dL.",
+    "critical_actions": "Bien que la prise en charge de la torsade de pointes (TdP) dépasse le cadre de ce calculateur, les protocoles de soins avancés en réanimation cardiovasculaire (ACLS) peuvent être suivis si elle survient, y compris la défibrillation pour les patients instables.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score de risque de Tisdale | Risque d'allongement du QT | Recommandation |\n| --- | --- | --- |\n| ≤6 | Faible | Toujours considérer qu'un risque plus élevé peut apparaître selon l'évolution clinique, les interactions médicamenteuses et la pharmacocinétique. |\n| 7-10 | Modéré | Envisager une consultation avec un pharmacien et corriger les facteurs de risque autant que possible. Un ECG doit être répété après 5 demi-vies des médicaments allongeant le QT administrés afin d'évaluer le QTc. |\n| ≥11 | Élevé | Envisager une consultation avec un pharmacien, corriger les facteurs de risque autant que possible et utiliser des médicaments alternatifs si possible. Un ECG doit être répété après 5 demi-vies des médicaments allongeant le QT administrés afin d'évaluer le QTc. |",
+  "short_description": "Risque d'allongement du QT.",
+  "medium_description": "Predicts risque de QT prolongation greater than 500 msec dans hospitalized patients.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge ≥68 years",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "loop",
+      "label": "Patient sous diurétique de l'anse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "potassium",
+      "label": "Potassium ≤3,5 mEq/L",
+      "tips": "Le potassium à considérer est celui dosé au plus près du moment de l'ECG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "qtc",
+      "label": "[QTc](nabda:calc.corrected-qt-interval-qtc) à l'admission ≥450 msec",
+      "tips": "Calculé automatiquement par l'ECG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mi",
+      "label": "Being admitted pour aigu infarctus du myocarde",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sepsis",
+      "label": "Being admitted pour sepsis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hf",
+      "label": "Being admitted pour insuffisance cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "drugs",
+      "label": "Nombre de médicaments allongeant le QTc administrés",
+      "tips": "Si le patient reçoit ≥2 médicaments, il reçoit 3 points pour 1 médicament allongeant le QTc ainsi que 3 points supplémentaires pour ≥2",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "1 médicament allongeant le QTc",
+          "value": 3
+        },
+        {
+          "label": "≥2 médicaments allongeant le QTc",
+          "value": 6
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Tisdale JE, Jaynes HA, Kingery JR, et al. Development and validation of a risk score to predict QT interval prolongation in hospitalized patients. Circ Cardiovasc Qual Outcomes. 2013;6(4):479-87.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23716032",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tisdale JE, Jaynes HA, Kingery JR, Overholser BR, Mourad NA, Trujillo TN, Kovacs RJ. Effectiveness of a clinical decision support system for reducing the risk of QT interval prolongation in hospitalized patients. Circ Cardiovasc Qual Outcomes 2014;7:381-390.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4696749/",
+      "kind": "other"
+    },
+    {
+      "text": "Tisdale JE. Drug-induced QT interval prolongation and torsades de pointes: Role of the pharmacist in risk assessment, prevention and management. Can Pharm J (Ott). 2016;149(3):139-52.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4860751/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.corrected-qt-interval-qtc",
+    "calc.mulbsta-score-viral-pneumonia-mortality",
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm"
+  ],
+  "source_logic_hash": "caf823906edcc41ba381a1b6607036dc",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.corrected-qt-interval-qtc",
+      "text": "QTc"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10293,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

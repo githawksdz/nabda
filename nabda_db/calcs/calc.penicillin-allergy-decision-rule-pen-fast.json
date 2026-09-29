@@ -1,0 +1,145 @@
+{
+  "id": "calc.penicillin-allergy-decision-rule-pen-fast",
+  "slug": "penicillin-allergy-decision-rule-pen-fast",
+  "language": "fr",
+  "title": "Penicillin Allergy Decision règle (PEN-FAST)",
+  "short_title": "PEN-FAST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie"
+  ],
+  "diseases": [
+    "Allergy"
+  ],
+  "chief_complaints": [
+    "Diarrhea",
+    "Fatigue",
+    "Fever",
+    "Douleur articulaire",
+    "Nausea",
+    "Rash",
+    "Seizure",
+    "Dyspnée",
+    "Swelling",
+    "Vomiting",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Penicillin Allergy Decision Rule (PEN-FAST)",
+    "pen-fast",
+    "penicillin",
+    "penicillin allergy",
+    "allergy",
+    "penicillin allergy rule"
+  ],
+  "dosing": false,
+  "formula": "Le score PEN-FAST est calculé par l'addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| (**F**) Cinq ans ou moins depuis la réaction | Non | 0 |\n| Oui/inconnu | 2 | |\n| (**A**) Anaphylaxie ou angio-œdème OU (**S**) Réaction cutanée sévère | Non | 0 |\n| Oui | 2 | |\n| (**T**) Traitement requis pour la réaction | Non | 0 |\n| Oui/inconnu | 1 | |",
+  "how_to_use": {
+    "why": "- Identifie les allergies à la pénicilline à faible risque ne nécessitant pas de tests cutanés formels.\n- Son utilisation au point de soin peut aider à réduire l'évitement inutile de la pénicilline chez les patients à faible risque, minimisant le recours aux alternatives antibiotiques à large spectre.",
+    "when": "Indiqué chez les patients rapportant une allergie à la pénicilline afin d'évaluer le risque allergique, en particulier lorsqu'une pénicilline ou une β-lactamine apparentée est envisagée.",
+    "pearls": "- Cet outil présente une forte valeur prédictive négative (VPN de 96,3 % pour les scores <3), ce qui le rend efficace pour exclure une allergie à la pénicilline dans les cas à faible risque.\n- Les réactions cutanées sévères peuvent inclure le syndrome de Stevens-Johnson, la nécrolyse épidermique toxique, la réaction médicamenteuse avec éosinophilie et symptômes systémiques (DRESS) et la pustulose exanthématique aiguë généralisée."
+  },
+  "next_steps": {
+    "advice": "- **Faible risque (score <3) :** envisager un test de provocation orale direct ou progressif.\n- **Risque modéré à élevé (score ≥3) :** adresser à un allergologue pour une évaluation plus détaillée, pouvant inclure des tests cutanés.\n- Documenter le score PEN-FAST et les résultats des éventuels tests allergologiques ultérieurs dans le dossier médical afin d'étayer les décisions cliniques futures.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PEN-FAST | % Risque d'allergie à la pénicilline |\n| --- | --- |\n| 0 | <1 % (risque très faible) |\n| 1-2 | 5 % (risque faible) |\n| 3 | 20 % (risque modéré) |\n| 4-5 | 50 % (risque élevé) |",
+  "short_description": "Identification de l'allergie à la pénicilline.",
+  "medium_description": "Identifie les allergies à la pénicilline à faible risque.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "**F** inq ans ou moins depuis la réaction",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Yes/unknown",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "as",
+      "label": "**A** naphylaxie ou angio-œdème OU **S** évère réaction cutanée",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "t",
+      "label": "**T** reatment requis pour reaction",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Yes/unknown",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Trubiano JA, Vogrin S, Chua KYL, et al. Development and validation of a penicillin allergy clinical decision rule. JAMA Intern Med. 2020;180(5):745-752.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32176248/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Piotin A, Godet J, Trubiano JA, et al. Predictive factors of amoxicillin immediate hypersensitivity and validation of PEN-FAST clinical decision rule. Ann Allergy Asthma Immunol. 2022;128(1):27-32.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34271183/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.prevention-incidence-asthma-mite-allergy-piama-risk-score",
+    "calc.mayo-alliance-prognostic-system-maps-score",
+    "calc.spanish-network-mastocytosis-rema-score"
+  ],
+  "source_logic_hash": "a6487a005fb0e1b69a1722eb9688500a",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10422,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

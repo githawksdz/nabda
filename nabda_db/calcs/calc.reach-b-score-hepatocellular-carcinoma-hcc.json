@@ -1,0 +1,209 @@
+{
+  "id": "calc.reach-b-score-hepatocellular-carcinoma-hcc",
+  "slug": "reach-b-score-hepatocellular-carcinoma-hcc",
+  "language": "en",
+  "title": "REACH-B score pour Hepatocellular Carcinoma (HCC)",
+  "short_title": "Score REACH-B",
+  "calc_type": null,
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hematologie",
+    "hepatologie"
+  ],
+  "diseases": [
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "REACH-B",
+    "hepatocellular carcinoma",
+    "hepatitis B",
+    "hepatitis",
+    "carcinoma",
+    "HCC"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sex | Female | 0 |\n| Male | 2 | |\n| Age, years | 30–34 | 0 |\n| 35–39 | 1 | |\n| 40–44 | 2 | |\n| 45–49 | 3 | |\n| 50–54 | 4 | |\n| 55–59 | 5 | |\n| 60–65 | 6 | |\n| ALT , U/L | <15 | 0 |\n| 15–44 | 1 | |\n| ≥45 | 2 | |\n| HBeAg | Negative | 0 |\n| Positive | 2 | |\n| Hepatitis B virus DNA level, copies/mL | <300 (undetectable) | 0 |\n| 300–9,999 | 0 | |\n| 10,000–99,999 | 3 | |\n| 100,000–999,999 | 5 | |\n| ≥10 6 | 4* | |\n\n*The risk score attributed to HBV DNA ≥10^6^copies/mL was less than that for HBV DNA of 100,000–999,999 copies/mL because most patients with HBV DNA ≥10^6^copies/mL were also HBeAg positive, thus sharing the associated higher score for this category.",
+  "how_to_use": {
+    "why": "",
+    "when": "",
+    "pearls": "- Dérivé et validé principalement dans des cohortes d'Asie de l'Est ; son applicabilité à d'autres populations peut être limitée.\n- Exclut des facteurs tels que l'alpha-fœtoprotéine et la consommation d'alcool, qui sont également connus pour être associés à la progression vers la cirrhose et le CHC."
+  },
+  "next_steps": {
+    "advice": "Peut aider à guider la décision d'initier un traitement chez les patients atteints d'hépatite B chronique et ainsi contribuer à prévenir la progression vers le CHC.",
+    "critical_actions": "",
+    "management": "Se référer aux recommandations de l'AASLD pour le traitement du carcinome hépatocellulaire."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score REACH-B | Risque de CHC | | |\n| --- | --- | --- | --- |\n| À 3 ans | À 5 ans | À 10 ans | |\n| 0 | 0,0 % | 0,0 % | 0,0 % |\n| 1 | 0,0 % | 0,0 % | 0,1 % |\n| 2 | 0,0 % | 0,0 % | 0,1 % |\n| 3 | 0,0 % | 0,1 % | 0,2 % |\n| 4 | 0,0 % | 0,1 % | 0,3 % |\n| 5 | 0,1 % | 0,2 % | 0,5 % |\n| 6 | 0,1 % | 0,3 % | 0,7 % |\n| 7 | 0,2 % | 0,5 % | 1,2 % |\n| 8 | 0,3 % | 0,8 % | 2,0 % |\n| 9 | 0,5 % | 1,2 % | 3,2 % |\n| 10 | 0,9 % | 2,0 % | 5,2 % |\n| 11 | 1,4 % | 3,3 % | 8,4 % |\n| 12 | 2,3 % | 5,3 % | 13,4 % |\n| 13 | 3,7 % | 8,5 % | 21,0 % |\n| 14 | 6,0 % | 13,6 % | 32,0 % |\n| 15 | 9,6 % | 21,3 % | 46,8 % |\n| 16 | 15,2 % | 32,4 % | 64,4 % |\n| 17 | 23,6 % | 47,4 % | 81,6 % |",
+  "short_description": "HCC risque dans hep B.",
+  "medium_description": "Estimates risque de hepatocellular carcinoma (HCC) chez les patients avec chronique hepatitis B.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "30–34",
+          "value": 0
+        },
+        {
+          "label": "35–39",
+          "value": 1
+        },
+        {
+          "label": "40–44",
+          "value": 2
+        },
+        {
+          "label": "45–49",
+          "value": 3
+        },
+        {
+          "label": "50–54",
+          "value": 4
+        },
+        {
+          "label": "55–59",
+          "value": 5
+        },
+        {
+          "label": "60–65",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alanine",
+      "label": "ALT, U/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 15",
+          "value": 0
+        },
+        {
+          "label": "15–44",
+          "value": 1
+        },
+        {
+          "label": "≥45",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ag",
+      "label": "HBeAg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Négatif",
+          "value": 0
+        },
+        {
+          "label": "Positif",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dna_level",
+      "label": "Charge virale du virus de l'hépatite B (ADN du VHB), copies/mL",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 300 (indétectable)",
+          "value": 0
+        },
+        {
+          "label": "300–9,999",
+          "value": 0
+        },
+        {
+          "label": "10,000–99,999",
+          "value": 3
+        },
+        {
+          "label": "100,000–999,999",
+          "value": 5
+        },
+        {
+          "label": "≥10⁶",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Yang HI, Yuen MF, Chan HL, et al. Risk estimation for hepatocellular carcinoma in chronic hepatitis B (REACH-B): development and validation of a predictive score. Lancet Oncol. 2011;12(6):568-74.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21497551",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.liver-decompensation-risk-hepatectomy-hepatocellular-carcinoma-hcc",
+    "calc.barcelona-clinic-liver-cancer-bclc-staging-classification-treatment-guidelines",
+    "calc.peld-score-pediatric-end-stage-liver-disease-younger-12"
+  ],
+  "source_logic_hash": null,
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10031,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

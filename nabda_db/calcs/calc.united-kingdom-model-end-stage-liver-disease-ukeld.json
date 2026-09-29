@@ -1,0 +1,134 @@
+{
+  "id": "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+  "slug": "united-kingdom-model-end-stage-liver-disease-ukeld",
+  "language": "fr",
+  "title": "United Kingdom modèle pour End-Stage Liver maladie (UKELD)",
+  "short_title": "Score UKELD",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "Meld",
+    "meld score",
+    "end-stage liver disease",
+    "end stage liver disease",
+    "chronic liver disease",
+    "transplant",
+    "liver transplantation"
+  ],
+  "dosing": false,
+  "formula": "Score UKELD = 5,395 × ln(INR) + 1,485 × ln(créatinine, μmol/L) + 3,13 × ln(bilirubine, μmol/L) - 81,565 × ln(sodium, mmol/L) + 435",
+  "how_to_use": {
+    "why": "Aide à déterminer si un patient atteint de maladie hépatique chronique est éligible à une transplantation hépatique au Royaume-Uni.",
+    "when": "- À utiliser pour déterminer l'éligibilité des patients atteints de maladie hépatique chronique en attente de transplantation.\n- À ne pas utiliser chez les patients en attente de transplantation pour d'autres causes (p. ex. CHC, insuffisance hépatique aiguë).",
+    "pearls": "- Le score UKELD a été développé et validé dans une population britannique et ne devrait être envisagé qu'au Royaume-Uni.\n- Il a été validé dans une population britannique de patients atteints de maladie hépatique chronique en attente de transplantation. Les patients atteints de CHC étaient exclus.\n- Un seuil de mortalité à 1 an de 9 % a été utilisé, car il correspondait à la mortalité à 1 an après transplantation hépatique au Royaume-Uni à l'époque.\n- Des différences interlaboratoires peuvent entraîner une variation des scores de maladie hépatique terminale. Par exemple, pour le centre de transplantation du Royal Free Hospital de Londres, la clairance de la créatinine est pondérée différemment et une correction locale doit être utilisée pour obtenir des résultats valides."
+  },
+  "next_steps": {
+    "advice": "- Consulter un hépatologue pour aider à déterminer si le patient peut être éligible à une transplantation pour des raisons autres que la maladie hépatique chronique.\n- Pour les patients atteignant le seuil d'éligibilité au Royaume-Uni (score ≥49), contacter le centre de transplantation local selon le système de référencement convenu localement.",
+    "critical_actions": "",
+    "management": "La plupart des hôpitaux disposent d'une méthode particulière de référencement pour la transplantation. En général, cela se fait par adressage via les services d'hépatologie ou de gastro-entérologie."
+  },
+  "evidence": "The UKELD Score was derived by[Barber et al](https://aasldpubs.onlinelibrary.wiley.com/doi/epdf/10.1002/hep.22018)from a prospective multicenter database of all UK-based liver transplantation centers. It included data from 1,103 adult patients awaiting their first elective liver transplantation from April 2003 to March 2006, and excluded patients presenting with acute liver failure or any type of cancer as their primary liver disease. The model was then validated on 452 patients awaiting elective liver transplantation in the UK between April 2006 and March 2007 ([Barber 2011](https://www.ncbi.nlm.nih.gov/pubmed/21775931)).\n\nThe cutoff of 49 points for eligibility was decided upon as these patients had a 1-year mortality of 9% from their chronic liver disease, which is approximately equal to the 1-year mortality post liver transplantation at the time ([Neuberger 2008](https://www.ncbi.nlm.nih.gov/pubmed/17895356)). This is used in determining eligibilityfor transplantation in chronic liver disease by theNHS Blood and Transplant Service according to the liver transplantation[policy](https://www.odt.nhs.uk/transplantation/tools-policies-and-guidance/policies-and-guidance/)",
+  "more_info": "Interprétation :\n\n- Un score UKELD ≥49 correspond au seuil d'éligibilité à la transplantation au Royaume-Uni, correspondant à une mortalité à 1 an >9 % sans transplantation.\n- Un score UKELD de 60 est prédictif d'une mortalité à 1 an de 50 %.",
+  "short_description": "Mortalité pour liver transplant planning (UK).",
+  "medium_description": "Predicts mortalité dans end-stage liver maladie patients pour transplant planning (UK-specific).",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "cr",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bili",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "na",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Neuberger J, Gimson A, Davies M, et al. Selection of patients for liver transplantation and allocation of donated livers in the UK. Gut. 2008;57(2):252-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17895356",
+      "kind": "international"
+    },
+    {
+      "text": "Barber KM, Pioli S, Blackwell JE, et al. Development of a UK score for patients with end-stage liver disease. Hepatology. 2007;46:611A.",
+      "href": "https://aasldpubs.onlinelibrary.wiley.com/doi/epdf/10.1002/hep.22018",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Asrani SK, Kim WR. Organ allocation for chronic liver disease: model for end-stage liver disease and beyond. Curr Opin Gastroenterol. 2010;26(3):209-13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20224394",
+      "kind": "other"
+    },
+    {
+      "text": "Barber KM, Madden S, Allen J, et al. Elective liver transplant list mortality: development of a United Kingdom end-stage liver disease score. Transplantation. 2011;92(4):469-76.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21775931",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.peld-cr"
+  ],
+  "source_logic_hash": "4027400f661cc2c547106fea53d48136",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10147,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

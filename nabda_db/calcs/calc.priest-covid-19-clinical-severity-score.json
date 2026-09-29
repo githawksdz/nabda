@@ -1,0 +1,368 @@
+{
+  "id": "calc.priest-covid-19-clinical-severity-score",
+  "slug": "priest-covid-19-clinical-severity-score",
+  "language": "en",
+  "title": "PRIEST COVID-19 clinique gravité score",
+  "short_title": "PRIEST score pour COVID-19",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Mortality, covid-19, covid19, covid, coronavirus, priest score, priest, priest study, PRIEST COVID-19 Clinical Severity Score, PRIEST Score for COVID-19"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Sexe | Féminin | 0 |\n| Masculin | 1 | |\n| Âge, années | 16-49 | 0 |\n| 50-65 | 2 | |\n| 66-80 | 3 | |\n| >80 | 4 | |\n| Fréquence respiratoire, respirations par min | <9 | 3 |\n| 9-11 | 1 | |\n| 12-20 | 0 | |\n| 21-24 | 2 | |\n| >24 | 3 | |\n| Saturation en oxygène | >95% | 0 |\n| 94-95% | 1 | |\n| 92-93% | 2 | |\n| <92% | 3 | |\n| Fréquence cardiaque, battements par min | <41 | 3 |\n| 41-50 | 1 | |\n| 51-90 | 0 | |\n| 91-110 | 1 | |\n| 111-130 | 2 | |\n| >130 | 3 | |\n| Pression artérielle systolique, mmHg | <91 | 3 |\n| 91-100 | 2 | |\n| 101-110 | 1 | |\n| 111-219 | 0 | |\n| >219 | 3 | |\n| Température | <35,1°C (<95,18°F) | 3 |\n| 35,1-36,0°C (95,18-96,8°F) | 1 | |\n| 36,1-38,0°C (96,8-100,4°F) | 0 | |\n| 38,1-39,0°C (100,58°C-102,2°F) | 1 | |\n| >39,0°C (>102,2°F) | 2 | |\n| Vigilance | Alerté | 0 |\n| Confus ou non alerté | 3 | |\n| Oxygène inspiré | Air ambiant | 0 |\n| Oxygène supplémentaire | 2 | |\n| Statut fonctionnel | Activité normale sans restriction | 0 |\n| Activité intense limitée, activité légère possible | 1 | |\n| Activité limitée, autonomie conservée | 2 | |\n| Autonomie limitée | 3 | |\n| Alitement/fauteuil, perte d'autonomie totale | 4 | |",
+  "how_to_use": {
+    "why": "- Fournit une méthode structurée pour prioriser la prise en charge des patients à risque plus élevé d'aggravation.\n- Améliore la prise de décision dans des contextes aux ressources limitées en identifiant les patients pouvant nécessiter une surveillance rapprochée ou une intervention précoce.",
+    "when": "- À utiliser chez les patients présentant une COVID-19 suspectée ou confirmée afin d'évaluer le risque d'évolutions graves, notamment l'admission en soins critiques, le soutien respiratoire ou le décès.\n- Peut être approprié pour le triage initial aux urgences ou en soins non programmés afin d'orienter l'allocation des ressources en période de forte demande.",
+    "pearls": "- Based on the [National Early Warning Score 2 (NEWS2)](nabda:calc.national-early-warning-score-news-2) .\n- Derived and validated using data from 22,445 patients with suspected COVID-19 across 70 emergency departments in the UK.\n- The primary outcome assessed was death or the need for organ support (e.g., respiratory, cardiovascular, renal) within 30 days."
+  },
+  "next_steps": {
+    "advice": "- Aucune recommandation thérapeutique spécifique n'est directement liée aux résultats de cet outil.\n- Les décisions de prise en charge doivent toujours être adaptées au contexte clinique et guidées par l'expertise du clinicien.\n- Des résultats indiquant une probabilité accrue d'évolution défavorable peuvent conduire à :\n\n - Une surveillance rapprochée.\n - Un avis spécialisé et une consultation en soins critiques.\n - Une hospitalisation en unité conventionnelle ou en soins intensifs.\n - Une initiation précoce d'un soutien respiratoire.\n - L'administration de glucocorticoïdes et de traitements spécifiques de la COVID-19.\n- Les patients à risque plus faible peuvent être éligibles à une sortie avec des instructions claires d'auto-surveillance, de suivi et de signes d'alerte imposant un retour consulter.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score PRIEST | Probabilité d'évolution défavorable à 30 jours |\n| --- | --- | --- |\n| 0-1 | 1% |\n| 2-3 | 2% |\n| 4* | 3% |\n| 5 | 9% |\n| 6 | 15% |\n| 7 | 18% |\n| 8 | 22% |\n| 9 | 26% |\n| 10 | 29% |\n| 11 | 34% |\n| 12 | 38% |\n| 13 | 46% |\n| 14 | 47% |\n| 15 | 49% |\n| 16 | 55% |\n| 17-25 | 59-88% |\n| ≥26 | >99% |\n\n*Un score >4 prédit une évolution défavorable (définie comme décès ou nécessité d'un soutien d'organe majeur - respiratoire, cardiovasculaire ou rénal) avec une sensibilité élevée (98%) et une spécificité faible (34%).\n\nD'après [Goodacre 2021](https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245840).",
+  "short_description": "Pronostic d'une COVID-19 suspectée.",
+  "medium_description": "Predicts adverse devenir dans adultes presenting pour ED avec suspected COVID-19.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Femme",
+          "value": 0
+        },
+        {
+          "label": "Homme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "16-49",
+          "value": 0
+        },
+        {
+          "label": "50-65",
+          "value": 2
+        },
+        {
+          "label": "66-80",
+          "value": 3
+        },
+        {
+          "label": ">80",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "res",
+      "label": "Fréquence respiratoire, breaths per min",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 9",
+          "value": 3
+        },
+        {
+          "label": "9-11",
+          "value": 1
+        },
+        {
+          "label": "12-20",
+          "value": 0
+        },
+        {
+          "label": "21-24",
+          "value": 2
+        },
+        {
+          "label": ">24",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "oxy",
+      "label": "Saturation en oxygène",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">95%",
+          "value": 0
+        },
+        {
+          "label": "94-95%",
+          "value": 1
+        },
+        {
+          "label": "92-93%",
+          "value": 2
+        },
+        {
+          "label": "< 92%",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bpm",
+      "label": "Fréquence cardiaque, beats per min",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 41",
+          "value": 3
+        },
+        {
+          "label": "41-50",
+          "value": 1
+        },
+        {
+          "label": "51-90",
+          "value": 0
+        },
+        {
+          "label": "91-110",
+          "value": 1
+        },
+        {
+          "label": "111-130",
+          "value": 2
+        },
+        {
+          "label": ">130",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sys",
+      "label": "Pression artérielle systolique, mmHg",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 91",
+          "value": 3
+        },
+        {
+          "label": "91-100",
+          "value": 2
+        },
+        {
+          "label": "101-110",
+          "value": 1
+        },
+        {
+          "label": "111-219",
+          "value": 0
+        },
+        {
+          "label": ">219",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Temperature",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 35.1°C (<95.18°F)",
+          "value": 3
+        },
+        {
+          "label": "35.1-36.0°C (95.18 - 96.8°F)",
+          "value": 1
+        },
+        {
+          "label": "36.1-38.0°C (>96.8 - 100.4°F)",
+          "value": 0
+        },
+        {
+          "label": "38.1-39.0°C (>100.4 - 102.2°F)",
+          "value": 1
+        },
+        {
+          "label": ">39.0°C (>102.2°F)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "alert",
+      "label": "Alertness",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Alert",
+          "value": 0
+        },
+        {
+          "label": "Confus ou non alerte",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ins",
+      "label": "Oxygène inspiré",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Air",
+          "value": 0
+        },
+        {
+          "label": "Oxygène d'appoint",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "status",
+      "label": "Indice de performance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Activité normale sans restriction",
+          "value": 0
+        },
+        {
+          "label": "Activité intense limitée, activité légère possible",
+          "value": 1
+        },
+        {
+          "label": "Activité limitée, autonomie conservée",
+          "value": 2
+        },
+        {
+          "label": "Soins personnels limités",
+          "value": 3
+        },
+        {
+          "label": "Alité ou en fauteuil, incapable de prendre soin de soi",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Goodacre S, Thomas B, Sutton L, et al. Derivation and validation of a clinical severity score for acutely ill adults with suspected COVID-19: The PRIEST observational cohort study. PLOS ONE. 2021;16(1):e0245840.",
+      "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245840",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Goodacre S, Thomas B, Sutton L, et al. Derivation and validation of a clinical severity score for acutely ill adults with suspected COVID-19: The PRIEST observational cohort study. PLOS ONE. 2021;16(1):e0245840.",
+      "href": "https://journals.plos.org/plosone/article?id=10.1371/journal.pone.0245840",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Suh EH, Lang KJ, Zerihun LM. Modified PRIEST score for identification of very low-risk COVID patients. Am J Emerg Med. 2021;47:213-216.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8062911/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Marincowitz C, Sutton L, Stone T, et al. Prognostic accuracy of triage tools for adults with suspected COVID-19 in a pre-hospital setting: an observational cohort study. Emerg Med J. 2022;39(3):168-175.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35140074/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.4c-mortality-score-covid-19",
+    "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.national-early-warning-score-news-2"
+  ],
+  "source_logic_hash": "a402d3356c6282cc8fa1cca015655131",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.national-early-warning-score-news-2",
+      "text": "National Early Warning Score 2 (NEWS2)"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10369,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

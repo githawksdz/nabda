@@ -1,0 +1,222 @@
+{
+  "id": "calc.noninvasive-ventilation-outcomes-nivo-score",
+  "slug": "noninvasive-ventilation-outcomes-nivo-score",
+  "language": "en",
+  "title": "Score de résultats de la ventilation non invasive (NIVO)",
+  "short_title": "Score NIVO",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "medecine-interne",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire",
+    "Bronchopneumopathie chronique obstructive"
+  ],
+  "chief_complaints": [
+    "Cough",
+    "Dyspnea",
+    "Soins préventifs / Dépistage",
+    "Dyspnée",
+    "Weakness",
+    "Perte/Gain de poids",
+    "Wheezing"
+  ],
+  "abbreviations": [
+    "Noninvasive Ventilation Outcomes (NIVO) Score",
+    "NIVO score",
+    "COPD",
+    "COPD mortality",
+    "COPD exacerbation",
+    "COPD ventilation",
+    "ventilated COPD",
+    "NIVO mortality",
+    "NIVO COPD",
+    "NIVO ventilation",
+    "acute exacerbations of COPD",
+    "AECOPD",
+    "acute hypercapnic respiratory failure",
+    "acidaemic hypercapnic respiratory failure",
+    "AHRF",
+    "COPD risk"
+  ],
+  "dosing": false,
+  "formula": "The NIVO Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Chest radiograph consolidation | No | 0 |\n| Yes | 1 | |\n| [Glasgow Coma Scale](nabda:calc.glasgow-coma-scale-score-gcs\\) | 15 | 0 |\n| ≤14 | 1 | |\n| Atrial fibrillation 1 | No | 0 |\n| Yes | 1 | |\n| pH | ≥7.25 | 0 |\n| <7.25 | 1 | |\n| Time to acidemia 2 | ≤12 h | 0 |\n| >12 h | 2 | |\n| Extended MRC Dyspnea Scale (eMRCD) ( On a good day, within the last 3 months ) | Not too dyspneic to leave house (eMRCD 1-4) | 0 |\n| Too dyspneic to leave house but independent with washing/dressing (eMRCD 5a) | 2 | |\n| Too dyspneic to leave house and wash/dress (eMRCD 5b) | 3 | |\n\n1. Atrial fibrillation (AF) should be positively scored if: persistent AF, new AF or paroxysmal AF (even if in sinus rhythm at initiation of ventilation).\n2. Time to acidaemia >12 h should be positively scored if: >12 h have elapsed between arrival at hospital and index episode of acidemia.",
+  "how_to_use": {
+    "why": "- Aide les cliniciens à stratifier le risque de mortalité hospitalière et à 90 jours.\n- Peut faciliter la décision partagée en fournissant des données objectives sur l’évolution attendue, ainsi que guider l’allocation des ressources et la surveillance intensive.",
+    "when": "Use in patients presenting with acute exacerbations of COPD requiring noninvasive ventilation (NIV) or invasive mechanical ventilation (IMV) for acute hypercapnic respiratory failure.",
+    "pearls": "- Derived and validated in the UK.\n- Specifically developed for patients with acute exacerbations of COPD requiring assisted ventilation (principally NIV, though IMV patients were also included). Its applicability to other patient groups or different causes of respiratory failure remains uncertain.\n- The original study included some patients with concurrent pneumonia in addition to COPD exacerbation, which explains the inclusion of chest X-ray consolidation as a variable.\n- This tool demonstrated strong predictive capability for in-hospital mortality.\n- In the validation cohort, it achieved an area under the receiver operating characteristic curve (AUC) of 0.79, indicating good discrimination between survivors and non-survivors.\n- [Alzaabi et al. (2024)](https://pmc.ncbi.nlm.nih.gov/articles/PMC11491423/)found that a score ≥5 was associated with a 56% risk of NIV failure, while a score ≥7 carried an 84% risk."
+  },
+  "next_steps": {
+    "advice": "- This score should complement, not replace, comprehensive clinical judgment.\n- A higher score indicates a higher risk of mortality and was associated with early NIV failure in a validation study ([Alzaabi et al., 2024](https://pmc.ncbi.nlm.nih.gov/articles/PMC11491423/)).\n- While there are no specific treatment recommendations tied directly to the score, it can guide decisions on:\n\n - Whether to continue NIV or escalate to IMV.\n - Determining the appropriate level of care, such as transfer to an intensive care unit (ICU).\n - The need for enhanced monitoring, including more frequent clinical and laboratory assessments.\n - Initiating goals-of-care discussions, including exploring the role of palliative interventions for patients with a poor prognosis.\n- Communicate prognosis and treatment options clearly with patients and families, integrating score results into the broader clinical context.\n- Reassess frequently, as changes in the patient’s condition may necessitate a shift in the management plan.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score NIVO | Risque | Mortalité intrahospitalière | Mortalité à 90 jours |\n| --- | --- | --- | --- |\n| 0-2 | Faible | 5,0 % | 15,8 % |\n| 3-4 | Intermédiaire | 16,8 % | 32,5 % |\n| 5-6 | Élevé | 41,2 % | 50,1 % |\n| 7-9 | Très élevé | 71,4 % | 80,0 % |",
+  "short_description": "Predicts dans-hôpital mortalité dans ventilated COPD exacerbations.",
+  "medium_description": "Predicts dans-hôpital mortalité dans COPD exacerbations requiring assisted ventilation.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "q1",
+      "label": "Consolidation sur radiographie thoracique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q2",
+      "label": "[Échelle de coma de Glasgow](nabda:calc.glasgow-coma-scale-score-gcs)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "15",
+          "value": 0
+        },
+        {
+          "label": "≤14",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q3",
+      "label": "Fibrillation atriale",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q4",
+      "label": "PH",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≥7.25",
+          "value": 0
+        },
+        {
+          "label": "< 7.25",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "q5",
+      "label": "Time pour acidemia",
+      "tips": "Voir [Preuves](#evidence) pour plus de détails.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤12 h",
+          "value": 0
+        },
+        {
+          "label": ">12 h",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "q6",
+      "label": "Extended MRC dyspnea échelle (eMRCD)",
+      "tips": "Lors d'une bonne journée, au cours des 3 derniers mois",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Not too dyspneic pour leave house (eMRCD 1-4)",
+          "value": 0
+        },
+        {
+          "label": "Too dyspneic pour leave house but independent avec washing/dressing (eMRCD 5)",
+          "value": 2
+        },
+        {
+          "label": "Too dyspneic pour leave house et wash/dress (eMRCD 5b)",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Hartley T, Lane ND, Steer J, et al. The Noninvasive Ventilation Outcomes (Nivo) score: prediction of in-hospital mortality in exacerbations of COPD requiring assisted ventilation. Eur Respir J. 2021;58(2):2004042.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33479109/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alzaabi O, Guerot E, Planquette B, Diehl JL, Soumagne T. Predicting outcomes in patients with exacerbation of COPD requiring mechanical ventilation. Ann Intensive Care. 2024;14(1):159.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39427276/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ottawa-copd-risk-scale",
+    "calc.decaf-score-acute-exacerbation-copd",
+    "calc.copd-assessment-test-cat",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "0ceff2be8a2704d797c58fa8b2738b98",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "Glasgow Coma Scale"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10588,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,342 @@
+{
+  "id": "calc.barthel-index-activities-daily-living-adl",
+  "slug": "barthel-index-activities-daily-living-adl",
+  "language": "en",
+  "title": "Barthel index pour Activities de Daily Living (ADL)",
+  "short_title": "Indice de Barthel",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "douleur"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Déficit neurologique",
+    "Pain",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "stroke",
+    "rehab",
+    "independence",
+    "ability",
+    "discharge ability",
+    "geriatrics",
+    "psych",
+    "neuro",
+    "neuro"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| | 0 points | 5 points | 10 points | 15 points |\n| --- | --- | --- | --- | --- |\n| Feeding | Unable | Needs help | Independent | -- |\n| Bathing | Unable | Independent | -- | -- |\n| Grooming | Unable | Independent | -- | -- |\n| Dressing | Unable | Needs help | Independent | -- |\n| Bowel control | Incontinence (or needs to be given enemas) | Occasional accident | Continent | -- |\n| Bladder control | Incontinence (catheterized and unable to manage alone) | Occasional accident | Continent | -- |\n| Toilet use | Unable | Needs help | Independent | -- |\n| Transfers (bed to chair and back) | Unable | Needs major help (one or two people, physical), can sit | Needs minor help (verbal or physical) | Independent |\n| Mobility on level surfaces | Immobile or <50 yards | Wheelchair independent, including corners, >50 yards | Walks with help of one person (verbal or physical) >50 yards | Independent (but may use any aid, e.g. stick) >50 yards |\n| Stairs | Unable | Needs help (verbal, physical, carrying aid) | Independent | -- |",
+  "how_to_use": {
+    "why": "- Évalue l’incapacité fonctionnelle d’un patient, ce qui peut influencer la planification de la sortie et des soins de longue durée.\n- Peut être utilisé pour surveiller l’évolution de l’état fonctionnel au fil du temps.",
+    "when": "- This tool can be used in the inpatient and outpatient setting to determine the degree of assistance required by an individual.\n- Although this tool is most commonly used to assess stroke patients, it may be applicable to many patient groups, such as older adults, those requiring an intensive care unit stay, and those with neuromuscular disorders, head injuries, or malignancies.",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "- Lower scores indicate increasing disability and a greater need for skilled care.\n- The total score and categorization may be used to help guide the extent of interventions necessary in management. However, scores within each variable are also important in guiding the focus of treatment (e.g., transfers, bathing, grooming).\n- The following are basic measures that may be beneficial for patients but should be considered within the clinical context of each patient:\n\n - Develop a comprehensive care plan involving a multidisciplinary team.\n - Educate and train family members and caregivers in providing assistance.\n - Ensure the patient has access to necessary resources for ADLs.\n - Educate the patient on energy conservation techniques and safe ways to perform ADLs.\n - Refer for occupation and physical therapy, structured to their needs, to improve and maintain function.\n - Introduce adaptive equipment to assist with daily activities (e.g., special utensils for eating, grab bars, transfer boards).\n - Evaluate and modify the home environment to optimize safety (e.g., wheelchair accessibility, hospital bed, bathroom aids).\n - Arrange for community support services (e.g., home meal delivery, home health aids).\n - Conduct regular assessments to monitor progress and adjust care plans accordingly.\n\n- For patients with minimal to no needs:\n\n - Schedule periodic checkups to ensure continued independence.\n - Continue to focus on health maintenance and preventive care.\n - Encourage participation in physical and social activities.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Barthel Index | Interpretation (from Sinoff 1997 ) |\n| --- | --- |\n| 80–100 | Independent |\n| 60–79 | Minimally dependent |\n| 40–59 | Partially dependent |\n| 20–39 | Very dependent |\n| <20 | Totally dependent |",
+  "short_description": "Degree de independence pour AVC rehabilitation.",
+  "medium_description": "Assesses functional independence, generally dans AVC patients.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "feed",
+      "label": "Feeding",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 10
+        },
+        {
+          "label": "Needs help",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bath",
+      "label": "Bathing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "groom",
+      "label": "Grooming",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dress",
+      "label": "Dressing",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 10
+        },
+        {
+          "label": "Needs help",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bowel",
+      "label": "Bowel control",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Continent",
+          "value": 10
+        },
+        {
+          "label": "Occasional accident",
+          "value": 5
+        },
+        {
+          "label": "Incontinent (ou needs pour be given enemas)",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bladder",
+      "label": "Bladder control",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Continent",
+          "value": 10
+        },
+        {
+          "label": "Occasional accident",
+          "value": 5
+        },
+        {
+          "label": "Incontinent (catheterized, unable pour manage alone)",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "toilet",
+      "label": "Toilet use",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 10
+        },
+        {
+          "label": "Needs help",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "transfer",
+      "label": "Transfers (bed pour chair et back)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 15
+        },
+        {
+          "label": "Needs minor help (verbal ou physical)",
+          "value": 10
+        },
+        {
+          "label": "Needs major help (1-2 people, physical), can sit",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mobile",
+      "label": "Mobility sur level surfaces",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent (but may use any aid, e.g. stick) >50 yards",
+          "value": 15
+        },
+        {
+          "label": "Walks avec help de one person (verbal ou physical) >50 yards",
+          "value": 10
+        },
+        {
+          "label": "Wheelchair independent, y compris corners, >50 yards",
+          "value": 5
+        },
+        {
+          "label": "Immobile ou <50 yards",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stairs",
+      "label": "Stairs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Independent",
+          "value": 10
+        },
+        {
+          "label": "Needs help (verbal, physical, carrying aid)",
+          "value": 5
+        },
+        {
+          "label": "Unable",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mahoney FI, Barthel D. Functional evaluation: The Barthel Index. Maryland State Medical Journal 1965;14:56-61.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14258950",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wylie CM, White BK. A measure of disability. Arch Environ Health. 1964;8:834–839.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14157579",
+      "kind": "other"
+    },
+    {
+      "text": "Sinoff G, Ore L. The Barthel activities of daily living index: self-reporting versus actual performance in the old-old (> or = 75 years). J Am Geriatr Soc. 1997;45(7):832-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9215334",
+      "kind": "other"
+    },
+    {
+      "text": "Granger CV, Dewis LS, Peters NC, Sherwood CC, Barrett JE. Stroke rehabilitation: analysis of repeated Barthel index measures. Arch Phys Med Rehabil. 1979;60(1):14-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/420565",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Granger CV, Albrecht GL, Hamilton BB. Outcome of comprehensive medical rehabilitation: measurement by PULSES profile and the Barthel Index. Arch Phys Med Rehabil. 1979;60(4):145-54.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/157729",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sulter G, Steen C, De keyser J. Use of the Barthel index and modified Rankin scale in acute stroke trials. Stroke. 1999;30(8):1538-41.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10436097",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shah S, Vanclay F, Cooper B. Improving the sensitivity of the Barthel Index for stroke rehabilitation. J Clin Epidemiol. 1989;42(8):703-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2760661",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.thrive-score-stroke-outcome",
+    "calc.functional-outcome-patients-primary-intracerebral-hemorrhage-func-score",
+    "calc.abcd2-score-tia"
+  ],
+  "source_logic_hash": "6443938f4fbc2b885a4cda3f779e758b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3912,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

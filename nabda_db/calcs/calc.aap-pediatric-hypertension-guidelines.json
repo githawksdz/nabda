@@ -1,0 +1,150 @@
+{
+  "id": "calc.aap-pediatric-hypertension-guidelines",
+  "slug": "aap-pediatric-hypertension-guidelines",
+  "language": "en",
+  "title": "AAP pédiatrique hypertension Guidelines",
+  "short_title": "AAP pédiatrique HTN Guidelines",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "general",
+    "nephrologie",
+    "pediatrie"
+  ],
+  "diseases": [
+    "Hypertension"
+  ],
+  "chief_complaints": [
+    "Any/All"
+  ],
+  "abbreviations": [
+    "Paediatric hypertension",
+    "paediatric htn",
+    "pediatric htn",
+    "htn",
+    "hypertension",
+    "blood pressure",
+    "guidelines",
+    "pediatric hypertension",
+    "aap pediatric hypertension guidelines",
+    "aap pediatric htn guidelines"
+  ],
+  "dosing": false,
+  "formula": "Individual regression equations for boys/girls and SBP/DBP percentiles for children aged 1-12 years are published in[Rosner 2008](https://academic.oup.com/aje/article/167/6/653/154351).",
+  "how_to_use": {
+    "why": "- Classifies blood pressure in pediatric patients, which varies based on age and gender.\n- Measuring BP at routine well-child visits enables early detection of primary hypertension as well as detection of asymptomatic hypertension secondary to another underlying disorder. Hypertension is a known major contributor to cardiovascular disease.\n- Can guide timing of:",
+    "when": "Enfants âgés de 1 à 17 ans.",
+    "pearls": "- These values are based on auscultatory measurements, not oscillometric devices or ambulatory blood pressure measurements.\n- Blood pressure should ideally be taken by auscultatory measurement after child has been seated for 3-5 minutes with back supported and legs uncrossed. Blood pressure should be measured on the right arm for consistency. Correct cuff size should be used to ensure accuracy of measurement.\n- If the initial blood pressure is elevated, providers should take two additional measurements at the same visit and use the average value.\n- For children ≥13 years of age, this calculator has been adjusted to meet definitions presented in the[2017 AHA/ACC adult hypertension guidelines](http:/hyper.ahajournals.org/content/early/2017/11/10/HYP.0000000000000065)in order to facilitate the management of older adolescents with high blood pressure."
+  },
+  "next_steps": {
+    "advice": "- Un dépistage de l’hypertension est recommandé chez l’enfant à partir de l’âge de 3 ans.\n- Il existe de nombreuses étiologies pouvant expliquer une fausse élévation de la PA, telles que l’anxiété ou la consommation de caféine ; c’est pourquoi le diagnostic d’hypertension est posé en vérifiant de multiples mesures au fil du temps.\n- L’hypertension est diagnostiquée si un enfant présente des mesures de PA confirmées par auscultation ≥95e percentile lors de 3 visites différentes.",
+    "critical_actions": "If the patient is symptomatic (encephalopathy, acute kidney injury, congestive heart failure) with Stage 2 HTN level, OR the BP is >30 mmHg above the 95th percentile (or >180/120 mmHg in an adolescent), refer to emergency department immediately for evaluation and treatment of acute severe HTN.",
+    "management": "AAP recommendations for management (from[Flynn 2017](https://pediatrics.aappublications.org/content/early/2017/08/21/peds.2017-1904)):\n\n**Normal BP**\n\n- No additional action is needed.\n- BP should be rechecked at the next routine well-child care visit.\n\n**Elevated BP**\n\n- Lifestyle interventions (nutrition, sleep, physical activity) should be initiated.\n- BP should be rechecked by auscultatory measurement in 6 months.\n\n**Stage 1 hypertension**\n\n- If asymptomatic, lifestyle interventions should be initiated.\n- BP should be rechecked by auscultatory measurement in 1-2 weeks.\n\n**Stage 2 hypertension**\n\n- If asymptomatic, lifestyle interventions should be initiated.\n- BP should be rechecked by auscultatory measurement in 1 week OR the patient can be directly referred to a subspecialist within 1 week.\n\nAdditional note: any patient with evidence of LVH may not participate in sports until BP is normalized with therapy. Athletes with Stage 2 HTN (even without evidence of target organ injury) should not participate in sports until HTN is controlled by lifestyle modification or pharmacologic therapy."
+  },
+  "evidence": "Multiple models were used to evaluate pediatric blood pressure data, and this data is based off of a quantile regression model.\n\nThese percentiles are based on normal weight children (BMI <85th percentile), as including overweight and obese children was thought to increase bias, knowing that these patients have a higher prevalence of high blood pressure. Therefore, the BP values in the new pediatric guidelines are several mmHg lower than previous youth hypertension guidelines.",
+  "more_info": "Interpretation:\n\n| | 1-12 years old | ≥13 years old |\n| --- | --- | --- |\n| Normal BP | SBP <90th percentile, and DBP <90th percentile | SBP <120 DBP <80 |\n| Elevated BP | SBP ≥90th percentile but <95th percentile, or DBP ≥90th percentile but <95th percentile, or 120/80 to <95th percentile (whichever is lower) | SBP 120-129 DBP <80 |\n| Stage 1 HTN | SBP ≥95th percentile but <12 mm Hg above 95th percentile, or SBP ≥95th percentile but <12 mm Hg above 95th percentile, or 130-139/80-89 (whichever is lower) | SBP 130-139 DBP 80-89 |\n| Stage 2 HTN | SBP or DBP ≥12 mm Hg above 95th percentile, or ≥140/90 (whichever is lower) | SBP ≥140 DBP ≥90 |\n\nUse the higher of the two values; e.g. if a 14 year old has BP 135/90, diagnosis is Stage 2 HTN.\n\nFrom[Flynn 2017](https://pediatrics.aappublications.org/content/early/2017/08/21/peds.2017-1904).",
+  "short_description": "Pédiatrique HTN diagnostic.",
+  "medium_description": "Diagnoses hypertension dans pédiatrique patients; official guideline de American Academy de Pediatrics.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "tips": "Valeurs décimales recommandées (par ex., pour un enfant de 5 ans et 6 mois, saisir 5.5)",
+      "optional": false,
+      "unit": "age_peds_htn",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ht",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_peds_htn",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Pression artérielle systolique (PAS)",
+      "tips": "Les valeurs normales dépendent de l’âge ; ne pas utiliser ce calculateur chez les patients présentant une hypotension.",
+      "optional": false,
+      "unit": "sbp_peds",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "dbp",
+      "label": "PA diastolique",
+      "tips": "Les valeurs normales dépendent de l’âge ; ne pas utiliser ce calculateur chez les patients présentant une hypotension.",
+      "optional": false,
+      "unit": "dbp_peds",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Flynn JT, Kaelber DC, Baker-smith CM, et al. Clinical Practice Guideline for Screening and Management of High Blood Pressure in Children and Adolescents. Pediatrics. 2017;140(3)",
+      "href": "https://pediatrics.aappublications.org/content/early/2017/08/21/peds.2017-1904",
+      "kind": "international"
+    },
+    {
+      "text": "Baker-Smith CM, Flinn SK, Flynn JT, et al. Diagnosis, Evaluation, and Management of High Blood Pressure in Children and Adolescents. Pediatrics. 2018;142(3)",
+      "href": "https://pediatrics.aappublications.org/content/142/3/e20182096",
+      "kind": "international"
+    },
+    {
+      "text": "Rosner B, Cook N, Portman R, Daniels S, Falkner B. Determination of blood pressure percentiles in normal-weight children: some methodological issues. Am J Epidemiol 2008; 167(6): 653-66.",
+      "href": "https://academic.oup.com/aje/article/167/6/653/154351 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.mean-arterial-pressure-map",
+    "calc.phoenix-sepsis-score",
+    "calc.withdrawal-assessment-tool-wat-1-pediatric-withdrawal"
+  ],
+  "source_logic_hash": "9388ba05835f91c42aaf956c0c2e6631",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4052,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

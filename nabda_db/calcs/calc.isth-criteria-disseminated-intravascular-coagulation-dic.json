@@ -1,0 +1,206 @@
+{
+  "id": "calc.isth-criteria-disseminated-intravascular-coagulation-dic",
+  "slug": "isth-criteria-disseminated-intravascular-coagulation-dic",
+  "language": "en",
+  "title": "ISTH critères pour Disseminated Intravascular Coagulation (DIC)",
+  "short_title": "ISTH critères pour DIC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "hematologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Bleeding/Hemorrhage",
+    "Coronavirus",
+    "Thrombocytopenia"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "Disseminated Intravascular Coagulation, DIC, DIC score, coagulation, covid19, covid 19, covid-19, covid, coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Diagnostic criteria for overt DIC (patient has to have an underlying disorder known to be associated with overt DIC to use this algorithm):\n\n| Variable | Points | |\n| --- | --- | --- |\n| Platelet count, cells x 10 9 /L | ≥100 | 0 |\n| 50 to <100 | 1 | |\n| <50 | 2 | |\n| Elevated levels of a fibrin-related marker* (e.g. D-dimer, fibrin degradation products) | No increase | 0 |\n| Moderate increase | 2 | |\n| Severe increase | 3 | |\n| Prolonged PT , seconds | <3 | 0 |\n| 3 to <6 | 1 | |\n| ≥6 | 2 | |\n| Fibrinogen level, g/L | ≥1 | 0 |\n| <1 | 1 | |\n\n*Use lab-specific cutoff values.",
+  "how_to_use": {
+    "why": "- DIC is a syndrome which complicates a range of diseases. It is characterized by systemic activation of pathways leading to generation of fibrin clots that may cause organ failure with concomitant consumption of platelets and coagulation factors that may result in clinical bleeding.\n- This calculator can aid in the determination of possible overt DIC and non-overt DIC in patients with underlying conditions that may be associated with DIC.",
+    "when": "Patients with suspected overt disseminated intravascular coagulopathy (DIC), e.g. in the setting of malignancy, severe infection or sepsis, obstetric complications, trauma.",
+    "pearls": "- The presence of disease known to be associated with DIC (e.g. malignancy, severe infection or sepsis, obstetric complications, trauma) is a prerequisite for the use of this scoring system.\n- Increasing scores strongly correlate with higher mortality rates.\n- The coagulation profile (platelet count,PT, D-dimer, fibrinogen) provide a glimpse of the dynamic nature of DIC. It is important to repeat the tests serially for monitoring.\n- This scoring system may not be appropriate for all patients, and individual patient circumstances may indicate an alternative method. For example, if bleeding is suspected due to liver dysfunction vs DIC, liver function tests and some coagulation factors may be more appropriate to confirm the clinical suspicion."
+  },
+  "next_steps": {
+    "advice": "Le diagnostic de CIVD doit être posé sur la base d'une suspicion clinique appropriée, étayée par des examens biologiques pertinents.",
+    "critical_actions": "La prise de décision globale ne doit pas se fonder uniquement sur ce système de score.",
+    "management": "- DIC results as a complication to a wide spectrum of disorders. It is crucial to identify the underlying clinical disorder for appropriate management.\n- DIC Score <5 - not suggestive of overt DIC, may be non-overt DIC; repeat within next 1-2 days and manage clinically as appropriate.\n- DIC Score ≥5 - compatible with overt DIC; treat for DIC as appropriate and repeat scoring daily."
+  },
+  "evidence": "The DIC Score was developed by the International Society of Thrombosis and Hemostasis (ISTH) subcommittee of the Scientific and Standardization Committee (SCC) on DIC ([Taylor 2001](https://www.ncbi.nlm.nih.gov/pubmed/11816725)). The DIC Score was developed in response to requests for guidelines on diagnosis and management of DIC from practicing hematologists. The writing group included a member of the British Committee for Standards in Hematology (BCSH) and two recognized experts in the field who performed a MEDLINE systematic search for English language publications up to June 2007 ([Toh 2007](https://www.ncbi.nlm.nih.gov/pubmed/17096704)). The guideline draft was agreed upon by consensus and reviewed by approximately 40 hematologists.\n\nSeveral validation studies have since shown strong correlation between increased score and higher mortality ([Bakhtiari 2004](https://www.ncbi.nlm.nih.gov/pubmed/15599145),[Sivula 2005](https://www.ncbi.nlm.nih.gov/pubmed/15959760),[Cauchie 2006](https://onlinelibrary.wiley.com/doi/abs/10.1002/ajh.20597),[Gando 2013](https://www.ncbi.nlm.nih.gov/pubmed/23787004)).",
+  "more_info": "Interprétation :\n\n| Score | Diagnostic |\n| --- | --- |\n| <5 | Non évocateur d'une CIVD manifeste, peut correspondre à une CIVD non manifeste ; répéter dans les 1-2 jours suivants et prendre en charge cliniquement de manière appropriée |\n| ≥5 | Compatible avec une CIVD manifeste ; traiter la CIVD de manière appropriée et répéter le score quotidiennement |",
+  "short_description": "DIC diagnostic.",
+  "medium_description": "Diagnostique une coagulation intravasculaire disséminée (DIC) patente.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "platelet",
+      "label": "Numération plaquettaire, cellules x 10^9^/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥100",
+          "value": 0
+        },
+        {
+          "label": "50 pour <100",
+          "value": 1
+        },
+        {
+          "label": "< 50",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "marker",
+      "label": "Elevated levels de fibrin-lié marker (e.g. D-dimer, fibrin degradation products)",
+      "tips": "Utilisez les valeurs seuils propres au laboratoire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Pas d'augmentation",
+          "value": 0
+        },
+        {
+          "label": "modéré increase",
+          "value": 2
+        },
+        {
+          "label": "Augmentation sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pt",
+      "label": "ProlongedPT, secondes",
+      "tips": "Défini comme le nombre de secondes au-dessus de la limite supérieure de la normale.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 3",
+          "value": 0
+        },
+        {
+          "label": "3 pour <6",
+          "value": 1
+        },
+        {
+          "label": "≥6",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "fib",
+      "label": "Taux de fibrinogène, g/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥1",
+          "value": 0
+        },
+        {
+          "label": "< 1",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Taylor FB, Toh CH, Hoots WK, Wada H, Levi M. Towards definition, clinical and laboratory criteria, and a scoring system for disseminated intravascular coagulation. Thromb Haemost. 2001;86(5):1327-30.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11816725",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Toh CH, Hoots WK. The scoring system of the Scientific and Standardisation Committee on Disseminated Intravascular Coagulation of the International Society on Thrombosis and Haemostasis: a 5-year overview. J Thromb Haemost. 2007;5(3):604-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17096704",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bakhtiari K, Meijers JC, De Jonge E, Levi M. Prospective validation of the International Society of Thrombosis and Haemostasis scoring system for disseminated intravascular coagulation. Crit Care Med. 2004;32(12):2416-21.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15599145",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sivula M, Tallgren M, Pettilä V. Modified score for disseminated intravascular coagulation in the critically ill. Intensive Care Med. 2005;31(9):1209-14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15959760",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cauchie P, Cauchie Ch, Boudjeltia KZ, et al. Diagnosis and prognosis of overt disseminated intravascular coagulation in a general hospital -- meaning of the ISTH score system, fibrin monomers, and lipoprotein-C-reactive protein complex formation. Am J Hematol. 2006;81(6):414-9.",
+      "href": "https://onlinelibrary.wiley.com/doi/abs/10.1002/ajh.20597",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Gando S, Saitoh D, Ogura H, et al. A multicenter, prospective validation study of the Japanese Association for Acute Medicine disseminated intravascular coagulation scoring system in patients with severe sepsis. Crit Care. 2013;17(3):R111.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23787004",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Di Nisio M, Thachil J, Squizzato A. Management of disseminated intravascular coagulation: a survey of the International Society on Thrombosis and Haemostasis. Thromb Res. 2015;136(2):239-42.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26033399",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Toh CH, Alhamdi Y, Abrams ST. Current Pathological and Laboratory Considerations in the Diagnosis of Disseminated Intravascular Coagulation. Ann Lab Med. 2016;36(6):505-12.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/27578502",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.tisdale-risk-score-qt-prolongation",
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm"
+  ],
+  "source_logic_hash": "5915d123b6e992ac54bc941c930165de",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10203,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

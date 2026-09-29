@@ -1,0 +1,183 @@
+{
+  "id": "calc.modified-response-evaluation-criteria-solid-tumors-mrecist",
+  "slug": "modified-response-evaluation-criteria-solid-tumors-mrecist",
+  "language": "fr",
+  "title": "Modifié Response évaluation critères dans Solid Tumors (mRECIST)",
+  "short_title": "MRECIST",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Pronostic",
+    "Traitement"
+  ],
+  "specialties": [
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "hcc"
+  ],
+  "dosing": false,
+  "formula": "Les réponses sont définies comme suit (RECIST est indiqué pour comparaison) :\n\n| | RECIST | mRECIST |\n| --- | --- | --- |\n| Réponse complète | Disparition de toutes les lésions cibles | Disparition de tout rehaussement artériel intratumoral dans toutes les lésions cibles |\n| Réponse partielle | Diminution d'au moins 30 % de la somme des diamètres des lésions cibles, en prenant comme référence la somme des diamètres des lésions cibles à l'inclusion | Diminution d'au moins 30 % de la somme des diamètres des lésions cibles viables (rehaussement à la phase artérielle), en prenant comme référence la somme des diamètres des lésions cibles à l'inclusion |\n| Maladie stable | Tout cas ne répondant pas aux critères de réponse partielle ou de progression de la maladie | Tout cas ne répondant pas aux critères de réponse partielle ou de progression de la maladie |\n| Progression de la maladie | Augmentation d'au moins 20 % de la somme des diamètres des lésions cibles, en prenant comme référence la plus petite somme des diamètres des lésions cibles enregistrée depuis le début du traitement | Augmentation d'au moins 20 % de la somme des diamètres des lésions cibles viables (rehaussées), en prenant comme référence la plus petite somme des diamètres des lésions cibles viables (rehaussées) enregistrée depuis le début du traitement |",
+  "how_to_use": {
+    "why": "- Les patients atteints de HCC reçoivent des thérapies multimodales complexes, incluant une chimiothérapie cytotoxique systémique, une thérapie ciblée comme le sorafénib, un traitement locorégional comme la chimioembolisation transartérielle (TACE) et la radioembolisation avec Y90, et une résection chirurgicale. Les critères d'imagerie (par rapport aux critères traditionnels de morbidité et mortalité) peuvent identifier plus rapidement les patients qui ne répondent pas au traitement pour aider à guider les décisions de modification thérapeutique.\n- Offre une meilleure précision que les critères antérieurs de réponse tumorale (OMS et RECIST), qui avaient été développés à partir de données de patients recevant uniquement une chimiothérapie cytotoxique.\n- Tient compte de la nécrose tumorale induite par le traitement (qui peut être interprétée à tort comme une tumeur vivante par la classification OMS).",
+    "when": "Patients atteints d'un carcinome hépatocellulaire (HCC) ayant reçu un traitement (systémique, locorégional et/ou chirurgical).",
+    "pearls": "- Peut identifier les patients qui ne répondent pas au traitement, afin d'aider à guider les décisions de modification thérapeutique, plus rapidement que les critères traditionnels comme la morbidité et la mortalité.\n- La réponse tumorale, bien qu'importante comme substitut de l'efficacité d'un traitement anticancéreux, n'est pas équivalente à la survie globale.\n- Spécifiques au HCC, contrairement aux RECIST originaux.\n- Basés sur un consensus d'experts et pas encore validés contre le gold standard (examen pathologique des foies explantés), bien que largement utilisés."
+  },
+  "next_steps": {
+    "advice": "- La tomodensitométrie (CT) ou l'IRM avec produit de contraste est la modalité d'imagerie de choix pour évaluer les lésions.\n- Les recommandations de l'European Association for the Study of the Liver (EASL) préconisent d'évaluer selon les critères mRECIST 1 mois après le traitement (chirurgie, traitement locorégional ou initiation d'une chimiothérapie systémique).",
+    "critical_actions": "",
+    "management": "![](https://cdn-web-img.mdcalc.com/content/modified-response-evaluation-criteria-solid-tumors-mrecist-visual.jpg)CR, réponse complète. PR, réponse partielle. SD, maladie stable. PD, progression de la maladie. IR, réponse incomplète."
+  },
+  "evidence": "- Les critères modifiés d'évaluation de la réponse dans les tumeurs solides (mRECIST) ont été développés en [2008](https://jnci.oxfordjournals.org/content/100/10/698.long) par l'American Association for the Study of Liver Disease (AASLD) comme version modifiée des RECIST, une méthode de mesure de la réponse tumorale au traitement. mRECIST a été développé spécifiquement pour le HCC.\n- [Llovet et collègues en 2008](https://jnci.oxfordjournals.org/content/100/10/698.long) ont développé un cadre pour la conception d'essais cliniques dans le HCC, incluant mRECIST. Les RECIST originaux ont été développés en 1981 par [Miller et al](https://www.ncbi.nlm.nih.gov/pubmed/7459811) et ne tenaient pas compte de mesures de l'activité tumorale autres que la taille.\n- RECIST et mRECIST sont tous deux des critères issus d'un consensus d'experts et, bien que largement utilisés, n'ont pas été validés contre le gold standard des études pathologiques des foies explantés.",
+  "more_info": "",
+  "short_description": "Évalue la réponse au traitement selon la taille tumorale du HCC.",
+  "medium_description": "Measures traitement response, specifically pour cytotoxic drugs, basé sur tumor shrinkage.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "b1",
+      "label": "Taille initiale de la tumeur 1",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "c1",
+      "label": "Taille actuelle de la tumeur 1",
+      "optional": false,
+      "unit": "length_si_mm",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "b2",
+      "label": "Taille initiale de la tumeur 2",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b1 != null && c1 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "c2",
+      "label": "Taille actuelle de la tumeur 2",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b1 != null && c1 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "b3",
+      "label": "Taille initiale de la tumeur 3",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b2 != null && c2 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "c3",
+      "label": "Taille actuelle de la tumeur 3",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b2 != null && c2 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "b4",
+      "label": "Taille initiale de la tumeur 4",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b3 != null && c3 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "c4",
+      "label": "Taille actuelle de la tumeur 4",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b3 != null && c3 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "b5",
+      "label": "Taille initiale de la tumeur 5",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b4 != null && c4 != null"
+    },
+    {
+      "type": "textbox",
+      "name": "c5",
+      "label": "Taille actuelle de la tumeur 5",
+      "optional": true,
+      "unit": "length_si_mm",
+      "show_points": false,
+      "conditionality": "b4 != null && c4 != null"
+    }
+  ],
+  "references": [
+    {
+      "text": "Llovet JM, Di Bisceglie AM, Bruix J, Kramer BS, Lencioni R, Zhu AX, Sherman M, Schwartz M, Lotze M, Talwalkar J, Gores GJ; Panel of Experts in HCC-Design Clinical Trials. Design and endpoints of clinical trials in hepatocellular carcinoma.J Natl Cancer Inst. 2008 May 21;100(10):698-711. doi: 10.1093/jnci/djn134. Epub 2008 May 13.",
+      "href": "https://jnci.oxfordjournals.org/content/100/10/698.long",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Tirkes T, Hollar MA, Tann M, Kohli MD, Akisik F, Sandrasegaran K. Response criteria in oncologic imaging: review of traditional and new criteria. Radiographics. 2013 Sep-Oct;33(5):1323-41. doi: 10.1148/rg.335125214.",
+      "href": "https://pubs.rsna.org/doi/pdf/10.1148/rg.335125214",
+      "kind": "other"
+    },
+    {
+      "text": "Bruix J, Sherman M; American Association for the Study of Liver Diseases. Management of hepatocellular carcinoma: an update.Hepatology. 2011 Mar;53(3):1020-2. doi: 10.1002/hep.24199.",
+      "href": "https://www.aasld.org/sites/default/files/guideline_documents/HCCUpdate2010.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Miller AB, Hoogstraten B, Staquet M, Winkler A. Reporting results of cancer treatment. Cancer 1981;47(1):207-214.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/7459811",
+      "kind": "other"
+    },
+    {
+      "text": "Lencioni R, Llovet JM. Modified RECIST (mRECIST) assessment for hepatocellular carcinoma. Semin Liver Dis. 2010;30(1):52-60.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20175033",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.barcelona-clinic-liver-cancer-bclc-staging-classification-treatment-guidelines",
+    "calc.milan-criteria-liver-transplantation",
+    "calc.metroticket-calculator-hepatocellular-carcinoma-survival"
+  ],
+  "source_logic_hash": "2bfde1cb36f1288e7738757377d57395",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3824,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

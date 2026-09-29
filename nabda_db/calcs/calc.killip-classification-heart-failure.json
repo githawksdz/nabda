@@ -1,0 +1,120 @@
+{
+  "id": "calc.killip-classification-heart-failure",
+  "slug": "killip-classification-heart-failure",
+  "language": "fr",
+  "title": "Killip classification pour insuffisance cardiaque",
+  "short_title": "Classe de Killip",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "urgences"
+  ],
+  "diseases": [
+    "Syndrome coronarien aigu",
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "killip class",
+    "killip classification for heart failure",
+    "heart failure",
+    "killip heart",
+    "kilip"
+  ],
+  "dosing": false,
+  "formula": "| Classe I | Absence de signes de congestion |\n| --- | --- |\n| Classe II | S3 et râles basaux à l'auscultation |\n| Classe III | Œdème pulmonaire aigu |\n| Classe IV | Choc cardiogénique |",
+  "how_to_use": {
+    "why": "Prédit la mortalité dans l'ACS et est validé à la fois pour le STEMI et le NSTEMI.",
+    "when": "Patients atteints d’un syndrome coronarien aigu confirmé.",
+    "pearls": "- Élaboré dans les années 1960, avant la thérapie de reperfusion (thrombolytiques, PCI) ; toutefois, plusieurs études ont depuis montré qu’il reste prédictif de la mortalité.\n- Les taux de mortalité ont considérablement diminué depuis l’étude originale.\n- Peut être utilisé à la fois dans les STEMI et les NSTEMI."
+  },
+  "next_steps": {
+    "advice": "Peut être utilisé dans le cadre du tableau clinique complet pour aider à choisir parmi les options thérapeutiques, y compris le traitement de reperfusion et la mise en place d'une contre-pulsion par ballonnet intra-aortique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Classe | Mortalité à 30 jours* | Mortalité intra-hospitalière** (intérêt historique uniquement) |\n| --- | --- | --- |\n| I | 2-3% | <6% |\n| II | 5-12% | <17% |\n| III | 10-20% | 38% |\n| IV | 81% | |\n\n*D'après [Khot 2003](https://www.ncbi.nlm.nih.gov/pubmed/14570953), qui a regroupé les classes III/IV en raison du nombre relativement plus faible de patients en classe IV (0,3% des patients).\n\n**D'après [Killip 1967](https://www.ncbi.nlm.nih.gov/pubmed/6059183).",
+  "short_description": "ACS mortalité.",
+  "medium_description": "Quantifies gravité de insuffisance cardiaque dans ACS et predicts 30-day mortalité.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "killip",
+      "label": "Classification",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Absence de signes de congestion",
+          "value": 1
+        },
+        {
+          "label": "S3 et râles crépitants basaux à l'auscultation",
+          "value": 2
+        },
+        {
+          "label": "aigu pulmonary œdème",
+          "value": 3
+        },
+        {
+          "label": "Choc cardiogénique",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Killip T, Kimball JT. Treatment of myocardial infarction in a coronary care unit. A two year experience with 250 patients. Am J Cardiol. 1967;20(4):457-64.",
+      "href": "https://www.ajconline.org/article/0002-9149(67)90023-9/pdf",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Khot UN, Jia G, Moliterno DJ, et al. Prognostic importance of physical examination for heart failure in non-ST-elevation acute coronary syndromes: the enduring value of Killip classification. JAMA. 2003;290(16):2174-81.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14570953 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "DeGeare VS, Boura JA, Grines LL, O'neill WW, Grines CL. Predictive value of the Killip classification in patients undergoing primary percutaneous coronary intervention for acute myocardial infarction. Am J Cardiol. 2001;87(9):1035-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11348598 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nesković AN, Otasević P, Bojić M, Popović AD. Association of Killip class on admission and left ventricular dilatation after myocardial infarction: a closer look into an old clinical classification. Am Heart J. 1999;137(2):361-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9924172 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.euromacs-rhf-score",
+    "calc.score2-diabetes"
+  ],
+  "source_logic_hash": "e867bc7281f071edb3062e2a27f67e5f",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3990,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

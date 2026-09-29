@@ -1,0 +1,226 @@
+{
+  "id": "calc.rotterdam-hip-fracture-mortality-prediction-30-days-rhmp-30",
+  "slug": "rotterdam-hip-fracture-mortality-prediction-30-days-rhmp-30",
+  "language": "en",
+  "title": "Rotterdam – Prédiction de mortalité à 30 jours après fracture de la hanche (RHMP-30)",
+  "short_title": "RHMP-30",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "urgences",
+    "geriatrie",
+    "medecine-interne",
+    "orthopedie"
+  ],
+  "diseases": [
+    "Fracture"
+  ],
+  "chief_complaints": [
+    "Douleur des extrémités",
+    "Lésion/Traumatisme",
+    "Douleur articulaire",
+    "Douleur",
+    "Gonflement",
+    "Douleur osseuse"
+  ],
+  "abbreviations": [
+    "Rotterdam Hip Fracture Mortality Prediction-30 Days (RHMP-30)",
+    "Rotterdam Hip Fracture Mortality Prediction-30 Days",
+    "RHMP-30",
+    "hip fracture",
+    "mortality risk",
+    "geriatric orthopedics",
+    "30-day risk",
+    "ASA",
+    "Katz-ADL",
+    "albumin",
+    "dementia",
+    "elderly fracture"
+  ],
+  "dosing": false,
+  "formula": "The RHMP-30 is calculated by the following formula:\n\nx = −2.69102004\n\n− (0.04421566 × Albumin [g/L])\n\n+ (0.03059813 × Age [years])\n\n− (1.01157133 × Gender [male = 0, female = 1])\n\n+ (0.36026082 × Dementia [yes = 1])\n\n− (0.08530769 ×Katz-ADLscore\n\n+ (0.85617275 ×ASAscore 4 [yes = 1])\n\n+ (0.72578208 × Nursing home resident [yes = 1])\n\nMortality risk, % = eˣ / (1 + eˣ) * 100",
+  "how_to_use": {
+    "why": "Prédit la mortalité à 30 jours après chirurgie de fracture de la hanche.",
+    "when": "- Use at the time of admission for an adult patient with an acute, native hip fracture who is expected to undergo operative repair.\n- Particularly helpful when a quick, objective estimate of 30-day mortality is needed to guide discussions with frail, comorbid, or nursing-home residents in whom goals of care may be uncertain.",
+    "pearls": "- Derived and externally validated within a single study that used cohorts from two level-II trauma hospitals in the Netherlands; performance in other populations is unknown.\n- Included AO/OTA trochanteric fractures (types 31A1–31A3) and collum fractures and excluded pathological fractures.\n- Comorbidity was captured by the American Society of Anesthesiologists (ASA) class, which outperformed scoring individual comorbidities; pre-fracture functional status was assessed with the Katz Index of Independence in Activities of Daily Living ( [Katz-ADL](nabda:calc.katz-index-independence-activities-daily-living-adl) ).\n- Achieved an AUROC of 0.775 but showed a tendency to over-predict mortality in the testing cohort."
+  },
+  "next_steps": {
+    "advice": "- Les résultats de cet outil ne doivent pas être le seul déterminant du traitement.\n- Utiliser les résultats conjointement avec une évaluation clinique approfondie, des outils complémentaires d'évaluation du risque chirurgical et l'expertise clinique afin de soutenir une décision partagée avec le patient et sa famille concernant les risques et les bénéfices d'une prise en charge chirurgicale versus non chirurgicale.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| RHMP-30 (Probability) | Risk of 30-Day Mortality |\n| --- | --- |\n| <0.05 (5%) | Low |\n| 0.05-0.20 (5%-20%) | Moderate |\n| >0.20 (20%) | High |",
+  "short_description": "Prédit la mortalité à 30 jours après chirurgie pour fracture de la hanche.",
+  "medium_description": "Predicts 30-day risque de mortalité after hip fracture surgery.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age_rhmp30",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "female",
+      "label": "Genre",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumine",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "dementia",
+      "label": "Démence",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "katz_total",
+      "label": "Total [Katz-ADL](nabda:calc.katz-index-independence-activities-daily-living-adl) score",
+      "tips": "Attribuer 1 point pour chaque activité dans laquelle le patient est indépendant : bain, habillage, utilisation des toilettes, transfert, continence et/ou alimentation.",
+      "optional": false,
+      "show_points": false,
+      "options": [
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        },
+        {
+          "label": "6",
+          "value": 6
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "asa_4",
+      "label": "[ASA score](nabda:calc.asa-physical-status-asa-classification) de 4",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nursing_home",
+      "label": "Résident en EHPAD",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "de Jong L, de Haan E, van Rijckevorsel VAJIM, Kuijper TM, Roukema GR. Multidimensional Approach for Predicting 30-Day Mortality in Patients with a Hip Fracture: Development and External Validation of the Rotterdam Hip Fracture Mortality Prediction-30 Days (RHMP-30). J Bone Joint Surg Am. 2025;107(5):459-468. doi:10.2106/JBJS.23.01397",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/39836737/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.katz-index-independence-activities-daily-living-adl"
+  ],
+  "source_logic_hash": "591258a7521847b388e5cca899a995e7",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.katz-index-independence-activities-daily-living-adl",
+      "text": "Katz-ADL"
+    },
+    {
+      "type": "calc",
+      "id": "calc.katz-index-independence-activities-daily-living-adl",
+      "text": "Katz-ADL"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10616,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\n\nvar age = parseFloat(age) || 0;\nvar female = parseInt(female) || 0;\nvar dementia = parseInt(dementia) || 0;\nvar albumin = parseFloat(albumin) || 0;\nvar nursing_home = parseInt(nursing_home) || 0;\nvar asa_4 = parseInt(asa_4) || 0;\nvar katz_total = parseInt(katz_total) || 0;\n\n//conversion\nif (typeof UOMSYSTEM !== 'undefined' && UOMSYSTEM === true) {\n  // User input is in g/dL → convert to g/L\n  albumin = albumin * 10;\n}\n\n// equation\nvar x = \n  -2.69102004 +\n  (0.03059813 * age) +\n  (-1.01157133 * female) +\n  (0.36026082 * dementia) +\n  (-0.04421566 * albumin) +\n  (0.72578208 * nursing_home) +\n  (0.85617275 * asa_4) +\n  (-0.08530769 * katz_total);\n\n// probability\nvar probability = Math.exp(x) / (1 + Math.exp(x));\nvar percent = (probability * 100).toFixed(1);\n\n// risk\nvar risk_category;\nif (probability < 0.05) {\n  risk_category = \"Low\";\n} else if (probability <= 0.20) {\n  risk_category = \"Moderate\";\n} else {\n  risk_category = \"High\";\n}\n\n//calc output\ncalc_output.push({\n  name: \"mini\",\n  value: percent,\n  value_text: `%`,\n  message: risk_category + ` risk of 30-day mortality`\n});\n\n//output (left side)\ncalc_output.push({\n  name: \"10616_RHMP30_result\",\n  value: percent,\n  value_text: `%`,\n  message: risk_category + ` risk of 30-day mortality after hip fracture surgery`\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Louis de Jong",
+    "Dr. Eveline de Haan"
+  ],
+  "measurement_ids": [
+    "Age",
+    "Albumin"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "8d2249dde5f6f8a48b6741ea63498ce719f45eaeeebaed859524470a4e4006b3"
+}

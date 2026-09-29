@@ -1,0 +1,95 @@
+{
+  "id": "calc.roth-score-hypoxia-screening",
+  "slug": "roth-score-hypoxia-screening",
+  "language": "fr",
+  "title": "Roth score pour Hypoxia dépistage",
+  "short_title": "Roth score pour Hypoxia dépistage",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus",
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Hypoxia, dyspnea, hypoxia screening, roth test, roth score, roth, phone screening, covid-19, covid, coronavirus, covid19, covid 19"
+  ],
+  "dosing": false,
+  "formula": "Instructions pour le patient :\n\n1. Prenez une inspiration profonde.\n2. Dans votre langue maternelle, comptez clairement de 1 à 30 à voix haute, aussi vite que possible sans vous arrêter, jusqu'à être à court de souffle ou atteindre 30.\n\nClinicien : **Mesurez le temps en secondes** nécessaire au patient pour atteindre 30, ou jusqu'à ce qu'il doive reprendre son souffle.\n\nNotez également **le nombre maximal** atteint avant de devoir reprendre son souffle.\n\n[Voir un médecin généraliste britannique décrire le score de Roth sur YouTube](https://youtu.be/haS9iVDKblc?t=69).",
+  "how_to_use": {
+    "why": "- Dans le contexte de la pandémie mondiale de COVID-19, il est extrêmement difficile de maintenir l'isolement/quarantaine, d'économiser les EPI, et de voir les patients en personne pour mesurer leurs constantes (notamment l'hypoxie).\n- Bien que la plupart des patients atteints de COVID-19 ne semblent pas nécessiter d'hospitalisation (80 % dans la plupart des études en mars 2020), environ 20 % nécessitent une hospitalisation principalement en raison d'une insuffisance respiratoire hypoxémique, d'une pneumonie et d'un SDRA ; les indications les plus évidentes d'admission étant la tachypnée et l'hypoxie. Le score de Roth peut aider à suggérer une hypoxie chez un patient qui n'est pas manifestement tachypnéique ou qui ne « sonne » pas particulièrement malade au téléphone.",
+    "when": "Le score de Roth peut être utile pour un dépistage approximatif de l'hypoxie chez les patients rapportant une dyspnée, lorsqu'il est impossible de réaliser en toute sécurité ou facilement une oxymétrie de pouls.",
+    "pearls": "- Ce score n'a pas été validé et a été développé sur seulement 93 patients (avec comparaisons de contrôles).\n- Il ne remplace pas l'oxymétrie de pouls et est loin d'être un outil parfait compte tenu de la taille relativement réduite de l'étude et de l'absence de validation externe."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- Le score de Roth, s'il est utilisé, ne devrait constituer qu'un élément parmi les données de l'évaluation clinique d'un patient, en particulier si le dépistage/l'évaluation initiale se fait par téléphone ou même par vidéo.\n- Comme il n'est pas particulièrement spécifique de l'hypoxie, il ne doit pas être utilisé seul pour décider qu'un patient nécessite une évaluation en personne ou en urgence.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Risque selon le nombre maximal atteint avant la reprise du souffle | |\n| --- | --- |\n| <10 | Sensibilité de 91 % pour une SpO₂ <95 % |\n| <7 | Sensibilité de 87 % pour une SpO₂ <90 % |\n| >10 | Score de Roth moins évocateur d'hypoxie (mais pour des nombres plus élevés, le score semble moins sensible pour l'hypoxie) |\n| Risque selon le nombre total de secondes comptées avant la reprise du souffle | |\n| <7 | Sensibilité de 83 % pour une SpO₂ <95 % |\n| <5 | Sensibilité de 82 % pour une SpO₂ <90 % |\n| >7 | Score de Roth moins évocateur d'hypoxie (mais pour des nombres plus élevés, le score semble moins sensible pour l'hypoxie) |\n\nRemarque : le clinicien traitant doit tenir compte des pathologies, de l'impression clinique globale et du risque.",
+  "short_description": "Hypoxia dépistage.",
+  "medium_description": "Screens pour hypoxia dans dyspneic patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "max",
+      "label": "Nombre maximal atteint avant la reprise du souffle",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "total",
+      "label": "Nombre total de secondes comptées avant la reprise du souffle",
+      "optional": false,
+      "unit": "sec",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Chorin E, Padegimas A, Havakuk O, et al. Assessment of Respiratory Distress by the Roth Score. Clin Cardiol. 2016;39(11):636-639.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC6490799/pdf/CLC-39-636.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.berlin-criteria-acute-respiratory-distress-syndrome",
+    "calc.brescia-covid-respiratory-severity-scale-bcrss-algorithm"
+  ],
+  "source_logic_hash": "8a55a528de2c738808d9fa38f274b463",
+  "logic_language": null,
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10288,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

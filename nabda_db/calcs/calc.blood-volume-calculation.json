@@ -1,0 +1,197 @@
+{
+  "id": "calc.blood-volume-calculation",
+  "slug": "blood-volume-calculation",
+  "language": "fr",
+  "title": "Calcul du volume sanguin",
+  "short_title": "Calcul du volume sanguin",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Hémopathie maligne"
+  ],
+  "chief_complaints": [
+    "Bleeding"
+  ],
+  "abbreviations": [
+    "blood",
+    "rbc",
+    "plasma volume",
+    "rbc volume",
+    "red blood cell volume",
+    "erythrocytes",
+    "total blood volume",
+    "tbv"
+  ],
+  "dosing": false,
+  "formula": "**Total blood volume, L (adults and children ≥25 kg)**\n\n- Male = [ 0.3669 × (height, m)^3^+ 0.03219 × (weight, kg) + 0.6041 ]\n- Female = [ 0.3561 × (height, m)^3^+ 0.03308 × (weight, kg) + 0.1833 ]\n\n**Total blood volume, mL (neonates and children <25 kg)** = weight, kg × Y, where Y is as follows:\n\n- Preterm neonate: 100 mL/kg\n- Term neonate: 85 mL/kg\n- Infant aged 1-4 months: 75 mL/kg\n- Child <25 kg: 70 mL/kg\n\n**RBC volume, mL** = total blood volume, mL × hematocrit / 100\n\n**Plasma volume, mL** = total blood volume, mL × ( 1 – hematocrit / 100 )\n\nExample: adult male, height = 180 cm, weight = 70 kg, Hct = 25%\n\n- Total blood volume, L\n- Red blood cell volume, mL\n\n - = (4,997 mL) × (25% / 100)\n - = 4,997 mL × 0.25\n - = 1,249 mL\n- Plasma volume, mL\n\n - = 4,997 mL × [1 - (25% / 100)]\n - = 4,997 mL × 0.75\n - = 3,748 mL",
+  "how_to_use": {
+    "why": "",
+    "when": "Use when blood volumes are needed (e.g. RBC exchange, plasma exchange, coagulation factor drug dosing, RhIG dosing calculations).",
+    "pearls": "Le volume sanguin total est calculé à l’aide de l’équation de Nadler."
+  },
+  "next_steps": {
+    "advice": "Si vous déterminez la posologie pour un échange de RBC, utilisez conjointement avec [Volume d'échange de RBC dans la drépanocytose](nabda:calc.sickle-cell-rbc-exchange-volume).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Volumes de sang et de composants sanguins.",
+  "medium_description": "Calcule le volume sanguin total, le volume érythrocytaire et le volume plasmatique.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "patient",
+      "label": "Patient",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Nouveau-né prématuré",
+          "value": 0
+        },
+        {
+          "label": "Nouveau-né à terme",
+          "value": 1
+        },
+        {
+          "label": "nourrisson âgé de 1 à 4 mois",
+          "value": 2
+        },
+        {
+          "label": "Enfant <25 kg (55 lbs)",
+          "value": 3
+        },
+        {
+          "label": "Enfant ≥25 kg (55 lbs) ou adulte",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "sex",
+      "label": "Sex",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "patient == 4",
+      "options": [
+        {
+          "label": "Homme",
+          "value": 0
+        },
+        {
+          "label": "Femme",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht",
+      "show_points": false,
+      "conditionality": "patient == 4"
+    },
+    {
+      "type": "textbox",
+      "name": "hematocrit",
+      "label": "Hematocrit",
+      "tips": "Facultatif, pour calculer le volume des RBC et le volume plasmatique",
+      "optional": true,
+      "unit": "hct",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_adult",
+      "show_points": false,
+      "conditionality": "patient == 4"
+    },
+    {
+      "type": "textbox",
+      "name": "weight_baby",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_fetus",
+      "show_points": false,
+      "conditionality": "patient <= 1"
+    },
+    {
+      "type": "textbox",
+      "name": "weight_infant",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_infant",
+      "show_points": false,
+      "conditionality": "patient == 2"
+    },
+    {
+      "type": "textbox",
+      "name": "weight_peds",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt_peds",
+      "show_points": false,
+      "conditionality": "patient == 3"
+    }
+  ],
+  "references": [
+    {
+      "text": "Nadler SB, Hidalgo JH, Bloch T. Prediction of blood volume in normal human adults. Surgery. 1962;51(2):224-32.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21936146",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brecher ME, Shaz BH, Schwartz J. Look This Up, Too! A Quick Reference in Apheresis. 3rd Ed. AABB Press, Bethesda MD 2013.",
+      "href": "https://www.ncbi.nlm.nih.gov/nlmcatalog/101666102",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.sickle-cell-rbc-exchange-volume",
+    "calc.mentzer-index",
+    "calc.donor-lymphocyte-infusion-dli-volume"
+  ],
+  "source_logic_hash": "ab2772e9a9e06d3bb5745d03777a5880",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.sickle-cell-rbc-exchange-volume",
+      "text": "Sickle Cell RBC Exchange Volume"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4065,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

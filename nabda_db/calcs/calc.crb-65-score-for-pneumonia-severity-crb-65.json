@@ -1,0 +1,199 @@
+{
+  "id": "calc.crb-65-score-for-pneumonia-severity-crb-65",
+  "slug": "crb-65-score-for-pneumonia-severity-crb-65",
+  "language": "en",
+  "title": "CRB-65 score pour pneumonie gravité",
+  "short_title": "CRB-65",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "infectiologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Pneumonia"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "CRB-65 Score",
+    "Community acquired pneumonia",
+    "CURB-65 score",
+    "pneumonia",
+    "community acquired infection",
+    "respiratory tract infection"
+  ],
+  "dosing": false,
+  "formula": "The CRB-65 Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| C onfusion | No | 0 |\n| Yes | 1 | |\n| R espiratory rate ≥ 30/min | No | 0 |\n| Yes | 1 | |\n| B lood pressure (SBP <90 mm Hg or DBP ≤60 mm Hg) | No | 0 |\n| Yes | 1 | |\n| Age ≥65 | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Grades CAP severity by estimating 30-day mortality, guiding disposition decisions (outpatient vs. inpatient).\n- A quick and simple calculation that requires no laboratory data, which can be ideal for resource-limited settings or where immediate laboratory results are not available.\n- Endorsed by multiple organizations, including the National Institute for Health and Care Excellence (NICE) and the American Academy of Family Physicians (AAFP).",
+    "when": "- Use to assess adult patients with suspected or confirmed community-acquired pneumonia (CAP) in primary care, urgent-care, or other pre-hospital settings.\n- Especially useful when laboratory data are not yet available.",
+    "pearls": "- Derived from the British Thoracic Society (BTS) [CURB-65 model](nabda:calc.curb-65-score-pneumonia-severity) ; CRB-65 omits the urea criterion, relying solely on clinical findings while preserving comparable prognostic accuracy.\n- Does not capture all predictors of CAP severity, such as nursing home residency, recent hospitalization, or recent antibiotics; incorporate these factors into the overall assessment.\n- [McNally et al. (2010)](https://pubmed.ncbi.nlm.nih.gov/20883616/)found that the tool may overestimate 30-day mortality in community cohorts, particularly in the intermediate-risk group."
+  },
+  "next_steps": {
+    "advice": "- Interpret the score alongside a thorough clinical evaluation; low scores do not override red flags such as hypoxemia, multilobar infiltrates, severe comorbidities, immunosuppression, or poor social support.\n- Use the tool primarily for disposition; antimicrobial choice, fluids, labs, cultures, and imaging should follow guideline-based best practice and clinical judgment.\n- Although CAP can be viral, empiric antibiotics are usually prescribed to cover potential bacterial pathogens.",
+    "critical_actions": "Be sure to screen for other signs of sepsis and initiate appropriate management bundles; helpful tools may include (but are not limited to) [SIRS](nabda:calc.sirs-sepsis-septic-shock-criteria) , [NEWS](nabda:calc.national-early-warning-score-news) , [SOFA](nabda:calc.sequential-organ-failure-assessment-sofa-score) / [qSOFA](nabda:calc.qsofa-quick-sofa-score-sepsis) .",
+    "management": "- **Low risk (score 0):** Outpatient care with timely follow-up and clear return precautions.\n- **Moderate risk (score 1–2):** Same-day hospital assessment; consider admission or short-stay/observation.\n- **High risk (score ≥3):** Urgent hospital admission and early intensive-care evaluation."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CRB-65 Score | Mortality Risk | Treatment |\n| --- | --- | --- |\n| 0 | Low | Likely suitable for home treatment |\n| 1 or 2 | Intermediate | Consider hospital referral |\n| 3 or 4 | High | Urgent hospital admission |",
+  "short_description": "CAP risque de mortalité sans bilan biologique.",
+  "medium_description": "Stratifies pneumonie communautaire (CAP) gravité pour determine hospitalisation versus ambulatoire traitement sans bilan biologique.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "confusion",
+      "label": "**C** onfusion",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "resrate",
+      "label": "**R** fréquence respiratoire ≥30/min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bloodpress",
+      "label": "**B** lood pressure (SBP <90 mm Hg ou DBP ≤60 mm Hg)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "age",
+      "label": "Âge **≥65**",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lim WS, van der Eerden MM, Laing R, et al. Defining community acquired pneumonia severity on presentation to hospital: an international derivation and validation study. Thorax. 2003;58(5):377-382. doi:10.1136/thorax.58.5.377",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/12728155/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ebell MH. Community-Acquired Pneumonia: Determining Safe Treatment in the Outpatient Setting. Am Fam Physician. 2019;99(12):768-769.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31194484/",
+      "kind": "other"
+    },
+    {
+      "text": "Dwyer R, Hedlund J, Henriques-Normark B, Kalin M. Improvement of CRB-65 as a prognostic tool in adult patients with community-acquired pneumonia. BMJ Open Respir Res. 2014;1(1):e000038. Published 2014 Jul 8. doi:10.1136/bmjresp-2014-000038",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25478185/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "McNally M, Curtain J, O'Brien KK, Dimitrov BD, Fahey T. Validity of British Thoracic Society guidance (the CRB-65 rule) for predicting the severity of pneumonia in general practice: systematic review and meta-analysis. Br J Gen Pract. 2010;60(579):e423-e433. doi:10.3399/bjgp10X532422",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/20883616/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.curb-65-score-pneumonia-severity",
+    "calc.sirs-sepsis-septic-shock-criteria",
+    "calc.national-early-warning-score-news",
+    "calc.sequential-organ-failure-assessment-sofa-score",
+    "calc.qsofa-quick-sofa-score-sepsis"
+  ],
+  "source_logic_hash": "bdaa58b215e054034e6654b021458a5c",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.curb-65-score-pneumonia-severity",
+      "text": "CURB-65 model"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sirs-sepsis-septic-shock-criteria",
+      "text": "SIRS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.national-early-warning-score-news",
+      "text": "NEWS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.sequential-organ-failure-assessment-sofa-score",
+      "text": "SOFA"
+    },
+    {
+      "type": "calc",
+      "id": "calc.qsofa-quick-sofa-score-sepsis",
+      "text": "qSOFA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10604,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [
+    "g.pneumonie-aigue-communautaire-de-l-adulte"
+  ],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,373 @@
+{
+  "id": "calc.infective-endocarditis-ie-mortality-risk-score",
+  "slug": "infective-endocarditis-ie-mortality-risk-score",
+  "language": "en",
+  "title": "Infective Endocarditis (IE) risque de mortalité score",
+  "short_title": "IE risque de mortalité score",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "infectiologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Endocarditis"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique"
+  ],
+  "abbreviations": [
+    "International collaboration",
+    "pcs",
+    "plus",
+    "ie",
+    "infective",
+    "endocarditis",
+    "mortality"
+  ],
+  "dosing": false,
+  "formula": "The IE Mortality Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Constant | | 4 |\n| Host factors | | |\n| Age, years | ≤45 | 0 |\n| 46-60 | 2 | |\n| 61-70 | 3 | |\n| >70 | 4 | |\n| History of dialysis | No | 0 |\n| Yes | 3 | |\n| IE factors | | |\n| Nosocomial IE | No | 0 |\n| Yes | 2 | |\n| Prosthetic IE | No | 0 |\n| Yes | 1 | |\n| Symptoms >1 month before admission | No | 0 |\n| Yes | -1 | |\n| Staphylococcus aureus | No | 0 |\n| Yes | 1 | |\n| Viridans group streptococci | No | 0 |\n| Yes | -2 | |\n| Aortic vegetation | No | 0 |\n| Yes | 1 | |\n| Mitral vegetation | No | 0 |\n| Yes | 1 | |\n| IE complications | | |\n| NYHA class 3 or 4 heart failure | No | 0 |\n| Yes | 3 | |\n| Stroke | No | 0 |\n| Yes | 2 | |\n| Paravalvular complication | No | 0 |\n| Yes | 2 | |\n| Persistent bacteremia | No | 0 |\n| Yes | 2 | |\n| Surgical treatment | No | 0 |\n| Yes | -2 | |",
+  "how_to_use": {
+    "why": "Le score TheIEMortality fournit une estimation objective de la mortalité.",
+    "when": "Patients atteints d'IE confirmée pour estimer la mortalité.",
+    "pearls": "- Infective endocarditis (IE) has an overall 6-month mortality of approximately 25% in all-comers.\n- Older age and history of dialysis appear to be the highest risk patient factors; IE complications also suggest a high mortality as well.\n- Surgery is associated with a lower mortality rate but is infrequent in the high-risk cohort of patients.\n- Mortality ranges from 10% in the lowest risk quintile to 53% in the highest-risk quintile.\n\n**Points to keep in mind:**\n\n- Surgery in this study was associated with lower mortality, but the highest risk patients were less likely to receive surgery (probably because they were high-risk surgical patients as well).\n- This study was performed in referral centers (likely tertiary and quaternary academic centers) with experience with endocarditis and cardiac surgery."
+  },
+  "next_steps": {
+    "advice": "Les patients atteints d’EI peuvent bénéficier d’une consultation avec les services de chirurgie cardiothoracique et de maladies infectieuses.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "- Les statistiques c pour les modèles de dérivation et de validation sont de 0,715 et 0,682, respectivement.\n- La cohorte de dérivation contenait 4049 patients, et la cohorte de validation incluait 1197 sujets.",
+  "more_info": "**Interpretation:**\n\nProbability of 6‐month mortality = 2.416*score+0.109*score^2^−4.849\n\nA simplified risk score ≥8 had sensitivity 86.7% and specificity 50.8% for predicting overall 6‐month mortality (negative predictive value of 86% and positive predictive value of 39%).",
+  "short_description": "6-month mortalité de Infective Endocarditis.",
+  "medium_description": "Predicts mortalité at 6 months chez les patients avec infective endocarditis.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge, years",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤45",
+          "value": 0
+        },
+        {
+          "label": "46-60",
+          "value": 2
+        },
+        {
+          "label": "61-70",
+          "value": 3
+        },
+        {
+          "label": ">70",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dialysis",
+      "label": "Antécédents de dialyse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "nosocomial",
+      "label": "EI nosocomiale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "prosthetic",
+      "label": "EI sur prothèse",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sx",
+      "label": "Symptômes >1 mois avant l’admission",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "staph",
+      "label": "Staphylococcus aureus",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "viridans",
+      "label": "Streptocoques du groupe viridans",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aveg",
+      "label": "végétation aortique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mveg",
+      "label": "Végétation mitrale",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "nyha",
+      "label": "Insuffisance cardiaque de classe NYHA 3 ou 4",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "stroke",
+      "label": "AVC",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "valv",
+      "label": "Complication paravalvulaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "bact",
+      "label": "Bactériémie persistante",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "surg",
+      "label": "Traitement chirurgical",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Park LP, Chu VH, Peterson G, Skoutelis A, Lejko-Zupa T, Bouza E, Tattevin P, Habib G, Tan R, Gonzalez J, Altclas J, Edathodu J, Fortes CQ, Siciliano RF,Pachirat O, Kanj S, Wang A; International Collaboration on Endocarditis (ICE) Investigators. Validated Risk Score for Predicting 6-Month Mortality in Infective Endocarditis. J Am Heart Assoc. 2016 Apr 18;5(4). pii: e003016. doi: 10.1161/JAHA.115.003016.",
+      "href": "https://jaha.ahajournals.org/content/5/4/e003016.full",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.duke-criteria-infective-endocarditis",
+    "calc.jones-criteria-acute-rheumatic-fever-diagnosis",
+    "calc.modified-early-warning-score-mews-clinical-deterioration"
+  ],
+  "source_logic_hash": "8989b715469fd9ffcfe0ad819d852592",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3121,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

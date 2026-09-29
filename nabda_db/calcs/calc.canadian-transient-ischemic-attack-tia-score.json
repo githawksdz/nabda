@@ -1,0 +1,367 @@
+{
+  "id": "calc.canadian-transient-ischemic-attack-tia-score",
+  "slug": "canadian-transient-ischemic-attack-tia-score",
+  "language": "en",
+  "title": "Score canadien d'accident ischémique transitoire (AIT)",
+  "short_title": "Score canadien d'AIT (Canadian TIA score)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Fatigue",
+    "Numbness",
+    "Vertigo",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Canadian Transient Ischemic Attack (TIA) Score",
+    "Canadian TIA Score",
+    "TIA",
+    "TIA score",
+    "stroke",
+    "impending stroke",
+    "transient ischemic attack",
+    "transient ischemic attack score"
+  ],
+  "dosing": false,
+  "formula": "The Canadian TIA Score is calculated by the addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Clinical Findings | | |\n| First TIA in lifetime | No | 0 |\n| Yes | 2 | |\n| Symptoms ≥10 mins | No | 0 |\n| Yes | 2 | |\n| History of carotid stenosis | No | 0 |\n| Yes | 2 | |\n| Already on antiplatelet therapy | No | 0 |\n| Yes | 3 | |\n| History of gait disturbance | No | 0 |\n| Yes | 1 | |\n| History of unilateral weakness | No | 0 |\n| Yes | 1 | |\n| History of vertigo | No | 0 |\n| Yes | -3 | |\n| Initial triage diastolic blood pressure ≥110 mmHg | No | 0 |\n| Yes | 3 | |\n| Dysarthria or aphasia (history or examination) | No | 0 |\n| Yes | 1 | |\n| Investigations in Emergency Department | | |\n| Atrial fibrillation on ECG | No | 0 |\n| Yes | 2 | |\n| Infarction (new or old) on CT | No | 0 |\n| Yes | 1 | |\n| Platelet count ≥400×10 9 /L | No | 0 |\n| Yes | 2 | |\n| Glucose ≥15 mmol/L (270 mg/dL) | No | 0 |\n| Yes | 3 | |",
+  "how_to_use": {
+    "why": "- Stratifie le risque d’AVC ultérieur à court terme chez un patient (p. ex., dans les 48 heures à 7 jours).\n- Aide les cliniciens à prioriser les ressources pour la prise en charge et à déterminer l’orientation appropriée.\n- S’est révélé supérieur pour prédire le risque d’AVC par rapport au [score ABCD²](nabda:calc.abcd2-score-tia) ([Perry et al., 2021](https://pubmed.ncbi.nlm.nih.gov/33541890/)).",
+    "when": "Use in the emergency department for adult patients presenting with symptoms suggestive of a transient ischemic attack (TIA).",
+    "pearls": "- The original study and validation cohorts were primarily from Canadian healthcare settings, which may not fully represent populations with different healthcare access or baseline stroke risks.\n- The derivation cohort included patients with a final emergency department diagnosis of TIA or minor stroke but excluded patients who had neurological deficits for >24 hours, decreased level of consciousness from baseline ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs) <15), alternative diagnoses (e.g., hypoglycemia), treatment with tPA or embolectomy for acute stroke, or those presenting >7 days after the onset of symptoms.\n- Primary outcomes studied included subsequent stroke or carotid revascularization (e.g., endarterectomy, stenting) within 7 days of the event."
+  },
+  "next_steps": {
+    "advice": "- Ce score ne doit être utilisé qu'en conjonction avec le jugement clinique et les recommandations de spécialistes.\n- Les auteurs de l'étude originale ont suggéré des options de prise en charge possibles en fonction du score et du niveau de risque associé :\n\n - **Risque faible (scores ≤3) :** Prise en charge ambulatoire avec un médecin de soins primaires.\n - **Risque intermédiaire (scores 4–8) :** Explorations avec suivi dans les 2 jours, incluant un bilan complet de la cause du TIA.\n - **Risque élevé (scores ≥9) :** Consultation et explorations lors de la même visite.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| Canadian TIA Score | % Risk of Stroke |\n| --- | --- |\n| -3 | 0.01% |\n| -2 | 0.01-0.03% |\n| -1 | 0.03% |\n| 0 | 0.04% |\n| 1 | 0.07% |\n| 2 | 0.11% |\n| 3 | 0.2% |\n| 4 | 0.3% |\n| 5 | 0.5% |\n| 6 | 0.8% |\n| 7 | 1.2% |\n| 8 | 2% |\n| 9 | 3.2% |\n| 10 | 5.1% |\n| 11 | 8.1% |\n| 12 | 12.6% |\n| 13 | 19% |\n| 14 | 27.6% |\n| ≥15 | >27.6% |\n\n| Canadian TIA Score | Risk Category |\n| --- | --- |\n| ≤3 | Low |\n| 4-8 | Medium |\n| ≥9 | High |",
+  "short_description": "AVC prédiction.",
+  "medium_description": "Identifies risque de AVC dans next 7 days dans patients who experienced symptoms de TIA.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "tia",
+      "label": "First TIA dans lifetime",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "symptoms",
+      "label": "Symptômes ≥ 10 min",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stenosis",
+      "label": "Antécédents de sténose carotidienne",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "therapy",
+      "label": "Déjà sous traitement antiagrégant plaquettaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gait",
+      "label": "Antécédents de trouble de la marche",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "weakness",
+      "label": "History de unilateral weakness",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "vertigo",
+      "label": "Antécédents de vertige",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": -3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bp",
+      "label": "Initial triage diastolic pression artérielle ≥110 mmHg",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "d",
+      "label": "Dysarthrie ou aphasie (antécédents ou examen)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "ecg",
+      "label": "Fibrillation atriale sur ECG",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ct",
+      "label": "Infarctus (récent ou ancien) sur CT",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "platelet",
+      "label": "Numération plaquettaire ≥400×10^9^/L",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "glucose",
+      "label": "Glycémie ≥15 mmol/L (270 mg/dL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Perry JJ, Sharma M, Sivilotti MLA, et al. A prospective cohort study of patients with transient ischemic attack to identify high-risk clinical characteristics. Stroke. 2014;45(1):92-100.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/24262323/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Perry JJ, Sivilotti MLA, Émond M, et al. Prospective validation of Canadian TIA Score and comparison with ABCD2 and ABCD2i for subsequent stroke risk after transient ischaemic attack: multicentre prospective cohort study. BMJ. 2021;372:n49.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33541890/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.astral-score-stroke",
+    "calc.plan-score-stroke",
+    "calc.los-angeles-motor-scale-lams",
+    "calc.glasgow-coma-scale-score-gcs",
+    "calc.abcd2-score-tia"
+  ],
+  "source_logic_hash": "559bb424171818f5f46f5c552c8bcbeb",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    },
+    {
+      "type": "calc",
+      "id": "calc.abcd2-score-tia",
+      "text": "ABCD² Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10421,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

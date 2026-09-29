@@ -1,0 +1,119 @@
+{
+  "id": "calc.albi-albumin-bilirubin-grade-hepatocellular-carcinoma-hcc",
+  "slug": "albi-albumin-bilirubin-grade-hepatocellular-carcinoma-hcc",
+  "language": "fr",
+  "title": "ALBI (Albumin-Bilirubin) Grade pour Hepatocellular Carcinoma (HCC)",
+  "short_title": "ALBI Grade pour HCC",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hematologie",
+    "hepatologie",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Jaundice"
+  ],
+  "abbreviations": [
+    "Albi score"
+  ],
+  "dosing": false,
+  "formula": "ALBI = (log~10~bilirubine × 0.66) + (albumine × -0.085), où la bilirubine est en μmol/L et l'albumine en g/L.",
+  "how_to_use": {
+    "why": "- Fournit une mesure objective et validée de la fonction hépatique reposant uniquement sur les taux d'albumine et de bilirubine.\n- Corrèle avec la survie globale, ce qui le rend utile pour la stadification et l'évaluation pronostique dans le HCC.\n- Non invasif et simple à calculer.\n- Offre une alternative au [Score de Child-Pugh](nabda:calc.child-pugh-score-cirrhosis-mortality) qui exclut les éléments subjectifs (p. ex., encéphalopathie).",
+    "when": "À utiliser chez les patients atteints d'un carcinome hépatocellulaire (HCC) pour évaluer la fonction hépatique et le pronostic.",
+    "pearls": "- Ne prend pas en compte tous les aspects de la fonction hépatique, tels que la présence d'une hypertension portale, qui peut encore influencer les décisions cliniques.\n- Peut surestimer la dysfonction hépatique chez les patients présentant des pathologies affectant l'albumine indépendamment de la fonction hépatique (p. ex., dénutrition)."
+  },
+  "next_steps": {
+    "advice": "- La prise en charge du HCC dépend de multiples facteurs, notamment les caractéristiques tumorales, les comorbidités, la fonction hépatique sous-jacente et la disponibilité/l'expérience avec certaines procédures thérapeutiques.\n- Envisager une approche multidisciplinaire (p. ex., hépatologue, oncologue, chirurgien) en fonction du grade ALBI et du tableau clinique global.\n- **Grade faible (Grade 1) :**\n\n - Suggère une fonction hépatique préservée.\n - Le patient peut être candidat à des options thérapeutiques plus agressives, y compris la résection chirurgicale et/ou la chimioembolisation artérielle transcatéthéter (TACE).\n- **Grades plus élevés (Grade 2 ou 3) :**\n\n - Indique une fonction hépatique plus altérée.\n - Selon le tableau clinique, certains patients peuvent ne pas être candidats à certaines procédures thérapeutiques.\n - Certains patients sélectionnés peuvent être appropriés pour une transplantation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score ALBI | Grade | Survie médiane |\n| --- | --- | --- |\n| ≤-2.60 | 1 | 18.5-85.6 mois |\n| >-2.60 à ≤-1.39 | 2 | 5.3-46.5 mois |\n| >-1.39 | 3 | 2.3-15.5 mois |",
+  "short_description": "Survie du HCC.",
+  "medium_description": "Predicts survie dans HCC patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubin",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "albumin",
+      "label": "Albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Johnson PJ, Berhane S, Kagebayashi C, et al. Assessment of liver function in patients with hepatocellular carcinoma: a new evidence-based approach-the ALBI grade. J Clin Oncol. 2015;33(6):550-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/25512453",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hiraoka A, Kumada T, Kudo M, et al. Albumin-Bilirubin (ALBI) Grade as Part of the Evidence-Based Clinical Practice Guideline for HCC of the Japan Society of Hepatology: A Comparison with the Liver Damage and Child-Pugh Classifications. Liver Cancer. 2017;6(3):204-215.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28626732",
+      "kind": "other"
+    },
+    {
+      "text": "Hiraoka A, Michitaka K, Kumada T, et al. Validation and Potential of Albumin-Bilirubin Grade and Prognostication in a Nationwide Survey of 46,681 Hepatocellular Carcinoma Patients in Japan: The Need for a More Detailed Evaluation of Hepatic Function. Liver Cancer. 2017;6(4):325-336.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29234636 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Chen B, Lin S. Albumin-bilirubin (ALBI) score at admission predicts possible outcomes in patients with acute-on-chronic liver failure. Medicine (Baltimore). 2017;96(24):e7142.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5478326/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee PC, Chen YT, Chao Y, et al. Validation of the albumin-bilirubin grade-based integrated model as a predictor for sorafenib-failed hepatocellular carcinoma. Liver Int. 2018;38(2):321-330.",
+      "href": "https://onlinelibrary.wiley.com/doi/full/10.1111/liv.13527",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.child-pugh-score-cirrhosis-mortality",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld",
+    "calc.clif-c-aclf-acute-chronic-liver-failure"
+  ],
+  "source_logic_hash": "949ca3e67a236d838e1f8408b79b6aa4",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.child-pugh-score-cirrhosis-mortality",
+      "text": "Child-Pugh Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10070,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

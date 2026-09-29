@@ -1,0 +1,139 @@
+{
+  "id": "calc.stool-osmolar-osmotic-gap",
+  "slug": "stool-osmolar-osmotic-gap",
+  "language": "en",
+  "title": "Trous osmolaire/osmotique des selles",
+  "short_title": "Trous osmolaire/osmotique des selles",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "medecine-interne",
+    "infectiologie"
+  ],
+  "diseases": [
+    "Maladies inflammatoires chroniques de l'intestin (MICI)"
+  ],
+  "chief_complaints": [
+    "Diarrhea"
+  ],
+  "abbreviations": [
+    "diarrhea"
+  ],
+  "dosing": false,
+  "formula": "Trous osmotique fécale = Osmolarité fécale - (2 × (Na + K))\nTrous osmotique fécale = 290 [mOsm/kg] - (2 × (Na + K))",
+  "how_to_use": {
+    "why": "La distinction entre les grandes classes de diarrhée peut s'avérer délicate. La diarrhée osmotique cesse habituellement au jeûne et pendant la nuit, alors que la diarrhée sécrétoire persiste souvent la nuit et se poursuit malgré le jeûne. Le trou osmotique des selles est particulièrement utile lorsque les symptômes rapportés sont atypiques et peut orienter le clinicien vers une catégorie, réduisant ainsi le coût du bilan diagnostique. Ce test est peu coûteux et simple à réaliser.",
+    "when": "À utiliser en cas de diarrhée aqueuse persistante (> 4 semaines) (> 3 épisodes/jour) pour orienter le diagnostic et le traitement.",
+    "pearls": "- Utile pour déterminer si une diarrhée chronique aqueuse est d'origine osmotique ou sécrétoire.\n- Non indiqué dans l'évaluation des diarrhées aiguës.\n- Plus utile en consultation externe ; très rarement à l'hôpital ou aux urgences.\n- Initialement validé chez l'adulte, mais également utilisé chez l'enfant. ([Eherer AJ 1992](https://www.ncbi.nlm.nih.gov/pubmed/1634072),[Castro-Rodriguez JA 1997](https://www.ncbi.nlm.nih.gov/pubmed/9370895))\n- Une anamnèse approfondie est l'outil le plus utile pour déterminer la cause d'une diarrhée chronique.\n- La diarrhée osmotique survient lorsque l'eau reste dans la lumière intestinale en raison d'une substance non électrolytique mal absorbée (trou >100, la spécificité augmente avec des seuils plus élevés de 125, 160, etc.). ([Binder HJ 2006](https://www.ncbi.nlm.nih.gov/pubmed/16855263))\n- La diarrhée sécrétoire est due à des troubles du transport intestinal des électrolytes (soit une véritable sécrétion, soit une mauvaise absorption). Le trou est habituellement <50.\n- Le calculateur repose sur l'hypothèse que l'osmolarité des selles est relativement constante et similaire à l'osmolarité sérique (290-300 mmol/L).\n- À interpréter avec prudence : une variabilité des électrolytes mesurés a été rapportée au sein d'échantillons de selles individuels, et les valeurs changent si l'échantillon est laissé à température ambiante. ([Duncan A 1992](https://www.ncbi.nlm.nih.gov/pubmed/1583385))"
+  },
+  "next_steps": {
+    "advice": "- La diarrhée osmotique se traite généralement par l'éviction de l'agent en cause.\n- Le traitement de la diarrhée sécrétoire est ciblé et spécifique à la cause sous-jacente.",
+    "critical_actions": "",
+    "management": "Symptom management is also dependent on the underlying cause. Some options include:\n\n- Increasing dietary fiber\n- Low FODMAP (Fermentable Oligo-Di-Monosaccharides and Polyols) diet\n- Active culture yogurt and probiotics\n- Bile acid resins (cholestyramine)\n- Bismuth\n- Anticholinergics\n- Empiric antibiotics (metronidazole, rifaximin)\n- Antimotility agents (loperamide, diphenoxylate/atropine, codeine); must rule out infection first!"
+  },
+  "evidence": "",
+  "more_info": "- Causes of osmotic diarrhea include:\n\n - Carbohydrate malabsorption\n\n - Lactose\n - Fructose\n - Dietary (high FODMAP)\n - Enteric feeding\n - Osmotic laxatives\n\n - Mg+ based\n - PEG\n - Lactulose\n - Sorbitol ingestion\n - Short gut syndrome\n- Causes of Secretory Diarrhea include:\n\n - Addison’s disease\n - Bile acid malabsorption\n - Congenital electrolyte transport disorders\n - Hyperthyroidism\n - Stimulant laxatives (bisocodyl, senna)\n - Small intestinal bacterial overgrowth\n - Tumors (rare)\n\n - Carcinoid\n - Lymphoma\n - VIPoma\n - Gastrinoma (Zollinger Ellison syndrome)\n - Whipple’s disease\n- Fatty diarrhea / Malabsorption / steatorrhea usually has an osmolar gap >50, but not invariably.\n- Inflammatory and infectious diarrhea often have a low gap (<50) but should generally be considered as distinct clinical entities.\n\n - Inflammatory/Infectious diarrhea are characterized by positive fecal leukocytes or other markers of inflammation in the gut like fecal calprotectin or stool lactoferrin. Very few causes in the secretory list should cause (+) fecal leukocytes.\n - As an aside, infectious diarrhea is more often acute but exceptions include giardia, c.dif, e.histolytica, and parasites. These should all give (+) fecal leukocytes\n- Overlap between disorders with both osmotic and secretory components is common (ex. infection, celiac disease, motility disorders, and functional disorders like irritable bowel syndrome)",
+  "short_description": "Diarrhée chronique : osmotique ou sécrétoire.",
+  "medium_description": "Determines if chronique diarrhea is osmotic ou secretory dans nature.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "stool_sodium",
+      "label": "Sodium fécal",
+      "optional": false,
+      "unit": "na_stool",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "stool_potassium",
+      "label": "Potassium fécal",
+      "optional": false,
+      "unit": "k_stool",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "stool_osm",
+      "label": "Osmolarité fécale",
+      "tips": "L'osmolarité des selles est supposée être égale à l'osmolarité sérique normale de 290 mOsm/kg",
+      "optional": false,
+      "default": 290,
+      "unit": "osm_stool",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Eherer AJ, Fordtran JS. Fecal osmotic gap and pH in experimental diarrhea of various causes. Gastroenterology. 1992;103(2):545.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1634072",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Steffer KJ, Santa Ana CA, Cole JA, Fordtran JS. The practical value of comprehensive stool analysis in detecting the cause of idiopathic chronic diarrhea. Gastroenterol Clin North Am 2012;41:539-560",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22917163",
+      "kind": "other"
+    },
+    {
+      "text": "Castro-Rodriguez JA, Differentiation of osmotic and secretory diarrhoea by stool carbohydrate and osmolar gap measurements.Arch Dis Child. 1997 Sep;77(3):201-5.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/9370895",
+      "kind": "other"
+    },
+    {
+      "text": "Binder HJ, Causes of chronic diarrhea. N Engl J Med. 2006 Jul 20;355(3):236-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16855263",
+      "kind": "other"
+    },
+    {
+      "text": "Duncan A, Robertson C, Russell RI. The fecal osmotic gap: technical aspects regarding its calculation. J Lab Clin Med. 1992 Apr;119(4):359-63.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/1583385",
+      "kind": "other"
+    },
+    {
+      "text": "Schiller L, Sellin J. Diarrhea. In: Sleisenger MH, Feldman M, Friedman LS, Brandt LJ, eds. Sleisenger and Fordtran’s Gastrointestinal and Liver Disease: Pathophysiology, Diagnosis, Management. 9th ed. Philadelphia, Pa.: Saunders/Elsevier; 2010:211-232.",
+      "href": "https://www.elsevier.com/books/sleisenger-and-fordtrans-gastrointestinal-and-liver-disease-2-volume-set/feldman/978-0-323-60962-3",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-infant-functional-diarrhea",
+    "calc.manning-criteria-diagnosis-irritable-bowel-syndrome-ibs",
+    "calc.kruis-score-diagnosis-irritable-bowel-syndrome-ibs"
+  ],
+  "source_logic_hash": "38a401e40091e22f6bff406010a65114",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 101,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.bicarbonate-electrolytes-lactique",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.electrolytes-icodextrine",
+    "s.bicarbonate-electrolytes-2",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

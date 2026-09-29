@@ -1,0 +1,384 @@
+{
+  "id": "calc.chalice-childrens-head-injury-algorithm-prediction-important-clinical-events-rule",
+  "slug": "chalice-childrens-head-injury-algorithm-prediction-important-clinical-events-rule",
+  "language": "en",
+  "title": "CHALICE (Children's Head lésion ALgorithm pour prédiction de Important clinique Events) règle",
+  "short_title": "CHALICE règle",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "neurologie",
+    "neurochirurgie",
+    "radiologie"
+  ],
+  "diseases": [
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Dizziness",
+    "Headache",
+    "Injury/Trauma"
+  ],
+  "abbreviations": [
+    "head trauma",
+    "trauma",
+    "head injury",
+    "CT head",
+    "trauma imaging",
+    "chalice",
+    "intracranial hemorrhage",
+    "intracranial bleed",
+    "pediatrics",
+    "peds",
+    "peds trauma",
+    "child",
+    "children"
+  ],
+  "dosing": false,
+  "formula": "Une TDM cérébrale est requise si l'un des critères suivants est présent :\n\n**Anamnèse**\n\n- Perte de connaissance observée de durée >5 min.\n- Antécédent d'amnésie (antérograde ou rétrograde) de durée >5 min.\n- Somnolence anormale (définie comme une somnolence supérieure à celle attendue par le médecin examinateur).\n- ≥3 vomissements après traumatisme crânien (un vomissement est défini comme un épisode discret unique de vomissement).\n- Suspicion de traumatisme non accidentel (NAI, défini comme toute suspicion de NAI par le médecin examinateur).\n- Crise convulsive après traumatisme crânien chez un patient sans antécédent d'épilepsie.\n\n**Examen clinique**\n\n- Score de Glasgow (GCS) <14, ou GCS <15 si <1 an.\n- Suspicion de blessure pénétrante ou embarrure, ou fontanelle tendue.\n- Signes de fracture de la base du crâne (définis comme la présence de sang ou de liquide céphalo-rachidien provenant de l'oreille ou du nez, yeux de panda, signe de Battle, hémotympan, crépitation faciale ou lésion faciale grave).\n- Signe neurologique focal positif (défini comme tout signe neurologique focal, incluant une anomalie motrice, sensitive, de coordination ou réflexe).\n- Présence d'hématome, de gonflement ou de lacération >5 cm si <1 an.\n\n**Mécanisme**\n\n- Accident de la route à haute vitesse en tant que piéton, cycliste ou occupant (défini comme un accident avec une vitesse >40 mph).\n- Chute de >3 m de hauteur.\n- Lésion à haute vitesse par projectile ou objet.\n\nSi aucune des variables ci-dessus n'est présente, le patient présente un faible risque de pathologie intracrânienne.",
+  "how_to_use": {
+    "why": "- Vise à équilibrer le risque de manquer des lésions cliniquement significatives avec les risques de surimagerie.\n- Contrairement à [PECARN](nabda:calc.pecarn-pediatric-head-injury-trauma-algorithm), qui identifie les enfants à très faible risque ne nécessitant pas d'imagerie, cet outil utilise des critères de haut risque de pathologie intracrânienne cliniquement significative pour déterminer quand l'imagerie est indiquée (c.-à-d., qui doit passer un TDM versus qui ne doit pas).\n- Les recommandations pour l'imagerie cérébrale chez l'enfant dans les [recommandations NICE](https://www.nice.org.uk/guidance/ng232/chapter/rationale-and-impact) étaient largement basées sur les règles de CHALICE.",
+    "when": "Utile aux urgences pour déterminer la nécessité d'une imagerie TDM chez les patients pédiatriques (<16 ans) avec traumatisme crânien.",
+    "pearls": "- Derived from a prospective study in the UK of 22,722 children recruited over 2.5 years.\n- The derivation study demonstrated 98% sensitivity and 87% specificity for predicting clinically significant head injuries (e.g., death, need for neurosurgical intervention, abnormality on CT)."
+  },
+  "next_steps": {
+    "advice": "Cet outil ne remplace pas le jugement clinique ; tenir compte du contexte clinique global lors de la décision de prise en charge.",
+    "critical_actions": "",
+    "management": "- **Si un quelconque critère est rempli :** Réaliser une TDM cérébrale pour évaluer une lésion intracrânienne.\n- **Si aucun critère n'est rempli :** Surveiller et autoriser la sortie après une période d'observation avec instructions, si cliniquement approprié."
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Clinically significant head injuries dans enfants.",
+  "medium_description": "Predicts death, need pour neurosurgical intervention ou CT abnormality dans enfants avec head traumatisme.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "wit",
+      "label": "WitnessedLOC>5 min",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hx",
+      "label": "Amnésie >5 min",
+      "tips": "Antérograde ou rétrograde",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "abn",
+      "label": "Somnolence anormale",
+      "tips": "Anormal = supérieure à la somnolence attendue par le médecin examinateur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "vomit",
+      "label": "≥3 vomits after head lésion",
+      "tips": "1 vomissement = épisode discret unique de vomissement",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "nai",
+      "label": "Suspicion de non‐accidental lésion (NAI)",
+      "tips": "Toute suspicion de NAI par le médecin examinateur",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "seiz",
+      "label": "Seizure after head lésion (et no previous history de epilepsy)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "gcs",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) <14 (ou GCS <15 si <1 an)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sus",
+      "label": "Suspicion de penetrating ou déprimé skull lésion, ou tense fontanelle",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "sign",
+      "label": "Signes de fracture de la base du crâne",
+      "tips": "Sang ou LCR provenant de l'oreille ou du nez, yeux de panda, signe de Battle, hémotympan, crépitation faciale ou lésion faciale grave",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pos",
+      "label": "Signe neurologique focal positif",
+      "tips": "Tout signe neurologique focal (anomalie motrice, sensitive, de coordination ou réflexe)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pres",
+      "label": "Hématome, gonflement ou lacération >5 cm (si <1 an)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "road",
+      "label": "Élevé‐speed road traffic accident as pedestrian, cyclist ou occupant",
+      "tips": "Haute vitesse : >40 mph (64 km/h)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "fall",
+      "label": "Fall de >3 m dans taille",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "high",
+      "label": "Élevé‐speed lésion de projectile ou object",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Dunning J, Daly JP, Lomas JP, et al. Derivation of the children's head injury algorithm for the prediction of important clinical events decision rule for head injury in children. Arch Dis Child. 2006;91(11):885-91.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17056862 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lyttle MD, Crowe L, Oakley E, Dunning J, Babl FE. Comparing CATCH, CHALICE and PECARN clinical decision rules for pediatric head injuries. Emerg Med J. 2012;29(10):785–94. doi: 10.1136/emermed-2011-200225",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22291431 ",
+      "kind": "other"
+    },
+    {
+      "text": "Lyttle MD, Cheek JA, Blackburn C, et al. Applicability of the CATCH, CHALICE and PECARN paediatric head injury clinical decision rules: pilot data from a single Australian centre. Emerg Med J. 2013;30(10):790-4.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23015114 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.palchak-uc-davis-rule-pediatric-head-trauma",
+    "calc.catch-canadian-assessment-tomography-childhood-head-injury-rule",
+    "calc.chip-ct-head-injury-patients-prediction-rule",
+    "calc.pecarn-pediatric-head-injury-trauma-algorithm"
+  ],
+  "source_logic_hash": "02e8db6e963c8856741f3c93d9a6f77d",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.pecarn-pediatric-head-injury-trauma-algorithm",
+      "text": "PECARN"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3953,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

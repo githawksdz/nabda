@@ -1,0 +1,155 @@
+{
+  "id": "calc.fibrosis-4-fib-4-index-liver-fibrosis",
+  "slug": "fibrosis-4-fib-4-index-liver-fibrosis",
+  "language": "en",
+  "title": "Fibrosis-4 (FIB-4) index pour Liver Fibrosis",
+  "short_title": "Index FIB-4",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "hepatologie",
+    "infectiologie",
+    "medecine-interne",
+    "general"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "HIV/AIDS"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Agitation",
+    "AMS",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "fibrosis",
+    "cirrhosis",
+    "fib",
+    "fib4",
+    "fib-4",
+    "hepatic",
+    "calculation",
+    "hepatitis",
+    "HCV",
+    "HIV",
+    "fib 4"
+  ],
+  "dosing": false,
+  "formula": "Score FIB-4 = (Âge* x ASAT) / (Plaquettes x √(ALAT))\n\n*À utiliser avec prudence chez les patients <35 ans ou >65 ans, car il a été démontré que le score est moins fiable chez ces patients.",
+  "how_to_use": {
+    "why": "- Bien que la biopsie hépatique soit le gold standard pour le diagnostic de fibrose hépatique, elle n'est pas idéale ; la biopsie n'évalue qu'une infime partie du foie lui-même, de sorte que des erreurs d'échantillonnage peuvent survenir. La biopsie hépatique s'accompagne également d'une morbidité substantielle.\n- La fibrose hépatique évolue souvent de manière non linéaire ; il est donc important de pouvoir réévaluer les tendances de la fibrose chez un patient donné au fil du temps.\n- Il est essentiel que les tests permettant d'identifier une cirrhose hépatique soient hautement sensibles, car les patients atteints de cette maladie nécessitent un dépistage du carcinome hépatocellulaire (HCC) et des varices gastro-œsophagiennes.\n- Le FIB-4 Index s'est révélé supérieur à 7 autres marqueurs non invasifs de fibrose chez les patients atteints de NAFLD, y compris le [NAFLD Fibrosis Score](nabda:calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score) ([Shah 2009](https://www.ncbi.nlm.nih.gov/pubmed/19523535)).",
+    "when": "- Patients présentant tout facteur de risque connu de maladie hépatique, notamment une hépatite chronique, une hépatopathie alcoolique, une [stéatose hépatique non alcoolique (NAFLD)](nabda:calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score) et les maladies hépatiques cholestatiques et métaboliques.\n- Chez les patients présentant une fibrose hépatique connue, l’évolution de la fibrose doit être suivie dans le temps afin d’évaluer sa progression ou sa stabilisation.",
+    "pearls": "- Liver fibrosis often progresses non-linearly, so it is important to be able to re-assess fibrosis trends in individual patients over time, and invasive re-assessments carry significant risk to patients. FIB-4 allows for non-invasive liver fibrosis assessment.\n- FIB-4 was developed in patients with HIV and HCV co-infection.\n- FIB-4 was developed to correlate with Ishak levels of fibrosis (by biopsy) with 3 levels:\n\n - 0-2 (mild fibrosis)\n - 3-4 (moderate fibrosis)\n - 5-6 (severe fibrosis/cirrhosis)"
+  },
+  "next_steps": {
+    "advice": "- Les scores de fibrose faibles peuvent être des candidats appropriés à une prise en charge médicale et peuvent ne pas nécessiter de biopsie hépatique si les scores FIB-4 restent faibles.\n- Les scores de fibrose/cirrhose sévère peuvent nécessiter une biopsie hépatique pour confirmer la cirrhose, sauf en présence d'autres signes cliniques ou d'imagerie de progression vers une maladie hépatique terminale.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n![](https://cdn-web-img.mdcalc.com/fib-4.png)\n\nLa « fibrose avancée » a été définie comme un stade METAVIR F3-F4 ([McPherson 2017](https://boris.unibe.ch/93541/1/Age%20as%20a%20Confounding%20Factor%20for%20the%20Accurate.pdf)).\n\n| Score FIB-4 | Stade de fibrose approximatif* |\n| --- | --- |\n| <1,45 | 0-1 |\n| 1,45-3,25 | 2-3 |\n| >3,25 | 4-6 |\n\n*D'après la stadification de la fibrose selon Ishak ([Sterling et al 2006](https://onlinelibrary.wiley.com/doi/10.1002/hep.21178/full)).",
+  "short_description": "Estimation non invasive de la fibrose hépatique.",
+  "medium_description": "Noninvasive estimate de liver scarring dans HCV et HBV patients, pour assess need pour biopsy.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "tips": "À utiliser avec prudence chez les patients <35 ans ou >65 ans, car il a été démontré que le score est moins fiable chez ces patients.",
+      "optional": false,
+      "unit": "age",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "ast",
+      "label": "AST",
+      "tips": "Aspartate aminotransférase",
+      "optional": false,
+      "unit": "AST",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "alt",
+      "label": "ALT",
+      "tips": "Alanine aminotransférase",
+      "optional": false,
+      "unit": "ALT",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plt",
+      "label": "Numération plaquettaire",
+      "optional": false,
+      "unit": "plt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Sterling RK, Lissen E, Clumeck N, et. al. Development of a simple noninvasive index to predict significant fibrosis patients with HIV/HCV co-infection. Hepatology 2006;43:1317-1325.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/hep.21178/full",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shah AG, Lydecker A, Murray K, et al. Comparison of noninvasive markers of fibrosis in patients with nonalcoholic fatty liver disease. Clin Gastroenterol Hepatol. 2009;7(10):1104-12.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19523535",
+      "kind": "other"
+    },
+    {
+      "text": "Tapper EB, Lok AS. Use of Liver Imaging and Biopsy in Clinical Practice. N Engl J Med. 2017;377(8):756-768.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28834467",
+      "kind": "other"
+    },
+    {
+      "text": "Kim BK, et. al. Validation of FIB-4 and comparison with other simple noninvasive indices for predicting liver fibrosis and cirrhosis in hepatitis B virus-infected patients. Liver Int. 2010 Apr;30(4):546-53. doi: 10.1111/j.1478-3231.2009.02192.x. Epub 2010 Jan 13.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20074094",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mcpherson S, Hardy T, Dufour JF, et al. Age as a Confounding Factor for the Accurate Non-Invasive Diagnosis of Advanced NAFLD Fibrosis. Am J Gastroenterol. 2017;112(5):740-751.",
+      "href": "https://boris.unibe.ch/93541/1/Age%20as%20a%20Confounding%20Factor%20for%20the%20Accurate.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+    "calc.ckd-prediction-hiv-patients",
+    "calc.fibrotic-nash-index-fni"
+  ],
+  "source_logic_hash": "94eda6d54424c5fd37802ac02336fda1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.nafld-non-alcoholic-fatty-liver-disease-fibrosis-score",
+      "text": "NAFLD Fibrosis Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2200,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

@@ -1,0 +1,223 @@
+{
+  "id": "calc.emergency-heart-failure-mortality-risk-grade-ehmrg",
+  "slug": "emergency-heart-failure-mortality-risk-grade-ehmrg",
+  "language": "en",
+  "title": "Emergency insuffisance cardiaque risque de mortalité Grade (EHMRG)",
+  "short_title": "Score EHMRG",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Insuffisance cardiaque"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Œdème des extrémités",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "chf",
+    "ape",
+    "ejection",
+    "ef",
+    "hf",
+    "heart failure"
+  ],
+  "dosing": false,
+  "formula": "The Emergency Heart Failure Mortality Risk Grade (EHMRG) Score is determined by the addition of the multiplicative component:\n\n| Variable | Multiplicative Component | |\n| --- | --- | --- |\n| Age, y | 2 × age | |\n| Transported by EMS | No | 0 |\n| Yes | 60 | |\n| Systolic blood pressure, mmHg (Initial/triage SBP, maximum of 160 mmHg 1 ) | -1 × SBP | |\n| Heart rate, beats/min (Initial/triage heart rate, minimum of 80 beats/min and maximum of 120 beats/min 1 ) | 1 × heart rate | |\n| Oxygen saturation, % (Lowest initial/triage oxygen saturation, maximum of 92% 1 ) | -2 × oxygen saturation | |\n| Creatinine, mg/dL | 20 × creatinine | |\n| Potassium | ≤3.9 mmol/L | 5 |\n| 4.0 to 4.5 mmol/L | 0 | |\n| ≥4.6 mmol/L | 30 | |\n| Troponin > ULN | No | 0 |\n| Yes | 60 | |\n| Active cancer | No | 0 |\n| Yes | 45 | |\n| Metolazone use at home | No | 0 |\n| Yes | 60 | |\n| Adjustment factor 2 | 12 | |\n\n1. Adjustment factor of 12 added to allow for an approximate 0 median score.\n2. Any values of the variable beyond these limits are treated as if they contribute no additional information or effect on the outcome.\n\nThe Emergency Heart Failure Mortality Risk Group (EHMRG) score cannot be used in patients on dialysis.",
+  "how_to_use": {
+    "why": "Bien que la plupart des patients atteints d’insuffisance cardiaque soient probablement dyspnéiques, se sentent mal et soient favorables à une hospitalisation, dans le cas où ils n’y sont pas favorables, cet outil peut aider à informer et à mettre en garde les patients sur leur risque de retour à domicile.",
+    "when": "L’Emergency Heart Failure Mortality Risk Group (EHMRG) a été conçu pour être utilisé au service des urgences afin de prédire la mortalité à 7 jours (en recommandant l’hospitalisation des patients présentant un risque élevé de mortalité à 7 jours).",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Patients at high risk for death should be admitted to the hospital for diuresis, medication management, and further evaluation of the cause of their decompensation.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score EHMRG | Groupe de risque | Taux de mortalité à 7 jours* |\n| --- | --- | --- |\n| ≤-49,1 | 1 | 0,5 |\n| -49,0 à -15,9 | 2 | 0,3 |\n| -15,8 à 17,9 | 3 | 0,7 |\n| 18,0 à 56,5 | 4 | 2,1 |\n| 56,6 à 89,3 | 5a | 3,3 |\n| ≥89,4 | 5b | 8,5 |\n\n* Les valeurs issues des jeux de données de validation de [Lee et al. (2012)](https://pubmed.ncbi.nlm.nih.gov/22665814/) sont utilisées dans ce calculateur.",
+  "short_description": "Mortalité de emergency HF patients.",
+  "medium_description": "Estimates 7-day mortalité de emergency HF patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "age",
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "ems",
+      "label": "Transporté par les services médicaux d'urgence (EMS)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "sbp",
+      "label": "Systolic pression artérielle",
+      "tips": "Initial/triage SBP, maximum of 160 mmHg (see[Evidence](#evidence)for more detail)",
+      "optional": false,
+      "unit": "mmhg",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hr",
+      "label": "Fréquence cardiaque",
+      "tips": "Fréquence cardiaque initiale/au triage, minimum de 80 battements/min et maximum de 120 battements/min (voir [Données probantes](#evidence) pour plus de détails)",
+      "optional": false,
+      "unit": "beats/min",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "o2",
+      "label": "Saturation en oxygène",
+      "tips": "Saturation en oxygène la plus basse initiale/au triage, maximum de 92 % (voir [Données probantes](#evidence) pour plus de détails)",
+      "optional": false,
+      "unit": "%",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "cre",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "k",
+      "label": "Potassium",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "≤ 3,9 mmol/L",
+          "value": 5
+        },
+        {
+          "label": "4.0 pour 4.5 mmol/L",
+          "value": 0
+        },
+        {
+          "label": "≥ 4,6 mmol/L",
+          "value": 30
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "troponin",
+      "label": "Troponine >ULN",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 60
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "cancer",
+      "label": "Cancer actif",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 45
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "metolazone",
+      "label": "Utilisation de la métolazone à domicile",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 60
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lee DS, Stitt A, Austin PC, Stukel TA, Schull MJ, Chong A, Newton GE, Lee JS, Tu JV. Prediction of heart failure mortality in emergent care: a cohort study. Ann Intern Med. 2012 Jun 5;156(11):767-75, W-261, W-262. doi: 10.7326/0003-4819-156-11-201206050-00003. PubMed PMID: 22665814.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22665814",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lee DS, Lee JS, Schull MJ, et al. Prospective validation of the emergency heart failure mortality risk grade for acute heart failure. Circulation. 2019;139(9):1146-1156.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30586748/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.maggic-risk-calculator-heart-failure",
+    "calc.new-york-heart-association-nyha-functional-classification-heart-failure",
+    "calc.seattle-heart-failure-model"
+  ],
+  "source_logic_hash": "470567f244267efb257e829fc4643cc9",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1755,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

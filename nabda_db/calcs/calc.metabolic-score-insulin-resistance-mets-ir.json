@@ -1,0 +1,189 @@
+{
+  "id": "calc.metabolic-score-insulin-resistance-mets-ir",
+  "slug": "metabolic-score-insulin-resistance-mets-ir",
+  "language": "en",
+  "title": "Metabolic score pour Insulin Resistance (METS-IR)",
+  "short_title": "METS-IR",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "cardiologie",
+    "nutrition",
+    "endocrinologie",
+    "general",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Maladie coronarienne",
+    "Diabète sucré",
+    "Hyperglycemia",
+    "Obesity",
+    "Hypoglycemia"
+  ],
+  "chief_complaints": [
+    "Anxious",
+    "Douleur thoracique",
+    "Fatigue",
+    "Nausea",
+    "Déficit neurologique",
+    "Numbness",
+    "Polyuria",
+    "Soins préventifs / Dépistage",
+    "Vomiting",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Metabolic Score for Insulin Resistance (METS-IR)",
+    "METS-IR",
+    "glucose",
+    "cardiometabolic",
+    "diabetes",
+    "DM",
+    "type 2 diabetes",
+    "T2DM",
+    "prediabetes",
+    "hba1c",
+    "insulin",
+    "insulin resistance",
+    "insulin sensitivity",
+    "euglycemic hyperinsulinemic clamp",
+    "EHC",
+    "fasting",
+    "metabolic syndrome",
+    "visceral adiposity",
+    "hyperinsulinemia"
+  ],
+  "dosing": false,
+  "formula": "METS-IR = (ln((2 × G~0~) + TG~0~) × BMI) / (ln(HDL-c)),\n\nwhere the variables are as follows:\n\n| Variables | |\n| --- | --- |\n| G 0 | Fasting glucose, mg/dL |\n| TG 0 | Triglyceride concentration, mg/dL |\n| [BMI](nabda:calc.body-mass-index-bmi-body-surface-area-bsa\\) | Body mass index, kg/m 2 |\n| HDL-c | High-density lipoprotein cholesterol, mg/dL |",
+  "how_to_use": {
+    "why": "- Cet outil peut être utilisé pour détecter l’insulinorésistance à un stade précoce, permettant aux cliniciens de mettre en œuvre des stratégies préventives.\n- Contrairement à d’autres calculateurs similaires, cet outil ne nécessite pas de dosage de l’insuline, ce qui le rend plus pratique et plus commode, avec une variabilité réduite.",
+    "when": "Idéal pour une utilisation en milieu ambulatoire et en soins primaires, où il peut être appliqué lors des consultations de routine pour évaluer les patients à risque de développer un diabète sucré de type 2 (T2DM).",
+    "pearls": "- Utilizes standard, easily accessible measures such as lipid levels, fasting glucose, and BMI to estimate insulin resistance.\n- Validated against the euglycemic-hyperinsulinemic clamp (EHC), considered the gold standard for measuring insulin resistance.\n- The original derivation study focused on a group of Mexican adults, while several validation studies have examined various Asian populations. Further research is needed in other ethnic groups.\n- Different studies have utilized varying cutoff values. This iteration relies on the original derivation study, where a cutoff >50.39 indicated the greatest risk for developing T2DM.\n- There may be other potential future uses for this tool, as it has also been studied to predict hypertension and cardiovascular disease in specific patient populations."
+  },
+  "next_steps": {
+    "advice": "- Les personnes identifiées comme présentant un risque élevé de développer un T2DM peuvent bénéficier de l’instauration de stratégies préventives, telles que des modifications du régime alimentaire et d’autres modifications du mode de vie.\n- Cet outil n’est pas destiné à diagnostiquer un T2DM. Les cliniciens doivent toujours intégrer d’autres évaluations et marqueurs cliniques standard, tels que les taux d’HbA1c, dans leur processus de diagnostic et de dépistage.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Valeur METS-IR | Risque de développer un DT2 |\n| --- | --- |\n| ≤50.39 | Faible |\n| >50.39 | Élevé |",
+  "short_description": "Type 2 diabète risque.",
+  "medium_description": "Predicts risque de type 2 diabète dans previously undiagnosed patients.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "fglu",
+      "label": "Glycémie à jeun",
+      "optional": false,
+      "unit": "glu",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "tg",
+      "label": "Concentration de triglycérides",
+      "optional": false,
+      "unit": "trig",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "bmi",
+      "label": "[IMC](nabda:calc.body-mass-index-bmi-body-surface-area-bsa)",
+      "optional": false,
+      "unit": "BMI",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "hdlc",
+      "label": "HDL-c",
+      "optional": false,
+      "unit": "chol_hdl",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Bello-Chavolla OY, Almeda-Valdes P, Gomez-Velasco D, et al. METS-IR, a novel score to evaluate insulin sensitivity, is predictive of visceral adiposity and incident type 2 diabetes. Eur J Endocrinol. 2018;178(5):533-544.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29535168/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Widjaja NA, Irawan R, Hanindita MH, Ugrasena I, Handajani R. METS-IR vs. HOMA-AD and Metabolic Syndrome in Obese Adolescents. J Med Invest. 2023;70(1.2):7-16.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37164746/",
+      "kind": "other"
+    },
+    {
+      "text": "Bello-Chavolla OY, Antonio-Villa NE, Vargas-Vázquez A, et al. Prediction of incident hypertension and arterial stiffness using the non-insulin-based metabolic score for insulin resistance (METS-IR) index. J Clin Hypertens . 2019;21(8):1063-1070.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31318156/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Yang W, Cai X, Hu J, et al. The Metabolic Score for Insulin Resistance (METS-IR) Predicts Cardiovascular Disease and Its Subtypes in Patients with Hypertension and Obstructive Sleep Apnea. Clin Epidemiol. 2023;15:177-189.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/36815173/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhang X, Liu F, Li W, et al. Metabolic Score for Insulin Resistance (METS-IR) Predicts Adverse Cardiovascular Events in Patients with Type 2 Diabetes and Ischemic Cardiomyopathy. Diabetes Metab Syndr Obes. 2023;16:1283-1295.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37179787/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shangguan Q, Liu Q, Yang R, et al. Predictive value of insulin resistance surrogates for the development of diabetes in individuals with baseline normoglycemia: findings from two independent cohort studies in China and Japan. Diabetol Metab Syndr. 2024;16(1):68.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/38491516/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.international-diabetes-federation-diabetes-ramadan-alliance-idf-dar-fasting-risk-assessment",
+    "calc.c-peptide-glucose-ratio",
+    "calc.canadian-diabetes-risk-assessment-questionnaire-canrisk",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "c5718e0fac07ddc9d5c5108bc1bcfbd0",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BMI"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10181,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.glucose",
+    "s.glucose-2",
+    "s.cholesterol-zinc-oxyde",
+    "s.glucose-3",
+    "s.acides-amines-glucose-lipides",
+    "s.glucose-4",
+    "s.acides-amines-electrolytes-glucose-lipides",
+    "s.bicarbonate-electrolytes-glucose",
+    "s.electrolytes-glucose",
+    "s.glucose-5",
+    "s.bicarbonate-electrolytes-glucose-2",
+    "s.bicarbonate-electrolytes-glucose-lactique",
+    "s.glucose-magnesium",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-a-magnesium-hexahydrate-glucose-bicarbonate",
+    "s.magnesium-hexahydrate-glucose",
+    "s.amines-glucose-lipides",
+    "s.trisodique-glucose"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

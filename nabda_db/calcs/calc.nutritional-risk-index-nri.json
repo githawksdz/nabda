@@ -1,0 +1,123 @@
+{
+  "id": "calc.nutritional-risk-index-nri",
+  "slug": "nutritional-risk-index-nri",
+  "language": "en",
+  "title": "Nutritional risque index (NRI)",
+  "short_title": "Nutritional risque index (NRI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Formule"
+  ],
+  "specialties": [
+    "nutrition",
+    "general",
+    "medecine-interne",
+    "nephrologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Malnutrition"
+  ],
+  "chief_complaints": [
+    "Fatigue",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Nutrition",
+    "malnutrition",
+    "nutritional risk index",
+    "nri"
+  ],
+  "dosing": false,
+  "formula": "NRI = (1.519 ×notionvc: 28406172-025d-4627-ad1f-4b4f9203104fserum albumin, g/L) + (41.7 ×notionvc: 28406172-025d-4627-ad1f-4b4f9203104fpresent weight, kg / usual weight*, kg)\n\n*Usual weight is defined as stable body weight for last 6 months.",
+  "how_to_use": {
+    "why": "- Malnutrition is a strong predictor of morbidity and mortality, including major operative complications.\n- Identifying patients at risk of malnutrition may potentially allow for timely interventions, such as dietary support, to improve outcomes.",
+    "when": "- Use as a screening tool for malnutrition, including hospitalized patients and those undergoing surgery, chemotherapy, or other treatments where malnutrition may impact outcomes.\n- May be helpful as part of a routine evaluation in older adults or chronically ill patients.",
+    "pearls": "- Lower scores strongly correlated with postoperative complications, mortality, and length of hospital stay.\n- Relies on albumin in its assessment, which may reduce accuracy in patients with hypoalbuminemia due to non-nutritional factors (e.g., liver disease).\n- Does not evaluate micronutrient deficiencies or assess dietary intake in detail.\n- Intended as a screening tool, not as a diagnostic tool."
+  },
+  "next_steps": {
+    "advice": "The results of this tool should be used in conjunction with clinical judgment and specialist recommendations to guide management.",
+    "critical_actions": "",
+    "management": "**If nutritional risk is identified:**\n\n- Optimize nutrition, which may include:\n\n - Consultation with a dietitian.\n - Encouraging nutrient-dense foods.\n - Oral supplementation (e.g., protein shakes, caloric boosters).\n - Enteral feedings, if oral intake is not feasible or inadequate.\n - Parenteral nutrition, only if enteral feeding is contraindicated or insufficient.\n- Monitor and reassess nutritional status regularly.\n\n**If no risk:**\n\n- Continue routine monitoring in at-risk populations.\n- Address any modifiable factors contributing to potential future malnutrition."
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| NRI Score | Risk of malnutrition |\n| --- | --- |\n| >100.0 | No risk |\n| 97.6-100.0 | Mild |\n| 83.5-97.5 | Moderate |\n| <83.5 | Severe |\n\nFrom[Prasad 2016](https://www.ncbi.nlm.nih.gov/pubmed/26937075).",
+  "short_description": "Quantifies malnutrition.",
+  "medium_description": "Quantifies malnutrition, validated dans many populations.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "alb",
+      "label": "Serum albumin",
+      "optional": false,
+      "unit": "alb",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight1",
+      "label": "Present poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight2",
+      "label": "Usual poids",
+      "tips": "Defined as stable body weight for last 6 months",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Buzby GP, Williford WO, Peterson OL, et al. A randomized clinical trial of total parenteral nutrition in malnourished surgical patients: the rationale and impact of previous clinical trials and pilot study on protocol design. Am J Clin Nutr. 1988;47(2 Suppl):357-65.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3124597",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Perioperative total parenteral nutrition in surgical patients. N Engl J Med. 1991;325(8):525-32.",
+      "href": "https://www.nejm.org/doi/10.1056/NEJM199108223250801?url_ver=Z39.88-2003&rfr_id=ori:rid:crossref.org&rfr_dat=cr_pub%3dwww.ncbi.nlm.nih.gov",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Adejumo OL, Koelling TM, Hummel SL. Nutritional Risk Index predicts mortality in hospitalized advanced heart failure patients. J Heart Lung Transplant. 2015;34(11):1385-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26250966",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Prasad N, Sinha A, Gupta A, et al. Validity of nutrition risk index as a malnutrition screening tool compared with subjective global assessment in end-stage renal disease patients on peritoneal dialysis. Indian J Nephrol. 2016;26(1):27-32.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/26937075",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.nutrition-risk-screening-2002-nrs-2002",
+    "calc.malnutrition-universal-screening-tool-must",
+    "calc.hiv-incidence-risk-index-hiri-msm"
+  ],
+  "source_logic_hash": "c2ade1917177ec347b5f5c4024b9462b",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10202,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

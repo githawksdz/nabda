@@ -1,0 +1,180 @@
+{
+  "id": "calc.milan-criteria-liver-transplantation",
+  "slug": "milan-criteria-liver-transplantation",
+  "language": "en",
+  "title": "Milan critères pour Liver Transplantation",
+  "short_title": "Milan critères",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique",
+    "Hepatitis",
+    "Carcinome hépatocellulaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "milan",
+    "hep",
+    "transplant",
+    "liver transplant",
+    "HCC"
+  ],
+  "dosing": false,
+  "formula": "- Tumeur unique de diamètre ≤5 cm OU jusqu'à 3 tumeurs, chacune de diamètre ≤3 cm, ET\n- Absence d'envahissement vasculaire majeur ou extra-hépatique.",
+  "how_to_use": {
+    "why": "- OLT cures HCC, but the procedure itself is extremely high risk.\n- The Milan Criteria identify patients most likely to benefit from transplantation.\n- Recommended by[AASLD guidelines](https://www.mdcalc.com/guidelines/other/treatment-hepatocellular-carcinoma).",
+    "when": "- Patients atteints d’un carcinome hépatocellulaire (HCC) chez qui une transplantation hépatique orthotopique (OLT) est envisagée.",
+    "pearls": "- Originally developed by[Mazzaferro and colleagues](https://onlinelibrary.wiley.com/doi/10.1002/lt.22365/abstract)in Milan in 1996 to identify cirrhotic patients with early stage HCC likely to benefit from transplant.\n- Widely validated.\n- HCC as an indication for OLT was controversial before Milan Criteria were published; now it is an accepted indication and still used today in its original iteration.\n- Patients not meeting Milan Criteria at presentation can potentially be downstaged with locoregional therapy such as transarterial chemoembolization (TACE) or radioembolization with Yttrium-90 (Y90), though it is not known whether pre-transplant downstaging reduces post-transplant survival."
+  },
+  "next_steps": {
+    "advice": "- In addition to standard workup for HCC, patients who fulfill the Milan Criteria should undergo full evaluation for OLT, including but not limited to assessment for comorbid conditions, appropriate laboratory studies, calculation of [MELD](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) , hepatology consultation, surgical evaluation, and referral to transplant center ([Martin 2014](https://www.aasld.org/sites/default/files/guideline_documents/Evaluation_for%20LT_in_Adults_hep26972_0.pdf)).\n- Monitor for potentially treatable hepatic decompensation (ascites, encephalopathy, variceal bleeding).",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "- In 1996, Mazzaferro and colleagues in a[prospective cohort study](https://www.nejm.org/doi/pdf/10.1056/NEJM199603143341104)of 48 patients with cirrhosis and HCC in Milan, Italy, who then underwent OLT.\n- The eligibility criteria for the study were what are today known as the Milan Criteria: a single tumor ≤5cm or ≤3 tumors, ≤3cm.\n- Overall mortality was 17% (median followup 26 months, range 9-54 months), and actuarial survival at 4 years was 75%.\n- A[systematic review](https://www.nejm.org/doi/pdf/10.1056/NEJM199603143341104)published in 2011 conducted by the same group included a meta-analysis of 25 studies looking at patients undergoing OLT according to the Milan criteria and found that not only did these patients have a better prognosis than those not fulfilling the criteria, but also the survival was similar to patients undergoing OLT for non-malignant indications.\n- Review of final pathology also showed that the Milan Criteria identified a subset of patients with lower grade tumors.",
+  "more_info": "",
+  "short_description": "Assess suitability de patients pour liver transplant.",
+  "medium_description": "Assess suitability de patients pour liver transplant avec cirrhosis et hepatocellular carcinoma, recommended par[AASLD guidelines](https://www.mdcalc.com/guidelines/other/treatment-hepatocellular-carcinoma).",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "onetumor",
+      "label": "Single tumor avec diameter ≤5 cm",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "threetumor",
+      "label": "Up pour 3 tumors each avec diameter ≤3 cm",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "extrahep",
+      "label": "Atteinte extra-hépatique",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "majorvess",
+      "label": "Atteinte des gros vaisseaux",
+      "optional": false,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 1
+        },
+        {
+          "label": "Oui",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Mazzaferro V, et al. Milan criteria in liver transplantation for hepatocellular carcinoma: An evidence-based analysis of 15 years of experience. Liver Transpl. 2011 Oct;17 Suppl 2:S44-57.",
+      "href": "https://onlinelibrary.wiley.com/doi/10.1002/lt.22365/abstract",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mazzaferro V, Regalia E, Doci R, et al. Liver transplantation for the treatment of small hepatocellular carcinomas in patients with cirrhosis. N Engl J Med. 1996;334(11):693-9.",
+      "href": "https://www.nejm.org/doi/pdf/10.1056/NEJM199603143341104",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Wald C, Russo MW, Heimbach JK, Hussain HK, Pomfret EA, Bruix J. New OPTN/UNOS policy for liver transplant allocation: standardization of liver imaging, diagnosis, classification, and reporting of hepatocellular carcinoma. Radiology. 2013 Feb;266(2):376-82. doi: 10.1148/radiol.12121698.",
+      "href": "https://pubs.rsna.org/doi/full/10.1148/radiol.12121698",
+      "kind": "other"
+    },
+    {
+      "text": "Martin P, DiMartini A, Feng S, Brown R Jr, Fallon M. Evaluation for liver transplantation in adults: 2013 practice guideline by the American Association for the Study of Liver Diseases and the American Society of Transplantation. Hepatology. 2014 Mar;59(3):1144-65.",
+      "href": "https://www.aasld.org/sites/default/files/guideline_documents/Evaluation_for%20LT_in_Adults_hep26972_0.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Elshamy M, Aucejo F, Menon KV, Eghtesad B. Hepatocellular carcinoma beyond Milan criteria: Management and transplant selection criteria. World J Hepatol. 2016 Jul 28;8(21):874-80. doi: 10.4254/wjh.v8.i21.874.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC4958697/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.metroticket-calculator-hepatocellular-carcinoma-survival",
+    "calc.united-kingdom-model-end-stage-liver-disease-ukeld"
+  ],
+  "source_logic_hash": "6d66dbf8dc2371bf72da350923861c2a",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.meld-score-model-end-stage-liver-disease-12-older",
+      "text": "MELD"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3900,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.yttrium"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

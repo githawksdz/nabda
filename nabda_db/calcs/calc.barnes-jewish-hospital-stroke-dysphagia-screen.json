@@ -1,0 +1,210 @@
+{
+  "id": "calc.barnes-jewish-hospital-stroke-dysphagia-screen",
+  "slug": "barnes-jewish-hospital-stroke-dysphagia-screen",
+  "language": "en",
+  "title": "Barnes Jewish hôpital AVC Dysphagia Screen",
+  "short_title": "Barnes Jewish hôpital AVC Dysphagia Screen",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Diagnostic",
+    "Pronostic",
+    "Élimination diagnostique",
+    "Traitement"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "neurologie"
+  ],
+  "diseases": [
+    "AVC / Accident ischémique transitoire (AIT)"
+  ],
+  "chief_complaints": [
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Dysphagia",
+    "prognosis",
+    "morbidity",
+    "stroke",
+    "speech pathology",
+    "aspiration",
+    "rehab",
+    "barnes",
+    "jewish",
+    "screen"
+  ],
+  "dosing": false,
+  "formula": "Examine the patient using the 4 physical exam screening (answered Yes/No)questions of the BJH-SDS:\n\n- If the answer to any of the screening questions ( [GCS](nabda:calc.glasgow-coma-scale-score-gcs) <13, Facial, Tongue, or Palatal Asymmetry/Weakness) is “YES” then the remainder of the screen should be stopped and the patient should be referred to speech pathology for further evaluation.\n- If the answer to all 4 screening questions is no, the the patient should be given a 3oz of water to swallow in sequential drinks.\n\n - Assess for throat clearing, cough or voice change during the initial swallowing and at 1 minute after.\n\n - If any of these are present, refer to speech pathology.\n - If patient tolerates water swallow without any of the above symptoms then they can be started on a regular diet.",
+  "how_to_use": {
+    "why": "There are nearly 800,000 cases of acute stroke in the United States every year, with 130,000 associated deaths (4th leading cause of death in Americans).\n\nBetween 37-78% of acute stroke patients are affected by dysphagia (depending on the study) and these patients have been shown to be at an increased risk of aspiration, which is associated with increased rates of pneumonia, higher morbidity and mortality.\n\nThe BJH-SDS can simply and reliably allow non-speech pathology trained healthcare professionals screen for patients with dysphagia or aspiration risk.",
+    "when": "The BJH-SDS can help non-speech pathologists identify stroke patients who are at risk for dysphagia and aspiration, allowing some patients to eat earlier while still preventing aspiration risks.",
+    "pearls": "The Barnes Jewish Hospital Stroke Dysphagia Screen (BJH-SDS) was designed to create a simple dysphagia screen that health care professionals could use to detect swallowing difficulty in stroke patients quickly and accurately.\n\n- Specifically designed to be reliably **used by practitioners who were not trained speech pathologists** .\n- The BJH-SDS has been shown to be sensitive for detecting dysphagia and aspiration risk (94% sensitive/66% specific dysphagia; 95% sensitive/50% specific for aspiration).\n\n**Points to keep in mind:**\n\n- Some patients with normal swallowing function will have a delay in resuming a normal diet while they wait for evaluation by a speech pathologist, because of the rule’s low specificity.\n- In the original validation study there was a 24 hour gap between applying the screen and the and the gold standard: evaluation by a speech pathologist."
+  },
+  "next_steps": {
+    "advice": "- If a patient completes all components of the BJH-SDS successfully then they can be safely started on a regular diet without the need for evaluation by speech pathology.\n- When evaluating a patient who suffered an acute stroke for potential dysphagia and aspiration risk, the BJH-SDS can be performed by non-specialty trained health care providers to determine which patients can safely tolerate a normal diet and which patients should be referred to speech pathology.",
+    "critical_actions": "- The BJH-SDS appears to be an easy, reliable and efficient means for non-specialists to identify which patients can be safely advanced to a regular diet after suffering an acute stroke.\n- If for any reason there remain concerns that a patient may be an aspiration risk despite having a negative BJH-SDS evaluation, they should be referred to speech pathology before advancing their diet.",
+    "management": ""
+  },
+  "evidence": "- The BJH-SDS was designed and the prospectively validated in 300 patients who presented to a single center stroke unit over a 6 month period. ([Edmiaston J 2010](https://www.ncbi.nlm.nih.gov/pubmed/19875722))\n\n - Mean time to BJH-SDS evaluation was 8 hours, with mean time of 32 hours for a speech pathologist to then perform the gold standard Mann Assessment of Swallowing Ability (MASA).\n - The BJH-SDS was performed by nursing staff and was 91 and 95% sensitive for detecting dysphagia and aspiration risk respectively.\n\n - Interrater reliability was 93.6%.\n- A subsequent trial at the same center enrolled 225 patients and compared the BJH-SDS to the gold standard test for dysphagia, the videofluoroscopic swallow study (VFSS).\n\n - The rule was again found to be 94 and 95% sensitive for detecting dysphagia and aspiration risk respectively.\n - During the 5 year trial period primary evaluation of aspiration risk was transitioned from trained speech pathologists to nursing staff using the BJH-SDS.\n\n - There was no increase in pneumonia among patients admitted to the stroke service over this period, suggesting the the BJH-SDS is a safe and effective screening tool that may identify patients who can be advanced to a regular diet without the need for formal speech pathology evaluation.",
+  "more_info": "",
+  "short_description": "Clears patient pour swallow after AVC.",
+  "medium_description": "Assesses ability pour swallow sans aspiration after AVC.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "glasgow_coma_scale_13",
+      "label": "[GCS](nabda:calc.glasgow-coma-scale-score-gcs) < 13",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "facial",
+      "label": "Facial asymmetry/weakness present",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "tongue",
+      "label": "Tongue asymmetry/weakness present",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "palatal",
+      "label": "Palatal asymmetry/weakness present",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "aspiration_signs",
+      "label": "Any signs de aspiration during 3 oz water test",
+      "optional": true,
+      "show_points": false,
+      "conditionality": "glasgow_coma_scale_13 + facial + palatal + tongue == 0",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Edmiaston J, Connor LT, Loehr L, Nassief A. Validation of a dysphagia screening tool in acute stroke patients. Am J Crit Care. 2010 Jul;19(4):357-64.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/19875722",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Donovan NJ, Daniels SK, Edmiaston J, et al. Dysphagia screening: state of the art: invitational conference proceeding from the State-of-the-Art Nursing Symposium, International Stroke Conference 2012. Stroke. 2013;44(4):e24-31.",
+      "href": "https://www.ahajournals.org/doi/10.1161/STR.0b013e3182877f57",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Edmiaston J, Connor LT, Steger-May K, Ford AL. A simple bedside stroke dysphagia screen, validated against videofluoroscopy, detects dysphagia and aspiration with high sensitivity. J Stroke Cerebrovasc Dis. 2014 Apr;23(4):712-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23910514",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.alberta-stroke-program-early-ct-score-aspects",
+    "calc.atria-stroke-risk-score",
+    "calc.barthel-index-activities-daily-living-adl",
+    "calc.glasgow-coma-scale-score-gcs"
+  ],
+  "source_logic_hash": "0fe5a359633641b16759b10a1d9f6bab",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.glasgow-coma-scale-score-gcs",
+      "text": "GCS"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1894,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

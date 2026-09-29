@@ -1,0 +1,340 @@
+{
+  "id": "calc.national-early-warning-score-news-2",
+  "slug": "national-early-warning-score-news-2",
+  "language": "en",
+  "title": "Score national d'alerte précoce (NEWS) 2",
+  "short_title": "Score NEWS2",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Any/All",
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Bleeding",
+    "Douleur thoracique",
+    "Fever",
+    "Seizure"
+  ],
+  "abbreviations": [
+    "NEWS",
+    "admission",
+    "mortality",
+    "NEWS 2",
+    "news2",
+    "covid19",
+    "covid-19",
+    "covid 19",
+    "covid",
+    "coronavirus"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Respiratory rate, breaths per minute | ≤8 | 3 |\n| 9-11 | 1 | |\n| 12-20 | 0 | |\n| 21-24 | 2 | |\n| ≥25 | 3 | |\n| SpO 2 (on room air or supplemental) | ≤91% | 3 |\n| 92-93% | 2 | |\n| 94-95% | 1 | |\n| ≥96% | 0 | |\n| SpO 2 (if patient has hypercapnic respiratory failure) | ≤83% | 3 |\n| 84-85% | 2 | |\n| 86-87% | 1 | |\n| 88-92%, ≥93% on room air | 0 | |\n| 93-94% on supplemental oxygen | 1 | |\n| 95-96% on supplemental oxygen | 2 | |\n| ≥97% on supplemental oxygen | 3 | |\n| Room air or supplemental oxygen | Supplemental oxygen | 2 |\n| Room air | 0 | |\n| Temperature | ≤35.0°C (95°F) | 3 |\n| 35.1-36.0°C (95.1-96.8°F) | 1 | |\n| 36.1-38.0°C (96.9-100.4°F) | 0 | |\n| 38.1-39.0°C (100.5-102.2°F) | 1 | |\n| ≥39.1°C (102.3°F) | 2 | |\n| Systolic BP, mmHg | ≤90 | 3 |\n| 91-100 | 2 | |\n| 101-110 | 1 | |\n| 111-219 | 0 | |\n| ≥220 | 3 | |\n| Pulse, beats per minute | ≤40 | 3 |\n| 41-50 | 1 | |\n| 51-90 | 0 | |\n| 91-110 | 1 | |\n| 111-130 | 2 | |\n| ≥131 | 3 | |\n| Consciousness | Alert | 0 |\n| New-onset confusion (or disorientation/agitation), responds to voice, responds to pain, or unresponsive | 3 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "- Patients âgés de ≥16 ans.\n- Ne pas utiliser chez l'enfant de <16 ans ni chez la patiente enceinte.\n- [The Royal College of Physicians](https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2) recommande le NEWS2 dans les contextes suivants :",
+    "pearls": "Peut ne pas être fiable chez les patients présentant une lésion médullaire en raison d'une perturbation fonctionnelle des réponses autonomes."
+  },
+  "next_steps": {
+    "advice": "Le NEWS2 (et tout score d'alerte précoce) doit être utilisé comme un complément au jugement clinique, et non pour le remplacer. Toute inquiétude concernant l'état clinique d'un patient doit conduire à des investigations urgentes, quels que soient les scores d'alerte précoce.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| NEW Score | Clinical risk | Frequency of monitoring | Response |\n| --- | --- | --- | --- |\n| 0-4 | Low | Minimum every 12 hrs if score of 0 Minimum every 4-6 hrs if score 1-4 | Assessment by a competent registered nurse or equivalent, to decide change in frequency of clinical monitoring or escalation of care |\n| Score of 3 in any individual parameter | Low-medium | Minimum every hr | Urgent review by a ward-based doctor, to decide change in frequency of clinical monitoring or escalation of care |\n| 5-6 | Medium | Urgent review by a ward-based doctor or acute team nurse, to decide if critical care team assessment is needed | |\n| ≥7 | High | Continuous monitoring of vital signs | Emergent assessment by a clinical team or critical care team and usually transfer to higher level of care |",
+  "short_description": "Gravité dépistage de declining conditions, recommended over original NEWS.",
+  "medium_description": "Détermine le degré de gravité de la maladie du patient et déclenche une intervention de soins critiques (recommandé par le NHS de préférence au NEWS original).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "resp",
+      "label": "Fréquence respiratoire, breaths per minute",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤8",
+          "value": 3
+        },
+        {
+          "label": "9-11",
+          "value": 1
+        },
+        {
+          "label": "12-20",
+          "value": 0
+        },
+        {
+          "label": "21-24",
+          "value": 2
+        },
+        {
+          "label": "≥25",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "failure",
+      "label": "Hypercapnic respiratory défaillance",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "scale1",
+      "label": "SpO₂",
+      "tips": "À l'air ambiant ou sous O₂ supplémentaire",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "failure == 0",
+      "options": [
+        {
+          "label": "≤91%",
+          "value": 3
+        },
+        {
+          "label": "92-93%",
+          "value": 2
+        },
+        {
+          "label": "94-95%",
+          "value": 1
+        },
+        {
+          "label": "≥96%",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "scale2",
+      "label": "SpO₂",
+      "tips": "Si le patient présente une insuffisance respiratoire hypercapnique",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "failure == 1",
+      "options": [
+        {
+          "label": "≤83%",
+          "value": 3
+        },
+        {
+          "label": "84-85%",
+          "value": 2
+        },
+        {
+          "label": "86-87%",
+          "value": 1
+        },
+        {
+          "label": "88-92 %, ≥93 % à l'air ambiant",
+          "value": 0
+        },
+        {
+          "label": "93-94 % sous O₂ supplémentaire",
+          "value": 1
+        },
+        {
+          "label": "95-96 % sous O₂ supplémentaire",
+          "value": 2
+        },
+        {
+          "label": "≥97 % sous O₂ supplémentaire",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "room",
+      "label": "Air ambiant ou O₂ supplémentaire",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "O₂ supplémentaire",
+          "value": 2
+        },
+        {
+          "label": "Air ambiant",
+          "value": 0
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "temp",
+      "label": "Temperature",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤35.0°C (95°F)",
+          "value": 3
+        },
+        {
+          "label": "35.1-36.0°C (95.1-96.8°F)",
+          "value": 1
+        },
+        {
+          "label": "36.1-38.0°C (96.9-100.4°F)",
+          "value": 0
+        },
+        {
+          "label": "38.1-39.0°C (100.5-102.2°F)",
+          "value": 1
+        },
+        {
+          "label": "≥39.1°C (102.3°F)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bp",
+      "label": "Pression artérielle systolique, mmHg",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤90",
+          "value": 3
+        },
+        {
+          "label": "91-100",
+          "value": 2
+        },
+        {
+          "label": "101-110",
+          "value": 1
+        },
+        {
+          "label": "111-219",
+          "value": 0
+        },
+        {
+          "label": "≥220",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "pulse",
+      "label": "Pouls, battements par minute",
+      "optional": false,
+      "default": 2,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤40",
+          "value": 3
+        },
+        {
+          "label": "41-50",
+          "value": 1
+        },
+        {
+          "label": "51-90",
+          "value": 0
+        },
+        {
+          "label": "91-110",
+          "value": 1
+        },
+        {
+          "label": "111-130",
+          "value": 2
+        },
+        {
+          "label": "≥131",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "acvpu",
+      "label": "Consciousness",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Alert",
+          "value": 0
+        },
+        {
+          "label": "New-onset confusion (ou disorientation/agitation), responds pour voice, responds pour douleur, ou unresponsive",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Royal College of Physicians. National Early Warning Score (NEWS) 2: Standardising the assessment of acute-illness severity in the NHS. Updated report of a working party. London: RCP, 2017.",
+      "href": "https://www.rcplondon.ac.uk/projects/outputs/national-early-warning-score-news-2",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.national-early-warning-score-news",
+    "calc.modified-early-warning-score-mews-clinical-deterioration",
+    "calc.piro-score-community-acquired-pneumonia"
+  ],
+  "source_logic_hash": "de50162d4728bbb8800fc5f71c8746e8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10083,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

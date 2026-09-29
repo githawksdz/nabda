@@ -1,0 +1,165 @@
+{
+  "id": "calc.corrected-count-increment-cci-platelet-transfusion",
+  "slug": "corrected-count-increment-cci-platelet-transfusion",
+  "language": "en",
+  "title": "Corrected Count Increment (CCI) pour Platelet Transfusion",
+  "short_title": "Corrected Count Increment (CCI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "hematologie",
+    "biologie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Anemia",
+    "Bleeding/Hemorrhage",
+    "Hémorragie gastro-intestinale",
+    "Trauma"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "CCI",
+    "corrected count",
+    "count increment",
+    "plt",
+    "platelet transfusion",
+    "transfusion",
+    "massive transfusion"
+  ],
+  "dosing": false,
+  "formula": "CCI = count increment, per µL × body surface area (m²) / unit content\n\nUnits (m²/µL) are usually omitted when reporting the result.\n\nExample:\n\nFor an adult patient with a [BSA](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) of 2.0 m² whose platelet count rose from 5 × 10^9^/L to 25 × 10^9^/L after a platelet transfusion containing 4.0 × 10^11^platelets:\n\n- CCI for above patient = (20 × 10^9^/L × 2.0 m²) / 4.0 = 10,000",
+  "how_to_use": {
+    "why": "- Le CCI est une mesure plus précise de la réfractorité, car il tient compte du nombre de plaquettes transfusées et du volume sanguin du patient.\n- Peut guider la décision de recourir à des plaquettes de meilleure compatibilité (c.-à-d., plaquettes HLA-compatibles).",
+    "when": "Utilisation chez les patients recevant une transfusion plaquettaire.",
+    "pearls": "- Corrected count increment (CCI) is a measure of the expected increase in platelets following a platelet transfusion. The “count increment” refers to the increase in platelets following a transfusion. The “correction” is based on the patient’s size and the number of platelets transfused.\n- Refractory = failure to achieve acceptable increase in platelet count following platelet transfusion on at least two occasions and no alternate cause for refractoriness such as fever, sepsis, DIC, bleeding, splenomegaly, or drug interaction (e.g. amphotericin B).\n- Response to platelet transfusion is typically measured within one hour. However, a sample collected 10 minutes after transfusion yields similar information and may be easier to obtain routinely. A post-transfusion platelet count can alternatively be taken at 20 hours."
+  },
+  "next_steps": {
+    "advice": "- Lorsqu’aucune plaquette compatible ne peut être trouvée pour transfuser un patient présentant une réfractorité plaquettaire, des mesures alternatives peuvent être essayées pour enrayer ou prévenir une hémorragie, mais leur bénéfice est imprévisible.\n- L’administration d’agents antifibrinolytiques, tels que l’acide ε-aminocaproïque (Amicar), soit par voie intraveineuse, soit, en cas de saignement gingival, sous forme de bain de bouche, peut permettre de maintenir le caillot formé.\n- Tenir compte des facteurs de base du patient, notamment l’âge, le sexe, la taille/poids, les antécédents de grossesse et les transfusions antérieures.\n- Caractéristiques possibles du patient à évaluer pour chaque transfusion :\n\n - Administration d’amphotéricine, d’héparine ou de γ-globuline.\n - Statut des anticorps HLA et/ou PLT de l’échantillon le plus proche avant la transfusion.\n - Présence d’un saignement, d’une fièvre, d’une infection, d’une réaction transfusionnelle, d’une splénomégalie.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| CCI at 1 hour | CCI at 20 hours | Interpretation |\n| --- | --- | --- |\n| >7,500 | >4,800 | Successful transfusion |\n| ≤7,500 | ≤4,800 | Repeat transfusion. Two CCIs below the cutoff indicate refractoriness. |",
+  "short_description": "Réponse à la transfusion plaquettaire",
+  "medium_description": "Assesses adequacy de response pour platelet transfusion.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "plt_pre",
+      "label": "Numération plaquettaire pré-transfusionnelle",
+      "optional": false,
+      "unit": "plt_tcp",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plt_post",
+      "label": "Numération plaquettaire post-transfusionnelle",
+      "tips": "Prélever soit à 1 heure, soit à 20 heures après la transfusion",
+      "optional": false,
+      "unit": "plt_posttrans",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "time",
+      "label": "Délai après transfusion",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "1-hour",
+          "value": 0
+        },
+        {
+          "label": "20-hour",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "height",
+      "label": "Taille",
+      "optional": false,
+      "unit": "ht_adult",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "plt_unit",
+      "label": "Platelet unit content",
+      "tips": "One apheresis unit is ~3.0 x 10¹¹ plts; one pooled unit is ~0.55 x 10¹¹ plts",
+      "optional": false,
+      "unit": "plt_unit",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Davis KB, Slichter SJ, Corash L. Corrected count increment and percent platelet recovery as measures of posttransfusion platelet response: problems and a solution. Transfusion. 1999;39(6):586-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/10378838 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Bishop JF, Matthews JP, Mcgrath K, Yuen K, Wolf MM, Szer J. Factors influencing 20-hour increments after platelet transfusion. Transfusion. 1991;31(5):392-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2048176 ",
+      "kind": "other"
+    },
+    {
+      "text": "Slichter SJ, Davis K, Enright H, et al. Factors affecting posttransfusion platelet increments, platelet refractoriness, and platelet transfusion intervals in thrombocytopenic patients. Blood. 2005;105(10):4106-14.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1895076/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.plasma-dosage",
+    "calc.sickle-cell-rbc-exchange-volume",
+    "calc.tash-score-trauma-associated-severe-hemorrhage",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "7026350898240960d29c503452253e91",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "BSA"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4034,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

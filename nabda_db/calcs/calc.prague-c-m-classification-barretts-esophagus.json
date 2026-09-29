@@ -1,0 +1,120 @@
+{
+  "id": "calc.prague-c-m-classification-barretts-esophagus",
+  "slug": "prague-c-m-classification-barretts-esophagus",
+  "language": "fr",
+  "title": "Prague C & M classification pour Barrett's Esophagus",
+  "short_title": "Classification de Prague C & M",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hémorragie gastro-intestinale"
+  ],
+  "chief_complaints": [
+    "Hematemesis",
+    "Melena",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "Prague",
+    "prague c & m",
+    "barretts",
+    "barrett",
+    "barrett esophagus",
+    "Barrett's esophagus",
+    "esophageal adenocarcinoma",
+    "esophageal cancer",
+    "esophagus cancer",
+    "oesophageal cancer",
+    "BE segment",
+    "endoscopy"
+  ],
+  "dosing": false,
+  "formula": "Étendue **C** ircumférentielle de l'EO au-dessus de la jonction œsogastrique (valeur C)\n\n- Mesurer la distance entre la jonction œsogastrique et le point le plus haut où la métaplasie est présente, sur toute la circonférence de l'œsophage.\n\nÉtendue **M** aximale de l'EO au-dessus de la jonction œsogastrique (valeur M)\n\n- Mesurer la distance entre la jonction œsogastrique et le point le plus haut de la métaplasie.",
+  "how_to_use": {
+    "why": "- Considéré comme la référence pour mesurer la longueur de l'œsophage de Barrett.\n- La prise en charge clinique des patients atteints d'EO bénéficierait grandement de critères standardisés et simples pour le grading endoscopique de l'EO avec un équipement endoscopique standard.",
+    "when": "",
+    "pearls": "Une erreur fréquente consiste à utiliser la valeur M pour indiquer la longueur de la langue située au-dessus du segment circonférentiel. La valeur M doit mesurer le segment de Barrett le plus long, y compris la langue la plus longue, et doit être au moins aussi longue que la valeur C."
+  },
+  "next_steps": {
+    "advice": "- L'EO est diagnostiqué lorsqu'il existe >1 cm de muqueuse de couleur saumon avec des biopsies révélant une métaplasie intestinale.\n- Si un EO est suspecté à l'endoscopie, au moins 8 biopsies doivent être réalisées afin d'augmenter le rendement diagnostique.\n- En cas de nodularité ou d'ulcération, une résection endoscopique de la muqueuse doit être effectuée pour mieux classifier la pathologie sous-jacente.",
+    "critical_actions": "",
+    "management": "- La prise en charge de l'EO dépend des résultats anatomopathologiques :\n\n - EO non dysplasique : répéter l'EGD dans 3 à 5 ans.\n - Dysplasie indéterminée : optimiser le traitement par IPP, répéter l'EGD avec biopsies.\n - Dysplasie de bas ou de haut grade : traitement d'éradication endoscopique (ablation par radiofréquence).\n - Cancer de l'œsophage : traitement d'éradication endoscopique et/ou orientation en oncologie selon le staging.\n- Après éradication endoscopique complète de la métaplasie intestinale, la surveillance par EGD est la suivante :\n\n - Carcinome intramuqueux ou dysplasie de haut grade : EGD tous les 3 mois la 1re année, tous les 6 mois la 2e année, puis annuellement par la suite.\n - Dysplasie de bas grade : EGD tous les 6 mois la 1re année, puis annuellement par la suite.\n- Quels que soient les résultats anatomopathologiques, tous les patients atteints d'EO doivent recevoir des inhibiteurs de la pompe à protons jusqu'à l'obtention du soulagement des symptômes."
+  },
+  "evidence": "- Sharma et al (2006) ont créé les premiers critères de Prague afin de fournir une méthode uniforme, fondée sur un consensus, faisant autorité, pour reconnaître et grader précisément l'EO. Ils ont été validés en interne (5 membres du groupe de travail) et en externe (22 non-membres), avec d'excellents taux d'accord entre observateurs pour les langues d'EO les plus longues et la valeur C.\n- Après un usage large, Alvarez et al (2013) ont étudié 187 patients pour évaluer la concordance entre experts de l'œsophage de Barrett et endoscopistes de communauté. Il y avait 89 % d'accord pour la valeur C et 91 % pour la valeur M à 2 cm près, avec une concordance relative de 91 % pour l'œsophage de Barrett.\n- Vahabzadeh (2012) a également validé les critères de Prague auprès de 18 internes en gastro-entérologie, montrant une forte concordance des valeurs C et M, quel que soit le niveau de formation.",
+  "more_info": "Interprétation :\n\nPlus les valeurs de Prague C&M sont élevées, plus l'œsophage de Barrett est sévère et plus le risque de développer un cancer est élevé.",
+  "short_description": "Stratifies gravité de Barrett's esophagus.",
+  "medium_description": "Stratifies gravité de Barrett's esophagus according pour endoscopic findings.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "cvalue",
+      "label": "Étendue circonférentielle de l'EO au-dessus de la jonction œsogastrique (valeur C)",
+      "tips": "Mesurer la distance entre la jonction œsogastrique et le point le plus haut où la métaplasie est présente, sur toute la circonférence de l'œsophage.",
+      "optional": false,
+      "unit": "length_barretts",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "mvalue",
+      "label": "Étendue maximale de l'EO au-dessus de la jonction œsogastrique (valeur M)",
+      "tips": "Mesurer la distance entre la jonction œsogastrique et le point le plus haut de la métaplasie.",
+      "optional": false,
+      "unit": "length_barretts",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Sharma P, Dent J, Armstrong D, Bergman JJ, Gossner L, Hoshihara Y, Jankowski JA, Junghard O, Lundell L, Tytgat GN, Vieth M. The development and validation of an endoscopic grading system for Barrett's esophagus: the Prague C & M criteria. Gastroenterology. 2006 Nov;131(5):1392-9. Epub 2006 Aug 16.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17101315/ ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Eluri S, Shaheen NJ. Barrett's esophagus: diagnosis and management. Gastrointest Endosc. 2017;85(5):889-903.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/28109913 ",
+      "kind": "other"
+    },
+    {
+      "text": "Vahabzadeh B, Seetharam AB, Cook MB, Wani S, Rastogi A, Bansal A, Early DS, Sharma P. Validation of the Prague C & M criteria for the endoscopic grading of Barrett's esophagus by gastroenterology trainees: a multicenter study. Gastrointest Endosc. 2012 Feb;75(2):236-41. doi: 10.1016/j.gie.2011.09.017.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22248595 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Alvarez herrero L, Curvers WL, Van vilsteren FG, et al. Validation of the Prague C&M classification of Barrett's esophagus in clinical practice. Endoscopy. 2013;45(11):876-82.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/24165812 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.evendo-score-esophageal-varices",
+    "calc.fong-clinical-risk-score-colorectal-cancer-recurrence",
+    "calc.common-terminology-criteria-adverse-events-ctcae"
+  ],
+  "source_logic_hash": "e3b5fb9f55d62aa0fd3c77f95fb00416",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4041,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,149 @@
+{
+  "id": "calc.atropine-dosing-cholinesterase-inhibitor-toxicity",
+  "slug": "atropine-dosing-cholinesterase-inhibitor-toxicity",
+  "language": "en",
+  "title": "Atropine posologie pour Cholinesterase Inhibitor Toxicity",
+  "short_title": "Posologie de l'atropine",
+  "calc_type": "calculator",
+  "purpose": [
+    "Traitement",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "AMS",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "ach",
+    "cholinesterase",
+    "ache",
+    "nerve agent",
+    "nerve gas",
+    "organophosphates",
+    "neostigmine"
+  ],
+  "dosing": true,
+  "formula": "- Dose initiale :\n- Évaluer l'atropinisation toutes les 5 minutes :\n- Si l'atropinisation n'a pas été obtenue, doubler la dose précédente et réévaluer dans 5 minutes supplémentaires.\n- Répéter le doublement toutes les 5 minutes jusqu'à l'obtention de l'atropinisation.\n- Une fois l'atropinisation obtenue, commencer une perfusion continue à un débit horaire de 10 % de la **somme** de toutes les doses nécessaires pour obtenir l'atropinisation initiale.\n- Titrer selon les besoins.",
+  "how_to_use": {
+    "why": "L’atropine est un antagoniste compétitif des récepteurs muscariniques et peut inverser les symptômes délétères ou potentiellement mortels de la toxicité cholinergique, en particulier le bronchospasme et la bronchorrhée.",
+    "when": "- À utiliser chez les patients présentant une toxicité cholinergique (les agents responsables sont généralement des composés organophosphorés ou des carbamates, que l’on trouve dans les pesticides, ou des agents utilisés dans la guerre chimique et les attaques terroristes).\n- De nombreux symptômes de la toxicité cholinergique sont rappelés par la mnémotechnique « SLUDGE and killer B’s » :",
+    "pearls": "- This dosing guide was created to facilitate early and safe atropinization of the patient exhibiting signs of acute cholinergic toxicity.\n- May be used in patients exposed to either pesticide agents (more common) or agents of chemical warfare/terrorism.\n- Markers of atropinization vary, but the most clinically significant is resolution of bronchorrhea, as assessed by auscultation.\n- Large cumulative doses of atropine may be necessary to treat toxicity. Cases requiring hundreds to thousands of milligrams over the course of treatment have been reported ([Hopmann 1974](https://www.ncbi.nlm.nih.gov/pubmed/4609713))."
+  },
+  "next_steps": {
+    "advice": "- Les patients chez qui l’on suspecte une toxicité cholinergique et qui présentent des signes de dysfonction neuromusculaire doivent également être traités par pralidoxime (2-PAM).\n- Les doses d’atropine administrées par voie intraveineuse doivent être injectées rapidement et en totalité — une administration lente ou des doses sous-thérapeutiques ont été associées à une bradycardie paradoxale.",
+    "critical_actions": "Les patients exposés à des agents organophosphorés ou carbamates doivent être immédiatement décontaminés par le retrait de tous les vêtements et une irrigation abondante de toutes les zones exposées avant l'instauration du traitement.",
+    "management": "La prise en charge de l'intoxication aux organophosphorés / carbamates comprend :"
+  },
+  "evidence": "Très peu d’essais ont été menés pour évaluer différentes doses d’atropine dans la toxicité cholinergique, et de nombreux schémas posologiques recommandés existent dans la littérature ([Eddleston 2004](https://www.ncbi.nlm.nih.gov/pubmed/15533026)). Ce calculateur repose en grande partie sur la synthèse d’opinions d’experts, bien qu’une étude randomisée ait constaté qu’un schéma de doublement des doses, suivi d’une perfusion continue, entraînait une diminution de la mortalité et une moindre toxicité de l’atropine qu’un protocole posologique « conventionnel » par bolus ([Abedin 2012](https://www.ncbi.nlm.nih.gov/pubmed/22351300)).",
+  "more_info": "",
+  "short_description": "Antagonisation des inhibiteurs de la cholinestérase.",
+  "medium_description": "Doses atropine pour cholinesterase inhibitor toxicity (prescribed drugs, nerve gas, insecticides).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "type",
+      "label": "Adulte ou pédiatrique patient",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "adulte",
+          "value": 0
+        },
+        {
+          "label": "pédiatrique",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "weight",
+      "label": "Poids",
+      "optional": false,
+      "unit": "wt",
+      "show_points": false,
+      "conditionality": "type == 1"
+    },
+    {
+      "type": "radio",
+      "name": "severity",
+      "label": "Gravité",
+      "tips": "Sévère = compromis hémodynamique, perte de conscience",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Léger",
+          "value": 0
+        },
+        {
+          "label": "Sévère",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Howland, MA Antidotes in Depth: Atropine. In: Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014.",
+      "href": null,
+      "kind": "pubmed"
+    },
+    {
+      "text": "Abedin MJ, Sayeed AA, Basher A, Maude RJ, Hoque G, Faiz MA. Open-label randomized clinical trial of atropine bolus injection versus incremental boluses plus infusion for organophosphate poisoning in Bangladesh. J Med Toxicol. 2012;8(2):108-17.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/22351300 ",
+      "kind": "other"
+    },
+    {
+      "text": "Eddleston M, Buckley NA, Checketts H, et al. Speed of initial atropinisation in significant organophosphorus pesticide poisoning--a systematic comparison of recommended regimens. J Toxicol Clin Toxicol. 2004;42(6):865-75.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15533026 ",
+      "kind": "other"
+    },
+    {
+      "text": "Hopmann G, Wanke H. [Maximum dose atropin treatment in severe organophosphate poisoning (author's transl)]. Dtsch Med Wochenschr. 1974;99(42):2106-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/4609713",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.local-anesthetic-dosing-calculator",
+    "calc.serum-osmolality-osmolarity",
+    "calc.arterial-blood-gas-abg-analyzer"
+  ],
+  "source_logic_hash": "8aff45a8194b67155db6c1915c5f5bf8",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2664,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.atropine",
+    "s.cetalkonium-choline",
+    "s.atropine-avizafone-pralidoxime",
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

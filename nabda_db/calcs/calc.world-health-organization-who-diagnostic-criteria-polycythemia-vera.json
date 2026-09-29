@@ -1,0 +1,182 @@
+{
+  "id": "calc.world-health-organization-who-diagnostic-criteria-polycythemia-vera",
+  "slug": "world-health-organization-who-diagnostic-criteria-polycythemia-vera",
+  "language": "fr",
+  "title": "World Health Organization (WHO) Diagnostic critères pour Polycythemia Vera",
+  "short_title": "WHO Diagnostic critères pour Polycythemia Vera",
+  "calc_type": "diagnostic_criteria",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "medecine-interne",
+    "biologie",
+    "general"
+  ],
+  "diseases": [
+    "Hémopathie maligne",
+    "Polycythémie vraie"
+  ],
+  "chief_complaints": [
+    "Bleeding",
+    "Fatigue",
+    "Perte d'appétit",
+    "Numbness",
+    "Dyspnée",
+    "Hepatosplenomegaly"
+  ],
+  "abbreviations": [
+    "World Health Organization (WHO) Diagnostic Criteria for Polycythemia Vera",
+    "WHO Diagnostic Criteria for Polycythemia Vera",
+    "polycythemia vera",
+    "polycythemia vera diagnosis",
+    "polycythemia diagnosis",
+    "polycythemia",
+    "polycythemia WHO",
+    "myeloproliferative neoplasms",
+    "MPN",
+    "PV",
+    "PV diagnosis",
+    "PV WHO"
+  ],
+  "dosing": false,
+  "formula": "Pour établir un diagnostic de PV, les trois critères majeurs doivent être réunis, ou les deux premiers critères majeurs et le critère mineur doivent être présents :\n\n| Critères majeurs et mineurs de la PV |\n| --- |\n| Critère majeur : Hémoglobine >16,5 g/dL chez l'homme ou >16,0 g/dL chez la femme, ou hématocrite >49 % chez l'homme ou >48 % chez la femme Biopsie de moelle osseuse montrant une hypercellularité ajustée à l'âge avec croissance trilignée (panmyélose), incluant une prolifération érythroïde, granulocytaire et mégacaryocytaire prononcée, avec des mégacaryocytes matures pléomorphes (différences de taille) Présence d'une mutation JAK2 V617F ou JAK2 exon 12 Critères mineurs : Taux sérique d'érythropoïétine abaissé (<2,6 mU/mL, la valeur de référence peut varier selon le laboratoire) |\n\nLe critère majeur 2 (biopsie de moelle osseuse) peut ne pas être nécessaire dans les cas d'érythrocytose absolue soutenue : taux d'hémoglobine >18,5 g/dL chez l'homme (hématocrite, 55,5 %) ou >16,5 g/dL chez la femme (hématocrite, 49,5 %) si le critère majeur 3 et le critère mineur sont présents. Cependant, une myélofibrose initiale (présente chez jusqu'à 20 % des patients) ne peut être détectée que par la réalisation d'une biopsie de moelle osseuse ; cette constatation peut prédire une progression plus rapide vers une myélofibrose franche (myélofibrose post-PV).",
+  "how_to_use": {
+    "why": "Créé par l'Organisation mondiale de la Santé afin de fournir un cadre cohérent pour le diagnostic de la PV.",
+    "when": "- Aide au diagnostic des cas suspects de polyglobulie de Vaquez (PV) chez les patients présentant une augmentation de la masse globulaire rouge.\n- Ne doit être appliqué qu'après avoir réalisé une évaluation visant à exclure les causes secondaires.",
+    "pearls": "- Cet outil est basé sur la 5e édition de la classification OMS des néoplasies myéloïdes.\n- Certains patients atteints de PV peuvent ne pas remplir ces critères en cas d'épisode hémorragique antérieur ou dans certains cas de syndrome de Budd-Chiari."
+  },
+  "next_steps": {
+    "advice": "- Évaluer les résultats dans le contexte clinique spécifique.\n- Une consultation avec un hématologue est recommandée pour les patients remplissant les critères de PV afin de déterminer la meilleure conduite à tenir pour le contrôle de l'hématocrite (p. ex., saignées, thérapies cytoréductrices), l'évaluation et la prophylaxie du risque thromboembolique, ainsi que la prise en charge des symptômes.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Polycythemia vera diagnostic critères.",
+  "medium_description": "Diagnoses polycythemia vera according pour critères established par World Health Organization (WHO).",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "major1",
+      "label": "Hemoglobin >16.5 g/dL dans men ou >16.0 g/dL dans women, ou hematocrit >49% dans men ou >48% dans women",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "major2",
+      "label": "Bone marrow biopsy showing âge-adjusted hypercellularity avec trilineage growth (panmyelosis), y compris prominent erythroid, granulocytic, et megakaryocytic proliferation, avec pleomorphic, mature megakaryocytes (differences dans size)",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "major3",
+      "label": "Présence d'une mutation *JAK2* V617F ou *JAK2* exon 12",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "minor",
+      "label": "Taux sérique d'érythropoïétine abaissé",
+      "tips": "2,6 mU/mL, la valeur de référence peut varier selon le laboratoire",
+      "optional": true,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Khoury JD, Solary E, Abla O, et al. The 5th edition of the world health organization classification of haematolymphoid tumours: myeloid and histiocytic/dendritic neoplasms. Leukemia. 2022;36(7):1703-1719.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35732831/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Arber DA, Orazi A, Hasserjian R, et al. The 2016 revision to the World Health Organization classification of myeloid neoplasms and acute leukemia. Blood. 2016;127(20):2391-2405.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27069254/",
+      "kind": "other"
+    },
+    {
+      "text": "Tefferi A, Barbui T. Polycythemia vera: 2024 update on diagnosis, risk‐stratification, and management. American J Hematol. 2023;98(9):1465-1487.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37357958/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.myelofibrosis-secondary-polycythemia-vera-pv-essential-thrombocythemia-et-prognostic-model",
+    "calc.world-health-organization-who-diagnostic-criteria-systemic-mastocytosis",
+    "calc.international-consensus-classification-icc-diagnostic-criteria-primary-myelofibrosis-pmf"
+  ],
+  "source_logic_hash": "abfa3ebe7238ca34b379d808b1ae2889",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10576,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

@@ -1,0 +1,311 @@
+{
+  "id": "calc.simple-disease-activity-index-sdai-rheumatoid-arthritis",
+  "slug": "simple-disease-activity-index-sdai-rheumatoid-arthritis",
+  "language": "fr",
+  "title": "Simple maladie Activity index (SDAI) pour Rheumatoid Arthritis",
+  "short_title": "SDAI pour Rheumatoid Arthritis",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "orthopedie",
+    "rhumatologie"
+  ],
+  "diseases": [
+    "Polyarthrite rhumatoïde"
+  ],
+  "chief_complaints": [
+    "Douleur articulaire"
+  ],
+  "abbreviations": [
+    "RA",
+    "rheum",
+    "rheumatoid arthritis",
+    "simple",
+    "clinical",
+    "lab",
+    "crp"
+  ],
+  "dosing": false,
+  "formula": "SDAI = Nombre d'articulations douloureuses + Nombre d'articulations gonflées + CRP, mg/dL + Évaluation globale par le patient + Évaluation globale par le médecin",
+  "how_to_use": {
+    "why": "- Le Simplified Disease Activity Index (SDAI) offre un excellent aperçu de la sévérité de la maladie d'un patient (il est étroitement corrélé au [CDAI](nabda:calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis), qui ne nécessite pas de données biologiques) et au [DAS-28](nabda:calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp) .\n- Le SDAI peut également aider à guider le traitement en fonction de la sévérité de la maladie.",
+    "when": "- Tous les patients atteints de polyarthrite rhumatoïde.\n- Réévaluation des patients après l'instauration d'un nouveau traitement pour la PR.",
+    "pearls": "- L'évaluation de l'activité de la maladie dans la polyarthrite rhumatoïde (PR) doit être considérée comme un processus dynamique et continu ; de nombreux experts recommandent de l'évaluer à chaque consultation.\n- Un traitement précoce est important pour des résultats optimaux dans la PR, et le SDAI peut aider à donner une vue d'ensemble de la sévérité et de l'activité de la maladie d'un patient.\n- Le [Clinical Disease Activity Index (CDAI)](nabda:calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis) fournit des informations similaires et bien corrélées, sans nécessiter de données biologiques (CRP)."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "Les patients présentant des scores d'activité élevés devraient recevoir précocement des traitements de la PR intensifs avec un suivi rapproché, car l'obtention de scores correspondant à une faible activité ou à une rémission peut prévenir la progression de la maladie et le handicap.",
+    "management": "Se référer aux recommandations de l’ACR pour le traitement de la polyarthrite rhumatoïde."
+  },
+  "evidence": "",
+  "more_info": "| SDAI | Sévérité de la maladie |\n| --- | --- |\n| ≤3.3 | Rémission |\n| >3.3-11.0 | Faible |\n| >11.0-26.0 | Modérée |\n| >26.0 | Élevée |",
+  "short_description": "RA gravité, clinique data only.",
+  "medium_description": "Determines gravité de rheumatoid arthritis using clinique et laboratoire data.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "tender",
+      "label": "Nombre d'articulations douloureuses",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "swollen",
+      "label": "Nombre d'articulations gonflées",
+      "optional": false,
+      "unit": "joint_count",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "crp",
+      "label": "Protéine C-réactive (CRP)",
+      "optional": false,
+      "unit": "crp_dl",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "pt",
+      "label": "Demander au patient : en tenant compte de toutes les façons dont votre arthrite vous affecte, comment allez-vous ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0.0 - Très bien",
+          "value": 0
+        },
+        {
+          "label": "0.5",
+          "value": 0.5
+        },
+        {
+          "label": "1.0",
+          "value": 1
+        },
+        {
+          "label": "1.5",
+          "value": 1.5
+        },
+        {
+          "label": "2.0",
+          "value": 2
+        },
+        {
+          "label": "2.5",
+          "value": 2.5
+        },
+        {
+          "label": "3.0",
+          "value": 3
+        },
+        {
+          "label": "3.5",
+          "value": 3.5
+        },
+        {
+          "label": "4.0",
+          "value": 4
+        },
+        {
+          "label": "4.5",
+          "value": 4.5
+        },
+        {
+          "label": "5.0",
+          "value": 5
+        },
+        {
+          "label": "5.5",
+          "value": 5.5
+        },
+        {
+          "label": "6.0",
+          "value": 6
+        },
+        {
+          "label": "6.5",
+          "value": 6.5
+        },
+        {
+          "label": "7.0",
+          "value": 7
+        },
+        {
+          "label": "7.5",
+          "value": 7.5
+        },
+        {
+          "label": "8.0",
+          "value": 8
+        },
+        {
+          "label": "8.5",
+          "value": 8.5
+        },
+        {
+          "label": "9.0",
+          "value": 9
+        },
+        {
+          "label": "9.5",
+          "value": 9.5
+        },
+        {
+          "label": "10.0 - Très mauvais",
+          "value": 10
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "md",
+      "label": "Selon l'avis médical : en tenant compte de toutes les façons dont l'arthrite affecte le patient, comment va-t-il ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0.0 - Très bien",
+          "value": 0
+        },
+        {
+          "label": "0.5",
+          "value": 0.5
+        },
+        {
+          "label": "1.0",
+          "value": 1
+        },
+        {
+          "label": "1.5",
+          "value": 1.5
+        },
+        {
+          "label": "2.0",
+          "value": 2
+        },
+        {
+          "label": "2.5",
+          "value": 2.5
+        },
+        {
+          "label": "3.0",
+          "value": 3
+        },
+        {
+          "label": "3.5",
+          "value": 3.5
+        },
+        {
+          "label": "4.0",
+          "value": 4
+        },
+        {
+          "label": "4.5",
+          "value": 4.5
+        },
+        {
+          "label": "5.0",
+          "value": 5
+        },
+        {
+          "label": "5.5",
+          "value": 5.5
+        },
+        {
+          "label": "6.0",
+          "value": 6
+        },
+        {
+          "label": "6.5",
+          "value": 6.5
+        },
+        {
+          "label": "7.0",
+          "value": 7
+        },
+        {
+          "label": "7.5",
+          "value": 7.5
+        },
+        {
+          "label": "8.0",
+          "value": 8
+        },
+        {
+          "label": "8.5",
+          "value": 8.5
+        },
+        {
+          "label": "9.0",
+          "value": 9
+        },
+        {
+          "label": "9.5",
+          "value": 9.5
+        },
+        {
+          "label": "10.0 - Très mauvais",
+          "value": 10
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Smolen JS, et al. A simplified disease activity index for rheumatoid arthritis for use in clinical practiceRheumatology (2003) 42 (2): 244-257 doi:10.1093/rheumatology/keg072.",
+      "href": "https://rheumatology.oxfordjournals.org/content/42/2/244.full.pdf+html",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Aletaha D, Smolen JS. The Simplified Disease Activity Index (SDAI) and Clinical Disease Activity Index (CDAI) to monitor patients in standard clinical care.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17678828",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis",
+    "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+    "calc.disease-activity-score-28-rheumatoid-arthritis-esr-das28-esr"
+  ],
+  "source_logic_hash": "274efe857e0e217057c2897519bfd077",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.clinical-disease-activity-index-cdai-rheumatoid-arthritis",
+      "text": "Clinical Disease Activity Index (CDAI)"
+    },
+    {
+      "type": "calc",
+      "id": "calc.disease-activity-score-28-rheumatoid-arthritis-crp-das28-crp",
+      "text": "DAS-28"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2194,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

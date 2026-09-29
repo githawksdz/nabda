@@ -1,0 +1,306 @@
+{
+  "id": "calc.immune-effector-cell-encephalopathy-ice-score",
+  "slug": "immune-effector-cell-encephalopathy-ice-score",
+  "language": "en",
+  "title": "Score d'encéphalopathie des cellules effectrices immunitaires (ICE)",
+  "short_title": "Score ICE",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "allergologie",
+    "soins-intensifs",
+    "hematologie",
+    "neurologie"
+  ],
+  "diseases": [
+    "Hémopathie maligne",
+    "Syndrome de libération des cytokines",
+    "Syndrome de neurotoxicité associé aux cellules effectrices immunitaires (ICANS)"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Headache",
+    "Déficit neurologique",
+    "Seizure",
+    "Weakness",
+    "Confusion",
+    "Tremor",
+    "Delirium",
+    "Troubles de la mémoire",
+    "Aphasia",
+    "Disorientation",
+    "Somnolence",
+    "Trouble visuel"
+  ],
+  "abbreviations": [
+    "ICE",
+    "ICE Score",
+    "Immune Effector Cell Encephalopathy",
+    "ICANS",
+    "CAR T-cell neurotoxicity",
+    "immune effector cell toxicity",
+    "DETOX-10",
+    "CARTOX-10",
+    "CARTOX",
+    "CAR T encephalopathy",
+    "neurotoxicity grading",
+    "cytokine release syndrome",
+    "CAR-T",
+    "immune effector cells"
+  ],
+  "dosing": false,
+  "formula": "To calculate the ICE Score, add the points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Orientation | | |\n| Year | No | 0 |\n| Yes | 1 | |\n| Month | No | 0 |\n| Yes | 1 | |\n| City | No | 0 |\n| Yes | 1 | |\n| Hospital | No | 0 |\n| Yes | 1 | |\n| Naming | | |\n| Ability to name three objects (E.g., point to clock, pen, button) | None | 0 |\n| One | 1 | |\n| Two | 2 | |\n| All three | 3 | |\n| Following Commands | | |\n| Ability to follow simple commands (E.g., “show me 2 fingers” or “close your eyes and stick out your tongue”) | No | 0 |\n| Yes | 1 | |\n| Writing | | |\n| Ability to write a standard sentence (E.g., “Our national bird is the bald eagle”) | No | 0 |\n| Yes | 1 | |\n| Attention | | |\n| Ability to count backwards from 100 by 10 | No | 0 |\n| Yes | 1 | |",
+  "how_to_use": {
+    "why": "- Facilite la reconnaissance précoce et la prise en charge rapide de la neurotoxicité, ce qui peut réduire le risque de complications sévères ou irréversibles.\n- Simple, reproductible, et utilisable dans les essais cliniques comme en pratique courante.\n- Favorise une gradation standardisée et la communication entre les équipes pluridisciplinaires.\n- Approuvé par [ASTCT (2019)](https://pubmed.ncbi.nlm.nih.gov/30592986/) et alimente directement le [ICANS Consensus Grading](nabda:calc.immune-effector-cell-associated-neurotoxicity-syndrome-icans-consensus-grading-adults).",
+    "when": "- Use for routine assessment and serial monitoring of immune effector cell-associated neurotoxicity syndrome (ICANS) in adults and adolescents (≥12 years) receiving chimeric antigen receptor (CAR) T-cell therapy.\n- Apply at baseline and at regular intervals post-infusion (authors recommend every 8 hours while hospitalized after therapy).",
+    "pearls": "- Incorporated into the[2019 American Society for Transplantation and Cellular Therapy (ASTCT)](https://pubmed.ncbi.nlm.nih.gov/30592986/)consensus ICANS grading as an update to CARTOX-10, adding a receptive aphasia component.\n- Not validated in patients with pre-existing neurological, sensory, or language barriers; results may be confounded by medications or comorbidities.\n- Not optimized for children <12 years of age."
+  },
+  "next_steps": {
+    "advice": "For a score <10, ICANS is likely present; lower scores indicate greater severity.\n\n- Rule out other potential causes of neurocognitive changes (e.g., sedatives, metabolic derangements, infection, stroke).\n- Apply results to the [Immune Effector Cell-Associated Neurotoxicity Syndrome (ICANS) Consensus Grading for Adults](nabda:calc.immune-effector-cell-associated-neurotoxicity-syndrome-icans-consensus-grading-adults) .",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| ICE Score | Severity |\n| --- | --- |\n| <2* | Severe |\n| 2-9 | Non-severe |\n| 10 | No cognitive impairment |\n\n*Any patient with an ICE score less than 2 or with seizures is classified as severe.",
+  "short_description": "Évalue la fonction neurocognitive après une thérapie par cellules CAR-T.",
+  "medium_description": "Assesses neurocognitive function dans patients receiving CAR T-cell therapy.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Year",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Month",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "City",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Hôpital",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "radio",
+      "name": "e",
+      "label": "Ability pour name three objects",
+      "tips": "E.g., point to clock, pen, button",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "One",
+          "value": 1
+        },
+        {
+          "label": "Two",
+          "value": 2
+        },
+        {
+          "label": "Les trois",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Ability pour follow simple commands",
+      "tips": "Ex. : « montrez-moi 2 doigts » ou « fermez les yeux et tirez la langue »",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "g",
+      "label": "Ability pour write standard sentence",
+      "tips": "Exemple : « Notre oiseau national est le pygargue à tête blanche »",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "h",
+      "label": "Ability pour count backwards de 100 par 10",
+      "optional": false,
+      "default": 1,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Neelapu SS, Tummala S, Kebriaei P, et al. Chimeric antigen receptor T-cell therapy - assessment and management of toxicities. Nat Rev Clin Oncol. 2018;15(1):47-62. doi:10.1038/nrclinonc.2017.148",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28925994/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Grant SJ, Grimshaw AA, Silberstein J, et al. Clinical presentation, risk factors, and outcomes of immune effector cell-associated neurotoxicity syndrome following chimeric antigen receptor T cell therapy: A systematic review. Transplant Cell Ther. 2022;28(6):294-302. doi:10.1016/j.jtct.2022.03.006",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35288347/",
+      "kind": "other"
+    },
+    {
+      "text": "Lee DW, Santomasso BD, Locke FL, et al. ASTCT Consensus Grading for Cytokine Release Syndrome and Neurologic Toxicity Associated with Immune Effector Cells. Biol Blood Marrow Transplant. 2019;25(4):625-638. doi:10.1016/j.bbmt.2018.12.758",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/30592986/",
+      "kind": "other"
+    },
+    {
+      "text": "Herr MM, Chen GL, Ross M, et al. Identification of neurotoxicity after chimeric antigen receptor (CAR) T cell infusion without deterioration in the immune effector cell encephalopathy (ICE) score. Transplant Cell Ther. 2023;29(5):309.e1-309.e6. doi:10.1016/j.jtct.2023.02.017",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32736009/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.immune-effector-cell-associated-neurotoxicity-syndrome-icans-consensus-grading-adults"
+  ],
+  "source_logic_hash": "f834bac25c2e2838fcc689ba2e8fd791",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.immune-effector-cell-associated-neurotoxicity-syndrome-icans-consensus-grading-adults",
+      "text": "ICANS Consensus Grading"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10635,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

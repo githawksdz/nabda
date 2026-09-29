@@ -1,0 +1,236 @@
+{
+  "id": "calc.carpal-tunnel-syndrome-6-cts-6",
+  "slug": "carpal-tunnel-syndrome-6-cts-6",
+  "language": "en",
+  "title": "Syndrome du canal carpien-6 (CTS-6)",
+  "short_title": "CTS-6",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Pronostic"
+  ],
+  "specialties": [
+    "medecine-interne",
+    "neurologie",
+    "orthopedie",
+    "general",
+    "rhumatologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Maladies auto-immunes",
+    "Syndrome du canal carpien",
+    "Neuropathie périphérique",
+    "Amyloidosis"
+  ],
+  "chief_complaints": [
+    "Douleur chronique",
+    "Numbness",
+    "Pain",
+    "Weakness"
+  ],
+  "abbreviations": [
+    "CTS-6",
+    "carpal tunnel syndrome score",
+    "carpal tunnel diagnosis",
+    "Phalen test",
+    "Tinel sign",
+    "two-point discrimination",
+    "thenar atrophy",
+    "nocturnal numbness",
+    "median nerve numbness",
+    "Graham criteria",
+    "CTS",
+    "carpal tunnel",
+    "CTS probability",
+    "CTS diagnosis",
+    "CTS likelihood",
+    "median nerve",
+    "CTS electrodiagnostic testing"
+  ],
+  "dosing": false,
+  "formula": "The CTS-6 is calculated by adding the selected points for each variable:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Symptoms and History | | |\n| Numbness predominately or exclusively in median nerve territory (Sensory symptoms are mostly in the thumb, index, middle, and/or ring fingers) | No | 0 |\n| Yes | 3.5 | |\n| Nocturnal numbness (Symptoms are prominent when patient sleeps; numbness wakes patient from sleep) | No | 0 |\n| Yes | 4 | |\n| Physical Examination | | |\n| Thenar atrophy and/or weakness (The bulk of the thenar area is reduced or manual motor testing shows strength of grade 4 or less) | No | 0 |\n| Yes | 5 | |\n| Positive Phalen test (Flexion of the wrist reproduces or worsens symptoms of numbness in the median nerve territory) | No | 0 |\n| Yes | 5 | |\n| Loss of 2 point discrimination (A failure to discriminate two points held 5 mm or less apart from one another in the median nerve innervated digits) | No | 0 |\n| Yes | 4.5 | |\n| Positive Tinel sign (Light tapping over the median nerve at the level of the carpal tunnel causing radiating paresthesia into the median nerve innervated digits (not proximally)) | No | 0 |\n| Yes | 4 | |",
+  "how_to_use": {
+    "why": "- Estimates a patient’s pretest probability for CTS from history and exam without specialized equipment or advanced training.\n- Outperforms “gestalt” alone and was similar or superior in specificity to electrodiagnostic studies and ultrasound.\n- Helps and avoid unnecessary electrodiagnostics in clear-cut cases and potentially reduces misdiagnosis.\n- Endorsed in the[American Academy of Orthopaedic Surgeons (AAOS)](https://www.aaos.org/globalassets/quality-and-practice-resources/carpal-tunnel/carpal-tunnel-2024/cts-cpg.pdf)guidelines as an interchangeable clinical diagnostic tool alongside electrodiagnostic studies and ultrasonography.",
+    "when": "À utiliser en soins primaires ou en soins urgents chez les patients adultes présentant des paresthésies ou des douleurs de la main suspectées d’être dues à un syndrome du canal carpien (CTS).",
+    "pearls": "- Developed from 57 candidate findings ranked via Delphi; the top 8 were combined into 256 standardized case histories rated by two expert panels to derive and validate a logistic model, from which 6 items contributed significantly.\n- The original work focused on non-disabled adults in hand clinics with clinical/electrodiagnostic confirmation; subsequent validation (including special populations) shows strong discrimination.\n- At higher cutoffs (e.g., 12), specificity is high while sensitivity is moderate; a negative result does not rule out CTS.\n- Intended as a clinical probability tool; it does not grade disease severity.\n- Misclassification can occur with atypical patterns or coexisting neuropathies."
+  },
+  "next_steps": {
+    "advice": "- Les résultats ne doivent pas remplacer le jugement clinique ; intégrez cet outil à l’anamnèse, à l’examen clinique, au contexte de risque (p. ex., grossesse, diabète, hypothyroïdie, utilisation répétitive du poignet) et à la durée des symptômes.\n- Excluez les diagnostics différentiels fréquents, tels que la radiculopathie cervicale, la neuropathie médiane proximale, la neuropathie ulnaire et la polyneuropathie généralisée.",
+    "critical_actions": "",
+    "management": "**Score ≥12:** CTS is more likely.\n\n- Initiate nonsurgical or surgical interventions, as deemed appropriate.\n- Electrodiagnostic testing is unlikely to add certainty to the diagnosis.\n\n**Score <12:** CTS is less likely.\n\n- Consider other diagnoses on the differential.\n- Electrodiagnostic testing may be considered if suspicion for CTS remains high."
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score CTS-6 | Probabilité |\n| --- | --- |\n| <12 | Moins probable |\n| ≥12 | Plus probable |\n\n*Un score de 12 correspond à une probabilité pré-test estimée de CTS d'environ 80 %, tandis qu'un score inférieur à 5 correspond à une probabilité pré-test d'environ 25 %.*",
+  "short_description": "Estimates likelihood de CTS dans adultes.",
+  "medium_description": "Estimates likelihood de carpal tunnel syndrome (CTS) dans adultes using symptoms et physical exam findings.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "a",
+      "label": "Numbness predominately ou exclusively dans median nerve territory",
+      "tips": "Les symptômes sensitifs siègent principalement au pouce, à l'index, au majeur et/ou à l'annulaire.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "b",
+      "label": "Engourdissement nocturne",
+      "tips": "Les symptômes prédominent lorsque le patient dort ; un engourdissement réveille le patient.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "c",
+      "label": "Atrophie thénarienne et/ou faiblesse",
+      "tips": "Le volume de l'éminence thénar est réduit ou l'évaluation manuelle de la force motrice met en évidence une force de grade 4 ou moins",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "d",
+      "label": "Test de Phalen positif",
+      "tips": "La flexion du poignet reproduit ou aggrave les symptômes d'engourdissement dans le territoire du nerf médian.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "e",
+      "label": "Loss de 2 point discrimination",
+      "tips": "Incapacité à discriminer deux points séparés de 5 mm ou moins l’un de l’autre au niveau des doigts innervés par le nerf médian.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4.5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "f",
+      "label": "Signe de Tinel positif",
+      "tips": "Percussion légère sur le nerf médian au niveau du canal carpien provoquant des paresthésies irradiant dans les doigts innervés par le nerf médian (et non de façon proximale).",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Graham B, Regehr G, Naglie G, Wright JG. Development and validation of diagnostic criteria for carpal tunnel syndrome. J Hand Surg Am. 2006;31(6):919.e1-919.e7. doi:10.1016/j.jhsa.2006.03.005",
+      "href": "https://linkinghub.elsevier.com/retrieve/pii/S036350230600387X",
+      "kind": "pubmed"
+    },
+    {
+      "text": "American Academy of Orthopaedic Surgeons. Management of Carpal Tunnel Syndrome Evidence-Based Clinical Practice Guideline. Published May 18, 2024.",
+      "href": "https://www.aaos.org/globalassets/quality-and-practice-resources/carpal-tunnel/carpal-tunnel-2024/cts-cpg.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Graham B. The value added by electrodiagnostic testing in the diagnosis of carpal tunnel syndrome. J Bone Joint Surg Am. 2008;90(12):2587-2593. doi:10.2106/JBJS.G.01362",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/19047703/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Fowler JR, Munsch M, Tosti R, Hagberg WC, Imbriglia JE. Comparison of ultrasound and electrodiagnostic testing for diagnosis of carpal tunnel syndrome: study using a validated clinical tool as the reference standard. J Bone Joint Surg Am. 2014;96(17):e148. doi:10.2106/JBJS.M.01250",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/25187592/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [],
+  "source_logic_hash": "427433de0bd4b6513e77650cc65d8672",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10631,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": true,
+  "engine_sha256": null
+}

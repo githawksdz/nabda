@@ -1,0 +1,351 @@
+{
+  "id": "calc.short-michigan-alcoholism-screening-test",
+  "slug": "short-michigan-alcoholism-screening-test",
+  "language": "fr",
+  "title": "Short Michigan Alcoholism dépistage Test (SMAST)",
+  "short_title": "SMAST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Consommation de drogues/alcool"
+  ],
+  "chief_complaints": [
+    "Injury/Trauma",
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "SMAST",
+    "MAST",
+    "smast",
+    "short michigan test",
+    "michigan screening",
+    "etoh",
+    "Short Michigan Alcoholism Screening Test",
+    "alcohol",
+    "alcohol abuse",
+    "alcoholism",
+    "alcohol assessment"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés (poser au patient les questions suivantes) :\n\n| | 0 point | 1 point |\n| --- | --- | --- |\n| Le patient estime être un buveur normal (c'est-à-dire qu'il boit moins ou autant que la plupart des gens) | Oui | Non |\n| Le conjoint ou un autre proche parent s'est inquiété ou s'est plaint de la consommation d'alcool du patient | Non | Oui |\n| Le patient s'est déjà senti coupable de sa consommation d'alcool | Non | Oui |\n| Les amis/parents considèrent que le patient est un buveur normal | Oui | Non |\n| Le patient est capable d'arrêter de boire quand il le souhaite | Oui | Non |\n| Le patient a déjà assisté à une réunion des Alcooliques Anonymes | Non | Oui |\n| La consommation d'alcool a déjà créé des problèmes avec le conjoint ou un autre proche parent | Non | Oui |\n| Le patient a eu des ennuis au travail en raison de sa consommation d'alcool | Non | Oui |\n| Le patient a négligé sa famille, ses obligations ou son travail pendant ≥2 jours consécutifs en raison de sa consommation d'alcool | Non | Oui |\n| Le patient a déjà cherché de l'aide pour sa consommation d'alcool | Non | Oui |\n| Le patient a déjà été hospitalisé en raison de sa consommation d'alcool | Non | Oui |\n| Le patient a déjà été arrêté pour conduite en état d'ivresse | Non | Oui |\n| Le patient a déjà été arrêté pour un autre comportement lié à l'ivresse (même quelques heures seulement) | Non | Oui |",
+  "how_to_use": {
+    "why": "Plus court que le Michigan Alcoholism Screening Test à 25 items, tout en conservant sa validité.",
+    "when": "",
+    "pearls": "- Les études ont utilisé divers seuils pour indiquer un test de dépistage positif, avec une grande variabilité de sensibilité et de spécificité.\n- Assurez-vous de connaître les standards de pratique de votre environnement professionnel."
+  },
+  "next_steps": {
+    "advice": "Les patients ayant une consommation d'alcool importante doivent également être dépistés pour d'autres consommations de drogues illicites.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score SMAST | Interprétation | Recommandation |\n| --- | --- | --- |\n| 0–2 | Risque faible, aucun problème apparent | Répéter le dépistage si nécessaire |\n| 3 | Risque limite, problème d'alcool potentiel débutant | Envisager des investigations complémentaires |\n| ≥4 | Risque élevé, abus d'alcool probable | Évaluation complète recommandée |",
+  "short_description": "Alcoholism dépistage.",
+  "medium_description": "Screens pour alcohol abuse.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "feels",
+      "label": "Le patient estime être un buveur normal",
+      "tips": "Qu'il boit moins ou autant que la plupart des gens",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "spouse",
+      "label": "Le conjoint ou un autre proche parent s'est inquiété ou s'est plaint de la consommation d'alcool du patient",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "guilty",
+      "label": "Le patient s'est déjà senti coupable de sa consommation d'alcool",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "think",
+      "label": "Les amis/parents considèrent que le patient est un buveur normal",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "able",
+      "label": "Patient is able pour stop drinking when they want",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "aa",
+      "label": "Le patient a déjà assisté à une réunion des Alcooliques Anonymes",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "problems",
+      "label": "Drinking has ever created problems avec spouse ou other near relative",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "trouble",
+      "label": "Le patient a eu des ennuis au travail en raison de sa consommation d'alcool",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "row",
+      "label": "Patient has neglected family, obligations, ou work pour ≥2 days dans row because de drinking",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "help",
+      "label": "Patient has ever sought help pour drinking",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hospital",
+      "label": "Patient has ever been dans hôpital because de drinking",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dui",
+      "label": "Patient has ever been arrested pour driving while intoxicated",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "arrested",
+      "label": "Patient has ever been arrested pour other drunken behavior",
+      "tips": "Même quelques heures seulement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Selzer ML, Vinokur A, Van rooijen L. A self-administered Short Michigan Alcoholism Screening Test (SMAST). J Stud Alcohol. 1975;36(1):117-26.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/238068 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Selzer ML. The Michigan alcoholism screening test: the quest for a new diagnostic instrument. Am J Psychiatry. 1971;127(12):1653-8.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/5565851 ",
+      "kind": "other"
+    },
+    {
+      "text": "Zung BJ. Reliability and validity of the short mast among psychiatric inpatients. J Clin Psychol. 1984;40(1):347-50.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/6746949",
+      "kind": "other"
+    },
+    {
+      "text": "Shields AL, Howell RT, Potter JS, Weiss RD. The Michigan Alcoholism Screening Test and its shortened form: a meta-analytic inquiry into score reliability. Subst Use Misuse. 2007;42(11):1783-800.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17934995",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Robin RW, Saremi A, Albaugh B, Hanson RL, Williams D, Goldman D. Validity of the SMAST in two American Indian tribal populations. Subst Use Misuse. 2004;39(4):601-24.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/15115215",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nanakorn S, Fukuda K, Ogimoto I, Tangseree T, Treethiptikhun S. Validation of the Short Michigan Alcoholism Screening Test Thai version in northeastern Thailand. Southeast Asian J Trop Med Public Health. 2000;31(4):780-6.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11414429 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Harburg E, Gunn R, Gleiberman L, Roeper P, Difranceisco W, Caplan R. Using the Short Michigan Alcoholism Screening Test to study social drinkers: Tecumseh, Michigan. J Stud Alcohol. 1988;49(6):522-31.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/3236884 ",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.short-michigan-alcoholism-screening-test-geriatric-version-smast-g",
+    "calc.prediction-alcohol-withdrawal-severity-scale",
+    "calc.audit-c-alcohol-use"
+  ],
+  "source_logic_hash": "327076c39c0d4b5c0cad9cc321706b19",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4013,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

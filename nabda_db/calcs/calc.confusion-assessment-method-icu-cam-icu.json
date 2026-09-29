@@ -1,0 +1,252 @@
+{
+  "id": "calc.confusion-assessment-method-icu-cam-icu",
+  "slug": "confusion-assessment-method-icu-cam-icu",
+  "language": "en",
+  "title": "Confusion évaluation Method pour ICU (CAM-ICU)",
+  "short_title": "CAM-ICU",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme",
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Delirium"
+  ],
+  "chief_complaints": [
+    "AMS"
+  ],
+  "abbreviations": [
+    "ICU",
+    "CAM",
+    "CAM-ICU",
+    "delirium",
+    "CAMICU",
+    "CAM ICU"
+  ],
+  "dosing": false,
+  "formula": "Algorithme de questions Oui/Non.",
+  "how_to_use": {
+    "why": "- Delirium affects up to 89% of ICU patients and has been shown to result in higher mortality. The relative risk of death increases for each day the patient remains delirious. Prompt recognition of this condition is therefore important.\n- To this day delirium remains a clinical diagnosis. Few clinical tools have been demonstrated to be useful in helping identify the presence or absence of delirium.",
+    "when": "Le CAM-ICU doit être utilisé quotidiennement chez tous les patients admis en réanimation, même s’ils sont sous ventilation mécanique.",
+    "pearls": "- Il a été démontré que le delirium est associé à des outcomes plus défavorables chez les patients en état critique. Il reste sous-diagnostiqué en raison de sa présentation parfois subtile.\n- Le score CAM-ICU est un score validé et couramment utilisé pour aider à surveiller l’apparition ou la résolution du delirium chez les patients.\n- Il s’agit d’une adaptation du score Confusion Assessment Method (CAM) pour une utilisation chez les patients en soins intensifs.\n- Étant donné que la première étape du score consiste à identifier un « changement aigu par rapport à l’état mental de base », il peut être difficile à utiliser chez les patients dont l’état neurologique de base est inconnu.\n- Si l’état neurologique de base d’un patient change au cours de son hospitalisation (comme un nouvel AVC par exemple), le nouveau baseline doit être utilisé pour toute nouvelle évaluation.\n- Pour que le score CAM-ICU soit exact, les patients ne doivent pas être sédatés, ou doivent avoir un RASS de 0."
+  },
+  "next_steps": {
+    "advice": "",
+    "critical_actions": "- La prise en charge du délirium est un sujet vaste qui dépasse le cadre de cette discussion.\n- Dépister quotidiennement le délirium chez tous les patients de réanimation à l'aide d'un outil clinique validé tel que le CAM-ICU.\n- Le dépistage est idéalement réalisé par des personnes formées à l'utilisation appropriée de cette méthode, telles que les infirmiers de réanimation.",
+    "management": "- Lorsqu'il est appliqué, le CAM-ICU fournit un résultat qualitatif de « délirium présent » ou « délirium absent ».\n- Les patients identifiés comme souffrant de délirium feront l'objet d'un bilan et d'une prise en charge en conséquence.\n- Le CAM-ICU doit continuer à être utilisé quotidiennement, même chez les patients délirants, afin de surveiller la résolution de l'état."
+  },
+  "evidence": "- La Confusion Assessment Method (CAM) a été [initialement dérivée](https://www.ncbi.nlm.nih.gov/pubmed/2240918) chez 56 patients hospitalisés en service de médecine générale, et s'est révélée dotée d'une sensibilité et d'une spécificité élevées pour le diagnostic de delirium par des non-psychiatres.\n- La CAM a [ensuite été modifiée](https://www.ncbi.nlm.nih.gov/pubmed/11445689) pour une utilisation en unité de soins intensifs et renommée CAM-ICU. Ce score modifié a été testé chez 38 patients de soins intensifs par des infirmiers et des intensivistes, et s'est révélé avoir une sensibilité allant jusqu'à 100 % et une spécificité de 93 % pour le diagnostic de delirium.\n- Afin de valider la CAM-ICU chez les patients sous ventilation mécanique, [Ely et al.](https://www.ncbi.nlm.nih.gov/pubmed/11730446) ont inclus prospectivement 111 patients, dont 96 ont été retenus dans l'analyse finale. Les évaluations ont été réalisées par deux infirmières de soins intensifs. La CAM-ICU s'est révélée avoir une sensibilité et une spécificité allant jusqu'à 100 %, ainsi qu'une fiabilité inter-évaluateurs élevée dans cette population de patients.\n- [Revue systématique et méta-analyse des outils cliniques pour le diagnostic du delirium chez les patients en état critique.](https://ccforum.biomedcentral.com/articles/10.1186/cc11407)",
+  "more_info": "The patient is CAM-ICU positive (patient has delirium) if:\n\n- RASS ≥ -3, AND\n- Acute onset change in mental status or fluctuating course in mental status, AND\n- >2 errors in letters attention test, AND\n- Either [RASS](nabda:calc.richmond-agitation-sedation-scale-rass) is not 0, OR combined number of errors to questions and commands >1\n\nFor more information and a schematic of questions, see[this CAM-ICU training manual](https://www.icudelirium.org/docs/CAM_ICU_training.pdf).",
+  "short_description": "Monitors delirium dans ICU patients.",
+  "medium_description": "Establishes ability pour detect delirium dans élevé risque settings.",
+  "input_schema": [
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "rass_3",
+      "label": "[RASS](nabda:calc.richmond-agitation-sedation-scale-rass) ≥ -3",
+      "tips": "Ou un autre système de score montre un niveau de conscience suffisant.",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "baseline_status",
+      "label": "Patient different than initial, pre-hôpital mental status",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "rass_3 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "mental_status",
+      "label": "Patient avec fluctuating mental status dans past 24 hours par fluctuation de level de consciousness/sedation",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "rass_3 == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "attention_test",
+      "label": "Letters attention test avec >2 errors",
+      "tips": "Dites C-A-S-A-B-L-A-N-C-A. Le patient doit serrer votre main lorsque la lettre A est prononcée. Erreur : omettre un A ou serrer la main sans qu'un A ait été prononcé.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1)",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "rass_score",
+      "label": "[RASS](nabda:calc.richmond-agitation-sedation-scale-rass) n'est pas 0 (éveillé et calme)",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "subheading",
+      "label": "",
+      "optional": false,
+      "show_points": false
+    },
+    {
+      "type": "toggle",
+      "name": "error_questions",
+      "label": "Combined number de errors pour questions et commands >1",
+      "tips": "Ask the patient the following yes/no questions and count errors: 1. Will a stone float on water?; 2. Are there fish in the sea?; 3. Does 1 pound weigh more than 2 pounds?; 4. Can you use a hammer to pound a nail? Next, ask the patient to follow your commands: a) “Hold up this many fingers” (hold up 2 fingers) ; b) “Now do the same thing with the other hand” (do not demonstrate the number of fingers). If unable to move both arms, for part “b” ask patient to hold up one more finger. Count errors if patient is unable to complete the entire command.",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "rass_3 == 1 && (baseline_status == 1 || mental_status ==1) && attention_test == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": " Inouye SK, van Dyck CH, Alessi CA, Balkin S, Siegal AP, Horwitz RI. Clarifying confusion: the confusion assessment method. A new method for detection of delirium. Ann Intern Med. 1990;113(12):941–948.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/2240918",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Ely EW, Inouye SK, et. al. Delirium in mechanically ventilated patients: validity and reliability of the confusion assessment method for the intensive care unit (CAM-ICU).JAMA. 2001 Dec 5;286(21):2703-10.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11730446",
+      "kind": "other"
+    },
+    {
+      "text": "Gusmao-Flores D, Salluh JIF, Chalhub RÁ, Quarantini LC. The confusion assessment method for the intensive care unit (CAM-ICU) and intensive care delirium screening checklist (ICDSC) for the diagnosis of delirium: a systematic review and meta-analysis of clinical studies. Crit Care. 2012;16(4):R115.",
+      "href": "https://ccforum.com/content/16/4/R115",
+      "kind": "other"
+    },
+    {
+      "text": "Ely EW, and Vanderbilt University. Confusion Assessment Method for the ICU (CAM-ICU). The Complete Training Manual. Revised 2014.",
+      "href": "https://www.icudelirium.org/docs/CAM_ICU_training.pdf",
+      "kind": "other"
+    },
+    {
+      "text": "Ely EW, Margolin R, et. al. Evaluation of delirium in critically ill patients: validation of the Confusion Assessment Method for the Intensive Care Unit (CAM-ICU). Crit Care Med. 2001 Jul;29(7):1370-9.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/11445689",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.richmond-agitation-sedation-scale-rass",
+    "calc.behavioral-pain-scale-bps-pain-assessment-intubated-patients",
+    "calc.nonverbal-pain-scale-nvps-nonverbal-patients"
+  ],
+  "source_logic_hash": "1c25793558b530f3e2d1b8cf8686cb17",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1870,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.magnesium-hexahydrate-solution-glucose",
+    "s.solution-electrolytes-solution-alcaline-a"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

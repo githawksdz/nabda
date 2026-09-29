@@ -1,0 +1,223 @@
+{
+  "id": "calc.hurt-insult-threaten-scream-hits-score",
+  "slug": "hurt-insult-threaten-scream-hits-score",
+  "language": "fr",
+  "title": "Hurt, Insult, Threaten, Scream (HITS) score",
+  "short_title": "HITS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Injury/Trauma",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Hurt, Insult, Threaten, Scream (HITS) Score",
+    "HITS",
+    "IPV",
+    "intimate partner violence",
+    "abuse",
+    "abuse screening",
+    "abuse screening tool",
+    "domestic abuse",
+    "domestic abuse screening",
+    "domestic violence",
+    "domestic violence screening"
+  ],
+  "dosing": false,
+  "formula": "Le score HITS est calculé par addition des points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| À quelle fréquence votre partenaire vous fait-il physiquement mal ? | Jamais | 1 |\n| Rarement | 2 | |\n| Parfois | 3 | |\n| Assez souvent | 4 | |\n| Fréquemment | 5 | |\n| À quelle fréquence votre partenaire vous insulte-t-il ou vous rabaisse-t-il ? | Jamais | 1 |\n| Rarement | 2 | |\n| Parfois | 3 | |\n| Assez souvent | 4 | |\n| Fréquemment | 5 | |\n| À quelle fréquence votre partenaire vous menace-t-il de vous faire du mal ? | Jamais | 1 |\n| Rarement | 2 | |\n| Parfois | 3 | |\n| Assez souvent | 4 | |\n| Fréquemment | 5 | |\n| À quelle fréquence votre partenaire vous crie-t-il dessus ou vous injurie-t-il ? | Jamais | 1 |\n| Rarement | 2 | |\n| Parfois | 3 | |\n| Assez souvent | 4 | |\n| Fréquemment | 5 | |",
+  "how_to_use": {
+    "why": "- Conçu pour être bref et facile à utiliser en contexte ambulatoire, l’outil a été validé pour une utilisation chez les hommes comme chez les femmes.\n- Facilite des conversations structurées et sans jugement sur la violence entre partenaires intimes (IPV).\n- Favorise la détection et l’intervention précoces, ce qui peut améliorer significativement la sécurité et les résultats des patients.",
+    "when": "- Utiliser dans le cadre du dépistage systématique chez les hommes et les femmes en soins",
+    "pearls": "- Cet outil n’évalue pas la gravité de la maltraitance ; un suivi est donc nécessaire pour une évaluation plus détaillée.\n- Veillez à garantir un environnement privé et sûr pour administrer l’outil ; réaliser l’entretien en présence du partenaire ou d’autres personnes peut compromettre la sécurité du patient et l’exactitude de ses réponses.\n- Normalisez les questions en expliquant qu’elles font partie standard des soins courants.\n- Abordez le patient avec empathie et sans jugement."
+  },
+  "next_steps": {
+    "advice": "- Use this tool alongside clinical judgment.\n- **Positive screen (score >10;[Sakil et al.](https://pubmed.ncbi.nlm.nih.gov/15739135/)suggest >11 in men):**\n\n - Validate the patient’s experience through empathetic and supportive communication.\n - Tailor follow-up questions to the patient”s responses to encourage further disclosure.\n - Assess for immediate safety concerns and implement a safety plan if needed.\n - Document findings thoroughly in the medical record, adhering to medico-legal requirements.\n - Provide resources such as hotlines, shelters, and referrals to counseling, social work, and/or advocacy services (e.g., the National Domestic Violence Hotline).\n - Schedule follow-up appointments for ongoing support.\n- **Negative screen (score ≤10):**\n\n - Maintain vigilance and consider re-screening at future visits, especially if concerns persist.\n - Educate the patient on IPV resources as part of routine care, emphasizing their availability if needed.",
+    "critical_actions": "Connaître les exigences locales en matière de déclaration obligatoire, car celles-ci varient selon la juridiction. Faire preuve d'une prudence particulière dans les cas impliquant des enfants ou des adultes vulnérables.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score HITS | Résultat du dépistage |\n| --- | --- |\n| ≤10 | Négatif |\n| >10 | Positif |",
+  "short_description": "Detects domestic abuse dans healthcare settings.",
+  "medium_description": "Detects domestic abuse (intimate partner violence) dans women et men dans healthcare settings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "hurt",
+      "label": "À quelle fréquence votre partenaire vous **blesse-t-il/elle** physiquement ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Rarely",
+          "value": 2
+        },
+        {
+          "label": "Sometimes",
+          "value": 3
+        },
+        {
+          "label": "Assez souvent",
+          "value": 4
+        },
+        {
+          "label": "Frequently",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "insult",
+      "label": "How often does your partner **insult** you ou talk down pour you?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Rarely",
+          "value": 2
+        },
+        {
+          "label": "Sometimes",
+          "value": 3
+        },
+        {
+          "label": "Assez souvent",
+          "value": 4
+        },
+        {
+          "label": "Frequently",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "threaten",
+      "label": "How often does your partner **threaten** you avec harm?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Rarely",
+          "value": 2
+        },
+        {
+          "label": "Sometimes",
+          "value": 3
+        },
+        {
+          "label": "Assez souvent",
+          "value": 4
+        },
+        {
+          "label": "Frequently",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "scream",
+      "label": "À quelle fréquence votre partenaire vous **crie**-t-il dessus ou vous insulte-t-il ?",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Never",
+          "value": 1
+        },
+        {
+          "label": "Rarely",
+          "value": 2
+        },
+        {
+          "label": "Sometimes",
+          "value": 3
+        },
+        {
+          "label": "Assez souvent",
+          "value": 4
+        },
+        {
+          "label": "Frequently",
+          "value": 5
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Sherin KM, Sinacore JM, Li XQ, Zitter RE, Shakil A. HITS: a short domestic violence screening tool for use in a family practice setting. Fam Med. 1998;30(7):508-512.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/9669164/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Shakil A, Donald S, Sinacore JM, Krepcho M. Validation of the HITS domestic violence screening tool with males. Fam Med. 2005;37(3):193-198.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15739135/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Feltner C, Wallace I, Berkman N, et al. Screening for intimate partner violence, elder abuse, and abuse of vulnerable adults: evidence report and systematic review for the US preventive services task force. JAMA. 2018;320(16):1688.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2708120",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.abuse-assessment-screen-aas",
+    "calc.humiliation-afraid-rape-kick-hark",
+    "calc.ongoing-violence-assessment-tool-ovat"
+  ],
+  "source_logic_hash": "0c3941a428c36cff7bf0ad0ced6872b3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10417,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

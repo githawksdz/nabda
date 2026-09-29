@@ -1,0 +1,193 @@
+{
+  "id": "calc.abuse-assessment-screen-aas",
+  "slug": "abuse-assessment-screen-aas",
+  "language": "fr",
+  "title": "Abuse évaluation Screen (AAS)",
+  "short_title": "AAS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "general",
+    "medecine-interne",
+    "gynecologie-obstetrique"
+  ],
+  "diseases": [
+    "Santé publique"
+  ],
+  "chief_complaints": [
+    "Agitation",
+    "Altération de l’état mental",
+    "Anxious",
+    "Depressed",
+    "Injury/Trauma",
+    "Perte d'appétit",
+    "Soins préventifs / Dépistage",
+    "Suicidal",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Abuse Assessment Screen (AAS)",
+    "aas",
+    "abuse",
+    "abuse screening",
+    "abuse screening tool",
+    "domestic abuse",
+    "domestic abuse screening",
+    "domestic violence",
+    "domestic violence screening",
+    "IPV",
+    "intimate partner violence"
+  ],
+  "dosing": false,
+  "formula": "Le résultat de l'AAS est déterminé selon les points suivants :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Avez-vous déjà été victime de violence émotionnelle ou physique de la part de votre partenaire ou d'une personne importante pour vous ? | Non | 0 |\n| Oui | 1 | |\n| Au cours de l'année écoulée, avez-vous été frappé(e), giflé(e), botté(e) ou autrement blessé(e) physiquement par votre partenaire ou une personne importante pour vous ? | Non | 0 |\n| Oui | 1 | |\n| Au cours de l'année écoulée, quelqu'un vous a-t-il forcé(e) à avoir des activités sexuelles ? | Non | 0 |\n| Oui | 1 | |\n| Avez-vous peur de votre partenaire ou de l'une des personnes suivantes : mari/femme, ex-mari/ex-femme, petit ami/petite amie, inconnu ? | Non | 0 |\n| Oui | 1 | |\n| Si vous êtes enceinte, avez-vous été frappé(e), giflé(e), botté(e) ou autrement blessé(e) physiquement par votre partenaire ou une personne importante pour vous pendant votre grossesse ? | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "- Identifie les patients victimes de violence, permettant une intervention et un soutien en temps utile.\n- Fournit une approche validée, rapide et structurée pour aborder des sujets sensibles comme la violence entre partenaires intimes (IPV).\n- Aide à établir la confiance et ouvre la communication sur la violence de manière non culpabilisante.\n- Démontre une sensibilité comparable à celle de questionnaires plus étendus.",
+    "when": "- Envisager d’utiliser l’outil en cas de suspicion de violence entre partenaires intimes (IPV) ou de maltraitance d’après la présentation clinique ou les antécédents, comme chez les patients présentant des blessures inexpliquées, une douleur chronique, une anxiété ou une dépression.\n- Peut être utilisé lors des dépistages de santé de routine, en particulier en contexte prénatal, d’urgence et de soins primaires.",
+    "pearls": "- Normalisez les questions en expliquant qu’elles font partie des soins courants.\n- Adoptez une approche empathique et sans jugement."
+  },
+  "next_steps": {
+    "advice": "- Si une situation de maltraitance est révélée :\n\n  - Validez le vécu du patient et apportez un soutien émotionnel.\n  - Évaluez la sécurité immédiate du patient et des personnes à charge ; envisagez de faire intervenir les services sociaux ou les forces de l’ordre si nécessaire.\n  - Consignez de manière exhaustive les constatations dans le dossier médical, conformément aux exigences légales.\n  - Orientez vers les ressources appropriées, telles que les structures d’hébergement, les lignes d’écoute téléphonique ou les services de soutien psychologique.\n\n- Si aucune maltraitance n",
+    "critical_actions": "Tenez compte des obligations locales de signalement, en particulier lorsque des enfants ou des adultes vulnérables sont concernés.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Une réponse « oui » à l’une des questions de dépistage est considérée comme un résultat de dépistage positif.",
+  "short_description": "Detects domestic abuse dans healthcare settings.",
+  "medium_description": "Detects domestic abuse (intimate partner violence) dans pregnant et nonpregnant women dans healthcare settings.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "one",
+      "label": "Have you ever been emotionally ou physically abused par your partner ou someone important pour you?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "two",
+      "label": "Within last year, have you been hit, slapped, kicked, ou otherwise physically hurt par your partner ou someone important pour you?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "three",
+      "label": "Within last year, has anyone forced you pour have sexual activities?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "four",
+      "label": "Avez-vous peur de votre partenaire ou de l’une des personnes suivantes : mari/femme, ex-mari/ex",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "five",
+      "label": "If pregnant, have you been hit, slapped, kicked, ou otherwise physically hurt par your partner ou someone important pour you during your grossesse?",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "McFarlane J, Parker B, Soeken K, Bullock L. Assessing for abuse during pregnancy. Severity and frequency of injuries and associated entry into prenatal care. JAMA. 1992;267(23):3176-3178.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/1593739/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Norton LB, Peipert JF, Zierler S, Lima B, Hume L. Battering in pregnancy: an assessment of two screening methods. Obstet Gynecol. 1995;85(3):321-325.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/7862365/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Feltner C, Wallace I, Berkman N, et al. Screening for intimate partner violence, elder abuse, and abuse of vulnerable adults: evidence report and systematic review for the US preventive services task force. JAMA. 2018;320(16):1688.",
+      "href": "https://jamanetwork.com/journals/jama/fullarticle/2708120",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.ongoing-violence-assessment-tool-ovat",
+    "calc.hurt-insult-threaten-scream-hits-score",
+    "calc.humiliation-afraid-rape-kick-hark"
+  ],
+  "source_logic_hash": "9bc96c09170284812b5e2f245a753d66",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10419,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

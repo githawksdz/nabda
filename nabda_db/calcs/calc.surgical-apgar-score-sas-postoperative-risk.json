@@ -1,0 +1,187 @@
+{
+  "id": "calc.surgical-apgar-score-sas-postoperative-risk",
+  "slug": "surgical-apgar-score-sas-postoperative-risk",
+  "language": "en",
+  "title": "Surgical Apgar score (SAS) pour Postoperative risque",
+  "short_title": "Score d'Apgar chirurgical (SAS)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Appendicitis",
+    "Bleeding/Hemorrhage",
+    "Cholecystitis",
+    "Hernia"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "surgery",
+    "mortality",
+    "m&m",
+    "gawande",
+    "Surgical Apgar Score",
+    "SAS"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points; points assigned below:\n\n| Criteria | Value | Points |\n| --- | --- | --- |\n| Estimated blood loss (mL) | >1,000 | 0 |\n| 600-1,000 | + 1 | |\n| 101-600 | + 2 | |\n| ≤100 | + 3 | |\n| Lowest mean arterial pressure (mmHg) | <40 | 0 |\n| 40-54 | + 1 | |\n| 55-69 | + 2 | |\n| ≥70 | + 3 | |\n| Lowest heart rate (beats / min) | >85 | 0 |\n| 76-85 | + 1 | |\n| 66-75 | + 2 | |\n| 56-65 | + 3 | |\n| ≤55 | + 4 | |",
+  "how_to_use": {
+    "why": "Le SAS peut souvent prédire le risque de complication de manière plus objective que le jugement clinique ; dans une étude, il était bien corrélé avec l'admission en réanimation (lorsque le patient n'avait pas été initialement admis en unité de soins intensifs).",
+    "when": "Le SAS peut être appliqué à tout patient en postopératoire d'une chirurgie majeure.",
+    "pearls": "Le « Score d'Apgar pour la chirurgie » (ou « Surgical Apgar Score ») a été développé par Gawande et al. en 2007 afin de tenter de prédire le risque de complication et d'évolution défavorable après une chirurgie majeure, au lieu d'utiliser des mesures subjectives pour évaluer le risque (comme les chirurgiens le font souvent). Ils souhaitaient développer un score simple, pouvant être calculé rapidement et facilement, « afin d'évaluer l'état des patients à la fin de toute intervention de chirurgie générale ou vasculaire ». Il est nommé d'après le [score d'APGAR](nabda:calc.apgar-score) utilisé par les obstétriciens pour évaluer l'état néonatal.\n\n- Il a été développé en collectant et analysant 99 variables pré-, per- et postopératoires chez des patients subissant une chirurgie majeure générale ou vasculaire.\n- Il a d'abord été développé dans deux cohortes de patients ayant subi une colectomie (choisie en raison du risque élevé de complications connu de cette intervention), puis validé dans une cohorte de patients de chirurgie générale et vasculaire (n = 767).\n- Le Surgical Apgar Score est directement corrélé au pronostic — plus le score est élevé, plus le risque de complication est faible.\n- Le score a été développé sans l'utilisation d'un dossier d'anesthésie électronique, qui pourrait documenter davantage de fluctuations des constantes hémodynamiques ; les auteurs rapportent qu'ils développent actuellement un modèle adapté aux dossiers d'anesthésie électroniques."
+  },
+  "next_steps": {
+    "advice": "Envisager une admission dans une unité de surveillance rapprochée (réanimation, unité de soins continus) pour les patients ayant un Surgical Apgar Score bas, car ils présentent un risque élevé de nécessiter des soins de niveau réanimation dans les 72 heures suivantes.",
+    "critical_actions": "Les patients avec un score ≤6 sont à risque élevé de complication majeure, et les patients avec un score ≤4 sont à très haut risque et doivent être considérés comme à risque élevé de décompensation et surveillés de très près, souvent en milieu de réanimation.",
+    "management": "- Pour les patients avec un score ≥7, envisager les soins habituels.\n- Pour les patients avec un score ≤6, envisager une surveillance rapprochée avec un seuil bas pour la réalisation d'examens complémentaires si ou lorsqu'un patient commence à présenter des signes de complication chirurgicale, compte tenu de leur risque élevé de complication, en plus des soins standards habituels. Il peut également être utile d'informer le personnel infirmier de ces patients particulièrement à risque afin que l'équipe soignante soit alertée précocement de tout signe de décompensation."
+  },
+  "evidence": "- Le Surgical Apgar Score a été validé dans d'autres populations chirurgicales nécessitant une « chirurgie majeure » ou une anesthésie générale ou péridurale, notamment en chirurgie traumatologique, cervicofaciale, oncologique, orthopédique et de transplantation, avec de bonnes corrélations avec la survie à 7, 30 et 90 jours.\n- [Certains auteurs ont trouvé des corrélations similaires](https://www.ncbi.nlm.nih.gov/pubmed/22546967) de survie/mortalité dans une cohorte de patients « triple low » (hypotension artérielle, indice bispectral bas et concentration alvéolaire minimale basse d'anesthésique volatil) et suggèrent que ces deux scores pourraient être combinés pour stratifier encore davantage le risque des patients.\n- À noter, le SAS semblait le moins bien corrélé chez les patients subissant une chirurgie majeure pour brûlures.",
+  "more_info": "Les complications dans cette étude étaient définies comme :\n\n- Insuffisance rénale aiguë,\n- Hémorragie nécessitant une transfusion de ≥4 U de concentrés érythrocytaires dans les 72 heures suivant l'intervention,\n- Arrêt cardiaque nécessitant une réanimation cardiopulmonaire (RCP),\n- Coma pendant 24 heures ou plus,\n- Thrombose veineuse profonde,\n- Choc septique,\n- IDM,\n- Intubation non programmée,\n- Ventilation mécanique pendant ≥48 heures,\n- Pneumonie,\n- Embolie pulmonaire,\n- AVC,\n- Éviscération/désunion de plaie,\n- Infection du site opératoire profonde ou de l'espace des organes,\n- Sepsis,\n- Syndrome de réponse inflammatoire systémique, et\n- Échec de greffe vasculaire, selon les définitions établies du NSQIP.\n\nTous les décès étaient considérés comme des complications majeures.\n\nLes patients présentant des complications classées dans la base de données comme « autre événement » ont été revus individuellement afin de déterminer la gravité de la complication. Les fistules anastomotiques, les fuites du canal cystique après cholécystectomie, les épanchements péricardiques nécessitant un drainage et les obstructions de la sortie gastrique nécessitant une réintervention ont été identifiés lors de la revue de ces événements individuels et classés comme complications majeures.\n\nLes infections superficielles du site opératoire et les infections urinaires n'étaient pas des complications majeures.",
+  "short_description": "Prédit le risque postopératoire.",
+  "medium_description": "Prédit le risque postopératoire de complication majeure, y compris le décès.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "estimated_blood_loss",
+      "label": "Pertes sanguines estimées (EBL)",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">1000 mL",
+          "value": 0
+        },
+        {
+          "label": "601-1000 mL",
+          "value": 1
+        },
+        {
+          "label": "101-600 mL",
+          "value": 2
+        },
+        {
+          "label": "≤100 mL",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lowest_mean_arterial_pressure",
+      "label": "[Pression artérielle moyenne la plus basse](nabda:calc.mean-arterial-pressure-map)",
+      "optional": false,
+      "default": 3,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 40 mmHg",
+          "value": 0
+        },
+        {
+          "label": "40-54 mmHg",
+          "value": 1
+        },
+        {
+          "label": "55-69 mmHg",
+          "value": 2
+        },
+        {
+          "label": "≥70 mmHg",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "lowest_heart_rate",
+      "label": "Lowest fréquence cardiaque",
+      "tips": "La « bradyarythmie pathologique » comprend l'arrêt sinusal, le bloc ou la dissociation auriculoventriculaire (AV), un rythme jonctionnel ou ventriculaire d'échappement",
+      "optional": false,
+      "default": 4,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">85 bpm",
+          "value": 0
+        },
+        {
+          "label": "76-85 bpm",
+          "value": 1
+        },
+        {
+          "label": "66-75 bpm",
+          "value": 2
+        },
+        {
+          "label": "56-65 bpm",
+          "value": 3
+        },
+        {
+          "label": "≤55 bpm",
+          "value": 4
+        },
+        {
+          "label": "Bradyarythmie pathologique ou asystolie",
+          "value": 0
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Gawande AA, Kwaan MR, Regenbogen SE, Lipsitz SA, Zinner MJ. An Apgar score for surgery. J Am Coll Surg. 2007 Feb;204(2):201-8. Epub 2006 Dec 27. PubMed PMID: 17254923.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/17254923",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Sobol JB, Gershengorn HB, Wunsch H, Li G. The surgical Apgar score is strongly associated with intensive care unit admission after high-risk intraabdominal surgery. Anesth Analg. 2013 Aug;117(2):438-46. doi: 10.1213/ANE.0b013e31829180b7. Epub 2013 Jun 6. PubMed PMID: 23744956; PubMed Central PMCID: PMC4020414.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23744956",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Reynolds PQ, Sanders NW, Schildcrout JS, Mercaldo ND, St Jacques PJ. Expansion of the surgical Apgar score across all surgical subspecialties as a means to predict postoperative mortality. Anesthesiology. 2011 Jun;114(6):1305-12. doi:10.1097/ALN.0b013e318219d734. PubMed PMID: 21502856.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21502856",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.possum-operative-morbidity-mortality-risk",
+    "calc.gupta-perioperative-risk-myocardial-infarction-cardiac-arrest-mica",
+    "calc.apgar-score"
+  ],
+  "source_logic_hash": "75e74881af9c267a0d41df28aa3b1aa1",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.apgar-score",
+      "text": "APGAR Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1826,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

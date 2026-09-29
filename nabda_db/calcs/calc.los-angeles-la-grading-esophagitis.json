@@ -1,0 +1,130 @@
+{
+  "id": "calc.los-angeles-la-grading-esophagitis",
+  "slug": "los-angeles-la-grading-esophagitis",
+  "language": "en",
+  "title": "Classification de Los Angeles (LA) de l'œsophagite",
+  "short_title": "Classification de Los Angeles (LA) de l'œsophagite",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Reflux gastro-œsophagien"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "gastroesophageal reflux disease",
+    "acid reflux",
+    "GERD",
+    "Los Angeles Classification of esophagitis",
+    "upper gastrointestinal endoscopy",
+    "GI endoscopy",
+    "esophagitis grading",
+    "esophageal mucosa grading",
+    "LA classification",
+    "standard endoscopy",
+    "reflux esophagitis",
+    "RO",
+    "high-grade esophagitis",
+    "low-grade esophagitis",
+    "erosive reflux disease",
+    "reflux oesophagitis",
+    "oesophagitis severity",
+    "la grading"
+  ],
+  "dosing": false,
+  "formula": "Selection of the appropriate criteria:\n\n| Features | Grade |\n| --- | --- |\n| Mucosal break(s) ≤5 mm, without continuity across mucosal folds | A |\n| Mucosal break(s) >5 mm, without continuity across mucosal folds | B |\n| Mucosal break(s) continuous between ≥2 mucosal folds, involving <75% of the esophageal circumference | C |\n| Mucosal break(s) involving ≥75% of the esophageal circumference | D |\n\n![](https://cdn-web-img.mdcalc.com/content/la-grading.png)\n\nFrom[Nayar 2004](https://www.giejournal.org/article/S0016-5107(04)01555-X/abstract).",
+  "how_to_use": {
+    "why": "- Provides a standard nomenclature for describing esophagitis with low interrater variability ([Armstrong 1996](https://www.ncbi.nlm.nih.gov/pubmed/8698230)).\n- Recommended by the[American College of Gastroenterology (ACG)](https://www.mdcalc.com/guidelines/acg/diagnosis-management-gastroesophageal-reflux-disease)for grading erosive esophagitis (strong recommendation, moderate level of evidence).",
+    "when": "Patients présentant des signes d'œsophagite érosive à l'endoscopie.",
+    "pearls": "Élaboré par consensus d’un groupe de travail lors du 10e Congrès mondial de gastroentérologie en 1994."
+  },
+  "next_steps": {
+    "advice": "L'[ACG](https://www.mdcalc.com/guidelines/acg/diagnosis-management-gastroesophageal-reflux-disease) recommande que les patients atte",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Grade | Sévérité |\n| --- | --- |\n| A-B | Œsophagite de reflux légère |\n| C-D | Œsophagite de reflux sévère |",
+  "short_description": "Esophagitis gravité.",
+  "medium_description": "Stratifies gravité de esophagitis basé sur endoscopic findings, recommended par[ACG guidelines](https://www.mdcalc.com/guidelines/acg/diagnosis-management-gastroesophageal-reflux-disease).",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "findings",
+      "label": "Résultats endoscopiques",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Mucosal break(s) ≤5 mm, sans continuity across mucosal folds",
+          "value": 0
+        },
+        {
+          "label": "Mucosal break(s) >5 mm, sans continuity across mucosal folds",
+          "value": 1
+        },
+        {
+          "label": "Mucosal break(s) continuous between ≥2 mucosal folds, involving <75% de esophageal circumference",
+          "value": 2
+        },
+        {
+          "label": "Rupture(s) muqueuse(s) intéressant ≥75 % de la circonférence œsophagienne",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Katz PO, Gerson LB, Vela MF. Guidelines for the diagnosis and management of gastroesophageal reflux disease. Am J Gastroenterol. 2013;108(3):308-28.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/23419381 ",
+      "kind": "international"
+    },
+    {
+      "text": "Armstrong D, Bennett JR, Blum AL, et al. The endoscopic assessment of esophagitis: a progress report on observer agreement. Gastroenterology. 1996;111(1):85-92.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8698230 ",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Nayar DS, Vaezi MF. Classifications of esophagitis: who needs them?. Gastrointest Endosc. 2004;60(2):253-7.",
+      "href": "https://www.giejournal.org/article/S0016-5107(04)01555-X/abstract",
+      "kind": "other"
+    },
+    {
+      "text": "Lundell LR, Dent J, Bennett JR, et al. Endoscopic assessment of oesophagitis: clinical and functional correlates and further validation of the Los Angeles classification. Gut. 1999;45(2):172-80.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1727604/pdf/v045p00172.pdf",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.forrest-classification-upper-gi-bleeding",
+    "calc.glasgow-blatchford-bleeding-score-gbs",
+    "calc.meld-score-model-end-stage-liver-disease-12-older"
+  ],
+  "source_logic_hash": "4f623429bbae00b92ad4abf1ab69d8d3",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4061,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

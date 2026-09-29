@@ -1,0 +1,262 @@
+{
+  "id": "calc.abbey-pain-scale-dementia-patients",
+  "slug": "abbey-pain-scale-dementia-patients",
+  "language": "en",
+  "title": "Échelle de douleur d’Abbey pour les patients atteints de démence",
+  "short_title": "Échelle de douleur d'Abbey (Abbey douleur échelle)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "general",
+    "geriatrie",
+    "medecine-interne",
+    "neurologie",
+    "douleur",
+    "soins-palliatifs",
+    "psychiatrie"
+  ],
+  "diseases": [
+    "Maladie d'Alzheimer",
+    "Délirium",
+    "Démence"
+  ],
+  "chief_complaints": [
+    "Altération de l’état mental",
+    "AMS (altération de l'état mental)",
+    "Douleur chronique",
+    "Douleur"
+  ],
+  "abbreviations": [
+    "dementia",
+    "cognitive",
+    "impairment",
+    "pain",
+    "Abbey Pain Scale",
+    "abbey dementia",
+    "advanced dementia",
+    "abbey scale",
+    "dementia pain scale",
+    "dementia abbey"
+  ],
+  "dosing": false,
+  "formula": "The Abbey Pain Scale is calculated by summing the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Vocalization E.g., whimpering, groaning, crying | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |\n| Facial expression E.g., looking tense, frowning, grimacing, frightened | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |\n| Changes in body language E.g., fidgeting, rocking, guarding part of body, withdrawn | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |\n| Behavioral changes E.g., increased confusion, refusing to eat, alteration in usual patterns | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |\n| Physiological changes E.g., temperature, pulse or blood pressure outside normal limits, perspiring, flushing or pallor | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |\n| Physical changes E.g., skin tears, pressure areas, arthritis, contractures, previous injuries | Absent | 0 |\n| Mild | 1 | |\n| Moderate | 2 | |\n| Severe | 3 | |",
+  "how_to_use": {
+    "why": "- Fournit une approche structurée de l’évaluation et de la réévaluation de la douleur.\n- Peut favoriser une reconnaissance plus précoce de la douleur, son traitement et le suivi de la réponse chez les patients atteints de démence avancée ou ayant une capacité de communication limitée.\n- Cité dans les ressources australiennes sur les soins aux personnes âgées et couramment utilisé dans certains contextes au Royaume-Uni.",
+    "when": "- À utiliser chez les patients atteints de démence avancée ou de troubles cognitifs sévères qui ne peuvent pas auto-évaluer leur douleur de manière fiable.\n- Peut être utilisé en soins hospitaliers, palliatifs ou en établissement de soins, ou dans d’autres contextes cliniques où une évaluation non verbale de la douleur est nécessaire.\n- Évaluer si possible pendant les mouvements ou les soins, car les comportements de douleur peuvent être plus apparents lors de l’activité.",
+    "pearls": "- Conçu comme un outil d'observation rapide reposant sur six domaines.\n- La précision dépend d'une observation attentive et de la connaissance du comportement de base du patient, lorsqu'elle est disponible.\n- Les scores suggèrent la probabilité et la gravité de la douleur, mais n'identifient pas la cause sous-jacente.\n- Les comportements peuvent refléter des conditions autres que la douleur, telles qu'une infection, une rétention urinaire, une détresse émotionnelle, des effets médicamenteux ou d'autres besoins non satisfaits.\n- Un score faible n'exclut pas totalement la douleur, en particulier chez les patients présentant une mobilité limitée, un delirium hypoactif ou des réponses comportementales atténuées.\n- Non destiné à être utilisé lorsque le patient peut communiquer ses symptômes de manière fiable."
+  },
+  "next_steps": {
+    "advice": "- Utilisez cet outil pour appuyer, et non remplacer, le jugement clinique et une évaluation clinique complète.\n- Interprétez les résultats dans leur contexte, notamment le comportement de base du patient, les interventions ou traumatismes récents, les signes vitaux, les médicaments et les causes possibles de détresse non liées à la douleur.\n- Lorsqu'une douleur est suspectée, recherchez les causes réversibles et envisagez des interventions analgésiques et non pharmacologiques appropriées.\n- Réévaluez le score après les interventions analgésiques pour évaluer la réponse.\n- Consultez les recommandations de votre établissement pour les protocoles relatifs au moment de l’évaluation initiale et continue et à la documentation appropriée.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Abbey Pain Scale | Sévérité de la douleur |\n| --- | --- |\n| 0-2 | Absence de douleur |\n| 3-7 | Légère |\n| 8-13 | Modérée |\n| ≥14 | Sévère |\n\n*Tous les scores peuvent être classés selon le type de douleur : aiguë, chronique et aiguë sur chronique.*",
+  "short_description": "Évaluation de la douleur dans la démence.",
+  "medium_description": "Assesses douleur chez les patients avec advanced dementia.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "vocal",
+      "label": "Vocalisation",
+      "tips": "P. ex. : pleurnichements, gémissements, pleurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "face",
+      "label": "Expression faciale",
+      "tips": "P. ex., avoir l’air tendu, froncer les sourcils, faire la grimace, avoir l’air effrayé",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "body",
+      "label": "Modifications du langage corporel",
+      "tips": "Ex. : agitation, balancement, protection d'une partie du corps, repli sur soi",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "behav",
+      "label": "Modifications du comportement",
+      "tips": "P. ex., confusion accrue, refus de s'alimenter, modification des habitudes.",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "physio",
+      "label": "Modifications physiologiques",
+      "tips": "Par ex., température, pouls ou pression artérielle en dehors des limites de la normale, sueurs, flush ou pâleur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "physical",
+      "label": "Modifications physiques",
+      "tips": "P. ex. : déchirures cutanées, zones de pression, arthrite, contractures, traumatismes antérieurs",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Absent",
+          "value": 0
+        },
+        {
+          "label": "Léger",
+          "value": 1
+        },
+        {
+          "label": "Modéré",
+          "value": 2
+        },
+        {
+          "label": "Sévère",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Abbey J, et al. The Abbey pain scale: a 1-minute numerical indicator for people with end-stage dementia. Int J Palliat Nurs. 2004 Jan;10(1):6-13",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/14966439/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Liu JY, et al. The psychometric qualities of four observational pain tools (OPTs) for the assessment of pain in elderly people with osteoarthritic pain. J Pain Symptom Manage. 2010 Oct;40(4):582-98.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/20692806",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.montreal-cognitive-assessment-moca",
+    "calc.nonverbal-pain-scale-nvps-nonverbal-patients",
+    "calc.behavioral-observational-pain-scale-bops-post-op-pediatric-pain"
+  ],
+  "source_logic_hash": "4fee1b730c3f25e12d13873b03501441",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 3627,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar v = parseFloat(vocal) + parseFloat(face) + parseFloat(body) + parseFloat(physio) + parseFloat(physical) + parseFloat(behav);\nvar text, typetext;\nvar type = parseFloat(type);\n\n\nif (v <= 2) {text = 'No';}\nif (v >= 3 && v <= 7) {text = 'Mild';}\nif (v >= 8 && v <= 13) {text = 'Moderate';}\nif (v >= 14) {text = 'Severe';}\n\ncalc_output.push({\n    name: 'mini',\n    value: v,\n    value_text: 'points',\n    message: text + ' pain'\n});\ncalc_output.push({\n    name: '3627_Abbey Pain Scale_result',\n    value: v,\n    value_text: 'points',\n    message: 'Abbey Pain Scale'\n});\ncalc_output.push({\n    name: '3627_Abbey Pain Scale_interpretation',\n    value: text,\n    value_text: 'pain',\n    message: ''\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Ms. Jennifer Abbey"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "b87f4c9efe60d1dfaa8572e0554e538fb1b652f2bb7f24dcbbb53f89e23d1cba"
+}

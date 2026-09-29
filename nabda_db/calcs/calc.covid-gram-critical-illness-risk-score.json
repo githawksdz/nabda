@@ -1,0 +1,257 @@
+{
+  "id": "calc.covid-gram-critical-illness-risk-score",
+  "slug": "covid-gram-critical-illness-risk-score",
+  "language": "en",
+  "title": "Score COVID-GRAM de risque de maladie critique",
+  "short_title": "Score de risque COVID-GRAM",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne",
+    "infectiologie",
+    "pneumologie"
+  ],
+  "diseases": [
+    "Coronavirus"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Cough",
+    "Fever",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "COVID-GRAM Critical Illness Risk Score, COVID-GRAM Score, covid-19 risk, covid risk, covid-19 critical illness, covid-19 critical illness risk, covid 19 critical illness, covid critical illness, covid 19 risk, covid 19 critical illness, covid-gram, covid-19 risk score, covid risk score, covid-19 illness risk, covid critical illness risk, covid gram"
+  ],
+  "dosing": false,
+  "formula": "Score de risque COVID-GRAM = (Anomalie radiographique x 27,1464) + (Âge x 0,6139) + (Hémoptysie x 33,6210) + (Dyspnée x 14,0569) + (Perte de conscience x 34,4617) + (Nombre de comorbidités x 10,3826) + (Antécédents de cancer x 31,2211) + (Rapport neutrophiles/lymphocytes x 1,25) + (Lactate déshydrogénase x 0,0534) + (Bilirubine directe x 3,0605), où les variables sont les suivantes :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Anomalie radiographique | Oui | 1 |\n| Non | 0 | |\n| Âge, années | Continu | |\n| Hémoptysie | Oui | 1 |\n| Non | 0 | |\n| Dyspnée | Oui | 1 |\n| Non | 0 | |\n| Perte de conscience | Oui | 1 |\n| Non | 0 | |\n| Nombre de comorbidités* | Continu | |\n| Antécédents de cancer | Oui | 1 |\n| Non | 0 | |\n| Rapport neutrophiles/lymphocytes | Continu | |\n| Lactate déshydrogénase, U/L | Continu | |\n| Bilirubine directe, μmol/L | Continu | |\n\n*Comprend la BPCO, l'hypertension, le diabète, la coronaropathie, la cardiopathie chronique, la maladie rénale chronique, le cancer, la maladie cérébrovasculaire, l'hépatite B et l'immunodéficience.",
+  "how_to_use": {
+    "why": "Ce score peut aider à stratifier le risque des patients admis afin d’aider à prédire lesquels devraient bénéficier d’une surveillance rapprochée (évaluations plus fréquentes ou admission en unité de soins intensifs) en raison du risque d’évolution vers une maladie critique.",
+    "when": "Patients admis à l’hôpital pour une infection présumée à la COVID-19.",
+    "pearls": "- This score is only for hospitalized patients and did not include ED patients; it should not be used to suggest which patients should be admitted or discharged.\n- While the study included 2300 patients, the average age of the admitted patients was quite young (48 years old). Very few had multiple comorbidities, which may make this study less applicable to other populations, like in the US.\n- For example, while the authors use a list of 10 possible comorbidities, only 3 patients had 5 comorbidities; 5 of these comorbidities would be relatively common in populations in the US.\n- The score was internally validated but has not been externally validated."
+  },
+  "next_steps": {
+    "advice": "Les cliniciens doivent suivre les recommandations et les politiques locales concernant la prévention, l'isolement, la prise en charge et le traitement de la COVID-19, car ces politiques évoluent fréquemment et de manière dynamique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Risk of critical illness~†~, % = e^x^/ (1 + e^x^),\n\nWhere x = (X-ray abnormality x 1.2205) + (Age x 0.0276) + (Hemoptysis x 1.5116) + (Dyspnea x 0.632) + (Unconsciousness x 1.5494) + (Number of comorbidities x 0.4668) + (Cancer history x 1.4037) + (Neutrophil to lymphocyte ratio x 0.0562) + (Lactate dehydrogenase x 0.0024) + (Direct bilirubin x 0.1376) - 6.6127 and variables are as listed in the table above.\n\n~†~Defined by admission to the intensive care unit (ICU), invasive ventilation, or death.\n\nInterpretation:\n\n| Risk of critical illness | Risk group |\n| --- | --- |\n| <1.7% | Low |\n| 1.7% to <40.4% | Medium |\n| ≥40.4% | High |",
+  "short_description": "Risque COVID-19.",
+  "medium_description": "Predicts risque de critical maladie dans hospitalized COVID-19 patients.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "xray",
+      "label": "Anomalie radiographique",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "unit": "time_years",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "radio",
+      "name": "hemo",
+      "label": "Hemoptysis",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "dys",
+      "label": "Dyspnea",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "uncon",
+      "label": "Unconsciousness",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "comorbid",
+      "label": "Nombre de comorbidités",
+      "tips": "Includes COPD, hypertension, diabetes, coronary heart disease, chronic heart disease, chronic kidney disease, cancer, cerebral vascular disease, Hepatitis B, and immunodeficiency",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "0",
+          "value": 0
+        },
+        {
+          "label": "1",
+          "value": 1
+        },
+        {
+          "label": "2",
+          "value": 2
+        },
+        {
+          "label": "3",
+          "value": 3
+        },
+        {
+          "label": "4",
+          "value": 4
+        },
+        {
+          "label": "5",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "cancer",
+      "label": "Antécédents de cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "ratio",
+      "label": "[Ratio neutrophiles-lymphocytes (NLR)](nabda:calc.neutrophil-lymphocyte-ratio-nlr-calculator)",
+      "optional": false,
+      "unit": "unitless",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "lactate",
+      "label": "Lactate déshydrogénase",
+      "optional": false,
+      "unit": "ldh_labmax",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bili",
+      "label": "Bilirubine directe",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Liang W, Liang H, Ou L, et al. Development and Validation of a Clinical Risk Score to Predict the Occurrence of Critical Illness in Hospitalized Patients With COVID-19. JAMA Intern Med. 2020.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/32396163",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Liang W, Liang H, Ou L, et al. Development and Validation of a Clinical Risk Score to Predict the Occurrence of Critical Illness in Hospitalized Patients With COVID-19. JAMA Intern Med. 2020.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/32396163",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Moreno-Pérez Ó, Andrés M, León-Ramirez JM, et al. The covid-gram tool for patients hospitalized with covid-19 in europe. JAMA Intern Med. 2021;181(7):1000.",
+      "href": "https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2778370",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.quick-covid-19-severity-index-qcsi",
+    "calc.covid-home-safely-now-chosen-risk-score-covid-19",
+    "calc.qsofa-quick-sofa-score-sepsis"
+  ],
+  "source_logic_hash": "f735f10b2ca33a58b6403b1647b4a257",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10303,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [
+    "s.lactate"
+  ],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

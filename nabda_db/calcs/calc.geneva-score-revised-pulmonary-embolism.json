@@ -1,0 +1,348 @@
+{
+  "id": "calc.geneva-score-revised-pulmonary-embolism",
+  "slug": "geneva-score-revised-pulmonary-embolism",
+  "language": "fr",
+  "title": "Score de Genève (révisé) pour l'embolie pulmonaire",
+  "short_title": "Score de Genève (révisé)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic",
+    "Élimination diagnostique"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "hematologie",
+    "medecine-interne",
+    "gynecologie-obstetrique",
+    "orthopedie",
+    "pneumologie",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Embolie pulmonaire"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Palpitations",
+    "Dyspnée",
+    "Syncope"
+  ],
+  "abbreviations": [
+    "pe",
+    "revised geneva",
+    "dvt",
+    "wells",
+    "geneva score",
+    "pulmonary embolism",
+    "pe risk",
+    "geneva pulmonary embolism"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "- Can risk-stratify patients into low, intermediate, or high risk based on history and physical exam alone.\n- Does not require:\n\n - Imaging or serum studies.\n - Clinical gestalt (present in [Wells’ Criteria](nabda:calc.wells-criteria-pulmonary-embolism) and often subjective).\n- Widely validated and aids in reducing unnecessary radiologic imaging in low-risk patients.\n- Explicitly endorsed by major clinical guidelines, such as the[ESC (European Society of Cardiology)/ERS (European Resuscitation Council)](https://www.escardio.org/guidelines/clinical-practice-guidelines/all-esc-practice-guidelines/acute-pulmonary-embolism-diagnosis-and-management-of/), as an alternative to the [Wells' Criteria](nabda:calc.wells-criteria-pulmonary-embolism) .",
+    "when": "Peut être utilisé comme alternative aux [Critères de Wells pour l’EP](nabda:calc.wells-criteria-pulmonary-embolism) pour déterminer les patients dont le risque est suffisamment faible pour exclure une embolie pulmonaire au moyen d’un dosage sérique des D-dimères et éviter le recours à l’angio-TDM et à l’échographie.",
+    "pearls": "- Il doit y avoir une suspicion clinique d’embolie pulmonaire (EP) avant d’appliquer ce score.\n- N’est pas destiné à être un outil de dépistage pour tous les patients présentant des symptômes généraux tels qu’une douleur thoracique ou une dyspnée.\n- Bien qu’il soit apprécié pour l’utilisation de variables entièrement objectives, des méta-analyses de multiples études ont montré que les [Wells' Criteria](nabda:calc.wells-criteria-pulmonary-embolism) sont plus efficaces que le score de Genève révisé pour identifier avec précision une EP.\n- N’a pas été bien validé chez les patientes enceintes et n’est pas recommandé comme outil autonome dans cette population ; envisager une alternative telle que l’[outil YEARS adapté à la grossesse](nabda:calc.years-algorithm-for-pulmonary-embolism-pe) ."
+  },
+  "next_steps": {
+    "advice": "- For patients identified as \"low-risk,” clinicians may consider applying the [PERC (Pulmonary Embolism Rule-out Criteria) Rule](nabda:calc.perc-rule-pulmonary-embolism) .\n- For patients over the age of 50 who are classified as \"low risk\" or \"intermediate risk\" (Revised Geneva score <11), use an [age-adjusted D-dimer](nabda:calc.age-adjusted-d-dimer-venous-thromboembolism-vte) cutoff to increase specificity.",
+    "critical_actions": "- Ne jamais retarder la réanimation pour réaliser des examens diagnostiques chez un patient instable.\n- Toujours recueillir l'anamnèse et réaliser un examen physique avant d'appliquer des règles de décision clinique.\n- L'impression clinique globale (gestalt clinique) prime sur les règles de décision.",
+    "management": "1. Clinical suspicion of PE:Apply score only if PE is reasonably suspected based on history and exam.\n\n2. Assess pre-test probability:Apply revised Geneva Score.\n\n3. Risk assessment:\n\n- If low risk, consider additional tools such as [PERC](nabda:calc.perc-rule-pulmonary-embolism) to confirm.\n- If intermediate risk, consider D-dimer testing.\n- If high-risk, consider proceeding directly to CTPA.\n\nBe familiar with any best practice pathways your institution may follow."
+  },
+  "evidence": "",
+  "more_info": "Interpretation\n\n| Score Total | Probability of PE |\n| --- | --- |\n| 0-3 | Low probability of PE |\n| 4-10 | Intermediate probability of PE |\n| 11-22 | High probability of PE |",
+  "short_description": "Risque de PE.",
+  "medium_description": "Objective le risque d'EP, comme le score de Wells.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "age_65",
+      "label": "Âge >65",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "dvt_pe",
+      "label": "Antécédent de TVP ou EP",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "surgery_limb_fracture",
+      "label": "Surgery (under general anesthesia) ou lower limb fracture dans past month",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "malignant_condition",
+      "label": "Affection maligne active",
+      "tips": "Solid or hematologic malignant condition, currently active or considered cured <1 year",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "limb_pain",
+      "label": "Douleur unilatérale du membre inférieur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "hemoptysis",
+      "label": "Hémoptysie",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "heart_rate",
+      "label": "Fréquence cardiaque",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 75",
+          "value": 0
+        },
+        {
+          "label": "75-94",
+          "value": 3
+        },
+        {
+          "label": "≥ 95",
+          "value": 5
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "pain_on_limb_palpatation",
+      "label": "Douleur à la palpation du membre inférieur et œdème unilatéral",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 4
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Wolf SJ, Hahn SA, Nentwich LM, Raja AS, Silvers SM, Brown MD. Clinical Policy: Critical Issues in the Evaluation and Management of Adult Patients Presenting to the Emergency Department With Suspected Acute Venous Thromboembolic Disease. Annals of Emergency Medicine. 2018;71(5):e59-e109. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29681319/",
+      "kind": "international"
+    },
+    {
+      "text": "Lim W, Le Gal G, Bates SM, et al. American Society of Hematology 2018 guidelines for management of venous thromboembolism: diagnosis of venous thromboembolism. Blood Adv. 2018;2(22):3226-3256. doi:10.1182/bloodadvances.2018024828",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6258916/ ",
+      "kind": "international"
+    },
+    {
+      "text": "Konstantinides SV, Meyer G, Becattini C, et al. 2019 ESC Guidelines for the diagnosis and management of acute pulmonary embolism developed in collaboration with the European Respiratory Society (ERS). Eur Heart J. 2020;41(4):543-603. doi:10.1093/eurheartj/ehz405",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/31473594/",
+      "kind": "international"
+    },
+    {
+      "text": "Le Gal G, Righini M, Roy PM, Sanchez O, Aujesky D, Bounameaux H, Perrier A. Prediction of pulmonary embolism in the emergency department: the revised Geneva score. Ann Intern Med. 2006 Feb 7;144(3):165-71. PubMed PMID: 16461960.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/16461960",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Lucassen W, Geersing GJ, Erkens PM, Reitsma JB, Moons KG, Büller H, van Weert HC. Clinical decision rules for excluding pulmonary embolism: a meta-analysis. Ann Intern Med. 2011;155(7):448-460.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21969343/",
+      "kind": "other"
+    },
+    {
+      "text": "Shen JH, Chen HL, Chen JR, Xing JL, Gu P, Zhu BF. Comparison of the Wells score with the revised Geneva score for assessing suspected pulmonary embolism: a systematic review and meta-analysis. J Thromb Thrombolysis. 2016;41(3):482-492.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/26178041/",
+      "kind": "other"
+    },
+    {
+      "text": "Coelho J, Divernet-Queriaud M, Roy PM, Penaloza A, Le Gal G, Trinh-Duc A. Comparison of the Wells score and the revised Geneva score as a tool to predict pulmonary embolism in outpatients over age 65. Thromb Res. 2020;196:120-126. doi:10.1016/j.thromres.2020.07.026",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32862033/",
+      "kind": "other"
+    },
+    {
+      "text": "Mai V, Takada T, Kraaijpoel N, et al. Safety and efficiency of diagnostic strategies for ruling out pulmonary embolism in clinically relevant patient subgroups: a systematic review and individual-patient data meta-analysis. Ann Intern Med. 2022;175(2):244-255. doi:10.7326/M21-2625",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41161416/",
+      "kind": "other"
+    },
+    {
+      "text": "Stals MAM, Takada T, Kraaijpoel N, et al. Safety and efficiency of diagnostic strategies for ruling out pulmonary embolism in clinically relevant patient subgroups : a systematic review and individual-patient data meta-analysis. Ann Intern Med. 2022;175(2):244-255. doi:10.7326/M21-2625",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34904857/",
+      "kind": "other"
+    },
+    {
+      "text": "Etemadi A, Hosseini M, Rafiee H, Mahboubi A, Mahmoodi T, Kuno T, Jenab Y, Raphael CE, Aronow WS, Hosseini K, Giri J. Comparative diagnostic accuracy of pre-test clinical probability scores for the risk stratification of patients with suspected pulmonary embolism: a systematic review and Bayesian network meta-analysis. BMC Pulm Med. 2025;25(1):162.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/40200307/",
+      "kind": "other"
+    },
+    {
+      "text": "Coelho J, Divernet-Queriaud M, Roy PM, Penaloza A, Le Gal G, Trinh-Duc A. Comparison of the Wells score and the revised Geneva score as a tool to predict pulmonary embolism in outpatients over age 65. Thromb Res. 2020;196:120-126. doi:10.1016/j.thromres.2020.07.026",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32862033/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "López-Vega C, Pérez-Garzón M, Ortiz-García-Herreros L, Bastidas-Goyes A, Aramendiz-Narvaez M, Ramos-Isaza E, Robayo-Amortegui H. Diagnostic accuracy of the Geneva clinical scale for diagnostic prediction of pulmonary embolism in adults aged 18 and older admitted between 2009 and 2020 with suspected pulmonary embolism at a third-level institution in Colombia: a retrospective cohort study. Medicine (Baltimore). 2025;104(9):e41603. doi:10.1097/MD.0000000000041603",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC11875587/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.perc-rule-pulmonary-embolism",
+    "calc.wells-criteria-pulmonary-embolism",
+    "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+    "calc.years-algorithm-for-pulmonary-embolism-pe"
+  ],
+  "source_logic_hash": "0214c726b17c803ff1eebe849b1b91b3",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells' Criteria"
+    },
+    {
+      "type": "calc",
+      "id": "calc.years-algorithm-for-pulmonary-embolism-pe",
+      "text": "pregnancy-adapted YEARS tool"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC (Pulmonary Embolism Rule-out Criteria) Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age-adjusted D-dimer"
+    },
+    {
+      "type": "calc",
+      "id": "calc.wells-criteria-pulmonary-embolism",
+      "text": "Wells' Criteria"
+    },
+    {
+      "type": "calc",
+      "id": "calc.years-algorithm-for-pulmonary-embolism-pe",
+      "text": "pregnancy-adapted YEARS tool"
+    },
+    {
+      "type": "calc",
+      "id": "calc.perc-rule-pulmonary-embolism",
+      "text": "PERC (Pulmonary Embolism Rule-out Criteria) Rule"
+    },
+    {
+      "type": "calc",
+      "id": "calc.age-adjusted-d-dimer-venous-thromboembolism-vte",
+      "text": "age-adjusted D-dimer"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1750,
+  "runnable": true,
+  "equation_logic_text": "var calc_output=[]; \n\nvar u=parseInt(age_65)+parseInt(dvt_pe)+parseInt(surgery_limb_fracture)+parseInt(malignant_condition)+parseInt(limb_pain)+parseInt(hemoptysis)+parseInt(heart_rate)+parseInt(pain_on_limb_palpatation); \n\nvar mini_msg=''; \nvar msg=''; \n\nif(u<4){\n    mini_msg='Low risk group'; \n    msg='7%-9% incidence of PE from several studies.'\n} \nif(u>=4&&u<=10){\n    mini_msg='Moderate risk group'; \n    msg='~20%-30% incidence of PE from several studies.'\n} \nif(u>10){\n    mini_msg='High risk group'; \n    msg='>60% incidence of PE from several studies.'\n}  \n\ncalc_output.push({\n    name:'mini',\n    value:u,\n    value_text:'points',\n    message:mini_msg\n});  \ncalc_output.push({\n    name:'1750_Geneva Score (Revised)_result',\n    value:u,\n    value_text:'points',\n    message:mini_msg+': '+msg\n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [
+    "abbas-husain-md"
+  ],
+  "creator_names": [
+    "Dr. Grégoire Le Gal"
+  ],
+  "measurement_ids": [],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "3315426c0ff0cf6d12d60e2be8fd5cfc80f76e166416324136046c63fb6af321"
+}

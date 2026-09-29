@@ -1,0 +1,245 @@
+{
+  "id": "calc.ucsf-capra-score-prostate-cancer-risk",
+  "slug": "ucsf-capra-score-prostate-cancer-risk",
+  "language": "en",
+  "title": "Score UCSF-CAPRA pour le risque de cancer de la prostate",
+  "short_title": "Score UCSF-CAPRA",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "hematologie",
+    "urologie"
+  ],
+  "diseases": [
+    "Cancer"
+  ],
+  "chief_complaints": [
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "prostate CA",
+    "CA"
+  ],
+  "dosing": false,
+  "formula": "Addition des points sélectionnés.",
+  "how_to_use": {
+    "why": "Fournit une stratification du risque pour étayer la planification pré-thérapeutique.",
+    "when": "Use following a recent biopsy-confirmed diagnosis of localized prostate cancer to estimate post-treatment risks of bone metastasis, cancer-specific death, and death from any cause.",
+    "pearls": "A prognostic score for prostate cancer, incorporating both the PSA and [Gleason Score](nabda:calc.gleason-score-prostate-cancer) , designed to be both simple but with an accuracy comparable with the best nomograms."
+  },
+  "next_steps": {
+    "advice": "Cet outil doit soutenir, et non remplacer, le jugement clinique et la décision partagée ; ne pas utiliser les résultats comme seul déterminant du traitement.",
+    "critical_actions": "",
+    "management": "The following are based on guidelines from the American Urological Association (AUA), American Society for Radiation Oncology (ASTRO), and Society of Urologic Oncology (SUO) (also endorsed by the American Society of Clinical Oncology [ASCO]):\n\n- **Very low-risk disease:** Active surveillance is the best available option.\n- **Low-risk disease:**\n\n - Active surveillance is the preferred option for most patients.\n - Select low-risk patients at high probability of progressing on active surveillance may instead be offered definitive treatment (radical prostatectomy or radiotherapy).\n- **Intermediate-risk disease:** Treatment options depend on shared decision-making between the patient and clinician and on whether the disease is determined to be favorable or unfavorable after further evaluation.\n\n - **For unfavorable disease:** Radical prostatectomy or radiotherapy combined with androgen-deprivation therapy are the standard treatment options.\n - **For favorable disease:**\n\n - Radiation alone is an option, although the supporting evidence is less robust than for radiation combined with androgen-deprivation therapy.\n - Active surveillance may be offered to select patients with counseling that this carries a higher risk of eventual metastasis than definitive treatment.\n- **High-risk disease:** Radical prostatectomy or radiotherapy combined with androgen-deprivation therapy are the standard treatment options."
+  },
+  "evidence": "",
+  "more_info": "**Score interpretation:**\n\n| | Metastasis-free interval % likelihood (95% CI) | Prostate cancer–specific survival % likelihood (95% CI) | Overall survival % likelihood (95% CI) | | | |\n| --- | --- | --- | --- | --- | --- | --- |\n| CAPRA Risk Group | 5-year | 10-year | 5-year | 10-year | 5-year | 10-year |\n| Low Risk Group (0-2 points) | 99.3 (98.8 to 99.5) | 97.5 (95.9 to 98.5) | 99.7 (99.9 to 99.5) | 97.1 (98.2 to 95.1) | 92.5 (91.5 to 93.5) | 71.4 (67.8 to 74.7) |\n| Intermediate Risk Group (3-5 points) | 96.9 (96.2 to 97.5) | 93.3 (91.7 to 94.6) | 98.6 (99.0 to 98.1) | 91.6 (93.4 to 89.5) | 90.2 (89.0 to 91.3) | 59.7 (56.7 to 62.7) |\n| High Risk Group (≥6 points) | 90.4 (88.4 to 92.0) | 83.4 (79.6 to 86.6) | 93.4 (94.9 to 91.5) | 79.1 (83.1 to 74.3) | 78.7 (75.9 to 81.2) | 42.0 (37.4 to 46.5) |\n\nFor more detailed risk outcomes, see[Cooperberg 2009](https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2697208/).",
+  "short_description": "Résultats après traitement du cancer de la prostate.",
+  "medium_description": "Estimations du pronostic post-traitement du cancer de la prostate.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "age",
+      "label": "Âge",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 50 ans",
+          "value": 0
+        },
+        {
+          "label": "≥ 50 ans",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "psa",
+      "label": "PSA au diagnostic (ng/mL)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 6",
+          "value": 0
+        },
+        {
+          "label": "≥6 - 10",
+          "value": 1
+        },
+        {
+          "label": "≥10 - 20",
+          "value": 2
+        },
+        {
+          "label": "≥20 – 30",
+          "value": 3
+        },
+        {
+          "label": ">30",
+          "value": 4
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "gleason",
+      "label": "Pattern du score de Gleason (primaire ou secondaire)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun motif 4 ou 5 présent",
+          "value": 0
+        },
+        {
+          "label": "4 ou 5 pattern dans secondaire",
+          "value": 1
+        },
+        {
+          "label": "4 ou 5 pattern dans primaire",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "stage",
+      "label": "Stade clinique",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "T1 ou T2",
+          "value": 0
+        },
+        {
+          "label": "T3",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "biopsy",
+      "label": "Pourcentage de carottes biopsiques positives pour cancer",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≤33 %",
+          "value": 0
+        },
+        {
+          "label": "﹥33 %",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Eastham JA, Barocas DA, Chu CE, et al. Clinically Localized Prostate Cancer: AUA/ASTRO Guideline Amendment (2026). J Urol. 2026;216(1):2-11. ",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/41988960/",
+      "kind": "international"
+    },
+    {
+      "text": "Cooperberg MR, et al. The University of California, San Francisco Cancer of the Prostate Risk Assessment score: a straightforward and reliable preoperative predictor of disease recurrence after radical prostatectomy. J Urol, 2005. 173(6): p. 1938-42.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15879786/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cooperberg MR, Broering JM, Carroll PR. Risk Assessment for Prostate Cancer Metastasis and Mortality at the Time of Diagnosis. JNCI Journal of the National Cancer Institute. 2009;101(12):878-887. doi:10.1093/jnci/djp122.",
+      "href": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2697208/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Brajtbord JS, Leapman MS, Cooperberg MR. The CAPRA score at 10 years: contemporary perspectives and analysis of supporting studies. European urology. 2017 May 1;71(5):705-9.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/27616723/",
+      "kind": "other"
+    },
+    {
+      "text": "Lorent M, Maalmi H, Tessier P, Supiot S, Dantan E, Foucher Y. Meta-analysis of predictive models to assess the clinical validity and utility for patient-centered medical decision making: application to the CAncer of the Prostate Risk Assessment (CAPRA). BMC medical informatics and decision making. 2019 Jan 7;19(1):2.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC6323757/",
+      "kind": "other"
+    },
+    {
+      "text": "Cooperberg MR, et al. Multiinstitutional validation of the UCSF cancer of the prostate risk assessment for prediction of recurrence after radical prostatectomy. Cancer, 2006. 107(10): p. 2384-91.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=17039503",
+      "kind": "pubmed"
+    },
+    {
+      "text": "May M, et al. Validity of the CAPRA score to predict biochemical recurrence-free survival after radical prostatectomy. Results from a european multicenter survey of 1,296 patients. J Urol, 2007. 178(5): p. 1957-62; discussion 1962.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed?term=17868719",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Zhao KH, et al. External validation of University of California, San Francisco, Cancer of the Prostate Risk Assessment score. Urology, 2008. 72(2): p. 396-400.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/18372031/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Kutluhan MA, Ünal S, Özsoy E, Şahin A, Özayar A, Okulu E, Kayıgil Ö. Evaluation of four pre‐operative models for prediction of biochemical recurrence after radical prostatectomy in localised prostate cancer. International Journal of Clinical Practice. 2021 Oct;75(10):e14682.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/34331823/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Epstein M, Syed K, Danella J, Ginzburg S, Belkoff L, Tomaszewski J, Trabulsi E, Singer EA, Jacobs BL, Raman JD, Guzzo TJ. Model risk scores may underestimate rate of biochemical recurrence in African American men with localized prostate cancer: a cohort analysis of over 3000 men. Prostate cancer and prostatic diseases. 2024 Jun;27(2):257-63.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/37821578/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.gleason-score-prostate-cancer",
+    "calc.damico-risk-classification-prostate-cancer",
+    "calc.manchester-score-prognosis-small-cell-lung-cancer"
+  ],
+  "source_logic_hash": "58acb0ae639ad88030c12cbb261377d6",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    },
+    {
+      "type": "calc",
+      "id": "calc.gleason-score-prostate-cancer",
+      "text": "Gleason Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 2046,
+  "runnable": true,
+  "equation_logic_text": "var calc_output = [];\nvar msg = '';\nvar mini_msg = '';\nvar grade = '';\nvar v = parseInt(age) + parseInt(psa) + parseInt(gleason) + parseInt(stage) + parseInt(biopsy);\nif (v < 3) { msg = 'Low risk by UCSF-CAPRA.';\n    mini_msg = 'Low risk' }\nif (v > 2 && v < 6) { msg = 'Intermediate risk by UCSF-CAPRA.';\n    mini_msg = 'Intermediate risk' }\nif (v > 5) { msg = 'High risk by UCSF-CAPRA.';\n    mini_msg = 'High risk' }\nif (v == 0 || v == 1) { grade = '~85% disease-free survival at 5 years.'; }\nif (v == 2) { grade = '75-81% disease-free survival at 5 years.'; }\nif (v == 3) { grade = '~66% disease-free survival at 5 years.'; }\nif (v == 4) { grade = '~61% disease-free survival at 5 years.'; }\nif (v == 5) { grade = '52-60% disease-free survival at 5 years.'; }\nif (v == 6) { grade = '29-34% disease-free survival at 5 years.'; }\nif (v > 6) { grade = '8-20% disease-free survival at 5 years.'; }\ncalc_output.push({ \n    name: 'mini', \n    value: v, \n    value_text: 'points', \n    message: mini_msg \n});\ncalc_output.push({ \n    name: '2046_UCSF-CAPRA Score_result', \n    value: v, \n    value_text: 'points', \n    message: msg + ' ' + grade \n});",
+  "before_use": null,
+  "instructions": null,
+  "contributor_ids": [],
+  "creator_names": [
+    "Dr. Matthew R. Cooperberg"
+  ],
+  "measurement_ids": [
+    "Age",
+    "psa"
+  ],
+  "popular": false,
+  "cat_ids": [],
+  "substance_ids": [],
+  "engine_sha256": "389a2c4d984667c32a8e7d82e96b3a5182afe11229c5c7aeb662353aa526ecfb"
+}

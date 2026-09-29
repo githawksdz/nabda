@@ -1,0 +1,132 @@
+{
+  "id": "calc.cardiac-power-output-cpo",
+  "slug": "cardiac-power-output-cpo",
+  "language": "fr",
+  "title": "Puissance cardiaque (CPO)",
+  "short_title": "Puissance cardiaque (CPO)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Formule"
+  ],
+  "specialties": [
+    "cardiologie",
+    "soins-intensifs",
+    "urgences",
+    "medecine-interne"
+  ],
+  "diseases": [
+    "Choc cardiogénique"
+  ],
+  "chief_complaints": [
+    "Douleur thoracique",
+    "Dizziness",
+    "Nausea",
+    "Dyspnée",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Cardiac Power Output (CPO)",
+    "cardiac power output",
+    "cpo",
+    "heart output",
+    "energy output",
+    "cardiogenic shock",
+    "cardiac output",
+    "co",
+    "cardiac power",
+    "hemodynamic measure",
+    "hemodynamic parameters"
+  ],
+  "dosing": false,
+  "formula": "Cardiac Power Output (CPO) is calculated by the following:\n\n**CPO, W** = [( [mean arterial pressure, mm Hg](nabda:calc.mean-arterial-pressure-map) )*( [cardiac output, L/min](nabda:calc.cardiac-output-ficks-formula) )]/451\n\nThe constant 451 converts mm Hg × L/min to watts.",
+  "how_to_use": {
+    "why": "- Fournit une vue intégrée de la performance myocardique, en quantifiant le débit de délivrance d'énergie à la circulation systémique.\n- Constitue un puissant prédicteur hémodynamique de mortalité dans le choc cardiogénique.\n- La CPO au repos peut identifier les patients à haut risque d'hospitalisation liée à l'IC et de décès.\n- Les tendances sérielles de la CPO permettent d'évaluer la récupération et de guider la titration ou le sevrage de l'assistance circulatoire pharmacologique ou mécanique.",
+    "when": "Appliquer aux patients atteints d’insuffisance cardiaque (HF), en particulier ceux chez qui un choc cardiogénique est suspecté ou confirmé, pour la stratification initiale du risque et pour suivre la réponse au traitement.",
+    "pearls": "- La valeur pronostique a d’abord été démontrée à l’aide du registre de l’essai SHOCK.\n- Pour les extrêmes de taille corporelle, peut être indexé à la [surface corporelle](nabda:calc.body-mass-index-bmi-body-surface-area-bsa) (c.-à-d. l’index de puissance cardiaque), où CPI = CPO / BSA (en m^2^).\n- La validation est plus solide pour le choc cardiogénique gauche ; peut surestimer le débit antérograde réel en cas de choc ventriculaire droit isolé ou de choc distributif mixte.\n- Non validé pour le choc non cardi"
+  },
+  "next_steps": {
+    "advice": "**In general:**\n\n- Resting CPO in a hemodynamically stable, average-sized adult is ~1W.\n- Exercise or stress states can increase CPO reserve (with values as high as 6W reported in the literature).\n- HF can significantly diminish CPO.\n- A CPO <0.6W indicates severe ventricular dysfunction and portends poor prognosis.\n\n**For chronic HF:**\n\n- A baseline CPO may aid risk stratification for HF-related hospitalization or death.\n- Results may inform optimization of guideline-directed HF therapy, particularly when CPO reserve is low.\n\n**For cardiogenic shock:**\n\n- CPO has been shown to be a strong, independent predictor of in-hospital mortality.\n- Obtain CPO at presentation and serially thereafter during treatment.\n- Persistently low or falling values should prompt escalation of inotropes or mechanical circulatory support, whereas sustained improvement supports de-escalation.",
+    "critical_actions": "Utiliser le CPO en association avec d’autres mesures cliniques, examens diagnostiques et observations pour établir une évaluation globale de la performance cardiovasculaire.",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "",
+  "short_description": "Débit énergétique cardiaque.",
+  "medium_description": "Calcule le taux de production d’énergie du cœur.",
+  "input_schema": [
+    {
+      "type": "textbox",
+      "name": "map",
+      "label": "[Pression artérielle moyenne](nabda:calc.mean-arterial-pressure-map)",
+      "optional": false,
+      "unit": "map",
+      "show_points": false
+    },
+    {
+      "type": "textbox",
+      "name": "co",
+      "label": "[Débit cardiaque](nabda:calc.cardiac-output-ficks-formula)",
+      "optional": false,
+      "unit": "cardiac_output",
+      "show_points": false
+    }
+  ],
+  "references": [
+    {
+      "text": "Fincke R, Hochman JS, Lowe AM, et al. Cardiac power is the strongest hemodynamic correlate of mortality in cardiogenic shock: a report from the SHOCK trial registry. J Am Coll Cardiol. 2004;44(2):340-348.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/15261929/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Mendoza DD, Cooper HA, Panza JA. Cardiac power output predicts mortality across a broad spectrum of patients with acute cardiac disease. Am Heart J. 2007;153(3):366-370.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/17307413/",
+      "kind": "other"
+    },
+    {
+      "text": "Lim HS. Cardiac power output revisited. Circ Heart Fail. 2020;13(10):e007393.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32993372/",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.cardiac-output-ficks-formula",
+    "calc.save-survival-veno-arterial-ecmo-score",
+    "calc.acute-renal-failure-cardiac-surgery-thakar-score",
+    "calc.mean-arterial-pressure-map",
+    "calc.body-mass-index-bmi-body-surface-area-bsa"
+  ],
+  "source_logic_hash": "26e48cc917e623c3e6e1c7c6a80e2301",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.mean-arterial-pressure-map",
+      "text": "mean arterial pressure, mm Hg"
+    },
+    {
+      "type": "calc",
+      "id": "calc.cardiac-output-ficks-formula",
+      "text": "cardiac output, L/min"
+    },
+    {
+      "type": "calc",
+      "id": "calc.body-mass-index-bmi-body-surface-area-bsa",
+      "text": "body surface area"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10494,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

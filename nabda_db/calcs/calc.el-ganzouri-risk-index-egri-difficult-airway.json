@@ -1,0 +1,264 @@
+{
+  "id": "calc.el-ganzouri-risk-index-egri-difficult-airway",
+  "slug": "el-ganzouri-risk-index-egri-difficult-airway",
+  "language": "en",
+  "title": "El-Ganzouri risque index (EGRI) pour Difficult Airway",
+  "short_title": "El-Ganzouri risque index (EGRI)",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "anesthesie",
+    "soins-intensifs",
+    "urgences",
+    "pneumologie",
+    "traumatologie"
+  ],
+  "diseases": [
+    "Insuffisance respiratoire"
+  ],
+  "chief_complaints": [
+    "Dyspnea",
+    "Dyspnée"
+  ],
+  "abbreviations": [
+    "Difficult airway",
+    "risk of difficult airway",
+    "Difficult airway risk",
+    "el ganzouri",
+    "egri",
+    "El-Ganzouri Risk Index",
+    "El Ganzouri Risk Index",
+    "difficult intubation",
+    "intubation",
+    "tracheal"
+  ],
+  "dosing": false,
+  "formula": "Addition of the selected points:\n\n| Variable | Points | |\n| --- | --- | --- |\n| Mouth opening | ≥4 cm | 0 |\n| <4 cm | 1 | |\n| Thyromental distance | >6.5 cm | 0 |\n| 6.0-6.5 cm | 1 | |\n| <6.0 cm | 2 | |\n| [Modified Mallampati Classification](nabda:calc.modified-mallampati-classification\\) | I (soft palate, fauces, uvula, and pillars seen) | 0 |\n| II (soft palate, fauces, and uvula seen) | 1 | |\n| III (soft palate and base of uvula seen) | 2 | |\n| IV (soft palate not visible) | 2 | |\n| Neck movement | >90° | 0 |\n| 80-90° | 1 | |\n| <80° | 2 | |\n| Ability to prognath (advance lower jaw forward) | Yes | 0 |\n| No | 1 | |\n| Weight | <90 kg (198.4 lbs) | 0 |\n| 90-110 kg (198.4-242.5 lbs) | 1 | |\n| >110 kg (242.5 lbs) | 2 | |\n| History of difficult intubation | None | 0 |\n| Questionable | 1 | |\n| Definite | 2 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "À utiliser chez les patients bénéficiant d'une anesthésie générale.",
+    "pearls": "\"Difficult airway\" was defined as inability to visualize laryngeal structures and epiglottis, or inability to achieve adequate mask ventilation."
+  },
+  "next_steps": {
+    "advice": "Consider precautions such as video-assisted laryngoscopy or awake intubation in high-risk patients.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interpretation:\n\n| EGRI | Risk of difficult airway |\n| --- | --- |\n| ≥4 | High (93.8% specificity) |\n| <4 | Low |",
+  "short_description": "Difficult airway risque.",
+  "medium_description": "Predicts risque de difficult airway.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "mouth",
+      "label": "Mouth opening",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "≥4 cm",
+          "value": 0
+        },
+        {
+          "label": "< 4 cm",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "thyro",
+      "label": "Thyromental distance",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">6.5 cm",
+          "value": 0
+        },
+        {
+          "label": "6.0-6.5 cm",
+          "value": 1
+        },
+        {
+          "label": "< 6.0 cm",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "mclass",
+      "label": "[Modified Mallampati Classification](nabda:calc.modified-mallampati-classification)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "I (soft palate, fauces, uvula, et pillars seen)",
+          "value": 0
+        },
+        {
+          "label": "II (soft palate, fauces, et uvula seen)",
+          "value": 1
+        },
+        {
+          "label": "III (soft palate et base de uvula seen)",
+          "value": 2
+        },
+        {
+          "label": "IV (soft palate not visible)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "neck",
+      "label": "Neck movement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": ">90°",
+          "value": 0
+        },
+        {
+          "label": "80-90°",
+          "value": 1
+        },
+        {
+          "label": "< 80°",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "prog",
+      "label": "Ability pour prognath (advance lower jaw forward)",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Oui",
+          "value": 0
+        },
+        {
+          "label": "Non",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "body",
+      "label": "Poids",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "< 90 kg (198.4 lbs)",
+          "value": 0
+        },
+        {
+          "label": "90-110 kg (198.4-242.5 lbs)",
+          "value": 1
+        },
+        {
+          "label": ">110 kg (242.5 lbs)",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "history",
+      "label": "History de difficult intubation",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Questionable",
+          "value": 1
+        },
+        {
+          "label": "Definite",
+          "value": 2
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "El-ganzouri AR, Mccarthy RJ, Tuman KJ, Tanck EN, Ivankovich AD. Preoperative airway assessment: predictive value of a multivariate risk index. Anesth Analg. 1996;82(6):1197-204.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/8638791",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Cortellazzi P, Minati L, Falcone C, Lamperti M, Caldiroli D. Predictive value of the El-Ganzouri multivariate risk index for difficult tracheal intubation: a comparison of Glidescope videolaryngoscopy and conventional Macintosh laryngoscopy. Br J Anaesth. 2007;99(6):906-11.",
+      "href": "https://academic.oup.com/bja/article/99/6/906/247661",
+      "kind": "other"
+    },
+    {
+      "text": "Bicalho GP, Bessa RC, Carneiro FS, et al. A Prospective Evaluation of Three Multivariate Models for Prediction of Difficult Tracheal Intubation. In: Proceedings from the American Society of Anesthesiologists; October 22, 2016; Chicago, IL. Abstract 1179.",
+      "href": "https://www.asaabstracts.com/strands/asaabstracts/abstract.htm?year=2016&index=15&absnum=4388",
+      "kind": "other"
+    },
+    {
+      "text": "Caldiroli D, Cortellazzi P. A new difficult airway management algorithm based upon the El Ganzouri Risk Index and GlideScope® videolaryngoscope. A new look for intubation?. Minerva Anestesiol. 2011;77(10):1011-7.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21610665",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.pulmonary-embolism-syncope-anemia-renal-dysfunction-pe-sard-score",
+    "calc.american-university-beirut-aub-has2-cardiovascular-risk-index",
+    "calc.osteoporosis-index-risk-osiris",
+    "calc.modified-mallampati-classification"
+  ],
+  "source_logic_hash": "a8867f0a64f95ea560f11adc868c9efb",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.modified-mallampati-classification",
+      "text": "Modified Mallampati Classification"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10149,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

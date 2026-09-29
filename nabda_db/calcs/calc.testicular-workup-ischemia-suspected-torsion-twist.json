@@ -1,0 +1,201 @@
+{
+  "id": "calc.testicular-workup-ischemia-suspected-torsion-twist",
+  "slug": "testicular-workup-ischemia-suspected-torsion-twist",
+  "language": "fr",
+  "title": "Testicular Workup pour Ischemia et Suspected Torsion (TWIST)",
+  "short_title": "TWIST",
+  "calc_type": "calculator",
+  "purpose": [
+    "Diagnostic"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "urgences",
+    "chirurgie",
+    "urologie"
+  ],
+  "diseases": [
+    "Torsion testiculaire"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Douleur chronique",
+    "Fever",
+    "Nausea",
+    "Pain",
+    "Polyuria",
+    "Swelling",
+    "Vomiting"
+  ],
+  "abbreviations": [
+    "Testicular Workup for Ischemia and Suspected Torsion (TWIST)",
+    "twist",
+    "testicular torsion",
+    "testicular torsion diagnosis",
+    "ischemia",
+    "suspected torsion"
+  ],
+  "dosing": false,
+  "formula": "Le score TWIST est calculé en additionnant les points sélectionnés :\n\n| Variable | Points | |\n| --- | --- | --- |\n| Gonflement testiculaire | Non | 0 |\n| Oui | 2 | |\n| Testicule dur | Non | 0 |\n| Oui | 2 | |\n| Absence de réflexe crémastérien | Non | 0 |\n| Oui | 1 | |\n| Nausées/vomissements | Non | 0 |\n| Oui | 1 | |\n| Testicule haut situé | Non | 0 |\n| Oui | 1 | |",
+  "how_to_use": {
+    "why": "",
+    "when": "Utilisez-vous le Testicular Workup for Ischemia and Suspected Torsion (TWIST) et souhaitez-vous contribuer avec votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Utilisez-vous le Testicular Workup for Ischemia and Suspected Torsion (TWIST) et souhaitez-vous contribuer avec votre expertise ?[Rejoignez](https://www.mdcalc.com/join-us)notre équipe de contributeurs !",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score TWIST | Risque de torsion testiculaire |\n| --- | --- |\n| 0-2 | Faible, échographie non recommandée |\n| 3-4 | Intermédiaire, échographie indiquée |\n| 5-7 | Élevé, exploration chirurgicale recommandée |",
+  "short_description": "Diagnostic de torsion testiculaire.",
+  "medium_description": "Diagnoses testicular torsion, decreasing indication pour ultrasound.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "swelling",
+      "label": "Gonflement testiculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "hard",
+      "label": "Testicule dur",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "absent",
+      "label": "Absence de réflexe crémastérien",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "nausea",
+      "label": "Nausées/vomissements",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "high",
+      "label": "Élevé riding testis",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Barbosa JA, Tiseo BC, Barayan GA, et al. Development and initial validation of a scoring system to diagnose testicular torsion in children. J Urol. 2013;189(5):1859-1864.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23103800/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Qin KR, Qu LG. Diagnosing with a twist: systematic review and meta-analysis of a testicular torsion risk score. J Urol. 2022;208(1):62-70.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/35238603/",
+      "kind": "other"
+    },
+    {
+      "text": "Barbosa JA, de Freitas PFS, Carvalho SAD, et al. Validation of the TWIST score for testicular torsion in adults. Int Urol Nephrol. 2021;53(1):7-11.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/32844355/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Frohlich LC, Paydar-Darian N, Cilento BG, Lee LK. Prospective validation of clinical score for males presenting with an acute scrotum. Acad Emerg Med. 2017;24(12):1474-1482.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/28833896/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pan P. Validation of the testicular workup for ischemia and suspected torsion (Twist) score in the diagnosis of testicular torsion in children with acute scrotum. Indian Pediatr. 2020;57(10):926-928.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/33089809/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Manohar CS, Gupta A, Keshavamurthy R, Shivalingaiah M, Sharanbasappa BR, Singh VK. Evaluation of Testicular Workup for Ischemia and Suspected Torsion score in patients presenting with acute scrotum. Urol Ann. 2018;10(1):20-23.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/29416270/",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.rome-iv-diagnostic-criteria-child-functional-nausea-vomiting",
+    "calc.acute-interstitial-nephritis-ain-risk-calculator",
+    "calc.cincinnati-prehospital-stroke-severity-scale-cp-sss"
+  ],
+  "source_logic_hash": "0a3e084f858e8505b1c4c4fad4fc7456",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10440,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

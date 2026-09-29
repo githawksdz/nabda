@@ -1,0 +1,130 @@
+{
+  "id": "calc.antivenom-dosing-algorithm",
+  "slug": "antivenom-dosing-algorithm",
+  "language": "en",
+  "title": "Algorithme de posologie des antivenimeux",
+  "short_title": "Algorithme de posologie des antivenimeux",
+  "calc_type": "calculator",
+  "purpose": [
+    "Algorithme"
+  ],
+  "specialties": [
+    "urgences",
+    "general",
+    "medecine-interne",
+    "pharmacotherapie",
+    "toxicologie"
+  ],
+  "diseases": [
+    "Ingestion/Overdose"
+  ],
+  "chief_complaints": [
+    "Intoxication/Overdose"
+  ],
+  "abbreviations": [
+    "Antivenom",
+    "ASV",
+    "snake bite",
+    "envenomation",
+    "venom",
+    "Crotalidae Polyvalent Immune Fab",
+    "snakebite",
+    "crotalid"
+  ],
+  "dosing": true,
+  "formula": "Algorithm, as follows:\n\n1. **Are there signs of envenomation?** Signs include:\n\n - Swelling, tenderness, redness, ecchymosis, or blebs at bite site.\n - Elevated protime, decreased fibrinogen or platelets.\n - Systemic signs (hypotension, bleeding beyond puncture site, refractory vomiting, diarrhea, angioedema, neurotoxicity).\n\nIf YES, proceed to 2.\n\nIf NO, this is an apparent dry bite or no bite. Observe patient ≥8 hours, repeat labs prior to discharge, and do not administer antivenom.\n\n1. **Check for indications for antivenom:**\n\n - Swelling that is more than minimal and is progressing.\n - Elevated protime, decreased fibrinogen or platelets.\n - Any systemic signs.\n\nIf YES, proceed to 3.\n\nIf NO, this is an apparent minor envenomation. Observe patient 12-24 hours, repeat labs at 4-6 hrs and prior to discharge, and do not administer antivenom.\n\n1. **Administer antivenom:**\n\n - Establish IV access, give IV fluids.\n - Mix 4-6 vials of crotaline Fab antivenom in 250 mL NS and infuse over 1 hour.\n - Increase dose to 6-8 vials for patients in shock or with serious active bleeding.\n - Reexamine after 1 hour, and proceed to 4.\n\n1. **Check for control of envenomation (after initial antivenom):**\n\n - Swelling and tenderness not progressing.\n - Protime, fibrinogen, platelets normal or clearly improving.\n - Clinically stable.\n - Neurotoxicity resolved or clearly improving.\n\nIf YES, monitor patient and perform serial examinations and maintenance therapy (2 vials of antivenom every 6 hours x 3 doses (given 6, 12, and 18 hours after initial control). Maintenance therapy may not be needed if close observation by physician expert is available.\n\nIf NO, then repeat antivenom until control is achieved.",
+  "how_to_use": {
+    "why": "- Approximately 9,000 snakebites are treated yearly in the US, with 5 of those patients dying annually. The case-fatality rate is reported at 1 death per 736 patients.\n- The algorithm specifies the manifestations of crotaline envenomation that necessitate aggressive management.",
+    "when": "- Patients with known or suspected crotaline envenomation (rattlesnake, copperhead, cottonmouth).\n- Not valid for snakebites to the head or neck or with cardiovascular collapse: call Poison Control (1-800-222-1222).",
+    "pearls": "- Based on the Unified Treatment Algorithm ([Lavonas 2011](https://bmcemergmed.biomedcentral.com/articles/10.1186/1471-227X-11-2)), which was developed with the goal of quick identification and management of patients who may benefit from Crotalidae Polyvalent Immune Fab.\n- There is significant variability among envenomation patients, and this algorithm does not represent a standard of care.\n- Report all cases of suspected/confirmed envenomation to poison control (1-800-222-1222)."
+  },
+  "next_steps": {
+    "advice": "- Le bord d'avancée de l'œdème et de la sensibilité douloureuse doit être marqué toutes les 15-30 minutes.\n- Surélever et immobiliser le membre, traiter la douleur de manière agressive par des opioïdes IV, et mettre à jour le statut vaccinal antitétanique selon les besoins.",
+    "critical_actions": "- Signaler au centre antipoison (1-800-222-1222) tous les cas d'envenimation suspectée/confirmée.\n- Éviter ce qui suit :",
+    "management": "Maintenance therapy:\n\n- 2 vials of antivenom every 6 hours x 3 doses (given 6, 12, and 18 hours after initial control).\n- May not be needed if close observation by physician expert is available.\n\nFollow-up planning:\n\n- Patient should return for worsening swelling not relieved by elevation, or abnormal bleeding (e.g. melena, gum bleeding, easy bruising).\n- If fever, rash, or muscle/joint pains occur (i.e., suggesting serum sickness), patient should return.\n- Patient should be given bleeding precautions (no contact sports, elective surgery, or dental work for 2 weeks).\n- Follow-up:"
+  },
+  "evidence": "[Lavonas et al](https://www.ncbi.nlm.nih.gov/pubmed/21291549)analyzed the medical literature regarding use of Crotalidae Polyvalent Immune Fab for pit viper envenomations. After analysis of 42 original articles, this panel of experts met and held a consensus-building meeting, which resulted in a consensus treatment algorithm.",
+  "more_info": "",
+  "short_description": "Antivenom pour snake bites.",
+  "medium_description": "Doses antivenom (CroFab only, not Anavip) pour pit viper snakebites.",
+  "input_schema": [
+    {
+      "type": "toggle",
+      "name": "signs",
+      "label": "Y a-t-il des signes d'envenimation ?",
+      "tips": "Swelling, tenderness, redness, ecchymosis, or blebs at bite site; elevated protime, decreased fibrinogen or platelets; systemic signs (hypotension, bleeding beyond puncture site, refractory vomiting, diarrhea, angioedema, neurotoxicity)",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "toggle",
+      "name": "indications",
+      "label": "Are there indications pour antivenom?",
+      "tips": "Œdème modéré, sévère et/ou en progression ; temps de prothrombine élevé, fibrinogène ou plaquettes diminués ; tout signe systémique",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "signs == 1",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Lavonas EJ, Ruha AM, Banner W, et al. Unified treatment algorithm for the management of crotaline snakebite in the United States: results of an evidence-informed consensus workshop. BMC Emerg Med. 2011;11:2.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/21291549",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Hoffman R, Howland MA, Lewin N et al. Goldfrank's Toxicologic Emergencies, Tenth Edition. McGraw-Hill Education / Medical; 2014.",
+      "href": "https://accessemergencymedicine.mhmedical.com/content.aspx?bookid=1163&sectionid=64552562",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Pham HX, Mullins ME. Safety of nonsteroidal anti-inflammatory drugs in copperhead snakebite patients. Clin Toxicol (Phila). 2018;56(11):1121-1127.",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/29774760",
+      "kind": "other"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.digifab-dosing-digoxin-poisoning",
+    "calc.fomepizole-dosing",
+    "calc.high-dose-insulin-euglycemia-therapy-hiet"
+  ],
+  "source_logic_hash": "87288da7ac935f5f7d0397895795be54",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 4046,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

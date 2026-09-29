@@ -1,0 +1,136 @@
+{
+  "id": "calc.meldna-meld-na-score-liver-cirrhosis",
+  "slug": "meldna-meld-na-score-liver-cirrhosis",
+  "language": "fr",
+  "title": "MELDNa/MELD-Na score pour Liver Cirrhosis",
+  "short_title": "Score MELD-Na",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic",
+    "Formule"
+  ],
+  "specialties": [
+    "soins-intensifs",
+    "gastroenterologie",
+    "hepatologie",
+    "medecine-interne",
+    "chirurgie"
+  ],
+  "diseases": [
+    "Hépatopathie chronique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale"
+  ],
+  "abbreviations": [
+    "cirrhosis"
+  ],
+  "dosing": false,
+  "formula": "MELD-Na = MELD Score - Na - 0.025 ×notionvc: 342bb2ae-aae1-4725-b9cb-5aa8a7f303d1MELD ×notionvc: 342bb2ae-aae1-4725-b9cb-5aa8a7f303d1(140-Na) + 140\n\nSodium is limited in a range of 125-140, and if outside of these bounds, is set to the nearest limit.",
+  "how_to_use": {
+    "why": "Le MELD-Na peut améliorer le [MELD Score](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) pour la cirrh",
+    "when": "",
+    "pearls": ""
+  },
+  "next_steps": {
+    "advice": "Les patients doivent être évalués en vue d’une transplantation si aucune cause réversible de cirrhose ne peut être identifiée.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| Score MELD-Na | Mortalité à 90 jours |\n| --- | --- |\n| <17 | <2 % |\n| 17-20 | 3-4 % |\n| 21-22 | 7-10 % |\n| 23-26 | 14-15 % |\n| 27-31 | 27-32 % |\n| ≥32 | 65-66 % |\n\nLe MELD-Na s’est avéré mieux adapté à la prédiction de la mortalité comparé au [MELD Score](nabda:calc.meld-score-model-end-stage-liver-disease-12-older) seul.\n\nD’après[Kim 2008](https://www.ncbi.nlm.nih.gov/pubmed/18768945).",
+  "short_description": "MELD + Na : plus précis que le MELD.",
+  "medium_description": "Adds sodium pour MELD modèle pour liver cirrhosis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "dialysis",
+      "label": "Dialysis at least twice dans past week",
+      "optional": false,
+      "show_points": false,
+      "conditionality": "",
+      "options": [
+        {
+          "label": "Non",
+          "value": 0
+        },
+        {
+          "label": "Oui",
+          "value": 1
+        }
+      ]
+    },
+    {
+      "type": "textbox",
+      "name": "creatinine",
+      "label": "Creatinine",
+      "optional": false,
+      "unit": "cr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "bilirubin",
+      "label": "Bilirubine totale",
+      "optional": false,
+      "unit": "bili",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "inr",
+      "label": "INR",
+      "optional": false,
+      "unit": "inr",
+      "show_points": false,
+      "conditionality": ""
+    },
+    {
+      "type": "textbox",
+      "name": "sodium",
+      "label": "Sodium",
+      "optional": false,
+      "unit": "na",
+      "show_points": false,
+      "conditionality": ""
+    }
+  ],
+  "references": [
+    {
+      "text": "Kim WR, Biggins SW, Kremers WK, Wiesner RH, Kamath PS, Benson JT, Edwards E, Therneau TM. Hyponatremia and mortality among patients on the liver-transplant waiting list. N Engl J Med. 2008 Sep 4;359(10):1018-26. PMID: 18768945",
+      "href": "https://www.ncbi.nlm.nih.gov/pubmed/18768945",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.meld-score-model-end-stage-liver-disease-12-older",
+    "calc.model-end-stage-liver-disease-meld",
+    "calc.meld-score-original-pre-2016-model-end-stage-liver-disease"
+  ],
+  "source_logic_hash": "41977b40534c5d2bf5df90e001a80787",
+  "logic_language": "javascript",
+  "mentions": [
+    {
+      "type": "calc",
+      "id": "calc.meld-score-model-end-stage-liver-disease-12-older",
+      "text": "MELD Score"
+    }
+  ],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 1754,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}

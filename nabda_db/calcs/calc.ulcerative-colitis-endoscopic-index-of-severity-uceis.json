@@ -1,0 +1,176 @@
+{
+  "id": "calc.ulcerative-colitis-endoscopic-index-of-severity-uceis",
+  "slug": "ulcerative-colitis-endoscopic-index-of-severity-uceis",
+  "language": "fr",
+  "title": "Ulcerative Colitis Endoscopic index de gravité (UCEIS)",
+  "short_title": "UCEIS",
+  "calc_type": "calculator",
+  "purpose": [
+    "Pronostic"
+  ],
+  "specialties": [
+    "gastroenterologie"
+  ],
+  "diseases": [
+    "Maladies inflammatoires chroniques de l'intestin (MICI)",
+    "Rectocolite hémorragique"
+  ],
+  "chief_complaints": [
+    "Douleur abdominale",
+    "Bleeding",
+    "Bloating",
+    "Sang dans les selles",
+    "Constipation",
+    "Diarrhea",
+    "Fatigue",
+    "Fever",
+    "Douleur articulaire",
+    "Perte d'appétit",
+    "Perte/Gain de poids"
+  ],
+  "abbreviations": [
+    "Ulcerative Colitis Endoscopic Index of Severity (UCEIS)",
+    "UCEIS",
+    "ulcerative colitis",
+    "ulcerative colitis severity",
+    "endoscopic index",
+    "endoscopic index of severity"
+  ],
+  "dosing": false,
+  "formula": "L'UCEIS est calculé par l'addition des points suivants :\n\n| Variable | Points | | |\n| --- | --- | --- | --- |\n| Motif vasculaire | Motif vasculaire normal avec arborisation des capillaires clairement définie, ou avec flou ou perte partielle des marges capillaires | Normal | 0 |\n| Oblitération partielle du motif vasculaire | Oblitération partielle | 1 | |\n| Oblitération complète du motif vasculaire | Oblitéré | 2 | |\n| Saignement | Aucun sang visible | Aucun | 0 |\n| Quelques points ou traînées de sang coagulé à la surface de la muqueuse devant l'endoscope, pouvant être lavés | Muqueux | 1 | |\n| Présence de sang liquide dans la lumière | Lumière (léger) | 2 | |\n| Sang franc dans la lumière devant l'endoscope ou suintement visible de la muqueuse après lavage du sang intraluminal, ou suintement visible d'une muqueuse hémorragique | Lumière (modéré ou sévère) | 3 | |\n| Érosions et ulcères | Muqueuse normale, absence d'érosions ou d'ulcères visibles | Aucune | 0 |\n| Défauts minuscules (≤ 5 mm) de la muqueuse, de couleur blanche ou jaune, à bord plat | Érosions | 1 | |\n| Défauts plus volumineux (> 5 mm) de la muqueuse, correspondant à des ulcères discrets recouverts de fibrine par rapport aux érosions, mais restant superficiels | Ulcère superficiel | 2 | |\n| Défauts plus profonds et excavés de la muqueuse, avec un bord légèrement surélevé | Ulcère profond | 3 | |",
+  "how_to_use": {
+    "why": "- Par rapport à des scores endoscopiques similaires, les variations de l'UCEIS pourraient mieux refléter l'amélioration clinique lors de la cicatrisation muqueuse précoce, offrant potentiellement une mesure plus précise de l'amélioration de la maladie.\n- Offre un système de score standardisé, objectif et validé pour l'évaluation endoscopique de la RCH.\n- Les scores semblent corrélés avec les symptômes de la maladie, le pronostic (à court et long terme) et la réponse au traitement, ce qui pourrait aider à la prise de décision objective pour l'intensification ou la désescalade thérapeutique.\n- Pourrait être utile pour surveiller l'efficacité thérapeutique dans les essais cliniques ou la prise en charge à long terme.",
+    "when": "À utiliser pour évaluer l'activité de la maladie chez les patients atteints de rectocolite hémorragique (RCH) bénéficiant d'une endoscopie.",
+    "pearls": "- Excellente fiabilité intra- et interobservateur lorsqu'il est utilisé par des endoscopistes entraînés.\n- S'est avéré être minimalement influencé par les informations cliniques sur l'activité de la maladie, garantissant une évaluation objective.\n- Se concentre sur les lésions intestinales les plus sévères, mais n'évalue pas l'étendue de la maladie."
+  },
+  "next_steps": {
+    "advice": "Bien que des scores plus élevés suggèrent une maladie plus sévère, nous n'avons connaissance d'aucune recommandation de prise en charge actuelle basée sur les scores UCEIS.\n\n- [Chen et al. (2021)](https://www.sciencedirect.com/science/article/pii/S2468900921000190) ont identifié un score UCEIS initial ≥6 comme étant associé à une probabilité élevée d'échec du traitement par mésalazine.\n- Des scores UCEIS initiaux élevés ont également été associés à une perte de réponse aux biothérapies, avec [Di Ruscio et al. (2021)](https://karger.com/dig/article-abstract/102/4/534/100648/Role-of-Ulcerative-Colitis-Endoscopic-Index-of?redirectedFrom=fulltext) rapportant des scores ≥7 comme prédictifs de colectomie dans un délai médian de 5 mois.\n- De plus, [Yan et al. (2023)](https://journals.lww.com/md-journal/fulltext/2023/11030/the_ulcerative_colitis_endoscopic_index_of.85.aspx) ont suggéré qu'un score UCEIS ≤3 pourrait définir la rémission clinique chez les patients atteints de RCH traités par védolizumab, tandis que des scores ≥4 pourraient indiquer la nécessité d'une escalade thérapeutique.",
+    "critical_actions": "",
+    "management": ""
+  },
+  "evidence": "",
+  "more_info": "Interprétation :\n\n| UCEIS | Interprétation |\n| --- | --- |\n| 0-1 | Rémission |\n| 2-4 | Léger |\n| 5-6 | Modéré |\n| 7-8 | Sévère |",
+  "short_description": "Ulcerative colitis gravité.",
+  "medium_description": "Assesses endoscopic gravité de ulcerative colitis.",
+  "input_schema": [
+    {
+      "type": "radio",
+      "name": "pattern",
+      "label": "Motif vasculaire",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Normal",
+          "value": 0
+        },
+        {
+          "label": "Oblitération partielle",
+          "value": 1
+        },
+        {
+          "label": "Obliterated",
+          "value": 2
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "bleeding",
+      "label": "Saignement",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Mucosal",
+          "value": 1
+        },
+        {
+          "label": "Lumière (léger)",
+          "value": 2
+        },
+        {
+          "label": "Luminal modéré ou severe",
+          "value": 3
+        }
+      ]
+    },
+    {
+      "type": "radio",
+      "name": "ulcers",
+      "label": "Érosions et ulcères",
+      "optional": false,
+      "default": 0,
+      "show_points": true,
+      "options": [
+        {
+          "label": "Aucun",
+          "value": 0
+        },
+        {
+          "label": "Erosions",
+          "value": 1
+        },
+        {
+          "label": "Ulcère superficiel",
+          "value": 2
+        },
+        {
+          "label": "Ulcère profond",
+          "value": 3
+        }
+      ]
+    }
+  ],
+  "references": [
+    {
+      "text": "Travis SPL, Schnell D, Krzeski P, et al. Developing an instrument to assess the endoscopic severity of ulcerative colitis: the Ulcerative Colitis Endoscopic Index of Severity (Uceis). Gut. 2012;61(4):535-542.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/21997563/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Travis SPL, Schnell D, Krzeski P, et al. Reliability and initial validation of the ulcerative colitis endoscopic index of severity. Gastroenterology. 2013;145(5):987-995.",
+      "href": "https://pubmed.ncbi.nlm.nih.gov/23891974/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Travis SPL, Schnell D, Feagan BG, et al. The impact of clinical information on the assessment of endoscopic activity: characteristics of the ulcerative colitis endoscopic index of severity [uceis]. Journal of Crohn’s & Colitis. 2015;9(8):607.",
+      "href": "https://pmc.ncbi.nlm.nih.gov/articles/PMC4584567/",
+      "kind": "pubmed"
+    },
+    {
+      "text": "Xie T, Zhang T, Ding C, et al. Ulcerative Colitis Endoscopic Index of Severity (Uceis) versus Mayo Endoscopic Score (Mes) in guiding the need for colectomy in patients with acute severe colitis. Gastroenterology Report. 2018;6(1):38-44.",
+      "href": "https://academic.oup.com/gastro/article/6/1/38/3769291",
+      "kind": "pubmed"
+    }
+  ],
+  "related_calc_ids": [
+    "calc.truelove-witts-severity-index-ulcerative-colitis",
+    "calc.ho-index",
+    "calc.travis-criteria"
+  ],
+  "source_logic_hash": "955fc993c43726cdfa59c7e6f853bfd4",
+  "logic_language": "javascript",
+  "mentions": [],
+  "locale_status": "needs_adaptation",
+  "source_context": "international",
+  "disabled": false,
+  "source_favorite_id": 10395,
+  "runnable": false,
+  "equation_logic_text": null,
+  "contributor_ids": [],
+  "creator_names": [],
+  "measurement_ids": [],
+  "cat_ids": [],
+  "substance_ids": [],
+  "before_use": null,
+  "instructions": null,
+  "popular": false,
+  "engine_sha256": null
+}
